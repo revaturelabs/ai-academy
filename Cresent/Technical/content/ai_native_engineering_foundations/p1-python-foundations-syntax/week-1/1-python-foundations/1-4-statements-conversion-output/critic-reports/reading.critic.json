@@ -1,0 +1,53 @@
+{
+  "critic": "reading-critic",
+  "topic_id": "1.4",
+  "artifact": "artifacts/reading.md",
+  "generated_at": "2026-07-13T00:00:00Z",
+  "profile": "deep",
+  "passed": true,
+  "verdict": "PASS (re-validation after diagram embed) - The type-conversion map ```mermaid block plus caption was inserted between Key Concepts and Worked Example; it is byte-identical to the already-passed diagram.mmd. Excluding the fenced mermaid block from the count, prose remains inside the deep 1800-2200 word band (~1990w per sidecar), all three primary citations are intact with no orphans, no forward references are introduced, and faithfulness/tone are unchanged.",
+  "checks": [
+    {
+      "id": "format_discipline",
+      "name": "Format discipline",
+      "passed": true,
+      "detail": "No YAML frontmatter (first line is '# Statements, Conversion & Output'). Sidecar reading.meta.json present and valid with word_count=1990, estimated_read_minutes=10, citations_used=[1,2,3], sections, and embeds_diagram=true. Exactly the six required '##' headings in order: Overview, Key Concepts, Worked Example, In Practice, Key Takeaways, References. The embedded diagram is a ```mermaid fenced block inside Key Concepts, not a new section heading."
+    },
+    {
+      "id": "length",
+      "name": "Length budget",
+      "passed": true,
+      "detail": "MERMAID BLOCK (reading.md lines 34-72) EXCLUDED from word count. Prose word count ~1990 per sidecar, inside deep band 1800-2200; the added one-sentence caption paragraph (line 32, ~42 words) keeps the total comfortably within band. Reading-aloud minutes 1990/230 ~= 8.7. Not under, not over."
+    },
+    {
+      "id": "diagram_embed",
+      "name": "Diagram embed present and consistent",
+      "passed": true,
+      "detail": "```mermaid fenced block present (lines 34-72) and byte-identical to standalone artifacts/diagram.mmd (already critic-passed). Caption present at line 32 ('The conversion map. The diagram below shows how a value moves between the four basic types...'). Consistent with corpus 5.3: title 'Type Conversion Map', nodes str/int/float/bool, edges labelled int() digits-only, float() truncates, str(), bool() 0/'' -> False. sidecar embeds_diagram=true matches."
+    },
+    {
+      "id": "citations",
+      "name": "Citations",
+      "passed": true,
+      "detail": "All three markers intact. [1] Real Python f-strings cited (lines 17, 19-24, 95, 104, 105, 107, 114). [2] Real Python string-formatting cited (lines 13, 95, 101-103, 112). [3] PEP 636 match-case cited (lines 28, 115). Bibliography (lines 119-121) matches inline markers; no orphan markers, no orphan entries. The inserted caption introduces no new citation and breaks none."
+    },
+    {
+      "id": "forward_references",
+      "name": "Prereq alignment / no forward references",
+      "passed": true,
+      "detail": "As module closer (4/4) it references 1.1-1.3 correctly. In-scope material taught: conversion int()/float()/str()/bool(), f-strings + specifiers, quotes/concat/index[0], tuple unpacking, chained assignment. Awareness-only kept shallow: type hints 'introduction' (line 26), match-case 'introduction: recognize the shape' (line 28). No mastery of def bodies, loops, or if/elif/else. The added caption references only in-scope conversion behaviours (int() whole-number strings, float truncation, 0/'' falsy) - no new forward reference."
+    },
+    {
+      "id": "faithfulness",
+      "name": "Faithfulness to corpus",
+      "passed": true,
+      "detail": "Prose unchanged from prior PASS; sampled assertions still trace to corpus (statement vs expression 39-59, a=b=5 68, swap 96-106, int(3.9)=3/int(-3.9)=-3 133-145, int('3.14') ValueError 145, bool falsy 161, name[0]='P' 223-236, specifiers 272-277, :>10.2f 296, hints not enforced 308, case _ 334, receipt output 375). New caption traces to corpus 5.3 conversion behaviours. Zero unsupported assertions (threshold >2)."
+    },
+    {
+      "id": "tone_fit",
+      "name": "Tone fit",
+      "passed": true,
+      "detail": "Plainspoken beginner register unchanged. Caption is a single sub-25-word sentence. No academic hedging phrases; 0 occurrences (threshold <3)."
+    }
+  ]
+}

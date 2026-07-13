@@ -1,0 +1,107 @@
+$CATEGORY: CIT/P1/week-1/1.3-operators-expressions
+
+::q1:: In Python, what does the expression 7 / 2 evaluate to, and of what type is the result? {
+~The int 3, because division between two whole numbers always discards any leftover fractional part#No — that describes floor division //; the single slash / keeps the fraction.
+=The float 3.5, because true division always returns a float even when the numbers divide unevenly#Correct — / is true division and always yields a float, here 3.5.
+~The int 4, because the single slash rounds the exact answer up to the nearest whole number value#No — / does not round to an int at all; it returns the full value 3.5 as a float.
+~The float 3.0, because division throws away the remainder and then reports the answer as a float#No — that would lose the .5; true division keeps it, giving 3.5.
+#### Tests true division / and its float result (corpus §5.1).
+}
+
+::q2:: A program evaluates -7 // 2. What is the result, and why? {
+~-3, because floor division simply chops off the decimal part and keeps the whole-number part#No — // rounds down, not toward zero; chopping would give -3 but Python gives -4.
+~-3.5, because the double slash returns the exact quotient just like ordinary true division does#No — // returns a floored whole number here, not the exact -3.5.
+~3, because dividing then flooring ignores the minus signs and reports the magnitude of the answer#No — the sign is kept; the answer is negative, and it floors to -4.
+=-4, because floor division rounds the true answer -3.5 down toward negative infinity#Correct — // rounds toward negative infinity, so -3.5 floors to -4.
+#### Tests floor division // with a negative operand, rounding toward negative infinity (corpus §5.1).
+}
+
+::q3:: Using modulo, which single expression is True exactly when a whole number n is even? {
+=n % 2 == 0, since dividing an even number by two leaves no remainder at all after the division#Correct — even numbers leave remainder 0, so n % 2 == 0 tests for even.
+~n % 2 == 1, since an even number always leaves a remainder of exactly one after dividing by two#No — that expression is True for odd numbers; even numbers leave remainder 0.
+~n // 2 == 0, since flooring an even number by two always produces the value zero as its result#No — n // 2 is the halved count, not a zero test; this is not an even/odd test.
+~n ** 2 == 0, since raising an even number to the second power collapses the whole thing to zero#No — squaring does not test evenness and is only 0 when n itself is 0.
+#### Tests the modulo even/odd test x % 2 (corpus §5.1).
+}
+
+::q4:: What does Python print for the two lines print(-2 ** 2) then print((-2) ** 2)? {
+~4 then 4, because a negative number squared is positive in both cases regardless of parentheses#No — without parentheses the minus applies after the power, giving -4 on the first line.
+~-4 then -4, because squaring can never remove the leading minus sign from either expression here#No — the second line groups (-2) first, so its square is a positive 4.
+=-4 then 4, because ** binds tighter than unary minus, so only the parentheses square the negative#Correct — -2 ** 2 negates 2 ** 2 to -4, while (-2) ** 2 squares -2 to 4.
+~4 then -4, because parentheses lower the priority of the power and let the minus sign win instead#No — this reverses the two; -2 ** 2 is -4 and (-2) ** 2 is 4.
+#### Tests that ** has higher precedence than unary minus (corpus §5.2).
+}
+
+::q5:: Applying operator precedence, what does 2 + 3 * 4 ** 2 - 1 evaluate to? {
+=49, because ** runs first (16), then * (48), then + and - left to right give 50 then 49#Correct — 4 ** 2 = 16, 3 * 16 = 48, 2 + 48 = 50, 50 - 1 = 49.
+~81, because the reader works strictly left to right, adding and multiplying before the final power#No — Python does not go left to right; ** runs first, not last.
+~99, because exponentiation applies to the whole product 3 * 4 before the addition and subtraction#No — ** binds only to 4, not to 3 * 4; the power is 4 ** 2 = 16.
+~50, because the trailing minus one is dropped once the higher-precedence operators have all run#No — the -1 is not dropped; after 50 you subtract 1 to get 49.
+#### Tests full precedence-ladder evaluation of a mixed arithmetic expression (corpus §5.2).
+}
+
+::q6:: How do parentheses change the result of the multiplication in 2 + 3 * 4 versus (2 + 3) * 4? {
+~Both give 20, because multiplication always runs before addition no matter where parentheses sit#No — the first is 14; without parentheses * runs first, so only the second is 20.
+~Both give 14, because parentheses around an addition have no effect on how the expression evaluates#No — parentheses raise the addition's priority; the second expression is 20, not 14.
+~The first is 20 and the second is 14, because parentheses always lower the priority of what they wrap#No — this reverses it; parentheses have the highest precedence, giving the second 20.
+=The first is 14 and the second is 20, because parentheses force the addition to run before the multiply#Correct — * beats + normally (14), but the parentheses do the + first, giving 5 * 4 = 20.
+#### Tests using parentheses to override precedence (corpus §5.2).
+}
+
+::q7:: What is the type of the value produced by the comparison 3 < 5? {
+~An int, because Python reports the numeric difference between the two operands being compared here#No — a comparison does not return a number; it returns a bool.
+=A bool, because every comparison operator answers a yes/no question with either True or False#Correct — comparisons always produce a bool, here True.
+~A float, because any operator involving numeric operands promotes its result to a float value#No — comparison never promotes to float; its result is a bool.
+~A str, because Python spells the answer out as the text True so that it can be printed later#No — True is a bool value, not the text "True"; comparisons yield a bool.
+#### Tests that comparison operators produce a bool result (corpus §5.3).
+}
+
+::q8:: Given x = 7, what does the chained comparison 1 < x < 10 evaluate to, and how should it be read? {
+~False, because Python compares 1 < x first and then compares that True result against the number 10#No — Python does not compare a bool against 10; it reads the chain as a range test.
+~True, because chaining simply checks the first comparison 1 < x and ignores the second half entirely#No — both links matter; the chain means 1 < x AND x < 10, not just the first link.
+=True, because it reads as "x is greater than 1 and less than 10," and 7 satisfies both links#Correct — 1 < 7 and 7 < 10 are both true, so the chain is True.
+~False, because a chained comparison is invalid syntax and Python defaults such expressions to False#No — chaining is valid; it reads as a range check and here evaluates to True.
+#### Tests reading a chained comparison such as 1 < x < 10 (corpus §5.3).
+}
+
+::q9:: The corpus calls confusing = with == the number-one beginner bug. What is the difference? {
+=A single = assigns a value into a variable; a double == compares two values and yields a bool#Correct — = binds a name to a value, while == asks whether two values are equal.
+~A single = compares two values for equality, while a double == stores the right value into a name#No — this reverses them; = assigns and == compares.
+~Both = and == store a value into a variable; the double == just makes the assignment happen twice#No — == does not assign anything; it is the equality comparison.
+~Both = and == compare two values; the single = is simply an older spelling kept for compatibility#No — = is assignment, not comparison, and is not a deprecated form of ==.
+#### Tests the == versus = distinction (corpus §5.3).
+}
+
+::q10:: According to the precedence rules, how is True or False and False evaluated, and what is the result? {
+~False, evaluated as (True or False) and False, because or is read before and going left to right#No — and binds tighter than or, so the and is grouped first, giving True.
+=True, evaluated as True or (False and False), because and binds tighter than or in precedence#Correct — and groups first to False, then True or False is True.
+~False, because when and and or appear together Python treats the whole expression as one big and#No — they are not merged into one and; and binds tighter, and the overall result is True.
+~True, evaluated as (True or False) and False, because parentheses are assumed around the leftmost pair#No — the grouping is around the and pair, not the or pair, though the result is still True.
+#### Tests logical-operator precedence, not > and > or (corpus §5.4).
+}
+
+::q11:: Why does print(False and (10 / 0)) return False instead of crashing on the division by zero? {
+~Because Python evaluates 10 / 0 first, quietly catches the error, and then substitutes False for it#No — the right side never runs; there is no error to catch.
+~Because and always returns False whenever a division appears anywhere inside the expression at all#No — the presence of a division is irrelevant; short-circuiting is what skips the crash.
+=Because and short-circuits\: the left side is False, so Python never evaluates the risky right side#Correct — with and, a falsy left side settles the result, so the right side is skipped.
+~Because Python evaluates both sides but discards the right side once it sees the left side is False#No — the right side is never evaluated at all, not evaluated then discarded.
+#### Tests short-circuit evaluation of and (corpus §5.5).
+}
+
+::q12:: Which list names exactly the values the corpus identifies as falsy? {
+~False, 0, 0.0, "", and also -1, since any value at or below zero counts as a falsy value in Python#No — negative numbers like -1 are truthy; falsiness is about being zero, not negative.
+~False, 0, and "", but not 0.0, because a float can never be treated as falsy the way an int can#No — 0.0 is falsy just like 0; the float zero is included.
+~False, 0, 0.0, "", and "False", since the word False written as text also counts as a falsy value#No — the non-empty string "False" is truthy; only the empty string "" is falsy.
+=False, 0, 0.0, and "" — everything else, including any non-zero number or non-empty string, is truthy#Correct — the falsy list is exactly False, 0, 0.0, and the empty string.
+#### Tests the falsy list and truthiness (corpus §5.6).
+}
+
+::q13:: True division uses the single-slash operator, whereas floor division uses the ____ operator (give the symbol). {
+=//
+}
+
+::q14:: The behavior where Python stops evaluating a logical expression as soon as the result is determined — skipping the right side of and when the left is falsy — is called ____ evaluation (one word for the blank). {
+=short-circuit
+=short circuit
+=shortcircuit
+}

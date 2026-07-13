@@ -13,8 +13,24 @@
     "Values and types: int, float, str, bool",
     "Inspecting types: the type() function; dynamic typing (concept)"
   ],
-  "expected_delivery_minutes": null,
-  "artifact_plan": {},
+  "expected_delivery_minutes": 10,
+  "artifact_plan": {
+    "profile": "deep",
+    "profile_source": "human_confirmed",
+    "profile_note": "Intrinsic + sibling signals were standard; human overrode to deep at HITL#2 to add seat time toward the week target.",
+    "reading": {
+      "target_word_range": [1800, 2200],
+      "target_minute_range": [9, 11]
+    },
+    "quiz": {
+      "min_questions": 10,
+      "max_questions": 15,
+      "include_short_answer": true
+    },
+    "diagram": true,
+    "diagram_intent": "Mental-model diagram: a variable NAME (identifier) bound by the assignment operator (=) to a VALUE/object that carries the TYPE; show reassignment repointing the name and dynamic typing (name can point to a new value of a different type). Concept/constellation layout, not a pipeline.",
+    "diagram_note": "Added at HITL#4 to honor the deep-profile diagram default (was skipped as 'textual')."
+  },
   "next_assessment": {
     "id": "A1",
     "week": 3,

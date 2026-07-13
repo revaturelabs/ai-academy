@@ -1,0 +1,97 @@
+$CATEGORY: CIT/P1/week-1/1.1-the-python-environment
+
+::q1:: The corpus gives two main reasons Python dominates AI and ML work. Which pair names both reasons? {
+~It runs faster than every other language and it was invented specifically for AI research#No — the corpus never claims Python is the fastest language or that it was built for AI.
+=It reads close to plain English and it has the richest ecosystem of reusable code packages#Correct — readability plus the largest ecosystem of shareable packages are the two stated reasons.
+~It is the only language that can call machine learning models and it needs no setup#No — other languages call models too, and setup is a Colab trait, not a Python reason.
+~It is a compiled language and it hides all of its underlying symbols from you#No — Python is interpreted, and low syntax overhead is not the same as hiding symbols.
+#### Tests why Python is the common AI/ML language: readability and ecosystem (corpus §5, Why Python for AI work).
+}
+
+::q2:: In the corpus, what does the word "ecosystem" refer to when describing Python's advantage for AI? {
+=The large collection of ready-made, shareable code packages that others built and you can reuse#Correct — ecosystem means the pool of reusable packages for math, data, and models.
+~The community forums and chat rooms where Python programmers ask each other for help#No — the corpus defines ecosystem as reusable code packages, not discussion venues.
+~The set of physical servers and computers that Google provides to run your Python code#No — that describes hosted compute, not Python's ecosystem.
+~The plain-English style of the language that lowers how many symbols you must write#No — that is readability, which is the separate second reason.
+#### Tests the corpus definition of "ecosystem" (corpus §5, Why Python for AI work).
+}
+
+::q3:: According to the corpus, what does the Python interpreter do? {
+~It translates your whole program ahead of time into a separate file the machine runs later#No — that describes a compiled language, which the corpus contrasts against Python.
+~It stores your instructions as a list of facts to be retrieved and displayed on request#No — the interpreter runs code; it does not merely store or retrieve facts.
+=It reads your code and carries it out directly, executing each line in order as it runs#Correct — the interpreter reads and executes Python line by line as it runs.
+~It checks your code for spelling and grammar mistakes before any of the lines will run#No — the corpus describes execution, not a spell or grammar check step.
+#### Tests what an interpreter does: interpreted, line-by-line execution (corpus §5, The interpreter and interactive mode).
+}
+
+::q4:: How does the corpus distinguish an interpreted language like Python from a compiled language? {
+~Interpreted code must be translated all at once ahead of time into a separate runnable file#No — that is the compiled case; the corpus assigns ahead-of-time translation to compiled languages.
+~Interpreted code cannot show output to the user until every line has finished running#No — the benefit is immediate feedback per line, not delayed output.
+~Compiled code is read and executed directly line by line while the program is running#No — reversed; line-by-line direct execution is the interpreted behavior.
+=Interpreted code is read and executed directly line by line, with no ahead-of-time compile step#Correct — Python runs directly line by line and is not compiled first.
+#### Tests interpreted vs compiled as defined in the corpus (corpus §5, The interpreter and interactive mode).
+}
+
+::q5:: What does REPL stand for, and what is the loop's cycle? {
+=Read-Eval-Print Loop\: it reads what you type, evaluates it, prints the result, and loops#Correct — Read, Eval, Print, then Loop back to wait for more input.
+~Run-Execute-Process Line\: it runs a file, executes it, processes it, then reads the next line#No — the acronym is Read-Eval-Print Loop, not this invented expansion.
+~Repeat-Enter-Program Language\: it repeats your program each time you enter a new language#No — REPL is not about repeating programs or switching languages.
+~Record-Edit-Publish List\: it records your code, lets you edit it, then publishes a saved list#No — REPL does not describe recording, editing, or publishing.
+#### Tests the meaning of the REPL / interactive mode (corpus §5, The interpreter and interactive mode).
+}
+
+::q6:: What kind of environment is Google Colab, according to the corpus? {
+~A program you download and install on your own machine to run Python files offline#No — Colab needs no install and runs in the browser on Google's computers.
+~A compiler that turns your notebook into a standalone application before you run it#No — Colab does not compile; it runs interpreted Python in cells.
+~A code editor that only stores your Python but cannot actually run any of it for you#No — Colab both stores and runs your code, showing output under each cell.
+=A hosted Jupyter notebook that runs Python in your browser on Google's computers#Correct — Colab is a hosted Jupyter notebook environment with nothing to install.
+#### Tests what Colab is: a hosted Jupyter notebook (corpus §5, Google Colab as the standard environment).
+}
+
+::q7:: In Colab, how are cells run and in what order do they execute? {
+~They run automatically from top to bottom the moment you open the notebook in a browser#No — cells do not run by themselves; you run them when you choose.
+=They run only when you tell them to, in whatever order you actually choose to run them#Correct — cells run on demand, in the order you run them, not automatically.
+~They all run at once as a single block whenever you press the run button on any one cell#No — you run one cell at a time, not the whole notebook per click.
+~They run in a locked top-to-bottom sequence that the notebook will never let you change#No — order is not locked; running out of order is possible and is a common pitfall.
+#### Tests cells and run order in Colab (corpus §5, Google Colab; Best Practices).
+}
+
+::q8:: You defined a variable in cell 3 but never ran cell 3. Based on the corpus, what happens when a later cell tries to use it? {
+~The later cell still sees the value because Colab reads every cell's text when it opens#No — merely having text in a cell does not run it; unrun code has no effect.
+~The notebook automatically runs cell 3 first so that no later cell can ever miss a value#No — cells do not auto-run to satisfy dependencies; you must run them.
+=The later cell does not have the value, because a cell affects others only after you run it#Correct — earlier code affects later cells only once you have actually run it.
+~The runtime blocks the whole notebook until you rewrite cell 3 in top-to-bottom order#No — the runtime does not enforce ordering or block on unrun cells.
+#### Tests why run order matters: earlier cells affect later ones only after running (corpus §5, run order; Best Practices).
+}
+
+::q9:: What is the Colab "runtime," and what happens when you restart it? {
+~It is the notebook file on Google Drive, and restarting it renames and re-saves that file#No — the runtime is the live session, not the saved file, and restart does not rename it.
+~It is the run button, and restarting it re-runs all of your cells automatically from the top#No — the runtime is the session's memory; restart wipes memory and does not auto-rerun.
+=It is the live Python session that remembers what you ran, and restarting wipes that memory#Correct — the runtime holds session memory, and a restart clears it, so you rerun setup cells.
+~It is the browser tab, and restarting it keeps every variable exactly as it was before restart#No — restart wipes the session memory; variables do not survive a restart.
+#### Tests runtime meaning and restart behavior (corpus §5, runtime; Best Practices).
+}
+
+::q10:: You close the Colab browser tab and reopen it tomorrow. What does the corpus say about your notebook? {
+=It is saved to Google Drive, so you can reopen it later from any browser#Correct — Colab saves notebooks to Google Drive, letting you reopen from any browser.
+~It is lost the moment the tab closes, because Colab keeps nothing after you leave#No — closing the tab does not lose work; Colab saves to Drive.
+~It is stored only in the runtime's memory, so it survives just until the next restart#No — the notebook is saved to Drive, not held in the disposable runtime memory.
+~It is downloaded to your own computer's hard drive, so any other browser cannot open it#No — it saves to Drive, which is reachable from any browser, not to your local disk.
+#### Tests saving notebooks to Google Drive (corpus §5, saving; Implementation).
+}
+
+::q11:: In the program print(\"Hello, world!\"), which statement correctly describes its parts? {
+~print is a variable holding text, and the quotes turn that variable into runnable code#No — print is a function, not a variable, and quotes mark text, not code.
+~print is a string, and Hello, world! is the function name shown inside the parentheses#No — reversed; print is the function and the quoted text is the string.
+~print is a compiled command, and the quotation marks tell the interpreter to skip that line#No — print is not compiled, and quotes do not cause the interpreter to skip anything.
+=print is a function, and the quoted text is a string that gets displayed as output#Correct — print() is a function; text in quotes is a string shown as output.
+#### Tests print(), functions, and strings (corpus §5, Running your first program).
+}
+
+::q12:: After you type print(\"Hello, world!\") into a cell and run it, where does the output appear? {
+~In a separate pop-up window that opens on top of the notebook whenever a cell finishes#No — output is not a pop-up; it appears inline in the notebook.
+=Directly below that cell, in the notebook, once you run the cell that contains it#Correct — each cell's output appears right underneath it after you run the cell.
+~At the very top of the notebook, above every cell, collected together for all cells at once#No — output is per cell and appears below its own cell, not gathered at the top.
+~Only in the Google Drive file, so you must download the notebook to read the printed text#No — output shows inline under the cell; you do not need to download to see it.
+#### Tests that print() output appears below the cell you ran (corpus §5, Running your first program; Implementation).
+}

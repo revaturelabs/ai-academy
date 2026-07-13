@@ -1,0 +1,107 @@
+$CATEGORY: CIT/P1/week-1/1.4-statements-conversion-output
+
+::q1:: The corpus contrasts an assignment statement with an expression statement. Which line is an EXPRESSION statement rather than an assignment? {
+~total = 10 + 5, which works out the sum on the right and then stores that result under a name#No — this binds a name to a value with =, so it is an assignment statement, not an expression one.
+~a = b = 5, which uses = twice to give the same single value to two different names at once#No — chained = is still assignment; it stores a value, it does not act as a bare expression.
+=print(total), which is an expression evaluated on its own line for the side effect it produces#Correct — a print(...) call is an expression statement; it acts now rather than storing a value.
+~x, y = 1, 2, which pairs the names on the left with the values on the right by their position#No — this is tuple-unpacking assignment; it stores two values, it is not an expression statement.
+#### Tests the assignment-versus-expression-statement distinction (corpus §5.1).
+}
+
+::q2:: After running a = b = 5 and then x, y = 1, 2, followed by x, y = y, x, what does print(a, b, x, y) show? {
+=5 5 2 1, because the chain sets a and b to 5, unpacking sets x,y to 1,2, then the swap reverses them#Correct — a=b=5 gives 5 5; x,y=1,2 gives 1 2; and x,y=y,x swaps them to 2 1.
+~5 5 1 2, because the swap line x, y = y, x needs a temporary third variable to actually take effect#No — Python evaluates the whole right side first, so the swap works with no temporary variable.
+~5 1 2 5, because chained assignment gives a and b two different values rather than one shared value#No — a = b = 5 binds both names to the same single value 5, not to two different values.
+~1 2 5 5, because tuple unpacking assigns the values from left to right before the chain runs at all#No — order of the lines is top to bottom; the chain runs first and the counts still pair by position.
+#### Tests chained assignment, tuple unpacking, and the swap idiom (corpus §5.2).
+}
+
+::q3:: A learner claims int() rounds to the nearest whole number. Testing int(3.9) and int(-3.9), what does the corpus say actually happens? {
+~int(3.9) is 4 and int(-3.9) is -4, because int() rounds each value to whichever whole number is closest#No — int() does not round; the corpus states it truncates by dropping the fractional part.
+~int(3.9) is 4 and int(-3.9) is -3, because int() always rounds a value upward toward positive infinity#No — there is no rounding upward; int() chops the decimal part, giving 3 and -3.
+~int(3.9) is 3 and int(-3.9) is -4, because int() rounds downward toward negative infinity every time#No — int() truncates toward zero, not down; -3.9 becomes -3, not -4.
+=int(3.9) is 3 and int(-3.9) is -3, because int() truncates toward zero and simply drops the decimal part#Correct — int() truncates toward zero, dropping the fractional part, so both move toward 0.
+#### Tests int() truncation toward zero, not rounding (corpus §5.3, §7).
+}
+
+::q4:: According to the corpus, which of these conversion calls raises a ValueError instead of returning a value? {
+~int("5"), because "5" is a clean whole-number string that int() parses straight into the integer 5#No — "5" is a valid whole-number string, so int("5") returns 5 with no error.
+=int("3.14"), because int() only parses whole-number strings and rejects a decimal string as text#Correct — int() cannot parse a decimal string; "3.14" raises a ValueError, so use float() instead.
+~float("3.14"), because float() reads the decimal text "3.14" and returns the floating value 3.14#No — float() parses decimal strings fine, returning 3.14 without any error at all.
+~str(42), because str() takes the integer 42 and hands back its plain text form as the string "42"#No — str() converts any value to text, so str(42) returns "42" with no error raised.
+#### Tests that int("3.14") raises ValueError while other conversions succeed (corpus §5.3, §7).
+}
+
+::q5:: Given the falsy rules in the corpus, what does bool(0), bool(""), and bool(42) evaluate to, in that order? {
+~True, True, False, because 0 and the empty string count as filled-in values while 42 counts as empty#No — this reverses truthiness; 0 and "" are the falsy values, and 42 is truthy.
+~True, False, True, because only the empty string is falsy while the number 0 is treated as truthy#No — 0 is falsy too; the falsy values are 0, 0.0, and "" per the corpus.
+~False, True, False, because the empty string is truthy but any number, including 42, is always falsy#No — a non-zero number like 42 is truthy, and the empty string "" is falsy, not truthy.
+=False, False, True, because 0 and the empty string "" are falsy while a non-zero number like 42 is truthy#Correct — 0 and "" are among the falsy values, so both give False; 42 is truthy, giving True.
+#### Tests bool() conversion and truthiness of 0 and "" (corpus §5.3).
+}
+
+::q6:: The corpus explains why "5" + 3 fails and how conversion fixes it. Which statement is correct? {
+=\"5\" + 3 raises a TypeError because you cannot add a string to an int; int("5") + 3 gives 8 after converting#Correct — + will not add a str to an int, so convert first with int("5"), which then adds to 3 for 8.
+~\"5\" + 3 quietly returns 8 on its own, because Python automatically converts the string "5" into a number#No — Python does not auto-convert here; "5" + 3 raises a TypeError until you convert explicitly.
+~\"5\" + 3 returns "53" as text, because Python turns the number 3 into a string and joins the two together#No — Python does not silently stringify the int; mixing str and int with + raises a TypeError.
+~\"5\" + 3 raises a ValueError because the string "5" is the wrong shape for the int() function to parse#No — the failure is a TypeError from mixing types with +, not a ValueError from parsing.
+#### Tests that "5" + 3 raises TypeError and conversion is the fix (corpus §5.3, §7).
+}
+
+::q7:: The corpus introduces string basics. Which statement about quotes, concatenation, and indexing is correct? {
+~Single and double quotes make different kinds of strings, so 'hello' and "hello" are not equal values#No — the corpus says single and double quotes have no difference in meaning; both make the same string.
+~Concatenation with + works even when one side is a number, because + converts the number to text first#No — both sides of + must be strings; mixing a str and a number raises a TypeError.
+=Indexing with [] starts at position 0, so for name = "Python" the expression name[0] gives the character "P"#Correct — string positions start at 0, so name[0] is the first character, "P".
+~Indexing with [] starts at position 1, so for name = "Python" the expression name[1] gives the character "P"#No — indexing starts at 0, not 1; name[0] is "P" and name[1] is "y".
+#### Tests quotes, + concatenation requiring two strings, and 0-based indexing (corpus §5.4).
+}
+
+::q8:: A learner writes print("{name}") expecting to see a value, but a variable name already holds "Ada". What prints, and why? {
+~Ada, because Python reads the braces and substitutes the variable's value even without the f prefix#No — without the f prefix the braces are ordinary text; the value is not substituted.
+=The literal text {name}, because the braces are only special inside an f-string and there is no f prefix here#Correct — braces do nothing in a plain string; you need f"{name}" for the value to be inserted.
+~An error, because braces are always reserved characters and a plain string may never contain them at all#No — braces are legal in a plain string; they simply print literally rather than causing an error.
+~Nothing at all, because Python skips any string that contains curly braces it does not know how to fill#No — the string still prints; it shows {name} verbatim rather than being skipped.
+#### Tests that f-string braces only work with the f prefix (corpus §5.5, §7).
+}
+
+::q9:: Following the corpus format specifiers, what does print(f"{19.5:.2f}") output? {
+=19.50, because the :.2f specifier shows a float in fixed-point form padded to exactly two decimal places#Correct — :.2f formats the value to two decimals, giving 19.50, ideal for money.
+~19.5, because the :.2f specifier only guarantees at least one decimal and leaves trailing digits off#No — :.2f fixes exactly two decimals, so it pads 19.5 out to 19.50.
+~20, because the :.2f specifier rounds the float up to the nearest whole number before it is displayed#No — :.2f keeps two decimal places; it does not collapse the value to a whole number.
+~19.500, because the number 2 in the :.2f specifier sets the total width of the field to two characters#No — the 2 sets decimal places, not field width, so the result is 19.50, not 19.500.
+#### Tests the :.2f fixed-point format specifier (corpus §5.5).
+}
+
+::q10:: Which pairing of alignment specifier to its predicted output matches the corpus? {
+~f"{'hi'\:>10}" centers "hi" inside a field ten characters wide, placing equal space on each side of it#No — > right-aligns; centering is done with ^, not >.
+=f"{'hi'\:>10}" right-aligns "hi" in a ten-wide field, padding the left with spaces so the text sits at the right#Correct — > right-aligns the value in the given width, padding on the left.
+~f"{'hi'\:^15}" right-aligns "hi" inside a fifteen-character field, pushing the text hard against the right edge#No — ^ centers the value; right alignment is the > specifier.
+~f"{'hi'\:^15}" left-aligns "hi" inside a fifteen-character field, pushing the text hard against the left edge#No — ^ centers the value; it does not left-align it.
+#### Tests the :>10 right-align and :^15 center specifiers (corpus §5.5).
+}
+
+::q11:: The corpus introduces type hints and match-case at recognition level. Which statement is correct about both? {
+~A type hint like count: int = 0 is enforced by Python, so assigning a string to count later raises a TypeError#No — the corpus stresses hints are documentation only; Python does not enforce them at runtime.
+~In a match block Python runs every case whose pattern could apply, combining all of their outputs together#No — only the first matching case runs; the rest are skipped once a match is found.
+=A type hint documents intent without being enforced, and in a match block the first matching case runs while case _ is the catch-all wildcard#Correct — hints are non-enforced documentation, and match runs the first matching case, with case _ matching anything.
+~A type hint is required before any variable may be used, and a match block must always end with case _ or it fails#No — hints are optional documentation and case _ is optional; neither is required by Python.
+#### Tests non-enforcing type hints and match-case first-match plus case _ wildcard (corpus §5.6, §5.7).
+}
+
+::q12:: Per the corpus guidance on comments and PEP 8 style, which statement is correct? {
+~A good comment restates what the code plainly does, so # add tax above total = subtotal * 1.08 earns its keep#No — the corpus says a comment that just restates the obvious what adds nothing; comment the why instead.
+~PEP 8 prefers no spaces around operators, so x=5 is the styled form and x = 5 is the version to avoid#No — the corpus reverses this; PEP 8 wants spaces around operators, so x = 5, not x=5.
+~A line comment can begin with either # or //, and PEP 8 lets you place several statements on one line freely#No — Python line comments start only with #, and PEP 8 asks for one statement per line, not several.
+=A comment should explain the why, not the obvious what; it starts with #, and PEP 8 wants spaces around operators (x = 5) and one statement per line#Correct — the corpus says comment the why, # begins a line comment, and PEP 8 basics include spaces around operators and one statement per line.
+#### Tests comment intent (why not what), the # line comment, and PEP 8 basics like spaces around operators and one statement per line (corpus §5.8).
+}
+
+::q13:: In an f-string, the format specifier that displays a float to two decimal places (ideal for money) is written after the colon as ____ (give the exact specifier). {
+=.2f
+=:.2f
+}
+
+::q14:: In a match block, the pattern written as case ____ acts as the catch-all wildcard that matches anything when no earlier case matched (give the single character). {
+=_
+=underscore
+}

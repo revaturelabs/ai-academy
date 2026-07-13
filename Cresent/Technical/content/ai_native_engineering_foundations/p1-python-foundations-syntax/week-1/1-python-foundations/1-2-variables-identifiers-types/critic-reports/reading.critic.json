@@ -1,0 +1,48 @@
+{
+  "artifact": "reading",
+  "topic_id": "1.2",
+  "profile": "deep",
+  "passed": true,
+  "revalidation": "post-diagram-embed",
+  "checks": {
+    "format_discipline": {
+      "passed": true,
+      "notes": "First non-empty line is '# Variables, Identifiers & Types' H1 (no leading YAML frontmatter). Sidecar reading.meta.json present, parses, carries word_count, estimated_read_minutes, citations_used, sections; now also embeds_diagram=true. Exactly the six required sections in order: Overview, Key Concepts, Worked Example, In Practice, Key Takeaways, References. The mermaid block was inserted at the end of Key Concepts (before Worked Example) and adds no new heading, so the section template is intact."
+    },
+    "length": {
+      "passed": true,
+      "word_count": 1960,
+      "target_word_range": [1800, 2200],
+      "estimated_read_minutes": 10,
+      "target_minute_range": [9, 11],
+      "notes": "Prose word count still in the 1800-2200 deep band. The inserted ```mermaid fenced block (reading.md lines 39-68) is EXCLUDED from the prose count exactly like the ```python and output code fences. The only new prose is the one 'Mental model.' caption paragraph (line 37, ~49 words); with the block excluded the prose remains ~1960w (well inside band even counting the caption). Sidecar word_count=1960 consistent."
+    },
+    "diagram_embed": {
+      "passed": true,
+      "embeds_diagram_flag": true,
+      "notes": "A ```mermaid fenced block is present (reading.md lines 39-68). It is byte-for-byte consistent with the standalone artifacts/diagram.mmd (already critic-passed): same YAML config header (title 'The type belongs to the value, not the name', theme base, themeVariables, flowchart config), same 'flowchart LR' body, same four nodes (NAME/VALUE/TYPE/NEWVAL), same four edges (assignment binds, carries a, reassignment repoints, dotted carries its own), same classDef definitions. Caption present: the 'Mental model.' sentence on line 37 introduces the diagram in prose. sidecar embeds_diagram=true matches the embedded block."
+    },
+    "citations": {
+      "passed": true,
+      "primary_cited": [1, 2, 3],
+      "notes": "Unchanged and intact after embed. All three sources cited inline: [1] Real Python (assignment binding, reassignment, dynamic typing), [2] PEP 8 (snake_case vs camelCase), [3] GeeksforGeeks (naming rules, keywords, case sensitivity, type()). Bibliography lists exactly 1,2,3 matching inline markers. No orphan markers, no orphan entries, no fabricated refs. The mermaid block introduces no new citation markers."
+    },
+    "no_forward_references": {
+      "passed": true,
+      "allowed": ["1.2 concepts", "1.1 interpreter/REPL/Colab/cells/run order/runtime/print()"],
+      "notes": "No new forward references introduced by the embed. The diagram's node labels use only 1.2 vocabulary: name/identifier, value/object, right side of =, type (int, float, str, bool), reassignment, dynamic typing. No comparison/logical operators, no truthiness (bool still framed only via the four listed types), no int()/str()/float()/bool() conversion, no f-strings, no type hints. The '=' in the diagram edge label is the assignment operator, consistent with the prose, not a conversion or comparison operator."
+    },
+    "faithfulness": {
+      "passed": true,
+      "assertions_sampled": 11,
+      "unsupported": 0,
+      "notes": "Prose assertions unchanged from prior pass and still trace to topic_corpus.md (5.1-5.8, pitfalls sec 7, worked example 6.1). The new 'Mental model' caption and diagram assert only what the corpus already states: assignment binds a name to a value/object [5.1], the value carries a type [5.6], reassignment repoints the name [5.2], and under dynamic typing the new value may carry a different type [5.8]. No unsupported claims added."
+    },
+    "tone_fit": {
+      "passed": true,
+      "notes": "Tone unchanged. Beginner-facing, plainspoken second person. The added caption sentence is a single explanatory sentence in the same register; no academic hedging introduced (0 occurrences). Average sentence length under 25 words."
+    }
+  },
+  "verdict": "PASS (re-validated post-diagram-embed). The ```mermaid block (reading.md lines 39-68) is present, carries a one-line 'Mental model.' caption, and is syntactically identical to the already-passed standalone diagram.mmd; embeds_diagram=true in the sidecar matches. With the mermaid fence excluded from the prose count (like all code fences), the prose stays ~1960 words inside the 1800-2200 deep band. Citations [1][2][3] intact with matching bibliography and no fabricated refs; no forward references (bool still 'two values', no operators-as-conversion, no f-strings); faithful to topic_corpus.md; tone unchanged.",
+  "at": "2026-07-13T00:00:00Z"
+}

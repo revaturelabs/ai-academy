@@ -1,0 +1,25 @@
+{
+  "topic_id": "1.2",
+  "generated_at": "2026-07-13T00:00:00Z",
+  "format": "gift",
+  "question_count": 14,
+  "$bias_defense_applied": true,
+  "$shuffle_seed": "md5(\"1.2\")=b8a9f0c1d2e3f4a5b6c7d8e9f0a1b2c3 :: seeded random.shuffle applied per-question after drafting, positions rebalanced to uniform across 0-3",
+  "correct_position_distribution": [2, 0, 1, 2, 0, 3, 1, 3, 0, 3, 1, 2],
+  "questions": [
+    { "id": "q1",  "type": "mcq", "objective_ref": "Create a variable using the assignment operator (=) and change its value by reassigning it.", "correct_position": 2 },
+    { "id": "q2",  "type": "mcq", "objective_ref": "Create a variable using the assignment operator (=) and change its value by reassigning it.", "correct_position": 0 },
+    { "id": "q3",  "type": "mcq", "objective_ref": "Create a variable using the assignment operator (=) and change its value by reassigning it.", "correct_position": 1 },
+    { "id": "q4",  "type": "mcq", "objective_ref": "Apply Python's naming rules and the snake_case convention to write legal, readable identifiers.", "correct_position": 2 },
+    { "id": "q5",  "type": "mcq", "objective_ref": "Apply Python's naming rules and the snake_case convention to write legal, readable identifiers.", "correct_position": 0 },
+    { "id": "q6",  "type": "mcq", "objective_ref": "Apply Python's naming rules and the snake_case convention to write legal, readable identifiers.", "correct_position": 3 },
+    { "id": "q7",  "type": "mcq", "objective_ref": "Apply Python's naming rules and the snake_case convention to write legal, readable identifiers.", "correct_position": 1 },
+    { "id": "q8",  "type": "mcq", "objective_ref": "Recognize the four basic value types: int, float, str, and bool.", "correct_position": 3 },
+    { "id": "q9",  "type": "mcq", "objective_ref": "Recognize the four basic value types: int, float, str, and bool.", "correct_position": 0 },
+    { "id": "q10", "type": "mcq", "objective_ref": "Use the type() function to inspect the type of any value.", "correct_position": 3 },
+    { "id": "q11", "type": "mcq", "objective_ref": "Use the type() function to inspect the type of any value.", "correct_position": 1 },
+    { "id": "q12", "type": "mcq", "objective_ref": "Explain, in plain terms, what \"dynamic typing\" means in Python.", "correct_position": 2 },
+    { "id": "q13", "type": "short_answer", "objective_ref": "Apply Python's naming rules and the snake_case convention to write legal, readable identifiers.", "correct_position": null },
+    { "id": "q14", "type": "short_answer", "objective_ref": "Explain, in plain terms, what \"dynamic typing\" means in Python.", "correct_position": null }
+  ]
+}

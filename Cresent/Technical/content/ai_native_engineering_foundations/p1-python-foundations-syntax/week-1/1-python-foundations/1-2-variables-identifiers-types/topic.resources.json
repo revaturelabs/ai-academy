@@ -1,0 +1,30 @@
+{
+  "topic_id": "1.2",
+  "captured_at": "2026-07-13T00:00:00Z",
+  "captured_by": "namratas@revature.com",
+  "resources_source": "web_search",
+  "resources": [
+    {
+      "type": "url",
+      "value": "https://realpython.com/python-variables/",
+      "role": "primary",
+      "source": "web_search",
+      "notes": "Beginner-friendly anchor: assignment, names reference objects, dynamic typing."
+    },
+    {
+      "type": "url",
+      "value": "https://peps.python.org/pep-0008/",
+      "role": "supporting",
+      "source": "web_search",
+      "notes": "First-party official style guide — snake_case and naming conventions for identifiers."
+    },
+    {
+      "type": "url",
+      "value": "https://www.geeksforgeeks.org/python/python-variables/",
+      "role": "supporting",
+      "source": "web_search",
+      "notes": "Reference: naming rules, case sensitivity, reserved keywords, type()."
+    }
+  ],
+  "web_search_query": "Python variables identifiers types beginners naming rules dynamic typing"
+}

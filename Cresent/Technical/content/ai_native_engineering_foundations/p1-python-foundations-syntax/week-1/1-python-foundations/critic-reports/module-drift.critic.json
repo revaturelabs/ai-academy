@@ -1,0 +1,153 @@
+{
+  "critic": "drift-critic",
+  "module_slug": "1-python-foundations",
+  "course_slug": "p1-python-foundations-syntax",
+  "week_num": 1,
+  "module_dir": "content/ai_native_engineering_foundations/p1-python-foundations-syntax/week-1/1-python-foundations/",
+  "sequence_index_path": "content/curriculum/sequence.index.json",
+  "run_note": "Light re-run after a source-provenance edit to topic 1.1 only: supporting reference [3] swapped from machinelearningmastery.com to Real Python 'Jupyter Notebook: An Introduction' (realpython.com/jupyter-notebook-introduction/), and one GPU citation moved [3]->[1]. All corpora, readings, quizzes, and the three diagrams (1.2/1.3/1.4) are unchanged from the prior PASS. All five original checks plus diagram coherence re-verified; the swap affects source provenance only and introduces no coherence drift.",
+  "topics_walked": ["1.1", "1.2", "1.3", "1.4"],
+  "passed": true,
+  "verdict": "pass",
+  "checks": {
+    "terminology_consistency": {
+      "passed": true,
+      "summary": "No synonym drift across the four topics. The 1.1 source swap changed only a supporting URL and a citation marker; it introduced no new term and altered no existing term. All established vocabulary and the diagram labels remain consistent.",
+      "per_topic_findings": [],
+      "evidence": [
+        "The 1.1 corpus prose is textually unchanged by the swap: 'interpreter', 'interactive mode / REPL', 'Google Colab', 'hosted Jupyter notebook', 'notebook', 'cells', 'run order', 'runtime', 'restart the runtime', 'Google Drive', 'print()', 'function', 'string' all keep their introducing names. The new [3] source (Real Python Jupyter intro) uses the same cell/kernel-as-runtime/restart-clears-state vocabulary, so no term is renamed at the source layer either.",
+        "'variable' / 'assignment operator (=)' introduced in 1.2 5.1; reused verbatim in 1.3 (== vs =) and 1.4 5.1; 1.2 diagram edge 'assignment (=) binds to' uses 'bind' only as a verb, not a competing noun.",
+        "'identifier' and 'snake_case' introduced in 1.2 5.3/5.5 match the 1.2 diagram Name node label exactly.",
+        "'int, float, str, bool' spelled identically across 1.2 prose, the 1.2 TYPE node, and the 1.4 conversion-map nodes.",
+        "'operator precedence' / 'binds first' / 'binds last' in the 1.3 diagram match the 1.3 corpus ladder language.",
+        "'truthiness' and falsy '0'/'' -> False in the 1.4 diagram match 1.3 5.6 and 1.4 5.3; bool() still defers to '1.3 truthiness rules'."
+      ]
+    },
+    "prerequisites_respected": {
+      "passed": true,
+      "summary": "Prerequisite chain is strictly increasing and matches sequence.index.json positions. The 1.1 source swap does not touch prerequisites or introduce any forward reference.",
+      "per_topic_findings": [],
+      "evidence": [
+        "1.1 prerequisites [] (position 1); 1.2 ['1.1'] (pos 2); 1.3 ['1.1','1.2'] (pos 3); 1.4 ['1.1','1.2','1.3'] (pos 4) — all strictly earlier. Unchanged by the swap.",
+        "The Real Python Jupyter intro is a supporting reference for 1.1's own scope (cells/runtime/print-era environment); it reaches neither forward nor backward across topics.",
+        "No diagram reaches forward; deferrals still point to later courses, not unseen earlier topics."
+      ]
+    },
+    "learning_arc": {
+      "passed": true,
+      "summary": "Union of the four topics still fully delivers the week-1 narrative seed with no gaps and no redundancy. The 1.1 source swap changes provenance only; the environment/print() facet it supports is unchanged.",
+      "per_topic_findings": [],
+      "narrative_seed": "Colab & print(); variables, identifiers, types; arithmetic/comparison/logical operators & precedence; type conversion; f-strings; type hints & match-case (intro)",
+      "coverage_map": {
+        "Colab & print()": "1.1 (Colab environment, cells/run order/runtime, print()) — no diagram, correct for standard profile; now backed by official Colab + QuantEcon getting-started + Real Python Jupyter intro",
+        "variables, identifiers, types": "1.2 (assignment, identifiers+snake_case, int/float/str/bool, type(), dynamic typing) + binding mental-model diagram",
+        "arithmetic/comparison/logical operators & precedence": "1.3 (all three operator families + precedence ladder + short-circuit + truthiness) + precedence-ladder diagram",
+        "type conversion": "1.4 5.3 + type-conversion map diagram",
+        "f-strings": "1.4 5.5 (embedding + specifiers)",
+        "type hints & match-case (intro)": "1.4 5.6 and 5.7 (recognition-level intros)"
+      },
+      "notes": "Arc unchanged from prior pass; source swap is confined to 1.1's supporting-reference provenance."
+    },
+    "no_duplicated_core_concepts": {
+      "passed": true,
+      "summary": "No pair of topics substantively re-teaches the same Core Concept. Shared concepts are introduced once and explicitly reused; the swap adds no new instructional content.",
+      "per_topic_findings": [],
+      "pairwise_max_similarity": "below 0.6 for all six pairs; highest overlap is 1.2<->1.3 on the bool/truthiness thread, a deliberate hand-off.",
+      "evidence": [
+        "bool has three distinct roles (value-type in 1.2, truthiness/logical use in 1.3, conversion target in 1.4) — no re-teach.",
+        "Four types drawn as a single generic TYPE node in 1.2 vs four concrete conversion nodes in 1.4 — different purpose.",
+        "type() taught once in 1.2; PEP 8 snake_case taught in 1.2, extended (not repeated) in 1.4.",
+        "The new 1.1 reference (Real Python Jupyter intro) covers cells/runtime/restart, which is 1.1's own scope; it does not duplicate any downstream topic's Core Concepts."
+      ]
+    },
+    "lab_activity_alignment": {
+      "passed": true,
+      "summary": "Every lab in the week-1 seed (P1.1-P1.7) is supported by at least one topic's hands-on artifact. The 1.1 source swap does not change lab alignment.",
+      "per_topic_findings": [],
+      "lab_seed": "Labs P1.1-P1.7: Colab & print(); variables & types; arithmetic playground; assignment variants; booleans & precedence; conversion & f-strings; type hints & match-case.",
+      "coverage_map": {
+        "P1.1 Colab & print()": "1.1 Section 6 + Section 9",
+        "P1.2 variables & types": "1.2 Section 6.1 + Section 9 (reinforced by binding diagram)",
+        "P1.3 arithmetic playground": "1.3 Section 6.1 + Section 9",
+        "P1.4 assignment variants": "1.2 5.2 + 1.4 5.2",
+        "P1.5 booleans & precedence": "1.3 6.2/6.3 + Section 9 (reinforced by precedence-ladder diagram)",
+        "P1.6 conversion & f-strings": "1.4 Section 6 + Section 9 (reinforced by conversion-map diagram)",
+        "P1.7 type hints & match-case": "1.4 5.6/5.7 + Section 9"
+      }
+    },
+    "diagram_coherence": {
+      "passed": true,
+      "summary": "The three diagrams (1.2/1.3/1.4) are unchanged this run and continue to share one consistent visual grammar, remain corpus-faithful, and stay embedded inline. 1.1 correctly has no diagram, and the 1.1 source swap has no bearing on any diagram.",
+      "per_topic_findings": [],
+      "palette_consistency": {
+        "shared_classdefs": "All three .mmd files carry byte-identical classDefs: start fill:#a5d8ff stroke:#4a9eed; auto fill:#d0bfff stroke:#8b5cf6; done fill:#b2f2bb stroke:#22c55e. Same theme:base and themeVariables, same htmlLabels/curve:basis conventions. Unchanged.",
+        "role_semantics": "Blue 'start' = entry node, purple 'auto' = intermediate, green 'done' = terminal, applied consistently in every diagram. No inversion."
+      },
+      "faithfulness": [
+        "1.2 binding mental-model faithful to corpus 'Mental model' + 5.8 dynamic typing.",
+        "1.3 operator-precedence ladder order matches the corpus precedence table (5.2) and Section 3 objectives.",
+        "1.4 type-conversion map arrows match corpus 5.3 behaviors; no spurious or missing edge."
+      ],
+      "embedding": [
+        "1.2/1.3/1.4 readings each embed their mermaid block inline with a lead-in sentence (project's live-mermaid convention); .mmd source and embedded block consistent. Unchanged."
+      ],
+      "standard_profile_check": "1.1 (standard, 7 min) has no diagram.mmd/.png and no diagram embed — correct, and unaffected by the source swap.",
+      "cross_topic_consistency": [
+        "bool/truthiness drawn as a logic terminus in 1.3 and a conversion-target type in 1.4 — two distinct roles, labeled distinctly, no conflict.",
+        "Four value types: abstract single TYPE node in 1.2 vs four concrete nodes in 1.4 — complementary, no contradiction.",
+        "Assignment '=' appears only as a 1.2 diagram edge label; not re-drawn elsewhere."
+      ]
+    }
+  },
+  "source_swap_verification": {
+    "scope": "topic 1.1 supporting reference [3] only, plus one GPU-note citation marker moved [3]->[1]",
+    "topic_1_1_references": [
+      {
+        "marker": "[1]",
+        "url": "https://developers.google.com/colab",
+        "role": "primary",
+        "real_and_appropriate": true,
+        "notes": "Official Colab docs — hosted Jupyter, no setup, cells/runtime, GPU. Now carries the GPU citation moved from [3]."
+      },
+      {
+        "marker": "[2]",
+        "url": "https://colab.research.google.com/github/QuantEcon/lecture-py-notebooks/blob/master/getting_started.ipynb",
+        "role": "supporting",
+        "real_and_appropriate": true,
+        "notes": "First-party QuantEcon Colab getting-started notebook — Python environment setup, cell run order."
+      },
+      {
+        "marker": "[3]",
+        "url": "https://realpython.com/jupyter-notebook-introduction/",
+        "role": "supporting",
+        "real_and_appropriate": true,
+        "notes": "Real Python 'Jupyter Notebook: An Introduction' (preferred trusted source). Cells, kernel/runtime, restart-clears-state, reading output; Colab as hosted Jupyter. Replaces the prior off-preferred-list machinelearningmastery.com blog."
+      }
+    ],
+    "citation_integrity": "The 1.1 corpus still cites [1][2][3] coherently: [1] supports hosted-Jupyter/no-setup/cells/runtime-memory/GPU/save; [2] supports run order; [3] supports runtime-remembers/restart-clears-state (all covered by the Real Python Jupyter intro). The GPU note now correctly cites [1] (official Colab). No dangling or orphaned marker.",
+    "cross_topic_reference_conflict": "none",
+    "cross_topic_notes": "1.2 and 1.3 cite Real Python + GeeksforGeeks; 1.4 cites Real Python + PEPs. Adding Real Python's Jupyter intro to 1.1 aligns 1.1 with the module's already-established Real-Python-as-trusted-source preference. Each topic cites a DISTINCT Real Python article (jupyter-notebook-introduction / python-variables / python-operators-expressions / python-f-strings + python-string-formatting), so there is no duplicate-source or conflicting-source-of-truth issue across topics.",
+    "coherence_impact": "none — provenance-only change; no learner-facing text, terminology, ordering, arc, overlap, lab, or diagram effect."
+  },
+  "additional_assessments": [
+    {
+      "id": "depth-profile-corpus-size-variance",
+      "severity": "info",
+      "hard_fail": false,
+      "topics": ["1.2", "1.3", "1.4"],
+      "finding": "All three deep topics carry equal expected_delivery_minutes (10) and the same reading band, but their source-corpus sizes diverge (1.2 ~3310w, 1.3 ~5320w, 1.4 ~2650w) per the documented HITL#2 profile-upgrade tension.",
+      "coherence_impact": "None at the learner-facing layer. Carried forward from prior pass unchanged. No action required."
+    },
+    {
+      "id": "week-time-budget-under-target",
+      "severity": "info",
+      "hard_fail": false,
+      "topics": ["1.1", "1.2", "1.3", "1.4"],
+      "finding": "Sum of expected_delivery_minutes = 7 + 10 + 10 + 10 = 37 of a 90-min week target; remaining budget is absorbed by the week-1 lab track (P1.1-P1.7) and assessment prep.",
+      "coherence_impact": "Not a coherence defect. Informational for week-level planning. Carried forward unchanged."
+    }
+  ],
+  "findings": [],
+  "topics_with_findings": [],
+  "at": "2026-07-13T00:00:00Z"
+}

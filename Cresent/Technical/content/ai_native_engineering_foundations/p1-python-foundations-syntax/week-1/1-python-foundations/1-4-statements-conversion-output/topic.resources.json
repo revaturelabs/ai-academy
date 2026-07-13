@@ -1,0 +1,30 @@
+{
+  "topic_id": "1.4",
+  "captured_at": "2026-07-13T00:00:00Z",
+  "captured_by": "namratas@revature.com",
+  "resources_source": "web_search",
+  "resources": [
+    {
+      "type": "url",
+      "value": "https://realpython.com/python-f-strings/",
+      "role": "primary",
+      "source": "web_search",
+      "notes": "Anchor: f-strings + format specifiers (:.2f, :d, :>10, :^15); embedding expressions."
+    },
+    {
+      "type": "url",
+      "value": "https://realpython.com/python-string-formatting/",
+      "role": "supporting",
+      "source": "web_search",
+      "notes": "Formatting tools overview; string basics and type-conversion context (int()/float()/str()/bool())."
+    },
+    {
+      "type": "url",
+      "value": "https://peps.python.org/pep-0636/",
+      "role": "supporting",
+      "source": "web_search",
+      "notes": "First-party gentle tutorial for match-case (structural pattern matching) — intro level."
+    }
+  ],
+  "web_search_query": "Python type conversion f-strings formatting type hints match-case beginners"
+}

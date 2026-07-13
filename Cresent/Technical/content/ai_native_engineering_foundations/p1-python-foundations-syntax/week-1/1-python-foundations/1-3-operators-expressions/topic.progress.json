@@ -1,26 +1,286 @@
 {
   "topic_id": "1.3",
-  "stage": "awaiting_resources",
+  "stage": "topic_artifacts_approved",
   "gates": {
-    "resources_captured": false,
-    "corpus_generated": false,
-    "corpus_critic_passed": false,
-    "corpus_human_approved": false,
-    "reading_generated": false,
-    "reading_critic_passed": false,
-    "quiz_generated": false,
-    "quiz_critic_passed": false,
-    "diagram_generated": false,
-    "diagram_critic_passed": false,
-    "topic_artifacts_human_approved": false,
-    "module_drift_passed": false,
-    "week_human_approved": false
+    "resources_captured": true,
+    "corpus_generated": true,
+    "corpus_critic_passed": true,
+    "corpus_human_approved": true,
+    "reading_generated": true,
+    "reading_critic_passed": true,
+    "quiz_generated": true,
+    "quiz_critic_passed": true,
+    "diagram_generated": true,
+    "diagram_critic_passed": true,
+    "topic_artifacts_human_approved": true,
+    "module_drift_passed": true,
+    "week_human_approved": true,
+    "module_passed": true
   },
   "history": [
     {
       "at": "2026-07-13T00:00:00Z",
       "op": "scaffold",
       "msg": "created by ai_native_ingest.py"
+    },
+    {
+      "at": "2026-07-13T11:44:41Z",
+      "op": "set",
+      "gate": "resources_captured",
+      "value": true
+    },
+    {
+      "at": "2026-07-13T11:44:42Z",
+      "op": "stage",
+      "to": "awaiting_corpus"
+    },
+    {
+      "at": "2026-07-13T11:44:42Z",
+      "op": "log",
+      "msg": "Captured 3 resources (source=web_search), primary: realpython.com/python-operators-expressions"
+    },
+    {
+      "at": "2026-07-13T11:48:26Z",
+      "op": "set",
+      "gate": "corpus_generated",
+      "value": true
+    },
+    {
+      "at": "2026-07-13T11:48:26Z",
+      "op": "stage",
+      "to": "awaiting_corpus_critic"
+    },
+    {
+      "at": "2026-07-13T11:48:26Z",
+      "op": "log",
+      "msg": "corpus drafted (2340w, suggested deep); config-band conflict flagged for critic to adjudicate"
+    },
+    {
+      "at": "2026-07-13T11:50:07Z",
+      "op": "set",
+      "gate": "corpus_critic_passed",
+      "value": false
+    },
+    {
+      "at": "2026-07-13T11:50:07Z",
+      "op": "log",
+      "msg": "Critic failed: corpus 2340w < deep floor 3500 (band 5000-6000 per SKILL.md). Expand sec5/6/7. Auto-revise 1/2."
+    },
+    {
+      "at": "2026-07-13T11:54:34Z",
+      "op": "set",
+      "gate": "corpus_critic_passed",
+      "value": true
+    },
+    {
+      "at": "2026-07-13T11:54:34Z",
+      "op": "stage",
+      "to": "awaiting_corpus_human_review"
+    },
+    {
+      "at": "2026-07-13T11:57:49Z",
+      "op": "set",
+      "gate": "corpus_human_approved",
+      "value": true
+    },
+    {
+      "at": "2026-07-13T11:57:49Z",
+      "op": "stage",
+      "to": "corpus_approved"
+    },
+    {
+      "at": "2026-07-13T11:57:49Z",
+      "op": "log",
+      "msg": "HITL#2: all sections approved; profile deep confirmed (human); diagram=false."
+    },
+    {
+      "at": "2026-07-13T16:17:47Z",
+      "op": "set",
+      "gate": "reading_generated",
+      "value": true
+    },
+    {
+      "at": "2026-07-13T16:17:47Z",
+      "op": "log",
+      "msg": "reading.md generated (1963w, 10min, deep); reading.meta.json recovered after session-limit interruption"
+    },
+    {
+      "at": "2026-07-13T16:18:57Z",
+      "op": "set",
+      "gate": "reading_critic_passed",
+      "value": true
+    },
+    {
+      "at": "2026-07-13T16:19:48Z",
+      "op": "set",
+      "gate": "quiz_generated",
+      "value": true
+    },
+    {
+      "at": "2026-07-13T16:19:48Z",
+      "op": "log",
+      "msg": "quiz.gift regenerated after interruption (14Q: 12 MCQ + 2 SA, positions A/B/C/D=3/3/3/3, sidecar written)"
+    },
+    {
+      "at": "2026-07-13T16:20:56Z",
+      "op": "set",
+      "gate": "quiz_critic_passed",
+      "value": true
+    },
+    {
+      "at": "2026-07-13T16:20:56Z",
+      "op": "stage",
+      "to": "awaiting_topic_artifacts_review"
+    },
+    {
+      "at": "2026-07-13T16:20:56Z",
+      "op": "log",
+      "msg": "reading+quiz critics passed"
+    },
+    {
+      "at": "2026-07-13T16:21:27Z",
+      "op": "set",
+      "gate": "topic_artifacts_human_approved",
+      "value": true
+    },
+    {
+      "at": "2026-07-13T16:21:27Z",
+      "op": "stage",
+      "to": "topic_artifacts_approved"
+    },
+    {
+      "at": "2026-07-13T16:21:27Z",
+      "op": "log",
+      "msg": "HITL#3: artifacts approved (reading 1963w deep, quiz 14q). No carry-over failures."
+    },
+    {
+      "at": "2026-07-13T16:41:38Z",
+      "op": "set",
+      "gate": "module_drift_passed",
+      "value": true
+    },
+    {
+      "at": "2026-07-13T16:46:48Z",
+      "op": "set",
+      "gate": "topic_artifacts_human_approved",
+      "value": false
+    },
+    {
+      "at": "2026-07-13T16:46:48Z",
+      "op": "set",
+      "gate": "diagram_generated",
+      "value": false
+    },
+    {
+      "at": "2026-07-13T16:46:49Z",
+      "op": "set",
+      "gate": "diagram_critic_passed",
+      "value": false
+    },
+    {
+      "at": "2026-07-13T16:46:49Z",
+      "op": "set",
+      "gate": "reading_critic_passed",
+      "value": false
+    },
+    {
+      "at": "2026-07-13T16:46:49Z",
+      "op": "stage",
+      "to": "corpus_approved"
+    },
+    {
+      "at": "2026-07-13T16:46:49Z",
+      "op": "log",
+      "msg": "HITL#4 Request changes: add diagram (deep default was true; reopening to add diagram + embed in reading). Walk back to corpus_approved."
+    },
+    {
+      "at": "2026-07-13T16:50:23Z",
+      "op": "set",
+      "gate": "diagram_generated",
+      "value": true
+    },
+    {
+      "at": "2026-07-13T16:50:23Z",
+      "op": "stage",
+      "to": "awaiting_diagram_critic"
+    },
+    {
+      "at": "2026-07-13T16:50:23Z",
+      "op": "log",
+      "msg": "diagram.mmd + diagram.png generated (rendered via mmdc + chrome-headless-shell)"
+    },
+    {
+      "at": "2026-07-13T16:51:58Z",
+      "op": "set",
+      "gate": "diagram_critic_passed",
+      "value": true
+    },
+    {
+      "at": "2026-07-13T16:55:00Z",
+      "op": "set",
+      "gate": "reading_critic_passed",
+      "value": true
+    },
+    {
+      "at": "2026-07-13T16:55:00Z",
+      "op": "stage",
+      "to": "awaiting_topic_artifacts_review"
+    },
+    {
+      "at": "2026-07-13T16:55:00Z",
+      "op": "log",
+      "msg": "Diagram added (HITL#4 request): generated+critic PASS, embedded in reading, reading re-critic PASS. Back at HITL#3."
+    },
+    {
+      "at": "2026-07-13T16:57:08Z",
+      "op": "set",
+      "gate": "topic_artifacts_human_approved",
+      "value": true
+    },
+    {
+      "at": "2026-07-13T16:57:08Z",
+      "op": "stage",
+      "to": "topic_artifacts_approved"
+    },
+    {
+      "at": "2026-07-13T16:57:08Z",
+      "op": "log",
+      "msg": "HITL#3 re-approved with diagram embedded."
+    },
+    {
+      "at": "2026-07-13T16:57:09Z",
+      "op": "set",
+      "gate": "module_drift_passed",
+      "value": false
+    },
+    {
+      "at": "2026-07-13T16:59:42Z",
+      "op": "set",
+      "gate": "module_drift_passed",
+      "value": true
+    },
+    {
+      "at": "2026-07-13T17:10:34Z",
+      "op": "set",
+      "gate": "module_drift_passed",
+      "value": true
+    },
+    {
+      "at": "2026-07-13T17:15:25Z",
+      "op": "set",
+      "gate": "week_human_approved",
+      "value": true
+    },
+    {
+      "at": "2026-07-13T17:15:25Z",
+      "op": "set",
+      "gate": "module_passed",
+      "value": true
+    },
+    {
+      "at": "2026-07-13T17:15:25Z",
+      "op": "log",
+      "msg": "HITL#4: week approved as shippable unit."
     }
   ]
 }

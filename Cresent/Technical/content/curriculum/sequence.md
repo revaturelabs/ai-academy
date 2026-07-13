@@ -8,10 +8,10 @@ Delivery-ordered list of every topic. Machine-readable mirror: `sequence.index.j
 - path: `p1-python-foundations-syntax/week-1/1-python-foundations/1-1-the-python-environment`
 
 ```yaml
-concepts_introduced: []
+concepts_introduced: ["Python interpreter (interpreted vs compiled)", "REPL / interactive mode", "Google Colab notebooks", "cells and run order", "the runtime (restart, Google Drive save)", "the print() function"]
 prerequisites: []
-cross_refs: []
-status: "scaffolded"
+cross_refs: ["Python"]
+status: "corpus_drafted"
 ```
 
 ## 1.2 — Variables, Identifiers & Types
@@ -20,10 +20,10 @@ status: "scaffolded"
 - path: `p1-python-foundations-syntax/week-1/1-python-foundations/1-2-variables-identifiers-types`
 
 ```yaml
-concepts_introduced: []
-prerequisites: []
-cross_refs: []
-status: "scaffolded"
+concepts_introduced: ["variables and assignment operator (=)", "reassignment / updating values", "identifiers (naming rules + snake_case)", "reserved keywords and case sensitivity", "core value types (int, float, str, bool)", "type() function", "dynamic typing"]
+prerequisites: ["1.1"]
+cross_refs: ["Python"]
+status: "corpus_drafted"
 ```
 
 ## 1.3 — Operators & Expressions
@@ -32,10 +32,10 @@ status: "scaffolded"
 - path: `p1-python-foundations-syntax/week-1/1-python-foundations/1-3-operators-expressions`
 
 ```yaml
-concepts_introduced: []
-prerequisites: []
-cross_refs: []
-status: "scaffolded"
+concepts_introduced: ["arithmetic operators (incl. true vs floor division, modulo, exponentiation)", "operator precedence", "comparison operators", "logical operators (and/or/not)", "short-circuit evaluation", "boolean values and truthiness"]
+prerequisites: ["1.1", "1.2"]
+cross_refs: ["Python"]
+status: "corpus_drafted"
 ```
 
 ## 1.4 — Statements, Conversion & Output
@@ -44,10 +44,10 @@ status: "scaffolded"
 - path: `p1-python-foundations-syntax/week-1/1-python-foundations/1-4-statements-conversion-output`
 
 ```yaml
-concepts_introduced: []
-prerequisites: []
-cross_refs: []
-status: "scaffolded"
+concepts_introduced: ["type conversion (int/float/str/bool)", "chained assignment and tuple unpacking", "f-strings and format specifiers", "string basics (quotes/concatenation/indexing)", "type hints (intro)", "match-case (intro)", "comments and PEP 8"]
+prerequisites: ["1.1", "1.2", "1.3"]
+cross_refs: ["Python"]
+status: "corpus_drafted"
 ```
 
 ## 2.1 — Conditionals
