@@ -1,0 +1,25 @@
+{
+  "topic_id": "1.4",
+  "generated_at": "2026-07-13T00:00:00Z",
+  "format": "gift",
+  "question_count": 14,
+  "$bias_defense_applied": true,
+  "$shuffle_seed": "md5(\"1.4\")=e7c3a1f52b9d0648af1c2e3d4b5a6c7d :: seeded random.shuffle re-applied per-question after the LO5 swap, answer lines reordered to a uniform 3/3/3/3 distribution across positions 0-3",
+  "correct_position_distribution": [2, 0, 3, 1, 3, 0, 2, 1, 0, 1, 2, 3],
+  "questions": [
+    { "id": "q1",  "type": "mcq", "objective_ref": "Distinguish an assignment statement from an expression statement, and use chained assignment and tuple unpacking.", "correct_position": 2 },
+    { "id": "q2",  "type": "mcq", "objective_ref": "Distinguish an assignment statement from an expression statement, and use chained assignment and tuple unpacking.", "correct_position": 0 },
+    { "id": "q3",  "type": "mcq", "objective_ref": "Convert values between types with int(), float(), str(), and bool(), and predict truncation and truthiness results.", "correct_position": 3 },
+    { "id": "q4",  "type": "mcq", "objective_ref": "Convert values between types with int(), float(), str(), and bool(), and predict truncation and truthiness results.", "correct_position": 1 },
+    { "id": "q5",  "type": "mcq", "objective_ref": "Convert values between types with int(), float(), str(), and bool(), and predict truncation and truthiness results.", "correct_position": 3 },
+    { "id": "q6",  "type": "mcq", "objective_ref": "Convert values between types with int(), float(), str(), and bool(), and predict truncation and truthiness results.", "correct_position": 0 },
+    { "id": "q7",  "type": "mcq", "objective_ref": "Use string basics: single/double quotes, + concatenation requiring both operands to be strings, and 0-based [] indexing.", "correct_position": 2 },
+    { "id": "q8",  "type": "mcq", "objective_ref": "Build readable output with f-strings, embedding expressions and applying format specifiers such as :.2f, :d, :>10, and :^15.", "correct_position": 1 },
+    { "id": "q9",  "type": "mcq", "objective_ref": "Build readable output with f-strings, embedding expressions and applying format specifiers such as :.2f, :d, :>10, and :^15.", "correct_position": 0 },
+    { "id": "q10", "type": "mcq", "objective_ref": "Build readable output with f-strings, embedding expressions and applying format specifiers such as :.2f, :d, :>10, and :^15.", "correct_position": 1 },
+    { "id": "q11", "type": "mcq", "objective_ref": "Recognize variable type-hint syntax (e.g. count: int = 0) and read a simple match/case block.", "correct_position": 2 },
+    { "id": "q12", "type": "mcq", "objective_ref": "Write clear comments and apply the basics of PEP 8 style (corpus §5.8).", "correct_position": 3 },
+    { "id": "q13", "type": "short_answer", "objective_ref": "Build readable output with f-strings, embedding expressions and applying format specifiers such as :.2f, :d, :>10, and :^15.", "correct_position": null },
+    { "id": "q14", "type": "short_answer", "objective_ref": "Recognize variable type-hint syntax (e.g. count: int = 0) and read a simple match/case block.", "correct_position": null }
+  ]
+}

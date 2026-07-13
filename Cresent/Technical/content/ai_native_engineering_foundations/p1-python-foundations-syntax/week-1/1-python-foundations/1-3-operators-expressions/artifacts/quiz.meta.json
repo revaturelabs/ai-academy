@@ -1,0 +1,25 @@
+{
+  "topic_id": "1.3",
+  "generated_at": "2026-07-13T00:00:00Z",
+  "format": "gift",
+  "question_count": 14,
+  "$bias_defense_applied": true,
+  "$shuffle_seed": "md5(\"1.3\")=c9b0a1d2e3f4a5b6c7d8e9f0a1b2c3d4 :: seeded random.shuffle applied per-question after drafting, positions rebalanced to uniform across 0-3 (3/3/3/3)",
+  "correct_position_distribution": [1, 3, 0, 2, 0, 3, 1, 2, 0, 1, 2, 3, null, null],
+  "questions": [
+    { "id": "q1",  "type": "mcq", "objective_ref": "Use Python's arithmetic operators (+, -, *, /, //, %, **) and explain how true division differs from floor division, including how each behaves with negative numbers.", "correct_position": 1 },
+    { "id": "q2",  "type": "mcq", "objective_ref": "Use Python's arithmetic operators (+, -, *, /, //, %, **) and explain how true division differs from floor division, including how each behaves with negative numbers.", "correct_position": 3 },
+    { "id": "q3",  "type": "mcq", "objective_ref": "Use Python's arithmetic operators (+, -, *, /, //, %, **) and explain how true division differs from floor division, including how each behaves with negative numbers.", "correct_position": 0 },
+    { "id": "q4",  "type": "mcq", "objective_ref": "Predict how Python evaluates an expression by applying operator precedence, and control that order deliberately with parentheses.", "correct_position": 2 },
+    { "id": "q5",  "type": "mcq", "objective_ref": "Predict how Python evaluates an expression by applying operator precedence, and control that order deliberately with parentheses.", "correct_position": 0 },
+    { "id": "q6",  "type": "mcq", "objective_ref": "Predict how Python evaluates an expression by applying operator precedence, and control that order deliberately with parentheses.", "correct_position": 3 },
+    { "id": "q7",  "type": "mcq", "objective_ref": "Compare two values with ==, !=, <, >, <=, >=, recognize that a comparison produces a bool result, and read a chained comparison such as 1 < x < 10.", "correct_position": 1 },
+    { "id": "q8",  "type": "mcq", "objective_ref": "Compare two values with ==, !=, <, >, <=, >=, recognize that a comparison produces a bool result, and read a chained comparison such as 1 < x < 10.", "correct_position": 2 },
+    { "id": "q9",  "type": "mcq", "objective_ref": "Compare two values with ==, !=, <, >, <=, >=, recognize that a comparison produces a bool result, and read a chained comparison such as 1 < x < 10.", "correct_position": 0 },
+    { "id": "q10", "type": "mcq", "objective_ref": "Combine conditions with the logical operators and, or, and not, explain the precedence among them, and explain what short-circuit evaluation does and why it is useful.", "correct_position": 1 },
+    { "id": "q11", "type": "mcq", "objective_ref": "Combine conditions with the logical operators and, or, and not, explain the precedence among them, and explain what short-circuit evaluation does and why it is useful.", "correct_position": 2 },
+    { "id": "q12", "type": "mcq", "objective_ref": "Identify which values Python treats as truthy and which as falsy, and explain how truthiness feeds the logical operators.", "correct_position": 3 },
+    { "id": "q13", "type": "short_answer", "objective_ref": "Use Python's arithmetic operators (+, -, *, /, //, %, **) and explain how true division differs from floor division, including how each behaves with negative numbers.", "correct_position": null },
+    { "id": "q14", "type": "short_answer", "objective_ref": "Combine conditions with the logical operators and, or, and not, explain the precedence among them, and explain what short-circuit evaluation does and why it is useful.", "correct_position": null }
+  ]
+}

@@ -1,0 +1,24 @@
+{
+  "passed": true,
+  "checks": {
+    "required_sections": {
+      "passed": true,
+      "detail": "All required sections present and non-trivial. §3 Learning Objectives: 5 concrete objectives. §4 Introduction: ~180 words. §5 Core Concepts: ~750 words (>=100 required), four sub-concepts. §10 Key Takeaways: 5 substantive bullets (>=50 words total). No placeholder strings occupy any required section."
+    },
+    "citation_density": {
+      "passed": true,
+      "detail": "resources_source = web_search (strict). Primary resource [1] (developers.google.com/colab) cited multiple times (§5 lines 53, 55, 59, 61; §6; §8; §10). Supporting [2] and [3] also cited. Only [1]-[3] markers appear; no marker resolves outside the 3 existing resources, so no fabricated citations. All Colab-specific factual assertions (hosted Jupyter, no setup, cells, run order, runtime memory, restart, Drive save, GPU) carry a citation marker — well above the 60% threshold for standalone factual claims in §5/§6/§8. General/definitional claims about Python readability, ecosystem, interpreter, and REPL are conceptual framing and are correctly not force-cited."
+    },
+    "sequence_drift": {
+      "passed": true,
+      "detail": "1.1 is the first topic; no prior concepts_introduced exist. All technical terms map to this topic's concepts_introduced (Python interpreter / interpreted vs compiled, REPL / interactive mode, Google Colab notebooks, cells and run order, the runtime / restart / Google Drive save, print()) or to the cross_ref 'Python', or are defined in-corpus (programming language, ecosystem, function, string) or common-English. No forward references to variables/types (1.2), operators (1.3), or statements/conversion (1.4). The line 'the building blocks ... come in the topics right after this one' is a passing forward-mention, not a dependency. No unknown terms."
+    },
+    "length_sanity": {
+      "passed": true,
+      "status": "LOW",
+      "detail": "Corpus is ~1290 words. suggested_profile = standard, whose corpus band in artifact-mix.json is 3000-4400 words, so the corpus is well below the floor and flags LOW. Reported honestly and NOT hard-gated per task instruction #4: the READING artifact (not the corpus) targets 1200-1600 words, which this content comfortably supports; the corpus floor is 1500. Recommend the corpus-builder expand §5 (e.g. a fuller interpreted-vs-compiled contrast, a second worked print example) to reach the 1500 corpus floor before downstream generation, but the substantive checks (sections, citations, drift) all pass so this is a soft advisory rather than a block."
+    }
+  },
+  "verdict": "PASS. Required sections complete and non-trivial; web_search strict citation density satisfied with primary [1] cited repeatedly and no fabricated markers; no sequence drift or forward references (all terms in 1.1 concepts_introduced, cross_ref, defined in-corpus, or common-English). Length flags LOW (~1290 words vs standard 3000-4400 band / 1500 corpus floor) and is reported honestly as a soft advisory, not a hard block per the topic's reading-length framing. Advisory: expand §5 to reach the 1500-word corpus floor.",
+  "at": "2026-07-13T00:00:00Z"
+}

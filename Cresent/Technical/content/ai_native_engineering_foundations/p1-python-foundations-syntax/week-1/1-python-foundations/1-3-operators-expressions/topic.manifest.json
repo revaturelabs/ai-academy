@@ -14,8 +14,23 @@
     "Logical operators: and, or, not; short-circuit evaluation",
     "Boolean values and truthiness: True/False; truthy and falsy values"
   ],
-  "expected_delivery_minutes": null,
-  "artifact_plan": {},
+  "expected_delivery_minutes": 10,
+  "artifact_plan": {
+    "profile": "deep",
+    "profile_source": "human_confirmed",
+    "reading": {
+      "target_word_range": [1800, 2200],
+      "target_minute_range": [9, 11]
+    },
+    "quiz": {
+      "min_questions": 10,
+      "max_questions": 15,
+      "include_short_answer": true
+    },
+    "diagram": true,
+    "diagram_intent": "Operator-precedence ladder as a vertical layered diagram: highest→lowest tiers — parentheses () → ** → unary minus → * / // % → + - → comparisons → not → and → or. Layered TB, top = binds first.",
+    "diagram_note": "Added at HITL#4 to honor the deep-profile diagram default (precedence is genuinely visual as an ordered ladder)."
+  },
   "next_assessment": {
     "id": "A1",
     "week": 3,

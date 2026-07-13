@@ -1,0 +1,52 @@
+{
+  "critic": "corpus-critic",
+  "topic_id": "1.3",
+  "corpus_path": "content/ai_native_engineering_foundations/p1-python-foundations-syntax/week-1/1-python-foundations/1-3-operators-expressions/topic_corpus.md",
+  "passed": true,
+  "verdict": "PASS. Re-check after deep-band length-fail revision. Corpus expanded to ~5320 words, within the corpus-critic deep band (5000-6000). All four checks pass: required sections present and non-trivial; strict web_search citation density met (primary [1] cited repeatedly, [2]/[3] cited, no fabricated markers, key-claim ratio >=0.60); no sequence drift (no forbidden future-1.4 material); length within band.",
+  "at": "2026-07-13T00:00:00Z",
+  "checks": {
+    "required_sections": {
+      "passed": true,
+      "detail": "Sections 3 (Learning Objectives), 4 (Introduction), 5 (Core Concepts), 10 (Key Takeaways) all present and non-trivial. Section 5 well exceeds 100 words; sections 3, 4, 10 each exceed 50 words. No placeholder strings in required sections.",
+      "sections": {
+        "3_learning_objectives": {"present": true, "approx_words": 200, "min": 50, "ok": true},
+        "4_introduction": {"present": true, "approx_words": 240, "min": 50, "ok": true},
+        "5_core_concepts": {"present": true, "approx_words": 3200, "min": 100, "ok": true},
+        "10_key_takeaways": {"present": true, "approx_words": 200, "min": 50, "ok": true}
+      }
+    },
+    "citation_density": {
+      "passed": true,
+      "resources_source": "web_search",
+      "mode": "strict",
+      "detail": "Primary resource [1] (realpython operators) cited many times across Core Concepts, Implementation, and Real-World Patterns. Supporting [2] (docs.python.org expressions) and [3] (geeksforgeeks operators) both cited multiple times. Every primary resource cited >=1x. Standalone factual assertions in sections 5/6/7 carry [N] markers well above the 60% threshold.",
+      "markers_found": ["[1]", "[2]", "[3]"],
+      "fabricated_markers": [],
+      "primary_cited": true,
+      "key_claim_citation_ratio_estimate": ">=0.75"
+    },
+    "sequence_drift": {
+      "passed": true,
+      "detail": "All technical content maps to 1.3 concepts_introduced (arithmetic incl / vs // % **, precedence + parentheses, comparison ops, logical and/or/not, short-circuit, booleans & truthiness) or prior 1.1 (Colab cell, run, print()) and 1.2 (variables, =, snake_case, int/float/str/bool, type(), case sensitivity, dynamic typing). No forbidden future-1.4 material: no type conversion via int()/float()/str()/bool(), no f-strings, no string indexing/slicing/concatenation-as-lesson, no type hints, no match-case, no chained/tuple assignment, no teaching of if/while syntax. Strings appear only as ==/!= comparison operands and truthiness examples (in scope). Truthiness, comparison, logical operators, and short-circuit are in-scope for 1.3 and not flagged.",
+      "forward_referenced_terms": []
+    },
+    "length_sanity": {
+      "passed": true,
+      "profile": "deep",
+      "band_source": "corpus-critic SKILL.md",
+      "band_applied": [5000, 6000],
+      "hard_fail_floor": 3500,
+      "hard_fail_ceiling": 7800,
+      "word_count": 5320,
+      "config_conflict": {
+        "note": "artifact-mix.json (and topic.manifest.json reading.target_word_range) specify deep = 1800-2200 words (seat-time band). corpus-critic SKILL.md specifies deep = 5000-6000 words. Per prior adjudication, the band the corpus-critic skill itself specifies was applied: 5000-6000.",
+        "artifact_mix_band": [1800, 2200],
+        "skill_band": [5000, 6000],
+        "band_used": [5000, 6000]
+      },
+      "detail": "5320 words falls within the deep band (5000-6000). PASS. This clears the prior length-fail (2340 words) that triggered the revision.",
+      "target_word_count": "5000-6000"
+    }
+  }
+}

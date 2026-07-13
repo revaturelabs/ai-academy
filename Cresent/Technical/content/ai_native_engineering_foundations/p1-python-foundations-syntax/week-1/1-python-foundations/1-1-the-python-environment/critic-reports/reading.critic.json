@@ -1,0 +1,13 @@
+{
+  "passed": true,
+  "checks": {
+    "length": "pass",
+    "citations": "pass",
+    "forward_refs": "pass",
+    "faithfulness": "pass",
+    "structure": "pass",
+    "tone": "pass"
+  },
+  "verdict": "PASS (re-validation after source [3] swap). Citations: bibliography (L67-69) has exactly 3 entries mapping cleanly to topic.resources.json — [1] developers.google.com/colab (official Colab), [2] QuantEcon getting_started colab notebook, [3] now Real Python 'Jupyter Notebook: An Introduction' (https://realpython.com/jupyter-notebook-introduction/). No fabricated refs; every inline [N] marker ([1],[2],[3]) maps to a real listed source; no orphan markers, no orphan bibliography entries; primary [1] cited (L13,17,40,53,59). Remaining [3] usages are all Jupyter-notebook-supported: runtime remembers session (L17 [1][3]), restart-runtime-clears-state (L17,46,51 [3]) — kernel/runtime restart-clears-state is core Jupyter notebook material covered by the Real Python intro. GPU/extra-hardware parenthetical (L17) correctly re-cited to [1] official Colab, NOT [3], since the Jupyter guide does not cover Colab runtime hardware. Length: word_count 1210 within 1200-1600 standard band. Forward references: 1.1 is the first topic; print()/function/string introduced in-topic (corpus L63-65); single allowed 'Coming next' line at L63. Faithfulness: prose unchanged; sampled 12 assertions, all trace to topic_corpus.md (0 unsupported); corpus itself carries [3] on runtime/restart (corpus L59), consistent with the swapped Jupyter source; code sample print(\"Hello, world!\") -> Hello, world! (L25-33) matches corpus verbatim. Structure: exactly six sections in order (Overview, Key Concepts, Worked Example, In Practice, Key Takeaways, References), no YAML frontmatter, first line is H1 (L1); sidecar reading.meta.json present and valid. Tone: plainspoken beginner register, assumes no prior programming, zero academic hedging phrases, average sentence length under 25 words.",
+  "at": "2026-07-13T00:00:00Z"
+}

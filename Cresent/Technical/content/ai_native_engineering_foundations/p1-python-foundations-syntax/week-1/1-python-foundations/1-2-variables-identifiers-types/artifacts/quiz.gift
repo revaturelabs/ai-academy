@@ -1,0 +1,107 @@
+$CATEGORY: CIT/P1/week-1/1.2-variables-identifiers-types
+
+::q1:: According to the corpus, how should you read the line x = 5 in Python? {
+~As a math statement claiming that x and 5 are equal, which Python then checks is true#No — in math = states a fact, but the corpus says Python's = performs an action instead.
+~As a request to compare x against 5 and report back whether the two of them match#No — that is comparison; the single = binds a name, it does not compare values.
+=As the instruction "let x refer to the value 5," binding the name on the left to the value#Correct — = is the assignment operator; it binds the left name to the right value.
+~As a rule that permanently links x to 5 so that changing either one changes the other#No — assignment does not create a permanent link; the name simply refers to the value.
+#### Tests the meaning of the assignment operator = (corpus §5.1).
+}
+
+::q2:: A program runs score = 100 and then score = score + 50, and finally prints score. What is printed, and why? {
+=150, because Python works out score + 50 using the old value, then rebinds score to 150#Correct — the right side is evaluated first (100 + 50), then the name is rebound to 150.
+~50, because Python subtracts the old value of score from the new number on the right side#No — nothing is subtracted; the right side score + 50 evaluates to 150.
+~100, because the second line is ignored once score already holds a value from the first line#No — reassignment is allowed freely; the second line does run and updates score.
+~150 and 100 both print, because reassigning keeps the old value alongside the new value#No — reassigning replaces the value; the old 100 is gone, only 150 remains.
+#### Tests reassignment using a variable's current value (corpus §5.2).
+}
+
+::q3:: The code runs first = 5, then second = first, then first = 9. What does the corpus say second refers to afterward? {
+~9, because second was linked to first and updates automatically whenever first changes#No — assignment copies the current value; it does not link the two names together.
+=5, because second = first copied the current value of first, not a live link to it#Correct — it copies the value first held at that moment; later changes to first do not follow.
+~Nothing, because reassigning first later erases the value that second was pointing at#No — reassigning first does not touch second; second keeps the value it was given.
+~Both, because second holds a list containing every value first has ever referred to#No — a variable holds one value, not a history; second holds only the copied 5.
+#### Tests that assignment copies the current value, not a live link (corpus §5.1).
+}
+
+::q4:: Which of these is an ILLEGAL Python identifier according to the corpus naming rules? {
+~user_name, a lowercase name whose words are joined by an underscore between them#No — underscores between words are allowed and are in fact the preferred style.
+~age2, a name that begins with a letter and simply happens to end in a digit character#No — digits are allowed inside a name; only a leading digit is illegal.
+=2age, a name that begins with a digit before any letter or underscore appears in it#Correct — identifiers must not start with a digit, so 2age raises a SyntaxError.
+~total_price, a descriptive lowercase name made of two words joined by an underscore#No — this is both legal and the recommended snake_case style.
+#### Tests Python's identifier rules, especially the no-leading-digit rule (corpus §5.3).
+}
+
+::q5:: The corpus separates naming RULES from naming CONVENTIONS. Which statement captures that difference? {
+=Rules are enforced by Python and break the code; conventions are style agreements code still runs despite#Correct — breaking a rule stops the code; breaking a convention is legal but harder to read.
+~Rules only matter for built-in names, while conventions apply to every variable that you create yourself#No — the corpus does not split them this way; rules govern all identifiers.
+~Rules are optional suggestions, while conventions are the ones Python strictly refuses to let you break#No — this reverses the two; Python enforces the rules, not the conventions.
+~Rules change between Python versions, while conventions are fixed forever and never differ across teams#No — the corpus does not discuss version changes; it distinguishes enforcement from style.
+#### Tests the rules-versus-conventions distinction (corpus §5.3).
+}
+
+::q6:: Following the corpus and PEP 8, which name is written in the recommended snake_case style? {
+~userName, capitalizing the first letter of each word after the first with no underscore#No — that is camelCase; the corpus says Python prefers snake_case instead.
+~UserName, capitalizing the first letter of every word including the very first one#No — that capitalized style is not the snake_case the corpus recommends.
+~usernm, a shortened spelling that drops letters to keep the whole identifier short#No — abbreviating hurts readability; the corpus favors clear, full snake_case names.
+=user_name, all lowercase with the separate words joined together by an underscore#Correct — snake_case is lowercase words joined by underscores, per PEP 8.
+#### Tests the snake_case convention from PEP 8 (corpus §5.5).
+}
+
+::q7:: The corpus says Python is case sensitive. Given score = 1 and Score = 2, what is true? {
+~score and Score are the same variable, so the second line simply overwrites the first one#No — case sensitivity means they are different names, not the same variable.
+=score and Score are two completely separate variables holding 1 and 2 respectively#Correct — Python treats upper and lower case as different, so these are distinct variables.
+~Python raises an error because two names that differ only in capitalization are not allowed#No — differing by case is permitted; they become two separate legal variables.
+~Score is ignored because Python quietly converts every identifier to lowercase before use#No — Python does not lowercase names; the capital S makes a genuinely different name.
+#### Tests case sensitivity of identifiers (corpus §5.4).
+}
+
+::q8:: The corpus lists four basic value types. Which option names exactly those four? {
+~int, float, string, and boolean, the four categories every Python value must belong to#No — the corpus abbreviates them as str and bool, not string and boolean.
+~int, decimal, text, and flag, describing whole numbers, decimals, words, and yes/no values#No — these are informal words, not the type names int, float, str, bool used by the corpus.
+~number, float, str, and bool, covering all numeric values plus text and truth values#No — the corpus separates whole numbers (int) from decimals (float); there is no single number type here.
+=int, float, str, and bool, covering whole numbers, decimals, text, and truth values#Correct — these are the four basic types named in the corpus.
+#### Tests recognition of the four basic types int, float, str, bool (corpus §5.6).
+}
+
+::q9:: In the corpus, what decides whether the value 2.0 is an int or a float? {
+=It is a float, because it was written with a decimal point, even though it equals a whole number#Correct — the decimal point is the deciding factor; 2.0 is a float, while 2 is an int.
+~It is an int, because its value has no fractional part and equals the whole number two exactly#No — the corpus says the decimal point, not the value, decides; 2.0 is a float.
+~It is a str, because any value containing a dot is treated by Python as a piece of text#No — a dot in a number is a decimal point; strings are text wrapped in quotes.
+~It depends, because the same literal 2.0 is an int on some lines and a float on others#No — 2.0 is always a float; the written decimal point fixes its type.
+#### Tests the int-versus-float distinction and the role of the decimal point (corpus §5.6).
+}
+
+::q10:: What does the corpus say the type() function does when you write print(type(9.99))? {
+~It changes the value 9.99 into its matching type name so the value becomes text you can print#No — type() never changes the value; it only reports what the value already is.
+~It rounds the value to a whole number and then tells you the whole number that resulted#No — type() does no rounding; it inspects and reports the value's type.
+~It compares 9.99 to the four basic types and prints True or False for each one in turn#No — type() reports a single type, not a set of true/false comparisons.
+=It reports the value's type without changing it, printing <class 'float'> for 9.99#Correct — type() inspects the value and reports its type, here float, leaving the value untouched.
+#### Tests using type() to inspect a value's type (corpus §5.7).
+}
+
+::q11:: In the corpus output <class 'int'>, what does the word class mean for a beginner? {
+~It means the value belongs to a school lesson group that Python organizes its numbers into#No — class here is not about lessons; the corpus says it simply means "type."
+=It just means "type," so <class 'int'> reads as "this is an int"#Correct — the corpus tells you to read class as type when interpreting type() output.
+~It means the value is a template you must fill in before Python will let you print the value#No — nothing needs filling in; class in this output is just a synonym for type.
+~It means the value is stored in a classroom of related values that share one common name#No — the corpus gives class the plain meaning "type," not a grouping of stored values.
+#### Tests reading type() output, where class means type (corpus §5.7).
+}
+
+::q12:: A program runs data = 100, prints type(data), then data = "one hundred" and prints type(data) again, giving <class 'int'> then <class 'str'>. What does this show? {
+~It shows an error was suppressed, because a name that held an int must never later hold text#No — Python allows this freely; no error occurs when the type changes.
+~It shows the name data secretly holds both values at once, an int and a str side by side#No — data holds one value at a time; it pointed to the int, then to the str.
+=It shows dynamic typing\: the type rides with the value, so one name can hold different types over time#Correct — the type belongs to the value, not the name, so data can be an int then a str.
+~It shows Python converted the number 100 into its spelled-out English words automatically#No — no conversion happened; a new string value was assigned in the second line.
+#### Tests the meaning of dynamic typing (corpus §5.8).
+}
+
+::q13:: The Python style convention of lowercase words joined by underscores, recommended by PEP 8, is called ____ (one word). {
+=snake_case
+=snake case
+=snakecase
+}
+
+::q14:: The Python feature by which you never declare a variable's type in advance and a name can hold different types over time is called ____ typing (one word for the blank). {
+=dynamic
+}

@@ -1,0 +1,30 @@
+{
+  "topic_id": "1.1",
+  "captured_at": "2026-07-13T00:00:00Z",
+  "captured_by": "namratas@revature.com",
+  "resources_source": "web_search",
+  "resources": [
+    {
+      "type": "url",
+      "value": "https://developers.google.com/colab",
+      "role": "primary",
+      "source": "web_search",
+      "notes": "Official Colab docs — hosted Jupyter, no setup, cells/runtime model."
+    },
+    {
+      "type": "url",
+      "value": "https://colab.research.google.com/github/QuantEcon/lecture-py-notebooks/blob/master/getting_started.ipynb",
+      "role": "supporting",
+      "source": "web_search",
+      "notes": "First-party getting-started notebook: setting up the Python environment, cell run order."
+    },
+    {
+      "type": "url",
+      "value": "https://realpython.com/jupyter-notebook-introduction/",
+      "role": "supporting",
+      "source": "web_search",
+      "notes": "Real Python (preferred trusted source). Cells, kernel/runtime, restart-clears-state, reading output — Colab is a hosted Jupyter notebook. Swapped in at week-1 audit to replace an off-preferred-list blog."
+    }
+  ],
+  "web_search_query": "Python environment Google Colab interpreter REPL beginners"
+}

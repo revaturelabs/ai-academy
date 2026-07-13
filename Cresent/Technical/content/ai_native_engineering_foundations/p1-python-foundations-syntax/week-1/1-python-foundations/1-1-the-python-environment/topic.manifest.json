@@ -13,8 +13,21 @@
     "Google Colab as the standard environment: cells and run order; the runtime and restarting it; saving notebooks to Google Drive",
     "Running your first program: the print() function; executing cells in sequence and reading output"
   ],
-  "expected_delivery_minutes": null,
-  "artifact_plan": {},
+  "expected_delivery_minutes": 7,
+  "artifact_plan": {
+    "profile": "standard",
+    "profile_source": "human_confirmed",
+    "reading": {
+      "target_word_range": [1200, 1600],
+      "target_minute_range": [6, 8]
+    },
+    "quiz": {
+      "min_questions": 10,
+      "max_questions": 15,
+      "include_short_answer": false
+    },
+    "diagram": false
+  },
   "next_assessment": {
     "id": "A1",
     "week": 3,

@@ -1,0 +1,30 @@
+{
+  "topic_id": "1.3",
+  "captured_at": "2026-07-13T00:00:00Z",
+  "captured_by": "namratas@revature.com",
+  "resources_source": "web_search",
+  "resources": [
+    {
+      "type": "url",
+      "value": "https://realpython.com/python-operators-expressions/",
+      "role": "primary",
+      "source": "web_search",
+      "notes": "Beginner anchor: arithmetic/comparison/logical operators, precedence, short-circuit evaluation, truthiness."
+    },
+    {
+      "type": "url",
+      "value": "https://docs.python.org/3/reference/expressions.html",
+      "role": "supporting",
+      "source": "web_search",
+      "notes": "First-party authoritative operator-precedence table and operator semantics."
+    },
+    {
+      "type": "url",
+      "value": "https://www.geeksforgeeks.org/python/python-operators/",
+      "role": "supporting",
+      "source": "web_search",
+      "notes": "Operator categories with examples; truthy/falsy values and Boolean context."
+    }
+  ],
+  "web_search_query": "Python operators expressions precedence comparison logical short-circuit beginners"
+}

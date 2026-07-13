@@ -1,0 +1,29 @@
+{
+  "passed": true,
+  "checks": {
+    "required_sections": {
+      "passed": true,
+      "detail": "Required sections 3 (Learning Objectives), 4 (Introduction), 5 (Core Concepts), 10 (Key Takeaways) all present and non-trivial. Section 5 well over 100 words (8 subsections 5.1-5.8); sections 3, 4, 10 each over 50 words. No placeholder strings in required sections."
+    },
+    "citation_density": {
+      "passed": true,
+      "mode": "strict",
+      "resources_source": "web_search",
+      "detail": "Primary [1] (realpython.com/python-variables) cited ~10x across 5.1, 5.2, 5.8, 6.2, 6.3, 7, 10. Supporting [2] (PEP 8) cited 5x (5.5, 7, 8, 10); supporting [3] (geeksforgeeks) cited ~14x (5.3, 5.4, 5.7, 6.1, 7, 8, 10). Only markers [1][2][3] appear and all resolve to the 3 declared resources - no fabricated/unknown markers. Key factual assertions in Core Concepts (sec 5), Implementation (sec 6), and the new Real-World Patterns (sec 7) carry [N] well above the 60% strict threshold."
+    },
+    "sequence_drift": {
+      "passed": true,
+      "forward_referenced_terms": [],
+      "detail": "All taught technical terms map to 1.2 concepts_introduced (variables/assignment operator =, reassignment, identifiers/snake_case, reserved keywords/case sensitivity, int/float/str/bool, type(), dynamic typing) or prior 1.1 concepts (Colab, cells/run, runtime, print()). 'bool' held at 'two values of type bool' only - no truthiness. New Section 7 introduces no forward concepts: reassignment, snake_case vs camelCase (PEP 8), keyword/built-in shadowing, case sensitivity, dynamic typing - all 1.2. No 1.3 operators/comparison/logical/truthiness taught (sec 5.6 explicitly defers operations to 'the next topic'; incidental '+' in reassignment examples illustrates a 1.2 concept, not taught as the operators topic). No 1.4 conversion int()/str()/float()/bool()-as-conversion, f-strings, type hints, match-case, or string indexing/concat. NameError/SyntaxError appear only as surfaced error messages, not as taught error-handling."
+    },
+    "length_sanity": {
+      "passed": true,
+      "suggested_profile": "standard",
+      "word_count": 3310,
+      "expected_range": [3000, 4400],
+      "detail": "Word count ~3310 against standard profile range 3000-4400 - within band. Re-check after prior length-fail revision (was ~1490) confirms recovery; new Section 7 (Real-World Patterns / Common Pitfalls) plus expansion of Core Concepts and Implementation brings the corpus to standard depth."
+    }
+  },
+  "verdict": "PASS - re-check after length-fail revision. All four checks pass: required_sections complete and non-trivial; citation_density strict/web_search met (only valid [1][2][3] markers, primary [1] cited ~10x, no fabrications); sequence_drift clean (no forward refs, bool held at value-only, new Section 7 introduces no forward concepts); length_sanity ~3310 words within standard band 3000-4400.",
+  "at": "2026-07-13T00:00:00Z"
+}

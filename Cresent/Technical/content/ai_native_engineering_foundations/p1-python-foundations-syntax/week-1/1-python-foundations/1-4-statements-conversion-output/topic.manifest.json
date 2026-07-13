@@ -16,8 +16,24 @@
     "match-case (introduction): structural pattern matching over simple shapes",
     "Comments and readability: line comments; PEP 8 style (introduction)"
   ],
-  "expected_delivery_minutes": null,
-  "artifact_plan": {},
+  "expected_delivery_minutes": 10,
+  "artifact_plan": {
+    "profile": "deep",
+    "profile_source": "human_confirmed",
+    "profile_note": "Corpus suggested standard (broad but 3 awareness-only items); human overrode to deep at HITL#2 for module consistency (1.2/1.3 deep) + week seat-time. Corpus (2650w) supports a deep 1800-2200w reading; no corpus re-expansion required (per 1.2 precedent).",
+    "reading": {
+      "target_word_range": [1800, 2200],
+      "target_minute_range": [9, 11]
+    },
+    "quiz": {
+      "min_questions": 10,
+      "max_questions": 15,
+      "include_short_answer": true
+    },
+    "diagram": true,
+    "diagram_intent": "Type-conversion map: the four types int, float, str, bool as nodes, with directed edges labelled by the conversion functions int()/float()/str()/bool() showing how a value moves between types (e.g. str->int, float->int truncates, 0/\"\"->bool False). A small directed graph, genuinely visual.",
+    "diagram_note": "Added at HITL#4 to honor the deep-profile diagram default (conversion between types is a real directed graph)."
+  },
   "next_assessment": {
     "id": "A1",
     "week": 3,

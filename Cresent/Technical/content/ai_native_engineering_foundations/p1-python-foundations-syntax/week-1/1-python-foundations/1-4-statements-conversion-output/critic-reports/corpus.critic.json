@@ -1,0 +1,47 @@
+{
+  "critic": "corpus-critic",
+  "topic_id": "1.4",
+  "corpus_path": "content/ai_native_engineering_foundations/p1-python-foundations-syntax/week-1/1-python-foundations/1-4-statements-conversion-output/topic_corpus.md",
+  "passed": true,
+  "verdict": "PASS. All four checks clear. Required sections present and non-trivial (Core Concepts far exceeds 100w; LO/Intro/Takeaways each exceed 50w). Strict web_search citation density met: primary [1] cited >=1x (5x), supporting [2] (6x) and [3] (2x) cited, no fabricated markers, key-claim ratio in sections 5/6/7 >=0.60. No sequence drift: type hints and match-case are correctly framed as intro/awareness (def shown only as recognizable syntax, match-case explicitly 'introduction, control-flow comes later'); no function-definition, loop, if/elif/else, or data-structure mastery is taught. Length ~2650 words is ~12% below the standard band start (3000) but ABOVE the 30%-below hard-fail floor of 2100, so per the skill's real 'more than 30% outside the range' rule it PASSES.",
+  "at": "2026-07-13T00:00:00Z",
+  "checks": {
+    "required_sections": {
+      "passed": true,
+      "detail": "Sections 3 (Learning Objectives), 4 (Introduction), 5 (Core Concepts), 10 (Key Takeaways) all present and non-trivial. Section 5 (subsections 5.1-5.8) well exceeds 100 words; sections 3, 4, 10 each exceed 50 words. No placeholder strings in any required section.",
+      "sections": {
+        "3_learning_objectives": {"present": true, "approx_words": 95, "min": 50, "ok": true},
+        "4_introduction": {"present": true, "approx_words": 210, "min": 50, "ok": true},
+        "5_core_concepts": {"present": true, "approx_words": 1750, "min": 100, "ok": true},
+        "10_key_takeaways": {"present": true, "approx_words": 130, "min": 50, "ok": true}
+      }
+    },
+    "citation_density": {
+      "passed": true,
+      "resources_source": "web_search",
+      "mode": "strict",
+      "detail": "Primary [1] (realpython.com/python-f-strings) cited 5x across Core Concepts (5.5), Real-World Patterns, and Best Practices. Supporting [2] (realpython string-formatting) cited 6x across type-conversion Core Concepts, Pitfalls, and Best Practices. Supporting [3] (PEP 636) cited 2x in match-case Core Concepts. Every primary resource cited >=1x. Only [1],[2],[3] appear; no out-of-range or fabricated markers. Standalone factual assertions in sections 5/6/7 (conversion semantics, truncation-toward-zero, truthiness, f-string braces/specifiers, match-case wildcard, TypeError/ValueError pitfalls) carry [N] markers above the 60% threshold.",
+      "markers_found": ["[1]", "[2]", "[3]"],
+      "fabricated_markers": [],
+      "primary_cited": true,
+      "key_claim_citation_ratio_estimate": ">=0.65"
+    },
+    "sequence_drift": {
+      "passed": true,
+      "detail": "All technical content maps to 1.4 concepts_introduced (type conversion int/float/str/bool, chained assignment a=b=5, tuple unpacking x,y=1,2, f-strings + format specifiers :.2f/:d/:>10/:^15, string basics quotes/concat/indexing, type hints intro, match-case intro, comments/PEP 8) or prior topics: 1.1 (Colab cell, print()), 1.2 (variables, =, int/float/str/bool, type(), snake_case), 1.3 (arithmetic/comparison/logical operators, truthiness/falsy values). Module-closer position 4/4, so all prior vocab is in scope. Type hints and match-case are correctly presented as INTRO/awareness: 'def area(w: float, h: float) -> float:' is shown only as a shape to recognize with 'You will meet functions properly in a later course'; match-case is explicitly labeled 'an introduction' with 'the general control-flow it relates to come later'. No mastery teaching of def, loops, if/elif/else, or lists/tuples/dicts/classes/files/exceptions as data-structure topics (the '1,2' tuple is explicitly used only as an assignment form, with data-structure tuples deferred). No forward references.",
+      "forward_referenced_terms": []
+    },
+    "length_sanity": {
+      "passed": true,
+      "profile": "standard",
+      "band_source": "corpus-critic SKILL.md",
+      "band_applied": [3000, 4400],
+      "hard_fail_floor": 2100,
+      "word_count": 2650,
+      "detail": "Standard band is 3000-4400. The skill's real rule fails only if the count is more than 30% outside the range; 30% below 3000 gives a hard-fail floor of 2100. word_count ~2650 is ~12% below the 3000 band start but ABOVE the 2100 floor, so it is within the skill's 30% tolerance and PASSES. Unlike topic 1.2 (1490w, ~50% below, failed), 2650w clears the floor.",
+      "percent_below_band_start": 11.7,
+      "cleared_hard_fail_floor": true,
+      "target_word_count": "3000-4400"
+    }
+  }
+}
