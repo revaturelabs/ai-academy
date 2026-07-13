@@ -1,0 +1,21 @@
+{
+  "module_slug": "1-cognition-in-practice",
+  "course_slug": "m3-human-cognition-ai-oversight",
+  "week_num": 15,
+  "title": "Cognition in Practice",
+  "topics": [
+    "15.1",
+    "15.2",
+    "15.3",
+    "15.4",
+    "15.5",
+    "15.6"
+  ],
+  "narrative_seed_by_week": {
+    "15": "Case studies (admissions, medical triage, loan approval); automation complacency; human-in-the-loop checkpoint design; oversight for your domain"
+  },
+  "lab_activity_seed_by_week": {
+    "15": "Labs M3.2a-M3.2e: case study data store; post_mortem() function; checkpoint() designer; complacency_risk() scorer; full oversight_report()."
+  },
+  "created_at": "2026-07-13T00:00:00Z"
+}

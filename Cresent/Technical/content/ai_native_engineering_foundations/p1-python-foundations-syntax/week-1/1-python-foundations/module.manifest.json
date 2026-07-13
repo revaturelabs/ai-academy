@@ -1,0 +1,19 @@
+{
+  "module_slug": "1-python-foundations",
+  "course_slug": "p1-python-foundations-syntax",
+  "week_num": 1,
+  "title": "Python Foundations",
+  "topics": [
+    "1.1",
+    "1.2",
+    "1.3",
+    "1.4"
+  ],
+  "narrative_seed_by_week": {
+    "1": "Colab & print(); variables, identifiers, types; arithmetic/comparison/logical operators & precedence; type conversion; f-strings; type hints & match-case (intro)"
+  },
+  "lab_activity_seed_by_week": {
+    "1": "Labs P1.1-P1.7: Colab & print(); variables & types; arithmetic playground; assignment variants; booleans & precedence; conversion & f-strings; type hints & match-case."
+  },
+  "created_at": "2026-07-13T00:00:00Z"
+}

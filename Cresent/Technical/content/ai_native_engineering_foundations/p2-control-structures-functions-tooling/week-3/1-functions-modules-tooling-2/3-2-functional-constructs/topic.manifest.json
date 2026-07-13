@@ -1,0 +1,26 @@
+{
+  "topic_id": "3.2",
+  "title": "Functional Constructs",
+  "course_slug": "p2-control-structures-functions-tooling",
+  "course_code": "P2",
+  "module_slug": "1-functions-modules-tooling-2",
+  "week_num": 3,
+  "position_in_week": 2,
+  "position_in_module": 2,
+  "source_outline": [
+    "Lambda (anonymous) functions: syntax and use as a sort key",
+    "Higher-order functions: map / filter (concept); sorted(key=...)",
+    "Decorators (light introduction): the @decorator syntax; a @timer example",
+    "Generators: the yield keyword; lazy evaluation (concept)"
+  ],
+  "expected_delivery_minutes": null,
+  "artifact_plan": {},
+  "next_assessment": {
+    "id": "A1",
+    "week": 3,
+    "title": "Python Core Skills Checkpoint",
+    "weight": null,
+    "outcome": "The learner can translate a plain-English problem into correct, tested Python using variables, control flow, and functions."
+  },
+  "created_at": "2026-07-13T00:00:00Z"
+}

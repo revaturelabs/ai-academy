@@ -1,0 +1,25 @@
+{
+  "topic_id": "10.4",
+  "title": "AI Today (Global and India)",
+  "course_slug": "m2-introduction-to-ai-systems",
+  "course_code": "M2",
+  "module_slug": "1-what-ai-is-and-isnt",
+  "week_num": 10,
+  "position_in_week": 4,
+  "position_in_module": 4,
+  "source_outline": [
+    "Healthcare",
+    "Agriculture",
+    "Vernacular translation"
+  ],
+  "expected_delivery_minutes": null,
+  "artifact_plan": {},
+  "next_assessment": {
+    "id": "A4",
+    "week": 11,
+    "title": "Computational Thinking & AI Foundations",
+    "weight": null,
+    "outcome": "The learner can decompose a problem, write testable specifications, and describe and evaluate what an AI system can and cannot do."
+  },
+  "created_at": "2026-07-13T00:00:00Z"
+}

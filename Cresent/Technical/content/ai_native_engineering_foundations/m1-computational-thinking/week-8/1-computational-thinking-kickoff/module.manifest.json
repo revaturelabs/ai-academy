@@ -1,0 +1,18 @@
+{
+  "module_slug": "1-computational-thinking-kickoff",
+  "course_slug": "m1-computational-thinking",
+  "week_num": 8,
+  "title": "Computational Thinking (kickoff)",
+  "topics": [
+    "8.3",
+    "8.4",
+    "8.5"
+  ],
+  "narrative_seed_by_week": {
+    "8": "AI kickoff: computation - deterministic vs probabilistic; why AI answers differ (2h)"
+  },
+  "lab_activity_seed_by_week": {
+    "8": "Labs M1.1-M1.2: flowchart two real-world tasks in Excalidraw; decompose your semester domain into a task tree."
+  },
+  "created_at": "2026-07-13T00:00:00Z"
+}

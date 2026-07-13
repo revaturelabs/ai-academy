@@ -1,0 +1,29 @@
+{
+  "topic_id": "5.2",
+  "title": "Dictionaries",
+  "course_slug": "p3-data-structures",
+  "course_code": "P3",
+  "module_slug": "1-data-structures-2",
+  "week_num": 5,
+  "position_in_week": 2,
+  "position_in_module": 2,
+  "source_outline": [
+    "Creating and accessing: key-value pairs; access by key",
+    "Adding, modifying, deleting: assignment, del, pop",
+    "Looping through dictionaries: items(), keys(), values()",
+    "Sorting dictionaries: by key and by value",
+    "Nested dictionaries: dictionaries within dictionaries",
+    "Built-in functions: get(), setdefault()",
+    "Dictionary comprehension: building and inverting dictionaries"
+  ],
+  "expected_delivery_minutes": null,
+  "artifact_plan": {},
+  "next_assessment": {
+    "id": "A2",
+    "week": 5,
+    "title": "Data Structures Portfolio",
+    "weight": null,
+    "outcome": "The learner can choose and manipulate the right Python data structure for a given data-handling task."
+  },
+  "created_at": "2026-07-13T00:00:00Z"
+}

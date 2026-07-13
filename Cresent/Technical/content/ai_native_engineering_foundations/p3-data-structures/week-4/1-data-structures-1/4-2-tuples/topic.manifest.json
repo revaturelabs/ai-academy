@@ -1,0 +1,27 @@
+{
+  "topic_id": "4.2",
+  "title": "Tuples",
+  "course_slug": "p3-data-structures",
+  "course_code": "P3",
+  "module_slug": "1-data-structures-1",
+  "week_num": 4,
+  "position_in_week": 2,
+  "position_in_module": 2,
+  "source_outline": [
+    "Creating and accessing: packing and indexing",
+    "Tuple assignment and unpacking: swapping variables (a, b = b, a)",
+    "Nested tuples: tuples within tuples",
+    "Immutability: when to prefer a tuple over a list",
+    "Basic tuple operations: concatenation, repetition, membership"
+  ],
+  "expected_delivery_minutes": null,
+  "artifact_plan": {},
+  "next_assessment": {
+    "id": "A2",
+    "week": 5,
+    "title": "Data Structures Portfolio",
+    "weight": null,
+    "outcome": "The learner can choose and manipulate the right Python data structure for a given data-handling task."
+  },
+  "created_at": "2026-07-13T00:00:00Z"
+}

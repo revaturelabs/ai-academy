@@ -1,0 +1,18 @@
+{
+  "module_slug": "1-data-structures-2",
+  "course_slug": "p3-data-structures",
+  "week_num": 5,
+  "title": "Data Structures (2)",
+  "topics": [
+    "5.1",
+    "5.2",
+    "5.3"
+  ],
+  "narrative_seed_by_week": {
+    "5": "Sets & operations; dictionaries - CRUD, looping, nesting, comprehension; iterators; collections (Counter, defaultdict)"
+  },
+  "lab_activity_seed_by_week": {
+    "5": "Labs P3.5-P3.10: set operations; dictionary CRUD; nested dictionaries; dictionary comprehension; Counter word frequency; defaultdict grouping."
+  },
+  "created_at": "2026-07-13T00:00:00Z"
+}

@@ -1,0 +1,26 @@
+{
+  "topic_id": "1.2",
+  "title": "Variables, Identifiers & Types",
+  "course_slug": "p1-python-foundations-syntax",
+  "course_code": "P1",
+  "module_slug": "1-python-foundations",
+  "week_num": 1,
+  "position_in_week": 2,
+  "position_in_module": 2,
+  "source_outline": [
+    "Variables and assignment: the assignment operator (=); reassignment and updating values",
+    "Identifiers - naming rules and conventions: legal identifier characters; snake_case convention; reserved keywords; case sensitivity",
+    "Values and types: int, float, str, bool",
+    "Inspecting types: the type() function; dynamic typing (concept)"
+  ],
+  "expected_delivery_minutes": null,
+  "artifact_plan": {},
+  "next_assessment": {
+    "id": "A1",
+    "week": 3,
+    "title": "Python Core Skills Checkpoint",
+    "weight": null,
+    "outcome": "The learner can translate a plain-English problem into correct, tested Python using variables, control flow, and functions."
+  },
+  "created_at": "2026-07-13T00:00:00Z"
+}

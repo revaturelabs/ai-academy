@@ -1,0 +1,16 @@
+{
+  "permissions": {
+    "allow": [
+      "Read(//c/Users/NamrataSinha/AppData/Roaming/Claude/local-agent-mode-sessions/skills-plugin/7a6fd349-2cf7-4f03-975d-33e91bf7d0d3/f255c28f-a2c9-4949-8fe4-e6606fbe5344/skills/docx/**)",
+      "Bash(extract-text \"C:\\\\Users\\\\NamrataSinha\\\\OneDrive - revature.com\\\\Desktop\\\\Assessment\\\\Assessment2\\\\A2_Student_Package.docx\")",
+      "Bash(pandoc \"C:\\\\Users\\\\NamrataSinha\\\\OneDrive - revature.com\\\\Desktop\\\\Assessment\\\\Assessment2\\\\A2_Student_Package.docx\" -o /tmp/a2.md)",
+      "Read(//tmp/**)",
+      "Bash(python C:/Users/NamrataSinha/AppData/Roaming/Claude/local-agent-mode-sessions/skills-plugin/7a6fd349-2cf7-4f03-975d-33e91bf7d0d3/f255c28f-a2c9-4949-8fe4-e6606fbe5344/skills/docx/scripts/office/unpack.py 'C:/Users/NamrataSinha/OneDrive - revature.com/Desktop/Assessment/Assessment2/A2_Student_Package.docx' /c/Users/NAMRAT~1/AppData/Local/Temp/claude/C--Users-NamrataSinha-Desktop-content-gen-example-content-gen-example--claude/441fcf33-e10b-4356-9089-11d03ef89039/scratchpad/a2_unpacked/)",
+      "Bash(python C:/Users/NamrataSinha/AppData/Roaming/Claude/local-agent-mode-sessions/skills-plugin/7a6fd349-2cf7-4f03-975d-33e91bf7d0d3/f255c28f-a2c9-4949-8fe4-e6606fbe5344/skills/docx/scripts/office/soffice.py --headless --convert-to pdf --outdir /c/Users/NAMRAT~1/AppData/Local/Temp/claude/C--Users-NamrataSinha-Desktop-content-gen-example-content-gen-example--claude/441fcf33-e10b-4356-9089-11d03ef89039/scratchpad/ 'C:/Users/NamrataSinha/OneDrive - revature.com/Desktop/Assessment/Assessment2/A2_Student_Package.docx')",
+      "Bash(python -c ' *)",
+      "Bash(python)",
+      "Bash(python -c \"import reportlab; print\\('reportlab', reportlab.Version\\)\")",
+      "Bash(python \"C:\\\\Users\\\\NAMRAT~1\\\\AppData\\\\Local\\\\Temp\\\\claude\\\\C--Users-NamrataSinha-Desktop-content-gen-example-content-gen-example--claude\\\\441fcf33-e10b-4356-9089-11d03ef89039\\\\scratchpad\\\\build_submission.py\")"
+    ]
+  }
+}

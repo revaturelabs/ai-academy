@@ -1,0 +1,24 @@
+{
+  "topic_id": "8.3",
+  "title": "What Is Computation",
+  "course_slug": "m1-computational-thinking",
+  "course_code": "M1",
+  "module_slug": "1-computational-thinking-kickoff",
+  "week_num": 8,
+  "position_in_week": 3,
+  "position_in_module": 1,
+  "source_outline": [
+    "Deterministic vs probabilistic systems",
+    "Inputs, processing, outputs"
+  ],
+  "expected_delivery_minutes": null,
+  "artifact_plan": {},
+  "next_assessment": {
+    "id": "A3",
+    "week": 8,
+    "title": "Python Foundations Diagnostic",
+    "weight": null,
+    "outcome": "The learner can model data with classes, handle files and errors robustly, and maintain a professional Git portfolio - confirming readiness to begin the AI modules."
+  },
+  "created_at": "2026-07-13T00:00:00Z"
+}

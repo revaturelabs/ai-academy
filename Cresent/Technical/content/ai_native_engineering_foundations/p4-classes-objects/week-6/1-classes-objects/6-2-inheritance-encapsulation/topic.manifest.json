@@ -1,0 +1,26 @@
+{
+  "topic_id": "6.2",
+  "title": "Inheritance & Encapsulation",
+  "course_slug": "p4-classes-objects",
+  "course_code": "P4",
+  "module_slug": "1-classes-objects",
+  "week_num": 6,
+  "position_in_week": 2,
+  "position_in_module": 2,
+  "source_outline": [
+    "Single-level inheritance: subclass extends superclass",
+    "Multiple levels of inheritance: super(); extending behaviour",
+    "Multiple inheritance: Method Resolution Order (MRO) (brief)",
+    "Encapsulation and information hiding: single underscore convention; double underscore name-mangling"
+  ],
+  "expected_delivery_minutes": null,
+  "artifact_plan": {},
+  "next_assessment": {
+    "id": "A3",
+    "week": 8,
+    "title": "Python Foundations Diagnostic",
+    "weight": null,
+    "outcome": "The learner can model data with classes, handle files and errors robustly, and maintain a professional Git portfolio - confirming readiness to begin the AI modules."
+  },
+  "created_at": "2026-07-13T00:00:00Z"
+}

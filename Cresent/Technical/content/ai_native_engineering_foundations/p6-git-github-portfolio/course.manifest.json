@@ -1,0 +1,23 @@
+{
+  "course_slug": "p6-git-github-portfolio",
+  "course_code": "P6",
+  "title": "Git, GitHub & Portfolio",
+  "part": "A",
+  "weeks_range": [
+    8,
+    8
+  ],
+  "total_hours": 2,
+  "builds_on": "P1-P5 - a body of Python work worth committing",
+  "scope": "Repo/commit/push, GitHub Classroom, portfolio repo, Part A diagnostic.",
+  "assessments": [
+    {
+      "id": "A3",
+      "week": 8,
+      "title": "Python Foundations Diagnostic",
+      "weight": null,
+      "outcome": "The learner can model data with classes, handle files and errors robustly, and maintain a professional Git portfolio - confirming readiness to begin the AI modules."
+    }
+  ],
+  "created_at": "2026-07-13T00:00:00Z"
+}

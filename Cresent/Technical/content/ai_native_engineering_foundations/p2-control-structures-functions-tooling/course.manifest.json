@@ -1,0 +1,23 @@
+{
+  "course_slug": "p2-control-structures-functions-tooling",
+  "course_code": "P2",
+  "title": "Control Structures, Functions & Tooling",
+  "part": "A",
+  "weeks_range": [
+    2,
+    3
+  ],
+  "total_hours": 8,
+  "builds_on": "P1 - syntax, variables, types, operators, output",
+  "scope": "Conditionals, loops, functions, recursion, lambdas, decorators, generators, modules, pip, venv, Poetry, Pytest.",
+  "assessments": [
+    {
+      "id": "A1",
+      "week": 3,
+      "title": "Python Core Skills Checkpoint",
+      "weight": null,
+      "outcome": "The learner can translate a plain-English problem into correct, tested Python using variables, control flow, and functions."
+    }
+  ],
+  "created_at": "2026-07-13T00:00:00Z"
+}

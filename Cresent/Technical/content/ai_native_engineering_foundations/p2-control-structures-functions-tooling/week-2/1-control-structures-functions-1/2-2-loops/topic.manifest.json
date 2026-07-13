@@ -1,0 +1,28 @@
+{
+  "topic_id": "2.2",
+  "title": "Loops",
+  "course_slug": "p2-control-structures-functions-tooling",
+  "course_code": "P2",
+  "module_slug": "1-control-structures-functions-1",
+  "week_num": 2,
+  "position_in_week": 2,
+  "position_in_module": 2,
+  "source_outline": [
+    "while loop: loop conditions; infinite loops and how to avoid them",
+    "for loop: iterating over sequences; the loop variable",
+    "range(): start, stop, step arguments",
+    "enumerate() and zip(): index + value with enumerate(); pairing sequences with zip()",
+    "break and continue: early exit; skipping an iteration",
+    "Nested loops: loops inside loops; the loop else clause (brief)"
+  ],
+  "expected_delivery_minutes": null,
+  "artifact_plan": {},
+  "next_assessment": {
+    "id": "A1",
+    "week": 3,
+    "title": "Python Core Skills Checkpoint",
+    "weight": null,
+    "outcome": "The learner can translate a plain-English problem into correct, tested Python using variables, control flow, and functions."
+  },
+  "created_at": "2026-07-13T00:00:00Z"
+}

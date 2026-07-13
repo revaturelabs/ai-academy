@@ -1,0 +1,25 @@
+{
+  "topic_id": "5.3",
+  "title": "Iterators, Generators & Collections",
+  "course_slug": "p3-data-structures",
+  "course_code": "P3",
+  "module_slug": "1-data-structures-2",
+  "week_num": 5,
+  "position_in_week": 3,
+  "position_in_module": 3,
+  "source_outline": [
+    "Iterables vs iterators: iter() and next() (concept)",
+    "Generators recap: yield for streaming values",
+    "The collections module: Counter, defaultdict, namedtuple (intro)"
+  ],
+  "expected_delivery_minutes": null,
+  "artifact_plan": {},
+  "next_assessment": {
+    "id": "A2",
+    "week": 5,
+    "title": "Data Structures Portfolio",
+    "weight": null,
+    "outcome": "The learner can choose and manipulate the right Python data structure for a given data-handling task."
+  },
+  "created_at": "2026-07-13T00:00:00Z"
+}

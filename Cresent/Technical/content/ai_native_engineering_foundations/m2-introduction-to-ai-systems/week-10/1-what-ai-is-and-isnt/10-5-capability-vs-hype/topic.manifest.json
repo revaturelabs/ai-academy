@@ -1,0 +1,23 @@
+{
+  "topic_id": "10.5",
+  "title": "Capability vs Hype",
+  "course_slug": "m2-introduction-to-ai-systems",
+  "course_code": "M2",
+  "module_slug": "1-what-ai-is-and-isnt",
+  "week_num": 10,
+  "position_in_week": 5,
+  "position_in_module": 5,
+  "source_outline": [
+    "What current AI can and cannot do"
+  ],
+  "expected_delivery_minutes": null,
+  "artifact_plan": {},
+  "next_assessment": {
+    "id": "A4",
+    "week": 11,
+    "title": "Computational Thinking & AI Foundations",
+    "weight": null,
+    "outcome": "The learner can decompose a problem, write testable specifications, and describe and evaluate what an AI system can and cannot do."
+  },
+  "created_at": "2026-07-13T00:00:00Z"
+}

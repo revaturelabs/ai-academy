@@ -1,0 +1,26 @@
+{
+  "topic_id": "13.6",
+  "title": "Governance Frameworks",
+  "course_slug": "m2-introduction-to-ai-systems",
+  "course_code": "M2",
+  "module_slug": "1-ethics-safety-governance",
+  "week_num": 13,
+  "position_in_week": 6,
+  "position_in_module": 6,
+  "source_outline": [
+    "EU AI Act",
+    "NIST AI RMF - Govern, Map, Measure, Manage",
+    "White House Executive Order on AI (2023)",
+    "India AI governance"
+  ],
+  "expected_delivery_minutes": null,
+  "artifact_plan": {},
+  "next_assessment": {
+    "id": "A5",
+    "week": 13,
+    "title": "AI Systems & Governance Essay",
+    "weight": null,
+    "outcome": "The learner can reason critically about AI risk and accountability and map a use case to the relevant governance framework."
+  },
+  "created_at": "2026-07-13T00:00:00Z"
+}

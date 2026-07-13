@@ -1,0 +1,25 @@
+{
+  "topic_id": "6.3",
+  "title": "Special Methods & Dataclasses",
+  "course_slug": "p4-classes-objects",
+  "course_code": "P4",
+  "module_slug": "1-classes-objects",
+  "week_num": 6,
+  "position_in_week": 3,
+  "position_in_module": 3,
+  "source_outline": [
+    "Operator overloading / dunder methods: __str__, __repr__, __eq__",
+    "Dataclasses: the @dataclass decorator; boilerplate reduction",
+    "Libraries and packages in OOP: organising classes into modules"
+  ],
+  "expected_delivery_minutes": null,
+  "artifact_plan": {},
+  "next_assessment": {
+    "id": "A3",
+    "week": 8,
+    "title": "Python Foundations Diagnostic",
+    "weight": null,
+    "outcome": "The learner can model data with classes, handle files and errors robustly, and maintain a professional Git portfolio - confirming readiness to begin the AI modules."
+  },
+  "created_at": "2026-07-13T00:00:00Z"
+}

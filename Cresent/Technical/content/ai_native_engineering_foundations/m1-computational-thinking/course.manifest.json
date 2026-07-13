@@ -1,0 +1,23 @@
+{
+  "course_slug": "m1-computational-thinking",
+  "course_code": "M1",
+  "title": "Computational Thinking",
+  "part": "B",
+  "weeks_range": [
+    8,
+    9
+  ],
+  "total_hours": 6,
+  "builds_on": "Part A (P1-P6) - a working Python and Git baseline",
+  "scope": "Decomposition, abstraction, pseudocode, flowcharts, specification writing, when NOT to use AI.",
+  "assessments": [
+    {
+      "id": "A3",
+      "week": 8,
+      "title": "Python Foundations Diagnostic",
+      "weight": null,
+      "outcome": "The learner can model data with classes, handle files and errors robustly, and maintain a professional Git portfolio - confirming readiness to begin the AI modules."
+    }
+  ],
+  "created_at": "2026-07-13T00:00:00Z"
+}

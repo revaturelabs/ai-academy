@@ -1,0 +1,23 @@
+{
+  "course_slug": "p5-files-exception-handling",
+  "course_code": "P5",
+  "title": "Files & Exception Handling",
+  "part": "A",
+  "weeks_range": [
+    7,
+    7
+  ],
+  "total_hours": 4,
+  "builds_on": "P4 - objects; P3 - collections",
+  "scope": "Text/CSV/JSON I/O, context managers, exception hierarchy, robust reader.",
+  "assessments": [
+    {
+      "id": "A3",
+      "week": 8,
+      "title": "Python Foundations Diagnostic",
+      "weight": null,
+      "outcome": "The learner can model data with classes, handle files and errors robustly, and maintain a professional Git portfolio - confirming readiness to begin the AI modules."
+    }
+  ],
+  "created_at": "2026-07-13T00:00:00Z"
+}

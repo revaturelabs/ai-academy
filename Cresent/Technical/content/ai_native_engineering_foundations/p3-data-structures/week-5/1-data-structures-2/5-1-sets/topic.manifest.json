@@ -1,0 +1,26 @@
+{
+  "topic_id": "5.1",
+  "title": "Sets",
+  "course_slug": "p3-data-structures",
+  "course_code": "P3",
+  "module_slug": "1-data-structures-2",
+  "week_num": 5,
+  "position_in_week": 1,
+  "position_in_module": 1,
+  "source_outline": [
+    "Creating sets: uniqueness guarantee",
+    "Set operations: union, intersection, difference, symmetric difference",
+    "Membership and mutation: add, remove, discard",
+    "Set comprehension: brief introduction"
+  ],
+  "expected_delivery_minutes": null,
+  "artifact_plan": {},
+  "next_assessment": {
+    "id": "A2",
+    "week": 5,
+    "title": "Data Structures Portfolio",
+    "weight": null,
+    "outcome": "The learner can choose and manipulate the right Python data structure for a given data-handling task."
+  },
+  "created_at": "2026-07-13T00:00:00Z"
+}

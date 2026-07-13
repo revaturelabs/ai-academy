@@ -1,0 +1,20 @@
+{
+  "module_slug": "1-what-ai-is-and-isnt",
+  "course_slug": "m2-introduction-to-ai-systems",
+  "week_num": 10,
+  "title": "What AI Is and Isn't",
+  "topics": [
+    "10.1",
+    "10.2",
+    "10.3",
+    "10.4",
+    "10.5"
+  ],
+  "narrative_seed_by_week": {
+    "10": "History (symbolic->ML->deep learning->LLMs->agents); how LLMs work (tokens, training, inference, parameters); the jagged frontier; AI in India today"
+  },
+  "lab_activity_seed_by_week": {
+    "10": "Labs M2.1a-M2.1d: capability probe across 5 task types; capability results store; hallucination logger; capability report generator."
+  },
+  "created_at": "2026-07-13T00:00:00Z"
+}

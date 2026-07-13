@@ -1,0 +1,27 @@
+{
+  "topic_id": "7.1",
+  "title": "File Handling",
+  "course_slug": "p5-files-exception-handling",
+  "course_code": "P5",
+  "module_slug": "1-files-exception-handling",
+  "week_num": 7,
+  "position_in_week": 1,
+  "position_in_module": 1,
+  "source_outline": [
+    "Introduction to files: text vs binary files; absolute vs relative paths",
+    "File operations: open() and modes (r, w, a, r+); read, readline, readlines, write, close",
+    "Context managers: the with statement; automatic file closing",
+    "Reading CSVs: the csv module; reading rows",
+    "Working with JSON: json.load() and json.dump() (introduction)"
+  ],
+  "expected_delivery_minutes": null,
+  "artifact_plan": {},
+  "next_assessment": {
+    "id": "A3",
+    "week": 8,
+    "title": "Python Foundations Diagnostic",
+    "weight": null,
+    "outcome": "The learner can model data with classes, handle files and errors robustly, and maintain a professional Git portfolio - confirming readiness to begin the AI modules."
+  },
+  "created_at": "2026-07-13T00:00:00Z"
+}

@@ -1,0 +1,30 @@
+{
+  "topic_id": "4.1",
+  "title": "Lists",
+  "course_slug": "p3-data-structures",
+  "course_code": "P3",
+  "module_slug": "1-data-structures-1",
+  "week_num": 4,
+  "position_in_week": 1,
+  "position_in_module": 1,
+  "source_outline": [
+    "Creating and indexing: positive and negative indexing",
+    "Slicing with step: a[::2], a[::-1], a[1:5:2]",
+    "Updating items and mutability: in-place modification; mutability demonstrated",
+    "List methods: append, insert, remove, pop, extend, index, count, clear",
+    "Looping through a list: for-loop iteration",
+    "Sorting: sort() vs sorted(); reverse and key= arguments",
+    "Nested lists: lists of lists",
+    "List comprehension: mapping and filtering in one expression"
+  ],
+  "expected_delivery_minutes": null,
+  "artifact_plan": {},
+  "next_assessment": {
+    "id": "A2",
+    "week": 5,
+    "title": "Data Structures Portfolio",
+    "weight": null,
+    "outcome": "The learner can choose and manipulate the right Python data structure for a given data-handling task."
+  },
+  "created_at": "2026-07-13T00:00:00Z"
+}

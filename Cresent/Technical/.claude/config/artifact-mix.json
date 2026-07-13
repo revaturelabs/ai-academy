@@ -1,0 +1,116 @@
+{
+  "$comment": "Time budget per topic = READING seat time only. Quizzes do NOT count toward delivery time — they are question-bank feedstock pooled into module/course-level assessments, not per-topic seat time. Weekly target = 90 min of reading across all topics in a week. Reading WPM = 200 (lower-end college reader). Hands-on artifact is NOT produced in this phase.",
+  "weekly_budget_minutes": 90,
+  "reading_wpm": 200,
+  "quiz_seconds_per_mcq": 60,
+  "quiz_seconds_per_short_answer": 90,
+  "profiles": {
+    "atomic": {
+      "description": "Tightly scoped topic (e.g. '6.2 Scalars — a single number representing one property'). Concept is foundational but small; padding the reading hurts quality.",
+      "reading": {
+        "target_min_minutes": 4,
+        "target_max_minutes": 6,
+        "target_word_range": [800, 1200],
+        "notes": "200 wpm × 4–6 min = 800–1200 words"
+      },
+      "quiz": {
+        "min_questions": 10,
+        "max_questions": 15,
+        "include_short_answer": true,
+        "$comment": "Quiz time excluded from delivery budget — question-bank feedstock only."
+      },
+      "diagram": {
+        "default": false,
+        "override_when": "topic introduces a visual primitive that benefits from a single hand-drawn glyph (rare for atomic topics)"
+      },
+      "total_minutes_estimate": 5
+    },
+    "standard": {
+      "description": "Mid-depth concept that needs context, an example, and a counter-example (e.g. '1.4 Why AI gives different answers to the same question').",
+      "reading": {
+        "target_min_minutes": 6,
+        "target_max_minutes": 8,
+        "target_word_range": [1200, 1600],
+        "notes": "200 wpm × 6–8 min = 1200–1600 words"
+      },
+      "quiz": {
+        "min_questions": 10,
+        "max_questions": 15,
+        "include_short_answer": false,
+        "$comment": "Quiz time excluded from delivery budget — question-bank feedstock only."
+      },
+      "diagram": {
+        "default": "if_visual",
+        "override_when": "concept is purely textual"
+      },
+      "total_minutes_estimate": 7
+    },
+    "deep": {
+      "description": "System-level or multi-part concept that needs a worked example end-to-end (e.g. '4.3 RAG — query → embed → retrieve → inject → respond').",
+      "reading": {
+        "target_min_minutes": 9,
+        "target_max_minutes": 11,
+        "target_word_range": [1800, 2200],
+        "notes": "200 wpm × 9–11 min = 1800–2200 words"
+      },
+      "quiz": {
+        "min_questions": 10,
+        "max_questions": 15,
+        "include_short_answer": true,
+        "$comment": "Quiz time excluded from delivery budget — question-bank feedstock only."
+      },
+      "diagram": {
+        "default": true,
+        "intent": "architecture or pipeline diagram showing the full flow"
+      },
+      "total_minutes_estimate": 10
+    }
+  },
+  "delivery_minutes_formula": {
+    "$comment": "expected_delivery_minutes = READING minutes only, written into topic.manifest.json. Quizzes are NOT seat time (question-bank feedstock), so quiz_minutes is no longer summed in.",
+    "reading_minutes": "ceil(word_count / reading_wpm)",
+    "total": "reading_minutes"
+  },
+  "weekly_balance_rule": {
+    "$comment": "course-drift critic enforces sum(topic.expected_delivery_minutes) per week. Soft warn at ±15%; fail at ±25%.",
+    "target_minutes": 90,
+    "soft_warn_pct": 15,
+    "hard_fail_pct": 25
+  },
+  "classification_signals": {
+    "$comment": "Heuristics the corpus-builder uses to pick a profile before HITL confirmation.",
+    "atomic_signals": [
+      "title is a single noun or compound noun under 8 words",
+      "Core Concepts section is one tight paragraph",
+      "no Implementation section warranted",
+      "no Real-World Patterns section warranted",
+      "topic ID maps to a single line in the xlsx source"
+    ],
+    "deep_signals": [
+      "title contains 'pipeline', 'framework', 'system', 'workflow', 'stack'",
+      "Core Concepts has 3+ sub-concepts",
+      "Implementation section warranted",
+      "Real-World Patterns section warranted",
+      "topic spans multiple technologies (cross_refs non-empty)",
+      "topic appears in a week with a 'Lab' Lab/Activity"
+    ],
+    "default_profile": "standard"
+  },
+  "hitl_confirmation": {
+    "$comment": "After the corpus passes its critic, the orchestrator computes a WEEK-AWARE recommended depth profile (intrinsic topic complexity + remaining budget for the week) and surfaces it via AskUserQuestion. The user either accepts the recommendation or overrides; there is no 'choose from scratch' path.",
+    "question_template": "Recommended: {profile} (~{minutes} min). Week running total would be {week_total}/90 min. Accept?",
+    "header": "Depth profile",
+    "options": [
+      {"label": "Accept {profile}",            "action": "accept"},
+      {"label": "Override → atomic (~5 min)",  "action": "override:atomic"},
+      {"label": "Override → standard (~7 min)", "action": "override:standard"},
+      {"label": "Override → deep (~10 min)",   "action": "override:deep"}
+    ],
+    "recommendation_inputs": [
+      "topic-corpus-builder's intrinsic suggestion (from atomic_signals / deep_signals)",
+      "sum of expected_delivery_minutes for already-approved topics in this week",
+      "count of topics in the week still to be processed",
+      "90-minute weekly target"
+    ]
+  }
+}

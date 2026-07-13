@@ -1,0 +1,27 @@
+{
+  "topic_id": "7.2",
+  "title": "Errors & Exceptions",
+  "course_slug": "p5-files-exception-handling",
+  "course_code": "P5",
+  "module_slug": "1-files-exception-handling",
+  "week_num": 7,
+  "position_in_week": 2,
+  "position_in_module": 2,
+  "source_outline": [
+    "Errors vs exceptions: the exception hierarchy",
+    "Exception handling: try / except / else / finally",
+    "Handling multiple exceptions: multiple except blocks; grouped exceptions",
+    "Common exceptions: FileNotFoundError, ValueError, IOError, KeyError, IndexError, ZeroDivisionError, TypeError, AttributeError",
+    "Raising exceptions: the raise statement; custom exceptions (brief)"
+  ],
+  "expected_delivery_minutes": null,
+  "artifact_plan": {},
+  "next_assessment": {
+    "id": "A3",
+    "week": 8,
+    "title": "Python Foundations Diagnostic",
+    "weight": null,
+    "outcome": "The learner can model data with classes, handle files and errors robustly, and maintain a professional Git portfolio - confirming readiness to begin the AI modules."
+  },
+  "created_at": "2026-07-13T00:00:00Z"
+}

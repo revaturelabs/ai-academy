@@ -1,0 +1,24 @@
+{
+  "topic_id": "8.2",
+  "title": "Portfolio & Diagnostic",
+  "course_slug": "p6-git-github-portfolio",
+  "course_code": "P6",
+  "module_slug": "1-git-diagnostic",
+  "week_num": 8,
+  "position_in_week": 2,
+  "position_in_module": 2,
+  "source_outline": [
+    "Personal portfolio repository: structure and README sections",
+    "End-of-Part-A diagnostic: demonstrating Python + Git readiness; faculty sign-off before Part B"
+  ],
+  "expected_delivery_minutes": null,
+  "artifact_plan": {},
+  "next_assessment": {
+    "id": "A3",
+    "week": 8,
+    "title": "Python Foundations Diagnostic",
+    "weight": null,
+    "outcome": "The learner can model data with classes, handle files and errors robustly, and maintain a professional Git portfolio - confirming readiness to begin the AI modules."
+  },
+  "created_at": "2026-07-13T00:00:00Z"
+}

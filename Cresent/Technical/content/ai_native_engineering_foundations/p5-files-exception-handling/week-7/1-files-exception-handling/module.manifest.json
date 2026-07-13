@@ -1,0 +1,18 @@
+{
+  "module_slug": "1-files-exception-handling",
+  "course_slug": "p5-files-exception-handling",
+  "week_num": 7,
+  "title": "Files & Exception Handling",
+  "topics": [
+    "7.1",
+    "7.2",
+    "7.3"
+  ],
+  "narrative_seed_by_week": {
+    "7": "File I/O, modes, context managers; CSV & JSON; exception hierarchy; try/except/else/finally; multiple exceptions; robust reader"
+  },
+  "lab_activity_seed_by_week": {
+    "7": "Labs P5.1-P5.6: read a text file; read a CSV; write filtered CSV; handle FileNotFoundError; multiple exceptions; robust reader case study."
+  },
+  "created_at": "2026-07-13T00:00:00Z"
+}

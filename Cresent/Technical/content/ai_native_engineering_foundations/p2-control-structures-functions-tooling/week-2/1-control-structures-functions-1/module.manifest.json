@@ -1,0 +1,17 @@
+{
+  "module_slug": "1-control-structures-functions-1",
+  "course_slug": "p2-control-structures-functions-tooling",
+  "week_num": 2,
+  "title": "Control Structures & Functions (1)",
+  "topics": [
+    "2.1",
+    "2.2"
+  ],
+  "narrative_seed_by_week": {
+    "2": "if/elif/else; nested conditionals; while & for loops; range(); enumerate/zip; break/continue; nested loops"
+  },
+  "lab_activity_seed_by_week": {
+    "2": "Labs P2.1-P2.5: task classifier (if/elif/else); for + enumerate; while countdown; break/continue; nested loops multiplication table."
+  },
+  "created_at": "2026-07-13T00:00:00Z"
+}

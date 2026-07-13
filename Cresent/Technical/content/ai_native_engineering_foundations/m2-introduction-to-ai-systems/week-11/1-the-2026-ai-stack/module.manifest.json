@@ -1,0 +1,21 @@
+{
+  "module_slug": "1-the-2026-ai-stack",
+  "course_slug": "m2-introduction-to-ai-systems",
+  "week_num": 11,
+  "title": "The 2026 AI Stack",
+  "topics": [
+    "11.1",
+    "11.2",
+    "11.3",
+    "11.4",
+    "11.5",
+    "11.6"
+  ],
+  "narrative_seed_by_week": {
+    "11": "Foundation models; fine-tuning; RAG (concept); agents (concept); tool use; multimodal AI"
+  },
+  "lab_activity_seed_by_week": {
+    "11": "Labs M2.2a-M2.2d: two-tool scorer; weighted scoring; rubric as a dictionary; comparison report generator."
+  },
+  "created_at": "2026-07-13T00:00:00Z"
+}

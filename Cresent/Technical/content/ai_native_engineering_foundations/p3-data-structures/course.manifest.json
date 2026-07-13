@@ -1,0 +1,23 @@
+{
+  "course_slug": "p3-data-structures",
+  "course_code": "P3",
+  "title": "Data Structures",
+  "part": "A",
+  "weeks_range": [
+    4,
+    5
+  ],
+  "total_hours": 8,
+  "builds_on": "P2 - loops, functions, and iteration",
+  "scope": "Lists, tuples, sets, dictionaries, comprehensions, iterators, Counter, defaultdict.",
+  "assessments": [
+    {
+      "id": "A2",
+      "week": 5,
+      "title": "Data Structures Portfolio",
+      "weight": null,
+      "outcome": "The learner can choose and manipulate the right Python data structure for a given data-handling task."
+    }
+  ],
+  "created_at": "2026-07-13T00:00:00Z"
+}

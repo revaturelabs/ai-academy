@@ -1,0 +1,27 @@
+{
+  "topic_id": "8.1",
+  "title": "Version Control Basics",
+  "course_slug": "p6-git-github-portfolio",
+  "course_code": "P6",
+  "module_slug": "1-git-diagnostic",
+  "week_num": 8,
+  "position_in_week": 1,
+  "position_in_module": 1,
+  "source_outline": [
+    "What Git is and why it matters: why professionals never work without version control",
+    "The basic loop: repository, commit, push",
+    "GitHub Classroom: how the cohort repo works; accepting an assignment",
+    "Working via the web interface: editing files in the browser; reading commit history",
+    "Good habits: README as the front door; small, descriptive commits; branching basics (main vs feature) - light intro; .gitignore for API keys - intro"
+  ],
+  "expected_delivery_minutes": null,
+  "artifact_plan": {},
+  "next_assessment": {
+    "id": "A3",
+    "week": 8,
+    "title": "Python Foundations Diagnostic",
+    "weight": null,
+    "outcome": "The learner can model data with classes, handle files and errors robustly, and maintain a professional Git portfolio - confirming readiness to begin the AI modules."
+  },
+  "created_at": "2026-07-13T00:00:00Z"
+}

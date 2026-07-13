@@ -1,0 +1,17 @@
+{
+  "module_slug": "1-human-judgment-ai-oversight",
+  "course_slug": "m3-human-cognition-ai-oversight",
+  "week_num": 14,
+  "title": "Human Judgment & AI Oversight",
+  "topics": [
+    "14.1",
+    "14.2"
+  ],
+  "narrative_seed_by_week": {
+    "14": "System 1/2 thinking; cognitive & automation bias; bias in training data; the 3-question Judgment Framework; acceptable error; high-stakes domains"
+  },
+  "lab_activity_seed_by_week": {
+    "14": "Labs M3.1a-M3.1d: judgment() function; domain component list; apply judgment across components; override detector."
+  },
+  "created_at": "2026-07-13T00:00:00Z"
+}

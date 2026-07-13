@@ -1,0 +1,26 @@
+{
+  "topic_id": "9.1",
+  "title": "Core Computational Thinking Skills",
+  "course_slug": "m1-computational-thinking",
+  "course_code": "M1",
+  "module_slug": "1-computational-thinking",
+  "week_num": 9,
+  "position_in_week": 1,
+  "position_in_module": 1,
+  "source_outline": [
+    "Decomposition: breaking a big problem into smaller solvable parts; building a task tree",
+    "Abstraction: hiding complexity at the right level; choosing what to ignore",
+    "Pattern recognition: how machines find rules in repeated data",
+    "Algorithmic thinking: recipes, GPS routes, sorting queues; step-by-step procedures"
+  ],
+  "expected_delivery_minutes": null,
+  "artifact_plan": {},
+  "next_assessment": {
+    "id": "A4",
+    "week": 11,
+    "title": "Computational Thinking & AI Foundations",
+    "weight": null,
+    "outcome": "The learner can decompose a problem, write testable specifications, and describe and evaluate what an AI system can and cannot do."
+  },
+  "created_at": "2026-07-13T00:00:00Z"
+}

@@ -1,0 +1,23 @@
+{
+  "topic_id": "7.3",
+  "title": "Case Study: Building a Robust File Reader",
+  "course_slug": "p5-files-exception-handling",
+  "course_code": "P5",
+  "module_slug": "1-files-exception-handling",
+  "week_num": 7,
+  "position_in_week": 3,
+  "position_in_module": 3,
+  "source_outline": [
+    "Building a robust file reader: logging bad rows and continuing; separating valid from invalid data"
+  ],
+  "expected_delivery_minutes": null,
+  "artifact_plan": {},
+  "next_assessment": {
+    "id": "A3",
+    "week": 8,
+    "title": "Python Foundations Diagnostic",
+    "weight": null,
+    "outcome": "The learner can model data with classes, handle files and errors robustly, and maintain a professional Git portfolio - confirming readiness to begin the AI modules."
+  },
+  "created_at": "2026-07-13T00:00:00Z"
+}

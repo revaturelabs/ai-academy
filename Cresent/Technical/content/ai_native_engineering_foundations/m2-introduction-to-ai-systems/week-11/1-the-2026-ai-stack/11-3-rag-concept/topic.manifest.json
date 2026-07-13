@@ -1,0 +1,23 @@
+{
+  "topic_id": "11.3",
+  "title": "RAG (Concept)",
+  "course_slug": "m2-introduction-to-ai-systems",
+  "course_code": "M2",
+  "module_slug": "1-the-2026-ai-stack",
+  "week_num": 11,
+  "position_in_week": 3,
+  "position_in_module": 3,
+  "source_outline": [
+    "Giving AI external knowledge at query time"
+  ],
+  "expected_delivery_minutes": null,
+  "artifact_plan": {},
+  "next_assessment": {
+    "id": "A4",
+    "week": 11,
+    "title": "Computational Thinking & AI Foundations",
+    "weight": null,
+    "outcome": "The learner can decompose a problem, write testable specifications, and describe and evaluate what an AI system can and cannot do."
+  },
+  "created_at": "2026-07-13T00:00:00Z"
+}

@@ -1,0 +1,29 @@
+{
+  "topic_id": "1.4",
+  "title": "Statements, Conversion & Output",
+  "course_slug": "p1-python-foundations-syntax",
+  "course_code": "P1",
+  "module_slug": "1-python-foundations",
+  "week_num": 1,
+  "position_in_week": 4,
+  "position_in_module": 4,
+  "source_outline": [
+    "Statements: assignment vs expression statements; chained assignment (a = b = 5); tuple unpacking (x, y = 1, 2)",
+    "Type conversion: int(), float(), str(), bool(); rounding and truncation behaviour",
+    "String basics: single vs double quotes; concatenation; indexing (intro)",
+    "Formatted output with f-strings: embedding expressions; format specifiers (:.2f, :d, :>10, :^15)",
+    "Type hints (introduction): annotating function parameters and return types",
+    "match-case (introduction): structural pattern matching over simple shapes",
+    "Comments and readability: line comments; PEP 8 style (introduction)"
+  ],
+  "expected_delivery_minutes": null,
+  "artifact_plan": {},
+  "next_assessment": {
+    "id": "A1",
+    "week": 3,
+    "title": "Python Core Skills Checkpoint",
+    "weight": null,
+    "outcome": "The learner can translate a plain-English problem into correct, tested Python using variables, control flow, and functions."
+  },
+  "created_at": "2026-07-13T00:00:00Z"
+}

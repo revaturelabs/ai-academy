@@ -1,0 +1,28 @@
+{
+  "topic_id": "3.3",
+  "title": "Modules, Packaging & Professional Tooling",
+  "course_slug": "p2-control-structures-functions-tooling",
+  "course_code": "P2",
+  "module_slug": "1-functions-modules-tooling-2",
+  "week_num": 3,
+  "position_in_week": 3,
+  "position_in_module": 3,
+  "source_outline": [
+    "Modules and imports: import, from ... import, as; namespacing",
+    "The Python Standard Library: random, math, datetime",
+    "Package management with pip: installing and using packages",
+    "Virtual environments (venv): why isolation matters (concept + offline practice)",
+    "Poetry: poetry new to initialise a project (concept)",
+    "Pytest: writing and running a first test (concept)"
+  ],
+  "expected_delivery_minutes": null,
+  "artifact_plan": {},
+  "next_assessment": {
+    "id": "A1",
+    "week": 3,
+    "title": "Python Core Skills Checkpoint",
+    "weight": null,
+    "outcome": "The learner can translate a plain-English problem into correct, tested Python using variables, control flow, and functions."
+  },
+  "created_at": "2026-07-13T00:00:00Z"
+}

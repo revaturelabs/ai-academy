@@ -1,0 +1,22 @@
+{
+  "module_slug": "1-ethics-safety-governance",
+  "course_slug": "m2-introduction-to-ai-systems",
+  "week_num": 13,
+  "title": "Ethics, Safety & Governance",
+  "topics": [
+    "13.1",
+    "13.2",
+    "13.3",
+    "13.4",
+    "13.5",
+    "13.6",
+    "13.7"
+  ],
+  "narrative_seed_by_week": {
+    "13": "Failure cases; data bias; four pillars; red-teaming; prompt injection; EU AI Act, NIST RMF, White House EO, India AI governance"
+  },
+  "lab_activity_seed_by_week": {
+    "13": "Labs M2.4a-M2.4d: risk-level keyword checker; governance framework matcher; accountability checker; ethics report generator run on three real systems."
+  },
+  "created_at": "2026-07-13T00:00:00Z"
+}

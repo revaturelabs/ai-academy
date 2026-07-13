@@ -1,0 +1,20 @@
+{
+  "module_slug": "1-how-llms-behave",
+  "course_slug": "m2-introduction-to-ai-systems",
+  "week_num": 12,
+  "title": "How LLMs Behave",
+  "topics": [
+    "12.1",
+    "12.2",
+    "12.3",
+    "12.4",
+    "12.5"
+  ],
+  "narrative_seed_by_week": {
+    "12": "Temperature & sampling; probability distributions (intuition); why answers vary; hallucination; context windows & prompting basics"
+  },
+  "lab_activity_seed_by_week": {
+    "12": "Labs M2.3a-M2.3d: temperature results store (temp0 vs temp1); unique response counter; temperature accuracy check; variance analyser."
+  },
+  "created_at": "2026-07-13T00:00:00Z"
+}

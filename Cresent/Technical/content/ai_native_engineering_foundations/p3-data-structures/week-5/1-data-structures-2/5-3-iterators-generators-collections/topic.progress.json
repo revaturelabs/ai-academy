@@ -1,0 +1,26 @@
+{
+  "topic_id": "5.3",
+  "stage": "awaiting_resources",
+  "gates": {
+    "resources_captured": false,
+    "corpus_generated": false,
+    "corpus_critic_passed": false,
+    "corpus_human_approved": false,
+    "reading_generated": false,
+    "reading_critic_passed": false,
+    "quiz_generated": false,
+    "quiz_critic_passed": false,
+    "diagram_generated": false,
+    "diagram_critic_passed": false,
+    "topic_artifacts_human_approved": false,
+    "module_drift_passed": false,
+    "week_human_approved": false
+  },
+  "history": [
+    {
+      "at": "2026-07-13T00:00:00Z",
+      "op": "scaffold",
+      "msg": "created by ai_native_ingest.py"
+    }
+  ]
+}

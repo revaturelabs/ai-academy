@@ -1,0 +1,23 @@
+{
+  "topic_id": "8.5",
+  "title": "Human vs Machine Problem-Solving",
+  "course_slug": "m1-computational-thinking",
+  "course_code": "M1",
+  "module_slug": "1-computational-thinking-kickoff",
+  "week_num": 8,
+  "position_in_week": 5,
+  "position_in_module": 3,
+  "source_outline": [
+    "What solving a problem currently requires of a human"
+  ],
+  "expected_delivery_minutes": null,
+  "artifact_plan": {},
+  "next_assessment": {
+    "id": "A3",
+    "week": 8,
+    "title": "Python Foundations Diagnostic",
+    "weight": null,
+    "outcome": "The learner can model data with classes, handle files and errors robustly, and maintain a professional Git portfolio - confirming readiness to begin the AI modules."
+  },
+  "created_at": "2026-07-13T00:00:00Z"
+}

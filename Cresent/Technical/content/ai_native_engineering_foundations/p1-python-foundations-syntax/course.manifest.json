@@ -1,0 +1,23 @@
+{
+  "course_slug": "p1-python-foundations-syntax",
+  "course_code": "P1",
+  "title": "Python Foundations & Syntax",
+  "part": "A",
+  "weeks_range": [
+    1,
+    1
+  ],
+  "total_hours": 4,
+  "builds_on": "Basic computer literacy - no prior programming assumed",
+  "scope": "Colab, variables, types, operators, conversion, f-strings, type hints, match-case.",
+  "assessments": [
+    {
+      "id": "A1",
+      "week": 3,
+      "title": "Python Core Skills Checkpoint",
+      "weight": null,
+      "outcome": "The learner can translate a plain-English problem into correct, tested Python using variables, control flow, and functions."
+    }
+  ],
+  "created_at": "2026-07-13T00:00:00Z"
+}
