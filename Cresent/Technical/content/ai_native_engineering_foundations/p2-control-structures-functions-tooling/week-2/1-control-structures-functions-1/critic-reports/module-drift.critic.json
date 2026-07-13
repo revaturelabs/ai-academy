@@ -1,0 +1,57 @@
+{
+  "critic": "drift-critic",
+  "scope": "module",
+  "module_slug": "1-control-structures-functions-1",
+  "module_title": "Control Structures & Functions (1)",
+  "course_code": "P2",
+  "week_num": 2,
+  "topics_reviewed": ["2.1", "2.2"],
+  "generated_at": "2026-07-13T00:00:00Z",
+  "passed": true,
+  "verdict": "PASS — 2.1 Conditionals and 2.2 Loops are terminologically consistent, correctly ordered, jointly cover the week's control-structures arc, do not duplicate material, and support all five week-2 labs; one low-severity data-hygiene note on sequence.index.json.",
+  "checks": {
+    "terminology_consistency": {
+      "passed": true,
+      "summary": "No synonym drift across 2.1 -> 2.2. Shared vocabulary is reused verbatim: 'condition'/'boolean expression' (2.1 defines 'a condition is just a boolean expression'; 2.2 calls the while continuation test 'a boolean expression'), 'indented block'/'indentation-as-block-structure' (2.2 explicitly states it 'carries straight over' from 2.1), and 'nesting'/'keep nesting shallow' (identical best-practice phrasing in both). break/continue in 2.2 sit under an 'if' and 2.2 names the reuse ('this is where conditionals and loops combine'), reusing 2.1's conditionals vocabulary correctly. 'branch' is used only in 2.1 (appropriate; loops do not branch).",
+      "findings": []
+    },
+    "prerequisites_respected": {
+      "passed": true,
+      "summary": "All prerequisite references point to earlier-position topics. 2.1 prereqs = 1.2, 1.3, 1.4 (all week-1); 2.2 prereqs = 1.2, 1.3, 1.4, 2.1 (2.1 is position 1, 2.2 position 2). Corpus prerequisite sections match sequence.index.json exactly. No forward references.",
+      "findings": [
+        {
+          "topic": "2.1",
+          "severity": "low",
+          "type": "data_hygiene",
+          "detail": "In sequence.index.json the 2.1 prerequisites are encoded as JSON numbers (1.2, 1.3, 1.4) whereas 2.2 encodes them as strings (\"1.2\", \"1.3\", \"1.4\", \"2.1\"). Semantically correct and non-blocking, but the type inconsistency should be normalized to strings to avoid float-parsing / comparison surprises in tooling."
+        }
+      ]
+    },
+    "learning_arc": {
+      "passed": true,
+      "summary": "Union of 2.1 + 2.2 Learning Objectives fully covers the week-2 narrative_seed 'if/elif/else; nested conditionals; while & for loops; range(); enumerate/zip; break/continue; nested loops'. Mapping: if/elif/else + nested conditionals -> 2.1; while & for + range() + enumerate/zip + break/continue + nested loops -> 2.2. Topics also add coherent extras (2.1: boolean and/or/not, ternary expression; 2.2: infinite-loop avoidance, loop else clause) that stay within the control-structures scope. 'Functions' in the module title 'Control Structures & Functions (1)' is NOT a false gap: the '(1)' marks this as the control-structures installment, and Functions are delivered in week-3 module 2 (topics 3.1-3.3 in sequence.index.json). No uncovered facets.",
+      "findings": []
+    },
+    "no_duplicated_core_concepts": {
+      "passed": true,
+      "summary": "Core Concepts of 2.1 and 2.2 are distinct; estimated noun-set Jaccard well below the 0.6 threshold. The only apparent overlap is 'nesting', which is correctly disambiguated: 2.1 covers nested conditionals (a decision inside a decision, section 5.6) and 2.2 covers nested loops (a loop inside a loop producing grids/tables, section 5.7). Indentation-as-block-structure is taught once in 2.1 and only referenced (not re-taught) in 2.2. No substantive duplication.",
+      "findings": []
+    },
+    "lab_activity_alignment": {
+      "passed": true,
+      "summary": "Every lab in the week-2 lab_activity_seed (P2.1-P2.5) is supported by a topic's worked/hands-on material. task classifier (if/elif/else) -> 2.1 section 5.4 + section 6 worked example + hands-on exercise. for + enumerate -> 2.2 section 5.5 ('this is the for + enumerate lab') + hands-on. while countdown -> 2.2 section 5.1 + section 6 worked example. break/continue -> 2.2 section 5.6 ('the tool behind the break/continue lab'). nested loops multiplication table -> 2.2 section 5.7 (produces the 1-2-3 / 2-4-6 / 3-6-9 table). All five labs have supporting hands-on artifacts.",
+      "findings": []
+    }
+  },
+  "per_topic_findings": {
+    "2.1": [
+      {
+        "check": "prerequisites_respected",
+        "severity": "low",
+        "type": "data_hygiene",
+        "detail": "sequence.index.json encodes 2.1 prerequisites as numbers rather than strings; normalize to strings for consistency with 2.2."
+      }
+    ],
+    "2.2": []
+  }
+}

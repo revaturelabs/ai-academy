@@ -1,0 +1,16 @@
+{
+  "topic_id": "2.2",
+  "title": "Loops",
+  "estimated_read_minutes": 10,
+  "word_count": 1880,
+  "generated_at": "2026-07-13T00:00:00Z",
+  "embeds_diagram": true,
+  "diagram_path": "diagram.png",
+  "citations_used": [1, 2, 3],
+  "next_assessment": {
+    "id": "A1",
+    "due_week": 3,
+    "title": "Python Core Skills Checkpoint"
+  },
+  "sections": ["Overview", "Key Concepts", "Worked Example", "In Practice", "Key Takeaways", "References"]
+}

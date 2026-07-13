@@ -1,26 +1,167 @@
 {
   "topic_id": "2.1",
-  "stage": "awaiting_resources",
+  "stage": "module_passed",
   "gates": {
-    "resources_captured": false,
-    "corpus_generated": false,
-    "corpus_critic_passed": false,
-    "corpus_human_approved": false,
-    "reading_generated": false,
-    "reading_critic_passed": false,
-    "quiz_generated": false,
-    "quiz_critic_passed": false,
+    "resources_captured": true,
+    "corpus_generated": true,
+    "corpus_critic_passed": true,
+    "corpus_human_approved": true,
+    "reading_generated": true,
+    "reading_critic_passed": true,
+    "quiz_generated": true,
+    "quiz_critic_passed": true,
     "diagram_generated": false,
     "diagram_critic_passed": false,
-    "topic_artifacts_human_approved": false,
-    "module_drift_passed": false,
-    "week_human_approved": false
+    "topic_artifacts_human_approved": true,
+    "module_drift_passed": true,
+    "week_human_approved": true
   },
   "history": [
     {
       "at": "2026-07-13T00:00:00Z",
       "op": "scaffold",
       "msg": "created by ai_native_ingest.py"
+    },
+    {
+      "at": "2026-07-13T10:34:41Z",
+      "op": "set",
+      "gate": "resources_captured",
+      "value": true
+    },
+    {
+      "at": "2026-07-13T10:34:41Z",
+      "op": "stage",
+      "to": "awaiting_corpus"
+    },
+    {
+      "at": "2026-07-13T10:34:41Z",
+      "op": "log",
+      "msg": "Captured 3 resources (source=web_search)"
+    },
+    {
+      "at": "2026-07-13T10:39:20Z",
+      "op": "set",
+      "gate": "corpus_generated",
+      "value": true
+    },
+    {
+      "at": "2026-07-13T10:39:20Z",
+      "op": "stage",
+      "to": "awaiting_corpus_critic"
+    },
+    {
+      "at": "2026-07-13T10:40:53Z",
+      "op": "set",
+      "gate": "corpus_critic_passed",
+      "value": true
+    },
+    {
+      "at": "2026-07-13T10:40:53Z",
+      "op": "stage",
+      "to": "awaiting_corpus_human_review"
+    },
+    {
+      "at": "2026-07-13T10:50:08Z",
+      "op": "set",
+      "gate": "corpus_human_approved",
+      "value": true
+    },
+    {
+      "at": "2026-07-13T10:50:08Z",
+      "op": "stage",
+      "to": "corpus_approved"
+    },
+    {
+      "at": "2026-07-13T10:50:08Z",
+      "op": "log",
+      "msg": "Corpus approved (HITL#2); depth=deep confirmed"
+    },
+    {
+      "at": "2026-07-13T10:52:00Z",
+      "op": "set",
+      "gate": "reading_generated",
+      "value": true
+    },
+    {
+      "at": "2026-07-13T10:52:00Z",
+      "op": "stage",
+      "to": "awaiting_reading_critic"
+    },
+    {
+      "at": "2026-07-13T10:53:32Z",
+      "op": "set",
+      "gate": "quiz_generated",
+      "value": true
+    },
+    {
+      "at": "2026-07-13T11:12:14Z",
+      "op": "set",
+      "gate": "reading_critic_passed",
+      "value": true
+    },
+    {
+      "at": "2026-07-13T11:12:14Z",
+      "op": "stage",
+      "to": "awaiting_quiz_critic"
+    },
+    {
+      "at": "2026-07-13T11:12:14Z",
+      "op": "log",
+      "msg": "Reading critic PASS. Quiz critic subagent killed by API session limit (resets 4:40pm IST) before writing quiz.critic.json. Resume: re-run quiz critic."
+    },
+    {
+      "at": "2026-07-13T11:16:32Z",
+      "op": "set",
+      "gate": "quiz_critic_passed",
+      "value": true
+    },
+    {
+      "at": "2026-07-13T11:16:32Z",
+      "op": "stage",
+      "to": "awaiting_topic_artifacts_review"
+    },
+    {
+      "at": "2026-07-13T11:26:04Z",
+      "op": "set",
+      "gate": "topic_artifacts_human_approved",
+      "value": true
+    },
+    {
+      "at": "2026-07-13T11:26:04Z",
+      "op": "stage",
+      "to": "topic_artifacts_approved"
+    },
+    {
+      "at": "2026-07-13T11:26:04Z",
+      "op": "log",
+      "msg": "HITL#3 approved (reading+quiz, no carry-over). depth=deep."
+    },
+    {
+      "at": "2026-07-13T11:45:30Z",
+      "op": "set",
+      "gate": "module_drift_passed",
+      "value": true
+    },
+    {
+      "at": "2026-07-13T11:45:30Z",
+      "op": "log",
+      "msg": "Module-drift PASS. Fixed sequence hygiene: 2.1 prerequisites numbers->strings."
+    },
+    {
+      "at": "2026-07-13T11:49:18Z",
+      "op": "set",
+      "gate": "week_human_approved",
+      "value": true
+    },
+    {
+      "at": "2026-07-13T11:49:18Z",
+      "op": "stage",
+      "to": "module_passed"
+    },
+    {
+      "at": "2026-07-13T11:49:18Z",
+      "op": "log",
+      "msg": "HITL#4 week approved. Week 2 complete."
     }
   ]
 }

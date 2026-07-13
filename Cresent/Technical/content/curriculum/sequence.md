@@ -56,10 +56,10 @@ status: "scaffolded"
 - path: `p2-control-structures-functions-tooling/week-2/1-control-structures-functions-1/2-1-conditionals`
 
 ```yaml
-concepts_introduced: []
-prerequisites: []
-cross_refs: []
-status: "scaffolded"
+concepts_introduced: ["if statement", "if/elif/else multi-branch decisions", "indentation as block structure", "boolean expressions with and/or/not", "nested conditionals", "conditional (ternary) expression"]
+prerequisites: ["1.2", "1.3", "1.4"]
+cross_refs: ["Python"]
+status: "corpus_drafted"
 ```
 
 ## 2.2 — Loops
@@ -68,10 +68,10 @@ status: "scaffolded"
 - path: `p2-control-structures-functions-tooling/week-2/1-control-structures-functions-1/2-2-loops`
 
 ```yaml
-concepts_introduced: []
-prerequisites: []
-cross_refs: []
-status: "scaffolded"
+concepts_introduced: ["while loop", "for loop and loop variable", "range() start/stop/step", "enumerate() and zip()", "break and continue", "nested loops", "loop else clause"]
+prerequisites: ["1.2", "1.3", "1.4", "2.1"]
+cross_refs: ["Python"]
+status: "corpus_drafted"
 ```
 
 ## 3.1 — Functions

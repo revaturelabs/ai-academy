@@ -1,0 +1,50 @@
+{
+  "critic": "reading-critic",
+  "topic_id": "2.2",
+  "topic_title": "Loops",
+  "at": "2026-07-13T00:00:00Z",
+  "passed": true,
+  "verdict": "PASS — clean learner-facing file (no frontmatter, first line is '# Loops' H1), sidecar present/parses, exactly the six required sections in order; primary [1] docs.python.org cited repeatedly with supporting [2][3], matching bibliography and no fabricated markers; no forward references beyond loops + conditionals + prereqs 1.1-1.4 (enumerate/zip are in-scope 2.2 objectives, not forward refs); plainspoken concrete spec voice, no hedging; every sampled assertion traces to the corpus and the inline diagram embed legitimately replaces prose. Soft note only: word_count 1880 sits inside [1800,2200], but reading-aloud minutes at 230 wpm compute to ~8.2, just under the nominal 9-11 band (word budget is the binding constraint and is satisfied; the 9-11 target implies ~190 wpm, so the figures diverge by spec, not by defect).",
+  "word_count": 1880,
+  "checks": {
+    "format_discipline": {
+      "passed": true,
+      "detail": "No frontmatter — first non-empty line is the '# Loops' H1 (line 1); no leading '---' YAML block. Sidecar reading.meta.json exists, parses, and carries word_count (1880), estimated_read_minutes (10), citations_used ([1,2,3]), and sections. Exactly six '##' headings present in required order: Overview (3), Key Concepts (7), Worked Example (96), In Practice (118), Key Takeaways (135), References (146). None added, renamed, or dropped. Inline diagram embed ![Loop control flow](diagram.png) at line 27 is expected (embeds_diagram=true in sidecar) and not a section violation.",
+      "frontmatter_present": false,
+      "meta_sidecar_missing": false,
+      "section_template_violation": false
+    },
+    "length": {
+      "passed": true,
+      "profile": "deep",
+      "word_count": 1880,
+      "accepted_word_range": "1800-2200",
+      "reading_aloud_minutes_at_230wpm": 8.2,
+      "target_minute_range": "9-11",
+      "detail": "Reported word_count 1880 is within the deep target range [1800,2200]. Reading-aloud minutes = 1880/230 = ~8.2, marginally below the 9-11 nominal band. The word range and minute range are internally inconsistent under a strict 230 wpm assumption (1800-2200 words = 7.8-9.6 min at 230; the 9-11 target implies ~190 wpm, matching the sidecar's reported 10 min). Word count is the authoritative budget and is satisfied, so this is a soft note, not a hard fail. Consistent with the sibling 2.1 disposition."
+    },
+    "citations": {
+      "passed": true,
+      "mode": "strict (resources_source=web_search)",
+      "detail": "Resources resolve to [1]=docs.python.org 'More Control Flow Tools' (primary), [2]=note.nkmk.me (supporting), [3]=CTU lecture (supporting). Primary [1] cited many times (lines 5, 11, 36, 47, 61, 65, 72, 81, 94). [2] cited (lines 43, 65, 72, 131). [3] cited (lines 32, 90). Footnote-style inline markers throughout with a matching bibliography in References (lines 148-150). Every inline marker has a bibliography entry and vice versa — no orphan markers, no orphan entries. Only [1], [2], [3] appear; no fabricated markers beyond the three declared resources.",
+      "primary_resources_cited": ["[1] docs.python.org"],
+      "fabricated_markers": []
+    },
+    "forward_references": {
+      "passed": true,
+      "detail": "All technical content stays within 2.2's own concepts (while, for, loop variable, range() start/stop/step, enumerate, zip, break, continue, nested loops, loop else) plus prerequisites 1.1-1.4 (variables/assignment, types, comparison/boolean and modulo operators, print/input/int conversion, strings as sequences). enumerate() and zip() are explicit 2.2 learning objectives per the corpus, not forward references. No lists/tuples/dicts/sets literals, no comprehensions, no .append, and no functions/def appear or are relied upon.",
+      "forward_referenced_terms": [],
+      "notes": "The tuple-style unpacking 'for index, letter in enumerate(...)' and 'for letter, digit in zip(...)' is taught in-topic (corpus 5.5) as the standard way to consume enumerate/zip, not a separate tuple/collections concept — in scope. Modulo in 'if i % 2 == 0: continue' (line 86) is an operator from 1.3. Soft observations only."
+    },
+    "tone_fit": {
+      "passed": true,
+      "detail": "Plainspoken 8th-grade spec voice with concrete, runnable examples in every concept (count-down, 'cat' string walk, range counters, enumerate index+value, zip pairs, odd-number continue, multiplication grid). Average sentence length under 25 words; longer sentences remain clear and are broken up by short code blocks and bulleted rules — no wall-of-text. Zero hedging phrases ('it is generally considered', 'many experts believe', 'various studies have shown'); well under the 3-occurrence threshold. No academic register or jargon dumps.",
+      "hedging_occurrences": 0
+    },
+    "faithfulness": {
+      "passed": true,
+      "detail": "Sampled 12 assertions, all traceable to topic_corpus.md: (1) while = if-shaped header+colon+indent, retests at top, repeats while True, stops when False -> corpus 5.1; (2) count=5 countdown prints 5..1 then 'Lift off!', decrement is the progress step -> 5.1; (3) missing decrement => infinite loop, the classic while bug -> 5.2; (4) 'while True:' legitimate only when paired with a break -> 5.2/5.6; (5) for runs once per item, loop variable takes each value, name is your choice -> 5.3; (6) for letter in 'cat' prints c/a/t -> 5.3; (7) range(stop/start,stop/start,stop,step), stop exclusive, negative step counts down, range(5,0,-1)=5 4 3 2 1 -> 5.4; (8) enumerate hands back counter (from 0) + item, enumerate('cat',1) starts at 1 -> 5.5; (9) zip walks two sequences together, stops at the shorter -> 5.5; (10) break leaves loop entirely, continue skips rest of current iteration, i%2==0 continue prints odds -> 5.6; (11) nested loop runs inner fully per outer pass, n x m total, keep shallow -> 5.7; (12) loop else runs only if loop finished without a break -> 5.8. In Practice (input validation, search, counting/totals, grids) maps to corpus sec 7; Best Practices bullets map to sec 8. The Worked Example (while countdown with int(input())) is a curated re-presentation of corpus sec 5.1/6, not new content. The prose replacing the flow diagram is a legitimate embed, not an unsupported claim. 0 unsupported technical assertions (threshold: fail if >2).",
+      "notes": "Assessment-mapping callouts ('This contributes to A1 — Python Core Skills Checkpoint (due W3)' on line 5 and the closing line 144) are course-scaffolding annotations, not technical claims, so they fall outside faithfulness scope and are not counted as unsupported assertions."
+    }
+  }
+}

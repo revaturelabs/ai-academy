@@ -1,0 +1,95 @@
+$CATEGORY: CIT/P2/week-2/2.1-conditionals
+
+::q1:: When a single `if` statement's condition evaluates to `False`, what happens? {
+~It runs the indented block once and then re-checks the condition before moving on.#No — an `if` is not a loop; it never re-checks or repeats its own block.
+~It raises an error, because in Python every `if` must be paired with an `else`.#No — `else` is optional; a bare `if` with no `else` is perfectly valid.
+=It skips the indented block entirely and continues at the next unindented line.#Correct — a `False` condition means the block is skipped and execution falls through.
+~It runs the indented block anyway but silently discards whatever the block produced.#No — the block does not run at all when the condition is `False`.
+#### Tests the core behaviour of a lone `if` when its condition is false (corpus §5.1).
+}
+
+::q2:: In an `if`/`elif`/`else` chain, how many branches run during one execution? {
+=Exactly one — Python runs the first branch whose condition is True and skips the rest.#Correct — evaluation stops at the first True branch; only that block executes.
+~Every branch whose condition is True, evaluated one after another from the top down.#No — later branches are never reached once an earlier one matches, even if also True.
+~At most two — the first matching branch plus the final `else` always run together.#No — the `else` only runs when no earlier condition matched, never alongside one.
+~None of them at all, unless a closing `else` is present to guarantee a branch runs.#No — an `if`/`elif` can match and run with no `else` present at all.
+#### Tests that exactly one branch executes in a chain (corpus §5.4).
+}
+
+::q3:: Why does indentation matter for the body of a Python `if` statement? {
+~It is a cosmetic convention that improves readability but has no effect on behaviour.#No — in Python indentation is grammar, not decoration; it changes what runs.
+~It replaces the colon on the header line whenever the block holds a single statement.#No — the header colon is always required; indentation is separate from it.
+~It is required only inside functions, so plain `if` blocks may be left unindented.#No — every `if` block needs consistent indentation regardless of context.
+=It defines which statements belong to the branch; wrong indentation changes meaning or errors.#Correct — indentation is the block structure, and mixing it raises an IndentationError.
+#### Tests indentation as block structure, not style (corpus §5.2).
+}
+
+::q4:: The condition `age \>\= 18 and has_ticket` is True in exactly which situation? {
+~When either the age is at least 18 or `has_ticket` is True, with just one side needed.#No — that describes `or`; `and` demands both sides, not just one.
+=Only when the age is at least 18 and `has_ticket` is True at the very same time.#Correct — `and` is True only when both operands are True together.
+~Whenever the age is at least 18, no matter what value `has_ticket` currently holds.#No — `has_ticket` must also be True; ignoring it would make the `and` pointless.
+~Whenever at least one of the two comparisons happens to evaluate to True on its own.#No — "at least one" is the meaning of `or`, not of `and`.
+#### Tests the meaning of `and` versus `or` (corpus §5.5).
+}
+
+::q5:: Per the corpus, when should two nested `if`s be flattened into one condition joined with `and`? {
+~Always, because nesting deeper than one level automatically produces an IndentationError.#No — deeper nesting is legal; it hurts readability but is not an error.
+~Never, since combining the two tests with `and` would change the program's actual result.#No — for "both required," the flattened `and` form gives the identical result.
+~Only when the inner `if` also carries its own `else` that produces a distinct outcome.#No — that is exactly the case to KEEP as nesting, not to flatten.
+=When both conditions are simply required together and the inner `if` has no separate else.#Correct — "both must be true" flattens cleanly; keep nesting only for diverging branches.
+#### Tests judging nesting versus flattening for readability (corpus §5.6).
+}
+
+::q6:: Which line correctly rewrites the `if`/`else` that sets `status` as a conditional expression? {
+=status \= "adult" if age \>\= 18 else "minor"#Correct — the shape is value_if_true if condition else value_if_false.
+~status \= if age \>\= 18 "adult" else "minor"#No — `if` does not lead the expression form; the true-value comes first.
+~status \= "adult" if age \>\= 18 elif "minor"#No — a conditional expression uses `else`, never `elif`.
+~status \= age \>\= 18 ? "adult" \: "minor"#No — the `? \:` ternary is C-style syntax; Python uses `if`/`else` words.
+#### Tests the correct syntax of the conditional (ternary) expression (corpus §5.7).
+}
+
+::q7:: Given the chain (`\>\= 90` A, `\>\= 80` B, `\>\= 70` C, else Below C), what prints for `grade \= 85`, and why? {
+~"C", because 85 is greater than 70 and that comparison is the one checked first.#No — the `\>\= 90` and `\>\= 80` tests are checked before `\>\= 70`.
+~Both "B" and "C", since 85 satisfies both the `\>\= 80` and the `\>\= 70` tests.#No — only the first True branch runs; C is never reached after B matches.
+=Prints "B", because Python stops at the first True branch and 85 meets `\>\= 80`.#Correct — 85 fails `\>\= 90`, matches `\>\= 80`, so B prints and the rest are skipped.
+~"Below C", because 85 does not exactly equal any of the listed threshold numbers.#No — the tests use `\>\=`, not equality, so 85 matches the `\>\= 80` branch.
+#### Tests order-dependence and first-True-wins in a range chain (corpus §5.4).
+}
+
+::q8:: For `if temperature \< 0 or temperature \> 35\:`, which value makes the warning print? {
+~temperature \= 20, because 20 sits comfortably between the two listed limit values.#No — 20 is neither below 0 nor above 35, so neither side of the `or` is True.
+=temperature \= -4, because it satisfies the `temperature \< 0` side of the `or`.#Correct — `or` needs only one True side, and -4 is below 0.
+~It prints only when both `temperature \< 0` and `temperature \> 35` are True together.#No — that is `and`; `or` needs just one side to be True.
+~temperature \= 35, because 35 counts as greater than or equal to the upper limit.#No — the test is `\> 35` (strictly greater), and 35 is not greater than 35.
+#### Tests `or` semantics and strict comparison boundaries (corpus §5.5).
+}
+
+::q9:: What lets a conditional expression sit inside `print(...)` while a plain `if`/`else` statement cannot? {
+~The conditional expression runs faster, so `print` is willing to accept it as an argument.#No — speed is irrelevant; the difference is statement versus expression.
+~`print` automatically converts any `if` statement it is handed into a returned string value.#No — `print` does no such conversion; a statement is simply not an expression.
+~A statement returns `None`, which `print` then formats into the chosen branch's text.#No — a statement does not return a usable value at all; it is not an argument.
+=A conditional expression evaluates to a value, whereas an `if`/`else` statement does not.#Correct — expressions produce values usable anywhere a value is expected; statements do not.
+#### Tests the statement-versus-expression distinction (corpus §5.7).
+}
+
+::q10:: Which single line is equivalent to an outer `if logged_in\:` wrapping an inner `if is_admin\:` (no elses)? {
+=if logged_in and is_admin\:#Correct — both must be True, so `and` flattens the two nested tests exactly.
+~if logged_in or is_admin\:#No — `or` runs when either is True, changing the logic entirely.
+~if not logged_in and is_admin\:#No — `not` inverts `logged_in`, reversing the intended condition.
+~if logged_in \=\= is_admin\:#No — this tests whether the two booleans are equal, not whether both are True.
+#### Tests flattening "both must be true" nesting with `and` (corpus §5.6).
+}
+
+::q11:: Mixing or forgetting the indentation of a block in Python raises an ____ (the specific error name). {
+=IndentationError
+=Indentation Error
+=indentationerror
+}
+
+::q12:: The keyword that adds another condition between `if` and `else`, short for "else if", is ____. {
+=elif
+}
+
+::q13:: Complete the conditional-expression shape\: value_if_true if condition ____ value_if_false (one keyword). {
+=else
+}

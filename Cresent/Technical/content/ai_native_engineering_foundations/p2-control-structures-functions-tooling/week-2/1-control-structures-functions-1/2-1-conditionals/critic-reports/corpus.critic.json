@@ -1,0 +1,35 @@
+{
+  "critic": "corpus-critic",
+  "topic_id": "2.1",
+  "topic_title": "Conditionals",
+  "at": "2026-07-13T00:00:00Z",
+  "passed": true,
+  "verdict": "PASS — all required sections present and substantive; strict web_search citation density satisfied (primary [1] + supporting [2][3] all cited, no fabricated markers, every Core Concept subsection carries >=1 citation); no forward references; word_count ~2650 within standard 1500-6000 range (below builder 3000 soft-floor, not a hard fail).",
+  "word_count": 2650,
+  "checks": {
+    "required_sections": {
+      "passed": true,
+      "detail": "Sections 3 (Learning Objectives, 6 objectives ~90w), 4 (Introduction ~230w), 5 (Core Concepts, 7 subsections, well over 100w), and 10 (Key Takeaways, 6 bullets ~200w) all present and non-trivial. No placeholder strings in required sections. Optional sections 6/8/9/11 also present; section 7 (Real-World Patterns) absent but not required by profile."
+    },
+    "citation_density": {
+      "passed": true,
+      "mode": "strict (resources_source=web_search)",
+      "detail": "Resources resolve to [1]=note.nkmk.me (primary), [2]=dataquest (supporting), [3]=koderhq (supporting). Primary [1] cited >=1 (lines 168,202,225,232). [2] cited (202,210), [3] cited (32,40,67,82,97,137). No fabricated [N] markers — only [1],[2],[3] appear. Core Concepts: all 7 subsections (5.1-5.7) carry >=1 citation marker on their key factual claim, exceeding the 60% threshold. Implementation (sec 6) carries no markers but its content is procedural synthesis of already-cited concepts; aggregate density across cited-eligible sections remains well above 60%.",
+      "primary_resources_cited": ["[1] note.nkmk.me"],
+      "fabricated_markers": []
+    },
+    "sequence_drift": {
+      "passed": true,
+      "detail": "All technical noun phrases resolve to 2.1's concepts_introduced (if, if/elif/else, indentation as block structure, and/or/not boolean expressions, nested conditionals, conditional/ternary expression) or prior topics 1.2-1.4 (variables/types, comparison operators, boolean type, print/input/int conversion, modulo). No loops, functions, lists/dicts/sets, or comprehensions referenced.",
+      "forward_referenced_terms": [],
+      "notes": "Incidental mention of 'IndentationError' (line 78) names an interpreter message a learner will see when misindenting a block; it does not teach exception handling (topic 7.2) and is not a forward-referenced concept. Soft observation only, not a fail."
+    },
+    "length_sanity": {
+      "passed": true,
+      "profile": "standard",
+      "word_count": 2650,
+      "accepted_range": "1500-6000",
+      "detail": "~2650 words is within the accepted standard range. Below the corpus-builder's 3000-word soft-floor, reported for visibility; content is complete across all required and most optional sections, so not hard-failed on word count alone."
+    }
+  }
+}
