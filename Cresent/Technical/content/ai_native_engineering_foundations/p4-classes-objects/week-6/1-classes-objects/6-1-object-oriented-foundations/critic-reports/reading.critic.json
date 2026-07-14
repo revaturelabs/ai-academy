@@ -1,0 +1,47 @@
+{
+  "critic": "reading-critic",
+  "topic_id": "6.1",
+  "artifact": "artifacts/reading.md",
+  "generated_at": "2026-07-14T00:00:00Z",
+  "profile": "deep",
+  "passed": true,
+  "verdict": "PASS - reading.md is a faithful, well-scoped condensation of topic_corpus.md for 6.1. Six required sections present in order with no frontmatter; sidecar reading.meta.json parses and its word_count (1841) matches an independent token count. Word count sits inside the deep 1800-2200 band and reading-aloud time (1841/230 ~= 8.0 min) sits inside the range implied by that band. All three resources are cited with a matching, orphan-free bibliography ([1] docs.python.org cited 7x as required for the primary source). No forward references: verified against sequence.index.json that 2.1-5.3 are unbuilt (empty concepts_introduced), and confirmed no conditional/ternary expressions, no loops, and no default-parameter-value or **kwargs signatures anywhere in the reading's code -- every def uses only required positional parameters, matching the corpus's explicit constraint. Faithfulness sampling (12 assertions across Overview/Key Concepts/Worked Example/In Practice/Key Takeaways) traced cleanly to topic_corpus.md with zero unsupported claims (well under the >2 fail threshold). Tone is plainspoken: zero hedging phrases, concrete code examples appear throughout Key Concepts (not just in Worked Example), and terms (ADT, class, instance, constructor, instance/class attribute, method) are bolded and defined at first use. One non-blocking observation: the Overview's closing sentence ('This contributes to A3 - Python Foundations Diagnostic (due W8)...') is LMS/assessment metadata leaking into learner-facing prose and is also the one assertion in the reading that does not trace back to topic_corpus.md -- it does not fail any of the five scored checks on its own (faithfulness has only this 1 unsupported assertion, threshold is >2) but should be moved to the sidecar or cut in a future pass. A second minor observation: the 'Methods and self' paragraph (lines 80) runs to 6 sentences, the outer edge of the wall-of-text guidance (target 4, ceiling ~6) -- not a violation, but the longest paragraph in the piece.",
+  "checks": [
+    {
+      "id": "format_discipline",
+      "name": "Format discipline",
+      "passed": true,
+      "detail": "First non-empty line is '# Object-Oriented Foundations' -- no YAML frontmatter. reading.meta.json exists and parses with topic_id, title, estimated_read_minutes, word_count, citations_used, sections. Exactly six '##' headings in order: Overview, Key Concepts, Worked Example, In Practice, Key Takeaways, References -- none added, renamed, or dropped."
+    },
+    {
+      "id": "length",
+      "name": "Length budget",
+      "passed": true,
+      "detail": "Independently counted via whitespace-token scan (offset/head_limit bisection on the raw file): 1841 tokens total, exactly matching the sidecar's self-reported word_count=1841. Falls inside the deep-profile target_word_range [1800, 2200] from .claude/config/artifact-mix.json. Reading-aloud estimate at 230 wpm = 1841/230 ~= 8.0 minutes, inside the range implied by the word band (~7.8-9.6 min). Sidecar's estimated_read_minutes=9 uses a different (200 wpm, project-delivery) formula and is a display-only discrepancy, not a length-budget fail."
+    },
+    {
+      "id": "citations",
+      "name": "Citations",
+      "passed": true,
+      "detail": "[1] (docs.python.org/3/tutorial/classes.html, the primary resource) is cited 7 times (lines 22, 37, 51, 80, 143, 145, 151, 166). [2] and [3] (Real Python, supporting) are each cited multiple times. Only markers [1][2][3] appear in the body; References section lists exactly [1][2][3] with matching URLs. No orphan markers, no orphan bibliography entries."
+    },
+    {
+      "id": "forward_references",
+      "name": "No forward references",
+      "passed": true,
+      "detail": "Read content/curriculum/sequence.index.json directly: 6.1 lists prerequisites 1.1/1.2/1.4 (all status corpus_drafted, populated), and topics 2.1 Conditionals, 2.2 Loops, 3.1 Functions, 3.2 Functional Constructs, 3.3 Modules, 4.1-4.2 Lists/Tuples, 5.1-5.3 Sets/Dictionaries/Iterators are all status='scaffolded' with empty concepts_introduced -- confirmed not yet built. Scanned reading.md for violations: no if/elif/else, no ternary/conditional expressions, no for/while loops, no list/dict/tuple/set literals, and no **kwargs or *args anywhere. Grepped every function signature (`def \\w+\\([^)]*=`) -- zero matches, i.e. no default parameter values in any constructor or method; the text explicitly calls this out as a deliberate constraint ('Python's default-parameter syntax is a feature of functions you haven't met yet'). The one mention of 'condition' (line 80, re: describe/self.done) and 'Conditionals topic later in this course' is a named-and-deferred pointer, not a taught/used conditional."
+    },
+    {
+      "id": "faithfulness",
+      "name": "Faithfulness to corpus",
+      "passed": true,
+      "detail": "Sampled 12 assertions spanning all sections against topic_corpus.md: OOP-bundling framing (corpus Sec 4/5.1), 'contract vs implementation' two-things-one-name framing (5.1), type()/PascalCase-snake_case convention (5.2), instance vs class attribute definitions and default-parameter deferral (5.3), class-attribute shadowing / Real Python 'most common source of confusion' quote (5.3), self lookup-then-bind mechanic (5.4), the four-step BankAccount build and its full trace including the forgotten-self TypeError (Sec 6), the Account/Player/Product In Practice examples (Sec 7), and the Key Takeaways (Sec 10) -- all traced verbatim or as faithful paraphrase, no new facts introduced. One unsupported assertion found: the Overview's assessment/due-week sentence ('contributes to A3 ... due W8') has no corpus basis (it's LMS scheduling metadata, not a taught concept) -- 1 unsupported assertion is under the >2 fail threshold."
+    },
+    {
+      "id": "tone_fit",
+      "name": "Tone fit",
+      "passed": true,
+      "detail": "Zero hedging phrases found ('it is generally considered' / 'many experts believe' / 'various studies have shown' and variants all absent; threshold <3). Concrete worked code appears inside Key Concepts itself (Task, then BankAccount in Worked Example), not deferred entirely to one section. Bolded terms are defined in plain language at first use (ADT, class, object/instance, constructor, instance attribute, class attribute, method). Paragraphs are mostly 3-5 sentences with one at the 6-sentence ceiling (line 80, 'Methods and self') -- borderline but not over the guidance limit. Lists used for Best Practices and In Practice bullets rather than run-on prose."
+    }
+  ]
+}

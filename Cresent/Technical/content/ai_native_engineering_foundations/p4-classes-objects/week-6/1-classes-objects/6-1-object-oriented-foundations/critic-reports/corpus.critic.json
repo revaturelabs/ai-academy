@@ -1,0 +1,58 @@
+{
+  "critic": "corpus-critic",
+  "topic_id": "6.1",
+  "corpus_path": "content/ai_native_engineering_foundations/p4-classes-objects/week-6/1-classes-objects/6-1-object-oriented-foundations/topic_corpus.md",
+  "resources_path": "content/ai_native_engineering_foundations/p4-classes-objects/week-6/1-classes-objects/6-1-object-oriented-foundations/topic.resources.json",
+  "sequence_index_path": "content/curriculum/sequence.index.json",
+  "verification_pass": 3,
+  "max_retries": 2,
+  "note": "Final verification after 2 revision passes. Full fresh, independent re-run per instructions -- prior claims (citations fixed, ~5226 words) were not trusted; every check was re-measured directly against the file on disk.",
+  "passed": true,
+  "checks": {
+    "required_sections": {
+      "passed": true,
+      "detail": "Sections 3 (Learning Objectives), 4 (Introduction), 5 (Core Concepts), 10 (Key Takeaways) all present and non-trivial, no placeholder strings used in any required section.",
+      "sections": {
+        "3_learning_objectives": {"present": true, "word_count": 99, "min": 50, "ok": true},
+        "4_introduction": {"present": true, "word_count": 206, "min": 50, "ok": true},
+        "5_core_concepts": {"present": true, "word_count_estimate": "~3800 (sub-sections 5.1-5.4, the largest section by far)", "min": 100, "ok": true},
+        "10_key_takeaways": {"present": true, "word_count": 116, "min": 50, "ok": true}
+      }
+    },
+    "citation_density": {
+      "passed": true,
+      "resources_source": "web_search",
+      "mode": "strict",
+      "detail": "Primary [1] (docs.python.org/3/tutorial/classes.html) cited 19 times across Sections 5, 6, 7, and 8. Supporting [2] (realpython python3-object-oriented-programming) cited 6 times; supporting [3] (realpython python-classes) cited 9 times. No fabricated markers: grepped for [4] and higher -- zero matches; only [1]/[2]/[3] appear anywhere, matching the 3 resources in topic.resources.json. Section 5 (Core Concepts): ~19 citation-bearing paragraphs across 5.1-5.4; uncited paragraphs are pure code-trace/mechanics walkthroughs (self-verifiable by running the code), not standalone external claims -- estimated well over 60%. Section 6 (Implementation): 7 citation markers across the 4-step build recipe and BankAccount walkthrough -- well over 60%. Section 7 (Real-World Patterns): 3 of 4 example write-ups (Account, Player, closing synthesis) carry [1][2]/[1][3]/[2][3] markers; the Product example paragraph (line 368) has no marker -- ~75% of the four per-example claims, still clears 60% but is the thinnest citation spot in the document.",
+      "markers_found": ["[1]", "[2]", "[3]"],
+      "marker_occurrence_counts": {"[1]": 19, "[2]": 6, "[3]": 9},
+      "fabricated_markers": [],
+      "primary_cited": true,
+      "sections_with_zero_citations": [],
+      "soft_note": "Section 7's Product paragraph is uncited while its sibling Account/Player paragraphs are cited -- non-blocking, but the weakest citation spot if another revision pass happens."
+    },
+    "sequence_drift": {
+      "passed": true,
+      "detail": "Read content/curriculum/sequence.index.json directly. Confirmed 1.1-1.4 have populated concepts_introduced (allowed vocabulary, including 1.3 operators) and 2.1-5.3 all have empty concepts_introduced (not yet built). Re-verified the two specifically-called-out items by direct grep of the corpus: (1) no ternary/conditional expressions anywhere -- grepped `if`/`else`/`elif`; every hit is plain-English prose ('everything else in this course', 'if you can say', 'if any', 'someone else's code', 'default by if you're unsure' etc.), zero Python conditional/ternary code. (2) no default parameter values in any signature -- grepped `def \\w+\\([^)]*=` across the whole file, zero matches; every one of the 29 `def` signatures (Task, Person, BankAccount, Account, Player, Product, plus the pre-OOP mark_complete(done) example) takes only required positional parameters. Also swept for loops, list/dict/tuple literals, comprehensions, *args/**kwargs, try/except, and import statements -- none found in code, consistent with 2.1-5.3 being unbuilt. Forward mentions of Conditionals, Functions (3.1), inheritance/encapsulation/dataclasses (6.2/6.3), and keyword/default arguments are explicit narrative pointers ('a job for the Conditionals topic later in this course', 'before functions (3.1) introduce a more flexible way', 'that's inheritance, coming next') that name a future topic without using its syntax -- the correct pattern, not a violation.",
+      "forward_referenced_terms": [],
+      "soft_note": "TypeError (line 299) and AttributeError (line 390) are named as what Python prints when a mistake is made, not taught via try/except -- no exception-handling syntax is used anywhere, so this is naming an observable runtime behavior rather than a forward-referenced construct. Flagged for awareness only, not a violation."
+    },
+    "length_sanity": {
+      "passed": true,
+      "profile": "deep",
+      "band_source": "corpus-critic SKILL.md / task instructions",
+      "band_applied": [5000, 6000],
+      "method": "Extracted every whitespace-delimited token from the raw file on disk via ripgrep (\\S+, one match per output line via -o), persisted the full match stream, then counted non-blank lines in that stream -- equivalent to a `wc -w`-style count of the entire file, independent of the corpus-builder's own self-reported figure.",
+      "raw_token_count_whole_file": 5227,
+      "yaml_frontmatter_tokens_excluded": 13,
+      "stray_artifact_token_excluded": 1,
+      "artifact_note": "Line 416 of the corpus file is a stray, unmatched `</content>` closing tag with no corresponding opening tag anywhere in the file -- almost certainly leftover wrapper markup from a prior generation/edit step. Cosmetic only, does not affect any hard-gate check, but should be deleted before final publish.",
+      "independent_body_word_count": 5213,
+      "prior_claim": "~5226 (try 3's self-report)",
+      "delta_from_prior_claim": "-13 words, consistent with excluding front-matter/artifact tokens -- independently confirms the claim was accurate",
+      "within_band": true
+    }
+  },
+  "verdict": "PASS. Independent re-measurement, not trusting prior claims: all four required sections present and well over their minimums (Learning Objectives 99w, Introduction 206w, Core Concepts ~3800w, Key Takeaways 116w). Citation density is strict-mode compliant -- primary [1] docs.python.org cited 19x, both supporting resources [2]/[3] cited 6x/9x, and a grep for [4]+ confirms zero fabricated markers (only [1]/[2]/[3] appear anywhere, matching the 3 listed resources). Sequence-drift re-check specifically re-verified the two flagged items directly by grep: zero ternary/conditional expressions anywhere (every if/else hit is plain English, not Python code) and zero default-parameter-value signatures anywhere (all 29 def signatures take required positional args only) -- both clean. A broader sweep also found no loops, data-structure literals, comprehensions, *args/**kwargs, or exception-handling syntax, consistent with topics 2.1-5.3 being confirmed empty/not-yet-built in sequence.index.json. Length: independent word count is 5213 words (whole-file token count 5227, minus 13 YAML front-matter tokens and 1 stray artifact token), squarely inside the deep 5000-6000 band -- this closes the narrow miss from try 2 (~4738-4770w) as intended. Two non-blocking observations for awareness, neither a check failure: (1) line 416 has a stray, unmatched `</content>` tag left over from generation that should be deleted before publish; (2) Section 7's Product example paragraph lacks a citation marker while its sibling Account/Player paragraphs are cited -- overall ratio still clears 60% but is the thinnest citation spot in the document. Corpus is approved to proceed past this gate.",
+  "at": "2026-07-14T00:00:00Z"
+}

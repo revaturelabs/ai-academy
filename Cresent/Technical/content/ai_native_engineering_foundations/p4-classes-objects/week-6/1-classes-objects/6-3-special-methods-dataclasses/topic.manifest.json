@@ -8,12 +8,41 @@
   "position_in_week": 3,
   "position_in_module": 3,
   "source_outline": [
-    "Operator overloading / dunder methods: __str__, __repr__, __eq__",
+    "Special / dunder methods: __str__, __repr__, __eq__",
     "Dataclasses: the @dataclass decorator; boilerplate reduction",
     "Libraries and packages in OOP: organising classes into modules"
   ],
-  "expected_delivery_minutes": null,
-  "artifact_plan": {},
+  "expected_delivery_minutes": 10,
+  "artifact_plan": {
+    "depth_profile": "deep",
+    "depth_profile_signals": [
+      "Core Concepts has 5 sub-concepts (dunders, __repr__/__str__, __eq__, @dataclass, modules) - exceeds standard's typical 2-3",
+      "Implementation section warranted (7-step refactor recipe)",
+      "Real-World Patterns section warranted (DTOs, logging, testing, module layout)",
+      "last topic in module, explicitly tasked with wrapping up multiple distinct mechanisms",
+      "matches sibling corpora 6.1/6.2 density",
+      "cross_refs non-empty (Python data model + stdlib dataclasses)"
+    ],
+    "diagram": false,
+    "depth_profile_confirmed_at_hitl2": true,
+    "week_budget_check": {
+      "already_spent_minutes": 20,
+      "this_topic_estimate_minutes": 10,
+      "siblings_unprofiled": 0,
+      "recommendation": "deep (last topic in week, no further siblings to weigh)",
+      "accepted": "deep"
+    },
+    "reading": {
+      "target_min_minutes": 9,
+      "target_max_minutes": 11,
+      "target_word_range": [1800, 2200]
+    },
+    "quiz": {
+      "min_questions": 10,
+      "max_questions": 15,
+      "include_short_answer": true
+    }
+  },
   "next_assessment": {
     "id": "A3",
     "week": 8,

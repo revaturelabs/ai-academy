@@ -1,0 +1,92 @@
+$CATEGORY: CIT/P4/week-6/6.2-inheritance-encapsulation
+
+::q1:: Given \: class RegulatoryTask(Task)\: pass, with no body beyond pass, what actually happens when rt.mark_complete() is called on an instance of it? {
+~Python raises an AttributeError, because RegulatoryTask itself defines no mark_complete method.#Incorrect - lookup doesn't stop at RegulatoryTask; it continues up the MRO to Task, where mark_complete is found.
+=Python's method lookup finds no mark_complete on RegulatoryTask itself and continues up to Task, where it runs Task's version unmodified.#Correct - inheriting a method means the subclass simply doesn't define its own version, so the search continues upward to the superclass.
+~Python finds mark_complete already present on RegulatoryTask, because subclasses receive their own automatic copies of every superclass method at definition time.#Incorrect - Python does not copy methods onto subclasses; it walks the MRO at call time instead.
+~Python re-runs Task's __init__ every time mark_complete is called, to keep RegulatoryTask's attributes synchronized with Task's.#Incorrect - __init__ only runs once, at construction; calling a method later does not re-trigger construction.
+#### Tests single-level inheritance: what's inherited automatically vs overridden (corpus 5.1).
+}
+
+::q2:: In the Person -> Student -> GraduateStudent hierarchy, GraduateStudent.__init__'s first line is super().__init__(name, age, email, student_id). What actually executes as a direct result of that single call? {
+~Only Student.__init__ actually runs in this chain; Person.__init__ never executes unless Student's own code explicitly names and calls it directly.#Incorrect - Student.__init__ itself opens with its own super().__init__() call, so Person.__init__ does run, just one level further along the chain.
+~Person.__init__ runs immediately, skipping Student.__init__ entirely, because super() always jumps straight to the topmost class in the chain.#Incorrect - super() resolves to the next class in the MRO from the calling class's position, not straight to the top.
+~super().__init__() only binds method references for later use; none of the attribute assignments inside Student.__init__ or Person.__init__ actually run yet.#Incorrect - calling super().__init__() executes that constructor's body immediately, including every assignment inside it.
+=Student.__init__ runs, and its own super().__init__() call runs Person.__init__ before both finish and control returns to GraduateStudent.__init__.#Correct - each level's super() call chains to the next, so all three constructors run in sequence before control returns to where each call was made.
+#### Tests super() usage across a chain of more than one level (corpus 5.2).
+}
+
+::q3:: For class Diamond(Left, Right), where both Left and Right extend Base, what does Diamond.__mro__ actually show, and how does that affect what super().describe() inside Left resolves to? {
+=The MRO is (Diamond, Left, Right, Base, object), so super() inside Left resolves to Right's describe next, not directly to Base's.#Correct - super() means "next in the computed MRO," and Right sits between Left and Base in this hierarchy.
+~The MRO is (Diamond, Left, Base, Right, object), so super() inside Left resolves straight to Base's describe, skipping Right entirely.#Incorrect - C3 linearization places Right before Base here, precisely because Diamond lists Left before Right.
+~The MRO always lists bases in alphabetical order regardless of the class line, so super() inside Left resolves directly to Base.#Incorrect - MRO is computed from the declared base order and inheritance structure, not alphabetically.
+~Diamond.__mro__ is only computed the first time d.describe() actually runs, so the resolved order could differ across separate calls on the same object.#Incorrect - the MRO is fixed once, at class-definition time, and never changes between calls.
+#### Tests basic MRO, why it matters with more than one base, and how to inspect it (corpus 5.3).
+}
+
+::q4:: A class's __init__ sets self._status = 'active' and self.__pin = 1234. Which statement correctly describes what Python actually does with each of these two attributes? {
+~Both _status and __pin are enforced as strictly private by the interpreter itself; external code attempting obj._status or obj.__pin raises AttributeError in either case, regardless of the leading-underscore convention.#Incorrect - only the double-underscore name gets mangled; the single-underscore name is left exactly as written and fully accessible.
+~_status is silently rewritten to _ClassName_status behind the scenes for security purposes, while __pin remains freely accessible everywhere under its original, unmodified name.#Incorrect - this reverses the actual mechanics: single underscore is untouched convention, and it's the double underscore that gets mangled.
+=_status stays exactly as written - the underscore is just convention; __pin gets mangled to _ClassName__pin, so obj.__pin raises AttributeError, though it's still reachable via that mangled name.#Correct - single underscore triggers no language mechanism at all; double underscore triggers real mangling, not enforcement of secrecy.
+~Both attribute names are subject to the same name-mangling process, but only __pin's mangled version appears in obj.__dict__; _status's supposedly mangled name stays completely hidden from any introspection.#Incorrect - single-underscore names are never mangled at all; only double-underscore names are rewritten.
+#### Tests single-underscore convention vs double-underscore name mangling (corpus 5.4).
+}
+
+::q5:: After constructing gs as a GraduateStudent through the full Person -> Student -> GraduateStudent chain, where does attribute lookup actually find gs.name versus gs.species? {
+~Both name and species are found in gs's instance dictionary, because every attribute set anywhere across the three-level __init__ chain ends up copied onto every class along the way.#Incorrect - species was never assigned to self anywhere in the chain, so it can't be in the instance dictionary.
+=name is found in gs's instance dictionary because Person.__init__ assigned it directly to self; species is not in the instance dictionary at all and is found only by walking up to Person's class body.#Correct - instance-dictionary entries are always checked first, and species was defined as a class attribute on Person, never assigned to self anywhere.
+~species is found in gs's instance dictionary because GraduateStudent.__init__ copies all inherited class attributes onto the instance at construction time; name is found only by walking the class hierarchy.#Incorrect - no __init__ in the chain copies class attributes onto the instance, and name actually is in the instance dictionary via Person.__init__.
+~Neither attribute is in the instance dictionary; both are resolved by walking the MRO on every access, since __init__ never actually writes attributes in a multi-level chain.#Incorrect - Person.__init__ does assign self.name directly, placing it in the instance dictionary.
+#### Tests threading shared state through a multi-level Person -> Student -> GraduateStudent hierarchy (corpus 5.2).
+}
+
+::q6:: RegulatoryTask.describe was first written without calling super().describe() at all, and later rewritten to call super().describe() and wrap its result. What best characterizes the difference between these two versions? {
+~The version without super() is always considered a mistake, since every reasonable override should build on and extend the superclass's version rather than fully replacing it.#Incorrect - replacing the superclass's version entirely is a legitimate choice when that version truly doesn't apply to the subclass.
+~Only the version explicitly calling super() actually counts as a true override in Python's own terms; the other version is instead treated as an entirely unrelated new method.#Incorrect - Python's method lookup treats both as overrides purely because each shares the same name and is found first in the MRO.
+~Both versions behave identically at runtime in every case, because Python's method lookup always calls the superclass's version first regardless of whether super() happens to be invoked.#Incorrect - without a super() call, the superclass's version never runs at all; the subclass's version fully replaces it.
+=The version without super() overrides, fully replacing the superclass's behaviour; the version with super() extends it instead - both are legitimate depending on whether the inherited behaviour still applies.#Correct - overriding replaces, extending builds on top; the right choice depends on whether the inherited behaviour is still relevant.
+#### Tests the override-vs-extend distinction (corpus 5.1, 5.2, 8).
+}
+
+::q7:: A function needs to accept a Task instance or any of its subclasses, such as RegulatoryTask, and treat them the same way. Which check correctly achieves that, and why does the alternative fail? {
+=isinstance(obj, Task) accepts a RegulatoryTask since it checks the object's whole MRO for Task; type(obj) is Task would wrongly reject it, since type() only reports the exact constructing class.#Correct - isinstance() answers the broader "is usable as a Task" question that inheritance exists to support; type() never consults the MRO.
+~type(obj) is Task correctly accepts any Task instance or its subclasses too, because type() always reports every class appearing anywhere in the object's full MRO chain.#Incorrect - type() always reports the one exact class an object was built from, never a broader set of classes.
+~Both checks behave completely identically in Python at runtime, since type() and isinstance() are effectively implemented internally as aliases pointing to the exact same underlying function.#Incorrect - they answer different questions: exact-class identity versus broader is-a relationship through the MRO.
+~isinstance(obj, Task) fails to correctly accept a RegulatoryTask instance because isinstance() supposedly only checks an object's immediate class, ignoring its full inheritance chain entirely.#Incorrect - isinstance() specifically walks the full MRO, which is exactly why it correctly accepts subclass instances.
+#### Tests isinstance() vs type() for subclass checks (corpus 5.1, 8).
+}
+
+::q8:: Best practice calls for super().__init__() to be the first line of a subclass's __init__, before any new attribute assignments. What's the actual reason for that ordering? {
+~Python actually raises a SyntaxError at import time if super().__init__() is not written as the very first statement inside any subclass constructor.#Incorrect - Python enforces no such rule; calling super().__init__() later still runs without any syntax error.
+~Calling super().__init__() any later in the constructor silently skips all of the superclass's attribute assignments entirely, leaving those attributes permanently unset on the instance.#Incorrect - calling it later still executes the superclass's assignments, just after the subclass's new ones instead of before.
+=Establishing the inherited state first avoids bugs where the superclass's constructor might need state the subclass hasn't set up yet; calling it last still works, but risks that ordering bug.#Correct - this is a convention for correctness and safety, not a hard rule enforced by the interpreter.
+~super().__init__() must always run first because Python silently deallocates any attributes a subclass assigns to self before that particular call actually executes.#Incorrect - Python performs no such deallocation; attributes assigned before a super() call simply persist normally.
+#### Tests why super().__init__() should run first (corpus 8).
+}
+
+::q9:: What best describes the role of a "mixin" class as used with Python's multiple inheritance? {
+~A base class that must always appear as the one and only single direct base of any subclass, and can never legitimately be combined with any other base class at all.#Incorrect - this describes ordinary single inheritance, the opposite of what makes a mixin useful.
+=A small class meant purely to be combined with others via multiple inheritance, contributing one focused behaviour while relying on the MRO to chain super() calls between mixins.#Correct - mixins are the most common legitimate real-world use of multiple inheritance, each contributing one focused capability.
+~A subclass that overrides every single method of its superclass, so that none of the superclass's original behaviour or logic ever actually runs at all.#Incorrect - mixins typically extend behaviour cooperatively via super(), not replace an entire superclass's methods.
+~A special decorator syntax that Python provides specifically for automatically merging two otherwise unrelated classes' __init__ methods into one.#Incorrect - mixins are ordinary classes combined through the standard class Sub(BaseA, BaseB) syntax, not a decorator feature.
+#### Tests mixins as a real-world multiple-inheritance pattern relying on MRO (corpus 5.3, 7).
+}
+
+::q10:: MissingFieldError extends ValidationError, which extends Exception, each using super().__init__(). What does code elsewhere gain by writing isinstance(some_error, ValidationError) instead of checking for each specific error subclass by name? {
+~It restricts the check to exactly ValidationError instances, deliberately excluding MissingFieldError so each error type must be handled separately.#Incorrect - isinstance() reports True for any subclass too, so MissingFieldError is included, not excluded.
+~It works identically to checking type(some_error) is ValidationError, since Python's exception system does not follow the usual MRO-based inheritance rules.#Incorrect - exceptions follow the same MRO-based rules as any other class; type() would incorrectly exclude MissingFieldError.
+~It requires MissingFieldError to redefine its own __init__ from scratch, since super().__init__() cannot be used inside exception subclasses.#Incorrect - exception subclasses use super().__init__() exactly like any other class, as MissingFieldError itself does.
+=It automatically catches any current or future subclass of ValidationError, including MissingFieldError, without needing to list every specific error type individually.#Correct - this is the same is-a relationship from single-level inheritance, extended across a multi-level exception hierarchy.
+#### Tests the exception-hierarchy pattern as a real-world multi-level hierarchy (corpus 7).
+}
+
+::q11:: The builtin attribute you print on a class (for example, Diamond.____) to inspect the exact order Python searches through its full inheritance hierarchy is spelled with double leading and trailing underscores. {
+=__mro__
+=mro
+}
+
+::q12:: Python's double-leading-underscore name-mangling mechanism exists primarily to prevent attribute name ____ across an inheritance hierarchy, not to provide security or true privacy. {
+=collisions
+=collision
+=name collisions
+}

@@ -1,0 +1,89 @@
+{
+  "skill": "drift-critic",
+  "module_dir": "content/ai_native_engineering_foundations/p4-classes-objects/week-6/1-classes-objects",
+  "module_title": "Classes & Objects",
+  "week_num": 6,
+  "course_slug": "p4-classes-objects",
+  "topics_checked": ["6.1", "6.2", "6.3"],
+  "generated_at": "2026-07-14T00:00:00Z",
+  "passed": true,
+  "verdict": "PASS with minor findings",
+  "summary": "The three-topic arc (Object-Oriented Foundations -> Inheritance & Encapsulation -> Special Methods & Dataclasses) is coherent: terminology is defined once (in 6.1 or 6.2) and reused consistently downstream, prerequisites reference only earlier-positioned topics and are substantively earned by the corpora, the learning-objective union fully covers the module narrative seed with no conceptual gaps in the ADT->class/instance->inheritance->encapsulation->special-methods->dataclasses->modules arc, no two topics substantively re-teach the same mechanic (shared Task/Person examples are intentional callbacks, explicitly cited as such), and all 5 lab mechanics (P4.1-P4.5) are demonstrably taught somewhere in the three corpora. Two minor, non-blocking findings are noted below.",
+  "checks": {
+    "terminology_consistency": {
+      "result": "pass_with_minor_findings",
+      "notes": "Core vocabulary (class vs instance/object, constructor/__init__, instance attribute vs class attribute, method/self, subclass/superclass, super(), MRO, isinstance/issubclass, describe()/greet() running examples, special/dunder method) is introduced once and reused with the same names across 6.1 -> 6.2 -> 6.3 without synonym drift. 6.3 explicitly and correctly narrates the retirement of describe() in favor of __str__ ('Notice __str__'s body is exactly Task.describe()'s body from 6.1'), so that transition is acknowledged rather than silent.",
+      "per_topic_findings": [
+        {
+          "topic": "6.1",
+          "findings": []
+        },
+        {
+          "topic": "6.2",
+          "findings": []
+        },
+        {
+          "topic": "6.3",
+          "findings": [
+            {
+              "severity": "minor",
+              "type": "unacknowledged_signature_change",
+              "description": "In 6.2, RegulatoryTask.__init__ takes 3 required params (name, priority, regulation_code) and calls super().__init__(name, priority); Task.__init__ always sets done=False. In 6.3 Section 6 (Implementation), the 'refactored' RegulatoryTask suddenly takes a 4th required param, done, and calls super().__init__(name, priority, done) against the new @dataclass Task. This signature change for the running RegulatoryTask example is never called out explicitly as a change, and is not actually necessitated by the dataclass refactor (Task's generated __init__ still defaults done=False, so RegulatoryTask could still call super().__init__(name, priority) unchanged). A learner tracking RegulatoryTask across 6.2 and 6.3 could be confused by the extra required argument appearing without explanation.",
+              "location": "6.3 Section 6, 'Implementation' -- final combined RegulatoryTask(Task) code block"
+            },
+            {
+              "severity": "cosmetic",
+              "type": "imprecise_label",
+              "description": "6.3's topic.manifest.json source_outline groups the section under the label 'Operator overloading / dunder methods: __str__, __repr__, __eq__'. Only __eq__ genuinely overloads an operator (==); __str__/__repr__ control string conversion, not operator behavior. The corpus body itself avoids this conflation (uses 'special method'/'dunder method' as the umbrella term and never calls __str__/__repr__ 'operator overloading'), so the imprecision is confined to the manifest-level outline label and does not affect the taught content.",
+              "location": "6.3 topic.manifest.json, source_outline[0]"
+            }
+          ]
+        }
+      ]
+    },
+    "prerequisites_respected": {
+      "result": "pass",
+      "notes": "position_in_module is 1/2/3 for 6.1/6.2/6.3 respectively. 6.1 declares no in-module prerequisites (only earlier-week topics 1.1, 1.2, 1.4, which are legitimately earlier in the full course sequence). 6.2's Prerequisites section names only 6.1 and demonstrably builds on it (extends the exact Task and Person classes/attributes/methods from 6.1, explicitly fulfilling 6.1's own forward reference to a future RegulatoryTask). 6.3's Prerequisites section names 6.1 and 6.2 and demonstrably builds on both (reuses __init__/attributes/methods from 6.1, super()/MRO/isinstance/underscore conventions from 6.2, and the Task/RegulatoryTask/Person/Student/GraduateStudent running examples from both). No topic references a later-positioned topic as a prerequisite, and no corpus assumes an unacknowledged dependency beyond its declared prerequisites.",
+      "per_topic_findings": [
+        {"topic": "6.1", "findings": []},
+        {"topic": "6.2", "findings": []},
+        {"topic": "6.3", "findings": []}
+      ]
+    },
+    "learning_arc": {
+      "result": "pass",
+      "notes": "Union of Learning Objectives: [6.1] ADT concept, class vs object/instance, __init__ and instance-vs-class attributes, methods and self. [6.2] single-level inheritance/overriding, super() across multi-level chains, MRO and multiple inheritance (brief, diamond problem), single-/double-underscore encapsulation conventions, building a 3-level Person->Student->GraduateStudent hierarchy. [6.3] __repr__ vs __str__, __eq__ for value equality, @dataclass mechanics and field defaults/ordering, organizing classes into modules. This union fully covers every element of narrative_seed_by_week[6] ('Classes, __init__, methods, self; inheritance (single/multiple), super(), MRO; encapsulation; __str__/__eq__; @dataclass') and completes the expected arc ADT -> class/instance -> inheritance -> encapsulation -> special methods -> dataclasses -> modules with no uncovered facet. No gaps identified.",
+      "per_topic_findings": [
+        {"topic": "6.1", "findings": []},
+        {"topic": "6.2", "findings": []},
+        {"topic": "6.3", "findings": []}
+      ]
+    },
+    "no_duplicated_concepts": {
+      "result": "pass",
+      "notes": "No two topics substantively re-teach the same mechanic. 6.1's construction/attribute-lookup trace is extended (not repeated) in 6.2 to cover inherited/overridden lookup up an MRO chain, and 6.2 explicitly frames it as continuing 6.1's trace style rather than re-explaining __init__ from scratch. 6.3's __str__ explicitly supersedes 6.1's describe() rather than duplicating it as a separate concept. The running Task and Person examples recur in all three topics by design (an intentional, explicitly-cited callback for continuity), but each recurrence adds a genuinely new mechanic (attributes/methods -> inheritance/super/MRO/encapsulation -> repr/str/eq/dataclass/modules) rather than re-teaching an existing one. Module 5.5 (organizing classes into modules) is wholly new material introduced only in 6.3.",
+      "per_topic_findings": [
+        {"topic": "6.1", "findings": []},
+        {"topic": "6.2", "findings": []},
+        {"topic": "6.3", "findings": []}
+      ]
+    },
+    "lab_activity_alignment": {
+      "result": "pass",
+      "notes": "lab_activity_seed_by_week[6] names 5 labs; every underlying mechanic is taught in the corpora.",
+      "per_lab_findings": [
+        {"lab": "P4.1 -- define a Task class", "supported_by": "6.1 Section 5.2-5.4, 6 (Task class with name/priority/done, __init__, mark_complete(), describe())", "status": "covered"},
+        {"lab": "P4.2 -- inheritance (RegulatoryTask)", "supported_by": "6.2 Section 5.1-5.2, 6 (RegulatoryTask(Task) single-level inheritance, override vs extend, super().__init__/super().describe())", "status": "covered"},
+        {"lab": "P4.3 -- __eq__ overload", "supported_by": "6.3 Section 5.3 (__eq__ value-based equality, isinstance guard, RegulatoryTask override via super().__eq__) and 6.3 Hands-On Exercise", "status": "covered"},
+        {"lab": "P4.4 -- dataclass refactor", "supported_by": "6.3 Section 5.4 (@dataclass fields, defaults/ordering rule, generated __init__/__repr__/__eq__) and 6.3 Hands-On Exercise (rewrite Task as @dataclass)", "status": "covered"},
+        {"lab": "P4.5 -- Person -> Student -> GraduateStudent hierarchy", "supported_by": "6.2 Section 5.2 (full 3-level super()-chained hierarchy, attribute/method resolution traced) and 6.2 Hands-On Exercise (build the same hierarchy)", "status": "covered"}
+      ]
+    }
+  },
+  "topics_with_findings": ["6.3"],
+  "topics_clean": ["6.1", "6.2"],
+  "recommended_actions": [
+    "In 6.3 Section 6 (Implementation), either revert the combined RegulatoryTask example to keep its 3-parameter constructor (name, priority, regulation_code) unchanged from 6.2, or add one explicit sentence acknowledging that done is now threaded through explicitly and explaining why, so the running example's signature does not appear to silently change between topics.",
+    "Optionally retitle 6.3's topic.manifest.json source_outline[0] from 'Operator overloading / dunder methods' to something like 'Special methods / dunder methods' to avoid implying __str__/__repr__ are operator overloads; no change to corpus body needed."
+  ]
+}

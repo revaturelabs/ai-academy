@@ -1,0 +1,74 @@
+{
+  "passed": true,
+  "verification_pass": 2,
+  "note": "Re-verification after builder's length-bias fix (verification try 1 post-fix). All four checks re-derived independently from quiz.gift + quiz.meta.json; prior critic report and builder's self-reported before/after numbers were not trusted -- every number below was recomputed fresh.",
+  "hard_prerequisites": {
+    "meta_sidecar_present": true,
+    "bias_defense_applied": true,
+    "meta_gift_position_desync": false
+  },
+  "checks": {
+    "positional_bias": {
+      "passed": true,
+      "correct_position_distribution_by_index": [1, 3, 0, 2, 1, 3, 0, 2, 1, 3],
+      "counts_by_position_0to3": [2, 3, 2, 3],
+      "max_share": 0.30,
+      "threshold": 0.40,
+      "meta_gift_desync": false,
+      "note": "Re-derived correct-answer position for all 10 MCQs directly from quiz.gift; matches quiz.meta.json's correct_position_distribution exactly (q1..q10 = [1,3,0,2,1,3,0,2,1,3]). Max share is position 1 and position 3, each 3/10 = 0.30, under the 0.40 cap. Unchanged from prior run, as expected -- builder made no position changes."
+    },
+    "length_bias": {
+      "passed": true,
+      "longest_correct_rate": 0.0,
+      "baseline": 0.25,
+      "threshold": 0.40,
+      "per_question_lengths_chars": {
+        "q1":  { "correct": 137, "distractor_mean": 128.33, "threshold_120pct": 154.0, "flagged": false },
+        "q2":  { "correct": 149, "distractor_mean": 150.00, "threshold_120pct": 180.0, "flagged": false },
+        "q3":  { "correct": 130, "distractor_mean": 138.00, "threshold_120pct": 165.6, "flagged": false },
+        "q4":  { "correct": 195, "distractor_mean": 201.33, "threshold_120pct": 241.6, "flagged": false },
+        "q5":  { "correct": 200, "distractor_mean": 187.67, "threshold_120pct": 225.2, "flagged": false },
+        "q6":  { "correct": 208, "distractor_mean": 179.00, "threshold_120pct": 214.8, "flagged": false },
+        "q7":  { "correct": 194, "distractor_mean": 185.00, "threshold_120pct": 222.0, "flagged": false },
+        "q8":  { "correct": 196, "distractor_mean": 170.33, "threshold_120pct": 204.4, "flagged": false },
+        "q9":  { "correct": 178, "distractor_mean": 155.33, "threshold_120pct": 186.4, "flagged": false },
+        "q10": { "correct": 171, "distractor_mean": 152.00, "threshold_120pct": 182.4, "flagged": false }
+      },
+      "previously_flagged_questions": ["q2", "q4", "q6", "q7", "q8", "q9"],
+      "all_previously_flagged_now_pass": true,
+      "note": "0/10 questions now exceed the 1.20x-distractor-mean rule (rate 0.0, down from 0.60, well under the 0.40 cap). All 6 previously-flagged questions individually re-measured and confirmed under threshold; closest margins are q6 (208 vs 214.8 cap, ~3.2% under), q8 (196 vs 204.4, ~4.1% under) and q9 (178 vs 186.4, ~4.5% under) -- comfortably passing but not with large headroom.",
+      "advisory_note": "Supplementary observation, not a fail condition: in 5/10 questions (q6, q7, q8, q9, q10) the correct answer is still the single literal-longest option among the four, just no longer exceeding the 20% margin. A 'pick the longest answer' guessing heuristic would still succeed on half the MCQs even though the formal bias metric is clean. This reads as the correct-answer lengths having been trimmed just enough to clear the threshold rather than the set of 'which option is longest' being rebalanced. Not required to re-fix for this check to pass, but flagged for the builder's awareness in case of further revision passes."
+    },
+    "distractor_plausibility": {
+      "passed": true,
+      "absurd_rate": 0.0,
+      "threshold": 0.25,
+      "total_distractors": 30,
+      "weakest_questions": [
+        {"id": "q1", "distractor": "Python re-runs Task's __init__ every time mark_complete is called, to keep attributes synchronized", "score": 2, "reason": "wrong but not a common real misconception about method calls vs construction"},
+        {"id": "q3", "distractor": "MRO always lists bases in alphabetical order regardless of the class line", "score": 2, "reason": "wrong but not a common real-world misconception about MRO"},
+        {"id": "q5", "distractor": "Neither attribute is in the instance dictionary; both resolved by walking MRO on every access", "score": 2, "reason": "overstated claim, less targeted than the item's other distractor"},
+        {"id": "q7", "distractor": "Both checks behave completely identically... implemented internally as aliases", "score": 2, "reason": "overstated 'aliases' claim, weaker than the item's type()-vs-isinstance() distractor (scored 4)"},
+        {"id": "q8", "distractor": "super().__init__() must run first because Python deallocates any attributes assigned before that call executes", "score": 2, "reason": "invents a deallocation mechanism Python doesn't have; weaker than the other two distractors on this item"},
+        {"id": "q9", "distractor": "A special decorator syntax Python provides for merging two unrelated classes' __init__ methods automatically", "score": 2, "reason": "fanciful mechanism, weaker distractor than the other two on this item"}
+      ],
+      "note": "Spot-checked all 30 distractors against corpus content. All reflect real, plausible OOP misconceptions (method-copying beliefs, super()-jumps-to-top beliefs, type() vs isinstance() confusion, underscore/mangling reversal, MRO literalism, deallocation myths, etc.) rather than absurd/obviously-wrong filler. absurd_rate = 0/30 = 0.0, well under the 0.25 cap. Unchanged from prior run, as expected -- no distractor content was touched by the length fix."
+    },
+    "objective_coverage": {
+      "passed": true,
+      "uncovered_objectives": [],
+      "orphan_questions": [],
+      "objective_to_questions": {
+        "Define a subclass that extends a superclass using single-level inheritance, and explain what a subclass inherits automatically versus what it must override.": ["q1", "q6", "q7"],
+        "Use super() inside a subclass's __init__ and its methods to extend the superclass's behaviour instead of duplicating it, across a chain of more than one level of inheritance.": ["q2", "q8"],
+        "Explain, at a basic level, what Method Resolution Order (MRO) is, why it matters once a class has more than one direct base, and how to inspect it.": ["q3", "q9", "q11"],
+        "Distinguish the single-underscore naming convention from double-underscore name mangling, and explain what each one actually does (and doesn't do) to attribute access.": ["q4", "q12"],
+        "Build a small multi-level class hierarchy (Person -> Student -> GraduateStudent) that correctly threads shared state and behaviour through every level.": ["q5", "q10"]
+      },
+      "note": "All 5 Learning Objectives from corpus section 3 have at least one matching question via sidecar objective_ref (exact text match, not just fuzzy). No orphan objective_ref values found. Unchanged from prior run, as expected -- no content/objective_ref changes were made."
+    }
+  },
+  "auto_correction_applied": { "shuffle_round_2": false },
+  "verdict": "Pass -- all four bias / coverage checks clean on independent re-verification. Length-bias fix confirmed: longest_correct_rate is now 0.0 (down from the prior failing 0.60), all 6 previously-flagged questions (q2, q4, q6, q7, q8, q9) individually re-measured fresh and confirmed under the 1.20x-mean cap, though three (q6, q8, q9) pass with only ~3-5% headroom. Positional bias (max_share 0.30), distractor plausibility (absurd_rate 0.0), and objective coverage (5/5 LOs covered, no orphans) were re-verified from scratch rather than assumed, and are unchanged from the prior run as expected since the builder did not touch positions, distractor content, or objective_ref mappings. One non-blocking advisory: correct answers remain the literal-longest option in 5/10 MCQs (just under the 20% margin now) -- worth a closer rebalance in a future pass but does not fail this check under the documented rule.",
+  "at": "2026-07-14T00:00:00Z"
+}
