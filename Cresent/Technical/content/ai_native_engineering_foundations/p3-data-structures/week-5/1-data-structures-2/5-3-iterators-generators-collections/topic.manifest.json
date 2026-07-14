@@ -12,8 +12,23 @@
     "Generators recap: yield for streaming values",
     "The collections module: Counter, defaultdict, namedtuple (intro)"
   ],
-  "expected_delivery_minutes": null,
-  "artifact_plan": {},
+  "expected_delivery_minutes": 10,
+  "artifact_plan": {
+    "profile": "deep",
+    "profile_source": "human_confirmed",
+    "profile_note": "Corpus-builder suggested standard (recap/intro scoping); human OVERRODE to deep at HITL#2 for capstone coverage — topic packs 6 distinct tools (iterator protocol, for-loop mechanic, generators, Counter, defaultdict, namedtuple) and the coverage rubric requires all survive the distill. Week budget easily absorbs it (~30/90 after this topic). Corpus ~2460w → deep reading band 1800-2200w is a clean distill.",
+    "reading": {
+      "target_word_range": [1800, 2200],
+      "target_minute_range": [9, 11]
+    },
+    "quiz": {
+      "min_questions": 10,
+      "max_questions": 15,
+      "include_short_answer": true
+    },
+    "diagram": false,
+    "diagram_note": "Corpus-builder recommended no diagram: the for-loop mechanic is rendered as a try/except code equivalent that teaches the iter/next/StopIteration sequence better than a box-arrow flow for this audience; consistent with 5.1/5.2 code-driven style."
+  },
   "next_assessment": {
     "id": "A2",
     "week": 5,

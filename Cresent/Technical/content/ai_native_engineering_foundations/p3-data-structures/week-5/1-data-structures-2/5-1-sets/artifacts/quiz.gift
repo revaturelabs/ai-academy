@@ -1,0 +1,114 @@
+$CATEGORY: CIT/P3/week-5/5.1-sets
+
+::q1:: What is printed by print(len(\{1, 2, 3, 2, 1\}))? {
+~5#No — a set is not a list; the uniqueness guarantee removes the repeated 1 and 2 as it is built.
+~2#No — only exact duplicates collapse, so 1, 2 and 3 all remain as distinct elements.
+=3#Correct — duplicates collapse at construction, leaving the distinct values 1, 2, 3 (corpus §5.2).
+~0#No — curly braces with values build a populated set, not an empty one, so length is not zero.
+#### Tests the uniqueness guarantee enforced at construction (corpus §5.2).
+}
+
+::q2:: Which expression creates an empty set in Python? {
+=set()#Correct — calling set() with no arguments is the only way to build an empty set (corpus §5.2).
+~\{\}#No — empty curly braces build an empty dictionary, not an empty set; this is a classic trap.
+~[]#No — square brackets build an empty list, which preserves order and allows duplicates.
+~()#No — empty parentheses build an empty tuple, an immutable ordered sequence, not a set.
+#### Tests the empty-set rule\: \{\} is a dict, use set() (corpus §5.2).
+}
+
+::q3:: For which task is a set the best-fitting data structure choice? {
+~Recording every page visit in the exact order it occurred#No — order matters here and sets are unordered, so a list is the right pick.
+~Counting how many times each individual word occurs in text#No — counts need duplicate information, which a plain set discards.
+~Storing rows so they can be retrieved later by index number#No — sets have no index or position, so indexed retrieval is impossible.
+=Tracking which distinct URLs a crawler has already visited#Correct — 'already seen' is a uniqueness plus membership job, exactly what sets are for (corpus §6-7).
+#### Tests structural judgment\: sets fit uniqueness/membership/overlap (corpus §6).
+}
+
+::q4:: Given a = \{1, 2, 3, 4\} and b = \{3, 4, 5, 6\}, what does a & b evaluate to? {
+~\{1, 2, 3, 4, 5, 6\}#No — that is the union (a | b); & is intersection, the overlap only.
+=\{3, 4\}#Correct — intersection keeps only elements present in both sets, which are 3 and 4 (corpus §5.4).
+~\{1, 2\}#No — that is the difference a - b, the elements in a but not in b.
+~\{1, 2, 5, 6\}#No — that is the symmetric difference a ^ b, elements in exactly one set.
+#### Tests intersection versus the other three operations (corpus §5.4).
+}
+
+::q5:: Given a = \{1, 2, 3, 4\} and b = \{3, 4, 5, 6\}, what is the value of a ^ b? {
+~\{3, 4\}#No — that is the intersection a & b, the shared overlap, not exactly-one.
+~\{1, 2, 3, 4, 5, 6\}#No — that is the union a | b; symmetric difference drops the shared 3 and 4.
+~\{1, 2\}#No — that is a - b; symmetric difference also includes b's unique 5 and 6.
+=\{1, 2, 5, 6\}#Correct — symmetric difference keeps elements in exactly one set: union minus intersection (corpus §5.4).
+#### Tests symmetric difference (^) against the neighbours (corpus §5.4).
+}
+
+::q6:: With a = \{1, 2, 3\}, which of these correctly intersects a with the list [2, 3, 9]? {
+=a.intersection([2, 3, 9])#Correct — the method form accepts any iterable, so a plain list works and yields \{2, 3\} (corpus §5.4).
+~a & [2, 3, 9]#No — the & operator requires a set on both sides and raises TypeError with a list.
+~a - [2, 3, 9]#No — besides needing a set, - is difference not intersection, a different operation.
+~a | [2, 3, 9]#No — the | operator needs a set argument and computes union, not intersection.
+#### Tests operator (set-only) vs method (any iterable) forms (corpus §5.4).
+}
+
+::q7:: What does the in-place statement a |= b do to the set a? {
+~It builds a brand-new set and leaves both a and b unchanged#No — that describes the plain | operator; the augmented |= mutates a.
+~It keeps in a only the elements that also appear in set b#No — that is intersection update (&=); |= adds b's elements.
+=It mutates a in place, adding every element of b into a#Correct — |= is in-place union; it changes a and returns nothing useful (corpus §5.5).
+~It removes from a every element that also appears in set b#No — that is difference update (-=); |= is union, which adds.
+#### Tests in-place |= (mutates left) vs plain | (new set) (corpus §5.5).
+}
+
+::q8:: With small = \{1, 2\} and big = \{1, 2, 3, 4\}, which comparison evaluates to False? {
+~small <= big#No — this is True; every element of small (1 and 2) is also in big.
+=small > big#Correct — > means proper superset; small does not contain big, so this is False (corpus §5.6).
+~small < big#No — this is True; small is inside big and the two sets are not equal.
+~big >= small#No — this is True; big contains every element of small, so it is a superset.
+#### Tests subset/superset direction and proper vs non-proper (corpus §5.6).
+}
+
+::q9:: Which method checks whether two sets share no elements at all, and has no operator form? {
+~issubset#No — issubset (operator <=) tests whether one set sits entirely inside another.
+~issuperset#No — issuperset (operator >=) tests whether one set contains all of another.
+~difference#No — difference returns the elements in one set but not the other, not a True/False.
+=isdisjoint#Correct — isdisjoint returns True when the sets share nothing, and Python gives it no operator (corpus §5.6).
+#### Tests the disjoint relation and its lack of an operator (corpus §5.6).
+}
+
+::q10:: For a set s that does NOT contain the value 'x', how do s.remove('x') and s.discard('x') differ? {
+=remove raises KeyError on the missing value, while discard does nothing#Correct — discard is silent on absence; remove signals it as an error (corpus §5.7).
+~discard raises KeyError on the missing value, while remove does nothing#No — this reverses them; it is remove that raises, and discard that is silent.
+~both silently do nothing because the value 'x' is not present anyway#No — only discard is silent; remove raises KeyError on a missing element.
+~both raise KeyError because neither will delete a value not in the set#No — discard never raises; it simply does nothing when 'x' is absent.
+#### Tests the remove (raises) vs discard (silent) distinction (corpus §5.7).
+}
+
+::q11:: Why does 'x in my_set' stay fast even when the set holds millions of elements? {
+~Python keeps the set sorted so it can binary-search for x quickly#No — sets are unordered and not sorted; membership uses hashing, not binary search.
+~Python compares x against each stored element until it finds it#No — that linear scan is how lists work; a set avoids walking every element.
+=Python hashes x and jumps straight to one location instead of scanning#Correct — hash lookup is roughly O(1), independent of set size (corpus §5.9).
+~Python caches the last few lookups so repeats return the result#No — speed comes from hashing every lookup, not from a cache of prior queries.
+#### Tests O(1) hashing vs O(n) list scan (corpus §5.9).
+}
+
+::q12:: What is the key capability a frozenset has that a regular mutable set does not? {
+~Being mutable, it lets you add and remove elements after it is created#No — that is backwards; a frozenset cannot change, which is the whole point.
+=Being immutable and hashable, it can be stored as an element of another set#Correct — a set is unhashable, but a frozenset can live inside a set (corpus §5.8).
+~Being ordered, it lets you retrieve its elements by an index position#No — frozensets are unordered like sets; there is no indexing on either.
+~Being duplicated-preserving, it keeps repeated values you add to it#No — a frozenset still collapses duplicates at construction, just like a set.
+#### Tests frozenset immutability enabling hashability (corpus §5.8).
+}
+
+::q13:: What does \{x * x for x in [1, 2, 2, 3, 3]\} produce? {
+~[1, 4, 4, 9, 9]#No — that is a list comprehension result; braces make a set that de-duplicates.
+~\{1, 4, 4, 9, 9\}#No — a set never holds duplicates, so the repeated 4 and 9 collapse to one each.
+~\{1, 2, 3\}#No — the comprehension squares each element, so the outputs are 1, 4 and 9, not 1, 2, 3.
+=\{1, 4, 9\}#Correct — a set comprehension squares each value and collapses the duplicate results (corpus §5.10).
+#### Tests set-comprehension syntax and de-duplication (corpus §5.10).
+}
+
+::q14:: To create an empty set you must call ____ with no arguments (include the parentheses). {
+=set()
+=set( )
+}
+
+::q15:: Which set method deletes an element but does NOT raise an error if the element is missing? (one word) {
+=discard
+}

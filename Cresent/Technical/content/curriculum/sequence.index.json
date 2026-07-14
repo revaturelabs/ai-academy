@@ -210,10 +210,26 @@
       "week_num": 5,
       "module_id": "1-data-structures-2",
       "position_in_module": 1,
-      "concepts_introduced": [],
-      "prerequisites": [],
-      "cross_refs": [],
-      "status": "scaffolded"
+      "concepts_introduced": [
+        "set",
+        "uniqueness guarantee",
+        "membership testing (in)",
+        "union/intersection/difference/symmetric difference",
+        "in-place update operators",
+        "subset/superset/disjoint",
+        "add/remove/discard",
+        "frozenset",
+        "membership performance (hashing)",
+        "set comprehension"
+      ],
+      "prerequisites": [
+        "4.1",
+        "4.2"
+      ],
+      "cross_refs": [
+        "Python"
+      ],
+      "status": "corpus_drafted"
     },
     {
       "id": "5.2",
@@ -224,10 +240,25 @@
       "week_num": 5,
       "module_id": "1-data-structures-2",
       "position_in_module": 2,
-      "concepts_introduced": [],
-      "prerequisites": [],
-      "cross_refs": [],
-      "status": "scaffolded"
+      "concepts_introduced": [
+        "dictionary (key-value mapping)",
+        "access by key and KeyError",
+        "dict CRUD (assignment, del, pop)",
+        "keys()/values()/items() iteration",
+        "sorting by key and by value",
+        "get() and setdefault()",
+        "nested dictionaries",
+        "dictionary comprehension and inversion"
+      ],
+      "prerequisites": [
+        "5.1",
+        "4.1",
+        "4.2"
+      ],
+      "cross_refs": [
+        "Python"
+      ],
+      "status": "corpus_drafted"
     },
     {
       "id": "5.3",
@@ -238,10 +269,25 @@
       "week_num": 5,
       "module_id": "1-data-structures-2",
       "position_in_module": 3,
-      "concepts_introduced": [],
-      "prerequisites": [],
-      "cross_refs": [],
-      "status": "scaffolded"
+      "concepts_introduced": [
+        "iterable vs iterator",
+        "iterator protocol (iter/next/StopIteration)",
+        "for-loop under the hood",
+        "generator recap (yield, generator expression, lazy streaming)",
+        "collections.Counter and most_common",
+        "collections.defaultdict (int/list factory)",
+        "collections.namedtuple"
+      ],
+      "prerequisites": [
+        "5.2",
+        "5.1",
+        "4.1",
+        "4.2"
+      ],
+      "cross_refs": [
+        "Python"
+      ],
+      "status": "corpus_drafted"
     },
     {
       "id": "6.1",

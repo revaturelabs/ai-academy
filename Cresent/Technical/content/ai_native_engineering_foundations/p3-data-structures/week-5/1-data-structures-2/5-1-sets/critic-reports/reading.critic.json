@@ -1,0 +1,64 @@
+{
+  "passed": true,
+  "checks": {
+    "format_discipline": {
+      "passed": true,
+      "frontmatter_present": false,
+      "meta_sidecar_present": true,
+      "sections_ok": true,
+      "notes": "First non-empty line is '# Sets' (no YAML frontmatter). reading.meta.json exists, parses, and carries word_count, estimated_read_minutes, citations_used, sections. Exactly six H2 sections in required order: Overview, Key Concepts, Worked Example, In Practice, Key Takeaways, References."
+    },
+    "length": {
+      "passed": true,
+      "declared_word_count": 1920,
+      "target_word_range": [1800, 2200],
+      "word_count_in_range": true,
+      "declared_read_minutes": 10,
+      "computed_read_minutes_from_words": 8.35,
+      "target_minute_range": [9, 11],
+      "notes": "Declared word_count 1920 falls within [1800,2200] (PASS). However 1920/230 = 8.35 min, below the [9,11] floor; the sidecar's declared estimated_read_minutes=10 is also inconsistent with its own 1920-word count. Metadata inconsistency, non-blocking since substantive word count passes."
+    },
+    "citations": {
+      "passed": true,
+      "primary_resource": "https://realpython.com/python-sets/",
+      "primary_cited": true,
+      "markers_used": [1, 2, 3],
+      "bibliography_entries": [1, 2, 3],
+      "orphan_markers": [],
+      "orphan_bibliography": [],
+      "notes": "Primary [1] realpython.com/python-sets cited many times. All three markers appear inline and in the References bibliography; no orphans either direction."
+    },
+    "forward_references": {
+      "passed": true,
+      "prohibited_terms_found": ["dictionary (line 36, in the '{} is an empty dictionary' trap)"],
+      "notes": "No 'iterator', 'Counter', or 'defaultdict'. 'dictionary' appears once (line 36) only to disambiguate the {} vs set() empty-set trap; this is corpus-grounded (corpus line 92) and is the standard idiom, not a conceptual forward reference. The reading actually improved on the corpus by dropping the corpus's explicit 'You will meet dictionaries in the next topic' forward reference. Line 135 refers to Counter obliquely as 'a dedicated counting tool arrives later this week' without naming it (compliant). Only prior topics (P1, P2, 4.1 Lists, 4.2 Tuples) and this corpus are referenced."
+    },
+    "faithfulness": {
+      "passed": true,
+      "assertions_sampled": 12,
+      "unsupported": 0,
+      "notes": "Sampled: set definition, comparison table, {} empty-dict trap, four operations operator+method (method takes any iterable), in-place forms, subset/superset/proper/disjoint, add/remove/discard + KeyError, frozenset hashability, O(1) hashing vs O(n) list scan, set comprehension, list(set()) discards order, oblique Counter reference. All 12 trace to corpus sections 5.1-5.10 and 6-8. Zero unsupported (threshold is >2 to fail)."
+    },
+    "tone_fit": {
+      "passed": true,
+      "hedging_occurrences": 0,
+      "notes": "Concrete, plainspoken, beginner voice with runnable examples and rules of thumb. No academic hedging phrases. Some sentences exceed 25 words but overall register is plain and direct."
+    }
+  },
+  "findings": [
+    {
+      "severity": "warning",
+      "check": "length",
+      "location": "reading.meta.json",
+      "detail": "Read-time inconsistency: declared word_count 1920 -> 8.35 min at 230wpm, below the [9,11] target floor. Sidecar's estimated_read_minutes=10 also does not match its own word count. Note the target word range [1800,2200] and minute range [9,11] only jointly satisfy at ~2070-2200 words; consider adding ~150 words of prose (e.g., expand Worked Example or In Practice) to satisfy both gates, or correct estimated_read_minutes to 8."
+    },
+    {
+      "severity": "advisory",
+      "check": "forward_references",
+      "location": "reading.md line 36",
+      "detail": "'empty dictionary' names a prohibited term, but only as the necessary {} vs set() disambiguation and grounded in corpus line 92. Not a conceptual forward reference; the reading correctly avoids the corpus's 'next topic' forward reference. Acceptable as-is; could be softened to '{} builds an empty mapping, not a set' if strict term-avoidance is desired."
+    }
+  ],
+  "verdict": "PASS. Format, citations, faithfulness, forward-reference naming, and tone all clean. Non-blocking: read-time metadata (8.35 min computed vs 10 declared) sits below the [9,11] floor while word count (1920) passes [1800,2200]; the single 'dictionary' mention is a corpus-grounded {}-trap disambiguation, not a forward reference.",
+  "at": "2026-07-14T00:00:00Z"
+}

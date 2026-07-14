@@ -13,8 +13,24 @@
     "Membership and mutation: add, remove, discard",
     "Set comprehension: brief introduction"
   ],
-  "expected_delivery_minutes": null,
-  "artifact_plan": {},
+  "expected_delivery_minutes": 10,
+  "artifact_plan": {
+    "profile": "deep",
+    "profile_source": "human_confirmed",
+    "profile_note": "Corpus suggested standard (2680w); human chose deep at HITL#2. Corpus expanded with genuine depth (frozenset, subset/superset + isdisjoint, in-place update operators, membership performance, richer examples) to clear the deep floor.",
+    "reading": {
+      "target_word_range": [1800, 2200],
+      "target_minute_range": [9, 11]
+    },
+    "quiz": {
+      "min_questions": 10,
+      "max_questions": 15,
+      "include_short_answer": true
+    },
+    "diagram": true,
+    "diagram_intent": "Set-operations map (Mermaid approximation of a Venn): two source sets A and B, and the four result operations union (A|B), intersection (A&B), difference (A-B), symmetric difference (A^B), each as a labelled node with its brief meaning. Not a true Venn (Mermaid limitation) but a clear operations diagram.",
+    "diagram_note": "Human chose a Mermaid approximation at HITL#2 despite the Venn limitation."
+  },
   "next_assessment": {
     "id": "A2",
     "week": 5,

@@ -1,0 +1,74 @@
+{
+  "passed": true,
+  "checks": {
+    "format_discipline": {
+      "passed": true,
+      "frontmatter_present": false,
+      "meta_sidecar_present": true,
+      "sections_ok": true,
+      "notes": "First non-empty line is '# Iterators, Generators & Collections' (no YAML frontmatter). reading.meta.json exists, parses, and carries word_count (1992), estimated_read_minutes, citations_used ([1,2,3]), and sections. Exactly six H2 sections in required order: Overview, Key Concepts, Worked Example, In Practice, Key Takeaways, References."
+    },
+    "length": {
+      "passed": true,
+      "declared_word_count": 1992,
+      "target_word_range": [1800, 2200],
+      "word_count_in_range": true,
+      "declared_read_minutes": 10,
+      "computed_read_minutes_from_words": 8.66,
+      "target_minute_range": [9, 11],
+      "notes": "Declared word_count 1992 (up from rev-1's 1860 after restoring the count_up_to generator-function block) falls within [1800,2200] (PASS). 1992/230 = 8.66 min sits just below the [9,11] read-aloud floor and the sidecar's declared estimated_read_minutes=10 overstates that. Metadata-only inconsistency; non-blocking since the substantive word-count gate passes. Same pattern flagged on sibling 5.1."
+    },
+    "citations": {
+      "passed": true,
+      "primary_resource": "https://realpython.com/python-iterators-iterables/",
+      "primary_cited": true,
+      "markers_used": [1, 2, 3],
+      "bibliography_entries": [1, 2, 3],
+      "orphan_markers": [],
+      "orphan_bibliography": [],
+      "notes": "Primary [1] realpython.com/python-iterators-iterables cited repeatedly (iterable/iterator, iter()/next(), StopIteration, for-loop, one-shot). [2] generators (incl. the restored count_up_to block and genexpr), [3] collections. All three markers appear inline AND in the References bibliography (lines 148-150); no orphans either direction."
+    },
+    "forward_references": {
+      "passed": true,
+      "prohibited_terms_found": [],
+      "notes": "Only prior material referenced: P1/P2 (incl. generators/yield), 4.1 Lists, 4.2 Tuples, 5.1 Sets, 5.2 Dictionaries, plus this corpus. itertools appears ONLY as further-reading (line 135: 'beyond this topic's scope') — compliant. This is the last module topic; no invented later topic, no 'next topic' forward reference. Clean."
+    },
+    "coverage": {
+      "passed": true,
+      "tools_required": 6,
+      "tools_present": 6,
+      "rev2_fix_confirmed": true,
+      "tool_status": {
+        "iterable_vs_iterator_plus_protocol": "present-strong (lines 9-21: __iter__/__next__, iter()/next() built-ins, StopIteration, book/bookmark analogy)",
+        "for_loop_under_hood_plus_one_shot": "present-strong (lines 23-33: 5-step protocol trace, silent StopIteration, list-reusable-vs-iterator-one-shot rule)",
+        "generators_function_and_expression": "present-strong (lines 35-57). REV-2 FIX: the generator-FUNCTION example is RESTORED at lines 37-46 (def count_up_to(limit): while n <= limit: yield n; n += 1, driven by 'for x in count_up_to(3)'), AND the generator EXPRESSION is still present at lines 52-55 (squares_list [] vs squares_gen ()). Line 48 ties the function back to the iter()/next()/StopIteration protocol from earlier sections. yield/pause-freeze/lazy/infinite semantics all in prose.",
+        "counter_plus_most_common": "present-strong (line 67: dict subclass, one-line count, missing-key->0, most_common(n) replaces sorted(items(),key=...), hashable rule)",
+        "defaultdict_int_or_list": "present-strong (line 69: factory function, list->[] grouping, int->0 counting, both factories explicit, replaces setdefault)",
+        "namedtuple": "present-strong (line 71: named fields, still-a-tuple/immutable/lightweight, p.x vs p[0], unpack/compare/pass-anywhere, sits between tuple and dict)"
+      },
+      "notes": "All 6 required tools present. REV-2 CONFIRMED: the previously dropped generator-function code (count_up_to ... yield) is back at lines 37-46 alongside the retained generator expression at lines 52-55. Generators are now present-STRONG (both construction forms shown as runnable code, protocol tie-back stated, Worked Example additionally feeds a genexpr into Counter at line 100, In Practice names both forms at line 117, Key Takeaways cites count_up_to by name at line 141). The rev-1 'present-mild-thin' finding is resolved."
+    },
+    "faithfulness": {
+      "passed": true,
+      "assertions_sampled": 12,
+      "unsupported": 0,
+      "notes": "Sampled and traced to corpus: (1) iterable=__iter__, iterator=__next__ [corpus 44-45]; (2) list is not an iterator, asks for fresh iterator [47]; (3) book/bookmark, several bookmarks in one book [47]; (4) StopIteration not None/-1 [68]; (5) for-loop 5-step protocol [83-87]; (6) iter() on iterator returns self, one-shot exhaustion [105-107]; (7) count_up_to generator-function block, verbatim match to corpus [121-130]; (8) yield pauses/freezes local state, lazy, infinite [119-132]; (9) genexpr parens vs list-comp brackets, range(1_000_000) [134-141]; (10) Counter one-liner, missing key ->0, most_common replaces sorted(items,key=) [155-168]; (11) defaultdict factory list->[] / int->0 [180-198]; (12) namedtuple p.x vs p[0], immutable, between tuple and dict [204-216]. Sign-in worked example Counter(genexpr)+defaultdict(list) maps to corpus 230-248. Zero unsupported (threshold to fail is >2)."
+    },
+    "tone_fit": {
+      "passed": true,
+      "hedging_occurrences": 0,
+      "avg_sentence_under_25": false,
+      "notes": "Concrete, plainspoken, beginner voice: runnable code (now including the restored def...yield block), book/bookmark analogy, decision guide, 'rule to remember' framing, by-hand-vs-tool contrast. No academic hedging phrases. Several Key Concepts bullets exceed 25 words, but the overall register is plain and direct, not academic."
+    }
+  },
+  "findings": [
+    {
+      "severity": "advisory",
+      "check": "length",
+      "location": "reading.meta.json",
+      "detail": "Read-time inconsistency: word_count 1992 -> 8.66 min at 230 wpm, just below the [9,11] floor, while declared estimated_read_minutes=10 overstates that. Word-count gate [1800,2200] passes cleanly; optionally correct estimated_read_minutes to ~9 for internal consistency. Non-blocking."
+    }
+  ],
+  "verdict": "PASS. REV-2 FIX CONFIRMED: the generator-function example (def count_up_to ... yield n, for-loop driven) is restored at lines 37-46 AND the generator expression remains at lines 52-55 — generators are now present-STRONG (both forms as runnable code, protocol tie-back, reused in Worked Example / In Practice / Takeaways), resolving rev-1's 'thin' finding. All six tools covered; format, citations, forward-reference discipline (itertools further-reading only), faithfulness (0/12 unsupported), and tone all clean. Only advisory: read-time metadata (8.66 min computed vs 10 declared) while word count 1992 passes [1800,2200].",
+  "at": "2026-07-14T00:00:00Z"
+}

@@ -140,10 +140,10 @@ status: "scaffolded"
 - path: `p3-data-structures/week-5/1-data-structures-2/5-1-sets`
 
 ```yaml
-concepts_introduced: []
-prerequisites: []
-cross_refs: []
-status: "scaffolded"
+concepts_introduced: ["set", "uniqueness guarantee", "membership testing (in)", "union/intersection/difference/symmetric difference", "in-place update operators", "subset/superset/disjoint", "add/remove/discard", "frozenset", "membership performance (hashing)", "set comprehension"]
+prerequisites: ["4.1", "4.2"]
+cross_refs: ["Python"]
+status: "corpus_drafted"
 ```
 
 ## 5.2 — Dictionaries
@@ -152,10 +152,10 @@ status: "scaffolded"
 - path: `p3-data-structures/week-5/1-data-structures-2/5-2-dictionaries`
 
 ```yaml
-concepts_introduced: []
-prerequisites: []
-cross_refs: []
-status: "scaffolded"
+concepts_introduced: ["dictionary (key-value mapping)", "access by key and KeyError", "dict CRUD (assignment, del, pop)", "keys()/values()/items() iteration", "sorting by key and by value", "get() and setdefault()", "nested dictionaries", "dictionary comprehension and inversion"]
+prerequisites: ["5.1", "4.1", "4.2"]
+cross_refs: ["Python"]
+status: "corpus_drafted"
 ```
 
 ## 5.3 — Iterators, Generators & Collections
@@ -164,10 +164,10 @@ status: "scaffolded"
 - path: `p3-data-structures/week-5/1-data-structures-2/5-3-iterators-generators-collections`
 
 ```yaml
-concepts_introduced: []
-prerequisites: []
-cross_refs: []
-status: "scaffolded"
+concepts_introduced: ["iterable vs iterator", "iterator protocol (iter/next/StopIteration)", "for-loop under the hood", "generator recap (yield, generator expression, lazy streaming)", "collections.Counter and most_common", "collections.defaultdict (int/list factory)", "collections.namedtuple"]
+prerequisites: ["5.2", "5.1", "4.1", "4.2"]
+cross_refs: ["Python"]
+status: "corpus_drafted"
 ```
 
 ## 6.1 — Object-Oriented Foundations

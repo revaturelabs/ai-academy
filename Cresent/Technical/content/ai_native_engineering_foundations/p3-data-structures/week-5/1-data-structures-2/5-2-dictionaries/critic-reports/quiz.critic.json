@@ -1,0 +1,53 @@
+{
+  "passed": true,
+  "checks": {
+    "positional_bias": {
+      "passed": true,
+      "distribution": [0, 1, 3, 1, 2, 1, 2, 3, 1, 2, 0, 2, 2],
+      "histogram": { "0": 2, "1": 4, "2": 5, "3": 2 },
+      "mcq_total": 13,
+      "max_share": 0.3846,
+      "threshold": 0.40,
+      "meta_gift_desync": false
+    },
+    "length_bias": {
+      "passed": true,
+      "longest_correct_rate": 0.0,
+      "baseline": 0.25,
+      "threshold": 0.40,
+      "longest_correct_questions": []
+    },
+    "distractor_plausibility": {
+      "passed": true,
+      "absurd_rate": 0.0,
+      "total_distractors": 39,
+      "absurd_count": 0,
+      "threshold": 0.25,
+      "weakest_questions": []
+    },
+    "objective_coverage": {
+      "passed": true,
+      "uncovered_objectives": [],
+      "orphan_questions": [],
+      "lo_map": {
+        "create_access_unique_hashable": ["q1", "q2", "q3", "q4"],
+        "add_modify_delete": ["q5", "q6", "q7"],
+        "loop_keys_values_items": ["q8"],
+        "sort_by_key_and_value": ["q9", "q10"],
+        "nested_dictionaries": ["q11", "q15"],
+        "get_setdefault_safe_access": ["q12", "q14"],
+        "comprehension_and_invert": ["q13"]
+      }
+    }
+  },
+  "gift_sanity": {
+    "parses": true,
+    "escaped_colons": true,
+    "per_answer_feedback": true,
+    "general_feedback_present": true,
+    "short_answer_excluded": ["q14", "q15"]
+  },
+  "auto_correction_applied": { "shuffle_round_2": false },
+  "verdict": "Pass — all four bias / coverage checks clean; positional max_share 0.385 under 0.40 threshold, GIFT parses.",
+  "at": "2026-07-14T00:00:00Z"
+}
