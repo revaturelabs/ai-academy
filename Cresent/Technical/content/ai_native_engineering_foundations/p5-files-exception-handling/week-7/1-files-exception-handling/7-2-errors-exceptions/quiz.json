@@ -1,0 +1,112 @@
+{
+  "topic_id": "7.2",
+  "title": "Errors & Exceptions",
+  "generated_at": "2026-07-14T00:00:00Z",
+  "format": "md+json",
+  "quiz_path": "content/ai_native_engineering_foundations/p5-files-exception-handling/week-7/1-files-exception-handling/7-2-errors-exceptions/quiz.md",
+  "question_count": 13,
+  "mcq_count": 12,
+  "short_answer_count": 1,
+  "include_short_answer": true,
+  "depth": "DEEP",
+  "$bias_defense_applied": true,
+  "$shuffle_seed": "7.2-errors-exceptions",
+  "answer_distribution": { "A": 3, "B": 3, "C": 3, "D": 3 },
+  "correct_position_distribution": [1, 2, 0, 3, 2, 0, 3, 1, 3, 0, 1, 2],
+  "mean_option_length_chars": 108,
+  "longest_option_correct_count": 3,
+  "questions": [
+    {
+      "id": "q1",
+      "type": "mcq",
+      "objective_ref": "Distinguish a syntax error from an exception.",
+      "correct_position": 1,
+      "feedback": "Syntax errors are caught before running and fixed by editing code; exceptions are runtime events you plan for and handle."
+    },
+    {
+      "id": "q2",
+      "type": "mcq",
+      "objective_ref": "Describe how built-in exceptions are organized into a class hierarchy; catching a parent catches its children.",
+      "correct_position": 2,
+      "feedback": "LookupError is the parent of IndexError and KeyError, so except LookupError catches both."
+    },
+    {
+      "id": "q3",
+      "type": "mcq",
+      "objective_ref": "Write a try/except block to catch an exception and keep a program from crashing.",
+      "correct_position": 0,
+      "feedback": "int('hello') raises ValueError; execution diverts to the matching except and the program continues."
+    },
+    {
+      "id": "q4",
+      "type": "mcq",
+      "objective_ref": "Use else and finally clauses to separate the success path from guaranteed cleanup.",
+      "correct_position": 3,
+      "feedback": "else runs only on success; finally runs no matter what. Distractors are the common swaps."
+    },
+    {
+      "id": "q5",
+      "type": "mcq",
+      "objective_ref": "Handle several error types with multiple except blocks; first match wins.",
+      "correct_position": 2,
+      "feedback": "Python checks except blocks top-to-bottom and runs the first that matches, not the narrowest or the last."
+    },
+    {
+      "id": "q6",
+      "type": "mcq",
+      "objective_ref": "Order except blocks specific-to-general because the first match wins.",
+      "correct_position": 0,
+      "feedback": "A parent listed before its child shadows the child, making that block unreachable (not a syntax error)."
+    },
+    {
+      "id": "q7",
+      "type": "mcq",
+      "objective_ref": "Use a grouped except (A, B) to give several error types one shared response.",
+      "correct_position": 3,
+      "feedback": "The tuple is an OR: either IndexError or ValueError triggers the shared handler."
+    },
+    {
+      "id": "q8",
+      "type": "mcq",
+      "objective_ref": "Recognize ValueError (right type, wrong value) vs TypeError (wrong type).",
+      "correct_position": 1,
+      "feedback": "int('cat') is a ValueError (right type, bad content); len(5) is a TypeError (wrong type)."
+    },
+    {
+      "id": "q9",
+      "type": "mcq",
+      "objective_ref": "Recognize the common built-in exceptions and what triggers each (KeyError).",
+      "correct_position": 3,
+      "feedback": "Looking up a missing dictionary key raises KeyError, not IndexError, AttributeError, or ValueError."
+    },
+    {
+      "id": "q10",
+      "type": "mcq",
+      "objective_ref": "Recognize the common built-in exceptions (IOError is an alias for OSError, the FileNotFoundError family).",
+      "correct_position": 0,
+      "feedback": "In modern Python IOError is an alias for OSError, the same family FileNotFoundError belongs to."
+    },
+    {
+      "id": "q11",
+      "type": "mcq",
+      "objective_ref": "Signal an error yourself with raise.",
+      "correct_position": 1,
+      "feedback": "raise signals a new exception from your own code, stopping execution; a caller can catch it like a built-in."
+    },
+    {
+      "id": "q12",
+      "type": "mcq",
+      "objective_ref": "Define a custom exception by subclassing Exception.",
+      "correct_position": 2,
+      "feedback": "A custom exception is just a class inheriting from Exception; its body can be a single docstring."
+    },
+    {
+      "id": "q13",
+      "type": "short_answer",
+      "objective_ref": "Use else and finally clauses to separate the success path from guaranteed cleanup (finally always runs).",
+      "correct_position": null,
+      "accepted_answers": ["finally", "Finally"],
+      "feedback": "finally runs in every case — success, caught exception, or uncaught — making it the place for guaranteed cleanup."
+    }
+  ]
+}

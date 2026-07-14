@@ -1,0 +1,14 @@
+{
+  "passed": true,
+  "checks": {
+    "positional_bias":          { "passed": true, "distribution": [3, 3, 3, 3], "max_share": 0.25, "meta_gift_desync": false, "note": "Re-derived correct positions [2,0,3,1,0,3,1,2,0,3,1,2] match quiz.json correct_position_distribution exactly; A/B/C/D = 3/3/3/3." },
+    "length_bias":              { "passed": true, "longest_correct_rate": 0.17, "longest_correct_count": 2, "baseline": 0.25, "note": "Correct option is longest (>1.20x mean distractor) in at most 2/12; sidecar longest_option_correct_count=2 confirmed. Below 0.40 threshold." },
+    "distractor_plausibility":  { "passed": true, "absurd_rate": 0.0, "total_distractors": 36, "weakest_questions": ["q1", "q11"], "note": "No score=1 throwaways. Weakest distractors (Q1-D open-only-csv/json, Q11-D csv.DictReader) still encode module/format confusions (score 2)." },
+    "objective_coverage":       { "passed": true, "uncovered_objectives": [], "orphan_questions": [], "note": "All 6 corpus LOs covered: text/binary+paths (Q1,Q2); open modes (Q3,Q4); read/write (Q5,Q6,Q7); with (Q8,Q13); csv (Q9,Q10); json (Q11,Q12)." }
+  },
+  "forward_reference_check":    { "passed": true, "note": "No try/except or exception-handling (7.2/7.3) quizzed. Q8/Q13 'with closes even on error' used only as the context-manager guarantee (allowed)." },
+  "answer_key_spotcheck":       { "passed": true, "note": "Spot-checked all 12 MCQ + short answer against corpus §5: Q3-D (w truncates), Q7-B (no auto newline), Q9-A (newline=''), Q11-B (loads=strings), Q12-C (JSON->Python type mapping) all correct." },
+  "auto_correction_applied":    { "shuffle_round_2": false },
+  "verdict": "Pass — positional 3/3/3/3 (max_share 0.25), length bias 2/12, no absurd distractors, all 6 LOs covered, no forward references, answer key correct.",
+  "at": "2026-07-14T00:00:00Z"
+}

@@ -212,10 +212,10 @@ status: "scaffolded"
 - path: `p5-files-exception-handling/week-7/1-files-exception-handling/7-1-file-handling`
 
 ```yaml
-concepts_introduced: []
-prerequisites: []
-cross_refs: []
-status: "scaffolded"
+concepts_introduced: ["text vs binary files", "absolute vs relative paths", "open() and file modes", "read/readline/readlines/write", "context managers (with statement)", "csv module reading", "json load/dump"]
+prerequisites: ["3.3", "5.2", "5.3", "4.1"]
+cross_refs: ["Python"]
+status: "corpus_drafted"
 ```
 
 ## 7.2 — Errors & Exceptions
@@ -224,10 +224,10 @@ status: "scaffolded"
 - path: `p5-files-exception-handling/week-7/1-files-exception-handling/7-2-errors-exceptions`
 
 ```yaml
-concepts_introduced: []
-prerequisites: []
-cross_refs: []
-status: "scaffolded"
+concepts_introduced: ["exception hierarchy", "try/except/else/finally", "multiple except blocks and grouped exceptions", "common built-in exceptions", "raise statement", "custom exceptions"]
+prerequisites: ["7.1", "6.1", "6.2", "6.3", "5.2"]
+cross_refs: ["Python"]
+status: "corpus_drafted"
 ```
 
 ## 7.3 — Case Study: Building a Robust File Reader
@@ -236,10 +236,10 @@ status: "scaffolded"
 - path: `p5-files-exception-handling/week-7/1-files-exception-handling/7-3-case-study-building-a-robust-file-reader`
 
 ```yaml
-concepts_introduced: []
-prerequisites: []
-cross_refs: []
-status: "scaffolded"
+concepts_introduced: ["robust file reader", "skip-and-log pattern", "per-row try/except", "per-row validation (presence/type/range)", "separating valid from invalid data", "errors report with line numbers", "csv.DictWriter for clean output"]
+prerequisites: ["7.1", "7.2", "5.2", "4.1", "3.1"]
+cross_refs: ["Python"]
+status: "corpus_drafted"
 ```
 
 ## 8.1 — Version Control Basics

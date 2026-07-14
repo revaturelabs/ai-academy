@@ -1,0 +1,39 @@
+{
+  "topic_id": "7.1",
+  "title": "File Handling",
+  "generated_at": "2026-07-14T00:00:00Z",
+  "format": "md",
+  "question_count": 13,
+  "mcq_count": 12,
+  "short_answer_count": 1,
+  "$bias_defense_applied": true,
+  "$shuffle_seed": "hash(7.1)=7.1-file-handling",
+  "correct_position_distribution": [2, 0, 3, 1, 0, 3, 1, 2, 0, 3, 1, 2],
+  "answer_distribution": { "A": 3, "B": 3, "C": 3, "D": 3 },
+  "mean_option_length_chars": 84,
+  "longest_option_correct_count": 2,
+  "questions": [
+    { "id": "q1", "type": "mcq", "objective_ref": "Explain the difference between text files and binary files.", "correct_letter": "C", "correct_position": 2 },
+    { "id": "q2", "type": "mcq", "objective_ref": "Explain the difference between absolute and relative paths.", "correct_letter": "A", "correct_position": 0 },
+    { "id": "q3", "type": "mcq", "objective_ref": "Open a file with open() using the correct mode; 'w' truncates.", "correct_letter": "D", "correct_position": 3 },
+    { "id": "q4", "type": "mcq", "objective_ref": "Open a file with open() using the correct mode; 'a' appends.", "correct_letter": "B", "correct_position": 1 },
+    { "id": "q5", "type": "mcq", "objective_ref": "Read file contents with read(), readline(), and readlines().", "correct_letter": "A", "correct_position": 0 },
+    { "id": "q6", "type": "mcq", "objective_ref": "Read file contents by looping over a file object (memory-friendly).", "correct_letter": "D", "correct_position": 3 },
+    { "id": "q7", "type": "mcq", "objective_ref": "Write content with write() (does not add a newline).", "correct_letter": "B", "correct_position": 1 },
+    { "id": "q8", "type": "mcq", "objective_ref": "Use the with statement (a context manager) so files are closed automatically.", "correct_letter": "C", "correct_position": 2 },
+    { "id": "q9", "type": "mcq", "objective_ref": "Read tabular data from a CSV file using the csv module (newline='').", "correct_letter": "A", "correct_position": 0 },
+    { "id": "q10", "type": "mcq", "objective_ref": "Read tabular data from a CSV file; values arrive as strings (rows as list of strings).", "correct_letter": "D", "correct_position": 3 },
+    { "id": "q11", "type": "mcq", "objective_ref": "json load/dump (files) vs loads/dumps (strings).", "correct_letter": "B", "correct_position": 1 },
+    { "id": "q12", "type": "mcq", "objective_ref": "Load JSON into Python objects with json.load(); JSON to Python type mapping.", "correct_letter": "C", "correct_position": 2 },
+    { "id": "q13", "type": "short_answer", "objective_ref": "Use the with statement (a context manager) so files are closed automatically.", "accepted_answers": ["with", "with statement", "the with statement"] }
+  ],
+  "objectives_covered": [
+    "text vs binary files; absolute vs relative paths",
+    "open() and modes (r, w, a, r+) — 'w' truncates, 'a' appends",
+    "read()/readline()/readlines() + looping over a file; write() (no auto newline)",
+    "with statement / context manager (auto-close)",
+    "csv module reading (newline='', rows as list of strings, DictReader)",
+    "json load/dump (files) vs loads/dumps (strings); JSON to Python type mapping"
+  ],
+  "forward_reference_check": "No try/except or exception-handling (7.2/7.3) content quizzed."
+}

@@ -10,8 +10,17 @@
   "source_outline": [
     "Building a robust file reader: logging bad rows and continuing; separating valid from invalid data"
   ],
-  "expected_delivery_minutes": null,
-  "artifact_plan": {},
+  "expected_delivery_minutes": 10,
+  "artifact_plan": {
+    "confirmed_profile": "deep",
+    "depth_signals": "capstone/synthesis topic; substantial end-to-end worked program in 4 moves (fragile -> guard -> validate -> report/write); Implementation is the heart; Lab week (P5.6 capstone)",
+    "reading_word_range": [1800, 2200],
+    "reading_minutes_range": [9, 11],
+    "quiz_questions_range": [10, 15],
+    "quiz_include_short_answer": true,
+    "diagram": true,
+    "diagram_intent": "data-flow pipeline: CSV row -> validate -> [valid bucket / invalid bucket + logged reason] -> clean CSV out; the two-bucket split is the topic's core idea"
+  },
   "next_assessment": {
     "id": "A3",
     "week": 8,

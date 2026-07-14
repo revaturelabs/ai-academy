@@ -1,0 +1,42 @@
+{
+  "critic": "corpus-critic",
+  "topic_id": "7.1",
+  "corpus_path": "content/ai_native_engineering_foundations/p5-files-exception-handling/week-7/1-files-exception-handling/7-1-file-handling/topic_corpus.md",
+  "resources_source": "web_search",
+  "citation_mode": "strict",
+  "depth_profile": "deep",
+  "passed": true,
+  "checks": [
+    {
+      "id": 1,
+      "name": "required_sections_present_nontrivial",
+      "passed": true,
+      "detail": "Section 3 (Learning Objectives): present, 6 substantive bullets. Section 4 (Introduction): present, ~250 words. Section 5 (Core Concepts): present, well over 100 words across 9 sub-concept blocks. Section 10 (Key Takeaways): present, 5 bullets, over 50 words. No placeholder strings in any required section."
+    },
+    {
+      "id": 2,
+      "name": "citation_density_strict_web_search",
+      "passed": true,
+      "detail": "3 resources declared. [1] realpython read-write-files (primary) cited at lines 35,41,56,73,83,93,97,233. [2] docs.python.org csv cited at 109,111,122,192,227,235,237. [3] realpython json cited at 126,128,147,226,236. Every primary resource cited >=1x. Only markers [1]/[2]/[3] appear -- no fabricated markers. Citation density across sections 5/6/7 is well above the 60% threshold for standalone factual assertions.",
+      "resources_cited": ["[1]", "[2]", "[3]"],
+      "fabricated_markers": []
+    },
+    {
+      "id": 3,
+      "name": "sequence_drift_forward_references",
+      "passed": true,
+      "detail": "All technical vocabulary maps to this topic's concepts_introduced (text vs binary files, absolute vs relative paths, open()/modes, read/readline/readlines/write, context managers/with, csv reading, json load/dump) or prior topics (import 3.3, dict 5.2, iterables/generators 5.3, lists 4.1). Exception-handling references are deferral-only and acceptable: line 35 explicitly names 7.2/7.3 as the topics that teach error handling ('Here we focus on the I/O itself'); line 64 merely notes a missing file 'raises an error'; lines 93/97 describe that 'with' closes even 'if an error happens' without teaching mechanics. No try/except/finally, no exception hierarchy, no raise teaching. csv.writer/DictReader and json.loads/dumps are in-scope siblings of the csv/json concepts.",
+      "forward_referenced_terms": []
+    },
+    {
+      "id": 4,
+      "name": "length_sanity",
+      "passed": true,
+      "detail": "Corpus body ~1955 words. Depth profile = deep, expected 1800-2200 (broader 1500-6000 acceptable). Within range.",
+      "word_count": 1955,
+      "expected_range": [1800, 2200]
+    }
+  ],
+  "verdict": "PASS -- all four checks satisfied. Required sections present and non-trivial; strict web_search citation density met with all 3 resources cited and no fabricated markers; no forward references (exception-handling is deferral-only to 7.2/7.3, not taught); word count ~1955 within the deep profile range.",
+  "at": "2026-07-14T00:00:00Z"
+}

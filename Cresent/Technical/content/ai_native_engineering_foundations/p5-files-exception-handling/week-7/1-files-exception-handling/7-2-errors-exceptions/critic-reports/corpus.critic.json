@@ -1,0 +1,32 @@
+{
+  "critic": "corpus-critic",
+  "topic_id": "7.2",
+  "topic_title": "Errors & Exceptions",
+  "passed": true,
+  "resources_source": "web_search",
+  "citation_mode": "strict",
+  "checks": {
+    "required_sections": {
+      "passed": true,
+      "detail": "Section 3 (Learning Objectives): present, 6 objectives. Section 4 (Introduction): present, ~230 words > 50. Section 5 (Core Concepts): present, ~1200 words across 8 sub-sections, well over 100. Section 10 (Key Takeaways): present, 5 bullets ~180 words > 50. No placeholder strings in required sections."
+    },
+    "citation_density": {
+      "passed": true,
+      "detail": "Primary resource [1] (docs.python.org/3/tutorial/errors.html) cited many times (Introduction, most Core Concepts sub-sections, Real-World Patterns, Best Practices). All markers resolve to the 3 declared resources ([1] tutorial, [2] library/exceptions, [3] realpython); no fabricated [N] markers (no [4]+). Core Concepts: nearly every sub-section carries a marker (errors-vs-exceptions [1], hierarchy [2], try/except [1], as-capture [1], FileNotFoundError [2], else/finally [1], multiple-except [1][2], grouped [1], built-ins [2], IOError alias [2], raise [1], custom [1]). Real-World Patterns: all 4 bullets carry [1]. Combined density across sections 5/6/7 well above the 60% threshold. Section 6 (Implementation) is a worked code example (no standalone factual assertions), so its lack of markers does not lower prose density below threshold.",
+      "fabricated_markers": []
+    },
+    "sequence_drift": {
+      "passed": true,
+      "detail": "All technical concepts trace to 7.2 concepts_introduced (exception hierarchy, try/except/else/finally, multiple/grouped except, common built-in exceptions, raise, custom exceptions) or prior topics. Prior-topic references are legitimate: 7.1 file handling (open/with, FileNotFoundError thread), 6.1-6.3 OOP/inheritance (custom exception subclassing Exception), 5.2 dict.get()/KeyError, 1.1-3.3 foundations. The 7.3 Robust File Reader case study is referenced only as forthcoming ('the next topic builds it end-to-end', lines 35/106/256) — no full case-study build is performed here, which the check explicitly permits. No forward references to 8.x or later.",
+      "forward_referenced_terms": []
+    },
+    "length_sanity": {
+      "passed": true,
+      "detail": "Depth profile = deep, range 1800-2200 words. Corpus is ~2050 words (Introduction ~230, Core Concepts ~1200 across 8 sub-sections, Implementation ~150, Real-World Patterns ~130, Best Practices ~130, plus Prereqs/Objectives/Exercise/Takeaways). Inside the deep range; not >30% outside.",
+      "estimated_word_count": 2050,
+      "range": [1800, 2200]
+    }
+  },
+  "verdict": "PASS — all four checks satisfied. Required sections present and non-trivial; strict web_search citation density met with primary [1] cited and no fabricated markers; no forward references (7.3 only teased, not built); ~2050 words within the deep 1800-2200 range.",
+  "at": "2026-07-14T00:00:00Z"
+}

@@ -1,0 +1,36 @@
+{
+  "critic": "corpus-critic",
+  "topic_id": "7.3",
+  "passed": true,
+  "checks": {
+    "required_sections": {
+      "passed": true,
+      "detail": "Sections 3 (Learning Objectives, 6 objectives), 4 (Introduction, ~280 words), 5 (Core Concepts, ~950 words, >=100), and 10 (Key Takeaways, ~180 words, >=50) all present and non-trivial. Capstone Implementation section (6) is load-bearing and confirmed substantial: complete runnable worked program built in 4 moves (fragile -> per-row try/except -> validation with raise -> report + DictWriter), reads CSV via csv.DictReader, per-row try/except, presence/type/range validation, skip-and-log of bad rows, separation of valid/invalid into two collections, writes clean CSV via csv.DictWriter. Includes sample input (people.csv) and expected output."
+    },
+    "citation_density": {
+      "passed": true,
+      "resources_source": "web_search",
+      "mode": "strict",
+      "detail": "Primary [1] cited (lines 36, 62, 213, 269). Supporting [2] cited (36, 101, 103, 213). Applied [3] cited (42, 76, 262, 264, 272). Every primary cited >=1. Key claims across Core Concepts / Implementation / Real-World carry markers well above 60%. No fabricated markers: only [1][2][3] appear and all resolve to declared resources. The logging module mention (line 97) correctly carries NO fabricated [4] and is framed as not-relied-upon."
+    },
+    "sequence_drift": {
+      "passed": true,
+      "forward_referenced_terms": [],
+      "detail": "Synthesis topic. Heavy reuse of 7.1 (with/open, csv.DictReader, csv.DictWriter, newline) and 7.2 (try/except, grouped except, ValueError/KeyError/AttributeError, raise) is expected and correct, not drift. All technical nouns map to 7.3 concepts_introduced or prior topics (5.2 dict/get, 4.1 lists, 3.1 functions, week-2 loops/enumerate). No new un-introduced terms; no week 8+ material (no Git, no AI modules). enumerate/restkey/restval/AttributeError fall within already-introduced loop and file/exception scope."
+    },
+    "length_sanity": {
+      "passed": true,
+      "profile": "deep",
+      "range": "1800-2200",
+      "approx_word_count": 2060,
+      "detail": "Word count ~2060, within the deep profile range 1800-2200 specified for this topic."
+    },
+    "code_correctness": {
+      "passed": true,
+      "detail": "Implementation program is valid Python 3. Traced Move 3/4 against people.csv: Sam(34) valid; Ada('thirty') -> ValueError from int(); Lee(-5) -> raised 'age -5 out of range'; Kai (short row, email=None via DictReader restval) -> raised 'email is missing'; Rob(41) valid. Yields 2 valid / 3 bad, matching stated 'Read 2 valid rows, 3 bad rows.' Error messages, line numbers (enumerate start=2), and row dicts all match the expected-output block exactly. people_clean.csv (header + Sam + Rob) is consistent. DictReader/DictWriter, with, newline='' usage all correct."
+    }
+  },
+  "findings": [],
+  "verdict": "PASS: all five checks pass. Required sections present and non-trivial with a complete, runnable capstone reader (skip-and-log, per-row try/except, presence/type/range validation, valid/invalid separation, DictWriter clean output) plus consistent sample input and expected output. Citations strict-clean: all three resources cited, no fabricated markers, logging module correctly uncited. No forward references (synthesis reuse of 7.1/7.2 is expected). Length ~2060 words within 1800-2200. Worked program is valid Python 3 and its expected output is exactly consistent with the code.",
+  "at": "2026-07-14T00:00:00Z"
+}
