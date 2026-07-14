@@ -1,0 +1,30 @@
+{
+  "topic_id": "6.3",
+  "captured_at": "2026-07-14T00:00:00Z",
+  "captured_by": "vishnu.vardhan@revature.com",
+  "resources_source": "web_search",
+  "resources": [
+    {
+      "type": "url",
+      "value": "https://docs.python.org/3/reference/datamodel.html",
+      "role": "primary",
+      "source": "web_search",
+      "notes": "Official Python 3 Data Model reference, section 3 - special/dunder methods (__str__, __repr__, __eq__)"
+    },
+    {
+      "type": "url",
+      "value": "https://docs.python.org/3/library/dataclasses.html",
+      "role": "primary",
+      "source": "web_search",
+      "notes": "Official dataclasses library docs - @dataclass decorator, generated __init__/__repr__/__eq__, field(), frozen, order"
+    },
+    {
+      "type": "url",
+      "value": "https://realpython.com/python-repr-vs-str/",
+      "role": "supporting",
+      "source": "web_search",
+      "notes": "Practical guidance on when/why to implement __repr__ vs __str__"
+    }
+  ],
+  "web_search_query": "Python dunder methods __str__ __repr__ __eq__ dataclass decorator tutorial"
+}

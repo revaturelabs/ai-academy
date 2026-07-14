@@ -1,0 +1,108 @@
+$CATEGORY: CIT/P4/week-6/6.1-object-oriented-foundations
+
+::q1:: Which statement best describes what an abstract data type (ADT) is?
+{
+~ A data structure that stores values but has no associated behaviour of its own.#Not quite — an ADT bundles both state and behaviour together; something with no behaviour is missing half of what makes it an ADT.
+~ A function that converts a value from one data type into another, such as str() or int().#Not quite — type conversion is unrelated to the ADT concept; an ADT describes a "thing," not a conversion operation.
+= A way of describing a thing by its state and behaviour together, independent of implementation details.#Correct — an ADT is defined by what it is and what it can do, without committing to how that's implemented (corpus 5.1).
+~ A built-in Python type such as int or str that cannot be subclassed or extended.#Not quite — ADT is a modeling concept, not a claim about which Python types can or cannot be subclassed.
+#### Tests LO1: what an ADT is and why bundling state with behaviour is useful (corpus 5.1).
+}
+
+::q2:: Which statement correctly distinguishes a class from an object/instance?
+{
+= A class is the blueprint defining attributes and methods; an instance is a specific object built from it, holding its own state.#Correct — the class is the template, the instance is a concrete thing built from that template (corpus 5.2).
+~ A class is generated only after at least one instance exists, since Python needs an example object to build the blueprint from.#Not quite — the class must be defined first; Python cannot build an instance without an existing class to call.
+~ An instance shares the exact same memory address as its class, so instance is ClassName evaluates to True.#Not quite — an instance and its class are distinct objects; is compares identity, and they are never the same object.
+~ A class can only ever produce one instance; creating a second instance silently overwrites the first one made.#Not quite — a class can produce as many independent instances as you like, each with its own separate state.
+#### Tests LO2: distinguishing a class (blueprint) from an object/instance (corpus 5.2).
+}
+
+::q3:: What is the correct description of what __init__ does and how it behaves?
+{
+~ It runs automatically when an instance is created and must return the finished object to the caller.#Not quite — __init__ never returns a value; Python discards any return value and hands back the object it already created.
+~ It only needs to be defined when a class wants some attributes shared across every instance of that class.#Not quite — sharing attributes across instances is what a class attribute does; __init__ is for per-instance setup, not shared values.
+~ It runs once per class, the first time any instance is created, and later instances simply reuse those attributes.#Not quite — __init__ runs every single time a new instance is created, giving each instance its own independent attributes.
+= It runs automatically when an instance is created, assigns instance attributes via self, and returns nothing.#Correct — __init__ is the constructor: called automatically per instance, used to set self.attribute values, with no return value (corpus 5.3).
+#### Tests LO3: writing a constructor that initializes instance attributes (corpus 5.3).
+}
+
+::q4:: Why must every instance method take self as its first parameter?
+{
+~ self is a required keyword marking a function as a method, but it never actually receives an argument automatically.#Not quite — self does receive an argument automatically: Python passes the calling instance into it at every method call.
+= Python automatically passes the calling instance as the first argument, so self lets the method reach that object's own attributes.#Correct — when you write t1.mark_complete(), Python binds t1 to self automatically, which is how the method reads/writes that specific object's state (corpus 5.4).
+~ self must be passed explicitly by the caller at the call site, for example writing t1.mark_complete(t1).#Not quite — self is bound automatically by Python; explicitly passing the instance again would cause a TypeError from too many arguments.
+~ self refers to the class itself rather than to the specific instance the method was called on.#Not quite — self refers to the specific instance the method was called on, not the class (which is what cls, not self, would represent).
+#### Tests LO4: correctly using the self parameter in instance methods (corpus 5.4).
+}
+
+::q5:: Suppose a Task class defines category as a class attribute equal to "general", and creates two instances, t1 and t2. The code then reassigns the class attribute directly (Task.category \= "work"), and afterward reassigns t1's attribute directly on the instance (t1.category \= "personal"). After all of this runs, what do t1.category and t2.category each print?
+{
+= t1.category is "personal" and t2.category is "work" — t1 now has its own instance attribute, while t2 still reads the shared class attribute.#Correct — assigning directly to t1.category creates a new instance attribute that shadows the class attribute only for t1; t2 never got its own, so it still reads the shared class value (corpus 5.3).
+~ Both t1.category and t2.category become "personal" — assigning through an instance always updates the shared class attribute for every other instance too.#Not quite — assigning through an instance never changes the class attribute; it only creates or overwrites an attribute local to that one instance.
+~ Both t1.category and t2.category remain "work" — an instance-level assignment has no effect until the object is reconstructed from the class.#Not quite — instance attribute assignment takes effect immediately; there's no reconstruction step required for it to apply.
+~ Both remain "general" — reassigning Task.category after the instances are created has no effect because each instance cached the original value at construction time.#Not quite — instances don't cache class attribute values at construction; they look the value up on the class each time, unless they have their own instance attribute overriding it.
+#### Tests LO3: instance attribute assignment shadowing a class attribute (corpus 5.3).
+}
+
+::q6:: When you call t1.mark_complete(), which sequence correctly describes what Python does?
+{
+~ Python looks for a mark_complete attribute stored directly on t1, since every instance keeps its own private copy of each method.#Not quite — instances don't carry their own copy of each method; methods live on the class, and lookup starts there, not on the instance.
+~ Python creates a brand-new copy of the mark_complete function and stores it on t1 the first time it's called.#Not quite — Python doesn't copy methods onto instances; it finds the single shared function on the class and binds it to whichever instance called it.
+= Python looks up mark_complete on the Task class, then binds t1 as the self argument before executing the method body.#Correct — method lookup starts at the class, and the calling instance is automatically bound to self before the body runs (corpus 5.4).
+~ Python calls mark_complete without any reference to t1, leaving self set to None until something assigns it inside the method.#Not quite — self is never None when a method is called normally; Python binds the calling instance to self as part of the call itself.
+#### Tests LO4: self binding mechanics when calling a method (corpus 5.4).
+}
+
+::q7:: A Task class defines __init__(self, name, priority) with no default values. What happens if you call Task("Write report") — supplying only one argument?
+{
+~ Python creates the Task with priority set to None, since Python fills in any missing argument with None by default.#Not quite — Python does not silently fill in missing positional arguments; it raises an error instead.
+~ Python creates the Task successfully, and priority simply doesn't exist as an attribute until it's assigned later.#Not quite — construction never completes in this case; __init__ never finishes running because the call itself fails before any assignment happens.
+~ Python raises an AttributeError because priority was never set as an instance attribute.#Not quite — this is a missing-argument problem at call time, which Python reports as a TypeError, not an AttributeError about a missing attribute.
+= Python raises a TypeError because __init__ is missing the required positional argument priority.#Correct — with no default value, every Task(...) call must supply both name and priority; omitting one raises TypeError (corpus 5.3, Section 8).
+#### Tests LO3: the required-positional-parameters-only constraint on constructors (corpus 5.3, Section 8).
+}
+
+::q8:: A Task class's __init__ sets self.name and self.priority but never sets self.done — done is only assigned inside mark_complete(). What happens if you print(t1.done) before ever calling t1.mark_complete()?
+{
+~ Python prints False, since Python assumes any boolean-sounding instance attribute defaults to False until it's explicitly set.#Not quite — Python has no concept of a default value based on an attribute's name; an attribute simply does not exist until something assigns it.
+= Python raises an AttributeError, because done was never assigned inside __init__ or anywhere else on this object yet.#Correct — instance attributes only exist once assigned; reading one before it's ever been set raises AttributeError (corpus Section 8, Best Practices).
+~ Python prints None, the default value Python assigns to any attribute that is referenced before being assigned.#Not quite — Python does not auto-create attributes with a None default; an unassigned attribute simply doesn't exist yet.
+~ Python raises a TypeError, because done isn't declared as a required constructor parameter.#Not quite — done not being a constructor parameter isn't the issue here; the error is about reading a never-assigned attribute, which is an AttributeError, not a TypeError.
+#### Tests LO3 / Best Practices: AttributeError from reading an uninitialized attribute (corpus Section 8).
+}
+
+::q9:: Which pair of class and instance names follows the naming convention this topic establishes?
+{
+~ class bank_account\: ... and Account \= bank_account(...) — snake_case for the class, PascalCase for the instance name.#Not quite — this is backwards; the convention is PascalCase for the class and snake_case for the instance.
+~ class BankAccount\: ... and BankAccount2 \= BankAccount(...) — PascalCase used for both the class and the instance names.#Not quite — instance names should follow snake_case, not reuse the class's PascalCase style.
+= class BankAccount\: ... and account \= BankAccount(...) — PascalCase for the class, snake_case for the instance name.#Correct — class names use PascalCase while instance names follow snake_case, by convention (corpus 5.2, Section 6).
+~ class Bank_Account\: ... and bankAccount \= Bank_Account(...) — underscore-separated PascalCase for the class, camelCase for the instance.#Not quite — neither underscore-separated PascalCase nor camelCase is the convention used here; it's plain PascalCase for classes and snake_case for instances.
+#### Tests LO2 / naming conventions: PascalCase for classes, snake_case for instances (corpus 5.2, Section 6).
+}
+
+::q10:: A deposit method is defined as def deposit(amount)\: ... — missing self as the first parameter. What happens when you call account.deposit(150)?
+{
+= Python raises a TypeError, because account is passed automatically as the first argument, leaving two values trying to fill the single amount parameter.#Correct — Python still passes the calling instance automatically; with self missing from the signature, account and 150 both compete for the one amount parameter, raising TypeError (corpus Section 6, Best Practices).
+~ Python raises an AttributeError, because deposit is never recognized as a properly bound method when it lacks a self parameter to bind to.#Not quite — Python does find and call deposit; the failure happens at argument-matching time, producing a TypeError, not a failure to locate the method at all.
+~ Python silently treats 150 as though it were the missing self parameter, and the amount argument is quietly ignored during the call.#Not quite — Python doesn't silently substitute values for missing parameters; a mismatched argument count raises an error rather than being absorbed silently.
+~ Python runs deposit(150) as though it were an ordinary standalone function call, completely unrelated to the account instance that invoked it.#Not quite — calling a method through an instance always passes that instance in automatically; it's never treated as an unrelated standalone call.
+#### Tests LO4 / Best Practices: forgetting self causes a TypeError, not an AttributeError (corpus Section 6, Best Practices).
+}
+
+::q11:: The special method that Python calls automatically when a new instance is created, and that is used to initialize that instance's attributes, is named ____.
+{
+=__init__
+=init
+}
+
+::q12:: Every instance method's first parameter, which Python automatically binds to the object the method was called on, is conventionally named ____.
+{
+=self
+}
+
+::q13:: Reading an instance attribute that was never assigned (for example, one only ever set inside a method that hasn't been called yet) raises a Python ____ (error name).
+{
+=AttributeError
+=attribute error
+}

@@ -1,0 +1,53 @@
+{
+  "passed": true,
+  "hard_prerequisites": {
+    "meta_json_present": true,
+    "bias_defense_applied": true,
+    "meta_gift_desync": false,
+    "derived_correct_position_distribution": [2, 0, 3, 1, 0, 2, 3, 1, 2, 0],
+    "sidecar_correct_position_distribution": [2, 0, 3, 1, 0, 2, 3, 1, 2, 0],
+    "note": "Re-derived correct-position sequence from quiz.gift matches sidecar exactly across all 10 MCQs."
+  },
+  "checks": {
+    "positional_bias": {
+      "passed": true,
+      "distribution_by_position_0to3": [3, 2, 3, 2],
+      "total_mcqs": 10,
+      "max_share": 0.30,
+      "threshold": 0.40
+    },
+    "length_bias": {
+      "passed": true,
+      "longest_correct_rate": 0.20,
+      "baseline": 0.25,
+      "threshold": 0.40,
+      "flagged_questions": [
+        { "id": "q1", "correct_len": 103, "distractor_mean": 82.7, "ratio": 1.25 },
+        { "id": "q4", "correct_len": 131, "distractor_mean": 105.0, "ratio": 1.25 }
+      ],
+      "note": "2 of 10 MCQs have a correct answer >20% longer than the distractor mean (char length, feedback stripped). Rate (0.20) is below the 0.40 fail threshold and close to the 0.25 four-option baseline; no action required."
+    },
+    "distractor_plausibility": {
+      "passed": true,
+      "absurd_rate": 0.00,
+      "total_distractors": 30,
+      "weakest_questions": [],
+      "note": "All distractors spot-checked encode genuine beginner misconceptions traceable to corpus content: type-conversion/ADT conflation (q1), identity vs class/instance confusion (q2), constructor-timing and shared-vs-instance-attribute errors (q3, q5, q7, q8), self-binding/self-as-class confusion (q4, q6, q10), and naming-convention mix-ups (q9). None are absurd/free-point options."
+    },
+    "objective_coverage": {
+      "passed": true,
+      "learning_objectives": [
+        { "lo": "LO1: ADT is state+behaviour bundled together, why that's useful", "covered_by": ["q1"] },
+        { "lo": "LO2: Distinguish class (blueprint) from object/instance; create instances", "covered_by": ["q2", "q9"] },
+        { "lo": "LO3: Constructor (__init__) initializing instance attributes; instance vs class attribute distinction", "covered_by": ["q3", "q5", "q7", "q8", "q11", "q13"] },
+        { "lo": "LO4: Instance methods, correct use of self, calling methods on an object", "covered_by": ["q4", "q6", "q10", "q12"] }
+      ],
+      "uncovered_objectives": [],
+      "orphan_questions": [],
+      "note": "q8/q9/q10 extend into corpus Section 6 (Implementation) and Section 8 (Best Practices) material (naming conventions, missing-self TypeError, uninitialized-attribute AttributeError) rather than Section 3's LO wording verbatim, but each is explicitly grounded in a cited corpus section and fuzzy-maps (>=0.7) to LO2/LO3/LO4 respectively — not treated as orphans."
+    }
+  },
+  "auto_correction_applied": { "shuffle_round_2": false },
+  "verdict": "Pass — positional bias max_share 0.30 (<=0.40), length bias longest_correct_rate 0.20 (<=0.40), distractor absurd_rate 0.00 (<=0.25), all 4 Learning Objectives covered with no orphan questions and no meta/gift desync.",
+  "at": "2026-07-14T00:00:00Z"
+}

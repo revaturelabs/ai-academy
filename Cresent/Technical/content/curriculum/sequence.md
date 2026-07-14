@@ -176,10 +176,10 @@ status: "scaffolded"
 - path: `p4-classes-objects/week-6/1-classes-objects/6-1-object-oriented-foundations`
 
 ```yaml
-concepts_introduced: []
-prerequisites: []
-cross_refs: []
-status: "scaffolded"
+concepts_introduced: ["abstract data types (state + behaviour)", "class vs instance/object", "constructor (__init__)", "instance vs class attributes", "methods and the self parameter"]
+prerequisites: [1.1, 1.2, 1.4]
+cross_refs: ["Python"]
+status: "corpus_drafted"
 ```
 
 ## 6.2 — Inheritance & Encapsulation
@@ -188,10 +188,10 @@ status: "scaffolded"
 - path: `p4-classes-objects/week-6/1-classes-objects/6-2-inheritance-encapsulation`
 
 ```yaml
-concepts_introduced: []
-prerequisites: []
-cross_refs: []
-status: "scaffolded"
+concepts_introduced: ["single-level inheritance (subclass/superclass)", "super() and multi-level inheritance", "Method Resolution Order (MRO) / diamond problem", "encapsulation: single underscore convention", "name mangling (double underscore)"]
+prerequisites: ["6.1"]
+cross_refs: ["Python"]
+status: "corpus_drafted"
 ```
 
 ## 6.3 — Special Methods & Dataclasses
@@ -200,10 +200,10 @@ status: "scaffolded"
 - path: `p4-classes-objects/week-6/1-classes-objects/6-3-special-methods-dataclasses`
 
 ```yaml
-concepts_introduced: []
-prerequisites: []
-cross_refs: []
-status: "scaffolded"
+concepts_introduced: ["dunder/special methods & the data model", "__repr__ vs __str__ (and the __str__-falls-back-to-__repr__ rule)", "__eq__ value-based equality (vs identity fallback)", "@dataclass decorator (auto __init__/__repr__/__eq__)", "dataclass field declarations & default-value ordering rule", "modules & packages (organizing classes into files, import)"]
+prerequisites: ["6.1", "6.2"]
+cross_refs: ["Python"]
+status: "corpus_drafted"
 ```
 
 ## 7.1 — File Handling

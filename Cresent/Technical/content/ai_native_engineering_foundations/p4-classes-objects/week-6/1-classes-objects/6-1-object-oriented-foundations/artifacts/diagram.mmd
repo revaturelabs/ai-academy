@@ -1,0 +1,32 @@
+---
+title: One Class, Many Independent Instances
+config:
+  theme: base
+  themeVariables:
+    primaryColor: "#a5d8ff"
+    primaryBorderColor: "#4a9eed"
+    lineColor: "#555"
+  flowchart:
+    htmlLabels: true
+    curve: basis
+    nodeSpacing: 50
+    rankSpacing: 70
+---
+flowchart TB
+    TASKCLASS["<b>Task</b><br/><span style='font-size:11px;color:#6d28d9'>class attribute: category = 'general'</span>"]:::start
+    CTOR["<b>__init__</b><br/><span style='font-size:11px;color:#6d28d9'>constructor builds each instance</span>"]:::auto
+    FIRST["<b>first_task</b><br/><span style='font-size:11px;color:#6d28d9'>name='Write topic corpus'<br/>priority='normal', done=False<br/>category='general' (inherited)</span>"]:::done
+    SECOND["<b>second_task</b><br/><span style='font-size:11px;color:#6d28d9'>name='Review pull request'<br/>priority='high', done=False<br/>category='personal' (overridden)</span>"]:::done
+    SHARED["<span style='font-size:11px;color:#6d28d9'>shared by every instance<br/>unless one overrides it</span>"]:::ghost
+    OVERRIDE["<span style='font-size:11px;color:#6d28d9'>t1.category='personal' makes<br/>its own copy, shadowing the class</span>"]:::ghost
+
+    TASKCLASS -- "instantiate" --> CTOR
+    CTOR -- "Task(name, priority)" --> FIRST
+    CTOR -- "Task(name, priority)" --> SECOND
+    TASKCLASS -. "class attr" .-> SHARED
+    SECOND -. "locally shadows" .-> OVERRIDE
+
+    classDef start fill:#a5d8ff,stroke:#4a9eed,stroke-width:2px
+    classDef auto fill:#d0bfff,stroke:#8b5cf6,stroke-width:2px
+    classDef done fill:#b2f2bb,stroke:#22c55e,stroke-width:2px
+    classDef ghost fill:none,stroke:none,color:#6d28d9

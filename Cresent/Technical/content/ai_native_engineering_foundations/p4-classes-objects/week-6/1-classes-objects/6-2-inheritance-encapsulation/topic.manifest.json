@@ -13,8 +13,37 @@
     "Multiple inheritance: Method Resolution Order (MRO) (brief)",
     "Encapsulation and information hiding: single underscore convention; double underscore name-mangling"
   ],
-  "expected_delivery_minutes": null,
-  "artifact_plan": {},
+  "expected_delivery_minutes": 10,
+  "artifact_plan": {
+    "depth_profile": "deep",
+    "depth_profile_confirmed_at_hitl2": true,
+    "depth_profile_signals": [
+      "Core Concepts has 4 sub-concepts (5.1-5.4)",
+      "Implementation section warranted (step-by-step RegulatoryTask + Person->Student->GraduateStudent build)",
+      "Real-World Patterns section warranted (frameworks, mixins, encapsulation-in-libraries)",
+      "week has an explicit Lab seed building exactly these hierarchies (P4.2, P4.5)",
+      "MRO/diamond problem is a genuinely multi-part, non-atomic concept needing a worked trace"
+    ],
+    "week_budget_check": {
+      "already_spent_minutes": 10,
+      "this_topic_estimate_minutes": 10,
+      "siblings_unprofiled": 1,
+      "avg_minutes_remaining_per_sibling": 70,
+      "recommendation": "deep (at ceiling, no upgrade possible)",
+      "accepted": "deep"
+    },
+    "reading": {
+      "target_min_minutes": 9,
+      "target_max_minutes": 11,
+      "target_word_range": [1800, 2200]
+    },
+    "quiz": {
+      "min_questions": 10,
+      "max_questions": 15,
+      "include_short_answer": true
+    },
+    "diagram": true
+  },
   "next_assessment": {
     "id": "A3",
     "week": 8,

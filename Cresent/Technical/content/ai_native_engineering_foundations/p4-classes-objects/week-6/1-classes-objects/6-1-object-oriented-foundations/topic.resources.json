@@ -1,0 +1,30 @@
+{
+  "topic_id": "6.1",
+  "captured_at": "2026-07-14T00:00:00Z",
+  "captured_by": "vishnu.vardhan@revature.com",
+  "resources_source": "web_search",
+  "resources": [
+    {
+      "type": "url",
+      "value": "https://docs.python.org/3/tutorial/classes.html",
+      "role": "primary",
+      "source": "web_search",
+      "notes": "Official Python 3 tutorial, Ch.9 Classes — classes, __init__, self, instance/class attributes, methods"
+    },
+    {
+      "type": "url",
+      "value": "https://realpython.com/python3-object-oriented-programming/",
+      "role": "supporting",
+      "source": "web_search",
+      "notes": "OOP in Python 3 — classes, instances, attributes, methods walkthrough"
+    },
+    {
+      "type": "url",
+      "value": "https://realpython.com/python-classes/",
+      "role": "supporting",
+      "source": "web_search",
+      "notes": "Deep-dive on class mechanics"
+    }
+  ],
+  "web_search_query": "Python object-oriented foundations classes __init__ self instance attributes tutorial"
+}

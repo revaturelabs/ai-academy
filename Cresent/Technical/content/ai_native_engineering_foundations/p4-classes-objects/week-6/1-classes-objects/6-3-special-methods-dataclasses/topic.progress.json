@@ -1,26 +1,205 @@
 {
   "topic_id": "6.3",
-  "stage": "awaiting_resources",
+  "stage": "module_passed",
   "gates": {
-    "resources_captured": false,
-    "corpus_generated": false,
-    "corpus_critic_passed": false,
-    "corpus_human_approved": false,
-    "reading_generated": false,
-    "reading_critic_passed": false,
-    "quiz_generated": false,
-    "quiz_critic_passed": false,
+    "resources_captured": true,
+    "corpus_generated": true,
+    "corpus_critic_passed": true,
+    "corpus_human_approved": true,
+    "reading_generated": true,
+    "reading_critic_passed": true,
+    "quiz_generated": true,
+    "quiz_critic_passed": true,
     "diagram_generated": false,
     "diagram_critic_passed": false,
-    "topic_artifacts_human_approved": false,
-    "module_drift_passed": false,
-    "week_human_approved": false
+    "topic_artifacts_human_approved": true,
+    "module_drift_passed": true,
+    "week_human_approved": true,
+    "module_passed": true
   },
   "history": [
     {
       "at": "2026-07-13T00:00:00Z",
       "op": "scaffold",
       "msg": "created by ai_native_ingest.py"
+    },
+    {
+      "at": "2026-07-14T11:03:48Z",
+      "op": "set",
+      "gate": "resources_captured",
+      "value": true
+    },
+    {
+      "at": "2026-07-14T11:03:48Z",
+      "op": "stage",
+      "to": "awaiting_corpus"
+    },
+    {
+      "at": "2026-07-14T11:03:48Z",
+      "op": "log",
+      "msg": "Captured 3 resources (source=web_search)"
+    },
+    {
+      "at": "2026-07-14T11:08:18Z",
+      "op": "set",
+      "gate": "corpus_generated",
+      "value": true
+    },
+    {
+      "at": "2026-07-14T11:08:18Z",
+      "op": "stage",
+      "to": "awaiting_corpus_critic"
+    },
+    {
+      "at": "2026-07-14T11:13:47Z",
+      "op": "set",
+      "gate": "corpus_critic_passed",
+      "value": false
+    },
+    {
+      "at": "2026-07-14T11:13:47Z",
+      "op": "log",
+      "msg": "Critic failed (try 1): forward ref to if-statements (2.1 Conditionals not built) in __eq__ guards/Step4/exercise; length ~4750-4770w vs deep band; modules/import section thin on citations"
+    },
+    {
+      "at": "2026-07-14T11:24:25Z",
+      "op": "set",
+      "gate": "corpus_critic_passed",
+      "value": true
+    },
+    {
+      "at": "2026-07-14T11:24:25Z",
+      "op": "stage",
+      "to": "awaiting_corpus_human_review"
+    },
+    {
+      "at": "2026-07-14T11:24:25Z",
+      "op": "log",
+      "msg": "Corpus critic passed on try 2 (5442 words, if-statements purged, citations fixed)"
+    },
+    {
+      "at": "2026-07-14T11:29:45Z",
+      "op": "set",
+      "gate": "corpus_human_approved",
+      "value": true
+    },
+    {
+      "at": "2026-07-14T11:29:45Z",
+      "op": "stage",
+      "to": "corpus_approved"
+    },
+    {
+      "at": "2026-07-14T11:29:45Z",
+      "op": "log",
+      "msg": "HITL#2 passed - all sections approved (Sec4 intro trimmed); depth=deep confirmed"
+    },
+    {
+      "at": "2026-07-14T11:34:29Z",
+      "op": "set",
+      "gate": "quiz_generated",
+      "value": true
+    },
+    {
+      "at": "2026-07-14T11:34:29Z",
+      "op": "stage",
+      "to": "awaiting_quiz_critic"
+    },
+    {
+      "at": "2026-07-14T11:35:28Z",
+      "op": "set",
+      "gate": "reading_generated",
+      "value": true
+    },
+    {
+      "at": "2026-07-14T11:35:28Z",
+      "op": "stage",
+      "to": "awaiting_reading_critic"
+    },
+    {
+      "at": "2026-07-14T11:35:28Z",
+      "op": "log",
+      "msg": "Reading generated (1922w, 10min) + quiz generated (14q) in parallel"
+    },
+    {
+      "at": "2026-07-14T11:39:05Z",
+      "op": "set",
+      "gate": "quiz_critic_passed",
+      "value": true
+    },
+    {
+      "at": "2026-07-14T11:39:05Z",
+      "op": "stage",
+      "to": "quiz_approved"
+    },
+    {
+      "at": "2026-07-14T11:39:05Z",
+      "op": "log",
+      "msg": "Quiz critic passed on try 1: 14q, positional uniform, length bias 16.7% (learned from 6.2), all 5 LOs covered"
+    },
+    {
+      "at": "2026-07-14T11:40:06Z",
+      "op": "set",
+      "gate": "reading_critic_passed",
+      "value": true
+    },
+    {
+      "at": "2026-07-14T11:40:06Z",
+      "op": "stage",
+      "to": "awaiting_topic_artifacts_review"
+    },
+    {
+      "at": "2026-07-14T11:40:06Z",
+      "op": "log",
+      "msg": "Reading critic passed: 1922w/1954tok, faithful, no forward refs, tone ok"
+    },
+    {
+      "at": "2026-07-14T11:46:01Z",
+      "op": "set",
+      "gate": "topic_artifacts_human_approved",
+      "value": true
+    },
+    {
+      "at": "2026-07-14T11:46:01Z",
+      "op": "stage",
+      "to": "topic_artifacts_approved"
+    },
+    {
+      "at": "2026-07-14T11:46:01Z",
+      "op": "log",
+      "msg": "HITL#3 approved - reading/quiz pass, no diagram needed, no carry-over failures"
+    },
+    {
+      "at": "2026-07-14T11:49:03Z",
+      "op": "set",
+      "gate": "module_drift_passed",
+      "value": true
+    },
+    {
+      "at": "2026-07-14T11:49:03Z",
+      "op": "stage",
+      "to": "module_passed"
+    },
+    {
+      "at": "2026-07-14T11:49:03Z",
+      "op": "log",
+      "msg": "Module-drift critic passed - fixed RegulatoryTask ctor drift + outline label"
+    },
+    {
+      "at": "2026-07-14T11:52:31Z",
+      "op": "set",
+      "gate": "week_human_approved",
+      "value": true
+    },
+    {
+      "at": "2026-07-14T11:52:31Z",
+      "op": "log",
+      "msg": "HITL#4 rollup approved - week 6 complete"
+    },
+    {
+      "at": "2026-07-14T11:52:39Z",
+      "op": "set",
+      "gate": "module_passed",
+      "value": true
     }
   ]
 }

@@ -1,0 +1,30 @@
+{
+  "topic_id": "6.2",
+  "captured_at": "2026-07-14T00:00:00Z",
+  "captured_by": "vishnu.vardhan@revature.com",
+  "resources_source": "web_search",
+  "resources": [
+    {
+      "type": "url",
+      "value": "https://docs.python.org/3/tutorial/classes.html",
+      "role": "primary",
+      "source": "web_search",
+      "notes": "Official Python 3 tutorial, sections 9.5 Inheritance and 9.6 Private Variables (name mangling)"
+    },
+    {
+      "type": "url",
+      "value": "https://realpython.com/python-super/",
+      "role": "supporting",
+      "source": "web_search",
+      "notes": "super(), MRO, cooperative multiple inheritance"
+    },
+    {
+      "type": "url",
+      "value": "https://www.datacamp.com/tutorial/super-multiple-inheritance-diamond-problem",
+      "role": "supporting",
+      "source": "web_search",
+      "notes": "MRO mechanics, diamond problem walkthrough"
+    }
+  ],
+  "web_search_query": "Python inheritance single multiple super() MRO encapsulation name mangling tutorial"
+}

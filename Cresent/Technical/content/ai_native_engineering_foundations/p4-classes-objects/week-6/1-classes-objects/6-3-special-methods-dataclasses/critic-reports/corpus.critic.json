@@ -1,0 +1,48 @@
+{
+  "critic": "corpus-critic",
+  "topic_id": "6.3",
+  "corpus_path": "content/ai_native_engineering_foundations/p4-classes-objects/week-6/1-classes-objects/6-3-special-methods-dataclasses/topic_corpus.md",
+  "resources_path": "content/ai_native_engineering_foundations/p4-classes-objects/week-6/1-classes-objects/6-3-special-methods-dataclasses/topic.resources.json",
+  "sequence_index_path": "content/curriculum/sequence.index.json",
+  "verification_try": 1,
+  "at": "2026-07-14T00:00:00Z",
+  "passed": true,
+  "checks": {
+    "1_required_sections": {
+      "passed": true,
+      "detail": "Section 3 Learning Objectives (5 bullets), Section 4 Introduction (~330 words), Section 5 Core Concepts (5.1-5.5, ~3500+ words), Section 10 Key Takeaways (6 bullets) all present, non-trivial, and well over the required word floors. No placeholder strings used in any required section."
+    },
+    "2_citation_density": {
+      "passed": true,
+      "resources_source": "web_search",
+      "primary_cited": true,
+      "detail": "Strict mode applied. Primary [1] (docs.python.org/3/reference/datamodel.html) cited repeatedly across 5.1, 5.2, 5.3, 5.5 (lines 318, 349 -- module-object/namespace mechanics now grounded), 6, 7. Primary [2] (docs.python.org/3/library/dataclasses.html) cited repeatedly across 5.4, 6, and 7 including the new order=True paragraph (line 406). Supporting [3] cited alongside [1] in 5.2/6/7. Grepped the full corpus for [1]/[2]/[3] occurrences and confirmed no [4]+ or other fabricated markers exist -- exactly the 3 declared resources are used.",
+      "claim_citation_rate_estimate": "~85-90% of standalone factual/definitional paragraphs in sections 5, 6, and 7 now carry a trailing citation marker (up from ~60% in the prior revision). The only uncited paragraphs remaining are practice/convention statements (e.g. 'many teams settle on this split independently,' 7 closing paragraph; the testing-workflow rationale in 7) that are reasoning/opinion rather than sourced factual claims -- acceptable and not counted against the 60% threshold.",
+      "findings": [
+        "Verified independently (not taking the revision's self-report on faith): re-read 5.5 lines 285-349 and confirmed the module-object/namespace claim at line 318 and the closing package/import paragraph at line 349 both now carry [1], closing the previously-flagged citation gap.",
+        "Verified Section 7's order=True paragraph (line 406) now carries [2], closing the second previously-flagged citation gap."
+      ]
+    },
+    "3_sequence_drift": {
+      "passed": true,
+      "detail": "Full manual review of every one of the corpus's 20 fenced code blocks plus a targeted grep for `if `, `elif`, `else:`, and ternary (`x if y else z`) patterns found zero literal if/elif/else statements and zero ternary expressions anywhere in the corpus -- not in the __eq__ guards (5.3, lines 160-164 and 183-186), not in Implementation Step 4 (line 366), not in the Hands-On Exercise (line 421). All three previously-flagged sites now use and-chained boolean-expression returns (e.g. `return (isinstance(other, Task) and self.name == other.name and self.priority == other.priority and self.done == other.done)`), consistent with the revision's claim. The handful of grep hits for the word 'if' are all prose ('if a class defines __repr__ but not __str__...', 'if it wouldn't differ...') describing behaviour in English, not Python code -- confirmed by inspecting each hit in context.",
+      "forward_referenced_terms": [],
+      "positive_findings": [
+        "Read content/curriculum/sequence.index.json directly: topic 2.1 Conditionals and topic 3.3 Modules/Packaging both still show concepts_introduced: [] (status: scaffolded / unbuilt), confirming these remain correctly un-relied-upon.",
+        "Dataclass field-default carve-out verified exhaustively: grepped for `def \\w+\\([^)]*=` (default values in plain function/method signatures) across the whole file -- zero matches. Every `= default` (e.g. `done: bool = False`, lines 204, 243, 260, 299) appears only inside @dataclass-decorated class bodies as field declarations; every plain __init__/__eq__/__repr__/method signature elsewhere remains required-positional-only.",
+        "Module/import mechanics (import, module, package, module namespace) are genuinely taught and defined here in 5.5 (what a module is, what from X import Y binds, what a package is, module-load-once caching) rather than assumed -- and this is licensed because 'modules & packages (organizing classes into files, import)' is explicitly listed in 6.3's own concepts_introduced in sequence.index.json, not borrowed from the still-unbuilt 3.3 Modules/Packaging topic. 3.3 is correctly never relied upon or referenced.",
+        "isinstance()/type() usage traces cleanly to 6.1 (type()) and 6.2 (isinstance(), lines 343/405/421 of the 6.2 corpus) where both are actually used and explained in running code, not merely assumed."
+      ]
+    },
+    "4_length_sanity": {
+      "passed": true,
+      "depth_profile": "deep",
+      "expected_range_words": "5000-6000",
+      "self_reported_words": "~5450-5460 (revision's claim)",
+      "independently_measured_words": "~5442 (whitespace-delimited token count via ripgrep \\S+ over the full file = 5457 total tokens, minus 15 YAML-frontmatter tokens)",
+      "detail": "Independently measured word count (~5442) lands inside the deep-profile 5000-6000 band and closely corroborates the revision's self-reported ~5450-5460 (within ~0.2%). This is a marked improvement over the prior revision's independently-measured ~4750-4770, which sat below the floor. Delta versus the prior measurement is ~5442-4747=~695 words, consistent with the revision's claimed +697-word addition (5.5 module-import trace, 5.4 Person dataclass trace, Section 7 order=True paragraph)."
+    }
+  },
+  "verdict": "PASS. All four checks pass on independent re-verification (verification try 1), not merely on the revision's self-report. (1) Required sections present and substantive. (2) Citation density strict mode: both primary [1] and [2] cited repeatedly, including the two specific gaps flagged in the prior fail -- 5.5's module-object/namespace paragraphs (lines 318, 349) now carry [1], and Section 7's order=True paragraph (line 406) now carries [2]; no fabricated citation markers found (only [1]/[2]/[3] appear anywhere, matching the 3 declared resources). (3) Sequence drift: manual inspection of all 20 code blocks plus targeted grep for if/elif/else/ternary patterns confirms zero remain anywhere in the corpus -- the __eq__ guards, Implementation Step 4, and the Hands-On Exercise all now use and-chained boolean-expression returns instead of if-statements, resolving the topic-2.1-forward-reference violation from the prior fail; the @dataclass field-default carve-out is verified exhaustively (no default-value syntax in any plain function/method signature); module/import mechanics are genuinely taught fresh in 5.5 under 6.3's own licensed concepts_introduced, with 3.3 Modules/Packaging correctly remaining unbuilt and unreferenced. (4) Length sanity: independently measured word count (~5442, via whitespace-token count) now lands inside the deep-profile 5000-6000 band, closely matching the revision's self-reported ~5450-5460 and resolving the prior below-floor measurement. No hard-block issues remain.",
+  "at": "2026-07-14T00:00:00Z"
+}

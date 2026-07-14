@@ -1,0 +1,109 @@
+$CATEGORY: CIT/P4/week-6/6.3-special-methods-dataclasses
+
+::q1:: A class defines only __repr__ (no __str__ method). What happens when you call print(t1) on an instance, and why? {
+~print(t1) shows the default <ClassName object at 0x...> address, because __repr__ only changes what the interactive interpreter shows, not what print() displays.#No — __repr__ affects print() too, not just the interpreter; object's default __str__ falls back to __repr__.
+=print(t1) shows the __repr__ output, because object's inherited __str__ method simply calls self.__repr__() when the class defines no __str__ of its own.#Correct — object's inherited __str__ calls self.__repr__(), so print() shows the repr output automatically.
+~print(t1) raises a TypeError, because Python's print() function refuses any object whose class does not explicitly define its own __str__ method.#No — print() never requires __str__; it works fine with only __repr__ defined.
+~print(t1) shows the __repr__ output, but only because Python automatically writes a matching __str__ method for every class that defines __repr__.#No — Python doesn't write a __str__ method for you; the fallback is inheritance from object's default __str__, not code generation.
+#### Tests the __str__ fallback-to-__repr__ rule (corpus 5.2).
+}
+
+::q2:: A Task class defines __eq__ as isinstance(other, Task) and self.name == other.name and self.priority == other.priority and self.done == other.done. What does t1 == t2 evaluate to when t1 and t2 are separate Task instances built with identical arguments? {
+~False, because separate Task() calls always allocate different objects, and == still checks identity even after __eq__ is defined.#No — once __eq__ is defined, == calls it instead of the inherited identity check; it no longer falls back to is.
+~True, but only because Python still silently falls back to comparing object identity underneath the custom __eq__ method.#No — the custom __eq__ fully replaces the identity fallback; nothing falls back to identity underneath it.
+~It raises an AttributeError, because isinstance(other, Task) fails whenever two different Task objects are compared.#No — isinstance(other, Task) succeeds here because other genuinely is a Task instance.
+=True, because __eq__ now compares matching attribute values instead of falling back to the default identity check that is performs.#Correct — __eq__ compares name, priority, and done by value, so identical attribute values make t1 == t2 True.
+#### Tests value-based equality via __eq__, replacing the default identity fallback (corpus 5.3).
+}
+
+::q3:: Applying @dataclass to a class made mostly of name (str), priority (str), and done (bool, default False) field declarations generates which methods automatically? {
+=__init__, __repr__, and __eq__, built from the declared fields in the order they appear in the class body.#Correct — @dataclass generates exactly these three methods from the field declarations.
+~__init__, __repr__, __eq__, and __str__, so the class prints a friendly human-readable string with no extra code.#No — @dataclass does not generate __str__; only __init__, __repr__, and __eq__ are generated.
+~Only __init__, since __repr__ and __eq__ still have to be written by hand for every dataclass field list.#No — @dataclass also generates __repr__ and __eq__, not just __init__.
+~__init__ and __repr__ only, leaving __eq__ to fall back to the default identity comparison from object.#No — @dataclass also generates __eq__, so equality does not fall back to identity.
+#### Tests which methods @dataclass generates from field declarations (corpus 5.4).
+}
+
+::q4:: In a @dataclass, name (str) and priority (str) have no defaults, and done (bool, default False) does. Which field order is valid, and why? {
+~done can be declared first, because dataclass field defaults behave exactly like ordinary function parameter defaults with no special ordering rule.#No — dataclass field defaults carry a special ordering rule; a required field cannot follow a defaulted one.
+~Any order is valid, because @dataclass reorders fields internally so defaulted fields are always placed last automatically.#No — @dataclass does not reorder fields; declaration order is preserved exactly as written.
+=name and priority must come before done, because every field declared after a defaulted field must also have a default value.#Correct — once a field has a default, every field after it must also have one, since __init__ places required parameters before optional ones.
+~name and priority must come after done, because Python requires every optional field to be declared before any required field.#No — this reverses the actual rule; required fields must come before defaulted ones, not after.
+#### Tests the field-default ordering rule for dataclasses (corpus 5.4).
+}
+
+::q5:: task.py defines Task as a top-level class. What does from task import Task in main.py do? {
+=It runs task.py once, then binds the name Task from that module's namespace into main.py's own namespace.#Correct — Python executes the module once and binds the requested name into the importing file's namespace.
+~It copies the text of task.py directly into main.py, merging both files into a single combined namespace.#No — import does not copy source text; it runs the module and binds names from its namespace.
+~It re-runs task.py from scratch every time main.py imports it, rebuilding a brand-new Task class object each time.#No — Python skips re-running an already-loaded module; it reuses the module object it already built.
+~It creates a separate, independent copy of the Task class definition that main.py can modify without affecting task.py.#No — import binds the same class object; it does not create an independent copy.
+#### Tests how import loads a module once and binds a name from its namespace (corpus 5.5).
+}
+
+::q6:: A class defines __repr__ but never defines __str__. According to the fallback rule Python's data model establishes, what happens when you call print() or str() on an instance? {
+~Python calls __str__ first by default, and only falls back to __repr__ if __str__ raises an error somewhere.#No — there is no such error-driven fallback; object's default __str__ simply calls __repr__ directly.
+~print() and str() both raise a NotImplementedError, because a class must define __str__ explicitly before either function will work.#No — neither function raises an error; __repr__ alone is enough for both to work.
+~object's default __str__ ignores __repr__ entirely and instead prints the plain memory-address representation regardless of what __repr__ returns.#No — object's default __str__ specifically calls self.__repr__(), it does not ignore it.
+=object's inherited __str__ implementation calls self.__repr__(), so print() and str() still show the __repr__ output automatically.#Correct — object's inherited __str__ calls self.__repr__(), so the repr output appears automatically.
+#### Tests the __str__-calls-__repr__ fallback rule (corpus 5.2, Best Practices).
+}
+
+::q7:: Why must isinstance(other, Task) be the first operand in __eq__'s and-chained boolean expression, rather than appearing later? {
+~Placement doesn't actually matter, because and evaluates every operand in the chain regardless of the order they're written in.#No — and short-circuits, so operand order does matter; a later isinstance check risks an AttributeError first.
+=and short-circuits left to right, so isinstance must run first to stop attribute comparisons before accessing attributes an unrelated object might not have.#Correct — and stops at the first False operand, so isinstance first prevents attribute access on the wrong type.
+~isinstance must run last, so the attribute comparisons can fail fast before the more expensive isinstance check ever executes.#No — placing isinstance last risks an AttributeError from the attribute comparisons running before the type check.
+~isinstance must be first so that Python automatically converts other into a Task object before any attribute is compared.#No — isinstance never converts other; it only tests whether other is already a Task instance.
+#### Tests why isinstance() must guard __eq__ first in the and-chain (corpus 5.3, Best Practices).
+}
+
+::q8:: Does @dataclass generate a __str__ method for the class by default? {
+~Yes — @dataclass always generates a __str__ that reuses the exact same formatted output as the generated __repr__.#No — @dataclass does not generate __str__ at all, so there is no generated __str__ to reuse __repr__'s output.
+~Yes — @dataclass generates __str__ first, then derives __repr__ from it automatically for consistency between the two outputs.#No — @dataclass never generates __str__, and __repr__ is not derived from it.
+=No — @dataclass generates __init__, __repr__, and __eq__ only; a distinct human-readable __str__ still has to be written by hand.#Correct — @dataclass only generates __init__, __repr__, and __eq__; __str__ must still be written by hand if needed.
+~No — @dataclass generates none of __init__, __repr__, __eq__, or __str__, leaving every special method to be written by hand.#No — @dataclass does generate __init__, __repr__, and __eq__; only __str__ is left out.
+#### Tests that @dataclass does not generate __str__ (corpus 5.4, Best Practices).
+}
+
+::q9:: What is the difference between @dataclass(frozen\=True) and @dataclass(order\=True)? {
+=frozen\=True makes fields read-only after construction, while order\=True generates comparison methods like __lt__ so instances can be sorted.#Correct — frozen enforces immutability, while order adds field-by-field comparison methods for sorting.
+~frozen\=True generates sorting methods like __lt__, while order\=True makes every field read-only after the object is constructed.#No — this swaps the two effects; frozen enforces immutability, and order adds the comparison methods.
+~Both arguments behave the same way, making every field read-only and preventing any attribute from being reassigned.#No — only frozen makes fields read-only; order instead adds comparison methods, it doesn't affect mutability.
+~frozen\=True and order\=True both generate __str__ automatically, differing only in whether the output includes field names.#No — neither argument generates __str__; @dataclass never generates __str__ regardless of these options.
+#### Tests the distinction between frozen\=True and order\=True dataclass options (corpus 5.4).
+}
+
+::q10:: What does Python's module object actually store once task.py has been imported? {
+~A cached copy of the raw source text of task.py, re-parsed into new objects on every subsequent import statement.#No — the module isn't re-parsed on every import; Python reuses the already-built module object after the first import.
+=A namespace implemented as a dictionary mapping every top-level name in task.py, like Task, to the object it refers to.#Correct — a module object's namespace is a dictionary mapping each top-level name to the object it refers to.
+~Only the names explicitly listed in an __all__ variable, discarding every other top-level name defined in the file.#No — the namespace includes every top-level name, not just names listed in an __all__ variable.
+~A list of every function call task.py made while it was running, in the exact order those calls executed.#No — the namespace maps names to objects; it isn't a log of function calls.
+#### Tests what a module object's namespace actually is (corpus 5.5).
+}
+
+::q11:: Which description best matches how real-world codebases typically use @dataclass? {
+~As a replacement for inheritance entirely, since @dataclass supposedly removes any need for subclasses or any shared base-class behaviour in a design.#No — @dataclass does not remove inheritance; dataclasses still participate in inheritance like any other class.
+~As a way to make a class's methods run measurably faster, since @dataclass compiles __init__ and __repr__ into optimized bytecode automatically.#No — @dataclass generates ordinary Python methods; it does not compile anything into optimized bytecode.
+~As a substitute for modules entirely, letting an entire program's classes live inside one dataclass instead of being split across separate files.#No — @dataclass is unrelated to module organization; modules and dataclasses solve different problems.
+=As a DTO or record — a small object mainly carrying named values between parts of a system, with little behaviour beyond what the decorator generates.#Correct — @dataclass is the standard shape for a DTO or record, a mostly-data object with little extra behaviour.
+#### Tests the DTO/record real-world pattern for @dataclass (corpus 7).
+}
+
+::q12:: A program needs to sort a list of Task instances by priority. What does declaring the class as @dataclass(order\=True) provide? {
+~A generated sort_by(field) method that lets the caller pick which single field to sort the list of instances by.#No — order\=True does not add a sort_by helper method; it generates comparison dunder methods instead.
+~Nothing extra for sorting — plain @dataclass instances already support < and > comparisons without any additional arguments needed.#No — without order\=True, plain dataclass instances cannot be compared with < or >; sorting raises an error.
+=Generated comparison methods (__lt__, __le__, __gt__, __ge__) that compare instances field-by-field in declaration order, making sorting possible.#Correct — order\=True generates __lt__, __le__, __gt__, and __ge__, comparing fields in declaration order.
+~A frozen, read-only version of the class, which Python then sorts using each instance's memory address as the key.#No — order\=True does not freeze the class or sort by memory address; frozen\=True is a separate option.
+#### Tests order\=True generating comparison methods for sorting (corpus 5.4, Real-World Patterns).
+}
+
+::q13:: A method whose name begins and ends with two underscores, which Python calls implicitly rather than being called directly, is called a ____ method (also known as a dunder method). {
+=special
+=dunder
+#### Tests the definition of a special (dunder) method (corpus 5.1).
+}
+
+::q14:: The decorator that generates __init__, __repr__, and __eq__ for a class made mostly of attribute fields is ____ (name only, no @ symbol). {
+=dataclass
+=@dataclass
+#### Tests recall of the @dataclass decorator and what it generates (corpus 5.4).
+}

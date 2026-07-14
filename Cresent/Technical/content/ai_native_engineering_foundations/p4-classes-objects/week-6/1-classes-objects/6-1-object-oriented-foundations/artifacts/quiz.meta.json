@@ -1,0 +1,24 @@
+{
+  "topic_id": "6.1",
+  "generated_at": "2026-07-14T00:00:00Z",
+  "format": "gift",
+  "question_count": 13,
+  "$bias_defense_applied": true,
+  "$shuffle_seed": "149 (derived from topic_id \"6.1\": ord('6')+ord('.')+ord('1') = 54+46+49 = 149; used to seed the uniform random shuffle of each MCQ's answer-line order)",
+  "correct_position_distribution": [2, 0, 3, 1, 0, 2, 3, 1, 2, 0],
+  "questions": [
+    { "id": "q1", "type": "mcq", "objective_ref": "Explain what an abstract data type (ADT) is and why bundling state with behaviour is useful.", "correct_position": 2 },
+    { "id": "q2", "type": "mcq", "objective_ref": "Distinguish a class (blueprint) from an object/instance (specific thing built from it), and create instances from a class.", "correct_position": 0 },
+    { "id": "q3", "type": "mcq", "objective_ref": "Write a constructor (__init__) that initializes instance attributes, and explain instance vs class attribute difference.", "correct_position": 3 },
+    { "id": "q4", "type": "mcq", "objective_ref": "Define instance methods, correctly use the self parameter, and call methods on an object.", "correct_position": 1 },
+    { "id": "q5", "type": "mcq", "objective_ref": "Write a constructor (__init__) that initializes instance attributes, and explain instance vs class attribute difference.", "correct_position": 0 },
+    { "id": "q6", "type": "mcq", "objective_ref": "Define instance methods, correctly use the self parameter, and call methods on an object.", "correct_position": 2 },
+    { "id": "q7", "type": "mcq", "objective_ref": "Write a constructor (__init__) that initializes instance attributes, and explain instance vs class attribute difference.", "correct_position": 3 },
+    { "id": "q8", "type": "mcq", "objective_ref": "Write a constructor (__init__) that initializes instance attributes, and explain instance vs class attribute difference.", "correct_position": 1 },
+    { "id": "q9", "type": "mcq", "objective_ref": "Distinguish a class (blueprint) from an object/instance (specific thing built from it), and create instances from a class.", "correct_position": 2 },
+    { "id": "q10", "type": "mcq", "objective_ref": "Define instance methods, correctly use the self parameter, and call methods on an object.", "correct_position": 0 },
+    { "id": "q11", "type": "short_answer", "objective_ref": "Write a constructor (__init__) that initializes instance attributes, and explain instance vs class attribute difference.", "correct_position": null },
+    { "id": "q12", "type": "short_answer", "objective_ref": "Define instance methods, correctly use the self parameter, and call methods on an object.", "correct_position": null },
+    { "id": "q13", "type": "short_answer", "objective_ref": "Write a constructor (__init__) that initializes instance attributes, and explain instance vs class attribute difference.", "correct_position": null }
+  ]
+}
