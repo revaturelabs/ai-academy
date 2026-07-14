@@ -1,4 +1,8 @@
-# Iterators, Generators & Collections
+﻿# Iterators, Generators & Collections
+
+<sub>[&#8592; Previous: 5.2 Dictionaries](../../../../../../../content/ai_native_engineering_foundations/p3-data-structures/week-5/1-data-structures-2/5-2-dictionaries/artifacts/reading.md)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[Go back to TOC](../../../../../../../README.md)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[Next: 6.1 Object-Oriented Foundations &#8594;](../../../../../../../content/ai_native_engineering_foundations/p4-classes-objects/week-6/1-classes-objects/6-1-object-oriented-foundations/artifacts/reading.md)</sub>
+
+---
 
 ## Overview
 
@@ -148,3 +152,7 @@ For going further, the standard library's **`itertools`** module builds on this 
 1. Real Python — *Iterators and Iterables in Python*. https://realpython.com/python-iterators-iterables/
 2. Real Python — *How to Use Generators and yield in Python*. https://realpython.com/introduction-to-python-generators/
 3. Real Python — *Python's collections: A Buffet of Specialized Data Types*. https://realpython.com/python-collections-module/
+
+---
+
+<sub>[&#8592; Previous: 5.2 Dictionaries](../../../../../../../content/ai_native_engineering_foundations/p3-data-structures/week-5/1-data-structures-2/5-2-dictionaries/artifacts/reading.md)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[Go back to TOC](../../../../../../../README.md)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[Next: 6.1 Object-Oriented Foundations &#8594;](../../../../../../../content/ai_native_engineering_foundations/p4-classes-objects/week-6/1-classes-objects/6-1-object-oriented-foundations/artifacts/reading.md)</sub>

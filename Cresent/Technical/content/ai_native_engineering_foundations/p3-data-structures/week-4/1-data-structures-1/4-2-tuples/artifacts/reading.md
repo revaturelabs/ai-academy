@@ -1,4 +1,8 @@
-# Tuples
+﻿# Tuples
+
+<sub>[&#8592; Previous: 4.1 Lists](../../../../../../../content/ai_native_engineering_foundations/p3-data-structures/week-4/1-data-structures-1/4-1-lists/artifacts/reading.md)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[Go back to TOC](../../../../../../../README.md)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[Next: 5.1 Sets &#8594;](../../../../../../../content/ai_native_engineering_foundations/p3-data-structures/week-5/1-data-structures-2/5-1-sets/artifacts/reading.md)</sub>
+
+---
 
 ## Overview
 
@@ -150,3 +154,7 @@ Step 5 is the whole immutability story in one line: we did not edit a tuple, we 
 1. Real Python — *Lists and Tuples in Python*. https://realpython.com/python-lists-tuples/
 2. W3Schools — *Python Tuples*. https://www.w3schools.com/python/python_tuples.asp
 3. Python Software Foundation — *Data Structures* (Python Tutorial). https://docs.python.org/3/tutorial/datastructures.html
+
+---
+
+<sub>[&#8592; Previous: 4.1 Lists](../../../../../../../content/ai_native_engineering_foundations/p3-data-structures/week-4/1-data-structures-1/4-1-lists/artifacts/reading.md)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[Go back to TOC](../../../../../../../README.md)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[Next: 5.1 Sets &#8594;](../../../../../../../content/ai_native_engineering_foundations/p3-data-structures/week-5/1-data-structures-2/5-1-sets/artifacts/reading.md)</sub>

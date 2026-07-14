@@ -1,4 +1,8 @@
-# Lists
+﻿# Lists
+
+<sub>[&#8592; Previous: 3.3 Modules, Packaging & Professional Tooling](../../../../../../../content/ai_native_engineering_foundations/p2-control-structures-functions-tooling/week-3/1-functions-modules-tooling-2/3-3-modules-packaging-professional-tooling/artifacts/reading.md)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[Go back to TOC](../../../../../../../README.md)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[Next: 4.2 Tuples &#8594;](../../../../../../../content/ai_native_engineering_foundations/p3-data-structures/week-4/1-data-structures-1/4-2-tuples/artifacts/reading.md)</sub>
+
+---
 
 ## Overview
 
@@ -212,3 +216,7 @@ Common do/don't when working with lists:
 1. W3Schools — *Python Lists*. https://www.w3schools.com/python/python_lists.asp
 2. Python Software Foundation — *Data Structures* (Python Tutorial). https://docs.python.org/3/tutorial/datastructures.html
 3. freeCodeCamp — *Python List Slicing and Indexing*.
+
+---
+
+<sub>[&#8592; Previous: 3.3 Modules, Packaging & Professional Tooling](../../../../../../../content/ai_native_engineering_foundations/p2-control-structures-functions-tooling/week-3/1-functions-modules-tooling-2/3-3-modules-packaging-professional-tooling/artifacts/reading.md)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[Go back to TOC](../../../../../../../README.md)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[Next: 4.2 Tuples &#8594;](../../../../../../../content/ai_native_engineering_foundations/p3-data-structures/week-4/1-data-structures-1/4-2-tuples/artifacts/reading.md)</sub>

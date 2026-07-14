@@ -1,4 +1,8 @@
-# Case Study: Building a Robust File Reader
+﻿# Case Study: Building a Robust File Reader
+
+<sub>[&#8592; Previous: 7.2 Errors & Exceptions](../../../../../../content/ai_native_engineering_foundations/p5-files-exception-handling/week-7/1-files-exception-handling/7-2-errors-exceptions/reading.md)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[Go back to TOC](../../../../../../README.md)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[Next: 8.1 Version Control Basics &#8594;](../../../../../../content/ai_native_engineering_foundations/p6-git-github-portfolio/week-8/1-git-diagnostic/8-1-version-control-basics/artifacts/reading.md)</sub>
+
+---
 
 ## Overview
 
@@ -229,3 +233,7 @@ That is the complete robust reader: it read the entire messy file, kept the 2 go
 1. Real Python — *Reading and Writing CSV Files in Python*. https://realpython.com/python-csv/
 2. Python documentation — *csv — CSV File Reading and Writing*. https://docs.python.org/3/library/csv.html
 3. Real Python — *Parsing CSV data*. https://realpython.com/python-csv/#parsing-csv-files-with-pythons-built-in-csv-library
+
+---
+
+<sub>[&#8592; Previous: 7.2 Errors & Exceptions](../../../../../../content/ai_native_engineering_foundations/p5-files-exception-handling/week-7/1-files-exception-handling/7-2-errors-exceptions/reading.md)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[Go back to TOC](../../../../../../README.md)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[Next: 8.1 Version Control Basics &#8594;](../../../../../../content/ai_native_engineering_foundations/p6-git-github-portfolio/week-8/1-git-diagnostic/8-1-version-control-basics/artifacts/reading.md)</sub>

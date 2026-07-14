@@ -1,4 +1,8 @@
-# Inheritance & Encapsulation
+﻿# Inheritance & Encapsulation
+
+<sub>[&#8592; Previous: 6.1 Object-Oriented Foundations](../../../../../../../content/ai_native_engineering_foundations/p4-classes-objects/week-6/1-classes-objects/6-1-object-oriented-foundations/artifacts/reading.md)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[Go back to TOC](../../../../../../../README.md)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[Next: 6.3 Special Methods & Dataclasses &#8594;](../../../../../../../content/ai_native_engineering_foundations/p4-classes-objects/week-6/1-classes-objects/6-3-special-methods-dataclasses/artifacts/reading.md)</sub>
+
+---
 
 ## Overview
 
@@ -181,3 +185,7 @@ Finally, verify with `isinstance()`, `issubclass()`, and `type()`. `isinstance(r
 [2] Real Python. "Supercharge Your Classes With Python super()." https://realpython.com/python-super/
 
 [3] DataCamp. "The Diamond Problem in Python." https://www.datacamp.com/tutorial/diamond-problem-in-python
+
+---
+
+<sub>[&#8592; Previous: 6.1 Object-Oriented Foundations](../../../../../../../content/ai_native_engineering_foundations/p4-classes-objects/week-6/1-classes-objects/6-1-object-oriented-foundations/artifacts/reading.md)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[Go back to TOC](../../../../../../../README.md)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[Next: 6.3 Special Methods & Dataclasses &#8594;](../../../../../../../content/ai_native_engineering_foundations/p4-classes-objects/week-6/1-classes-objects/6-3-special-methods-dataclasses/artifacts/reading.md)</sub>

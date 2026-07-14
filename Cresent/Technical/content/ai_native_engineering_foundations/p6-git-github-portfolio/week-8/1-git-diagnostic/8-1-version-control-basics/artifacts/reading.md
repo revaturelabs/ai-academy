@@ -1,4 +1,8 @@
-# Version Control Basics
+﻿# Version Control Basics
+
+<sub>[&#8592; Previous: 7.3 Case Study: Building a Robust File Reader](../../../../../../../content/ai_native_engineering_foundations/p5-files-exception-handling/week-7/1-files-exception-handling/7-3-case-study-building-a-robust-file-reader/reading.md)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[Go back to TOC](../../../../../../../README.md)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[Next: 8.2 Portfolio Diagnostic &#8594;](../../../../../../../content/ai_native_engineering_foundations/p6-git-github-portfolio/week-8/1-git-diagnostic/8-2-portfolio-diagnostic/artifacts/reading.md)</sub>
+
+---
 
 ## Overview
 
@@ -88,3 +92,7 @@ Do / don't, condensed[1][2][3][4][5]:
 [3] widdowquinn, github-best-practice README, https://github.com/widdowquinn/github-best-practice/blob/master/README.md
 [4] UNO IST Support, GitHub Classroom for UNO Students, https://github.com/UNO-IST-Support/GitHubClassroom_for_UNOStudents
 [5] Bill Mongan, "GitHub Classroom" walkthrough, https://www.billmongan.com/posts/2020/02/githubclassroom/
+
+---
+
+<sub>[&#8592; Previous: 7.3 Case Study: Building a Robust File Reader](../../../../../../../content/ai_native_engineering_foundations/p5-files-exception-handling/week-7/1-files-exception-handling/7-3-case-study-building-a-robust-file-reader/reading.md)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[Go back to TOC](../../../../../../../README.md)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[Next: 8.2 Portfolio Diagnostic &#8594;](../../../../../../../content/ai_native_engineering_foundations/p6-git-github-portfolio/week-8/1-git-diagnostic/8-2-portfolio-diagnostic/artifacts/reading.md)</sub>

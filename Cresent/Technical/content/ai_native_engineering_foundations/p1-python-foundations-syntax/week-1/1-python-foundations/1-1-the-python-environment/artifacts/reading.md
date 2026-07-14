@@ -1,4 +1,8 @@
-# The Python Environment
+﻿# The Python Environment
+
+<sub>[Go back to TOC](../../../../../../../README.md)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[Next: 1.2 Variables, Identifiers, Types &#8594;](../../../../../../../content/ai_native_engineering_foundations/p1-python-foundations-syntax/week-1/1-python-foundations/1-2-variables-identifiers-types/artifacts/reading.md)</sub>
+
+---
 
 ## Overview
 
@@ -77,3 +81,7 @@ Coming next: the building blocks of the language itself — storing values and d
 1. Google Colab — Welcome / Overview. https://developers.google.com/colab
 2. QuantEcon, Getting Started with Colab notebooks. https://colab.research.google.com/github/QuantEcon/lecture-py-notebooks/blob/master/getting_started.ipynb
 3. Real Python — Jupyter Notebook: An Introduction. https://realpython.com/jupyter-notebook-introduction/
+
+---
+
+<sub>[Go back to TOC](../../../../../../../README.md)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[Next: 1.2 Variables, Identifiers, Types &#8594;](../../../../../../../content/ai_native_engineering_foundations/p1-python-foundations-syntax/week-1/1-python-foundations/1-2-variables-identifiers-types/artifacts/reading.md)</sub>

@@ -1,4 +1,8 @@
-# Variables, Identifiers & Types
+﻿# Variables, Identifiers & Types
+
+<sub>[&#8592; Previous: 1.1 The Python Environment](../../../../../../../content/ai_native_engineering_foundations/p1-python-foundations-syntax/week-1/1-python-foundations/1-1-the-python-environment/artifacts/reading.md)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[Go back to TOC](../../../../../../../README.md)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[Next: 1.3 Operators & Expressions &#8594;](../../../../../../../content/ai_native_engineering_foundations/p1-python-foundations-syntax/week-1/1-python-foundations/1-3-operators-expressions/artifacts/reading.md)</sub>
+
+---
 
 ## Overview
 
@@ -141,3 +145,7 @@ A reliable habit when creating and checking a variable: choose a clear `snake_ca
 1. Real Python — Variables in Python. https://realpython.com/python-variables/
 2. PEP 8 — Style Guide for Python Code. https://peps.python.org/pep-0008/
 3. GeeksforGeeks — Python Variables. https://www.geeksforgeeks.org/python/python-variables/
+
+---
+
+<sub>[&#8592; Previous: 1.1 The Python Environment](../../../../../../../content/ai_native_engineering_foundations/p1-python-foundations-syntax/week-1/1-python-foundations/1-1-the-python-environment/artifacts/reading.md)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[Go back to TOC](../../../../../../../README.md)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[Next: 1.3 Operators & Expressions &#8594;](../../../../../../../content/ai_native_engineering_foundations/p1-python-foundations-syntax/week-1/1-python-foundations/1-3-operators-expressions/artifacts/reading.md)</sub>

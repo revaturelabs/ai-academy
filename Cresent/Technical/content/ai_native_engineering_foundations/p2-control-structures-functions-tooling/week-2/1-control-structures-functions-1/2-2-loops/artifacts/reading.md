@@ -1,4 +1,8 @@
-# Loops
+﻿# Loops
+
+<sub>[&#8592; Previous: 2.1 Conditionals](../../../../../../../content/ai_native_engineering_foundations/p2-control-structures-functions-tooling/week-2/1-control-structures-functions-1/2-1-conditionals/artifacts/reading.md)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[Go back to TOC](../../../../../../../README.md)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[Next: 3.1 Functions &#8594;](../../../../../../../content/ai_native_engineering_foundations/p2-control-structures-functions-tooling/week-3/1-functions-modules-tooling-2/3-1-functions/artifacts/reading.md)</sub>
+
+---
 
 ## Overview
 
@@ -148,3 +152,7 @@ These constructs let you translate a repetitive plain-English task ("keep asking
 1. Python Software Foundation. *More Control Flow Tools* — Python 3 Tutorial. https://docs.python.org/3/tutorial/controlflow.html
 2. nkmk. *How to use for loops in Python (range, enumerate, zip)*. https://note.nkmk.me/en/python-for-usage/
 3. Czech Technical University. *Lecture 5: Iteration and Loops*. https://cw.fel.cvut.cz/b211/_media/courses/be5b33prg/lectures/lec05-iteration.pdf
+
+---
+
+<sub>[&#8592; Previous: 2.1 Conditionals](../../../../../../../content/ai_native_engineering_foundations/p2-control-structures-functions-tooling/week-2/1-control-structures-functions-1/2-1-conditionals/artifacts/reading.md)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[Go back to TOC](../../../../../../../README.md)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[Next: 3.1 Functions &#8594;](../../../../../../../content/ai_native_engineering_foundations/p2-control-structures-functions-tooling/week-3/1-functions-modules-tooling-2/3-1-functions/artifacts/reading.md)</sub>

@@ -1,4 +1,8 @@
-# Errors & Exceptions
+﻿# Errors & Exceptions
+
+<sub>[&#8592; Previous: 7.1 File Handling](../../../../../../content/ai_native_engineering_foundations/p5-files-exception-handling/week-7/1-files-exception-handling/7-1-file-handling/reading.md)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[Go back to TOC](../../../../../../README.md)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[Next: 7.3 Case Study: Building a Robust File Reader &#8594;](../../../../../../content/ai_native_engineering_foundations/p5-files-exception-handling/week-7/1-files-exception-handling/7-3-case-study-building-a-robust-file-reader/reading.md)</sub>
+
+---
 
 ## Overview
 
@@ -198,3 +202,7 @@ Notice how `finally` prints in *every* case, `else` prints only on success, and 
 1. Python Software Foundation. *Errors and Exceptions — Python Tutorial.* https://docs.python.org/3/tutorial/errors.html
 2. Python Software Foundation. *Built-in Exceptions — Python Standard Library.* https://docs.python.org/3/library/exceptions.html
 3. Real Python. *Python Exceptions: An Introduction.* https://realpython.com/python-exceptions/
+
+---
+
+<sub>[&#8592; Previous: 7.1 File Handling](../../../../../../content/ai_native_engineering_foundations/p5-files-exception-handling/week-7/1-files-exception-handling/7-1-file-handling/reading.md)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[Go back to TOC](../../../../../../README.md)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[Next: 7.3 Case Study: Building a Robust File Reader &#8594;](../../../../../../content/ai_native_engineering_foundations/p5-files-exception-handling/week-7/1-files-exception-handling/7-3-case-study-building-a-robust-file-reader/reading.md)</sub>

@@ -1,4 +1,8 @@
-# Functional Constructs
+﻿# Functional Constructs
+
+<sub>[&#8592; Previous: 3.1 Functions](../../../../../../../content/ai_native_engineering_foundations/p2-control-structures-functions-tooling/week-3/1-functions-modules-tooling-2/3-1-functions/artifacts/reading.md)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[Go back to TOC](../../../../../../../README.md)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[Next: 3.3 Modules, Packaging & Professional Tooling &#8594;](../../../../../../../content/ai_native_engineering_foundations/p2-control-structures-functions-tooling/week-3/1-functions-modules-tooling-2/3-3-modules-packaging-professional-tooling/artifacts/reading.md)</sub>
+
+---
 
 ## Overview
 
@@ -178,3 +182,7 @@ slow_add(2, 3)
 2. Python Software Foundation. "Functional Programming HOWTO" — higher-order functions, map/filter, sorted(key=), generators. https://docs.python.org/3/howto/functional.html
 3. Real Python. "Primer on Python Decorators" — @decorator syntax, wrapper functions, @timer-style practical use cases. https://realpython.com/primer-on-python-decorators/
 4. Real Python. "Introduction to Python Generators" — generators and yield, lazy evaluation, memory efficiency vs lists. https://realpython.com/introduction-to-python-generators/
+
+---
+
+<sub>[&#8592; Previous: 3.1 Functions](../../../../../../../content/ai_native_engineering_foundations/p2-control-structures-functions-tooling/week-3/1-functions-modules-tooling-2/3-1-functions/artifacts/reading.md)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[Go back to TOC](../../../../../../../README.md)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[Next: 3.3 Modules, Packaging & Professional Tooling &#8594;](../../../../../../../content/ai_native_engineering_foundations/p2-control-structures-functions-tooling/week-3/1-functions-modules-tooling-2/3-3-modules-packaging-professional-tooling/artifacts/reading.md)</sub>

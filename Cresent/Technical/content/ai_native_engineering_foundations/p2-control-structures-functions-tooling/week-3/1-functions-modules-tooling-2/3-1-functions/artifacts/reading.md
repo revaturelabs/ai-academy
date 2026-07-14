@@ -1,4 +1,8 @@
-# Functions
+﻿# Functions
+
+<sub>[&#8592; Previous: 2.2 Loops](../../../../../../../content/ai_native_engineering_foundations/p2-control-structures-functions-tooling/week-2/1-control-structures-functions-1/2-2-loops/artifacts/reading.md)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[Go back to TOC](../../../../../../../README.md)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[Next: 3.2 Functional Constructs &#8594;](../../../../../../../content/ai_native_engineering_foundations/p2-control-structures-functions-tooling/week-3/1-functions-modules-tooling-2/3-2-functional-constructs/artifacts/reading.md)</sub>
+
+---
 
 ## Overview
 
@@ -198,3 +202,7 @@ Each step maps directly onto how the checkpoint is graded: a named function, exp
 2. Real Python. "Python Optional Arguments: How to Create Them" — default arguments and the mutable-default trap. https://realpython.com/python-optional-arguments/
 3. Programiz. "Python Function Arguments" — positional, keyword, default, and arbitrary arguments. https://www.programiz.com/python-programming/function-argument
 4. Real Python. "Thinking Recursively in Python" — base case, recursive case, factorial, call stack, `RecursionError`. https://realpython.com/python-recursion/
+
+---
+
+<sub>[&#8592; Previous: 2.2 Loops](../../../../../../../content/ai_native_engineering_foundations/p2-control-structures-functions-tooling/week-2/1-control-structures-functions-1/2-2-loops/artifacts/reading.md)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[Go back to TOC](../../../../../../../README.md)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[Next: 3.2 Functional Constructs &#8594;](../../../../../../../content/ai_native_engineering_foundations/p2-control-structures-functions-tooling/week-3/1-functions-modules-tooling-2/3-2-functional-constructs/artifacts/reading.md)</sub>

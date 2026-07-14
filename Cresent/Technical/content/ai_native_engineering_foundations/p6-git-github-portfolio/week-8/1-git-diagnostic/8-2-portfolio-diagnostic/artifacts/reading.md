@@ -1,4 +1,8 @@
-# Portfolio & Diagnostic
+﻿# Portfolio & Diagnostic
+
+<sub>[&#8592; Previous: 8.1 Version Control Basics](../../../../../../../content/ai_native_engineering_foundations/p6-git-github-portfolio/week-8/1-git-diagnostic/8-1-version-control-basics/artifacts/reading.md)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[Go back to TOC](../../../../../../../README.md)</sub>
+
+---
 
 ## Overview
 
@@ -75,3 +79,7 @@ Don't:
 [2] freeCodeCamp — *How to Write a Good README File*. https://www.freecodecamp.org/news/how-to-write-a-good-readme-file/
 
 [3] Medium (Code Factory Berlin) — *GitHub Repository Structure Best Practices*. https://medium.com/code-factory-berlin/github-repository-structure-best-practices-248e6effc405
+
+---
+
+<sub>[&#8592; Previous: 8.1 Version Control Basics](../../../../../../../content/ai_native_engineering_foundations/p6-git-github-portfolio/week-8/1-git-diagnostic/8-1-version-control-basics/artifacts/reading.md)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[Go back to TOC](../../../../../../../README.md)</sub>

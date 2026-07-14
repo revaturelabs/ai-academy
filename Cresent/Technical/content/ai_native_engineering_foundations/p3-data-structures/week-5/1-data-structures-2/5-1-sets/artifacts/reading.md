@@ -1,4 +1,8 @@
-# Sets
+﻿# Sets
+
+<sub>[&#8592; Previous: 4.2 Tuples](../../../../../../../content/ai_native_engineering_foundations/p3-data-structures/week-4/1-data-structures-1/4-2-tuples/artifacts/reading.md)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[Go back to TOC](../../../../../../../README.md)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[Next: 5.2 Dictionaries &#8594;](../../../../../../../content/ai_native_engineering_foundations/p3-data-structures/week-5/1-data-structures-2/5-2-dictionaries/artifacts/reading.md)</sub>
+
+---
 
 ## Overview
 
@@ -152,3 +156,7 @@ A few guardrails: prefer `discard` over `remove` unless a missing element is a b
 1. Real Python — *Sets in Python*. https://realpython.com/python-sets/
 2. W3Schools — *Python Sets*. https://www.w3schools.com/python/python_sets.asp
 3. Python Documentation — *Data Structures (Sets)*. https://docs.python.org/3/tutorial/datastructures.html
+
+---
+
+<sub>[&#8592; Previous: 4.2 Tuples](../../../../../../../content/ai_native_engineering_foundations/p3-data-structures/week-4/1-data-structures-1/4-2-tuples/artifacts/reading.md)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[Go back to TOC](../../../../../../../README.md)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[Next: 5.2 Dictionaries &#8594;](../../../../../../../content/ai_native_engineering_foundations/p3-data-structures/week-5/1-data-structures-2/5-2-dictionaries/artifacts/reading.md)</sub>

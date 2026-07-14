@@ -1,4 +1,8 @@
-# Special Methods & Dataclasses
+﻿# Special Methods & Dataclasses
+
+<sub>[&#8592; Previous: 6.2 Inheritance & Encapsulation](../../../../../../../content/ai_native_engineering_foundations/p4-classes-objects/week-6/1-classes-objects/6-2-inheritance-encapsulation/artifacts/reading.md)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[Go back to TOC](../../../../../../../README.md)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[Next: 7.1 File Handling &#8594;](../../../../../../../content/ai_native_engineering_foundations/p5-files-exception-handling/week-7/1-files-exception-handling/7-1-file-handling/reading.md)</sub>
+
+---
 
 ## Overview
 
@@ -146,3 +150,7 @@ Once a class is refactored this way, verifying it end to end matters more than t
 [2] Python Software Foundation. "dataclasses — Data Classes." *Python Documentation*. https://docs.python.org/3/library/dataclasses.html
 
 [3] Real Python. "Python's `str()` and `repr()` for Custom Classes." https://realpython.com/python-repr-vs-str/
+
+---
+
+<sub>[&#8592; Previous: 6.2 Inheritance & Encapsulation](../../../../../../../content/ai_native_engineering_foundations/p4-classes-objects/week-6/1-classes-objects/6-2-inheritance-encapsulation/artifacts/reading.md)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[Go back to TOC](../../../../../../../README.md)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[Next: 7.1 File Handling &#8594;](../../../../../../../content/ai_native_engineering_foundations/p5-files-exception-handling/week-7/1-files-exception-handling/7-1-file-handling/reading.md)</sub>

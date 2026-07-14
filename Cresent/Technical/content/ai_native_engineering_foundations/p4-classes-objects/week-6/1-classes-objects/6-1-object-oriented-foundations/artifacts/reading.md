@@ -1,4 +1,8 @@
-# Object-Oriented Foundations
+﻿# Object-Oriented Foundations
+
+<sub>[&#8592; Previous: 5.3 Iterators, Generators & Collections](../../../../../../../content/ai_native_engineering_foundations/p3-data-structures/week-5/1-data-structures-2/5-3-iterators-generators-collections/artifacts/reading.md)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[Go back to TOC](../../../../../../../README.md)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[Next: 6.2 Inheritance & Encapsulation &#8594;](../../../../../../../content/ai_native_engineering_foundations/p4-classes-objects/week-6/1-classes-objects/6-2-inheritance-encapsulation/artifacts/reading.md)</sub>
+
+---
 
 ## Overview
 
@@ -175,3 +179,7 @@ Best practices to carry forward:
 [2] Real Python. "Object-Oriented Programming (OOP) in Python 3." https://realpython.com/python3-object-oriented-programming/
 
 [3] Real Python. "Python Classes: The Power of Object-Oriented Programming." https://realpython.com/python-classes/
+
+---
+
+<sub>[&#8592; Previous: 5.3 Iterators, Generators & Collections](../../../../../../../content/ai_native_engineering_foundations/p3-data-structures/week-5/1-data-structures-2/5-3-iterators-generators-collections/artifacts/reading.md)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[Go back to TOC](../../../../../../../README.md)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[Next: 6.2 Inheritance & Encapsulation &#8594;](../../../../../../../content/ai_native_engineering_foundations/p4-classes-objects/week-6/1-classes-objects/6-2-inheritance-encapsulation/artifacts/reading.md)</sub>

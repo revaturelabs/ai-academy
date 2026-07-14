@@ -1,4 +1,8 @@
-# Operators & Expressions
+﻿# Operators & Expressions
+
+<sub>[&#8592; Previous: 1.2 Variables, Identifiers, Types](../../../../../../../content/ai_native_engineering_foundations/p1-python-foundations-syntax/week-1/1-python-foundations/1-2-variables-identifiers-types/artifacts/reading.md)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[Go back to TOC](../../../../../../../README.md)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[Next: 1.4 Statements, Conversion & Output &#8594;](../../../../../../../content/ai_native_engineering_foundations/p1-python-foundations-syntax/week-1/1-python-foundations/1-4-statements-conversion-output/artifacts/reading.md)</sub>
+
+---
 
 ## Overview
 
@@ -176,3 +180,7 @@ True
 1. Real Python — Operators and Expressions in Python. https://realpython.com/python-operators-expressions/
 2. Python Language Reference — Expressions. https://docs.python.org/3/reference/expressions.html
 3. GeeksforGeeks — Python Operators. https://www.geeksforgeeks.org/python/python-operators/
+
+---
+
+<sub>[&#8592; Previous: 1.2 Variables, Identifiers, Types](../../../../../../../content/ai_native_engineering_foundations/p1-python-foundations-syntax/week-1/1-python-foundations/1-2-variables-identifiers-types/artifacts/reading.md)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[Go back to TOC](../../../../../../../README.md)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[Next: 1.4 Statements, Conversion & Output &#8594;](../../../../../../../content/ai_native_engineering_foundations/p1-python-foundations-syntax/week-1/1-python-foundations/1-4-statements-conversion-output/artifacts/reading.md)</sub>

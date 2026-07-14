@@ -1,4 +1,8 @@
-# Dictionaries
+﻿# Dictionaries
+
+<sub>[&#8592; Previous: 5.1 Sets](../../../../../../../content/ai_native_engineering_foundations/p3-data-structures/week-5/1-data-structures-2/5-1-sets/artifacts/reading.md)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[Go back to TOC](../../../../../../../README.md)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[Next: 5.3 Iterators, Generators & Collections &#8594;](../../../../../../../content/ai_native_engineering_foundations/p3-data-structures/week-5/1-data-structures-2/5-3-iterators-generators-collections/artifacts/reading.md)</sub>
+
+---
 
 ## Overview
 
@@ -170,3 +174,7 @@ Do / don't habits worth keeping:
 1. Real Python — *Dictionaries in Python*. https://realpython.com/python-dicts/
 2. Real Python — *Python Dictionary Comprehensions*. https://realpython.com/python-dictionary-comprehension/
 3. W3Schools — *Python Nested Dictionaries*. https://www.w3schools.com/python/python_dictionaries_nested.asp
+
+---
+
+<sub>[&#8592; Previous: 5.1 Sets](../../../../../../../content/ai_native_engineering_foundations/p3-data-structures/week-5/1-data-structures-2/5-1-sets/artifacts/reading.md)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[Go back to TOC](../../../../../../../README.md)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[Next: 5.3 Iterators, Generators & Collections &#8594;](../../../../../../../content/ai_native_engineering_foundations/p3-data-structures/week-5/1-data-structures-2/5-3-iterators-generators-collections/artifacts/reading.md)</sub>

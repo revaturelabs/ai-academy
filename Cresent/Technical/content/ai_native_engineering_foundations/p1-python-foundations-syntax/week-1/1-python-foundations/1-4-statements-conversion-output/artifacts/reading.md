@@ -1,4 +1,8 @@
-# Statements, Conversion & Output
+﻿# Statements, Conversion & Output
+
+<sub>[&#8592; Previous: 1.3 Operators & Expressions](../../../../../../../content/ai_native_engineering_foundations/p1-python-foundations-syntax/week-1/1-python-foundations/1-3-operators-expressions/artifacts/reading.md)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[Go back to TOC](../../../../../../../README.md)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[Next: 2.1 Conditionals &#8594;](../../../../../../../content/ai_native_engineering_foundations/p2-control-structures-functions-tooling/week-2/1-control-structures-functions-1/2-1-conditionals/artifacts/reading.md)</sub>
+
+---
 
 ## Overview
 
@@ -136,3 +140,7 @@ Where this shows up and the mistakes that actually bite beginners:
 1. Real Python — Python's F-String for String Interpolation and Formatting. https://realpython.com/python-f-strings/
 2. Real Python — Python String Formatting. https://realpython.com/python-string-formatting/
 3. PEP 636 — Structural Pattern Matching: Tutorial. https://peps.python.org/pep-0636/
+
+---
+
+<sub>[&#8592; Previous: 1.3 Operators & Expressions](../../../../../../../content/ai_native_engineering_foundations/p1-python-foundations-syntax/week-1/1-python-foundations/1-3-operators-expressions/artifacts/reading.md)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[Go back to TOC](../../../../../../../README.md)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[Next: 2.1 Conditionals &#8594;](../../../../../../../content/ai_native_engineering_foundations/p2-control-structures-functions-tooling/week-2/1-control-structures-functions-1/2-1-conditionals/artifacts/reading.md)</sub>

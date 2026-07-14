@@ -1,4 +1,8 @@
-# Modules, Packaging & Professional Tooling
+﻿# Modules, Packaging & Professional Tooling
+
+<sub>[&#8592; Previous: 3.2 Functional Constructs](../../../../../../../content/ai_native_engineering_foundations/p2-control-structures-functions-tooling/week-3/1-functions-modules-tooling-2/3-2-functional-constructs/artifacts/reading.md)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[Go back to TOC](../../../../../../../README.md)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[Next: 4.1 Lists &#8594;](../../../../../../../content/ai_native_engineering_foundations/p3-data-structures/week-4/1-data-structures-1/4-1-lists/artifacts/reading.md)</sub>
+
+---
 
 ## Overview
 
@@ -141,3 +145,9 @@ Applied concretely: a `dice.py` module defines `roll(sides=6)`, returning `rando
 3. Python Software Foundation. "Brief Tour of the Standard Library" — `random`, `math`, `datetime`. https://docs.python.org/3/tutorial/stdlib.html
 4. Poetry. "Basic Usage" — `poetry new`, `pyproject.toml`, `poetry add`, `poetry install`, `poetry run`. https://python-poetry.org/docs/basic-usage/
 5. Pytest. "Get Started" — writing a `test_` function, `assert`, test discovery, pass/fail reporting. https://docs.pytest.org/en/stable/getting-started.html
+
+
+---
+
+<sub>[&#8592; Previous: 3.2 Functional Constructs](../../../../../../../content/ai_native_engineering_foundations/p2-control-structures-functions-tooling/week-3/1-functions-modules-tooling-2/3-2-functional-constructs/artifacts/reading.md)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[Go back to TOC](../../../../../../../README.md)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[Next: 4.1 Lists &#8594;](../../../../../../../content/ai_native_engineering_foundations/p3-data-structures/week-4/1-data-structures-1/4-1-lists/artifacts/reading.md)</sub>
+

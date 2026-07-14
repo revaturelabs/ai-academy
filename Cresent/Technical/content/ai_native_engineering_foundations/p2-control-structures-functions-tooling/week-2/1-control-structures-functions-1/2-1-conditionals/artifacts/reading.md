@@ -1,4 +1,8 @@
-# Conditionals
+﻿# Conditionals
+
+<sub>[&#8592; Previous: 1.4 Statements, Conversion & Output](../../../../../../../content/ai_native_engineering_foundations/p1-python-foundations-syntax/week-1/1-python-foundations/1-4-statements-conversion-output/artifacts/reading.md)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[Go back to TOC](../../../../../../../README.md)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[Next: 2.2 Loops &#8594;](../../../../../../../content/ai_native_engineering_foundations/p2-control-structures-functions-tooling/week-2/1-control-structures-functions-1/2-2-loops/artifacts/reading.md)</sub>
+
+---
 
 ## Overview
 
@@ -161,3 +165,7 @@ These are the building blocks a program lives on, and they prepare you to transl
 [2] The Python Ternary Operator (Dataquest). https://www.dataquest.io/blog/python-ternary-operator/
 
 [3] Python Conditional Control (KoderHQ). https://www.koderhq.com/tutorial/python/conditional-control/
+
+---
+
+<sub>[&#8592; Previous: 1.4 Statements, Conversion & Output](../../../../../../../content/ai_native_engineering_foundations/p1-python-foundations-syntax/week-1/1-python-foundations/1-4-statements-conversion-output/artifacts/reading.md)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[Go back to TOC](../../../../../../../README.md)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[Next: 2.2 Loops &#8594;](../../../../../../../content/ai_native_engineering_foundations/p2-control-structures-functions-tooling/week-2/1-control-structures-functions-1/2-2-loops/artifacts/reading.md)</sub>

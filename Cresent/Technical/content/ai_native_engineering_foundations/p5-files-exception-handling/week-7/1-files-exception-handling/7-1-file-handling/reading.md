@@ -1,4 +1,8 @@
-# File Handling
+﻿# File Handling
+
+<sub>[&#8592; Previous: 6.3 Special Methods & Dataclasses](../../../../../../content/ai_native_engineering_foundations/p4-classes-objects/week-6/1-classes-objects/6-3-special-methods-dataclasses/artifacts/reading.md)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[Go back to TOC](../../../../../../README.md)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[Next: 7.2 Errors & Exceptions &#8594;](../../../../../../content/ai_native_engineering_foundations/p5-files-exception-handling/week-7/1-files-exception-handling/7-2-errors-exceptions/reading.md)</sub>
+
+---
 
 ## Overview
 
@@ -175,3 +179,7 @@ Habits worth keeping:
 1. Real Python — *Reading and Writing Files in Python*. https://realpython.com/read-write-files-python/
 2. Python documentation — *csv — CSV File Reading and Writing*. https://docs.python.org/3/library/csv.html
 3. Real Python — *Working With JSON Data in Python*. https://realpython.com/python-json/
+
+---
+
+<sub>[&#8592; Previous: 6.3 Special Methods & Dataclasses](../../../../../../content/ai_native_engineering_foundations/p4-classes-objects/week-6/1-classes-objects/6-3-special-methods-dataclasses/artifacts/reading.md)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[Go back to TOC](../../../../../../README.md)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[Next: 7.2 Errors & Exceptions &#8594;](../../../../../../content/ai_native_engineering_foundations/p5-files-exception-handling/week-7/1-files-exception-handling/7-2-errors-exceptions/reading.md)</sub>
