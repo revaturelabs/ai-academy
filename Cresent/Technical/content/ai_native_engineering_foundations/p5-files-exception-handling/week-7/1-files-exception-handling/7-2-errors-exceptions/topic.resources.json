@@ -1,0 +1,30 @@
+{
+  "topic_id": "7.2",
+  "captured_at": "2026-07-14T00:00:00Z",
+  "captured_by": "namratas@revature.com",
+  "resources_source": "web_search",
+  "resources": [
+    {
+      "type": "url",
+      "value": "https://docs.python.org/3/tutorial/errors.html",
+      "role": "primary",
+      "source": "web_search",
+      "notes": "Official tutorial — try/except/else/finally, multiple except, raise, custom exceptions"
+    },
+    {
+      "type": "url",
+      "value": "https://docs.python.org/3/library/exceptions.html",
+      "role": "supporting",
+      "source": "web_search",
+      "notes": "Built-in exception hierarchy — FileNotFoundError, ValueError, KeyError, IndexError, etc."
+    },
+    {
+      "type": "url",
+      "value": "https://realpython.com/python-exceptions/",
+      "role": "supporting",
+      "source": "web_search",
+      "notes": "Beginner walkthrough with examples"
+    }
+  ],
+  "web_search_query": "Python exceptions try except else finally exception hierarchy raise"
+}

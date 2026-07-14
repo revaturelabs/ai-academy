@@ -1,0 +1,86 @@
+{
+  "critic": "drift-critic",
+  "scope": "module",
+  "course_id": "p5-files-exception-handling",
+  "course_code": "P5",
+  "week_num": 7,
+  "module_id": "1-files-exception-handling",
+  "module_title": "Files & Exception Handling",
+  "sequence_index_path": "content/curriculum/sequence.index.json",
+  "generated_at": "2026-07-14T00:00:00Z",
+  "topics_evaluated": [
+    { "id": "7.1", "title": "File Handling", "position_in_module": 1 },
+    { "id": "7.2", "title": "Errors & Exceptions", "position_in_module": 2 },
+    { "id": "7.3", "title": "Case Study: Building a Robust File Reader", "position_in_module": 3 }
+  ],
+  "verdict": "pass",
+  "checks": {
+    "terminology_consistency": {
+      "status": "pass",
+      "summary": "All shared concepts are named identically across the three topics. No synonym drift.",
+      "findings": [],
+      "verified_terms": [
+        { "term": "context manager / with", "introduced_in": "7.1", "reused_in": ["7.2", "7.3"], "consistent": true, "note": "7.1 defines both the `with` statement and the term 'context manager'; 7.2 and 7.3 use `with` with the same meaning and never rename it." },
+        { "term": "exception (vs syntax error)", "introduced_in": "7.2", "reused_in": ["7.3"], "consistent": true, "note": "7.2 draws the syntax-error/exception distinction once; 7.3 uses 'exception'/'error' consistent with that framing and does not redefine it." },
+        { "term": "FileNotFoundError", "introduced_in": "7.1 (deferred), 7.2 (taught)", "reused_in": ["7.3"], "consistent": true, "note": "Identical spelling everywhere; 7.1 names it as the deferred thread, 7.2 teaches catching it, 7.3 lists it in prerequisites." },
+        { "term": "csv.DictReader", "introduced_in": "7.1", "reused_in": ["7.3"], "consistent": true, "note": "7.1 introduces csv.DictReader (rows as dicts keyed by header, line 122); 7.3 builds on it with the same name and semantics." },
+        { "term": "csv.DictWriter", "introduced_in": "7.3", "reused_in": [], "consistent": true, "note": "Introduced fresh in 7.3 and explicitly framed as 'the writer side of the csv module from 7.1' — no drift; 7.1 had introduced the sibling csv.writer/writerow." },
+        { "term": "try / except / else / finally", "introduced_in": "7.2", "reused_in": ["7.3"], "consistent": true },
+        { "term": "raise / custom exception", "introduced_in": "7.2", "reused_in": ["7.3"], "consistent": true },
+        { "term": "ValueError / KeyError / IndexError / TypeError", "introduced_in": "7.2", "reused_in": ["7.3"], "consistent": true }
+      ]
+    },
+    "prerequisites_respected": {
+      "status": "pass",
+      "summary": "Every topic's declared prerequisites reference only earlier-position topics, and each matches the expected declaration. No forward references detected in prose.",
+      "findings": [],
+      "per_topic": [
+        { "id": "7.1", "declared_prerequisites": ["3.3", "5.2", "5.3", "4.1"], "expected": ["3.3", "5.2", "5.3", "4.1"], "match": true, "all_earlier_than_position": true, "forward_reference_check": "pass — 7.1 deliberately DEFERS FileNotFoundError/error-handling to 7.2 and 7.3 rather than teaching it early (Introduction + Reading make the deferral explicit)." },
+        { "id": "7.2", "declared_prerequisites": ["7.1", "6.1", "6.2", "6.3", "5.2"], "expected": ["7.1", "6.1", "6.2", "6.3", "5.2"], "match": true, "all_earlier_than_position": true, "forward_reference_check": "pass — depends on 7.1 (picks up the deferred FileNotFoundError thread) and on OOP 6.1-6.3 (exception-as-class / custom exception subclassing Exception). No reference to 7.3 concepts." },
+        { "id": "7.3", "declared_prerequisites": ["7.1", "7.2", "5.2", "4.1", "3.1"], "expected": ["7.1", "7.2", "5.2", "4.1", "3.1"], "match": true, "all_earlier_than_position": true, "forward_reference_check": "pass — synthesizes 7.1 (with/csv) + 7.2 (try/except/raise); introduces no concept it does not already have as a prerequisite." }
+      ]
+    },
+    "learning_arc": {
+      "status": "pass",
+      "summary": "read-text -> read/write CSV+JSON -> handle errors -> robust capstone forms a complete, gap-free arc. No concept is taught twice.",
+      "findings": [],
+      "arc": [
+        { "stage": "read/write files (text, CSV, JSON) + context managers", "owned_by": "7.1" },
+        { "stage": "handle runtime failures (try/except/else/finally, hierarchy, raise, custom)", "owned_by": "7.2" },
+        { "stage": "synthesize into a robust skip-and-log reader with validation and clean output", "owned_by": "7.3" }
+      ],
+      "duplicate_teaching_check": "pass — try/except is taught once in 7.2 and only APPLIED in 7.3 (7.3 states 'We are not learning new syntax'). File I/O taught once in 7.1 and applied later. No overlapping Core Concepts (section 5) between topics; nouns are complementary, not redundant."
+    },
+    "lab_activity_alignment": {
+      "status": "pass",
+      "summary": "All six labs P5.1-P5.6 are supported by at least one topic's hands-on artifact / worked example.",
+      "findings": [],
+      "coverage": [
+        { "lab": "P5.1 read text", "supported_by": ["7.1"], "evidence": "7.1 Implementation Step 1 + Hands-On Exercise (read names.txt line by line)." },
+        { "lab": "P5.2 read CSV", "supported_by": ["7.1"], "evidence": "7.1 Implementation Step 2 (csv.reader, total a numeric column)." },
+        { "lab": "P5.3 write filtered CSV", "supported_by": ["7.3"], "evidence": "7.3 Implementation Move 4 (csv.DictWriter writes only valid rows to people_clean.csv); Hands-On Exercise writes products_clean.csv." },
+        { "lab": "P5.4 handle FileNotFoundError", "supported_by": ["7.2"], "evidence": "7.2 'Catching a missing file' section + Implementation Step 1 (read_count catches FileNotFoundError)." },
+        { "lab": "P5.5 multiple exceptions", "supported_by": ["7.2"], "evidence": "7.2 'Handling multiple exceptions' + grouped except (A, B) + Hands-On safe_divide." },
+        { "lab": "P5.6 robust reader capstone", "supported_by": ["7.3"], "evidence": "7.3 full 4-move worked reader (fragile -> guard -> validate -> report/write) + Hands-On products.csv extension." }
+      ]
+    },
+    "weekly_time_budget": {
+      "status": "info",
+      "severity": "soft",
+      "summary": "Sum of expected_delivery_minutes = 30 (10+10+10) vs a 90-minute weekly target. Not a hard fail.",
+      "expected_delivery_minutes": { "7.1": 10, "7.2": 10, "7.3": 10, "total": 30 },
+      "weekly_target_minutes": 90,
+      "findings": [
+        {
+          "type": "time_budget_underrun",
+          "severity": "soft",
+          "detail": "This is a structural artifact of a 3-topic capstone week. Each reading is already at the deep-profile maximum (~10 min; reading_minutes_range [9,11] in every manifest, confirmed_profile 'deep'). Depth cannot be raised further without exceeding the profile ceiling, and the learning arc is already complete. Reported as INFO, not a coherence failure."
+        }
+      ]
+    }
+  },
+  "topics_with_findings": [],
+  "hard_findings_count": 0,
+  "soft_findings_count": 1,
+  "notes": "Coherence is clean across terminology, prerequisites, learning arc, no-duplication, and lab alignment. The only finding is the soft/INFO time-budget underrun, which is expected and acceptable for a maxed-depth 3-topic capstone week."
+}

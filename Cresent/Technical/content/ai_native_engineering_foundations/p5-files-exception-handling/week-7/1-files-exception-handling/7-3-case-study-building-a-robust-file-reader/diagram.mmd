@@ -1,0 +1,43 @@
+---
+title: Robust File Reader — the skip-and-log pipeline splits every row into two buckets
+config:
+  theme: base
+  themeVariables:
+    primaryColor: "#a5d8ff"
+    primaryBorderColor: "#4a9eed"
+    lineColor: "#999"
+  flowchart:
+    htmlLabels: true
+    curve: basis
+    nodeSpacing: 50
+    rankSpacing: 65
+---
+graph LR
+    CSV["<b>people.csv</b><br/>messy rows<br/>(all strings)"]
+    READ["<b>DictReader</b><br/>read one row at a time"]
+    VAL{"<b>validate_row</b><br/>presence · type · range"}
+    VALID["<b>valid[]</b><br/>clean records"]
+    ERR["<b>errors[]</b><br/>line no. + reason"]
+    CLEAN["<b>people_clean.csv</b><br/>DictWriter — good data only"]
+    REPORT["<b>error report</b><br/>'line 5: email is missing'"]
+
+    CSV --> READ
+    READ -->|"per-row try"| VAL
+    VAL -->|"pass"| VALID
+    VAL -->|"fail: skip &amp; log"| ERR
+    VALID --> CLEAN
+    ERR --> REPORT
+    READ -.->|"loop continues, never crashes"| READ
+
+    classDef source fill:#a5d8ff,stroke:#4a9eed,stroke-width:2px;
+    classDef process fill:#d0bfff,stroke:#8b5cf6,stroke-width:2px;
+    classDef good fill:#b2f2bb,stroke:#22c55e,stroke-width:2px;
+    classDef bad fill:#ffc9c9,stroke:#e03131,stroke-width:2px;
+
+    class CSV source;
+    class READ,VAL process;
+    class VALID,CLEAN good;
+    class ERR,REPORT bad;
+
+    linkStyle 2 stroke:#22c55e,stroke-width:3px;
+    linkStyle 3 stroke:#e03131,stroke-width:3px;

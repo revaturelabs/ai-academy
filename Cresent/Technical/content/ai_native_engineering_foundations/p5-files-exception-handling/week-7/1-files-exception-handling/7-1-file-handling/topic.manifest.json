@@ -14,8 +14,17 @@
     "Reading CSVs: the csv module; reading rows",
     "Working with JSON: json.load() and json.dump() (introduction)"
   ],
-  "expected_delivery_minutes": null,
-  "artifact_plan": {},
+  "expected_delivery_minutes": 10,
+  "artifact_plan": {
+    "confirmed_profile": "deep",
+    "depth_signals": "5 distinct sub-concepts (files/paths, modes, with, csv, json); Implementation + Real-World Patterns warranted; Lab week (P5.1-P5.6)",
+    "reading_word_range": [1800, 2200],
+    "reading_minutes_range": [9, 11],
+    "quiz_questions_range": [10, 15],
+    "quiz_include_short_answer": true,
+    "diagram": false,
+    "diagram_override_reason": "procedural/textual content; no pipeline or architecture flow a glyph would clarify"
+  },
   "next_assessment": {
     "id": "A3",
     "week": 8,

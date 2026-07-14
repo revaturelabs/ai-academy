@@ -1,0 +1,67 @@
+---
+title: Python Exception Inheritance Tree — a bold edge means "catch the parent, catch these children"
+config:
+  theme: base
+  themeVariables:
+    primaryColor: "#a5d8ff"
+    primaryBorderColor: "#4a9eed"
+    lineColor: "#999"
+  flowchart:
+    htmlLabels: true
+    curve: basis
+    nodeSpacing: 45
+    rankSpacing: 55
+---
+graph TD
+    BaseException["<b>BaseException</b>"]
+    Exception["<b>Exception</b>"]
+
+    ArithmeticError["<b>ArithmeticError</b>"]
+    ZeroDivisionError["<b>ZeroDivisionError</b>"]
+
+    LookupError["<b>LookupError</b>"]
+    IndexError["<b>IndexError</b>"]
+    KeyError["<b>KeyError</b>"]
+
+    OSError["<b>OSError</b>"]
+    FileNotFoundError["<b>FileNotFoundError</b>"]
+
+    ValueError["<b>ValueError</b>"]
+    TypeError["<b>TypeError</b>"]
+    AttributeError["<b>AttributeError</b>"]
+
+    %% edge 0
+    BaseException --> Exception
+
+    %% edges 1-6: Exception to its direct children
+    Exception --> ArithmeticError
+    Exception --> LookupError
+    Exception --> OSError
+    Exception --> ValueError
+    Exception --> TypeError
+    Exception --> AttributeError
+
+    %% edges 7-10: the "catch-parent" links — catching the parent catches ALL of these children
+    ArithmeticError -->|catch parent| ZeroDivisionError
+    LookupError -->|catch parent| IndexError
+    LookupError -->|catch parent| KeyError
+    OSError -->|catch parent| FileNotFoundError
+
+    %% Legend (disconnected)
+    subgraph Legend [" "]
+      direction LR
+      LKey["<b>Bold orange edge = catch-parent rule</b><br/>e.g. <code>except LookupError:</code> also<br/>catches IndexError and KeyError"]
+    end
+
+    classDef start fill:#a5d8ff,stroke:#4a9eed,stroke-width:2px;
+    classDef auto fill:#d0bfff,stroke:#8b5cf6,stroke-width:2px;
+    classDef done fill:#b2f2bb,stroke:#22c55e,stroke-width:2px;
+    classDef legend fill:#fff4e6,stroke:#e8590c,stroke-width:1px,color:#5c3d00;
+
+    class BaseException,Exception start;
+    class ArithmeticError,LookupError,OSError auto;
+    class ZeroDivisionError,IndexError,KeyError,FileNotFoundError,ValueError,TypeError,AttributeError done;
+    class LKey legend;
+
+    %% highlight the catch-parent edges (indices 7,8,9,10) in bold orange
+    linkStyle 7,8,9,10 stroke:#e8590c,stroke-width:3px;

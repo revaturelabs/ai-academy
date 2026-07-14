@@ -1,0 +1,30 @@
+{
+  "topic_id": "7.1",
+  "captured_at": "2026-07-14T00:00:00Z",
+  "captured_by": "namratas@revature.com",
+  "resources_source": "web_search",
+  "resources": [
+    {
+      "type": "url",
+      "value": "https://realpython.com/read-write-files-python/",
+      "role": "primary",
+      "source": "web_search",
+      "notes": "open() modes, read/readline/readlines/write, with-statement context manager"
+    },
+    {
+      "type": "url",
+      "value": "https://docs.python.org/3/library/csv.html",
+      "role": "supporting",
+      "source": "web_search",
+      "notes": "Official csv module — reader/writer, newline='' guidance"
+    },
+    {
+      "type": "url",
+      "value": "https://realpython.com/python-json/",
+      "role": "supporting",
+      "source": "web_search",
+      "notes": "json.load() / json.dump() serialize/deserialize"
+    }
+  ],
+  "web_search_query": "Python file handling open modes context managers csv json reading writing"
+}

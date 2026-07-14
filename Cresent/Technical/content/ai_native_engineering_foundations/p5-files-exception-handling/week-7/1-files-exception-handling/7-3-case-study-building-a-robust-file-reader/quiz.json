@@ -1,0 +1,117 @@
+{
+  "topic_id": "7.3",
+  "title": "Case Study: Building a Robust File Reader",
+  "generated_at": "2026-07-14T00:00:00Z",
+  "format": "md",
+  "depth": "deep",
+  "question_count": 14,
+  "mcq_count": 12,
+  "short_answer_count": 2,
+  "include_short_answer": true,
+  "$bias_defense_applied": true,
+  "$shuffle_seed": "7.3-case-study-building-a-robust-file-reader",
+  "correct_position_distribution": [1, 3, 0, 2, 0, 3, 1, 2, 3, 0, 2, 1],
+  "answer_distribution": { "A": 3, "B": 3, "C": 3, "D": 3 },
+  "max_share": 0.25,
+  "md_json_synced": true,
+  "questions": [
+    {
+      "id": "q1",
+      "type": "mcq",
+      "objective_ref": "Explain why a real-world data reader must skip and log bad rows instead of crashing on the first one.",
+      "correct_position": 1,
+      "feedback": "A robust reader keeps going: it processes what it can, sets aside what it can't, and finishes the file rather than stopping at the first defect."
+    },
+    {
+      "id": "q2",
+      "type": "mcq",
+      "objective_ref": "Explain why a real-world data reader must skip and log bad rows instead of crashing on the first one.",
+      "correct_position": 3,
+      "feedback": "The failure is usually in the data, not the code, so keep-going preserves the thousands of good rows and reports the few bad ones."
+    },
+    {
+      "id": "q3",
+      "type": "mcq",
+      "objective_ref": "Structure a read loop so a try/except wraps the processing of each individual row, isolating one bad row from the rest.",
+      "correct_position": 0,
+      "feedback": "Placing the try/except inside the loop sends a row's failure to that iteration's handler and lets the loop continue with the next row."
+    },
+    {
+      "id": "q4",
+      "type": "mcq",
+      "objective_ref": "Structure a read loop so a try/except wraps the processing of each individual row, isolating one bad row from the rest.",
+      "correct_position": 2,
+      "feedback": "Wrapping the whole loop from the outside is the fragile version: the first bad row breaks out and every remaining row is lost."
+    },
+    {
+      "id": "q5",
+      "type": "mcq",
+      "objective_ref": "Validate a row's fields — presence, type, and range — and raise a clear error when a row is invalid.",
+      "correct_position": 0,
+      "feedback": "CSV values are strings, so a type error surfaces at int() conversion, which raises ValueError on non-numeric text."
+    },
+    {
+      "id": "q6",
+      "type": "mcq",
+      "objective_ref": "Validate a row's fields — presence, type, and range — and raise a clear error when a row is invalid.",
+      "correct_position": 3,
+      "feedback": "int(\"-5\") succeeds, so a range/business-rule failure is one you must detect and raise yourself with a clear ValueError."
+    },
+    {
+      "id": "q7",
+      "type": "mcq",
+      "objective_ref": "Validate a row's fields — presence, type, and range — and raise a clear error when a row is invalid.",
+      "correct_position": 1,
+      "feedback": "Catch the specific expected errors — ValueError, KeyError, AttributeError — rather than a broad or bare except that also hides real bugs."
+    },
+    {
+      "id": "q8",
+      "type": "mcq",
+      "objective_ref": "Separate valid records from invalid ones, returning clean data in one collection and an error report in another.",
+      "correct_position": 2,
+      "feedback": "Two collections keep clean data usable by downstream code and rejects readable by a human, so the two are never mixed."
+    },
+    {
+      "id": "q9",
+      "type": "mcq",
+      "objective_ref": "Separate valid records from invalid ones, returning clean data in one collection and an error report in another.",
+      "correct_position": 3,
+      "feedback": "Mixing good and bad rows means callers can no longer tell them apart and may silently process garbage."
+    },
+    {
+      "id": "q10",
+      "type": "mcq",
+      "objective_ref": "Assemble file opening, CSV parsing, per-row validation, and error collection into one complete, runnable reader function.",
+      "correct_position": 0,
+      "feedback": "enumerate(reader, start=2) numbers rows from 2 because line 1 is the header, so error messages point at the real file line."
+    },
+    {
+      "id": "q11",
+      "type": "mcq",
+      "objective_ref": "Assemble file opening, CSV parsing, per-row validation, and error collection into one complete, runnable reader function.",
+      "correct_position": 2,
+      "feedback": "A short row does not raise on its own; DictReader fills the missing field with restval (default None), which validation must catch."
+    },
+    {
+      "id": "q12",
+      "type": "mcq",
+      "objective_ref": "Write the clean rows back out to a new CSV so downstream code only ever sees good data.",
+      "correct_position": 1,
+      "feedback": "csv.DictWriter with writeheader() then writerows(valid) produces a clean output file containing only validated rows."
+    },
+    {
+      "id": "q13",
+      "type": "short_answer",
+      "objective_ref": "Explain why a real-world data reader must skip and log bad rows instead of crashing on the first one.",
+      "accepted_answers": ["skip-and-log", "skip and log", "skip/log"],
+      "feedback": "The skip-and-log pattern rejects a bad row with a recorded reason, then continues to the next row."
+    },
+    {
+      "id": "q14",
+      "type": "short_answer",
+      "objective_ref": "Separate valid records from invalid ones, returning clean data in one collection and an error report in another.",
+      "accepted_answers": ["silently", "silent"],
+      "feedback": "Never fail silently: a skipped row must be recorded (collected or printed), because losing data quietly is worse than crashing."
+    }
+  ]
+}

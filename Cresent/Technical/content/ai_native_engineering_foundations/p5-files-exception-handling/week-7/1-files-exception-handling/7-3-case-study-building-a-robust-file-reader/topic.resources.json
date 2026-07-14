@@ -1,0 +1,30 @@
+{
+  "topic_id": "7.3",
+  "captured_at": "2026-07-14T00:00:00Z",
+  "captured_by": "namratas@revature.com",
+  "resources_source": "web_search",
+  "resources": [
+    {
+      "type": "url",
+      "value": "https://realpython.com/python-csv/",
+      "role": "primary",
+      "source": "web_search",
+      "notes": "csv.reader/DictReader, writing filtered output — the reader backbone"
+    },
+    {
+      "type": "url",
+      "value": "https://docs.python.org/3/library/csv.html",
+      "role": "supporting",
+      "source": "web_search",
+      "notes": "DictReader restkey/restval, strict mode — handling malformed rows"
+    },
+    {
+      "type": "url",
+      "value": "https://realpython.com/python-interview-problem-parsing-csv-files/",
+      "role": "applied",
+      "source": "web_search",
+      "notes": "Applied walkthrough of parsing CSV and handling rows"
+    }
+  ],
+  "web_search_query": "Python robust CSV reader skip log bad rows validate data logging module"
+}

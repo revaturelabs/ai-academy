@@ -14,8 +14,17 @@
     "Common exceptions: FileNotFoundError, ValueError, IOError, KeyError, IndexError, ZeroDivisionError, TypeError, AttributeError",
     "Raising exceptions: the raise statement; custom exceptions (brief)"
   ],
-  "expected_delivery_minutes": null,
-  "artifact_plan": {},
+  "expected_delivery_minutes": 10,
+  "artifact_plan": {
+    "confirmed_profile": "deep",
+    "depth_signals": "Lab week (P5.1-P5.6); Core Concepts has 8 sub-concepts; Implementation warranted; picks up deferred FileNotFoundError thread from 7.1",
+    "reading_word_range": [1800, 2200],
+    "reading_minutes_range": [9, 11],
+    "quiz_questions_range": [10, 15],
+    "quiz_include_short_answer": true,
+    "diagram": true,
+    "diagram_intent": "exception-class inheritance tree (BaseException -> Exception -> LookupError/OSError/...) — catch-the-parent behavior and specific-to-general ordering both reference it"
+  },
   "next_assessment": {
     "id": "A3",
     "week": 8,

@@ -1,26 +1,161 @@
 {
   "topic_id": "7.3",
-  "stage": "awaiting_resources",
+  "stage": "topic_artifacts_approved",
   "gates": {
-    "resources_captured": false,
-    "corpus_generated": false,
-    "corpus_critic_passed": false,
-    "corpus_human_approved": false,
-    "reading_generated": false,
-    "reading_critic_passed": false,
-    "quiz_generated": false,
-    "quiz_critic_passed": false,
-    "diagram_generated": false,
-    "diagram_critic_passed": false,
-    "topic_artifacts_human_approved": false,
-    "module_drift_passed": false,
-    "week_human_approved": false
+    "resources_captured": true,
+    "corpus_generated": true,
+    "corpus_critic_passed": true,
+    "corpus_human_approved": true,
+    "reading_generated": true,
+    "reading_critic_passed": true,
+    "quiz_generated": true,
+    "quiz_critic_passed": true,
+    "diagram_generated": true,
+    "diagram_critic_passed": true,
+    "topic_artifacts_human_approved": true,
+    "module_drift_passed": true,
+    "week_human_approved": true,
+    "module_passed": true
   },
   "history": [
     {
       "at": "2026-07-13T00:00:00Z",
       "op": "scaffold",
       "msg": "created by ai_native_ingest.py"
+    },
+    {
+      "at": "2026-07-14T13:37:36Z",
+      "op": "set",
+      "gate": "resources_captured",
+      "value": true
+    },
+    {
+      "at": "2026-07-14T13:37:37Z",
+      "op": "stage",
+      "to": "awaiting_corpus"
+    },
+    {
+      "at": "2026-07-14T13:37:37Z",
+      "op": "log",
+      "msg": "Captured 3 resources (source=web_search)"
+    },
+    {
+      "at": "2026-07-14T13:40:35Z",
+      "op": "set",
+      "gate": "corpus_generated",
+      "value": true
+    },
+    {
+      "at": "2026-07-14T13:40:35Z",
+      "op": "stage",
+      "to": "awaiting_corpus_critic"
+    },
+    {
+      "at": "2026-07-14T13:42:11Z",
+      "op": "set",
+      "gate": "corpus_critic_passed",
+      "value": true
+    },
+    {
+      "at": "2026-07-14T13:42:11Z",
+      "op": "stage",
+      "to": "awaiting_corpus_human_review"
+    },
+    {
+      "at": "2026-07-14T13:43:43Z",
+      "op": "set",
+      "gate": "corpus_human_approved",
+      "value": true
+    },
+    {
+      "at": "2026-07-14T13:43:43Z",
+      "op": "stage",
+      "to": "corpus_approved"
+    },
+    {
+      "at": "2026-07-14T13:44:44Z",
+      "op": "set",
+      "gate": "diagram_generated",
+      "value": true
+    },
+    {
+      "at": "2026-07-14T13:44:44Z",
+      "op": "set",
+      "gate": "diagram_critic_passed",
+      "value": true
+    },
+    {
+      "at": "2026-07-14T13:44:44Z",
+      "op": "stage",
+      "to": "awaiting_diagram_critic"
+    },
+    {
+      "at": "2026-07-14T13:44:44Z",
+      "op": "log",
+      "msg": "Diagram: LR two-bucket pipeline, PNG rendered (58KB), source+visual critic PASS"
+    },
+    {
+      "at": "2026-07-14T13:46:24Z",
+      "op": "set",
+      "gate": "reading_generated",
+      "value": true
+    },
+    {
+      "at": "2026-07-14T13:47:20Z",
+      "op": "set",
+      "gate": "quiz_generated",
+      "value": true
+    },
+    {
+      "at": "2026-07-14T13:47:45Z",
+      "op": "set",
+      "gate": "reading_critic_passed",
+      "value": true
+    },
+    {
+      "at": "2026-07-14T13:54:40Z",
+      "op": "set",
+      "gate": "quiz_critic_passed",
+      "value": true
+    },
+    {
+      "at": "2026-07-14T13:54:40Z",
+      "op": "stage",
+      "to": "awaiting_topic_artifacts_review"
+    },
+    {
+      "at": "2026-07-14T13:55:06Z",
+      "op": "set",
+      "gate": "topic_artifacts_human_approved",
+      "value": true
+    },
+    {
+      "at": "2026-07-14T13:55:06Z",
+      "op": "stage",
+      "to": "topic_artifacts_approved"
+    },
+    {
+      "at": "2026-07-14T13:55:06Z",
+      "op": "log",
+      "msg": "HITL #3 approved: reading 1970w/10min + quiz 14q + diagram (two-bucket pipeline, PNG), all critic-PASS"
+    },
+    {
+      "at": "2026-07-14T13:57:43Z",
+      "op": "set",
+      "gate": "module_drift_passed",
+      "value": true
+    },
+    {
+      "at": "2026-07-14T13:58:23Z",
+      "op": "set",
+      "gate": "week_human_approved",
+      "value": true
+    },
+    {
+      "at": "2026-07-14T13:58:23Z",
+      "op": "set",
+      "gate": "module_passed",
+      "value": true
     }
   ]
 }

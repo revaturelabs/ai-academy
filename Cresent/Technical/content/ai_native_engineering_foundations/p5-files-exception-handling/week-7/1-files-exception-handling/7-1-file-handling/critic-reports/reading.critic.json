@@ -1,0 +1,62 @@
+{
+  "critic": "reading-critic",
+  "topic_id": "7.1",
+  "reading_path": "content/ai_native_engineering_foundations/p5-files-exception-handling/week-7/1-files-exception-handling/7-1-file-handling/reading.md",
+  "meta_path": "content/ai_native_engineering_foundations/p5-files-exception-handling/week-7/1-files-exception-handling/7-1-file-handling/reading.meta.json",
+  "corpus_path": "content/ai_native_engineering_foundations/p5-files-exception-handling/week-7/1-files-exception-handling/7-1-file-handling/topic_corpus.md",
+  "resources_source": "web_search",
+  "citation_mode": "strict",
+  "depth_profile": "deep",
+  "passed": true,
+  "checks": [
+    {
+      "id": 0,
+      "name": "format_discipline",
+      "passed": true,
+      "detail": "frontmatter_present: PASS -- reading.md line 1 is the H1 '# File Handling'; no leading YAML '---' block. section_template: PASS -- exactly the six required '##' headings appear in order: Overview (L3), Key Concepts (L7), Worked Example (L70), In Practice (L149), Key Takeaways (L165), References (L173); none added/renamed/dropped. meta_sidecar: PASS -- reading.meta.json now exists beside reading.md, parses as valid JSON, and carries all four required fields: word_count=1860, estimated_read_minutes=10, citations_used=[\"[1]\",\"[2]\",\"[3]\"], sections=[Overview, Key Concepts, Worked Example, In Practice, Key Takeaways, References]. The previously-missing sidecar is resolved.",
+      "frontmatter_present": false,
+      "section_template_violation": false,
+      "meta_sidecar_missing": false
+    },
+    {
+      "id": 1,
+      "name": "length",
+      "passed": true,
+      "detail": "Reading body ~1860 words (sidecar word_count=1860; independent count of prose+code-comment text lands ~1850-1900). Deep profile target 1800-2200 words: within range. Reading-aloud minutes words/230 ~= 8.1 min. Sidecar cross-check: estimated_read_minutes=10 at reading_wpm=200 (1860/200 ~= 9.3, rounded 10); word_count and minutes fields in the sidecar are consistent with the reading body.",
+      "word_count": 1860,
+      "expected_word_range": [1800, 2200]
+    },
+    {
+      "id": 2,
+      "name": "citations",
+      "passed": true,
+      "detail": "Primary resource [1] (realpython read-write-files) cited multiple times: L11, L24, L35, L41, L45, L47, L160. Supporting [2] (docs.python.org csv) cited: L59, L154, L162. Supporting [3] (realpython json) cited: L63, L153, L162. Bibliography (L175-177) lists [1][2][3], exactly matching inline markers and the sidecar citations_used. No orphan markers, no orphan bibliography entries, no fabricated markers.",
+      "resources_cited": ["[1]", "[2]", "[3]"],
+      "fabricated_markers": []
+    },
+    {
+      "id": 3,
+      "name": "no_forward_references",
+      "passed": true,
+      "detail": "Exception-handling is deferral-only, matching the corpus scope. L26 notes a missing file 'raises an error (handling that is the subject of the next topic)'; L45 'if something goes wrong between opening and closing'; L47/L55 describe 'with' closing even when 'interrupted' / left 'in a panic'. No try/except/finally, no exception hierarchy, no raise teaching -- all within a one-line deferral. csv.writer/DictReader and json.loads/dumps are in-scope siblings present in the corpus.",
+      "forward_referenced_terms": []
+    },
+    {
+      "id": 4,
+      "name": "faithfulness",
+      "passed": true,
+      "detail": "Sampled 11 assertions, all trace to corpus: (1) text vs binary files + UTF-8/png/mp3 -> corpus L41-43; (2) absolute vs relative path postal-address analogy -> L45-52; (3) open() returns a file object -> L56; (4) modes r/w/a/r+ and 'w wipes, a adds' -> L62-69; (5) read/readline/readlines behavior incl. list + trailing \\n -> L73-77; (6) loop over file is memory-friendly -> L79; (7) write() returns char count, no auto-newline -> L83-89; (8) close flushes/releases handle, with = context manager self-closing door -> L91-105; (9) csv.reader yields list of strings, newline=\"\" rationale, DictReader -> L109-122; (10) json load/dump vs loads/dumps files-vs-strings -> L126-147; (11) int(row[2]) cast because CSV values are strings -> L237. Zero unsupported assertions (threshold: fail if > 2).",
+      "unsupported_assertions": []
+    },
+    {
+      "id": 5,
+      "name": "tone_fit",
+      "passed": true,
+      "detail": "Beginner, plainspoken register. Average sentence length under 25 words. Two concrete analogies present (postal address vs 'two doors down'; self-closing door). Runnable Python 3 code in every example (text write/read loop, csv total, json round-trip) with correct expected outputs. No hedging phrases ('it is generally considered' / 'many experts believe' / 'various studies have shown') -- 0 occurrences.",
+      "avg_sentence_words_ok": true,
+      "hedging_occurrences": 0
+    }
+  ],
+  "verdict": "PASS -- all six checks pass. Format discipline (check 0) is now clean: no frontmatter, the fixed six sections present in order, and the previously-missing sidecar reading.meta.json is now present, valid, and carries word_count=1860, estimated_read_minutes=10, citations_used, and sections. Content checks 1-5 unchanged from the prior run and all pass: word count ~1860 within the deep 1800-2200 budget; primary [1] and supporting [2]/[3] all cited with a matching bibliography and no fabricated markers; exception handling is deferral-only (no forward references); 11 sampled assertions all trace to the corpus (0 unsupported); beginner tone with analogies and runnable Python 3.",
+  "at": "2026-07-14T00:00:00Z"
+}

@@ -1,0 +1,24 @@
+{
+  "critic": "diagram-critic",
+  "topic_id": "7.3",
+  "mmd_path": "content/ai_native_engineering_foundations/p5-files-exception-handling/week-7/1-files-exception-handling/7-3-case-study-building-a-robust-file-reader/diagram.mmd",
+  "png_path": "content/ai_native_engineering_foundations/p5-files-exception-handling/week-7/1-files-exception-handling/7-3-case-study-building-a-robust-file-reader/diagram.png",
+  "png_rendered": true,
+  "passed": true,
+  "checks": {
+    "source_preflight": {
+      "passed": true,
+      "detail": "Mermaid parses (graph LR). 7 nodes + 1 decision diamond, labels concise (node names + one clarifying sub-line each). Edges: CSV->READ->VAL, VAL-pass->VALID->CLEAN, VAL-fail->ERR->REPORT, plus dotted READ self-loop. Node count within guide."
+    },
+    "concept_fidelity": {
+      "passed": true,
+      "detail": "Matches corpus §5-§6 exactly: DictReader row-by-row, validate_row (presence/type/range), the valid/invalid two-bucket split, DictWriter clean output, and skip-and-log 'loop continues' semantics. The pass path is green, the fail path red — mirroring the corpus's valid vs invalid framing."
+    },
+    "visual_inspection": {
+      "passed": true,
+      "detail": "Rendered PNG (58 KB, 1600px) inspected. Clean left-to-right pipeline, decision diamond centered, two color-coded output paths (green pass -> valid/clean, red fail -> errors/report). Dotted self-loop labelled 'loop continues, never crashes'. No node overlaps, no label truncation, all text legible. Blue=source, purple=process, green=good bucket, red=bad bucket reads clearly."
+    }
+  },
+  "verdict": "PASS — source + visual both clean. LR data-flow pipeline foregrounds the two-bucket split (green valid path / red skip-and-log path) that is the topic's core idea. PNG rendered via mmdc + chrome-headless-shell override.",
+  "at": "2026-07-14T00:00:00Z"
+}

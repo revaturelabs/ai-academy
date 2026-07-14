@@ -1,0 +1,42 @@
+{
+  "passed": true,
+  "checks": {
+    "positional_bias": {
+      "passed": true,
+      "re_derived_correct_positions": [1, 3, 0, 2, 0, 3, 1, 2, 3, 0, 2, 1],
+      "sidecar_correct_position_distribution": [1, 3, 0, 2, 0, 3, 1, 2, 3, 0, 2, 1],
+      "meta_gift_synced": true,
+      "distribution": [3, 3, 3, 3],
+      "answer_distribution": { "A": 3, "B": 3, "C": 3, "D": 3 },
+      "max_share": 0.25,
+      "note": "Re-derived the = index for all 12 MCQ from quiz.md answer order; every value equals quiz.json correct_position. No meta/gift desync. Distribution unchanged by the revise (only option text edited, no reordering). max_share 0.25 <= 0.40."
+    },
+    "length_bias": {
+      "passed": true,
+      "longest_correct_rate": 0.0,
+      "baseline": 0.25,
+      "threshold": 0.40,
+      "longest_correct_questions": [],
+      "note": "Re-measured all 12 MCQ (feedback stripped). 0 of 12 have correct option > 1.20x mean distractor length. The five previously flagged items are now clean: q2 correct 76 vs mean 94.67; q8 correct 78 vs mean 91; q9 correct 90 vs 1.20x 106.4; q11 correct 96 vs 1.20x 103.2; q12 correct 100 vs 1.20x 111.6. Rate dropped 0.417 -> 0.0. No correct answer, position, or stem changed."
+    },
+    "distractor_plausibility": {
+      "passed": true,
+      "absurd_rate": 0.0,
+      "weakest_questions": [],
+      "note": "All 36 distractors still encode real beginner misconceptions (fragile all-or-nothing, DictReader type/range-checks, int() catches out-of-range, bare/broad except is safest, short-row carry-forward, printing counts as persisting, TypeError on mixed list). The lengthened distractors on q2/q8/q9/q11/q12 add plausible wrong reasoning, not absurd padding. No score-1 throwaways."
+    },
+    "objective_coverage": {
+      "passed": true,
+      "uncovered_objectives": [],
+      "orphan_questions": [],
+      "note": "All 6 corpus LOs covered: skip/log->q1,q2,q13; per-row try->q3,q4; validate presence/type/range+raise->q5,q6,q7; separate collections->q8,q9,q14; assemble runnable->q10,q11; write clean CSV->q12."
+    },
+    "answer_key_correctness": {
+      "passed": true,
+      "note": "Keys verified against corpus 5-6: try INSIDE loop is robust (q3), whole-loop wrap loses rest (q4), CSV values are strings so int() surfaces type error (q5), int('-5') succeeds -> you raise range error (q6), specific (ValueError,KeyError,AttributeError) grouping (q7), separate collections (q8,q9), enumerate start=2 for header (q10), short row -> restval None (q11), DictWriter writeheader+writerows (q12). No forward references beyond week 7."
+    }
+  },
+  "auto_correction_applied": { "shuffle_round_2": false },
+  "verdict": "Pass - length bias resolved: re-measured all 12 MCQ, 0 longest-correct (rate 0.0 <= 0.40, was 0.417); q2/q8/q9/q11/q12 rebalanced correctly with no change to correct answer, position, or stem. Positional/meta-gift sync clean (re-derived [1,3,0,2,0,3,1,2,3,0,2,1] == sidecar, A/B/C/D 3/3/3/3, max_share 0.25), distractors remain plausible (absurd_rate 0.0), all 6 LOs covered, answer key correct vs corpus 5-6, no forward references.",
+  "at": "2026-07-14T00:00:00Z"
+}
