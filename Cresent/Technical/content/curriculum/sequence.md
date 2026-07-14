@@ -116,10 +116,10 @@ status: "corpus_drafted"
 - path: `p3-data-structures/week-4/1-data-structures-1/4-1-lists`
 
 ```yaml
-concepts_introduced: []
-prerequisites: []
-cross_refs: []
-status: "scaffolded"
+concepts_introduced: ["list creation and indexing (positive/negative)", "slicing with step", "mutability and in-place update", "list methods (append/insert/remove/pop/extend/index/count/clear)", "sort() vs sorted() with reverse/key", "nested lists", "list comprehension (map + filter)"]
+prerequisites: ["2.2", "3.1"]
+cross_refs: ["Python"]
+status: "corpus_drafted"
 ```
 
 ## 4.2 — Tuples
@@ -128,10 +128,10 @@ status: "scaffolded"
 - path: `p3-data-structures/week-4/1-data-structures-1/4-2-tuples`
 
 ```yaml
-concepts_introduced: []
-prerequisites: []
-cross_refs: []
-status: "scaffolded"
+concepts_introduced: ["tuple", "immutability", "tuple packing/unpacking", "variable swap (a, b = b, a)", "nested tuples", "tuple ops (concatenation/repetition/membership)", "tuple methods (count/index)", "lexicographic comparison", "tuple() constructor"]
+prerequisites: ["4.1", "1.4"]
+cross_refs: ["Python"]
+status: "corpus_drafted"
 ```
 
 ## 5.1 — Sets

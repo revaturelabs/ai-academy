@@ -1,0 +1,25 @@
+{
+  "topic_id": "4.1",
+  "generated_at": "2026-07-14T00:00:00Z",
+  "format": "gift",
+  "question_count": 14,
+  "$bias_defense_applied": true,
+  "$shuffle_seed": "4.1-lists",
+  "correct_position_distribution": [0, 1, 2, 3, 1, 2, 0, 2, 1, 0, 3, 3],
+  "questions": [
+    { "id": "q1", "type": "mcq", "objective_ref": "Create a list literal and access any element using positive and negative indexing.", "correct_position": 0 },
+    { "id": "q2", "type": "mcq", "objective_ref": "Create a list literal and access any element using positive and negative indexing.", "correct_position": 1 },
+    { "id": "q3", "type": "mcq", "objective_ref": "Create a list literal and access any element using positive and negative indexing.", "correct_position": 2 },
+    { "id": "q4", "type": "mcq", "objective_ref": "Slice a list with a start, stop, and step — including the [::2] and [::-1] idioms.", "correct_position": 3 },
+    { "id": "q5", "type": "mcq", "objective_ref": "Slice a list with a start, stop, and step — including the [::2] and [::-1] idioms.", "correct_position": 1 },
+    { "id": "q6", "type": "mcq", "objective_ref": "Explain what mutability means and modify a list in place (reference aliasing).", "correct_position": 2 },
+    { "id": "q7", "type": "mcq", "objective_ref": "Explain what mutability means and modify a list in place.", "correct_position": 0 },
+    { "id": "q8", "type": "mcq", "objective_ref": "Apply the core list methods (append, insert, remove, pop, extend, index, count, clear) to the right task.", "correct_position": 2 },
+    { "id": "q9", "type": "mcq", "objective_ref": "Apply the core list methods (append, insert, remove, pop, extend, index, count, clear) to the right task.", "correct_position": 1 },
+    { "id": "q10", "type": "mcq", "objective_ref": "Apply the core list methods (append, insert, remove, pop, extend, index, count, clear) to the right task.", "correct_position": 0 },
+    { "id": "q11", "type": "mcq", "objective_ref": "Sort a list with sort() versus sorted(), using the reverse and key= arguments.", "correct_position": 3 },
+    { "id": "q12", "type": "mcq", "objective_ref": "Build a nested list and access elements with grid[r][c].", "correct_position": 3 },
+    { "id": "q13", "type": "short_answer", "objective_ref": "Write a list comprehension that maps and/or filters in a single expression." },
+    { "id": "q14", "type": "short_answer", "objective_ref": "Iterate over a list with a for-loop." }
+  ]
+}

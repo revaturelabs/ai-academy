@@ -258,10 +258,23 @@
       "week_num": 4,
       "module_id": "1-data-structures-1",
       "position_in_module": 1,
-      "concepts_introduced": [],
-      "prerequisites": [],
-      "cross_refs": [],
-      "status": "scaffolded"
+      "concepts_introduced": [
+        "list creation and indexing (positive/negative)",
+        "slicing with step",
+        "mutability and in-place update",
+        "list methods (append/insert/remove/pop/extend/index/count/clear)",
+        "sort() vs sorted() with reverse/key",
+        "nested lists",
+        "list comprehension (map + filter)"
+      ],
+      "prerequisites": [
+        "2.2",
+        "3.1"
+      ],
+      "cross_refs": [
+        "Python"
+      ],
+      "status": "corpus_drafted"
     },
     {
       "id": "4.2",
@@ -272,10 +285,25 @@
       "week_num": 4,
       "module_id": "1-data-structures-1",
       "position_in_module": 2,
-      "concepts_introduced": [],
-      "prerequisites": [],
-      "cross_refs": [],
-      "status": "scaffolded"
+      "concepts_introduced": [
+        "tuple",
+        "immutability",
+        "tuple packing/unpacking",
+        "variable swap (a, b = b, a)",
+        "nested tuples",
+        "tuple ops (concatenation/repetition/membership)",
+        "tuple methods (count/index)",
+        "lexicographic comparison",
+        "tuple() constructor"
+      ],
+      "prerequisites": [
+        "4.1",
+        "1.4"
+      ],
+      "cross_refs": [
+        "Python"
+      ],
+      "status": "corpus_drafted"
     },
     {
       "id": "5.1",

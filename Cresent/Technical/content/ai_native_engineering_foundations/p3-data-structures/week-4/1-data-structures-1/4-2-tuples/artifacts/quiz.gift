@@ -1,0 +1,97 @@
+$CATEGORY: CIT/P3/week-4/4.2-tuples
+
+::q1:: In Python, what actually makes the expression `3, 5` a tuple? {
+~The two values are numeric, and tuples only hold numbers of the same type.#No — tuples can mix types like ("Ada", 36, True); numbers are not required.
+~The parentheses around the values are what create the tuple object.#No — parentheses are optional here; `3, 5` with no parentheses is still a tuple.
+=The comma between the values is what packs them into a tuple.#Correct — the comma makes a tuple, not the parentheses (this is tuple packing).
+~The values are wrapped by the `tuple()` constructor behind the scenes.#No — no constructor runs; the comma alone triggers packing at the syntax level.
+#### Tests that the comma, not the parentheses, creates a tuple (corpus §5.1).
+}
+
+::q2:: What is the type of the value bound by `single = (42)`? {
+=It is an `int`, because `(42)` is just the number 42 in parentheses.#Correct — with no trailing comma, `(42)` is a parenthesized int, not a tuple.
+~It is a `tuple` holding one element, the integer 42.#No — a one-element tuple needs a trailing comma\: `(42,)`, not `(42)`.
+~It is a `tuple`, because any parentheses around a value build a tuple.#No — parentheses alone do not make a tuple; the comma does.
+~It raises a `TypeError`, since a tuple cannot hold a single value.#No — no error occurs; `(42)` is simply the int 42.
+#### Tests the single-element trailing-comma gotcha (corpus §5.1).
+}
+
+::q3:: What does `tuple("abc")` evaluate to? {
+~`("abc",)` — the whole string kept as one element in a tuple.#No — the constructor iterates the string, it does not keep it whole.
+~It raises a `TypeError`, because `tuple()` cannot accept a string.#No — a string is a valid iterable, so this is allowed.
+~`("a", "b", "c", "")` — one element per character plus a trailing empty string.#No — there is no trailing empty element; only the three characters appear.
+=`("a", "b", "c")` — one element per character of the string.#Correct — `tuple()` iterates the string, splitting it into its characters.
+#### Tests the `tuple()` constructor on a string (corpus §5.1).
+}
+
+::q4:: Given `nums = (10, 20, 30, 40, 50)`, what is `nums[1:4]` and what type is it? {
+~`[20, 30, 40]` — slicing a tuple returns a list.#No — slicing a tuple returns a tuple, not a list.
+=`(20, 30, 40)` — a tuple, since slicing a tuple returns a new tuple.#Correct — the slice is itself a tuple; stop index 4 is excluded.
+~`(20, 30, 40, 50)` — a tuple that includes the element at the stop index.#No — the stop index is excluded, so index 4 (value 50) is not included.
+~`(10, 20, 30, 40)` — a tuple, since slicing counts from index 0.#No — the slice starts at index 1 (value 20), not index 0.
+#### Tests that slicing a tuple returns a tuple and excludes the stop index (corpus §5.2).
+}
+
+::q5:: What happens when you run `point = (3, 5)` and then `point[1] = 40`? {
+=It raises a `TypeError`, because a tuple does not support item assignment.#Correct — item assignment is forbidden; that error is the defining tuple behavior.
+~It succeeds, rebinding `point` to the new tuple `(3, 40)`.#No — a tuple is immutable; item assignment is refused, unlike a list.
+~It succeeds, because index assignment works the same on tuples as on lists.#No — a list would accept it, but a tuple raises a TypeError.
+~It raises an `AttributeError`, since tuples have no assignment method.#No — the error is a TypeError on item assignment, not an AttributeError.
+#### Tests immutability via TypeError on item assignment (corpus §5.2, §5.3).
+}
+
+::q6:: Why does `point.append(7)` fail when `point = (3, 5)`? {
+~Because `.append()` exists on tuples but only works on empty tuples.#No — `.append()` does not exist on tuples at all, regardless of contents.
+~Because you must call it as `point.append((7,))` with a trailing comma.#No — the method is absent entirely; the argument form is not the issue.
+~Because tuples require you to reassign the result, as in `point = point.append(7)`.#No — the method does not exist, so no reassignment form would work.
+=Because a tuple has no `.append()` method — it is immutable and offers no mutating operations.#Correct — appending would mutate; tuples expose only `count()` and `index()`.
+#### Tests that tuples lack mutating methods like append (corpus §5.3, §5.7).
+}
+
+::q7:: In Python, why does the swap `a, b = b, a` work without a temporary variable? {
+~Because Python secretly creates a hidden temporary variable to hold `a`.#No — no temporary is created; the swap works through packing and unpacking.
+=Because the right side `b, a` is packed into a tuple first, then unpacked into `a` and `b`.#Correct — the whole right side is built before any assignment, so no temp is needed.
+~Because assignment on the left happens one variable at a time, left to right.#No — if it went one at a time the first assignment would clobber the value.
+~Because `a` and `b` must be the same type for the swap to be valid.#No — types are irrelevant; the swap works for any two values.
+#### Tests the pack-then-unpack mechanism behind the swap (corpus §5.4).
+}
+
+::q8:: Given `pairs = [("Ada", 36), ("Alan", 41)]`, what does `for name, age in pairs:` do each iteration? {
+~It binds `name` to the whole tuple and `age` to the value `2`.#No — both targets receive the tuple's elements, not the tuple and a count.
+~It raises a `ValueError`, because you cannot unpack inside a loop header.#No — unpacking in the loop header is a standard, valid pattern.
+=It unpacks each 2-element tuple, binding `name` and `age` to its two values.#Correct — each inner tuple is unpacked directly in the header into name and age.
+~It binds `name` to each tuple and leaves `age` undefined.#No — both variables are bound; each tuple's two values fill name and age.
+#### Tests loop-unpacking over a list of tuples (corpus §5.4).
+}
+
+::q9:: Given `matrix = ((1, 2, 3), (4, 5, 6))`, what does `matrix[0][2]` evaluate to? {
+~`4`, the first element of the second inner tuple.#No — `matrix[0]` selects the first inner tuple, not the second.
+~`(1, 2, 3)`, the entire first inner tuple.#No — that is `matrix[0]`; the second index reaches inside it.
+~`6`, the last element of the second inner tuple.#No — the first index is 0, selecting `(1, 2, 3)`, not `(4, 5, 6)`.
+=`3`, the third element of the first inner tuple.#Correct — chained indexing\: `[0]` picks `(1, 2, 3)`, then `[2]` picks `3`.
+#### Tests chained indexing into nested tuples (corpus §5.5).
+}
+
+::q10:: What is the result of `(0,) * 3`? {
+=`(0, 0, 0)`, because `*` repeats the tuple three times into a new tuple.#Correct — repetition with `*` produces a fresh tuple with the element repeated.
+~`(0, 3)`, because `*` pairs the element with the repeat count.#No — `*` repeats the whole tuple; it does not append the count.
+~`9`, because `*` multiplies the single element by the count.#No — `*` on a tuple repeats it; it does not do arithmetic on the element.
+~It raises a `TypeError`, because a one-element tuple cannot be repeated.#No — repetition works on any tuple, including a one-element tuple.
+#### Tests the repetition operator `*` on a tuple (corpus §5.6).
+}
+
+::q11:: Given `marks = (7, 3, 7, 7, 1)`, what do `marks.count(7)` and `marks.index(7)` return? {
+~`count(7)` is `7` and `index(7)` is `3`, reporting the value and its last position.#No — count returns how many times 7 appears (3), not the value itself.
+=`count(7)` is `3` and `index(7)` is `0`, the number of 7s and the first 7's position.#Correct — 7 appears three times; its first occurrence is at index 0.
+~`count(7)` is `3` and `index(7)` is `2`, using the last occurrence of 7.#No — `index()` returns the first occurrence (position 0), not a later one.
+~`count(7)` is `4` and `index(7)` is `0`, counting every position in the tuple.#No — only three elements equal 7, so the count is 3, not 4.
+#### Tests the read-only methods count() and index() (corpus §5.7).
+}
+
+::q12:: Using lexicographic comparison, what is the value of `(1, 2, 3) < (1, 3)`? {
+~`False`, because the left tuple is longer and a longer tuple is always greater.#No — length is not compared first; elements are compared position by position.
+~`False`, because comparison sums the elements and 6 is not less than 4.#No — comparison is element-by-element, left to right, not by summing.
+=`True`, because the first elements tie and then `2 < 3` at position 1 decides it.#Correct — position 0 ties, position 1 has 2 < 3, so the third element is never checked.
+~`True`, because the left tuple has more elements than the right tuple.#No — the extra element is irrelevant; the decision is made at position 1.
+#### Tests element-by-element lexicographic comparison (corpus §5.8).
+}

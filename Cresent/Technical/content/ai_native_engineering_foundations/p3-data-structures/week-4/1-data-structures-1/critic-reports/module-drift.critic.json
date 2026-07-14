@@ -1,0 +1,79 @@
+{
+  "critic": "drift-critic",
+  "schema_version": "1.0",
+  "module_slug": "1-data-structures-1",
+  "course_slug": "p3-data-structures",
+  "week_num": 4,
+  "module_title": "Data Structures (1)",
+  "topics_reviewed": ["4.1", "4.2"],
+  "sequence_index_path": "content/curriculum/sequence.index.json",
+  "generated_at": "2026-07-14T00:00:00Z",
+  "passed": true,
+  "checks": {
+    "terminology_consistency": {
+      "passed": true,
+      "summary": "Shared vocabulary is used identically across 4.1 and 4.2: list/tuple, element(s), index/indexing (positive & negative), slice/slicing with the [start:stop:step] shape, mutable/immutable, packing/unpacking, membership (in), count()/index(), lexicographic comparison. No synonym drift.",
+      "findings": [
+        {
+          "topics": ["4.1", "4.2"],
+          "severity": "info",
+          "note": "4.2 explicitly anchors to 4.1's terms ('indexing ... applies unchanged', 'chained indexing', slice returns a new sequence). Terminology is reused verbatim, reinforcing rather than drifting."
+        }
+      ]
+    },
+    "prerequisites_respected": {
+      "passed": true,
+      "summary": "4.1 (position_in_module 1) precedes 4.2 (position 2). 4.1 prerequisites [2.2, 3.1] and 4.2 prerequisites [4.1, 1.4] all reference earlier sequence positions. 4.2 correctly builds on 4.1 (teaches tuples by contrast with lists, reusing indexing/slicing/iteration). Forward references to tuple-as-a-topic in 4.1 are one-line 'next topic' asides only. P1/P2 foundations (variables, types, operators, conversion, f-strings, conditionals, loops, functions) are reused, not re-taught, and are not flagged (empty concepts_introduced in local index).",
+      "findings": [
+        {
+          "topics": ["4.1"],
+          "severity": "info",
+          "note": "4.1 references tuples only as brief forward asides ('the tuple you will meet in the next topic'; 'what a tuple (topic 4.2) forbids ... a story for the next topic'). Within the allowed 'unlike a tuple' exception; no tuple mechanics are taught in 4.1."
+        },
+        {
+          "topics": ["4.2"],
+          "severity": "info",
+          "note": "4.2 contains a single one-line forward preview that a tuple can 'later be able to use ... as a dictionary key where a list cannot' (dict = week 5, topic 5.2). It names the future use as motivation only and does not teach dictionaries; treated as a non-failing preview, consistent with the immutability motivation. No references to sets or iterators/generators."
+        }
+      ]
+    },
+    "learning_arc": {
+      "passed": true,
+      "summary": "Union of topic objectives fully covers the week-4 narrative seed 'Lists - indexing, slicing, methods, mutability, sorting, comprehensions; tuples - unpacking, immutability.' Lists: indexing (4.1 5.2), slicing (5.3), methods (5.5), mutability (5.4), sorting (5.7), comprehensions (5.9) all present, plus nested lists. Tuples: unpacking (4.2 5.4) and immutability (5.3) present, plus packing, nested tuples, ops, count()/index(), lexicographic comparison, tuple() constructor. No uncovered facets, no gaps.",
+      "findings": [
+        {
+          "topics": ["4.1", "4.2"],
+          "severity": "info",
+          "note": "Mutability is taught once, in 4.1 (5.4). 4.2 invokes it only by contrast ('the one thing you cannot do is write', 'none of the mutating methods you used on lists') without re-teaching the concept. No redundancy."
+        }
+      ]
+    },
+    "no_duplicated_core_concepts": {
+      "passed": true,
+      "summary": "Core Concepts of the two topics are substantively distinct (list mechanics/mutation/sorting/comprehensions vs tuple immutability/packing-unpacking/comparison). Estimated Jaccard of section-5 noun sets is well below the 0.6 threshold. The indexing/slicing overlap in 4.2 5.2 is deliberately delivered by reference to 4.1 ('applies unchanged'), not re-explained, so it is reinforcement rather than duplication.",
+      "findings": []
+    },
+    "lab_activity_alignment": {
+      "passed": true,
+      "summary": "Lab seed 'Labs P3.1-P3.4: list operations; list methods & mutability; list comprehension; tuple swap & unpack' is fully supported. P3.1 list operations -> 4.1 5.1-5.3 + Hands-On steps 1. P3.2 list methods & mutability -> 4.1 5.4-5.5 + Hands-On step 2. P3.3 list comprehension -> 4.1 5.9 + Hands-On step 3. P3.4 tuple swap & unpack -> 4.2 5.4 + Hands-On steps 1-2 (pack coordinate/unpack, a,b=b,a swap). Both topics carry hands-on artifacts (reading Worked Example + corpus Hands-On Exercise + GIFT quizzes).",
+      "findings": []
+    },
+    "diagram_coherence": {
+      "passed": true,
+      "summary": "4.1 declares diagram:true and ships an index/slice figure embedded as an inline mermaid fenced block in reading.md (plus artifacts/diagram.mmd), matching diagram_intent (positive/negative index labeling). It uses the project palette (primaryColor #a5d8ff, border #4a9eed, purple #6d28d9 index labels). 4.2 declares diagram:false and correctly contains no mermaid block or figure (tuple-vs-list contrast is textual). No inconsistency.",
+      "findings": []
+    }
+  },
+  "informational_notes": [
+    {
+      "note": "Week-4 budget: sum of expected_delivery_minutes = 17 (4.1=10, 4.2=7) against a nominal 90-minute week. A 2-topic week structurally cannot reach 90; recorded as expected, non-failing.",
+      "severity": "info"
+    },
+    {
+      "note": "Both readings use the bullet + underline Key-Concepts format (<u>**Term.**</u> lead-ins). Format is consistent across the module.",
+      "severity": "info"
+    }
+  ],
+  "topics_with_findings": ["4.1", "4.2"],
+  "blocking_findings": []
+}

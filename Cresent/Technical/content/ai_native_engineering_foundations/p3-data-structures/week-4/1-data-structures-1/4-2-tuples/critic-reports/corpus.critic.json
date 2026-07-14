@@ -1,0 +1,30 @@
+{
+  "passed": true,
+  "checks": {
+    "required_sections": {
+      "passed": true,
+      "notes": "Sections 3 (Learning Objectives, 6 objectives), 4 (Introduction ~200w), 5 (Core Concepts, ~1700w across 5.1-5.8, well over 100w floor), 10 (Key Takeaways ~120w, over 50w floor) all present and non-trivial. Section 6 Implementation NOW PRESENT after atomic->standard expansion: 4-step decision procedure + worked multi-step (name, score) records example. No placeholder strings in required sections."
+    },
+    "citation_density": {
+      "passed": true,
+      "primary_cited": true,
+      "claim_citation_rate": 0.85,
+      "notes": "resources_source=web_search -> STRICT. Primary [1] (realpython lists-tuples) cited 15x (well above the ~9 expected and >=1 required). Supporting [2] (w3schools) cited 12x, [3] (docs.python.org) cited 14x. All three resources cited. Only [1][2][3] appear; no out-of-range/fabricated markers ([4]+ absent). Standalone factual assertions in Core Concepts (5.1-5.8), Implementation (6), Real-World Patterns (7), and Best Practices (8) carry markers well above the 60% threshold."
+    },
+    "sequence_drift": {
+      "passed": true,
+      "forward_refs": [],
+      "notes": "P3 week 4, position 4.2 (after 4.1 Lists). All tuple content maps to 4.2 concepts_introduced (tuple, immutability, packing/unpacking, variable swap, nested tuples, ops concat/repeat/membership, count/index, lexicographic comparison, tuple() constructor). New material -- count()/index(), lexicographic comparison, tuple() constructor, star-unpacking (a variant of unpacking) -- is all IN scope for tuples. Prior vocab used correctly: P1 (variables, types, +/* operators, comparison, type(), print, f-strings, unpacking intro from 1.4), P2 (for loops, def functions), 4.1 Lists (indexing, slicing, mutability, methods, iteration, in, sorted()). No FORBIDDEN forward refs: no sets, no iterators/generators/Counter/defaultdict, no named tuples/dataclasses. Two 'dictionary' mentions are ACCEPTABLE: line 147 is the single permitted forward-AWARENESS sentence ('use a tuple as a dictionary key later') with NO dict syntax or operations taught; line 291 uses 'dictionary-order' as the natural-language etymology of 'lexicographic', not the Python dict type. Neither teaches dictionaries."
+    },
+    "length_sanity": {
+      "passed": true,
+      "word_count": 3050,
+      "profile": "standard",
+      "band": "3000-4400",
+      "floor": 2100,
+      "notes": "Standard band 3000-4400 (floor ~2100). word_count ~3050 lands squarely inside the standard band and well above the floor. Passes cleanly. The atomic->standard expansion (Section 6 Implementation, count()/index(), lexicographic comparison, tuple() constructor, star-unpacking) lifted the corpus from the prior 1390w into band."
+    }
+  },
+  "verdict": "PASS (hard gate, re-run after atomic->standard expansion). All required sections present and non-trivial including the new Section 6 Implementation; STRICT web_search citation satisfied (primary [1] cited 15x, only valid [1][2][3] markers, ~85% key-claim coverage, no fabricated markers); no sequence drift (count/index/lexicographic/tuple()/star-unpacking all in-scope; the two dictionary mentions are forward-awareness + etymology, not taught); length 3050 inside standard band 3000-4400.",
+  "at": "2026-07-14T00:00:00Z"
+}

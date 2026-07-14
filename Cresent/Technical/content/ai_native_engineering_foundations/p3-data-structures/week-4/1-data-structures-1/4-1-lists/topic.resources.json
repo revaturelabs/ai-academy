@@ -1,0 +1,30 @@
+{
+  "topic_id": "4.1",
+  "captured_at": "2026-07-14T00:00:00Z",
+  "captured_by": "namratas@revature.com",
+  "resources_source": "web_search",
+  "resources": [
+    {
+      "type": "url",
+      "value": "https://www.w3schools.com/python/python_lists.asp",
+      "role": "primary",
+      "source": "web_search",
+      "notes": "Beginner anchor: creating, indexing, changing items, methods, looping, comprehension — full list overview."
+    },
+    {
+      "type": "url",
+      "value": "https://docs.python.org/3/tutorial/datastructures.html",
+      "role": "supporting",
+      "source": "web_search",
+      "notes": "First-party authoritative: list methods (append/insert/remove/pop/extend/index/count/clear), sort() vs sorted(), comprehensions, nested lists."
+    },
+    {
+      "type": "url",
+      "value": "https://www.freecodecamp.org/news/slicing-and-indexing-in-python/",
+      "role": "supporting",
+      "source": "web_search",
+      "notes": "Depth on positive/negative indexing and slicing with step (a[::2], a[::-1], a[1:5:2])."
+    }
+  ],
+  "web_search_query": "Python lists indexing slicing methods mutability sorting comprehension beginners"
+}
