@@ -13,8 +13,18 @@
     "Boolean expressions in conditions: combining comparisons with and / or / not",
     "Conditional (ternary) expression: value_if_true if condition else value_if_false"
   ],
-  "expected_delivery_minutes": null,
-  "artifact_plan": {},
+  "expected_delivery_minutes": 10,
+  "artifact_plan": {
+    "depth_profile_suggested": "standard",
+    "depth_profile_confirmed": "deep",
+    "reading_word_range": [1800, 2200],
+    "reading_minutes_estimate": 10,
+    "quiz_min_questions": 10,
+    "quiz_max_questions": 15,
+    "quiz_include_short_answer": true,
+    "diagram": false,
+    "corpus_word_count": 2650
+  },
   "next_assessment": {
     "id": "A1",
     "week": 3,

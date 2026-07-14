@@ -1,0 +1,30 @@
+{
+  "topic_id": "2.1",
+  "captured_at": "2026-07-13T00:00:00Z",
+  "captured_by": "namratas@revature.com",
+  "resources_source": "web_search",
+  "resources": [
+    {
+      "type": "url",
+      "value": "https://note.nkmk.me/en/python-if-conditional-expressions/",
+      "role": "primary",
+      "source": "web_search",
+      "notes": "Reference-style coverage of ternary + nested conditional expressions."
+    },
+    {
+      "type": "url",
+      "value": "https://www.dataquest.io/blog/python-ternary-operator/",
+      "role": "supporting",
+      "source": "web_search",
+      "notes": "Beginner-friendly ternary operator guide."
+    },
+    {
+      "type": "url",
+      "value": "https://www.koderhq.com/tutorial/python/conditional-control/",
+      "role": "supporting",
+      "source": "web_search",
+      "notes": "Full if/elif/else + ternary control-flow tutorial."
+    }
+  ],
+  "web_search_query": "Python conditionals if elif else nested ternary boolean expressions"
+}

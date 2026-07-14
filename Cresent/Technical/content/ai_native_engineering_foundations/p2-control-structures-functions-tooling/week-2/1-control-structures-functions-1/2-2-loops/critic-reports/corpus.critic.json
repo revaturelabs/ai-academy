@@ -1,0 +1,35 @@
+{
+  "critic": "corpus-critic",
+  "topic_id": "2.2",
+  "topic_title": "Loops",
+  "at": "2026-07-13T00:00:00Z",
+  "passed": true,
+  "verdict": "PASS — all required sections present and substantive; strict web_search citation density satisfied (primary [1] cited 8x, supporting [2][3] both cited, no fabricated markers, every Core Concept subsection 5.1-5.8 carries >=1 citation); no forward references (functions/def, lists/tuples/dicts/sets, comprehensions, .append all absent; iteration confined to strings and range()); word_count ~2090 within accepted deep 1500-6000 range.",
+  "word_count": 2090,
+  "checks": {
+    "required_sections": {
+      "passed": true,
+      "detail": "Section 3 (Learning Objectives, 6 objectives ~110w), Section 4 (Introduction ~170w), Section 5 (Core Concepts, 8 subsections 5.1-5.8, well over 100w), and Section 10 (Key Takeaways, 6 bullets ~150w) all present and non-trivial. No placeholder strings in required sections. Optional sections 2/6/7/8/9/11 also present and substantive."
+    },
+    "citation_density": {
+      "passed": true,
+      "mode": "strict (resources_source=web_search)",
+      "detail": "Resources resolve to [1]=docs.python.org (primary), [2]=note.nkmk.me (supporting), [3]=cvut.cz (supporting). Primary [1] cited >=1 (lines 33,39,73,88,105,116,133,144,195). [2] cited (82,116,131,133,140). [3] cited (57,174). Only [1],[2],[3] appear — no fabricated [N] markers. Core Concepts: all eight subsections (5.1-5.8) carry >=1 citation marker on their key factual claim, well above the 60% threshold. Implementation (6) and Real-World Patterns (7) carry no markers, but both are procedural/applied synthesis of already-cited concepts; aggregate density across cited-eligible key claims remains well above 60%.",
+      "primary_resources_cited": ["[1] docs.python.org"],
+      "fabricated_markers": []
+    },
+    "sequence_drift": {
+      "passed": true,
+      "detail": "All technical noun phrases resolve to 2.2's concepts_introduced (while loop, for loop and loop variable, range() start/stop/step, enumerate() and zip(), break and continue, nested loops, loop else clause) or allowed prior material (1.2-1.4 variables/types, comparison + boolean operators, print/input/int conversion, modulo; 2.1 conditionals: if inside loop, indentation-as-block). Iteration is confined to strings (in-scope) and range() (in-scope) — no iteration over lists/dicts/tuples. No use of def/functions, list/tuple/dict/set literals, comprehensions, or .append. enumerate()/zip() multi-value results are described as 'two things'/'pairs' and destructured via 'unpacks into two loop variables' without introducing tuple terminology, staying in-scope.",
+      "forward_referenced_terms": [],
+      "notes": "'collection' (line 84) and 'sequence' are used generically to mean a string or range being walked, not as list/collection data-type concepts; not a forward reference. 'unpacks the two values' (line 131) is described operationally, not as tuple unpacking. Soft observations only, not fails."
+    },
+    "length_sanity": {
+      "passed": true,
+      "profile": "deep",
+      "word_count": 2090,
+      "accepted_range": "1500-6000",
+      "detail": "~2090 words falls within the accepted deep range (1500-6000). Content is complete across all required and optional sections; not hard-failed on word count."
+    }
+  }
+}

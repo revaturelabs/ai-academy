@@ -1,0 +1,30 @@
+{
+  "topic_id": "2.2",
+  "captured_at": "2026-07-13T00:00:00Z",
+  "captured_by": "namratas@revature.com",
+  "resources_source": "web_search",
+  "resources": [
+    {
+      "type": "url",
+      "value": "https://docs.python.org/3/tutorial/controlflow.html",
+      "role": "primary",
+      "source": "web_search",
+      "notes": "Official Python tutorial 'More Control Flow Tools' — for, range(), break/continue, loop else."
+    },
+    {
+      "type": "url",
+      "value": "https://note.nkmk.me/en/python-for-usage/",
+      "role": "supporting",
+      "source": "web_search",
+      "notes": "Reference-style for loop coverage with range/enumerate/zip."
+    },
+    {
+      "type": "url",
+      "value": "https://cw.fel.cvut.cz/b211/_media/courses/be5b33prg/lectures/lec05-iteration.pdf",
+      "role": "supporting",
+      "source": "web_search",
+      "notes": "University lecture on iterations and loops."
+    }
+  ],
+  "web_search_query": "Python for while loops range enumerate zip break continue nested loops"
+}

@@ -1,0 +1,50 @@
+{
+  "critic": "reading-critic",
+  "topic_id": "2.1",
+  "topic_title": "Conditionals",
+  "at": "2026-07-13T00:00:00Z",
+  "passed": true,
+  "verdict": "PASS — clean learner-facing file (no frontmatter, first line is '# Conditionals' H1), sidecar present/parses, exactly the six required sections in order; primary [1] and supporting [2][3] all cited with matching bibliography and no fabricated markers; no forward references beyond conditionals + prereqs 1.2-1.4; plainspoken concrete tone, no hedging; every sampled assertion traces to the corpus. Soft note only: word_count 1950 sits well inside [1800,2200], but reading-aloud minutes at 230 wpm compute to ~8.5, just under the nominal 9-11 band (the word budget is the binding constraint and is satisfied; the 9-11 target implies ~200 wpm, so the two figures diverge by spec, not by defect).",
+  "word_count": 1950,
+  "checks": {
+    "format_discipline": {
+      "passed": true,
+      "detail": "No frontmatter — first non-empty line is the '# Conditionals' H1 (line 1); no leading '---' YAML block. Sidecar reading.meta.json exists, parses, and carries word_count (1950), estimated_read_minutes (10), citations_used ([1,2,3]), and sections. Exactly six '##' headings present in required order: Overview (3), Key Concepts (7), Worked Example (118), In Practice (137), Key Takeaways (146), References (157). None added, renamed, or dropped.",
+      "frontmatter_present": false,
+      "meta_sidecar_missing": false,
+      "section_template_violation": false
+    },
+    "length": {
+      "passed": true,
+      "profile": "deep",
+      "word_count": 1950,
+      "accepted_word_range": "1800-2200",
+      "reading_aloud_minutes_at_230wpm": 8.5,
+      "target_minute_range": "9-11",
+      "detail": "Reported word_count 1950 is comfortably within the deep target range [1800,2200]. Reading-aloud minutes = 1950/230 = ~8.5, which is marginally below the 9-11 nominal band. The word range and minute range are internally inconsistent under a strict 230 wpm assumption (1800-2200 words = 7.8-9.6 min at 230; the 9-11 target implies ~200 wpm, matching the sidecar's reported 10 min). Word count is the authoritative budget and is satisfied, so this is a soft note, not a hard fail."
+    },
+    "citations": {
+      "passed": true,
+      "mode": "strict (resources_source=web_search)",
+      "detail": "Resources resolve to [1]=note.nkmk.me (primary), [2]=dataquest (supporting), [3]=koderhq (supporting). Primary [1] cited >=1 (lines 83, 98, 109, 116). [2] cited (line 98). [3] cited (lines 5, 9, 23, 36, 47, 68). Footnote-style inline markers throughout with a matching bibliography in References (lines 159, 161, 163). Every inline marker has a bibliography entry and vice versa — no orphan markers, no orphan entries. Only [1], [2], [3] appear; no fabricated markers.",
+      "primary_resources_cited": ["[1] note.nkmk.me"],
+      "fabricated_markers": []
+    },
+    "forward_references": {
+      "passed": true,
+      "detail": "All technical content stays within 2.1's concepts (if, if/else, if/elif/else, indentation as block structure, and/or/not compound conditions, nested conditionals, conditional/ternary expression) plus prerequisites 1.2-1.4 (variables/types, comparison and boolean operators, print/input/int conversion, and the modulo operator used in the even/odd print on line 113). No loops, functions/def, lists, dicts/sets, or comprehensions are referenced or relied on.",
+      "forward_referenced_terms": [],
+      "notes": "Incidental mention of 'IndentationError' (line 34) names an interpreter message a learner will encounter on misindentation; it does not teach exception handling and is not a forward-referenced concept. Soft observation only."
+    },
+    "tone_fit": {
+      "passed": true,
+      "detail": "Plainspoken 8th-grade spec voice with concrete, runnable examples in every concept (temperature, score, grade, age/ticket, login/admin, task classifier). Average sentence length under 25 words; occasional longer sentences remain clear. No wall-of-text — prose is broken by short code blocks and bulleted rules. Zero hedging phrases ('it is generally considered', 'many experts believe', 'various studies have shown'); well under the 3-occurrence threshold. No academic register or jargon dumps.",
+      "hedging_occurrences": 0
+    },
+    "faithfulness": {
+      "passed": true,
+      "detail": "Sampled 11 assertions, all traceable to topic_corpus.md: (1) if = header+colon+indented block runs only when True -> corpus 5.1; (2) four spaces per level, mixing yields IndentationError -> 5.2; (3) else runs on False, exactly one of two blocks runs -> 5.3; (4) elif checked top-to-bottom, first True wins, rest skipped -> 5.4; (5) grade 78 -> 'C' walkthrough -> corpus lines 121-133; (6) and/or/not semantics -> 5.5; (7) parentheses grouping and chained comparison 0<=score<=100 -> 5.5; (8) nesting adds indentation, flatten 'both required' with and -> 5.6; (9) ternary shape value_if_true if condition else value_if_false -> 5.7; (10) conditional expression is an expression evaluating to a value, usable inside print -> 5.7; (11) task-classifier worked example with int(input(...)) and fallback else -> corpus sec 6. The Worked Example is a curated re-presentation of corpus material, not new content. 0 unsupported technical assertions (threshold: fail if >2).",
+      "notes": "The assessment-mapping callouts ('This contributes to A1 — Python Core Skills Checkpoint (due W3)' on line 5, and the closing line 155) are course-scaffolding annotations, not technical claims, so they are outside the faithfulness scope and not counted as unsupported assertions."
+    }
+  }
+}

@@ -1,0 +1,102 @@
+$CATEGORY: CIT/P2/week-2/2.2-loops
+
+::q1:: What guarantees that a while loop will eventually stop instead of running forever? {
+~Python automatically halts any while loop once it has run a fixed number of times#No — Python never caps the iteration count for you; nothing stops an unbounded while.
+~The condition is checked only before the first pass, so the loop cannot repeat forever#No — the condition is re-tested at the top of every pass, which is exactly why it can loop forever.
+=Something in the body must change a value so the loop condition eventually becomes False#Correct — every while loop needs a progress step that drives the condition toward False.
+~A while loop stops as soon as its condition first evaluates to True during a pass#No — a while loop runs while the condition is True and stops when it becomes False.
+#### Tests why a while loop needs a progress step to terminate (corpus §5.1, §5.2).
+}
+
+::q2:: Which situation produces an infinite loop? {
+=The loop condition never becomes False because nothing in the body moves it toward False#Correct — with no progress step the condition stays True and the loop never ends.
+~The loop variable is decreased by one on every single pass of the loop body#No — decreasing the value each pass is the progress step that lets the loop stop.
+~The while condition is False before the loop starts, so the body never runs at all#No — that loop runs zero times; it is the opposite of an infinite loop.
+~A break statement is reached on the first pass, ending the loop immediately and cleanly#No — a break gives a clean exit, which is the standard way out of a while True loop.
+#### Tests recognising the missing-progress cause of an infinite loop (corpus §5.2).
+}
+
+::q3:: In the header for letter in \"cat\"\: , what is letter on each pass of the loop? {
+~It is a counter that holds the current index position 0, 1, 2 of each character#No — a plain for over a string binds the character itself, not its index number.
+~It is the whole string \"cat\", made available inside the body on every pass#No — the loop variable takes one item at a time, not the entire sequence.
+~It is a fixed name Python requires; you cannot rename it to ch or anything else#No — the loop variable name is your choice; ch would work identically.
+=It is the loop variable, bound to each character of the string in turn per pass#Correct — the loop variable takes each item of the sequence in order, one per pass.
+#### Tests the meaning and naming of the for loop variable (corpus §5.3).
+}
+
+::q4:: What does range(5) produce? {
+~1, 2, 3, 4, 5 — five integers counting from one up to and including five#No — range starts at 0 by default, not 1, and never includes the stop value.
+=0, 1, 2, 3, 4 — five integers, since the stop value 5 is excluded#Correct — range counts from 0 and stops before the stop value, which is exclusive.
+~0, 1, 2, 3, 4, 5 — six integers from zero through five inclusive#No — the stop value 5 is excluded, so you get five numbers, not six.
+~5 — a single integer, the stop value passed to the range call#No — range produces a whole sequence of integers, not just the stop number.
+#### Tests the exclusive stop value of range() and the off-by-one trap (corpus §5.4).
+}
+
+::q5:: Which call counts down 5, 4, 3, 2, 1? {
+~range(5, 0) — start at 5 and stop at 0, counting downward automatically by one#No — with only start and stop, range steps by +1 and produces nothing when start exceeds stop.
+~range(1, 5, -1) — start at 1 and step by -1 until reaching five at the end#No — starting at 1 with a negative step produces an empty sequence.
+~range(0, 5, -1) — start at 0, stop at 5, walking backward by one each pass#No — a negative step from 0 toward 5 yields no numbers at all.
+=range(5, 0, -1) — start at 5, stop before 0, step by -1 each pass#Correct — a negative step counts down; stop 0 is excluded, so it ends at 1.
+#### Tests using start, stop, and a negative step to count down (corpus §5.4).
+}
+
+::q6:: What two things does enumerate(\"cat\") hand back on each pass? {
+=An index counter starting at 0 and the item, e.g. 0 c, then 1 a, then 2 t#Correct — enumerate yields a 0-based index paired with each item, in that order.
+~Two copies of the current character, one for the index and one for the value#No — the first value is a numeric index, not a second copy of the character.
+~The character first and then its index, e.g. c 0, then a 1, then t 2 each pass#No — the index comes first, then the item; the order is index, value.
+~An index counter starting at 1 by default and the item, e.g. 1 c, then 2 a#No — enumerate starts at 0 by default; you must pass a start of 1 to begin at 1.
+#### Tests the index-then-value pairing and 0-based start of enumerate() (corpus §5.5).
+}
+
+::q7:: What does zip(\"abcd\", \"12\") yield? {
+~Four pairs, padding the shorter sequence with blanks until both have equal length#No — zip does no padding; it simply stops when the shorter sequence runs out.
+~Two pairs from the shorter one, then an error is raised for the leftover c and d#No — zip silently ignores the extra items; no error is raised.
+=Two pairs — a1 and b2 — because zip stops at the end of the shorter sequence#Correct — zip pairs items until the shorter sequence is exhausted, giving two pairs.
+~Four pairs, since zip always walks to the end of the longer of the two sequences#No — zip stops at the shorter sequence, not the longer one.
+#### Tests that zip() stops at the shorter of two sequences (corpus §5.5).
+}
+
+::q8:: What does break do inside a loop? {
+~It skips only the rest of the current pass and continues with the next iteration#No — that describes continue; break leaves the loop, it does not resume it.
+=It leaves the loop entirely at once; execution jumps to the first line after the loop#Correct — break ends the loop immediately and control moves past it.
+~It restarts the loop from its very first iteration, re-running the whole sequence again#No — break does not restart anything; it terminates the loop.
+~It skips just the next single iteration and then resumes the loop as normal after that#No — break does not skip one pass; it ends the whole loop.
+#### Tests the meaning of break as an immediate loop exit (corpus §5.6).
+}
+
+::q9:: What does continue do inside a loop? {
+~It leaves the loop entirely, jumping to the first statement written after the loop body#No — that is break; continue stays in the loop and moves to the next pass.
+~It ends the program's current function and returns control back to the caller at once#No — continue affects only the loop; it does not return from a function.
+~It pauses the loop until the user presses a key, then resumes the current iteration#No — continue does not pause for input; it moves straight on to the next pass.
+=It skips the rest of the current pass and jumps straight to the loop's next iteration#Correct — continue abandons the current pass only and proceeds to the next one.
+#### Tests the meaning of continue as skipping to the next iteration (corpus §5.6).
+}
+
+::q10:: If an outer loop runs n times and its inner loop runs m times, how many times does the inner body run in total? {
+=n times m times, because the whole inner loop runs once for each pass of the outer loop#Correct — the inner loop repeats fully on every outer pass, giving n multiplied by m.
+~n plus m times, adding the two loop counts since they run one after the other#No — nested loops multiply rather than add; the inner loop is inside each outer pass.
+~n times, because the inner loop shares the outer loop's single counter variable#No — each loop has its own variable, and the inner one restarts every outer pass.
+~m times, because only the inner loop actually repeats while the outer runs just once#No — the outer loop runs n times, and the inner loop repeats on each of those passes.
+#### Tests the n multiplied by m iteration count of nested loops (corpus §5.7).
+}
+
+::q11:: When does a loop's else clause run? {
+~Every time the loop finishes, whether or not a break statement fired during the loop#No — a fired break skips the else; it does not always run at the end.
+~Only when a break statement fires, running the else block right after the break#No — this is backwards; a break is exactly what skips the else.
+=Only when the loop finishes normally, that is, it completes without a break firing#Correct — the loop else runs when the loop ends without any break.
+~On every single pass of the loop, right after the loop body's last line each time#No — the else runs at most once, after the loop ends, not on every pass.
+#### Tests that the loop else runs only when no break fired (corpus §5.8).
+}
+
+::q12:: Which single keyword immediately leaves a loop entirely (one word)? {
+=break
+}
+
+::q13:: In range(start, stop, step), the stop value is ____ — it is never included in the generated sequence (one word). {
+=exclusive
+}
+
+::q14:: By default, the index counter that enumerate() produces starts at the number ____ (give the number). {
+=0
+=zero
+}

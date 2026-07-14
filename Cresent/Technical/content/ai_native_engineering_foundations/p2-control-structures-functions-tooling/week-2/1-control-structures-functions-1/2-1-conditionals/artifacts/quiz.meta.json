@@ -1,0 +1,28 @@
+{
+  "topic_id": "2.1",
+  "generated_at": "2026-07-13T00:00:00Z",
+  "format": "gift",
+  "question_count": 13,
+  "mcq_count": 10,
+  "short_answer_count": 3,
+  "$bias_defense_applied": true,
+  "$shuffle_seed": 21,
+  "shuffle_method": "python random.shuffle seeded from topic id 2.1 (fixed seed 21)",
+  "correct_position_distribution": [2, 0, 3, 1, 3, 0, 2, 1, 3, 0],
+  "correct_position_counts": { "0": 3, "1": 2, "2": 2, "3": 3 },
+  "questions": [
+    { "id": "q1", "type": "mcq", "objective_ref": "Write a single if statement that runs a block of code only when a condition is True.", "correct_position": 2 },
+    { "id": "q2", "type": "mcq", "objective_ref": "Build multi-branch decisions with if / elif / else, choosing exactly one path out of several.", "correct_position": 0 },
+    { "id": "q3", "type": "mcq", "objective_ref": "Explain how indentation defines which statements belong to a branch in Python.", "correct_position": 3 },
+    { "id": "q4", "type": "mcq", "objective_ref": "Combine comparisons with and, or, and not to form richer conditions.", "correct_position": 1 },
+    { "id": "q5", "type": "mcq", "objective_ref": "Nest one conditional inside another and judge when nesting helps or hurts readability.", "correct_position": 3 },
+    { "id": "q6", "type": "mcq", "objective_ref": "Rewrite a simple value-choosing if/else as a conditional (ternary) expression.", "correct_position": 0 },
+    { "id": "q7", "type": "mcq", "objective_ref": "Build multi-branch decisions with if / elif / else, choosing exactly one path out of several.", "correct_position": 2 },
+    { "id": "q8", "type": "mcq", "objective_ref": "Combine comparisons with and, or, and not to form richer conditions.", "correct_position": 1 },
+    { "id": "q9", "type": "mcq", "objective_ref": "Rewrite a simple value-choosing if/else as a conditional (ternary) expression.", "correct_position": 3 },
+    { "id": "q10", "type": "mcq", "objective_ref": "Nest one conditional inside another and judge when nesting helps or hurts readability.", "correct_position": 0 },
+    { "id": "q11", "type": "short_answer", "objective_ref": "Explain how indentation defines which statements belong to a branch in Python.", "correct_position": null },
+    { "id": "q12", "type": "short_answer", "objective_ref": "Build multi-branch decisions with if / elif / else, choosing exactly one path out of several.", "correct_position": null },
+    { "id": "q13", "type": "short_answer", "objective_ref": "Rewrite a simple value-choosing if/else as a conditional (ternary) expression.", "correct_position": null }
+  ]
+}
