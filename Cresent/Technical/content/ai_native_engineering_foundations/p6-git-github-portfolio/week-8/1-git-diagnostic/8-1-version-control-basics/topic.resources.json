@@ -1,0 +1,44 @@
+{
+  "topic_id": "8.1",
+  "captured_at": "2026-07-14T00:00:00Z",
+  "captured_by": "bhuvaneshwarim@revature.com",
+  "resources_source": "web_search",
+  "resources": [
+    {
+      "type": "citation",
+      "value": "Official Git docs (git-scm.com reference)",
+      "role": "primary",
+      "source": "human",
+      "notes": "Author-nominated anchor for core Git vocabulary"
+    },
+    {
+      "type": "url",
+      "value": "https://git-scm.com/book/en/v2/Git-Basics-Getting-a-Git-Repository",
+      "role": "primary",
+      "source": "web_search",
+      "notes": "Pro Git book chapter 2.1 — init, track, stage, commit, push/pull"
+    },
+    {
+      "type": "url",
+      "value": "https://github.com/widdowquinn/github-best-practice/blob/master/README.md",
+      "role": "supporting",
+      "source": "web_search",
+      "notes": "Commit granularity, message quality, local-first workflow"
+    },
+    {
+      "type": "url",
+      "value": "https://github.com/UNO-IST-Support/GitHubClassroom_for_UNOStudents",
+      "role": "supporting",
+      "source": "web_search",
+      "notes": "Accepting assignments, GitHub Classroom student workflow"
+    },
+    {
+      "type": "url",
+      "value": "https://www.billmongan.com/posts/2020/02/githubclassroom/",
+      "role": "supporting",
+      "source": "web_search",
+      "notes": "Instructor walkthrough of Classroom setup + student flow"
+    }
+  ],
+  "web_search_query": "git basics repository commit push official documentation git-scm"
+}

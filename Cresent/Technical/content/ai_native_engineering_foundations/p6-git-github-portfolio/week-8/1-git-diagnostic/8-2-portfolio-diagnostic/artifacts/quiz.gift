@@ -1,0 +1,108 @@
+$CATEGORY: CIT/P6/week-8/8.2-portfolio-diagnostic
+
+::q1:: What is the primary difference between a Classroom assignment repo and a portfolio repo, per the corpus? {
+~A portfolio repo needs noticeably fewer files than a Classroom repo, because it should hold only a single flagship project rather than several#No — the corpus never measures either repo type by file count; a portfolio can hold several strongest projects together, and the real difference is about audience, not size.
+=A Classroom repo is graded by an instructor who already knows the assignment's context, while a portfolio repo must make sense to a total stranger#Correct — the corpus contrasts a grader who already knows the assignment against a reader who encounters the work cold (5.1).
+~A Classroom repo is the one that actually requires a README, because a portfolio repo can rely on well-named files instead of documentation#No — the corpus says the opposite: the README matters more for a portfolio precisely because its reader has no assignment context to fall back on.
+~A portfolio repo is reviewed only once, at the point of faculty sign-off, while a Classroom repo instead gets graded continuously throughout its assignment period#No — Classroom repos are graded too, just once; sign-off is a separate, later gate described in 5.4, not a distinguishing feature here.
+#### Tests LO1: what a portfolio repo is for versus a Classroom repo (corpus 5.1).
+}
+
+::q2:: Per the corpus, who is the real audience for a portfolio repo? {
+~The instructor who originally assigned the exercise, because they already understand the full context behind the assignment#No — that describes the audience for a Classroom repo, not a portfolio repo (5.1).
+~The learner themselves, because a portfolio mainly serves as a private reference kept for personal review, not public display#No — the corpus frames the portfolio as something shown to a hiring manager, mentor, or future self, not kept private.
+~The GitHub Classroom autograder, because it checks completion criteria the same way for every assignment repo submitted#No — a portfolio repo isn't autograded; it's read by a person with no assignment context.
+=A stranger with zero shared context, such as a hiring manager or mentor who wasn't present when the work happened#Correct — the corpus describes the portfolio's reader as someone who "wasn't in the room when the work happened" (5.1).
+#### Tests LO1: identifying the portfolio repo's real audience (corpus 5.1).
+}
+
+::q3:: Which folder-naming approach best follows the corpus's structure conventions (section 5.2)? {
+=Descriptive folder names like csv-summary-project, because they tell a reader what's inside before they even open the folder#Correct — the corpus says a name is information a reader gets for free, and a vague name wastes that (5.2).
+~Generic folder names like misc or stuff, because grouping loosely by creation date is simpler than naming things precisely#No — the corpus explicitly calls out generic labels like "misc" as the pattern to avoid (5.2).
+~A single folder named final2, because it holds whichever version of the work was edited most recently#No — the corpus uses "final2" as its own example of a name that tells a reader nothing (5.2).
+~Numbered folders like folder1 and folder2, because ordering by completion sequence is easier than choosing descriptive names#No — numbering by completion order hides content instead of describing it, which the corpus warns against.
+#### Tests LO2: applying descriptive folder-naming conventions (corpus 5.2).
+}
+
+::q4:: According to the corpus, what makes a portfolio README's quick-start section valuable to a reader? {
+~It lists every function and class defined across the project's source files, acting like a full code index#No — the corpus describes quick-start as how to run and use the project, not an exhaustive code index.
+~It certifies that the project has passed every automated grading test the diagnostic pipeline happens to run#No — the corpus never ties quick-start sections to grading or test results.
+=It lets a reader see, in just a couple of lines, exactly how to run the project and what it produces#Correct — the corpus says quick-start turns a passive reader into someone who actually tries the project (5.3).
+~It links out to the full commit history, because that's where a reader verifies how much effort went in#No — commit history matters for the diagnostic review (5.4), not for a README's quick-start section.
+#### Tests LO2: the purpose of a portfolio README's quick-start section (corpus 5.3).
+}
+
+::q5:: A learner drafts a very long portfolio README covering every detail of every exercise. Per the corpus, is length itself the goal? {
+~Yes, because a longer README always demonstrates more thorough and complete documentation than a shorter one#No — the corpus explicitly says clarity and completeness matter, not length (5.3).
+=No, because clarity and completeness in a few key sections matter far more than the README's overall length#Correct — the corpus states a short README covering title, description, quick start, and demo outperforms a rambling long one (5.3).
+~Yes, because faculty reviewers grade portfolio README length directly as part of the sign-off checklist#No — the corpus never mentions length as a grading criterion; sign-off looks at clarity and repo habits.
+~No, because a README should be limited to a single sentence describing the whole portfolio at once#No — the corpus lists several needed sections (title, description, quick start, demo), which a single sentence can't cover.
+#### Tests LO2: the length-vs-clarity misconception about README writing (corpus 5.3).
+}
+
+::q6:: In Git terms, what does the end-of-Part-A diagnostic check about a learner's repo? {
+~That the repo has at least one open GitHub Issue describing a known bug in the diagnostic code#No — the corpus never requires open Issues; it requires described, incremental commits.
+~That the repo has never once been forked by another learner working through the same course#No — forking status isn't part of what the corpus says the diagnostic checks.
+~That every commit message in the repo's history is exactly one word long, without exception#No — the corpus asks for real, described commits, not commits constrained to one word.
+=That the diagnostic work is committed in small, described commits and pushed so a reviewer can see it#Correct — the corpus says the Git half of the bar is real, described commits, not one giant dump, pushed for review (5.4).
+#### Tests LO3: the Git side of what the diagnostic checks (corpus 5.4).
+}
+
+::q7:: In Python terms, what does the end-of-Part-A diagnostic task concretely require? {
+=Reading a CSV file, printing a summary of it, and handling malformed rows or missing files without crashing#Correct — the corpus describes the diagnostic's recognizable shape as reading a CSV and printing a summary, guarding against messy input (5.4).
+~Writing a brand-new class hierarchy with inheritance spanning across five entirely distinct subclass levels#No — the corpus asks for class-based modeling built across Parts 1-5, not a new deep inheritance chain.
+~Implementing a full REST API that serves the CSV data over HTTP to any client that requests it#No — the corpus never mentions an API; the task is reading and summarizing a CSV file locally.
+~Writing unit tests that achieve a full one-hundred-percent code coverage rate across the entire portfolio repo#No — the corpus describes error handling on messy input, not a coverage target across the portfolio.
+#### Tests LO3: the Python side of what the diagnostic checks (corpus 5.4).
+}
+
+::q8:: Which statement about faculty sign-off is accurate per the corpus? {
+~It is a formality that learners can quietly route around if their code technically happens to run#No — the corpus explicitly warns against treating sign-off as a formality to route around (8).
+~It only checks whether the CSV-reading script executes once without throwing any kind of syntax error#No — the corpus says sign-off checks the code, whether it handles messy input, and the state of the repo together (5.4).
+=It is the actual gate between Part A and Part B, earned through both working code and commit history#Correct — the corpus states sign-off is "a real gate, not a formality," earned through code and repo history together (5.4, 10).
+~It is granted automatically the moment the diagnostic repo gets pushed up to GitHub for review#No — pushing alone doesn't earn sign-off; a faculty member must review and approve it (5.4).
+#### Tests LO4: recognizing faculty sign-off as a real gate, not a formality (corpus 5.4).
+}
+
+::q9:: Comparing a submission with one giant last-minute commit against one with several small, described commits, which is ready for faculty sign-off? {
+~Both are equally ready, because only the final state of the code actually gets reviewed at sign-off#No — the corpus says the reviewer checks Git habits from 8.1, not only whether the final code runs (5.4).
+=The small, described commits, because the reviewer is checking Git habits from 8.1, not just whether code runs#Correct — the corpus says a reviewer forms a judgment from commit history, the same signal a hiring manager would later look at (5.4, 6).
+~The single giant commit, because it shows the entire task was finished efficiently in one sitting#No — the corpus calls a single oversized commit a common mistake to avoid, not a sign of efficiency (6).
+~Neither submission is ready, because faculty only ever review code quality and never look at commit history#No — the corpus is explicit that the reviewer examines commit history, not only the final code (5.4).
+#### Tests LO4: distinguishing a sign-off-ready submission from one that isn't (corpus 5.4, 6).
+}
+
+::q10:: A learner cleans up their portfolio repo by dumping every exercise ever written into one unsorted folder to prove volume of work. Is this a sound application of the corpus's conventions? {
+~Yes, because a portfolio should include literally every piece of code the learner has ever produced#No — the corpus says a portfolio collects the strongest pieces, not everything ever written (5.1).
+~Yes, because faculty sign-off rewards raw quantity of files over how well they happen to be organized#No — the corpus never ties sign-off to file quantity; it ties it to code quality and repo habits (5.4).
+~No, because a portfolio repo should never be allowed to contain more than one single project folder#No — the corpus describes a folder per project, meaning multiple folders are expected, not forbidden (5.2).
+=No, because a smaller, well-organized set of strong projects reads better than a large, disorganized one#Correct — the corpus directly warns against dumping every exercise unsorted, favoring a smaller organized set (8).
+#### Tests LO5: applying the "don't dump everything unsorted" convention when building a portfolio repo (corpus 8).
+}
+
+::q11:: Per the implementation sequence in the corpus, what should a learner do first when building a portfolio repo? {
+=Create the repo and add a top-level README with a title and description before adding much else#Correct — the corpus's step 2 says to add the README, drafting title and description first, before adding much else (6).
+~Complete the diagnostic CSV task first, before creating any folder structure inside the repo at all#No — the corpus places the diagnostic task later in the sequence, as a separate step after the repo structure exists (6).
+~Move every one of the Parts 1-5 exercises into project folders first, before writing any README#No — the corpus's sequence puts the README before moving project files into folders (6).
+~Submit the repo for faculty sign-off immediately, to get early feedback on its overall structure#No — sign-off is the final step in the sequence, after the repo and diagnostic are both complete (6).
+#### Tests LO5: applying the corpus's build sequence for a portfolio repo (corpus 6).
+}
+
+::q12:: A learner argues their portfolio repo doesn't need a README because "the code speaks for itself." What is wrong with this reasoning per the corpus? {
+~Nothing is wrong with it, because code quality alone is enough for any repo's intended audience#No — the corpus is explicit that structure and documentation are the entire first impression, before any code is read (5.1).
+~READMEs are only actually required for repos that contain more than ten separate files#No — the corpus never sets a file-count threshold for needing a README.
+=A portfolio's stranger audience lacks assignment context, so the README is the whole first impression before code is read#Correct — the corpus says the README and structure are the explanation a visitor gets before reading a single line of code (5.1).
+~Classroom repos already require this same README depth, so the reasoning is merely redundant, not incorrect#No — the corpus contrasts the two: Classroom repos get a pass a portfolio repo doesn't get (5.1).
+#### Tests LO1/LO2: why a README can't be skipped even when code "speaks for itself" (corpus 5.1).
+}
+
+::q13:: Fill in the blank: the end-of-Part-A diagnostic checks two things together — your Python foundation and whether your ____ habits from 8.1 hold up on graded, reviewed work. {
+=Git
+=git
+}
+
+::q14:: Fill in the blank: until faculty ____ happens, a learner does not move into Part B. {
+=sign-off
+=sign off
+=signoff
+}

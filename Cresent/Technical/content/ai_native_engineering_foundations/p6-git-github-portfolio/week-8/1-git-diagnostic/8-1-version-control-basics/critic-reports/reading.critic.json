@@ -1,0 +1,46 @@
+{
+  "critic": "reading-critic",
+  "topic_id": "8.1",
+  "retry": 1,
+  "retry_reason": "Retry after FAIL on check 3 (forward-ref 'diff' used undefined). Targeted rephrasing applied at lines 25 and 50: 'the diff' replaced with 'the view showing exactly which lines changed' / 'that changed-lines view' / 'the changed-lines view'.",
+  "reading_path": "content/ai_native_engineering_foundations/p6-git-github-portfolio/week-8/1-git-diagnostic/8-1-version-control-basics/artifacts/reading.md",
+  "meta_path": "content/ai_native_engineering_foundations/p6-git-github-portfolio/week-8/1-git-diagnostic/8-1-version-control-basics/artifacts/reading.meta.json",
+  "corpus_path": "content/ai_native_engineering_foundations/p6-git-github-portfolio/week-8/1-git-diagnostic/8-1-version-control-basics/topic_corpus.md",
+  "target_word_range": [1800, 2200],
+  "position_in_sequence": "first topic anywhere in the curriculum to introduce Git vocabulary; no prior topic has concepts_introduced populated, so every technical term used in the reading must be defined within this topic's own corpus/reading",
+  "at": "2026-07-14T00:00:00Z",
+  "passed": true,
+  "checks": [
+    {
+      "id": "0-format-discipline",
+      "passed": true,
+      "detail": "Re-verified fresh: no frontmatter (first non-empty line is '# Version Control Basics'). Sidecar reading.meta.json exists and parses, carrying word_count, estimated_read_minutes, citations_used, sections. Exactly six ## sections in required order: Overview (line 3), Key Concepts (line 7), Worked Example (line 40), In Practice (line 56), Key Takeaways (line 76), References (line 84). Unchanged from prior pass; the edit did not touch structure."
+    },
+    {
+      "id": "1-length-budget",
+      "passed": true,
+      "detail": "The two targeted substitutions add a net +7 words by whitespace tokenization: 'the diff' (2 words) -> 'the view showing exactly which lines changed' (7 words) at line 25's first occurrence (+5); 'the diff' (2 words) -> 'that changed-lines view' (3 words) at line 25's second occurrence (+1); and the equivalent swap at line 50, 'the diff' -> 'the changed-lines view' (+1). Prior verified prose word count was ~1860-1900; new count is therefore ~1867-1907, still comfortably inside [1800, 2200]. Note: sidecar reading.meta.json still reports word_count: 1860, identical to the pre-fix sidecar -- this appears stale (not regenerated after the edit) since the file body did change, but the discrepancy is only ~7 words and does not put the true count outside the target range, so it is a non-blocking data-hygiene note, not a check failure. Reading-aloud estimate remains ~8.1-8.4 min at 230 wpm, consistent with sidecar's estimated_read_minutes: 9."
+    },
+    {
+      "id": "2-citation-discipline",
+      "passed": true,
+      "detail": "Unchanged from prior pass and re-confirmed: both primary resources cited repeatedly -- [1] Official Git docs (Key Concepts, Worked Example, In Practice, Key Takeaways) and [2] Pro Git ch2.1 (nearly every paragraph across all sections). Supporting [3][4][5] also each cited multiple times. Bibliography (lines 86-90) has exactly five entries matching markers [1]-[5]; no orphan markers, no orphan bibliography entries. The rephrasing did not touch citation markers -- both edited sentences retain their original [2][3] and [3] markers respectively."
+    },
+    {
+      "id": "3-no-forward-references",
+      "passed": true,
+      "detail": "Targeted re-check: a substring sweep for 'diff' across the full reading.md returns exactly one hit, and it is inside the word 'difference' (line 35, README paragraph: 'the difference is entirely whether the author thought about the reader') -- not the Git term. The bare term 'diff' no longer appears anywhere in the file. Line 25 now reads '...reconstruct intent from the view showing exactly which lines changed every time... and that changed-lines view then confirms rather than replaces it[2][3]'; line 50 now reads '...check that the changed-lines view shows only the lines you changed...[3]'. Both instances now use plain-English descriptive phrasing instead of an undefined jargon noun, and this phrasing is introduced/reinforced earlier at line 29 ('opening one shows exactly which lines changed'), so by the time a reader hits lines 25/50 the concept has already been described in-line, not just labeled. Broader sweep repeated for other potentially-undefined Git jargon (clone, checkout, merge, pull request, stage/staging, fork, rebase, HEAD, SSH, CI/CD, branch protection, upstream, origin, tag, reset/revert) -- zero hits for all. Terms that ARE used (repo, commit, push, remote, feature branch, .gitignore, README) are each defined in-line at or before first use. No other forward-reference gaps found."
+    },
+    {
+      "id": "4-faithfulness-to-corpus",
+      "passed": true,
+      "detail": "Re-verified the two rephrased passages specifically, since they are the only content that changed: (a) line 25's 'the view showing exactly which lines changed' / 'that changed-lines view' traces to corpus 5.2 ('the diff confirms rather than replaces the message') and 5.4 ('Opening any single commit shows exactly which lines changed and which didn't') -- the reading's paraphrase describes the same mechanism the corpus describes, just without borrowing the corpus's own use of the word 'diff', so no new claim is introduced. (b) line 50's 'the changed-lines view shows only the lines you changed' traces to corpus Implementation step 8 ('confirm the diff view shows exactly the lines you changed -- nothing more'). Both are faithful paraphrases of existing corpus assertions, not new information. The remaining 11 previously-sampled assertions across all six sections (untouched by this edit) were spot-checked again and still trace cleanly to topic_corpus.md 5.1-5.5, section 6, and section 7. 0 unsupported assertions; well under the >2 fail threshold."
+    },
+    {
+      "id": "5-tone-fit",
+      "passed": true,
+      "detail": "Re-swept hedging phrases (0 occurrences, unchanged) -- well under the <3 threshold. Document-wide average sentence length remains ~22 words/sentence, under the 25-word ceiling. The two rephrased sentences were checked individually: line 25's 'stuff' example sentence is ~39 words (compound via semicolon, same structure as before the edit -- not lengthened materially since the added words replace a short phrase inline rather than appending a new clause); line 50's sentence is ~24 words, comparable to its pre-fix length. Same non-blocking style note carries over from the prior pass: a handful of long compound sentences elsewhere (Overview line 5's opening sentence, line 62's leaked-credentials sentence) lean toward a denser register than the plainspoken specification voice, but this is unrelated to and unaffected by the targeted fix, and remains non-blocking."
+    }
+  ],
+  "verdict": "PASS. All six checks pass on this retry. The blocking issue from the previous run -- 'diff' used twice (lines 25, 50) as an already-known, undefined Git term -- is resolved: the bare word 'diff' no longer appears anywhere in the reading (the only remaining substring hit is inside 'difference', an unrelated word), and both spots now read as plain-English descriptions of the changed-lines view that were already introduced earlier in the same section (line 29). The rephrasing added a net ~7 words, which does not move the reading outside the [1800, 2200] target range and does not introduce any new claim beyond what topic_corpus.md already supports. One non-blocking data-hygiene note: reading.meta.json's word_count field (1860) appears stale relative to the edited body and should ideally be regenerated, but this does not affect pass/fail since the true count is still well inside range. No other undefined jargon was found in the broader sweep, and citations, format, faithfulness, and tone all remain clean from the prior pass."
+}

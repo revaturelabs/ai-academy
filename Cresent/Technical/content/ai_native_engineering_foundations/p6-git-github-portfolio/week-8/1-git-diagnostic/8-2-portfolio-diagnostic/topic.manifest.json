@@ -11,8 +11,27 @@
     "Personal portfolio repository: structure and README sections",
     "End-of-Part-A diagnostic: demonstrating Python + Git readiness; faculty sign-off before Part B"
   ],
-  "expected_delivery_minutes": null,
-  "artifact_plan": {},
+  "expected_delivery_minutes": 11,
+  "artifact_plan": {
+    "depth_profile": "deep",
+    "depth_signals": [
+      "intrinsic corpus signal: standard (Core Concepts has 4 sub-concepts, Implementation + Real-World Patterns both warranted, cross_refs non-empty, gated lab present)",
+      "week-budget upgrade: 8.1 already spent 9/90 min, 3 siblings (8.3-8.5) still unprofiled, remaining 74 min / 3 = ~24.7 min/topic avg (> 14 min upgrade threshold) -> upgraded standard to deep",
+      "hitl_confirmed: user accepted deep (~10 min) at corpus review gate"
+    ],
+    "hitl_confirmed": true,
+    "reading": {
+      "target_min_minutes": 9,
+      "target_max_minutes": 11,
+      "target_word_range": [1800, 2200]
+    },
+    "quiz": {
+      "min_questions": 10,
+      "max_questions": 15,
+      "include_short_answer": true
+    },
+    "diagram": false
+  },
   "next_assessment": {
     "id": "A3",
     "week": 8,

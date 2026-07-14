@@ -1,18 +1,18 @@
 {
   "topic_id": "8.1",
-  "stage": "awaiting_resources",
+  "stage": "topic_artifacts_approved",
   "gates": {
-    "resources_captured": false,
-    "corpus_generated": false,
-    "corpus_critic_passed": false,
-    "corpus_human_approved": false,
-    "reading_generated": false,
-    "reading_critic_passed": false,
-    "quiz_generated": false,
-    "quiz_critic_passed": false,
-    "diagram_generated": false,
-    "diagram_critic_passed": false,
-    "topic_artifacts_human_approved": false,
+    "resources_captured": true,
+    "corpus_generated": true,
+    "corpus_critic_passed": true,
+    "corpus_human_approved": true,
+    "reading_generated": true,
+    "reading_critic_passed": true,
+    "quiz_generated": true,
+    "quiz_critic_passed": true,
+    "diagram_generated": true,
+    "diagram_critic_passed": true,
+    "topic_artifacts_human_approved": true,
     "module_drift_passed": false,
     "week_human_approved": false
   },
@@ -21,6 +21,199 @@
       "at": "2026-07-13T00:00:00Z",
       "op": "scaffold",
       "msg": "created by ai_native_ingest.py"
+    },
+    {
+      "at": "2026-07-14T11:13:27Z",
+      "op": "set",
+      "gate": "resources_captured",
+      "value": true
+    },
+    {
+      "at": "2026-07-14T11:13:27Z",
+      "op": "stage",
+      "to": "awaiting_corpus"
+    },
+    {
+      "at": "2026-07-14T11:13:27Z",
+      "op": "log",
+      "msg": "Captured 5 resources (source=web_search, 1 human primary + 1 web primary + 3 web supporting)"
+    },
+    {
+      "at": "2026-07-14T11:18:08Z",
+      "op": "set",
+      "gate": "corpus_generated",
+      "value": true
+    },
+    {
+      "at": "2026-07-14T11:18:08Z",
+      "op": "stage",
+      "to": "awaiting_corpus_critic"
+    },
+    {
+      "at": "2026-07-14T11:18:08Z",
+      "op": "log",
+      "msg": "Corpus drafted (2050 words) - deep profile, diagram required"
+    },
+    {
+      "at": "2026-07-14T11:20:33Z",
+      "op": "set",
+      "gate": "corpus_critic_passed",
+      "value": false
+    },
+    {
+      "at": "2026-07-14T11:20:33Z",
+      "op": "log",
+      "msg": "Critic failed: citation density <60% in 5.4/5.5/7, forward refs (staging/fork/merging), 2050w vs deep-profile 5000-6000w floor"
+    },
+    {
+      "at": "2026-07-14T11:32:54Z",
+      "op": "set",
+      "gate": "corpus_critic_passed",
+      "value": true
+    },
+    {
+      "at": "2026-07-14T11:32:54Z",
+      "op": "stage",
+      "to": "awaiting_corpus_human_review"
+    },
+    {
+      "at": "2026-07-14T11:32:54Z",
+      "op": "log",
+      "msg": "Corpus critic passed on retry 1/2 - ~4744w, citations fixed, forward refs removed"
+    },
+    {
+      "at": "2026-07-14T11:48:29Z",
+      "op": "set",
+      "gate": "corpus_human_approved",
+      "value": true
+    },
+    {
+      "at": "2026-07-14T11:48:29Z",
+      "op": "stage",
+      "to": "corpus_approved"
+    },
+    {
+      "at": "2026-07-14T11:48:29Z",
+      "op": "log",
+      "msg": "HITL#2 passed - all 10 sections approved as-written, depth=deep accepted (~10min reading, diagram required)"
+    },
+    {
+      "at": "2026-07-14T11:51:23Z",
+      "op": "set",
+      "gate": "diagram_generated",
+      "value": true
+    },
+    {
+      "at": "2026-07-14T11:51:23Z",
+      "op": "log",
+      "msg": "Diagram generated (mermaid, flowchart LR, 5 nodes) - subagent lacked Bash for mmdc render, main session rendered PNG directly"
+    },
+    {
+      "at": "2026-07-14T11:52:45Z",
+      "op": "set",
+      "gate": "diagram_critic_passed",
+      "value": true
+    },
+    {
+      "at": "2026-07-14T11:52:46Z",
+      "op": "stage",
+      "to": "awaiting_diagram_critic"
+    },
+    {
+      "at": "2026-07-14T11:52:46Z",
+      "op": "log",
+      "msg": "Diagram critic passed - 5-node flowchart LR, no visual issues"
+    },
+    {
+      "at": "2026-07-14T11:55:31Z",
+      "op": "set",
+      "gate": "quiz_generated",
+      "value": true
+    },
+    {
+      "at": "2026-07-14T11:55:31Z",
+      "op": "stage",
+      "to": "awaiting_quiz_critic"
+    },
+    {
+      "at": "2026-07-14T11:55:31Z",
+      "op": "log",
+      "msg": "Quiz generated - 13 Q (10 MCQ + 3 short-answer), all 6 objectives covered, bias_defense_applied"
+    },
+    {
+      "at": "2026-07-14T11:58:06Z",
+      "op": "set",
+      "gate": "quiz_critic_passed",
+      "value": true
+    },
+    {
+      "at": "2026-07-14T11:58:06Z",
+      "op": "stage",
+      "to": "quiz_approved"
+    },
+    {
+      "at": "2026-07-14T11:58:06Z",
+      "op": "log",
+      "msg": "Quiz critic passed - no positional/length bias, all objectives covered"
+    },
+    {
+      "at": "2026-07-14T11:58:16Z",
+      "op": "set",
+      "gate": "reading_generated",
+      "value": true
+    },
+    {
+      "at": "2026-07-14T11:58:16Z",
+      "op": "stage",
+      "to": "awaiting_reading_critic"
+    },
+    {
+      "at": "2026-07-14T11:58:16Z",
+      "op": "log",
+      "msg": "Reading generated - 1860w (9 min), all 5 resources cited, diagram embedded, A3 tie-in"
+    },
+    {
+      "at": "2026-07-14T12:06:16Z",
+      "op": "set",
+      "gate": "reading_critic_passed",
+      "value": false
+    },
+    {
+      "at": "2026-07-14T12:06:16Z",
+      "op": "log",
+      "msg": "Reading critic failed: forward-ref 'diff' used undefined (2x) - retry 1/2"
+    },
+    {
+      "at": "2026-07-14T12:09:17Z",
+      "op": "set",
+      "gate": "reading_critic_passed",
+      "value": true
+    },
+    {
+      "at": "2026-07-14T12:09:17Z",
+      "op": "stage",
+      "to": "awaiting_topic_artifacts_review"
+    },
+    {
+      "at": "2026-07-14T12:09:17Z",
+      "op": "log",
+      "msg": "Reading critic passed on retry 1/2 (diff->changed-lines view fix). Quiz+diagram+reading all critic-passed - ready for HITL#3"
+    },
+    {
+      "at": "2026-07-14T12:10:55Z",
+      "op": "set",
+      "gate": "topic_artifacts_human_approved",
+      "value": true
+    },
+    {
+      "at": "2026-07-14T12:10:55Z",
+      "op": "stage",
+      "to": "topic_artifacts_approved"
+    },
+    {
+      "at": "2026-07-14T12:10:55Z",
+      "op": "log",
+      "msg": "HITL#3 approved - all artifacts clean, no carry-over failures"
     }
   ]
 }

@@ -1,0 +1,36 @@
+{
+  "critic": "corpus-critic",
+  "topic_id": "8.1",
+  "retry": 1,
+  "corpus_path": "content/ai_native_engineering_foundations/p6-git-github-portfolio/week-8/1-git-diagnostic/8-1-version-control-basics/topic_corpus.md",
+  "resources_path": "content/ai_native_engineering_foundations/p6-git-github-portfolio/week-8/1-git-diagnostic/8-1-version-control-basics/topic.resources.json",
+  "sequence_index_path": "content/curriculum/sequence.index.json",
+  "position_in_sequence": "first topic to introduce Git/version-control vocabulary; no prior topic (1.1-7.3) has any concepts_introduced",
+  "depth_profile": "deep",
+  "at": "2026-07-14T00:00:00Z",
+  "passed": true,
+  "checks": [
+    {
+      "id": "1-required-sections",
+      "passed": true,
+      "detail": "Section 3 Learning Objectives (6 substantive bullets), Section 4 Introduction (3 full paragraphs, well over 50 words), Section 5 Core Concepts (5 subsections 5.1-5.5, roughly 2,900+ words, far over the 100-word floor), and Section 10 Key Takeaways (5 substantive bullets) are all present, non-placeholder, and substantive."
+    },
+    {
+      "id": "2-citation-density",
+      "passed": true,
+      "resources_source": "web_search (strict mode)",
+      "detail": "Both primary resources are cited heavily and repeatedly: [1] Official Git docs appears in 5.1, 5.2, 5.4, 5.5, 6, 7, 8; [2] Pro Git ch2.1 appears in nearly every subsection of 5, 6, 7, 8. All three supporting resources ([3] widdowquinn, [4] UNO Classroom, [5] Mongan walkthrough) are also cited multiple times each. Verified via full-file citation-marker extraction: only markers [1]-[5] appear anywhere in the corpus, no [6] or higher -- no fabricated markers. The previously-flagged uncited gaps are fixed: 5.4 (Working via the Web Interface) now carries citations on every bullet and closing paragraph (lines 73/75/76/77/79/81); 5.5 (Good Habits) now carries citations in all four habit paragraphs (README, commits, branching, .gitignore -- lines 87/89/91/93); Section 7 (Real-World Patterns) now carries citations in all five paragraphs (protected-main pattern, commit-history-as-documentation, README-as-first-impression, leaked-credential pattern, browser-first-workflow analogue -- lines 117/119/121/123/125). By claim-level spot count, standalone factual/best-practice assertions in sections 5, 6, and 7 carry a citation marker at a rate well above the 60% strict-mode floor (visually near-saturating: most sentences end in one or more [N] markers)."
+    },
+    {
+      "id": "3-sequence-drift",
+      "passed": true,
+      "detail": "Targeted re-check of the three previously-flagged terms confirms they are gone: 'stage/staging' as a Git-workflow noun does not appear anywhere (the one regex hit on 'stage' is the ordinary-English phrase 'At this stage you only need the concept' in 5.5, not the Git staging area -- false positive, not jargon); 'fork' does not appear anywhere in the corpus; 'merging' / 'pull request(s)' do not appear anywhere -- 5.5 explicitly defers the mechanism by name ('Combining a feature branch's work back into main is itself a deliberate, reviewed step with its own tools and vocabulary -- that's a later topic in this program') without naming merge/PR, which is correct scope discipline. Broader jargon sweep (clone, checkout, pull, SSH, HEAD, rebase, CI/CD, branch protection, workflow files/Actions) found zero additional hits. One minor, non-blocking finding: 'diff' is used as an already-known noun three times (5.2 line 57: 'open the diff and reconstruct the intent'; Implementation step 8 line 106: 'confirm the diff view shows...'; Best Practices line 135: 'the message and the diff should always agree') without ever explicitly naming-and-defining the term, even though 5.4 describes the underlying mechanic ('shows exactly which lines changed and which didn't') without labeling it 'diff'. This is materially lighter-weight than the previously-flagged terms -- it names a UI view rather than introducing a competing workflow step or collaboration model -- and each usage is accompanied by enough context (open it / view / lines you changed) that a first-time reader can infer the meaning. Recommended but not blocking: add one clause tying the word 'diff' to the lines-changed view already described in 5.4."
+    },
+    {
+      "id": "4-length-sanity",
+      "passed": true,
+      "detail": "Depth profile is 'deep' (5000-6000 word range, 30% tolerance per artifact-mix.json -> effective pass band ~3500-7800). Verified actual whitespace-token count via binary-search offset probing directly against the file (not taking the corpus-builder's self-report on faith): total = 4,744 tokens, confirming the author's claimed ~4,700 is accurate. Of that, front matter (~14 tokens) and pure markdown scaffolding (16 heading markers #/##/###, 29 bullet-list dashes, 11 numbered-list markers in Section 6) account for roughly 55-70 tokens, so true prose word count is approximately 4,650-4,690 -- essentially the same figure, since scaffolding overhead is under 2% of the total. This sits about 6% below the deep profile's nominal 5,000-word floor, which is well inside the 30% tolerance band the check itself allows (floor for auto-fail is ~3,500). Judgment: this is an acceptable deep-profile length, not a real miss -- a marked improvement from the prior draft's ~2,050 words (~59% under floor, a genuine fail). No further expansion is required to pass this gate, though the corpus sits at the low end of 'deep' rather than mid-range."
+    }
+  ],
+  "verdict": "PASS (retry #1). All four hard checks now pass: (1) required sections 3/4/5/10 are present and substantive; (2) citation density in strict web_search mode is satisfied -- both primary resources [1]/[2] are cited repeatedly, all supporting resources [3]-[5] are cited, no fabricated markers exist, and the previously-flagged uncited stretches in 5.4, 5.5, and Section 7 now carry citations throughout; (3) sequence drift is resolved -- 'stage/staging', 'fork', and 'merging/pull requests' are confirmed absent (the branching subsection now correctly defers merge/PR mechanics by topic reference without naming them), leaving only one minor, non-blocking note that the word 'diff' is used three times without an explicit inline definition (lower severity than the prior flags since it names a UI view, not a competing workflow/collaboration model, and is contextually inferable); (4) length sanity passes -- verified actual token count is ~4,744 (matching the author's ~4,700 claim), about 6% under the deep floor and well within the 30% tolerance band, versus the prior draft's ~59%-under-floor genuine failure. Corpus is cleared to ground downstream artifacts; the 'diff' definition gap is worth a light-touch fix in a future pass but does not block this gate."
+}

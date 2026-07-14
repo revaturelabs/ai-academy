@@ -1,0 +1,47 @@
+{
+  "critic": "reading-critic",
+  "topic_id": "8.2",
+  "retry": 1,
+  "reading_path": "content/ai_native_engineering_foundations/p6-git-github-portfolio/week-8/1-git-diagnostic/8-2-portfolio-diagnostic/artifacts/reading.md",
+  "meta_path": "content/ai_native_engineering_foundations/p6-git-github-portfolio/week-8/1-git-diagnostic/8-2-portfolio-diagnostic/artifacts/reading.meta.json",
+  "corpus_path": "content/ai_native_engineering_foundations/p6-git-github-portfolio/week-8/1-git-diagnostic/8-2-portfolio-diagnostic/topic_corpus.md",
+  "resources_path": "content/ai_native_engineering_foundations/p6-git-github-portfolio/week-8/1-git-diagnostic/8-2-portfolio-diagnostic/topic.resources.json",
+  "target_word_range": [1800, 2200],
+  "target_minute_range": [9, 11],
+  "position_in_sequence": "second topic in the git-diagnostic module; prerequisites = [8.1]; prior-topic vocab (repo/commit/push, GitHub Classroom, README as front door, light branching intro, .gitignore) plus this topic's own corpus concepts (portfolio repository, README sections, folder naming, Part A diagnostic gate, faculty sign-off) are all in-bounds",
+  "at": "2026-07-14T00:00:00Z",
+  "passed": true,
+  "checks": [
+    {
+      "id": "0-format-discipline",
+      "passed": true,
+      "detail": "No frontmatter: first non-empty line is '# Portfolio & Diagnostic' (an H1), no leading YAML block. Sidecar reading.meta.json exists and parses, carrying word_count (2101), estimated_read_minutes (9), citations_used ([1,2,3]), and sections (all six, in order). Exactly six '##' sections present in the required order: Overview (line 3), Key Concepts (line 7), Worked Example (line 24), In Practice (line 41), Key Takeaways (line 63), References (line 71). No sections added, renamed, or dropped. Unchanged pass from prior attempt."
+    },
+    {
+      "id": "1-length-budget",
+      "passed": true,
+      "detail": "Sidecar reports word_count 2101, inside [1800,2200]. An independent manual word tally across all six sections (Overview ~199, Key Concepts ~988, Worked Example ~403, In Practice ~370, Key Takeaways ~124, References ~60) lands at ~2144, close enough to the sidecar figure to corroborate it (both well inside the target range). Reading-aloud minutes now clear the floor that failed last time: words/230 = 2101/230 = 9.13 min (sidecar figure) or 2144/230 = 9.32 min (manual figure) -- both land inside [9,11]. The sidecar's own estimated_read_minutes (9) is now internally consistent with the required words/230 formula, unlike the prior attempt. This check, which failed last time on the minutes sub-criterion, now passes on both sub-criteria."
+    },
+    {
+      "id": "2-citation-discipline",
+      "passed": true,
+      "detail": "Primary resource [1] (GitHub Docs, Best practices for repositories) is cited repeatedly across Key Concepts, Worked Example, and In Practice (lines 9, 11, 18, 22, 30, 45, 47, 51, 53, 59). Supporting resources [2] (freeCodeCamp README guide) and [3] (Medium repo-structure guide) are each cited multiple times as well. Bibliography (lines 73-77) has exactly three entries, [1][2][3], matching every inline marker used in the body -- no orphan markers, no orphan bibliography entries."
+    },
+    {
+      "id": "3-no-forward-references",
+      "passed": true,
+      "detail": "Swept for Git/GitHub vocabulary beyond 8.1's introduced set (repo/commit/push, GitHub Classroom, README-as-front-door, light branching intro, .gitignore) and beyond this topic's own corpus concepts (portfolio repository, README sections, folder/file naming conventions, Part A diagnostic, faculty sign-off, CSV reading + class-based modeling + error handling as already-built Parts 1-5 foundation). The one borderline term, 'merges' (line 47, '...before work moves forward -- merges, ships, or unlocks the next part of a program...'), is used only as a brief professional-analogy aside and traces directly to this same topic's own corpus (Real-World Patterns, section 7: 'merges into a shared branch, ships...'), so it is in-bounds. No other undefined jargon (rebase, checkout, pull request, staging, upstream, HEAD, CI/CD, branch protection, fork, SSH) appears anywhere in the reading."
+    },
+    {
+      "id": "4-faithfulness-to-corpus",
+      "passed": true,
+      "detail": "Sampled assertions across all six sections trace cleanly to topic_corpus.md: the Overview's Classroom-vs-portfolio framing (corpus 4), the 'reader who wasn't in the room' framing and portfolio definition (corpus 5.1), structure/naming guidance and the csv_reader.py/final2.py example (corpus 5.2), the four README sections and the near-verbatim 'Python exercises and projects from Parts 1-5...' example string (corpus 5.3), the diagnostic/faculty-sign-off paragraph (corpus 5.4), all ten Worked Example steps (corpus section 6, matched near 1:1, including the illustrative 'python summary.py transactions.csv' quick-start command, which is a reasonable concretization of corpus 5.2/5.3's summary.py/csv_reader.py naming examples rather than a new claim), the In Practice bullets and Do/Don't lists (corpus sections 7-8), and the Key Takeaways (near-verbatim match to corpus section 10). One unsupported assertion persists unchanged from the prior attempt: the Overview's italicized sentence '_This contributes to A3 -- Python Foundations Diagnostic (due W8): ... confirming you're ready to begin the AI modules._' -- the strings 'A3', 'W8', and 'AI modules' still do not appear anywhere in topic_corpus.md (confirmed via direct search); this traces to topic.manifest.json's assignment metadata rather than the corpus. This is 1 unsupported assertion, unchanged from the prior pass and still under the >2 threshold required to fail this check, so the check passes -- same non-blocking note as last time: the sentence should ideally be removed, generalized, or traced to a corpus update if it is meant to stay."
+    },
+    {
+      "id": "5-tone-fit",
+      "passed": true,
+      "detail": "Hedging-phrase sweep: 0 occurrences of hedging constructions ('it is generally considered', 'many experts believe', 'various studies have shown' or equivalents) -- unchanged pass, well under the <3 threshold. Average sentence length -- the specific sub-check that failed last attempt (28-34 words/sentence, ceiling 25) -- was recomputed sentence-by-sentence for Overview and Key Concepts specifically, per the retry instructions: Overview is 16 sentences / ~199 words = ~12.4 words/sentence (down from ~34 last time); Key Concepts is 63 sentences / ~988 words = ~15.7 words/sentence across its four paragraphs (portfolio-reader intro ~14.4 w/s, structure-conventions paragraph ~15.8 w/s, README-sections paragraph+bullets ~16.3 w/s, diagnostic/sign-off paragraph ~15.7 w/s, down from ~27-33 last time). Both sections now sit comfortably at or under the 25-word ceiling, and the whole-document average across all six sections (~2144 words / ~123 sentences =~17.4 w/s) is also under 25. Non-blocking observation: a handful of individual sentences outside Overview/Key Concepts still run long -- e.g. Worked Example step 5's 51-word quick-start sentence, step 7's 35-word sentence, the Worked Example closing paragraph's 28- and 35-word sentences, and In Practice bullet 46 (41 words) and bullet 47's first sentence (49 words). These are isolated long sentences in list/bullet contexts rather than a pervasive pattern, and they do not pull the Worked Example (~21.2 w/s) or In Practice (~21.8 w/s) section averages over the ceiling. Since the retry's specific target -- Overview and Key Concepts -- is now well under 25 w/s and the document-wide average is also under 25, this check passes; tightening the handful of long list-item sentences noted above would still improve consistency in a future pass."
+    }
+  ],
+  "verdict": "PASS. All six checks pass on this retry. Both issues that failed last time are resolved: (1) Length budget -- word count moved from ~1934 to 2101 (sidecar; independent manual tally ~2144), which now pushes reading-aloud minutes at the required 230 wpm into the [9,11] target_minute_range (2101/230 = 9.13 min; 2144/230 = 9.32 min), versus the ~8.4-8.7 min that failed the floor last time. (5) Tone fit -- average sentence length in Overview and Key Concepts, recomputed specifically per the retry instructions, dropped from ~28-34 words/sentence to ~12.4 (Overview) and ~15.7 (Key Concepts), both comfortably under the 25-word ceiling; hedging language remains clean at 0 occurrences. Format discipline (0), citation discipline (2), no-forward-references (3), and faithfulness (4) all continue to pass; faithfulness carries the same single non-blocking note as the prior pass -- the Overview's italicized 'A3 / due W8 / AI modules' sentence still traces to topic.manifest.json's assignment metadata rather than topic_corpus.md, which is 1 unsupported assertion, unchanged and still well under the >2-violation failure threshold. A minor non-blocking style note: a few individual sentences in Worked Example and In Practice (up to 51 words) remain long outliers even though section and document averages are healthy -- worth tightening in a future revision but not a blocking issue for this retry."
+}
