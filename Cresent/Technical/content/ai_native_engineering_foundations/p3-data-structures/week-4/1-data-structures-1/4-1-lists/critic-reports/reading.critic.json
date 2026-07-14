@@ -1,0 +1,66 @@
+{
+  "artifact": "reading",
+  "topic_id": "4.1",
+  "topic_title": "Lists",
+  "reading_path": "content/ai_native_engineering_foundations/p3-data-structures/week-4/1-data-structures-1/4-1-lists/artifacts/reading.md",
+  "profile": "deep",
+  "passed": true,
+  "verdict": "PASS — Reading is 1893 words (within deep 1800–2200 budget, mermaid + code fences excluded), reading-aloud ~8.2 min. All three primary citations [1] W3Schools, [2] docs.python.org datastructures, [3] freeCodeCamp slicing are used inline with a matching bibliography and no orphans or fabrications. No forward references (tuples/sets/dicts/iterators never appear — the reading omits even the acceptable tuple aside). Faithful to corpus across all sampled assertions with zero unsupported claims. Beginner tone assuming only P1/P2. Diagram embedded as a ```mermaid block identical to diagram.mmd with a title caption; embeds_diagram=true. format_ok=true.",
+  "generated_at": "2026-07-14T00:00:00Z",
+  "checks": [
+    {
+      "id": "format_discipline",
+      "name": "Format discipline (no frontmatter, sidecar, six fixed sections)",
+      "passed": true,
+      "notes": "First line is '# Lists' H1, no leading YAML frontmatter. reading.meta.json present and parses with word_count, estimated_read_minutes, citations_used, sections. Exactly six '##' sections in order: Overview, Key Concepts, Worked Example, In Practice, Key Takeaways, References."
+    },
+    {
+      "id": "length",
+      "name": "Length within deep budget 1800–2200 words",
+      "passed": true,
+      "word_count": 1893,
+      "target_word_range": [1800, 2200],
+      "estimated_read_minutes": 8.2,
+      "notes": "1893 prose words (mermaid block and python code fences excluded per profile). Sidecar word_count=1893 consistent. Within budget; not under, not over."
+    },
+    {
+      "id": "citations",
+      "name": "Citations used, matched, no fabrications",
+      "passed": true,
+      "citations_used": [1, 2, 3],
+      "notes": "[1] W3Schools, [2] docs.python.org datastructures, [3] freeCodeCamp slicing all cited inline and all appear in the References bibliography. No orphan markers, no orphan bibliography entries, no fabricated sources."
+    },
+    {
+      "id": "forward_references",
+      "name": "Prereq alignment / no forward references",
+      "passed": true,
+      "notes": "P1/P2 vocab (variables, types, operators, f-strings, print, conditionals, loops, functions, range) used as known — allowed. No reference to later topics: 'tuple' does not appear at all (reading dropped the optional aside), and no sets/dicts (week 5) or iterators/generators/Counter/defaultdict. Hard-gate criteria clear."
+    },
+    {
+      "id": "faithfulness",
+      "name": "Faithfulness to corpus",
+      "passed": true,
+      "unsupported_count": 0,
+      "notes": "Sampled 10 assertions — square-bracket literals (corpus 5.1), zero/negative indexing + IndexError (5.2), slice start:stop:step and a[::-1] (5.3), mutability + reference sharing b=a (5.4), eight methods in add/remove/search groups and append-vs-extend nesting (5.5), sort() returns None vs sorted() with reverse=/key= (5.7), nested grid[0][2] (5.8), comprehension map/filter/both (5.9). All trace to corpus. Worked Example and In Practice mirror corpus sections 9 and 7."
+    },
+    {
+      "id": "tone",
+      "name": "Beginner plainspoken tone",
+      "passed": true,
+      "notes": "Average sentence length under 25 words; no hedging phrases ('generally considered', 'many experts believe', 'various studies'). Direct, concrete, assumes no programming beyond P1/P2."
+    },
+    {
+      "id": "diagram_embed",
+      "name": "Diagram embedded with caption, consistent with diagram.mmd",
+      "passed": true,
+      "notes": "A ```mermaid flowchart block (reading.md lines 22–44) is byte-identical to artifacts/diagram.mmd, carries a title caption 'Indexing: 0..n-1 from the left, -1..-n from the right', and is introduced by explanatory prose (line 20). Sidecar embeds_diagram=true."
+    },
+    {
+      "id": "format_ok",
+      "name": "Project format check (underlined bold labels + bulleted enumerations)",
+      "passed": true,
+      "format_ok": true,
+      "notes": "All nine Key Concepts sub-topics lead with '<u>**Label.**</u>' (Creating a list, Indexing, Slicing, Mutability, List methods, Iteration, Sorting, Nested lists, Comprehensions). Run-together enumerations are rendered as Markdown bullet lists: list methods split into three bulleted groups (add/remove/search), sort vs sorted as bullets, reverse/key as bullets, comprehension map/filter/both as bullets. No enumeration buried in prose."
+    }
+  ]
+}

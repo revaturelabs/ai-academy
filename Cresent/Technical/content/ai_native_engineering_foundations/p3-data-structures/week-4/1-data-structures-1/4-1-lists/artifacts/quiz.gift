@@ -1,0 +1,106 @@
+$CATEGORY: CIT/P3/week-4/4.1-lists
+
+::q1:: Given `fruits = ["apple", "banana", "cherry"]`, which expression evaluates to `"apple"`? {
+=fruits[0]#Correct — Python indexes from zero, so index 0 is the first element.
+~fruits[1]#No — index 1 is the second element, "banana".
+~fruits[-3] returns "cherry"#No — fruits[-3] is "apple", but this claim about its value is wrong.
+~fruits[3]#No — a three-element list has no index 3; this raises an IndexError.
+#### Tests zero-based positive indexing to reach the first element (corpus §5.2).
+}
+
+::q2:: For `nums = [10, 20, 30, 40, 50]`, what does `nums[-2]` evaluate to? {
+~50, because negative indices count the last element as -2#No — the last element is -1, not -2.
+=40, because -1 is the last element and -2 is the second-to-last#Correct — negative indices count back from the end starting at -1.
+~20, because -2 counts two places from the front#No — negative indices count from the end, not the front.
+~an IndexError, because negative indices are invalid#No — Python fully supports negative indexing.
+#### Tests negative indexing counting back from the end (corpus §5.2).
+}
+
+::q3:: Running `colors = ["red", "green", "blue"]` then `print(colors[3])` produces what? {
+~It prints `blue`, the last element of the list#No — "blue" is at index 2, not index 3.
+~It prints `None` because index 3 is empty#No — out-of-range access does not return None.
+=It raises an `IndexError` because index 3 does not exist#Correct — a three-element list has valid indices 0-2 only.
+~It prints an empty string for the missing slot#No — Python raises rather than returning a blank value.
+#### Tests that an out-of-range index raises IndexError (corpus §5.2).
+}
+
+::q4:: For `a = [0, 1, 2, 3, 4, 5]`, what does `a[::-1]` produce? {
+~The list sorted in ascending order, `[0, 1, 2, 3, 4, 5]`#No — a step of -1 reverses; it does not sort.
+~The list sorted in descending order by value comparison#No — slicing reverses order, it does not compare values to sort.
+~The single last element `5` returned on its own#No — this slice returns a full new list, not one element.
+=A reversed copy `[5, 4, 3, 2, 1, 0]` leaving `a` unchanged#Correct — a negative step walks backward and slicing builds a new list.
+#### Tests the `[::-1]` reversal idiom and that slicing does not mutate (corpus §5.3).
+}
+
+::q5:: For `a = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]`, what does `a[1:5:2]` evaluate to? {
+~`[1, 2, 3, 4, 5]`, taking every index from 1 through 5 inclusive#No — stop (5) is excluded and step 2 skips elements.
+=`[1, 3]`, starting at 1, stepping by 2, stopping before index 5#Correct — start is included, stop is excluded, step jumps by 2.
+~`[1, 3, 5]`, because the stop index 5 is included in the slice#No — the stop index is always excluded from a slice.
+~`[2, 4]`, stepping by 2 but starting from index 2#No — the slice starts at the start index 1, not 2.
+#### Tests start-inclusive, stop-exclusive slicing with a step (corpus §5.3).
+}
+
+::q6:: After `a = [1, 2, 3]`, `b = a`, and `b.append(4)`, what is the value of `a`? {
+~`[1, 2, 3]`, because `b = a` made an independent copy of the list#No — plain assignment aliases; it does not copy.
+~`[4]`, because appending replaces the list contents with the new item#No — append adds to the end, it does not replace.
+=`[1, 2, 3, 4]`, because `b` and `a` refer to the same list object#Correct — assignment binds another name to the same list, so changes show through both.
+~`[1, 2, 3]`, because appending to `b` cannot affect any other variable#No — both names point at one object, so the change is shared.
+#### Tests reference aliasing — assignment shares, it does not copy (corpus §5.4).
+}
+
+::q7:: Which statement about list mutability is correct? {
+=Assigning `colors[1] = "yellow"` changes the existing list in place#Correct — lists are mutable, so index assignment replaces an element without a new list.
+~Assigning to an index creates and returns a brand-new list each time#No — index assignment mutates the same list in place.
+~Lists cannot be changed after creation, only rebuilt from scratch#No — that describes an immutable type; lists are mutable.
+~You must call `rebuild()` to modify a list after it is created#No — no such method exists; assignment mutates directly.
+#### Tests that lists are mutable and index assignment edits in place (corpus §5.4).
+}
+
+::q8:: Starting from `nums = [1, 2, 3]`, what does `nums.append([4, 5])` leave in `nums`? {
+~`[1, 2, 3, 4, 5]`, because append unpacks the sequence into elements#No — that describes extend; append adds one element.
+~`[1, 2, 3, 4]`, because append only ever adds the first item given#No — append adds exactly the one object passed, whole.
+=`[1, 2, 3, [4, 5]]`, because append adds its argument as one element#Correct — append stores the list `[4, 5]` as a single nested element.
+~`[[4, 5], 1, 2, 3]`, because append inserts its argument at the front#No — append always adds at the end, not the front.
+#### Tests append (adds one element) versus extend (unpacks) (corpus §5.5).
+}
+
+::q9:: For `letters = ["a", "b", "c", "b"]`, calling `x = letters.pop()` sets `x` to what and leaves `letters` as what? {
+~`x` is None and `letters` is `["a", "c"]`, since pop only deletes#No — pop returns the removed element; that describes remove.
+=`x` is `"b"` and `letters` is `["a", "b", "c"]`, removing the last item#Correct — pop() with no argument removes and returns the last element.
+~`x` is `"a"` and `letters` is `["b", "c", "b"]`, removing the first item#No — pop() with no argument targets the last item, not the first.
+~`x` is `["a", "b", "c", "b"]` and `letters` is empty afterward#No — pop returns one element, not the whole list; that is nearer to clear().
+#### Tests pop() returning the last element versus remove() (corpus §5.5).
+}
+
+::q10:: For `scores = [10, 20, 10, 30, 10]`, which pair of results is correct? {
+=`scores.index(20)` is `1` and `scores.count(10)` is `3`#Correct — index gives the first matching position; count gives the number of occurrences.
+~`scores.index(20)` is `20` and `scores.count(10)` is `1`#No — index returns a position, not the value, and count tallies all matches.
+~`scores.index(20)` is `2` and `scores.count(10)` is `10`#No — 20 sits at index 1, and count returns how many, not the value.
+~`scores.index(20)` is `1` and `scores.count(10)` is `5`#No — count returns 3 (the number of 10s), not the list length.
+#### Tests index (first position) and count (number of occurrences) (corpus §5.5).
+}
+
+::q11:: What does the code `nums = [3, 1, 2]` then `nums = nums.sort()` leave in `nums`? {
+~`[1, 2, 3]`, because sort returns the newly sorted list to assign#No — sort() sorts in place and returns None, not the list.
+~`[3, 1, 2]`, because sort() leaves the original order untouched#No — sort() does reorder the list in place.
+~A new sorted list while the original stays `[3, 1, 2]`#No — that describes sorted(); sort() mutates the same list.
+=`None`, because `sort()` sorts in place and returns `None`#Correct — assigning the return value of sort() overwrites nums with None.
+#### Tests the sort()-returns-None pitfall versus sorted() (corpus §5.7).
+}
+
+::q12:: For `grid = [[1, 2, 3], [4, 5, 6], [7, 8, 9]]`, what does `grid[2][0]` evaluate to? {
+~`3`, because the first index picks the column and the second the row#No — the first index is the row, the second is the column, in that order.
+~`[7, 8, 9]`, because a single index into a nested list returns a row#No — two indices reach a single cell, not the whole row.
+~`9`, because `grid[2][0]` reads the last element of the last row#No — the second index 0 selects the first column, not the last.
+=`7`, because the first index selects row 2 and the second selects column 0#Correct — grid[2] is the row [7, 8, 9] and [0] takes its first element.
+#### Tests nested-list access grid[r][c] — row first, then column (corpus §5.8).
+}
+
+::q13:: Predict the output. `nums = [1, 2, 3, 4, 5, 6]` then `[n * 2 for n in nums if n % 2 == 0]` evaluates to ____ (write the list literal). {
+=[4, 8, 12]
+}
+
+::q14:: In the loop `total = []` then `for row in grid: for value in row: total.append(value)`, the pattern that walks each element of a list in order is called a ____ loop (one word). {
+=for
+=For
+}

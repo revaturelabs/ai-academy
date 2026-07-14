@@ -1,0 +1,30 @@
+{
+  "topic_id": "4.2",
+  "captured_at": "2026-07-14T00:00:00Z",
+  "captured_by": "namratas@revature.com",
+  "resources_source": "web_search",
+  "resources": [
+    {
+      "type": "url",
+      "value": "https://realpython.com/python-lists-tuples/",
+      "role": "primary",
+      "source": "web_search",
+      "notes": "Immutability, tuple vs list, when to prefer a tuple over a list — the core of the 4.2 outline."
+    },
+    {
+      "type": "url",
+      "value": "https://www.w3schools.com/python/python_tuples.asp",
+      "role": "supporting",
+      "source": "web_search",
+      "notes": "Beginner anchor: creating, accessing/indexing, packing, basic operations (concatenation, repetition, membership)."
+    },
+    {
+      "type": "url",
+      "value": "https://docs.python.org/3/tutorial/datastructures.html",
+      "role": "supporting",
+      "source": "web_search",
+      "notes": "First-party authoritative Tuples & Sequences section: packing and unpacking (a, b = b, a)."
+    }
+  ],
+  "web_search_query": "Python tuples packing unpacking immutability tuple vs list beginners"
+}

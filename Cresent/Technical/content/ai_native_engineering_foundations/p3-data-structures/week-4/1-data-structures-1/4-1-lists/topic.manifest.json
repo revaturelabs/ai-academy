@@ -17,8 +17,23 @@
     "Nested lists: lists of lists",
     "List comprehension: mapping and filtering in one expression"
   ],
-  "expected_delivery_minutes": null,
-  "artifact_plan": {},
+  "expected_delivery_minutes": 10,
+  "artifact_plan": {
+    "profile": "deep",
+    "profile_source": "human_confirmed",
+    "profile_note": "Intrinsic signal deep (8 sub-concepts, richest/first topic of P3); human confirmed deep at HITL#2. Corpus 2470w supports a deep 1800-2200w reading without padding (same path as week-1 1.2/1.4).",
+    "reading": {
+      "target_word_range": [1800, 2200],
+      "target_minute_range": [9, 11]
+    },
+    "quiz": {
+      "min_questions": 10,
+      "max_questions": 15,
+      "include_short_answer": true
+    },
+    "diagram": true,
+    "diagram_intent": "List index/slice figure: the elements in a row of cells with positive indices 0..n-1 above and negative -1..-n below, plus a highlighted slice window (e.g. a[1:5:2] with step). Genuinely spatial."
+  },
   "next_assessment": {
     "id": "A2",
     "week": 5,

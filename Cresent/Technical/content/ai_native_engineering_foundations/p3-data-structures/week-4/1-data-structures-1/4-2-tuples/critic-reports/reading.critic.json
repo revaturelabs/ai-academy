@@ -1,0 +1,49 @@
+{
+  "artifact": "reading",
+  "topic_id": "4.2",
+  "title": "Tuples",
+  "passed": true,
+  "verdict": "PASS - reading.md meets length, citation, forward-reference, faithfulness, tone, and project format requirements.",
+  "generated_at": "2026-07-14T00:00:00Z",
+  "checks": {
+    "format_discipline": {
+      "passed": true,
+      "frontmatter_present": false,
+      "meta_sidecar_present": true,
+      "section_template_ok": true,
+      "notes": "First non-empty line is '# Tuples' H1; no YAML frontmatter. Sidecar reading.meta.json parses with word_count, estimated_read_minutes, citations_used, sections. Sections present in exact order: Overview, Key Concepts, Worked Example, In Practice, Key Takeaways, References."
+    },
+    "length": {
+      "passed": true,
+      "word_count": 1365,
+      "target_word_range": [1200, 1600],
+      "estimated_read_minutes_sidecar": 7,
+      "computed_minutes_words_over_230": 5.9,
+      "notes": "Prose word count (code fences excluded) sits mid-range at ~1365. Minute figure in sidecar (7) is slightly higher than words/230 (~5.9) but the word budget is the gate and is satisfied."
+    },
+    "citations": {
+      "passed": true,
+      "primary_cited": [1, 2, 3],
+      "notes": "[1] Real Python lists-tuples, [2] W3Schools python_tuples, [3] docs.python.org datastructures each cited inline (e.g. [1] L5, [2] L11, [3] L20). Bibliography L150-152 has exactly three entries matching inline markers. No orphan markers, no orphan entries, no fabricated sources."
+    },
+    "forward_references": {
+      "passed": true,
+      "notes": "Prior P1/P2 and 4.1 Lists vocabulary used freely and correctly (tuples taught by contrast with lists, as intended). No later topics taught as known: no sets/dicts (week 5), no iterators/generators/Counter/defaultdict (week 5), no named tuples/dataclasses (later). The one dict-key aside at L50 ('you will later be able to use one as a dictionary key where a list cannot') is a permitted forward-awareness note - it does not teach dictionary syntax or operations."
+    },
+    "faithfulness": {
+      "passed": true,
+      "sampled_assertions": 10,
+      "unsupported_count": 0,
+      "notes": "Sampled assertions all trace to corpus: ordered/immutable sequence (5.1); comma makes a tuple and (42,) gotcha (5.1); tuple() takes one iterable, tuple(1,2,3) TypeError (5.1); exactly two methods count()/index() (5.3, 5.7); index() raises ValueError, guard with in (5.7); lexicographic comparison and shorter-is-less rule (5.8); variable swap RHS evaluated before assignment (5.4); star-unpacking yields a list, at most one star (5.4); chained indexing matrix[0][2] (5.5); worked example records/sorted/rebind and mutable-list-of-fixed-tuples framing (section 6)."
+    },
+    "tone": {
+      "passed": true,
+      "notes": "Plainspoken, second-person, beginner-friendly. Average sentence length under 25 words; no academic hedging phrases. embeds_diagram is false in sidecar and no image is embedded or required (diagram=false)."
+    },
+    "format_check_project": {
+      "passed": true,
+      "format_ok": true,
+      "notes": "Every Key Concepts sub-topic leads with an underlined bold label <u>**Label.**</u> (L11, L20, L32, L43, L52, L64, L74, L85, L95). Run-together enumerations are rendered as Markdown bullet lists rather than buried in prose: Operations +/*/in bulleted (L76-78), count()/index() methods bulleted (L82-83), and the tuple-vs-list decision procedure bulleted (L97-101)."
+    }
+  }
+}

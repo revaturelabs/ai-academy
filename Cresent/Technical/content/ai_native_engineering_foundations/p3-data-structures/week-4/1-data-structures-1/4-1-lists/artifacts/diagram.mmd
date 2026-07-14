@@ -1,0 +1,21 @@
+---
+title: "Indexing: 0..n-1 from the left, -1..-n from the right"
+config:
+  theme: base
+  themeVariables:
+    primaryColor: "#a5d8ff"
+    primaryBorderColor: "#4a9eed"
+    lineColor: "#555"
+  flowchart:
+    htmlLabels: true
+    curve: basis
+---
+flowchart LR
+    A["<b>&quot;apple&quot;</b><br/><span style='font-size:11px;color:#6d28d9'>index 0 / -3</span>"]
+    B["<b>&quot;banana&quot;</b><br/><span style='font-size:11px;color:#6d28d9'>index 1 / -2</span>"]
+    C["<b>&quot;cherry&quot;</b><br/><span style='font-size:11px;color:#6d28d9'>index 2 / -1</span>"]
+
+    A --> B --> C
+
+    class A,B,C act
+    classDef act fill:#a5d8ff,stroke:#4a9eed

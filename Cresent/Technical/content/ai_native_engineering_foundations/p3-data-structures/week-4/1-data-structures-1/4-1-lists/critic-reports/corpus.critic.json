@@ -1,0 +1,28 @@
+{
+  "passed": true,
+  "checks": {
+    "required_sections": {
+      "passed": true,
+      "notes": "All required sections present and non-trivial: 3 Learning Objectives (~90w, 6 measurable objectives), 4 Introduction (~230w), 5 Core Concepts (~1550w across 9 subsections, well above 100w floor), 10 Key Takeaways (~130w, above 50w floor). No placeholder strings in required sections."
+    },
+    "citation_density": {
+      "passed": true,
+      "primary_cited": true,
+      "claim_citation_rate": 0.85,
+      "notes": "resources_source=web_search -> STRICT. Primary [1] (w3schools python_lists) cited multiple times (sections 4,5.1,5.4,5.5,5.6,5.9,7). Only valid markers [1],[2],[3] appear as citations; [3]=freecodecamp slicing/indexing, [2]=docs.python.org datastructures both cited. Bracketed [0]/[1]/[2] tokens inside code blocks and index expressions (fruits[0], grid[0][2], row[0]) are array indices, not citation markers. No fabricated/out-of-range markers. Key claims across Core Concepts / Implementation / Real-World Patterns carry [N] well above the 60% threshold."
+    },
+    "sequence_drift": {
+      "passed": true,
+      "forward_refs": [],
+      "notes": "All 4.1 concepts_introduced covered (list creation/indexing, slicing with step, mutability/in-place update, methods append/insert/remove/pop/extend/index/count/clear, sort() vs sorted() with reverse/key, nested lists, list comprehension map+filter). P1/P2 foundations (variables, types, operators, conversion, f-strings, print, type(), conditionals, loops, functions, range/len) treated as KNOWN per sequence policy despite empty prior concepts_introduced arrays. Tuple/4.2 mentioned only as a signposted future-topic pointer ('the tuple you will meet in the next topic', 'topic 4.2'), not used to explain current content — allowed. No sets/dicts (week 5), no iterators/generators/Counter/defaultdict, no comprehensions beyond list. No forward references detected."
+    },
+    "length_sanity": {
+      "passed": true,
+      "word_count": 2470,
+      "profile": "standard",
+      "notes": "Standard band 3000-4400. Count 2470 is below the band start but above the hard-fail floor of ~2100 (30% below 3000). Not more than 30% outside range, so it clears the floor and does not hard-fail (consistent with comparable topic 1.4 at 2650). Below-band, above-floor: pass."
+    }
+  },
+  "verdict": "PASS. All four checks clear. Sections complete; strict web_search citations satisfied with only valid markers [1][2][3] and primary [1] cited repeatedly; no forward references (4.2/week-5 concepts absent; tuple mention is a signposted pointer only); word_count 2470 is below the 3000-4400 standard band but above the ~2100 hard-fail floor, so length sanity passes. Note (advisory, non-blocking): corpus is ~18% under band start; corpus-builder may optionally expand Implementation/Real-World Patterns toward 3000+.",
+  "at": "2026-07-14T00:00:00Z"
+}

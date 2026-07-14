@@ -14,8 +14,23 @@
     "Immutability: when to prefer a tuple over a list",
     "Basic tuple operations: concatenation, repetition, membership"
   ],
-  "expected_delivery_minutes": null,
-  "artifact_plan": {},
+  "expected_delivery_minutes": 7,
+  "artifact_plan": {
+    "profile": "standard",
+    "profile_source": "human_confirmed",
+    "profile_note": "Corpus suggested atomic (1390w); human chose standard at HITL#2. Corpus expanded with genuine content (count()/index() methods, lexicographic comparison, tuple() constructor, Implementation section, more examples) to clear the standard floor — not padding.",
+    "reading": {
+      "target_word_range": [1200, 1600],
+      "target_minute_range": [6, 8]
+    },
+    "quiz": {
+      "min_questions": 10,
+      "max_questions": 15,
+      "include_short_answer": false
+    },
+    "diagram": false,
+    "diagram_note": "Purely textual/syntactic; tuple-vs-list contrast served by a markdown table, no rendered glyph needed."
+  },
   "next_assessment": {
     "id": "A2",
     "week": 5,
