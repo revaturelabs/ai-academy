@@ -1,0 +1,110 @@
+{
+  "module": "1-probability-foundations",
+  "module_path": "content/m3-applied-maths-for-ai/week-7/1-probability-foundations/",
+  "generated_at": "2026-06-23T00:00:00Z",
+  "passed": true,
+  "checks": {
+    "terminology_consistency": {
+      "passed": true,
+      "findings": [
+        {
+          "severity": "soft",
+          "topic": "7.2",
+          "artifact": "artifacts/reading.md",
+          "description": "Token re-defined in 7.2 reading (In Practice section): 'a token is a chunk of text the model processes, roughly a word.' Topic 7.1 corpus §5.8 and reading already defined token as 'a small chunk of text the model reads and writes.' The wording differs slightly ('reads and writes' vs 'processes, roughly a word'). Reading artifacts may be used standalone, but within this module the term is being re-expanded rather than back-referenced.",
+          "recommendation": "In 7.2 reading, replace the parenthetical token definition with a back-reference: 'a token (defined in topic 7.1) is ...' to avoid the minor double-definition."
+        },
+        {
+          "severity": "soft",
+          "topic": "7.3",
+          "artifact": "topic_corpus.md",
+          "description": "P(B) is labelled 'Evidence (marginal probability of B)' in the Bayes theorem table (corpus §5.3). In topic 7.2 the same symbol was called 'the probability of the condition alone.' This contextual rename is explained inline and is mathematically accurate, but learners reading the two topics side-by-side may be briefly confused by the different label for the same symbol.",
+          "recommendation": "Add a bridging clause in 7.3 §5.3: 'P(B) — here called Evidence, the same denominator you saw in the conditional probability formula from topic 7.2.'"
+        }
+      ]
+    },
+    "prerequisites_respected": {
+      "passed": true,
+      "findings": []
+    },
+    "learning_arc": {
+      "passed": true,
+      "findings": [
+        {
+          "severity": "info",
+          "description": "The arc is clean and logically sequenced: 7.1 builds the vocabulary (probability, sample space, event, complement, sum rule); 7.2 uses that vocabulary to introduce conditional probability and the reduced-sample-space concept; 7.3 uses both to introduce Bayesian updating. Every concept used in a later topic is introduced in an earlier one. Prerequisite cross-references are explicit and accurate in all three corpus files."
+        }
+      ]
+    },
+    "no_duplicated_core_concepts": {
+      "passed": true,
+      "findings": [
+        {
+          "severity": "info",
+          "description": "Overlap is appropriate and intentional. Each topic re-uses terms from predecessors as anchors (back-reference, not re-definition). No pair of topics has substantively overlapping Core Concepts sections: 7.1 covers probability scale / sample space / event / sum rule / complement; 7.2 covers conditioning / reduced sample space / P(A|B) formula; 7.3 covers prior / likelihood / posterior / Bayesian updating. Jaccard similarity across these concept sets is well below the 0.6 threshold."
+        }
+      ]
+    },
+    "lab_activity_alignment": {
+      "passed": true,
+      "findings": [
+        {
+          "severity": "info",
+          "description": "Module lab_activity_seed_by_week (week 7): 'Run the same prompt 10x at temperature 0 and 10x at temperature 1 / Tally unique responses, measure variation, compute accuracy on a 5-question yes/no task / Write a 200-word interpretation.' This lab sits naturally after all three topics: 7.1 provides the probability vocabulary needed to interpret counts and proportions; 7.2's conditional probability is the reasoning behind why different temperature settings change token selection; 7.3's posterior/prior language is the conceptual frame for 'what does this tell you about trusting AI?' The lab is supported by the module's conceptual foundation. Note: the lab touches temperature and accuracy, which are introduced in topics 7.5 (temperature) and 7.6/7.7 (accuracy/precision/recall) — modules outside this module. The topics in this module correctly defer those concepts forward, so there is no conflict."
+        }
+      ]
+    },
+    "session_narrative_alignment": {
+      "passed": true,
+      "findings": [
+        {
+          "severity": "soft",
+          "topic": "7.3",
+          "artifact": "topic_corpus.md, artifacts/reading.md",
+          "description": "The module narrative seed specifies 'Bayes' theorem intuition — P(rain | dark clouds) without formula derivation.' Topic 7.3 presents the full symbolic Bayes formula P(A|B) = P(B|A) × P(A) / P(B) with a table naming each symbol, plus a complete step-by-step numerical worked example (computing P(dark clouds) = 0.41 then applying the formula to get 0.66). No derivation or proof is given, which satisfies the 'without formula derivation' constraint literally. However, the level of formula exposure and worked arithmetic may exceed what 'intuition without formula derivation' was intended to permit. The topic manifest confirms depth_profile 'standard' and 'one worked example end-to-end' as a planned depth signal, and the corpus critic soft finding about 'probability distribution partial defining clause' was accepted by the author. This is a boundary case: the formula is shown but not derived. Surface at HITL #4 for author confirmation that the formula-plus-worked-example treatment is intentional.",
+          "recommendation": "Author to confirm at HITL #4 whether 7.3's explicit formula notation and numerical computation align with the 'without formula derivation' framing in the narrative seed, or whether 7.3's overview section should add 'the formula is shown for reference — no derivation required' to set expectations explicitly."
+        }
+      ]
+    },
+    "audience_level_consistency": {
+      "passed": true,
+      "findings": [
+        {
+          "severity": "info",
+          "description": "All three topics maintain an absolute-beginner register throughout: everyday language (weather, dice, coins, cards, job applications), simple fractions, no algebra beyond substitution, explicit step-by-step worked examples. The depth profile rises appropriately from 7.1 (conceptual vocabulary) to 7.2 (formula application) to 7.3 (multi-step calculation), without any unjustified register spike. No term is used cold without a prior introduction or inline definition."
+        }
+      ]
+    }
+  },
+  "findings": [
+    {
+      "id": "F1",
+      "severity": "soft",
+      "check": "terminology_consistency",
+      "topic": "7.2",
+      "artifact": "artifacts/reading.md",
+      "description": "Token re-defined in 7.2 reading with slightly different wording from 7.1's definition ('processes, roughly a word' vs 7.1's 'reads and writes'). Minor double-definition within the module.",
+      "action_required": false
+    },
+    {
+      "id": "F2",
+      "severity": "soft",
+      "check": "terminology_consistency",
+      "topic": "7.3",
+      "artifact": "topic_corpus.md",
+      "description": "P(B) relabelled 'Evidence' in the Bayes theorem table, while topic 7.2 called it 'probability of the condition.' The rename is explained inline but may briefly confuse learners reading across topics.",
+      "action_required": false
+    },
+    {
+      "id": "F3",
+      "severity": "soft",
+      "check": "session_narrative_alignment",
+      "topic": "7.3",
+      "artifact": "topic_corpus.md, artifacts/reading.md",
+      "description": "Narrative seed says 'without formula derivation.' Topic 7.3 shows the symbolic Bayes formula with a full numerical worked example. No derivation is given, but the formula-plus-arithmetic treatment exceeds a pure-intuition approach. Surface at HITL #4 for author confirmation.",
+      "action_required": false,
+      "surface_at": "HITL #4"
+    }
+  ],
+  "verdict": "Module passes: terminology is consistent, prerequisite chain is intact, learning arc is coherent, and no substantive concept duplication was found — three soft findings (two minor labelling inconsistencies and one narrative-seed boundary case) are surface-only and do not block approval."
+}

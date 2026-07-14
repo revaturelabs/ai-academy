@@ -1,0 +1,57 @@
+{
+  "artifact": "reading",
+  "topic_id": "8.3",
+  "passed": true,
+  "at": "2026-06-22T07:00:00Z",
+  "checks": {
+    "format_discipline": {
+      "passed": true,
+      "frontmatter_present": false,
+      "meta_sidecar_present": true,
+      "section_template": ["Overview", "Key Concepts", "Worked Example", "In Practice", "Key Takeaways", "References"],
+      "notes": "First non-empty line is the H1 title; no leading YAML. Sidecar parses with word_count/estimated_read_minutes/citations_used/sections. Fixed six sections present, correct order, none added/renamed/dropped."
+    },
+    "length": {
+      "passed": true,
+      "word_count": 1293,
+      "target_word_range": [1200, 1600],
+      "estimated_read_minutes_meta": 7,
+      "notes": "1293 within [1200,1600]. Intuition-only STANDARD course runs near the floor; count is comfortably inside the band, not a near-floor edge case. No hard-fail."
+    },
+    "citations": {
+      "passed": true,
+      "inline_markers": [1, 2, 3],
+      "bibliography": [1, 2, 3],
+      "notes": "All three corpus primaries ([1] APXML, [2] DataCamp, [3] Viso.ai) cited inline and listed in References. No orphan markers, no orphan bibliography entries, no fabricated markers."
+    },
+    "forward_references": {
+      "passed": true,
+      "notes": "F1 (8.4) and by-hand compute (8.5) are name-and-deferred only at L107 ('comes next in 8.4', 'comes in 8.5') — bare names + pointer, not bolded, not defined, not taught. No ROC/AUC/calibration anywhere."
+    },
+    "faithfulness": {
+      "passed": true,
+      "unsupported_assertions": 0,
+      "notes": "Sampled ~10 assertions (precision/recall definitions and ratios, true positive, confidence score + threshold trade-off, cost-of-error decision rule, cancer/disease/fraud recall-first cases, search/moderation/QC In-Practice patterns). All trace verbatim or paraphrased to topic_corpus.md. No new claims introduced."
+    },
+    "beginner_readability": {
+      "passed": true,
+      "undefined_terms": [],
+      "notes": "Terms defined before use with bold-term/plain-meaning shape (false positive, false negative, true positive, precision, recall, confidence score, threshold). Concrete-first (cat photos, spam filter). No jargon dump, no hedging, no academic register. Matches the artifact-mix fresher-zero-background baseline."
+    },
+    "formatting": {
+      "passed": true,
+      "notes": "Chunked into bullets/numbered lists; contrast table (precision vs recall) present per formatting_standards; paragraphs <=4 sentences; inline examples next to concepts; Worked Example as numbered procedure. No wall_of_text, no unlisted_sequence, no assessment_reference."
+    },
+    "scope": {
+      "passed": true,
+      "scope_creep": [],
+      "notes": "Reading stays on the headline (precision vs recall trade-off, when recall wins). Advanced/adjacent items (F1, by-hand compute) are mention-and-defer only. No scope_creep."
+    },
+    "diagram_embedded": {
+      "passed": true,
+      "embed_marker_line": 61,
+      "notes": "Inline embed ![Threshold dial: precision vs recall trade-off](./diagram.png) with caption at L62-63. embeds_diagram=true in meta. NOTE: the referenced diagram.png file is NOT present in artifacts/ (only diagram.mmd) — the reading's embed reference is correct, but PNG render existence is the diagram-critic's gate, not this critic's hard-fail. Flagged for the diagram pipeline / HITL #3."
+    }
+  },
+  "verdict": "PASS. Reading 8.3 meets the reading-critic bar: 1293 words in [1200,1600], faithful to corpus with clean [1][2][3] citations, fixed six sections in order, beginner-tone and scannable formatting, F1/by-hand named-and-deferred only with no ROC/AUC/calibration leakage, and the diagram embed reference is inline. No gold reading example present in .claude/references/gold-examples/reading/, so judged against the written standards. One non-blocking finding: the embedded ./diagram.png is absent from artifacts/ (only diagram.mmd exists) — render/existence is the diagram-critic's gate; surface at HITL #3."
+}

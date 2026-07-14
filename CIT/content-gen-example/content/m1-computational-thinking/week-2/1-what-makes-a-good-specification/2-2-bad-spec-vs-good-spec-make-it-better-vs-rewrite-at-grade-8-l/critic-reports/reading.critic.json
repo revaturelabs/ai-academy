@@ -1,0 +1,149 @@
+{
+  "topic_id": "2.2",
+  "artifact": "reading",
+  "critic_version": "reading-critic-v1",
+  "run_at": "2026-06-16T00:00:00Z",
+  "passed": true,
+  "verdict": "All checks pass. Reading is fit for HITL #3 approval.",
+  "checks": {
+    "format_discipline": {
+      "passed": true,
+      "frontmatter_present": false,
+      "meta_sidecar_missing": false,
+      "section_template_violation": false,
+      "sections_found": ["Overview", "Key Concepts", "Worked Example", "In Practice", "Key Takeaways", "References"],
+      "notes": "First non-empty line is the H1 title. Sidecar parses with all required fields. Exactly the six required ## sections appear in the correct order."
+    },
+    "length": {
+      "passed": true,
+      "word_count_sidecar": 1228,
+      "target_word_range": [1000, 1400],
+      "word_count_in_range": true,
+      "estimated_read_minutes_sidecar": 6,
+      "calculated_read_minutes_200wpm": 6.14,
+      "target_minute_range": [5, 7],
+      "minutes_in_range": true,
+      "notes": "1228 words at 200 wpm = 6.14 min; within 5–7 min target."
+    },
+    "citations": {
+      "passed": true,
+      "primary_resources_required": [
+        "https://saicharankummetha.medium.com/few-examples-of-bad-prompts-and-how-to-improve-them-e717a1087735",
+        "https://www.mygreatlearning.com/blog/prompt-engineering-beginners-mistakes/",
+        "https://www.digitalocean.com/resources/articles/prompt-engineering-best-practices"
+      ],
+      "all_primary_cited": true,
+      "citation_markers_used": [1, 2, 3],
+      "orphan_markers": [],
+      "orphan_bibliography_entries": [],
+      "notes": "All three primary resources cited inline at multiple points. Bibliography entries at lines 146–148 exactly match inline markers [1], [2], [3]. No orphans on either side."
+    },
+    "no_forward_references": {
+      "passed": true,
+      "notes": "The reading references the four properties from topic 2.1 as established prior knowledge, which is appropriate. No references to future or downstream topics. No forward references detected."
+    },
+    "faithfulness": {
+      "passed": true,
+      "assertions_sampled": 8,
+      "unsupported_count": 0,
+      "threshold": 2,
+      "sampled_assertions": [
+        {
+          "reading_line": 5,
+          "assertion": "A bad specification almost always fails one or more of the four properties.",
+          "corpus_section": "5.1",
+          "supported": true
+        },
+        {
+          "reading_line": 31,
+          "assertion": "incremental fix means keeping the existing specification and adding specific words to address each failing property",
+          "corpus_section": "5.2",
+          "supported": true
+        },
+        {
+          "reading_line": "50-53",
+          "assertion": "Grade 8 / 80-word rewrite is a complete replacement using plain words and short sentences",
+          "corpus_section": "5.3",
+          "supported": true
+        },
+        {
+          "reading_line": 44,
+          "assertion": "Adding vague words does not count as a fix — 'Write a good email' still fails testable",
+          "corpus_section": "8 (Best Practices)",
+          "supported": true
+        },
+        {
+          "reading_line": "90-94",
+          "assertion": "Summarise the article in no more than 50 words — incremental fix example",
+          "corpus_section": "5.2",
+          "supported": true
+        },
+        {
+          "reading_line": "108-119",
+          "assertion": "Full rewrite example: 'List five steps to plan a 10-minute presentation'",
+          "corpus_section": "5.4 Pair 2",
+          "supported": true
+        },
+        {
+          "reading_line": "125-126",
+          "assertion": "Marketing team 'make the article shorter' — content summarisation example",
+          "corpus_section": "7 (Real-World Patterns)",
+          "supported": true
+        },
+        {
+          "reading_line": "127-128",
+          "assertion": "Support team 'be helpful and friendly' chatbot prompt — customer support example",
+          "corpus_section": "7 (Real-World Patterns)",
+          "supported": true
+        }
+      ],
+      "notes": "All 8 sampled assertions trace cleanly to corpus sections. Zero unsupported assertions found."
+    },
+    "beginner_readability": {
+      "passed": true,
+      "undefined_terms": [],
+      "jargon_dump": null,
+      "abstract_first": null,
+      "academic_register": null,
+      "findings_count": 0,
+      "notes": "All non-everyday terms are defined at first use (incremental fix at L31, Grade 8 / 80-word rewrite at L50). Four properties are cited as established from topic 2.1 — not cold-used. No jargon dumps of 3+ new terms in a single paragraph. Concrete examples precede or accompany abstractions throughout. No hedging language detected. Learner addressed as 'you' throughout. Sentences are short and active-voice."
+    },
+    "formatting": {
+      "passed": true,
+      "wall_of_text": null,
+      "unlisted_sequence": null,
+      "no_inline_examples": null,
+      "findings_count": 0,
+      "notes": "No paragraph exceeds 5 sentences. The 4-question diagnostic is a numbered list (L20–26). 'How to apply' steps are numbered lists (L38–43). The comparison table (L59–65) uses tabular format. Inline concrete examples appear in every section alongside concepts. Definitions use bold-term/plain-meaning shape (incremental fix, Grade 8/80-word rewrite, four property names in table)."
+    },
+    "assessment_reference": {
+      "passed": true,
+      "occurrences": [],
+      "notes": "No assessment IDs, due-week references, or grade weights appear anywhere in the reading."
+    },
+    "scope": {
+      "passed": true,
+      "scope_creep": null,
+      "findings_count": 0,
+      "notes": "Reading stays tightly on the topic headline. Covers: diagnosing failing properties, incremental fix strategy, full rewrite strategy (Grade 8/80-word), decision rule, worked examples, and professional practice examples. The four properties from 2.1 are referenced but not re-taught. No advanced or adjacent concepts introduced without deference."
+    }
+  },
+  "escalation": {
+    "hard_fail_triggered": false,
+    "reason": null,
+    "soft_findings_total": 0,
+    "threshold_for_escalation": 3
+  },
+  "gold_example_comparison": {
+    "gold_file": ".claude/references/gold-examples/reading/2-1-what-makes-a-good-specification.reading.md",
+    "meets_gold_bar": true,
+    "notes": "Matches the 2-1 gold example on all key dimensions: clean H1 start, six fixed sections in order, beginner-first tone with concrete examples, tables for comparisons, short paragraphs (≤4 sentences), all primary resources cited, no assessment references. Word count 1228 consistent with the gold bar's ~1200 note. The assessment tie-in defect flagged in the gold notes does NOT appear in this reading."
+  },
+  "summary": {
+    "total_checks": 9,
+    "passed": 9,
+    "failed": 0,
+    "hard_fails": 0,
+    "soft_findings": 0
+  }
+}

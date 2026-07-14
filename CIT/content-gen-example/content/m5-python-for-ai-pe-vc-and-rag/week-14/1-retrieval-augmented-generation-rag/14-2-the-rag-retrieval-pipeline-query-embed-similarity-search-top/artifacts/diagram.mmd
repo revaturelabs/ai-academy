@@ -1,0 +1,22 @@
+﻿flowchart LR
+    A["User query"]:::inputNode
+    B["Embed query\n(same model as index)"]:::modelNode
+    C["Vector DB\nANN similarity search"]:::storeNode
+    D["Top-k chunks\n(text + similarity score)"]:::dataNode
+    E["Assemble prompt\n(template + context + query)"]:::modelNode
+    F["LLM generates\nresponse"]:::modelNode
+    G["Grounded response"]:::outputNode
+
+    A --> B
+    B --> C
+    C --> D
+    D --> E
+    A --> E
+    E --> F
+    F --> G
+
+    classDef inputNode fill:#3b82f6,stroke:#1d4ed8,color:#fff
+    classDef modelNode fill:#10b981,stroke:#047857,color:#fff
+    classDef dataNode fill:#f59e0b,stroke:#b45309,color:#fff
+    classDef storeNode fill:#8b5cf6,stroke:#6d28d9,color:#fff
+    classDef outputNode fill:#06b6d4,stroke:#0e7490,color:#fff

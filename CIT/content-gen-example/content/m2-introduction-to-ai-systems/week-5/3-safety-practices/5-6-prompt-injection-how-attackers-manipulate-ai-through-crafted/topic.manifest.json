@@ -1,0 +1,59 @@
+{
+  "type": "topic",
+  "id": "5.6",
+  "title": "Prompt injection — how attackers manipulate AI through crafted inputs",
+  "slug": "5-6-prompt-injection-how-attackers-manipulate-ai-through-crafted",
+  "position_in_module": 2,
+  "week_num": 5,
+  "session_name": "AI Ethics, Safety and Governance",
+  "module": {
+    "position": 3,
+    "slug": "3-safety-practices",
+    "title": "Safety Practices"
+  },
+  "course": {
+    "code": "M2",
+    "slug": "m2-introduction-to-ai-systems",
+    "title": "Introduction to AI Systems"
+  },
+  "next_assessment": {
+    "id": "A2",
+    "due_week": 6,
+    "title": "AI Systems Essay",
+    "weight": "15%"
+  },
+  "paths": {
+    "corpus": "topic_corpus.md",
+    "resources": "topic.resources.json",
+    "progress": "topic.progress.json",
+    "artifacts_dir": "artifacts/",
+    "critic_reports_dir": "critic-reports/"
+  },
+  "artifact_plan": {
+    "diagram": true,
+    "diagram_intent": "Flow contrast: two labeled inputs (TRUSTED system prompt, UNTRUSTED user input) merging into a single context-window box feeding the LLM, output marked hijacked/manipulated; small split showing direct (user→window) vs indirect (web page/document→window) sources of the malicious instruction. Mermaid flowchart.",
+    "suggested_profile": "standard",
+    "suggested_profile_signals": "mid-length descriptive title (not single noun); Core Concepts 6 beginner-tight sub-concepts (not system-level); one contrast (direct vs indirect) + injection-vs-jailbreak comparison; no pipeline/framework/algorithm; cross_refs just LLM reuse; mid-week budget pressure favors standard.",
+    "confirmed_profile": "standard",
+    "confirmed_at_hitl2": true,
+    "reading": {
+      "target_word_range": [
+        1200,
+        1600
+      ],
+      "target_minutes": [
+        6,
+        8
+      ]
+    },
+    "quiz": {
+      "min_questions": 5,
+      "max_questions": 6,
+      "include_short_answer": false
+    }
+  },
+  "depth_profile": "standard",
+  "depth_signals": "Standard — 6 beginner-tight sub-concepts, contrast + comparison structure, no system-level pipeline; reading ~1200-1600w; diagram for the shared-context-window contrast.",
+  "expected_delivery_minutes": 7,
+  "status": "module_passed"
+}

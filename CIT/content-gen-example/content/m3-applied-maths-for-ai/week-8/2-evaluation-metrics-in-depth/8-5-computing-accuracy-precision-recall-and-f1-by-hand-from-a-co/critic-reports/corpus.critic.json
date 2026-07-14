@@ -1,0 +1,44 @@
+{
+  "artifact": "corpus",
+  "topic_id": "8.5",
+  "passed": true,
+  "verdict": "PASS. All required sections present and non-trivial (3 LO, 4 Intro, 5 Core Concepts ~700w, 6 Implementation, 9 Hands-On, 10 Key Takeaways). STRICT citation mode satisfied: all three resources cited and resolve, no fabricated markers, key claims in 5/6 carry [N]. No forward refs (calibration name-and-deferred to 8.6, bare mention). No scope_creep (accuracy imbalance caution held to ~2 sentences; no multi-class, ROC/AUC, macro/micro/weighted averaging, or PR-curves taught; 8.3/8.4 reuse is correct). Worked-example arithmetic verified CORRECT (acc 0.75, prec 0.67, rec 0.75, F1 0.71). Length ~1455w below deep floor (1800) — soft note only per established short-corpus pattern, not gated.",
+  "at": "2026-06-22T07:25:00Z",
+  "resources_source": "web_search",
+  "citation_mode": "strict",
+  "checks": {
+    "required_sections": {
+      "passed": true,
+      "detail": "Section 3 (Learning Objectives), 4 (Introduction), 5 (Core Concepts, ~700w >=100), 10 (Key Takeaways) all present and non-trivial. Applied-topic sections 6 (Implementation, 6-step procedure) and 9 (Hands-On Exercise, fraud confusion matrix) also present. No placeholder strings in required sections."
+    },
+    "citation_density": {
+      "passed": true,
+      "detail": "STRICT mode. Primary [1] (Google ML Crash Course) cited at lines 43,45,62,66,74,75. Supporting [2] (Microsoft Learn) cited 49,56,66,76. Supporting [3] (Towards Data Science) cited 82. All three markers resolve to resources.json entries; zero fabricated/unresolvable markers. Standalone factual assertions in Core Concepts/Implementation carry >=60% citation coverage.",
+      "fabricated_markers": []
+    },
+    "sequence_drift": {
+      "passed": true,
+      "detail": "In-scope newly introduced: confusion matrix (2x2), true negative, accuracy, accuracy formula, by-hand computation, all-cells-sum sanity check. Reused from 8.3 (precision, recall, FP, FN, TP, cost-of-error) and 8.4 (F1, harmonic mean) — all from prior topics, correct reuse. No forward-referenced or unknown terms taught.",
+      "forward_refs": ["calibration / confidence-vs-accuracy (8.6) — name-and-deferred only at line 122, bare mention with pointer; compliant"]
+    },
+    "length": {
+      "passed": true,
+      "soft_note": true,
+      "detail": "~1455 words. Below deep-profile floor (1800). Per established week-8 intuition-only short-corpus pattern, length is a soft note not a gate — corpus reuses 8.3/8.4 as one-liners and the 20-case worked example carries depth without padding. Substance and required sections fully met."
+    },
+    "topic_scope": {
+      "passed": true,
+      "detail": "Headline (build/read a 2x2 confusion matrix + compute the four metrics by hand) honored exactly. Accuracy's imbalanced-data weakness held to ~2 sentences (line 68) — acceptable. No teaching of multi-class confusion matrices, ROC/AUC, macro/micro/weighted averaging, or precision-recall curves.",
+      "scope_creep": []
+    },
+    "beginner_readability": {
+      "passed": true,
+      "detail": "Zero-background audience baseline met. Terms defined on first use (TP/FP/FN/TN spelled and explained, confusion matrix lead-in via spam-filter analogy). Mnemonic for naming. Short sentences, active voice, 'you' address. No jargon dump, no academic hedging. Worked example shows every substitution.",
+      "findings": []
+    },
+    "worked_example_arithmetic": {
+      "passed": true,
+      "detail": "Spot-checked all substitutions in the 20-case example. Sanity sum 6+2+3+9=20 correct. Accuracy=(6+9)/20=15/20=0.75 correct. Precision=6/(6+3)=6/9~0.67 correct. Recall=6/(6+2)=6/8=0.75 correct. F1=2*(0.67*0.75)/(0.67+0.75)=1.005/1.42~0.71 correct (intermediate 2*0.50/1.42 consistent). No arithmetic errors."
+    }
+  }
+}

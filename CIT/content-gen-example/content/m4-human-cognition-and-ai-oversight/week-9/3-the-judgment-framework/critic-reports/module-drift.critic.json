@@ -1,0 +1,114 @@
+{
+  "module": "3-the-judgment-framework",
+  "week_num": 9,
+  "critic_run_at": "2026-06-13",
+  "passed": true,
+  "checks": {
+    "terminology_consistency": {
+      "passed": true,
+      "findings": [
+        {
+          "topic": "9.9",
+          "severity": "info",
+          "detail": "Corpus prerequisites section paraphrases the Q2 title as 'Can I verify this output before I act?' whereas the canonical Q2 title (9.8) is 'Can I verify this without the AI?' — a minor paraphrase, not a contradiction. All three artifacts use 'Judgment Framework', Q1/Q2/Q3 labels, and 'severity / probability / detectability' consistently throughout."
+        }
+      ]
+    },
+    "prerequisites_respected": {
+      "passed": true,
+      "findings": [
+        {
+          "topic": "9.7",
+          "severity": "info",
+          "detail": "Corpus section 2 lists prerequisites 9.1, 9.2, 9.5, 9.6 — all from earlier modules (week-9 modules 1 and 2). No forward reference. Manifests carry no explicit prerequisites field; prerequisites are expressed only in corpus prose."
+        },
+        {
+          "topic": "9.8",
+          "severity": "info",
+          "detail": "Prerequisites list 9.7 (position 1 in this module, earlier) and 9.5. No forward reference."
+        },
+        {
+          "topic": "9.9",
+          "severity": "info",
+          "detail": "Prerequisites list 9.7 and 9.8 (both earlier positions in this module) and 9.1–9.6 as background. No forward reference."
+        }
+      ]
+    },
+    "learning_arc": {
+      "passed": true,
+      "findings": [
+        {
+          "topic": "module",
+          "severity": "soft",
+          "detail": "The module narrative seed includes 'Acceptable error — defining the failure threshold that is tolerable for your use case.' All three topics explicitly forward-pointer this concept to topic 9.10, which sits outside this module. The three topics cover Q1 (9.7), Q2 (9.8), and Q3 (9.9) completely, fulfilling the primary module outcome 'The Judgment Framework.' The acceptable-error facet is intentionally deferred; no content gap within the module's own scope."
+        }
+      ]
+    },
+    "no_duplicated_concepts": {
+      "passed": true,
+      "findings": [
+        {
+          "topic_pair": "9.7 vs 9.8",
+          "severity": "pass",
+          "detail": "9.7 section 5 noun set: {judgment-framework, Q1, cost, error, severity, probability, detectability, triage, harm, scrutiny, decision, stakes, high-stakes-domains}. 9.8 section 5 noun set: {independent-verification, source, production, cross-referencing, domain-expertise, standard, Q2, verifiable, difficult, impossible, prediction, method}. Overlap is minimal (AI, output, domain); Jaccard << 0.6. No duplication."
+        },
+        {
+          "topic_pair": "9.7 vs 9.9",
+          "severity": "pass",
+          "detail": "9.9 section 5 noun set: {accountability, liability, blame, accountability-chain, developer, deployer, operator, end-user, authority, knowledge, nameability, escalation, automated-pipeline, design-time-accountability}. Overlap with 9.7 is {AI, output, judgment, framework}; Jaccard << 0.6. No duplication."
+        },
+        {
+          "topic_pair": "9.8 vs 9.9",
+          "severity": "pass",
+          "detail": "Overlap between 9.8 and 9.9 concept sets is {AI, output, domain, expert}; Jaccard << 0.6. No duplication."
+        }
+      ]
+    },
+    "lab_activity_alignment": {
+      "passed": true,
+      "findings": [
+        {
+          "topic": "9.8",
+          "severity": "pass",
+          "detail": "Topic 9.8 corpus section 12 is titled 'Journal Entry #5 — Applying Q2 to Your Domain System' — an exact match to the lab seed's 'Journal Entry #5'. It directly prepares A3 and is scaffolded for domain application across Q1, Q2, Q3."
+        },
+        {
+          "topic": "9.7",
+          "severity": "pass",
+          "detail": "Topic 9.7 corpus section 9 ('Q1 Triage on Three AI Outputs') provides a hands-on exercise applying Q1 severity/probability/detectability triage, supporting the lab seed's 'answer all three questions per component'."
+        },
+        {
+          "topic": "9.9",
+          "severity": "pass",
+          "detail": "Topic 9.9 corpus section 6 and reading.md provide a step-by-step Q3 application procedure with a practical checklist. Together with 9.7 and 9.8, all three framework questions have hands-on scaffolding."
+        },
+        {
+          "topic": "module",
+          "severity": "soft",
+          "detail": "Lab seed item 'Define acceptable error thresholds — what failure rate is tolerable and why?' is not addressed by any of the three topics in this module. All three forward-pointer this to topic 9.10. Learners completing only the week-9 module-3 topics will not have the threshold-setting tool before encountering the lab prompt. This is an intentional curriculum sequencing choice (9.10 follows immediately), but it means Journal Entry #5 in 9.8 asks students to 'apply all three Judgment Framework questions' to A3 without yet having the acceptable-error tool. Flag for HITL #4 awareness."
+        }
+      ]
+    },
+    "audience_consistency": {
+      "passed": true,
+      "findings": [
+        {
+          "topic": "9.9",
+          "severity": "soft",
+          "detail": "Topic 9.9 introduces 'EU AI Act' and 'design-time accountability' as named terms. Both are defined in context before use and are treated descriptively, not technically. The depth profile remains 'standard' and consistent with 9.7 and 9.8. However, the EU AI Act reference is the only instance across the module where a named piece of external regulation is invoked without prior introduction in any earlier topic — a mild register step-up. Soft flag; no hard drift."
+        },
+        {
+          "topic": "9.7",
+          "severity": "pass",
+          "detail": "Corpus and reading both state 'No programming or statistical background is assumed.' All examples use nursing, email, and legal scenarios at an everyday register. Fully consistent with absolute-beginner audience."
+        },
+        {
+          "topic": "9.8",
+          "severity": "pass",
+          "detail": "Patient/prescription analogy used to ground abstract verification concept. 'Expertise not required for cross-referencing' explicitly stated. Register consistent with 9.7."
+        }
+      ]
+    }
+  },
+  "verdict": "PASS — all six checks clear; two soft findings surfaced for HITL #4: (1) 'acceptable error thresholds' from lab seed deferred to topic 9.10 outside this module, and (2) topic 9.9 introduces 'EU AI Act' with no prior module introduction, a mild register step-up that stays within the standard depth profile."
+}

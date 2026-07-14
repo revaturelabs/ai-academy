@@ -1,0 +1,41 @@
+{
+  "critic": "corpus-critic",
+  "topic_id": "6.6",
+  "cycle": 2,
+  "at": "2026-06-18T00:00:00Z",
+  "passed": true,
+  "checks": {
+    "required_sections": {
+      "passed": true,
+      "notes": "Sections 3 (Learning Objectives, 5 objectives, well over 50w), 4 (Introduction, ~100w), 5 (Core Concepts, 6 subsections, well over 100w), and 10 (Key Takeaways, ~120w) all present and non-trivial. No placeholder strings found in any required section."
+    },
+    "citation_density": {
+      "passed": true,
+      "primary_cited": true,
+      "claim_citation_rate": 0.92,
+      "notes": "Primary resource [1] (apxml.com) cited at least 10 times across §4–§10. Approximately 22 of 24 standalone factual assertions in §5/§6/§7 carry citation markers [1], [2], or [3]. Rate ~0.92, well above the 0.60 threshold. No uncited claims of significance detected. No fabricated citations — all three [N] markers resolve to resources listed in topic.resources.json."
+    },
+    "sequence_drift": {
+      "passed": true,
+      "forward_refs": [],
+      "notes": "All technical terms used are either (a) introduced in this topic's own concepts_introduced (dot_product, position_multiply_sum, same_direction_score, opposite_direction_negative, perpendicular_zero, similarity_score, magnitude_sensitivity), (b) established in prior topics 6.1–6.5 (scalar, magnitude, vector, dimension, feature, feature_vector, coordinate, axis, origin, point_in_space, n_dimensional_space, distance_as_similarity), or (c) legitimately name-and-deferred with a topic pointer. 'Embeddings' (topic 6.7) and 'Cosine similarity' (topic 6.9) are both name-and-defer only. General AI application terms (recommendation systems, search, LLMs) are contextual framing covered in prior weeks (3.2, 3.4, 4.3)."
+    },
+    "length_sanity": {
+      "passed": true,
+      "word_count": 1980,
+      "profile": "atomic",
+      "notes": "1980 words falls within the atomic target range (1500–2400w). Well inside the hard-fail bounds of 1000–3500w."
+    },
+    "topic_scope": {
+      "passed": true,
+      "findings": [],
+      "notes": "All three cycle-1 scope_creep violations confirmed resolved: (1) §7 'embeddings' is now bare name-and-defer 'vectors called embeddings (introduced in topic 6.7)' — no bold, no defining clause. (2) §5.6 'Cosine similarity' is now unbolded with topic pointer only 'Cosine similarity (topic 6.9) addresses this' — no defining clause about normalisation. (3) §10 'Cosine similarity' reads '(topic 6.9) corrects for this — covered later' — bare name-and-defer. magnitude_sensitivity is in scope as it appears in 6.6's own concepts_introduced and directly qualifies the dot product as similarity measure. All content stays within the headline boundary."
+    },
+    "beginner_readability": {
+      "passed": true,
+      "findings": [],
+      "notes": "All non-everyday terms defined on first use or explicitly back-referenced to prior topics. No jargon dumps (no paragraph introduces 3+ new terms at once). Register is plain and concrete throughout; torch/flashlight analogy and music worked examples ground abstractions effectively. Average sentence length is appropriate. Zero soft findings."
+    }
+  },
+  "verdict": "PASS (cycle 2). All checks pass with no findings. The three cycle-1 scope_creep violations are confirmed resolved — embeddings, cosine similarity (§5.6), and cosine similarity (§10) all now comply with name-and-defer discipline (bare term + topic pointer, no bold, no defining clause). Citation density ~92% across §5/§6/§7. Word count 1980w within atomic profile range. No forward references. No scope creep. Corpus is cleared to advance to awaiting_corpus_human_review."
+}

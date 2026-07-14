@@ -1,0 +1,49 @@
+$CATEGORY: CIT/M5/week-11/11-2-setting-up-google-colab-no-installation-runs-in-the-browser
+
+::q1:: Which of the following is NOT one of the main parts of the Google Colab interface? {
+~The code cell, where Python code is typed#No — code cells are a core part of the Colab interface where you write and run Python.
+~The text cell, used for writing plain English descriptions#No — text cells are a standard part of every Colab notebook for explanatory writing.
+=The local Python interpreter installed on your laptop#Correct — Colab runs code on Google's remote servers, so no local Python interpreter is part of the interface.
+~The runtime status indicator shown in the top-right corner#No — the runtime status indicator is a key part of the interface; it shows whether your runtime is connected.
+#### Tests identification of the main Colab interface components (corpus §5.7).
+}
+
+::q2:: You are working in a Colab notebook and want to add a new cell. What is the correct way to do this? {
+=Click "+ Code" or "+ Text" in the toolbar to add a new code or text cell#Correct — the toolbar buttons are the standard way to insert new cells of either type.
+~Open the File menu and choose "New notebook" to add a new cell#No — "New notebook" creates an entirely new notebook file, not a new cell inside the current one.
+~Press the Escape key and then type the cell content directly#No — pressing Escape puts a cell in command mode but does not insert a new cell.
+~Right-click anywhere on the page and select "Insert cell" from the menu#No — there is no "Insert cell" right-click option; cells are added through the toolbar or keyboard shortcuts.
+#### Tests the ability to open a notebook and add both code and text cells (corpus §5.3).
+}
+
+::q3:: A learner presses Shift+Enter on a code cell that contains `2 + 2`. What happens? {
+~The cell is saved to Google Drive and the cursor stays on the same cell#No — Shift+Enter runs the cell, not just saves it, and the cursor moves to the next cell.
+~Colab checks the code for syntax errors but does not run it until you click the play button#No — Shift+Enter fully executes the cell; there is no separate "check only" step.
+~A new text cell is inserted directly below and the current cell is deactivated#No — Shift+Enter runs the code cell; it does not insert a text cell.
+=The code runs on Google's server, output appears below the cell, and the cursor moves to the next cell#Correct — Shift+Enter executes the cell, displays the result in the output area, and advances the cursor.
+#### Tests knowledge of running a code cell and interpreting the output area (corpus §5.4).
+}
+
+::q4:: A learner closes their Colab browser tab and reopens the notebook the next day. What has been lost? {
+~The code you typed in cells is deleted because it was stored only in the runtime's memory#No — the code in cells is saved to Google Drive and is not lost when the session ends.
+=Results computed by running code are lost because they existed only in the runtime's memory#Correct — when a session resets the runtime's memory is cleared, so all computed results must be re-run.
+~Your Google Drive folder is cleared and the notebook file is permanently deleted#No — Google Drive stores the notebook persistently; Drive files are not deleted when a runtime disconnects.
+~All keyboard shortcuts are disabled until you restart the browser#No — keyboard shortcuts are part of the Colab interface and are unaffected by session resets.
+#### Tests understanding of runtime, session, and what is lost on session reset (corpus §5.5).
+}
+
+::q5:: You need to submit your Colab notebook for Assessment 4. Which option under File -> Download should you choose, and what does it produce? {
+=The .ipynb format, which stores both code cells and text cells in a single file#Correct — .ipynb is the notebook file format that preserves code cells, text cells, and outputs together.
+~The .py format, which contains only the Python code from the code cells#No — a .py file strips out the text cells and is not the submission format required for this course.
+~The .pdf format, so the notebook looks the same on every device#No — Colab does not offer a direct .pdf download via the File menu, and .pdf is not the required format.
+~The .txt format, which stores the output area results as plain text#No — there is no .txt download option; Colab notebooks are saved as .ipynb files.
+#### Tests the ability to save a notebook to Google Drive and download it as a .ipynb file (corpus §5.6).
+}
+
+::q6:: What does the keyboard shortcut Ctrl+M B do in Google Colab? {
+~It runs the current code cell and moves the cursor to the next cell#No — running a cell and moving to the next cell is what Shift+Enter does, not Ctrl+M B.
+~It saves the notebook to Google Drive immediately#No — saving is triggered by Ctrl+S, not Ctrl+M B.
+=It inserts a new code cell directly below the currently selected cell#Correct — Ctrl+M B (Cmd+M B on Mac) is the shortcut for inserting a new code cell below the current one.
+~It converts the current text cell into a code cell#No — converting a cell type uses Ctrl+M Y (to code) or Ctrl+M M (to text), not Ctrl+M B.
+#### Tests use of keyboard shortcuts for efficient work in Colab (corpus §5.3, §5.8).
+}

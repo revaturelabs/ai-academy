@@ -1,0 +1,39 @@
+{
+  "passed": true,
+  "checks": {
+    "required_sections": {
+      "passed": true,
+      "notes": "All four required sections present and non-trivial. Section 3 (Learning Objectives) ~73 words (≥50w pass). Section 4 (Introduction) ~165 words (≥50w pass). Section 5 (Core Concepts) ~1465 words across 5.1–5.5 subsections (≥100w pass). Section 10 (Key Takeaways) ~180 words (≥50w pass)."
+    },
+    "citation_density": {
+      "passed": true,
+      "primary_cited": true,
+      "claim_citation_rate": 0.65,
+      "notes": "Primary resource [1] (ibm.com/think/topics/rag-vs-fine-tuning) is cited in Section 4 (Introduction), 5.1, 5.2, 5.3, 5.4, 5.5, 7, 8 — well above once. All three resources [1][2][3] appear throughout. At the top-level standalone factual assertion grain (excluding sub-bullets that directly elaborate a cited claim), approximately 13 of ~20 top-level assertions carry a [N] marker (~65%), meeting the ≥60% threshold. No fabricated citations detected — all [N] markers resolve to the three declared resources."
+    },
+    "sequence_drift": {
+      "passed": true,
+      "forward_refs": [],
+      "notes": "Terms from 14.1 corpus (embedding, vector database, similarity search, top-k, knowledge cutoff) and 14.2 corpus (RAG pipeline steps, prompt injection context) are used freely per Section 2 Prerequisites declaration. Concepts from 14.3 concepts_introduced (parametric memory, hallucination, evidence-grounded generation, context window) are referenced correctly. 'fine-tuning' is listed in 14.4's own concepts_introduced and is also a prior-sequence concept (topic 4.2). No forward references to Semester 2 or later-week topics detected. 'prompt engineering' is used once as a named-and-deferred one-liner ('or prompt engineering for simpler cases') — acceptable."
+    },
+    "length_sanity": {
+      "passed": true,
+      "word_count": 2840,
+      "profile": "standard",
+      "expected_range": [3000, 4400],
+      "notes": "Estimated word count ~2840, approximately 5% below the 3000-word standard-profile floor. This does not trigger a hard fail (the 30% rule fires below 2100 words). Soft finding: corpus is marginally short; builder may expand Section 5 examples or Section 7 patterns by ~160+ words to comfortably clear the floor."
+    },
+    "scope_creep": {
+      "passed": true,
+      "violations": [],
+      "notes": "Corpus stays tightly within the 'When to use RAG' decision-framework boundary. Covers the four signals (freshness, private data, precision, cost-benefit) and the RAG vs fine-tuning distinction — all explicitly within scope. Section 5.4 RAG vs fine-tuning comparison table uses only prior-introduced concepts (vector database, parametric memory) to inform the architectural decision; this is in-scope elaboration, not teaching vector DB internals or pipeline mechanics. Section 6 applies the decision framework to a retail scenario (on-scope). No agent architecture, no vector DB internals, no retrieval pipeline mechanics taught here. The one mention of 'prompt engineering' in Section 6 is a single named-and-deferred alternative, not a teaching block."
+    },
+    "beginner_readability": {
+      "passed": true,
+      "findings": [],
+      "notes": "No readability failures. 'fine-tuning' is defined in plain language at first use in Section 5.4. 'LLM' appears without spell-out in Section 5.4 table header but was introduced in earlier topics (3.2, 4.x) — acceptable per sequence rules. 'parametric memory' is referenced with an explicit '(the concept you learned in 14.3)' pointer — correct. No paragraph introduces 3+ new terms simultaneously. Sentence length is predominantly short (target <20 words). No hedging phrases detected above the 3-instance threshold. Active voice and 'you' address used throughout."
+    }
+  },
+  "verdict": "PASS — all six checks pass; one soft note: estimated word count (~2840) is ~5% below the 3000-word standard-profile floor but within the 30% hard-fail threshold; builder may add ~160 words to Section 5 or 7 examples to clear the floor cleanly.",
+  "at": "2026-06-15T00:00:00Z"
+}

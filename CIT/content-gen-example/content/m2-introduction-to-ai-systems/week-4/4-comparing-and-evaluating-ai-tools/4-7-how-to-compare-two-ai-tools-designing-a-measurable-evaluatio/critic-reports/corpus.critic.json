@@ -1,0 +1,38 @@
+{
+  "passed": true,
+  "checks": {
+    "required_sections": {
+      "passed": true,
+      "notes": "Section 3 (Learning Objectives): 5 substantive bullets, ~90 words — passes ≥50 threshold. Section 4 (Introduction): 4 paragraphs, ~130 words — passes ≥50 threshold. Section 5 (Core Concepts): 6 subsections with tables and worked examples, ~1450 words — comfortably passes ≥100 threshold. Section 10 (Key Takeaways): 5 bullets summarising all major concepts, ~90 words — passes ≥50 threshold."
+    },
+    "citation_density": {
+      "passed": true,
+      "primary_cited": true,
+      "claim_citation_rate": 0.73,
+      "notes": "resources_source=web_search → STRICT mode applied. Primary resource [1] cited in sections 4, 5.1, 5.2, 5.3, 5.5, 7. Supporting [2] cited in sections 4, 5.2, 5.3, 5.6, 7. Supporting [3] cited in sections 5.2, 5.3, 5.4, 5.5, 5.6, 7. All three resources cited at least once. Estimated 73% of standalone factual assertions in sections 5 and 7 carry a citation marker — exceeds the 60% threshold. Uncited items are either sub-bullets elaborating a previously cited parent claim or explanatory prose without novel factual content."
+    },
+    "sequence_drift": {
+      "passed": true,
+      "forward_refs": [],
+      "notes": "All six concepts_introduced (evaluation rubric, criteria, performance levels, descriptors, weighting, test protocol) are introduced and defined within this corpus. 'Hallucination' is referenced with an explicit back-pointer to topic 3.9 — not forward-referenced. Foundation model, agents, tool use, and multimodal AI appear only in the Prerequisites section (2) as cross-references to prior topics, not as newly taught material. No unknown or forward-referenced technical terms detected."
+    },
+    "length_sanity": {
+      "passed": true,
+      "word_count": 3180,
+      "profile": "standard",
+      "notes": "Corpus builder reported ~3180 words. Manual verification of line density (257 lines including tables and headings) is consistent with this estimate. 3180 falls within the standard range of 3000–4400 words and is within the target band of ~3000–4400. No length concern."
+    },
+    "scope_creep": {
+      "passed": true,
+      "off_topic": [],
+      "notes": "All six subsections of section 5 directly serve the headline ('designing a measurable evaluation rubric'): 5.1 defines the rubric construct, 5.2 justifies it, 5.3 establishes common criteria, 5.4 covers descriptor writing, 5.5 covers weighting, 5.6 covers test protocol design. Section 6 (Implementation) is a step-by-step procedure for the rubric-design task — on scope. Section 7 (Real-World Patterns) contextualises rubric use in organisations — on scope. 'Academic integrity risk' is named as one example criterion in a real-world scenario, not taught as a concept. 'Cost and licensing' as a possible 6th criterion is named in one sentence with no depth. No off-topic teaching detected."
+    },
+    "beginner_readability": {
+      "passed": true,
+      "findings": [],
+      "notes": "All non-everyday terms defined on first use: 'rubric' defined in section 4 introduction paragraph; 'descriptors' defined in section 5.1; 'test protocol' defined in section 5.6; 'hallucination' back-referenced to topic 3.9. No acronyms used without expansion. No paragraph found introducing three or more new terms simultaneously — each subsection introduces one concept with a worked example. Register is plain and direct; sentence length is consistently below 25 words average. Zero distinct readability findings — well below the ≥3 hard-fail threshold."
+    }
+  },
+  "verdict": "All 6 checks pass. Corpus is well-structured, fully cited (all three resources used, ~73% claim citation rate in core sections), free of forward references, within standard depth-profile word count (~3180 words), tightly scoped to the rubric-design headline, and beginner-readable with all terms defined on first use.",
+  "at": "2026-06-17T00:00:00Z"
+}

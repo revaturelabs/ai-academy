@@ -1,0 +1,80 @@
+{
+  "topic_id": "10.3",
+  "critic_cycle": 2,
+  "verdict": "PASS",
+  "passed": true,
+  "at": "2026-06-12T17:04:00Z",
+  "checks": {
+    "positional_bias": {
+      "passed": true,
+      "positions_verified": {
+        "10.3-Q1": 2, "10.3-Q2": 0, "10.3-Q3": 3,
+        "10.3-Q4": 1, "10.3-Q5": 2, "10.3-Q6": 0
+      },
+      "position_frequency": { "0": 2, "1": 1, "2": 2, "3": 1 },
+      "max_share": 0.333,
+      "threshold": 0.40,
+      "note": "All sidecar positions verified against .gift. Max share 0.333 < 0.40."
+    },
+    "length_bias": {
+      "passed": true,
+      "per_question": {
+        "10.3-Q1": { "correct_len": 16, "mean_dist_len": 16.0, "ratio": 1.000, "correct_is_longest": false },
+        "10.3-Q2": { "correct_len": 23, "mean_dist_len": 25.0, "ratio": 0.920, "correct_is_longest": false },
+        "10.3-Q3": { "correct_len": 25, "mean_dist_len": 29.7, "ratio": 0.843, "correct_is_longest": false },
+        "10.3-Q4": { "correct_len": 21, "mean_dist_len": 17.7, "ratio": 1.189, "correct_is_longest": false },
+        "10.3-Q5": { "correct_len": 25, "mean_dist_len": 21.7, "ratio": 1.154, "correct_is_longest": true },
+        "10.3-Q6": { "correct_len": 27, "mean_dist_len": 32.7, "ratio": 0.827, "correct_is_longest": false }
+      },
+      "flagged_ratio_gt_1_20": [],
+      "longest_correct_count": 1,
+      "longest_correct_rate": 0.167,
+      "threshold": 0.40,
+      "note": "No ratio exceeds 1.20. longest_correct_rate 0.167 < 0.40. Cycle-1 length-bias expansion on Q2/Q3/Q6 fully resolved."
+    },
+    "distractor_plausibility": {
+      "passed": true,
+      "scores": {
+        "10.3-Q1": { "D1_input_collection": 4, "D2_credit_model": 4, "D4_consequence_delivery": 4 },
+        "10.3-Q2": { "D2_automation_bias": 4, "D3_override_as_theater": 4, "D4_evaluation_gap": 3 },
+        "10.3-Q3": { "D1_automation_waives_ecoa": 4, "D2_appeal_triggered": 4, "D3_aggregate_accuracy": 4 },
+        "10.3-Q4": { "D1_naming_orgs_passes_q3": 4, "D3_q1_not_q3": 3, "D4_training_data_problem": 3 },
+        "10.3-Q5": { "D1_adverse_action_notice": 4, "D2_subgroup_audit": 4, "D4_deterioration_alert": 3 },
+        "10.3-Q6": { "D2_step_2": 4, "D3_step_3": 4, "D4_step_4": 4 }
+      },
+      "absurd_count": 0,
+      "total_distractors": 18,
+      "absurd_rate": 0.000,
+      "threshold": 0.25,
+      "note": "All 18 distractors score >= 3 (plausible to very plausible). No absurd or easy-giveaway options detected."
+    },
+    "objective_coverage": {
+      "passed": true,
+      "coverage_map": {
+        "LO1": ["10.3-Q1"],
+        "LO2": ["10.3-Q2"],
+        "LO3": ["10.3-Q3"],
+        "LO4": ["10.3-Q4"],
+        "LO5": ["10.3-Q5"],
+        "LO6": ["10.3-Q6"]
+      },
+      "lo_count": 6,
+      "questions_count": 6,
+      "orphaned_los": [],
+      "note": "6 LOs covered 1-to-1, no orphans."
+    },
+    "beginner_fairness_and_scope": {
+      "passed": true,
+      "jargon_in_stem": [],
+      "out_of_scope_questions": [],
+      "unfair_distractors": [],
+      "note": "All stems use plain language. ECOA spelled out in full in Q3 stem. No unexplained jargon. All scenarios grounded in loan approval case study. Q5 distractor referencing 'deterioration-contradiction alert' (10.2) is a taught prior concept used as a foil — fair use. No assessment prose or script artifacts."
+    }
+  },
+  "progress_updates_applied": {
+    "quiz_critic_passed": true,
+    "stage": "quiz_approved"
+  },
+  "cycle_1_findings_resolved": ["length_bias: Q2 ratio was 1.28", "length_bias: Q3 ratio was 1.39", "length_bias: Q6 ratio was 1.65"],
+  "summary": "Cycle 2 — all 5 checks PASS. Length-bias expansion on Q2/Q3/Q6 resolved cycle-1 failure. No positional concentration (max_share 0.333), no ratio > 1.20, longest_correct_rate 0.167, all 18 distractors plausible, 6 LOs covered 1-to-1. Progress updated: quiz_critic_passed=true, stage=quiz_approved."
+}

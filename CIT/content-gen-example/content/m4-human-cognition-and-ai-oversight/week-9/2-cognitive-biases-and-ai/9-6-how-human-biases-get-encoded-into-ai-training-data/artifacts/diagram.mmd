@@ -1,0 +1,37 @@
+---
+title: "How Human Biases Encode into AI"
+theme: base
+themeVariables:
+  primaryColor: "#a5d8ff"
+  primaryBorderColor: "#4a9eed"
+  lineColor: "#555"
+flowchart:
+  htmlLabels: true
+  curve: basis
+---
+flowchart LR
+    HD["<b>Human Decisions</b><br/><span style='font-size:12px;color:#6d28d9'>collection · labelling · curation<br/>confirmation bias · automation bias</span>"]
+    TD["<b>Training Data</b><br/><span style='font-size:12px;color:#6d28d9'>labelling · historical · selection bias</span>"]
+    AM["<b>AI Model</b><br/><span style='font-size:12px;color:#6d28d9'>learns patterns from data</span>"]
+    AD["<b>AI Decisions</b><br/><span style='font-size:12px;color:#6d28d9'>scores · rankings · recommendations</span>"]
+    RO["<b>Real-World Outcomes</b><br/><span style='font-size:12px;color:#6d28d9'>loans · jobs · healthcare</span>"]
+    NT["<b>New Training Data</b><br/><span style='font-size:12px;color:#6d28d9'>outcomes collected as new examples</span>"]
+
+    HD -->|"encodes bias into"| TD
+    TD -->|"trains"| AM
+    AM -->|"produces"| AD
+    AD -->|"shapes"| RO
+    RO -->|"feeds back as"| NT
+    NT -->|"amplifies bias in"| TD
+
+    classDef start fill:#a5d8ff,stroke:#4a9eed
+    classDef auto fill:#d0bfff,stroke:#8b5cf6
+    classDef act fill:#a5d8ff,stroke:#4a9eed
+    classDef done fill:#b2f2bb,stroke:#22c55e
+    classDef hitl fill:#fff3bf,stroke:#f59e0b,stroke-width:3px
+    classDef feedback fill:#ffd8a8,stroke:#f76707,stroke-width:2px
+
+    class HD hitl
+    class TD,NT act
+    class AM,AD auto
+    class RO done

@@ -1,0 +1,41 @@
+{
+  "topic_id": "5.8",
+  "artifact": "corpus",
+  "try": 1,
+  "passed": true,
+  "resources_source": "web_search",
+  "citation_mode": "strict",
+  "checks": {
+    "required_sections": {
+      "passed": true,
+      "detail": "Required sections 3, 4, 5, 10 all present and non-trivial. §3 Learning Objectives (~80w), §4 Introduction (~150w), §5 Core Concepts (~700w, well over the 100w floor), §10 Key Takeaways (~140w, non-placeholder). Canonical numbering verified: Best Practices = ## 8, Hands-On Exercise = ## 9, Key Takeaways = ## 10, Next Steps = ## 11. Key Takeaways correctly lands at ## 10 (sibling-trip avoided). Optional §6/§7 intentionally skipped by builder — allowed."
+    },
+    "citation_density": {
+      "passed": true,
+      "detail": "STRICT (web_search). Primary [1] (artificialintelligenceact.eu/high-level-summary) cited at lines 35,57,66,70,107,109,111. Supporting [2] (Article 16) cited at 35,43,48,57,66,72,107,108,109. Supporting [3] (EC service-desk Article 14, human oversight) cited at 48,64,72,108,110. All three resolve; primary is cited >=1. No fabricated/unresolvable [N] markers (only [1][2][3] appear). §5 standalone factual assertions (provider vs deployer split, the obligations list, conformity-assessment gate, human oversight, robustness) carry markers well above the 60% threshold."
+    },
+    "sequence_drift": {
+      "passed": true,
+      "forward_referenced_terms": [],
+      "detail": "All cross-references point to EARLIER topics: 5.1 (failure cases), 5.3 (data bias), 5.4 (four pillars), 5.5 (red-teaming), 5.6 (prompt injection), 5.7 (risk tiers). Later topics 5.9 (prohibited uses), 5.10 (NIST RMF), 5.11 (US Executive Order), 5.12 (India MEITY) are confirmed real later entries in sequence.index.json and appear only as bare-name deferrals (§5.5, lines 89-90). No forward-referenced concept is taught."
+    },
+    "length_sanity": {
+      "passed": true,
+      "word_count_estimate": 1180,
+      "band": "standard reading 1200-1600 (artifact-mix); manifest depth_profile=standard",
+      "detail": "~1180w, a hair under the 1200 floor of the standard reading band but well within the 30% tolerance margin. Judged with tolerance per task framing; obligations are taught fully and concisely. Soft note only — not a fail."
+    },
+    "scope_creep": {
+      "passed": true,
+      "off_topic_concepts": [],
+      "detail": "This IS the home topic for high-risk OBLIGATIONS; teaching risk mgmt, technical documentation, data governance, logging, human oversight, accuracy/robustness/cybersecurity, conformity assessment, and provider vs deployer is correct and on-headline. Risk tiers (5.7) are REFERENCED as recall (line 15 names the four tiers without re-explaining them) — no redundant tier re-teaching. 5.9-5.12 are bare-name deferrals, not taught. No Article/Annex numbers or compliance dates used as the teaching frame — Article 14/16 appear only in resource notes, never in prose; framing is plain 'the Act requires/attaches.'"
+    },
+    "beginner_readability": {
+      "passed": true,
+      "findings": [],
+      "detail": "EU AI Act spelled out 'European Union Artificial Intelligence Act' (line 26). Provider and deployer defined at first use (lines 45-46). Conformity assessment defined with car-inspection analogy (line 66). Robustness defined first use (line 65). Data governance defined (line 61). Logs/record-keeping defined (line 62). Technical documentation defined inline (line 60). Lead-with-analogy pattern (car/safety-check) used. Short active sentences, no jargon dumps (each obligation = one bolded term + plain meaning + example), no hedging phrases. Zero distinct findings — well clear of the 3-finding escalation."
+    }
+  },
+  "verdict": "PASS. Topic 5.8 corpus is well-grounded and on-scope. All four required sections present with canonical numbering (Key Takeaways correctly at ## 10). Strict web_search citation density met — primary [1] and both supporting [2][3] cited, no fabricated markers. No forward references; 5.9-5.12 confirmed real later topics, bare-name-deferred only. Risk tiers (5.7) referenced as prior knowledge, not re-taught. No Article/Annex/date teaching frame. Length ~1180w, a hair under the standard floor but inside tolerance. Beginner readability clean. No revisions required.",
+  "at": "2026-06-22T08:14:37Z"
+}

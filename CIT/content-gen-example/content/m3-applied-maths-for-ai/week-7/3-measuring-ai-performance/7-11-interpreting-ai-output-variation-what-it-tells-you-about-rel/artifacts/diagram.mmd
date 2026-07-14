@@ -1,0 +1,33 @@
+---
+title: "Variation + temperature together reveal reliability"
+config:
+  theme: base
+  themeVariables:
+    primaryColor: "#a5d8ff"
+    primaryBorderColor: "#4a9eed"
+    lineColor: "#555"
+  flowchart:
+    htmlLabels: true
+    curve: basis
+    nodeSpacing: 50
+    rankSpacing: 70
+---
+flowchart LR
+    subgraph LOW_TEMP["<b>Low Temperature</b><br/><span style='font-size:12px;color:#555'>(model picks its top answer)</span>"]
+        direction TB
+        Q1["<b>Low variation</b><br/><span style='font-size:12px;color:#166534'>Confident model — most trustworthy</span>"]:::done
+        Q2["<b>High variation</b><br/><span style='font-size:12px;color:#92400e'>Reliability warning — model uncertain</span>"]:::hitl
+    end
+
+    subgraph HIGH_TEMP["<b>High Temperature</b><br/><span style='font-size:12px;color:#555'>(model spreads its answers)</span>"]
+        direction TB
+        Q3["<b>Low variation</b><br/><span style='font-size:12px;color:#1e3a5f'>Surprisingly robust — strong preference</span>"]:::act
+        Q4["<b>High variation</b><br/><span style='font-size:12px;color:#4b0082'>Expected — variety is fine here</span>"]:::auto
+    end
+
+    LOW_TEMP ~~~ HIGH_TEMP
+
+    classDef done fill:#b2f2bb,stroke:#22c55e,color:#14532d
+    classDef hitl fill:#fff3bf,stroke:#f59e0b,stroke-width:3px,color:#78350f
+    classDef act  fill:#a5d8ff,stroke:#4a9eed,color:#1e3a5f
+    classDef auto fill:#d0bfff,stroke:#8b5cf6,color:#3b0764

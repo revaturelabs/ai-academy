@@ -1,0 +1,30 @@
+{
+  "topic_id": "9.6",
+  "captured_at": "2026-06-12T00:00:00Z",
+  "captured_by": "vishnu.vardhan@revature.com",
+  "resources_source": "web_search",
+  "web_search_query": "how human biases encoded into AI training data machine learning bias",
+  "resources": [
+    {
+      "type": "url",
+      "value": "https://www.ibm.com/think/topics/ai-bias",
+      "role": "primary",
+      "source": "web_search",
+      "notes": "IBM authoritative explainer: types of AI bias (historical, representation, measurement, aggregation), how each enters training data, real-world examples"
+    },
+    {
+      "type": "url",
+      "value": "https://www.ibm.com/think/topics/data-bias",
+      "role": "supporting",
+      "source": "web_search",
+      "notes": "Focused on training data bias specifically: labelling bias, selection bias, historical bias encoding"
+    },
+    {
+      "type": "url",
+      "value": "https://arxiv.org/abs/2304.07683",
+      "role": "supporting",
+      "source": "web_search",
+      "notes": "Academic survey of AI bias sources, impacts, and mitigation strategies"
+    }
+  ]
+}

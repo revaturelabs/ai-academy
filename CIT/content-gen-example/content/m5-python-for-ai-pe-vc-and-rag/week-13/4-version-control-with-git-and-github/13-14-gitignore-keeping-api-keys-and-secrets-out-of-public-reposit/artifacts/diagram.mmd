@@ -1,0 +1,38 @@
+---
+title: "Keep secrets out of GitHub: unsafe vs safe path"
+config:
+  theme: base
+  themeVariables:
+    primaryColor: "#a5d8ff"
+    primaryBorderColor: "#4a9eed"
+    lineColor: "#555"
+  flowchart:
+    htmlLabels: true
+    curve: basis
+    rankSpacing: 60
+    nodeSpacing: 40
+---
+flowchart LR
+  subgraph UNSAFE["UNSAFE — hardcoded secret"]
+    direction TB
+    U1["<b>Key in .py file</b><br/><span style='font-size:12px;color:#991b1b'>api_key = sk-abc123... pasted directly</span>"]
+    U2["<b>Key pushed to GitHub</b><br/><span style='font-size:12px;color:#991b1b'>git add . then git push — key is public</span>"]
+    U3["<b>Bot scans commit</b><br/><span style='font-size:12px;color:#991b1b'>automated scanners run within minutes</span>"]
+    U4["<b>Key stolen, charges hit</b><br/><span style='font-size:12px;color:#991b1b'>unauthorized API calls, account suspended</span>"]
+    U1 --> U2 --> U3 --> U4
+  end
+
+  subgraph SAFE["SAFE — secret behind .gitignore"]
+    direction TB
+    S1["<b>Key in .env file</b><br/><span style='font-size:12px;color:#166534'>OPENAI_API_KEY=sk-abc123 in plain text file</span>"]
+    S2["<b>.env listed in .gitignore</b><br/><span style='font-size:12px;color:#166534'>added BEFORE the first git add</span>"]
+    S3["<b>git add skips .env</b><br/><span style='font-size:12px;color:#166534'>Git ignores the file entirely</span>"]
+    S4["<b>Repo has no secret</b><br/><span style='font-size:12px;color:#166534'>Python reads key via os.getenv()</span>"]
+    S1 --> S2 --> S3 --> S4
+  end
+
+  classDef danger fill:#fee2e2,stroke:#dc2626,stroke-width:2px,color:#1a1a1a
+  classDef safe fill:#dcfce7,stroke:#16a34a,stroke-width:2px,color:#1a1a1a
+
+  class U1,U2,U3,U4 danger
+  class S1,S2,S3,S4 safe

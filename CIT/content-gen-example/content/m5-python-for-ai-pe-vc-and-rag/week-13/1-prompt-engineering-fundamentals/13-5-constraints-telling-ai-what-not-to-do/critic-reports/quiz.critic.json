@@ -1,0 +1,80 @@
+{
+  "passed": true,
+  "checks": {
+    "positional_bias": {
+      "passed": true,
+      "distribution": [1, 1, 2, 2],
+      "position_counts": { "0": 1, "1": 1, "2": 2, "3": 2 },
+      "max_share": 0.333,
+      "mcq_count": 6,
+      "note": "max_share 33.3% < 40% threshold. All four positions used. Matches sidecar correct_position_distribution."
+    },
+    "length_bias": {
+      "passed": true,
+      "longest_correct_rate": 0.167,
+      "baseline": 0.25,
+      "flagged_questions": [
+        {
+          "id": "q4",
+          "correct_len": 172,
+          "distractor_mean": 138.0,
+          "threshold": 165.6,
+          "note": "Correct answer is longest by >20% of distractor mean (172 vs threshold 165.6). Flagged but rate 1/6=0.167 is below 0.40 hard-fail."
+        }
+      ],
+      "note": "1 question flagged (q4); longest_correct_rate 16.7% < 40% threshold. Pass."
+    },
+    "distractor_plausibility": {
+      "passed": true,
+      "total_distractors": 18,
+      "absurd_count": 0,
+      "absurd_rate": 0.0,
+      "weakest_questions": [],
+      "scores_summary": {
+        "q1": [3, 4, 4],
+        "q2": [3, 3, 4],
+        "q3": [3, 3, 3],
+        "q4": [3, 3, 3],
+        "q5": [4, 3, 4],
+        "q6": [4, 3, 2]
+      },
+      "note": "No score-1 (absurd) distractors. q6 distractor 3 ('it does not matter') scored 2 but is a plausible beginner belief, not absurd. absurd_rate 0.0 < 0.25 threshold."
+    },
+    "objective_coverage": {
+      "passed": true,
+      "lo_mapping": {
+        "LO1 — Define constraint vs positive instruction": ["q1"],
+        "LO2 — Identify 4 types (format, tone, content exclusion, scope limit)": ["q2"],
+        "LO3 — Apply positive-reframe technique": ["q3", "q7"],
+        "LO4 — Explain why negation is less reliable": ["q4"],
+        "LO5 — Recognise pitfalls (vague negation, overloading, contradiction)": ["q5"],
+        "LO6 — Know placement (system prompt persistent vs user message single-turn)": ["q6"]
+      },
+      "uncovered_objectives": [],
+      "orphan_questions": [],
+      "note": "All 6 task-specified LOs covered. q7 (short-answer) provides second coverage of LO3. No orphan questions."
+    },
+    "beginner_fairness_and_scope": {
+      "passed": true,
+      "findings": [],
+      "note": "All stems plain-language; no undefined acronyms. No question requires 5-role framework or JSON schema (13.6) knowledge. Distractors referencing 13.1–13.4 concepts are prior-topic knowledge — fair for a beginner who read 13.1–13.5. No out-of-scope questions detected."
+    }
+  },
+  "meta_gift_desync": false,
+  "auto_correction_applied": {
+    "shuffle_round_2": false
+  },
+  "question_count": 7,
+  "mcq_count": 6,
+  "short_answer_count": 1,
+  "profile_compliance": {
+    "profile": "atomic",
+    "min_questions": 5,
+    "max_questions": 7,
+    "include_short_answer": true,
+    "compliant": true,
+    "note": "7 questions within atomic 5–7 range. Short-answer (q7) present as required."
+  },
+  "verdict": "Pass — all checks clean: positional bias 33% < 40%, length bias 17% < 40%, 0 absurd distractors, all 6 LOs covered, no scope violations.",
+  "at": "2026-06-14T00:00:00Z"
+}

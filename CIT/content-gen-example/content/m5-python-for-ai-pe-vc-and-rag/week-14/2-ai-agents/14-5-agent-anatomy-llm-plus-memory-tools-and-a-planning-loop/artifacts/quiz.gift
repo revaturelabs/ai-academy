@@ -1,0 +1,49 @@
+$CATEGORY: CIT/M5/week-14/14-5-agent-anatomy-llm-plus-memory-tools-and-a-planning-loop
+
+::q1:: An AI agent is described as having four components working together. Which list correctly names all four? {
+~A language model, a search engine, a database, and a user interface#No — a search engine and database are examples of tools, not separate components; and a user interface is not part of agent anatomy.
+~A language model, a training loop, a tokenizer, and a context window#No — the training loop and tokenizer are internal to how the language model itself works, not the four architectural components of an agent system.
+=A language model core, memory, tools, and a planning loop#Correct — every AI agent has exactly these four: the LLM core reasons, memory holds information across steps, tools act in the world, and the planning loop keeps it all running until the task is done.
+~A language model, a prompt template, a vector database, and an API#No — a prompt template is a formatting choice, and a vector database is one implementation of long-term memory, not a standalone fourth component.
+#### Tests LO1 — naming the four components of an AI agent (corpus §5.2).
+}
+
+::q2:: A student says\: "If I give the language model a detailed enough prompt, it already is an agent — I don't need anything extra." Which response most accurately corrects this claim? {
+=A language model on its own can only produce text — it cannot take actions, remember previous steps, or decide what to do next across multiple cycles#Correct — without tools to act, memory to remember, and a planning loop to keep going, a language model is limited to a single response; the other three components are what make it an agent.
+~The student is correct — a sufficiently detailed system prompt gives the language model all the memory and decision-making it needs to act as a full agent#No — no matter how detailed the prompt, a language model without tools cannot take real-world actions, and without a planning loop it stops after one response.
+~The student is partially right — a language model becomes an agent once it is given access to the internet, which is achieved through prompt engineering alone#No — internet access requires a web-search tool wired into the agent system; prompt engineering alone cannot give a model the ability to call external services.
+~The student is correct — the language model's context window serves as memory, and its training covers enough knowledge that tools are rarely needed#No — the context window holds only the current prompt and has a fixed size limit; it does not replace long-term memory or tools that interact with the live world.
+#### Tests LO2 — why an LLM alone is not an agent, and what the other components add (corpus §5.1, §5.2).
+}
+
+::q3:: You ask an agent to "find the three cheapest flights to Tokyo next week and email me a comparison table." After the agent finishes one search, why does it need to keep running rather than stopping and returning an answer? {
+~The agent must restart from scratch after every tool call because tool results are not kept in memory between steps#No — short-term memory carries tool results across steps; the agent does not restart. The reason for continuing is that more steps remain to complete the task.
+~The planning loop runs a fixed number of times set at the start, so the agent continues simply because its counter has not reached zero yet#No — the planning loop is not a fixed countdown; it continues based on whether the task is done, not a preset number of cycles.
+~The language model core runs all steps in a single forward pass, so the appearance of "continuing" is just sequential token generation#No — the LLM core produces one response per cycle; the planning loop is what triggers subsequent cycles after each tool call returns a result.
+=The task requires multiple steps — more searches, then composing the email — and the planning loop is what keeps the agent working through each step until all are done#Correct — the planning loop repeats Observe, Think, Act, Update until the goal is reached; a single cycle only completes one step, so multi-step tasks require multiple cycles.
+#### Tests LO3 — what the planning loop does and why it is necessary for multi-step tasks (corpus §5.2 Component 4, §5.3).
+}
+
+::q4:: An agent is halfway through a long research task. It has already gathered facts from four web searches. Which statement correctly describes where those facts are most likely stored right now? {
+~In the language model's weights — the model has learned them during the current session and can recall them without any external storage#No — language model weights are fixed after training and cannot be updated during a conversation; facts gathered during a task are not "learned" into the weights.
+=In short-term memory — the results of those tool calls have been added to the current prompt context so the LLM core can reason about them in the next cycle#Correct — short-term memory is the contents of the active prompt; tool results are written there so the LLM core can use them in subsequent cycles.
+~In long-term memory — every tool result is automatically saved to an external vector database for retrieval later in the session#No — not every tool result goes to long-term memory; short-term memory (the prompt context) is where recent tool results live during an active task.
+~In the planning loop's internal state — the loop keeps a separate log of results that it feeds directly to the language model without using the prompt#No — the planning loop coordinates the components but does not maintain a separate memory store; information passes to the LLM core through the prompt (short-term memory).
+#### Tests LO4 — distinguishing short-term and long-term memory in agent context (corpus §5.2 Component 2).
+}
+
+::q5:: Which of the following best describes what a "tool" is in the context of an AI agent, and gives two correct examples? {
+~A tool is a special type of prompt that unlocks additional reasoning capabilities inside the language model; examples are chain-of-thought prompting and few-shot examples#No — chain-of-thought and few-shot are prompting techniques that shape the LLM's output; they do not give the agent the ability to act in the outside world.
+~A tool is any external document the agent reads during the task, such as a PDF or a webpage that was already fetched before the session started#No — a pre-fetched document added to the prompt is part of the context, not a tool; a tool is a callable function the agent invokes during the planning loop to get fresh results.
+=A tool is a callable function that lets the agent take real-world actions or retrieve external information; examples include a web search function and a calculator#Correct — tools are separate programs the LLM core invokes by name with specific inputs; web search retrieves live information and a calculator evaluates expressions the model cannot reliably compute itself.
+~A tool is a component built into the language model that lets it run code natively; examples are Python execution and SQL queries that the model runs inside its weights#No — the LLM core does not run code inside its weights; it produces a structured request naming a tool, and the agent system executes that tool as a separate program.
+#### Tests LO5 — what a tool is and two concrete examples (corpus §5.2 Component 3).
+}
+
+::q6:: A developer is building a system to answer a single, common customer question\: "What are your business hours?" The answer never changes. Which approach is most appropriate? {
+~An agent with a planning loop, because the language model needs multiple cycles to formulate a reliable answer to any customer query#No — a single, static question with a fixed answer does not need multi-step decision-making; adding an agent loop adds cost and complexity with no benefit here.
+=A direct language model call with the answer included in the system prompt, because the task is static and requires no multi-step decision-making#Correct — when the task is a single fixed question with a known answer, a direct LLM call is faster, cheaper, and simpler; agents are only warranted when tasks require dynamic, multi-step decisions based on intermediate results.
+~An agent with long-term memory, because any customer-facing system benefits from the persistent storage that long-term memory provides#No — long-term memory is warranted when facts must persist across sessions or be retrieved from a large store; a static business-hours answer does not need it.
+~A fixed chain of tool calls, because tool results are always more accurate than information embedded in a system prompt#No — tool calls introduce latency and cost; for a fixed, unchanging fact, embedding it in the system prompt is both more reliable and more efficient.
+#### Tests LO6 — identifying when an agent is the right choice versus a simpler approach (corpus §8 Best Practices, §5.5).
+}

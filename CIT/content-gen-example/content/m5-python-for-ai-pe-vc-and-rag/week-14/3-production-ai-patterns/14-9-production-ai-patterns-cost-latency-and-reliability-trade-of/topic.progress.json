@@ -1,0 +1,174 @@
+{
+  "topic_id": "14.9",
+  "stage": "topic_artifacts_approved",
+  "gates": {
+    "resources_captured": true,
+    "corpus_generated": true,
+    "corpus_critic_passed": true,
+    "corpus_human_approved": true,
+    "reading_generated": true,
+    "reading_critic_passed": true,
+    "quiz_generated": true,
+    "quiz_critic_passed": true,
+    "diagram_generated": true,
+    "diagram_critic_passed": true,
+    "topic_artifacts_human_approved": true,
+    "module_drift_passed": true,
+    "week_human_approved": true,
+    "course_drift_passed": true
+  },
+  "history": [
+    {
+      "at": "2026-06-16T00:00:00Z",
+      "op": "set",
+      "gate": "resources_captured",
+      "value": true
+    },
+    {
+      "at": "2026-06-16T00:00:00Z",
+      "op": "stage",
+      "to": "awaiting_corpus"
+    },
+    {
+      "at": "2026-06-16T00:00:00Z",
+      "op": "log",
+      "msg": "Captured 4 resources (source=human, all primary)"
+    },
+    {
+      "at": "2026-06-16T00:00:00Z",
+      "op": "set",
+      "gate": "corpus_generated",
+      "value": true
+    },
+    {
+      "at": "2026-06-16T00:00:00Z",
+      "op": "stage",
+      "to": "awaiting_corpus_critic"
+    },
+    {
+      "at": "2026-06-16T00:00:00Z",
+      "op": "set",
+      "gate": "corpus_critic_passed",
+      "value": true
+    },
+    {
+      "at": "2026-06-16T00:00:00Z",
+      "op": "stage",
+      "to": "awaiting_corpus_human_review"
+    },
+    {
+      "at": "2026-06-16T00:00:00Z",
+      "op": "set",
+      "gate": "corpus_human_approved",
+      "value": true
+    },
+    {
+      "at": "2026-06-16T00:00:00Z",
+      "op": "stage",
+      "to": "corpus_approved"
+    },
+    {
+      "at": "2026-06-16T00:00:00Z",
+      "op": "log",
+      "msg": "HITL #2 complete — all 9 sections approved as written, depth=standard, diagram=true (cost-latency-quality triangle), expected_delivery=7min."
+    },
+    {
+      "at": "2026-06-16T00:00:00Z",
+      "op": "set",
+      "gate": "diagram_generated",
+      "value": true
+    },
+    {
+      "at": "2026-06-16T00:00:00Z",
+      "op": "set",
+      "gate": "diagram_critic_passed",
+      "value": true
+    },
+    {
+      "at": "2026-06-16T00:00:00Z",
+      "op": "log",
+      "msg": "Diagram critic PASSED cycle 2 — 6-node flowchart TD triangle (Cost+Quality / Cost+Latency / Latency+Quality vertices, 3 ghost axis labels). PNG rendered 1400px transparent bg via npx mmdc."
+    },
+    {
+      "at": "2026-06-16T00:00:00Z",
+      "op": "set",
+      "gate": "reading_generated",
+      "value": true
+    },
+    {
+      "at": "2026-06-16T00:00:00Z",
+      "op": "stage",
+      "to": "awaiting_reading_critic"
+    },
+    {
+      "at": "2026-06-16T00:00:00Z",
+      "op": "log",
+      "msg": "Reading generated — 1382 words, 7 min. All 4 primary resources cited. Diagram embedded. 6 fixed sections, no frontmatter."
+    },
+    {
+      "at": "2026-06-16T00:00:00Z",
+      "op": "set",
+      "gate": "reading_critic_passed",
+      "value": true
+    },
+    {
+      "at": "2026-06-16T00:00:00Z",
+      "op": "log",
+      "msg": "Reading critic PASSED cycle 1 — 1382w in [1200,1400], all 4 cited, format clean, no forward refs, scope tight, beginner-readable, 12/12 corpus claims verified."
+    },
+    {
+      "at": "2026-06-16T00:00:00Z",
+      "op": "set",
+      "gate": "quiz_generated",
+      "value": true
+    },
+    {
+      "at": "2026-06-16T00:00:00Z",
+      "op": "stage",
+      "to": "awaiting_quiz_critic"
+    },
+    {
+      "at": "2026-06-16T00:00:00Z",
+      "op": "log",
+      "msg": "Quiz generated — 5 MCQ, positions [1,3,0,2,1], max_share=0.40, bias_defense_applied=true. All 5 LOs covered."
+    },
+    {
+      "at": "2026-06-16T00:00:00Z",
+      "op": "set",
+      "gate": "quiz_critic_passed",
+      "value": true
+    },
+    {
+      "at": "2026-06-16T00:00:00Z",
+      "op": "stage",
+      "to": "awaiting_topic_artifacts_review"
+    },
+    {
+      "at": "2026-06-16T00:00:00Z",
+      "op": "log",
+      "msg": "Quiz critic PASSED cycle 2 (cycle 1 fail: length-bias 0.80, fixed). 5 MCQ, max_share=0.40, 0 absurd distractors, all 5 LOs covered. All artifact critics passed — advancing to HITL #3."
+    },
+    {
+      "at": "2026-06-16T00:00:00Z",
+      "op": "set",
+      "gate": "topic_artifacts_human_approved",
+      "value": true
+    },
+    {
+      "at": "2026-06-16T00:00:00Z",
+      "op": "stage",
+      "to": "topic_artifacts_approved"
+    },
+    {
+      "at": "2026-06-16T00:00:00Z",
+      "op": "log",
+      "msg": "HITL #3 approved — reading 1382w/7min PASS (cycle 1), quiz 5MCQ bias-defended PASS (cycle 2, length-bias fixed), diagram 6-node TD triangle PASS (cycle 2). No carry-over failures."
+    },
+    {
+      "at": "2026-06-23T17:39:32Z",
+      "op": "set",
+      "gate": "course_drift_passed",
+      "value": true
+    }
+  ]
+}

@@ -1,0 +1,30 @@
+{
+  "topic_id": "6.7",
+  "captured_at": "2026-06-19T00:00:00Z",
+  "captured_by": "bhuvaneshwarim@revature.com",
+  "resources_source": "web_search",
+  "web_search_query": "word embeddings turning words into vectors that capture meaning beginner explainer",
+  "resources": [
+    {
+      "type": "url",
+      "value": "https://lena-voita.github.io/nlp_course/word_embeddings.html",
+      "role": "primary",
+      "source": "web_search",
+      "notes": "University NLP course page — comprehensive, covers word2vec, meaning geometry, king−man+woman=queen"
+    },
+    {
+      "type": "url",
+      "value": "https://www.coursera.org/articles/word-embedding-nlp",
+      "role": "supporting",
+      "source": "web_search",
+      "notes": "Institutional guide — structured, beginner-friendly, covers embedding basics and NLP applications"
+    },
+    {
+      "type": "url",
+      "value": "https://machinelearningmastery.com/a-gentle-introduction-to-word-embedding-and-text-vectorization/",
+      "role": "supporting",
+      "source": "web_search",
+      "notes": "Well-known ML resource — gentle intro to word embedding and text vectorization"
+    }
+  ]
+}

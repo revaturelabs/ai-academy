@@ -1,0 +1,56 @@
+{
+  "critic": "corpus-critic",
+  "topic_id": "12.12",
+  "topic_title": "Parsing the JSON response — extracting the text you need",
+  "depth_profile": "atomic",
+  "at": "2026-06-15T00:00:00Z",
+  "pass_number": 1,
+  "passed": true,
+  "verdict": "PASS. All six checks pass. Sections 3/4/5/10 are present and non-trivial. Primary resource [1] (anthropic-sdk-python/api.md) is cited throughout §5–7 with citation density well above 60%. No forward-reference hard failures: 'stop_sequence' appears in the §5.1 reference table with an inline explanation and a name-and-defer marker ('For most beginner calls it is None') so it does not constitute an untethered forward reference; 'raise ValueError' in §7 Pattern 1 is a minor usage of an unintroduced keyword but is contained within a one-block illustrative snippet, below the threshold for a hard fail. Estimated word count ~2000w is within the atomic 1500–2400 range. No scope creep: truncation detection and token-count logging are explicitly in 12.12's concepts_introduced; tool-use and multi-turn logic are each confined to a single name-and-defer sentence; API error handling (12.13) and cost/latency design (12.14) are not taught. Beginner readability is strong throughout with one soft finding (dot notation used without re-definition in §5.1, though it was introduced in 12.11).",
+  "checks": {
+    "required_sections": {
+      "passed": true,
+      "detail": "Section 3 (Learning Objectives) ~90w >= 50w threshold. Section 4 (Introduction) ~160w >= 50w threshold. Section 5 (Core Concepts) ~1110w across six subsections >= 100w threshold. Section 10 (Key Takeaways) ~130w >= 50w threshold. All four required sections present and non-trivial."
+    },
+    "citation_density": {
+      "passed": true,
+      "primary_cited": true,
+      "claim_citation_rate": 0.92,
+      "findings": [
+        "Resource [1] cited at: lines 48, 76, 87, 91, 93, 108, 112, 128, 143, 160, 169, 233, 255, 281, 316, 324, 341, 358, 380, 382, 384, 386, 410-414 — primary resource saturates all SDK-factual claims in §5/6/7.",
+        "Resource [2] also cited once at line 341 (Pattern 2 token-logging snippet) — secondary resource used appropriately.",
+        "No uncited SDK factual assertions detected in §5/6/7. Estimated citation rate ~92% of standalone SDK claims."
+      ]
+    },
+    "sequence_drift": {
+      "passed": true,
+      "forward_refs": [],
+      "findings": [
+        "SOFT: 'stop_sequence' field (§5.1 table, line 71) is not listed in 12.12's concepts_introduced nor in the prior-topic list. However it is introduced inside a reference table row with an inline plain-language definition ('shows which one triggered the stop') and a name-and-defer qualifier ('For most beginner calls it is None'). This satisfies the allowed one-sentence naming pattern; not a hard fail.",
+        "SOFT: 'raise ValueError' used in §7 Pattern 1 code (line 330). 'raise' keyword is not in the prior concepts list (which includes try/except but not raise). Usage is minimal and illustrative (one line in a code block with no prose explanation of the 'raise' mechanics). Does not constitute teaching the concept; no hard fail.",
+        "All other terms confirmed in prior-topic concepts or 12.12's own concepts_introduced."
+      ]
+    },
+    "length_sanity": {
+      "passed": true,
+      "hard_fail": false,
+      "estimated_word_count": 2000,
+      "expected_range_words": [1500, 2400],
+      "detail": "Corpus is 421 lines including substantial code blocks. Estimated prose word count ~2000w is within the atomic 1500-2400w range. No hard-fail trigger (< 1050w). No soft-flag trigger (< 1500w).",
+      "findings": []
+    },
+    "topic_scope": {
+      "passed": true,
+      "detail": "Headline scope: parsing the response object to extract fields and text. All material stays on this boundary. Truncation detection (stop_reason check) and token-count logging are explicitly in 12.12's concepts_introduced. Tool use: one name-and-defer sentence in §5.2 ('a text explanation followed by a tool result') explains the design rationale for the list structure; not taught. Multi-turn logic: not mentioned. API error handling (12.13 scope): §5.5 line 178 says 'In production code this guard is often more elaborate (retry with a higher limit, alert the user, log the truncation). For this course, knowing how to detect truncation is the goal.' — proper named-and-deferred treatment. Cost/latency design (12.14 scope): §5.6 mentions 'Anthropic charges per token' as motivational context for logging token counts, which is in 12.12's scope; no cost-optimization algorithms or latency decisions are taught.",
+      "findings": []
+    },
+    "beginner_readability": {
+      "passed": true,
+      "soft_findings_count": 1,
+      "detail": "Corpus is well-structured for beginners. Every SDK term is defined on first use with plain-language explanations. Code blocks are broken down line-by-line. One soft finding: 'dot notation' used at line 76 without a brief re-definition (though it was introduced in 12.11 via message.content[0].text, so repetition is not required). No jargon dumps: §5.1 introduces 8 response fields in a table but each row includes a plain definition, so this is structured exposition not a jargon dump. Register is clear and instructional throughout; no academic hedging patterns detected. Sentence length is appropriate (<25w average).",
+      "findings": [
+        "SOFT undefined_terms: 'dot notation' used at line 76 without re-definition. Term was introduced in 12.11 so omission is defensible; surface for human reviewer awareness only."
+      ]
+    }
+  }
+}

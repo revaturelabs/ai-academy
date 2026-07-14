@@ -1,0 +1,33 @@
+%%  12.5 — List vs Dictionary: index vs key
+%%  Layout: side-by-side panels (LR) with internal TB stacking
+%%  Intent: make the index-vs-key distinction concrete for a zero-background learner
+
+flowchart LR
+    subgraph LIST["List — reach by position number"]
+        direction TB
+        L0["[0] = 72"]
+        L1["[1] = 88"]
+        L2["[2] = 65"]
+    end
+
+    VS(["vs"])
+
+    subgraph DICT["Dictionary — reach by key name"]
+        direction TB
+        DK1["&quot;name&quot; → Alice"]
+        DK2["&quot;score&quot; → 88"]
+        DK3["&quot;grade&quot; → B"]
+    end
+
+    LIST --- VS --- DICT
+
+    classDef idx fill:#dbeafe,stroke:#3b82f6,color:#1e3a8a
+    classDef kv fill:#dcfce7,stroke:#16a34a,color:#14532d
+    classDef vsNode fill:#fef9c3,stroke:#f59e0b,color:#78350f
+
+    class L0,L1,L2 idx
+    class DK1,DK2,DK3 kv
+    class VS vsNode
+
+    style LIST fill:#eff6ff,stroke:#93c5fd,color:#1e3a8a
+    style DICT fill:#f0fdf4,stroke:#86efac,color:#14532d

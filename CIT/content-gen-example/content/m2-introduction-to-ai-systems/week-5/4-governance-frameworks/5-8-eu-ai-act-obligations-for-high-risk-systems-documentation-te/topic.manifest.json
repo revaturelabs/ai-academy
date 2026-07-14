@@ -1,0 +1,60 @@
+{
+  "type": "topic",
+  "id": "5.8",
+  "title": "EU AI Act — obligations for high-risk systems (documentation, testing, human oversight)",
+  "slug": "5-8-eu-ai-act-obligations-for-high-risk-systems-documentation-te",
+  "position_in_module": 2,
+  "week_num": 5,
+  "session_name": "AI Ethics, Safety and Governance",
+  "module": {
+    "position": 4,
+    "slug": "4-governance-frameworks",
+    "title": "Governance Frameworks"
+  },
+  "course": {
+    "code": "M2",
+    "slug": "m2-introduction-to-ai-systems",
+    "title": "Introduction to AI Systems"
+  },
+  "next_assessment": {
+    "id": "A2",
+    "due_week": 6,
+    "title": "AI Systems Essay",
+    "weight": "15%"
+  },
+  "paths": {
+    "corpus": "topic_corpus.md",
+    "resources": "topic.resources.json",
+    "progress": "topic.progress.json",
+    "artifacts_dir": "artifacts/",
+    "critic_reports_dir": "critic-reports/"
+  },
+  "artifact_plan": {
+    "diagram": true,
+    "diagram_intent": "Left-to-right path-to-market flow for a high-risk system: provider obligations (risk management, technical documentation, data governance, testing/robustness) → conformity-assessment gate (pass/fail) → placed on market → ongoing duties (record-keeping/logging, human oversight, transparency to deployers). Shows the 'before, then ongoing' split and the gate.",
+    "suggested_profile": "standard",
+    "suggested_profile_signals": "multi-part title; Core Concepts spine is a discrete ~8-obligation list + provider/deployer split; examples per obligation but no procedure section; 5.7 carried tier framing so 5.8 expands one slice (not deep/system-level).",
+    "confirmed_profile": "standard",
+    "confirmed_at_hitl2": true,
+    "budget_note": "Standard accepted; running 60/90 after 5.8. Steer naturally-light remaining topics (India MEITY 5.12, wrap-up 5.13) to atomic to land near 90.",
+    "reading": {
+      "target_word_range": [
+        1200,
+        1600
+      ],
+      "target_minutes": [
+        6,
+        8
+      ]
+    },
+    "quiz": {
+      "min_questions": 5,
+      "max_questions": 6,
+      "include_short_answer": false
+    }
+  },
+  "depth_profile": "standard",
+  "depth_signals": "Standard — ~8-obligation list + provider/deployer split, expands the high-risk slice of 5.7's tiers, no procedure; reading ~1200-1600w; diagram = path-to-market flow with conformity gate.",
+  "expected_delivery_minutes": 7,
+  "status": "module_passed"
+}

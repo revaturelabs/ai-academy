@@ -1,0 +1,30 @@
+{
+  "topic_id": "13.14",
+  "captured_at": "2026-06-15T00:00:00Z",
+  "captured_by": "namratas@revature.com",
+  "resources_source": "web_search",
+  "resources": [
+    {
+      "type": "url",
+      "value": "https://blog.gitguardian.com/secrets-api-management/",
+      "role": "primary",
+      "source": "web_search",
+      "notes": "GitGuardian canonical guide: .gitignore patterns, .env approach, API key exposure risks and consequences"
+    },
+    {
+      "type": "url",
+      "value": "https://www.deployhq.com/blog/protecting-your-api-keys-a-quick-guide",
+      "role": "supporting",
+      "source": "web_search",
+      "notes": "Practical guide with code examples: .env file, .gitignore, os.getenv() pattern"
+    },
+    {
+      "type": "url",
+      "value": "https://consensys.io/blog/how-to-avoid-uploading-your-private-key-to-github-approaches-to-prevent-making-your-secrets-public",
+      "role": "supporting",
+      "source": "web_search",
+      "notes": "Developer-focused: approaches to prevent secrets going public, .gitignore patterns"
+    }
+  ],
+  "web_search_query": "gitignore API keys secrets public repository security best practices"
+}

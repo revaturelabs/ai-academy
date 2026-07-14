@@ -1,0 +1,47 @@
+{
+  "critic": "drift-critic",
+  "module_slug": "3-multimodal-ai",
+  "course_code": "M2",
+  "week_num": 4,
+  "run_at": "2026-06-17T00:00:00Z",
+  "passed": true,
+  "verdict": "Single-topic module passes all applicable drift checks — terminology consistent, prerequisites respected, arc covers module outcome, duplication N/A, lab activity aligned.",
+  "topics_evaluated": ["4.6"],
+  "checks": {
+    "terminology_consistency": {
+      "passed": true,
+      "findings": []
+    },
+    "prerequisites_respected": {
+      "passed": true,
+      "findings": []
+    },
+    "learning_arc": {
+      "passed": true,
+      "findings": []
+    },
+    "no_duplicated_core_concepts": {
+      "passed": true,
+      "note": "N/A — single-topic module; pairwise Jaccard check requires at least two topics.",
+      "findings": []
+    },
+    "lab_activity_alignment": {
+      "passed": true,
+      "findings": [
+        {
+          "topic_id": "4.6",
+          "severity": "info",
+          "note": "Lab seed includes a RAG live-demo bullet; that bullet is anchored to topic 4.3 in the adjacent retrieval-agents module, not to 4.6. Topic 4.6 correctly covers the rubric-design and two-tool-comparison portions of the lab activity — no gap."
+        }
+      ]
+    }
+  },
+  "per_topic_findings": {
+    "4.6": {
+      "terminology_consistency": [],
+      "prerequisites_respected": [],
+      "learning_arc": [],
+      "lab_activity_alignment": []
+    }
+  }
+}

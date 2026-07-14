@@ -1,0 +1,24 @@
+{
+  "type": "course",
+  "code": "M4",
+  "title": "Human Cognition and AI Oversight",
+  "slug": "m4-human-cognition-and-ai-oversight",
+  "weeks_range": "9–10",
+  "total_hours": "6 hrs",
+  "scope": "Cognitive biases, automation bias, oversight mechanisms and Cognition Case Studies deepdive.",
+  "source_label": "M4 – Human Cognition and AI Oversight",
+  "week_nums": [
+    9,
+    10
+  ],
+  "assessments": [
+    {
+      "id": "A3",
+      "due_week": 10,
+      "title": "Maths and Cognition Lab Report",
+      "mode": "Individual",
+      "weight": "15%",
+      "requirement": "Two-part PDF submission. Part 1 — Temperature experiment: run the same prompt 10x at temperature 0 and 10x at temperature 1; compute accuracy, variance, and write a 200-word statistical interpretation. Part 2 — Cognition case brief: apply all three Judgment Framework questions to a technical AI system in your domain with quantified acceptable error thresholds (one page). Graded on: statistical correctness, depth of Judgment Framework application."
+    }
+  ]
+}

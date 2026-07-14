@@ -1,0 +1,47 @@
+{
+  "topic_id": "12.1",
+  "generated_at": "2026-06-13",
+  "format": "gift",
+  "question_count": 6,
+  "$bias_defense_applied": true,
+  "$shuffle_seed": "12.1-cit-m5-w12-functions-r2",
+  "correct_position_distribution": [1, 3, 0, 2, 0, 3],
+  "questions": [
+    {
+      "id": "q1",
+      "type": "mcq",
+      "objective_ref": "Explain in plain words what a Python function is and why functions exist.",
+      "correct_position": 1
+    },
+    {
+      "id": "q2",
+      "type": "mcq",
+      "objective_ref": "Write a function using the `def` keyword with correct Python syntax.",
+      "correct_position": 3
+    },
+    {
+      "id": "q3",
+      "type": "mcq",
+      "objective_ref": "Call (run) a function by name and observe when the code inside it executes.",
+      "correct_position": 0
+    },
+    {
+      "id": "q4",
+      "type": "mcq",
+      "objective_ref": "Choose a clear, descriptive name for a function that signals what it does.",
+      "correct_position": 2
+    },
+    {
+      "id": "q5",
+      "type": "mcq",
+      "objective_ref": "Recognise the difference between defining a function and calling a function.",
+      "correct_position": 0
+    },
+    {
+      "id": "q6",
+      "type": "mcq",
+      "objective_ref": "Identify where functions appear in real AI-adjacent Python scripts.",
+      "correct_position": 3
+    }
+  ]
+}

@@ -1,0 +1,54 @@
+{
+  "passed": true,
+  "checks": {
+    "positional_bias": {
+      "passed": true,
+      "distribution": [
+        { "position": 0, "count": 1, "share": 0.167 },
+        { "position": 1, "count": 2, "share": 0.333 },
+        { "position": 2, "count": 1, "share": 0.167 },
+        { "position": 3, "count": 2, "share": 0.333 }
+      ],
+      "max_share": 0.333
+    },
+    "length_bias": {
+      "passed": true,
+      "longest_correct_rate": 0.0,
+      "baseline": 0.25,
+      "per_question": [
+        { "id": "q1", "correct_len": 108, "distractor_mean": 126.7, "threshold_120pct": 152.0, "passed": true },
+        { "id": "q2", "correct_len": 117, "distractor_mean": 99.0, "threshold_120pct": 118.8, "passed": true },
+        { "id": "q3", "correct_len": 181, "distractor_mean": 188.3, "threshold_120pct": 225.9, "passed": true },
+        { "id": "q4", "correct_len": 113, "distractor_mean": 97.3, "threshold_120pct": 116.8, "passed": true },
+        { "id": "q5", "correct_len": 179, "distractor_mean": 193.7, "threshold_120pct": 232.4, "passed": true },
+        { "id": "q6", "correct_len": 115, "distractor_mean": 100.7, "threshold_120pct": 120.8, "passed": true }
+      ],
+      "note": "Distractor expansion applied to q1, q3, q5 since prior critic pass. All distractors now at or above correct-answer length in mean, resolving previous length-signal failure."
+    },
+    "distractor_plausibility": {
+      "passed": true,
+      "absurd_rate": 0.0,
+      "absurd_count": 0,
+      "total_distractors": 18
+    },
+    "objective_coverage": {
+      "passed": true,
+      "uncovered_objectives": [],
+      "coverage": [
+        { "lo": 1, "description": "Define what a post-mortem is and state its purpose in an AI system context", "covered_by": ["q1"] },
+        { "lo": 2, "description": "Describe the four sections of a post-mortem and explain what belongs in each section", "covered_by": ["q2", "q6"] },
+        { "lo": 3, "description": "Apply the four-section framework to a Week 10 case study and produce a structured 200-word post-mortem", "covered_by": ["q7"] },
+        { "lo": 4, "description": "Distinguish between proximate cause and root cause and place each in the correct post-mortem section", "covered_by": ["q3"] },
+        { "lo": 5, "description": "Propose a specific, named governance control as the prevention answer for a given failure", "covered_by": ["q4"] },
+        { "lo": 6, "description": "Recognise the difference between a blame-assigning and a no-blame post-mortem and explain why no-blame produces more useful governance improvements", "covered_by": ["q5"] }
+      ]
+    },
+    "beginner_scope": {
+      "passed": true,
+      "findings": []
+    }
+  },
+  "shuffled_at": "2026-06-13T00:00:00Z",
+  "verdict": "PASS — all 5 checks passed. Positional distribution balanced (max share 0.333, below 0.40 threshold; positions 0-3 all used). Length bias resolved: distractor expansion on q1, q3, q5 brought distractor means above correct-answer lengths in all three questions, yielding longest_correct_rate 0.0 (was 0.50 pre-expansion). All 18 distractors are plausible with no absurd options. All 6 learning objectives covered (LO1 via q1, LO2 via q2+q6, LO3 via q7, LO4 via q3, LO5 via q4, LO6 via q5). Stems and options are within beginner scope using only corpus vocabulary.",
+  "at": "2026-06-13T00:00:00Z"
+}

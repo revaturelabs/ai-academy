@@ -1,0 +1,122 @@
+{
+  "passed": true,
+  "checks": {
+    "positional_bias": {
+      "passed": true,
+      "distribution": [1, 1, 2, 1],
+      "positions_by_question": {
+        "q1": 2,
+        "q2": 0,
+        "q3": 3,
+        "q4": 1,
+        "q5": 2
+      },
+      "max_share": 0.40,
+      "note": "Position 2 used twice (2/5 = 0.40). Threshold is > 0.40; 0.40 is not over the limit. meta_gift_desync: false — sidecar correct_position_distribution [2,0,3,1,2] matches gift-derived positions exactly."
+    },
+    "length_bias": {
+      "passed": true,
+      "longest_correct_rate": 0.40,
+      "baseline": 0.25,
+      "per_question": {
+        "q1": {
+          "correct_len": 87,
+          "mean_distractor_len": 88.33,
+          "threshold": 105.99,
+          "longest_correct": false
+        },
+        "q2": {
+          "correct_len": 40,
+          "mean_distractor_len": 36.0,
+          "threshold": 43.2,
+          "longest_correct": false
+        },
+        "q3": {
+          "correct_len": 218,
+          "mean_distractor_len": 158.0,
+          "threshold": 189.6,
+          "longest_correct": true,
+          "note": "Correct answer (218 chars) exceeds 1.20x mean distractor (158.0). Flagged but rate is at ceiling, not over."
+        },
+        "q4": {
+          "correct_len": 208,
+          "mean_distractor_len": 136.0,
+          "threshold": 163.2,
+          "longest_correct": true,
+          "note": "Correct answer (208 chars) exceeds 1.20x mean distractor (136.0). Flagged but rate is at ceiling, not over."
+        },
+        "q5": {
+          "correct_len": 222,
+          "mean_distractor_len": 186.67,
+          "threshold": 224.0,
+          "longest_correct": false,
+          "note": "222 < 224.0 threshold — not flagged."
+        }
+      },
+      "note": "2/5 questions are longest-correct = 0.40. Threshold is > 0.40; 0.40 is not over the limit. At ceiling — recommend author balance q3 and q4 distractor lengths in a future revision."
+    },
+    "distractor_plausibility": {
+      "passed": true,
+      "absurd_rate": 0.0,
+      "total_distractors": 15,
+      "absurd_count": 0,
+      "per_question_weakest": [],
+      "scores": {
+        "q1": [3, 4, 3],
+        "q2": [3, 3, 3],
+        "q3": [3, 4, 3],
+        "q4": [3, 3, 3],
+        "q5": [3, 3, 4]
+      },
+      "note": "All 15 distractors score 3 or 4 — plausible beginner misconceptions grounded in corpus content. No absurd (score=1) or unrelated (score=2) distractors."
+    },
+    "objective_coverage": {
+      "passed": true,
+      "uncovered_objectives": [],
+      "orphan_questions": [],
+      "mapping": {
+        "LO1 — State Q1 and explain what it is asking": ["q1"],
+        "LO2 — Define the three dimensions of error cost: severity, probability, and detectability": ["q2"],
+        "LO3 — Apply the three-dimension cost analysis to at least two real-world scenarios involving AI-assisted decisions": ["q3"],
+        "LO4 — Distinguish between low-cost and high-cost errors and explain why the distinction changes how much scrutiny an AI output deserves": ["q4"],
+        "LO5 — Name the other two Judgment Framework questions and explain why Q1 must come first": ["q5"]
+      }
+    },
+    "beginner_fairness_and_scope": {
+      "passed": true,
+      "jargon_in_stem": [],
+      "out_of_scope_questions": [],
+      "unfair_distractors": [],
+      "note": "All stems use plain language. 'Judgment Framework', 'Q1', 'Q2', 'Q3' are contextually anchored within each stem or are this topic's own vocabulary. No undefined acronyms. All questions test Q1 content only; q5 names Q2/Q3 solely to test LO5 recall as specified in the corpus — in scope. No acceptable error threshold (topic 9.10) material present."
+    },
+    "gift_format_validity": {
+      "passed": true,
+      "category_line_present": true,
+      "id_labels_present": true,
+      "answer_markers_valid": true,
+      "per_answer_feedback_present": true,
+      "general_feedback_present": true
+    },
+    "question_count": {
+      "passed": true,
+      "count": 5,
+      "min": 5,
+      "max": 6,
+      "include_short_answer": false,
+      "short_answer_questions_found": 0
+    },
+    "meta_gift_desync": {
+      "passed": true,
+      "desync_detected": false
+    }
+  },
+  "auto_correction_applied": {
+    "shuffle_round_2": false
+  },
+  "advisory_notes": [
+    "Length bias is at the 0.40 ceiling (2/5 questions are longest-correct). Not a failure, but author should consider trimming q3 and q4 correct-answer text or extending distractor lengths in a future revision to bring the rate closer to the 0.25 baseline.",
+    "Positional bias is also at the 0.40 ceiling (position 2 used twice). Not a failure per the defined threshold (>0.40), but close. No auto-correction required."
+  ],
+  "verdict": "Pass — all checks clean. Question count, LO coverage, positional bias, length bias, distractor plausibility, GIFT format, beginner fairness, and scope all pass. Two metrics (positional bias, length bias) sit at the 0.40 ceiling but do not exceed the > 0.40 fail threshold.",
+  "at": "2026-06-13T00:00:00Z"
+}

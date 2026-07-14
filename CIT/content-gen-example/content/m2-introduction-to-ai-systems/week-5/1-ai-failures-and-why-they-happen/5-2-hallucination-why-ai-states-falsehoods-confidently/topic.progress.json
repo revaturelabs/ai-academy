@@ -1,0 +1,178 @@
+{
+  "topic_id": "5.2",
+  "stage": "topic_artifacts_approved",
+  "gates": {
+    "resources_captured": true,
+    "corpus_generated": true,
+    "corpus_critic_passed": true,
+    "corpus_human_approved": true,
+    "reading_generated": true,
+    "reading_critic_passed": true,
+    "quiz_generated": true,
+    "quiz_critic_passed": true,
+    "diagram_generated": true,
+    "diagram_critic_passed": true,
+    "module_drift_passed": true,
+    "course_drift_passed": true,
+    "topic_artifacts_human_approved": true,
+    "week_human_approved": true
+  },
+  "history": [
+    {
+      "at": "2026-06-17T15:57:31Z",
+      "op": "set",
+      "gate": "resources_captured",
+      "value": true
+    },
+    {
+      "at": "2026-06-17T15:57:32Z",
+      "op": "stage",
+      "to": "awaiting_corpus"
+    },
+    {
+      "at": "2026-06-17T15:57:32Z",
+      "op": "log",
+      "msg": "Captured 3 resources (source=web_search, primary: atlan.com/know/llm-hallucinations/)"
+    },
+    {
+      "at": "2026-06-17T16:22:16Z",
+      "op": "set",
+      "gate": "corpus_generated",
+      "value": true
+    },
+    {
+      "at": "2026-06-17T16:22:17Z",
+      "op": "stage",
+      "to": "awaiting_corpus_critic"
+    },
+    {
+      "at": "2026-06-17T16:24:52Z",
+      "op": "set",
+      "gate": "corpus_critic_passed",
+      "value": true
+    },
+    {
+      "at": "2026-06-17T16:24:52Z",
+      "op": "stage",
+      "to": "awaiting_corpus_human_review"
+    },
+    {
+      "at": "2026-06-17T16:54:11Z",
+      "op": "set",
+      "gate": "corpus_human_approved",
+      "value": true
+    },
+    {
+      "at": "2026-06-17T16:54:11Z",
+      "op": "stage",
+      "to": "corpus_approved"
+    },
+    {
+      "at": "2026-06-17T16:56:08Z",
+      "op": "set",
+      "gate": "diagram_generated",
+      "value": true
+    },
+    {
+      "at": "2026-06-17T16:56:09Z",
+      "op": "set",
+      "gate": "diagram_critic_passed",
+      "value": true
+    },
+    {
+      "at": "2026-06-17T16:58:40Z",
+      "op": "set",
+      "gate": "quiz_generated",
+      "value": true
+    },
+    {
+      "at": "2026-06-17T16:58:48Z",
+      "op": "set",
+      "gate": "reading_generated",
+      "value": true
+    },
+    {
+      "at": "2026-06-17T16:58:48Z",
+      "op": "stage",
+      "to": "awaiting_reading_critic"
+    },
+    {
+      "at": "2026-06-17T17:01:03Z",
+      "op": "set",
+      "gate": "quiz_critic_passed",
+      "value": false
+    },
+    {
+      "at": "2026-06-17T17:01:03Z",
+      "op": "log",
+      "msg": "Quiz critic cycle 1 fail: length_bias 0.80 > 0.40 — correct answers too long vs distractors in 4/5 MCQs"
+    },
+    {
+      "at": "2026-06-17T17:01:17Z",
+      "op": "log",
+      "msg": "Reading critic cycle 1 fail: scope_creep — grounding parenthetical on line 140 violates bare-name-only rule; fixing in place"
+    },
+    {
+      "at": "2026-06-17T17:04:19Z",
+      "op": "set",
+      "gate": "reading_critic_passed",
+      "value": true
+    },
+    {
+      "at": "2026-06-17T17:04:19Z",
+      "op": "stage",
+      "to": "reading_approved"
+    },
+    {
+      "at": "2026-06-17T17:06:17Z",
+      "op": "set",
+      "gate": "quiz_critic_passed",
+      "value": true
+    },
+    {
+      "at": "2026-06-17T17:06:17Z",
+      "op": "stage",
+      "to": "awaiting_topic_artifacts_review"
+    },
+    {
+      "at": "2026-06-17T17:12:27Z",
+      "op": "set",
+      "gate": "topic_artifacts_human_approved",
+      "value": true
+    },
+    {
+      "at": "2026-06-17T17:12:27Z",
+      "op": "stage",
+      "to": "topic_artifacts_approved"
+    },
+    {
+      "at": "2026-06-17T17:12:27Z",
+      "op": "log",
+      "msg": "HITL#3 approved — reading 1250w/7min cycle2, quiz 5MCQ cycle2, diagram cycle1; soft: mermaid block in reading (no PNG)"
+    },
+    {
+      "at": "2026-06-22T15:14:55Z",
+      "op": "set",
+      "gate": "module_drift_passed",
+      "value": true
+    },
+    {
+      "at": "2026-06-22T15:17:55Z",
+      "op": "set",
+      "gate": "week_human_approved",
+      "value": true
+    },
+    {
+      "at": "2026-06-23T10:39:01Z",
+      "op": "set",
+      "gate": "course_drift_passed",
+      "value": true
+    },
+    {
+      "at": "2026-06-23T11:29:09Z",
+      "op": "set",
+      "gate": "course_drift_passed",
+      "value": true
+    }
+  ]
+}

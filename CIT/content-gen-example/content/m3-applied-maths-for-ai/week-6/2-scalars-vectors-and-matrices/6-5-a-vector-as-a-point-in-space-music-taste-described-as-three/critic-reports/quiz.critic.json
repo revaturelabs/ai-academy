@@ -1,0 +1,124 @@
+{
+  "passed": true,
+  "cycle": 2,
+  "checks": {
+    "positional_bias": {
+      "passed": true,
+      "distribution": {"0": 1, "1": 2, "2": 1, "3": 1},
+      "positions_by_question": {
+        "q1": 1,
+        "q2": 2,
+        "q3": 0,
+        "q4": 3,
+        "q5": 1
+      },
+      "max_share": 0.40,
+      "meta_gift_desync": false,
+      "note": "0.40 equals the threshold; condition is strictly > 0.40 — PASS. Matches sidecar [1,2,0,3,1]."
+    },
+    "length_bias": {
+      "passed": true,
+      "longest_correct_rate": 0.00,
+      "baseline": 0.25,
+      "threshold": 0.40,
+      "per_question": [
+        {
+          "id": "q1",
+          "correct_text": "A number marking how far along one axis the point sits",
+          "correct_len": 54,
+          "distractor_lengths": [53, 66, 57],
+          "distractor_mean": 58.67,
+          "ratio": 0.92,
+          "violation": false
+        },
+        {
+          "id": "q2",
+          "correct_text": "(0.8, 0.3) — energy=0.8 on x-axis, mood=0.3 on y-axis",
+          "correct_len": 54,
+          "distractor_lengths": [63, 62, 76],
+          "distractor_mean": 67.00,
+          "ratio": 0.81,
+          "violation": false
+        },
+        {
+          "id": "q3",
+          "correct_text": "A location in taste-space — each coordinate pins one dimension",
+          "correct_len": 62,
+          "distractor_lengths": [73, 67, 66],
+          "distractor_mean": 68.67,
+          "ratio": 0.90,
+          "violation": false
+        },
+        {
+          "id": "q4",
+          "correct_text": "Alice and Bob are most similar — their coordinates are close, so their points are nearby",
+          "correct_len": 87,
+          "distractor_lengths": [93, 90, 92],
+          "distractor_mean": 91.67,
+          "ratio": 0.95,
+          "violation": false
+        },
+        {
+          "id": "q5",
+          "correct_text": "The neighbourhood — the set of nearby points corresponding to listeners with similar taste",
+          "correct_len": 90,
+          "distractor_lengths": [83, 89, 92],
+          "distractor_mean": 88.00,
+          "ratio": 1.02,
+          "violation": false
+        }
+      ],
+      "note": "All five ratios below 1.20. Cycle-1 violations resolved: correct answers shortened, distractors lengthened to balance. Cycle-1 worst ratio was 1.509 (q2); cycle-2 worst is 1.02 (q5)."
+    },
+    "distractor_plausibility": {
+      "passed": true,
+      "absurd_rate": 0.00,
+      "total_distractors": 15,
+      "absurd_count": 0,
+      "per_question_scores": {
+        "q1": [3, 3, 3],
+        "q2": [4, 3, 3],
+        "q3": [4, 3, 3],
+        "q4": [4, 4, 3],
+        "q5": [3, 3, 3]
+      },
+      "weakest_questions": []
+    },
+    "objective_coverage": {
+      "passed": true,
+      "objectives_from_corpus": [
+        "LO1: Explain what it means to say a vector describes a point in space rather than just a list of numbers.",
+        "LO2: Map a 2D vector onto a standard x-y coordinate grid and identify the plotted point.",
+        "LO3: Describe a 3D vector as a location in a three-axis space using the music-taste example.",
+        "LO4: Explain why two users with similar taste vectors are close in taste-space without using any formula.",
+        "LO5: Name the key vocabulary — coordinate space, n-dimensional space, neighbourhood — and give plain-language definitions.",
+        "LO6: Identify at least one real AI system that exploits this geometric idea to make recommendations."
+      ],
+      "coverage_map": {
+        "LO1": ["q1"],
+        "LO2": ["q2"],
+        "LO3": ["q3"],
+        "LO4": ["q4"],
+        "LO5": ["q5"],
+        "LO6": ["q5"]
+      },
+      "uncovered_objectives": [],
+      "orphan_questions": [],
+      "note": "Q5 dual-maps LO5 and LO6. Stem frames a music streaming platform using taste vectors to find listeners with similar taste (grounding LO6). Correct answer identifies 'neighbourhood' (grounding LO5). Both LOs have match similarity >= 0.7 against sidecar objective_ref text. Cycle-1 LO6 gap resolved."
+    },
+    "beginner_fairness_and_scope": {
+      "passed": true,
+      "jargon_in_stem": [],
+      "out_of_scope_questions": [],
+      "unfair_distractors": [],
+      "note": "All stems use only corpus vocabulary. No question requires dot product, cosine similarity, distance formulas, or embedding knowledge. Q5 recommendation-system framing is directly taught in corpus §5.5 and §7."
+    },
+    "meta_gift_desync": false
+  },
+  "auto_correction_applied": {
+    "shuffle_round_2": false,
+    "length_balance": false
+  },
+  "verdict": "Pass — all four bias/coverage checks clean. Length-bias rate 0.00 (cycle-1 rate was 1.00; fixed by shortening correct answers). LO6 now covered via Q5 dual-map (LO5+LO6). Positional max_share 0.40 at threshold, not over. Distractor plausibility absurd_rate 0.00.",
+  "at": "2026-06-18T00:00:00Z"
+}

@@ -1,0 +1,50 @@
+{
+  "type": "topic",
+  "id": "4.1",
+  "title": "Foundation models — trained once at scale, usable for many tasks",
+  "slug": "4-1-foundation-models-trained-once-at-scale-usable-for-many-task",
+  "position_in_module": 1,
+  "week_num": 4,
+  "session_name": "The 2026 AI Stack",
+  "module": {
+    "position": 1,
+    "slug": "1-foundation-models-and-adaptation",
+    "title": "Foundation Models and Adaptation"
+  },
+  "course": {
+    "code": "M2",
+    "slug": "m2-introduction-to-ai-systems",
+    "title": "Introduction to AI Systems"
+  },
+  "next_assessment": {
+    "id": "A2",
+    "due_week": 6,
+    "title": "AI Systems Essay",
+    "weight": "15%"
+  },
+  "paths": {
+    "corpus": "topic_corpus.md",
+    "resources": "topic.resources.json",
+    "progress": "topic.progress.json",
+    "artifacts_dir": "artifacts/",
+    "critic_reports_dir": "critic-reports/"
+  },
+  "artifact_plan": {
+    "diagram": true,
+    "diagram_intent": "Hierarchy + flow: base foundation model at centre → adaptation layer (prompting / fine-tuning / RAG) on top → multiple application outputs; contrasts narrow AI (many separate models) against foundation model (one base, many uses).",
+    "depth_profile": "standard",
+    "depth_signals": "Title exceeds 8 words, Core Concepts has 4 sub-sections, Real-World Patterns and Best Practices sections both warranted, week lab activity present.",
+    "confirmed_by_hitl2": true,
+    "reading": { "target_word_range": [1200, 1600], "target_minutes_range": [6, 8] },
+    "quiz": { "min_questions": 5, "max_questions": 6, "include_short_answer": false },
+    "soft_findings_carry": [
+      "open-weights (line 133) — inline gloss not added",
+      "corpus (line 130) — undefined for true beginners",
+      "lines 81-82 generalisation paragraph uncited",
+      "GPT-4o multimodal entry (line 139) uncited",
+      "India govt/research entry (line 144) uncited"
+    ]
+  },
+  "expected_delivery_minutes": 9,
+  "status": "scaffolded"
+}

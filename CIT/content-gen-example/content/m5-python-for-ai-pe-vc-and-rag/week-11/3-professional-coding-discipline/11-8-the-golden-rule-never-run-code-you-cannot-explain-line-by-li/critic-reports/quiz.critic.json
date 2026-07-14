@@ -1,0 +1,56 @@
+{
+  "passed": true,
+  "cycle": 2,
+  "checks": {
+    "positional_bias": {
+      "passed": true,
+      "distribution": { "pos0": 1, "pos1": 2, "pos2": 1, "pos3": 2 },
+      "max_share": 0.333
+    },
+    "length_bias": {
+      "passed": true,
+      "longest_correct_rate": 0.0,
+      "baseline": 0.25,
+      "threshold": 0.40,
+      "flagged_questions": [],
+      "per_question_ratios": {
+        "q1": { "correct_chars": 114, "mean_distractor_chars": 154.0, "ratio": 0.740 },
+        "q2": { "correct_chars": 128, "mean_distractor_chars": 167.33, "ratio": 0.765 },
+        "q3": { "correct_chars": 185, "mean_distractor_chars": 200.67, "ratio": 0.922 },
+        "q4": { "correct_chars": 178, "mean_distractor_chars": 182.67, "ratio": 0.974 },
+        "q5": { "correct_chars": 146, "mean_distractor_chars": 195.0, "ratio": 0.749 },
+        "q6": { "correct_chars": 144, "mean_distractor_chars": 122.67, "ratio": 1.174 }
+      },
+      "note": "All ratios verified by independent character count (feedback stripped). q6 is closest at 1.174, below the 1.20 flag threshold. Correct answers are shorter than or comparable to their distractors in q1-q5; q6 correct is moderately longer but within threshold."
+    },
+    "distractor_plausibility": {
+      "passed": true,
+      "absurd_rate": 0.0,
+      "total_distractors": 18,
+      "absurd_count": 0,
+      "findings": []
+    },
+    "objective_coverage": {
+      "passed": true,
+      "uncovered_objectives": [],
+      "orphan_questions": [],
+      "mapping": {
+        "q1": "LO1 — Explain in plain language why the golden rule exists and what problem it prevents.",
+        "q2": "LO2 — Describe the risks of running AI-generated code you have not read and understood.",
+        "q3": "LO3 — Apply the explain-every-line habit to a short code block, narrating what each line does.",
+        "q4": "LO4 — Identify at least two signs that a piece of code contains logic you cannot yet account for.",
+        "q5": "LO5 — Distinguish between 'the code ran without errors' and 'I understand what the code does.'",
+        "q6": "LO6 — Connect the golden rule to the A4 portfolio requirement for independent code ownership."
+      }
+    },
+    "beginner_scope": {
+      "passed": true,
+      "findings": []
+    }
+  },
+  "auto_correction_applied": {
+    "shuffle_round_2": false
+  },
+  "verdict": "Pass — all five checks clean. Length bias resolved: 0 of 6 questions have a correct answer longer than 1.20× mean distractor length (rate 0.0, threshold 0.40). q6 ratio 1.174 is the maximum, comfortably below threshold. Positional bias max_share 0.333 < 0.40. Distractor plausibility absurd_rate 0.0. All six LOs covered with no orphan questions. Beginner scope clean.",
+  "at": "2026-06-13T00:07:00Z"
+}

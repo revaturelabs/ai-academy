@@ -1,0 +1,48 @@
+{
+  "topic_id": "13.8",
+  "generated_at": "2026-06-14T00:00:00Z",
+  "shuffled_at": "2026-06-14T00:00:00Z",
+  "format": "gift",
+  "question_count": 6,
+  "$bias_defense_applied": true,
+  "$shuffle_seed": "138-r2",
+  "correct_position_distribution": [1, 3, 0, 2, 1, null],
+  "questions": [
+    {
+      "id": "q1",
+      "type": "mcq",
+      "objective_ref": "Define output validation and explain in plain language why AI responses cannot be assumed to follow a format.",
+      "correct_position": 1
+    },
+    {
+      "id": "q2",
+      "type": "mcq",
+      "objective_ref": "Identify the format rules in a Rubric role that become the checklist for a validator.",
+      "correct_position": 3
+    },
+    {
+      "id": "q3",
+      "type": "mcq",
+      "objective_ref": "Write a Python function that checks an AI response against at least two format constraints and returns True or False.",
+      "correct_position": 0
+    },
+    {
+      "id": "q4",
+      "type": "mcq",
+      "objective_ref": "Interpret the result of a validation check and describe what the result means for the next step.",
+      "correct_position": 2
+    },
+    {
+      "id": "q5",
+      "type": "mcq",
+      "objective_ref": "Recognise at least three common mistakes beginners make when writing validators.",
+      "correct_position": 1
+    },
+    {
+      "id": "q6",
+      "type": "short_answer",
+      "objective_ref": "Recognise at least three common mistakes beginners make when writing validators — vocabulary: validation error term (corpus §5c).",
+      "correct_position": null
+    }
+  ]
+}

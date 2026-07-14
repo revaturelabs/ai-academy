@@ -1,0 +1,63 @@
+{
+  "topic_id": "7.11",
+  "generated_at": "2026-06-23T00:00:00Z",
+  "format": "gift",
+  "question_count": 6,
+  "mcq_count": 5,
+  "short_answer_count": 1,
+  "$bias_defense_applied": true,
+  "$shuffle_seed": "7b11a3f9",
+  "shuffle_constraint_check": {
+    "max_share": 0.40,
+    "max_share_passes": true,
+    "all_positions_used": true,
+    "position_counts": { "0": 1, "1": 2, "2": 1, "3": 1 }
+  },
+  "correct_position_distribution": [1, 2, 0, 3, 1],
+  "length_bias_check": {
+    "method": "word count of option text before feedback marker",
+    "q1": { "words": [19, 19, 16, 17], "mean": 17.75, "tolerance_pct": 15, "passes": true },
+    "q2": { "words": [17, 17, 19, 16], "mean": 17.25, "tolerance_pct": 15, "passes": true },
+    "q3": { "words": [24, 23, 23, 21], "mean": 22.75, "tolerance_pct": 15, "passes": true },
+    "q4": { "words": [20, 19, 19, 23], "mean": 20.25, "tolerance_pct": 15, "passes": true },
+    "q5": { "words": [19, 21, 18, 20], "mean": 19.5, "tolerance_pct": 15, "passes": true }
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "type": "mcq",
+      "objective_ref": "Explain what it means when an AI gives different answers to the same question across multiple runs",
+      "correct_position": 1
+    },
+    {
+      "id": "q2",
+      "type": "mcq",
+      "objective_ref": "Use the four-quadrant variation-temperature framework to interpret output patterns; Identify whether high or low output variation is a reliability problem, given the type of task",
+      "correct_position": 2
+    },
+    {
+      "id": "q3",
+      "type": "mcq",
+      "objective_ref": "Distinguish tasks where variation signals failure from tasks where variation is expected and acceptable",
+      "correct_position": 0
+    },
+    {
+      "id": "q4",
+      "type": "mcq",
+      "objective_ref": "Explain why consistent AI output does not guarantee correct output, and why ground-truth checking is required",
+      "correct_position": 3
+    },
+    {
+      "id": "q5",
+      "type": "mcq",
+      "objective_ref": "Describe which measurement tools (accuracy, precision, recall) apply when quantifying reliability from variation data",
+      "correct_position": 1
+    },
+    {
+      "id": "q6",
+      "type": "short_answer",
+      "objective_ref": "Use the four-quadrant variation-temperature framework to interpret output patterns; Explain what it means when an AI gives different answers to the same question across multiple runs",
+      "correct_position": null
+    }
+  ]
+}

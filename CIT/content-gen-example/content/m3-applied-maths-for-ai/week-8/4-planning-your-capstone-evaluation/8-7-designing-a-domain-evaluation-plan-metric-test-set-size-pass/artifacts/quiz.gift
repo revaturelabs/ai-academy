@@ -1,0 +1,58 @@
+$CATEGORY: CIT/M3/week-8/8.7-designing-a-domain-evaluation-plan-metric-test-set-size-pass
+
+::q1:: You are building a tool that flags possible fraud, where letting a real fraud case slip through is the costly mistake. Which metric best matches that cost? {
+~Accuracy, because it gives one overall percentage of how often the tool is right.#No — accuracy hides missed cases, especially when fraud is rare; it does not focus on the costly miss.
+~Precision, because it tells you how many flagged cases were truly fraud.#No — precision punishes false alarms, but here the costly mistake is a missed case, not a false alarm.
+=Recall, because it punishes the missed real cases you most want to avoid.#Correct — recall measures how many real fraud cases you caught, so it targets the costly false negatives.
+~Calibration, because it checks whether the confidence score is trustworthy.#No — calibration is a separate confidence check, not the main metric for a costly-miss task.
+#### Tests choosing a metric by matching it to the cost of errors — a costly miss points to recall (corpus §5.2).
+}
+
+::q2:: A spam filter is tested on emails where only 1 in 100 is actually spam. A model that labels everything "not spam" scores 99% accuracy. What does this show? {
+=Accuracy can mislead on imbalanced classes, hiding that the model catches no spam at all.#Correct — with lopsided classes, a high accuracy can come from ignoring the rare class entirely, so it hides the failures that matter.
+~Accuracy is the best metric here because 99% is a very strong score.#No — the 99% comes from never catching spam, so the high number is misleading, not strong.
+~The model has excellent recall on the spam class despite the imbalance.#No — it catches zero spam, so its recall on the spam class is actually zero.
+~Calibration problems are the reason the accuracy figure looks so high.#No — the issue is class imbalance inflating accuracy, not a mismatch between confidence and correctness.
+#### Tests the warning that accuracy can lie on imbalanced classes (corpus §5.2).
+}
+
+::q3:: When deciding how many labeled examples your test set needs, what makes a score trustworthy rather than noise? {
+~A handful of examples is fine as long as each one is carefully chosen and clearly labeled.#No — with only a few examples, one lucky or unlucky case swings the score wildly, so it stays noisy.
+~You should test on as few examples as possible to keep the labeling work small.#No — too few examples makes the score unstable; the goal is enough that stray cases stop mattering.
+~The exact number must be fixed with a confidence-interval calculation before testing.#No — for this planning topic you use intuition, not a statistical formula, to size the set.
+=Enough examples that one or two odd cases cannot swing the result up or down.#Correct — more examples steady the score, so a single lucky or unlucky case no longer dominates it.
+#### Tests sizing a test set by the intuition that the count should be large enough to resist single-case swings (corpus §5.3).
+}
+
+::q4:: Besides being large enough, your test examples must be "held-out." What does held-out mean? {
+~They were shown to the system during building so it already handles them well.#No — that is the opposite; using examples you tuned on is like grading your own homework with the key open.
+=They are examples the system was never tuned on, so the test is honest.#Correct — held-out examples were kept aside from building or tuning, so the score reflects real unseen performance.
+~They are the easiest examples, set aside so the score looks reassuringly high.#No — picking easy cases inflates the score; held-out is about not having tuned on them, not about difficulty.
+~They are stored separately only so they are easier to find again later.#No — held-out is about keeping them out of tuning for an honest test, not about file storage convenience.
+#### Tests the requirement that a test set be held-out — never tuned on — for an honest score (corpus §5.3).
+}
+
+::q5:: Why should you set the pass/fail threshold in advance, before you see any results? {
+~Because the threshold is easier to calculate before the test data exists.#No — the reason is honesty, not calculation order; the threshold is a judgment call, not a computation.
+~Because a threshold set later would always end up far too strict to pass.#No — the risk is the opposite: seeing a low score tempts you to lower the bar, not raise it.
+~Because the metric you chose can only be applied once a threshold is fixed.#No — you can compute the metric without a threshold; the threshold is the separate ship/rework bar.
+=Because deciding first stops you from quietly moving the goalposts to match a disappointing score.#Correct — fixing the bar in advance keeps you honest, so the result cannot lower the bar for you afterward.
+#### Tests the "decide the threshold in advance" habit that prevents goalpost-moving (corpus §5.4, §8).
+}
+
+::q6:: How high should you set the pass/fail threshold for your system? {
+=Tie it to the stakes — strict for high-harm tasks, modest when a wrong answer is minor.#Correct — a threshold is a decision about acceptable risk, so higher stakes call for a stricter bar.
+~Always aim for the highest possible score so the system is as good as it can be.#No — there is no universal "good" number; the right bar depends on what a mistake costs, not on maximizing.
+~Pick whichever score the system happens to reach so it comfortably passes.#No — that is moving the goalposts; the bar should be set by stakes in advance, not by the result.
+~Use 50% as a safe default bar that works across every kind of task.#No — there is no universal default; the bar must reflect the stakes of the specific task.
+#### Tests setting a pass/fail threshold tied to the stakes of the task (corpus §5.4).
+}
+
+::q7:: A finished evaluation plan fits on one page as three decisions, each with a one-sentence reason. Name the three decisions in order. {
+=metric, test set size, threshold
+=metric, test set, threshold
+=pick the metric, size the test set, set the threshold
+=choose the metric, decide the test set size, set the pass/fail threshold
+=the metric, the number of test examples, the pass threshold
+#### Tests assembling the three decisions — metric, test-set size, pass/fail threshold — into a one-page plan (corpus §5.5, §6).
+}

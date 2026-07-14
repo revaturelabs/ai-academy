@@ -1,0 +1,30 @@
+{
+  "topic_id": "6.6",
+  "captured_at": "2026-06-18T00:00:00Z",
+  "captured_by": "bhuvaneshwarim@revature.com",
+  "resources_source": "web_search",
+  "web_search_query": "dot product similarity vectors intuition beginner machine learning",
+  "resources": [
+    {
+      "type": "url",
+      "value": "https://apxml.com/courses/linear-algebra-fundamentals-machine-learning/chapter-6-linear-algebra-in-ml/similarity-with-dot-products",
+      "role": "primary",
+      "source": "web_search",
+      "notes": "Structured ML course chapter — dot product as similarity, beginner-friendly, AI-framed"
+    },
+    {
+      "type": "url",
+      "value": "https://www.learndatasci.com/glossary/dot-product/",
+      "role": "supporting",
+      "source": "web_search",
+      "notes": "Canonical glossary entry — definition, computation, applications, clean format"
+    },
+    {
+      "type": "url",
+      "value": "https://jamesmccaffreyblog.com/2022/03/28/using-dot-product-as-a-measure-of-similarity/",
+      "role": "supporting",
+      "source": "web_search",
+      "notes": "Intuition-first, practical framing, worked examples without heavy maths"
+    }
+  ]
+}

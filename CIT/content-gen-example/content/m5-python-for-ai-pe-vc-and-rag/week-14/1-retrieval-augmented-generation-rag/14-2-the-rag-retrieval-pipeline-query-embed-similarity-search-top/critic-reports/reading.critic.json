@@ -1,0 +1,53 @@
+{
+  "passed": true,
+  "cycle": 1,
+  "checks": {
+    "format_discipline": {
+      "passed": true,
+      "notes": "No frontmatter. First line is H1 title. reading.meta.json exists. 6 fixed sections in order (Overview/Key Concepts/Worked Example/In Practice/Key Takeaways/References). All present and non-empty."
+    },
+    "length_budget": {
+      "passed": true,
+      "word_count": 1251,
+      "reading_minutes": 7,
+      "target_word_range": [
+        1200,
+        1400
+      ],
+      "target_minute_range": [
+        6,
+        8
+      ],
+      "notes": "1251w in [1200,1400]. 7 min (ceil(1251/200)) in [6,8]. Within bounds."
+    },
+    "citation_discipline": {
+      "passed": true,
+      "primary_cited": [
+        "R1",
+        "R2",
+        "R3",
+        "R4"
+      ],
+      "notes": "All 4 primary resources cited at least once. Footnote-style [1]-[4] markers throughout. Bibliography present at end."
+    },
+    "no_forward_references": {
+      "passed": true,
+      "violations": [],
+      "notes": "ANN, HNSW, top-k, vector DB from topic 14.1 (prereq). No references to 14.3 or later. Hallucination named-and-implied as behaviour context, not taught."
+    },
+    "beginner_readability_formatting_scope": {
+      "passed": true,
+      "readability_findings": [],
+      "formatting_findings": [],
+      "scope_findings": [],
+      "notes": "RAG expanded on first use. Numbered list for 5-step pipeline. Concrete refund example before abstraction. Bold terms + plain meanings. Paragraphs <=4 sentences. Chunking/metadata filtering/thresholds correctly omitted (corpus §8 scope not imported). 0 scope_creep findings."
+    },
+    "faithfulness": {
+      "passed": true,
+      "notes": "Worked example traces corpus §5.2-5.3. Two-phase structure from corpus §5.5. In-practice patterns from corpus §7. No new claims."
+    }
+  },
+  "soft_findings": [],
+  "verdict": "PASS (cycle 1) — all 6 checks green. 1251w/7min in standard range. All 4 primary sources cited. No forward refs. Format clean. Scope tight. Beginner-readable with concrete refund example, numbered pipeline, bold definitions.",
+  "at": "2026-06-15T07:07:24Z"
+}

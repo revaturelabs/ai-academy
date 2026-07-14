@@ -1,0 +1,100 @@
+{
+  "passed": true,
+  "cycle": 2,
+  "checks": {
+    "positional_bias": {
+      "passed": true,
+      "distribution": { "0": 2, "1": 2, "2": 1, "3": 1 },
+      "max_share": 0.333,
+      "threshold": 0.40,
+      "note": "Positions re-derived from quiz.gift match sidecar exactly. All 4 positions used; max_share 0.333 <= 0.40."
+    },
+    "length_bias": {
+      "passed": true,
+      "longest_correct_rate": 0.0,
+      "baseline": 0.25,
+      "threshold": 0.40,
+      "per_question": [
+        {
+          "id": "q1",
+          "correct_len": 109,
+          "distractor_mean": 105.0,
+          "ratio": 1.038,
+          "flagged": false
+        },
+        {
+          "id": "q2",
+          "correct_len": 117,
+          "distractor_mean": 117.0,
+          "ratio": 1.000,
+          "flagged": false
+        },
+        {
+          "id": "q3",
+          "correct_len": 119,
+          "distractor_mean": 111.67,
+          "ratio": 1.066,
+          "flagged": false
+        },
+        {
+          "id": "q4",
+          "correct_len": 136,
+          "distractor_mean": 121.0,
+          "ratio": 1.124,
+          "flagged": false
+        },
+        {
+          "id": "q5",
+          "correct_len": 148,
+          "distractor_mean": 128.67,
+          "ratio": 1.150,
+          "flagged": false
+        },
+        {
+          "id": "q6",
+          "correct_len": 141,
+          "distractor_mean": 119.67,
+          "ratio": 1.178,
+          "flagged": false
+        }
+      ],
+      "flagged_questions": [],
+      "note": "Cycle-2 rebalance confirmed effective. All six questions now below the 1.20 threshold. Q1 D1 expanded to ~128 chars reduces Q1 ratio from 1.303 to 1.038. Q3 distractors expanded and correct trimmed reduces ratio from 1.818 to 1.066. Q4 distractors expanded and correct trimmed reduces ratio from 2.239 to 1.124. Q5 D3 expansion reduces ratio from 1.216 to 1.150. Q6 D3 expansion reduces ratio from 1.236 to 1.178."
+    },
+    "distractor_plausibility": {
+      "passed": true,
+      "absurd_rate": 0.0,
+      "total_distractors": 18,
+      "absurd_count": 0,
+      "weakest_questions": [
+        {
+          "id": "q6",
+          "distractor": "Obtaining a computer science degree before attempting to write any Python code in a professional or educational context.",
+          "score": 2,
+          "note": "Low plausibility as a real beginner misconception; no degree gate was implied in the corpus. Not absurd but weakest distractor in the set. Carried over from cycle 1; below threshold for a fail."
+        }
+      ]
+    },
+    "objective_coverage": {
+      "passed": true,
+      "uncovered_objectives": [],
+      "orphan_questions": [],
+      "soft_flags": [
+        {
+          "lo": "LO4 — Connect Python's role to prior concepts already known: flowcharts, abstraction, and specification writing from weeks 1–10.",
+          "coverage_claim": "q5 (sidecar: LO4/LO5)",
+          "issue": "q5 tests 'interpreted language / line-by-line execution' semantics, which maps cleanly to LO5. The LO4 claim (connection to flowcharts, abstraction, specification writing from M1) is tenuous — no question stem or answer option references flowcharts, pseudocode, decomposition, or M1 prior work. Coverage accepted via sidecar assertion; flagged as a carry-over from cycle 1 for builder attention in a future revision."
+        }
+      ]
+    },
+    "beginner_fairness": {
+      "passed": true,
+      "jargon_in_stem": [],
+      "out_of_scope_questions": [],
+      "unfair_distractors": [],
+      "note": "All acronyms (API, SDK, PyPI) are spelled out inline. All stems are answerable from this topic alone."
+    }
+  },
+  "verdict": "Pass — all checks clear on cycle 2. Length bias resolved: flagged_count dropped from 5 to 0 (longest_correct_rate 0.0, well below 0.40 threshold). Positional bias unchanged and passing (max_share 0.333). Distractor plausibility passing (absurd_rate 0.0; one weak but not absurd distractor in q6 noted). All 6 LOs covered; LO4 soft flag carried over — q5 blends LO4/LO5 by assertion, accepted by design. Beginner fairness passing.",
+  "at": "2026-06-12T00:10:00Z"
+}

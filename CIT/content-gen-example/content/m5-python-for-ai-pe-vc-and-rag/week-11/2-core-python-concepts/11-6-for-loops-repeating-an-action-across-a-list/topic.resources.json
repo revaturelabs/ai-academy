@@ -1,0 +1,43 @@
+{
+  "topic_id": "11.6",
+  "captured_at": "2026-06-12T01:45:00Z",
+  "captured_by": "bhuvaneshwarim@revature.com",
+  "resources_source": "human",
+  "resources": [
+    {
+      "type": "url",
+      "value": "https://docs.python.org/3/tutorial/controlflow.html#for-statements",
+      "role": "primary",
+      "source": "human",
+      "notes": "Python official docs — for statement syntax and semantics"
+    },
+    {
+      "type": "url",
+      "value": "https://realpython.com/python-for-loop/",
+      "role": "primary",
+      "source": "human",
+      "notes": "Real Python comprehensive for loop guide"
+    },
+    {
+      "type": "url",
+      "value": "https://www.w3schools.com/python/python_for_loops.asp",
+      "role": "primary",
+      "source": "human",
+      "notes": "W3Schools — beginner-friendly for loop examples"
+    },
+    {
+      "type": "url",
+      "value": "https://docs.python.org/3/library/functions.html#func-range",
+      "role": "primary",
+      "source": "human",
+      "notes": "Python official docs — range() built-in"
+    },
+    {
+      "type": "url",
+      "value": "https://realpython.com/python-lists-tuples/",
+      "role": "primary",
+      "source": "human",
+      "notes": "Real Python — lists as the primary iterable for for loops"
+    }
+  ]
+}

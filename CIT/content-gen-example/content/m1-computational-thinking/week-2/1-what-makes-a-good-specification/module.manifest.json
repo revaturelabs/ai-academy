@@ -1,0 +1,20 @@
+{
+  "type": "module",
+  "position": 1,
+  "title": "What Makes a Good Specification",
+  "slug": "1-what-makes-a-good-specification",
+  "course_code": "M1",
+  "course_slug": "m1-computational-thinking",
+  "week_nums": [
+    2
+  ],
+  "session_name_by_week": {
+    "2": "Specifying for AI"
+  },
+  "narrative_seed_by_week": {
+    "2": "What makes a good specification — testable, bounded, observable / Bad spec vs good spec — ‘make it better’ vs ‘rewrite at Grade 8 level, max 80 words’ / Pattern recognition — how machines find rules in repeated data / The 70/30 rule — AI implements, you specify and verify / When NOT to use AI — privacy, precision, legal accountability"
+  },
+  "lab_activity_seed_by_week": {
+    "2": "Write 5 task specifications — one each for health, transport, education, food, scheduling / Test each spec live with Claude — did you get exactly what you asked for? / Peer review — iterate based on feedback"
+  }
+}

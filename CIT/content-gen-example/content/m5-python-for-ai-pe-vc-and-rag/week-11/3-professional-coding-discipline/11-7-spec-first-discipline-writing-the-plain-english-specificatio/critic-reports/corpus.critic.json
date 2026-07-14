@@ -1,0 +1,52 @@
+{
+  "critic": "corpus-critic",
+  "cycle": 1,
+  "topic_id": "11.7",
+  "topic_title": "Spec-first discipline — writing the plain-English specification before writing or prompting code",
+  "at": "2026-06-13T04:40:00Z",
+  "passed": true,
+  "checks": {
+    "required_sections": {
+      "passed": true,
+      "sections_found": ["3. Learning Objectives", "4. Introduction", "5. Core Concepts", "10. Key Takeaways"],
+      "notes": "All 4 required sections present and non-trivial. LOs: 5 well-formed bullets. Introduction: ~230 words with the 'how do you know if it's right?' motivation. Core Concepts: 5 subsections (5.1 what-is-a-spec table, 5.2 why-spec-first 4 reasons, 5.3 4-step workflow, 5.4 good-vs-bad spec comparison, 5.5 spec-as-prompt). Key Takeaways: 5 bullets."
+    },
+    "citation_density": {
+      "passed": true,
+      "primary_cited": true,
+      "resources_cited": [1, 2, 3, 4, 5],
+      "claim_citation_rate": 0.80,
+      "detail": "All 5 primary resources cited. [1] Fowler cited in §4, §5.1, §5.2, §5.3, §5.4, §6, §7, §8, §10. [2] Joel on Software cited throughout all sections. [3] Prompting Guide cited in §4, §5.2, §5.3, §5.5, §6, §7, §8, §10. [4] Real Python comments cited in §5.2, §5.5, §10. [5] Anthropic prompt engineering cited in §4, §5.2, §5.3, §5.5, §6, §7, §8, §10."
+    },
+    "sequence_drift": {
+      "passed": true,
+      "forward_refs": [],
+      "soft_findings": [
+        "§8 Best Practices: 'invalid input raises ValueError and is caught' — ValueError named as a constraint-language example, not taught. In-bounds: 11.5 deferred ValueError with context, this usage is similarly brief.",
+        "§7 Real-World Patterns: 'response must be JSON' — JSON named as a real-world AI pipeline constraint example only. Not a Python concept being taught."
+      ],
+      "detail": "Steps 3 and 4 of the workflow (explain every line / test edge cases) named-and-deferred to 11.8 and 11.9 explicitly: 'Steps 3 and 4 are introduced in 11.8 and 11.9 respectively.' No other forward references. All specification concepts introduced fresh in this topic."
+    },
+    "length_sanity": {
+      "passed": true,
+      "word_count": 2603,
+      "profile": "standard",
+      "target_range": "1500–6000",
+      "detail": "2603 words — in standard range. 9 corpus sections. Good-vs-bad spec comparison and hands-on exercise add pedagogical weight appropriate for standard depth."
+    },
+    "scope_creep": {
+      "passed": true,
+      "findings": [],
+      "soft_findings": [
+        "§5.3 introduces the 4-step workflow label including steps 3+4 by name ('Explain every line ← 11.8', 'Test edge cases ← 11.9') — labels named and explicitly deferred, not taught. Correct forward-pointer pattern."
+      ],
+      "detail": "Core teaching stays within specification writing — what a spec is, why it comes first, how to write one, how to turn it into a prompt. No new Python syntax introduced. Steps 3 and 4 of the workflow are explicitly deferred."
+    },
+    "beginner_readability": {
+      "passed": true,
+      "findings": [],
+      "detail": "Specification and all sub-terms (inputs/outputs/constraints/examples) defined on first use with a table. 4-step workflow uses a code-block format that is easy to scan. Good-vs-bad spec comparison makes the abstract concrete immediately. Grade-average script used as the running example throughout — familiar from 11.3–11.6."
+    }
+  },
+  "verdict": "PASS (cycle 1). 2603-word standard-depth corpus covers specification definition, why-spec-first (4 reasons), 4-step workflow (steps 3+4 deferred), good-vs-bad spec comparison, spec-as-prompt. All 5 primary resources cited. 3 soft findings (ValueError example, JSON example, step labels forward-pointed). No hard fails."
+}

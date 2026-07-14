@@ -1,0 +1,41 @@
+$CATEGORY: CIT/M5/week-14/14-9-production-ai-patterns-cost-latency-and-reliability-trade-of
+
+::q1:: A commercial LLM API bills you for every token in a call. Which statement correctly describes how input tokens and output tokens are priced relative to each other? {
+~Input and output tokens are always billed at exactly the same rate.#No — providers charge more for output tokens because generating each one requires more compute than reading it.
+=Output tokens cost more — typically 2× to 5× the input token rate.#Correct — generating tokens demands more compute than processing them, so output tokens carry a higher per-unit price.
+~Output tokens are cheaper because the model generates them automatically.#No — generation is the computationally expensive step; automatic does not mean free or cheap.
+~Calls are billed per second of processing time, not by token count.#No — commercial LLM APIs bill by token count, not by elapsed wall-clock time.
+#### Tests the token cost model: input vs output token pricing and tier cost comparison (LO 1, corpus §5.1).
+}
+
+::q2:: A user sends a question to an AI chat interface. Words begin appearing almost immediately, but the complete response takes five seconds to arrive. What is the name for the delay between sending the request and receiving that very first word? {
+=Time to first token (TTFT) — the delay until the model's first token arrives.#Correct — TTFT is the specific latency measure for response-start lag, which is what users experience as "the system feels slow."
+~Total completion time — the only latency figure that reflects the full delay.#No — total completion time measures the gap to the final token; the delay to the first token has its own distinct name.
+~Streaming delay — because tokens arrive progressively rather than all at once.#No — streaming is the delivery mechanism; it does not describe or measure the time before the first token appears.
+~Context window lag — because a larger prompt slows down the start of the response.#No — context window is a capacity limit on tokens per call, not a named latency measure.
+#### Tests the definition of TTFT and why streaming improves perceived latency without changing TTFT (LO 2, corpus §5.2).
+}
+
+::q3:: A RAG team wants to reduce token costs by caching their system prompt and static document corpus. A colleague warns that caching does not always help. What is the core trade-off prompt caching introduces? {
+~Output token costs rise because the model must re-read the cached prefix each time.#No — cached tokens lower the cost of input processing; output token pricing is entirely separate and unaffected.
+~Latency drops to near zero because the model skips all input processing entirely.#No — caching reduces input token cost; it does not eliminate model inference latency for generating the output.
+~Prompt caching is restricted to agent loops and cannot be applied to RAG pipelines.#No — caching is commonly used in RAG systems precisely because the same document corpus is sent on every request.
+=Cache misses occur if the prefix changes often, so you pay the full rate anyway.#Correct — a stable prefix is required for caching to save money; a frequently changing prefix causes cache misses and negates the benefit.
+#### Tests cost-reduction strategies and the trade-off each introduces (LO 3, corpus §5.3).
+}
+
+::q4:: During a traffic spike a production RAG system starts receiving rate-limit errors from the LLM provider. The on-call engineer wants a retry strategy that avoids amplifying the spike. Which pattern is designed for this failure mode? {
+~A sliding context window that keeps each individual request under the token limit.#No — context window management addresses token-count overflow errors, not quota exhaustion from too many concurrent requests.
+~Streaming the response so that tokens are delivered progressively to the client.#No — streaming is a latency UX pattern; it has no effect on whether the provider's request quota is exceeded.
+=Exponential backoff with jitter — double the wait on each retry to let the quota recover.#Correct — increasing the wait after each failure gives the rate-limit quota time to replenish; jitter prevents all clients from retrying in lockstep.
+~A circuit breaker that switches all traffic to a fallback model after repeated failures.#No — a circuit breaker addresses provider downtime by changing providers; it does not pace retries to let a quota recover.
+#### Tests reliability failure modes and the pattern that addresses each one (LO 4, corpus §5.4).
+}
+
+::q5:: A product team wants their AI assistant to be both instant (low latency) and highly accurate (high quality). An architect explains the cost–latency–quality triangle. What does the triangle predict about this goal? {
+~The triangle only applies to agent loops; simpler tiers can achieve all three at once.#No — the trade-off triangle applies to every AI system tier; no architecture escapes the constraint between cost, latency, and quality.
+=Low latency and high quality together typically require accepting a higher cost.#Correct — you can optimise any two of the three axes, but doing so forces a trade-off on the third; fast and accurate tends to be expensive.
+~Latency and quality are independent, so tuning one never forces a change in the other.#No — the triangle treats all three as interdependent; improving any two typically squeezes the third.
+~Prompt caching alone resolves all three constraints without any trade-off on the other axes.#No — caching helps on the cost axis but does not eliminate the fundamental tension between all three dimensions.
+#### Tests the cost–latency–quality triangle and why optimising two requires a trade-off on the third (LO 5, corpus §5.5).
+}

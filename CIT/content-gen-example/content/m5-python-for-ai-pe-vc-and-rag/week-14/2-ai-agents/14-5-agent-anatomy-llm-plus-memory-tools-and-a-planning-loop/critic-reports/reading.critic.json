@@ -1,0 +1,145 @@
+{
+  "critic": "reading-critic",
+  "topic_id": "14.5",
+  "pass": true,
+  "at": "2026-06-15T00:00:00Z",
+  "passed": true,
+  "verdict": "PASS. All hard checks clear. Word count 1302 is within [1200, 1600]. Reading time at 200 wpm = 6.5 min, within [6, 8]. Primary resource [1] cited multiple times; all three resources cited; bibliography matches inline markers. No forward references taught at depth — ReAct (14.6) and fixed chain/decision matrix (14.7) are bare-name-and-defer mentions only. All sampled assertions (10 of 10) trace to the corpus. Format is clean: no frontmatter, H1 first line, exactly 6 required sections in correct order, sidecar meta present. Beginner readability is strong: every key term bolded and defined at first use, concrete-before-abstract throughout, planning loop steps as numbered list, tools as table, no walls of text, no assessment references. Two soft findings noted, both non-blocking and well below the 3-finding escalation threshold. Reading meets the standard-depth bar.",
+  "checks": {
+    "format_discipline": {
+      "passed": true,
+      "frontmatter_present": false,
+      "meta_sidecar_missing": false,
+      "section_template_violation": false,
+      "sections_found": ["Overview", "Key Concepts", "Worked Example", "In Practice", "Key Takeaways", "References"],
+      "note": "H1 is first non-empty line. Six required sections present in exact order. Sidecar reading.meta.json present and valid."
+    },
+    "length_budget": {
+      "passed": true,
+      "word_count": 1302,
+      "target_range": [1200, 1600],
+      "reading_minutes_at_200wpm": 6.51,
+      "target_minute_range": [6, 8],
+      "note": "At 230 wpm (SKILL.md default) the estimate is 5.66 min, marginally below 6.0. Task brief specifies 200 wpm; meta.json records 7 min. Soft awareness item only — not a hard fail at either WPM rate given the meta records 7 min and 200 wpm is the stated standard."
+    },
+    "citations": {
+      "passed": true,
+      "primary_resource_cited": true,
+      "primary_marker": "[1]",
+      "all_markers_used": ["[1]", "[2]", "[3]"],
+      "bibliography_entries": 3,
+      "orphan_markers": [],
+      "orphan_bibliography_entries": [],
+      "note": "[1] cited in Overview, Key Concepts (Components 1, 2, 3, 4), Worked Example, and In Practice. All three markers used; bibliography matches."
+    },
+    "forward_references": {
+      "passed": true,
+      "findings": [
+        {
+          "concept": "ReAct",
+          "line": 61,
+          "text": "Note: the planning loop often follows a pattern called ReAct (covered in the next topic, 14.6).",
+          "disposition": "PASS — bare name + explicit topic pointer, no bold, no definition clause. Correct mention-and-defer."
+        },
+        {
+          "concept": "fixed chain of calls / decision matrix",
+          "line": 102,
+          "text": "The decision signals for choosing between a direct call, a fixed chain, and a full agent are covered in topic 14.7.",
+          "disposition": "PASS — bare pointer to 14.7, not taught. Key Takeaways line 111 names the hierarchy in one phrase but does not teach the decision matrix."
+        }
+      ]
+    },
+    "faithfulness": {
+      "passed": true,
+      "assertions_sampled": 10,
+      "unsupported_count": 0,
+      "unsupported_assertions": [],
+      "note": "All 10 sampled assertions (agent definition, short-term memory, long-term memory, tool trigger mechanism, cycle count safety limit, Observe-Think-Act-Update loop, Paris worked example, customer service example, research agent example, direct-call-first best practice) trace directly to corpus sections 4, 5.2, 5.3, 5.4, 7.1, 7.2, and 8."
+    },
+    "beginner_readability": {
+      "passed": true,
+      "undefined_terms": {
+        "count": 1,
+        "items": [
+          {
+            "term": "structured text",
+            "line": 46,
+            "note": "Used without inline gloss ('outputs the tool name and inputs as structured text'). Minor; below 2-term hard threshold. Corpus uses 'structured output' similarly without definition."
+          }
+        ],
+        "threshold_exceeded": false
+      },
+      "jargon_dump": {
+        "found": false,
+        "soft_findings": [
+          {
+            "location": "Overview, line 5",
+            "text": "wraps an LLM with three extra pieces — memory, tools, and a planning loop",
+            "note": "Three component names introduced together as a preview list. Each fully defined in dedicated subsections below. Mirrors corpus critic soft finding (borderline preview list, non-blocking). Soft finding #1."
+          }
+        ]
+      },
+      "concrete_first": {
+        "passed": true,
+        "note": "Overview opens with plain LLM limitation contrast before introducing agent definition. Each component section uses analogy (desk, filing cabinet, brain/hands) before technical elaboration. Worked Example provides full concrete trace."
+      },
+      "academic_register": {
+        "passed": true,
+        "hedging_count": 0,
+        "note": "No hedging phrases detected. Register is plain and direct throughout."
+      }
+    },
+    "formatting": {
+      "passed": true,
+      "wall_of_text": {
+        "found": false,
+        "note": "All paragraphs at or under 4 sentences. No walls of prose detected."
+      },
+      "unlisted_sequence": {
+        "found": false,
+        "note": "Planning loop stages rendered as numbered list (lines 54-57). Tools presented as a table. Worked example cycles presented as numbered sub-steps."
+      },
+      "inline_examples": {
+        "present": true,
+        "note": "Desk and filing cabinet analogies in Memory section. Tool table in Component 3. Worked Example section. Two use-case patterns in In Practice."
+      },
+      "bold_term_definitions": {
+        "passed": true,
+        "note": "AI agent, LLM core, Memory, Short-term memory, Long-term memory, Tools, planning loop, final-answer signal, hard maximum cycle count all bolded at first use with inline definitions."
+      }
+    },
+    "assessment_references": {
+      "passed": true,
+      "found": false
+    },
+    "scope": {
+      "passed": true,
+      "scope_creep": false,
+      "findings": [],
+      "note": "All content stays within 'Agent anatomy — LLM plus memory, tools, and a planning loop.' ReAct (14.6) and the fixed-chain/decision-matrix (14.7) are mention-and-defer only. No adjacent concepts taught at depth."
+    }
+  },
+  "summary": {
+    "hard_fails": [],
+    "soft_findings": [
+      {
+        "id": "SF-1",
+        "check": "beginner_readability.jargon_dump",
+        "severity": "soft",
+        "description": "Overview preview list introduces three component names (memory, tools, planning loop) in one sentence. Each is fully defined below. Carry-over of corpus critic's noted soft finding. Non-blocking."
+      },
+      {
+        "id": "SF-2",
+        "check": "beginner_readability.undefined_terms",
+        "severity": "soft",
+        "description": "'structured text' (line 46) used without an inline gloss. Below 2-term threshold. Very minor."
+      }
+    ],
+    "soft_finding_count": 2,
+    "escalation_threshold": 3,
+    "escalated": false,
+    "word_count": 1302,
+    "reading_minutes": 6.51,
+    "gold_bar_note": "Reading meets standard-depth bar: every term bolded and defined at first use, concrete-before-abstract structure, overview in plain sentences, worked example as numbered cycles, key takeaways as self-contained bullets."
+  }
+}

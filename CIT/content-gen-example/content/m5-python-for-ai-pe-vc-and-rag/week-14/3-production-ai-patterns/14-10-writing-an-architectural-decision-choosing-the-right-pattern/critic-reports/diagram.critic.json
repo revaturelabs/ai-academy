@@ -1,0 +1,43 @@
+{
+  "critic": "diagram-critic",
+  "topic_id": "14.10",
+  "at": "2026-06-16T00:00:00Z",
+  "cycle": 1,
+  "passed": true,
+  "checks": {
+    "renders": {
+      "passed": true,
+      "notes": "mmdc exit 0, PNG 38207 bytes, 1400px transparent background."
+    },
+    "node_count": {
+      "passed": true,
+      "count": 9,
+      "notes": "9 nodes (3 decision-matrix inputs, 1 tier decision, 5 ADR sections). Slightly over the 3-8 guideline; justified by the intent — each of the 3 questions is a distinct pedagogical point, and all 5 ADR sections must appear in order per the topic. Collapsing would hide the educational structure."
+    },
+    "label_clarity": {
+      "passed": true,
+      "notes": "All labels plain English. No unexplained acronyms. 'RAG' and 'Agent' appear in the TIER node subtitle — both introduced in 14.1-14.8 and in-scope as inputs to the ADR decision."
+    },
+    "scope_discipline": {
+      "passed": true,
+      "notes": "All nodes represent ADR-writing concepts (Title/Status/Context/Decision/Consequences) or decision-matrix questions from 14.7 used as inputs. No advanced/adjacent concepts beyond what the topic teaches."
+    },
+    "palette": {
+      "passed": true,
+      "notes": "Project palette applied: inputs=neutral blue (#457B9D), chosen tier=act green (#2D6A4F), ADR sections=sys dark blue (#1D3557). Three distinct semantic layers visually clear."
+    },
+    "edge_clarity": {
+      "passed": true,
+      "notes": "Q1/Q2/Q3 → TIER (3 inputs converge on decision) → A1 → A2 → A3 → A4 → A5 (5 ADR sections in order). Causal flow reads top-to-bottom without ambiguity."
+    }
+  },
+  "hard_findings": [],
+  "soft_findings": [
+    {
+      "check": "node_count",
+      "severity": "soft",
+      "detail": "9 nodes is 1 over the 3-8 guideline. Acceptable here — collapsing the 3 decision-matrix questions into a single 'Decision Matrix' node would hide the 3 specific questions that are the pedagogical core of the Context-writing exercise."
+    }
+  ],
+  "verdict": "PASS cycle 1 — diagram renders cleanly, project palette applied, all labels plain-language, scope clean. 9-node flowchart TD: 3 decision-matrix inputs converge on Chosen Tier, which feeds the 5 ADR sections in order. Soft: 9 nodes vs 3-8 guideline, accepted given pedagogical requirement."
+}

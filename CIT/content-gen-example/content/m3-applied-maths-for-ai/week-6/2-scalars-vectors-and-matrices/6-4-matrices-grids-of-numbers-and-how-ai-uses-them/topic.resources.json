@@ -1,0 +1,30 @@
+{
+  "topic_id": "6.4",
+  "captured_at": "2026-06-18T00:00:00Z",
+  "captured_by": "bhuvaneshwarim@revature.com",
+  "resources_source": "web_search",
+  "web_search_query": "matrices grids of numbers AI machine learning beginner intuition",
+  "resources": [
+    {
+      "type": "url",
+      "value": "https://machinelearningmastery.com/introduction-matrices-machine-learning/",
+      "role": "primary",
+      "source": "web_search",
+      "notes": "Canonical ML series — dedicated matrix intro, row/column structure, arithmetic, beginner-friendly"
+    },
+    {
+      "type": "url",
+      "value": "https://www.geeksforgeeks.org/data-science/matrices-and-matrix-arithmetic-for-machine-learning/",
+      "role": "supporting",
+      "source": "web_search",
+      "notes": "Structured explainer with notation, good contrast with vectors from 6.3"
+    },
+    {
+      "type": "url",
+      "value": "https://labelbox.com/blog/inside-the-matrix-a-look-into-the-math-behind-ai/",
+      "role": "supporting",
+      "source": "web_search",
+      "notes": "AI-framed intuition — images as grids, weights in neural nets, accessible tone"
+    }
+  ]
+}

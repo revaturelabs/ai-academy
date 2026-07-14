@@ -1,0 +1,48 @@
+{
+  "topic_id": "9.5",
+  "generated_at": "2026-06-12T00:00:00Z",
+  "format": "gift",
+  "question_count": 6,
+  "$bias_defense_applied": true,
+  "$shuffle_seed": "9d5f2a1c",
+  "correct_position_distribution": [1, 3, 0, 2, 3, 1],
+  "longest_correct_rate": 0.0,
+  "questions": [
+    {
+      "id": "q1",
+      "type": "mcq",
+      "objective_ref": "Define automation bias in plain terms and explain why it is a cognitive bias rather than a deliberate choice.",
+      "correct_position": 1
+    },
+    {
+      "id": "q2",
+      "type": "mcq",
+      "objective_ref": "Distinguish between an omission error and a commission error in the context of automation bias.",
+      "correct_position": 3
+    },
+    {
+      "id": "q3",
+      "type": "mcq",
+      "objective_ref": "Explain the two main cognitive mechanisms — cognitive offloading and perceived reliability — that cause automation bias to occur.",
+      "correct_position": 0
+    },
+    {
+      "id": "q4",
+      "type": "mcq",
+      "objective_ref": "Identify automation bias in real-world examples drawn from aviation, medicine, and AI-assisted tools.",
+      "correct_position": 2
+    },
+    {
+      "id": "q5",
+      "type": "mcq",
+      "objective_ref": "Recognise how System 1 thinking (from 9.1) amplifies automation bias when an automated recommendation is presented without explanation.",
+      "correct_position": 3
+    },
+    {
+      "id": "q6",
+      "type": "mcq",
+      "objective_ref": "Describe at least two practical steps an individual or organisation can take to reduce the risk of automation bias.",
+      "correct_position": 1
+    }
+  ]
+}

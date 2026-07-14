@@ -1,0 +1,77 @@
+{
+  "critic": "corpus-critic",
+  "topic_id": "14.6",
+  "topic_title": "The ReAct pattern — Reason, Act, Observe, Repeat",
+  "cycle": 1,
+  "at": "2026-06-15T00:00:00Z",
+  "passed": true,
+  "word_count": 3380,
+  "depth_profile": "standard",
+  "word_count_range": [3000, 4400],
+  "checks": {
+    "required_sections": {
+      "passed": true,
+      "findings": [],
+      "detail": {
+        "section_3_learning_objectives": { "present": true, "word_count_approx": 100, "threshold": 50, "passed": true },
+        "section_4_introduction":        { "present": true, "word_count_approx": 160, "threshold": 50, "passed": true },
+        "section_5_core_concepts":       { "present": true, "word_count_approx": 1600, "threshold": 100, "passed": true },
+        "section_10_key_takeaways":      { "present": true, "word_count_approx": 130, "threshold": 50, "passed": true }
+      }
+    },
+    "citation_density": {
+      "passed": true,
+      "resources_source": "human",
+      "mode": "strict",
+      "findings": [],
+      "resources_cited": {
+        "[1] react-lm.github.io":                     { "cited_at_least_once": true, "sections": ["§4","§5.1","§5.2","§5.4","§5.5","§5.6","§5.7","§6","§7.1","§7.3","§8","§10"] },
+        "[2] arxiv.org/abs/2210.03629":               { "cited_at_least_once": true, "sections": ["§4","§5.1","§5.2","§5.3","§5.4","§5.5","§5.6","§6","§7.1","§7.2","§8","§10"] },
+        "[3] promptingguide.ai/techniques/react":     { "cited_at_least_once": true, "sections": ["§4","§5.1","§5.2","§5.3","§5.4","§5.5","§5.7","§6","§7.3","§8","§10"] },
+        "[4] blog.langchain.dev/react-agent":         { "cited_at_least_once": true, "sections": ["§5.1","§5.2","§5.3","§5.7","§7.1","§7.3","§8","§10"] },
+        "[5] towardsdatascience.com/react-agent-pattern": { "cited_at_least_once": true, "sections": ["§5.2","§5.3","§5.5","§5.6","§6","§7.2","§8","§10"] }
+      },
+      "key_claims_in_5_6_7_with_citation_pct_approx": 95,
+      "threshold_pct": 60
+    },
+    "sequence_drift": {
+      "passed": true,
+      "findings": [],
+      "forward_referenced_terms": [],
+      "detail": "No concepts from 14.7 (decision matrix: when to use agent vs simpler flow) or 14.8 (when NOT to use agents) are taught at depth. Agent frameworks (LangChain, AutoGen, LlamaIndex, OpenAI Assistants) are named as ReAct users — in scope. Max-cycle-count safety limit is an intrinsic ReAct loop mechanism — in scope. All new terms are in concepts_introduced or prior-topic carry-over vocab."
+    },
+    "length_sanity": {
+      "passed": true,
+      "findings": [],
+      "word_count": 3380,
+      "range": [3000, 4400],
+      "within_range": true
+    },
+    "topic_scope": {
+      "passed": true,
+      "findings": [],
+      "scope_creep_items": [],
+      "detail": "§5.4 contrast with generic planning loop (14.5) is explicitly in scope. Framework mentions are in scope. No decision matrix or agent-safety content found. No concept taught beyond the headline boundary."
+    },
+    "beginner_readability": {
+      "passed": true,
+      "hard_escalated": false,
+      "findings": [
+        {
+          "type": "undefined_terms",
+          "severity": "soft",
+          "detail": "'multi-hop question answering' (§7.2) is used without a formal definition; an inline illustration ('questions that require gathering evidence from more than one source and combining it') is provided immediately after. Adequate for comprehension but a formal one-phrase gloss would be cleaner.",
+          "terms": ["multi-hop question answering"]
+        }
+      ],
+      "jargon_dump": false,
+      "cold_acronyms": [],
+      "avg_sentence_length_approx": 19,
+      "hedging_phrase_count": 1,
+      "distinct_soft_findings_count": 1,
+      "escalation_threshold": 3,
+      "note": "chain-of-thought reasoning defined on first use with abbreviation (CoT) in §5.1. Thought/Action/Observation/Final Answer each introduced one at a time under separate headings. Prompting strategy defined in §5.3. All prior-topic vocab (parametric memory, hallucination, RAG, etc.) carried over correctly without re-definition."
+    }
+  },
+  "verdict": "PASS — all 6 checks passed. Word count 3380 (within standard 3000–4400 range). All 5 primary resources cited; citation density in §5/§6/§7 approximately 95%, well above 60% threshold. No forward references to 14.7+ concepts. No scope creep: decision matrix and agent safety are absent; §5.4 ReAct-vs-generic-loop contrast is in scope. One soft readability finding: 'multi-hop question answering' (§7.2) relies on inline illustration rather than a formal gloss — below the 3-finding escalation threshold. Corpus is ready to ground downstream artifacts."
+}

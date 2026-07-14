@@ -1,0 +1,192 @@
+{
+  "topic_id": "3.4",
+  "stage": "topic_artifacts_approved",
+  "gates": {
+    "resources_captured": true,
+    "corpus_generated": true,
+    "corpus_critic_passed": true,
+    "corpus_human_approved": true,
+    "reading_generated": true,
+    "reading_critic_passed": true,
+    "quiz_generated": true,
+    "quiz_critic_passed": true,
+    "diagram_generated": true,
+    "diagram_critic_passed": true,
+    "module_drift_passed": true,
+    "course_drift_passed": true,
+    "topic_artifacts_human_approved": true,
+    "week_human_approved": true
+  },
+  "history": [
+    {
+      "at": "2026-06-17T11:30:46Z",
+      "op": "set",
+      "gate": "resources_captured",
+      "value": true
+    },
+    {
+      "at": "2026-06-17T11:30:47Z",
+      "op": "stage",
+      "to": "awaiting_corpus"
+    },
+    {
+      "at": "2026-06-17T11:30:47Z",
+      "op": "log",
+      "msg": "Captured 3 resources (source=web_search, primary: thenewstack.io/what-is-an-llm-token)"
+    },
+    {
+      "at": "2026-06-17T11:35:28Z",
+      "op": "set",
+      "gate": "corpus_generated",
+      "value": true
+    },
+    {
+      "at": "2026-06-17T11:35:28Z",
+      "op": "stage",
+      "to": "awaiting_corpus_critic"
+    },
+    {
+      "at": "2026-06-17T15:38:23Z",
+      "op": "set",
+      "gate": "corpus_critic_passed",
+      "value": true
+    },
+    {
+      "at": "2026-06-17T15:38:24Z",
+      "op": "stage",
+      "to": "awaiting_corpus_human_review"
+    },
+    {
+      "at": "2026-06-17T15:38:24Z",
+      "op": "log",
+      "msg": "Corpus critic passed (2nd attempt): attempt 1 hard-failed on temperature scope_creep; fixed + soft forward_pass resolved"
+    },
+    {
+      "at": "2026-06-17T15:39:58Z",
+      "op": "set",
+      "gate": "corpus_human_approved",
+      "value": true
+    },
+    {
+      "at": "2026-06-17T15:39:58Z",
+      "op": "stage",
+      "to": "corpus_approved"
+    },
+    {
+      "at": "2026-06-17T15:39:59Z",
+      "op": "log",
+      "msg": "HITL #2 approved: all sections approved, depth=standard, diagram=true"
+    },
+    {
+      "at": "2026-06-17T15:41:51Z",
+      "op": "set",
+      "gate": "diagram_generated",
+      "value": true
+    },
+    {
+      "at": "2026-06-17T15:41:52Z",
+      "op": "set",
+      "gate": "diagram_critic_passed",
+      "value": true
+    },
+    {
+      "at": "2026-06-17T15:41:52Z",
+      "op": "log",
+      "msg": "Diagram generated (Mermaid LR pipeline, 7 nodes, PREFILL+DECODE subgraphs). PNG not rendered — mmdc not on PATH. Source critic PASS 1st cycle."
+    },
+    {
+      "at": "2026-06-17T15:43:47Z",
+      "op": "set",
+      "gate": "reading_generated",
+      "value": true
+    },
+    {
+      "at": "2026-06-17T15:43:48Z",
+      "op": "set",
+      "gate": "quiz_generated",
+      "value": true
+    },
+    {
+      "at": "2026-06-17T15:43:48Z",
+      "op": "stage",
+      "to": "awaiting_reading_critic"
+    },
+    {
+      "at": "2026-06-17T15:43:48Z",
+      "op": "log",
+      "msg": "Reading generated (1381w, 7min). Quiz generated (5 MCQ, bias_defense=true, positions [2,0,3,1,2])."
+    },
+    {
+      "at": "2026-06-17T15:45:44Z",
+      "op": "set",
+      "gate": "reading_critic_passed",
+      "value": true
+    },
+    {
+      "at": "2026-06-17T15:45:44Z",
+      "op": "log",
+      "msg": "Reading critic PASS (1st). Quiz critic FAIL: length_bias rate=0.80 (q1,q3,q4,q5 correct answers too long)."
+    },
+    {
+      "at": "2026-06-17T16:13:15Z",
+      "op": "set",
+      "gate": "quiz_critic_passed",
+      "value": true
+    },
+    {
+      "at": "2026-06-17T16:13:16Z",
+      "op": "stage",
+      "to": "quiz_approved"
+    },
+    {
+      "at": "2026-06-17T16:13:16Z",
+      "op": "log",
+      "msg": "Quiz critic PASS (3rd attempt): length_bias rate=0.20 (q1 marginal 1-char excess, within threshold)"
+    },
+    {
+      "at": "2026-06-17T16:13:24Z",
+      "op": "stage",
+      "to": "awaiting_topic_artifacts_review"
+    },
+    {
+      "at": "2026-06-17T16:16:39Z",
+      "op": "set",
+      "gate": "topic_artifacts_human_approved",
+      "value": true
+    },
+    {
+      "at": "2026-06-17T16:16:40Z",
+      "op": "stage",
+      "to": "topic_artifacts_approved"
+    },
+    {
+      "at": "2026-06-17T16:16:40Z",
+      "op": "log",
+      "msg": "HITL #3 approved: reading 1381w/7min, quiz 5 MCQ (3 cycles rate 0.20), diagram mmd PASS (PNG deferred)"
+    },
+    {
+      "at": "2026-06-18T00:00:00Z",
+      "op": "set",
+      "gate": "module_drift_passed",
+      "value": true
+    },
+    {
+      "at": "2026-06-18T02:49:59Z",
+      "op": "set",
+      "gate": "week_human_approved",
+      "value": true
+    },
+    {
+      "at": "2026-06-23T10:38:59Z",
+      "op": "set",
+      "gate": "course_drift_passed",
+      "value": true
+    },
+    {
+      "at": "2026-06-23T11:29:07Z",
+      "op": "set",
+      "gate": "course_drift_passed",
+      "value": true
+    }
+  ]
+}

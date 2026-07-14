@@ -1,0 +1,49 @@
+{
+  "verdict": "pass",
+  "cycle": 1,
+  "note": "PNG render requires mmdc in terminal: mmdc -i content/m1-computational-thinking/week-1/1-understanding-computation/1-4-why-ai-gives-different-answers-to-the-same-question/artifacts/diagram.mmd -o content/m1-computational-thinking/week-1/1-understanding-computation/1-4-why-ai-gives-different-answers-to-the-same-question/artifacts/diagram.png -w 1400 -b transparent. Source-level pre-flight passed all checks. Visual inspection pending render.",
+  "findings": [
+    {
+      "code": "looks_good",
+      "where": "full diagram",
+      "detail": "7 nodes across two subgraphs: MAIN (left, direction TB) contains a clean 5-node linear pipeline — start(blue) Input Question → auto(purple) Probability Distribution → auto(purple) Token Sampling → auto(purple) Token Added to Response → done(green) LLM Output Complete. SIDE (right, direction TB) contains two nodes — done(green) Low Temperature and warn(orange) High Temperature, connected from Token Sampling via labelled edges 'near 0' and 'near 1+' (both values directly from the S5.3 temperature table). Governing concept in config title field: 'Same question, different answer — how token sampling works' — satisfies title-discipline rule. All bold labels ≤ 4 words, plain English, trace directly to S5.1–S5.4 corpus phrases. No concept drift. No bare unexplained acronyms. Color palette matches project spec exactly (start:#a5d8ff, auto:#d0bfff, done:#b2f2bb, warn:#ffa94d). Subgraph titles are plain descriptions ('Sampling chain — repeats token by token'; 'Temperature controls the sampling step'). Edge labels 'near 0' / 'near 1+' are short, non-colliding, and trace to the S5.3 temperature table."
+    }
+  ],
+  "preflight": {
+    "mermaid_parse": "ok — valid Mermaid flowchart LR with two subgraphs (direction TB each) and solid cross-subgraph edges from node C",
+    "node_count_check": "pass — 7 nodes (A + B + C + D + E in MAIN + LT + HT in SIDE = 7, within 3–8 limit)",
+    "label_length_check": "pass — all bold labels ≤ 4 words: 'Input Question' (2), 'Probability Distribution' (2), 'Token Sampling' (2), 'Token Added to Response' (4), 'LLM Output Complete' (3), 'Low Temperature' (2), 'High Temperature' (2)",
+    "concept_fidelity_check": "pass — 'Input Question' traces to S5.4 step 1 'You type a question'; 'Probability Distribution' traces to S5.2; 'Token Sampling' traces to S5.1 'token sampling — the step where the model picks the next token'; 'Token Added to Response' traces to S5.4 step 4; 'LLM Output Complete' traces to S5.4 step 6; 'Low Temperature' and 'High Temperature' trace to S5.3",
+    "label_plainness_check": "pass — 'LLM' is corpus-defined in S5.1 ('LLM (Large Language Model)') and paired with 'Output Complete'; all other terms are everyday English",
+    "title_discipline_check": "pass — governing concept 'Same question, different answer — how token sampling works' in config title field; no ghost annotation node used",
+    "single_path_discipline_check": "pass — diagram intent is 'main flow + side-by-side temperature contrast', correctly implemented as side-by-side panel pattern (LR root + TB subgraphs); linear chain within MAIN is a clean single path A→B→C→D→E",
+    "color_tier_check": "pass — start:#a5d8ff (entry node A), auto:#d0bfff (process nodes B/C/D), done:#b2f2bb (terminal node E and Low Temperature node), warn:#ffa94d (High Temperature node — orange correctly signals contrast/caution); no HITL nodes present",
+    "scope_discipline_check": "pass — no transformer internals, no backpropagation, no advanced ML concepts; all nodes are within the allowed concept set specified in layout guidance"
+  },
+  "visual_inspection": "pending — mmdc not available in this agent session; render command above. Source-level analysis indicates clean layout: MAIN subgraph (5 nodes, direction TB) will render as a vertical column on the left; SIDE subgraph (2 nodes, direction TB) will render as a shorter vertical column on the right; two cross-subgraph edges from C labelled 'near 0' and 'near 1+' are short and distinct so edge label collision is unlikely. 12px subtitles are one pixel above the 11px minimum, readable at 1400px viewer width.",
+  "stats": {
+    "nodes": 7,
+    "edges": 6,
+    "layout": "flowchart LR (MAIN subgraph direction TB — 5-node linear chain; SIDE subgraph direction TB — 2-node temperature contrast panel)",
+    "labels": [
+      "Input Question",
+      "Probability Distribution",
+      "Token Sampling",
+      "Token Added to Response",
+      "LLM Output Complete",
+      "Low Temperature",
+      "High Temperature"
+    ],
+    "concepts_mapped": [
+      "input question / prompt",
+      "probability distribution",
+      "token sampling",
+      "token added to response",
+      "LLM output",
+      "low temperature",
+      "high temperature"
+    ],
+    "png_path": "content/m1-computational-thinking/week-1/1-understanding-computation/1-4-why-ai-gives-different-answers-to-the-same-question/artifacts/diagram.png",
+    "png_dims": "pending render"
+  }
+}

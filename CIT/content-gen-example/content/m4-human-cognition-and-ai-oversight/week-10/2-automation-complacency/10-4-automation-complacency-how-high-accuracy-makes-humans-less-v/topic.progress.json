@@ -1,0 +1,199 @@
+{
+  "topic_id": "10.4",
+  "stage": "topic_artifacts_approved",
+  "gates": {
+    "resources_captured": true,
+    "corpus_generated": true,
+    "corpus_critic_passed": true,
+    "corpus_human_approved": true,
+    "reading_generated": true,
+    "reading_critic_passed": true,
+    "quiz_generated": true,
+    "quiz_critic_passed": true,
+    "diagram_generated": true,
+    "diagram_critic_passed": true,
+    "module_drift_passed": true,
+    "course_drift_passed": false,
+    "topic_artifacts_human_approved": true,
+    "week_human_approved": true
+  },
+  "history": [
+    {
+      "at": "2026-06-12T12:31:55Z",
+      "op": "set",
+      "gate": "resources_captured",
+      "value": true
+    },
+    {
+      "at": "2026-06-12T12:31:56Z",
+      "op": "stage",
+      "to": "awaiting_corpus"
+    },
+    {
+      "at": "2026-06-12T12:31:56Z",
+      "op": "log",
+      "msg": "Captured 3 resources (source=web_search, primary: sciencedirect.com)"
+    },
+    {
+      "at": "2026-06-12T12:36:27Z",
+      "op": "set",
+      "gate": "corpus_generated",
+      "value": true
+    },
+    {
+      "at": "2026-06-12T12:36:27Z",
+      "op": "stage",
+      "to": "awaiting_corpus_critic"
+    },
+    {
+      "at": "2026-06-12T12:39:42Z",
+      "op": "set",
+      "gate": "corpus_critic_passed",
+      "value": false
+    },
+    {
+      "at": "2026-06-12T12:39:42Z",
+      "op": "log",
+      "msg": "Critic failed (try 1): sequence_drift (distributional shifts, Judgment Framework); scope_creep (Section 8 teaches mitigation concepts)"
+    },
+    {
+      "at": "2026-06-12T13:19:55Z",
+      "op": "log",
+      "msg": "Critic failed (try 2): length_sanity (~1900 words vs ~3000 floor for standard); prior drift+scope issues resolved"
+    },
+    {
+      "at": "2026-06-12T13:20:55Z",
+      "op": "set",
+      "gate": "corpus_critic_passed",
+      "value": true
+    },
+    {
+      "at": "2026-06-12T13:20:56Z",
+      "op": "stage",
+      "to": "awaiting_corpus_human_review"
+    },
+    {
+      "at": "2026-06-12T13:20:56Z",
+      "op": "log",
+      "msg": "length_sanity override: user accepted 1900-word corpus (within 1500-6000 spec range); soft fixes applied (base error rate gloss, citations)"
+    },
+    {
+      "at": "2026-06-12T17:26:08Z",
+      "op": "set",
+      "gate": "corpus_human_approved",
+      "value": true
+    },
+    {
+      "at": "2026-06-12T17:26:08Z",
+      "op": "stage",
+      "to": "corpus_approved"
+    },
+    {
+      "at": "2026-06-12T17:26:08Z",
+      "op": "log",
+      "msg": "HITL#2 approved \u00e2\u20ac\u201d all sections approved, depth=deep (10 min), diagram=true"
+    },
+    {
+      "at": "2026-06-12T17:29:14Z",
+      "op": "set",
+      "gate": "diagram_generated",
+      "value": true
+    },
+    {
+      "at": "2026-06-12T17:29:15Z",
+      "op": "set",
+      "gate": "diagram_critic_passed",
+      "value": true
+    },
+    {
+      "at": "2026-06-12T17:29:15Z",
+      "op": "stage",
+      "to": "awaiting_diagram_critic"
+    },
+    {
+      "at": "2026-06-12T17:36:26Z",
+      "op": "set",
+      "gate": "reading_generated",
+      "value": true
+    },
+    {
+      "at": "2026-06-12T17:36:27Z",
+      "op": "stage",
+      "to": "awaiting_reading_critic"
+    },
+    {
+      "at": "2026-06-12T17:56:38Z",
+      "op": "log",
+      "msg": "Reading critic failed (try 1): length_budget \u00e2\u20ac\u201d 1843 words / 8.0 min; need \u00e2\u2030\u00a52070 words. All other checks pass."
+    },
+    {
+      "at": "2026-06-12T18:01:17Z",
+      "op": "set",
+      "gate": "reading_critic_passed",
+      "value": true
+    },
+    {
+      "at": "2026-06-12T18:01:18Z",
+      "op": "stage",
+      "to": "reading_approved"
+    },
+    {
+      "at": "2026-06-12T18:04:19Z",
+      "op": "set",
+      "gate": "quiz_generated",
+      "value": true
+    },
+    {
+      "at": "2026-06-12T18:04:19Z",
+      "op": "stage",
+      "to": "awaiting_quiz_critic"
+    },
+    {
+      "at": "2026-06-12T18:06:25Z",
+      "op": "log",
+      "msg": "Quiz critic failed (try 1): length_bias \u00e2\u20ac\u201d q2,q3,q5,q6 correct answer too long vs distractors; fixing option balance"
+    },
+    {
+      "at": "2026-06-12T18:09:34Z",
+      "op": "log",
+      "msg": "Quiz critic failed (try 2): length_bias \u00e2\u20ac\u201d q2,q5,q6 correct/distractor ratio still >1.20 after shortening; all other checks pass"
+    },
+    {
+      "at": "2026-06-12T18:13:22Z",
+      "op": "set",
+      "gate": "quiz_critic_passed",
+      "value": true
+    },
+    {
+      "at": "2026-06-12T18:13:22Z",
+      "op": "stage",
+      "to": "quiz_approved"
+    },
+    {
+      "at": "2026-06-12T18:13:22Z",
+      "op": "log",
+      "msg": "Quiz critic passed (pass 3, user-authorized): length_bias resolved via distractor lengthening"
+    },
+    {
+      "at": "2026-06-12T18:13:29Z",
+      "op": "stage",
+      "to": "awaiting_topic_artifacts_review"
+    },
+    {
+      "at": "2026-06-12T18:15:34Z",
+      "op": "set",
+      "gate": "topic_artifacts_human_approved",
+      "value": true
+    },
+    {
+      "at": "2026-06-12T18:15:34Z",
+      "op": "stage",
+      "to": "topic_artifacts_approved"
+    },
+    {
+      "at": "2026-06-12T18:15:34Z",
+      "op": "log",
+      "msg": "HITL#3 approved \u00e2\u20ac\u201d reading 2073w/9min, quiz 7q bias_defense, diagram mermaid pass"
+    }
+  ]
+}

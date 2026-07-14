@@ -1,0 +1,49 @@
+$CATEGORY: CIT/M4/week-9/9-3-confirmation-bias-seeking-information-that-confirms-existing
+
+::9-3-q1:: Confirmation bias is best described as the tendency to {
+=seek out, interpret, and remember information in a way that confirms beliefs you already hold#Correct — this is the standard definition: the bias operates across search, interpretation, and memory, all tilted toward confirming existing beliefs.
+~make random errors in judgment that sometimes push you toward overconfidence and sometimes toward underconfidence#No — random errors are unpredictable and can go either way; confirmation bias is systematic and consistently pushes in one direction.
+~deliberately ignore evidence that contradicts your views because it feels uncomfortable#No — the bias is not deliberate dishonesty or wilful ignorance; it is an automatic feature of normal cognition that operates without conscious intent.
+~apply stricter standards to new information than to information you already knew#No — the bias applies stricter scrutiny to challenging evidence, not to all new information uniformly; this reverses the actual mechanism.
+#### Tests the core definition of confirmation bias and the crucial word "systematic" that distinguishes it from random judgment errors (corpus §5).
+}
+
+::9-3-q2:: A learner tests an AI tool on only the kinds of tasks they already know well, reads a borderline output as "close enough," and later recalls the successes more vividly than the failures. In order, which three mechanisms does this sequence illustrate? {
+~Selective memory, biased interpretation, selective search#No — this reverses the order; the scenario starts with how the learner chose what to test (selective search), not how they remembered it.
+=Selective search, biased interpretation, selective memory#Correct — testing only familiar ground is selective search; reading borderline output charitably is biased interpretation; recalling wins more vividly is selective memory.
+~Biased interpretation, selective memory, selective search#No — biased interpretation cannot come first here because the learner has not yet encountered any output to interpret; the sequence starts with choosing what to test.
+~Selective search, selective memory, biased interpretation#No — this places memory before interpretation; in the scenario the charitable reading of output (interpretation) happens during evaluation, before the later act of recall.
+#### Tests knowledge of the three mechanisms of confirmation bias and the ability to map a scenario onto them in the correct order (corpus §5).
+}
+
+::9-3-q3:: Confirmation bias is largely automatic because it is rooted in System 1 processing. Which additional concept from this topic explains why confirming a belief costs less mental effort than revising it? {
+~Motivated reasoning — analytical capacity is redirected toward building the best case for the prior belief#No — motivated reasoning explains how System 2 can be distorted, not why confirmation operates automatically at low cost; it is a related but distinct concept.
+~Biased interpretation — ambiguous evidence is processed faster when it fits an existing mental model#No — biased interpretation names the outcome of the mechanism, not the underlying reason why confirmation is cheaper than revision.
+=Cognitive economy — the brain minimises effort, and confirming an existing belief requires less cognitive work than restructuring it#Correct — cognitive economy is the principle that the brain takes the path of least resistance; confirming a model avoids the costly work of revising it.
+~Selective memory — retrieving consistent memories is easier, which reinforces the impression that confirmation is more reliable#No — selective memory is a downstream consequence of the bias, not the explanation for why confirmation costs less effort than belief revision.
+#### Tests understanding of the cognitive economy concept as the mechanism behind why confirmation bias is automatic and effortless (corpus §5).
+}
+
+::9-3-q4:: In Peter Wason's 2-4-6 task, participants were given the sequence "2, 4, 6" and asked to discover the secret rule by proposing other sequences. What did the majority of participants do, and what did this reveal? {
+~They proposed sequences that violated their hypothesis — such as "1, 2, 3" — and quickly discovered the broader rule "any ascending sequence."#No — this describes the strategy that would have worked; the striking result was that most participants did not do this.
+~They proposed a wide variety of sequences, both confirming and disconfirming, but still guessed the rule incorrectly due to poor reasoning.#No — the issue was not broad testing with poor reasoning; participants were selective, testing mainly confirming sequences and feeling confident without having falsified anything.
+~They gave up quickly when their initial hypothesis of "any even numbers" was confirmed, illustrating overconfidence rather than confirmatory search.#No — participants did not give up after one confirmation; they kept testing confirming sequences and felt increasingly confident, which is the confirmation bias pattern, not mere overconfidence.
+=They tested mostly confirming sequences such as "8, 10, 12" and declared confidence in a rule they had never actually tested against disconfirming cases.#Correct — the task demonstrated selective search: participants kept gathering supporting evidence without ever trying sequences that could falsify their hypothesis, so they never discovered the true broader rule.
+#### Tests recall of the Wason 2-4-6 task as evidence for the selective search mechanism of confirmation bias (corpus §5).
+}
+
+::9-3-q5:: A developer evaluates an AI code assistant and concludes it is reliable. As a result of confirmation bias, which of the following is the most likely pattern in their evaluation? {
+=They test the tool on familiar, easy tasks; read ambiguous outputs as correct; and recall successful outputs more vividly when writing up their recommendation.#Correct — all three mechanisms are active: selective search (familiar tasks), biased interpretation (charitable reading), and selective memory (vivid recall of wins); the evaluation reflects prior belief as much as evidence.
+~They test the tool on unfamiliar, hard tasks to challenge their belief, but interpret the results too strictly and end up with an unfairly negative conclusion.#No — confirmation bias pushes toward confirming the prior belief (the tool is reliable), not toward harsh scrutiny; testing hard tasks and strict interpretation runs against the direction of the bias.
+~They deliberately avoid testing edge cases because they are short on time, leading to an incomplete but unbiased evaluation.#No — time pressure may also cause shortcuts, but it is not confirmation bias; confirmation bias involves directional, belief-driven selectivity, not just any form of limited testing.
+~They test a broad range of tasks but weight all outputs equally, producing an accurate overall assessment that happens to align with their prior belief.#No — if testing is broad and weighting is equal, the outcome is not a product of confirmation bias even if it matches the prior belief; confirmation bias requires the systematic tilt described in the correct option.
+#### Tests application of confirmation bias to AI evaluation, showing how all three mechanisms combine to distort an assessment of an AI system's quality (corpus §8).
+}
+
+::9-3-q6:: A practitioner learns about confirmation bias and thinks: "Now that I know about this, I can just remind myself to be objective and the bias will stop affecting me." Why is this belief incorrect? {
+~It is incorrect because only people with high analytical ability can correct for the bias, and most practitioners lack this skill.#No — intelligence and analytical skill do not reliably eliminate confirmation bias; in fact, higher analytical ability can enable more sophisticated motivated reasoning.
+=System 1 operates below conscious awareness, and motivated reasoning means analytical effort can be redirected to defend prior beliefs rather than find the truth — awareness alone does not switch this off.#Correct — even deliberate System 2 thinking can be co-opted by motivated reasoning; structured methods such as adversarial testing are needed because unaided self-awareness is not a reliable cure.
+~It is incorrect because confirmation bias only disappears after years of practice applying critical thinking, not from a single moment of awareness.#No — the corpus does not claim years of practice eliminates the bias; it states that awareness does not automatically eliminate it and that structured methods are more effective.
+~It is incorrect because reminding yourself to be objective activates System 1, which makes confirmation bias worse rather than better.#No — the instruction to "be objective" engages deliberate System 2 thinking, not System 1; the problem is that System 2 can itself be distorted by motivated reasoning, not that it triggers more System 1.
+#### Tests the understanding that awareness of confirmation bias does not eliminate it, due to System 1 automaticity and motivated reasoning under System 2 (corpus §5, §7).
+}

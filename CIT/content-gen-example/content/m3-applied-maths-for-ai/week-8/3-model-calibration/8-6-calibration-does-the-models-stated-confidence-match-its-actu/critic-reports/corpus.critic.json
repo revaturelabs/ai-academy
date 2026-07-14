@@ -1,0 +1,42 @@
+{
+  "critic": "corpus-critic",
+  "topic_id": "8.6",
+  "corpus_path": "topic_corpus.md",
+  "resources_source": "web_search",
+  "citation_mode": "strict",
+  "passed": true,
+  "checks": {
+    "required_sections": {
+      "passed": true,
+      "detail": "Sec 3 (Learning Objectives, 5 bullets), Sec 4 (Introduction, ~3 paragraphs, >50w), Sec 5 (Core Concepts, ~700w, well over 100w floor, 5 sub-sections), Sec 10 (Key Takeaways, 5 bullets, >50w) all present and non-trivial. No placeholder strings in required sections."
+    },
+    "citation_density": {
+      "passed": true,
+      "detail": "STRICT mode (web_search). Primary resource [1] (arxiv 2501.19047) cited many times (lines 30,32,47,53,86,87,88,96,100,122,124). Supporting [2] (reliability-diagrams) and [3] (mbrenndoerfer) both cited. >=60% of standalone factual assertions in Sec 5/6/7 carry [N] markers (5.2,5.3,5.4,5.5 + all Implementation steps + all 3 Real-World bullets). No fabricated markers — [1][2][3] all resolve to the 3 resources in topic.resources.json."
+    },
+    "sequence_drift": {
+      "passed": true,
+      "forward_refs": [],
+      "detail": "All technical terms map to 8.6 concepts_introduced (confidence, calibration/well-calibrated, bucketing, reliability diagram, over/under-confidence, accuracy-vs-calibration) or prior topics. Reuse of 'accuracy' (8.5) and the prediction right/wrong framing (8.3) is correct and expected. ECE and calibration-fix methods are named-and-deferred only, not forward-taught."
+    },
+    "length_sanity": {
+      "passed": true,
+      "word_count_estimate": 1180,
+      "detail": "SOFT NOTE only. ~1180 words is below the standard nominal floor (1200-1600) and below the prior-week-8-accepted near-floor (~1460). Per task instruction this is an intuition-only short-corpus course — judging substance not length; substance is dense and complete (5 sub-concepts, contrast table, reliability-diagram reading rules, by-hand procedure, real-world patterns). Not a hard fail. Builder may optionally expand toward ~1460w."
+    },
+    "topic_scope": {
+      "passed": true,
+      "scope_creep": [],
+      "detail": "Headline (calibration idea + reliability diagram + over/under-confidence) is exactly what is taught. ECE: named once in a 'Beyond this topic' deferral block (line 107), no arithmetic/formula taught. Calibration-fixing methods (temperature/Platt/isotonic): deferred as a bare phrase ('techniques that adjust... covered later'), not taught. Multi-class calibration and 8.7 capstone: not mentioned. No off-headline teaching."
+    },
+    "beginner_readability": {
+      "passed": true,
+      "findings": [],
+      "detail": "All non-everyday terms defined on first use (confidence, calibration, well-calibrated, bucket, reliability diagram, overconfident, underconfident) with concrete weather-app/spam analogies leading the abstract definitions. No jargon-dump paragraphs (one new idea at a time). Short active sentences, no hedging. Comparison tables used per formatting standards."
+    }
+  },
+  "verdict": "PASS — corpus 8.6 grounds calibration cleanly in STRICT citation mode: all required sections substantive, primary [1] cited throughout, no forward refs, no scope creep (ECE + calibration-fix methods correctly named-and-deferred), beginner-readable. Only soft note: ~1180w sits below the prior week-8 near-floor (~1460w); accepted on substance per intuition-only short-corpus policy.",
+  "forward_refs": [],
+  "scope_creep": [],
+  "at": "2026-06-22T07:42:00Z"
+}

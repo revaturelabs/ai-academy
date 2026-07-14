@@ -1,0 +1,25 @@
+{
+  "topic_id": "2.4",
+  "captured_at": "2026-06-16",
+  "source": "web_search",
+  "resources": [
+    {
+      "type": "primary",
+      "title": "Pattern Recognition in AI: A Comprehensive Guide",
+      "url": "https://sam-solutions.com/blog/pattern-recognition-in-ai/",
+      "notes": "Beginner-friendly overview of how machines identify patterns in repeated data — feature extraction, classification, clustering"
+    },
+    {
+      "type": "primary",
+      "title": "Mastering AI: Pattern Recognition Techniques",
+      "url": "https://viso.ai/deep-learning/pattern-recognition/",
+      "notes": "Viso.ai deep-learning guide — covers training loops, labeled data, and how rules emerge from repeated examples"
+    },
+    {
+      "type": "primary",
+      "title": "AI for Pattern Recognition — Revolutionizing Data Analysis",
+      "url": "https://saiwa.ai/blog/ai-for-pattern-recognition/",
+      "notes": "Applied pattern recognition — probabilistic outputs, real-world use cases, contrast with rule-based systems"
+    }
+  ]
+}

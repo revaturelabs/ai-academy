@@ -1,0 +1,24 @@
+﻿{
+  "verdict": "pass",
+  "findings": [
+    {
+      "code": "looks_good",
+      "where": "whole grid",
+      "detail": "Reads cleanly as a 2x2 confusion matrix. Column band 'PREDICTED (what the model said)' spans both prediction columns; left band 'ACTUAL (the truth)' labels the two rows. TP top-left, FN top-right, FP bottom-left, TN bottom-right — matches corpus section 5 exactly. Diagonal TP/TN green (correct), off-diagonal FP/FN red (errors); headers blue. Each cell pairs the acronym with plain words (correct catch / miss / false alarm / correct pass). No scope-creep nodes (no accuracy/precision/recall/F1/ROC/calibration). All text fits, no overlap or truncation."
+    },
+    {
+      "code": "whitespace_imbalance",
+      "where": "canvas above table",
+      "detail": "Non-blocking. mermaid pads the single-table node's canvas with vertical whitespace above the grid. The matrix itself is centered and fully legible at viewer scale; cosmetic only, does not affect readability."
+    }
+  ],
+  "stats": {
+    "cells": 4,
+    "headers": 5,
+    "layout": "flowchart TB — single HTML <table> grid node (legacy bgcolor/border/font attrs survive sanitization; CSS style attrs do not)",
+    "labels": ["TP - correct catch", "FN - miss", "FP - false alarm", "TN - correct pass", "Model said Positive", "Model said Negative", "Actually Positive", "Actually Negative"],
+    "png_path": "artifacts/diagram.png",
+    "png_dims": "775x956"
+  },
+  "cycles_used": 2
+}

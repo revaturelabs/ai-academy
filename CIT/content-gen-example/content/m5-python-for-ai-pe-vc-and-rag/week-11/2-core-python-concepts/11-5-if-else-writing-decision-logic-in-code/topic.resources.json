@@ -1,0 +1,43 @@
+{
+  "topic_id": "11.5",
+  "captured_at": "2026-06-12T01:00:00Z",
+  "captured_by": "bhuvaneshwarim@revature.com",
+  "resources_source": "human",
+  "resources": [
+    {
+      "type": "url",
+      "value": "https://docs.python.org/3/tutorial/controlflow.html",
+      "role": "primary",
+      "source": "human",
+      "notes": "Python official tutorial — if statements, elif, else, and control flow fundamentals"
+    },
+    {
+      "type": "url",
+      "value": "https://realpython.com/python-conditional-statements/",
+      "role": "primary",
+      "source": "human",
+      "notes": "Real Python — conditional statements: if, elif, else with worked examples and common patterns"
+    },
+    {
+      "type": "url",
+      "value": "https://docs.python.org/3/library/stdtypes.html#comparisons",
+      "role": "primary",
+      "source": "human",
+      "notes": "Python docs — comparison operators (==, !=, >, <, >=, <=) formal reference"
+    },
+    {
+      "type": "url",
+      "value": "https://www.w3schools.com/python/python_conditions.asp",
+      "role": "primary",
+      "source": "human",
+      "notes": "W3Schools — Python if/elif/else with simple worked examples for beginners"
+    },
+    {
+      "type": "url",
+      "value": "https://realpython.com/python-operators-expressions/",
+      "role": "primary",
+      "source": "human",
+      "notes": "Real Python — operators and expressions: comparison, logical, and their use in conditions"
+    }
+  ]
+}

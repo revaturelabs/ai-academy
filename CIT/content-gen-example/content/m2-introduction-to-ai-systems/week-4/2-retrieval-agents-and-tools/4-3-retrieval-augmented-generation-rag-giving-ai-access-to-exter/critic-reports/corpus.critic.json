@@ -1,0 +1,144 @@
+{
+  "critic": "corpus-critic",
+  "topic_id": "4.3",
+  "topic_title": "Retrieval-Augmented Generation (RAG) — giving AI access to external knowledge at query time",
+  "cycle": 2,
+  "at": "2026-06-16T00:00:00Z",
+  "passed": true,
+  "checks": {
+    "required_sections": {
+      "passed": true,
+      "findings": [],
+      "detail": {
+        "section_3_learning_objectives": {
+          "present": true,
+          "word_count_estimate": 125,
+          "threshold": 100,
+          "passed": true
+        },
+        "section_4_introduction": {
+          "present": true,
+          "word_count_estimate": 220,
+          "threshold": 50,
+          "passed": true
+        },
+        "section_5_core_concepts": {
+          "present": true,
+          "word_count_estimate": 1320,
+          "threshold": 100,
+          "passed": true
+        },
+        "section_10_key_takeaways": {
+          "present": true,
+          "word_count_estimate": 125,
+          "threshold": 50,
+          "passed": true
+        }
+      }
+    },
+    "citation_density": {
+      "passed": true,
+      "resources_source": "web_search",
+      "mode": "strict",
+      "primary_resource_cited": true,
+      "primary_resource": "[1] https://www.ibm.com/think/topics/retrieval-augmented-generation",
+      "supporting_resources_cited": {
+        "[2]": true,
+        "[3]": true
+      },
+      "factual_assertions_with_citation_pct_estimate": 95,
+      "threshold_pct": 60,
+      "fake_citations_detected": false,
+      "findings": [],
+      "detail": "All three resources cited liberally throughout sections 5, 6, 7. Primary resource [1] cited on first factual claim (introduction, line 35) and consistently throughout all core sections. [2] and [3] cited in sections 5, 6, 7, 8, 10. Estimated citation coverage ~95% of standalone factual assertions — well above the 60% threshold. No [N] markers found that fail to resolve to a declared resource."
+    },
+    "sequence_drift": {
+      "passed": true,
+      "hard_forward_references": [],
+      "soft_findings": [
+        {
+          "term": "parameters",
+          "first_use": "Section 5.1, line 59",
+          "context": "\"The model's parameters do not change at all. Only the input changes.\"",
+          "finding": "The term 'parameters' (model weights/internal numeric settings) is used without a plain-English gloss. It is not listed in concepts_introduced for 4.1 or 4.2 in the sequence index. However, it appears contextually in a contrast with fine-tuning (which was introduced in 4.2) and its meaning is implied by that contrast. Impact is low; no hard forward reference.",
+          "severity": "soft"
+        },
+        {
+          "term": "LLM (Large Language Model)",
+          "first_use": "Section 7, line 174",
+          "context": "\"connecting a general-purpose large language model (LLM) to a continuously updated article database\"",
+          "finding": "Acronym is spelled out on first use — 'large language model (LLM)'. The concept LLM is not listed in any prior topic's concepts_introduced in the sequence index (all weeks 1-3 have concepts_introduced: []); 4.1 and 4.2 use 'foundation model'. The term appears once in a real-world pattern example and is not load-bearing for understanding RAG. Low severity — acceptable as incidental reference given the spell-out. Recommend replacing with 'foundation model' for curriculum consistency.",
+          "severity": "soft"
+        }
+      ],
+      "detail": "No hard forward references to un-introduced concepts detected. All core vocabulary (knowledge cutoff, knowledge source, query, prompt augmentation, retrieve-augment-generate pipeline) is in 4.3's own concepts_introduced. Foundation model, adaptation, hallucination, fine-tuning, and related terms are covered in 4.1 and 4.2. The four Week-14 deferred terms (embeddings, vector databases, similarity search, chunking) are explicitly flagged as deferred in s5.2 and s5.5 — not treated as sequence violations."
+    },
+    "length_sanity": {
+      "passed": true,
+      "depth_profile": "standard",
+      "corpus_word_count_estimate": 2725,
+      "corpus_range_for_standard": [3000, 4400],
+      "pct_below_floor": 9,
+      "hard_fail_threshold_pct": 30,
+      "findings": [],
+      "detail": "Corpus word count is estimated at ~2725 words, approximately 9% below the standard-depth corpus floor of 3000 words. The hard-fail threshold is 30% outside the range (floor of 2100 words); this corpus is well above that limit. No hard fail. Soft advisory: the corpus sits just below the standard floor — sections 7 (Real-World Patterns) or 8 (Best Practices) could absorb ~275 additional words on the next pass if depth is needed, but the existing content is substantive, well-structured, and grounded. The depth_profile shown in topic.manifest.json is 'standard'; the content complexity and depth signals (three-step pipeline, RAG-vs-fine-tuning comparison, multiple real-world patterns) are consistent with standard or deep classification.",
+      "severity_of_undercount": "soft"
+    },
+    "topic_scope": {
+      "passed": true,
+      "hard_scope_creep": false,
+      "cycle_1_failure_resolved": true,
+      "cycle_1_failure_description": "Section 5.5 previously contained four Week-14 concepts (embeddings, vector database, similarity search, chunking) bolded and followed by full defining clauses — teaching deferred concepts. Hard fail in cycle 1.",
+      "cycle_2_resolution": "Section 5.5 (line 147-149) now contains a single sentence naming all four terms in italics (not bold) with an explicit Week-14 pointer and a 'you do not need to understand how any of these work at this stage' disclaimer. No defining clauses. No bold. This satisfies the bare-name + pointer form required by scope_discipline. Cycle-1 failure resolved.",
+      "scope_creep_findings": [
+        {
+          "concept": "deferred terms relational framing",
+          "section": "5.2",
+          "line": 71,
+          "text": "\"...using a concept called similarity search over embeddings stored in a vector database — is a Week 14 topic.\"",
+          "finding": "The three deferred terms (similarity search, embeddings, vector database) appear in italics with an explicit Week-14 pointer — format is correct. However, the clause 'similarity search over embeddings stored in a vector database' reveals the architectural relationship between all three terms (embeddings are stored in a vector database; similarity search operates over them). This is marginally more than a bare name: it encodes one piece of Week-14 architecture in passing. Strict reading of scope_discipline ('bare name plus the topic pointer — never followed by a defining clause or appositive') flags this.",
+          "severity": "soft",
+          "hard_fail": false,
+          "recommendation": "Simplify to: '(The technical mechanism — how the retrieval step finds relevant passages — involves concepts called embeddings, vector databases, and similarity search; these are covered in Week 14.)' This removes the relational framing while preserving the deferral intent."
+        }
+      ],
+      "detail": "Section 5.5 is clean. The only remaining scope finding is a soft one in Section 5.2 where deferred terms are framed relationally in a parenthetical. Does not constitute teaching and does not gate a hard fail. Topic headline scope (RAG conceptual introduction: problem, three-step pipeline, comparison with fine-tuning, real-world use cases) is respected throughout. No section teaches beyond the headline."
+    },
+    "beginner_readability": {
+      "passed": true,
+      "hard_fail_escalated": false,
+      "distinct_finding_types": 1,
+      "hard_fail_threshold": 3,
+      "findings": [
+        {
+          "code": "undefined_terms",
+          "terms": ["parameters"],
+          "first_use": "Section 5.1, line 59",
+          "detail": "The term 'parameters' is used without a plain-English gloss on first use: 'The model's parameters do not change at all.' A brief inline definition — e.g. 'the model's internal numeric settings (its parameters) do not change at all' — would satisfy the define-on-first-use mandate for a zero-background learner. The term recurs in the comparison table (section 5.4) and Key Takeaways without definition.",
+          "severity": "soft"
+        },
+        {
+          "code": "undefined_terms",
+          "terms": ["LLM"],
+          "first_use": "Section 7, line 174",
+          "detail": "Acronym is spelled out ('large language model (LLM)'). Low severity — single appearance, not relied upon. Recommend replacing with 'foundation model' for consistency with the rest of the curriculum and to avoid introducing an unexplained synonym.",
+          "severity": "soft"
+        }
+      ],
+      "jargon_dumps": [],
+      "academic_register_violations": 0,
+      "detail": "One distinct soft finding type (undefined_terms). Well below the 3-distinct-finding escalation threshold. No jargon dumps detected — the four Week-14 terms in s5.5 are presented as a single named list (not a dump) with explicit deferral. No hedging phrases. Sentence length and register are appropriate for a zero-background fresher audience. The open-book vs closed-book exam analogy (Introduction) and the colleague-reads-policy analogy (Section 5.3) are well-calibrated for the target audience. Formatting is consistent with guidelines: bold terms on definition, numbered list for ordered steps, comparison table in section 5.4, inline ASCII pipeline diagram in section 5.2."
+    }
+  },
+  "summary": {
+    "hard_fails": [],
+    "soft_findings": [
+      "length_sanity: corpus ~9% below standard-depth 3000-word floor (estimated 2725w); within 30% hard-fail band",
+      "sequence_drift: 'parameters' used without gloss (line 59); 'LLM' used once (line 174) — not in sequence concepts_introduced",
+      "topic_scope: s5.2 line 71 — deferred terms in relational clause rather than bare-name form; soft only",
+      "beginner_readability: 'parameters' undefined on first use; 'LLM' should be replaced with 'foundation model' for curriculum consistency"
+    ],
+    "action_required": "None required to proceed — all hard checks pass. Optional improvements on next authoring pass: (1) simplify s5.2 line 71 to remove relational framing from deferred-term clause; (2) add inline gloss for 'parameters' on first use; (3) replace 'LLM' with 'foundation model' in section 7."
+  },
+  "verdict": "PASS. All six hard checks clear. Cycle-1 scope_creep failure on Section 5.5 is resolved: the revised section names embeddings, vector databases, similarity search, and chunking as bare italicised terms with a single explicit Week-14 pointer — no bold, no defining clauses, no relational architecture framing. Four soft findings recorded (none gate the pass): corpus is ~9% below the 3000-word standard floor; 'parameters' undefined on first use; 'LLM' appears once without prior sequence introduction; s5.2 deferred-term clause has mild relational framing. Corpus is cleared to proceed to artifact fan-out (reading + quiz + diagram)."
+}

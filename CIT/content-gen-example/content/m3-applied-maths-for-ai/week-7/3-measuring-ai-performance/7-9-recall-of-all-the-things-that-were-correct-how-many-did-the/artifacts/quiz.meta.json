@@ -1,0 +1,48 @@
+{
+  "topic_id": "7.9",
+  "generated_at": "2026-06-23T00:00:00Z",
+  "format": "gift",
+  "question_count": 6,
+  "$bias_defense_applied": true,
+  "$shuffle_seed": "158",
+  "correct_position_distribution": [2, 0, 3, 1, 2, 0],
+  "bias_defense_notes": "Seed derived from sum of ord('7')+ord('.')+ord('9')=158. Positions: pos0=2 (33%), pos1=1 (17%), pos2=2 (33%), pos3=1 (17%). max_share=0.33 <= 0.40. All 4 positions used. Constraint check passed. Cycle-2 revision: distractor lengths for q2/q3/q4 extended to resolve length-bias fail; correct-answer positions unchanged.",
+  "questions": [
+    {
+      "id": "q1",
+      "type": "mcq",
+      "objective_ref": "Explain in plain English what recall measures for a classification model.",
+      "correct_position": 2
+    },
+    {
+      "id": "q2",
+      "type": "mcq",
+      "objective_ref": "Define true positive and false negative in the context of a model's predictions.",
+      "correct_position": 0
+    },
+    {
+      "id": "q3",
+      "type": "mcq",
+      "objective_ref": "Apply the recall formula (true positives divided by true positives plus false negatives) to a simple scenario.",
+      "correct_position": 3
+    },
+    {
+      "id": "q4",
+      "type": "mcq",
+      "objective_ref": "Explain why a model can have high accuracy and high precision while still having low recall.",
+      "correct_position": 1
+    },
+    {
+      "id": "q5",
+      "type": "mcq",
+      "objective_ref": "Identify at least one real-world situation where recall is the metric that matters most.",
+      "correct_position": 2
+    },
+    {
+      "id": "q6",
+      "type": "mcq",
+      "objective_ref": "Describe, without computing it, why precision and recall pull in opposite directions.",
+      "correct_position": 0
+    }
+  ]
+}

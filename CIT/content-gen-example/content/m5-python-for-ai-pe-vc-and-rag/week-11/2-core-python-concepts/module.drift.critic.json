@@ -1,0 +1,176 @@
+{
+  "critic": "drift-critic",
+  "module": "2-core-python-concepts",
+  "course": "M5",
+  "week_num": 11,
+  "generated_at": "2026-06-13T00:00:00Z",
+  "run_sequence": 2,
+  "run_note": "Re-run after targeted fixes: (1) 11.3 corpus 11.6→11.5 forward-ref correction, (2) 11.4 §5.2–5.5 demoted to one-line recap references, (3) module manifest narrative_seed trimmed to three delivered facets.",
+  "verdict": "PASS",
+  "summary": "All six checks now pass. The three findings from run 1 have been resolved: Check 1 (terminology) — both '11.6' forward-references to if/else in 11.3 corrected to '11.5'; Check 3 (learning arc) — narrative seed trimmed to Variables/data-types, If/else, and For-loops only, all three covered by the four topic corpora; Check 4 (no duplicated core concepts) — 11.4 §5.2–5.5 now uses one-line recap references, reducing the estimated 11.3–11.4 Jaccard similarity from 0.72 to approximately 0.43, below the 0.6 threshold. One soft audience-level note from run 1 (IEEE 754 register spike in 11.4) remains informational and is not a block.",
+
+  "checks": {
+
+    "terminology_consistency": {
+      "passed": true,
+      "findings": [
+        {
+          "topic_id": "11.3",
+          "location": "corpus section 5.4 (Using type()), line 148; corpus section 6 (Implementation) preview paragraph, line 279",
+          "finding": "Both occurrences of the if/else forward-reference now correctly read '11.5'. No remaining '11.6' mislabelling for conditionals anywhere in the module. Terminology is consistent across all four topic corpora.",
+          "severity": "info"
+        }
+      ]
+    },
+
+    "prerequisites_respected": {
+      "passed": true,
+      "findings": [
+        {
+          "topic_id": "11.4",
+          "location": "corpus section 2 (Prerequisites)",
+          "finding": "11.4 correctly names 11.3 as its prerequisite and explicitly flags that comparison operators were deferred to 11.5. No unexplained forward dependencies.",
+          "severity": "info"
+        },
+        {
+          "topic_id": "11.5",
+          "location": "corpus section 2 (Prerequisites)",
+          "finding": "11.5 correctly names 11.3 and 11.4 as prerequisites and explicitly resolves the deferred comparison operators. input() introduced cleanly here.",
+          "severity": "info"
+        },
+        {
+          "topic_id": "11.6",
+          "location": "corpus section 2 (Prerequisites)",
+          "finding": "11.6 correctly names 11.3, 11.4, and 11.5 as prerequisites. The list type is new but introduced self-contained in section 5.1 with a back-reference to string indexing from 11.4.",
+          "severity": "info"
+        }
+      ]
+    },
+
+    "learning_arc": {
+      "passed": true,
+      "findings": [
+        {
+          "topic_id": "module-level",
+          "location": "narrative_seed_by_week for week 11; module.manifest.json",
+          "finding": "Narrative seed now reads: 'Variables and data types — string, int, float, bool — with everyday analogies / If/else — making decisions in code, mirrors Week 1 flowcharts / For loops — doing something repeatedly'. All three stated facets are fully covered: variables and data types by 11.3 and 11.4; if/else by 11.5 (which explicitly connects to Week 1 flowchart decision diamonds); for loops by 11.6. The previously flagged spec-first and golden-rule facets have been removed from the seed. No arc gaps remain.",
+          "severity": "info"
+        }
+      ]
+    },
+
+    "no_duplicated_core_concepts": {
+      "passed": true,
+      "findings": [
+        {
+          "topic_pair": ["11.3", "11.4"],
+          "location": "11.3 corpus section 5.3 (The four basic data types); 11.4 corpus sections 5.2–5.5",
+          "finding": "11.4 sections 5.2–5.5 now open each subsection with a one-line recap reference ('defined in 11.3; here we focus on the operations') and proceed directly to operations content. The full type definitions, everyday analogies, and illustrative assignment examples from 11.3 section 5.3 do not recur in 11.4. The remaining overlap is limited to unavoidable type-name tokens (str, int, float, bool, True, False, type, value) shared by both sections' headings and one-line recaps. Estimated Jaccard similarity approximately 0.43, below the 0.6 threshold. The pedagogical layering ('introducing types' in 11.3, 'operating on types' in 11.4) is now structurally explicit to the learner.",
+          "similarity_estimate": 0.43,
+          "severity": "info"
+        }
+      ]
+    },
+
+    "lab_activity_alignment": {
+      "passed": true,
+      "findings": [
+        {
+          "topic_id": "module-level",
+          "location": "lab_activity_seed_by_week week 11; 11.3–11.6 corpus section 6 / hands-on exercises",
+          "finding": "The lab seed ('student name + 3 marks → prints average and grade / write the spec / ask Claude to implement / explain every line / test 3 edge cases') is directly scaffolded by the progressive grade-average script thread across all four topics: 11.3 introduces variables for name/marks, 11.4 adds arithmetic and print(), 11.5 completes the script with input() and if/elif/else, 11.6 generalises it with a list and for-loop accumulator. The 'ask Claude to implement, then explain every line' gate is contextually prepared by the AI-pipeline real-world sections in multiple topics.",
+          "severity": "info"
+        }
+      ]
+    },
+
+    "audience_level_consistency": {
+      "passed": true,
+      "findings": [
+        {
+          "topic_id": "11.4",
+          "location": "corpus section 5.4 (Floats), paragraph on binary representation",
+          "finding": "The explanation of why 0.1 + 0.2 != 0.3 (binary storage) is slightly above the absolute-beginner register of the surrounding content. The corpus frames it explicitly as 'not a Python bug' and keeps it practical (use round()), containing the depth spike. No cold-used terms that were not introduced in 11.3. Informational only — not a block.",
+          "severity": "minor"
+        }
+      ]
+    }
+
+  },
+
+  "topic_findings_summary": [
+    {
+      "topic_id": "11.3",
+      "title": "Variables — naming and storing values",
+      "findings": [
+        "RESOLVED: Both forward-references to if/else now correctly cite topic 11.5 (not 11.6). Lines 148 and 279 of topic_corpus.md confirmed correct."
+      ],
+      "block": false
+    },
+    {
+      "topic_id": "11.4",
+      "title": "Data types — string, integer, float, boolean",
+      "findings": [
+        "RESOLVED: Section 5.2–5.5 type-definition prose replaced with one-line recap references. Jaccard similarity with 11.3 section 5.3 reduced to approximately 0.43, below 0.6 threshold.",
+        "SOFT NOTE (unchanged): IEEE 754 / binary explanation is a register step above immediate neighbours. Contained by practical framing. Not a block."
+      ],
+      "block": false
+    },
+    {
+      "topic_id": "11.5",
+      "title": "If / else — writing decision logic in code",
+      "findings": [
+        "No drift findings. Prerequisites correctly resolved. Arc contribution complete for its scope."
+      ],
+      "block": false
+    },
+    {
+      "topic_id": "11.6",
+      "title": "For loops — repeating an action across a list",
+      "findings": [
+        "No drift findings. List type introduced cleanly with prior scaffold reuse. Accumulator pattern well-bounded."
+      ],
+      "block": false
+    },
+    {
+      "topic_id": "module-level",
+      "title": "Learning arc",
+      "findings": [
+        "RESOLVED: Narrative seed trimmed to three facets (variables/data-types, if/else, for-loops) all delivered by the four topic corpora. No arc gap remains."
+      ],
+      "block": false
+    }
+  ],
+
+  "pass_fail_by_check": {
+    "1_terminology_consistency": "PASS",
+    "2_prerequisites_respected": "PASS",
+    "3_learning_arc": "PASS",
+    "4_no_duplicated_core_concepts": "PASS",
+    "5_lab_activity_alignment": "PASS",
+    "6_audience_level_consistency": "PASS"
+  },
+
+  "recommended_actions": [],
+
+  "run1_findings_resolved": [
+    {
+      "original_priority": 1,
+      "topic_id": "11.3",
+      "original_action": "Change both occurrences of '11.6' (if/else forward-ref) to '11.5' in topic_corpus.md lines 148 and 279.",
+      "resolution": "Confirmed fixed. Grep on '11.6' in 11.3 corpus returns no matches. Lines 148 and 279 correctly read '11.5'."
+    },
+    {
+      "original_priority": 2,
+      "topic_id": "11.4",
+      "original_action": "Replace full str/int/float/bool type-definition paragraphs in section 5.2–5.5 with one-line recap references, then add operations content.",
+      "resolution": "Confirmed fixed. Each of sections 5.2–5.5 now opens with a one-line recap citing 11.3 and scopes the section to operations only. Estimated Jaccard similarity reduced from 0.72 to 0.43."
+    },
+    {
+      "original_priority": 3,
+      "topic_id": "module-level",
+      "original_action": "Remove 'spec-first discipline' and 'golden rule' phrases from narrative_seed_by_week week 11.",
+      "resolution": "Confirmed fixed. module.manifest.json narrative_seed_by_week['11'] no longer contains spec-first or golden-rule language. Seed scoped to three delivered facets only."
+    }
+  ]
+}

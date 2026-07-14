@@ -1,0 +1,44 @@
+{
+  "critic": "drift-critic",
+  "module_slug": "2-the-5-role-context-framework",
+  "module_title": "The 5-Role Context Framework",
+  "course_code": "M5",
+  "week_num": 13,
+  "generated_at": "2026-06-15T00:00:00Z",
+  "verdict": "PASS",
+  "topics_evaluated": ["13.7"],
+  "checks": {
+    "terminology_consistency": {
+      "passed": true,
+      "findings": [],
+      "notes": "Single-topic module; no inter-topic synonym drift possible. Within-topic consistency confirmed: the five role names (Authority, Exemplar, Constraint, Rubric, Metadata) and the terms 'context package' and 'priority stack' are used uniformly with consistent capitalisation and meaning across corpus, reading, and vocabulary list. No synonym drift detected."
+    },
+    "prerequisites_respected": {
+      "passed": true,
+      "findings": [],
+      "notes": "Topic 13.7 declares prerequisites ['13.1','13.2','13.3','13.5','13.6']. All are in module-position 1 (earlier in the week-13 delivery sequence) and carry lower numeric ids. The corpus explicitly cross-references each prerequisite in Section 2 (Prerequisites) and Section 9 (Connections to Prior Topics). Topic 13.4 is referenced only as optional background ('also relevant'), not as a hard prerequisite — appropriate given the curriculum dependency model. No forward-reference violations found."
+    },
+    "learning_arc": {
+      "passed": true,
+      "findings": [],
+      "notes": "Module outcome (from module.title + narrative_seed): name and assemble the 5-role context framework (Authority, Exemplar, Constraint, Rubric, Metadata); understand the priority stack; build a complete context package in Python. Topic 13.7's five LOs map as follows — LO1: naming and defining each role; LO2: mapping an existing prompt onto roles; LO3: assembling a 5-role prompt in Python; LO4: applying the priority rule for conflict resolution; LO5: evaluating a prompt for missing roles. The union of LOs covers every facet of the module outcome. No uncovered facets identified."
+    },
+    "no_duplicated_core_concepts": {
+      "passed": true,
+      "findings": [],
+      "notes": "Only one topic in this module. Jaccard similarity check is not applicable (no pair to compare). Core concepts introduced are novel to this module: '5-role context framework', 'context package', 'authority role', 'exemplar role', 'constraint role', 'rubric role', 'metadata role', 'priority stack'. These extend (rather than duplicate) concepts from module 1 topics. No duplication detected."
+    },
+    "lab_activity_alignment": {
+      "passed": true,
+      "findings": [],
+      "notes": "lab_activity_seed_by_week['13'] specifies three activities: (1) Apply the 5-role framework to a domain system prompt — directly supported by corpus Section 8 (8-step Python implementation) and the reading 'In Practice' section with a complete Anthropic SDK example. (2) Write 3 prompt versions with accuracy comparison — directly supported by corpus Section 10 (Assessment Alignment), which provides an explicit Version 1/2/3 incremental role-addition strategy. (3) Build a simple output validator — supported by corpus Section 5 ('Missing Rubric -> output validator has nothing to check against') and the explicit link to 13.6 output-validator-pattern in Section 9. All three lab activities have direct artifact-level support."
+    },
+    "audience_level_consistency": {
+      "passed": true,
+      "findings": [],
+      "notes": "Depth profile: atomic (budget-adjusted). Reading: 983 words / 5 min. All new terms are defined at first use. 'context package' and 'priority stack' are introduced with analogy, definition, and table before they appear in exercises. The f-string concept used in 'In Practice' step 3 is explicitly defined inline in the reading. No term appears cold. Register is consistently accessible to an absolute-beginner audience. No depth spike relative to neighbouring week-13 topics (all are atomic/standard-adjusted). Audience-level consistency: PASS."
+    }
+  },
+  "summary": "All 5 drift checks pass. The module contains a single topic (13.7) that is self-consistent in terminology, correctly chains from prerequisites 13.1–13.6, covers the module outcome fully across its five LOs, has no duplicated core concepts, and provides direct artifact support for all three lab activities in the seed. No findings require HITL #4 attention.",
+  "hitl4_flags": []
+}

@@ -1,0 +1,90 @@
+{
+  "critic": "reading-critic",
+  "topic_id": "13.1",
+  "run_at": "2026-06-13T00:00:00Z",
+  "verdict": "pass",
+  "passed": true,
+  "checks": {
+    "format_discipline": {
+      "passed": true,
+      "frontmatter_present": false,
+      "meta_sidecar_missing": false,
+      "section_template_violation": false,
+      "sections_found": [
+        "Overview",
+        "Key Concepts",
+        "Worked Example",
+        "In Practice",
+        "Key Takeaways",
+        "References"
+      ],
+      "notes": "First line is H1 title, no YAML block. Sidecar reading.meta.json present and valid. All six required sections present in correct order."
+    },
+    "length": {
+      "passed": true,
+      "word_count": 1392,
+      "word_range": [1200, 1600],
+      "reading_minutes": 7,
+      "minutes_range": [6, 8],
+      "notes": "Word count 1392 within 1200–1600. Read minutes 7 within 6–8."
+    },
+    "citations": {
+      "passed": true,
+      "primary_cited": true,
+      "primary_resource": "https://tetrate.io/learn/ai/system-prompts-vs-user-prompts",
+      "resources_cited": [1, 2, 3],
+      "orphan_markers": [],
+      "orphan_bibliography": [],
+      "notes": "Primary [1] cited at lines 5, 15, 29, 50, 55, 87, 104, 143, 154, 160, 163, 168, 171, 172. All three bibliography entries match inline markers. No orphans."
+    },
+    "no_forward_references": {
+      "passed": true,
+      "forward_refs_found": [],
+      "notes": "References to week 12 (12.10) are backward references to prerequisite topics. No 13.2+ concepts (role assignment as standalone technique, few-shot, chain-of-thought) are taught. 'Role' appears only as a field inside the system prompt, squarely within 13.1 scope."
+    },
+    "faithfulness": {
+      "passed": true,
+      "assertions_sampled": 10,
+      "unsupported_assertions": 0,
+      "unsupported_list": [],
+      "notes": "All 10 sampled assertions trace to corpus sections 4, 5.1–5.5, 6, 7.2, 7.3, 8. No new claims introduced beyond corpus."
+    },
+    "beginner_readability": {
+      "passed": true,
+      "undefined_terms": [],
+      "jargon_dump": null,
+      "abstract_first": false,
+      "academic_register": false,
+      "notes": "LLM defined at first use (line 5). 'Static context' defined inline (line 38). 'Guardrails' parenthetically defined (line 59). Bookshop analogy precedes abstractions throughout. Sentence lengths well under 25 words on average. No hedging phrases detected."
+    },
+    "formatting": {
+      "passed": true,
+      "wall_of_text": null,
+      "unlisted_sequence": false,
+      "no_inline_examples": false,
+      "bold_term_definitions_present": true,
+      "notes": "No paragraph exceeds ~6 sentences. Multi-item lists (role/tone/constraints/format, Do/Do Not table) rendered as bullets/tables. Inline examples present in Key Concepts beyond Worked Example. Bold-term + plain-meaning shape used throughout."
+    },
+    "assessment_reference": {
+      "passed": true,
+      "violations": [],
+      "notes": "No assessment IDs (A4), due weeks, or grade weights appear in the reading text."
+    },
+    "scope": {
+      "passed": true,
+      "scope_creep": [],
+      "notes": "Reading covers exactly the concepts_introduced for 13.1: system prompt, user prompt, static context, authority, precedence, static vs dynamic split, persistent context. All within topic headline scope."
+    },
+    "diagram_embedded": {
+      "passed": true,
+      "location": "Key Concepts section, after bookshop analogy",
+      "artifact": "./diagram.png",
+      "notes": "Diagram embedded inline at line 22 within Key Concepts as required. reading.meta.json diagram_embedded=true confirmed."
+    }
+  },
+  "findings": [],
+  "hard_fail_triggers": [],
+  "soft_findings_count": 0,
+  "escalated_to_hard_fail": false,
+  "summary": "All 10 checks pass. Reading is 1392 words (standard profile), six sections in correct order, no frontmatter, primary citation [1] present, diagram embedded in Key Concepts, no forward references, no scope creep, no assessment references, beginner-accessible with concrete-first explanations and defined terms."
+}

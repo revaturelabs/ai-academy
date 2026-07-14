@@ -1,0 +1,80 @@
+{
+  "module": "4-defining-safe-boundaries",
+  "week_num": 9,
+  "critic_run_at": "2026-06-13",
+  "passed": true,
+  "checks": {
+    "terminology_consistency": {
+      "passed": true,
+      "findings": [
+        {
+          "severity": "info",
+          "topic": "9.11",
+          "finding": "9.11 drops the '(Type I error)' / '(Type II error)' parentheticals when using false positive / false negative in running prose (signals table and Argument 1 body). 9.10 introduced both with the type-label parentheticals. The omission is not a synonym drift — the same primary terms are used — but the parenthetical labels are absent in 9.11 body text. No flag; acceptable abbreviation once terms are established."
+        }
+      ]
+    },
+    "prerequisites_respected": {
+      "passed": true,
+      "findings": [
+        {
+          "severity": "pass",
+          "topic": "9.10",
+          "finding": "Prerequisites listed as 9.7 and 9.5, both at earlier sequence positions. Corpus section 2 correctly names both and explains how each concept feeds into acceptable-error threshold logic."
+        },
+        {
+          "severity": "pass",
+          "topic": "9.11",
+          "finding": "Prerequisites listed as 9.7, 9.9, and 9.10, all at earlier sequence positions. Corpus section 2 explicitly cites all three by id and title, and explains the conceptual dependency for each. 9.10 concepts (acceptable error, failure threshold) are correctly treated as prior vocabulary, not re-introduced."
+        }
+      ]
+    },
+    "learning_arc": {
+      "passed": true,
+      "findings": [
+        {
+          "severity": "pass",
+          "finding": "Module outcome 'Defining Safe Boundaries' has two facets: (a) how to set a failure threshold for a given use case, and (b) which domains require human final authority because no threshold is low enough. 9.10 fully covers (a) via its four-step threshold-setting process LOs. 9.11 fully covers (b) via its LOs on high-stakes domain definition, four-argument justification for human final authority, EU AI Act classification, and accountability failure analysis. Together the arc is complete."
+        },
+        {
+          "severity": "info",
+          "finding": "Lab activity seed ('Apply the Judgment Framework per component / Define acceptable error thresholds') is explicitly referenced in 9.11 Discussion Prompt 1 ('This connects directly to the Lab Activity') and in 9.10 via the worked example and four-step process. Arc closes into the lab cleanly."
+        }
+      ]
+    },
+    "no_duplicated_concepts": {
+      "passed": true,
+      "findings": [
+        {
+          "severity": "pass",
+          "finding": "Jaccard similarity of section-5 Core Concept noun sets: 9.10 set = {acceptable error, failure threshold, false positive, false negative, asymmetric error cost, threshold-setting process, confidence threshold, human baseline, alert fatigue, threshold segmentation, accuracy, error rate, cost structure} (13 items). 9.11 set = {high-stakes domain, irreversibility, accountability chain, accountability gap, final word, decision support, human final authority, explainability, XAI, high-risk AI, EU AI Act, COMPAS, MCAS, rubber-stamp, meaningful oversight, nominal oversight, recidivism prediction} (17 items). Shared items treated as established vocabulary in 9.11 (false positive, false negative, asymmetric error cost, failure threshold) appear in 9.11 section 5.1 explicitly framed as prior concepts being *applied* as signals, not re-introduced as Core Concepts. Intersection = 4, union = 30, Jaccard = 0.13. Well below 0.6 threshold."
+        }
+      ]
+    },
+    "lab_activity_alignment": {
+      "passed": true,
+      "findings": [
+        {
+          "severity": "pass",
+          "finding": "Lab seed has two active tasks: (1) 'Define acceptable error thresholds — what failure rate is tolerable and why?' — covered by 9.10's four-step process, worked example (recruitment agency), and planned decision-flow diagram. (2) 'Apply the Judgment Framework to your domain system — answer all three questions per component' — covered by 9.11's five-step implementation procedure and worked example (radiologist rubber-stamp applying all four arguments). Both tasks are supported by at least one topic's hands-on artifact content."
+        }
+      ]
+    },
+    "audience_consistency": {
+      "passed": true,
+      "findings": [
+        {
+          "severity": "info",
+          "topic": "9.11",
+          "finding": "Depth profile steps up from 'standard' (9.10, 1200–1600 words) to 'deep' (9.11, 1800–2200 words). This is a manifest-confirmed HITL #2 decision, not uncontrolled drift. Register remains absolute-beginner throughout — both corpora explicitly state 'No programming background is required' and define all technical terms inline at first use."
+        },
+        {
+          "severity": "info",
+          "topic": "9.11",
+          "finding": "9.11 introduces 'XAI (explainable artificial intelligence)' — a term not in any prior topic's concepts_introduced list. However, the term is defined inline at its first use in corpus section 5.3 ('refers to the property of an AI system's outputs being traceable and understandable'). The skill's cross-topic cold-introduction flag condition ('a term used cold that isn't in any prior topic's concepts_introduced and isn't defined in that topic') is not triggered because the definition is present within the topic. Soft note only."
+        }
+      ]
+    }
+  },
+  "verdict": "PASS — all six checks pass; two soft info notes (depth step-up is HITL-confirmed, XAI introduced cold but defined inline) require no author action."
+}

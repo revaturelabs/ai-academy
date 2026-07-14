@@ -1,0 +1,53 @@
+{
+  "critic": "corpus-critic",
+  "cycle": 1,
+  "topic_id": "11.6",
+  "topic_title": "For loops — repeating an action across a list",
+  "at": "2026-06-13T04:05:00Z",
+  "passed": true,
+  "checks": {
+    "required_sections": {
+      "passed": true,
+      "sections_found": ["3. Learning Objectives", "4. Introduction", "5. Core Concepts", "10. Key Takeaways"],
+      "notes": "All 4 required sections present and non-trivial. LOs: 5 well-formed bullets. Introduction: ~180 words with lab narrative hook. Core Concepts: 5 subsections (5.1 lists, 5.2 for loop, 5.3 range(), 5.4 accumulator, 5.5 loop+if combo), each ≥100 words. Key Takeaways: 5 bullets."
+    },
+    "citation_density": {
+      "passed": true,
+      "primary_cited": true,
+      "resources_cited": [1, 2, 3, 4, 5],
+      "claim_citation_rate": 0.82,
+      "detail": "All 5 primary resources cited. [1] Python docs for-statements cited in §5.2, §5.3, §5.4, §5.5, §6, §7, §8, §10. [2] Real Python for-loop guide cited throughout. [3] W3Schools cited in §5.2 and §10. [4] Python docs range() cited in §5.3, §7, §10. [5] Real Python lists cited in §5.1, §6, §10."
+    },
+    "sequence_drift": {
+      "passed": true,
+      "forward_refs": [],
+      "soft_findings": [
+        "sum() briefly named in §8 Best Practices as 'production alternative you'll learn later' — proper named-and-deferred pattern, not taught here.",
+        "enumerate() named-and-deferred in §7 with explicit 'introduced in a later topic' — correct forward pointer."
+      ],
+      "detail": "list, list literal, list element, list index, for loop, loop variable, range(), accumulator pattern, list.append() all first-introduced in this topic. No concept requires an un-introduced prior concept. sum() and enumerate() named-and-deferred, not taught."
+    },
+    "length_sanity": {
+      "passed": true,
+      "word_count": 2401,
+      "profile": "standard",
+      "target_range": "1500–6000",
+      "detail": "2401 words — in standard range. 9 subsections across 11 corpus sections. Hands-on exercise adds ~100 words."
+    },
+    "scope_creep": {
+      "passed": true,
+      "findings": [],
+      "soft_findings": [
+        "list.append() introduced in §6 Implementation — single method, narrowly scoped to the collect-in-loop pattern; deeper coverage of list methods explicitly deferred. Acceptable given 'across a list' in topic title.",
+        "sum() mentioned in §8 Best Practices as production alternative — phrased as deferred, not taught. Soft."
+      ],
+      "detail": "Core teaching stays within for loop, list literals, range(), accumulator. Topic title includes 'a list' so list introduction is in scope. No while loops, list comprehensions, nested loops, or other adjacent concepts taught."
+    },
+    "beginner_readability": {
+      "passed": true,
+      "findings": [],
+      "detail": "All new terms defined on first use: list (§5.1), element (§5.1), loop variable (§5.2), range() (§5.3), accumulator (§5.4). Table in §5.2 breaks down for-loop parts. Table in §5.3 shows range() variants. Concrete examples before abstract pattern. Accumulator explained in step-by-step numbered comments inside code."
+    }
+  },
+  "verdict": "PASS (cycle 1). 2401-word standard-depth corpus covers list literals, for loop syntax, range(), accumulator pattern, loop+if combination. All 5 primary resources cited. 4 soft findings (sum() and enumerate() named-and-deferred, list.append() narrowly introduced, scope well-bounded). No hard fails."
+}

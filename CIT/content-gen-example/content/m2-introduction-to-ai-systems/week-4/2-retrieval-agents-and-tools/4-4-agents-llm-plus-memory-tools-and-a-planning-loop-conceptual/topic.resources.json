@@ -1,0 +1,30 @@
+{
+  "topic_id": "4.4",
+  "captured_at": "2026-06-16T00:00:00Z",
+  "captured_by": "namratas@revature.com",
+  "resources_source": "web_search",
+  "web_search_query": "LLM agents memory tools planning loop conceptual introduction",
+  "resources": [
+    {
+      "type": "url",
+      "value": "https://langcopilot.com/posts/2025-09-17-llm-agents-explained-visual-guide-ai",
+      "role": "primary",
+      "source": "web_search",
+      "notes": "Comprehensive visual guide: architecture, tools, memory, multi-agent systems (2026)"
+    },
+    {
+      "type": "url",
+      "value": "https://dev.to/ozfarooq/the-anatomy-of-an-ai-agent-memory-tools-planning-and-execution-explained-3il3",
+      "role": "supporting",
+      "source": "web_search",
+      "notes": "Conceptual breakdown of memory, tools, planning, execution pillars"
+    },
+    {
+      "type": "url",
+      "value": "https://arxiv.org/abs/2506.04565",
+      "role": "supporting",
+      "source": "web_search",
+      "notes": "Academic survey: standalone LLMs to compound AI systems, 2026 preprint"
+    }
+  ]
+}

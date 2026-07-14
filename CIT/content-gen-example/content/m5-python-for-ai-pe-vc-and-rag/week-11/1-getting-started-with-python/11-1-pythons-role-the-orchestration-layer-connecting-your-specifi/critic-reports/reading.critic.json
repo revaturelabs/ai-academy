@@ -1,0 +1,49 @@
+{
+  "passed": true,
+  "checks": {
+    "format_discipline": {
+      "passed": true,
+      "notes": "First non-empty line is a valid H1 with no frontmatter. reading.meta.json exists and parses (word_count: 1298, reading_minutes: 7, resources_cited: [1,2,3,4,5], diagram_embedded: true, sections: 6). Exactly 6 sections present in required order: Overview / Key Concepts / Worked Example / In Practice / Key Takeaways / References."
+    },
+    "length_budget": {
+      "passed": true,
+      "word_count": 1298,
+      "minutes": 7,
+      "notes": "1298 words is within [1200, 1600]. ceil(1298/200) = 7 minutes is within [6, 8]."
+    },
+    "citation_discipline": {
+      "passed": true,
+      "uncited": [],
+      "notes": "All 5 primary resources cited: [1] python.org tutorial, [2] Google Colab, [3] Real Python variables, [4] Automate the Boring Stuff, [5] CS50 Python. Each appears multiple times throughout the reading."
+    },
+    "forward_references": {
+      "passed": true,
+      "findings": [],
+      "notes": "Variables (11.3), data types (11.4), loops (11.6), conditionals (11.5), spec-first (11.7), golden rule (11.8) are all named-and-deferred only — each is mentioned with an explicit topic pointer and no teaching content. API technical details deferred to week 12. No teaching of any week-11.2+ topic detected."
+    },
+    "scope_creep": {
+      "passed": true,
+      "findings": [],
+      "notes": "Spec-first and golden rule are each named once as future topics with explicit pointers ('topic 11.7', 'topic 11.8') — not taught. Syntax errors and REPL are within scope as properties of Python's interpreted nature relevant to understanding the orchestration role. No content beyond the topic headline is taught."
+    },
+    "beginner_readability": {
+      "passed": true,
+      "findings": [
+        "Minor: The 'Python as a language' bullet list introduces 5 terms (interpreted, general-purpose, standard library, packages, Google Colab) across 4 bullets. Each term is immediately defined in its bullet, so readability is maintained, but it is the densest section."
+      ],
+      "notes": "All key terms defined on first use: orchestration layer, API, Python, interpreted, general-purpose, standard library, packages, syntax, REPL, PyPI. All acronyms spelled out on first use (API, REPL, PyPI). Concrete translator analogy precedes the formal term 'orchestration layer'. No paragraph dumps 3+ undefined terms without definition."
+    },
+    "formatting": {
+      "passed": true,
+      "findings": [],
+      "notes": "No text walls found — longest prose paragraph is 4 sentences (Overview). All procedural content (four-layer steps, worked example steps) presented as numbered lists. All 'In Practice' patterns use bullet lists. Bold used consistently for term definitions on first use. diagram.png embedded with alt text and caption. Table for syntax/runtime errors is well-structured."
+    },
+    "corpus_faithfulness": {
+      "passed": true,
+      "findings": [],
+      "notes": "All claims traceable to corpus: four-layer model (corpus section 5.1), translator analogy (corpus Introduction), research assistant 5-step example (corpus section 5.1), customer-facing chatbot (corpus Real-World Patterns), document summarisation pipeline (corpus Real-World Patterns), PyPI '500,000 packages' figure (corpus section 5.5), AI organisations list (corpus section 5.5), REPL description (corpus section 5.3), syntax/runtime error distinction (corpus section 5.3). No new claims introduced."
+    }
+  },
+  "verdict": "PASS — all 8 checks passed. Reading is within length budget (1298 words, 7 min), cites all 5 resources, defers all forward topics with explicit pointers, stays on-scope, defines terms on first use, uses correct formatting, and is faithful to the corpus. One minor readability note (dense bullet list of 5 Python properties) does not rise to a failure.",
+  "at": "2026-06-12T00:09:00Z"
+}

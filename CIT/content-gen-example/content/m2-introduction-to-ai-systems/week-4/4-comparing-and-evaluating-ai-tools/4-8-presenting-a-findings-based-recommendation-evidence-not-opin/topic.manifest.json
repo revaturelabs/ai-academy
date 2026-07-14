@@ -1,0 +1,51 @@
+{
+  "type": "topic",
+  "id": "4.8",
+  "title": "Presenting a findings-based recommendation — evidence, not opinion",
+  "slug": "4-8-presenting-a-findings-based-recommendation-evidence-not-opin",
+  "position_in_module": 2,
+  "week_num": 4,
+  "session_name": "The 2026 AI Stack",
+  "module": {
+    "position": 4,
+    "slug": "4-comparing-and-evaluating-ai-tools",
+    "title": "Comparing and Evaluating AI Tools"
+  },
+  "course": {
+    "code": "M2",
+    "slug": "m2-introduction-to-ai-systems",
+    "title": "Introduction to AI Systems"
+  },
+  "next_assessment": {
+    "id": "A2",
+    "due_week": 6,
+    "title": "AI Systems Essay",
+    "weight": "15%"
+  },
+  "paths": {
+    "corpus": "topic_corpus.md",
+    "resources": "topic.resources.json",
+    "progress": "topic.progress.json",
+    "artifacts_dir": "artifacts/",
+    "critic_reports_dir": "critic-reports/"
+  },
+  "artifact_plan": {
+    "diagram": true,
+    "diagram_intent": "Flow from rubric scores through findings summary table → evidence anchor selection → three-part recommendation structure, showing how evidence (not opinion) drives each step",
+    "depth_profile": "deep",
+    "depth_signals": [
+      "Core Concepts has 6 sub-sections covering distinct aspects of the recommendation process",
+      "Implementation section warranted — 9 ordered steps",
+      "Real-World Patterns section warranted with professional and academic examples",
+      "no multi-technology pipeline or cross-refs — not deep",
+      "topic is a capstone method, not a multi-system architecture"
+    ],
+    "confirmed_profile": "deep",
+    "confirmed_by_hitl2": true,
+    "reading": { "target_word_range": [1800, 2200], "target_minutes_range": [9, 11] },
+    "quiz": { "min_questions": 5, "max_questions": 7, "include_short_answer": true }
+  },
+  "expected_delivery_minutes": 10,
+  "reading_word_count": 1982,
+  "status": "corpus_approved"
+}

@@ -1,0 +1,132 @@
+{
+  "critic": "drift-critic",
+  "module": "1-prompt-engineering-fundamentals",
+  "course_code": "M5",
+  "week_num": 13,
+  "run_at": "2026-06-15T00:00:00Z",
+  "run_reason": "re-run after narrative_seed_by_week[\"13\"] edited to remove 5-role framework reference",
+  "verdict": "pass",
+  "verdict_summary": "No hard findings remain. The only prior hard finding (LA-1 — 5-role framework named in narrative seed but not taught by any topic) is resolved: the updated narrative_seed_by_week[\"13\"] no longer references the 5-role framework. Two moderate findings remain (PR-1, PR-2: missing prerequisite declarations in manifests for 13.5 and 13.6) — these are manifest hygiene gaps, not content gaps, and do not block pass. Two soft findings (LA-2, AUD-1) and one minor finding (TC-2) surface for optional clean-up.",
+  "hard_findings_count": 0,
+  "moderate_findings_count": 2,
+  "minor_findings_count": 1,
+  "soft_findings_count": 2,
+  "module_drift_passed": true,
+  "checks": {
+    "terminology_consistency": {
+      "result": "pass",
+      "findings": [
+        {
+          "id": "TC-1",
+          "severity": "informational",
+          "topics_involved": ["13.2", "13.5"],
+          "term": "register",
+          "description": "\"register\" is introduced and defined in 13.2 (§5.1: 'the level of formality and technical detail in language, for example academic versus conversational'; §5.4: 'social register — the degree of formality and assumed familiarity'; §10 key takeaways: full definition). 13.5 uses the word in a passing phrase ('tone constraints control the register and emotional character') without repeating the gloss. This is correct usage for a term introduced in a preceding topic — not a drift. Downgraded from minor to informational on this re-run; the addition of 'emotional character' in 13.5 is a natural extension, not a redefinition.",
+          "action": "none required"
+        },
+        {
+          "id": "TC-2",
+          "severity": "minor",
+          "topics_involved": ["13.3", "13.6"],
+          "term": "token",
+          "description": "\"token\" is glossed in 13.3 §5.5 as 'roughly a word or part of a word'. In 13.6 §5.1 it is re-glossed as 'small chunks of text, roughly one word each'. Both definitions are functionally equivalent and pose no comprehension risk. The inconsistency is a minor style issue.",
+          "action": "optional — on next edit pass, align both glosses to a single canonical phrase, e.g. 'roughly one word or part of a word'"
+        }
+      ]
+    },
+    "prerequisites_respected": {
+      "result": "pass_with_findings",
+      "notes": "All prerequisites listed in each topic's manifest are genuinely earlier in the sequence. The findings below are about dependencies that exist in the body text but are absent from the formal prerequisites field.",
+      "findings": [
+        {
+          "id": "PR-1",
+          "severity": "moderate",
+          "topic": "13.5",
+          "description": "13.5 prerequisites field lists 13.1, 13.2, 13.3 but not 13.4. The body substantively assumes 13.4 in two places: §4 Introduction ('ask for step-by-step reasoning (13.4)') and §6 Implementation Step 1 ('reasoning style (13.4)'). A learner arriving at 13.5 without having completed 13.4 would encounter an unexplained cross-reference.",
+          "action": "add 13.4 to the prerequisites field in 13.5 topic.manifest.json on the next manifest update pass"
+        },
+        {
+          "id": "PR-2",
+          "severity": "moderate",
+          "topic": "13.6",
+          "description": "13.6 prerequisites field lists 13.1, 13.2, 13.5 but not 13.3. The body references 13.3 explicitly in §5.3 Strategy 2 ('the format-focused application of the few-shot technique from topic 13.3') and in §9 Hands-On Exercise ('prompts you have already written … from the lab exercises in topics 13.1 through 13.5').",
+          "action": "add 13.3 to the prerequisites field in 13.6 topic.manifest.json on the next manifest update pass"
+        }
+      ]
+    },
+    "learning_arc": {
+      "result": "pass",
+      "notes": "Updated narrative_seed_by_week[\"13\"] maps cleanly to the six topics in delivery order: system/user prompt split (13.1), role assignment (13.2), few-shot examples (13.3), chain-of-thought prompting (13.4), constraints (13.5), output format control (13.6). The 5-role framework reference has been removed from the narrative seed. No uncovered module outcomes detected.",
+      "findings": []
+    },
+    "no_duplicated_core_concepts": {
+      "result": "pass",
+      "notes": "No topic pair exceeds the 0.6 Jaccard threshold on core-concept noun sets. Notable near-overlaps are intentional progressive layering: 13.1 introduces output format as one element of the system prompt; 13.5 classifies it as one of four constraint types; 13.6 treats it as a full technique. 13.3 and 13.4 share few-shot vocabulary because 13.4 explicitly extends 13.3 with reasoning triples. 13.1 Pattern 3 anticipates JSON format in one paragraph; 13.6 is the full treatment — estimated Jaccard ~0.20.",
+      "findings": []
+    },
+    "lab_activity_alignment": {
+      "result": "pass_with_findings",
+      "notes": "Most lab sub-tasks are well-supported. One residual soft finding from the narrative edit.",
+      "findings": [
+        {
+          "id": "LA-2",
+          "severity": "soft",
+          "description": "lab_activity_seed_by_week[\"13\"] still contains the line 'Apply the 5-role framework to your domain system's system prompt'. The narrative_seed fix removed the 5-role framework from the narrative, but the lab_activity_seed was not updated. No topic in this module introduces or defines a 5-role framework by that name. Topic 13.2 covers role assignment as a standalone technique, which is the closest match. The remaining lab sub-tasks (three-version prompt comparison, accuracy measurement, output validator) are all well-supported by 13.2–13.6 hands-on exercises.",
+          "action": "edit lab_activity_seed_by_week[\"13\"] in module.manifest.json — replace the 5-role framework line with language referencing the role-assignment technique from 13.2, e.g. 'Refine your domain system prompt using the role-assignment technique from 13.2: add domain, expertise level, and audience to your role statement'",
+          "prior_hard_finding": "LA-1 (hard) from the previous run is resolved. LA-2 is the residual in lab_activity_seed only and is rated soft because lab_activity_seed is facilitation guidance, not a hard content requirement for artifact generation."
+        }
+      ],
+      "supported_sub_tasks": [
+        {
+          "lab_sub_task": "Write 3 prompt versions, measure accuracy on 10 domain-relevant test inputs each",
+          "supported_by": ["13.2 §9 (three A/B/C prompt versions)", "13.3 §9 (five-input classifier test)", "13.5 §9 (ten-input three-version comparison)"]
+        },
+        {
+          "lab_sub_task": "Build a simple output validator — if format check fails, retry once; document what the validator caught",
+          "supported_by": ["13.6 §5.7 (output validator pattern)", "13.6 §6 steps 4-5 (Python implementation)", "13.6 §9 (hands-on exercise)"]
+        }
+      ]
+    },
+    "audience_level_consistency": {
+      "result": "pass_with_findings",
+      "findings": [
+        {
+          "id": "AUD-1",
+          "severity": "soft",
+          "topic": "13.4",
+          "description": "13.4 §5.2 uses the phrase 'auto-regressive text generation' once without defining it: 'This is a characteristic of how auto-regressive text generation works.' The surrounding sentence explains the mechanism in plain terms ('more visible intermediate context leads to better subsequent tokens') so the conceptual point is accessible. The technical label is used cold — not introduced in 13.4 or any prior topic in this module.",
+          "action": "optional — add a brief parenthetical on first use, e.g. 'auto-regressive text generation (the process where the model produces output one token at a time, each step informed by everything it has already written)'"
+        }
+      ]
+    }
+  },
+  "resolved_from_prior_run": [
+    {
+      "id": "LA-1",
+      "prior_severity": "hard",
+      "prior_verdict": "FAIL",
+      "resolution": "narrative_seed_by_week[\"13\"] was edited by the author to remove the 5-role framework reference. The updated narrative reads: 'Prompt Engineering / System prompt vs user prompt — context-setting vs asking the question / Core techniques — role assignment, few-shot examples, chain-of-thought prompting / Constraints — telling AI what NOT to do matters as much as what to do / Output format control — JSON, numbered lists, fixed structure through prompt'. All six topics in this module now have a corresponding named outcome in the narrative. Hard finding resolved."
+    },
+    {
+      "id": "LAB-1",
+      "prior_severity": "hard",
+      "prior_verdict": "FAIL",
+      "resolution": "LAB-1 was the lab-activity manifestation of LA-1 (the 5-role framework lab sub-task was unsupported). With LA-1 resolved at the narrative level, the unsupported lab sub-task is now demoted to LA-2 (soft) because the residual is only in the lab_activity_seed facilitation text, not in a student-facing artifact requirement."
+    }
+  ],
+  "open_findings_summary": [
+    { "id": "PR-1",  "severity": "moderate",      "topic": "13.5",   "short": "13.4 missing from 13.5 prerequisites field in manifest" },
+    { "id": "PR-2",  "severity": "moderate",      "topic": "13.6",   "short": "13.3 missing from 13.6 prerequisites field in manifest" },
+    { "id": "TC-2",  "severity": "minor",         "topic": "13.6",   "short": "token gloss phrasing differs from 13.3 — functionally equivalent, style inconsistency only" },
+    { "id": "LA-2",  "severity": "soft",          "topic": "module", "short": "5-role framework persists in lab_activity_seed — not in narrative_seed or any artifact" },
+    { "id": "AUD-1", "severity": "soft",          "topic": "13.4",   "short": "auto-regressive text generation used cold in 13.4 §5.2" }
+  ],
+  "topics_evaluated": ["13.1", "13.2", "13.3", "13.4", "13.5", "13.6"],
+  "topics_with_open_findings": {
+    "13.4": ["AUD-1 (soft)"],
+    "13.5": ["PR-1 (moderate)"],
+    "13.6": ["PR-2 (moderate)", "TC-2 (minor)"],
+    "module": ["LA-2 (soft)"]
+  },
+  "topics_clean": ["13.1", "13.2", "13.3"]
+}

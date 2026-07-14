@@ -1,0 +1,90 @@
+{
+  "report_type": "module-drift-critic",
+  "generated_at": "2026-06-13T00:00:00Z",
+  "module": {
+    "slug": "1-getting-started-with-python",
+    "title": "Getting Started with Python",
+    "course_code": "M5",
+    "week_num": 11,
+    "session": "Python Foundations I",
+    "topics_evaluated": ["11.1", "11.2"]
+  },
+  "verdict": "PASSED",
+  "module_drift_passed": true,
+  "summary": "Two-topic module is coherent. Narrative arc (concept-first → environment-setup) is well-ordered. Forward/back references are clean. No material duplication. Lab seed alignment is explicit. Two soft findings logged but neither blocks approval.",
+  "checks": {
+    "terminology_consistency": {
+      "result": "PASS",
+      "findings": [
+        {
+          "severity": "soft",
+          "topic": "11.2",
+          "description": "The term 'runtime' is used in 11.1 in the phrase 'runtime error' (a Python execution concept) and reused in 11.2 as the Colab remote-server concept. These are different referents for the same word in adjacent topics. 11.2 defines its sense explicitly, which mitigates the risk, but an absolute-beginner reading both back-to-back could briefly conflate the two uses.",
+          "recommendation": "Optional: add a one-line clarification in 11.2's runtime section noting 'not to be confused with runtime error introduced in 11.1'."
+        },
+        {
+          "severity": "soft",
+          "topic": "11.2",
+          "description": "The term 'REPL' is introduced and explained in 11.1 as operative in Colab code cells, but 11.2 never reuses the term when describing those same cells. A student who memorised the word 'REPL' from 11.1 finds no reinforcement in 11.2.",
+          "recommendation": "Optional: one parenthetical in 11.2 section on running a code cell — e.g. '(this is the REPL in action, as described in topic 11.1)' — would close the loop."
+        }
+      ]
+    },
+    "prerequisites_respected": {
+      "result": "PASS",
+      "findings": []
+    },
+    "learning_arc": {
+      "result": "PASS",
+      "findings": [],
+      "coverage_notes": "11.1 covers conceptual framing of Python's role; 11.2 covers practical environment setup. Together they fully address the module title 'Getting Started with Python' and the first two items in the narrative seed. Remaining narrative-seed items (variables, if/else, loops, spec-first, golden rule) belong to downstream topics in this same week and are correctly deferred."
+    },
+    "no_duplicated_core_concepts": {
+      "result": "PASS",
+      "findings": [],
+      "jaccard_pairs": [
+        {
+          "topic_a": "11.1",
+          "topic_b": "11.2",
+          "noun_overlap": ["runtime (different referents — see terminology check)"],
+          "jaccard_similarity": 0.04,
+          "threshold": 0.6,
+          "flag": false
+        }
+      ]
+    },
+    "lab_activity_alignment": {
+      "result": "PASS",
+      "findings": [],
+      "notes": "11.1 Hands-On Exercise A explicitly names the week's lab task (student name + three marks → average + letter grade) and maps it to the orchestration pipeline concept. 11.2 Hands-On Exercise covers the Colab orientation loop (create, write, run, save, retrieve, re-run) — a prerequisite environment skill, not a conflict. The spec-first step and golden-rule step in the lab seed are supported by 11.1's explicit deferrals to 11.7 and 11.8 respectively."
+    },
+    "audience_level_consistency": {
+      "result": "PASS",
+      "findings": [
+        {
+          "severity": "soft",
+          "topic": "11.1",
+          "description": "11.1 introduces 'PyPI' and gives the figure '500,000 packages as of 2024'. This is factual scaffolding, appropriate at standard depth, but PyPI is not referenced again in 11.2 and does not appear in 11.2's concepts_introduced. No cold-usage downstream (within this module), so no arc problem.",
+          "recommendation": "None required within this module; downstream topics should not assume PyPI knowledge without re-introduction."
+        }
+      ],
+      "register_check": "Both topics use beginner-level metaphors (translator/orchestra in 11.1; car dashboard/driver's seat in 11.2). Depth profiles match: both 'standard', both 1200–1600 word reading range, both 7-min expected delivery. No spike detected."
+    }
+  },
+  "topics_with_findings": [
+    {
+      "topic_id": "11.1",
+      "findings": [
+        "Audience-level soft: PyPI introduced and not re-referenced in 11.2; note for downstream topics."
+      ]
+    },
+    {
+      "topic_id": "11.2",
+      "findings": [
+        "Terminology soft: 'runtime' used for two different concepts across 11.1 and 11.2 — mitigated by explicit definition in 11.2.",
+        "Terminology soft: 'REPL' introduced in 11.1 but not reinforced in 11.2's code-cell descriptions."
+      ]
+    }
+  ],
+  "gate_recommendation": "module_drift_passed = true — no hard findings. Three soft findings logged above for optional follow-up at HITL #4. Topic progress records for 11.1 and 11.2 may be updated to set module_drift_passed = true."
+}

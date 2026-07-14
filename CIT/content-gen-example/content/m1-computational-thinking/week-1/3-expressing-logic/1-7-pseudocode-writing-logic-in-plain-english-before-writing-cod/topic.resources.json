@@ -1,0 +1,30 @@
+{
+  "topic_id": "1.7",
+  "captured_at": "2026-06-21T00:00:00Z",
+  "captured_by": "namratas@revature.com",
+  "resources_source": "web_search",
+  "web_search_query": "pseudocode writing logic plain English before code programming fundamentals",
+  "resources": [
+    {
+      "type": "url",
+      "value": "https://www.codecademy.com/article/pseudocode-and-flowchart-complete-beginners-guide",
+      "role": "primary",
+      "source": "web_search",
+      "notes": "Canonical education platform. Covers pseudocode + flowchart together — matches topic scope exactly."
+    },
+    {
+      "type": "url",
+      "value": "https://www.geeksforgeeks.org/dsa/what-is-pseudocode-a-complete-tutorial/",
+      "role": "supporting",
+      "source": "web_search",
+      "notes": "Deep CS education coverage. Conventions, constructs, step-by-step examples."
+    },
+    {
+      "type": "url",
+      "value": "https://builtin.com/data-science/pseudocode",
+      "role": "supporting",
+      "source": "web_search",
+      "notes": "Practical primer with real-world use cases and examples."
+    }
+  ]
+}

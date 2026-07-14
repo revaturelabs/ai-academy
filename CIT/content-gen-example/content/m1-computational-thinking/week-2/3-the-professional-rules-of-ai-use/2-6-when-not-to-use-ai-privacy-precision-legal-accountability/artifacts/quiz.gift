@@ -1,0 +1,53 @@
+$CATEGORY: CIT/M1/week-2/2.6-when-not-to-use-ai-privacy-precision-legal-accountability
+
+::2.6-Q1:: According to this topic, which three situations make using AI inappropriate or risky for a professional task?
+{
+=Privacy, precision, and legal accountability — these are the three situations identified in this topic#Correct — the topic introduces exactly these three as the reasons to say "no" to AI use professionally.
+~Speed, efficiency, and cost — using AI when time is short, effort is saved, or money is at stake#No — speed, efficiency, and cost are reasons people choose AI, not situations where AI is inappropriate.
+~Data quality, user error, and network reliability — technical factors that affect how well the AI performs#No — these are technical factors affecting any software tool, not the three professional risk situations described here.
+~Automation, scalability, and model accuracy — properties of the AI system itself that determine its output quality#No — these describe AI system characteristics, not the three professional situations that make AI use risky.
+#### Tests whether learners can identify the three situations where AI use is inappropriate (corpus §4, §5).
+}
+
+::2.6-Q2:: A paralegal pastes a client's full contract — including names, financial terms, and confidentiality clauses — into a free AI chat tool to get a summary. What is the core privacy risk?
+{
+~The AI tool may misread legal language and produce a summary with factual errors about the contract#This is a precision concern about output accuracy, not a privacy risk — the problem is where the data went, not what the AI said.
+~The AI tool charges a fee to process legal documents, creating an unexpected cost for the firm#Consumer AI tools do not charge per-document fees; cost is irrelevant to the privacy risk here.
+=Once the data is sent to the tool's server, the paralegal no longer controls its storage or future use#Correct — the moment sensitive data leaves the user's device, the third-party provider controls what happens to it.
+~The AI tool will display the contract summary publicly unless the paralegal sets a privacy option#Consumer AI tools do not publicly display individual user queries; the risk is what the provider does with the data internally.
+#### Tests understanding of sensitive data and why sharing it with a consumer AI tool is a privacy risk (corpus §5.1).
+}
+
+::2.6-Q3:: A nurse asks an AI tool to confirm a drug dosage. The AI gives a confident, specific figure. Why is this a problem even when the AI is correct most of the time?
+{
+~The AI is not connected to the hospital's drug database, so it cannot retrieve up-to-date dosage tables#Database connectivity is a separate technical limitation; the deeper problem is that AI can be wrong and shows no uncertainty.
+=AI produces probabilistic output — it can state an incorrect figure with the same confidence as a correct one#Correct — "usually right" is not "always right," and the AI gives no warning when it is wrong, making unverified output dangerous.
+~The nurse must obtain written approval before using any software tool in a clinical setting#Written approval is a workplace policy matter; the fundamental issue is the reliability of the AI's output itself.
+~The AI tool does not store the dosage result, so the nurse cannot retrieve it later for audit purposes#Audit trail is an administrative concern; the precision problem is that a wrong dose can go undetected before it is acted on.
+#### Tests understanding of probabilistic output and why it is unacceptable in high-stakes precision tasks (corpus §5.2).
+}
+
+::2.6-Q4:: A junior lawyer includes an AI-generated court case in a legal brief without verifying it. The case turns out not to exist. Who is responsible for the professional consequences?
+{
+~The AI tool's developers, because they built and released software that generates false information#Developers are not held professionally responsible for how practitioners use or fail to verify AI output in their work.
+~No one faces consequences, because using AI for legal research is now a standard and accepted practice#Standard practice does not remove professional accountability; a lawyer is responsible for every claim in a document they file.
+~The client, because they retained the lawyer to conduct thorough and accurate legal research on their behalf#Clients do not bear professional accountability for their legal representative's research or verification decisions.
+=The lawyer, because professional accountability for a filed document stays with the licensed human, not the software#Correct — the lawyer cannot transfer legal responsibility to an AI tool; the AI has no licence, cannot be sanctioned, and cannot appear in court.
+#### Tests understanding of legal accountability and why an AI system cannot hold it (corpus §5.3).
+}
+
+::2.6-Q5:: A financial analyst drafts an investment recommendation for a retail client using data from the client's private account and an AI writing tool. Which checks from the three-dimension framework apply?
+{
+~Only the precision check, because financial figures in a client recommendation must be accurate and verified first#Precision applies, but the client's account data is sensitive personal information and the recommendation requires a licensed adviser's sign-off.
+~Only the privacy check, because the client's account details are confidential personal financial information#Privacy applies, but precision also matters for financial figures, and a licensed adviser must own the final recommendation.
+=All three checks apply — privacy for the account data, precision for the figures, and accountability for the advice#Correct — account data is sensitive (privacy), the figures must be accurate (precision), and a licensed human must sign off on the advice (accountability).
+~None of the checks apply, because AI use is already routine and accepted across the financial services industry#Routine industry use does not exempt a task from the framework; these checks apply to the task's characteristics, not industry norms.
+#### Tests the ability to apply all three dimensions of the framework to a realistic scenario (corpus §5.4, §7).
+}
+
+::2.6-Q6:: Complete the sentence with one word or short phrase\: The three-question check asks a professional to consider privacy, precision, and ____ before using any AI tool for work.
+{
+=legal accountability
+=accountability
+=legal responsibility
+}

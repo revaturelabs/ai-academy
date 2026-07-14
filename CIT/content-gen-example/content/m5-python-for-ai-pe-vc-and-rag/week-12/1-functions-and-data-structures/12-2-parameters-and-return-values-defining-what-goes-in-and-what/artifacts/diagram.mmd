@@ -1,0 +1,45 @@
+---
+title: "Parameters and Return Values — What Goes In and What Comes Out"
+config:
+  theme: base
+  themeVariables:
+    primaryColor: "#a5d8ff"
+    primaryBorderColor: "#4a9eed"
+    lineColor: "#555"
+  flowchart:
+    htmlLabels: true
+    curve: basis
+    nodeSpacing: 50
+    rankSpacing: 40
+---
+flowchart LR
+  subgraph PANEL_A["WITH return — value flows back to caller"]
+    direction TB
+    A1["<b>Call Site</b><br/><span style='font-size:11px;color:#6d28d9'>compute_average(marks)</span>"]:::callSite
+    A2["<b>Parameter Slot</b><br/><span style='font-size:11px;color:#6d28d9'>marks = [72, 88, 65]</span>"]:::param
+    A3["<b>Function Body</b><br/><span style='font-size:11px;color:#6d28d9'>processes the argument</span>"]:::body
+    A4["<b>Value Returned to Caller</b><br/><span style='font-size:11px;color:#6d28d9'>return 74.0 → result = 74.0</span>"]:::retVal
+    A1 -->|"argument fills slot"| A2
+    A2 -->|"body executes"| A3
+    A3 -->|"return keyword fires"| A4
+  end
+
+  subgraph PANEL_B["WITHOUT return — caller gets None"]
+    direction TB
+    B1["<b>Call Site</b><br/><span style='font-size:11px;color:#6d28d9'>print_greeting('Alice')</span>"]:::callSite
+    B2["<b>Function Body</b><br/><span style='font-size:11px;color:#6d28d9'>prints Hello Alice — no return</span>"]:::body
+    B3["<b>Implicit None returned</b><br/><span style='font-size:11px;color:#6d28d9'>Python inserts None silently</span>"]:::noneVal
+    B4["<b>Caller Receives None</b><br/><span style='font-size:11px;color:#6d28d9'>result = None — not a value</span>"]:::noneVal
+    B1 -->|"call with argument"| B2
+    B2 -->|"no return statement"| B3
+    B3 -->|"None sent back"| B4
+  end
+
+  style PANEL_A fill:#f0f8ff,stroke:#4A90D9,color:#1a1a1a
+  style PANEL_B fill:#fff5f5,stroke:#E74C3C,color:#1a1a1a
+
+  classDef callSite fill:#4A90D9,stroke:#2C5F8A,color:#fff
+  classDef param fill:#7CB9E8,stroke:#4A90D9,color:#1a1a1a
+  classDef body fill:#E8F4FD,stroke:#4A90D9,color:#1a1a1a
+  classDef retVal fill:#27AE60,stroke:#1E8449,color:#fff
+  classDef noneVal fill:#E74C3C,stroke:#C0392B,color:#fff

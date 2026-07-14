@@ -1,0 +1,51 @@
+{
+  "type": "topic",
+  "id": "7.11",
+  "title": "Interpreting AI output variation — what it tells you about reliability",
+  "slug": "7-11-interpreting-ai-output-variation-what-it-tells-you-about-rel",
+  "position_in_module": 6,
+  "week_num": 7,
+  "session_name": "Probability, Statistics and AI Confidence",
+  "module": {
+    "position": 3,
+    "slug": "3-measuring-ai-performance",
+    "title": "Measuring AI Performance"
+  },
+  "course": {
+    "code": "M3",
+    "slug": "m3-applied-maths-for-ai",
+    "title": "Applied Maths for AI"
+  },
+  "next_assessment": {
+    "id": "A3",
+    "due_week": 10,
+    "title": "Maths and Cognition Lab Report",
+    "weight": "15%"
+  },
+  "paths": {
+    "corpus": "topic_corpus.md",
+    "resources": "topic.resources.json",
+    "progress": "topic.progress.json",
+    "artifacts_dir": "artifacts/",
+    "critic_reports_dir": "critic-reports/"
+  },
+  "artifact_plan": {
+    "diagram": true,
+    "diagram_intent": "2x2 grid: variation (high/low) x temperature (high/low) -> reliability interpretation per quadrant",
+    "depth_profile": "atomic",
+    "depth_profile_confirmed_at_hitl2": true,
+    "depth_profile_signals": "Capstone synthesis/interpretation layer over already-taught concepts. Core concepts are interpretive framings, not new foundational mechanisms. Week at 85/90 min; atomic (5 min) covers the layer fully. All atomic signals apply.",
+    "reading": {
+      "target_min_minutes": 4,
+      "target_max_minutes": 6,
+      "target_word_range": [800, 1200]
+    },
+    "quiz": {
+      "min_questions": 5,
+      "max_questions": 7,
+      "include_short_answer": true
+    }
+  },
+  "expected_delivery_minutes": 5,
+  "status": "scaffolded"
+}

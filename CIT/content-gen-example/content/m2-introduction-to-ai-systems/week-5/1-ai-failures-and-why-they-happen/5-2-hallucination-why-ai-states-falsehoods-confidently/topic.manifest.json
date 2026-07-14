@@ -1,0 +1,52 @@
+{
+  "type": "topic",
+  "id": "5.2",
+  "title": "Hallucination — why AI states falsehoods confidently",
+  "slug": "5-2-hallucination-why-ai-states-falsehoods-confidently",
+  "position_in_module": 2,
+  "week_num": 5,
+  "session_name": "AI Ethics, Safety and Governance",
+  "module": {
+    "position": 1,
+    "slug": "1-ai-failures-and-why-they-happen",
+    "title": "AI Failures and Why They Happen"
+  },
+  "course": {
+    "code": "M2",
+    "slug": "m2-introduction-to-ai-systems",
+    "title": "Introduction to AI Systems"
+  },
+  "next_assessment": {
+    "id": "A2",
+    "due_week": 6,
+    "title": "AI Systems Essay",
+    "weight": "15%"
+  },
+  "paths": {
+    "corpus": "topic_corpus.md",
+    "resources": "topic.resources.json",
+    "progress": "topic.progress.json",
+    "artifacts_dir": "artifacts/",
+    "critic_reports_dir": "critic-reports/"
+  },
+  "artifact_plan": {
+    "profile": "standard",
+    "reading": {
+      "target_min_minutes": 6,
+      "target_max_minutes": 8,
+      "target_word_range": [
+        1200,
+        1600
+      ]
+    },
+    "quiz": {
+      "min_questions": 5,
+      "max_questions": 6,
+      "include_short_answer": false
+    },
+    "diagram": true,
+    "diagram_intent": "Flow showing user prompt entering the LLM, the next-token prediction loop executing with no ground-truth check branch, and output delivered to user with no uncertainty signal — visually contrasting what IS in the loop vs what is absent."
+  },
+  "expected_delivery_minutes": 7,
+  "status": "module_passed"
+}

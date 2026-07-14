@@ -1,0 +1,58 @@
+{
+  "topic_id": "10.5",
+  "generated_at": "2026-06-13T00:00:00Z",
+  "format": "gift",
+  "question_count": 6,
+  "profile": "standard",
+  "$bias_defense_applied": true,
+  "$shuffle_seed": "1692063615",
+  "shuffle_seed_derivation": "int(md5(b'10.5').hexdigest(), 16) % 2**31",
+  "correct_position_distribution": [2, 0, 3, 1, 2, 0],
+  "position_frequency": {"0": 2, "1": 1, "2": 2, "3": 1},
+  "max_share": 0.333,
+  "constraint_check": {
+    "max_share_le_040": true,
+    "all_positions_used": true,
+    "passed": true
+  },
+  "revision_cycle": 2,
+  "revision_reason": "length_bias_fix",
+  "questions": [
+    {
+      "id": "q1",
+      "type": "mcq",
+      "objective_ref": "Identify the three factors that determine whether a decision point requires human sign-off or can safely be left to autonomous AI action.",
+      "correct_position": 2
+    },
+    {
+      "id": "q2",
+      "type": "mcq",
+      "objective_ref": "Apply the Judgment Framework (Q1, Q2, Q3) to a real decision point and translate the answers into a specific checkpoint type.",
+      "correct_position": 0
+    },
+    {
+      "id": "q3",
+      "type": "mcq",
+      "objective_ref": "Distinguish among the three oversight modes (HITL / HOTL / HOOTL) and match each to appropriate use cases.",
+      "correct_position": 3
+    },
+    {
+      "id": "q4",
+      "type": "mcq",
+      "objective_ref": "Evaluate a proposed checkpoint design for a known failure mode (confidence routing that erodes in practice) using the escalation pitfalls framework.",
+      "correct_position": 1
+    },
+    {
+      "id": "q5",
+      "type": "mcq",
+      "objective_ref": "Design a checkpoint matrix — identify what belongs in each column.",
+      "correct_position": 2
+    },
+    {
+      "id": "q6",
+      "type": "mcq",
+      "objective_ref": "Bonus (applied judgment from §7 Real-World Patterns): Re-analysis of the college admissions case study (10.1) through the checkpoint design lens.",
+      "correct_position": 0
+    }
+  ]
+}

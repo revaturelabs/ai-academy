@@ -1,0 +1,50 @@
+{
+  "verdict": "pass",
+  "cycle": 1,
+  "notes": "Source-level pre-flight all pass. PNG render requires mmdc on PATH — run: mmdc -i content/m1-computational-thinking/week-2/3-the-professional-rules-of-ai-use/2-6-when-not-to-use-ai-privacy-precision-legal-accountability/artifacts/diagram.mmd -o content/m1-computational-thinking/week-2/3-the-professional-rules-of-ai-use/2-6-when-not-to-use-ai-privacy-precision-legal-accountability/artifacts/diagram.png -w 1400 -b transparent",
+  "findings": [
+    {
+      "code": "looks_good",
+      "where": "whole canvas",
+      "detail": "Decision tree exactly matches §5.4 three-question check: START (blue) → G1 Privacy check (blue diamond) → G2 Precision check (blue diamond) → G3 Legal accountability check (blue diamond). Each gate YES branches to a yellow HITL constraint node (C1: Use approved platform only; C2: Human must verify output; C3: Human must sign off). All three NO paths continue down the main trunk to the green DONE terminal 'AI use is appropriate'. Color tiers correctly applied throughout: start/act=blue, hitl=yellow with 3px stroke, done=green."
+    },
+    {
+      "code": "looks_good",
+      "where": "concept-drift check",
+      "detail": "All 8 node labels trace directly to corpus §5.4 and §4: 'Privacy check' → §5.1/§5.4 Q1; 'Precision check' → §5.2/§5.4 Q2; 'Legal accountability check' → §5.3/§5.4 Q3; 'Use approved platform only' → §5.4 constraint outcome for privacy YES; 'Human must verify output' → §5.4 constraint outcome for precision YES; 'Human must sign off' → §5.4 constraint outcome for accountability YES; 'AI use is appropriate' → §5.4 all-NO outcome. No advanced ML terms, no out-of-headline-scope concepts (e.g. 'HIPAA', 'hallucination', 'probabilistic output' correctly kept in subtitles/corpus, not promoted to nodes)."
+    },
+    {
+      "code": "looks_good",
+      "where": "label discipline",
+      "detail": "All bold node labels are ≤4 words: 'Any task' (2), 'Privacy check' (2), 'Precision check' (2), 'Legal accountability check' (3), 'Use approved platform only' (4), 'Human must verify output' (4), 'Human must sign off' (4), 'AI use is appropriate' (4). Subtitles carry qualifying detail at 12px — readable at 1400px viewer width. No bare unexplained acronyms as labels."
+    },
+    {
+      "code": "looks_good",
+      "where": "title discipline",
+      "detail": "'Three-Question AI Use Check' appears in the --- config block title: field, not as a ghost node. The governing concept (the three-question framework from §5.4) sits above the whole diagram as a banner. Correct."
+    },
+    {
+      "code": "looks_good",
+      "where": "layout choice",
+      "detail": "flowchart TB is the correct direction for a sequential decision tree with three vertically-stacked gates. The three YES constraint branches extend horizontally from each gate diamond, preventing the constraint boxes from cluttering the main vertical trunk. nodeSpacing:40 and rankSpacing:55 should provide adequate breathing room between ranks."
+    }
+  ],
+  "preflight": {
+    "mermaid_parses": true,
+    "node_count_ok": true,
+    "node_count": 8,
+    "label_discipline_ok": true,
+    "concept_fidelity_ok": true,
+    "title_in_config": true,
+    "single_path_discipline": "n/a — intentional decision tree, branching is the intent"
+  },
+  "stats": {
+    "nodes": 8,
+    "edges": 7,
+    "layout": "flowchart TB (vertical decision tree, YES branches horizontal, NO continues down)",
+    "labels": ["Any task", "Privacy check", "Precision check", "Legal accountability check", "Use approved platform only", "Human must verify output", "Human must sign off", "AI use is appropriate"],
+    "png_path": "content/m1-computational-thinking/week-2/3-the-professional-rules-of-ai-use/2-6-when-not-to-use-ai-privacy-precision-legal-accountability/artifacts/diagram.png",
+    "png_render_pending": true,
+    "render_command": "mmdc -i content/m1-computational-thinking/week-2/3-the-professional-rules-of-ai-use/2-6-when-not-to-use-ai-privacy-precision-legal-accountability/artifacts/diagram.mmd -o content/m1-computational-thinking/week-2/3-the-professional-rules-of-ai-use/2-6-when-not-to-use-ai-privacy-precision-legal-accountability/artifacts/diagram.png -w 1400 -b transparent"
+  }
+}

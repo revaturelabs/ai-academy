@@ -1,0 +1,30 @@
+{
+  "topic_id": "1.8",
+  "captured_at": "2026-06-21T00:00:00Z",
+  "captured_by": "namratas@revature.com",
+  "resources_source": "web_search",
+  "web_search_query": "flowchart standard shapes symbols logic diagram programming tutorial",
+  "resources": [
+    {
+      "type": "url",
+      "value": "https://www.visual-paradigm.com/tutorials/flowchart-tutorial/",
+      "role": "primary",
+      "source": "web_search",
+      "notes": "Full tutorial covering standard symbols, guide, and worked examples"
+    },
+    {
+      "type": "url",
+      "value": "https://www.geeksforgeeks.org/dsa/an-introduction-to-flowcharts/",
+      "role": "supporting",
+      "source": "web_search",
+      "notes": "CS/programming-focused introduction connecting flowcharts to algorithms"
+    },
+    {
+      "type": "url",
+      "value": "https://www.smartdraw.com/flowchart/flowchart-symbols.htm",
+      "role": "supporting",
+      "source": "web_search",
+      "notes": "Symbol reference — shape meanings and usage rules"
+    }
+  ]
+}

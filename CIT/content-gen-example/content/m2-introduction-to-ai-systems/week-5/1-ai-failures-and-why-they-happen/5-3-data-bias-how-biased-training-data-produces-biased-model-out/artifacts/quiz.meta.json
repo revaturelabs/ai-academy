@@ -1,0 +1,59 @@
+{
+  "topic_id": "5.3",
+  "generated_at": "2026-06-17T00:00:00Z",
+  "format": "gift",
+  "question_count": 6,
+  "$bias_defense_applied": true,
+  "$shuffle_seed": "5a3c7f2e",
+  "correct_position_distribution": [2, 0, 3, 1, 2, 0],
+  "shuffle_constraint_check": {
+    "max_share": 0.333,
+    "max_share_threshold": 0.40,
+    "all_positions_used": true,
+    "passed": true
+  },
+  "length_bias_check": {
+    "longest_correct_count": 0,
+    "longest_correct_rate": 0.00,
+    "threshold": 0.40,
+    "passed": true
+  },
+  "questions": [
+    {
+      "id": "5.3-Q1",
+      "type": "mcq",
+      "objective_ref": "Distinguish between three specific types of data bias — historical bias, representation bias, and measurement bias — and give a concrete example of each.",
+      "correct_position": 2
+    },
+    {
+      "id": "5.3-Q2",
+      "type": "mcq",
+      "objective_ref": "Explain the GIGO principle and apply it to describe how a biased dataset produces a biased model.",
+      "correct_position": 0
+    },
+    {
+      "id": "5.3-Q3",
+      "type": "mcq",
+      "objective_ref": "Explain in plain language what data bias is and how it enters an AI system through training data.",
+      "correct_position": 3
+    },
+    {
+      "id": "5.3-Q4",
+      "type": "mcq",
+      "objective_ref": "Describe why a biased AI output can feel objective and authoritative, and why that feeling is dangerous.",
+      "correct_position": 1
+    },
+    {
+      "id": "5.3-Q5",
+      "type": "mcq",
+      "objective_ref": "Identify at least two real-world domains where data bias has produced documented harm.",
+      "correct_position": 2
+    },
+    {
+      "id": "5.3-Q6",
+      "type": "mcq",
+      "objective_ref": "Name the mitigation approaches used to address data bias, and explain why this topic defers the technical detail to later study.",
+      "correct_position": 0
+    }
+  ]
+}

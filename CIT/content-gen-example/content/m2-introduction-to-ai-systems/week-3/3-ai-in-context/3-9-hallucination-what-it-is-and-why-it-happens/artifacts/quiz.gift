@@ -1,0 +1,41 @@
+$CATEGORY: CIT/M2/week-3/3-9-hallucination-what-it-is-and-why-it-happens
+
+::q1:: A student asks an AI assistant to name the research paper that first proved a well-known theory. The AI provides a paper title, an author name, and a journal — all of which sound plausible — but when the student searches for it, no such paper exists. Which type of hallucination does this best illustrate? {
+~The model states a fact that is simply wrong, such as an incorrect year for a historical event.#Not quite — that describes factual hallucination, where the model gets a fact wrong rather than inventing a source.
+~The model follows a false assumption in the question and produces a coherent but incorrect conclusion.#Not quite — that describes faithful-but-wrong hallucination, where the model reasons correctly from a bad premise.
+=The model describes something accurately but credits it to a source that does not exist.#Correct — this is attributional hallucination\: the content may be plausible, but the cited source is fabricated.
+~The model refuses to answer because it cannot find the information in its training data.#Not quite — LLMs do not refuse this way; they generate a plausible-sounding answer even when no reliable source exists.
+#### Tests the definition and recognition of attributional hallucination (corpus §5.1).
+}
+
+::q2:: At its core, an LLM (Large Language Model) generates each word in a response by doing which of the following? {
+=The model picks the most plausible next token — it has no built-in fact-checking.#Correct — autoregressive decoding selects the most statistically plausible continuation; truth is never directly verified.
+~The model searches an internal database of verified facts before composing its reply.#Not quite — LLMs have no internal fact database; they blend patterns learned during training into their parameters.
+~The model checks each statement against a live internet source before replying.#Not quite — standard LLMs have no live internet access; they work entirely from patterns stored in their weights.
+~The model skips any topic it was not trained on, rather than generating a guess.#Not quite — the model generates a plausible-sounding response regardless of whether the topic was well-represented in training data.
+#### Tests the structural mechanism — token prediction ≠ truth verification (corpus §5.2).
+}
+
+::q3:: Why can Reinforcement Learning from Human Feedback (RLHF) make hallucination worse, even though it is designed to improve model helpfulness? {
+~RLHF removes hallucinations by penalising the model every time it produces an incorrect or uncertain answer.#Not quite — RLHF scores overall response quality as judged by human raters; it does not directly penalise factual errors.
+~RLHF teaches the model to refuse any question it cannot answer with full certainty, reducing false claims.#Not quite — RLHF trained models typically do not refuse uncertain questions; they are rewarded for being helpful and complete.
+~RLHF updates the model's training data after deployment to fix knowledge gaps and reduce wrong answers.#Not quite — RLHF adjusts model weights through feedback; it does not add new verified facts to a knowledge base.
+=RLHF can push the model toward overconfidence because human raters tend to reward confident-sounding answers.#Correct — raters often score confident responses higher, so the model learns to sound certain even when its output may be wrong.
+#### Tests RLHF as a contributing cause of overconfidence bias (corpus §5.4).
+}
+
+::q4:: Which of the following is the clearest documented example of AI hallucination causing real-world harm in a professional setting? {
+~Medical AI refused to answer treatment questions, leading to documented patient harm in multiple cases.#Not quite — the documented harm in the corpus involves fabricated information being trusted, not refusals to respond.
+=Lawyers filed court documents citing AI-generated cases that did not exist and faced professional sanctions.#Correct — this is the clearest documented example\: fabricated legal citations were submitted in formal filings and led to professional consequences.
+~Plagiarism detectors flagged AI-written essays as copied from real papers, embarrassing many researchers.#Not quite — this describes a detection problem, not a case where hallucinated content caused direct professional harm.
+~AI translation systems introduced offensive errors in medical documents, causing harm to patients in several countries.#Not quite — translation errors are a separate category of AI failure; the corpus focuses on hallucinated citations and fabricated facts.
+#### Tests identification of documented real-world harm from hallucination (corpus §§5.1, 7).
+}
+
+::q5:: A student is writing a report and wants to reduce the chance that the AI assistant gives them false information about a topic they are researching. Which action best describes the grounding strategy? {
+~Ask the AI to re-check its own answer a second time, since models can spot errors they made on the first attempt.#Not quite — models that hallucinate a claim will typically affirm it when asked to check; self-verification is unreliable.
+~Switch to a larger, newer model because larger models produce hallucinations far less often than smaller ones.#Not quite — larger models hallucinate less frequently, but no model eliminates hallucination; switching models is not grounding.
+=Paste verified source documents into the prompt so the model works from those texts, not from memory.#Correct — grounding ties the model's output to documents you supply, so it answers from a known source rather than training memory.
+~Set the model's temperature to zero so it always produces the same output and never generates a random wrong answer.#Not quite — deterministic output (temperature 0) removes randomness but does not prevent the model from confidently repeating a hallucination.
+#### Tests the grounding mitigation strategy and distinguishes it from common misconceptions (corpus §5.5).
+}

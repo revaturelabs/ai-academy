@@ -1,0 +1,40 @@
+{
+  "artifact": "corpus",
+  "topic_id": "8.3",
+  "passed": true,
+  "checks": {
+    "required_sections": {
+      "passed": true,
+      "detail": "Sections 3 (Learning Objectives, 5 bullets), 4 (Introduction, ~2 paragraphs), 5 (Core Concepts, ~900+ words, well over 100), and 10 (Key Takeaways, 5 bullets) all present and non-trivial. No required section left as a placeholder."
+    },
+    "citation_density": {
+      "passed": true,
+      "mode": "strict",
+      "resources_source": "web_search",
+      "detail": "All 3 resources are referenced: primary [1] (precision/recall defs, threshold, trade-off), supporting [2] (FP/FN framing, cost-of-error, real-world), supporting [3] (recall-wins domains). Every primary cited at least once. >=60% of factual assertions in Core Concepts / Implementation / Real-World carry an [N] marker. No fabricated markers — [1][2][3] all resolve to listed resources."
+    },
+    "sequence_drift": {
+      "passed": true,
+      "forward_refs": [],
+      "detail": "F1 (8.4) and by-hand computation from a results table (8.5) appear only as bare name-and-defer one-liners at line 125 with explicit 'covered next' pointers — not taught. ROC/AUC and calibration (8.6) do not appear. Precision/recall ratio formulas are part of this topic's own concepts (precision, recall), not confusion-matrix arithmetic. All technical terms map to this topic's concepts_introduced or are defined-from-scratch beginner framing."
+    },
+    "length_sanity": {
+      "passed": true,
+      "profile": "standard",
+      "estimated_word_count": 1650,
+      "detail": "Body runs ~1600-1700 words. Below the artifact-mix standard floor (3000) but inside the task-specified sane band of 1500-6000 for this intuition-only short-corpus course. Prior week-8 corpora ran near-floor and were accepted; applying instructed judgment rather than hard-failing on length alone."
+    },
+    "topic_scope": {
+      "passed": true,
+      "scope_creep": [],
+      "detail": "Corpus stays on the headline: the precision/recall trade-off plus when-recall-wins. Teaches precision, recall, false positive, false negative, threshold-driven trade-off, and cost-of-error framing — exactly concepts_introduced. F1 and manual computation are named-and-deferred (bare names + pointer, not bolded, no defining clause). No advanced/adjacent concept taught at depth."
+    },
+    "beginner_readability": {
+      "passed": true,
+      "findings": [],
+      "detail": "Leads with concrete analogies (smoke alarm, spam filter) before abstract definitions. Every non-everyday term (precision, recall, false/true positive, false negative, threshold, confidence score) defined in plain language on first use. No jargon-dump paragraphs (one new idea at a time). Short, active, second-person sentences. No hedging. Comparison rendered as a table per formatting standards."
+    }
+  },
+  "verdict": "PASS — corpus 8.3 stays on the precision/recall trade-off headline, cites all 3 web_search resources with no fabricated markers, defers F1 (8.4) and by-hand computation (8.5) as bare one-liners, and is beginner-clean. Length ~1650w is under the standard floor but within the task's instructed 1500-6000 sane band for this short-corpus course. No forward refs, no scope creep.",
+  "at": "2026-06-22T06:45:00Z"
+}

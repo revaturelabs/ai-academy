@@ -1,0 +1,65 @@
+{
+  "topic_id": "9.2",
+  "passed": true,
+  "checks": {
+    "positional_bias": {
+      "passed": true,
+      "distribution": [1, 2, 1, 2],
+      "max_share": 0.333,
+      "reshuffled": false,
+      "notes": "6 MCQs; 0-based correct positions: q1=1, q2=3, q3=0, q4=1, q5=2, q6=3. Distribution pos0=1, pos1=2, pos2=1, pos3=2. max_share=0.333 <= 0.40. Matches quiz.meta.json correct_position_distribution (pos1–pos4 1-based keys map to 0-based pos0–pos3 correctly). No reshuffle needed."
+    },
+    "length_bias": {
+      "passed": true,
+      "longest_correct_rate": 0.333,
+      "baseline": 0.25,
+      "flagged_questions": [
+        {
+          "id": "9-2-q5",
+          "correct_len": 107,
+          "distractor_mean": 75.7,
+          "threshold": 90.8,
+          "ratio": 1.41
+        },
+        {
+          "id": "9-2-q6",
+          "correct_len": 136,
+          "distractor_mean": 86.3,
+          "threshold": 103.6,
+          "ratio": 1.57
+        }
+      ],
+      "notes": "2 of 6 questions (0.333) show longest-correct pattern; hard-fail threshold is >0.40 (>2 of 6 questions). q5 correct answer is 41% longer than distractor mean; q6 correct is 57% longer than distractor mean. Both exceed the 20% flag threshold but the rate stays at 0.333, under the 0.40 hard-fail line. Flagged for builder awareness on next revision."
+    },
+    "distractor_plausibility": {
+      "passed": true,
+      "absurd_rate": 0.0,
+      "flagged_distractors": [],
+      "notes": "18 total distractors across 6 questions. No distractor scored 1 (absurd). Two distractors scored 2 (wrong but not anchored in a common misconception): q5 'System 2 stores System 1's impression in long-term memory for future pattern recognition' and q6 'AI-generated text is formatted to bypass System 2 entirely'. Both are weak but not absurd and do not exceed the 0.25 absurd_rate hard-fail threshold. All other distractors scored 3–4 as plausible beginner misconceptions about System 2."
+    },
+    "objective_coverage": {
+      "passed": true,
+      "covered_objectives": [
+        "LO1 — Explain what System 2 thinking is and describe its three defining characteristics",
+        "LO2 — Distinguish System 2 from System 1 using concrete examples",
+        "LO3 — Describe what working memory is and explain why it limits System 2",
+        "LO4 — Identify conditions that cause System 2 to activate",
+        "LO5 — Explain what cognitive fatigue is and describe how it affects System 2",
+        "LO6 — Describe System 2's role in checking and overriding System 1",
+        "LO7 — Apply awareness of System 2 limitations to explain why humans don't always catch AI errors"
+      ],
+      "uncovered_objectives": [],
+      "notes": "All 7 LOs covered: q1→LO1, q2→LO2, q3→LO3, q4→LO4+LO5 (combined), q5→LO6, q6→LO7. No orphan questions. LO4 and LO5 share q4 which is permissible given the 6-question standard-profile count. Sidecar objective_ref values match corpus §3 LO text with high similarity."
+    },
+    "beginner_scope": {
+      "passed": true,
+      "findings": [],
+      "notes": "All stems use plain language with no unexplained acronyms. No forward references to 9.3+ concepts, confirmation bias, anchoring, automation bias, or the Judgment Framework. AI-oversight framing in q4 and q6 is grounded in corpus §6 (worked example) and §8 (Connection to AI Context), both in-scope for topic 9.2. Distractors draw only on within-topic concepts or plausible beginner confusions about dual-process theory. No out_of_scope_question findings."
+    }
+  },
+  "auto_correction_applied": {
+    "shuffle_round_2": false
+  },
+  "verdict": "Pass — all five checks clean; positional bias 0.333, length bias 0.333 (two questions flagged but under hard-fail threshold), zero absurd distractors, all 7 LOs covered, no out-of-scope content.",
+  "at": "2026-06-12T00:00:00Z"
+}

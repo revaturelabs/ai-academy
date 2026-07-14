@@ -1,0 +1,50 @@
+{
+  "critic": "reading-critic",
+  "topic_id": "14.10",
+  "at": "2026-06-16T00:00:00Z",
+  "cycle": 1,
+  "passed": true,
+  "checks": {
+    "format_discipline": {
+      "passed": true,
+      "notes": "First non-empty line is the H1 title with no frontmatter. reading.meta.json is present and parses with required fields (word_count, reading_minutes, target_word_range, sections, citations). Exactly six fixed ## headings in the required order: Overview, Key Concepts, Worked Example, In Practice, Key Takeaways, References."
+    },
+    "length_budget": {
+      "passed": true,
+      "word_count": 1310,
+      "target": [1200, 1400],
+      "notes": "1310 words is within the [1200, 1400] target range. Reading-aloud estimate: 1310 / 230 = 5.7 min. No target_minute_range is specified in artifact_plan; word count is the binding constraint and passes."
+    },
+    "citation_discipline": {
+      "passed": true,
+      "all_primaries_cited": true,
+      "notes": "All 5 primary resources cited at least once. [1] adr.github.io cited in Key Concepts (ADR three rules, five-section template) and In Practice. [2] AWS cited in Key Concepts (mandatory recommendation) and In Practice. [3] Chip Huyen cited in Context, Decision, and Consequences sections and Key Takeaways. [4] Nygard cited in Overview and Key Concepts. [5] Fowler cited in Decision and Consequences sections and Key Takeaways. Bibliography (References section lines 132-136) has exactly five numbered entries matching inline markers. No orphan markers; no orphan bibliography entries."
+    },
+    "forward_references": {
+      "passed": true,
+      "forward_refs": [],
+      "notes": "Topic 14.10 is the capstone of week 14. All cross-topic references are backward (14.7 decision matrix, 14.9 cost-latency-quality triangle). Prior-topic vocabulary (vector database, RAG, agent, HITL, streaming, circuit breaker, ReAct) is used without re-definition per corpus §2 which explicitly marks all 14.1-14.9 vocabulary as available. No forward references exist."
+    },
+    "beginner_readability": {
+      "passed": true,
+      "findings": []
+    },
+    "formatting_standards": {
+      "passed": true,
+      "findings": []
+    },
+    "scope_discipline": {
+      "passed": true,
+      "scope_creep_instances": [],
+      "notes": "Reading teaches only ADR writing: definition, five-section template, how to populate each section for an AI system, a worked example, and storage conventions. References to RAG, agent, and direct-call patterns appear only as content inputs to illustrate ADR sections — they are not re-taught. References to the 14.7 decision matrix and 14.9 cost-latency-quality triangle are one-sentence named-and-deferred pointers ('from topic 14.7', 'from topic 14.9'), not instructional material."
+    },
+    "faithfulness": {
+      "passed": true,
+      "new_claims": [],
+      "notes": "Eight assertions sampled and verified: (1) Nygard 2011 origin — matches corpus §5.1 verbatim. (2) Three ADR properties (one decision / plain text / append-only) — matches corpus §5.1 list. (3) AWS mandatory-for-multi-engineer recommendation — matches corpus §5.1. (4) Five sections in fixed order — matches corpus §5.2 table exactly. (5) Three Context questions drawn from 14.7 decision matrix — matches corpus §5.3 numbered list. (6) Weak vs. strong Context examples — corpus §5.3 provides identical sentences verbatim. (7) Decision section rules (past tense, one primary reason) — matches corpus §5.4. (8) Consequences must name both what gets better and harder — matches corpus §5.5. Zero unsupported or invented assertions found."
+    }
+  },
+  "hard_findings": [],
+  "soft_findings": [],
+  "verdict": "PASS — all 8 checks pass with no hard or soft findings. Format is clean (H1 first line, no frontmatter, six fixed sections in order, sidecar present). Word count 1310 is within [1200, 1400]. All 5 primary resources are cited inline with a complete bibliography and no orphan markers. No forward references; all cross-topic pointers are backward to 14.7 and 14.9. Faithfulness is strong — all sampled assertions trace directly to corpus §5.1-§5.5 with some verbatim preservation of key examples. Beginner readability is sound: ADR defined on first use in Overview, five-section terms defined in a table before use, prior-topic vocabulary (RAG, agent, HITL, streaming, ReAct) correctly used without re-definition per the capstone corpus contract. Sequences are rendered as bullets and numbered lists throughout. Prose paragraphs are all 2-4 sentences. Inline concrete examples (weak/strong Context contrast) appear in Key Concepts independent of the Worked Example section. No assessment references. Scope is tight — the reading teaches only ADR writing; prior AI pattern concepts appear only as labeled pointers."
+}

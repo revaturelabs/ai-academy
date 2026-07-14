@@ -1,0 +1,29 @@
+{
+  "topic_id": "11.4",
+  "generated_at": "2026-06-12T00:45:00Z",
+  "profile": "standard",
+  "$bias_defense_applied": true,
+  "$shuffle_seed": "position-distributed-manual",
+  "question_count": 6,
+  "mcq_count": 6,
+  "short_answer_count": 0,
+  "correct_position_distribution": {
+    "0": 2,
+    "1": 1,
+    "2": 2,
+    "3": 1
+  },
+  "max_share": 0.333,
+  "per_question": [
+    {"id": "q1", "correct_position": 0, "objective_ref": "LO1 — Use print() to display values, variables, and multiple arguments"},
+    {"id": "q2", "correct_position": 1, "objective_ref": "LO2 — Apply core string operations: indexing s[0]"},
+    {"id": "q3", "correct_position": 2, "objective_ref": "LO3 — Perform integer arithmetic including floor division //"},
+    {"id": "q4", "correct_position": 3, "objective_ref": "LO4 — Describe why 0.1 + 0.2 does not equal 0.3"},
+    {"id": "q5", "correct_position": 0, "objective_ref": "LO5 — Combine booleans with and, or, not"},
+    {"id": "q6", "correct_position": 2, "objective_ref": "LO6 — Convert between types using str(), int(), float(), bool()"}
+  ],
+  "length_bias_check": {
+    "passed": true,
+    "notes": "Correct answer is not the longest in any of the 6 questions; all correct/mean ratios < 1.20"
+  }
+}

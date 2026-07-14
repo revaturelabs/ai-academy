@@ -1,0 +1,82 @@
+{
+  "critic": "drift-critic",
+  "module": "3-output-validation-and-retry",
+  "course_code": "M5",
+  "week_num": 13,
+  "generated_at": "2026-06-15T00:00:00Z",
+  "verdict": "pass",
+  "topics_evaluated": ["13.8", "13.9"],
+  "checks": {
+    "terminology_consistency": {
+      "result": "pass",
+      "findings": [
+        {
+          "severity": "info",
+          "topic": "13.9",
+          "detail": "13.8 consistently uses 'AI model' / 'the model'; 13.9 introduces 'LLM (Large Language Model)' in its overview. The terms are synonymous and 13.9 defines LLM on first use, so this is not flagged as drift — but authors should note the register shift for stylistic consistency in future edits."
+        }
+      ],
+      "carry_forward_terms_consistent": true,
+      "synonym_drift_flagged": false
+    },
+    "prerequisites_respected": {
+      "result": "pass",
+      "findings": [],
+      "detail": "13.8 lists prerequisites 13.6 and 13.7 — both are earlier in the sequence (module positions 1 and 2 of module 2). 13.9 lists prerequisite 13.8 — position 1 in this module. All prerequisites precede the topic referencing them. Corpus text for both topics references only prior topics."
+    },
+    "learning_arc": {
+      "result": "pass",
+      "findings": [],
+      "module_outcome": "Output validation and retry — if the AI response fails a format check, retry once before returning a fallback",
+      "coverage_map": {
+        "validation_half": {
+          "covered_by": "13.8",
+          "los": [
+            "Define output validation and explain why AI responses cannot be assumed to follow a format",
+            "Identify the format rules in a Rubric role that become the validator checklist",
+            "Write a Python function that checks an AI response against format constraints",
+            "Interpret the result of a validation check",
+            "Recognise common beginner mistakes when writing validators"
+          ]
+        },
+        "retry_half": {
+          "covered_by": "13.9",
+          "los": [
+            "Explain what a retry loop does when an LLM response fails validation",
+            "Describe the role of a corrective message in prompting self-correction",
+            "Use a retry counter to limit attempts",
+            "Identify when max retry limit is reached and explain the fallback",
+            "Read and trace a Python retry loop and predict its output"
+          ]
+        }
+      },
+      "uncovered_facets": []
+    },
+    "no_duplicated_core_concepts": {
+      "result": "pass",
+      "findings": [],
+      "pairs_checked": [
+        {
+          "pair": ["13.8", "13.9"],
+          "jaccard_similarity": 0.05,
+          "threshold": 0.6,
+          "shared_nouns": ["validation function"],
+          "note": "'validation function' appears in both sections but 13.9 defers entirely to 13.8 ('run the validator (from 13.8)') — it references the concept rather than re-introducing it. All five concepts introduced in 13.9 (retry loop, corrective message, retry counter, max retries, fallback response) are new."
+        }
+      ]
+    },
+    "lab_activity_alignment": {
+      "result": "pass",
+      "findings": [],
+      "lab_seed": "Build a simple output validator — if format check fails, retry once; document what the validator caught",
+      "alignment_detail": "13.8 hands-on exercise covers the validator-building half (write function with 3+ checks, test on good/bad/invalid inputs, journal entry #8). 13.9 hands-on exercise covers the retry half (write call_with_retry up to 2 retries, test with bad prompt, document results). Together they fully satisfy the lab seed."
+    },
+    "audience_level_consistency": {
+      "result": "pass",
+      "findings": [],
+      "detail": "Both topics target absolute beginners. 13.8 explicitly states assumed Python knowledge (functions, if statements, dictionaries) — consistent with the course baseline. 13.9 builds directly on 13.8 without introducing new abstractions cold. Advanced techniques (exponential backoff, structured output libraries) are explicitly deferred to later topics. No upward drift detected across the module."
+    }
+  },
+  "summary": "All five checks (plus audience-level consistency) pass. The two topics form a clean two-part arc: 13.8 establishes what output validation is and how to write a validator; 13.9 takes the validator as given and teaches the retry pattern that wraps it. Terminology carries forward consistently, prerequisites are correctly ordered, learning objectives cover both halves of the module outcome, core concept sets are disjoint (Jaccard 0.05), and the hands-on exercises directly support the lab activity seed. One informational note: minor register shift from 'AI model' (13.8) to 'LLM' (13.9) is not a blocker but worth normalising in a future editorial pass.",
+  "gate_recommendation": "module_drift_passed=true for both 13.8 and 13.9"
+}

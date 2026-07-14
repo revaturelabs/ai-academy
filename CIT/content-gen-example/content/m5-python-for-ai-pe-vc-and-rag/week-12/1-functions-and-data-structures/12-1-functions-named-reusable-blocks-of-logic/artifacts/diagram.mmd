@@ -1,0 +1,40 @@
+---
+title: "Definition vs Call — two phases of every function"
+config:
+  theme: base
+  themeVariables:
+    primaryColor: "#a5d8ff"
+    primaryBorderColor: "#4a9eed"
+    lineColor: "#555"
+  flowchart:
+    htmlLabels: true
+    curve: basis
+    nodeSpacing: 50
+    rankSpacing: 40
+---
+flowchart LR
+  subgraph DEFINE["PHASE 1 — DEFINE"]
+    direction TB
+    D1["<b>def keyword</b><br/><span style='font-size:11px;color:#6d28d9'>signals Python: store this block</span>"]:::start
+    D2["<b>Function Name</b><br/><span style='font-size:11px;color:#6d28d9'>the label you will call later</span>"]:::auto
+    D3["<b>Body stored in memory</b><br/><span style='font-size:11px;color:#6d28d9'>indented code — not run yet</span>"]:::auto
+    D1 --> D2 --> D3
+  end
+
+  subgraph CALL["PHASE 2 — CALL"]
+    direction TB
+    C1["<b>Caller line</b><br/><span style='font-size:11px;color:#6d28d9'>name() triggers execution</span>"]:::act
+    C2["<b>Body executes</b><br/><span style='font-size:11px;color:#6d28d9'>indented code runs top-to-bottom</span>"]:::auto
+    C3["<b>Returns to caller</b><br/><span style='font-size:11px;color:#6d28d9'>call again — write once, reuse</span>"]:::done
+    C1 --> C2 --> C3
+  end
+
+  DEFINE -->|"call triggers execution"| CALL
+
+  style DEFINE fill:#f0f4ff,stroke:#4a9eed,color:#1a1a1a
+  style CALL fill:#f4fff0,stroke:#22c55e,color:#1a1a1a
+
+  classDef start fill:#a5d8ff,stroke:#4a9eed,color:#1a1a1a
+  classDef auto fill:#d0bfff,stroke:#8b5cf6,color:#1a1a1a
+  classDef act fill:#a5d8ff,stroke:#4a9eed,color:#1a1a1a
+  classDef done fill:#b2f2bb,stroke:#22c55e,color:#1a1a1a

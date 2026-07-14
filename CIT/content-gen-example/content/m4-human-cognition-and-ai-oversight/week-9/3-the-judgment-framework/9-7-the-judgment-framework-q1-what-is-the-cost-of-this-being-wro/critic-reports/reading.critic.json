@@ -1,0 +1,223 @@
+{
+  "critic": "reading-critic",
+  "topic_id": "9.7",
+  "run_at": "2026-06-13T00:00:00Z",
+  "passed": true,
+  "verdict": "PASS — all hard checks pass; one soft finding (undefined term 'pharmacopeia' at line 75); does not reach escalation threshold.",
+  "checks": {
+    "format_discipline": {
+      "passed": true,
+      "frontmatter_present": false,
+      "meta_sidecar_present": true,
+      "meta_sidecar_valid": true,
+      "section_template_violation": false,
+      "sections_found": [
+        "Overview",
+        "Key Concepts",
+        "Worked Example",
+        "In Practice",
+        "Key Takeaways",
+        "References"
+      ],
+      "notes": "First non-empty line is '# The Judgment Framework — Q1: What is the cost of this being wrong?' — correct H1, no leading frontmatter. All 6 required sections present in the required order."
+    },
+    "length": {
+      "passed": true,
+      "word_count": 1347,
+      "target_word_range": [1200, 1600],
+      "within_target": true,
+      "hard_fail_range": [900, 1900],
+      "within_hard_fail_range": true,
+      "estimated_read_minutes": 7,
+      "target_minutes_range": [6, 8],
+      "within_minutes_target": true,
+      "notes": "1347 words at 200 wpm = 6.7 min (rounded to 7 in sidecar). Within standard profile target of 1200–1600 words and 6–8 minutes."
+    },
+    "citations": {
+      "passed": true,
+      "primary_resource_cited": true,
+      "primary_resource_url": "https://aicompetence.org/risk-aware-decision-framework-complex-ai-systems/",
+      "all_resources_cited": true,
+      "resources_cited_inline": ["[1]", "[2]", "[3]"],
+      "bibliography_entries": ["[1]", "[2]", "[3]"],
+      "orphan_markers": [],
+      "orphan_bibliography_entries": [],
+      "fabricated_citations": false,
+      "notes": "[1] aicompetence.org (primary) cited multiple times including Overview, Key Concepts, Worked Example, In Practice, Key Takeaways. [2] arXiv 2508.03714 cited throughout. [3] corporatefinanceinstitute.com cited in In Practice and Key Takeaways. Bibliography matches all inline markers."
+    },
+    "diagram_embedded": {
+      "passed": true,
+      "diagram_found_in_key_concepts": true,
+      "image_path": "./diagram.png",
+      "line": 13,
+      "notes": "Inline image referencing diagram.png appears in Key Concepts section at line 13 with descriptive alt text."
+    },
+    "scope": {
+      "passed": true,
+      "scope_creep_findings": [],
+      "deferred_concepts_check": {
+        "Q2_mentioned": true,
+        "Q2_treatment": "bare name + topic pointer only — 'Q2 and Q3 are introduced in topics 9.8 and 9.9' (line 9) and 'Q2 (topic 9.8) covers exactly how to verify' (line 75). Not taught or defined.",
+        "Q3_mentioned": true,
+        "Q3_treatment": "bare name + topic pointer only. Not taught or defined.",
+        "acceptable_error_thresholds_mentioned": false,
+        "notes": "Anchoring bias (topic 9.4) referenced in In Practice section as a previously-taught concept — legitimate back-reference, not a forward reference or out-of-scope teaching."
+      },
+      "hard_fail_triggered": false,
+      "notes": "Topic boundary is Q1 only. Q2 and Q3 are named with topic pointers but not taught. No deferred concept is bolded, defined, or receives an appositive. No scope_creep found."
+    },
+    "beginner_readability": {
+      "passed": true,
+      "hard_fail_triggered": false,
+      "findings_count": 1,
+      "findings": [
+        {
+          "code": "undefined_terms",
+          "severity": "soft",
+          "term": "pharmacopeia",
+          "line": 75,
+          "detail": "'pharmacopeia' is used without definition in Worked Example Step 5: 'verify the dosage against the pharmacopeia and the prescribing physician's notes'. This is a non-everyday specialist term that a beginner (zero background) would not know. It should be replaced with plain language (e.g., 'the official drug reference guide') or defined inline.",
+          "count_toward_escalation": true
+        }
+      ],
+      "define_before_use": {
+        "passed": true,
+        "undefined_terms_count": 1,
+        "threshold": 2,
+        "notes": "All key terms (Judgment Framework, Severity, Probability, Detectability) are defined with bold-term / plain-meaning shape on first use. 'System 2 thinking' is a prior-topic concept (9.2) and may be used without re-defining. Only 'pharmacopeia' (line 75) is unexplained — count 1, threshold is >2 to fail."
+      },
+      "jargon_dump": {
+        "passed": true,
+        "findings": [],
+        "notes": "Three dimensions (Severity, Probability, Detectability) are each introduced in separate sub-sections, never stacked in a single paragraph. No paragraph introduces 3+ new terms simultaneously."
+      },
+      "concrete_first": {
+        "passed": true,
+        "findings": [],
+        "notes": "Overview leads with two concrete scenarios (email sentence, nurse drug dosage) before stating the abstract framework principle. Each dimension sub-section leads with a bold definition then concrete examples or spectrum. Concrete-first pattern is consistently applied."
+      },
+      "academic_register": {
+        "passed": true,
+        "hedging_instances": 0,
+        "threshold": 3,
+        "notes": "No instances of 'it is generally considered', 'many experts believe', 'various studies have shown', or equivalent hedging found. Register is plain, direct, and uses 'you' throughout."
+      }
+    },
+    "formatting": {
+      "passed": true,
+      "findings": [],
+      "wall_of_text": {
+        "passed": true,
+        "findings": [],
+        "notes": "No paragraph exceeds 6 sentences. Most paragraphs are 2–4 sentences. Bullet lists used throughout for the probability dimension, detectability bands, and the In Practice domain summaries."
+      },
+      "unlisted_sequence": {
+        "passed": true,
+        "findings": [],
+        "notes": "Worked Example uses numbered steps (Step 1 through Step 6). Triage checklist in Key Concepts uses a numbered list. Do/Don't checklist in In Practice uses a table. No multi-step procedure rendered as run-on prose."
+      },
+      "no_inline_examples": {
+        "passed": true,
+        "findings": [],
+        "notes": "Each dimension sub-section contains inline examples (e.g., severity spectrum with 'delete a wrong word', detectability with 'a number that is clearly impossible', 'a clause in a contract'). Inline examples appear throughout, not only in the Worked Example section."
+      },
+      "definition_shape": {
+        "passed": true,
+        "notes": "Severity, Probability, and Detectability all follow the bold-term / plain-meaning shape on first use (lines 18, 24, 39)."
+      }
+    },
+    "assessment_references": {
+      "passed": true,
+      "findings": [],
+      "notes": "No mention of A3, 'Maths and Cognition Lab Report', due weeks, grade weights, or any assessment ID found in the reading prose."
+    },
+    "corpus_alignment": {
+      "passed": true,
+      "assertions_sampled": 10,
+      "unsupported_assertions": 0,
+      "threshold": 2,
+      "sampled_assertions": [
+        {
+          "reading_line": 5,
+          "claim": "Q1 asks you to think about the cost of being wrong before you act, switching thinking from automatic acceptance to deliberate judgment",
+          "corpus_location": "section 4, paragraph 4",
+          "supported": true
+        },
+        {
+          "reading_line": 9,
+          "claim": "The Judgment Framework is a set of three questions you ask before acting on any AI output",
+          "corpus_location": "section 5.1",
+          "supported": true
+        },
+        {
+          "reading_line": 18,
+          "claim": "Severity — how bad the harm would be if the error actually occurs",
+          "corpus_location": "section 5.2, Dimension 1",
+          "supported": true
+        },
+        {
+          "reading_line": 50,
+          "claim": "Decision consequence = Severity × Probability × (1 / Detectability)",
+          "corpus_location": "section 5.3",
+          "supported": true
+        },
+        {
+          "reading_line": 46,
+          "claim": "Low detectability amplifies the cost even when severity and probability are individually moderate",
+          "corpus_location": "section 5.2, Dimension 3 closing sentence",
+          "supported": true
+        },
+        {
+          "reading_line": "86-90",
+          "claim": "Radiology AI with 87% sensitivity; severity high; detectability low (missed flag is absent signal); verdict: AI flag is not the final word",
+          "corpus_location": "section 7.1",
+          "supported": true
+        },
+        {
+          "reading_line": "92-95",
+          "claim": "Legal contract AI; anchoring bias pulls attention toward AI-highlighted clauses",
+          "corpus_location": "section 7.2",
+          "supported": true
+        },
+        {
+          "reading_line": 98,
+          "claim": "6% error at millions of posts = hundreds of thousands of wrong decisions daily",
+          "corpus_location": "section 7.3",
+          "supported": true
+        },
+        {
+          "reading_line": 120,
+          "claim": "The habit of asking Q1 is the protection",
+          "corpus_location": "section 10, final bullet",
+          "supported": true
+        },
+        {
+          "reading_line": 119,
+          "claim": "Low-cost situations are real; recognising them lets you spend scrutiny where it matters",
+          "corpus_location": "section 5.5 and section 10",
+          "supported": true
+        }
+      ],
+      "notes": "All 10 sampled assertions trace directly to corpus content. The reading faithfully condenses the corpus without introducing new claims."
+    }
+  },
+  "soft_findings_summary": [
+    {
+      "code": "undefined_terms",
+      "count": 1,
+      "details": "Term 'pharmacopeia' at line 75 of reading.md used without plain-language definition. Recommend: replace with 'the official drug reference guide (pharmacopeia)' or equivalent."
+    }
+  ],
+  "hard_fail_triggered": false,
+  "escalation_check": {
+    "scope_creep_count": 0,
+    "checks_5_6_findings_count": 1,
+    "escalation_threshold": 3,
+    "escalated": false
+  },
+  "gold_example_check": {
+    "gold_example_path": ".claude/references/gold-examples/reading/",
+    "gold_example_found": false,
+    "notes": "No gold example file found in reading gold-examples directory. Evaluation based on written standards in artifact-mix.json and SKILL.md."
+  }
+}

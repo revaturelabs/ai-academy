@@ -1,0 +1,69 @@
+{
+  "critic": "corpus-critic",
+  "topic_id": "1.11",
+  "topic_title": "The four properties of a good algorithm — finite, definite, input, output",
+  "at": "2026-06-22T00:00:00Z",
+  "passed": true,
+  "depth_profile": "standard",
+  "estimated_word_count": 2300,
+  "checks": {
+    "required_sections": {
+      "passed": true,
+      "detail": "Sections 3 (Learning Objectives ~90 words), 4 (Introduction ~200 words), 5 (Core Concepts ~860 words), and 10 (Key Takeaways ~130 words) all present and non-trivial. All minimum thresholds met (section 5 ≥100 words; sections 3, 4, 10 ≥50 words)."
+    },
+    "citation_density": {
+      "passed": true,
+      "resources_source": "web_search",
+      "primary_resources_cited": ["[1] bouraspage.com — cited in sections 4, 5.1, 5.2, 5.3, 5.4, 5.5, 6, 7"],
+      "supporting_resources_cited": ["[2] study.com — cited in sections 4, 5.1, 5.3, 5.4, 5.5, 6, 7", "[3] quescol.com — cited in sections 5.1, 5.2, 5.3, 5.4, 5.5, 6, 7"],
+      "estimated_cited_fraction_sections_5_6_7": 0.78,
+      "detail": "Primary resource [1] cited multiple times throughout all content sections. All three resources cited in sections 5, 6, and 7. Approximately 78% of standalone factual assertions carry a citation marker, exceeding the 60% threshold. A small number of assertions lack citations (e.g., 'Infinite loops are one of the most common bugs in programming', 'A computer cannot guess at meaning', 'Key point: Every step should bring it closer to finishing') — these are minor soft items, not hard fails.",
+      "soft_findings": [
+        "3–4 factual assertions in section 5 lack a citation marker but do not constitute a hard fail."
+      ]
+    },
+    "sequence_drift": {
+      "passed": true,
+      "allowed_concept_sources": "topics 1.1 through 1.11 (concepts_introduced)",
+      "forward_references_found": [],
+      "soft_findings": [
+        "The word 'program' (used informally in section 5.1: 'the program runs forever') has not been formally introduced in any prior topic's concepts_introduced. Used colloquially, not defined — borderline but acceptable.",
+        "The word 'server' (section 7: 'when a server is slow') has not been introduced in any prior topic. Used in a brief aside, not defined — acceptable."
+      ],
+      "detail": "All bolded/formally introduced terms are in the allowed set for topics 1.1–1.11. Cross-topic references (topic 1.9 'unambiguous steps', topic 1.1 'input/process/output model', topic 1.10 'stopping condition') are explicitly flagged with topic numbers. No hard forward references detected."
+    },
+    "length_sanity": {
+      "passed": true,
+      "estimated_words": 2300,
+      "profile_target_range": [3000, 4400],
+      "absolute_floor": 1500,
+      "absolute_ceiling": 6000,
+      "pct_below_target_lower_bound": 23,
+      "hard_fail_threshold_pct": 30,
+      "detail": "Estimated word count ~2300 is below the standard profile target range of 3000–4400 words (23% below the lower bound). The SKILL.md hard-fail threshold is >30% outside the range. At 23% below, this is within the tolerance band — a soft warning rather than a hard fail. The corpus is above the absolute floor of 1500 words. Flagged for the human reviewer at HITL #2 to consider requesting expansion, particularly in sections 5 (Core Concepts) and 7 (Real-World Patterns).",
+      "severity": "soft_warning"
+    },
+    "topic_scope": {
+      "passed": true,
+      "scope_creep_findings": [],
+      "detail": "Corpus stays tightly within the headline scope of the four properties (finiteness, definiteness, input, output). No Big-O complexity, no algorithm efficiency or effectiveness as a 5th property, no NP-completeness, no time/space complexity. The term 'well-defined algorithm' is correctly listed in this topic's concepts_introduced and is appropriate to introduce here. No scope creep detected."
+    },
+    "beginner_readability": {
+      "passed": true,
+      "findings_count": 0,
+      "findings": [],
+      "detail": "All four main properties (finiteness, definiteness, input as algorithm property, output as algorithm property) are bolded and defined in plain language on first use. 'infinite loop' and 'termination' and 'well-defined algorithm' are similarly defined on first appearance. No jargon dumps (no paragraph introduces 3+ new terms simultaneously — each section introduces one property). Register is plain, direct, and active throughout. No unexplained technical acronyms (GPS/ATM/PIN are everyday terms). Sentence length is generally appropriate for zero-background learners. No readability hard-fail threshold reached."
+    }
+  },
+  "verdict": "PASS — all 6 checks passed. Soft warnings: (1) corpus length (~2300 words) is below the standard profile 3000–4400 word target by ~23% — not a hard fail but the human reviewer at HITL #2 should consider requesting expansion in Core Concepts and Real-World Patterns; (2) 3–4 factual assertions in section 5 lack citation markers (still above 60% threshold); (3) 'program' and 'server' used informally without formal introduction in prior topics — colloquial use only, no hard fail.",
+  "notes_for_builder": null,
+  "notes_for_human_reviewer": "The corpus is well-structured and beginner-appropriate. Primary concern is that estimated word count (~2300) is below the standard depth target of 3000–4400 words. Recommend expanding section 5 subsections (each core concept could use one more concrete example) and section 7 (one additional real-world pattern). This will also strengthen the reading artifact generated downstream.",
+  "checks_summary": [
+    "required_sections → PASS: all four sections present and above word minimums",
+    "citation_density → PASS: primary cited throughout; ~78% of claims in sections 5-7 carry citation markers; 3-4 uncited assertions (soft only)",
+    "sequence_drift → PASS: no hard forward references; 'program' and 'server' used informally (soft)",
+    "length_sanity → SOFT WARNING: ~2300 words vs 3000–4400 target (23% below lower bound, within 30% hard-fail threshold)",
+    "topic_scope → PASS: no scope creep; corpus stays on the four properties only",
+    "beginner_readability → PASS: all terms defined on first use, no jargon dumps, plain register, 0 hard findings"
+  ]
+}

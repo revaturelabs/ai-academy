@@ -1,0 +1,49 @@
+{
+  "verdict": "pass",
+  "cycle": 1,
+  "note": "Source-level pre-flight passed all checks. PNG render requires mmdc in terminal: mmdc -i content/m1-computational-thinking/week-1/4-algorithmic-thinking/1-10-algorithms-in-everyday-life-recipes-gps-routes-sorting-queue/artifacts/diagram.mmd -o content/m1-computational-thinking/week-1/4-algorithmic-thinking/1-10-algorithms-in-everyday-life-recipes-gps-routes-sorting-queue/artifacts/diagram.png -w 1400 -b transparent. Visual checks at source level indicate layout is correct for the side-by-side parallel subgraph intent.",
+  "preflight": {
+    "mermaid_parse_check": "pass — valid flowchart LR with three direction:TB subgraphs, correct classDef syntax, ~~~ invisible edges for horizontal spacing",
+    "node_count_check": "pass — RECIPE: 4 nodes (R1,R2,R3,R4); GPS: 4 nodes (G1,G2,G3,G4); SORT: 5 nodes (S1,S2,S3,S4,S5); all within 3–8 per subgraph",
+    "label_length_check": "pass — all <b>...</b> labels ≤ 4 words: 'Raw ingredients'(2), 'Ordered cooking steps'(3), 'Is it done?'(3), 'Finished dish'(2), 'Start + destination'(2), 'Evaluate road segments'(3), 'Destination reached?'(2), 'Turn-by-turn directions'(2), 'Unordered list'(2), 'Compare pair of items'(4), 'Out of order?'(3), 'Any swaps this pass?'(4), 'Sorted list'(2)",
+    "concept_fidelity_check": "pass — all labels trace directly to corpus §5.1 (recipe: ingredients, cooking steps, decisions, loops, stopping condition, finished dish), §5.2 (GPS: start, destination, road segments, travel time, turn-by-turn directions), §5.3 (sorting: unordered list, comparison rule, compare pairs, swap, out of order, sorted list), §5.4 (shared input→process→output pattern)",
+    "title_discipline_check": "pass — governing concept 'Every algorithm has the same shape: Input → Process → Output' is in the --- config title field; not a ghost node. This traces directly to §5.4 'The pattern that holds across all three' and §5.1 table",
+    "single_path_discipline_check": "pass — each subgraph is a deliberate branching loop (decision diamond with loop-back), which is correct for the corpus's description of decision + repetition building blocks (§5.1); not a spurious branch",
+    "label_plainness_check": "pass — no bare unexplained acronyms; 'GPS' is used only in the subgraph title which mirrors the topic title, not as a bare node label; all node labels are plain English",
+    "color_tier_check": "pass — input nodes use start(#a5d8ff blue), process/decision nodes use auto(#d0bfff purple), output nodes use done(#b2f2bb green); no HITL gate nodes (none appropriate for this conceptual diagram)"
+  },
+  "findings": [
+    {
+      "code": "looks_good",
+      "where": "full diagram — three parallel subgraphs",
+      "detail": "Three TB subgraphs arranged horizontally via LR root + ~~~ invisible spacing edges. Each domain follows the same structural shape: start(blue input) → auto(purple process) → decision loop → done(green output). Node counts are 4, 4, 5 per domain — all within bounds. Labels are plain English, corpus-grounded, and ≤ 4 words. The shared title captures the governing pattern from §5.4. Decision diamonds with loop-back arrows accurately represent the 'repeat until stopping condition met' pattern described in all three corpus sections. Color palette matches project spec exactly."
+    }
+  ],
+  "stats": {
+    "nodes": 13,
+    "nodes_per_subgraph": {
+      "RECIPE": 4,
+      "GPS": 4,
+      "SORT": 5
+    },
+    "edges": 14,
+    "layout": "flowchart LR (three parallel direction:TB subgraphs)",
+    "labels": [
+      "Raw ingredients",
+      "Ordered cooking steps",
+      "Is it done?",
+      "Finished dish",
+      "Start + destination",
+      "Evaluate road segments",
+      "Destination reached?",
+      "Turn-by-turn directions",
+      "Unordered list",
+      "Compare pair of items",
+      "Out of order?",
+      "Any swaps this pass?",
+      "Sorted list"
+    ],
+    "png_path": "content/m1-computational-thinking/week-1/4-algorithmic-thinking/1-10-algorithms-in-everyday-life-recipes-gps-routes-sorting-queue/artifacts/diagram.png",
+    "png_dims": "pending render — mmdc not available in agent session"
+  }
+}

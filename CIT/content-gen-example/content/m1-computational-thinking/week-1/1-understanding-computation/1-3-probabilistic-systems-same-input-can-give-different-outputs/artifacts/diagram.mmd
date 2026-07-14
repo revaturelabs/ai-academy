@@ -1,0 +1,31 @@
+---
+title: "Same input — different result each time: the probabilistic system"
+config:
+  theme: base
+  themeVariables:
+    primaryColor: "#a5d8ff"
+    primaryBorderColor: "#4a9eed"
+    lineColor: "#555"
+  flowchart:
+    htmlLabels: true
+    curve: basis
+    nodeSpacing: 55
+    rankSpacing: 65
+---
+flowchart TB
+  subgraph DET["Deterministic System"]
+    direction LR
+    D_IN["<b>Same Input</b>"]:::start --> D_PROC["<b>Fixed Process</b><br/><span style='font-size:12px;color:#6d28d9'>no randomness — one defined path</span>"]:::auto --> D_OUT["<b>Single Fixed Output</b><br/><span style='font-size:12px;color:#6d28d9'>same input → always this exact result</span>"]:::done
+  end
+
+  subgraph PROB["Probabilistic System"]
+    direction LR
+    P_IN["<b>Same Input</b>"]:::start --> P_PROC["<b>Process + Randomness</b><br/><span style='font-size:12px;color:#6d28d9'>sampling picks one answer from the range</span>"]:::auto
+    P_PROC --> P_A["<b>Output A</b>"]:::done
+    P_PROC --> P_B["<b>Output B</b><br/><span style='font-size:12px;color:#6d28d9'>output variation — any run can differ</span>"]:::done
+    P_PROC --> P_C["<b>Output C</b>"]:::done
+  end
+
+  classDef start fill:#a5d8ff,stroke:#4a9eed,color:#000
+  classDef auto fill:#d0bfff,stroke:#8b5cf6,color:#000
+  classDef done fill:#b2f2bb,stroke:#22c55e,color:#000

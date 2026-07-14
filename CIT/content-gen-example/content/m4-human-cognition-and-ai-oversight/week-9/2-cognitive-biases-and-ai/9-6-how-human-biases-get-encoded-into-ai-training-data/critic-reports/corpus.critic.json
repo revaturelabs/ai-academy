@@ -1,0 +1,88 @@
+{
+  "critic": "corpus-critic",
+  "topic_id": "9.6",
+  "topic_title": "How human biases get encoded into AI training data",
+  "passed": true,
+  "at": "2026-06-12T00:00:00Z",
+  "depth_profile": "standard",
+  "word_count_estimate": 3130,
+  "checks": {
+    "required_sections": {
+      "passed": true,
+      "detail": "Sections 3, 4, 5, 10 all present and non-trivial. Section 3 ~130w (>=50), Section 4 ~165w (>=50), Section 5 ~1900w (>=100), Section 10 ~135w (>=50)."
+    },
+    "citation_density": {
+      "passed": true,
+      "resources_source": "web_search",
+      "primary_cited": true,
+      "primary_url": "https://www.ibm.com/think/topics/ai-bias",
+      "primary_marker": "[1]",
+      "primary_citation_count": "15+",
+      "sections_5_6_7_density": ">=60% of standalone factual assertions carry [1], [2], or [3] markers throughout sections 5, 6, and 7.",
+      "fake_citations": false,
+      "detail": "All three markers ([1],[2],[3]) resolve to resources listed in topic.resources.json. No fabricated citations detected."
+    },
+    "sequence_drift": {
+      "passed": true,
+      "findings": [
+        {
+          "term": "proxy variable",
+          "severity": "soft",
+          "location": "Section 7 (Real-World Patterns), two sentences",
+          "detail": "Used descriptively ('proxy variables like zip code', 'proxy variable') without definition. Not in 9.6 concepts_introduced, not in any prior topic's concepts_introduced. Not a future-topic formal concept, but opaque to a beginner.",
+          "recommendation": "Add a one-phrase plain-English gloss on first use, e.g. 'a stand-in variable — a piece of data that acts as an indirect measure of something else'."
+        }
+      ],
+      "unknown_forward_terms": ["proxy variable"],
+      "detail": "'Judgment Framework' appears once in Section 3 LO with an explicit defer flag ('without needing to define it yet') — satisfies the one-sentence mention-and-defer rule at the sequence-drift level."
+    },
+    "length_sanity": {
+      "passed": true,
+      "word_count_estimate": 3130,
+      "profile": "standard",
+      "range": [3000, 4400],
+      "within_range": true,
+      "detail": "Estimated 3130 words; standard profile range 3000–4400. Within bounds."
+    },
+    "topic_scope": {
+      "passed": true,
+      "findings": [
+        {
+          "concept": "Judgment Framework characterization in Learning Objectives",
+          "severity": "soft",
+          "finding_code": "scope_creep",
+          "location": "Section 3, Learning Objective 6",
+          "detail": "LO6 reads: 'Name the Judgment Framework as a tool for managing these risks (without needing to define it yet).' The phrase 'as a tool for managing these risks' is an appositive characterization of a deferred concept. Per scope_discipline rules, a deferred concept must appear as a bare name plus a topic pointer — never with a defining clause. The appositive partially characterizes the Judgment Framework, which is scope_creep even at LO level.",
+          "recommendation": "Revise to bare name + defer pointer only, e.g. 'Be aware that the Judgment Framework (covered in 9.7) exists as a next step — you do not need to define it here.'"
+        }
+      ],
+      "out_of_scope_concepts": ["Judgment Framework characterization (appositive in LO6)"],
+      "detail": "No teaching of full AI ethics/fairness landscape, technical debiasing, governance frameworks, or other clearly beyond-scope material detected. The seven-step bias trace in Section 6 is correctly scoped as awareness-level diagnostic, not technical debiasing. Best Practices (Section 8) is non-technical and within scope."
+    },
+    "beginner_readability": {
+      "passed": true,
+      "findings": [
+        {
+          "type": "undefined_terms",
+          "severity": "soft",
+          "terms": ["proxy variable"],
+          "location": "Section 7, two sentences",
+          "detail": "'proxy variable' used twice without a plain-language gloss. Beginners cannot be expected to know what a proxy variable is. Also referenced in Check 3 sequence_drift findings."
+        }
+      ],
+      "jargon_dump": false,
+      "academic_register": false,
+      "terms_defined_on_first_use": true,
+      "findings_count": 1,
+      "escalated_to_hard_fail": false,
+      "detail": "All major technical terms (encoding, training data, labelling, labelling bias, historical bias, selection bias, representation bias, feedback loop, aggregation bias, AAVE) are defined on first use. No jargon dumps detected. Register is plain and direct; sentences address the learner as 'you'. One soft finding: 'proxy variable' used without definition in Section 7. Finding count (1) is below the 3-finding hard-escalation threshold."
+    }
+  },
+  "soft_findings_summary": [
+    "sequence_drift: 'proxy variable' used in S7 without definition — not in any topic's concepts_introduced; add a brief gloss.",
+    "topic_scope: 'Judgment Framework' in LO6 has an appositive characterization ('as a tool for managing these risks') — scope_discipline requires bare name + defer pointer only; remove the appositive.",
+    "beginner_readability: 'proxy variable' undefined for beginners — same as sequence_drift finding above."
+  ],
+  "hard_failures": [],
+  "verdict": "PASSED — 2 soft findings (no hard failures): (1) 'proxy variable' used twice in Section 7 without definition, not in any topic's concepts_introduced — add a one-phrase plain-English gloss; (2) Judgment Framework in LO6 receives an appositive characterization rather than a bare name + defer pointer — revise to bare name form per scope_discipline. These surface at HITL #2 for author review but do not block downstream artifact generation."
+}

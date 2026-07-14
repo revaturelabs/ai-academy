@@ -1,0 +1,50 @@
+$CATEGORY: CIT/M2/week-4/4-8-presenting-a-findings-based-recommendation-evidence-not-opin
+
+::q1:: A student writes\: "Tool A felt more intelligent and easier to work with." Why does this statement fail the test of an evidence-based recommendation? {
+~It fails because the student should have compared at least three tools, not two.#No — the number of tools compared is not the issue here.
+~It fails because feelings are not allowed in any professional document.#No — feelings are allowed in reflection sections; the problem here is that the statement is presented as a recommendation claim, which must be checkable.
+=It fails because the claim is a personal feeling, not a verifiable score or observation.#Correct — evidence must be something another person with your rubric could verify; a personal feeling cannot be verified.
+~It fails because the student forgot to name the evaluation criteria in the sentence.#Not the core issue — the deeper problem is that the claim is an opinion, not a traceable result, regardless of whether criteria are named.
+#### Tests LO1 — the distinction between evidence-based recommendation and personal opinion (corpus §5.1).
+}
+
+::q2:: Which of the following lists the three parts of a well-formed recommendation in the correct order? {
+=Findings summary → Evidence anchor → Recommendation statement#Correct — you first state what the evaluation found overall, then cite the specific scores that drove the result, then deliver a clear conclusion.
+~Evidence anchor → Recommendation statement → Findings summary#No — leading with selected evidence before giving the overall scores leaves the reader without context for why those criteria matter.
+~Recommendation statement → Findings summary → Evidence anchor#No — opening with the conclusion before showing any evidence makes the recommendation look like an assertion rather than an analysis.
+~Findings summary → Recommendation statement → Evidence anchor#No — placing the conclusion before the evidence anchor skips the step that makes the conclusion traceable and verifiable.
+#### Tests LO2 — identifying the three parts and their required order (corpus §5.2).
+}
+
+::q3:: To turn a rubric score into a citable evidence statement, which three pieces of information must you include? {
+~The tool's brand name, the date you tested it, and your overall personal impression of the session.#No — brand name and date alone are not evidence; personal impression is opinion, not evidence.
+=The criterion name, the score each tool received, and a concrete observation showing why that score applies.#Correct — all three together make the evidence citable: what was measured, how each tool performed, and a concrete example that shows the score is justified.
+~The criterion name, the score, and the name of the person who designed the rubric.#No — who designed the rubric is not part of the evidence statement for a specific criterion finding.
+~The weighted total score, the number of test tasks you ran, and your recommendation conclusion.#No — the weighted total belongs in the findings summary; the recommendation belongs in Part 3; neither is the evidence statement itself.
+#### Tests LO3 — translating rubric scores and test observations into specific, citable evidence statements (corpus §5.3).
+}
+
+::q4:: A classmate reads your recommendation and says, "I can see Tool A won overall, but I cannot tell which specific results drove that conclusion." Which part of your recommendation is most likely missing or too weak? {
+~The findings summary — you likely omitted the overall weighted scores for each tool.#The findings summary covers overall totals; the problem described is about tracing the deciding results, which is a different section.
+~The recommendation statement — your final conclusion is probably not stated clearly enough for the reader.#The recommendation statement gives the conclusion; the classmate already understands who won overall, so the conclusion is not the weak point here.
+~The limitations note — you omitted how many test tasks you ran and where gaps exist in the test design.#Limitations describe gaps in test design; they do not explain which criteria drove the result.
+=The evidence anchor — you have not cited the specific criteria and test observations that most explain the outcome.#Correct — the evidence anchor is the part that names the two or three deciding criteria with scores and concrete observations, enabling a reader to trace the conclusion.
+#### Tests LO4 — writing a recommendation a sceptical audience can follow and verify (corpus §5.2, §5.3).
+}
+
+::q5:: A student's recommendation says\: "Tool A produced better outputs overall — therefore we recommend Tool A." The student's rubric shows Tool B actually scored higher on accessibility (4/4 versus Tool A's 3/4). Which weakness does this recommendation display? {
+~Vague claims — the word "better" is used without any rubric score or criterion reference attached.#This is also present, but the more specific weakness being illustrated by the accessibility omission is the ignored trade-off.
+~Unsupported assertions — the recommendation is stated without referencing the rubric scores or any specific criterion.#Partially true, but the most specific weakness shown by the missing accessibility comparison is the ignored trade-off.
+=Ignored trade-offs — the criterion where the other tool outperformed is not mentioned, so the recommendation looks one-sided.#Correct — when the recommended tool scores lower on a criterion, that trade-off must be named; omitting it hides important information the reader needs.
+~Overstated certainty — the student claims the tool is "definitively better" rather than qualifying it for this specific context.#The language here is "better overall," not "definitively better"; the most glaring defect is the missing trade-off acknowledgement.
+#### Tests LO5 — recognising and correcting three common weaknesses (corpus §5.6).
+}
+
+::q6:: Name two specific types of limitation that are commonly worth acknowledging when you present a rubric-based recommendation. Give a brief example of each. {
+=test sample size
+=single scorer
+=single evaluator
+=version and timing
+=context specificity
+#### Tests LO6 — acknowledging limitations of a rubric-based evaluation honestly and briefly (corpus §5.5).
+}

@@ -1,0 +1,47 @@
+{
+  "topic_id": "9.11",
+  "generated_at": "2026-06-13",
+  "format": "gift",
+  "question_count": 6,
+  "$bias_defense_applied": true,
+  "$shuffle_seed": "9.11-cit-m4-w9-highstakes-r2",
+  "correct_position_distribution": [0, 3, 1, 2, 0, null],
+  "questions": [
+    {
+      "id": "q1",
+      "type": "mcq",
+      "objective_ref": "Define high-stakes domain — three signals",
+      "correct_position": 0
+    },
+    {
+      "id": "q2",
+      "type": "mcq",
+      "objective_ref": "Two reasons for mandatory oversight: cognitive science + legal",
+      "correct_position": 3
+    },
+    {
+      "id": "q3",
+      "type": "mcq",
+      "objective_ref": "Apply Judgment Framework to determine human final authority requirement",
+      "correct_position": 1
+    },
+    {
+      "id": "q4",
+      "type": "mcq",
+      "objective_ref": "EU AI Act high-risk AI — meaning and oversight requirement",
+      "correct_position": 2
+    },
+    {
+      "id": "q5",
+      "type": "mcq",
+      "objective_ref": "Concrete accountability failure when AI has effective final authority",
+      "correct_position": 0
+    },
+    {
+      "id": "q6",
+      "type": "short_answer",
+      "objective_ref": "Apply meaningful vs nominal oversight distinction",
+      "correct_position": null
+    }
+  ]
+}

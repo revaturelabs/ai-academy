@@ -1,0 +1,46 @@
+---
+title: "ReAct — Reasoning + Acting interleaved"
+config:
+  theme: base
+  themeVariables:
+    primaryColor: "#a5d8ff"
+    primaryBorderColor: "#4a9eed"
+    lineColor: "#555"
+    edgeLabelBackground: "#ffffff"
+  flowchart:
+    htmlLabels: true
+    curve: basis
+    nodeSpacing: 55
+    rankSpacing: 70
+---
+flowchart LR
+    Q["<b>Question</b><br/><span style='font-size:11px;color:#6d28d9'>the user's task</span>"]:::start
+
+    T["<b>Thought</b><br/><span style='font-size:11px;color:#6d28d9'>explicit reasoning written<br/>into the prompt</span>"]:::auto
+
+    A["<b>Action</b><br/><span style='font-size:11px;color:#6d28d9'>tool call — search,<br/>calculator, etc.</span>"]:::act
+
+    O["<b>Observation</b><br/><span style='font-size:11px;color:#6d28d9'>real result returned<br/>by the tool</span>"]:::act
+
+    FA["<b>Final Answer</b><br/><span style='font-size:11px;color:#6d28d9'>returned to user</span>"]:::done
+
+    subgraph TRACE["Cycle 1 example — Eiffel Tower"]
+        direction LR
+        C1T["<b>Thought</b><br/><span style='font-size:11px;color:#6d28d9'>I'll search for the<br/>build year</span>"]:::auto
+        C1A["<b>Action</b><br/><span style='font-size:11px;color:#6d28d9'>search('Eiffel Tower<br/>year')</span>"]:::act
+        C1O["<b>Observation</b><br/><span style='font-size:11px;color:#6d28d9'>completed in 1889</span>"]:::act
+        C1T --> C1A --> C1O
+    end
+
+    Q --> T
+    T --> A
+    A --> O
+    O -- "need more info" --> T
+    T -- "task complete" --> FA
+    T -.- C1T
+
+    classDef start fill:#a5d8ff,stroke:#4a9eed,color:#1e293b
+    classDef auto  fill:#d0bfff,stroke:#8b5cf6,color:#1e293b
+    classDef act   fill:#a5d8ff,stroke:#4a9eed,color:#1e293b
+    classDef done  fill:#b2f2bb,stroke:#22c55e,color:#1e293b
+    classDef ghost fill:none,stroke:none,color:#6d28d9

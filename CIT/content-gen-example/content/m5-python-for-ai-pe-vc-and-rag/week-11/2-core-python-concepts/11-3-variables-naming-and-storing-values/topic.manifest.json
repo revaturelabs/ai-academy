@@ -1,0 +1,45 @@
+{
+  "type": "topic",
+  "id": "11.3",
+  "title": "Variables — naming and storing values",
+  "slug": "11-3-variables-naming-and-storing-values",
+  "position_in_module": 1,
+  "week_num": 11,
+  "session_name": "Python Foundations I",
+  "module": {
+    "position": 2,
+    "slug": "2-core-python-concepts",
+    "title": "Core Python Concepts"
+  },
+  "course": {
+    "code": "M5",
+    "slug": "m5-python-for-ai-pe-vc-and-rag",
+    "title": "Python for AI, PE, VC and RAG"
+  },
+  "next_assessment": {
+    "id": "A4",
+    "due_week": 13,
+    "title": "Python and Prompt Engineering Portfolio",
+    "weight": "20%"
+  },
+  "paths": {
+    "corpus": "topic_corpus.md",
+    "resources": "topic.resources.json",
+    "progress": "topic.progress.json",
+    "artifacts_dir": "artifacts/",
+    "critic_reports_dir": "critic-reports/"
+  },
+  "artifact_plan": {
+    "diagram": true,
+    "diagram_intent": "Side-by-side comparison of the four data types (str, int, float, bool) with their everyday analogies and example values, plus a simple assignment-arrow showing variable name pointing to value",
+    "suggested_profile": "standard",
+    "reading_word_range": [1200, 1600],
+    "reading_min_minutes": 6,
+    "reading_max_minutes": 8,
+    "quiz_min_questions": 5,
+    "quiz_max_questions": 6,
+    "quiz_include_short_answer": false
+  },
+  "expected_delivery_minutes": 7,
+  "status": "artifacts_complete"
+}

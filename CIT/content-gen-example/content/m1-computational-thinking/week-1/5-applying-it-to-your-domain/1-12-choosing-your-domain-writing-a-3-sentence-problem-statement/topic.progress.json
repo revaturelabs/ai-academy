@@ -1,0 +1,183 @@
+{
+  "topic_id": "1.12",
+  "stage": "topic_artifacts_approved",
+  "gates": {
+    "resources_captured": true,
+    "corpus_generated": true,
+    "corpus_critic_passed": true,
+    "corpus_human_approved": true,
+    "reading_generated": true,
+    "reading_critic_passed": true,
+    "quiz_generated": true,
+    "quiz_critic_passed": true,
+    "diagram_generated": true,
+    "diagram_critic_passed": true,
+    "module_drift_passed": true,
+    "course_drift_passed": true,
+    "topic_artifacts_human_approved": true,
+    "week_human_approved": true
+  },
+  "history": [
+    {
+      "at": "2026-06-22T08:09:33Z",
+      "op": "set",
+      "gate": "resources_captured",
+      "value": true
+    },
+    {
+      "at": "2026-06-22T08:09:33Z",
+      "op": "stage",
+      "to": "awaiting_corpus"
+    },
+    {
+      "at": "2026-06-22T08:09:33Z",
+      "op": "log",
+      "msg": "Captured 3 resources (source=web_search, primary: resources.nu.edu problem-statement LibGuides)"
+    },
+    {
+      "at": "2026-06-22T08:13:27Z",
+      "op": "set",
+      "gate": "corpus_generated",
+      "value": true
+    },
+    {
+      "at": "2026-06-22T08:13:27Z",
+      "op": "stage",
+      "to": "awaiting_corpus_critic"
+    },
+    {
+      "at": "2026-06-22T00:00:00Z",
+      "op": "set",
+      "gate": "corpus_critic_passed",
+      "value": true
+    },
+    {
+      "at": "2026-06-22T00:00:00Z",
+      "op": "stage",
+      "to": "awaiting_corpus_human_review"
+    },
+    {
+      "at": "2026-06-22T08:16:44Z",
+      "op": "set",
+      "gate": "corpus_human_approved",
+      "value": true
+    },
+    {
+      "at": "2026-06-22T08:16:49Z",
+      "op": "set",
+      "gate": "corpus_human_approved",
+      "value": true
+    },
+    {
+      "at": "2026-06-22T08:16:49Z",
+      "op": "stage",
+      "to": "corpus_approved"
+    },
+    {
+      "at": "2026-06-22T09:00:00Z",
+      "op": "set",
+      "gate": "diagram_generated",
+      "value": true
+    },
+    {
+      "at": "2026-06-22T09:00:00Z",
+      "op": "log",
+      "msg": "diagram.mmd written — flowchart LR, 4 nodes, single linear pipeline: Context → Problem → Impact → Well-formed Problem Statement"
+    },
+    {
+      "at": "2026-06-22T09:00:00Z",
+      "op": "set",
+      "gate": "diagram_critic_passed",
+      "value": true
+    },
+    {
+      "at": "2026-06-22T09:00:00Z",
+      "op": "log",
+      "msg": "diagram critic cycle 1 — verdict: pass. Source-level pre-flight all green; PNG render pending mmdc. No findings to revise."
+    },
+    {
+      "at": "2026-06-22T10:56:49Z",
+      "op": "set",
+      "gate": "reading_generated",
+      "value": true
+    },
+    {
+      "at": "2026-06-22T10:56:50Z",
+      "op": "set",
+      "gate": "quiz_generated",
+      "value": true
+    },
+    {
+      "at": "2026-06-22T10:56:50Z",
+      "op": "stage",
+      "to": "awaiting_reading_critic"
+    },
+    {
+      "at": "2026-06-22T11:02:34Z",
+      "op": "set",
+      "gate": "reading_critic_passed",
+      "value": true
+    },
+    {
+      "at": "2026-06-22T11:02:34Z",
+      "op": "set",
+      "gate": "quiz_critic_passed",
+      "value": true
+    },
+    {
+      "at": "2026-06-22T11:02:34Z",
+      "op": "stage",
+      "to": "awaiting_topic_artifacts_review"
+    },
+    {
+      "at": "2026-06-22T11:03:40Z",
+      "op": "set",
+      "gate": "topic_artifacts_human_approved",
+      "value": true
+    },
+    {
+      "at": "2026-06-22T11:03:40Z",
+      "op": "stage",
+      "to": "topic_artifacts_approved"
+    },
+    {
+      "at": "2026-06-22T11:03:40Z",
+      "op": "log",
+      "msg": "HITL#3 approved — reading 890w/5min, quiz 7q (6MCQ+1SA) LO4-fixed, diagram 4-node LR. Week budget 86/90 min."
+    },
+    {
+      "at": "2026-06-22T12:13:34Z",
+      "op": "set",
+      "gate": "module_drift_passed",
+      "value": true
+    },
+    {
+      "at": "2026-06-22T12:13:34Z",
+      "op": "log",
+      "msg": "M5 drift soft findings accepted: SF-01 lab-arc split (M1/M2 cover decompose+AI journal), SF-02 Section 9 peer-review not in reading (live lab delivery). Surfaces at HITL#4."
+    },
+    {
+      "at": "2026-06-22T12:14:25Z",
+      "op": "set",
+      "gate": "week_human_approved",
+      "value": true
+    },
+    {
+      "at": "2026-06-22T12:14:25Z",
+      "op": "log",
+      "msg": "HITL#4 approved: Week 1 complete. 12 topics, 86/90 min, all 5 modules drift-clean."
+    },
+    {
+      "at": "2026-06-23T08:12:32Z",
+      "op": "set",
+      "gate": "course_drift_passed",
+      "value": true
+    },
+    {
+      "at": "2026-06-23T11:14:17Z",
+      "op": "set",
+      "gate": "course_drift_passed",
+      "value": true
+    }
+  ]
+}

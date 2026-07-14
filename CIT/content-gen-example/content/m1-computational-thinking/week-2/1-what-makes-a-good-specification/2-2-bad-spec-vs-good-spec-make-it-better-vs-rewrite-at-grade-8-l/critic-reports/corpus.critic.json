@@ -1,0 +1,60 @@
+{
+  "critic": "corpus-critic",
+  "topic_id": "2.2",
+  "at": "2026-06-16T00:00:00Z",
+  "passed": true,
+  "verdict": "Corpus passes all hard checks. All required sections (3, 4, 5, 10) are present and non-trivial. All three primary resources are cited at least once; citation density in sections 5, 6, 7 is adequate for a web_search corpus. No forward references detected — 'machine learning' appears only as the subject of example bad specifications, not as a concept taught. Word count estimated at ~2900 words, within the 30% tolerance band of the standard profile (3000–4400 floor at 30% = 2100). Scope stays tightly on topic title throughout. One soft finding: the term 'system prompt' (section 7, customer support example) is used without a plain-language gloss or a 'covered later' pointer; flag for author review at HITL #2.",
+  "checks": {
+    "required_sections": {
+      "passed": true,
+      "detail": {
+        "section_3_learning_objectives": "present, ~100 words, non-trivial",
+        "section_4_introduction": "present, ~150 words, non-trivial",
+        "section_5_core_concepts": "present, ~1800 words across 5 subsections, non-trivial",
+        "section_10_key_takeaways": "present, ~130 words, non-trivial"
+      }
+    },
+    "citation_density": {
+      "passed": true,
+      "resources_source": "web_search",
+      "detail": {
+        "resource_1_cited": true,
+        "resource_2_cited": true,
+        "resource_3_cited": true,
+        "sections_5_6_7_density": "majority of standalone factual assertions carry citation markers"
+      }
+    },
+    "sequence_drift": {
+      "passed": true,
+      "forward_references": [],
+      "notes": "'machine learning' appears only as the subject matter inside example specifications being diagnosed, not as a concept being taught or defined. No technical terms from outside the allowed prior concepts list are introduced."
+    },
+    "length_sanity": {
+      "passed": true,
+      "estimated_word_count": 2900,
+      "inferred_profile": "standard",
+      "profile_range": [3000, 4400],
+      "tolerance_lower_bound": 2100,
+      "notes": "Estimated ~2900 words. This is approximately 3% below the standard profile floor of 3000, well within the 30% tolerance band (floor 2100). Corpus is clearly standard-depth given 5 Core Concept subsections, Implementation, Real-World Patterns, Best Practices, and a Hands-On Exercise."
+    },
+    "topic_scope": {
+      "passed": true,
+      "scope_creep_findings": [],
+      "notes": "All sections stay on the topic headline: diagnosing bad specs and choosing between incremental fix and full rewrite. No advanced or adjacent concepts are taught at depth."
+    },
+    "beginner_readability": {
+      "passed": true,
+      "hard_escalation": false,
+      "soft_findings": [
+        {
+          "code": "undefined_terms",
+          "terms": ["system prompt"],
+          "location": "Section 7 (Real-World Patterns), customer support example",
+          "detail": "'system prompt' is used as a domain term in a real-world example without a plain-language gloss or a 'covered later' pointer. Beginner learners will not know this term yet. Recommend either brief inline gloss (e.g. 'the instruction text given to an AI chatbot') or removing it from the example."
+        }
+      ],
+      "notes": "1 undefined term soft finding — below the 3-finding escalation threshold. No jargon dumps detected. Sentence length and active voice are appropriate for the zero-background audience throughout."
+    }
+  },
+  "failures": []
+}

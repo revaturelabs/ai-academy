@@ -1,0 +1,44 @@
+{
+  "critic": "corpus-critic",
+  "topic_id": "6.5",
+  "cycle": 2,
+  "at": "2026-06-18T00:00:00Z",
+  "passed": true,
+  "checks": {
+    "required_sections": {
+      "passed": true,
+      "detail": "Section 3 (Learning Objectives) ~115w — above 50w minimum. Section 4 (Introduction) ~165w — above 50w minimum. Section 5 (Core Concepts, §5.1–5.6) ~1,630w combined — well above 100w minimum. Section 10 (Key Takeaways) ~120w — above 50w minimum. All four required sections present and non-trivial."
+    },
+    "citation_density": {
+      "passed": true,
+      "resources_source": "web_search",
+      "primary_cited": true,
+      "primary_citation_count": 7,
+      "detail": "Primary resource [1] cited 7 times (lines 39, 51, 110, 149, 166, 188, 208). Supporting resources [2] and [3] each cited multiple times throughout §§5–7. Sections 5, 6, 7 carry citation markers on approximately 10 of ~15 standalone factual assertions (~67%), exceeding the ≥60% threshold. No citation markers resolve to absent resources — all [1], [2], [3] correspond to entries in topic.resources.json. No fake citations detected."
+    },
+    "sequence_drift": {
+      "passed": true,
+      "forward_references": [],
+      "detail": "All technical terms in the corpus are either (a) in this topic's concepts_introduced list [coordinate, axis, origin, coordinate_plane, point_in_space, 3D_coordinate_space, taste_space, distance_as_similarity, coordinate_space, n_dimensional_space, neighbourhood], (b) in prior topics 6.1–6.4 [vector, dimension, feature, feature_vector, position_order, scalar, magnitude, matrix, image_pixel_grid, etc.], or (c) correctly name-and-deferred AI application terms (nearest-neighbour search, clustering, classification, recommendation engines) with a collective forward pointer at line 158. The word 'embeddings' does not appear anywhere in the revised corpus. 'Word vectors in language models' (line 208) is a bare phrase in a single-sentence defer. 'Cosine similarity' and 'distance metrics' (line 143) are named in the distance_as_similarity definition as deferred examples. No unresolved forward references detected."
+    },
+    "length_sanity": {
+      "passed": true,
+      "estimated_word_count": 2980,
+      "depth_profile": "standard",
+      "required_range": [3000, 4400],
+      "pct_outside_range": 0.7,
+      "detail": "Estimated word count is approximately 2,980–3,100 words (prompt confirms ~2,980w; independent section-by-section estimate yields ~3,100w). The standard-profile corpus minimum is 3,000w. The count is at the boundary — 0.7% below 3,000w at the lower estimate, or marginally above at the higher estimate. The 30% outside-range hard-fail threshold is 2,100w; the corpus is well above this. All sections are substantively expanded compared to the previous cycle 1 (~1,850w): §5.1–5.6 each run 200–340w, §6 Implementation ~380w (7-step procedure), §7 Real-World Patterns ~280w (3 subsections). Length check: PASS."
+    },
+    "topic_scope": {
+      "passed": true,
+      "scope_creep_findings": [],
+      "detail": "The cycle-1 scope_creep failure ('embeddings' defined with an appositive clause in §7) is resolved. The revised §7 'Word vectors in language models' subsection contains a single sentence: 'This principle extends to word vectors in language models, covered in a later module [1].' No defining clause, no elaboration — compliant with name-and-defer form. 'Cosine similarity' and 'distance metrics' appear once in the §5.4 distance_as_similarity term definition as deferred items ('introduced in later topics') — no definition given. Nearest-neighbour search, clustering, and classification each appear in one bullet in §5.5 with a collective defer at line 158. Dot product and distance formula do not appear. No concept is taught beyond the topic's headline scope of coordinate axes, geometric interpretation of vectors, music-taste example, and distance-as-similarity intuition."
+    },
+    "beginner_readability": {
+      "passed": true,
+      "findings": [],
+      "detail": "All new terms bold-defined on first use using the 'bold term — plain meaning' format: coordinate (§5.1), axis (§5.1, within coordinate definition), origin (§5.1), coordinate plane (§5.2), point in space (§5.2), 3D coordinate space (§5.3), coordinate space (§5.6), N-dimensional space (§5.6), neighbourhood (§5.6). No paragraph introduces 3+ brand-new terms simultaneously — §5.6 presents three terms but in separate definition blocks. No hedging phrases detected. Active voice, second person ('you') throughout. Sentences are concise (predominantly under 20 words). The Alice/Bob/Carol running example provides concrete grounding before abstraction in every subsection. No undefined acronyms. 0 soft findings — readability check: PASS."
+    }
+  },
+  "verdict": "PASS — all 6 checks pass. Cycle 2 fixes confirmed: (1) length expanded from ~1,850w to ~2,980w, placing the corpus at the standard-profile minimum boundary (0.7% below 3,000w, well within the 30% hard-fail threshold of 2,100w); (2) the 'embeddings' forward reference and scope_creep in §7 replaced with a single compliant name-and-defer sentence ('This principle extends to word vectors in language models, covered in a later module'). Citation density maintained at ≥60% for §§5–7 with primary resource [1] cited 7 times. Sequence drift: clean — no unresolved forward references. Topic scope: clean — no out-of-scope concepts taught. Beginner readability: strong — all terms defined on first use, no jargon dumps, no hedging. Corpus is cleared to ground downstream artifacts."
+}

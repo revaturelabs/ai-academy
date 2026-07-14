@@ -1,0 +1,70 @@
+{
+  "artifact": "reading",
+  "topic_id": "5.9",
+  "topic_title": "EU AI Act — prohibited uses including social scoring and real-time biometric surveillance",
+  "critic": "reading-critic",
+  "hard_gate": true,
+  "passed": true,
+  "at": "2026-06-22T00:00:00Z",
+  "cycles_used": 1,
+  "inputs": {
+    "reading_path": "artifacts/reading.md",
+    "meta_path": "artifacts/reading.meta.json",
+    "corpus_path": "topic_corpus.md",
+    "resources_path": "topic.resources.json",
+    "depth_profile": "standard",
+    "target_word_range": [1200, 1600],
+    "target_minute_range": [6, 8],
+    "gold_example": ".claude/references/gold-examples/reading/2-1-what-makes-a-good-specification.reading.md"
+  },
+  "checks": {
+    "format_discipline": {
+      "passed": true,
+      "detail": "No frontmatter — file opens with the '# EU AI Act ...' H1 (line 1), no leading YAML. Sidecar reading.meta.json present beside reading.md and parses, carrying word_count (1392), estimated_read_minutes, citations_used [1,2,3], and sections array. Exactly the six fixed sections in order: Overview, Key Concepts, Worked Example, In Practice, Key Takeaways, References — none added, renamed, dropped, or reordered."
+    },
+    "length": {
+      "passed": true,
+      "word_count": 1392,
+      "word_range": [1200, 1600],
+      "read_aloud_minutes": 6.05,
+      "minute_range": [6, 8],
+      "detail": "1392 words sits mid-range in standard [1200,1600]. Read-aloud minutes 1392/230 = 6.05, inside [6,8]. First draft (~1225w) landed in the word range but under the 6-min read-aloud floor (5.3 min); cycle-1 revision added ~165 words of beginner scaffolding (Key-Concepts framing sentence, a speed-limit/no-entry analogy for ban-vs-regulate, a clarifying privacy clause, and a worked-example closer) to clear the minute floor without breadth/scope expansion."
+    },
+    "citations": {
+      "passed": true,
+      "detail": "Primary [1] (EC AI Act Service Desk Article-5 FAQ) cited repeatedly across Overview, Key Concepts, Worked Example, Key Takeaways. Supporting [2] (FLI / artificialintelligenceact.eu Article 5) and [3] (EC Guidelines on prohibited practices, anchoring the narrow biometric exceptions) both cited where used. Bibliography lists exactly [1][2][3]; every inline marker resolves; no orphan markers, no orphan entries. Density ~1 citation per ~120 words, well above the >=1/400 floor."
+    },
+    "forward_references": {
+      "passed": true,
+      "forward_referenced_terms": [],
+      "detail": "Only prior-sequence concepts reused: 5.7 risk tiers/pyramid and 5.4 four pillars (harm-prevention, fairness, dignity). High-risk tier appears solely as a contrast (table row in the diagram caption framing, worked-example case 2), never taught at depth. No reference to 5.10 NIST RMF, 5.11 White House EO, 5.12 India MEITY, or 5.13 framework selection."
+    },
+    "faithfulness": {
+      "passed": true,
+      "unsupported_assertions": 0,
+      "detail": "Sampled 10 assertions: prohibited = unacceptable tier / Article 5 (corpus 5.1, intro); ban-vs-regulate rationale = harm-prevention pillar at its limit (corpus 5.1); social-scoring definition + trust-score example + two harms (corpus 5.2); biometric/real-time definitions (corpus 5.3); narrow pre-authorized exceptions: missing child, imminent threat, serious-crime suspect (corpus 5.4); the six other Article 5 bans (corpus 5.5); recognition heuristics (corpus 8). All trace to corpus. The speed-limit/no-entry analogy and the 'difference is not the technology' line are pedagogical restatements of the corpus ban-vs-regulate / exceptions distinction, not new factual claims."
+    },
+    "beginner_readability": {
+      "passed": true,
+      "findings": [],
+      "detail": "Matches artifact-mix audience baseline and the 2.1 standard-depth gold bar. EU AI Act spelled out on first use; prohibited use, Article 5, social scoring, biometric, real-time all defined plainly before formal phrasing, concrete-first (camera/crowd, trust-score examples lead). No paragraph stacks 3+ new terms (no jargon_dump). Short, active, 'you'-addressed sentences; no hedging (no academic_register). Average sentence length comfortably under 25 words."
+    },
+    "formatting": {
+      "passed": true,
+      "findings": [],
+      "detail": "No paragraph exceeds ~4 sentences (max ~4). Ordered sets rendered as numbered lists (biometric exceptions, four worked-example cases); contrast and definition sets as bullets with bold-term / plain-meaning shape. Inline concrete examples appear at each concept's introduction (not deferred to the Worked Example alone). Diagram embedded inline in Key Concepts at the prohibited-vs-high-risk contrast with a one-line caption."
+    },
+    "assessment_references": {
+      "passed": true,
+      "detail": "No assessment IDs, due weeks, or grade weights anywhere. The A1/A2 tie-in line carried by the 2.1 and 3.4 gold examples was deliberately NOT replicated, per the gold-notes team decision (2026-06-11)."
+    },
+    "scope": {
+      "passed": true,
+      "scope_creep": [],
+      "detail": "On-headline: prohibited/unacceptable tier, social scoring, real-time biometric surveillance, the narrow exceptions, and the other Article 5 bans — exactly the topic title. High-risk obligations (documentation/testing/human oversight from 5.8) appear only as a one-line contrast in the diagram-caption framing and worked-example case 2, never taught. No drift introduced while expanding corpus prose."
+    }
+  },
+  "soft_findings": [],
+  "verdict": "PASS (cycle 1 of max 2). Topic 5.9 reading clears all reading-critic checks as a hard gate. Format discipline clean (no frontmatter, sidecar present, exact six fixed sections in order). After a cycle-1 revision that added ~165 words of beginner scaffolding to lift read-aloud time from 5.3 to 6.05 min, length now sits mid-range (1392w / [1200,1600], 6.05 min / [6,8]). Citations: all three EU sources cited, no orphans. No forward references to 5.10-5.13. Faithful to corpus (0 unsupported assertions; added analogy is pedagogical, not factual). Beginner-readable and well-chunked, matching the 2.1 standard-depth gold bar; no assessment references (gold A1 line correctly omitted). Scope held to the prohibited tier with high-risk used as contrast only. Diagram embedded inline in Key Concepts at the prohibited-vs-high-risk contrast.",
+  "sections_needing_revision": []
+}

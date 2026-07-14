@@ -1,0 +1,50 @@
+{
+  "type": "topic",
+  "id": "4.7",
+  "title": "How to compare two AI tools — designing a measurable evaluation rubric",
+  "slug": "4-7-how-to-compare-two-ai-tools-designing-a-measurable-evaluatio",
+  "position_in_module": 1,
+  "week_num": 4,
+  "session_name": "The 2026 AI Stack",
+  "module": {
+    "position": 4,
+    "slug": "4-comparing-and-evaluating-ai-tools",
+    "title": "Comparing and Evaluating AI Tools"
+  },
+  "course": {
+    "code": "M2",
+    "slug": "m2-introduction-to-ai-systems",
+    "title": "Introduction to AI Systems"
+  },
+  "next_assessment": {
+    "id": "A2",
+    "due_week": 6,
+    "title": "AI Systems Essay",
+    "weight": "15%"
+  },
+  "paths": {
+    "corpus": "topic_corpus.md",
+    "resources": "topic.resources.json",
+    "progress": "topic.progress.json",
+    "artifacts_dir": "artifacts/",
+    "critic_reports_dir": "critic-reports/"
+  },
+  "artifact_plan": {
+    "diagram": true,
+    "diagram_intent": "Side-by-side rubric table showing two AI tools scored across five criteria with weighted totals — contrasts two paths and illustrates the structure/flow of the evaluation framework",
+    "depth_profile": "deep",
+    "depth_signals": [
+      "6 Core Concept subsections",
+      "Implementation section warranted (9-step procedure)",
+      "Real-World Patterns section warranted",
+      "lab activity directly tied to rubric design",
+      "budget headroom supports deep (26 min remaining for 4.8 after deep)"
+    ],
+    "confirmed_profile": "deep",
+    "confirmed_by_hitl2": true,
+    "reading": { "target_word_range": [1800, 2200], "target_minutes_range": [9, 11] },
+    "quiz": { "min_questions": 5, "max_questions": 7, "include_short_answer": true }
+  },
+  "expected_delivery_minutes": 10,
+  "status": "corpus_approved"
+}

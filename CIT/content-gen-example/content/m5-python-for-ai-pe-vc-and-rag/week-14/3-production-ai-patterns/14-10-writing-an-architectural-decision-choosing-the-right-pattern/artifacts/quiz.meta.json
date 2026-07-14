@@ -1,0 +1,49 @@
+{
+  "topic_id": "14.10",
+  "generated_at": "2026-06-16T00:00:00Z",
+  "format": "gift",
+  "question_count": 5,
+  "$bias_defense_applied": true,
+  "$shuffle_seed": "lo-ordered-manual-shuffle",
+  "correct_position_distribution": [1, 3, 0, 2, 1],
+  "max_share": 0.40,
+  "objective_coverage": {
+    "LO1": "q1",
+    "LO2": "q2",
+    "LO3": "q3",
+    "LO4": "q4",
+    "LO5": "q5"
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "type": "mcq",
+      "objective_ref": "Explain what an ADR is and why professional teams write them.",
+      "correct_position": 1
+    },
+    {
+      "id": "q2",
+      "type": "mcq",
+      "objective_ref": "Name the five standard sections of an ADR: Title, Status, Context, Decision, and Consequences.",
+      "correct_position": 3
+    },
+    {
+      "id": "q3",
+      "type": "mcq",
+      "objective_ref": "Write the Context section of an AI ADR by mapping a domain problem onto the decision matrix from 14.7.",
+      "correct_position": 0
+    },
+    {
+      "id": "q4",
+      "type": "mcq",
+      "objective_ref": "Write the Decision section by naming the chosen tier and the primary reason in plain language.",
+      "correct_position": 2
+    },
+    {
+      "id": "q5",
+      "type": "mcq",
+      "objective_ref": "Write the Consequences section by naming the cost-latency-quality trade-off the chosen tier introduces.",
+      "correct_position": 1
+    }
+  ]
+}

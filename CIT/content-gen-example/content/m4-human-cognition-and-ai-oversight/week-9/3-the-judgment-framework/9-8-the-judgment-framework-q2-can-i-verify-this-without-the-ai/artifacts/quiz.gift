@@ -1,0 +1,49 @@
+$CATEGORY: CIT/M4/week-9/9-8-the-judgment-framework-q2-can-i-verify-this-without-the-ai
+
+::q1:: A team member wants to check whether an AI answer is correct. She plans to ask the same AI the same question a second time and compare the two replies. Why does this NOT count as independent verification?
+~It would count as independent verification if she phrases the question differently each time.#No — rephrasing the same question to the same model still draws on the same training data; the source is not independent.
+~It would count if she waits 24 hours between the two questions, because the model may have updated.#No — consumer AI models do not update in real time between queries; the same training data produces both answers.
+=Both replies come from the same model trained on the same data, so neither is an independent source.#Correct — independent verification requires a source that did not originate from the AI; same-model repetition only gives you consistency, not correctness.
+~It would count as long as the two replies are worded differently, because different wording means different reasoning.#No — different wording does not mean different sources; both outputs are still shaped by the same underlying model.
+#### Tests the definition of independent verification and the misconception that asking the AI again constitutes a check (corpus §5.1, §8 Misconception 1).
+}
+
+::q2:: A student cannot write code herself, but an AI has generated a Python script for her assignment. She looks up each function the script calls in the official Python documentation and confirms every function behaves as the script expects. Which of the following best describes what she has done?
+=She has verified the AI output using an authoritative independent source, even though she could not have produced the script herself.#Correct — verification means checking a claim against an independent source; it does not require the ability to produce the same output from scratch.
+~She has not verified anything, because verification requires being able to produce the same output independently.#No — this confuses verification with production; you can check a claim without being able to generate it yourself.
+~She has verified nothing because the Python documentation was written by humans, not by an AI, so it is not comparable to AI output.#No — the documentation being human-written is exactly what makes it an independent source; this is a strength, not a flaw.
+~She has partially verified it, but a full verification would require her to rewrite the script from scratch.#No — rewriting the script would be production, not verification; her documentation check is a valid and complete verification of the specific claims she tested.
+#### Tests the distinction between verification and production (corpus §5.2).
+}
+
+::q3:: According to the Judgment Framework, which of the following is a valid method of independent verification?
+~Asking the AI to explain its step-by-step reasoning before you accept the answer.#No — asking the AI to explain itself is still drawing on the same model; the explanation is not an independent source.
+~Running the same query through two different AI systems and accepting the answer they agree on.#No — different AI systems may share training sources and the same factual errors; agreement between models is not independence from AI.
+~Checking whether the AI's answer sounds confident and well-structured, then accepting it.#No — confidence and structure are surface features of AI output; they tell you nothing about factual accuracy.
+=Comparing the AI's claim to the relevant section of a published regulation or standard that you look up directly.#Correct — a published regulation is an authoritative source that exists independently of the AI; this is the "checking against a known standard" verification method.
+#### Tests knowledge of the four verification methods, specifically cross-referencing and known standards (corpus §5.3).
+}
+
+::q4:: An analyst has applied Q1 and found that the cost of the AI's output being wrong is very high. She then applies Q2 and concludes that she genuinely cannot verify the output — no independent source exists and no expert is available in time. What should she do?
+~Act on the AI output but add a disclaimer that the output has not been fully verified.#No — a disclaimer does not reduce the risk of harm when cost is high; it only shifts the appearance of accountability.
+=Refuse to act on the AI output alone and escalate to an accountable person or seek a different approach.#Correct — the Judgment Framework's bottom-right cell (high cost, cannot verify) requires stopping, escalating, or finding a different source; acting alone is a failure of judgment.
+~Act on the AI output because, if verification is impossible, there is no other available option.#No — "impossible to verify" does not mean "safe to act on"; it means the risk is uncontrolled, which is precisely why escalation is required.
+~Repeat the Q1 assessment to see if the cost estimate was too high, then act if the revised cost is medium.#No — revising the cost estimate to justify acting is not a valid step; the Q1 score stands unless new information genuinely changes the situation.
+#### Tests the correct response when Q1 cost is high and verification is impossible (corpus §5.6, §5.7 bottom-right cell).
+}
+
+::q5:: A hospital doctor uses an AI clinical decision support tool that recommends a drug dosage. Before prescribing, the doctor checks the recommendation against the hospital's formulary and also applies her own clinical knowledge of the patient's kidney function and other medications. Which cells of the Q1 × Q2 matrix does this scenario illustrate?
+~Low cost, cannot verify — the doctor verifies as a formality but the stakes are low.#No — drug dosing in a hospital is a high-cost domain; errors can directly harm patients.
+~High cost, can verify — but the doctor has over-checked because one method would have been enough.#No — using two independent verification methods (the formulary and clinical expertise) in a high-cost domain reflects good practice, not over-checking.
+~Low cost, can verify — the AI tool handles the hard thinking so the doctor only needs a quick check.#No — delegating the hard thinking to the AI is automation bias; the cost of a dosage error remains high regardless of who generated the recommendation.
+=High cost, can verify — so the correct action is to verify before acting, which is exactly what the doctor does.#Correct — this is the top-right cell of the Q1 × Q2 matrix; the doctor correctly verifies using two independent methods (formulary and domain expertise) before prescribing.
+#### Tests application of the Q1 × Q2 matrix to a real-world medical scenario (corpus §5.7, §7 Medical pattern).
+}
+
+::q6:: Which of the following describes a situation where verification of an AI output is genuinely impossible, rather than merely difficult?
+~An AI summarises a technical research paper in a field the analyst has not studied — checking the summary fully would require reading the original paper and having relevant expertise.#No — this is difficult verification, not impossible; a qualified expert could perform the check in principle, even if it takes significant time and access.
+=An AI generates a forecast of which product category will see the highest customer demand in 18 months — no external record exists to compare against the AI's claim right now.#Correct — this is genuinely impossible: the AI is predicting future events and there is no existing independent source that can confirm or refute the claim today (corpus §5.6).
+~An AI recommends a contract clause but the analyst has no legal background and cannot evaluate the clause herself.#No — the analyst can still verify by comparing the clause to the relevant legislation or by asking a qualified lawyer; lacking personal expertise does not make verification impossible.
+~An AI recommends a drug dosage but the hospital's formulary is temporarily unavailable this week.#No — this is a temporary practical barrier, not a fundamental impossibility; verification can happen once the formulary or an expert becomes available.
+#### Tests the ability to distinguish genuinely impossible verification from difficult or temporarily constrained verification (corpus §5.6).
+}

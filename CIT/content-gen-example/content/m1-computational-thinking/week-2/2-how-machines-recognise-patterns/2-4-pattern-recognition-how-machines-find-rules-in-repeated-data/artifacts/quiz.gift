@@ -1,0 +1,46 @@
+$CATEGORY: CIT/M1/week-2/2.4-pattern-recognition-how-machines-find-rules-in-repeated-data
+
+::q1:: A programmer builds a spam filter by writing out every rule by hand — for example, "IF the email contains 'lottery' THEN mark as spam." A colleague says this is a rule-based system. What is the key feature that makes it rule-based? {
+~The filter uses a large collection of labeled emails to discover patterns on its own.#No — discovering patterns from labeled examples describes a pattern-recognition system, not a rule-based one.
+=Every decision is written as an explicit instruction by a human programmer, not discovered from data.#Correct — in a rule-based system, a human writes every IF/THEN rule; the machine follows those instructions exactly.
+~The filter produces a confidence score rather than a definite yes-or-no answer each time.#No — confidence scores are a feature of pattern-recognition systems. Rule-based systems produce a definite answer.
+~The filter improves automatically when the existing rules stop matching new spam emails.#No — a rule-based system does not update itself. A human must rewrite the rules when the world changes.
+#### Tests the distinction between rule-based and pattern-recognition systems (corpus §5.1).
+}
+
+::q2:: A team trains a spam filter by showing it 50,000 emails, each tagged "spam" or "not spam" by a human. After seeing enough examples, the filter classifies new emails it has never seen before. Which step in this process is called "labeling"? {
+~Breaking each email into measurable pieces — such as word counts and sender details — that the machine uses to learn.#No — breaking inputs into measurable pieces is feature extraction, not labeling.
+~Adjusting the machine's internal rules until it classifies the training examples correctly through repeated passes.#No — repeatedly adjusting internal rules over many passes is the training step itself, not labeling.
+~Deploying the finished filter so it handles new, unseen emails arriving in the live inbox every day.#No — putting the trained model into production is the deployment step, not labeling.
+=Tagging each example with its correct category — spam or not spam — before training begins.#Correct — labeling means a human attaches the right answer to each training example so the machine knows what to learn toward.
+#### Tests how machines learn from labeled data (corpus §5.2).
+}
+
+::q3:: After training on thousands of images of handwritten digits, a machine looks at a brand-new image and decides it is most likely the digit "3". What is this decision called? {
+=Classification — assigning the new input to the category whose learned pattern it most closely matches.#Correct — classification is the output step where the trained machine assigns a new, unseen input to the best-fitting category.
+~Feature extraction — converting the image into measurable properties such as pixel brightness and edge positions.#No — feature extraction happens before training begins. It turns raw input into the measurable pieces the machine studies.
+~Labeling — a human tags each training image with its correct digit so the machine can learn from examples.#No — labeling is done by a human on training data before the model is built. The machine's output on new data is classification.
+~Training — showing the machine repeated labeled examples so it gradually builds its own internal rules.#No — training is the process of building rules from labeled data. Deciding what a new, unseen input is comes after training ends.
+#### Tests the definition of classification in pattern recognition (corpus §§5.3–5.4).
+}
+
+::q4:: A student writes this specification for a fraud-detection system\: "The system must always flag every fraudulent transaction correctly." A senior developer says this specification is not suitable for an AI system. Why not? {
+~The specification does not name the country where transactions originate, so the input boundaries are unclear.#No — naming the geographic scope of inputs is good practice, but that is not the core reason this specification fails for an AI system.
+~The specification covers only one output state and does not say what the system should do with non-fraudulent transactions.#No — describing both output states is useful, but missing that detail is not the fundamental problem that makes this unworkable.
+=A pattern-recognition system produces probabilistic outputs, so it cannot guarantee it will always be correct on every new input.#Correct — no trained AI system can promise perfect accuracy. The specification must state a measurable success threshold instead of an absolute guarantee.
+~The specification is written in plain English rather than a formal notation that a system can be tested against automatically.#No — plain-English specifications are standard in specification writing. The language used is not the problem; the absolute guarantee is.
+#### Tests why probabilistic outputs make absolute guarantees unsuitable for AI specifications (corpus §§5.5, 8).
+}
+
+::q5:: A software specification for an AI email classifier reads\: "The system must classify spam emails with a precision of at least 85%, measured on a held-out labeled set of 500 emails." A teammate says this is better than "The system must always catch spam." Which features of the better specification make it suitable for a probabilistic AI system? {
+~It describes the programming language the classifier uses and explains the process by which training data was collected.#No — the programming language is an implementation detail. Training data provenance matters, but those are not the improvements shown in this example.
+=It states a measurable performance threshold and names the specific test conditions under which that claim must hold.#Correct — a threshold (85% precision) and defined test conditions (500 held-out labeled emails) make the specification testable and bounded for a probabilistic system.
+~It lists the exact rules the classifier applies internally to decide whether each arriving email is spam.#No — a pattern-recognition system finds its own rules from data. A specification describes the required output behavior, not the internal rules.
+~It guarantees the classifier will never wrongly delete a legitimate email that lands in the spam folder.#No — promising the system will never make a mistake is an absolute guarantee, which is exactly what is inappropriate for a probabilistic AI system.
+#### Tests the consequences of probabilistic outputs for writing specifications (corpus §§5.5, 8).
+}
+
+::q6:: Fill in the blank. A **____** is one measurable property of an input — such as the number of times the word "free" appears in an email — that a machine examines during training and classification. {
+=feature
+=Feature
+}

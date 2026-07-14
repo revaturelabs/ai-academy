@@ -1,0 +1,30 @@
+{
+  "topic_id": "1.4",
+  "captured_at": "2026-06-20T00:00:00Z",
+  "captured_by": "namratas@revature.com",
+  "resources_source": "web_search",
+  "web_search_query": "why AI language models give different answers same question probabilistic temperature",
+  "resources": [
+    {
+      "type": "url",
+      "value": "https://medium.com/@samikalliokoski/why-large-language-models-give-different-answers-even-with-the-same-input-2e44c7582626",
+      "role": "primary",
+      "source": "web_search",
+      "notes": "Technical walkthrough of token sampling, probability distributions, temperature — most comprehensive match for topic scope."
+    },
+    {
+      "type": "url",
+      "value": "https://ragyfied.com/articles/what-is-llm-temperature",
+      "role": "supporting",
+      "source": "web_search",
+      "notes": "Focused explainer on temperature as the control knob for output variation."
+    },
+    {
+      "type": "url",
+      "value": "https://medium.com/@taofesco/why-do-ai-models-give-different-answers-to-the-same-question-0e64f0ffa64b",
+      "role": "supporting",
+      "source": "web_search",
+      "notes": "Intro-level framing, beginner-accessible — matches audience profile."
+    }
+  ]
+}

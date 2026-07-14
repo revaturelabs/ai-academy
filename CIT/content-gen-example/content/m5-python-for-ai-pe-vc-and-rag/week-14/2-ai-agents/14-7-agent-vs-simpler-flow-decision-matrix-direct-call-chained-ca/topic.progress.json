@@ -1,0 +1,174 @@
+{
+  "topic_id": "14.7",
+  "stage": "topic_artifacts_approved",
+  "gates": {
+    "resources_captured": true,
+    "corpus_generated": true,
+    "corpus_critic_passed": true,
+    "corpus_human_approved": true,
+    "reading_generated": true,
+    "reading_critic_passed": true,
+    "quiz_generated": true,
+    "quiz_critic_passed": true,
+    "diagram_generated": true,
+    "diagram_critic_passed": true,
+    "module_drift_passed": true,
+    "week_human_approved": true,
+    "course_drift_passed": true,
+    "topic_artifacts_human_approved": true
+  },
+  "history": [
+    {
+      "at": "2026-06-15T17:13:05Z",
+      "op": "set",
+      "gate": "resources_captured",
+      "value": true
+    },
+    {
+      "at": "2026-06-15T17:13:05Z",
+      "op": "stage",
+      "to": "awaiting_corpus"
+    },
+    {
+      "at": "2026-06-15T17:13:05Z",
+      "op": "log",
+      "msg": "Captured 5 resources (source=human) — primary: python.langchain.com/docs/modules/agents/, docs.anthropic.com/en/docs/build-with-claude/tool-use, Chip Huyen AI Engineering, cloud.google.com/discover/what-are-ai-agents, lilianweng.github.io/posts/2023-06-23-agent/"
+    },
+    {
+      "at": "2026-06-15T17:19:32Z",
+      "op": "set",
+      "gate": "corpus_generated",
+      "value": true
+    },
+    {
+      "at": "2026-06-15T17:19:32Z",
+      "op": "stage",
+      "to": "awaiting_corpus_critic"
+    },
+    {
+      "at": "2026-06-15T17:19:32Z",
+      "op": "log",
+      "msg": "Corpus generated — standard depth, diagram=true, ~3210 words. 6 concepts introduced. All 5 primary resources cited. 4-tier decision matrix with worked examples. Human-in-loop deferred to 14.8."
+    },
+    {
+      "at": "2026-06-15T17:22:04Z",
+      "op": "set",
+      "gate": "corpus_critic_passed",
+      "value": true
+    },
+    {
+      "at": "2026-06-15T17:22:04Z",
+      "op": "stage",
+      "to": "awaiting_corpus_human_review"
+    },
+    {
+      "at": "2026-06-15T17:22:04Z",
+      "op": "log",
+      "msg": "Corpus critic PASSED cycle 1 — all 6 checks green. ~3500w standard. All 5 cited. 3 soft: output parsing/system prompt/sentiment analysis undefined (same code, non-blocking)."
+    },
+    {
+      "at": "2026-06-15T17:24:39Z",
+      "op": "set",
+      "gate": "corpus_human_approved",
+      "value": true
+    },
+    {
+      "at": "2026-06-15T17:24:39Z",
+      "op": "stage",
+      "to": "corpus_approved"
+    },
+    {
+      "at": "2026-06-15T17:24:39Z",
+      "op": "log",
+      "msg": "HITL #2 complete — all 9 sections approved as written, depth=standard, expected_delivery=7min, diagram=true. Intent: four-branch decision flowchart (Q1-Q4). 3 soft undefined_terms accepted (output parsing/system prompt/sentiment analysis)."
+    },
+    {
+      "at": "2026-06-15T17:26:38Z",
+      "op": "set",
+      "gate": "diagram_generated",
+      "value": true
+    },
+    {
+      "at": "2026-06-15T17:26:38Z",
+      "op": "set",
+      "gate": "diagram_critic_passed",
+      "value": true
+    },
+    {
+      "at": "2026-06-15T17:26:38Z",
+      "op": "log",
+      "msg": "Diagram critic PASSED cycle 1 — TB flowchart, 10 nodes, 4-branch decision tree. Color escalation: Direct Call(green)->Chained Calls(purple)->RAG(blue)->Agent(orange). Reconsider(grey). All labels readable at 1400px. No scope creep."
+    },
+    {
+      "at": "2026-06-15T17:29:26Z",
+      "op": "set",
+      "gate": "reading_generated",
+      "value": true
+    },
+    {
+      "at": "2026-06-15T17:29:26Z",
+      "op": "set",
+      "gate": "quiz_generated",
+      "value": true
+    },
+    {
+      "at": "2026-06-15T17:29:26Z",
+      "op": "log",
+      "msg": "Reading generated — 1352w, 7min. All 5 cited. Diagram embedded. 3 soft findings resolved (output parsing/system prompt/sentiment analysis)."
+    },
+    {
+      "at": "2026-06-15T17:29:26Z",
+      "op": "log",
+      "msg": "Quiz generated — 6 MCQ, positions [2,0,3,1,2,0], max_share=0.333, bias_defense=true. All 5 LOs covered (LO3 twice)."
+    },
+    {
+      "at": "2026-06-15T17:33:54Z",
+      "op": "set",
+      "gate": "reading_critic_passed",
+      "value": true
+    },
+    {
+      "at": "2026-06-15T17:33:54Z",
+      "op": "set",
+      "gate": "quiz_critic_passed",
+      "value": true
+    },
+    {
+      "at": "2026-06-15T17:33:55Z",
+      "op": "log",
+      "msg": "Reading critic PASS cycle 2 — scope_creep resolved (14.8 block collapsed to 1 sentence). All checks clean."
+    },
+    {
+      "at": "2026-06-15T17:33:55Z",
+      "op": "log",
+      "msg": "Quiz critic PASS cycle 1 — positional_bias 0.333, length_bias 0.333, all 5 LOs covered. 2 borderline soft findings (q1/q5 length). Sidecar field inaccuracy noted (non-blocking)."
+    },
+    {
+      "at": "2026-06-15T17:33:55Z",
+      "op": "stage",
+      "to": "awaiting_topic_artifacts_review"
+    },
+    {
+      "at": "2026-06-15T17:34:29Z",
+      "op": "set",
+      "gate": "topic_artifacts_human_approved",
+      "value": true
+    },
+    {
+      "at": "2026-06-15T17:34:29Z",
+      "op": "stage",
+      "to": "topic_artifacts_approved"
+    },
+    {
+      "at": "2026-06-15T17:34:29Z",
+      "op": "log",
+      "msg": "HITL #3 approved — 1352w reading (cycle 2), 6q quiz, diagram PNG. 2 soft quiz findings accepted."
+    },
+    {
+      "at": "2026-06-23T17:39:32Z",
+      "op": "set",
+      "gate": "course_drift_passed",
+      "value": true
+    }
+  ]
+}

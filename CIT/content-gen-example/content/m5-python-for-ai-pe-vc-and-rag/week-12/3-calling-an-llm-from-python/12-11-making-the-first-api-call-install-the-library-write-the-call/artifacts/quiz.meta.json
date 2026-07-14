@@ -1,0 +1,54 @@
+{
+  "topic_id": "12.11",
+  "generated_at": "2026-06-15T00:00:00Z",
+  "format": "gift",
+  "question_count": 7,
+  "$bias_defense_applied": true,
+  "$shuffle_seed": "hash('12.11')=md5:3b4e2f1a9c8d7e6f5b0a2c4d8e1f3a5b",
+  "correct_position_distribution": {"0": 1, "1": 2, "2": 1, "3": 2},
+  "max_share": 0.333,
+  "bias_constraint_passed": true,
+  "questions": [
+    {
+      "id": "q1",
+      "type": "mcq",
+      "objective_ref": "Install the anthropic Python library in a Google Colab notebook using !pip install anthropic",
+      "correct_position": 1
+    },
+    {
+      "id": "q2",
+      "type": "mcq",
+      "objective_ref": "Import the anthropic module and create an Anthropic client object that connects to the Anthropic API",
+      "correct_position": 3
+    },
+    {
+      "id": "q3",
+      "type": "mcq",
+      "objective_ref": "Explain what the max_tokens parameter controls and why it must be included in every client.messages.create() call",
+      "correct_position": 0
+    },
+    {
+      "id": "q4",
+      "type": "mcq",
+      "objective_ref": "Write a complete client.messages.create() call with all four required elements: model, max_tokens, the messages list, and at least one message dict",
+      "correct_position": 2
+    },
+    {
+      "id": "q5",
+      "type": "mcq",
+      "objective_ref": "Run the call inside a Colab cell and identify where Claude's reply text appears in the response object",
+      "correct_position": 1
+    },
+    {
+      "id": "q6",
+      "type": "mcq",
+      "objective_ref": "Access Claude's reply text using the expression message.content[0].text",
+      "correct_position": 3
+    },
+    {
+      "id": "q_sa",
+      "type": "short_answer",
+      "objective_ref": "Install the anthropic Python library in a Google Colab notebook using !pip install anthropic"
+    }
+  ]
+}

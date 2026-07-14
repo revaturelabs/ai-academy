@@ -1,0 +1,130 @@
+{
+  "critic": "corpus-critic",
+  "topic_id": "10.1",
+  "attempt": 2,
+  "at": "2026-06-12T00:00:00Z",
+  "passed": true,
+  "verdict": "PASS — citation-density fix confirmed. Sections 5/6/7 now carry approximately 21 cited factual assertions out of ~27 standalone factual claims (~78%), well above the 60% floor. All other checks continue to pass: required sections present and non-trivial, no sequence-drift violations, word count within standard profile range (~4,100w, 3,000–4,400), no scope creep, beginner readability clean. One residual observation (non-blocking): three low-weight factual claims in sections 5.4 and 7.2 remain uncited ('Admissions offices process thousands of applications in a short window'; the two framing sentences opening the 7.2 mechanism explanation). These are contextual observations rather than research findings and do not affect the density calculation. Automation complacency in section 7.2 is correctly mention-and-deferred: bare name, no definition, explicit later-topic pointer — compliant.",
+  "checks": {
+    "required_sections": {
+      "passed": true,
+      "findings": [],
+      "detail": {
+        "section_3_learning_objectives": { "present": true, "word_estimate": 122, "threshold": 50, "pass": true },
+        "section_4_introduction": { "present": true, "word_estimate": 198, "threshold": 50, "pass": true },
+        "section_5_core_concepts": { "present": true, "word_estimate": 2100, "threshold": 100, "pass": true },
+        "section_10_key_takeaways": { "present": true, "word_estimate": 163, "threshold": 50, "pass": true }
+      }
+    },
+    "citation_density": {
+      "passed": true,
+      "resources_source": "web_search",
+      "mode": "strict",
+      "primary_resources": [
+        {
+          "index": 1,
+          "url": "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC10569720/",
+          "role": "primary",
+          "cited_at_least_once": true,
+          "citation_locations": [
+            "section_4_intro", "section_5.1 (twice)", "section_5.3", "section_5.4 (twice)",
+            "section_5.6", "section_7.1", "section_7.2 (twice)"
+          ]
+        }
+      ],
+      "all_primary_resources_cited": true,
+      "factual_assertion_density": {
+        "sections_checked": ["5", "6", "7"],
+        "estimated_total_standalone_factual_assertions": 27,
+        "assertions_with_citation_marker": 21,
+        "density_pct": 78,
+        "required_pct": 60,
+        "pass": true
+      },
+      "residual_uncited_claims": [
+        {
+          "section": "5.4",
+          "claim": "Admissions offices process thousands of applications in a short window.",
+          "severity": "observation",
+          "blocking": false
+        },
+        {
+          "section": "5.4",
+          "claim": "The AI's score arrived first, looked precise (e.g., '72 / 100'), and carried an implicit authority.",
+          "severity": "behavioral framing / extension of automation bias definition",
+          "blocking": false
+        },
+        {
+          "section": "7.2",
+          "claim": "When an AI tool is accurate most of the time, human reviewers who do check its outputs find nothing to override most of the time.",
+          "severity": "logical consequence of automation bias — non-empirical framing sentence",
+          "blocking": false
+        }
+      ],
+      "findings": []
+    },
+    "sequence_drift": {
+      "passed": true,
+      "findings": [],
+      "forward_references_found": [],
+      "mention_and_defer_used": [
+        {
+          "term": "automation complacency",
+          "location": "section_7.2",
+          "exact_text": "This is related to automation complacency, a concept covered in a later topic in this week's sequence.",
+          "form": "bare name + explicit later-topic pointer, not bolded, not defined — fully compliant with mention-and-defer rule",
+          "topic_that_introduces_it": "10.4 (or later in week 10 sequence)"
+        }
+      ],
+      "detail": "All technical terms in the corpus resolve cleanly: holistic review, pipeline, human override point, calibration, holistic review collapse, training data, override as theater are all in this topic's concepts_introduced. Automation bias (9.5), Judgment Framework Q1/Q2/Q3 (9.7/9.8/9.9), acceptable error (9.10), high-stakes domains (9.11), and biases in training data (9.6 cross-ref) are all from prior topics in the sequence. No forward-reference violations detected."
+    },
+    "length_sanity": {
+      "passed": true,
+      "findings": [],
+      "estimated_word_count": 4100,
+      "suggested_profile": "standard",
+      "profile_range": [3000, 4400],
+      "within_range": true,
+      "detail": "Corpus is approximately 4,100 words (sections 2–11 inclusive). Within the standard profile range of 3,000–4,400 words. No 30%-outside-range trigger."
+    },
+    "topic_scope": {
+      "passed": true,
+      "findings": [],
+      "topic_title": "Case study: AI in college admissions — where was the human override point missed?",
+      "detail": "All content in sections 5–9 is directly relevant to the headline case study question. Section 5.7 introduces 'training data' — which is in this topic's own concepts_introduced list — scoped narrowly to explaining why the missing override point matters in the admissions context; it does not teach the broader ML training pipeline. Section 8 governance controls and the audit methodology in section 6 are tightly bound to the admissions case evidence. Automation complacency in 7.2 is mention-and-defer (one sentence, bare name, no definition). No out-of-scope advanced concepts taught at depth."
+    },
+    "beginner_readability": {
+      "passed": true,
+      "findings": [],
+      "detail": {
+        "undefined_terms": {
+          "finding": "None — all non-everyday terms bold-defined on first use: holistic review (5.1), pipeline (5.2), calibration (5.3), human override point (5.3), holistic review collapse (5.6), training data (5.7), override as theater (section 8). Prerequisite terms from week 9 are listed in section 2 with definitions and not re-defined in body text — appropriate.",
+          "severity": null
+        },
+        "jargon_dump": {
+          "finding": "None — no paragraph introduces 3 or more new terms simultaneously.",
+          "severity": null
+        },
+        "academic_register": {
+          "finding": "None — prose uses active voice and second person throughout. No hedging phrases ('it is generally considered', 'many believe') detected. Sentence length is appropriate for the audience baseline.",
+          "severity": null
+        }
+      },
+      "distinct_findings_count": 0,
+      "escalated_to_hard_fail": false
+    }
+  },
+  "summary": {
+    "hard_fails": [],
+    "soft_findings": [],
+    "passes": [
+      "required_sections",
+      "citation_density",
+      "sequence_drift",
+      "length_sanity",
+      "topic_scope",
+      "beginner_readability"
+    ],
+    "recommended_action": "None — corpus is ready to proceed to HITL #2 corpus human review."
+  }
+}

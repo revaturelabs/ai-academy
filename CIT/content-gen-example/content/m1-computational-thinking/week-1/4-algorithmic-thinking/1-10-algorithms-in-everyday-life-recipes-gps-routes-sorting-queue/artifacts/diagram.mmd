@@ -1,0 +1,61 @@
+---
+title: "Every algorithm has the same shape: Input → Process → Output"
+theme: base
+themeVariables:
+  primaryColor: "#a5d8ff"
+  primaryBorderColor: "#4a9eed"
+  lineColor: "#555"
+  fontFamily: "ui-sans-serif, system-ui, sans-serif"
+flowchart:
+  htmlLabels: true
+  curve: basis
+  nodeSpacing: 40
+  rankSpacing: 55
+---
+flowchart LR
+
+  subgraph RECIPE["Recipe"]
+    direction TB
+    R1["<b>Raw ingredients</b><br/><span style='font-size:12px;color:#6d28d9'>starting conditions + quantities</span>"]:::start
+    R2["<b>Ordered cooking steps</b><br/><span style='font-size:12px;color:#6d28d9'>sequence, decision, repetition</span>"]:::auto
+    R3{"<b>Is it done?</b><br/><span style='font-size:12px;color:#6d28d9'>testable stopping condition</span>"}:::auto
+    R4["<b>Finished dish</b>"]:::done
+    R1 --> R2
+    R2 --> R3
+    R3 -- "No — keep cooking" --> R2
+    R3 -- "Yes — plate it" --> R4
+  end
+
+  subgraph GPS["GPS Route"]
+    direction TB
+    G1["<b>Start + destination</b><br/><span style='font-size:12px;color:#6d28d9'>two inputs to the algorithm</span>"]:::start
+    G2["<b>Evaluate road segments</b><br/><span style='font-size:12px;color:#6d28d9'>calculate travel time for each option</span>"]:::auto
+    G3{"<b>Destination reached?</b><br/><span style='font-size:12px;color:#6d28d9'>stopping condition</span>"}:::auto
+    G4["<b>Turn-by-turn directions</b><br/><span style='font-size:12px;color:#6d28d9'>unambiguous, ordered output</span>"]:::done
+    G1 --> G2
+    G2 -- "Pick lowest travel time" --> G3
+    G3 -- "No — move to next" --> G2
+    G3 -- "Yes — trace path" --> G4
+  end
+
+  subgraph SORT["Sorting Queue"]
+    direction TB
+    S1["<b>Unordered list</b><br/><span style='font-size:12px;color:#6d28d9'>items + comparison rule</span>"]:::start
+    S2["<b>Compare pair of items</b><br/><span style='font-size:12px;color:#6d28d9'>apply the ordering rule</span>"]:::auto
+    S3{"<b>Out of order?</b><br/><span style='font-size:12px;color:#6d28d9'>if yes, swap the pair</span>"}:::auto
+    S4{"<b>Any swaps this pass?</b><br/><span style='font-size:12px;color:#6d28d9'>stopping condition</span>"}:::auto
+    S5["<b>Sorted list</b>"]:::done
+    S1 --> S2
+    S2 --> S3
+    S3 -- "Yes — swap" --> S2
+    S3 -- "No — next pair" --> S4
+    S4 -- "Yes — new pass" --> S2
+    S4 -- "No swaps — done" --> S5
+  end
+
+  RECIPE ~~~ GPS
+  GPS ~~~ SORT
+
+  classDef start fill:#a5d8ff,stroke:#4a9eed,color:#1e3a5f
+  classDef auto fill:#d0bfff,stroke:#8b5cf6,color:#2e1065
+  classDef done fill:#b2f2bb,stroke:#22c55e,color:#14532d

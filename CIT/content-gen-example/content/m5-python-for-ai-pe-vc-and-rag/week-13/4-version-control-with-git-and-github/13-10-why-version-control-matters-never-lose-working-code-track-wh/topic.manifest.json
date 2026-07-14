@@ -1,0 +1,43 @@
+{
+  "type": "topic",
+  "id": "13.10",
+  "title": "Why version control matters — never lose working code, track what changed and why",
+  "slug": "13-10-why-version-control-matters-never-lose-working-code-track-wh",
+  "position_in_module": 1,
+  "week_num": 13,
+  "session_name": "Prompt Engineering and Version Control",
+  "module": {
+    "position": 4,
+    "slug": "4-version-control-with-git-and-github",
+    "title": "Version Control with Git and GitHub"
+  },
+  "course": {
+    "code": "M5",
+    "slug": "m5-python-for-ai-pe-vc-and-rag",
+    "title": "Python for AI, PE, VC and RAG"
+  },
+  "next_assessment": {
+    "id": "A4",
+    "due_week": 13,
+    "title": "Python and Prompt Engineering Portfolio",
+    "weight": "20%"
+  },
+  "paths": {
+    "corpus": "topic_corpus.md",
+    "resources": "topic.resources.json",
+    "progress": "topic.progress.json",
+    "artifacts_dir": "artifacts/",
+    "critic_reports_dir": "critic-reports/"
+  },
+  "artifact_plan": {
+    "diagram": true,
+    "diagram_intent": "Side-by-side contrast: manual folder versioning (chaotic folder-copy tree, no history, overwrite risk) vs version control system (linear checkpoint history with messages, safe rollback)",
+    "depth_profile": "standard",
+    "depth_signals": ["motivational/conceptual only — no procedure or algorithm", "tight single question: why VCS?", "budget override: standard selected at HITL#2"],
+    "reading": { "target_min_minutes": 6, "target_max_minutes": 8, "target_word_range": [1200, 1600] },
+    "quiz": { "min_questions": 5, "max_questions": 6, "include_short_answer": false },
+    "hitl2_approved_at": "2026-06-14T00:00:00Z"
+  },
+  "expected_delivery_minutes": 8,
+  "status": "corpus_drafted"
+}

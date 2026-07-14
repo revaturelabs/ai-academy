@@ -1,0 +1,35 @@
+{
+  "verdict": "pass",
+  "cycle": 1,
+  "notes": "Source-level pre-flight all pass. PNG render requires mmdc on PATH — run: mmdc -i content/m1-computational-thinking/week-2/3-the-professional-rules-of-ai-use/2-5-the-70-30-rule-ai-implements-you-specify-and-verify/artifacts/diagram.mmd -o content/m1-computational-thinking/week-2/3-the-professional-rules-of-ai-use/2-5-the-70-30-rule-ai-implements-you-specify-and-verify/artifacts/diagram.png -w 1400 -b transparent",
+  "findings": [
+    {
+      "code": "looks_good",
+      "where": "whole canvas",
+      "detail": "Side-by-side role contrast matches intent exactly: HUMAN subgraph (yellow, 30%) contains Write the Spec → Verify Output + Revise Spec; AI subgraph (purple, 70%) contains AI Implements. Decision diamond 'Meets spec?' outside subgraphs routes to green 'Accepted' on Yes, back to Revise Spec on No — loop-back is explicit and traceable to corpus §5.5 Verification Loop. All six color tiers correctly applied: hitl=yellow for all three human nodes, auto=purple for AI Implements, act=blue for decision, done=green for Accepted."
+    },
+    {
+      "code": "looks_good",
+      "where": "concept-drift check",
+      "detail": "No out-of-scope nodes. Every label traces directly to corpus §5: 'Write the Spec' → §5.2, 'AI Implements' → §5.1, 'Verify Output' → §5.3, 'Meets spec?' → §5.3/5.5, 'Revise Spec' → §5.5, 'Accepted' → §5.5. No adjacent concepts (e.g. 'prompt engineering', 'fine-tuning') included."
+    }
+  ],
+  "preflight": {
+    "mermaid_parses": true,
+    "node_count_ok": true,
+    "node_count": 6,
+    "label_discipline_ok": true,
+    "concept_fidelity_ok": true,
+    "title_in_config": true,
+    "single_path_per_column": "n/a — intentional decision loop, not a linear flow"
+  },
+  "stats": {
+    "nodes": 6,
+    "edges": 6,
+    "layout": "flowchart LR (two direction-TB subgraphs + external decision node + terminal)",
+    "labels": ["Write the Spec", "Verify Output", "Revise Spec", "AI Implements", "Meets spec?", "Accepted"],
+    "png_path": "content/m1-computational-thinking/week-2/3-the-professional-rules-of-ai-use/2-5-the-70-30-rule-ai-implements-you-specify-and-verify/artifacts/diagram.png",
+    "png_render_pending": true,
+    "render_command": "mmdc -i content/m1-computational-thinking/week-2/3-the-professional-rules-of-ai-use/2-5-the-70-30-rule-ai-implements-you-specify-and-verify/artifacts/diagram.mmd -o content/m1-computational-thinking/week-2/3-the-professional-rules-of-ai-use/2-5-the-70-30-rule-ai-implements-you-specify-and-verify/artifacts/diagram.png -w 1400 -b transparent"
+  }
+}

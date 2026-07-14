@@ -1,0 +1,77 @@
+{
+  "critic": "quiz-critic",
+  "topic_id": "6.6",
+  "cycle": 1,
+  "at": "2026-06-19T00:00:00Z",
+  "passed": true,
+  "checks": {
+    "positional_bias": {
+      "passed": true,
+      "distribution": {"0": 1, "1": 1, "2": 1, "3": 1},
+      "max_share": 0.25,
+      "notes": "Perfect uniform spread across all four positions. Sidecar correct_position_distribution matches quiz.gift exactly — no meta_gift_desync."
+    },
+    "length_bias": {
+      "passed": true,
+      "longest_correct_rate": 0.0,
+      "baseline": 0.25,
+      "per_question": [
+        {"id": "q1", "correct_len": 37, "distractor_mean": 61.0, "threshold_1_20": 73.2, "longest_correct": false},
+        {"id": "q2", "correct_len": 79, "distractor_mean": 74.0, "threshold_1_20": 88.8, "longest_correct": false},
+        {"id": "q3", "correct_len": 71, "distractor_mean": 90.3, "threshold_1_20": 108.4, "longest_correct": false},
+        {"id": "q4", "correct_len": 119, "distractor_mean": 105.0, "threshold_1_20": 126.0, "longest_correct": false}
+      ],
+      "notes": "No question has a correct answer whose length exceeds 120% of the mean distractor length. Zero longest-correct cases out of 4 MCQs."
+    },
+    "distractor_plausibility": {
+      "passed": true,
+      "absurd_rate": 0.0,
+      "total_distractors": 12,
+      "absurd_count": 0,
+      "per_distractor_scores": [
+        {"q": "q1", "text_prefix": "A new vector with the same number of positions...", "score": 3},
+        {"q": "q1", "text_prefix": "A matrix made from all the possible pairs...", "score": 3},
+        {"q": "q1", "text_prefix": "A list of products, one for each matching pair...", "score": 4},
+        {"q": "q2", "text_prefix": "0.56, because you only multiply the first positions...", "score": 4},
+        {"q": "q2", "text_prefix": "0.46, because you add the vectors first...", "score": 3},
+        {"q": "q2", "text_prefix": "1.10, because you sum all six numbers...", "score": 3},
+        {"q": "q3", "text_prefix": "A large positive score, because right angles create the most overlap...", "score": 3},
+        {"q": "q3", "text_prefix": "A large negative score, because right angles indicate opposing vectors...", "score": 3},
+        {"q": "q3", "text_prefix": "A score of exactly 1, because perpendicular vectors are fully independent...", "score": 2},
+        {"q": "q4", "text_prefix": "...the song vector is longer, so it contains more musical information...", "score": 3},
+        {"q": "q4", "text_prefix": "...recently added to the library and ranked by upload order...", "score": 2},
+        {"q": "q4", "text_prefix": "...shares exactly the same number of dimensions as the listener's taste vector...", "score": 3}
+      ],
+      "notes": "No absurd (score=1) distractors. Two distractors scored 2 (wrong but not a canonical beginner misconception): q3's 'exactly 1' option and q4's 'upload order' option. These are weak but not absurd — they do not constitute free points. absurd_rate=0.00 well under the 0.25 threshold."
+    },
+    "objective_coverage": {
+      "passed": true,
+      "uncovered_objectives": [],
+      "orphan_questions": [],
+      "coverage_map": [
+        {"lo": "LO-1: Explain dot product in plain language (multiply matching positions, sum)", "covered_by": ["q1"]},
+        {"lo": "LO-2: Calculate dot product step by step", "covered_by": ["q2"]},
+        {"lo": "LO-3: Geometric relationship (same=positive, opposite=negative, perpendicular=zero)", "covered_by": ["q3"]},
+        {"lo": "LO-4: Interpret high dot product as similarity signal", "covered_by": ["q4"]},
+        {"lo": "LO-5: Give AI application example (recommendation/search)", "covered_by": ["q4"]}
+      ],
+      "notes": "All 5 LOs covered. q4 objective_ref explicitly references both LO-4 and LO-5; fuzzy match confirmed for all mappings. No orphan questions."
+    },
+    "beginner_scope": {
+      "passed": true,
+      "findings": [
+        {
+          "type": "weak_distractor",
+          "severity": "soft",
+          "location": "q4, distractor: '...recently added to the library and ranked by upload order...'",
+          "note": "This distractor is not a canonical beginner misconception arising from the topic — 'upload order' has no conceptual link to dot product instruction. It is plain-language and not harmful, but a stronger distractor grounded in a taught concept (e.g., magnitude sensitivity from §5.6) would be preferable. Rolled into §3 plausibility signal (score 2)."
+        }
+      ],
+      "notes": "No undefined jargon in any stem. All questions test only concepts taught in this topic. No hard out_of_scope_question findings. One soft weak_distractor finding in q4 does not trigger a hard fail."
+    }
+  },
+  "auto_correction_applied": {
+    "shuffle_round_2": false
+  },
+  "verdict": "PASS — all five checks clean. Positional distribution is perfectly uniform (max_share=0.25). No length bias (longest_correct_rate=0.00). No absurd distractors (absurd_rate=0.00). All five Learning Objectives covered with no orphans. All stems are beginner-accessible and on-scope. One soft finding: q4 has a weak distractor ('upload order') that is not a canonical misconception but is not absurd and does not trigger failure."
+}

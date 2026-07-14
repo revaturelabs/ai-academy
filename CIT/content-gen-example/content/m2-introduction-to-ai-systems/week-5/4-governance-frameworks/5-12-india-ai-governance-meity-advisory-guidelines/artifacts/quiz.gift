@@ -1,0 +1,53 @@
+$CATEGORY: CIT/M2/week-5/5.12-india-ai-governance-meity-advisory-guidelines
+
+::5.12-Q1:: MEITY stands for the Ministry of Electronics and Information Technology. In 2024, what did its AI advisories ask Indian online platforms to do?
+{
+~To stop offering any AI features to users until a brand-new Indian AI law was passed#No - the advisories did not ban AI; they asked platforms to label and take care, not to halt AI.
+~To hand all of their user data to the government so it could train a national AI model#No - the advisories were about labeling and due diligence, not collecting platform data.
+=To label unreliable or AI-generated output and to exercise due diligence to prevent harm#Correct - those two asks, labeling and due diligence, are exactly what the 2024 advisories requested.
+~To pay a yearly tax to MEITY for every AI model that the platform chose to deploy#No - no AI tax was involved; the advisories asked for transparency and care, not payment.
+#### Tests what MEITY is and what its 2024 advisories asked platforms to do (corpus 5.1, 5.2, Learning Objectives).
+}
+
+::5.12-Q2:: An advisory is government guidance issued by a ministry. Why is it softer than a binding law such as the EU AI Act (the European Union's AI law)?
+{
+=No legislature has to vote on it, so a ministry can issue or revise it quickly#Correct - an advisory is guidance under existing rules, not statute, so it is softer and faster to change.
+~It applies to far more companies than a law does, which makes it weaker overall#No - reach is not the issue; an advisory is softer because it is guidance, not voted statute.
+~It is written in a foreign language, so platforms are free to ignore all of it#No - language has nothing to do with it; softness comes from its being guidance, not law.
+~It can only ever ask for one single action and never more than that at a time#No - an advisory can make several asks; what makes it soft is that it is not statute.
+#### Tests what an advisory is and why it is softer than a binding law (corpus 5.1, Learning Objectives).
+}
+
+::5.12-Q3:: The MEITY AI advisories make two core asks of platforms. Which pair correctly names both?
+{
+~Delete all deepfakes instantly, and report every user who shares AI content to police#No - the advisories asked for labeling and care, not mass deletion or reporting users.
+~Build their own AI model from scratch, and open-source all of its training code#No - the advisories did not require building or open-sourcing models.
+~Charge users a fee to see AI output, and ban all foreign AI tools from the platform#No - neither fees nor bans appear; the asks are labeling and due diligence.
+=Label unreliable or AI-generated output, and carry out due diligence to prevent harm#Correct - labeling and due diligence are the two core asks the corpus lists.
+#### Tests the advisories' two core asks - labeling and due diligence (corpus 5.2, Learning Objectives).
+}
+
+::5.12-Q4:: The corpus uses March 2024 as proof that the guidance is evolving. What changed between the two March 2024 advisories?
+{
+~The March 15 revision added a brand-new rule banning all AI image tools in India#No - the revision did not ban image tools; it dropped a requirement, not added a ban.
+=The March 15 revision dropped the prior-government-permission requirement from March 1#Correct - the Mar 1 advisory asked for prior permission; the Mar 15 revision removed it.
+~The March 15 revision made the advisory a permanent binding law passed by parliament#No - it stayed an advisory; a two-week change is exactly why it is not a law.
+~The March 15 revision deleted the labeling ask and kept only the prior-permission rule#No - this reverses it; labeling was kept and the prior-permission ask was dropped.
+#### Tests the March 2024 evolving example - prior permission dropped (corpus 5.3, Learning Objectives).
+}
+
+::5.12-Q5:: The corpus says India is directionally aligned with global frameworks. What does that phrase mean here?
+{
+~India has copied the EU AI Act word for word and enforces it as its own binding law#No - India has no single binding AI law yet; it uses advisories, not a copied statute.
+~India is steering away from transparency goals that the EU and US frameworks pursue#No - this is backwards; India aims at the same goals, just through a softer tool.
+~India has formally joined the EU and now votes on the European Union's AI rules#No - alignment is about shared direction, not membership in the EU.
+=India aims at the same goals as the EU and US but uses advisories rather than one AI law#Correct - same destination, transparency and harm prevention, reached by a different, softer road.
+#### Tests the meaning of directionally aligned with global frameworks (corpus 5.4, Learning Objectives).
+}
+
+::5.12-Q6:: On the softness scale in the corpus, the MEITY advisories sit between voluntary NIST guidance and the binding EU AI Act. Fill in the one word the corpus uses for the kind of governance the MEITY documents are\: government ____ (one word). {
+=advisory
+=advisories
+=Advisory
+=Advisories
+}

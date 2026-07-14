@@ -1,0 +1,123 @@
+{
+  "critic": "reading-critic",
+  "topic_id": "9.9",
+  "title": "The Judgment Framework — Q3: Who is accountable if this fails?",
+  "run_at": "2026-06-13T00:00:00Z",
+  "passed": true,
+  "verdict": "PASS — all five hard checks clear; one soft diagram-path note only.",
+  "checks": {
+    "format_discipline": {
+      "passed": true,
+      "frontmatter_present": false,
+      "first_line": "# The Judgment Framework — Q3: Who is accountable if this fails?",
+      "meta_sidecar_missing": false,
+      "section_template_violation": false,
+      "sections_found": ["Overview", "Key Concepts", "Worked Example", "In Practice", "Key Takeaways", "References"],
+      "sections_order_correct": true,
+      "findings": []
+    },
+    "length": {
+      "passed": true,
+      "word_count_reported": 1487,
+      "target_range": [1200, 1600],
+      "word_count_in_range": true,
+      "estimated_read_minutes": 8,
+      "target_minutes_range": [6, 8],
+      "minutes_in_range": true,
+      "findings": []
+    },
+    "citations": {
+      "passed": true,
+      "primary_resource": {
+        "id": "[1]",
+        "url": "https://www.hfw.com/insights/legal-liability-for-ai-driven-decisions-when-ai-gets-it-wrong-who-can-you-turn-to/",
+        "cited_count": 10,
+        "minimum_required": 1,
+        "passes": true
+      },
+      "all_resources_cited": true,
+      "resources": [
+        { "id": "[1]", "role": "primary", "cited_inline": true },
+        { "id": "[2]", "role": "supporting", "cited_inline": true },
+        { "id": "[3]", "role": "supporting", "cited_inline": true }
+      ],
+      "orphan_markers": [],
+      "orphan_bibliography_entries": [],
+      "findings": []
+    },
+    "no_forward_references": {
+      "passed": true,
+      "forward_references_found": [],
+      "deferred_pointers_found": [],
+      "notes": [
+        "9.6 (labelling bias, historical bias) back-referenced correctly.",
+        "9.5 (automation bias) back-referenced correctly.",
+        "Q1 and Q2 referenced as tools already learned, not re-taught.",
+        "No references to 9.10 or 9.11."
+      ],
+      "findings": []
+    },
+    "faithfulness": {
+      "passed": true,
+      "assertions_sampled": 8,
+      "unsupported_assertions": 0,
+      "sampled_assertions": [
+        { "claim": "Accountability = named person expected to answer for outcome", "corpus_section": "5.1", "supported": true },
+        { "claim": "Four-level chain: developer/deployer/operator/end user with scope annotations", "corpus_section": "5.2", "supported": true },
+        { "claim": "Deployer cannot fully pass accountability to developer", "corpus_section": "5.2", "supported": true },
+        { "claim": "Pre-decision naming = safety check; post-failure = blame allocation", "corpus_section": "5.3", "supported": true },
+        { "claim": "Three criteria: authority, knowledge, nameability", "corpus_section": "5.4", "supported": true },
+        { "claim": "Escalation steps (5-step list)", "corpus_section": "5.5", "supported": true },
+        { "claim": "Design-time accountability in automated systems", "corpus_section": "5.6", "supported": true },
+        { "claim": "'For any AI system you evaluate, name who is accountable' — A3 application note", "corpus_section": "5.3/5.4 (applied)", "supported": true, "note": "Resolves corpus soft finding (A3 alignment absent); no new assertion introduced." }
+      ],
+      "findings": []
+    },
+    "beginner_readability": {
+      "passed": true,
+      "undefined_terms": { "passed": true, "issues": [] },
+      "jargon_dump": { "passed": true, "issues": [] },
+      "abstract_first": { "passed": true, "note": "Table precedes abstract description in Key Concepts; worked example follows concepts." },
+      "academic_register": { "passed": true, "hedging_instances": 0 },
+      "distinct_findings_count": 0,
+      "findings": []
+    },
+    "formatting": {
+      "passed": true,
+      "wall_of_text": { "passed": true, "issues": [] },
+      "unlisted_sequence": { "passed": true, "note": "Escalation procedure as 5-step numbered list; worked example as numbered steps; In Practice as bullet lists." },
+      "no_inline_examples": { "passed": true, "note": "Deployer examples (hospital, bank) inline in Key Concepts; medical and credit patterns in In Practice." },
+      "bold_term_shape": { "passed": true, "note": "Accountability chain, design-time accountability, escalation all bolded at first use with inline definition." },
+      "distinct_findings_count": 0,
+      "findings": []
+    },
+    "scope": {
+      "passed": true,
+      "topic_title": "The Judgment Framework — Q3: Who is accountable if this fails?",
+      "scope_creep": false,
+      "findings": []
+    },
+    "assessment_references": {
+      "passed": true,
+      "assessment_ids_found": [],
+      "due_weeks_found": [],
+      "grade_weights_found": [],
+      "findings": []
+    }
+  },
+  "diagram_embedded": {
+    "passed": true,
+    "location": "Key Concepts section, after accountability chain definition",
+    "alt_text": "Q3 accountability chain",
+    "caption_present": true
+  },
+  "soft_findings_summary": [
+    {
+      "code": "diagram_path_prefix",
+      "severity": "soft",
+      "detail": "Diagram embedded as './diagram.png' (relative path with './' prefix). Functional in most renderers; recommend normalising to 'artifacts/diagram.png' for consistency with other topics."
+    }
+  ],
+  "total_hard_failures": 0,
+  "total_soft_findings": 1
+}

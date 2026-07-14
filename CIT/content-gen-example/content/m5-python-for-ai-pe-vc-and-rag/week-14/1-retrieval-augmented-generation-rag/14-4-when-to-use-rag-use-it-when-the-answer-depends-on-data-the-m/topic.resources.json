@@ -1,0 +1,30 @@
+﻿{
+  "topic_id": "14.4",
+  "captured_at": "2026-06-15T00:00:00Z",
+  "captured_by": "bhuvaneshwarim@revature.com",
+  "resources_source": "web_search",
+  "web_search_query": "when to use RAG retrieval augmented generation vs fine-tuning LLM decision",
+  "resources": [
+    {
+      "type": "url",
+      "value": "https://www.ibm.com/think/topics/rag-vs-fine-tuning",
+      "role": "primary",
+      "source": "web_search",
+      "notes": "IBM canonical explainer — RAG vs fine-tuning decision framework"
+    },
+    {
+      "type": "url",
+      "value": "https://docs.aws.amazon.com/prescriptive-guidance/latest/retrieval-augmented-generation-options/rag-vs-fine-tuning.html",
+      "role": "supporting",
+      "source": "web_search",
+      "notes": "AWS Prescriptive Guidance — cloud-practitioner perspective on choosing RAG"
+    },
+    {
+      "type": "url",
+      "value": "https://www.oracle.com/artificial-intelligence/generative-ai/retrieval-augmented-generation-rag/rag-fine-tuning/",
+      "role": "supporting",
+      "source": "web_search",
+      "notes": "Oracle enterprise decision guide — RAG vs fine-tuning trade-offs"
+    }
+  ]
+}

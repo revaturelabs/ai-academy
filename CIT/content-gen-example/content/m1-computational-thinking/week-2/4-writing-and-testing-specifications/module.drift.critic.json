@@ -1,0 +1,81 @@
+{
+  "critic": "drift-critic",
+  "module": {
+    "slug": "4-writing-and-testing-specifications",
+    "title": "Writing and Testing Specifications",
+    "course_code": "M1",
+    "week_num": 2,
+    "position": 4
+  },
+  "topics_evaluated": ["2.7", "2.8", "2.9"],
+  "run_at": "2026-06-17T12:00:00Z",
+  "passed": true,
+  "summary": "All five checks pass. The hard finding from the prior run (synonym drift on 'Inputs' vs 'Context' in 2.8's worked-example specification boxes) has been resolved — both boxes in Sections 5.6 and 5.7 now use 'Context:' consistently with 2.7. Two soft findings remain: (1) 2.9 prerequisites omit an explicit 2.7 reference despite relying on its vocabulary; (2) 2.8 Section 7 uses 'test cases' without a standalone definition. Neither blocks passage. Module is drift-passed.",
+  "checks": {
+    "terminology_consistency": {
+      "result": "PASS",
+      "findings": [],
+      "notes": "All key terms are introduced at their correct first-use topic and carried forward without synonym drift. 'Testable / bounded / observable / actionable' established in 2.1, used consistently across all three topics. 'Four-part structure' (task statement / context / constraints / expected output format) established in 2.7 Section 5.1; the prior 'Inputs' vs 'Context' synonym drift in 2.8's worked-example spec boxes has been corrected — both Sections 5.6 and 5.7 now use 'Context:'. 'Format drift / constraint overflow / task drift' introduced in 2.8 Section 5.5 and carried forward identically into 2.9 Section 5.2. 'Full pass / partial pass / full fail' introduced in 2.8 Section 5.3 and used identically in 2.9. 'Pass/fail table' introduced in 2.8 Section 5.4, referenced in 2.9 best-practices table. 'Three-question verification check' introduced in 2.8 Section 5.2, used identically in 2.9. 'Minimum viable patch' introduced and used only in 2.9 — no forward-topic drift. 'Iteration cycle' introduced and used only in 2.9 — no forward-topic drift. One intra-topic note: 2.7 uses 'four-part structure' and 'four-part template' interchangeably within the same topic; this is within a single topic and does not constitute cross-topic drift. No cross-topic synonym drift found."
+    },
+    "prerequisites_respected": {
+      "result": "PASS",
+      "findings": [
+        {
+          "topic": "2.9",
+          "severity": "soft",
+          "description": "Topic 2.9 Section 2 (Prerequisites) lists 2.1, 2.3, and 2.8 but does not explicitly list 2.7. The four-part structure vocabulary from 2.7 (task statement, context, constraints, expected output format) is used in 2.9's worked examples and Section 5.2 gap-type table. The dependency is transitively covered — 2.8 lists 2.7 in its prerequisites so no learner reaches 2.9 without having covered 2.7. The omission is an incomplete declaration rather than a sequencing violation, but it reduces traceability of the dependency chain.",
+          "location": "2-9 topic_corpus.md, Section 2 (Prerequisites)"
+        }
+      ],
+      "notes": "All explicitly listed prerequisites reference topics with earlier sequence positions. 2.7 (position 1 in module) lists 2.1, 2.2, 2.3, 2.5 — all earlier in the week-2 delivery order. 2.8 (position 2) lists 2.1, 2.3, 2.7 — all earlier. 2.9 (position 3) lists 2.1, 2.3, 2.8 — all earlier. No forward references detected in any topic."
+    },
+    "learning_arc": {
+      "result": "PASS",
+      "findings": [],
+      "notes": "Module title 'Writing and Testing Specifications' is fully covered by the three-topic arc. 2.7 covers writing specifications across all five stated domains (health, transport, education, food, scheduling) using the four-part template with weak-to-strong worked examples. 2.8 covers testing a specification via the three-question verification check, pass/fail table, three failure patterns, and two full domain worked examples. 2.9 covers iterating based on test gaps via the four-step iteration cycle, minimum viable patch principle, stopping criteria, and a three-cycle worked example. Assessment A1 (Specification Portfolio, due Week 3) is explicitly threaded into all three topics in introduction and hands-on sections. The lab phases 'write / test / iterate' map 1-to-1 onto 2.7 / 2.8 / 2.9. No uncovered facets of the module stated outcome."
+    },
+    "no_duplicated_core_concepts": {
+      "result": "PASS",
+      "findings": [
+        {
+          "pair": ["2.8", "2.9"],
+          "severity": "informational",
+          "jaccard_estimate": 0.31,
+          "description": "2.8 and 2.9 share the highest concept-noun overlap of any pair because 2.9 deliberately re-uses 2.8's gap-type taxonomy (format drift, constraint overflow, task drift) and pass/fail classification system as its foundation. This is expected definitional carry-forward: 2.8 teaches classification of test results; 2.9 teaches the targeted remediation action for each classification. Instructional purpose is distinct — recognition vs. remediation — and no Section 5 subsection in 2.9 re-teaches material already covered in 2.8. Jaccard estimate of ~0.31 is well below the 0.6 flag threshold."
+        }
+      ],
+      "notes": "Jaccard estimates on Section 5 core noun sets: 2.7 vs 2.8 ~0.12 (no substantive overlap); 2.7 vs 2.9 ~0.11 (no substantive overlap); 2.8 vs 2.9 ~0.31 (intentional vocabulary carry-forward, below threshold). No pair exceeds 0.6. Check passes."
+    },
+    "lab_activity_alignment": {
+      "result": "PASS",
+      "findings": [],
+      "notes": "Lab seed for Week 2 module 4 has three phases: (1) write five task specifications — one per domain; (2) test each spec live with Claude; (3) peer review and iterate. Phase 1 is supported by 2.7 Section 9 hands-on exercise (write a weak then strong spec in a chosen domain, apply the four-part process, compare to worked example — mirrors the five-domain portfolio task for A1). Phase 2 is supported by 2.8 Section 9 hands-on exercise (re-read spec, send to AI, run three-question check, build pass/fail table, classify result, name failure pattern). Phase 3 is supported by 2.9 Section 9 hands-on exercise (test, name gap, patch minimum viable change, retest up to three cycles, record iteration log in the format required by A1). All three lab phases are supported by a hands-on topic artifact. The peer-review element of phase 3 is a delivery mechanic (student pairing), not a conceptual gap requiring corpus content."
+    },
+    "audience_level_consistency": {
+      "result": "PASS",
+      "findings": [
+        {
+          "topic": "2.8",
+          "severity": "soft",
+          "description": "Section 7 (Real-World Patterns), first paragraph, uses the term 'test cases' without prior introduction in this module. The surrounding sentence provides an adequate inline gloss ('each test case specifies what input goes in and what output is expected') so a reader can follow without prior knowledge. The usage is confined to a real-world analogy section and does not carry into core-concept or exercise sections. No remediation required; optional parenthetical definition would strengthen the absolute-beginner register maintained elsewhere.",
+          "location": "2-8 topic_corpus.md, Section 7 (Real-World Patterns), paragraph 1"
+        }
+      ],
+      "notes": "All three topics explicitly state 'no programming knowledge needed' in prerequisites or introduction. Depth profiles are consistent across the module — all three operate at worked-example and checklist depth, with no topic spiking above its neighbors. No term is used cold in a core-concept section that was not introduced in a prior topic or defined in that same section. Absolute-beginner baseline is maintained throughout."
+    }
+  },
+  "action_required": [
+    {
+      "priority": "should-fix",
+      "topic": "2.9",
+      "check": "prerequisites_respected",
+      "action": "In topic_corpus.md Section 2 (Prerequisites), add topic 2.7 as an explicit prerequisite entry. Suggested text: '- **2.7 — Writing specifications across five domains.** The four-part structure (task statement, context, constraints, expected output format) is referenced in examples throughout this topic.'"
+    },
+    {
+      "priority": "optional",
+      "topic": "2.8",
+      "check": "audience_level_consistency",
+      "action": "In Section 7 paragraph 1, add a brief parenthetical after 'test cases': e.g., 'test cases (written descriptions pairing an expected input with the output a feature should produce)'. This reinforces the absolute-beginner register maintained in core sections."
+    }
+  ]
+}

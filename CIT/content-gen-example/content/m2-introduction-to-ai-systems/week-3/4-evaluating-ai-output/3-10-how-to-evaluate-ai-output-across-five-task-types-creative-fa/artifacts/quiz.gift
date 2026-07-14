@@ -1,0 +1,41 @@
+$CATEGORY: CIT/M2/week-3/3-10-how-to-evaluate-ai-output-across-five-task-types-creative-fa
+
+::q1:: A student uses an AI tool to generate a short story about a haunted lighthouse. When evaluating the output, which of the following would be the WRONG criterion to apply? {
+~Originality — whether the story brings a fresh angle or avoids predictable plot moves#No — originality is a legitimate and important criterion for creative output.
+~Coherence — whether the story's plot and characters connect in a way that makes sense#No — coherence is a core criterion for creative output; internal consistency matters.
+=Factual accuracy — checking whether the events and details in the story match real-world facts#Correct — factual accuracy is a mismatch criterion for creative tasks. Fiction is not required to be factually true.
+~Prompt adherence — whether the AI followed the creative brief, such as the correct setting and tone#No — prompt adherence is a valid criterion; failing the brief is a genuine quality failure even in creative work.
+#### Tests LO1\: understanding that each task type requires its own criteria, and that factual accuracy is the wrong bar for creative output (corpus §5.2–5.3).
+}
+
+::q2:: When AI systems generate creative writing, which quality criterion do they most commonly fail to meet, and why? {
+=Originality — AI systems tend to default to predictable metaphors and formulaic structures rather than bringing a genuinely fresh voice#Correct — AI is trained to produce an average of patterns it has seen, which leads to a generic default voice that lacks originality.
+~Prompt adherence, because AI systems often misread or ignore specific formatting and tone instructions given in the creative brief#No — AI generally follows explicit prompt instructions well; prompt adherence is not the most commonly failed criterion.
+~Stylistic consistency, because AI writing shifts register mid-piece, moving from formal to informal tone without a clear reason#No — AI-generated writing is usually stylistically consistent throughout; this is not the most common failure mode.
+~Coherence, because AI-generated stories frequently jump between unrelated ideas or characters without any clear internal connection#No — AI output is typically coherent; the more common failure is that coherent output is also generic and predictable.
+#### Tests LO2\: knowing which creative criterion AI output most often fails, and why the generic-default pattern represents an originality failure (corpus §7).
+}
+
+::q3:: You ask an AI to write a summary of research on sleep deprivation and it includes three citations. What is the correct way to check whether the citation integrity criterion has been met? {
+~Read each citation carefully to verify that the author names, journal title, and publication year look realistic and professionally formatted#No — a hallucinated citation can look entirely realistic. Plausibility is not the same as existence.
+~Ask the same AI tool a follow-up question to confirm that each citation it produced is real and accurately described#No — asking the same AI system to verify its own citations is unreliable; the system may confidently confirm a citation that does not exist.
+~Accept the citations as valid if the overall summary sounds accurate, well-structured, and consistent with what you already know#No — overall plausibility of the summary does not guarantee the cited sources exist or say what the AI claims.
+=Look up each citation independently in a database or search engine to confirm the source exists and says what the AI claims#Correct — independent verification is the only reliable method. Paste the citation into a trusted database and confirm the source is real and accurately represented.
+#### Tests LO3\: applying the citation integrity criterion to factual output, specifically that verification requires an independent source lookup, not surface plausibility (corpus §5.4, §7).
+}
+
+::q4:: An AI produces an argument that reads smoothly and reaches a confident conclusion, but when you trace each step, you notice that step 3 jumps directly to the final conclusion without filling in the middle reasoning. Which logical evaluation criterion has been failed? {
+~Step validity — each individual step in the argument contains a factual error that makes it false on its own#No — step validity concerns whether individual steps are internally correct. The problem described is a gap between steps, not an error within a single step.
+=No unwarranted leaps — each step must follow from the one directly before it, not jump ahead by skipping over missing steps#Correct — an argument that skips from an early step to a distant conclusion without filling in the intermediate reasoning has failed the "no unwarranted leaps" criterion.
+~Acknowledgment of uncertainty — the output failed to flag the assumptions and contested evidence it relied on throughout#No — acknowledgment of uncertainty concerns whether the output admits what it does not know. A gap in the logical chain is a different kind of failure.
+~Correct conclusion from stated premises — the final conclusion is the opposite of what the opening premises logically require#No — this criterion concerns whether the conclusion contradicts the premises. Here, the conclusion may be consistent with the premises but is reached by skipping steps.
+#### Tests LO4\: identifying which logical criterion is violated when an argument skips intermediate steps, and distinguishing it from related but distinct logical criteria (corpus §5.5, §7).
+}
+
+::q5:: The five-step evaluation workflow says to select the rubric at Step 2, before reading the AI output carefully. What is the reason given for doing this step BEFORE reading? {
+~Reading the output before selecting the rubric is actually fine — it just means you evaluate from memory, which is more efficient for simple tasks#No — the workflow explicitly warns against reading first. Evaluating from memory is not the reason given; anchoring bias is the concern.
+~The rubric you choose should depend on how polished the output looks, so you must read the AI output before you can decide which criteria to apply#No — the task type, not the output's polish, determines the rubric. Polished-sounding output can still fail important criteria.
+=Reading first anchors your expectations to the output's surface quality, which makes it harder to spot real problems when you then apply the criteria#Correct — if you read first, the output's fluency and apparent quality anchor your judgment, reducing your ability to detect genuine failures when you apply the rubric.
+~Selecting criteria after reading allows the AI system to refine its output in response to your initial impressions before the formal evaluation begins#No — the AI does not observe or respond to your reading. This is not how AI evaluation works.
+#### Tests LO5\: recalling and applying Step 2 of the evaluation workflow, specifically why committing to criteria before reading protects evaluator judgment (corpus §6, §8).
+}

@@ -1,0 +1,41 @@
+---
+title: "Manual Copies vs Version Control"
+config:
+  theme: base
+  themeVariables:
+    primaryColor: "#a5d8ff"
+    primaryBorderColor: "#4a9eed"
+    lineColor: "#555"
+  flowchart:
+    htmlLabels: true
+    curve: basis
+    nodeSpacing: 40
+    rankSpacing: 60
+---
+flowchart LR
+  subgraph MANUAL["Manual Folder Copies (no VCS)"]
+    direction TB
+    M1["<b>Duplicate Folders Pile Up</b><br/><span style='font-size:12px;color:#6d28d9'>project_FINAL_FINAL_use_this_one…</span>"]:::hitl
+    M2["<b>No Change Record</b><br/><span style='font-size:12px;color:#6d28d9'>can't see what or why changed</span>"]:::hitl
+    M3["<b>Overwrite Risk</b><br/><span style='font-size:12px;color:#6d28d9'>edit wrong copy = good code gone</span>"]:::hitl
+    M4["<b>No Reliable Rollback</b><br/><span style='font-size:12px;color:#6d28d9'>hunt through folder names hoping</span>"]:::hitl
+    M1 --> M2 --> M3 --> M4
+  end
+
+  M4 ~~~ V1
+
+  subgraph VCS["Version Control System (VCS)"]
+    direction TB
+    V1["<b>Save Working Checkpoint</b><br/><span style='font-size:12px;color:#6d28d9'>code works → save → experiment safely</span>"]:::start
+    V2["<b>Full Version History</b><br/><span style='font-size:12px;color:#6d28d9'>what / when / who — every snapshot</span>"]:::auto
+    V3["<b>Change Log Records Why</b><br/><span style='font-size:12px;color:#6d28d9'>message explains the reason</span>"]:::auto
+    V4["<b>Safe Rollback, Any Time</b><br/><span style='font-size:12px;color:#6d28d9'>return to any checkpoint instantly</span>"]:::done
+    V1 --> V2 --> V3 --> V4
+  end
+
+  classDef start fill:#a5d8ff,stroke:#4a9eed
+  classDef hitl fill:#fff3bf,stroke:#f59e0b,stroke-width:3px
+  classDef auto fill:#d0bfff,stroke:#8b5cf6
+  classDef act fill:#a5d8ff,stroke:#4a9eed
+  classDef done fill:#b2f2bb,stroke:#22c55e
+  classDef ghost fill:none,stroke:none,color:#6d28d9

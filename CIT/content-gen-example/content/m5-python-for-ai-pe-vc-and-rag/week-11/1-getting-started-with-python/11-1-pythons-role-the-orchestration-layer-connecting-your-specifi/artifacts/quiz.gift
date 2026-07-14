@@ -1,0 +1,55 @@
+$CATEGORY: CIT/M5/week-11/11-1-pythons-role-the-orchestration-layer
+
+::q1:: In an AI pipeline, what is Python's main role?
+{
+~Python is the AI model that reads your question and generates a response automatically, without any intermediate code required.#No — Python is not the AI model itself; the AI model is a separate system that Python calls.
+=Python acts as a connector that bridges your written specification and the AI system carrying out your intent.#Correct — Python sits between your human-readable specification and the AI service, translating instructions into executable calls.
+~Python replaces the need for a written specification by figuring out what you want automatically.#No — Python cannot guess your intent; a clear specification written before coding is still required.
+~Python only runs on remote servers, so it cannot run on your own computer or in a browser.#No — Python runs in Google Colab, a free browser-based environment, with no installation needed.
+#### Tests LO1: the role Python plays as a connector/orchestration layer between a human specification and an AI system.
+}
+
+::q2:: Which sequence correctly shows the four-layer model for turning a human idea into an AI system output?
+{
+=Human intent → plain-English specification → Python code → AI API (Application Programming Interface) call → output.#Correct — this is the exact four-layer order described in the corpus: idea, then specification, then code, then the API call that produces output.
+~Python code → human intent → plain-English specification → AI API (Application Programming Interface) call → output.#No — you must capture and specify your intent before writing any code, not after.
+~Human intent → Python code → plain-English specification → AI API (Application Programming Interface) call → output.#No — the specification step comes before writing code, not after; code without a specification is putting the cart before the horse.
+~Human intent → plain-English specification → AI API (Application Programming Interface) call → Python code → output.#No — Python code is what makes the API call; the API call cannot happen before the code is written.
+#### Tests LO2: the correct ordering of the four layers — intent, specification, Python code, API call, output.
+}
+
+::q3:: In computing, what does the term "orchestration layer" mean?
+{
+~A hardware component inside the computer that accelerates AI model training and speeds up inference calculations.#No — orchestration is a software concept, not a physical hardware part.
+~A specialised database that stores AI model weights, training data, and retrieves them on demand when needed.#No — a database stores data; orchestration is about coordinating services, not storing information.
+=Software that coordinates multiple services, calling each in the right order and assembling their outputs into a result.#Correct — an orchestration layer directs other components, just as a musical orchestrator coordinates different instruments into one piece.
+~A programming language designed exclusively to work with AI and machine learning systems, not general software tasks.#No — Python is general-purpose; being exclusive to AI is not what "orchestration" means.
+#### Tests LO3: distinguishing the orchestration layer concept from other computing terms — hardware, storage, or AI-only tools.
+}
+
+::q4:: Why did the AI ecosystem converge on Python as its standard orchestration language?
+{
+~Python executes significantly faster than other languages, which makes it essential for real-time AI responses and low latency.#No — Python is not the fastest language; speed of execution is not the primary reason it became the AI standard.
+~Python was designed specifically for AI and machine learning work and has no significant uses outside that domain.#No — Python is a general-purpose language created in 1991, long before modern AI; it was not designed for AI.
+~Python is the only language capable of calling an external API, so AI providers had no other option but to support it first.#No — many languages can call APIs; Python's dominance is about ecosystem, readability, and community, not exclusive capability.
+=OpenAI, Anthropic, and Google all publish their Python SDKs first, and PyPI's 500,000+ packages create a reinforcing community standard.#Correct — the ecosystem converged because AI companies publish Python examples first and the package ecosystem makes orchestration straightforward.
+#### Tests LO5: why the AI industry standardised on Python — ecosystem, SDK availability, and the reinforcing community effect.
+}
+
+::q5:: Python is described as an "interpreted" language. What does this mean for someone writing their first Python program?
+{
+~The computer translates the entire program into machine code before running any of it, similar to compiling a document before printing.#No — that describes a compiled language; Python does not require a compile step before running.
+=Python reads and runs your instructions one line at a time, so you can write a single line, run it immediately, and see the result before moving on.#Correct — interpreted execution means line-by-line feedback with no compile-first step, which makes experimenting fast and errors easy to locate.
+~Interpreted means the program is sent to a remote internet server and the results are streamed back; it cannot run locally.#No — "interpreted" refers to how the language executes code, not where it runs; Python runs locally, in Colab, or on a server.
+~Python can only execute one statement per program file; you must save and run an entirely new file for each additional instruction.#No — a Python program can contain as many lines as needed; "interpreted" means each line runs in sequence, not one per file.
+#### Tests LO5 (also supporting LO1): what "interpreted" means — line-by-line execution, fast feedback, no compile step — and how the REPL in Google Colab embodies this.
+}
+
+::q6:: According to this topic, what is a programmer's most important job?
+{
+=Understanding what each part of the code does and being able to direct it toward a clear goal — not memorising every rule of Python's syntax.#Correct — the corpus explicitly states that a programmer's primary job is to understand and direct code, not to memorise syntax.
+~Memorising as many Python syntax rules as possible so that code can be written without referring to any reference material.#No — memorising syntax is not the primary skill; understanding purpose and being able to verify behaviour is what matters.
+~Writing code entirely from scratch without any specification, relying on experience to know what the program should do.#No — writing code without a prior specification is discouraged; understanding what you are building before you build it is a core practice.
+~Obtaining a computer science degree before attempting to write any Python code in a professional or educational context.#No — a formal degree is not listed as a requirement; the key skill is being able to understand and explain the code you write.
+#### Tests LO6: recognising that the programmer's primary role is understanding and directing code, not memorising syntax.
+}

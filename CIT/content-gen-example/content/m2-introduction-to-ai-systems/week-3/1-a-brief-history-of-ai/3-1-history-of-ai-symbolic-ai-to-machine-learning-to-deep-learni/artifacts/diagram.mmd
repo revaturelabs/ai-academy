@@ -1,0 +1,31 @@
+---
+title: "Three Eras of AI — How Each Era Solved the Last"
+theme: base
+themeVariables:
+  primaryColor: "#a5d8ff"
+  primaryBorderColor: "#4a9eed"
+  lineColor: "#555"
+flowchart:
+  htmlLabels: true
+  curve: basis
+---
+flowchart LR
+    era1["<b>Symbolic AI</b><br/><span style='font-size:12px;color:#6d28d9'>~1950s – 1980s<br/>Hand-written IF/THEN rules<br/>Expert systems<br/>Bottleneck: knowledge bottleneck</span>"]:::start
+
+    bridge1["<b>AI Winter</b><br/><span style='font-size:12px;color:#6d28d9'>Late 1980s<br/>Funding cut; rules could not<br/>scale to the real world</span>"]:::hitl
+
+    era2["<b>Machine Learning</b><br/><span style='font-size:12px;color:#6d28d9'>~1980s – 2010s<br/>Learn patterns from examples<br/>Training data + parameters<br/>Bottleneck: feature engineering</span>"]:::auto
+
+    bridge2["<b>AlexNet 2012</b><br/><span style='font-size:12px;color:#6d28d9'>Deep network halved<br/>ImageNet error rate;<br/>proved raw data + GPUs work</span>"]:::hitl
+
+    era3["<b>Deep Learning</b><br/><span style='font-size:12px;color:#6d28d9'>~2010s – today<br/>Artificial neural networks<br/>Learn from raw data at scale<br/>Needs: vast data + compute</span>"]:::done
+
+    era1 -->|knowledge bottleneck| bridge1
+    bridge1 -->|ML: learn from examples| era2
+    era2 -->|feature engineering bottleneck| bridge2
+    bridge2 -->|deep learning: skip manual features| era3
+
+    classDef start fill:#a5d8ff,stroke:#4a9eed,color:#111
+    classDef hitl fill:#fff3bf,stroke:#f59e0b,stroke-width:3px,color:#111
+    classDef auto fill:#d0bfff,stroke:#8b5cf6,color:#111
+    classDef done fill:#b2f2bb,stroke:#22c55e,color:#111

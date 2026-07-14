@@ -1,0 +1,82 @@
+{
+  "critic": "corpus-critic",
+  "topic_id": "1.4",
+  "topic_title": "Why AI gives different answers to the same question",
+  "at": "2026-06-20T00:00:00Z",
+  "passed": true,
+  "verdict": "PASS — all required sections present, citation density strong (web_search strict mode), no forward references, no scope creep, no readability defects; soft warning on corpus length (~2300 words vs standard-profile minimum 3000, but within the 30% hard-fail threshold).",
+  "checks": {
+    "required_sections": {
+      "passed": true,
+      "detail": {
+        "section_3_learning_objectives": { "present": true, "word_count_approx": 80, "threshold": 50, "passed": true },
+        "section_4_introduction": { "present": true, "word_count_approx": 175, "threshold": 50, "passed": true },
+        "section_5_core_concepts": { "present": true, "word_count_approx": 980, "threshold": 100, "passed": true },
+        "section_10_key_takeaways": { "present": true, "word_count_approx": 130, "threshold": 50, "passed": true }
+      }
+    },
+    "citation_density": {
+      "passed": true,
+      "resources_source": "web_search",
+      "mode": "strict",
+      "primary_cited": true,
+      "primary_resource": "https://medium.com/@samikalliokoski/why-large-language-models-give-different-answers-even-with-the-same-input-2e44c7582626",
+      "primary_citation_marker": "[1]",
+      "section_5_coverage_approx_pct": 85,
+      "section_6_coverage_approx_pct": 80,
+      "section_7_coverage_approx_pct": 100,
+      "threshold_pct": 60,
+      "fake_citations_found": false,
+      "detail": "All three resources ([1], [2], [3]) cited throughout Core Concepts, Implementation, and Real-World Patterns. Coverage well above 60% threshold in all sections. No unresolvable citation markers detected."
+    },
+    "sequence_drift": {
+      "passed": true,
+      "forward_references_found": [],
+      "allowed_prior_concepts": [
+        "computation", "input/process/output", "computable", "computational thinking", "defined steps",
+        "deterministic system", "determinism", "predictability", "reproducibility", "hidden inputs",
+        "probabilistic system", "probability", "uncertainty", "randomness", "sampling", "output variation",
+        "temperature as control on randomness"
+      ],
+      "this_topic_concepts_introduced": [
+        "LLM (Large Language Model)", "token", "token sampling", "probability distribution"
+      ],
+      "detail": "All technical terms used are either from this topic's concepts_introduced or from prior topics 1.1–1.3. LLM, token, token sampling, and probability distribution are all introduced and defined here. No transformer mechanics, neural network weights, backpropagation, or training data concepts appear in the corpus."
+    },
+    "length_sanity": {
+      "passed": true,
+      "depth_profile": "standard",
+      "word_count_approx": 2300,
+      "range_min": 3000,
+      "range_max": 4400,
+      "pct_below_minimum": 23,
+      "hard_fail_threshold_pct": 30,
+      "hard_fail_triggered": false,
+      "soft_finding": true,
+      "soft_finding_detail": "Corpus is approximately 2300 words, below the standard-profile minimum of 3000 words (23% under). This is within the 30% hard-fail tolerance. Downstream builder should note the corpus is lean for standard depth — the reading artifact may need to be more generative to meet the 1200–1600 word reading target."
+    },
+    "topic_scope": {
+      "passed": true,
+      "scope_creep_findings": [],
+      "detail": "Corpus stays tightly within the headline scope. Core Concepts covers only: LLM token-by-token generation, probability distribution, temperature, and the causal chain explaining output variation. No teaching of LLM architecture internals, transformer mechanics, training data, neural network weights, or backpropagation. The terms ChatGPT and Gemini appear as product name examples only (one-liners), not as taught concepts. No bolded definitions for out-of-scope concepts found."
+    },
+    "beginner_readability": {
+      "passed": true,
+      "findings": [],
+      "undefined_terms_on_first_use": [],
+      "jargon_dump_paragraphs": [],
+      "academic_register_flags": [],
+      "distinct_finding_count": 0,
+      "escalation_threshold": 3,
+      "detail": "All non-everyday terms (AI, LLM, token, token sampling, probability distribution) are spelled out and defined in plain language on first use, following the bold-term-then-plain-meaning pattern. No paragraph introduces 3+ new terms at once. Sentences are short, active voice, addressed to 'you'. No hedging phrases detected. Readability meets the fresher-zero-background audience baseline."
+    }
+  },
+  "soft_findings_summary": [
+    {
+      "code": "corpus_length_below_profile_min",
+      "severity": "soft",
+      "detail": "~2300 words is 23% below the standard-profile corpus minimum (3000 words). Not a hard fail (under 30% threshold). Flag for author awareness at HITL #2."
+    }
+  ],
+  "hard_failures": []
+}

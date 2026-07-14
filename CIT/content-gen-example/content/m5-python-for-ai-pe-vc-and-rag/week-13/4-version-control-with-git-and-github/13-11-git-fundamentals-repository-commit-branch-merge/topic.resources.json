@@ -1,0 +1,30 @@
+{
+  "topic_id": "13.11",
+  "captured_at": "2026-06-14T14:20:00Z",
+  "captured_by": "namratas@revature.com",
+  "resources_source": "web_search",
+  "web_search_query": "Git fundamentals repository commit branch merge beginners",
+  "resources": [
+    {
+      "type": "url",
+      "value": "https://git-scm.com/book/en/v2/Git-Branching-Basic-Branching-and-Merging",
+      "role": "primary",
+      "source": "web_search",
+      "notes": "Official Git Book ch. on basic branching and merging — canonical first-party. Also covers repository and commit fundamentals in adjacent chapters."
+    },
+    {
+      "type": "url",
+      "value": "https://www.atlassian.com/git/tutorials/using-branches/git-merge",
+      "role": "supporting",
+      "source": "web_search",
+      "notes": "Atlassian Git Tutorial on branches and merging — well-known beginner-friendly reference."
+    },
+    {
+      "type": "url",
+      "value": "https://www.w3schools.com/git/git_branch_merge.asp",
+      "role": "supporting",
+      "source": "web_search",
+      "notes": "W3Schools Git branch/merge quick reference — simple and accessible for absolute beginners."
+    }
+  ]
+}

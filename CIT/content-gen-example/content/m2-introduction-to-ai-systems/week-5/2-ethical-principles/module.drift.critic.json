@@ -1,0 +1,43 @@
+{
+  "module_slug": "2-ethical-principles",
+  "course_code": "M2",
+  "week_num": 5,
+  "topics_walked": ["5.4"],
+  "cross_referenced_for_drift": ["5.5", "5.6", "5.10"],
+  "passed": true,
+  "checks": {
+    "terminology_consistency": {
+      "status": "pass",
+      "note": "The four pillars are named identically ('fairness, transparency, accountability, harm prevention') in 5.4 corpus, 5.4 reading, and every downstream topic that cites them. 5.5 reuses 'harm prevention' verbatim and frames red-teaming as 'the proactive testing the harm-prevention pillar (5.4) asks for'. 5.6 cites 'harm prevention' in the same terms. 5.10 maps all four pillars by their exact 5.4 names onto the NIST functions (Accountability->Govern, Harm prevention->Map/Measure, Fairness->Measure/Manage, Transparency->documentation). 5.4's internal sub-terms (proxy discrimination, black box problem, accountability gap, XAI, explainability, discoverability) are each defined at point of use. No synonym drift detected.",
+      "findings": []
+    },
+    "prerequisite_ordering": {
+      "status": "pass",
+      "note": "5.4 declares prerequisites 5.1, 5.2, 5.3 only — all earlier in delivery order. Every back-reference in the corpus/reading points backward (5.1 deep learning + failure cases, 5.2 hallucination, 5.3 historical/representation bias). Forward-looking items (XAI, red-teaming, EU guidelines, NIST AI RMF) are correctly flagged as 'covered later in the course' / 'next topic' and are NOT relied upon — they are previews, not dependencies. No forward dependence.",
+      "findings": []
+    },
+    "learning_arc": {
+      "status": "pass",
+      "note": "5.4 coherently bridges the module-1 failure narrative to the modules 3/4 safety+governance arc. Intro and Real-World Patterns recast the 5.1-5.3 failures as pillar violations (the failures->principles pivot); the harm-prevention pillar explicitly hands off to red-teaming (5.5); section 5.6 names the EU guidelines and NIST AI RMF as the detailed governance discussions 'that follow', which 5.10 then picks up and explicitly grounds back in 5.4. As the sole topic in this single-topic module, its LOs fully cover the module title 'Ethical Principles'.",
+      "findings": []
+    },
+    "no_duplicated_material": {
+      "status": "pass",
+      "note": "5.4 references the module-1 failures (Amazon hiring, healthcare diagnostic, hallucination) as illustrative cases to map onto pillars but does NOT re-teach the failure mechanics — it adds the ethical-framework lens (which pillar each broke), which is net-new analysis rather than restatement. No substantive Core Concepts overlap with sibling topics: 5.5 owns red-teaming mechanics, 5.6 owns prompt injection, 5.10 owns NIST functions; 5.4 owns the pillar definitions. Jaccard of section-5 noun sets across pairs well below 0.6.",
+      "findings": []
+    },
+    "lab_activity_alignment": {
+      "status": "pass",
+      "note": "Week-5 lab seed is a 500-word structured essay covering 'what went right/wrong, who was accountable, what should change' plus a presentation. 5.4 section 9 Hands-On Exercise is purpose-built for this: it has the student pick one AI system and assess it against all four pillars in prose, explicitly stating 'You are preparing your 500-word structured essay.' The accountability pillar (section 5.3 + checklist) and the 'who is responsible when this system causes harm' framing directly support the essay's required 'who was accountable' angle; the best-practice 'what ethical practice looks like' framing supports 'what should change'. Strong alignment.",
+      "findings": []
+    },
+    "audience_level_consistency": {
+      "status": "pass",
+      "note": "5.4 holds the absolute-beginner register: every technical term (proxy discrimination, black box problem, XAI, accountability gap, non-maleficence) is defined in-line with a plain-language analogy (hiring manager, bank letter, car accident). No term is used cold that wasn't introduced in 5.1-5.3 or defined on the spot. Depth profile 'deep' is justified by four parallel sub-concepts each needing definition+counter-example; register does not spike above the absolute-beginner baseline. As a single-topic module there is no later-topic upward-drift to flag here.",
+      "findings": []
+    }
+  },
+  "findings": [],
+  "verdict": "PASS — 5.4 is internally consistent, depends only on 5.1-5.3, cleanly bridges module-1 failures to the modules 3/4 safety/governance arc, duplicates no failure content, and its hands-on exercise directly serves the week-5 accountability essay.",
+  "at": "2026-06-22T00:00:00Z"
+}

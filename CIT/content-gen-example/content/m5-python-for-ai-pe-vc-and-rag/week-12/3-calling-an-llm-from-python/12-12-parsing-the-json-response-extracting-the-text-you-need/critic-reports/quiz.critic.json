@@ -1,0 +1,114 @@
+{
+  "topic_id": "12.12",
+  "quiz_path": "artifacts/quiz.gift",
+  "meta_path": "artifacts/quiz.meta.json",
+  "passed": true,
+  "checks": {
+    "hard_prerequisites": {
+      "passed": true,
+      "meta_exists": true,
+      "bias_defense_applied": true
+    },
+    "positional_bias": {
+      "passed": true,
+      "derived_distribution": {"0": 1, "1": 2, "2": 1, "3": 1},
+      "sidecar_distribution": {"0": 1, "1": 2, "2": 1, "3": 1},
+      "meta_gift_desync": false,
+      "total_mcq": 5,
+      "max_position": 1,
+      "max_count": 2,
+      "max_share": 0.40,
+      "threshold": 0.40,
+      "note": "max_share is exactly at threshold (not strictly greater); borderline pass"
+    },
+    "length_bias": {
+      "passed": true,
+      "total_mcq": 5,
+      "longest_correct_questions": ["q2", "q5"],
+      "longest_correct_rate": 0.40,
+      "threshold": 0.40,
+      "note": "longest_correct_rate is exactly at threshold (not strictly greater); borderline pass",
+      "per_question": [
+        {
+          "id": "q1",
+          "correct_len": 60,
+          "mean_distractor_len": 61.3,
+          "120pct_mean": 73.6,
+          "longest_correct": false
+        },
+        {
+          "id": "q2",
+          "correct_len": 134,
+          "mean_distractor_len": 90.0,
+          "120pct_mean": 108.0,
+          "longest_correct": true
+        },
+        {
+          "id": "q3",
+          "correct_len": 84,
+          "mean_distractor_len": 72.7,
+          "120pct_mean": 87.2,
+          "longest_correct": false
+        },
+        {
+          "id": "q4",
+          "correct_len": 95,
+          "mean_distractor_len": 83.3,
+          "120pct_mean": 100.0,
+          "longest_correct": false
+        },
+        {
+          "id": "q5",
+          "correct_len": 103,
+          "mean_distractor_len": 65.7,
+          "120pct_mean": 78.8,
+          "longest_correct": true
+        }
+      ]
+    },
+    "distractor_plausibility": {
+      "passed": true,
+      "total_distractors": 15,
+      "absurd_count": 0,
+      "absurd_rate": 0.0,
+      "threshold": 0.25,
+      "weakest_questions": [],
+      "notes": [
+        "q2 distractor 3 ('strings cannot be stored directly') is the weakest (score 2) but not absurd",
+        "All other distractors score 3-4; represent plausible beginner misconceptions"
+      ]
+    },
+    "objective_coverage": {
+      "passed": true,
+      "task_los": [
+        "Identify top-level fields of the response object (id, model, role, stop_reason, usage, content)",
+        "Explain why content is a list and what each content block contains",
+        "Write a for-loop that safely iterates content blocks and extracts text-type blocks",
+        "Use stop_reason to detect a truncated reply",
+        "Read token counts from message.usage"
+      ],
+      "coverage_map": [
+        {"lo_index": 1, "covered_by": ["q1"]},
+        {"lo_index": 2, "covered_by": ["q2"]},
+        {"lo_index": 3, "covered_by": ["q3"]},
+        {"lo_index": 4, "covered_by": ["q4", "q_sa"]},
+        {"lo_index": 5, "covered_by": ["q5"]}
+      ],
+      "uncovered_objectives": [],
+      "orphan_questions": [],
+      "corpus_lo_note": "Corpus §3 lists 6 LOs; LO3 ('Extract via message.content[0].text') is not among the 5 task-specified LOs and has no dedicated question. This is consistent with the task brief, not a quiz defect."
+    },
+    "beginner_scope": {
+      "passed": true,
+      "jargon_in_stem": [],
+      "out_of_scope_questions": [],
+      "unfair_distractors": [],
+      "notes": "All stems and distractors reference concepts explicitly taught in topic 12.12 corpus sections 5.1-5.6. No un-taught knowledge required."
+    }
+  },
+  "auto_correction_applied": {
+    "shuffle_round_2": false
+  },
+  "verdict": "Pass — all checks clean; positional bias and length bias are both borderline at exactly 0.40 (not strictly over threshold).",
+  "at": "2026-06-15T00:00:00Z"
+}

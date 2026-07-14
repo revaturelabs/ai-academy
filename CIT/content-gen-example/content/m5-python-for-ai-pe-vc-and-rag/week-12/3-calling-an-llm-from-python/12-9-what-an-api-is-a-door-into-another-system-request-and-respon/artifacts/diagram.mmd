@@ -1,0 +1,32 @@
+---
+title: "API Request-Response Cycle"
+config:
+  theme: base
+  themeVariables:
+    primaryColor: "#a5d8ff"
+    primaryBorderColor: "#4a9eed"
+    lineColor: "#555"
+  flowchart:
+    htmlLabels: true
+    curve: basis
+---
+flowchart LR
+    CLIENT["<b>Your Python Code</b><br/><span style='font-size:11px;color:#6d28d9'>the client</span>"]
+    ENDPOINT["<b>API Endpoint</b><br/><span style='font-size:11px;color:#6d28d9'>URL + method + headers + body</span>"]
+    SERVER["<b>Anthropic Server</b><br/><span style='font-size:11px;color:#6d28d9'>runs Claude internally</span>"]
+    RESP["<b>JSON Response</b><br/><span style='font-size:11px;color:#6d28d9'>status code + body</span>"]
+
+    CLIENT -->|"1. POST request"| ENDPOINT
+    ENDPOINT -->|"2. forwards"| SERVER
+    SERVER -->|"3. returns"| RESP
+    RESP -->|"4. back to client"| CLIENT
+
+    classDef clientNode fill:#dbeafe,stroke:#3b82f6,color:#1e3a8a
+    classDef apiNode fill:#e0e7ff,stroke:#6366f1,color:#312e81
+    classDef serverNode fill:#fef9c3,stroke:#ca8a04,color:#713f12
+    classDef doneNode fill:#b2f2bb,stroke:#22c55e,color:#14532d
+
+    class CLIENT clientNode
+    class ENDPOINT apiNode
+    class SERVER serverNode
+    class RESP doneNode

@@ -1,0 +1,82 @@
+{
+  "critic": "reading-critic",
+  "topic_id": "6.3",
+  "title": "Vectors — a list of numbers representing multiple properties at once",
+  "run_at": "2026-06-18T00:00:00Z",
+  "passed": true,
+  "verdict": "PASS — all 8 check groups clear. Reading is 791 words (range 600–900), 3 sections-correct headings in order, all 3 citation markers used inline and in bibliography with primary [1] cited 10+ times, no forward references (similarity deferred to 6.6, embeddings deferred to later module, matrices not mentioned), all 10 sampled assertions trace to corpus, beginner readability strong (concrete-first, bold-term definitions, no jargon dumps), no assessment references, no scope creep.",
+  "checks": {
+    "format_discipline": {
+      "passed": true,
+      "frontmatter_present": false,
+      "meta_sidecar_missing": false,
+      "section_template_violation": false,
+      "sections_found": ["Overview", "Key Concepts", "Worked Example", "In Practice", "Key Takeaways", "References"],
+      "notes": "First non-empty line is H1 title. Sidecar valid. Exactly 6 required sections in correct order."
+    },
+    "length": {
+      "passed": true,
+      "word_count": 791,
+      "word_range": [600, 900],
+      "estimated_minutes": 3.4,
+      "minute_range": [3, 5],
+      "notes": "791 words is within the 600–900 standard range. 791/230 = 3.44 min."
+    },
+    "citations": {
+      "passed": true,
+      "primary_cited": true,
+      "primary_resource": "machinelearningplus.com/linear-algebra/vectors/ [1]",
+      "inline_markers": [1, 2, 3],
+      "bibliography_entries": [1, 2, 3],
+      "orphan_inline": [],
+      "orphan_bibliography": [],
+      "notes": "All 3 markers cited inline. Bibliography entries match. Primary [1] appears at lines 5, 11, 13, 29, 41, 46, 71, 102, 119, 121, 127."
+    },
+    "no_forward_references": {
+      "passed": true,
+      "forward_refs_taught": [],
+      "forward_refs_named_and_deferred": [
+        { "concept": "similarity calculation / dot product", "line": 72, "handling": "named-and-deferred to topic 6.6" },
+        { "concept": "embeddings", "line": 103, "handling": "named-and-deferred to later module" }
+      ],
+      "notes": "Matrices not mentioned. Dot product and embeddings each receive exactly one name-and-defer sentence, not taught."
+    },
+    "faithfulness": {
+      "passed": true,
+      "assertions_sampled": 10,
+      "unsupported_count": 0,
+      "unsupported_assertions": [],
+      "notes": "All 10 sampled assertions trace directly to corpus sections 5.1–5.5, 6, and 7. Phrasing is paraphrased or closely matched."
+    },
+    "beginner_readability": {
+      "passed": true,
+      "undefined_terms": [],
+      "jargon_dump": null,
+      "abstract_first": null,
+      "academic_register": null,
+      "notes": "vector, dimension, feature, feature vector all defined at first use with plain-language meaning. scalar back-referenced to prior topic 6.2. Concrete-first: song analogy in Overview before abstraction. No hedging phrases. Average sentence length well under 25 words."
+    },
+    "formatting": {
+      "passed": true,
+      "wall_of_text": null,
+      "unlisted_sequence": null,
+      "no_inline_examples": null,
+      "definition_shape": true,
+      "notes": "No paragraph exceeds 6 sentences. Worked Example is a numbered list. In Practice Do/Don't uses bullet lists. Inline code blocks and a table appear in Key Concepts. Bold-term/plain-meaning shape used for all defined terms."
+    },
+    "assessment_references": {
+      "passed": true,
+      "findings": [],
+      "notes": "No mention of A2, due week 6, 15%, or any assessment ID or weight in the reading."
+    },
+    "scope": {
+      "passed": true,
+      "scope_creep": [],
+      "notes": "Reading stays within the headline: vectors as ordered lists of scalars representing multiple properties. Similarity calculation deferred. Embeddings deferred. Matrices not introduced. No content from 6.4, 6.5, or 6.6 is taught."
+    }
+  },
+  "soft_findings": [],
+  "hard_fail_triggers": [],
+  "soft_finding_count": 0,
+  "escalated_to_hard_fail": false
+}

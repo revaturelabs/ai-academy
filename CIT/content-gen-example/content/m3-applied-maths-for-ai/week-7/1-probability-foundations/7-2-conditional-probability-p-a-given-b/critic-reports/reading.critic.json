@@ -1,0 +1,152 @@
+{
+  "critic": "reading-critic",
+  "topic_id": "7.2",
+  "topic_title": "Conditional probability — P(A given B)",
+  "run_at": "2026-06-22T00:00:00Z",
+  "passed": true,
+  "verdict": "Reading passes all hard checks; two soft findings noted — sidecar field names diverge from skill spec (non-blocking) and word-count sits at the low end of the reading-time target at 230 wpm.",
+  "checks": {
+    "format_discipline": {
+      "passed": true,
+      "frontmatter_present": false,
+      "meta_sidecar_present": true,
+      "meta_sidecar_valid": true,
+      "meta_sidecar_notes": "Sidecar parses and contains word_count/reading_minutes/citations, but field names differ from skill spec: 'reading_minutes' vs expected 'estimated_read_minutes', 'citations' vs expected 'citations_used', and 'sections' field is absent. Soft finding only — sidecar is parseable and substantively complete.",
+      "section_template_valid": true,
+      "sections_found": ["Overview", "Key Concepts", "Worked Example", "In Practice", "Key Takeaways", "References"],
+      "sections_order_correct": true,
+      "findings": [
+        {
+          "code": "meta_sidecar_field_names",
+          "severity": "soft",
+          "detail": "Sidecar uses 'reading_minutes' (expected 'estimated_read_minutes'), 'citations' (expected 'citations_used'), and omits 'sections' array entirely."
+        }
+      ]
+    },
+    "length": {
+      "passed": true,
+      "word_count_claimed": 1246,
+      "word_range_target": [1200, 1600],
+      "word_count_in_range": true,
+      "reading_minutes_at_230wpm": 5.4,
+      "reading_minutes_at_200wpm": 6.2,
+      "reading_minutes_range_target": [6, 8],
+      "notes": "At the skill-specified 230 wpm, 1246 words = 5.4 min, just below the 6-min floor. At 200 wpm (sidecar's implied rate) = 6.2 min, within range. Word count is within [1200, 1600] and the shortfall is marginal (~36 words to reach 6 min at 230 wpm). Flagged as a soft finding; not treated as a hard fail given the word count is within spec.",
+      "findings": [
+        {
+          "code": "reading_time_borderline",
+          "severity": "soft",
+          "detail": "1246 words / 230 wpm = 5.4 min, 0.6 min below the 6-min floor. Word count is within range; adding ~36 words anywhere would resolve this."
+        }
+      ]
+    },
+    "citations": {
+      "passed": true,
+      "primary_resources": [
+        {
+          "ref": "[1]",
+          "url": "http://www.stat.yale.edu/Courses/1997-98/101/condprob.htm",
+          "role": "primary",
+          "cited_in_body": true,
+          "cited_at_lines": [5, 22, 45, 52, 75, 98, 118, 124, 128]
+        }
+      ],
+      "supporting_resources": [
+        {
+          "ref": "[2]",
+          "url": "https://www.probabilitycourse.com/chapter1/1_4_0_conditional_probability.php",
+          "role": "supporting",
+          "cited_in_body": true
+        },
+        {
+          "ref": "[3]",
+          "url": "https://setosa.io/ev/conditional-probability/",
+          "role": "supporting",
+          "cited_in_body": true
+        }
+      ],
+      "orphan_inline_markers": [],
+      "orphan_bibliography_entries": [],
+      "bibliography_matches_inline": true,
+      "findings": []
+    },
+    "no_forward_references": {
+      "passed": true,
+      "prior_topic_concepts_used": ["probability", "sample space", "event", "outcome", "complement"],
+      "forward_concepts_taught": [],
+      "forward_concepts_named_and_deferred": [
+        {
+          "concept": "joint probability",
+          "line": 73,
+          "treatment": "Named and explicitly deferred: 'You will study joint probability in more depth in later topics; for now, think of it as the probability of the overlap.' Acceptable per skill rules."
+        }
+      ],
+      "findings": []
+    },
+    "faithfulness": {
+      "passed": true,
+      "assertions_sampled": 10,
+      "unsupported_assertions": 0,
+      "sample": [
+        {"assertion": "Conditional probability captures how likelihood of one event changes once you know something else has happened", "corpus_section": "4. Introduction", "supported": true},
+        {"assertion": "Weather/dark-clouds analogy for conditional probability", "corpus_section": "4. Introduction", "supported": true},
+        {"assertion": "P(A|B) notation with rain/dark-clouds and late/traffic-jam examples", "corpus_section": "5.2", "supported": true},
+        {"assertion": "P(A|B) and P(B|A) are different questions", "corpus_section": "5.2", "supported": true},
+        {"assertion": "Die example: condition >3 reduces space to {4,5,6}, P(even|>3)=2/3", "corpus_section": "5.3", "supported": true},
+        {"assertion": "Formula P(A|B) = P(A and B) / P(B)", "corpus_section": "5.4", "supported": true},
+        {"assertion": "Joint probability named and deferred", "corpus_section": "5.4", "supported": true},
+        {"assertion": "Job application 5% vs 60% example", "corpus_section": "5.5", "supported": true},
+        {"assertion": "Medical diagnosis P(condition|positive test)", "corpus_section": "7. Real-World Patterns", "supported": true},
+        {"assertion": "LLM next-token selection as conditional probability", "corpus_section": "7. Real-World Patterns", "supported": true}
+      ],
+      "findings": []
+    },
+    "beginner_readability": {
+      "passed": true,
+      "undefined_terms": [],
+      "jargon_dump_instances": [],
+      "abstract_first_instances": [],
+      "academic_register_instances": [],
+      "assessment_references": [],
+      "findings": []
+    },
+    "formatting": {
+      "passed": true,
+      "wall_of_text_instances": [],
+      "unlisted_sequence_instances": [],
+      "inline_examples_present": true,
+      "bold_term_definitions_used": true,
+      "findings": []
+    },
+    "scope": {
+      "passed": true,
+      "scope_creep_instances": [],
+      "named_and_deferred_pointers": [
+        {
+          "concept": "joint probability",
+          "line": 73,
+          "treatment": "named-and-deferred"
+        }
+      ],
+      "findings": []
+    }
+  },
+  "all_findings": [
+    {
+      "code": "meta_sidecar_field_names",
+      "severity": "soft",
+      "check": "format_discipline",
+      "detail": "Sidecar field 'reading_minutes' should be 'estimated_read_minutes'; 'citations' should be 'citations_used'; 'sections' array is missing. Sidecar is parseable and substantively complete — does not block pass."
+    },
+    {
+      "code": "reading_time_borderline",
+      "severity": "soft",
+      "check": "length",
+      "detail": "1246 words at 230 wpm = 5.4 min, 0.6 min below the 6-min floor of the [6, 8] range. Word count (1246) is within [1200, 1600]. Adding ~36 words resolves this."
+    }
+  ],
+  "hard_fail_count": 0,
+  "soft_finding_count": 2,
+  "escalation_triggered": false,
+  "escalation_reason": null
+}

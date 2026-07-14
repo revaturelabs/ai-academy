@@ -1,0 +1,129 @@
+{
+  "passed": true,
+  "topic_id": "14.7",
+  "at": "2026-06-15T00:00:00Z",
+  "checks": {
+    "positional_bias": {
+      "passed": true,
+      "derived_positions": [2, 0, 3, 1, 2, 0],
+      "sidecar_positions": [2, 0, 3, 1, 2, 0],
+      "meta_gift_desync": false,
+      "distribution": {
+        "pos_0": 2,
+        "pos_1": 1,
+        "pos_2": 2,
+        "pos_3": 1
+      },
+      "max_share": 0.333,
+      "threshold": 0.40,
+      "note": "Max share 0.333 is below the 0.40 threshold. All four positions used."
+    },
+    "length_bias": {
+      "passed": true,
+      "per_question": [
+        {
+          "id": "q1",
+          "correct_len": 278,
+          "mean_distractor_len": 226.7,
+          "ratio": 0.226,
+          "flagged": true
+        },
+        {
+          "id": "q2",
+          "correct_len": 259,
+          "mean_distractor_len": 238.3,
+          "ratio": 0.087,
+          "flagged": false
+        },
+        {
+          "id": "q3",
+          "correct_len": 258,
+          "mean_distractor_len": 244.7,
+          "ratio": 0.054,
+          "flagged": false
+        },
+        {
+          "id": "q4",
+          "correct_len": 246,
+          "mean_distractor_len": 248.3,
+          "ratio": -0.009,
+          "flagged": false
+        },
+        {
+          "id": "q5",
+          "correct_len": 279,
+          "mean_distractor_len": 225.0,
+          "ratio": 0.240,
+          "flagged": true
+        },
+        {
+          "id": "q6",
+          "correct_len": 283,
+          "mean_distractor_len": 254.0,
+          "ratio": 0.114,
+          "flagged": false
+        }
+      ],
+      "flagged_count": 2,
+      "total_mcq": 6,
+      "longest_correct_rate": 0.333,
+      "baseline": 0.25,
+      "threshold": 0.40,
+      "sidecar_claimed_violations": 0,
+      "sidecar_desync_note": "Sidecar reports length_bias_violations=0 but two questions (q1 ratio=0.226, q5 ratio=0.240) exceed the per-question 0.20 flag threshold. The aggregate rate (0.333) does not breach the 0.40 fail threshold so the check passes, but the sidecar field is inaccurate."
+    },
+    "distractor_plausibility": {
+      "passed": true,
+      "total_distractors": 18,
+      "absurd_count": 0,
+      "absurd_rate": 0.0,
+      "threshold": 0.25,
+      "weakest_questions": [
+        {
+          "id": "q4",
+          "distractors_scored_2": ["D1 — creativity rationale (score 2)", "D2 — regulatory prohibition rationale (score 2)"],
+          "note": "Two distractors in q4 invoke rationales (creativity, regulatory compliance) that are not closely connected to common beginner misconceptions about simplest-tier-first; they are wrong but not absurd."
+        }
+      ]
+    },
+    "objective_coverage": {
+      "passed": true,
+      "los_from_corpus": [
+        "LO1 — Name and describe the four tiers of AI system complexity: direct call, chained calls, RAG, and agent",
+        "LO2 — State the defining criterion for each tier — what makes a task belong to that tier and not a simpler one",
+        "LO3 — Apply a four-question decision matrix to a new task description and identify the correct tier",
+        "LO4 — Explain why starting with the simplest tier that works is the right engineering default",
+        "LO5 — Recognize the two most common design mistakes: over-engineering (reaching for an agent when a direct call suffices) and under-engineering (skipping RAG when the model is likely to hallucinate)"
+      ],
+      "coverage_map": {
+        "LO1": ["q1"],
+        "LO2": ["q2"],
+        "LO3": ["q3", "q6"],
+        "LO4": ["q4"],
+        "LO5": ["q5"]
+      },
+      "uncovered_objectives": [],
+      "orphan_questions": []
+    },
+    "beginner_fairness_and_scope": {
+      "passed": true,
+      "jargon_in_stem": [],
+      "out_of_scope_questions": [],
+      "notes": "LLM and ReAct are prerequisite vocabulary from prior topics (14.5, 14.6) — explicitly listed in corpus §2. All stems and distractors are within the topic boundary."
+    }
+  },
+  "bias_defense_prerequisite": {
+    "passed": true,
+    "bias_defense_applied": true
+  },
+  "auto_correction_applied": {
+    "shuffle_round_2": false
+  },
+  "hard_findings": [],
+  "soft_findings": [
+    "LENGTH_BIAS_BORDERLINE: q1 correct answer is 22.6% longer than mean distractors (threshold 20%). q5 correct answer is 24.0% longer. Aggregate rate 0.333 passes the 0.40 threshold, but builder should tighten distractor lengths in q1 and q5.",
+    "SIDECAR_FIELD_INACCURATE: quiz.meta.json reports length_bias_violations=0; two questions (q1, q5) exceed the per-question 0.20 flag threshold. Sidecar should be corrected for accurate downstream reporting.",
+    "DISTRACTOR_QUALITY_Q4: D1 (creativity rationale) and D2 (regulatory prohibition) in q4 are wrong but only weakly connected to plausible beginner misconceptions about the simplest-tier-first rule. Consider replacing with misconceptions closer to the corpus rationale (e.g., 'simpler tiers are less powerful so engineers avoid them' or 'agents have more built-in error recovery')."
+  ],
+  "verdict": "Pass — positional bias 0.333, length bias 0.333, distractor plausibility 0.0 absurd rate, all 5 LOs covered, no out-of-scope questions; two soft length-bias borderline questions (q1, q5) and one sidecar field inaccuracy noted but do not breach thresholds."
+}

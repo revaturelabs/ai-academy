@@ -1,0 +1,43 @@
+{
+  "critic": "diagram-critic",
+  "cycle": 1,
+  "topic_id": "11.6",
+  "topic_title": "For loops — repeating an action across a list",
+  "at": "2026-06-13T04:15:00Z",
+  "passed": true,
+  "checks": {
+    "source_preflight": {
+      "passed": true,
+      "mermaid_parses": true,
+      "node_count": 5,
+      "node_range_ok": true,
+      "label_discipline": true,
+      "concept_fidelity": true,
+      "detail": "5 nodes: marks list (input), more items? (decision), loop body executes/total += mark (body), advance to next item (iteration), loop ends/total = 251 (terminal). All labels concise ≤4 words or compound-noun. Every node maps to corpus §5.2 (for loop anatomy) and §5.4 (accumulator). Loop-back edge D→B correctly models iteration cycle."
+    },
+    "visual_inspection": {
+      "passed": true,
+      "findings": [],
+      "stats": {
+        "node_count": 5,
+        "edge_count": 6,
+        "layout": "TB flowchart (loop / state machine)",
+        "png_path": "artifacts/diagram.png",
+        "png_size_bytes": 25717,
+        "width_px": 430
+      },
+      "checks": {
+        "nodes_overlap": false,
+        "label_truncated": false,
+        "crossings_illegible": false,
+        "layout_wrong_for_intent": false,
+        "whitespace_imbalance": false,
+        "subtitle_illegible": false,
+        "color_tier_violation": false,
+        "edge_label_collision": false
+      },
+      "detail": "TB layout correct for loop control flow diagram. Input node blue (#a5d8ff), decision diamond yellow (#fff3bf), loop body + advance nodes purple (#d0bfff), terminal green (#b2f2bb). Loop-back arrow from 'advance to next item' curves cleanly back to 'more items?' on the right side — legible, no node overlap. True/False edge labels positioned clearly. Title 'for loop — iteration control flow' readable at top."
+    }
+  },
+  "verdict": "PASS (cycle 1). 5-node TB flowchart cleanly illustrates for loop iteration cycle: input list → decision diamond → body (accumulator) → advance → loop back or exit. Color tiers correct. Loop-back arrow legible. No visual defects."
+}

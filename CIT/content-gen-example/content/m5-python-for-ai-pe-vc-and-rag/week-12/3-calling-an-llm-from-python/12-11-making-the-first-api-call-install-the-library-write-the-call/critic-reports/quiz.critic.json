@@ -1,0 +1,37 @@
+{
+  "critic": "quiz-critic",
+  "topic_id": "12.11",
+  "at": "2026-06-15T00:00:00Z",
+  "pass_number": 1,
+  "passed": true,
+  "verdict": "Pass — all 5 checks clean; positional max_share 0.333, length-bias rate 0.333, 0 absurd distractors, all 6 LOs covered, no out-of-scope questions.",
+  "checks": {
+    "positional_bias": {
+      "passed": true,
+      "distribution": {"0": 1, "1": 2, "2": 1, "3": 2},
+      "max_share": 0.333,
+      "detail": "6 MCQs; position counts {0:1, 1:2, 2:1, 3:2}. max_share=0.333 < 0.40 threshold. Sidecar distribution matches derived distribution exactly — no meta_gift_desync."
+    },
+    "length_bias": {
+      "passed": true,
+      "longest_correct_rate": 0.333,
+      "baseline": 0.25,
+      "detail": "q4 flagged: correct answer (111 chars) is 21.1% longer than distractor mean (91.67 chars) — the correct option necessarily includes all four required parameters while distractors each omit one, so length is structurally unavoidable. q6 flagged: correct answer (23 chars, 'message.content[0].text') is 38% longer than distractor mean (16.67 chars) — the correct expression is simply longer by design. 2/6 = 0.333 < 0.40 threshold. PASS."
+    },
+    "distractor_plausibility": {
+      "passed": true,
+      "absurd_rate": 0.0,
+      "detail": "18 distractors across 6 MCQs. All scored 3 or 4 (plausible-to-strong beginner misconceptions). No score-1 absurd distractors found. Highlights: q1 uses 'pip install anthropic' (missing ! — a very real beginner mistake); q2 uses 'AnthropicClient()' (wrong class name, natural guess); q6 uses 'message.text' and 'message.content.text' (both one-step-off attribute errors beginners commonly make). absurd_rate=0.0."
+    },
+    "objective_coverage": {
+      "passed": true,
+      "uncovered_objectives": [],
+      "detail": "LO1 (install via !pip install anthropic): q1 + q_sa. LO2 (import + create Anthropic client): q2. LO3 (max_tokens purpose + required): q3. LO4 (complete messages.create() with 4 elements): q4. LO5 (run call + identify reply location in response object): q5. LO6 (access reply via message.content[0].text): q6. All 6 LOs covered; no orphan questions."
+    },
+    "scope": {
+      "passed": true,
+      "findings": [],
+      "detail": "All stems are plain-language. The '!' prefix, pip, max_tokens, messages.create(), message.content[0].text are all introduced in this topic (corpus §5.1–§5.6). No undefined jargon in stems. No question requires knowledge beyond what this topic teaches. No out_of_scope_question findings."
+    }
+  }
+}

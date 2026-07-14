@@ -1,0 +1,49 @@
+{
+  "type": "topic",
+  "id": "9.11",
+  "title": "High-stakes domains where AI must not have the final word — medical, legal, safety",
+  "slug": "9-11-high-stakes-domains-where-ai-must-not-have-the-final-word-me",
+  "position_in_module": 2,
+  "week_num": 9,
+  "session_name": "Human Judgment and AI Oversight",
+  "module": {
+    "position": 4,
+    "slug": "4-defining-safe-boundaries",
+    "title": "Defining Safe Boundaries"
+  },
+  "course": {
+    "code": "M4",
+    "slug": "m4-human-cognition-and-ai-oversight",
+    "title": "Human Cognition and AI Oversight"
+  },
+  "next_assessment": {
+    "id": "A3",
+    "due_week": 10,
+    "title": "Maths and Cognition Lab Report",
+    "weight": "15%"
+  },
+  "paths": {
+    "corpus": "topic_corpus.md",
+    "resources": "topic.resources.json",
+    "progress": "topic.progress.json",
+    "artifacts_dir": "artifacts/",
+    "critic_reports_dir": "critic-reports/"
+  },
+  "artifact_plan": {
+    "depth_profile": "deep",
+    "depth_profile_confirmed_by": "hitl2",
+    "diagram": true,
+    "diagram_intent": "Side-by-side comparison of three domains (medical, legal, safety) mapped against the Judgment Framework axes — showing cost-of-error, accountability chain, and failure threshold for each, with a fourth column indicating the required oversight model (AI as decision support, human as final authority)",
+    "reading": {
+      "target_word_range": [1800, 2200],
+      "target_minutes_range": [9, 11]
+    },
+    "quiz": {
+      "min_questions": 5,
+      "max_questions": 7,
+      "include_short_answer": true
+    }
+  },
+  "expected_delivery_minutes": 10,
+  "status": "scaffolded"
+}

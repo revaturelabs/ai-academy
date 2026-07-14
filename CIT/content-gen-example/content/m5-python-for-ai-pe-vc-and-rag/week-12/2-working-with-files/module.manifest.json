@@ -1,0 +1,20 @@
+{
+  "type": "module",
+  "position": 2,
+  "title": "Working with Files",
+  "slug": "2-working-with-files",
+  "course_code": "M5",
+  "course_slug": "m5-python-for-ai-pe-vc-and-rag",
+  "week_nums": [
+    12
+  ],
+  "session_name_by_week": {
+    "12": "Python Foundations II and Calling an LLM"
+  },
+  "narrative_seed_by_week": {
+    "12": "Python Foundations II / Functions — named, reusable blocks of logic; parameters and return values / One function = one job — the testable unit principle / Lists and dictionaries — storing and retrieving multiple values / Reading from and writing to a file — open, read lines, write, close / try/except — handling errors gracefully without crashing /  / Calling an LLM from Python / What an API is — a door into another system; request and response / The Anthropic API — model, messages array, system prompt, user prompt, authentication / Making the first API call — install the library, write the call, run it in Colab / Parsing the JSON response — extracting the text you need / Handling API errors — what to do when the call fails / Every API call is a design decision — latency, cost, and reliability considered upfront"
+  },
+  "lab_activity_seed_by_week": {
+    "12": "Lab Part 1 — Functions and files: read a CSV of 10 student marks → compute average, highest, lowest → write summary file. Spec-first. Test with 2 edge cases. /  / Lab Part 2 — First API call: connect your domain system to the Anthropic API — user query → Claude → structured JSON output. Test with 5 domain-relevant inputs. Write a cost and latency note. / Journal Entry #7"
+  }
+}

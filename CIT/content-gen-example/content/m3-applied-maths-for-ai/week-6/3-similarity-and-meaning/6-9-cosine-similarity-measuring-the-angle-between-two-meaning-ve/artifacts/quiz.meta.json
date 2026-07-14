@@ -1,0 +1,47 @@
+{
+  "topic_id": "6.9",
+  "generated_at": "2026-06-19T00:00:00Z",
+  "format": "gift",
+  "question_count": 6,
+  "$bias_defense_applied": true,
+  "$shuffle_seed": 7,
+  "correct_position_distribution": {"0": 2, "1": 1, "2": 2, "3": 1},
+  "questions": [
+    {
+      "id": "q1",
+      "type": "mcq",
+      "objective_ref": "Define cosine similarity and explain how it differs from the raw dot product.",
+      "correct_position": 2
+    },
+    {
+      "id": "q2",
+      "type": "mcq",
+      "objective_ref": "Explain why cosine similarity ignores vector magnitude and why that matters for word vectors.",
+      "correct_position": 0
+    },
+    {
+      "id": "q3",
+      "type": "mcq",
+      "objective_ref": "Walk through the cosine similarity formula step by step — dot product, magnitudes, division.",
+      "correct_position": 3
+    },
+    {
+      "id": "q4",
+      "type": "mcq",
+      "objective_ref": "Interpret a cosine similarity score (near 1, near 0, near −1).",
+      "correct_position": 1
+    },
+    {
+      "id": "q5",
+      "type": "mcq",
+      "objective_ref": "Identify where cosine similarity is used in embedding-based systems.",
+      "correct_position": 2
+    },
+    {
+      "id": "q6",
+      "type": "mcq",
+      "objective_ref": "Define cosine similarity and explain how it differs from the raw dot product (applied — magnitude sensitivity misconception).",
+      "correct_position": 0
+    }
+  ]
+}

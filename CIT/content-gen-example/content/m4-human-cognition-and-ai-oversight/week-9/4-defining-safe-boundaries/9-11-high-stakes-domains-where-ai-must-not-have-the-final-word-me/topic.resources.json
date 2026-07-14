@@ -1,0 +1,30 @@
+{
+  "topic_id": "9.11",
+  "captured_at": "2026-06-13T00:00:00Z",
+  "captured_by": "vishnu.vardhan@revature.com",
+  "resources_source": "web_search",
+  "web_search_query": "high-stakes domains AI must not have final word medical legal safety human oversight",
+  "resources": [
+    {
+      "type": "url",
+      "value": "https://jolt.law.harvard.edu/digest/redefining-the-standard-of-human-oversight-for-ai-negligence",
+      "role": "primary",
+      "source": "web_search",
+      "notes": "Harvard JOLT — legal accountability framing; argues for redefining negligence standards when AI lacks mandatory human oversight in high-stakes decisions"
+    },
+    {
+      "type": "url",
+      "value": "https://onereach.ai/blog/human-in-the-loop-agentic-ai-systems/",
+      "role": "supporting",
+      "source": "web_search",
+      "notes": "Practical HITL overview — medical imaging diagnosis, legal case triage examples of domains where humans retain final call"
+    },
+    {
+      "type": "url",
+      "value": "https://aicompetence.org/xai-in-high-stakes-when-the-law-demands-answers/",
+      "role": "supporting",
+      "source": "web_search",
+      "notes": "EU AI Act + explainability requirements; covers medical, legal, safety as high-risk categories requiring human oversight by regulation"
+    }
+  ]
+}

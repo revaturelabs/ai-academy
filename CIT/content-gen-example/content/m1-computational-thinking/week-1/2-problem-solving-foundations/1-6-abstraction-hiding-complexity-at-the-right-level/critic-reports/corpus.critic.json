@@ -1,0 +1,49 @@
+{
+  "passed": true,
+  "checks": {
+    "required_sections": {
+      "passed": true,
+      "notes": "All four required sections present with adequate substance. Learning Objectives (section 3): ~90 words, 6 objectives — passes >=50 word threshold. Introduction (section 4): ~170 words — passes >=50 word threshold. Core Concepts (section 5): ~1400 words across 6 subsections (5.1–5.6) — passes >=100 word threshold. Key Takeaways (section 10): ~110 words, 5 bullets — passes >=50 word threshold."
+    },
+    "citation_density": {
+      "passed": true,
+      "primary_cited": true,
+      "claim_citation_rate": 0.72,
+      "notes": "resources_source=web_search (strict mode). Primary resource [1] (learning.com) is cited throughout all major sections — primary citation check passes. Estimated ~25 standalone factual assertions across sections 5, 6, 7; approximately 18 carry citation markers, yielding ~72% citation rate — exceeds the 60% threshold. Uncited assertions are incidental (Latin etymology of 'abstrahere', individual sentences within the complexity paragraph in 5.2, the London Underground distortion claim in section 7, the recipe chemistry sentence in section 7). No fabricated citations — all [1], [2], [3] markers resolve to declared resources."
+    },
+    "sequence_drift": {
+      "passed": true,
+      "forward_refs": [],
+      "notes": "All technical terms used are either: (a) in 1.6's own concepts_introduced (abstraction, layer/abstraction layer, right level of abstraction, model as abstraction output, leaky abstraction), or (b) introduced in prior topics 1.1–1.5 (computational thinking, input/process/output, decomposition, task tree, sub-task). Passing technical mentions such as 'semiconductor physics' (line 73), 'phase transitions' (line 169), 'database query language' (line 146) are used solely as illustrative examples of hidden complexity — not defined or taught — and do not constitute forward references to sequenced concepts."
+    },
+    "length_sanity": {
+      "passed": true,
+      "word_count": 3170,
+      "profile": "standard",
+      "notes": "Estimated word count ~3170 (sections 1–11 inclusive, including tables and code-format blocks). Falls within the standard profile corpus range of 1500–6000 words specified in the task, and also within the SKILL.md standard range of 3000–4400 words. No length issue."
+    },
+    "scope_creep": {
+      "passed": true,
+      "offending_concepts": [],
+      "notes": "Topic headline: 'Abstraction — hiding complexity at the right level.' All material taught stays within the five concepts_introduced: abstraction, layer, right level, model, leaky abstraction. Section 5.4 (Abstraction vs. decomposition) correctly cross-references decomposition (1.5) for comparison without re-teaching it. Reference to 'four pillars of computational thinking' in the Introduction is a one-sentence context pointer, not a teaching moment. Passing references to semiconductor physics, phase transitions, and database internals are used as named-and-deferred examples of complexity being hidden — each appears in one sentence with no defining clause. No scope creep found."
+    },
+    "readability": {
+      "passed": true,
+      "findings": [
+        {
+          "code": "undefined_terms",
+          "severity": "soft",
+          "detail": "'semiconductor physics' used without definition at line 73 (section 5.3, 'Too much detail' example). The term is used to illustrate over-detailed explanation rather than to be learned — context makes it self-explanatory in context ('describing the semiconductor physics of the LED bulbs' is offered as an example of excessive detail). Soft finding only."
+        },
+        {
+          "code": "undefined_terms",
+          "severity": "soft",
+          "detail": "'phase transitions' used without definition at line 169 (section 7, Recipes pattern). Used as a parenthetical to illustrate what a recipe hides ('the physics of phase transitions and the exact molecular activity of water at 100°C'). The adjacent concrete description ('exact molecular activity of water at 100°C') makes the meaning accessible. Soft finding only."
+        }
+      ],
+      "notes": "Two soft findings (both undefined_terms) — below the >=3 distinct findings threshold for hard-fail escalation. No jargon dump paragraphs found (no paragraph introduces 3+ new terms at once). Register is plain, active voice, second person ('you') throughout. No hedging phrases detected. Sentence lengths are generally short. Two minor cold-use terms are used purely as examples of complexity that gets hidden — meta-appropriate given the topic — and do not impede comprehension."
+    }
+  },
+  "verdict": "PASS. All six checks pass. Required sections present and substantive. Primary resource [1] cited throughout; claim citation rate ~72% exceeds the 60% threshold. No forward references — all technical terms belong to 1.6 concepts_introduced or prior topics 1.1–1.5. Word count ~3170 falls within the standard profile range. No scope creep; all material stays within the five concepts_introduced for this topic. Two soft readability findings (undefined_terms: 'semiconductor physics', 'phase transitions') are below the hard-fail escalation threshold of >=3 distinct findings. Corpus is suitable to ground downstream reading, quiz, and diagram artifacts.",
+  "at": "2026-06-20T00:00:00Z"
+}

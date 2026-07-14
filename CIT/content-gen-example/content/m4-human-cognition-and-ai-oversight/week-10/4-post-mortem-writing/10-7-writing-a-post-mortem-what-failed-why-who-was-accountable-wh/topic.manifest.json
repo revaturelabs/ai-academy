@@ -1,0 +1,50 @@
+{
+  "type": "topic",
+  "id": "10.7",
+  "title": "Writing a post-mortem — what failed, why, who was accountable, what governance would have prevented it",
+  "slug": "10-7-writing-a-post-mortem-what-failed-why-who-was-accountable-wh",
+  "position_in_module": 1,
+  "week_num": 10,
+  "session_name": "Cognition in Practice — Case Studies",
+  "module": {
+    "position": 4,
+    "slug": "4-post-mortem-writing",
+    "title": "Post-Mortem Writing"
+  },
+  "course": {
+    "code": "M4",
+    "slug": "m4-human-cognition-and-ai-oversight",
+    "title": "Human Cognition and AI Oversight"
+  },
+  "next_assessment": {
+    "id": "A3",
+    "due_week": 10,
+    "title": "Maths and Cognition Lab Report",
+    "weight": "15%"
+  },
+  "paths": {
+    "corpus": "topic_corpus.md",
+    "resources": "topic.resources.json",
+    "progress": "topic.progress.json",
+    "artifacts_dir": "artifacts/",
+    "critic_reports_dir": "critic-reports/"
+  },
+  "artifact_plan": {
+    "profile": "deep",
+    "diagram": true,
+    "diagram_intent": "Four-phase post-mortem flow: Incident → Root Cause Analysis → Accountability Mapping → Governance Fix",
+    "reading": {
+      "target_word_range": [1800, 2200],
+      "target_min_minutes": 9,
+      "target_max_minutes": 11
+    },
+    "quiz": {
+      "min_questions": 5,
+      "max_questions": 7,
+      "include_short_answer": true
+    }
+  },
+  "suggested_profile": "deep",
+  "expected_delivery_minutes": 10,
+  "status": "corpus_drafted"
+}

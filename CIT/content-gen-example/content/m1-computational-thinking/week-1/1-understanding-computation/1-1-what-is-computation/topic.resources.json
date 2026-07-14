@@ -1,0 +1,30 @@
+{
+  "topic_id": "1.1",
+  "captured_at": "2026-06-19T00:00:00Z",
+  "captured_by": "namratas@revature.com",
+  "resources_source": "web_search",
+  "web_search_query": "what is computation deterministic probabilistic systems explainer",
+  "resources": [
+    {
+      "type": "url",
+      "value": "https://thelearnnotes.com/blog/deterministic-and-probabilistic-systems-what-s-the-deal-",
+      "role": "primary",
+      "source": "web_search",
+      "notes": "Intro explainer covering both system types with real-world examples"
+    },
+    {
+      "type": "url",
+      "value": "https://www.alphanome.ai/post/probabilistic-vs-deterministic-models-in-ai-ml-a-detailed-explanation",
+      "role": "supporting",
+      "source": "web_search",
+      "notes": "AI/ML focused breakdown with model behaviour context"
+    },
+    {
+      "type": "url",
+      "value": "https://www.gaine.com/blog/probabilistic-and-deterministic-results-in-ai-systems",
+      "role": "supporting",
+      "source": "web_search",
+      "notes": "Applied AI framing — decision-making variability in AI systems"
+    }
+  ]
+}

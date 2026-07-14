@@ -1,0 +1,10 @@
+{
+  "topic_id": "12.14",
+  "title": "Every API call is a design decision — latency, cost, and reliability considered upfront",
+  "estimated_read_minutes": 5,
+  "word_count": 980,
+  "generated_at": "2026-06-15T00:00:00Z",
+  "embeds_diagram": false,
+  "citations_used": [1, 2],
+  "sections": ["Overview", "Key Concepts", "Worked Example", "In Practice", "Key Takeaways", "References"]
+}

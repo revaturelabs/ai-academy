@@ -1,0 +1,91 @@
+{
+  "passed": true,
+  "checks": {
+    "bias_defense_prerequisite": {
+      "passed": true,
+      "detail": "$bias_defense_applied=true in quiz.meta.json"
+    },
+    "positional_bias": {
+      "passed": true,
+      "distribution": {"0": 1, "1": 1, "2": 2, "3": 1},
+      "max_share": 0.40,
+      "threshold": 0.40,
+      "note": "max_share equals threshold but does not exceed it; no desync between .gift and sidecar",
+      "meta_gift_desync": false
+    },
+    "length_bias": {
+      "passed": true,
+      "longest_correct_rate": 0.40,
+      "threshold": 0.40,
+      "baseline": 0.25,
+      "note": "longest_correct_rate equals threshold but does not exceed it; q3 and q4 flagged as longest-correct",
+      "longest_correct_questions": [
+        {
+          "id": "q3",
+          "correct_len": 126,
+          "mean_distractor_len": 66.67,
+          "ratio": 1.89
+        },
+        {
+          "id": "q4",
+          "correct_len": 95,
+          "mean_distractor_len": 75.67,
+          "ratio": 1.25
+        }
+      ]
+    },
+    "distractor_plausibility": {
+      "passed": true,
+      "absurd_rate": 0.00,
+      "total_distractors": 15,
+      "absurd_count": 0,
+      "weakest_questions": [
+        {
+          "id": "q3",
+          "distractor": "It prevents the except block from printing any message to the user",
+          "score": 2,
+          "note": "Weak but not absurd; a beginner could imagine syntax-level restrictions on bare except"
+        }
+      ],
+      "scoring_summary": {
+        "q1": [3, 3, 3],
+        "q2": [3, 4, 3],
+        "q3": [3, 3, 2],
+        "q4": [3, 4, 3],
+        "q5": [3, 3, 4]
+      }
+    },
+    "objective_coverage": {
+      "passed": true,
+      "covered_los": ["LO1", "LO2", "LO3", "LO4", "LO5"],
+      "uncovered_objectives": [],
+      "orphan_questions": [],
+      "soft_findings": [
+        {
+          "lo": "LO6",
+          "text": "Identify at least two common beginner mistakes — bare except and swallowing errors silently — and explain why they make programs harder to debug",
+          "note": "Present in corpus section 3 but not in the task-specified 5-LO atomic profile; no question assigned. Not a hard fail for atomic 5-question profile."
+        }
+      ],
+      "lo_question_map": {
+        "LO1": "q1",
+        "LO2": "q2",
+        "LO3": "q3",
+        "LO4": "q4",
+        "LO5": "q5"
+      }
+    },
+    "beginner_fairness_and_scope": {
+      "passed": true,
+      "jargon_in_stem": [],
+      "out_of_scope_questions": [],
+      "unfair_distractors": [],
+      "note": "All stems use plain language. All correct answers and distractors are grounded in corpus sections 5.1-5.6. No outside knowledge required."
+    }
+  },
+  "auto_correction_applied": {
+    "shuffle_round_2": false
+  },
+  "verdict": "Pass — all checks clean. Positional max_share 0.40 and length longest_correct_rate 0.40 both meet threshold exactly without exceeding. Distractor absurd_rate 0.00. All 5 task-specified LOs covered 1:1. Beginner-fair, on-headline scope throughout. One soft finding: corpus LO6 uncovered, consistent with atomic 5-question profile constraint.",
+  "at": "2026-06-15T00:00:00Z"
+}

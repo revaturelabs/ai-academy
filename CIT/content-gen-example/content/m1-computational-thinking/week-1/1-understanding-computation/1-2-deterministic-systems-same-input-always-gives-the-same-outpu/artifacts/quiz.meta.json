@@ -1,0 +1,42 @@
+{
+  "topic_id": "1.2",
+  "generated_at": "2026-06-19T00:00:00Z",
+  "format": "gift",
+  "question_count": 5,
+  "$bias_defense_applied": true,
+  "$shuffle_seed": "md5:1.2",
+  "correct_position_distribution": [2, 0, 3, 1, 2],
+  "bias_defense_notes": "Post-shuffle constraint check passed: max_share=0.40 (2/5 at position 2), all 4 positions used at least once.",
+  "questions": [
+    {
+      "id": "1.2-Q1",
+      "type": "mcq",
+      "objective_ref": "Define what a deterministic system is in plain, everyday terms.",
+      "correct_position": 2
+    },
+    {
+      "id": "1.2-Q2",
+      "type": "mcq",
+      "objective_ref": "Explain why the phrase 'same input always gives the same output' is the test for determinism.",
+      "correct_position": 0
+    },
+    {
+      "id": "1.2-Q3",
+      "type": "mcq",
+      "objective_ref": "Give at least three real-world examples of deterministic systems and identify why each one qualifies.",
+      "correct_position": 3
+    },
+    {
+      "id": "1.2-Q4",
+      "type": "mcq",
+      "objective_ref": "Distinguish a deterministic system from one where the output can vary — without needing to define the technical details of that variation.",
+      "correct_position": 1
+    },
+    {
+      "id": "1.2-Q5",
+      "type": "mcq",
+      "objective_ref": "Explain why predictability and reproducibility matter in practical computing systems.",
+      "correct_position": 2
+    }
+  ]
+}

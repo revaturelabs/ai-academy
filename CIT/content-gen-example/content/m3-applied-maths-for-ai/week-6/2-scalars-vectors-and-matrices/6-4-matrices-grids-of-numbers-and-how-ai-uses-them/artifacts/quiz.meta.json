@@ -1,0 +1,43 @@
+{
+  "topic_id": "6.4",
+  "generated_at": "2026-06-18T00:00:00Z",
+  "format": "gift",
+  "question_count": 5,
+  "$bias_defense_applied": true,
+  "$shuffle_seed": "hash(6.4)=152; per-question salts 152,153,154,155,156 (mod 4) → positions 0,1,2,3,0",
+  "correct_position_distribution": [0, 1, 2, 3, 0],
+  "positional_bias_max_share": 0.40,
+  "length_bias_violation_rate": 0.00,
+  "questions": [
+    {
+      "id": "q1",
+      "type": "mcq",
+      "objective_ref": "Describe what a matrix is in plain language — a rectangular grid of scalars arranged in rows and columns.",
+      "correct_position": 0
+    },
+    {
+      "id": "q2",
+      "type": "mcq",
+      "objective_ref": "Read standard matrix notation (rows × columns) AND identify that each row in a data matrix is one feature vector — one data sample described by all its feature values.",
+      "correct_position": 1
+    },
+    {
+      "id": "q3",
+      "type": "mcq",
+      "objective_ref": "Name four advanced matrix operations — multiplication, transpose, determinant, eigenvalues — and state that each is covered in a later topic.",
+      "correct_position": 2
+    },
+    {
+      "id": "q4",
+      "type": "mcq",
+      "objective_ref": "Explain how AI uses matrices to store images, representing each pixel value as one cell in a grid.",
+      "correct_position": 3
+    },
+    {
+      "id": "q5",
+      "type": "mcq",
+      "objective_ref": "Recognise the term 'weight matrix' and describe, in one sentence, why neural networks use one.",
+      "correct_position": 0
+    }
+  ]
+}

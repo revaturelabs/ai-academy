@@ -1,0 +1,64 @@
+{
+  "passed": true,
+  "checks": {
+    "positional_bias": {
+      "passed": true,
+      "distribution": {"0": 1, "1": 2, "2": 2, "3": 1},
+      "meta_gift_desync": false,
+      "max_share": 0.333,
+      "note": "Positions per question — q1:1, q2:3, q3:0, q4:2, q5:1, q6:2. Matches sidecar. max_share=2/6=0.333 ≤ 0.40."
+    },
+    "length_bias": {
+      "passed": true,
+      "longest_correct_rate": 0.333,
+      "baseline": 0.25,
+      "longest_correct_questions": ["q1", "q6"],
+      "detail": {
+        "q1": {"correct_len": 84, "distractor_mean": 68.67, "threshold_120pct": 82.4, "flagged": true},
+        "q2": {"correct_len": 89, "distractor_mean": 89.33, "threshold_120pct": 107.2, "flagged": false},
+        "q3": {"correct_len": 119, "distractor_mean": 102.0, "threshold_120pct": 122.4, "flagged": false},
+        "q4": {"correct_len": 84, "distractor_mean": 85.67, "threshold_120pct": 102.8, "flagged": false},
+        "q5": {"correct_len": 79, "distractor_mean": 82.0, "threshold_120pct": 98.4, "flagged": false},
+        "q6": {"correct_len": 130, "distractor_mean": 107.0, "threshold_120pct": 128.4, "flagged": true}
+      },
+      "note": "2 of 6 questions have correct answer longer than 1.20× distractor mean. Rate=0.333 ≤ 0.40."
+    },
+    "distractor_plausibility": {
+      "passed": true,
+      "absurd_rate": 0.0,
+      "total_distractors": 18,
+      "absurd_count": 0,
+      "weakest_questions": [],
+      "note": "All distractors score ≥3 (plausible beginner misconceptions). No score-1 distractors found."
+    },
+    "objective_coverage": {
+      "passed": true,
+      "uncovered_objectives": [],
+      "orphan_questions": [],
+      "coverage_map": {
+        "LO-1": ["q1"],
+        "LO-2": ["q2"],
+        "LO-3": ["q3"],
+        "LO-4": ["q4"],
+        "LO-5": ["q5"],
+        "LO-6": ["q6"]
+      }
+    },
+    "beginner_fairness_scope": {
+      "passed": true,
+      "jargon_in_stem": [],
+      "out_of_scope_questions": [],
+      "unfair_distractors": [],
+      "note": "All stems use plain language; LLM spelled out in q6 stem. No references to conditional probability, Bayes, temperature, mean/median/mode, or accuracy/precision/recall. All distractor content sourced from within-topic concepts only."
+    }
+  },
+  "pre_check": {
+    "bias_defense_applied": true,
+    "meta_parseable": true
+  },
+  "auto_correction_applied": {
+    "shuffle_round_2": false
+  },
+  "verdict": "Pass — all bias, coverage, and scope checks clean.",
+  "at": "2026-06-22T00:00:00Z"
+}

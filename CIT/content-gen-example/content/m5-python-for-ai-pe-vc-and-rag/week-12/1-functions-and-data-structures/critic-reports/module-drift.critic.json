@@ -1,0 +1,83 @@
+{
+  "module": "1-functions-and-data-structures",
+  "week_num": 12,
+  "passed": true,
+  "topics_checked": ["12.1", "12.2", "12.3", "12.4", "12.5"],
+  "checks": {
+    "terminology_consistency": {
+      "passed": true,
+      "findings": [
+        {
+          "severity": "soft",
+          "topics": ["12.4", "12.5"],
+          "detail": "12.4 §5.5 introduces the word 'method' for dot-notation operations (append) and defines it explicitly. 12.5 consistently calls the same pattern 'operation' (e.g., 'a dictionary operation') without using the word 'method'. Minor synonym drift between the two data-structure topics. Not critical — the concept is clear in both — but the reading artifacts should standardise on 'method' for dot-notation patterns."
+        },
+        {
+          "severity": "info",
+          "topics": ["12.2"],
+          "detail": "12.2 uses a list literal [72, 88, 65, 90, 55] and a for loop over a list in its worked examples before lists are formally taught in 12.4. The corpus critic previously caught and resolved a more serious forward reference (file I/O) but this residual list usage in 12.2 is acceptable — it is incidental scaffolding in an example, not a teaching point about lists."
+        }
+      ]
+    },
+    "prerequisites_respected": {
+      "passed": true,
+      "findings": []
+    },
+    "module_learning_arc": {
+      "passed": true,
+      "findings": [
+        {
+          "severity": "soft",
+          "detail": "The module's narrative_seed_by_week includes 'Reading from and writing to a file — open, read lines, write, close' and 'try/except — handling errors gracefully without crashing' as session content. None of the 5 topics in this module have these as Learning Objectives. File I/O is referenced as an implementation detail in 12.3 §6 (write_average_to_file) but not taught. If these concepts are intended to live in a separate week-12 module, no arc gap exists at this module level. If they were meant to be in this module, two topics are missing. Flag for human review at HITL #4 — the lab activity (Lab Part 1) does require file I/O skills.",
+          "gap": "file I/O (open/read/write/close) and try/except — present in narrative seed and lab activity, absent from any topic LO in this module"
+        }
+      ]
+    },
+    "no_duplicated_material": {
+      "passed": true,
+      "findings": [
+        {
+          "severity": "info",
+          "topics": ["12.4", "12.5"],
+          "detail": "12.5 §5.7 re-introduces len() applied to dictionaries but explicitly cross-references 12.4 ('This reuses the same len() function you already know from Topic 12.4'). This is intentional bridging, not duplication. Jaccard similarity of core concept noun sets across all topic pairs is well below 0.6."
+        },
+        {
+          "severity": "info",
+          "topics": ["12.2", "12.5"],
+          "detail": "None appears in both 12.2 (implicit function return) and 12.5 (default value from .get()). 12.5 explicitly back-references 12.2: 'You first saw this as the implicit return of a function that has no return statement (Topic 12.2)'. Cross-reference is correct; not a duplication."
+        }
+      ]
+    },
+    "lab_activity_alignment": {
+      "passed": true,
+      "findings": [
+        {
+          "severity": "info",
+          "detail": "Lab Part 1 (functions + files + marks CSV + edge cases) is strongly supported: compute_average/find_highest/find_lowest are modeled explicitly in 12.2 §7 and 12.3 §7; the marks-list pattern is modeled in 12.4 §6 and §7 Pattern 3; spec-first and edge-case testing discipline appears in 12.1, 12.2, and 12.3. File write is demonstrated in 12.3 §6 but not taught as a dedicated topic (see module_learning_arc finding)."
+        },
+        {
+          "severity": "info",
+          "detail": "Lab Part 2 (Anthropic API call, structured JSON output) is scaffolded by 12.5: §7 Pattern 2 models the API config dictionary with real field names (model, max_tokens), and Pattern 3 models parsing an AI API response. The dictionary skills are directly applicable."
+        }
+      ]
+    }
+  },
+  "per_topic_findings": {
+    "12.1": [],
+    "12.2": [
+      "Soft: list literal and for-loop-over-list used in worked examples before lists are formally introduced in 12.4. Acceptable as incidental scaffolding; no teaching claim made about lists."
+    ],
+    "12.3": [
+      "Info: file I/O (open/write/close) used in the Implementation section as an example of I/O that should be separated from computation. The concept is not taught — it is used as a contrast to illustrate the one-job principle. Consistent with the module arc finding."
+    ],
+    "12.4": [
+      "Soft: 'method' introduced in §5.5 for append(). 12.5 uses 'operation' for the equivalent concept. Recommend aligning reading artifact for 12.5 to use 'method'."
+    ],
+    "12.5": [
+      "Soft: dot-notation operations (.get, .values, .items) described as 'operations' throughout; 12.4 established the term 'method'. Recommend standardising terminology in the reading artifact.",
+      "Info: 'immutable' defined inline in §8 — not introduced in any prior topic. Inline definition is adequate for this level; no prerequisite gap."
+    ]
+  },
+  "verdict": "PASS. All five checks pass. The module presents a clean, sequenced learning arc: functions (12.1) → parameters and return values (12.2) → single-responsibility design (12.3) → lists (12.4) → dictionaries (12.5). Terminology is consistent with two soft findings: (1) 'method' vs 'operation' drift between 12.4 and 12.5 for dot-notation patterns — recommend aligning in reading artifacts; (2) file I/O and try/except appear in the narrative seed and lab activity but are not covered by any topic LO in this module — flag for HITL #4 to confirm these live in a separate week-12 module. Prerequisites are strictly respected across all five topics. No substantive Core Concept duplication found. The lab activity is well-supported by the module's hands-on content.",
+  "at": "2026-06-15T00:00:00Z"
+}

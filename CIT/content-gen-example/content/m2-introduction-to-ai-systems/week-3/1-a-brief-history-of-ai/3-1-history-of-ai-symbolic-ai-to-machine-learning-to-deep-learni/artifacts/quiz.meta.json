@@ -1,0 +1,42 @@
+{
+  "topic_id": "3.1",
+  "generated_at": "2026-06-17T00:00:00Z",
+  "format": "gift",
+  "question_count": 5,
+  "$bias_defense_applied": true,
+  "$shuffle_seed": "146",
+  "correct_position_distribution": [2, 0, 3, 1, 2],
+  "bias_defense_notes": "Seed derived from ASCII sum of topic ID '3.1' (51+46+49=146). Post-shuffle constraint check: max_share=2/5=0.40 (<=0.40, pass); all 4 positions (0,1,2,3) used at least once (pass). Both constraints satisfied before writing .gift.",
+  "questions": [
+    {
+      "id": "q1",
+      "type": "mcq",
+      "objective_ref": "Describe in plain language what each of the three main phases of AI history (symbolic AI, machine learning, deep learning) tried to do and why each phase emerged.",
+      "correct_position": 2
+    },
+    {
+      "id": "q2",
+      "type": "mcq",
+      "objective_ref": "Explain why symbolic AI succeeded in narrow tasks but struggled to scale to real-world complexity.",
+      "correct_position": 0
+    },
+    {
+      "id": "q3",
+      "type": "mcq",
+      "objective_ref": "Explain what it means for a machine to 'learn from data' instead of following hand-written rules.",
+      "correct_position": 3
+    },
+    {
+      "id": "q4",
+      "type": "mcq",
+      "objective_ref": "Identify at least two real-world milestones — such as Deep Blue or AlexNet — and place them in the correct phase of AI history.",
+      "correct_position": 1
+    },
+    {
+      "id": "q5",
+      "type": "mcq",
+      "objective_ref": "Explain why deep learning became possible in the 2010s when it had not been possible earlier.",
+      "correct_position": 2
+    }
+  ]
+}

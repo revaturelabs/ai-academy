@@ -1,0 +1,42 @@
+{
+  "type": "topic",
+  "id": "7.10",
+  "title": "Confusion matrix — why 95% accuracy can still mean frequent failure",
+  "slug": "7-10-confusion-matrix-why-95-accuracy-can-still-mean-frequent-fai",
+  "position_in_module": 5,
+  "week_num": 7,
+  "session_name": "Probability, Statistics and AI Confidence",
+  "module": {
+    "position": 3,
+    "slug": "3-measuring-ai-performance",
+    "title": "Measuring AI Performance"
+  },
+  "course": {
+    "code": "M3",
+    "slug": "m3-applied-maths-for-ai",
+    "title": "Applied Maths for AI"
+  },
+  "next_assessment": {
+    "id": "A3",
+    "due_week": 10,
+    "title": "Maths and Cognition Lab Report",
+    "weight": "15%"
+  },
+  "paths": {
+    "corpus": "topic_corpus.md",
+    "resources": "topic.resources.json",
+    "progress": "topic.progress.json",
+    "artifacts_dir": "artifacts/",
+    "critic_reports_dir": "critic-reports/"
+  },
+  "artifact_plan": {
+    "diagram": true,
+    "diagram_intent": "2x2 confusion matrix table labelled with TP, FP, FN, TN cells, predicted vs actual axes, annotations showing which cells feed precision (top row) and recall (left column).",
+    "depth_profile": "standard",
+    "reading_word_range": [1200, 1600],
+    "quiz_questions_range": [5, 6],
+    "quiz_include_short_answer": false
+  },
+  "expected_delivery_minutes": 7,
+  "status": "scaffolded"
+}

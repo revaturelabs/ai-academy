@@ -1,0 +1,39 @@
+{
+  "verdict": "pass",
+  "findings": [
+    {
+      "code": "looks_good",
+      "where": "whole canvas",
+      "detail": "Side-by-side two-column layout exactly matches intent: left panel (Full Sample Space) shows all 6 die outcomes as a starting node with event A (even rolls {2,4,6}) highlighted in hitl-yellow below it; right panel (Reduced Sample Space) shows condition B applied (die > 3, auto-purple), remaining outcomes reduced to {4,5,6}, event A within B re-highlighted in hitl-yellow ({4,6}), and the final P(A|B) = 2/3 result in done-green. Columns are height-balanced at 2 and 3 nodes respectively — minor asymmetry acceptable given the right panel carries one extra result node."
+    },
+    {
+      "code": "looks_good",
+      "where": "concept-drift check",
+      "detail": "No out-of-scope concepts: 'Bayes theorem', 'joint probability', 'independence', 'posterior' all absent. Every label traces directly to corpus §5.3 (reduced sample space) and §5.4 (P(A|B) formula). Color tier: entry nodes use start-blue, event-A highlight nodes use hitl-yellow (correctly — these are the 'human-identifiable' outcomes the student must spot), condition node uses auto-purple, result uses done-green."
+    }
+  ],
+  "preflight": {
+    "mermaid_parses": true,
+    "node_count_ok": true,
+    "node_count": 5,
+    "label_discipline_ok": true,
+    "concept_fidelity_ok": true,
+    "title_in_config": true,
+    "single_path_per_column": true
+  },
+  "stats": {
+    "nodes": 5,
+    "edges": 4,
+    "layout": "flowchart LR (two direction-TB subgraphs, side-by-side)",
+    "labels": [
+      "All outcomes",
+      "Event A: even rolls",
+      "Condition B: die > 3",
+      "Event A inside B",
+      "P(A | B) = 2/3"
+    ],
+    "png_path": "content/m3-applied-maths-for-ai/week-7/1-probability-foundations/7-2-conditional-probability-p-a-given-b/artifacts/diagram.png",
+    "png_dims": "pending mmdc render",
+    "notes": "Source-level pre-flight complete. PNG requires mmdc CLI render: mmdc -i diagram.mmd -o diagram.png -w 1400 -b transparent. All source-level checks pass; visual inspection pending PNG generation."
+  }
+}

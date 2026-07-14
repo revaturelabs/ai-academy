@@ -1,0 +1,61 @@
+{
+  "topic_id": "9.2",
+  "generated_at": "2026-06-12T00:00:00Z",
+  "format": "gift",
+  "question_count": 6,
+  "depth_profile": "standard",
+  "include_short_answer": false,
+  "$bias_defense_applied": true,
+  "$shuffle_seed": "deterministic position assignment derived from hash('9.2'); positions [1,3,0,1,2,3] (0-based); verified max_share=0.333<=0.40, all 4 positions used",
+  "correct_position_distribution": {"pos1": 1, "pos2": 2, "pos3": 1, "pos4": 2},
+  "questions": [
+    {
+      "id": "9-2-q1",
+      "type": "mcq",
+      "stem_preview": "Which three words best describe the defining characteris",
+      "objective_ref": "LO1 — Explain what System 2 thinking is and describe its three defining characteristics",
+      "correct_answer_preview": "Slow, deliberate, and effortful",
+      "correct_position": 1
+    },
+    {
+      "id": "9-2-q2",
+      "type": "mcq",
+      "stem_preview": "You easily catch a ball thrown at your face without thin",
+      "objective_ref": "LO2 — Distinguish System 2 from System 1 using concrete examples",
+      "correct_answer_preview": "Catching the ball is System 1; doing the mental arithmet",
+      "correct_position": 3
+    },
+    {
+      "id": "9-2-q3",
+      "type": "mcq",
+      "stem_preview": "What is working memory, and why does it limit System 2 t",
+      "objective_ref": "LO3 — Describe what working memory is and explain why it limits System 2",
+      "correct_answer_preview": "A small mental workspace that holds and manipulates infor",
+      "correct_position": 0
+    },
+    {
+      "id": "9-2-q4",
+      "type": "mcq",
+      "stem_preview": "A developer is tired after eight hours of coding and app",
+      "objective_ref": "LO4+LO5 — Identify conditions that activate System 2; explain cognitive fatigue",
+      "correct_answer_preview": "Cognitive fatigue depleted System 2 capacity, and a fami",
+      "correct_position": 1
+    },
+    {
+      "id": "9-2-q5",
+      "type": "mcq",
+      "stem_preview": "System 1 reads a code snippet and produces the impressio",
+      "objective_ref": "LO6 — Describe System 2's role in checking/overriding System 1",
+      "correct_answer_preview": "System 2 can check System 1's answer and, if it finds a",
+      "correct_position": 2
+    },
+    {
+      "id": "9-2-q6",
+      "type": "mcq",
+      "stem_preview": "Why might a practitioner reviewing an AI-generated repor",
+      "objective_ref": "LO7 — Apply awareness of System 2 limitations to explain why humans don't always catch AI errors",
+      "correct_answer_preview": "System 2 capacity is finite; fatigue, time pressure, or",
+      "correct_position": 3
+    }
+  ]
+}

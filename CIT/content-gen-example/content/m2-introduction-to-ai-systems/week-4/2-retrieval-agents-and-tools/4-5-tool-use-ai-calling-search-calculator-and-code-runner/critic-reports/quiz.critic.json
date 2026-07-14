@@ -1,0 +1,54 @@
+{
+  "topic_id": "4.5",
+  "passed": true,
+  "checks": {
+    "positional_bias": {
+      "passed": true,
+      "distribution_from_gift": [0, 1, 2, 3, 2, 0],
+      "distribution_by_position": { "0": 2, "1": 1, "2": 2, "3": 1 },
+      "mcq_count": 6,
+      "max_share": 0.3333,
+      "max_share_limit": 0.40,
+      "note": "Cycle-1 meta_gift_desync resolved: q6 MCQ (LO6) added to quiz.gift; q7 short-answer renumbered. Final distribution [0,1,2,3,2,0] max_share=33.3% < 40% threshold. All 4 positions used."
+    },
+    "length_bias": {
+      "passed": true,
+      "longest_correct_rate": 0.1667,
+      "baseline": 0.25,
+      "note": "1/6 MCQs (q6) correct answer slightly longer than mean — 16.7% well below 40% fail threshold. Non-blocking."
+    },
+    "distractor_plausibility": {
+      "passed": true,
+      "absurd_rate": 0.0,
+      "total_distractors": 18,
+      "absurd_count": 0,
+      "note": "All distractors represent plausible beginner misconceptions. Soft notes on q4 ('model refuses') and q5 ('grammar checker') from cycle 1 non-blocking."
+    },
+    "objective_coverage": {
+      "passed": true,
+      "uncovered_objectives": [],
+      "lo_coverage_map": {
+        "LO1": ["q1"],
+        "LO2": ["q2", "q7"],
+        "LO3": ["q3"],
+        "LO4": ["q4"],
+        "LO5": ["q5"],
+        "LO6": ["q6"]
+      },
+      "note": "Cycle-1 LO6 gap closed: q6 MCQ added testing 'tool use turns standalone LLM into capable assistant'."
+    },
+    "beginner_fairness": {
+      "passed": true,
+      "jargon_in_stem": [],
+      "out_of_scope_questions": [],
+      "unfair_distractors": [],
+      "note": "All stems plain language. LLM spelled out in q4. All 7 questions on this topic only."
+    }
+  },
+  "auto_correction_applied": {
+    "cycle_2": true,
+    "note": "Cycle-1 failed: LO6 uncovered + GIFT/sidecar desync (5 MCQs in gift vs 6 in sidecar). Fix: added q6 MCQ for LO6 (correct at pos 0) to quiz.gift; renamed short-answer to q7; updated sidecar. All checks pass cycle 2."
+  },
+  "verdict": "PASSED (cycle 2). LO6 MCQ added; GIFT/sidecar synced to 6 MCQ + 1 SA = 7 questions. Positional distribution [0,1,2,3,2,0] max_share=33.3%. All 6 LOs covered. All bias checks pass.",
+  "at": "2026-06-17T00:00:00Z"
+}

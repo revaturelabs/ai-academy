@@ -1,0 +1,40 @@
+---
+title: "Hallucination — Plausibility vs Truth"
+config:
+  theme: base
+  themeVariables:
+    primaryColor: "#4A90E2"
+    primaryBorderColor: "#2C5F8A"
+    lineColor: "#555"
+  flowchart:
+    htmlLabels: true
+    curve: basis
+---
+flowchart TD
+    TD[("<b>Training data</b><br/><span style='font-size:11px;color:#6d28d9'>finite — has gaps and skew</span>")]:::process
+    LLM["<b>LLM learns token probabilities</b><br/><span style='font-size:11px;color:#6d28d9'>optimises for plausible text, not truth</span>"]:::process
+    RLHF["<b>RLHF reward signal</b><br/><span style='font-size:11px;color:#6d28d9'>raters prefer confident-sounding output</span>"]:::neutral
+    OC["<b>Overconfidence bias</b><br/><span style='font-size:11px;color:#6d28d9'>model expresses more certainty than it has</span>"]:::decision
+
+    PROMPT["<b>Prompt received</b>"]:::process
+    AD["<b>Autoregressive decoding</b><br/><span style='font-size:11px;color:#6d28d9'>next token chosen by highest probability</span>"]:::process
+    HALL["<b>Hallucinated output</b><br/><span style='font-size:11px;color:#6d28d9'>factual / attributional / faithful-but-wrong</span>"]:::output
+
+    GD["<b>Prompt + grounding documents</b><br/><span style='font-size:11px;color:#6d28d9'>verified sources provided by the user</span>"]:::positive
+    GO["<b>Output grounded in verified source</b><br/><span style='font-size:11px;color:#6d28d9'>hallucination risk reduced</span>"]:::positive
+
+    TD --> LLM
+    RLHF --> OC
+    OC --> AD
+    LLM --> PROMPT
+    PROMPT --> AD
+    AD --> HALL
+
+    GD -->|"grounding intervention"| AD
+    AD -->|"when grounded"| GO
+
+    classDef process fill:#4A90E2,stroke:#2C5F8A,color:#fff
+    classDef decision fill:#F5A623,stroke:#C47A1A,color:#fff
+    classDef output fill:#D0021B,stroke:#8B0000,color:#fff
+    classDef positive fill:#7ED321,stroke:#4A7C10,color:#fff
+    classDef neutral fill:#9B9B9B,stroke:#6B6B6B,color:#fff

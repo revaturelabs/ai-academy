@@ -1,0 +1,47 @@
+{
+  "type": "module-drift-critic-report",
+  "module": {
+    "slug": "3-model-calibration",
+    "title": "Model Calibration",
+    "course_code": "M3",
+    "week_num": 8,
+    "topic_count": 1,
+    "single_topic_module": true
+  },
+  "passed": true,
+  "verdict": "PASS — single-topic module (8.6 Calibration) is a self-contained, internally consistent learning arc; prerequisites (8.5 accuracy, 8.3 precision/recall) resolve to earlier sequence positions and are reused, not re-taught; lab seed satisfied. No findings.",
+  "checks": {
+    "terminology_consistency": {
+      "passed": true,
+      "note": "Single topic — no N+1 topic to drift against. Internally, terminology is consistent across topic_corpus.md and reading.md: 'confidence', 'calibration'/'well-calibrated', 'reliability diagram', 'buckets', 'observed accuracy', 'overconfident'/'underconfident' are used with identical meaning throughout.",
+      "findings": []
+    },
+    "prerequisites_respected": {
+      "passed": true,
+      "note": "8.6 (sequence pos 1549) declares prerequisites 8.5 (pos 1517) and 8.3 (pos 1460) — both strictly earlier in sequence.index.json. 'Accuracy' from 8.5 is reused correctly (Introduction and the Accuracy-vs-Calibration table cite 8.5) and is NOT re-derived. No forward references to ECE or calibration-correction techniques — both are explicitly fenced as 'beyond this topic'.",
+      "findings": []
+    },
+    "learning_arc": {
+      "passed": true,
+      "note": "Single topic carries the full module outcome 'Model Calibration'. Its 5 LOs (define well-calibrated, describe confidence scores, read a reliability diagram, distinguish accuracy from calibration, justify calibration for decisions) form a complete arc: intro -> confidence -> calibration test -> bucketing -> reliability diagram -> why it matters -> hands-on. No uncovered facet of the module title.",
+      "findings": []
+    },
+    "no_duplicated_core_concepts": {
+      "passed": true,
+      "note": "Only one topic in the module; no topic pair exists to exceed the 0.6 Jaccard threshold. Trivially satisfied.",
+      "findings": []
+    },
+    "lab_activity_alignment": {
+      "passed": true,
+      "note": "Module lab_activity_seed for week 8 'Calibration check: run a 10-question quiz with Claude; record confidence vs actual accuracy' is directly supported by section 9 Hands-On Exercise in 8.6 (run a 10-question quiz with an AI assistant, record stated confidence vs actual correctness, bucket and compare, optionally plot a reliability diagram).",
+      "findings": []
+    },
+    "audience_level_consistency": {
+      "passed": true,
+      "note": "No earlier topic within this module to drift from. 'Accuracy' is the only assumed-known concept and is an explicit, earlier prerequisite (8.5), not used cold. Register stays at absolute-beginner level (weather-app analogy, by-hand counting, 'no heavy math'); advanced material (ECE, calibration correction) is explicitly deferred, so no upward register/depth spike.",
+      "findings": []
+    }
+  },
+  "findings": [],
+  "at": "2026-06-22T08:15:00Z"
+}

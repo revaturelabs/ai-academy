@@ -1,0 +1,103 @@
+{
+  "passed": true,
+  "checks": {
+    "positional_bias": {
+      "passed": true,
+      "distribution": [1, 1, 2, 1],
+      "positions_map": { "0": 1, "1": 1, "2": 2, "3": 1 },
+      "total_mcq": 5,
+      "max_share": 0.40,
+      "note": "max_share is exactly 0.40 (not strictly greater than 0.40), so the hard-fail threshold is not triggered; position 2 held by q1 and q5.",
+      "meta_gift_desync": false
+    },
+    "length_bias": {
+      "passed": true,
+      "longest_correct_rate": 0.20,
+      "baseline": 0.25,
+      "longest_correct_questions": ["q5"],
+      "detail": "q5 correct answer (~131 chars) marginally exceeds 1.20× distractor mean (~130.4). One of five MCQs flagged — rate 0.20, well below 0.40 hard-fail threshold."
+    },
+    "distractor_plausibility": {
+      "passed": true,
+      "absurd_rate": 0.00,
+      "total_distractors": 15,
+      "score_1_count": 0,
+      "weakest_questions": [
+        {
+          "question_id": "q5",
+          "distractor": "It tells Anthropic's servers to pause billing for ten seconds so the rate-limit quota refills faster.",
+          "score": 2,
+          "note": "Implausible (local sleep cannot communicate with remote billing), but still topically grounded — not absurd."
+        },
+        {
+          "question_id": "q5",
+          "distractor": "It cancels any in-flight requests from the previous attempt and resets the SDK connection pool before the next try.",
+          "score": 2,
+          "note": "Conflates time.sleep with network-layer operations; plausible enough to score 2, not 1."
+        }
+      ],
+      "plausibility_scores_summary": {
+        "score_1": 0,
+        "score_2": 2,
+        "score_3": 10,
+        "score_4": 3
+      }
+    },
+    "objective_coverage": {
+      "passed": true,
+      "lo_coverage": [
+        {
+          "lo_num": 1,
+          "lo_text": "List the four main categories of API failure (network, authentication, rate-limit, server) and describe what causes each one.",
+          "covered_by": ["q1"]
+        },
+        {
+          "lo_num": 2,
+          "lo_text": "Describe the Anthropic SDK exception hierarchy — how AnthropicError, APIError, and the specific error classes relate to one another.",
+          "covered_by": ["q2"]
+        },
+        {
+          "lo_num": 3,
+          "lo_text": "Wrap a client.messages.create() call in a try/except block that catches at least two specific Anthropic exception classes.",
+          "covered_by": ["q3"]
+        },
+        {
+          "lo_num": 4,
+          "lo_text": "Distinguish the correct response for each exception type: fix credentials for AuthenticationError, wait and retry for RateLimitError, inspect the request for BadRequestError, check connectivity for APIConnectionError.",
+          "covered_by": ["q4", "q6"]
+        },
+        {
+          "lo_num": 5,
+          "lo_text": "Implement a basic retry loop for RateLimitError using time.sleep().",
+          "covered_by": ["q5"]
+        },
+        {
+          "lo_num": 6,
+          "lo_text": "Explain why catching the most-specific exception class first leads to clearer, safer error-handling code.",
+          "covered_by": ["q3"]
+        }
+      ],
+      "uncovered_objectives": [],
+      "orphan_questions": []
+    },
+    "scope_and_beginner_fairness": {
+      "passed": true,
+      "jargon_in_stem": [],
+      "out_of_scope_questions": [],
+      "unfair_distractors": [],
+      "notes": "All stems and distractors are grounded in corpus-taught concepts only. No acronyms introduced without prior definition. q6 short-answer uses multiple = lines (valid GIFT syntax for acceptable-answer variants)."
+    }
+  },
+  "auto_correction_applied": {
+    "shuffle_round_2": false
+  },
+  "meta_validation": {
+    "bias_defense_applied_flag": true,
+    "question_count_match": true,
+    "correct_position_distribution_match": true,
+    "sidecar_reported_max_share": 0.40,
+    "derived_max_share": 0.40
+  },
+  "verdict": "Pass — positional bias at exactly 0.40 (not above threshold), length bias 0.20, zero absurd distractors, all six LOs covered, no orphan questions, no scope violations.",
+  "at": "2026-06-15T00:00:00Z"
+}

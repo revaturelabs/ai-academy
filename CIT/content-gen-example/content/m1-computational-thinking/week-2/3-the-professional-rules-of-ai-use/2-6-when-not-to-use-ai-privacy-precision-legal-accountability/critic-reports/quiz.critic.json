@@ -1,0 +1,62 @@
+{
+  "passed": true,
+  "checks": {
+    "positional_bias": {
+      "passed": true,
+      "distribution": [1, 1, 2, 1],
+      "max_share": 0.40,
+      "note": "5 MCQs; positions used: 0×1, 1×1, 2×2, 3×1. max_share=0.40 is not > 0.40 — passes threshold."
+    },
+    "length_bias": {
+      "passed": true,
+      "longest_correct_rate": 0.0,
+      "baseline": 0.25,
+      "per_question": {
+        "2.6-Q1": { "correct_chars": 102, "distractor_mean_chars": 105.7, "threshold": 126.8, "longest_correct": false },
+        "2.6-Q2": { "correct_chars": 102, "distractor_mean_chars": 96.3,  "threshold": 115.6, "longest_correct": false },
+        "2.6-Q3": { "correct_chars": 109, "distractor_mean_chars": 98.3,  "threshold": 117.96,"longest_correct": false },
+        "2.6-Q4": { "correct_chars": 116, "distractor_mean_chars": 102.7, "threshold": 123.2, "longest_correct": false },
+        "2.6-Q5": { "correct_chars": 115, "distractor_mean_chars": 110.0, "threshold": 132.0, "longest_correct": false }
+      }
+    },
+    "distractor_plausibility": {
+      "passed": true,
+      "absurd_rate": 0.0,
+      "total_distractors": 15,
+      "absurd_count": 0,
+      "weakest_questions": [
+        {
+          "id": "2.6-Q2",
+          "distractor": "The AI tool charges a fee to process legal documents, creating an unexpected cost for the firm",
+          "score": 2,
+          "note": "Slightly weak — fee-charging is easily falsified by any user — but still a surface-level beginner misconception rather than an absurd distractor."
+        }
+      ]
+    },
+    "objective_coverage": {
+      "passed": true,
+      "uncovered_objectives": [],
+      "orphan_questions": [],
+      "coverage_map": {
+        "Identify at least three types of situations where using AI is inappropriate or risky.": ["2.6-Q1"],
+        "Explain what \"sensitive data\" means and give an example of why sharing it with an AI tool is a problem.": ["2.6-Q2"],
+        "Describe what \"probabilistic output\" means (introduced in topic 2.4) and explain why it is unacceptable in high-stakes precision tasks.": ["2.6-Q3"],
+        "Explain what \"legal accountability\" means and why an AI system cannot hold it.": ["2.6-Q4"],
+        "Apply the three-dimension framework (privacy, precision, legal accountability) to a scenario and decide whether AI use is appropriate.": ["2.6-Q5", "2.6-Q6"]
+      }
+    },
+    "beginner_fairness": {
+      "passed": true,
+      "jargon_in_stem": [],
+      "out_of_scope_questions": [],
+      "unfair_distractors": [],
+      "notes": "All stems use plain-language scenarios. No unexplained acronyms. No stem-level # feedback. All questions are answerable from this topic's corpus alone."
+    }
+  },
+  "meta_gift_desync": false,
+  "auto_correction_applied": {
+    "shuffle_round_2": false
+  },
+  "verdict": "Pass — all five checks clean. Positional bias max_share=0.40 (at threshold, not over). Length bias rate=0.0. Distractor plausibility absurd_rate=0.0. All 5 LOs covered. Beginner-fair, on-headline.",
+  "at": "2026-06-17T00:00:00Z"
+}

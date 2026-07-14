@@ -1,0 +1,83 @@
+{
+  "topic_id": "7.10",
+  "critic": "reading-critic",
+  "generated_at": "2026-06-23T00:00:00Z",
+  "passed": true,
+  "verdict": "PASSED — all 7 checks clear; 1 minor advisory on computed read-minutes (5.64 min vs 6-min floor by words/230 formula, word count 1298 is within the 1200-1600 range).",
+  "checks": {
+    "format": {
+      "passed": true,
+      "frontmatter_present": false,
+      "meta_sidecar_missing": false,
+      "section_template_violation": false,
+      "sections_found": ["Overview", "Key Concepts", "Worked Example", "In Practice", "Key Takeaways", "References"],
+      "notes": "First non-empty line is # H1 title; meta sidecar present and valid; exactly 6 sections in correct order."
+    },
+    "length": {
+      "passed": true,
+      "word_count": 1298,
+      "target_word_range": [1200, 1600],
+      "word_count_in_range": true,
+      "computed_read_minutes": 5.64,
+      "target_minute_range": [6, 8],
+      "minutes_in_range": false,
+      "advisory": "Computed minutes (1298/230 = 5.64) fall marginally below the 6-min floor. Word count is within spec. Advisory only — word count is the primary gating measure and passes.",
+      "notes": "meta reports estimated_read_minutes: 7 (within range). Word count passes. Minor advisory logged."
+    },
+    "citations": {
+      "passed": true,
+      "primary_resources_cited": ["DataCamp [1]"],
+      "inline_markers_found": ["[1]"],
+      "bibliography_entries_found": ["1. DataCamp — What is a Confusion Matrix in Machine Learning?"],
+      "orphan_markers": [],
+      "orphan_bibliography": [],
+      "notes": "DataCamp [1] cited multiple times across Key Concepts, Worked Example, In Practice, and Key Takeaways sections. Bibliography matches inline marker."
+    },
+    "no_forward_references": {
+      "passed": true,
+      "forbidden_terms_found": [],
+      "notes": "No mention of F1, ROC, or AUC. References to topics 7.8 and 7.9 are backward references (precision/recall already taught)."
+    },
+    "faithfulness": {
+      "passed": true,
+      "assertions_sampled": 10,
+      "unsupported_assertions": 0,
+      "notes": "All 10 sampled assertions (four-cell definitions, spam-filter worked example numbers, disease-screener paradox scenario, precision/recall/accuracy formula derivations, In Practice domain examples) trace directly to topic_corpus.md sections 5.1–5.5 and 7."
+    },
+    "beginner_readability": {
+      "passed": true,
+      "undefined_terms": [],
+      "jargon_dump": false,
+      "abstract_first": false,
+      "academic_register": false,
+      "notes": "Terms defined at first meaningful use (ground truth, positive/negative class introduced with examples). Each TP/FP/FN/TN definition paired with a spam-filter analogy before the abstraction. Sentence lengths consistently under 25 words. Zero hedging phrases found."
+    },
+    "formatting": {
+      "passed": true,
+      "wall_of_text": false,
+      "unlisted_sequence": false,
+      "no_inline_examples": false,
+      "bold_term_plain_meaning_used": true,
+      "notes": "Paragraphs 2–5 sentences. Four-cell definitions, matrix reading instructions, and best-practices rendered as bullet lists. Inline examples present in Key Concepts (spam filter analogies). Bold-term + definition pattern used correctly throughout."
+    },
+    "assessment_references": {
+      "passed": true,
+      "findings": [],
+      "notes": "No assessment IDs, due-week mentions, or grade weights appear in the reading."
+    },
+    "known_pattern_bold_confusion_matrix": {
+      "passed": true,
+      "notes": "No instance of **confusion matrix** (bolded) followed by a defining clause found in the reading."
+    },
+    "scope": {
+      "passed": true,
+      "scope_creep": false,
+      "concepts_found": ["confusion matrix (2x2)", "TP/FP/FN/TN", "accuracy paradox", "precision from top row", "recall from left column", "true negative role in imbalanced datasets"],
+      "concepts_out_of_scope": [],
+      "notes": "Reading stays within the topic headline: confusion matrix and the accuracy paradox. Showing how precision and recall read from the matrix is explicitly within scope for this unification topic per the corpus. No F1, ROC, AUC, or any more-advanced metric introduced."
+    }
+  },
+  "soft_findings_count": 0,
+  "hard_fail_triggers": [],
+  "advisory": "Computed read-minutes (5.64) marginally below 6-min floor by the words/230 formula. Word count (1298) is within the 1200-1600 spec. No action required unless word count is the authority; if minutes-formula is authoritative, ~40 words of additional content would bring it to 6.0 min."
+}

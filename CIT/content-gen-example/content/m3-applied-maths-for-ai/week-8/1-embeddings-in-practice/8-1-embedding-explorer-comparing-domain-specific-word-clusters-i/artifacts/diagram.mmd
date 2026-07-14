@@ -1,0 +1,44 @@
+---
+title: "Reading two domains on a flat 2D map of word-dots"
+config:
+  theme: base
+  themeVariables:
+    primaryColor: "#a5d8ff"
+    primaryBorderColor: "#4a9eed"
+    lineColor: "#555"
+  flowchart:
+    htmlLabels: true
+    curve: basis
+    nodeSpacing: 50
+    rankSpacing: 55
+---
+flowchart TB
+    subgraph FLOW["Step 1 — pick and plot the words"]
+        direction LR
+        P["<b>Pick 10 words</b><br/><span style='font-size:12px;color:#6d28d9'>from one subject area</span>"] --> S["<b>Search each word</b><br/><span style='font-size:12px;color:#6d28d9'>tool highlights its dot</span>"] --> V["<b>Switch to 2D view</b><br/><span style='font-size:12px;color:#6d28d9'>flat left-right, up-down</span>"] --> R["<b>Read the groups</b><br/><span style='font-size:12px;color:#6d28d9'>then compare domains</span>"]
+    end
+
+    subgraph PLANE["Step 2 — the 2D plane (each dot is one word)"]
+        direction LR
+        COOK["<b>Cooking cluster</b><br/><span style='font-size:12px;color:#6d28d9'>whisk, simmer, dough...</span>"]
+        BETWEEN["<b>coach</b><br/><span style='font-size:12px;color:#6d28d9'>in-between word, sits in the gap</span>"]
+        FOOT["<b>Football cluster</b><br/><span style='font-size:12px;color:#6d28d9'>goal, tackle, pitch...</span>"]
+        OUT["<b>plate</b><br/><span style='font-size:12px;color:#6d28d9'>outlier, drifts off alone</span>"]
+
+        COOK ==>|"wide gap = little shared meaning"| FOOT
+        COOK -.-> BETWEEN
+        BETWEEN -.-> FOOT
+        COOK -->|"lonely dot"| OUT
+    end
+
+    R --> COOK
+
+    classDef act fill:#a5d8ff,stroke:#4a9eed;
+    classDef auto fill:#d0bfff,stroke:#8b5cf6;
+    classDef done fill:#b2f2bb,stroke:#22c55e;
+    classDef ghost fill:none,stroke:none,color:#6d28d9;
+
+    class P,S,V,R act;
+    class COOK,FOOT auto;
+    class BETWEEN ghost;
+    class OUT done;

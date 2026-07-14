@@ -1,0 +1,47 @@
+{
+  "critic": "drift-critic",
+  "module": "4-comparing-and-evaluating-ai-tools",
+  "module_title": "Comparing and Evaluating AI Tools",
+  "course_code": "M2",
+  "week_num": 4,
+  "generated_at": "2026-06-17T00:00:00Z",
+  "topics_evaluated": ["4.7", "4.8"],
+  "passed": true,
+  "verdict": "All five drift checks pass; module forms a clean two-topic arc from rubric design (4.7) to evidence-based recommendation (4.8) with no terminology drift, no prerequisite violations, full lab alignment, and no duplicated core concepts.",
+  "checks": {
+    "terminology_consistency": {
+      "passed": true,
+      "findings": [],
+      "notes": "4.8 prerequisites section explicitly declares all six core 4.7 terms (evaluation rubric, criteria, performance levels, descriptors, weighting, test protocol) are carried forward without re-definition. All six are used consistently in 4.8 body text with no synonym drift. Minor variant: 4.7 uses 'performance levels' as the formal label; 4.8 uses 'descriptor level' as an in-context shorthand when citing scores — this is a natural condensation, not a contradiction, and is below flag threshold."
+    },
+    "prerequisites_respected": {
+      "passed": true,
+      "findings": [],
+      "notes": "4.7 (position_in_module=1) lists prerequisites 4.1, 4.4, 4.5, 4.6, and 3.10 — all earlier in the sequence. 4.8 (position_in_module=2) lists only 4.7 as prerequisite. No forward-references detected."
+    },
+    "learning_arc": {
+      "passed": true,
+      "findings": [],
+      "notes": "Module outcome 'Comparing and Evaluating AI Tools' requires both evaluation construction and findings communication. 4.7 covers rubric design (what, why, criteria, descriptors, weighting, test protocol). 4.8 covers recommendation structure (evidence vs opinion, three-part form, trade-offs, limitations). Union of LOs fully covers the module title. Arc is tight and sequentially coherent."
+    },
+    "no_duplicated_core_concepts": {
+      "passed": true,
+      "findings": [],
+      "notes": "4.7 core concept nouns: {rubric, criteria, descriptor, weight, test, protocol, score, performance, level, functionality, accuracy, privacy, accessibility, ethics}. 4.8 core concept nouns: {recommendation, evidence, finding, trade-off, limitation, anchor, opinion, assertion, score, rubric, descriptor}. Estimated Jaccard similarity ~0.31 (4 shared nouns from union of ~13), well below the 0.6 flag threshold. 4.8 references the findings summary table (a 4.7 output) as an input artefact — this is consumption, not duplication; weighting and scoring mechanics are not re-taught."
+    },
+    "lab_activity_alignment": {
+      "passed": true,
+      "findings": [],
+      "notes": "lab_activity_seed_by_week['4'] has three components: (1) live RAG demo — belongs to topic 4.3, not this module; (2) design 5-criteria rubric — directly supported by 4.7 Implementation §6 (9-step procedure) and Hands-On Exercise §9; (3) present findings / defend with evidence — directly supported by 4.8 Implementation §6 (9-step procedure) and Lab Capstone §9. Both module-specific lab components have a hands-on artifact anchor."
+    },
+    "audience_level_consistency": {
+      "passed": true,
+      "findings": [],
+      "notes": "Both topics explicitly state 'No programming background is assumed. You will not write code.' Both use accessible analogies (4.7: teacher marking essays; 4.8: food-safety inspector). 4.8 introduces no cold terms — all technical vocabulary is defined in 4.7 and declared as carried-forward in 4.8 prerequisites. No register spike detected across the module."
+    }
+  },
+  "per_topic_findings": {
+    "4.7": [],
+    "4.8": []
+  }
+}

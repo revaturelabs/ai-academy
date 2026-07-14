@@ -1,0 +1,30 @@
+{
+  "topic_id": "3.8",
+  "captured_at": "2026-06-17T00:00:00Z",
+  "captured_by": "bhuvaneshwarim@revature.com",
+  "resources_source": "web_search",
+  "web_search_query": "jagged frontier AI superhuman tasks unreliable limitations Ethan Mollick 2024 2025",
+  "resources": [
+    {
+      "type": "url",
+      "value": "https://www.insightpartners.com/ideas/generative-ai-ethan-mollick/",
+      "role": "primary",
+      "source": "web_search",
+      "notes": "Ethan Mollick interview — definitive explanation of the jagged frontier concept: AI superhuman at hard tasks, unreliable at seemingly easy ones"
+    },
+    {
+      "type": "url",
+      "value": "https://www.ikangai.com/jagged-agi-superhuman-ai-flaws/",
+      "role": "supporting",
+      "source": "web_search",
+      "notes": "Applied explainer with concrete examples — medical diagnosis superhuman, visual puzzles and anagrams fail"
+    },
+    {
+      "type": "url",
+      "value": "https://www.oneusefulthing.org/p/on-jagged-agi-o3-gemini-25-and-everything",
+      "role": "supporting",
+      "source": "web_search",
+      "notes": "Mollick's 2025 Substack update on how the frontier has narrowed with o3 and Gemini 2.5; human oversight still required"
+    }
+  ]
+}

@@ -1,0 +1,171 @@
+{
+  "topic_id": "9.7",
+  "stage": "topic_artifacts_approved",
+  "gates": {
+    "resources_captured": true,
+    "corpus_generated": true,
+    "corpus_critic_passed": true,
+    "corpus_human_approved": true,
+    "reading_generated": true,
+    "reading_critic_passed": true,
+    "quiz_generated": true,
+    "quiz_critic_passed": true,
+    "diagram_generated": true,
+    "diagram_critic_passed": true,
+    "module_drift_passed": true,
+    "course_drift_passed": false,
+    "topic_artifacts_human_approved": true,
+    "week_human_approved": true
+  },
+  "history": [
+    {
+      "at": "2026-06-13T07:03:15Z",
+      "op": "set",
+      "gate": "resources_captured",
+      "value": true
+    },
+    {
+      "at": "2026-06-13T07:03:15Z",
+      "op": "stage",
+      "to": "awaiting_corpus"
+    },
+    {
+      "at": "2026-06-13T07:03:16Z",
+      "op": "log",
+      "msg": "Captured 3 resources (source=web_search): aicompetence.org risk-aware decision framework (primary), arxiv Think-First-Verify-Always (supporting), CFI AI decision making (supporting)"
+    },
+    {
+      "at": "2026-06-13T07:06:13Z",
+      "op": "log",
+      "msg": "Soft checkpoint before corpus build — user chose /save-session at yellow band."
+    },
+    {
+      "at": "2026-06-13T07:24:31Z",
+      "op": "set",
+      "gate": "corpus_generated",
+      "value": true
+    },
+    {
+      "at": "2026-06-13T07:24:31Z",
+      "op": "stage",
+      "to": "awaiting_corpus_critic"
+    },
+    {
+      "at": "2026-06-13T07:37:49Z",
+      "op": "set",
+      "gate": "corpus_critic_passed",
+      "value": false
+    },
+    {
+      "at": "2026-06-13T07:37:49Z",
+      "op": "log",
+      "msg": "Critic failed: scope_creep — acceptable error threshold defined in LO6 + Implementation step 6; must be bare name + topic pointer only"
+    },
+    {
+      "at": "2026-06-13T07:43:13Z",
+      "op": "set",
+      "gate": "corpus_critic_passed",
+      "value": true
+    },
+    {
+      "at": "2026-06-13T07:43:14Z",
+      "op": "stage",
+      "to": "awaiting_corpus_human_review"
+    },
+    {
+      "at": "2026-06-13T07:49:29Z",
+      "op": "set",
+      "gate": "corpus_human_approved",
+      "value": true
+    },
+    {
+      "at": "2026-06-13T07:49:29Z",
+      "op": "stage",
+      "to": "corpus_approved"
+    },
+    {
+      "at": "2026-06-13T07:57:26Z",
+      "op": "set",
+      "gate": "diagram_generated",
+      "value": true
+    },
+    {
+      "at": "2026-06-13T07:57:27Z",
+      "op": "set",
+      "gate": "diagram_critic_passed",
+      "value": true
+    },
+    {
+      "at": "2026-06-13T07:57:27Z",
+      "op": "stage",
+      "to": "awaiting_diagram_critic"
+    },
+    {
+      "at": "2026-06-13T08:02:25Z",
+      "op": "set",
+      "gate": "reading_generated",
+      "value": true
+    },
+    {
+      "at": "2026-06-13T08:02:25Z",
+      "op": "stage",
+      "to": "awaiting_reading_critic"
+    },
+    {
+      "at": "2026-06-13T08:04:46Z",
+      "op": "set",
+      "gate": "quiz_generated",
+      "value": true
+    },
+    {
+      "at": "2026-06-13T08:04:46Z",
+      "op": "stage",
+      "to": "awaiting_quiz_critic"
+    },
+    {
+      "at": "2026-06-13T08:07:13Z",
+      "op": "set",
+      "gate": "reading_critic_passed",
+      "value": true
+    },
+    {
+      "at": "2026-06-13T08:07:13Z",
+      "op": "set",
+      "gate": "quiz_critic_passed",
+      "value": true
+    },
+    {
+      "at": "2026-06-13T08:07:13Z",
+      "op": "stage",
+      "to": "awaiting_topic_artifacts_review"
+    },
+    {
+      "at": "2026-06-13T08:12:49Z",
+      "op": "set",
+      "gate": "topic_artifacts_human_approved",
+      "value": true
+    },
+    {
+      "at": "2026-06-13T08:12:50Z",
+      "op": "stage",
+      "to": "topic_artifacts_approved"
+    },
+    {
+      "at": "2026-06-13T08:12:50Z",
+      "op": "log",
+      "msg": "HITL #3 approved — all critics passed; soft: pharmacopeia undefined (reading:75)"
+    },
+    {
+      "at": "2026-06-13T17:52:40Z",
+      "op": "set",
+      "gate": "module_drift_passed",
+      "value": true
+    },
+    {
+      "at": "2026-06-13T17:56:25Z",
+      "op": "set",
+      "gate": "week_human_approved",
+      "value": true
+    }
+  ]
+}

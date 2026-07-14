@@ -1,0 +1,26 @@
+---
+title: "LLM Generation Loop"
+config:
+  theme: base
+  themeVariables:
+    primaryColor: "#a5d8ff"
+    primaryBorderColor: "#4a9eed"
+    lineColor: "#555"
+  flowchart:
+    htmlLabels: true
+    curve: basis
+---
+flowchart LR
+    classDef start fill:#a5d8ff,stroke:#4a9eed,color:#1a1a1a
+    classDef auto fill:#d0bfff,stroke:#8b5cf6,color:#1a1a1a
+    classDef done fill:#b2f2bb,stroke:#22c55e,color:#1a1a1a
+
+    A["<b>Context Tokens</b><br/><span style='font-size:11px;color:#6d28d9'>prompt + generated so far</span>"]:::start
+    B["<b>Compute Raw Scores</b><br/><span style='font-size:11px;color:#6d28d9'>one score per vocabulary word</span>"]:::auto
+    C["<b>Softmax</b><br/><span style='font-size:11px;color:#6d28d9'>convert scores → probabilities</span>"]:::auto
+    D["<b>Probability Distribution</b><br/><span style='font-size:11px;color:#6d28d9'>sums to 1 across vocabulary</span>"]:::auto
+    E["<b>Sample Token</b><br/><span style='font-size:11px;color:#6d28d9'>randomly pick one word</span>"]:::auto
+    F["<b>Output Token</b><br/><span style='font-size:11px;color:#6d28d9'>appended to context</span>"]:::done
+
+    A --> B --> C --> D --> E --> F
+    F -->|"append + loop"| A

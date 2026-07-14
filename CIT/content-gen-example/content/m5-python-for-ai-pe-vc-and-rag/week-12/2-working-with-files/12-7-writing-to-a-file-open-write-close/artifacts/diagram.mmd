@@ -1,0 +1,37 @@
+%%  12.7 — Write mode vs Append mode: open → write → auto-close lifecycle
+%%  Layout: side-by-side subgraph panels
+%%  Intent: contrast write mode (erases content) vs append mode (keeps content)
+
+flowchart LR
+    subgraph WRITE["write mode  'w'"]
+        direction TB
+        W1["open('out.txt', 'w')"]
+        W2["existing content\nerased ✗"]
+        W3[".write()  or  .writelines()"]
+        W4["with block → auto-close"]
+        W1 --> W2 --> W3 --> W4
+    end
+
+    subgraph APPEND["append mode  'a'"]
+        direction TB
+        A1["open('out.txt', 'a')"]
+        A2["existing content\nkept intact ✓"]
+        A3[".write()  or  .writelines()"]
+        A4["with block → auto-close"]
+        A1 --> A2 --> A3 --> A4
+    end
+
+    classDef openNode fill:#dbeafe,stroke:#3b82f6,color:#1e3a8a
+    classDef eraseNode fill:#fee2e2,stroke:#ef4444,color:#7f1d1d
+    classDef keepNode fill:#dcfce7,stroke:#16a34a,color:#14532d
+    classDef writeMethod fill:#dbeafe,stroke:#3b82f6,color:#1e3a8a
+    classDef closeNode fill:#e0e7ff,stroke:#6366f1,color:#312e81
+
+    class W1,A1 openNode
+    class W2 eraseNode
+    class A2 keepNode
+    class W3,A3 writeMethod
+    class W4,A4 closeNode
+
+    style WRITE fill:#fef2f2,stroke:#fca5a5,color:#7f1d1d
+    style APPEND fill:#f0fdf4,stroke:#86efac,color:#14532d

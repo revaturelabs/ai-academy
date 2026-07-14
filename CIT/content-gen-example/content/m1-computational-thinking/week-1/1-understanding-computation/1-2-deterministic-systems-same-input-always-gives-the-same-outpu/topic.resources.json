@@ -1,0 +1,30 @@
+{
+  "topic_id": "1.2",
+  "captured_at": "2026-06-19T00:00:00Z",
+  "captured_by": "namratas@revature.com",
+  "resources_source": "web_search",
+  "web_search_query": "deterministic systems same input same output computer science explainer beginner",
+  "resources": [
+    {
+      "type": "url",
+      "value": "https://en.wikipedia.org/wiki/Deterministic_system",
+      "role": "primary",
+      "source": "web_search",
+      "notes": "Wikipedia article on deterministic systems — formal definition, examples (sorting, arithmetic), contrast with stochastic systems"
+    },
+    {
+      "type": "url",
+      "value": "https://computersciencewiki.org/index.php/Determinism",
+      "role": "supporting",
+      "source": "web_search",
+      "notes": "CS education wiki — beginner-friendly coverage of determinism in algorithms and programs"
+    },
+    {
+      "type": "url",
+      "value": "https://www.geeksforgeeks.org/dsa/difference-between-deterministic-and-non-deterministic-algorithms/",
+      "role": "supporting",
+      "source": "web_search",
+      "notes": "Deterministic vs non-deterministic contrast with worked examples"
+    }
+  ]
+}

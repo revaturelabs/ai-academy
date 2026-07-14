@@ -1,0 +1,42 @@
+{
+  "type": "topic",
+  "id": "6.9",
+  "title": "Cosine similarity — measuring the angle between two meaning-vectors",
+  "slug": "6-9-cosine-similarity-measuring-the-angle-between-two-meaning-ve",
+  "position_in_module": 4,
+  "week_num": 6,
+  "session_name": "Numbers, Vectors and Meaning",
+  "module": {
+    "position": 3,
+    "slug": "3-similarity-and-meaning",
+    "title": "Similarity and Meaning"
+  },
+  "course": {
+    "code": "M3",
+    "slug": "m3-applied-maths-for-ai",
+    "title": "Applied Maths for AI"
+  },
+  "next_assessment": {
+    "id": "A2",
+    "due_week": 6,
+    "title": "AI Systems Essay",
+    "weight": "15%"
+  },
+  "paths": {
+    "corpus": "topic_corpus.md",
+    "resources": "topic.resources.json",
+    "progress": "topic.progress.json",
+    "artifacts_dir": "artifacts/",
+    "critic_reports_dir": "critic-reports/"
+  },
+  "artifact_plan": {
+    "diagram": true,
+    "diagram_intent": "Two 2D vectors A and B drawn as arrows from the origin with the angle theta labelled between them; a small annotation showing cos(theta)=1 when arrows overlap, 0 when perpendicular, -1 when opposite — visually contrasting with a raw dot product arrow whose length changes with vector size",
+    "depth_profile": "standard",
+    "depth_signals": ["4 sub-sections in Core Concepts", "worked numeric example", "formula walkthrough", "real-world section with 5 patterns", "hands-on paper exercise"],
+    "reading_word_range": [1200, 1600],
+    "quiz_question_range": [5, 6]
+  },
+  "expected_delivery_minutes": 7,
+  "status": "scaffolded"
+}

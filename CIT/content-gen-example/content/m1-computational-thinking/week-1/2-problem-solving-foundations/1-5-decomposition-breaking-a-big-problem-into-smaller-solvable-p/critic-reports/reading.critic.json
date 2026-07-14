@@ -1,0 +1,162 @@
+{
+  "critic": "reading-critic",
+  "topic_id": "1.5",
+  "artifact": "reading.md",
+  "run_at": "2026-06-20T00:00:00Z",
+  "passed": true,
+  "verdict": "All 10 checks pass — reading is well-formed, in-range at 1255 words (~6.3 min), fully faithful to corpus, beginner-accessible, correctly scoped, and includes the diagram embed with alt-text and caption.",
+  "checks": {
+    "format": {
+      "passed": true,
+      "findings": [],
+      "detail": {
+        "frontmatter_present": false,
+        "first_line_is_h1": true,
+        "meta_sidecar_present": true,
+        "meta_sidecar_valid": true,
+        "sections_in_order": ["Overview", "Key Concepts", "Worked Example", "In Practice", "Key Takeaways", "References"],
+        "section_template_violation": null
+      }
+    },
+    "length": {
+      "passed": true,
+      "findings": [],
+      "detail": {
+        "word_count_reported": 1255,
+        "word_range": [1200, 1600],
+        "word_count_in_range": true,
+        "estimated_minutes": 6.3,
+        "minute_range": [6, 8],
+        "minutes_in_range": true
+      }
+    },
+    "citations": {
+      "passed": true,
+      "findings": [],
+      "detail": {
+        "primary_resource_cited": true,
+        "primary_resource": "[1] OpenStax — cited at lines 5, 12, 19, 26, 30, 35, 46, 57, 61, 85, 89, 91, 97, 100, 104, 107, 108, 112, 113, 115, 116",
+        "all_bibliography_entries_have_inline_citations": true,
+        "all_inline_citations_have_bibliography_entries": true,
+        "orphan_markers": [],
+        "orphan_bibliography_entries": []
+      }
+    },
+    "no_forward_references": {
+      "passed": true,
+      "findings": [],
+      "detail": {
+        "allowed_prior_vocab": ["computation", "defined steps", "input/process/output", "computational thinking", "deterministic systems", "probabilistic systems"],
+        "this_topic_vocab": ["decomposition", "task tree", "root", "sub-task", "leaf", "iterative refinement"],
+        "named_and_deferred": ["abstraction", "pattern recognition", "algorithm", "pseudocode", "flowchart"],
+        "forward_references_found": [],
+        "deferred_concepts_taught": false,
+        "note": "'programming' appears as a plain-language forward pointer ('before any code is written') — not a forward reference to a defined CS concept. 'computational thinking' mentioned as the broader framework by name only, not taught here."
+      }
+    },
+    "faithfulness": {
+      "passed": true,
+      "findings": [],
+      "detail": {
+        "assertions_sampled": 10,
+        "assertions_unsupported": 0,
+        "unsupported_assertions": [],
+        "sample": [
+          {"assertion": "Decomposition is the strategy of breaking a large, complex problem into smaller, focused, manageable parts", "corpus_location": "Section 5.1", "supported": true},
+          {"assertion": "one of the four pillars of computational thinking", "corpus_location": "Section 4", "supported": true},
+          {"assertion": "task tree — diagram that looks like an upside-down tree", "corpus_location": "Section 5.3", "supported": true},
+          {"assertion": "Root/Sub-task/Leaf/Level table", "corpus_location": "Section 5.3 table", "supported": true},
+          {"assertion": "Iterative means you do something, review the result, adjust, and repeat", "corpus_location": "Section 5.5", "supported": true},
+          {"assertion": "Library website 6-step worked example", "corpus_location": "Section 6", "supported": true},
+          {"assertion": "Software development: projects broken into features, features into user stories", "corpus_location": "Section 7", "supported": true},
+          {"assertion": "AI system design: data collection, cleaning, training, evaluation, deployment, monitoring", "corpus_location": "Section 7", "supported": true},
+          {"assertion": "Start with the problem statement, not the solution", "corpus_location": "Section 8", "supported": true},
+          {"assertion": "Name tasks with verbs: 'Choose a venue,' not 'Venue'", "corpus_location": "Section 8", "supported": true}
+        ]
+      }
+    },
+    "beginner_readability": {
+      "passed": true,
+      "findings": [],
+      "detail": {
+        "undefined_terms": [],
+        "jargon_dump": null,
+        "abstract_first": null,
+        "academic_register": null,
+        "notes": [
+          "'Decomposition' defined on first use at line 11 with bold-term / plain-meaning format.",
+          "'Iterative' defined on first use at line 57: 'Iterative means you do something, review the result, adjust, and repeat.'",
+          "'Task tree' defined on first use at line 30 with visual analogy (upside-down tree).",
+          "No hedging language detected. No jargon dumps found. Concrete-first approach used throughout (party analogy precedes formal definition in Overview)."
+        ]
+      }
+    },
+    "formatting": {
+      "passed": true,
+      "findings": [],
+      "detail": {
+        "wall_of_text": null,
+        "unlisted_sequence": null,
+        "no_inline_examples": null,
+        "notes": [
+          "All paragraphs are 1–4 sentences; no wall-of-text detected.",
+          "Worked Example rendered as a numbered list (6 steps). Best practices rendered as bullet list. Why-big-problems-are-hard rendered as bullet list.",
+          "Inline examples present in Overview (party analogy), Key Concepts (textbook reading analogy), and In Practice (recipes, medical, software) — not deferred solely to Worked Example section.",
+          "Bold-term / plain-meaning definitions used for Decomposition, task tree vocabulary (Root, Sub-task, Leaf, Level), and key attributes (Focused, Manageable, Completable).",
+          "Terminology table in Key Concepts section appropriately uses table format per formatting_standards."
+        ]
+      }
+    },
+    "no_assessment_references": {
+      "passed": true,
+      "findings": [],
+      "detail": {
+        "assessment_reference": null,
+        "note": "No mention of A1, due weeks, or grade weights found anywhere in the reading."
+      }
+    },
+    "scope": {
+      "passed": true,
+      "findings": [],
+      "detail": {
+        "scope_creep": null,
+        "topic_headline": "Decomposition — breaking a big problem into smaller solvable parts",
+        "notes": [
+          "Reading stays entirely within decomposition. No adjacent concepts (abstraction, pattern recognition, algorithm, pseudocode, flowchart) are taught or defined.",
+          "'computational thinking' appears as a named framework reference (one sentence) without teaching its other pillars.",
+          "'programming' and 'code' used as plain-language forward pointers ('before any code is written', 'before programming') — not as defined CS concepts taught here.",
+          "AI system design example in In Practice is a real-world application of decomposition, not a lesson on AI — within scope."
+        ]
+      }
+    },
+    "diagram_embed": {
+      "passed": true,
+      "findings": [],
+      "detail": {
+        "embed_found": true,
+        "path_referenced": "./diagram.png",
+        "resolves_to": "artifacts/diagram.png",
+        "alt_text": "Task tree for Plan a party — root branches into four sub-tasks, two sub-tasks branch further into leaf tasks.",
+        "caption_present": true,
+        "caption": "A task tree for 'Plan a party'. Each level breaks the problem into smaller parts until every item at the bottom is concrete and doable.",
+        "placement": "Key Concepts section, immediately after introducing the task tree concept (inline with concept introduction)"
+      }
+    }
+  },
+  "gold_example_comparison": {
+    "gold_example_exists_for_type": true,
+    "gold_examples_available": [
+      "3-4-how-llms-work-tokens-training-and-inference.reading.md",
+      "2-1-what-makes-a-good-specification.reading.md"
+    ],
+    "note": "No gold example exists for topic 1.5 specifically. Compared against written standards in artifact-mix.json. Reading meets the bar: correct six-section structure, beginner-first tone, concrete-before-abstract, all terms defined on first use, diagram embedded with alt-text and caption, faithfulness to corpus confirmed, no scope creep."
+  },
+  "summary": {
+    "hard_failures": 0,
+    "soft_findings": 0,
+    "checks_5_6_escalation": false,
+    "scope_creep_found": false,
+    "total_checks": 10,
+    "checks_passed": 10
+  }
+}

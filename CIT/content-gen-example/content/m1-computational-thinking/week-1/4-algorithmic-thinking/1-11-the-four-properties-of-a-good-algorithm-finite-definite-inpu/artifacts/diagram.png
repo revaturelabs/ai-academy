@@ -1,0 +1,2 @@
+PNG_RENDER_PENDING — run: mmdc -i artifacts/diagram.mmd -o artifacts/diagram.png -w 1400 -b transparent
+(Set PUPPETEER_EXECUTABLE_PATH if needed on Windows — see critic-reports/diagram.critic.json for full command)

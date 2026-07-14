@@ -1,0 +1,41 @@
+{
+  "type": "topic",
+  "id": "14.1",
+  "title": "Vector databases — storing embeddings and enabling similarity search at scale",
+  "slug": "14-1-vector-databases-storing-embeddings-and-enabling-similarity",
+  "position_in_module": 1,
+  "week_num": 14,
+  "session_name": "RAG, Vectors, Agents and Production AI",
+  "module": {
+    "position": 1,
+    "slug": "1-retrieval-augmented-generation-rag",
+    "title": "Retrieval-Augmented Generation (RAG)"
+  },
+  "course": {
+    "code": "M5",
+    "slug": "m5-python-for-ai-pe-vc-and-rag",
+    "title": "Python for AI, PE, VC and RAG"
+  },
+  "next_assessment": {
+    "id": "A5",
+    "due_week": 15,
+    "title": "Capstone Project and Portfolio",
+    "weight": "40%"
+  },
+  "paths": {
+    "corpus": "topic_corpus.md",
+    "resources": "topic.resources.json",
+    "progress": "topic.progress.json",
+    "artifacts_dir": "artifacts/",
+    "critic_reports_dir": "critic-reports/"
+  },
+  "artifact_plan": {
+    "confirmed_profile": "standard",
+    "reading": {"target_word_range": [1200, 1400]},
+    "quiz": {"min_questions": 5, "max_questions": 6, "include_short_answer": false},
+    "diagram": true,
+    "diagram_intent": "Text-to-embedding-to-vector-DB pipeline: raw text → embedding model → vector → database index (HNSW) → similarity search → top-k results"
+  },
+  "expected_delivery_minutes": 7,
+  "status": "scaffolded"
+}

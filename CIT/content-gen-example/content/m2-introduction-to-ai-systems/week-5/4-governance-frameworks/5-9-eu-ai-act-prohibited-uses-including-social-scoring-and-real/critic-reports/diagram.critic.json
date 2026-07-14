@@ -1,0 +1,35 @@
+{
+  "verdict": "pass",
+  "findings": [
+    {
+      "code": "looks_good",
+      "where": "whole diagram",
+      "detail": "Top-bottom tier stack reads as the risk pyramid: red highlighted Prohibited tier at the narrow top, amber Article 5 ban list, lavender narrow-exceptions sub-note, green High-risk 'allowed under rules' tier at bottom. Banned-outright vs allowed-under-rules contrast is unmistakable. All labels trace to corpus Core Concepts; no overlaps, truncation, or concept drift."
+    }
+  ],
+  "history": [
+    {
+      "cycle": 1,
+      "verdict": "fail",
+      "finding": "subtitle font-size inconsistency in BANS node — last span block rendered larger than the lines above it, making the bottom bans read as more important than the headline bans."
+    },
+    {
+      "cycle": 2,
+      "verdict": "pass",
+      "finding": "consolidated ban list into a single uniform 12px span with internal <br/> breaks; all six lines now render at equal size."
+    }
+  ],
+  "stats": {
+    "nodes": 4,
+    "edges": 3,
+    "layout": "flowchart TB (vertical tier stack / pyramid)",
+    "labels": [
+      "Prohibited tier — banned outright",
+      "What Article 5 bans",
+      "Narrow biometric exceptions",
+      "High-risk tier — allowed under rules"
+    ],
+    "png_path": "content/m2-introduction-to-ai-systems/week-5/4-governance-frameworks/5-9-eu-ai-act-prohibited-uses-including-social-scoring-and-real/artifacts/diagram.png",
+    "png_dims": "approx 1000x1900 (rendered at -w 1400)"
+  }
+}

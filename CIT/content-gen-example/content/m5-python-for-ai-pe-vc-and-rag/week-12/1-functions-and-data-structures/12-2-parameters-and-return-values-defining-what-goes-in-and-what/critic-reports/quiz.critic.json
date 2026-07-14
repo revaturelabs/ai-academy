@@ -1,0 +1,82 @@
+{
+  "topic_id": "12.2",
+  "artifact": "quiz",
+  "critic": "quiz-critic",
+  "cycle": 2,
+  "at": "2026-06-14T00:00:00Z",
+  "passed": true,
+  "checks": {
+    "positional_bias": {
+      "passed": true,
+      "distribution": [2, 1, 2, 1],
+      "position_counts": { "0": 2, "1": 1, "2": 2, "3": 1 },
+      "max_share": 0.333,
+      "threshold": 0.40,
+      "meta_gift_desync": false,
+      "note": "Derived positions from quiz.gift: q1=2, q2=0, q3=3, q4=1, q5=2, q6=0. Match sidecar correct_position_distribution [2,0,3,1,2,0] exactly. max_share=2/6=0.333 <= 0.40."
+    },
+    "length_bias": {
+      "passed": true,
+      "per_question": [
+        { "id": "q1", "correct_len": 46, "distractor_mean": 55.3, "threshold_len": 66.4, "longest_correct": false },
+        { "id": "q2", "correct_len": 30, "distractor_mean": 40.3, "threshold_len": 48.4, "longest_correct": false },
+        { "id": "q3", "correct_len": 71, "distractor_mean": 71.7, "threshold_len": 86.0, "longest_correct": false },
+        { "id": "q4", "correct_len": 81, "distractor_mean": 70.0, "threshold_len": 84.0, "longest_correct": false },
+        { "id": "q5", "correct_len": 82, "distractor_mean": 70.7, "threshold_len": 84.8, "longest_correct": false },
+        { "id": "q6", "correct_len": 100, "distractor_mean": 72.7, "threshold_len": 87.2, "longest_correct": true }
+      ],
+      "longest_correct_count": 1,
+      "longest_correct_rate": 0.167,
+      "baseline": 0.25,
+      "threshold": 0.40,
+      "note": "q6 correct answer (100 chars) exceeds 1.20x distractor mean (87.2 chars). Rate 0.167 is well below the 0.40 fail threshold."
+    },
+    "distractor_plausibility": {
+      "passed": true,
+      "absurd_rate": 0.0,
+      "threshold": 0.25,
+      "total_distractors": 18,
+      "absurd_count": 0,
+      "per_question": [
+        { "id": "q1", "scores": [3, 4, 3], "absurd": [] },
+        { "id": "q2", "scores": [4, 3, 2], "absurd": [] },
+        { "id": "q3", "scores": [3, 3, 2], "absurd": [] },
+        { "id": "q4", "scores": [2, 3, 4], "absurd": [] },
+        { "id": "q5", "scores": [4, 3, 3], "absurd": [] },
+        { "id": "q6", "scores": [4, 2, 3], "absurd": [] }
+      ],
+      "note": "q3-d3 ('pauses for user to press Enter') scored 2 — wrong and unrelated to common return misconceptions, but a beginner familiar with input() might conflate the two; not absurd. Zero score-1 distractors."
+    },
+    "objective_coverage": {
+      "passed": true,
+      "uncovered_objectives": [],
+      "orphan_questions": [],
+      "coverage_map": {
+        "q1": "LO1 — Distinguish parameter from argument",
+        "q2": "LO2 — Write a function with positional parameters",
+        "q3": "LO3 — Write a function using the return keyword",
+        "q4": "LO4 — Assign and use the return value",
+        "q5": "LO5 — Explain implicit None when no return",
+        "q6": "LO6 — Identify return vs. print"
+      }
+    },
+    "scope_discipline": {
+      "passed": true,
+      "findings": [],
+      "note": "All six questions test only material explicitly taught in topic 12.2 corpus: parameter/argument distinction, positional parameter ordering, return keyword mechanics, return value capture, implicit None, and print-vs-return distinction. No out_of_scope_question findings. No jargon_in_stem findings."
+    }
+  },
+  "auto_correction_applied": {
+    "shuffle_round_2": false
+  },
+  "hard_failures": [],
+  "soft_findings": [
+    {
+      "check": "length_bias",
+      "question": "q6",
+      "detail": "Correct answer (100 chars) exceeds 1.20x distractor mean (87.2 chars). Single instance; rate 0.167 is below 0.40 fail threshold. Monitor if pattern recurs in revision."
+    }
+  ],
+  "verdict": "Pass — all five checks clean: positional bias max_share 0.333, length bias rate 0.167, absurd_rate 0.0, all 6 LOs covered 1:1, no out-of-scope questions.",
+  "at": "2026-06-14T00:00:00Z"
+}

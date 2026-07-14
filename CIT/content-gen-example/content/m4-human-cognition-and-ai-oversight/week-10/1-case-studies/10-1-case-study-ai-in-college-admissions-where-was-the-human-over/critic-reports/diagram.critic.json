@@ -1,0 +1,62 @@
+{
+  "verdict": "pass",
+  "findings": [
+    {
+      "code": "looks_good",
+      "where": "source pre-flight — all checks",
+      "detail": "Node count 8 (within 3–8). All bold labels ≤ 4 words. All labels trace directly to corpus sections 5.2 (pipeline stages), 5.3 (missing override), 5.8 (5 functioning properties). Title 'Where Was the Human Override?' sits in config title: field as governing question — not a ghost node. No bare acronyms. Side-by-side panels layout (flowchart LR + MAIN TB + SIDE TB) matches intent."
+    },
+    {
+      "code": "looks_good",
+      "where": "concept fidelity",
+      "detail": "Every node maps to a named corpus phrase: 'Application submitted' (5.2 stage 1), 'Completeness + eligibility checks' (5.2 stages 2–3), 'AI personal qualities scoring' (5.2 stage 4), 'Human override checkpoint' (5.3), 'Final ranking and offer' (5.2 stage 5), 'Defined · Sampled' (5.8 props 1–2), 'Documented · Empowered' (5.8 props 3–4), 'Monitored (rate tracked)' (5.8 prop 5). No scope-creep nodes."
+    },
+    {
+      "code": "looks_good",
+      "where": "bypass arc",
+      "detail": "Dashed arrow aiscoring -.-> final labeled 'override absent / theater' correctly models the missing-override path from section 5.3. Solid arrow through hitlchk labeled 'healthy path' models the intended flow. Both arcs together make the contrast legible."
+    },
+    {
+      "code": "looks_good",
+      "where": "color tiers",
+      "detail": "app:::start (blue #a5d8ff), checks/aiscoring:::auto (purple #d0bfff), hitlchk:::hitl (yellow #fff3bf stroke-width:3), p12/p34/p5:::act (blue #a5d8ff), final:::done (green #b2f2bb). All tiers correctly assigned."
+    },
+    {
+      "code": "subtitle_illegible",
+      "where": "all nodes (12px subtitle spans)",
+      "detail": "Soft note only: 12px italic subtitles are borderline at LMS reader width. Non-blocking — 12px is at the recommended floor from SKILL.md. No revision required."
+    },
+    {
+      "code": "looks_good",
+      "where": "PNG render",
+      "detail": "mmdc render not executed in this environment (no mmdc on PATH, no package.json). Source pre-flight passes all checks. PNG render should be executed by the orchestrator or CI step using: mmdc -i <mmd-path> -o <png-path> -w 1400 -b transparent"
+    }
+  ],
+  "stats": {
+    "nodes": 8,
+    "edges": 6,
+    "layout": "flowchart LR (side-by-side panels)",
+    "labels": [
+      "Application submitted",
+      "Completeness + eligibility checks",
+      "AI personal qualities scoring",
+      "Human override checkpoint",
+      "Final ranking and offer",
+      "Defined · Sampled",
+      "Documented · Empowered",
+      "Monitored (rate tracked)"
+    ],
+    "subgraphs": ["MAIN (Admissions Pipeline)", "SIDE (Functioning Override Point)"],
+    "png_path": "content/m4-human-cognition-and-ai-oversight/week-10/1-case-studies/10-1-case-study-ai-in-college-admissions-where-was-the-human-over/artifacts/diagram.png",
+    "png_dims": "not rendered",
+    "preflight": {
+      "mermaid_parse": "source review pass (mmdc not available for exit-code check)",
+      "node_count": "pass (8, within 3–8)",
+      "label_discipline": "pass (all bold labels ≤ 4 words)",
+      "concept_fidelity": "pass (all labels match corpus 5.2/5.3/5.8; on-headline)",
+      "jargon_labels": "pass (no bare unexplained acronyms)",
+      "title_discipline": "pass (governing question in title: field, no ghost node)",
+      "single_path": "n/a (intent explicitly calls for healthy-path vs bypass-path contrast)"
+    }
+  }
+}

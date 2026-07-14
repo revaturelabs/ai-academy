@@ -1,0 +1,205 @@
+{
+  "topic_id": "6.7",
+  "stage": "topic_artifacts_approved",
+  "gates": {
+    "resources_captured": true,
+    "corpus_generated": true,
+    "corpus_critic_passed": true,
+    "corpus_human_approved": true,
+    "reading_generated": true,
+    "reading_critic_passed": true,
+    "quiz_generated": true,
+    "quiz_critic_passed": true,
+    "diagram_generated": true,
+    "diagram_critic_passed": true,
+    "module_drift_passed": true,
+    "course_drift_passed": true,
+    "topic_artifacts_human_approved": true,
+    "week_human_approved": true,
+    "module_passed": true
+  },
+  "history": [
+    {
+      "at": "2026-06-19T07:13:55Z",
+      "op": "set",
+      "gate": "resources_captured",
+      "value": true
+    },
+    {
+      "at": "2026-06-19T07:13:55Z",
+      "op": "stage",
+      "to": "awaiting_corpus"
+    },
+    {
+      "at": "2026-06-19T07:13:55Z",
+      "op": "log",
+      "msg": "Captured 3 resources (source=web_search, primary: lena-voita.github.io/nlp_course/word_embeddings.html)"
+    },
+    {
+      "at": "2026-06-19T07:19:02Z",
+      "op": "set",
+      "gate": "corpus_generated",
+      "value": true
+    },
+    {
+      "at": "2026-06-19T07:19:02Z",
+      "op": "stage",
+      "to": "awaiting_corpus_critic"
+    },
+    {
+      "at": "2026-06-19T07:19:02Z",
+      "op": "log",
+      "msg": "Corpus drafted: 2050w, atomic profile, requires_diagram=true"
+    },
+    {
+      "at": "2026-06-19T07:21:19Z",
+      "op": "set",
+      "gate": "corpus_critic_passed",
+      "value": false
+    },
+    {
+      "at": "2026-06-19T07:21:19Z",
+      "op": "log",
+      "msg": "Critic FAIL cycle 1: scope_creep §5.4 — direction-offset sentence teaches 6.8 content"
+    },
+    {
+      "at": "2026-06-19T07:23:25Z",
+      "op": "set",
+      "gate": "corpus_critic_passed",
+      "value": true
+    },
+    {
+      "at": "2026-06-19T07:23:25Z",
+      "op": "stage",
+      "to": "awaiting_corpus_human_review"
+    },
+    {
+      "at": "2026-06-19T07:23:26Z",
+      "op": "log",
+      "msg": "Corpus critic PASS cycle 2"
+    },
+    {
+      "at": "2026-06-19T07:26:22Z",
+      "op": "set",
+      "gate": "corpus_human_approved",
+      "value": true
+    },
+    {
+      "at": "2026-06-19T07:26:22Z",
+      "op": "stage",
+      "to": "corpus_approved"
+    },
+    {
+      "at": "2026-06-19T07:28:48Z",
+      "op": "set",
+      "gate": "diagram_generated",
+      "value": true
+    },
+    {
+      "at": "2026-06-19T07:28:48Z",
+      "op": "set",
+      "gate": "diagram_critic_passed",
+      "value": true
+    },
+    {
+      "at": "2026-06-19T07:28:48Z",
+      "op": "stage",
+      "to": "awaiting_diagram_critic"
+    },
+    {
+      "at": "2026-06-19T07:30:52Z",
+      "op": "set",
+      "gate": "reading_generated",
+      "value": true
+    },
+    {
+      "at": "2026-06-19T07:30:52Z",
+      "op": "stage",
+      "to": "awaiting_reading_critic"
+    },
+    {
+      "at": "2026-06-19T07:35:19Z",
+      "op": "set",
+      "gate": "quiz_generated",
+      "value": true
+    },
+    {
+      "at": "2026-06-19T07:35:19Z",
+      "op": "stage",
+      "to": "awaiting_quiz_critic"
+    },
+    {
+      "at": "2026-06-19T07:37:58Z",
+      "op": "set",
+      "gate": "reading_critic_passed",
+      "value": false
+    },
+    {
+      "at": "2026-06-19T07:37:58Z",
+      "op": "log",
+      "msg": "Reading critic FAIL cycle 1: length ~1090w over 900w target — trim Key Concepts"
+    },
+    {
+      "at": "2026-06-19T07:43:35Z",
+      "op": "set",
+      "gate": "reading_critic_passed",
+      "value": true
+    },
+    {
+      "at": "2026-06-19T07:45:43Z",
+      "op": "set",
+      "gate": "quiz_critic_passed",
+      "value": true
+    },
+    {
+      "at": "2026-06-19T07:45:44Z",
+      "op": "stage",
+      "to": "awaiting_topic_artifacts_review"
+    },
+    {
+      "at": "2026-06-19T07:46:37Z",
+      "op": "set",
+      "gate": "topic_artifacts_human_approved",
+      "value": true
+    },
+    {
+      "at": "2026-06-19T07:46:37Z",
+      "op": "stage",
+      "to": "topic_artifacts_approved"
+    },
+    {
+      "at": "2026-06-19T07:46:37Z",
+      "op": "log",
+      "msg": "HITL #3 approved — all critics pass, depth standard, 856w reading"
+    },
+    {
+      "at": "2026-06-19T12:21:05Z",
+      "op": "set",
+      "gate": "module_drift_passed",
+      "value": true
+    },
+    {
+      "at": "2026-06-19T12:31:06Z",
+      "op": "set",
+      "gate": "week_human_approved",
+      "value": true
+    },
+    {
+      "at": "2026-06-19T12:31:06Z",
+      "op": "set",
+      "gate": "module_passed",
+      "value": true
+    },
+    {
+      "at": "2026-06-23T00:00:00Z",
+      "op": "set",
+      "gate": "course_drift_passed",
+      "value": true
+    },
+    {
+      "at": "2026-06-23T00:00:00Z",
+      "op": "log",
+      "msg": "course-drift-critic cycle 2 PASS — M3 W6/W7/W8 all checks pass; W6 warn -23.3%, W7 ok -13.3%, W8 warn -23.3%; no hard fails"
+    }
+  ]
+}

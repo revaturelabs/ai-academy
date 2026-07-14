@@ -1,0 +1,30 @@
+{
+  "topic_id": "9.8",
+  "captured_at": "2026-06-13T00:00:00Z",
+  "captured_by": "vishnu.vardhan@revature.com",
+  "resources_source": "web_search",
+  "web_search_query": "verify AI output without AI independent human verification judgment framework",
+  "resources": [
+    {
+      "type": "url",
+      "value": "https://www.clio.com/resources/ai-for-lawyers/verify-legal-ai-output/",
+      "role": "primary",
+      "source": "web_search",
+      "notes": "Professional legal verification framework — quality control checklist for AI output; directly addresses Q2 \"can I verify this?\" in a high-stakes domain."
+    },
+    {
+      "type": "url",
+      "value": "https://verifywise.ai/lexicon/ai-output-validation",
+      "role": "supporting",
+      "source": "web_search",
+      "notes": "Practical catalog of AI output validation methods and checklists — domain-agnostic verification techniques."
+    },
+    {
+      "type": "url",
+      "value": "https://libguides.csun.edu/c.php?g=1377855&p=11076059",
+      "role": "supporting",
+      "source": "web_search",
+      "notes": "CSUN university library guide on evaluating AI-generated output — canonical academic framing for Q2 verification thinking."
+    }
+  ]
+}

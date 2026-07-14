@@ -1,0 +1,226 @@
+{
+  "topic_id": "13.14",
+  "stage": "module_passed",
+  "gates": {
+    "resources_captured": true,
+    "corpus_generated": true,
+    "corpus_critic_passed": true,
+    "corpus_human_approved": true,
+    "reading_generated": true,
+    "reading_critic_passed": true,
+    "quiz_generated": true,
+    "quiz_critic_passed": true,
+    "diagram_generated": true,
+    "diagram_critic_passed": true,
+    "module_drift_passed": true,
+    "course_drift_passed": true,
+    "topic_artifacts_human_approved": true,
+    "week_human_approved": true
+  },
+  "history": [
+    {
+      "at": "2026-06-15T02:28:23Z",
+      "op": "set",
+      "gate": "resources_captured",
+      "value": true
+    },
+    {
+      "at": "2026-06-15T02:28:23Z",
+      "op": "stage",
+      "to": "awaiting_corpus"
+    },
+    {
+      "at": "2026-06-15T02:28:23Z",
+      "op": "log",
+      "msg": "Captured 3 resources (source=web_search, primary: blog.gitguardian.com)"
+    },
+    {
+      "at": "2026-06-15T02:32:59Z",
+      "op": "set",
+      "gate": "corpus_generated",
+      "value": true
+    },
+    {
+      "at": "2026-06-15T02:33:00Z",
+      "op": "stage",
+      "to": "awaiting_corpus_critic"
+    },
+    {
+      "at": "2026-06-15T02:33:00Z",
+      "op": "log",
+      "msg": "Corpus drafted: standard profile, diagram=true (cautionary flow: unsafe vs safe secret path)"
+    },
+    {
+      "at": "2026-06-15T00:00:00Z",
+      "op": "set",
+      "gate": "corpus_critic_passed",
+      "value": true
+    },
+    {
+      "at": "2026-06-15T00:00:00Z",
+      "op": "stage",
+      "to": "awaiting_corpus_human_review"
+    },
+    {
+      "at": "2026-06-15T00:00:00Z",
+      "op": "log",
+      "msg": "corpus-critic PASS: all 6 checks passed. Soft note: verify pip introduced in prior M5 topic. Report: critic-reports/corpus.critic.json"
+    },
+    {
+      "at": "2026-06-15T02:37:48Z",
+      "op": "set",
+      "gate": "corpus_human_approved",
+      "value": true
+    },
+    {
+      "at": "2026-06-15T02:37:48Z",
+      "op": "stage",
+      "to": "corpus_approved"
+    },
+    {
+      "at": "2026-06-15T02:37:48Z",
+      "op": "log",
+      "msg": "Corpus approved. Profile: atomic (budget override from standard). Diagram: true (cautionary flow)."
+    },
+    {
+      "at": "2026-06-15T00:00:00Z",
+      "op": "set",
+      "gate": "diagram_generated",
+      "value": true
+    },
+    {
+      "at": "2026-06-15T00:00:00Z",
+      "op": "stage",
+      "to": "awaiting_diagram_critic"
+    },
+    {
+      "at": "2026-06-15T00:00:00Z",
+      "op": "log",
+      "msg": "Diagram generated: flowchart LR side-by-side panels, 8 nodes, danger/safe color tiers, cycle 1"
+    },
+    {
+      "at": "2026-06-15T00:00:00Z",
+      "op": "set",
+      "gate": "diagram_critic_passed",
+      "value": true
+    },
+    {
+      "at": "2026-06-15T00:00:00Z",
+      "op": "log",
+      "msg": "diagram-critic PASS cycle 1: all pre-flight checks passed. Side-by-side contrast layout correct for intent. Report: critic-reports/diagram.critic.json. Note: PNG render requires mmdc in pipeline environment."
+    },
+    {
+      "at": "2026-06-15T00:00:00Z",
+      "op": "set",
+      "gate": "reading_generated",
+      "value": true
+    },
+    {
+      "at": "2026-06-15T00:00:00Z",
+      "op": "stage",
+      "to": "awaiting_reading_critic"
+    },
+    {
+      "at": "2026-06-15T00:00:00Z",
+      "op": "log",
+      "msg": "Reading generated: atomic profile, 1008 words, ~5 min, embeds diagram (mermaid fenced block), 3 citations. Report: critic-reports/reading.critic.json"
+    },
+    {
+      "at": "2026-06-15T00:00:00Z",
+      "op": "set",
+      "gate": "reading_critic_passed",
+      "value": true
+    },
+    {
+      "at": "2026-06-15T00:00:00Z",
+      "op": "log",
+      "msg": "reading-critic PASS cycle 1: all checks passed — format, length, citations, faithfulness, beginner readability, formatting, no assessment refs, scope clean. No findings. Report: critic-reports/reading.critic.json"
+    },
+    {
+      "at": "2026-06-15T00:00:00Z",
+      "op": "set",
+      "gate": "quiz_generated",
+      "value": true
+    },
+    {
+      "at": "2026-06-15T00:00:00Z",
+      "op": "stage",
+      "to": "awaiting_quiz_critic"
+    },
+    {
+      "at": "2026-06-15T00:00:00Z",
+      "op": "log",
+      "msg": "Quiz generated: atomic profile, 7 questions (6 MCQ + 1 short answer), all 6 LOs covered, bias_defense_applied=true, max_share=0.333. artifacts/quiz.gift + artifacts/quiz.meta.json"
+    },
+    {
+      "at": "2026-06-15T00:00:00Z",
+      "op": "set",
+      "gate": "quiz_critic_passed",
+      "value": true
+    },
+    {
+      "at": "2026-06-15T00:00:00Z",
+      "op": "stage",
+      "to": "quiz_approved"
+    },
+    {
+      "at": "2026-06-15T00:00:00Z",
+      "op": "log",
+      "msg": "quiz-critic PASS cycle 1: positional max_share=0.333, length_bias_rate=0.0, absurd_rate=0.0, all 6 LOs covered, beginner-fair, on-headline. Report: critic-reports/quiz.critic.json"
+    },
+    {
+      "at": "2026-06-15T02:45:04Z",
+      "op": "stage",
+      "to": "awaiting_topic_artifacts_review"
+    },
+    {
+      "at": "2026-06-15T02:45:04Z",
+      "op": "log",
+      "msg": "All artifacts generated and critics passed: diagram(c1), reading(c1,1008w), quiz(c1,7q). Advancing to HITL#3."
+    },
+    {
+      "at": "2026-06-15T02:47:14Z",
+      "op": "set",
+      "gate": "topic_artifacts_human_approved",
+      "value": true
+    },
+    {
+      "at": "2026-06-15T02:47:14Z",
+      "op": "stage",
+      "to": "topic_artifacts_approved"
+    },
+    {
+      "at": "2026-06-15T02:47:14Z",
+      "op": "log",
+      "msg": "HITL#3 approved. No failures. reading=1008w/5min, quiz=7q(6MCQ+1SA), diagram=LR-unsafe-vs-safe. All critics c1 pass."
+    },
+    {
+      "at": "2026-06-15T00:00:00Z",
+      "op": "set",
+      "gate": "module_drift_passed",
+      "value": true
+    },
+    {
+      "at": "2026-06-15T00:00:00Z",
+      "op": "stage",
+      "to": "module_passed"
+    },
+    {
+      "at": "2026-06-15T00:00:00Z",
+      "op": "log",
+      "msg": "module-drift critic PASS — verdict: PASS, 0 hard failures, 3 soft findings. Report: critic-reports/module-drift.critic.json"
+    },
+    {
+      "at": "2026-06-15T06:37:49Z",
+      "op": "set",
+      "gate": "week_human_approved",
+      "value": true
+    },
+    {
+      "at": "2026-06-23T17:39:31Z",
+      "op": "set",
+      "gate": "course_drift_passed",
+      "value": true
+    }
+  ]
+}

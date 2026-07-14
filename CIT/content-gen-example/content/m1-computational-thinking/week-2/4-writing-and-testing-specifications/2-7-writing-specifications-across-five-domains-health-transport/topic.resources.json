@@ -1,0 +1,30 @@
+{
+  "topic_id": "2.7",
+  "captured_at": "2026-06-17T00:00:00Z",
+  "captured_by": "vishnu.vardhan@revature.com",
+  "resources_source": "web_search",
+  "web_search_query": "how to write clear AI prompt specifications beginner examples real-world tasks",
+  "resources": [
+    {
+      "type": "url",
+      "value": "https://mitsloanedtech.mit.edu/ai/basics/effective-prompts/",
+      "role": "primary",
+      "source": "web_search",
+      "notes": "MIT Sloan canonical guide — task, context, format, constraints framework for writing effective AI prompts"
+    },
+    {
+      "type": "url",
+      "value": "https://www.huit.harvard.edu/news/ai-prompts",
+      "role": "supporting",
+      "source": "web_search",
+      "notes": "Harvard HUIT beginner-oriented institutional guide with real-world task examples"
+    },
+    {
+      "type": "url",
+      "value": "https://www.atlassian.com/blog/artificial-intelligence/ultimate-guide-writing-ai-prompts",
+      "role": "supporting",
+      "source": "web_search",
+      "notes": "Atlassian practitioner guide — domain-spanning examples covering scheduling, documentation, and applied tasks"
+    }
+  ]
+}

@@ -1,0 +1,49 @@
+$CATEGORY: CIT/M3/week-8/8.3-precision-vs-recall-trade-off
+
+::q1:: A model flags 10 emails as spam, and 8 of those 10 really are spam. Which number is this describing? {
+~The recall, because it counts how many of the real spam emails the model managed to catch.#No — recall is about the real cases caught, not about how trustworthy the flags are. This describes precision.
+~The threshold, because it is the cut-off the model used before deciding to flag each email.#No — the threshold is the confidence cut-off, not a score for how many flags were correct.
+=The precision, because it measures how many of the model's "yes" flags turned out to be correct.#Correct — precision asks: of the cases the model flagged, what fraction were actually right (here, 8 of 10).
+~The accuracy, because it shows the share of all emails the model handled without any mistake at all.#No — this only looks at the flagged emails, not every email, so it is precision rather than overall accuracy.
+#### Tests the meaning of precision — of the cases flagged, how many were right (corpus §5, "Precision").
+}
+
+::q2:: In a set of photos there are 20 real cat photos, and the model correctly flags 8 of them. Which statement correctly describes its recall? {
+=Its recall is 8 out of 20, because recall is the share of the real cases that the model actually caught.#Correct — recall asks: of every case that should have been flagged, how many did the model find (here, 8 of the 20 real cats).
+~Its recall is 8 out of 8, because recall only looks at the photos the model chose to flag as cats.#No — that describes precision's denominator; recall divides by all the real cases, not just the flagged ones.
+~Its recall is 20 out of 20, because every real cat photo counts toward the recall whether caught or not.#No — only the caught cases count in the numerator; missing 12 real cats lowers recall.
+~Its recall is 12 out of 20, because recall counts the real cases that the model ended up missing.#No — recall counts the cases caught, not the ones missed; the 12 misses are what drag it down.
+#### Tests the meaning of recall — of the real cases, how many were caught (corpus §5, "Recall").
+}
+
+::q3:: A team slides their model's threshold down so it flags cases more eagerly, even when only a little confident. What usually happens to precision and recall? {
+~Both precision and recall go up together, because flagging more cases can only ever help both scores.#No — you rarely raise both at once; flagging more eagerly trades one against the other.
+~Both precision and recall go down together, because any change to the threshold harms every score at once.#No — recall actually improves when you flag more eagerly; the two move in opposite directions, not the same one.
+~Precision goes up and recall goes down, because eager flagging makes each individual flag more trustworthy.#No — this is backwards; eager flagging makes flags less trustworthy, lowering precision.
+=Recall goes up and precision goes down, because eager flagging catches more real cases but also more junk.#Correct — sliding the threshold down catches more real cases (recall up) while flagging more false alarms (precision down).
+#### Tests the trade-off mechanism — moving the threshold raises one metric and lowers the other (corpus §5, "The trade-off").
+}
+
+::q4:: When deciding whether to favor precision or recall for a task, what should the choice be based on? {
+~Recall should always win, because catching every real case is more important than avoiding false alarms.#No — there is no metric that always wins; the right choice depends on the situation, not a fixed rule.
+=Which mistake is more expensive in that situation — a miss or a false alarm — should decide which metric you favor.#Correct — the choice depends on the cost of each error, not on which metric is "better" in the abstract.
+~Precision should always win, because a model you cannot trust when it flags something is useless to anyone.#No — precision is not always the priority; in many tasks a missed case is far worse than a false alarm.
+~Whichever metric has the higher score already should win, because you build on the strength the model has.#No — you do not pick based on the current score; you pick based on which error costs more.
+#### Tests the cost-of-error decision — favor the metric that guards against the more expensive mistake (corpus §5, "Deciding which one wins").
+}
+
+::q5:: For a cancer screening test, which choice best matches how it should be tuned, and why? {
+~Favor precision, because a follow-up test after a false alarm is the most expensive part of screening.#No — a follow-up after a false alarm is stressful but recoverable; the dangerous error is missing a real tumor.
+~Favor precision, because a screening test that flags too many people will quickly lose the public's trust.#No — trust matters, but the catastrophic, irreversible cost here is a missed tumor, which calls for recall.
+~Favor recall, because catching every real case keeps the number of follow-up tests as low as possible.#No — favoring recall actually raises the number of false alarms and follow-ups; the real reason is that a miss can cost a life.
+=Favor recall, because missing a real tumor can cost a life while a false alarm only leads to more testing.#Correct — recall wins when a miss is far worse than a false alarm; screening tunes high-recall and sorts out false alarms later.
+#### Tests a recall-wins example — recall matters more when a miss is catastrophic and a false alarm is recoverable (corpus §5, "When recall matters more").
+}
+
+::q6:: A learner says, "A model with 100% recall must be an excellent model." Why is this claim wrong? {
+=You can get 100% recall by flagging every single case, which catches everything but produces huge numbers of false alarms.#Correct — perfect recall is trivial to fake by flagging everything; on its own it says nothing about how trustworthy the flags are.
+~100% recall is impossible to reach in practice, so any model claiming it must have measured the score incorrectly.#No — 100% recall is easy to reach (flag everything); the problem is that it is not meaningful on its own.
+~100% recall means the model never flags anything at all, so it cannot actually be doing any useful work.#No — flagging nothing gives zero recall, not perfect recall; this confuses the two ends of the scale.
+~A high recall always forces a high precision too, so the two scores cannot be read apart from each other.#No — recall and precision move oppositely; a high recall often comes with low precision, so they must be read together.
+#### Tests the "higher is always better" misconception — perfect recall alone is worthless without precision (corpus §8, "Best Practices" / §5 trade-off).
+}

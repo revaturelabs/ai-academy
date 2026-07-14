@@ -1,0 +1,46 @@
+{
+  "type": "module-drift-critic-report",
+  "module_slug": "4-planning-your-capstone-evaluation",
+  "module_title": "Planning Your Capstone Evaluation",
+  "course_code": "M3",
+  "week_num": 8,
+  "topics_examined": ["8.7"],
+  "single_topic_module": true,
+  "note": "Single-topic capstone synthesis module. 8.7 deliberately reuses (does not re-teach) the metrics introduced in 8.3-8.6; reuse is the correct mode for a capstone planning topic. Checks 1, 2, 3, 5 and 6 evaluated against the cross-topic context of 8.3-8.6 (and 8.1/8.2 as illustrative). Check 4 (duplicated Core Concepts) is trivially N/A with one topic.",
+  "passed": true,
+  "verdict": "PASS",
+  "checks": {
+    "terminology_consistency": {
+      "passed": true,
+      "findings": [],
+      "detail": "8.7 reuses precision, recall, false positive (= false alarm), false negative (= miss), F1, accuracy, the imbalanced-class caveat, calibration, confidence, and overconfidence. Each matches its canonical definition: precision/recall and the false-alarm/miss framing align with 8.3; F1 as 'balances precision and recall, stays low if either is bad' aligns with 8.4; accuracy and the 99%-spam imbalance warning align with 8.5; calibration ('does stated confidence match actual accuracy') and confidence/overconfident align with 8.6. Metrics are attributed inline with '(from 8.X)'. No synonym drift."
+    },
+    "prerequisites_respected": {
+      "passed": true,
+      "findings": [],
+      "detail": "8.7 prerequisites = [8.3, 8.4, 8.5, 8.6], all earlier in the week-8 sequence. cross_refs to 8.1/8.2 are used only as an example of a similarity-based task being evaluated, not as a load-bearing prerequisite. No concept is used before it was introduced; advanced ideas (confidence intervals, train/validation/test split, Z-scores, K-fold cross-validation) are explicitly fenced as 'later, more advanced' rather than assumed."
+    },
+    "learning_arc": {
+      "passed": true,
+      "findings": [],
+      "detail": "Single-topic capstone module. The LOs cover the module's stated outcome (Planning Your Capstone Evaluation): the three decisions (choose metric by cost-of-error, size a trustworthy held-out/representative test set, set a pass/fail threshold in advance tied to stakes) plus assembling them into a one-page plan with a one-sentence 'because' per decision. Complete arc; no uncovered facet."
+    },
+    "no_duplicated_core_concepts": {
+      "passed": true,
+      "findings": [],
+      "detail": "N/A for a single-topic module (no topic pairs to compare). Note: 8.7's overlap with 8.3-8.6 is deliberate synthesis/reuse for a capstone, not intra-module duplication."
+    },
+    "lab_activity_alignment": {
+      "passed": true,
+      "findings": [],
+      "detail": "Module lab seed 'Domain evaluation plan: write a one-page evaluation design — metric, test set size, pass threshold' is directly supported by 8.7's section 9 Hands-On Exercise and the reading's Worked Example/Putting-the-three-together one-pager template (three 'because' sentences). Strong alignment."
+    },
+    "audience_level_consistency": {
+      "passed": true,
+      "findings": [],
+      "detail": "Beginner register held. No upward drift: no term used cold that isn't either introduced in an earlier week-8 topic or defined in 8.7. Advanced statistical machinery is consistently deferred ('belongs to a later, more advanced treatment') instead of assumed. Depth ('deep' profile) is appropriate for a capstone synthesis topic and does not spike inappropriately above neighbors given its role."
+    }
+  },
+  "findings": [],
+  "at": "2026-06-22T08:15:00Z"
+}

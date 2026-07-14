@@ -1,0 +1,107 @@
+{
+  "passed": true,
+  "attempt": 2,
+  "checks": {
+    "positional_bias": {
+      "passed": true,
+      "distribution": { "0": 1, "1": 1, "2": 2, "3": 1 },
+      "positions": [2, 0, 3, 1, 2],
+      "max_share": 0.40,
+      "meta_gift_desync": false,
+      "note": "Position 2 appears twice (2/5=0.40). Threshold is strictly >0.40; 0.40 does not exceed it. Pass."
+    },
+    "length_bias": {
+      "passed": true,
+      "longest_correct_rate": 0.20,
+      "baseline": 0.25,
+      "threshold": 0.40,
+      "per_question": [
+        {
+          "id": "q1",
+          "correct_len": 105,
+          "mean_all_stems": 95.75,
+          "threshold_120pct": 114.90,
+          "longest_correct": false
+        },
+        {
+          "id": "q2",
+          "correct_len": 92,
+          "mean_all_stems": 102.00,
+          "threshold_120pct": 122.40,
+          "longest_correct": false
+        },
+        {
+          "id": "q3",
+          "correct_len": 138,
+          "mean_all_stems": 106.00,
+          "threshold_120pct": 127.20,
+          "longest_correct": true,
+          "note": "Correct stem (138 chars) exceeds 1.20x mean (127.2). One failure out of 5 = rate 0.20, within threshold."
+        },
+        {
+          "id": "q4",
+          "correct_len": 106,
+          "mean_all_stems": 97.00,
+          "threshold_120pct": 116.40,
+          "longest_correct": false
+        },
+        {
+          "id": "q5",
+          "correct_len": 115,
+          "mean_all_stems": 109.75,
+          "threshold_120pct": 131.70,
+          "longest_correct": false
+        }
+      ],
+      "note": "Fix from attempt 1 (shorten all 5 correct-answer stems) reduced rate from 1.00 to 0.20. Now within threshold."
+    },
+    "distractor_plausibility": {
+      "passed": true,
+      "absurd_rate": 0.00,
+      "total_distractors": 15,
+      "absurd_count": 0,
+      "weakest_questions": [],
+      "note": "All distractors score 3 or 4 (plausible beginner misconceptions or strong distractors). No score=1 items."
+    },
+    "objective_coverage": {
+      "passed": true,
+      "uncovered_objectives": [],
+      "orphan_questions": [],
+      "coverage_map": [
+        {
+          "lo": "Define what a Large Language Model (LLM) is in plain language.",
+          "questions": ["q1"]
+        },
+        {
+          "lo": "Describe the sequence of milestones — from early neural-network language work through word embeddings, sequence models, and the Transformer — that made LLMs possible.",
+          "questions": ["q2"]
+        },
+        {
+          "lo": "Explain what makes LLMs different from the earlier AI approaches covered in Topic 3.1.",
+          "questions": ["q3"]
+        },
+        {
+          "lo": "Identify at least three capabilities that LLMs demonstrate and two limitations they carry today.",
+          "questions": ["q4"]
+        },
+        {
+          "lo": "Recognise the names of landmark LLMs (BERT, GPT series) and place them on a rough timeline.",
+          "questions": ["q5"]
+        }
+      ]
+    },
+    "beginner_fair_on_scope": {
+      "passed": true,
+      "jargon_in_stem": [],
+      "out_of_scope_questions": [],
+      "unfair_distractors": [],
+      "note": "All stems use plain language. All acronyms (LLM, BERT, GPT, RNN, LSTM) are defined in the corpus. All questions and distractors are answerable from this topic alone without outside knowledge."
+    }
+  },
+  "meta_gift_desync": false,
+  "auto_correction_applied": {
+    "shuffle_round_2": false
+  },
+  "verdict": "Pass — all five checks clean on attempt 2. Positional bias: max_share=0.40 (boundary, not strictly >0.40, pass). Length bias: rate=0.20 after shortening correct-answer stems (q3 still marginally long but overall rate within 0.40 threshold). Distractor plausibility: 0 absurd distractors out of 15. Objective coverage: all 5 LOs covered 1-for-1, no orphans. Beginner-fair and fully on-headline scope.",
+  "at": "2026-06-17T00:00:00Z"
+}

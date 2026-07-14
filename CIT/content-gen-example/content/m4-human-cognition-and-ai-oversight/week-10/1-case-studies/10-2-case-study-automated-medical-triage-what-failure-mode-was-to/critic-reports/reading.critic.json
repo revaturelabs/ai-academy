@@ -1,0 +1,143 @@
+{
+  "critic": "reading-critic",
+  "topic_id": "10.2",
+  "run_at": "2026-06-12T00:00:00Z",
+  "profile": "standard",
+  "target_word_range": [1200, 1600],
+  "target_minute_range": [6, 8],
+  "passed": true,
+  "verdict": "PASS — all checks clear. Word count 1556 sits at the top of the standard window (1200–1600). Both WPM estimates land within the 6–8 minute target. All three citations used correctly. No forward references. All 10 sampled assertions supported by corpus. Beginner readability and formatting standards met. No assessment references. No scope creep.",
+  "checks": {
+    "format": {
+      "passed": true,
+      "frontmatter_present": false,
+      "meta_sidecar_missing": false,
+      "section_template_violation": false,
+      "sections_found": ["Overview", "Key Concepts", "Worked Example", "In Practice", "Key Takeaways", "References"],
+      "notes": "No frontmatter — file opens directly with the H1 title. Sidecar reading.meta.json parses cleanly with all required fields: word_count, estimated_read_minutes, citations, sections. Six required sections present in correct order: Overview / Key Concepts / Worked Example / In Practice / Key Takeaways / References."
+    },
+    "length": {
+      "passed": true,
+      "word_count_meta": 1556,
+      "word_range": [1200, 1600],
+      "within_range": true,
+      "estimated_minutes_at_200wpm": 7.78,
+      "estimated_minutes_at_230wpm": 6.76,
+      "minute_range": [6, 8],
+      "minutes_within_range": true,
+      "notes": "1556 words is within the 1200–1600 standard ceiling (at the top of the window). At 200 WPM (artifact-mix.json canonical rate) = 7.78 min; at 230 WPM (meta.json note) = 6.76 min. Both estimates fall within the 6–8 minute target. No trimming required."
+    },
+    "citations": {
+      "passed": true,
+      "primary_resource_cited": true,
+      "primary_url": "https://www.jmir.org/2026/1/e88396",
+      "citation_1_uses": ["Overview para 2", "Key Concepts — systematic under-scoring (elderly/night-shift)", "Key Concepts — governance gaps table", "Key Concepts — automation bias", "Worked Example Q2/Q3", "In Practice — deterioration alert", "Key Takeaways"],
+      "citation_2_uses": ["Key Concepts — governance gaps table (alert thresholds)", "Key Concepts — override accountability", "Worked Example Q3", "In Practice — deterioration alert", "Key Takeaways"],
+      "citation_3_uses": ["Key Concepts — non-standard symptom language", "Key Concepts — governance gaps table (evaluation design)", "Worked Example step 6", "In Practice — sub-group audit", "Key Takeaways"],
+      "bibliography_entries": [1, 2, 3],
+      "inline_markers": [1, 2, 3],
+      "orphan_markers": [],
+      "orphan_bibliography_entries": [],
+      "notes": "All three resources cited inline with appropriate distribution. Bibliography entries match inline markers exactly. No orphan markers or entries. Primary resource [1] carries the most citations as expected."
+    },
+    "no_forward_references": {
+      "passed": true,
+      "findings": [],
+      "notes": "All cross-topic references are backward-pointing: 'topic 9.5' (automation bias), 'topics 9.7–9.9' (Judgment Framework Q1/Q2/Q3). The reference to 10.1 concepts (pipeline, override as theater, calibration) is within allowed prior-topic concepts as declared in the corpus prerequisites. No mentions of future topics or weeks. No forward references detected."
+    },
+    "faithfulness": {
+      "passed": true,
+      "assertions_sampled": 10,
+      "unsupported_count": 0,
+      "unsupported_threshold": 2,
+      "samples_checked": [
+        {
+          "assertion": "The AI does not diagnose — it decides how long the patient can safely wait; getting it wrong by one priority level can mean a one-hour wait versus a six-hour wait",
+          "corpus_location": "§5.1",
+          "supported": true
+        },
+        {
+          "assertion": "Failure mode is 'systematic under-scoring of specific patient groups' — the model assigns priority scores that are too low, signalling 'this patient can wait' when clinical signs indicate otherwise",
+          "corpus_location": "§5.2",
+          "supported": true
+        },
+        {
+          "assertion": "Three under-scored groups: elderly patients (training data association), patients using non-standard symptom language ('my heart feels heavy'), night-shift patients (incomplete records)",
+          "corpus_location": "§5.2 — all three groups with same examples",
+          "supported": true
+        },
+        {
+          "assertion": "Four governance gaps: evaluation design (aggregate-only accuracy hides sub-group failure), checkpoint frequency (no post-deployment audits), override accountability (unlogged, no feedback), alert thresholds (no deterioration linkage)",
+          "corpus_location": "§5.4 Gaps 1–4",
+          "supported": true
+        },
+        {
+          "assertion": "Automation bias turned each individual acceptance of a wrong score into a silent validation — nurse, doctor, manager vignettes each represent automation bias; small acceptances accumulated into long run of harm",
+          "corpus_location": "§5.5 — same three role vignettes and accumulation framing",
+          "supported": true
+        },
+        {
+          "assertion": "Q1: wrong triage score delays care; for cardiac/sepsis/stroke a delay of 1–3 hours can cause permanent harm or death — irreversible cost",
+          "corpus_location": "§5.6 Q1",
+          "supported": true
+        },
+        {
+          "assertion": "Q2: error invisible before harm — patient waits, deteriorates; error only becomes visible after the harm",
+          "corpus_location": "§5.6 Q2",
+          "supported": true
+        },
+        {
+          "assertion": "Q3: override was theater — unlogged, no feedback to model, high-volume time pressure; AI held the final say",
+          "corpus_location": "§5.6 Q3 and §5.4 Gap 3",
+          "supported": true
+        },
+        {
+          "assertion": "Sub-group performance audit: monthly, by patient category (age bands, shift, primary language, symptom entry method); data existed in every deployment that failed; audit would have revealed elderly gap within 1–3 months",
+          "corpus_location": "§5.7 Control 1",
+          "supported": true
+        },
+        {
+          "assertion": "Deterioration-contradiction alert: software rule — non-urgent patient deteriorates within 120 minutes → flags original AI score; both controls require named accountable owner for pipeline as a whole",
+          "corpus_location": "§5.7 Control 2 and closing paragraph",
+          "supported": true
+        }
+      ],
+      "notes": "All 10 sampled assertions traced to corpus verbatim or close paraphrase. The reading appropriately omits the three-forms-of-'tolerated' taxonomy (corpus §5.3) — an editorial compression, not a faithfulness violation. No new assertions introduced."
+    },
+    "beginner_readability": {
+      "passed": true,
+      "undefined_terms": [],
+      "undefined_terms_count": 0,
+      "undefined_terms_threshold": 2,
+      "jargon_dump": false,
+      "abstract_first": false,
+      "academic_register": false,
+      "hedging_phrases_found": [],
+      "notes": "All non-everyday terms defined at first use with bold-term pattern: 'Triage' (French etymology + plain meaning), 'failure mode' (specific repeatable pattern + 'repeatable is load-bearing' gloss), 'systematic under-scoring' (the failure mode named and explained), 'governance gap' (missing rule/role/process). 'Automation bias' and 'Judgment Framework' correctly back-referenced to prior topics without re-defining. 'Pipeline' used without a back-reference tag but its meaning is contextually clear from the preceding step-description — borderline, not a defect given prior-topic designation. The reading opens with a concrete ED Friday-night scenario before any abstraction; all concept sections lead with example or concrete framing before formal definitions. No hedging language ('generally considered', 'many experts believe') detected. Average sentence length well within 25-word target. Active voice and 'you' address used consistently."
+    },
+    "formatting": {
+      "passed": true,
+      "wall_of_text": false,
+      "unlisted_sequence": false,
+      "no_inline_examples": false,
+      "definitions_bold_format": true,
+      "notes": "No paragraph exceeds 5 sentences. The AI pipeline is rendered as a 4-step numbered list. The Worked Example 6 steps are a numbered list. Governance gaps rendered as a comparison table (Gap / What was missing / Fix). Automation bias section uses 3 bulleted vignettes (nurse, doctor, manager) instead of a prose wall. Two concrete inline examples present in body sections (one-hour vs six-hour wait framing; 87% hides 70% example in governance gap). Bold-definition format used for all introduced terms. Diagram embedded with descriptive caption."
+    },
+    "no_assessment_references": {
+      "passed": true,
+      "findings": [],
+      "notes": "No assessment IDs (A3), due weeks, or grade weights appear in the learner-facing reading prose. The reading does not reference any assessment deadline or weight."
+    },
+    "scope": {
+      "passed": true,
+      "scope_creep": false,
+      "findings": [],
+      "notes": "Content stays tightly on the headline topic: what the triage AI does, what failure mode was tolerated, why it persisted, and what governance controls would have caught it. The one-sentence regulatory mention ('proposed regulatory standards for clinical AI [1]') is a mention-and-defer, not taught. The post-market surveillance analogy is used to explain the deterioration-contradiction alert — it is pedagogically grounded in the topic, not scope-expanding. No advanced ML, LLM internals, or future-topic material introduced. Corpus §7.2 forward references (if any) are excluded from the reading."
+    }
+  },
+  "soft_findings_count": 0,
+  "hard_fail": false,
+  "escalation": "none",
+  "gold_example_comparison": "No gold example exists for topic 10.2 case studies. Two gold examples exist (2-1 specification reading and 3-4 LLM reading) but neither matches this topic's profile. Evaluated against written standards in artifact-mix.json and reading-critic SKILL.md. Reading meets all stated bars.",
+  "summary": "All 8 check groups pass. Word count 1556 is within the 1200–1600 standard ceiling. All three citations used correctly with full bibliography match. No forward references. All 10 sampled faithfulness assertions supported by corpus. Beginner readability checks pass with no undefined terms, no jargon dumps, and concrete-first ordering throughout. Formatting is well-structured with numbered lists, a comparison table, and bulleted vignettes. No assessment references. No scope creep. Reading is cleared for HITL #3."
+}

@@ -1,0 +1,63 @@
+{
+  "topic_id": "1.7",
+  "generated_at": "2026-06-21T00:00:00Z",
+  "format": "gift",
+  "question_count": 6,
+  "profile": "standard",
+  "include_short_answer": false,
+  "$bias_defense_applied": true,
+  "$shuffle_seed": "topic_id='1.7' revise-cycle-2 => positions [1,3,0,2,0,3] satisfy max_share=0.333<=0.40 and all-4-positions-used constraints",
+  "correct_position_distribution": {"0": 2, "1": 1, "2": 1, "3": 2},
+  "correct_positions_by_question": [1, 3, 0, 2, 0, 3],
+  "max_share": 0.333,
+  "constraint_check": "max_share=0.333 <= 0.40 PASS; all 4 positions used PASS",
+  "length_bias_fix": {
+    "cycle": 2,
+    "fixed_questions": ["q1", "q5", "q6"],
+    "method": "expanded distractors with added phrase/clause/example to bring lengths within ±20% of correct answer length; correct answers unchanged"
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "type": "mcq",
+      "objective_ref": "Explain in your own words what pseudocode is and why it exists.",
+      "objective_number": 1,
+      "correct_position": 1
+    },
+    {
+      "id": "q2",
+      "type": "mcq",
+      "objective_ref": "Write basic pseudocode that describes a simple, real-world process using plain English.",
+      "objective_number": 2,
+      "correct_position": 3
+    },
+    {
+      "id": "q3",
+      "type": "mcq",
+      "objective_ref": "Identify the core building blocks of pseudocode: sequence, decision (IF/OTHERWISE), and repetition (REPEAT/WHILE).",
+      "objective_number": 3,
+      "correct_position": 0
+    },
+    {
+      "id": "q4",
+      "type": "mcq",
+      "objective_ref": "Translate a short block of pseudocode into the equivalent steps you would follow manually.",
+      "objective_number": 4,
+      "correct_position": 2
+    },
+    {
+      "id": "q5",
+      "type": "mcq",
+      "objective_ref": "Recognise the difference between pseudocode and actual programming code.",
+      "objective_number": 5,
+      "correct_position": 0
+    },
+    {
+      "id": "q6",
+      "type": "mcq",
+      "objective_ref": "Describe at least two reasons why writing pseudocode before coding helps you think more clearly.",
+      "objective_number": 6,
+      "correct_position": 3
+    }
+  ]
+}

@@ -1,0 +1,25 @@
+{
+  "topic_id": "2.2",
+  "captured_at": "2026-06-16",
+  "source": "web_search",
+  "resources": [
+    {
+      "type": "primary",
+      "title": "Few Examples of Bad Prompts and How to Improve Them",
+      "url": "https://saicharankummetha.medium.com/few-examples-of-bad-prompts-and-how-to-improve-them-e717a1087735",
+      "notes": "Concrete before/after examples of vague vs. specific specifications — directly maps to 'make it better vs rewrite'"
+    },
+    {
+      "type": "primary",
+      "title": "5 Common Prompt Engineering Mistakes Beginners Make",
+      "url": "https://www.mygreatlearning.com/blog/prompt-engineering-beginners-mistakes/",
+      "notes": "Covers vagueness, missing constraints, lack of output format — diagnostic checklist for bad specs"
+    },
+    {
+      "type": "primary",
+      "title": "Prompt Engineering Best Practices",
+      "url": "https://www.digitalocean.com/resources/articles/prompt-engineering-best-practices",
+      "notes": "DigitalOcean practical guide — incremental improvement vs full rewrite decision framework"
+    }
+  ]
+}

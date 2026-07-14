@@ -1,0 +1,53 @@
+{
+  "topic_id": "13.12",
+  "generated_at": "2026-06-15T00:00:00Z",
+  "format": "gift",
+  "question_count": 6,
+  "$bias_defense_applied": true,
+  "$shuffle_seed": "topic_id '13.12' interpreted as integer seed 1312; positions assigned round-robin across [2,0,3,1,0,3] to ensure no position exceeds 2/6 (0.333) and all four positions (0,1,2,3) are used at least once",
+  "correct_position_distribution": [2, 0, 3, 1, 0, 3],
+  "questions": [
+    {
+      "id": "q1",
+      "type": "mcq",
+      "objective_ref": "Explain the difference between a local repository and a remote repository on GitHub.",
+      "stem_preview": "Which statement best explains the difference between a local repository and a remote repository on GitHub?",
+      "correct_position": 2
+    },
+    {
+      "id": "q2",
+      "type": "mcq",
+      "objective_ref": "Use git clone to copy a remote repository onto your own computer.",
+      "stem_preview": "You want to download a GitHub repository so you can work on it on your laptop. Which command should you run?",
+      "correct_position": 0
+    },
+    {
+      "id": "q3",
+      "type": "mcq",
+      "objective_ref": "Use git add to stage one or more changed files for inclusion in a commit.",
+      "stem_preview": "You have edited two files in your project. You want the next commit to include both files. What must you do before running git commit?",
+      "correct_position": 3
+    },
+    {
+      "id": "q4",
+      "type": "mcq",
+      "objective_ref": "Use git commit to record a named snapshot of staged changes in your local repository.",
+      "stem_preview": "After running git add on your changed files, what does git commit -m 'Add project README' do?",
+      "correct_position": 1
+    },
+    {
+      "id": "q5",
+      "type": "mcq",
+      "objective_ref": "Use git push to upload your local commits to GitHub.",
+      "stem_preview": "You have committed your changes locally. What is the correct command to make those commits visible on GitHub?",
+      "correct_position": 0
+    },
+    {
+      "id": "q6",
+      "type": "mcq",
+      "objective_ref": "Trace the path a file change travels — from editor, through staging, through committing, to GitHub — in the correct order.",
+      "stem_preview": "A student edits analysis.py, then runs four commands in some order. Which order correctly traces the file change from the editor all the way to GitHub?",
+      "correct_position": 3
+    }
+  ]
+}

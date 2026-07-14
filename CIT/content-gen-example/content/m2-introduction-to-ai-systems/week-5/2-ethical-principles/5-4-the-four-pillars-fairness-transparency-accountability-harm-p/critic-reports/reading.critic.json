@@ -1,0 +1,87 @@
+{
+  "artifact": "reading",
+  "topic_id": "5.4",
+  "passed": true,
+  "checks": {
+    "format_discipline": {
+      "passed": true,
+      "frontmatter_present": false,
+      "meta_sidecar_present": true,
+      "section_template": "ok",
+      "notes": "First line is the # H1 (no YAML). Sidecar parses with word_count, estimated_read_minutes, citations_used, sections. Exactly six ## sections in canonical order: Overview, Key Concepts, Worked Example, In Practice, Key Takeaways, References."
+    },
+    "length_budget": {
+      "passed": true,
+      "word_count_meta": 1870,
+      "target_word_range": [1800, 2200],
+      "estimated_minutes": 10,
+      "target_minute_range": [9, 11],
+      "notes": "In-budget on both word count and reading minutes for the deep profile."
+    },
+    "citations": {
+      "passed": true,
+      "primary_resources": ["[1] arxiv 2109.07906"],
+      "primary_all_cited": true,
+      "citations_used": [1, 2, 3],
+      "fabricated_markers": [],
+      "orphan_bibliography": [],
+      "notes": "Primary [1] cited many times. [1][2][3] all used inline and all three resolve in References. No marker beyond [3]; no orphans either direction."
+    },
+    "faithfulness": {
+      "passed": true,
+      "assertions_sampled": 11,
+      "unsupported": 0,
+      "notes": "Sampled four-pillar definitions, proxy discrimination (ZIP/university), equal-treatment vs equal-outcome, black-box/millions-of-weights, accountability gap + car-crash analogy, 99%/80% face recognition, harm-category table (physical/psych/economic/reputational/societal), 2021 review of 84 docs, three-of-four interdependence, EU/NIST covered-later. All trace to corpus (paraphrased condense). Reading adds no assertion beyond corpus."
+    },
+    "forward_reference": {
+      "passed": true,
+      "notes": "Prior-topic refs (5.1 deep learning, 5.2 hallucination, 5.3 historical bias) are legitimate back-references. EU Ethics Guidelines + NIST AI RMF (line 78) named as bare proper nouns + 'both covered later in the course' pointer, no teaching of risk tiers / four functions — proper mention-and-defer. Red-teaming named-and-deferred to 5.5 (line 68)."
+    },
+    "beginner_readability": {
+      "passed": true,
+      "undefined_terms": [],
+      "jargon_dump": [],
+      "abstract_first": false,
+      "academic_register": false,
+      "notes": "Each pillar + proxy discrimination, black box, accountability gap get bold-term/plain-meaning on first use; XAI spelled out. Concrete-first throughout (hiring manager, car crash, bank-letter framing precede abstractions). No hedging. Sentences plain, paragraphs short."
+    },
+    "formatting": {
+      "passed": true,
+      "wall_of_text": [],
+      "unlisted_sequence": [],
+      "no_inline_examples": false,
+      "notes": "Bulleted pillar definitions, harm-category table, numbered Worked Example, posed-and-answered questions, inline examples beside each concept. Diagram embedded inline in Key Concepts (line 17, ![...](./diagram.png)) with caption. No paragraph exceeds ~4 sentences."
+    },
+    "assessment_reference": {
+      "passed": true,
+      "notes": "No A2 / due-week / weight / grade prose anywhere in learner-facing text."
+    },
+    "scope": {
+      "passed": true,
+      "scope_creep": [],
+      "soft_findings": [
+        {
+          "code": "scope_note",
+          "concept": "red-teaming (deferred to 5.5)",
+          "line": 68,
+          "detail": "Name is introduced via a descriptive appositive ('One technique teams use to probe their own system for failures, red-teaming, is the subject of topic 5.5'). The deferral pointer is present and the technique is NOT taught (no how-to, no development), but the gloss leans toward a defining clause rather than the strict bare-name form. Inherited from the critic-passed corpus (line 135). Soft note for HITL #3, not a hard scope_creep — nothing beyond the headline is taught."
+        },
+        {
+          "code": "scope_note",
+          "concept": "XAI (Explainable AI)",
+          "line": 42,
+          "detail": "Named + acronym-expanded + one-clause gloss ('techniques that approximate the reasoning') + deferral ('which you will study later'). XAI IS listed in 5.4 concepts_introduced in sequence.md, so naming it here is in-scope; the gloss is a single identifying clause and XAI methods are not taught. Soft note only."
+        }
+      ],
+      "notes": "On the headline (four pillars only). No concept beyond the topic title is developed/taught. Escalation NOT triggered: zero hard scope_creep, and checks 5-6 produced zero findings, so the >=3 combined-findings hard-fail path is not met."
+    }
+  },
+  "gold_example": {
+    "matched": true,
+    "path": ".claude/references/gold-examples/reading/3-4-how-llms-work-tokens-training-and-inference.reading.md",
+    "meets_bar": true,
+    "notes": "Matches the deep-profile gold reading on sectioning (fixed six), bold-term/plain-meaning definitions, concrete-first analogies, inline diagram embed, table for the harm-category comparison, and beginner register."
+  },
+  "verdict": "PASS. Format discipline clean (no frontmatter, six canonical sections in order, sidecar valid). Length 1870 words / 10 min, in the deep [1800,2200] / [9,11] budget. Citations: primary [1] cited repeatedly, [1][2][3] all used and resolve, no fabricated or orphan markers. Faithful condense of the corpus (11/11 sampled assertions trace, 0 unsupported, 0 new claims). Beginner readability and scannable formatting both met; diagram embedded inline in Key Concepts. Scope on-headline (four pillars only); EU/NIST/red-teaming properly named-and-deferred. Two SOFT scope notes for HITL #3: the red-teaming gloss (L68) and the XAI gloss (L42) lean toward defining clauses rather than strict bare-name form, but neither teaches the deferred concept and both carry the deferral pointer (and XAI is an in-scope concepts_introduced term) — no hard scope_creep, no escalation. Meets the deep gold-reading bar.",
+  "at": "2026-06-22T00:00:00Z"
+}

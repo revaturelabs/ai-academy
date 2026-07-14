@@ -1,0 +1,49 @@
+$CATEGORY: CIT/M3/week-7/7-7-accuracy-what-proportion-of-outputs-were-correct
+
+::7.7-q1:: In the context of an AI model making predictions, what does the term "accuracy" measure? {
+~The confidence level the model assigns to each of its answers#No — confidence is about probability scores the model outputs, not whether those answers matched the correct label.
+~The speed at which the model produces an answer for each input#No — speed measures computational performance, not whether the model's answers were correct.
+=The proportion of predictions the model got right out of all predictions it made#Yes — accuracy is simply the fraction of total predictions that matched the correct label.
+~The variety of different answer types the model produced across all inputs#No — variety of outputs is unrelated to how many answers were correct.
+#### Tests LO1: defining accuracy in plain English as the proportion of predictions that were correct (corpus §5.2).
+}
+
+::7.7-q2:: A student tests a quiz-grading AI on 20 questions. The AI correctly grades 14 of them. What is the AI's accuracy? {
+=0.70, because 14 correct answers divided by 20 total questions equals 0.70#Yes — accuracy is correct predictions divided by total predictions: 14 ÷ 20 = 0.70.
+~0.30, because 6 incorrect answers divided by 20 total questions equals 0.30#No — this divides the wrong answers by the total, not the correct answers by the total.
+~14.0, because you count the correct answers without dividing by anything#No — a raw count is not a proportion; accuracy must be expressed as a fraction of the total.
+~0.70, because 14 correct answers divided by 6 incorrect answers equals about 2.3, then inverted#No — accuracy divides correct by total predictions, not correct by incorrect.
+#### Tests LO2: applying the accuracy formula (correct predictions ÷ total predictions) to a small labelled dataset (corpus §5.2).
+}
+
+::7.7-q3:: A model that labels every single incoming message as "not spam" achieves 95% accuracy on a test set where 95 out of 100 messages are genuine. What does this result reveal? {
+~The model is highly reliable, since 95% accuracy is well above a typical passing threshold#No — this ignores the fact that the model never detects any spam, making it completely useless for its intended purpose.
+~The model has learned effective patterns for telling spam from genuine messages#No — a model that always outputs the same label cannot have learned to distinguish between categories.
+~The test set was too small to produce a meaningful accuracy estimate for this task#No — test-set size is a separate issue; the core problem here is that one category dominates the data.
+=The accuracy score is misleading, because the categories are imbalanced and the model learned nothing#Yes — when one category vastly outnumbers the other, even a model that ignores the input entirely can score very high.
+#### Tests LO3: explaining why a high accuracy score does not always mean a model is useful (corpus §5.5).
+}
+
+::7.7-q4:: For which of the following AI tasks is accuracy a meaningful metric? {
+~Predicting the exact selling price of a house next month based on current market data#No — predicting a continuous number is a regression task, not a classification task; accuracy as defined here does not apply.
+=Deciding whether a customer review should be labelled positive, neutral, or negative#Yes — this is a classification task where each input is assigned to one of a fixed set of categories, making accuracy a relevant measure.
+~Generating a short paragraph summarising a longer article in plain English#No — summarisation produces free-text output, not a category label, so accuracy as a proportion of correct labels is not applicable.
+~Ranking a list of search results from most to least relevant for a user's query#No — ranking tasks produce an ordered list rather than a category label per input, so this accuracy formula does not directly apply.
+#### Tests LO4: identifying classification tasks as the context where accuracy is a meaningful metric (corpus §5.1).
+}
+
+::7.7-q5:: After computing accuracy on a test set and finding it useful, a data team discovers their categories are heavily imbalanced. What is the most sensible next step? {
+~Collect more training data until both categories have identical counts, then re-run the model#No — rebalancing training data is one option, but the immediate measurement gap calls for additional metrics, not more data collection.
+~Report the accuracy result without additional metrics, since it already reflects overall correctness#No — with imbalanced categories, accuracy alone can be actively misleading and should be supplemented by other measures.
+=Supplement accuracy with other metrics such as precision and recall that address imbalanced data#Yes — precision and recall (covered in topics 7.8 and 7.9) are designed to give meaningful measurement when categories are unequal.
+~Discard the accuracy result entirely, since it is never valid on imbalanced datasets#No — accuracy is not worthless on imbalanced data; it simply needs to be interpreted alongside additional metrics, not thrown away.
+#### Tests LO5: recognising that precision and recall exist to fill gaps accuracy leaves behind (corpus §5.7).
+}
+
+::7.7-q6:: Before trusting a reported accuracy score, what is the most important question to ask first? {
+=What accuracy would a model score by always predicting the most common category, without examining inputs at all?#Yes — this "dummy baseline" check reveals whether the reported accuracy reflects genuine learning or just reflects the distribution of categories.
+~How many decimal places was the accuracy rounded to before it was reported in the evaluation?#No — rounding precision affects readability, but does not determine whether the accuracy score is meaningfully above a naive baseline.
+~Did the team use the same software library to train the model and to measure its accuracy on the test set?#No — software consistency is an engineering concern; it does not affect whether the accuracy score is informative for this task.
+~Was the accuracy measured before or after the model's final training run was completed?#No — timing of measurement matters for detecting overfitting, but the first sanity check should be comparing against the dummy baseline.
+#### Tests LO3: applying the dummy-baseline insight to evaluate whether a high accuracy score is informative (corpus §5.5, §6).
+}

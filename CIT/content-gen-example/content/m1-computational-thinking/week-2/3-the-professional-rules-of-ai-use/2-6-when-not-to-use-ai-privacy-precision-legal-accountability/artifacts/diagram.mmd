@@ -1,0 +1,48 @@
+---
+title: "Three-Question AI Use Check"
+config:
+  theme: base
+  themeVariables:
+    primaryColor: "#a5d8ff"
+    primaryBorderColor: "#4a9eed"
+    lineColor: "#555"
+  flowchart:
+    htmlLabels: true
+    curve: basis
+    nodeSpacing: 40
+    rankSpacing: 55
+---
+flowchart TB
+    START["<b>Any task</b><br/><span style='font-size:12px;color:#1d4ed8'>Start here before opening an AI tool</span>"]
+
+    G1{"<b>Privacy check</b><br/><span style='font-size:12px;color:#374151'>Sensitive or confidential data?</span>"}
+
+    G2{"<b>Precision check</b><br/><span style='font-size:12px;color:#374151'>Wrong answer causes serious harm?</span>"}
+
+    G3{"<b>Legal accountability check</b><br/><span style='font-size:12px;color:#374151'>Licensed human must be responsible?</span>"}
+
+    C1["<b>Use approved platform only</b><br/><span style='font-size:12px;color:#92400e'>Or stop — do not use consumer AI tool</span>"]
+
+    C2["<b>Human must verify output</b><br/><span style='font-size:12px;color:#92400e'>AI drafts only — expert checks before use</span>"]
+
+    C3["<b>Human must sign off</b><br/><span style='font-size:12px;color:#92400e'>Licensed professional owns final decision</span>"]
+
+    DONE["<b>AI use is appropriate</b><br/><span style='font-size:12px;color:#166534'>Proceed with a clear specification</span>"]
+
+    START --> G1
+    G1 -- "<b>YES</b>" --> C1
+    G1 -- "<b>NO</b>" --> G2
+    G2 -- "<b>YES</b>" --> C2
+    G2 -- "<b>NO</b>" --> G3
+    G3 -- "<b>YES</b>" --> C3
+    G3 -- "<b>NO</b>" --> DONE
+
+    classDef start fill:#a5d8ff,stroke:#4a9eed,stroke-width:2px,color:#1e3a5f
+    classDef act fill:#a5d8ff,stroke:#4a9eed,stroke-width:2px,color:#1e3a5f
+    classDef hitl fill:#fff3bf,stroke:#f59e0b,stroke-width:3px,color:#78350f
+    classDef done fill:#b2f2bb,stroke:#22c55e,stroke-width:2px,color:#14532d
+
+    class START start
+    class G1,G2,G3 act
+    class C1,C2,C3 hitl
+    class DONE done

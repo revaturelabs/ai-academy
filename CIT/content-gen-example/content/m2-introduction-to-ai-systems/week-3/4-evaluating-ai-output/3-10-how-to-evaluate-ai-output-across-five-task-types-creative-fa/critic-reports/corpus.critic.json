@@ -1,0 +1,47 @@
+{
+  "topic_id": "3.10",
+  "critic": "corpus-critic",
+  "at": "2026-06-17T00:00:00Z",
+  "passed": true,
+  "checks": {
+    "required_sections": {
+      "passed": true,
+      "findings": []
+    },
+    "citation_density": {
+      "passed": true,
+      "findings": [
+        "resources_source=web_search: strict mode applied. Primary resource [1] (walturn.com) cited in §4, §5.1, §5.2, §5.3, §5.4, §5.5, §5.6, §5.7, §6, §7, §8, §10 — requirement satisfied. §5/§6/§7 factual assertions carry citation markers on substantially all standalone claims; estimated density >80%, well above 60% threshold."
+      ]
+    },
+    "sequence_drift": {
+      "passed": true,
+      "findings": [
+        "BLEU/ROUGE referenced in §5.1 in a single named-and-deferred sentence ('a separate, more technical topic') — within the allowed ≤1 sentence pointer pattern. No forward references detected. All technical terms used are drawn from concepts_introduced by topics 3.1–3.9 or are new to 3.10."
+      ]
+    },
+    "length_sanity": {
+      "passed": true,
+      "profile": "standard",
+      "word_count_estimate": 3700,
+      "valid_range": "3000–4400",
+      "findings": [
+        "Estimated ~3700 words across all 11 sections. Within standard profile range (3000–4400)."
+      ]
+    },
+    "topic_scope": {
+      "passed": true,
+      "findings": [
+        "Corpus is tightly bounded to the headline: evaluation criteria and workflow across five task types. BLEU/ROUGE are named and deferred in one sentence. No automated ML training metrics are taught in depth. No model development or fine-tuning material present."
+      ]
+    },
+    "beginner_readability": {
+      "passed": true,
+      "findings": [
+        "Terms defined on first use: 'rubric' appears in §4 with an inline plain-language gloss ('a structured checklist of criteria you apply when assessing a piece of work') and is formally defined in §5.1 — no cold usage. 'BLEU or ROUGE' are named but explicitly deferred; readers are told they are out of scope, no definition needed. 'Attributional hallucination', 'provenance', 'calibration' each carry a topic back-reference (e.g. 'topic 3.9'), which acts as a definition pointer for a beginner. No jargon dumps (no single paragraph introduces ≥3 new terms cold). Register is plain and accessible; sentence lengths are moderate."
+      ],
+      "soft_findings": []
+    }
+  },
+  "verdict": "PASS — all six checks pass. Required sections §3, §4, §5, §10 are present and above word-count thresholds. Primary resource [1] (walturn.com) is cited throughout; citation density in §5/§6/§7 exceeds 60%. No sequence-drift violations found; BLEU/ROUGE is correctly named-and-deferred in one sentence as a cross_ref per sequence.index.json. Word count (~3700) sits within the standard profile range (3000–4400). Corpus stays on-headline: teaching human evaluation rubrics across five task types, not automated metrics or model development. Beginner readability is good: key terms are defined on first use or pointer-referenced to prior topics."
+}

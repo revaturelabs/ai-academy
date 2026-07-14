@@ -1,0 +1,49 @@
+{
+  "topic_id": "4.8",
+  "generated_at": "2026-06-17T00:00:00Z",
+  "format": "gift",
+  "question_count": 6,
+  "mcq_count": 5,
+  "short_answer_count": 1,
+  "$bias_defense_applied": true,
+  "$shuffle_seed": "a9f3c1",
+  "correct_position_distribution": [2, 0, 1, 3, 2],
+  "questions": [
+    {
+      "id": "q1",
+      "type": "mcq",
+      "objective_ref": "Explain the difference between an evidence-based recommendation and a personal opinion",
+      "correct_position": 2
+    },
+    {
+      "id": "q2",
+      "type": "mcq",
+      "objective_ref": "Identify the three parts of a well-formed recommendation: findings summary, evidence anchor, and recommendation statement",
+      "correct_position": 0
+    },
+    {
+      "id": "q3",
+      "type": "mcq",
+      "objective_ref": "Translate rubric scores and test observations into specific, citable evidence statements",
+      "correct_position": 1
+    },
+    {
+      "id": "q4",
+      "type": "mcq",
+      "objective_ref": "Write a short recommendation that a sceptical audience can follow and verify",
+      "correct_position": 3
+    },
+    {
+      "id": "q5",
+      "type": "mcq",
+      "objective_ref": "Recognise and correct three common patterns that weaken a recommendation: vague claims, unsupported assertions, and ignored trade-offs",
+      "correct_position": 2
+    },
+    {
+      "id": "q6",
+      "type": "short_answer",
+      "objective_ref": "Acknowledge limitations of a rubric-based evaluation honestly and briefly",
+      "correct_position": null
+    }
+  ]
+}

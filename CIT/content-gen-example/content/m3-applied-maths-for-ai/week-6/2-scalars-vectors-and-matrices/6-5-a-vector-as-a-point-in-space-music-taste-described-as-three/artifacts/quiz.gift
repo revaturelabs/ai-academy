@@ -1,0 +1,41 @@
+$CATEGORY: CIT/M3/week-6/6.5-a-vector-as-a-point-in-space-music-taste-described-as-three
+
+::q1:: A coordinate in a feature vector is best described as which of the following?{
+~A list of all feature values packed into a single number#No — a coordinate is one number for one axis, not a summary of all features.
+=A number marking how far along one axis the point sits#Correct — each coordinate measures the distance along exactly one axis from the origin.
+~A label that names the axis without giving any numerical measurement#No — a coordinate is a measured value; the label belongs to the axis itself, not the coordinate.
+~A pair of numbers that together describe one named feature#No — one coordinate covers one axis only; a pair together describe a 2D location, not one feature.
+#### Tests the definition of a coordinate as a scalar position along a single axis (corpus §5.1).
+}
+
+::q2:: A song is represented by [energy=0.8, mood=0.3]. On a 2D grid where x=energy and y=mood, which point correctly plots this vector?{
+~(0.3, 0.8) — mood value on the x-axis, energy value on the y-axis#No — swapping the values reverses the axes; position order must follow the vector definition.
+~(0.8, 0.8) — the same value is placed on both the x and y axes#No — each axis reads its own coordinate; energy is 0.8 but mood is 0.3, not 0.8.
+=(0.8, 0.3) — energy=0.8 on x-axis, mood=0.3 on y-axis#Correct — the first coordinate maps to x and the second to y, placing the point at (0.8, 0.3).
+~(0.0, 0.0) — the origin, because every vector is measured from the zero point#No — the origin is the reference start, not the destination; you move away from it by the coordinate values.
+#### Tests reading a 2D feature vector as a plotted point on labelled axes (corpus §5.2).
+}
+
+::q3:: A music platform stores your taste as [0.8, 0.6, 0.3] for (energy, tempo, mood). What is this vector being used as?{
+=A location in taste-space — each coordinate pins one dimension#Correct — the three numbers are coordinates that together fix one unique point in 3D taste-space.
+~A ranking that scores energy highest and mood lowest among your preferences#No — coordinates give positions on axes, not importance rankings; 0.3 mood is a location, not a low priority.
+~A list of three separate measurements that carry no geometric meaning#No — the geometric view is the whole point: together the numbers define a location, not just a list.
+~A weight the platform assigns to each song in your listening history#No — this vector describes the listener's taste location, not a set of per-song importance values.
+#### Tests interpreting a feature vector as a point in taste-space (corpus §5.3).
+}
+
+::q4:: Alice's taste is [0.8, 0.6, 0.3] and Bob's is [0.75, 0.65, 0.28]. Carol's is [0.1, 0.9, 0.95]. What does the geometric view tell you without any formula?{
+~Carol and Alice share a neighbourhood because all their coordinate values fall between 0 and 1#No — sharing the same scale does not make vectors close; what matters is how near the actual coordinate values are to each other.
+~Bob and Carol have similar taste because both of their vectors have exactly three dimensions#No — having the same dimension count means they share the same space, not that their points are close.
+~Alice and Carol are most similar because Alice has the highest energy coordinate in the group#No — similarity requires all coordinates to be close together, not just one high value to match.
+=Alice and Bob are most similar — their coordinates are close, so their points are nearby#Correct — small differences across all three coordinates mean the two points are near each other in taste-space.
+#### Tests the idea that closeness between points signals similarity between the things they represent (corpus §5.4).
+}
+
+::q5:: A music streaming platform uses each listener's taste vector as a point in space to find others with similar taste. Which term correctly describes the region of taste-space the platform searches?{
+~The coordinate space — the full set of axes defining all possible listener positions#No — coordinate space names the complete grid structure, not a local region around one specific listener's point.
+=The neighbourhood — the set of nearby points corresponding to listeners with similar taste#Correct — a neighbourhood is the cluster of points close to a given point; here those points are listeners with similar musical preferences.
+~The n-dimensional space — the total count of feature axes used to describe each listener#No — n-dimensional space describes the overall number of axes in the grid, not a local region around one user's point.
+~The origin — the neutral reference point where all axes intersect before measurements are made#No — the origin is the fixed zero-point shared by all axes, not a region of nearby listeners.
+#### Tests the vocabulary term neighbourhood and its application in a real recommendation system (corpus §5.5, §5.6).
+}

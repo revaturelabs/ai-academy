@@ -1,0 +1,178 @@
+{
+  "topic_id": "12.10",
+  "stage": "module_passed",
+  "gates": {
+    "resources_captured": true,
+    "corpus_generated": true,
+    "corpus_critic_passed": true,
+    "corpus_human_approved": true,
+    "reading_generated": true,
+    "reading_critic_passed": true,
+    "quiz_generated": true,
+    "quiz_critic_passed": true,
+    "diagram_generated": true,
+    "diagram_critic_passed": true,
+    "module_drift_passed": true,
+    "course_drift_passed": true,
+    "topic_artifacts_human_approved": true,
+    "week_human_approved": true
+  },
+  "history": [
+    {
+      "at": "2026-06-14T19:17:38Z",
+      "op": "set",
+      "gate": "resources_captured",
+      "value": true
+    },
+    {
+      "at": "2026-06-14T19:17:38Z",
+      "op": "stage",
+      "to": "awaiting_corpus"
+    },
+    {
+      "at": "2026-06-14T19:17:38Z",
+      "op": "log",
+      "msg": "Captured 3 resources (source=web_search): primary=docs.anthropic.com/en/api/messages"
+    },
+    {
+      "at": "2026-06-15T05:50:07Z",
+      "op": "set",
+      "gate": "corpus_generated",
+      "value": true
+    },
+    {
+      "at": "2026-06-15T05:50:07Z",
+      "op": "stage",
+      "to": "awaiting_corpus_critic"
+    },
+    {
+      "at": "2026-06-15T05:53:04Z",
+      "op": "set",
+      "gate": "corpus_critic_passed",
+      "value": false
+    },
+    {
+      "at": "2026-06-15T05:53:04Z",
+      "op": "log",
+      "msg": "Critic failed: length ~2350w (need 5000 deep), max_tokens scope creep in s5.1+5.6"
+    },
+    {
+      "at": "2026-06-15T06:00:07Z",
+      "op": "set",
+      "gate": "corpus_critic_passed",
+      "value": true
+    },
+    {
+      "at": "2026-06-15T06:00:07Z",
+      "op": "stage",
+      "to": "awaiting_corpus_human_review"
+    },
+    {
+      "at": "2026-06-15T06:02:49Z",
+      "op": "set",
+      "gate": "corpus_human_approved",
+      "value": true
+    },
+    {
+      "at": "2026-06-15T06:02:49Z",
+      "op": "stage",
+      "to": "corpus_approved"
+    },
+    {
+      "at": "2026-06-15T06:05:12Z",
+      "op": "set",
+      "gate": "diagram_generated",
+      "value": true
+    },
+    {
+      "at": "2026-06-15T06:08:20Z",
+      "op": "set",
+      "gate": "diagram_critic_passed",
+      "value": true
+    },
+    {
+      "at": "2026-06-15T06:08:20Z",
+      "op": "stage",
+      "to": "awaiting_diagram_critic"
+    },
+    {
+      "at": "2026-06-15T06:10:52Z",
+      "op": "set",
+      "gate": "reading_generated",
+      "value": true
+    },
+    {
+      "at": "2026-06-15T06:10:52Z",
+      "op": "set",
+      "gate": "quiz_generated",
+      "value": true
+    },
+    {
+      "at": "2026-06-15T06:10:53Z",
+      "op": "stage",
+      "to": "awaiting_reading_critic"
+    },
+    {
+      "at": "2026-06-15T06:13:34Z",
+      "op": "set",
+      "gate": "reading_critic_passed",
+      "value": true
+    },
+    {
+      "at": "2026-06-15T06:13:34Z",
+      "op": "set",
+      "gate": "quiz_critic_passed",
+      "value": false
+    },
+    {
+      "at": "2026-06-15T06:13:34Z",
+      "op": "log",
+      "msg": "Quiz critic failed: length bias 66.7% (4/6 correct answers >120% mean length) + sidecar position sync error"
+    },
+    {
+      "at": "2026-06-15T06:19:19Z",
+      "op": "set",
+      "gate": "quiz_critic_passed",
+      "value": true
+    },
+    {
+      "at": "2026-06-15T06:19:19Z",
+      "op": "stage",
+      "to": "awaiting_topic_artifacts_review"
+    },
+    {
+      "at": "2026-06-15T06:23:49Z",
+      "op": "set",
+      "gate": "topic_artifacts_human_approved",
+      "value": true
+    },
+    {
+      "at": "2026-06-15T06:23:49Z",
+      "op": "stage",
+      "to": "topic_artifacts_approved"
+    },
+    {
+      "at": "2026-06-15T12:00:00Z",
+      "op": "set",
+      "gate": "module_drift_passed",
+      "value": true
+    },
+    {
+      "at": "2026-06-15T12:00:00Z",
+      "op": "stage",
+      "to": "module_passed"
+    },
+    {
+      "at": "2026-06-15T12:06:18Z",
+      "op": "set",
+      "gate": "week_human_approved",
+      "value": true
+    },
+    {
+      "at": "2026-06-23T17:39:28Z",
+      "op": "set",
+      "gate": "course_drift_passed",
+      "value": true
+    }
+  ]
+}

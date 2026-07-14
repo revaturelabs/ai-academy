@@ -1,0 +1,166 @@
+{
+  "topic_id": "9.8",
+  "stage": "topic_artifacts_approved",
+  "gates": {
+    "resources_captured": true,
+    "corpus_generated": true,
+    "corpus_critic_passed": true,
+    "corpus_human_approved": true,
+    "reading_generated": true,
+    "reading_critic_passed": true,
+    "quiz_generated": true,
+    "quiz_critic_passed": true,
+    "diagram_generated": true,
+    "diagram_critic_passed": true,
+    "module_drift_passed": true,
+    "course_drift_passed": false,
+    "topic_artifacts_human_approved": true,
+    "week_human_approved": true
+  },
+  "history": [
+    {
+      "at": "2026-06-13T08:15:49Z",
+      "op": "set",
+      "gate": "resources_captured",
+      "value": true
+    },
+    {
+      "at": "2026-06-13T08:15:49Z",
+      "op": "stage",
+      "to": "awaiting_corpus"
+    },
+    {
+      "at": "2026-06-13T08:15:49Z",
+      "op": "log",
+      "msg": "Captured 3 resources (source=web_search): clio.com legal verification checklist (primary), verifywise.ai validation methods (supporting), CSUN LibGuides evaluating AI output (supporting)"
+    },
+    {
+      "at": "2026-06-13T08:19:59Z",
+      "op": "set",
+      "gate": "corpus_generated",
+      "value": true
+    },
+    {
+      "at": "2026-06-13T08:19:59Z",
+      "op": "stage",
+      "to": "awaiting_corpus_critic"
+    },
+    {
+      "at": "2026-06-13T08:23:12Z",
+      "op": "set",
+      "gate": "corpus_critic_passed",
+      "value": true
+    },
+    {
+      "at": "2026-06-13T08:23:13Z",
+      "op": "stage",
+      "to": "awaiting_corpus_human_review"
+    },
+    {
+      "at": "2026-06-13T08:27:36Z",
+      "op": "set",
+      "gate": "corpus_human_approved",
+      "value": true
+    },
+    {
+      "at": "2026-06-13T08:27:36Z",
+      "op": "stage",
+      "to": "corpus_approved"
+    },
+    {
+      "at": "2026-06-13T08:31:05Z",
+      "op": "set",
+      "gate": "diagram_generated",
+      "value": true
+    },
+    {
+      "at": "2026-06-13T08:31:06Z",
+      "op": "set",
+      "gate": "diagram_critic_passed",
+      "value": true
+    },
+    {
+      "at": "2026-06-13T08:31:06Z",
+      "op": "stage",
+      "to": "awaiting_diagram_critic"
+    },
+    {
+      "at": "2026-06-13T08:33:18Z",
+      "op": "set",
+      "gate": "reading_generated",
+      "value": true
+    },
+    {
+      "at": "2026-06-13T08:33:19Z",
+      "op": "stage",
+      "to": "awaiting_reading_critic"
+    },
+    {
+      "at": "2026-06-13T08:33:19Z",
+      "op": "set",
+      "gate": "quiz_generated",
+      "value": true
+    },
+    {
+      "at": "2026-06-13T08:33:19Z",
+      "op": "stage",
+      "to": "awaiting_quiz_critic"
+    },
+    {
+      "at": "2026-06-13T08:35:27Z",
+      "op": "set",
+      "gate": "reading_critic_passed",
+      "value": true
+    },
+    {
+      "at": "2026-06-13T08:35:27Z",
+      "op": "set",
+      "gate": "quiz_critic_passed",
+      "value": false
+    },
+    {
+      "at": "2026-06-13T08:35:27Z",
+      "op": "log",
+      "msg": "Quiz critic failed: LO4 (easy/hard/impossible verification tiers) uncovered — adding q6"
+    },
+    {
+      "at": "2026-06-13T08:40:52Z",
+      "op": "set",
+      "gate": "quiz_critic_passed",
+      "value": true
+    },
+    {
+      "at": "2026-06-13T08:40:52Z",
+      "op": "stage",
+      "to": "awaiting_topic_artifacts_review"
+    },
+    {
+      "at": "2026-06-13T08:41:41Z",
+      "op": "set",
+      "gate": "topic_artifacts_human_approved",
+      "value": true
+    },
+    {
+      "at": "2026-06-13T08:41:42Z",
+      "op": "stage",
+      "to": "topic_artifacts_approved"
+    },
+    {
+      "at": "2026-06-13T08:41:42Z",
+      "op": "log",
+      "msg": "HITL #3 approved — reading 1389w/7min, quiz 6MCQ (cycle 2: added q6 for LO4), diagram 2x2 matrix"
+    },
+    {
+      "at": "2026-06-13T17:52:40Z",
+      "op": "set",
+      "gate": "module_drift_passed",
+      "value": true
+    },
+    {
+      "at": "2026-06-13T17:56:25Z",
+      "op": "set",
+      "gate": "week_human_approved",
+      "value": true
+    }
+  ]
+}

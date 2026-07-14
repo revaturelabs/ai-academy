@@ -1,0 +1,26 @@
+{
+  "topic_id": "11.5",
+  "topic_title": "If / else — writing decision logic in code",
+  "generated_at": "2026-06-12T01:30:00Z",
+  "word_count": 1316,
+  "reading_minutes": 7,
+  "target_word_range": [1200, 1600],
+  "target_minutes": [6, 8],
+  "in_range": true,
+  "sections": [
+    "Overview",
+    "Key Concepts",
+    "Worked Example",
+    "In Practice",
+    "Key Takeaways",
+    "References"
+  ],
+  "has_frontmatter": false,
+  "diagram_embedded": true,
+  "diagram_path": "artifacts/diagram.png",
+  "citations": {
+    "primary_resources_cited": [1, 2, 3, 4, 5],
+    "all_primary_cited": true
+  },
+  "depth_profile": "standard"
+}

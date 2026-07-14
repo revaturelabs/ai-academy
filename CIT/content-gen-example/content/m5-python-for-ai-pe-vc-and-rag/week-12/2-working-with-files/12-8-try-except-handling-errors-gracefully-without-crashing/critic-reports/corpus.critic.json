@@ -1,0 +1,109 @@
+{
+  "critic": "corpus-critic",
+  "topic_id": "12.8",
+  "topic_title": "try / except — handling errors gracefully without crashing",
+  "at": "2026-06-14T00:00:00Z",
+  "passed": true,
+  "checks": {
+    "required_sections": {
+      "passed": true,
+      "findings": [],
+      "detail": {
+        "section_3_learning_objectives": { "present": true, "word_count_ge_50": true, "items": 6 },
+        "section_4_introduction": { "present": true, "word_count_ge_50": true },
+        "section_5_core_concepts": { "present": true, "word_count_ge_100": true, "subsections": 6 },
+        "section_10_key_takeaways": { "present": true, "word_count_ge_50": true, "items": 5 }
+      }
+    },
+    "citation_density": {
+      "passed": true,
+      "resources_source": "web_search",
+      "findings": [],
+      "detail": {
+        "primary_resource": "[1] https://www.pythontutorial.net/python-basics/python-try-except/",
+        "primary_cited": true,
+        "primary_citation_count_approx": 8,
+        "supporting_resources_cited": { "[2] w3schools": true, "[3] datacamp": true },
+        "sections_5_6_7_density_ge_60_pct": true,
+        "fake_citations_detected": false,
+        "notes": "ZeroDivisionError and PermissionError entries in the §5.1 table lack inline [N] markers; these are 2 of ~22 factual claims across §5/6/7, keeping density well above 60%."
+      }
+    },
+    "sequence_drift": {
+      "passed": true,
+      "findings": [
+        {
+          "severity": "soft",
+          "term": "finally",
+          "location": "§8 Best Practices, final paragraph",
+          "note": "The `finally` clause is explained across 3 sentences (defines it, names its use-case, explains deferral). This slightly exceeds the allowed one-sentence named-and-deferred pointer. No mechanics are taught and the paragraph explicitly labels it an advanced pattern not needed yet. Recommend trimming to a single sentence deferral to stay within the rule."
+        },
+        {
+          "severity": "soft",
+          "term": "except Exception:",
+          "location": "§8 Best Practices, 'Too broad' code block",
+          "note": "The base `Exception` class is not in the new-concepts list nor in prior topics. It appears only as an anti-pattern counter-example inside a 'Bad practice' comment block, not as a taught concept. Risk is low but flagged for awareness."
+        }
+      ],
+      "hard_failures": [],
+      "detail": {
+        "forward_references_hard_failed": false,
+        "raise_keyword_as_statement": "not taught — only used as a verb describing Python's behavior",
+        "custom_exceptions": "not mentioned",
+        "logging_module": "not mentioned",
+        "async_decorators": "not mentioned",
+        "finally_treatment": "named-and-deferred but slightly over the 1-sentence limit"
+      }
+    },
+    "length_sanity": {
+      "passed": true,
+      "findings": [],
+      "detail": {
+        "profile": "standard",
+        "target_range_words": "3000–4400",
+        "estimated_word_count": 2850,
+        "within_30_pct_below_floor": true,
+        "note": "Estimated ~2850 words (prose + inline code). Floor is 3000; 30% tolerance puts the hard-fail threshold at 2100. Corpus clears that threshold. The count is slightly below the ideal lower bound; a builder revision adding ~150–200 words of prose to §6 or §7 would push it cleanly into the 3000–4400 window. Not a hard fail."
+      }
+    },
+    "topic_scope": {
+      "passed": true,
+      "findings": [
+        {
+          "severity": "soft",
+          "concept": "finally clause",
+          "location": "§8 Best Practices",
+          "note": "Three sentences describe `finally` — slightly beyond a one-liner deferral. Not taught operationally; does not constitute scope creep to hard-fail level. Trim to one sentence recommended."
+        }
+      ],
+      "hard_failures": [],
+      "detail": {
+        "else_clause_in_scope": true,
+        "specific_exceptions_in_scope": true,
+        "exception_object_as_e_in_scope": true,
+        "bare_except_anti_pattern_in_scope": true,
+        "file_operations_wrapping_in_scope": true,
+        "api_calls_preview": "named-and-deferred correctly in §7 with explicit forward pointer to 12.12"
+      }
+    },
+    "beginner_readability": {
+      "passed": true,
+      "findings": [],
+      "detail": {
+        "terms_defined_on_first_use": {
+          "exception": "defined §5.1",
+          "raises": "defined §5.1",
+          "runtime": "clarified inline §5.1",
+          "crash": "defined §4",
+          "bare_except": "defined §5.4",
+          "exception_object": "introduced §5.4"
+        },
+        "undefined_terms_count": 0,
+        "jargon_dumps_found": false,
+        "academic_register_issues": false,
+        "plain_language_throughout": true
+      }
+    }
+  },
+  "verdict": "PASS — all six checks pass. Hard failures: none. Soft findings (non-blocking): (1) The `finally` clause is described across 3 sentences in §8 rather than the permitted 1-sentence deferral — trim to a single sentence; (2) `except Exception:` appears in an anti-pattern code block without being in the concepts list — low risk but noted; (3) Estimated word count (~2850) is slightly below the 3000-word standard-profile floor, though well above the 30%-below hard-fail threshold of 2100 — adding ~150–200 words of prose to §6 or §7 would bring it cleanly into range. Corpus is fit to ground downstream artifacts."
+}

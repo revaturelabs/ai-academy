@@ -1,0 +1,30 @@
+{
+  "topic_id": "6.3",
+  "captured_at": "2026-06-18T00:00:00Z",
+  "captured_by": "bhuvaneshwarim@revature.com",
+  "resources_source": "web_search",
+  "web_search_query": "vectors list of numbers representing properties AI machine learning beginner intuition",
+  "resources": [
+    {
+      "type": "url",
+      "value": "https://machinelearningplus.com/linear-algebra/vectors/",
+      "role": "primary",
+      "source": "web_search",
+      "notes": "Canonical ML series — vectors, norms, unit vectors, beginner-friendly"
+    },
+    {
+      "type": "url",
+      "value": "https://apxml.com/courses/linear-algebra-essentials-ml/chapter-1-vectors-in-machine-learning/vectors-data-representations",
+      "role": "supporting",
+      "source": "web_search",
+      "notes": "Frames vectors as data representations — matches topic angle directly"
+    },
+    {
+      "type": "url",
+      "value": "https://towardsdatascience.com/vector-representations-for-machine-learning-5047c50aaeff/",
+      "role": "supporting",
+      "source": "web_search",
+      "notes": "Feature vectors and multi-property representation, well-known publication"
+    }
+  ]
+}

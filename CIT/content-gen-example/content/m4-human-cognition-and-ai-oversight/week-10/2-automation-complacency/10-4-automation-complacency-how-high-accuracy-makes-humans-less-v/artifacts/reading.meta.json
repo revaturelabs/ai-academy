@@ -1,0 +1,17 @@
+{
+  "topic_id": "10.4",
+  "title": "Automation complacency — how high accuracy makes humans less vigilant",
+  "generated_at": "2026-06-12T00:00:00Z",
+  "word_count": 2073,
+  "estimated_minutes": 10,
+  "depth_profile": "deep",
+  "citations": [
+    "sciencedirect.com/science/article/pii/S2949882124000598",
+    "jolt.law.harvard.edu/digest/redefining-the-standard-of-human-oversight-for-ai-negligence",
+    "uxmatters.com/mt/archives/2025/12/ux-research-insights-balancing-ai-automation-and-human-oversight-in-it-operations.php"
+  ],
+  "diagram_embedded": true,
+  "embeds_diagram": true,
+  "citations_used": [1, 2, 3],
+  "sections": ["Overview", "Key Concepts", "Worked Example", "In Practice", "Key Takeaways", "References"]
+}

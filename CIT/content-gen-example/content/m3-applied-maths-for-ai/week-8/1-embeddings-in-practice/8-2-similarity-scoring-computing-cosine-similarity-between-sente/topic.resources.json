@@ -1,0 +1,30 @@
+{
+  "topic_id": "8.2",
+  "captured_at": "2026-06-22T06:19:48Z",
+  "captured_by": "namratas@revature.com",
+  "resources_source": "web_search",
+  "resources": [
+    {
+      "type": "url",
+      "value": "https://milvus.io/ai-quick-reference/what-is-cosine-similarity-and-how-is-it-used-with-sentence-transformer-embeddings-to-measure-sentence-similarity",
+      "role": "primary",
+      "source": "web_search",
+      "notes": "Cosine similarity over sentence embeddings — directional intuition (angle → score), 0–1 range; beginner anchor"
+    },
+    {
+      "type": "url",
+      "value": "https://fastdatascience.com/natural-language-processing/semantic-similarity-with-sentence-embeddings/",
+      "role": "supporting",
+      "source": "web_search",
+      "notes": "Semantic similarity with sentence embeddings, plain-language; sentence-pair framing matches the lab"
+    },
+    {
+      "type": "url",
+      "value": "https://www.tigerdata.com/learn/understanding-cosine-similarity",
+      "role": "supporting",
+      "source": "web_search",
+      "notes": "Worked examples + use cases. Use example/intuition slice only — skip heavy math (course = no proofs, no NumPy)"
+    }
+  ],
+  "web_search_query": "cosine similarity sentence embeddings explained intuition beginner"
+}

@@ -1,0 +1,18 @@
+{
+  "verdict": "pass",
+  "findings": [
+    {
+      "code": "looks_good",
+      "where": "overall",
+      "detail": "Source-level pre-flight passed: 8 nodes (within 3–8), all labels plain-language (no acronyms), all concepts trace to §5.1–§5.5 and §6 of the corpus, title in config block. Two-panel layout (gender direction illustration vs. arithmetic steps) correctly models the two parallel concerns. PNG rendered at 43,868 bytes."
+    }
+  ],
+  "stats": {
+    "nodes": 8,
+    "edges": 5,
+    "layout": "flowchart LR (side-by-side panels with nested TB subgraphs)",
+    "labels": ["man", "woman", "king", "queen", "Start: king vector", "Subtract man vector", "Add woman vector", "Landing point ≈ queen"],
+    "png_path": "content/m3-applied-maths-for-ai/week-6/3-similarity-and-meaning/6-8-why-king-man-woman-queen-works/artifacts/diagram.png",
+    "png_bytes": 43868
+  }
+}

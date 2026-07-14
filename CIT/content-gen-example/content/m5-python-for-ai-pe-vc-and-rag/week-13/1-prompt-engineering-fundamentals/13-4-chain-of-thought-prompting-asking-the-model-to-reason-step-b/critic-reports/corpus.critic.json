@@ -1,0 +1,52 @@
+{
+  "topic_id": "13.4",
+  "passed": true,
+  "at": "2026-06-13T00:00:00Z",
+  "checks": {
+    "required_sections": {
+      "passed": true,
+      "notes": "§3 LOs (6 objectives), §4 Introduction (~200w), §5 Core Concepts (6 subsections, >900w), §10 Key Takeaways (5 bullets) — all present and non-trivial"
+    },
+    "citation_density": {
+      "passed": true,
+      "primary_cited": true,
+      "claim_citation_rate": 0.82,
+      "notes": "[1] cited in §4, §5.1–5.6, §6, §7, §8. [2] cited in §5.2, §5.5, §6, §7, §8. [3] cited in §5.5, §7, §8. All three resources cited; rate well above 60%."
+    },
+    "sequence_drift": {
+      "passed": true,
+      "forward_refs": [],
+      "soft_findings": [
+        {
+          "term": "auto-regressive text generation",
+          "section": "§5.2",
+          "note": "Concept described inline (tokens one at a time) before term is named, but term not explicitly defined for beginners. Soft finding — not an untaught forward reference."
+        },
+        {
+          "term": "benchmarks",
+          "section": "§5.3",
+          "note": "Used in passing ('multi-step reasoning benchmarks') without definition. Soft finding."
+        }
+      ],
+      "notes": "2 soft findings, no hard forward references. All core new concepts (CoT, zero-shot CoT, few-shot CoT, reasoning triple, final-answer marker) properly introduced."
+    },
+    "length_sanity": {
+      "passed": true,
+      "word_count": 3050,
+      "profile": "standard",
+      "notes": "Within standard range 3000–4400w"
+    },
+    "scope_discipline": {
+      "passed": true,
+      "scope_creep": false,
+      "notes": "least-to-most, self-consistency, tree-of-thought absent. §5.6 final-answer extraction is directly relevant to CoT output handling."
+    },
+    "beginner_readability": {
+      "passed": true,
+      "finding_count": 2,
+      "findings": ["auto-regressive term (soft)", "benchmarks term (soft)"],
+      "notes": "2 soft findings < 3 threshold. All key new terms defined on first use. Concrete-before-abstract pattern followed."
+    }
+  },
+  "verdict": "PASS — all 6 checks clear. 2 soft readability findings (auto-regressive, benchmarks) below threshold. Corpus ready for human review."
+}

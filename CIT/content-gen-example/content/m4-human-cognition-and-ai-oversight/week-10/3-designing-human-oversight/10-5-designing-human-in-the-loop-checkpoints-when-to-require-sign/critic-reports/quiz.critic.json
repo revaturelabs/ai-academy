@@ -1,0 +1,114 @@
+{
+  "passed": true,
+  "cycle": 2,
+  "checks": {
+    "positional_bias": {
+      "passed": true,
+      "distribution": [2, 0, 3, 1, 2, 0],
+      "position_frequency": {"0": 2, "1": 1, "2": 2, "3": 1},
+      "max_share": 0.333,
+      "meta_gift_desync": false,
+      "note": "Derived positions from GIFT match sidecar exactly. max_share 0.333 <= 0.40 threshold."
+    },
+    "length_bias": {
+      "passed": true,
+      "longest_correct_rate": 0.0,
+      "baseline": 0.25,
+      "threshold": 0.40,
+      "longest_correct_questions": [],
+      "detail": {
+        "q1": {
+          "correct_len": 165,
+          "distractor_mean": 176.0,
+          "threshold_1_20x": 211.2,
+          "longest_correct": false,
+          "note": "correct (165) < distractor_mean (176.0); distractors now longer on average"
+        },
+        "q2": {
+          "correct_len": 84,
+          "distractor_mean": 74.7,
+          "threshold_1_20x": 89.6,
+          "longest_correct": false,
+          "note": "correct (84) < threshold (89.6); within tolerance"
+        },
+        "q3": {
+          "correct_len": 150,
+          "distractor_mean": 152.0,
+          "threshold_1_20x": 182.4,
+          "longest_correct": false,
+          "note": "correct (150) < distractor_mean (152.0); distractors slightly longer on average"
+        },
+        "q4": {
+          "correct_len": 242,
+          "distractor_mean": 228.3,
+          "threshold_1_20x": 274.0,
+          "longest_correct": false,
+          "note": "correct (242) < threshold (274.0); distractors expanded sufficiently"
+        },
+        "q5": {
+          "correct_len": 147,
+          "distractor_mean": 178.0,
+          "threshold_1_20x": 213.6,
+          "longest_correct": false,
+          "note": "correct (147) < distractor_mean (178.0); distractors now longer on average"
+        },
+        "q6": {
+          "correct_len": 249,
+          "distractor_mean": 268.0,
+          "threshold_1_20x": 321.6,
+          "longest_correct": false,
+          "note": "correct (249) < distractor_mean (268.0); distractors expanded past correct length"
+        }
+      },
+      "cycle_1_comparison": {
+        "cycle_1_rate": 0.833,
+        "cycle_2_rate": 0.0,
+        "fixed_questions": ["q1", "q3", "q4", "q5", "q6"]
+      }
+    },
+    "distractor_plausibility": {
+      "passed": true,
+      "absurd_rate": 0.0,
+      "total_distractors": 18,
+      "score_1_count": 0,
+      "weakest_questions": [],
+      "per_question_min_scores": {
+        "q1": 3,
+        "q2": 3,
+        "q3": 3,
+        "q4": 3,
+        "q5": 3,
+        "q6": 4
+      },
+      "note": "All 18 distractors score >= 3. Distractors represent genuine misconceptions (vendor reputation as proxy for checkpoint need; throughput/SLA as oversight-mode proxy; confidence-threshold inversion; free-text notes vs. structured JF rationale fields; escalation trigger vs. verification gap conflation). No absurd options detected."
+    },
+    "objective_coverage": {
+      "passed": true,
+      "uncovered_objectives": [],
+      "orphan_questions": [],
+      "coverage_map": {
+        "LO1 — Identify the three factors (cost, verifiability, accountability) that determine checkpoint type": ["q1"],
+        "LO2 — Apply the Judgment Framework (Q1/Q2/Q3) to a real decision point and read off checkpoint type": ["q2"],
+        "LO3 — Distinguish HITL / HOTL / HOOTL and match each to appropriate use cases": ["q3"],
+        "LO4 — Evaluate a proposed checkpoint design for confidence-routing failure mode": ["q4"],
+        "LO5 — Design a checkpoint matrix specifying oversight mode, JF rationale, and escalation triggers": ["q5"],
+        "Bonus — Re-analyse a case study (10.1) through the checkpoint design lens (Q2 gap = HITL as theater)": ["q6"]
+      },
+      "note": "All five corpus §3 LOs covered by exactly one question each. q6 maps to corpus §7 case-study re-analysis content; no orphan."
+    },
+    "beginner_fairness_and_scope": {
+      "passed": true,
+      "jargon_in_stem": [],
+      "out_of_scope_questions": [],
+      "unfair_distractors": [],
+      "note": "All terms in stems and options (HITL, HOTL, HOOTL, Q1/Q2/Q3, escalation trigger, checkpoint matrix, confidence routing, override as theater) are defined in corpus §5–§6 or explicitly listed as prerequisites in corpus §2. q6 re-analysis is directly supported by corpus §7. No distractor requires knowledge not covered by this topic or its stated prerequisites."
+    }
+  },
+  "auto_correction_applied": {
+    "shuffle_round_2": false,
+    "length_bias_correction": false,
+    "note": "Length bias resolved by builder expanding distractor text in cycle 2; no critic-side auto-correction was needed or applied."
+  },
+  "verdict": "Pass — all five checks clean. Length bias fully resolved (longest_correct_rate 0.833 → 0.0). Positional bias, distractor plausibility, objective coverage, and beginner-fairness unchanged at pass.",
+  "at": "2026-06-13T00:00:00Z"
+}

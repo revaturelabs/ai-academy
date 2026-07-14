@@ -1,0 +1,41 @@
+$CATEGORY: CIT/M2/week-3/3-7-ai-in-india-today-healthcare-agriculture-vernacular-translat
+
+::q1:: At AIIMS district hospitals, how does the AI system help with diabetic retinopathy screening? {
+~It schedules patient appointments and sends reminder messages via SMS#No — the system works on retinal images, not appointment logistics.
+=It analyses retinal photographs and flags scans that may need a specialist's review#Correct — the AI filters high-volume cases so specialists can focus on flagged scans.
+~It performs the retinal photography and uploads results to the cloud#No — a nurse takes the photograph; the AI interprets it afterward.
+~It replaces the ophthalmologist and makes the final diagnosis for each patient#No — the specialist review still happens; AI assists, it does not replace the doctor.
+#### Tests LO1: AI-assisted diabetic retinopathy screening at AIIMS — what role the AI plays vs the specialist.
+}
+
+::q2:: What does the Kisan e-Mitra system use as its main data input to monitor crop health across farming districts? {
+~Soil samples collected monthly by government extension officers#No — soil sampling is a manual, slow process; Kisan e-Mitra operates at satellite scale.
+~Reports submitted by farmers through a dedicated mobile app form#No — farmers receive advice; the system's crop monitoring input is remote sensing, not farmer-submitted forms.
+~Weather station readings from sensors placed across agricultural districts#No — weather data may complement the system, but the corpus identifies satellite imagery as the primary input.
+=Satellite imagery showing light patterns reflected by vegetation#Correct — the system captures spectral signatures from satellites and AI interprets them to flag crop stress.
+#### Tests LO2: inputs and outputs of the Kisan e-Mitra AI agriculture system.
+}
+
+::q3:: Which of the following is listed as one of the three main reasons building multilingual AI for India is harder than building English-only AI? {
+=There is far less digitised text available in regional Indian languages than in English#Correct — data scarcity means models trained on regional languages are less reliable.
+~Indian users prefer to type in English when using AI-powered apps on smartphones#No — the corpus states 75% of Indian smartphone users prefer their native language, not English.
+~English-only models are cheaper to train because server costs are lower#No — cost differences are not listed; the three reasons are data scarcity, script diversity, and code-mixing.
+~Government policy currently restricts releasing AI tools in more than five languages#No — the IndiaAI Mission and BharatGen aim to support all 22 scheduled languages, not restrict them.
+#### Tests LO3: the three technical challenges of multilingual AI for India — data scarcity, script diversity, code-mixing.
+}
+
+::q4:: What distinguishes BharatGen from simply adapting an existing English-dominant AI model for India? {
+~It fine-tunes an existing English model on a small set of Indian language examples#No — fine-tuning an existing English model is exactly what BharatGen is designed to avoid.
+~It translates English AI responses into regional languages using a separate translation layer#No — that would be an English-first approach with translation bolted on; BharatGen trains natively multilingual.
+=It is trained from the ground up on multilingual Indian data to support all 22 scheduled languages#Correct — BharatGen builds foundational models on Indian multilingual corpora rather than retrofitting English models.
+~It uses only Hindi and English because those cover the largest share of Indian internet users#No — BharatGen explicitly targets all 22 constitutionally scheduled languages, not just the two most common.
+#### Tests LO4: BharatGen as a natively multilingual government initiative, not a retrofitted English model.
+}
+
+::q5:: The corpus says the digital divide limits who actually benefits from AI in India. Which example best illustrates this? {
+~An AI chatbot gives advice in Hindi to a user who asked a question in Tamil#No — this is a language-mismatch problem, not a connectivity or access problem.
+=A farmer with no reliable mobile internet cannot access the AI crop advisory#Correct — the digital divide means gaps in connectivity determine who benefits, regardless of who the tool targets.
+~BharatGen does not yet cover all 22 scheduled languages for voice input#No — this is a model capability gap, not a divide in device access, connectivity, or literacy.
+~A hospital AI tool flags too many false positives and overloads specialist doctors#No — this describes an accuracy or workflow problem, not a gap in who can access the technology.
+#### Tests LO5: the digital divide as a concrete barrier to AI adoption — connectivity, devices, and literacy gaps.
+}

@@ -1,0 +1,53 @@
+$CATEGORY: CIT/M1/week-2/2.7-writing-specifications-across-five-domains-health-transport
+
+::2.7-Q1:: Every strong specification — whether it is for a health task, a food task, or a scheduling task — contains four parts. Which of the following correctly names all four parts of that shared template?
+{
+~Task statement, data source, word count, and output disclaimer#These are not the four structural parts — data source and disclaimer are not template components; context and constraints serve those roles in the template.
+=Task statement, context, constraints, and expected output format#Correct — these four parts appear in every domain example and together make a specification testable, bounded, observable, and actionable.
+~Goal statement, target audience, chosen method, and a feedback section#These terms do not match the four-part template; method and feedback section are not named structural parts of the specification framework at all.
+~Action verb, named subject, time limit, and desired output length#These describe possible contents of some parts but are not the four structural parts themselves; each belongs inside one of the four template components.
+#### Tests recognition of the shared four-part structure across all five domains (corpus §5.1, §5.7). All five domain examples use the same four-part template.
+}
+
+::2.7-Q2:: A learner writes two specifications — one for a health task and one for a scheduling task. In both cases the specification needs to be "bounded." Which statement best explains how "bounded" means something different in these two domains?
+{
+~In both domains, "bounded" simply means adding a word limit to the output so the AI does not produce a response that is longer than the learner can practically read or use#Word limits are one possible constraint, but "bounded" covers the full scope of the task, not only output length; what counts as a bound is determined by the domain context.
+~"Bounded" applies mainly to scheduling because only time slots are inherently fixed; in health the AI identifies the right scope from the data it receives automatically#The AI never sets scope automatically in any domain; in health as in scheduling, the learner must name the specific bounds explicitly inside the specification itself.
+~In health, "bounded" means specifying the reading level or language grade of the output; in scheduling, it means naming the preferred file or table format for the result#Reading level is an education-domain constraint, and naming an output format relates to observability rather than bounding; neither describes the health or scheduling case correctly.
+=In health, "bounded" means fixing the metric and date range being analysed; in scheduling, it means fixing the time window, the task list with durations, and any hard constraints#Correct — the principle of bounding is constant, but the detail is domain-specific: a date range or metric in health versus a time window and named task list in scheduling.
+#### Tests identification of how "bounded" applies differently across two domains (corpus §5.2, §5.6, §5.7). The principle is constant; the domain-specific detail changes.
+}
+
+::2.7-Q3:: A learner produces this food specification\: "Give me a healthy dinner recipe." A classmate says the specification is weak. Which gap is the most critical one to fix?
+{
+="Healthy" is a vague quality word with no measurable meaning — it must be replaced with specific, checkable criteria such as a calorie limit, a dietary restriction, or a protein target#Correct — the corpus identifies "healthy" as the classic weak phrase in the food domain; without a measurable criterion, the AI picks its own interpretation and the result cannot be checked.
+~The phrase "dinner recipe" is too broad in scope — the learner should narrow the task to a single dish category such as pasta or soup so the AI has fewer choices to make#Narrowing the food category is not the primary weakness identified in the corpus; the core problem is that "healthy" is an unmeasurable quality word, not that the meal type is unspecified.
+~The specification does not name an output format — the learner should specify whether the recipe should arrive as a numbered list, a paragraph, or a formatted table with quantities#Output format is one of the four template parts, but the corpus singles out the vague quality word "healthy" as the critical gap for food domain specifications specifically.
+~The phrase "Give me" is too informal — the learner should open with a structured phrase such as "Generate one dinner recipe that\:" to make the task statement match the template#Informal phrasing is not the primary weakness the corpus flags for food; the critical issue is the absence of a measurable criterion that replaces the vague word "healthy."
+#### Tests ability to identify the specific gap a weak food specification leaves (corpus §5.5, §8 anti-patterns table). "Healthy" is listed as a classic weak phrase that must be replaced with measurable criteria.
+}
+
+::2.7-Q4:: A learner drafts this transport specification\: "I need to travel from Liverpool Street Station to Heathrow Terminal 2 on a weekday morning. Find the two fastest public transport options." A classmate says one of the four template parts is still clearly missing. Which part is absent?
+{
+~Task statement — the learner has not clearly named the action they want the AI to perform, so the system will not know what kind of result to return#"Find the two fastest public transport options" names the action clearly; the task statement is present and complete in this draft.
+~Context — the learner has not provided enough background about the journey for the AI to determine the correct starting assumptions and conditions#Origin, destination, terminal number, day type, and travel direction are all stated; the context is adequately covered in this draft.
+=Expected output format — the learner has not described what they will actually receive, such as a table with named columns listing route, times, and changes required#Correct — without a stated output format, the AI may return a paragraph, a table, or a bullet list; the learner cannot check the result against a clear structure.
+~Constraints — the learner has not included any limits at all, leaving the AI free to return any mode of transport, any number of options, and any time of day#Two constraints are present: "two options only" and "public transport only"; constraints are partially addressed; the clearly absent part is the expected output format.
+#### Tests application of the four-part template to a transport scenario (corpus §5.3, §5.1). The strong transport example adds a four-column table as the expected output format.
+}
+
+::2.7-Q5:: The corpus says the five domains covered in this topic — health, transport, education, food, and scheduling — are "the exact scope of Assessment A1, the Specification Portfolio." What does this mean for how a learner should use the worked examples in this topic?
+{
+~The learner should copy the strong worked examples directly into the portfolio, replacing the domain name and any personal details to save time on the writing task#Copying the worked examples is not the task; the portfolio asks the learner to write their own specifications for their own chosen tasks in each domain from scratch.
+=Each worked example shows the four-part structure applied to one domain task; the portfolio task is to apply that same structure to a task the learner chooses in each domain#Correct — the corpus states the portfolio task is to write your own specifications; the worked examples provide a structural model to follow, not text to reproduce verbatim.
+~The learner only needs to submit specifications for the two or three domains they consider most relevant to their life; the other domains appear in the topic for context only#The portfolio covers all five domains; the corpus does not say any domain is optional or intended only as background context for the learner.
+~The worked examples are provided for in-class discussion only and are not related to the portfolio assessment, which draws its tasks from a separate brief provided in Week 3#The corpus explicitly connects the five domains to the exact scope of Assessment A1; the worked examples are directly relevant to what the learner must produce in the portfolio.
+#### Tests the connection between the topic content and Assessment A1 (corpus §4, §10). The corpus names the portfolio link explicitly; the worked examples are a structural guide for the learner's own writing.
+}
+
+::2.7-Q6:: Complete this sentence using one or two words\: In the four-part specification template, the part that sets the fences — naming what is in scope, what is excluded, how many items, and what the time or size limit is — is called the ____.
+{
+=constraints
+=constraints part
+=the constraints
+}

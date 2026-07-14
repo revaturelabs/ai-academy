@@ -1,0 +1,49 @@
+{
+  "topic_id": "1.11",
+  "generated_at": "2026-06-22T00:00:00Z",
+  "format": "gift",
+  "question_count": 6,
+  "$bias_defense_applied": true,
+  "$shuffle_seed": "topic-1.11-seed-111",
+  "correct_position_distribution": {"0": 1, "1": 2, "2": 2, "3": 1},
+  "max_share": 0.333,
+  "bias_check_passed": true,
+  "questions": [
+    {
+      "id": "1-11-q1",
+      "type": "mcq",
+      "objective_ref": "State the four properties of a good algorithm — finiteness, definiteness, input, and output — and explain each in plain language.",
+      "correct_position": 1
+    },
+    {
+      "id": "1-11-q2",
+      "type": "mcq",
+      "objective_ref": "State the four properties of a good algorithm — finiteness, definiteness, input, and output — and explain each in plain language.",
+      "correct_position": 0
+    },
+    {
+      "id": "1-11-q3",
+      "type": "mcq",
+      "objective_ref": "Give an everyday example that illustrates each property.",
+      "correct_position": 3
+    },
+    {
+      "id": "1-11-q4",
+      "type": "mcq",
+      "objective_ref": "Identify whether a given set of steps satisfies each of the four properties.",
+      "correct_position": 1
+    },
+    {
+      "id": "1-11-q5",
+      "type": "mcq",
+      "objective_ref": "Explain why a set of instructions that fails any one property is not a reliable algorithm.",
+      "correct_position": 2
+    },
+    {
+      "id": "1-11-q6",
+      "type": "mcq",
+      "objective_ref": "Apply the four-property checklist to evaluate a simple algorithm you encounter.",
+      "correct_position": 2
+    }
+  ]
+}

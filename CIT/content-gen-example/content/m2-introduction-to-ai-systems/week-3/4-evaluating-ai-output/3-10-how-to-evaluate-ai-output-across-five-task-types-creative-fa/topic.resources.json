@@ -1,0 +1,30 @@
+{
+  "topic_id": "3.10",
+  "captured_at": "2026-06-17T00:00:00Z",
+  "captured_by": "bhuvaneshwarim@revature.com",
+  "resources_source": "web_search",
+  "web_search_query": "how to evaluate AI output quality creative factual logical ethical coding rubric 2024 2025",
+  "resources": [
+    {
+      "type": "url",
+      "value": "https://www.walturn.com/insights/evaluating-ai-generated-content",
+      "role": "primary",
+      "source": "web_search",
+      "notes": "Multi-dimension evaluation of AI-generated content: accuracy, coherence, bias, originality, ethical safety — practical criteria across content types."
+    },
+    {
+      "type": "url",
+      "value": "https://encord.com/rubric-evaluation-generative-ai-assessment/",
+      "role": "supporting",
+      "source": "web_search",
+      "notes": "Rubric-based framework for generative AI assessment — multi-level criteria replacing binary pass/fail; applicable to open-ended tasks."
+    },
+    {
+      "type": "url",
+      "value": "https://www.mindtheproduct.com/how-to-implement-effective-ai-evaluations/",
+      "role": "supporting",
+      "source": "web_search",
+      "notes": "Practical guide to implementing effective AI evaluations across task types — hybrid approaches, calibration, domain-specific rubrics."
+    }
+  ]
+}

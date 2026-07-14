@@ -1,0 +1,18 @@
+{
+  "verdict": "pass",
+  "findings": [
+    {
+      "code": "looks_good",
+      "where": "whole diagram",
+      "detail": "Side-by-side contrast off the central Threshold dial reads cleanly. Two equal panels (raise it -> Precision up -> more false negatives; lower it -> Recall up -> more false positives). No overlaps, no truncation, edge labels disambiguate the two branches, subtitles legible at 12px, color tiers consistent (blue dial = entry, green = the metric that rises, amber = the error type that rises). On-topic: only this topic's five concepts, no F1/confusion-matrix/ROC scope-creep."
+    }
+  ],
+  "stats": {
+    "nodes": 5,
+    "edges": 4,
+    "layout": "flowchart TD (side-by-side contrast, two subgraph panels)",
+    "labels": ["Threshold dial", "Recall up", "More false positives", "Precision up", "More false negatives"],
+    "png_path": "artifacts/diagram.png",
+    "png_dims": "622x582"
+  }
+}

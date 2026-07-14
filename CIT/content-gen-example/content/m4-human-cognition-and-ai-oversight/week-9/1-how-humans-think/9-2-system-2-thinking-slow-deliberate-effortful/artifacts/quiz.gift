@@ -1,0 +1,49 @@
+$CATEGORY: CIT/M4/week-9/9-2-system-2-thinking-slow-deliberate-effortful
+
+::9-2-q1:: Which three words best describe the defining characteristics of System 2 thinking? {
+~Fast, automatic, and parallel#No — these describe System 1, not System 2; System 1 runs quickly, without conscious effort, and handles many patterns at once.
+=Slow, deliberate, and effortful#Correct — Kahneman's three defining characteristics of System 2 are that it is slow (takes seconds or minutes), deliberate (requires conscious choice to engage), and effortful (consumes mental energy).
+~Intuitive, continuous, and low-cost#No — System 2 is the opposite of intuitive and low-cost; it requires conscious direction and significant mental energy to run.
+~Parallel, effortful, and automatic#No — System 2 is serial (one thing at a time), not parallel; and it is not automatic — you must consciously choose to engage it.
+#### Tests the three defining characteristics of System 2 thinking (corpus §5.1, LO1).
+}
+
+::9-2-q2:: You easily catch a ball thrown at your face without thinking. You then work out 47 × 38 in your head. Which statement correctly matches each action to a thinking mode? {
+~Both actions use System 2 — catching requires rapid calculation of trajectory and speed.#No — catching a ball is a well-trained automatic reflex handled by System 1; only the arithmetic deliberately engages System 2.
+~Both actions use System 1 — arithmetic becomes automatic once the multiplication table is learned.#No — multi-step mental arithmetic requires holding several intermediate results in working memory simultaneously, which is a System 2 task, not an automatic reflex.
+~Both actions use System 2 because both require accurate results.#No — accuracy alone does not determine which system is active; System 1 can produce accurate results through pattern matching for familiar tasks.
+=Catching the ball is System 1; doing the mental arithmetic is System 2.#Correct — catching uses fast, automatic pattern-matching (System 1); multi-step arithmetic requires deliberate step-by-step reasoning and working memory (System 2).
+#### Tests the ability to distinguish System 2 from System 1 using concrete examples (corpus §5.1, §5.3, LO2).
+}
+
+::9-2-q3:: What is working memory, and why does it limit System 2 thinking? {
+=A small mental workspace that holds and manipulates information in the moment; its limited capacity means complex reasoning can fail when it overflows.#Correct — working memory is the brain's temporary workspace (roughly four to seven chunks); when a problem exceeds its capacity, earlier information drops out and reasoning becomes unreliable.
+~A long-term storage system for learned skills; it limits System 2 by slowing retrieval of relevant facts.#No — long-term storage is a different memory system; working memory is specifically the short-term, active workspace used during reasoning, not a retrieval mechanism for learned facts.
+~The part of the brain that runs automatic pattern matching; System 2 is limited because it must wait for working memory to finish before acting.#No — automatic pattern matching is System 1; working memory is the workspace System 2 uses, not a separate system that System 2 waits on.
+~A fixed-size cache that stores the last few seconds of sensory input; System 2 is limited because it can only act on very recent events.#No — sensory buffers are a different concept; working memory holds and manipulates information during active reasoning, not just a replay of recent sensory experience.
+#### Tests understanding of working memory as System 2's workspace and its capacity constraint (corpus §5.2, LO3).
+}
+
+::9-2-q4:: A developer is tired after eight hours of coding and approves an AI-generated config change with only a quick glance. Which two factors best explain this outcome? {
+~High cognitive load from the code kept System 1 fully occupied, leaving System 2 free to make a poor decision.#No — high cognitive load fills System 2's capacity, not System 1's; it is System 2 that becomes unavailable, causing the person to rely on System 1's quick impression.
+=Cognitive fatigue depleted System 2 capacity, and a familiar-looking output did not trigger System 2 to activate.#Correct — after sustained effort, System 2 degrades (cognitive fatigue); a configuration that looks routine provides no contradiction or novelty to trigger System 2 engagement, so System 1's "looks fine" impression goes unchecked.
+~The developer's System 1 was fatigued, so System 2 stepped in and made a hasty decision on its behalf.#No — System 1 does not fatigue in the way System 2 does; it is System 2 that becomes depleted, causing the person to rely more heavily on System 1.
+~Low cognitive load from a simple config meant System 2 engagement was unnecessary and correctly skipped.#No — the problem is not that engagement was unnecessary but that fatigue made deep engagement unlikely even if it was warranted; the risk lies precisely in skipping System 2 when it is needed.
+#### Tests cognitive fatigue and the conditions that activate (or fail to activate) System 2 (corpus §5.3, §5.5, LO4, LO5).
+}
+
+::9-2-q5:: System 1 reads a code snippet and produces the impression "this looks fine." What is System 2's role at this point? {
+~System 2 immediately replaces System 1's answer with its own independent conclusion.#No — System 2 does not automatically replace System 1; it activates when triggered and then checks or confirms the candidate answer System 1 produced.
+~System 2 stores System 1's impression in long-term memory for future pattern recognition.#No — consolidation into long-term memory is a separate process; System 2's immediate role is evaluation and potential override, not memory storage.
+=System 2 can check System 1's answer and, if it finds a problem, override it with a more carefully reasoned conclusion.#Correct — System 2's role is to scrutinise System 1's candidate output; if System 2 finds an error (e.g., an off-by-one logic flaw), it can revise or reject what System 1 offered.
+~System 2 runs continuously to prevent System 1 from producing any unverified output.#No — System 2 is mostly dormant and activates selectively; it does not run continuously, which is why System 1 outputs often go unchecked.
+#### Tests System 2's checking and overriding role relative to System 1 (corpus §5.4, LO6).
+}
+
+::9-2-q6:: Why might a practitioner reviewing an AI-generated report accept a factual error even after reading it carefully? {
+~Careful reading always activates System 2, so any error that persists must have been undetectable.#No — feeling like you are reading carefully does not guarantee System 2 is rigorously engaged; cognitive fatigue, time pressure, or high cognitive load can all cause shallow processing even when the person believes they are concentrating.
+~System 1 is responsible for fact-checking AI output, and System 1 is unreliable with text.#No — fact-checking AI output requires System 2; System 1 checks for surface familiarity and fluency, not logical accuracy or factual correctness.
+~AI-generated text is formatted to bypass System 2 entirely, making errors impossible to catch by reading.#No — the corpus does not claim AI output bypasses System 2 entirely; the issue is that System 2 capacity is finite and conditions like fatigue reduce its effectiveness, not that it is structurally blocked.
+=System 2 capacity is finite; fatigue, time pressure, or high cognitive load can mean System 2 is not fully engaged when reviewing the output.#Correct — System 2 is the checking mode, but it is expensive and depletable; when capacity is low, System 1 accepts fluent, confident-looking output without rigorous scrutiny, allowing errors to pass through.
+#### Tests application of System 2 limitations to AI oversight contexts (corpus §5.5, §5.6, §8, LO7).
+}

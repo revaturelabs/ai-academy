@@ -1,0 +1,27 @@
+{
+  "topic_id": "5.13",
+  "artifact": "diagram",
+  "cycles": 1,
+  "passed": true,
+  "source_checks": {
+    "mermaid_parses": true,
+    "node_count": 5,
+    "node_count_in_range_3_8": true,
+    "label_discipline_max_4_words": true,
+    "concept_fidelity": "all nodes trace to corpus 5.2 (four frameworks + jurisdiction/use questions); EU risk-tier subtitle traces to 5.3",
+    "no_scope_creep": "no compliance-procedure / certification / new-framework nodes",
+    "non_exclusivity_in_source": "single START source fans to all four outcomes in parallel; explicit 'answer EVERY question' subtitle + title '(more than one can)'"
+  },
+  "visual_checks": {
+    "nodes_overlap": "none",
+    "label_truncated": "none — all node labels and subtitles fully contained",
+    "crossings_illegible": "none — four clean diverging arrows, no edge crossings",
+    "layout_for_intent": "TD decision flowchart, start diamond at top fanning to outcomes — correct for a non-exclusive branch chart",
+    "subtitle_legible": true,
+    "color_tier": "start=blue diamond, outcomes=green done tier — consistent",
+    "edge_labels": "four jurisdiction/use questions on edges, legible, no collision with nodes",
+    "non_exclusivity_visually_conveyed": true
+  },
+  "verdict": "pass — clean 5-node decision flowchart; non-exclusivity is conveyed both structurally (one source fanning to all four frameworks) and in text; EU risk-tier collapsed to a subtitle to stay within node budget; no scope-creep, no overlaps, all labels legible.",
+  "at": "2026-06-22T16:25:00Z"
+}

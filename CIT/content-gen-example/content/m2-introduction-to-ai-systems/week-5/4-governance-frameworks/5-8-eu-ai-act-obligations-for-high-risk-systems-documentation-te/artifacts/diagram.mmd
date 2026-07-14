@@ -1,0 +1,52 @@
+---
+title: High-risk AI — path to market
+config:
+  theme: base
+  themeVariables:
+    primaryColor: "#a5d8ff"
+    primaryBorderColor: "#4a9eed"
+    lineColor: "#555"
+  flowchart:
+    htmlLabels: true
+    curve: basis
+    nodeSpacing: 45
+    rankSpacing: 60
+---
+flowchart LR
+  subgraph BEFORE["Before market — provider obligations"]
+    direction TB
+    risk["<b>Risk management</b><br><span style='font-size:12px;color:#6d28d9'>spot and reduce harms</span>"]
+    doc["<b>Technical documentation</b><br><span style='font-size:12px;color:#6d28d9'>written paper trail</span>"]
+    data["<b>Data governance</b><br><span style='font-size:12px;color:#6d28d9'>check data for bias</span>"]
+    test["<b>Testing and robustness</b><br><span style='font-size:12px;color:#6d28d9'>red-team before launch</span>"]
+  end
+
+  gate{"<b>Conformity assessment</b><br>pass / fail"}
+
+  subgraph AFTER["After launch — ongoing duties"]
+    direction TB
+    logs["<b>Record-keeping</b><br><span style='font-size:12px;color:#6d28d9'>automatic logs</span>"]
+    oversight["<b>Human oversight</b><br><span style='font-size:12px;color:#6d28d9'>person can override</span>"]
+    transp["<b>Transparency to deployers</b><br><span style='font-size:12px;color:#6d28d9'>clear instructions</span>"]
+  end
+
+  risk --> gate
+  doc --> gate
+  data --> gate
+  test --> gate
+  gate -->|pass — placed on market| logs
+  gate -->|pass — placed on market| oversight
+  gate -->|pass — placed on market| transp
+
+  risk:::auto
+  doc:::auto
+  data:::auto
+  test:::auto
+  gate:::hitl
+  logs:::done
+  oversight:::done
+  transp:::done
+
+  classDef auto fill:#d0bfff,stroke:#8b5cf6,color:#1f2937
+  classDef hitl fill:#fff3bf,stroke:#f59e0b,stroke-width:3px,color:#1f2937
+  classDef done fill:#b2f2bb,stroke:#22c55e,color:#1f2937

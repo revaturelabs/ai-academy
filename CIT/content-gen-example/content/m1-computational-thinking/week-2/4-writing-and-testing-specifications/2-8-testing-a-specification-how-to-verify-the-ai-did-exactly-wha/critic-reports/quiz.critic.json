@@ -1,0 +1,57 @@
+{
+  "passed": true,
+  "checks": {
+    "positional_bias": {
+      "passed": true,
+      "distribution": [1, 1, 2, 1],
+      "positions_used": [0, 1, 2, 3],
+      "max_share": 0.40,
+      "note": "5 MCQs; position 2 appears twice (40%). max_share = 0.40, not strictly greater than threshold — passes."
+    },
+    "length_bias": {
+      "passed": true,
+      "longest_correct_rate": 0.0,
+      "baseline": 0.25,
+      "per_question": [
+        { "id": "q1", "correct_len": 100, "distractor_mean": 93.7, "threshold": 112.4, "longest_correct": false },
+        { "id": "q2", "correct_len": 144, "distractor_mean": 159.7, "threshold": 191.6, "longest_correct": false },
+        { "id": "q3", "correct_len": 115, "distractor_mean": 103.7, "threshold": 124.4, "longest_correct": false },
+        { "id": "q4", "correct_len": 116, "distractor_mean": 113.7, "threshold": 136.4, "longest_correct": false },
+        { "id": "q5", "correct_len": 98,  "distractor_mean": 91.3,  "threshold": 109.6, "longest_correct": false }
+      ]
+    },
+    "distractor_plausibility": {
+      "passed": true,
+      "absurd_rate": 0.0,
+      "total_distractors": 15,
+      "score_1_count": 0,
+      "weakest_questions": [],
+      "notes": "All distractors score 3 or 4 — plausible beginner misconceptions grounded in corpus concepts (e.g., confusing revision with testing, treating majority-pass as full pass, conflating format drift with constraint overflow in the scenario)."
+    },
+    "objective_coverage": {
+      "passed": true,
+      "uncovered_objectives": [],
+      "orphan_questions": [],
+      "coverage_map": [
+        { "lo": "Explain what 'testing a specification' means — comparing actual AI output to what you specified.", "covered_by": ["q1"] },
+        { "lo": "Apply the three-question verification check to any AI output to decide whether it passes.", "covered_by": ["q2"] },
+        { "lo": "Classify a test result as full pass, partial pass, or full fail, and describe what each looks like.", "covered_by": ["q3"] },
+        { "lo": "Record a test result using a simple pass/fail table mapped to each part of the specification.", "covered_by": ["q4"] },
+        { "lo": "Identify three common failure patterns — format drift, constraint overflow, and task drift — and explain what causes each.", "covered_by": ["q5"] },
+        { "lo": "Work through a complete test on a real specification and its AI output across two domains.", "covered_by": ["q6"] }
+      ]
+    },
+    "beginner_fairness_and_scope": {
+      "passed": true,
+      "jargon_in_stem": [],
+      "out_of_scope_questions": [],
+      "unfair_distractors": [],
+      "notes": "All stems use plain language. All concepts tested (verification, three-question check, pass/fail classification, the table, three failure patterns) are explicitly defined in the corpus. Q5 scenario mirrors the health-domain worked example from corpus §5.6. No forward references or unexplained terms detected."
+    }
+  },
+  "auto_correction_applied": {
+    "shuffle_round_2": false
+  },
+  "verdict": "Pass — all five checks clean. Positional bias at max_share=0.40 (boundary, not over). Length bias 0/5 longest-correct. Distractor plausibility absurd_rate=0.0. All 6 LOs covered 1-for-1. No scope creep or jargon.",
+  "at": "2026-06-17T00:00:00Z"
+}

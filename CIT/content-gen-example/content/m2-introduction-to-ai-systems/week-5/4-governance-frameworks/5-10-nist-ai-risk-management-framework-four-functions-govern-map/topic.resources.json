@@ -1,0 +1,30 @@
+{
+  "topic_id": "5.10",
+  "captured_at": "2026-06-22T14:04:32Z",
+  "captured_by": "namratas@revature.com",
+  "resources_source": "web_search",
+  "resources": [
+    {
+      "type": "url",
+      "value": "https://nvlpubs.nist.gov/nistpubs/ai/nist.ai.100-1.pdf",
+      "role": "primary",
+      "source": "web_search",
+      "notes": "NIST AI 100-1, AI RMF 1.0 — canonical source document defining the four functions"
+    },
+    {
+      "type": "url",
+      "value": "https://airc.nist.gov/airmf-resources/airmf/5-sec-core/",
+      "role": "supporting",
+      "source": "web_search",
+      "notes": "NIST AI Resource Center — Core section detailing Govern/Map/Measure/Manage"
+    },
+    {
+      "type": "url",
+      "value": "https://www.nist.gov/itl/ai-risk-management-framework",
+      "role": "supporting",
+      "source": "web_search",
+      "notes": "NIST program landing page — voluntary, widely-adopted framing"
+    }
+  ],
+  "web_search_query": "NIST AI Risk Management Framework four functions Govern Map Measure Manage"
+}

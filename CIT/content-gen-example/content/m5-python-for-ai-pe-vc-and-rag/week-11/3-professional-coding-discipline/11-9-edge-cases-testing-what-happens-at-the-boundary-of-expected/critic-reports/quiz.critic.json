@@ -1,0 +1,117 @@
+{
+  "topic_id": "11.9",
+  "cycle": 2,
+  "passed": true,
+  "checks": {
+    "positional_bias": {
+      "passed": true,
+      "distribution": { "0": 1, "1": 1, "2": 1, "3": 2 },
+      "positions_by_question": { "q1": 1, "q2": 3, "q3": 0, "q4": 2, "q5": 3 },
+      "max_share": 0.40,
+      "threshold": 0.40,
+      "note": "max_share exactly equals threshold (0.40), does not exceed it — passes. Written positions match sidecar correct_position_distribution; no meta_gift_desync.",
+      "meta_gift_desync": false
+    },
+    "length_bias": {
+      "passed": true,
+      "longest_correct_rate": 0.0,
+      "baseline": 0.25,
+      "threshold": 0.40,
+      "per_question": [
+        {
+          "id": "q1",
+          "correct_len": 100,
+          "mean_distractor_len": 88.3,
+          "ratio": 1.132,
+          "longest_correct": false
+        },
+        {
+          "id": "q2",
+          "correct_len": 84,
+          "mean_distractor_len": 76.3,
+          "ratio": 1.100,
+          "longest_correct": false
+        },
+        {
+          "id": "q3",
+          "correct_len": 68,
+          "mean_distractor_len": 57.3,
+          "ratio": 1.186,
+          "longest_correct": false
+        },
+        {
+          "id": "q4",
+          "correct_len": 79,
+          "mean_distractor_len": 91.7,
+          "ratio": 0.862,
+          "longest_correct": false
+        },
+        {
+          "id": "q5",
+          "correct_len": 105,
+          "mean_distractor_len": 102.3,
+          "ratio": 1.026,
+          "longest_correct": false
+        }
+      ],
+      "questions_exceeding_1_20x": [],
+      "note": "All per-question ratios below 1.20x threshold. Cycle-2 revision successful — cycle-1 hard fail (4 questions at 1.31x–1.59x) is resolved."
+    },
+    "distractor_plausibility": {
+      "passed": true,
+      "absurd_rate": 0.0,
+      "total_distractors": 15,
+      "absurd_count": 0,
+      "threshold": 0.25,
+      "per_question_min_scores": {
+        "q1": 2,
+        "q2": 3,
+        "q3": 4,
+        "q4": 3,
+        "q5": 2
+      },
+      "weakest_questions": [
+        {
+          "question_id": "q1",
+          "distractor": "The function should be tested with much larger numbers first before declaring it fully tested",
+          "score": 2,
+          "note": "Plausible but weakly grounded — scale is a real beginner concern though not the boundary issue. Not absurd."
+        },
+        {
+          "question_id": "q5",
+          "distractor": "A scope error — a global variable holding a threshold overwrote the boundary value 70 inside the function",
+          "score": 2,
+          "note": "Slightly advanced concept (variable scope), but used as a wrong-answer distractor not as a definition. Plausible beginner guess for unexpected boundary behaviour. Not absurd."
+        }
+      ]
+    },
+    "objective_coverage": {
+      "passed": true,
+      "uncovered_objectives": [],
+      "orphan_questions": [],
+      "coverage_map": {
+        "Define what an edge case is and explain why boundaries in input expose more bugs than typical inputs do.": ["q1"],
+        "Identify at least three edge-case categories (empty input, zero, maximum/minimum value) for a given function.": ["q2"],
+        "Explain the difference between an edge case and a normal case, using your own example.": ["q3"],
+        "Predict the expected output for an edge-case input before running code.": ["q4"],
+        "Run manual edge-case tests on the week-11 lab script and record whether each test passes or fails.": ["q5"]
+      }
+    },
+    "beginner_fairness_and_scope": {
+      "passed": true,
+      "jargon_in_stem": [],
+      "out_of_scope_questions": [],
+      "unfair_distractors": [],
+      "note": "All stems readable without outside knowledge. 'Off-by-one error' in q5 stem is defined in corpus §5.3. No forward references to pytest/unittest or advanced testing frameworks. All distractors represent plausible beginner misconceptions about boundary testing."
+    }
+  },
+  "auto_correction_applied": {
+    "shuffle_round_2": false
+  },
+  "previous_cycle_failures": {
+    "cycle_1_hard_fail": "length_bias — longest_correct_rate=0.80 (4 of 5 questions exceeded 1.20x threshold: q1=1.55x, q2=1.59x, q3=1.31x, q5=1.39x)"
+  },
+  "hard_fails": [],
+  "verdict": "Pass — all checks clean in cycle 2. Length-bias fix verified: all per-question ratios below 1.20x (max ratio q3=1.186x), longest_correct_rate=0.0. Positional distribution pos0=1, pos1=1, pos2=1, pos3=2; max_share=0.40 (at threshold, not exceeding). Full LO coverage across all 5 objectives, no orphan questions. absurd_rate=0.0. No scope violations.",
+  "at": "2026-06-13T00:00:00Z"
+}

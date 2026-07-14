@@ -1,0 +1,85 @@
+{
+  "critic": "reading-critic",
+  "topic_id": "14.7",
+  "cycle": 2,
+  "run_at": "2026-06-15T00:00:00Z",
+  "passed": true,
+  "cycle_1_hard_finding_resolved": true,
+  "checks": {
+    "format_discipline": {
+      "passed": true,
+      "frontmatter_present": false,
+      "meta_sidecar_missing": false,
+      "section_template_violation": false,
+      "sections_found": ["Overview", "Key Concepts", "Worked Example", "In Practice", "Key Takeaways", "References"],
+      "notes": "First non-empty line is the correct H1. Sidecar reading.meta.json parses with all required fields (word_count, estimated_read_minutes, citations_used, sections). Exactly 6 sections in correct order, none added/renamed/dropped."
+    },
+    "length_budget": {
+      "passed": true,
+      "word_count_reported": 1352,
+      "word_count_range": [1200, 1600],
+      "minutes_reported": 7,
+      "minutes_range": [6, 8],
+      "minutes_at_200wpm": 6.76,
+      "notes": "1352 words is within 1200-1600. 6.76 min at 200 wpm is within the 6-8 min target."
+    },
+    "citations": {
+      "passed": true,
+      "resources_primary_count": 5,
+      "resources_cited": [1, 2, 3, 4, 5],
+      "orphan_inline_markers": [],
+      "orphan_bibliography_entries": [],
+      "notes": "All 5 primary resources cited inline. References [1]-[5] present in bibliography. No orphan markers or entries."
+    },
+    "forward_references": {
+      "passed": true,
+      "notes": "The cycle 1 forward_reference_overreach finding is resolved. The 14.8 block in In Practice (line 92) is now a single sentence: 'Topic 14.8 covers what to do before an agent takes an irreversible action.' This satisfies the one-sentence mention-and-defer limit. No other downstream topic references found."
+    },
+    "faithfulness": {
+      "passed": true,
+      "assertions_sampled": 10,
+      "unsupported_count": 0,
+      "sampled_assertions": [
+        {"assertion": "A four-tier decision matrix walks you through four yes/no questions", "corpus_anchor": "corpus §5.6", "supported": true},
+        {"assertion": "Direct call — one prompt sent to an LLM, one response returned. No memory between calls, no external tools.", "corpus_anchor": "corpus §5.2", "supported": true},
+        {"assertion": "Chained calls — two or more LLM calls in sequence, output of one becomes input of next", "corpus_anchor": "corpus §5.3", "supported": true},
+        {"assertion": "RAG — question embedded, matching documents retrieved, injected into prompt, LLM answers", "corpus_anchor": "corpus §5.4", "supported": true},
+        {"assertion": "Agent — LLM uses tools and loops via Thought/Action/Observation (ReAct)", "corpus_anchor": "corpus §5.5", "supported": true},
+        {"assertion": "Q4 No → reconsider whether an LLM-based system is the right solution", "corpus_anchor": "corpus §5.6", "supported": true},
+        {"assertion": "FAQ chatbot embeds 40-item FAQ in system prompt", "corpus_anchor": "corpus §7 FAQ chatbot", "supported": true},
+        {"assertion": "Order-fulfillment: receives complaint email, looks up order, checks carrier tracking, decides refund/escalate, sends reply", "corpus_anchor": "corpus §7 Automated order-fulfillment coordinator", "supported": true},
+        {"assertion": "Prototype as a direct call; if hallucinates add RAG; if RAG not enough add agent", "corpus_anchor": "corpus §8 Best Practices", "supported": true},
+        {"assertion": "Over-engineering and under-engineering are both defects", "corpus_anchor": "corpus §10 Key Takeaways", "supported": true}
+      ],
+      "notes": "All 10 sampled assertions trace directly to corpus. No fabricated claims detected."
+    },
+    "beginner_readability": {
+      "passed": true,
+      "undefined_terms": [],
+      "jargon_dump": null,
+      "abstract_first": null,
+      "academic_register": null,
+      "notes": "LLM spelled out as 'LLM (Large Language Model)' on first use (line 14). RAG spelled out as 'RAG (Retrieval-Augmented Generation)' on first use (line 15). ReAct and vector database are prior-topic vocabulary (14.5, 14.6) — reuse without re-definition is permitted. No paragraph introduces 3+ brand-new terms. No hedging language detected. Sentence lengths generally under 25 words. Concrete examples and analogies (ladder analogy, capital-of-France scenario) precede abstractions throughout."
+    },
+    "formatting": {
+      "passed": true,
+      "wall_of_text": null,
+      "unlisted_sequence": null,
+      "no_inline_examples": null,
+      "notes": "Decision matrix questions rendered as structured Q1-Q4 blocks with yes/no bullet answers. Tiers introduced as a bulleted list and comparison table. Worked Example scenarios use numbered walk steps. In Practice examples separated by bold headers. All definitions use bold-term / plain-meaning pattern. No prose block exceeds 5 sentences. The 14.8 note is now a single sentence — no wall-of-text concern."
+    },
+    "assessment_reference": {
+      "passed": true,
+      "notes": "No mention of assessment IDs, due weeks, or grade weights anywhere in the reading."
+    },
+    "scope": {
+      "passed": true,
+      "finding_code": null,
+      "notes": "Cycle 1 scope_creep hard finding is resolved. Line 92 now reads: 'Topic 14.8 covers what to do before an agent takes an irreversible action.' This is a single bare mention-and-defer sentence. It does not bold the deferred concept, does not supply a defining clause, and does not describe trigger scenarios or mechanisms. Complies with scope_discipline mention-and-defer rules. No other out-of-scope teaching detected."
+    }
+  },
+  "scope_creep_resolved": true,
+  "hard_findings": [],
+  "soft_findings": [],
+  "verdict": "PASS (cycle 2) — scope_creep resolved: 4-sentence 14.8 block collapsed to one plain sentence. All checks pass: format, length (1352 words / 6.76 min), citations (all 5 resources), forward references, faithfulness (10/10 assertions supported), beginner readability, formatting, no assessment references, scope clean."
+}

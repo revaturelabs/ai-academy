@@ -1,0 +1,58 @@
+{
+    "type":  "topic",
+    "id":  "8.2",
+    "title":  "Similarity scoring — computing cosine similarity between sentence pairs",
+    "slug":  "8-2-similarity-scoring-computing-cosine-similarity-between-sente",
+    "position_in_module":  2,
+    "week_num":  8,
+    "session_name":  "Applied Maths Lab",
+    "module":  {
+                   "position":  1,
+                   "slug":  "1-embeddings-in-practice",
+                   "title":  "Embeddings in Practice"
+               },
+    "course":  {
+                   "code":  "M3",
+                   "slug":  "m3-applied-maths-for-ai",
+                   "title":  "Applied Maths for AI"
+               },
+    "next_assessment":  {
+                            "id":  "A3",
+                            "due_week":  10,
+                            "title":  "Maths and Cognition Lab Report",
+                            "weight":  "15%"
+                        },
+    "paths":  {
+                  "corpus":  "topic_corpus.md",
+                  "resources":  "topic.resources.json",
+                  "progress":  "topic.progress.json",
+                  "artifacts_dir":  "artifacts/",
+                  "critic_reports_dir":  "critic-reports/"
+              },
+    "artifact_plan":  {
+                          "confirmed_profile":  "standard",
+                          "suggested_profile":  "standard",
+                          "reading":  {
+                                          "target_word_range":  [
+                                                                    1200,
+                                                                    1600
+                                                                ],
+                                          "target_minutes":  [
+                                                                 6,
+                                                                 8
+                                                             ]
+                                      },
+                          "quiz":  {
+                                       "min_questions":  5,
+                                       "max_questions":  6,
+                                       "include_short_answer":  false
+                                   },
+                          "diagram":  true,
+                          "diagram_intent":  "Side-by-side arrow contrast: two arrows pointing nearly the same direction (small angle) labeled \u0027score ~1, same meaning\u0027 vs two arrows at a wide angle labeled \u0027score ~0, unrelated\u0027 — drives home angle→score intuition.",
+                          "review_notes":  [
+                                               "week trending light (~49/90 at all-standard); revisit depth-up at 8.5/8.6 if still under 68 floor"
+                                           ]
+                      },
+    "expected_delivery_minutes":  9,
+    "status":  "module_passed"
+}

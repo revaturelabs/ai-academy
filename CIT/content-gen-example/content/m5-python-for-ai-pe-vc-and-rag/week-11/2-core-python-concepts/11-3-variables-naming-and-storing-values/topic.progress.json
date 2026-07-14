@@ -1,0 +1,169 @@
+{
+  "topic_id": "11.3",
+  "stage": "topic_artifacts_approved",
+  "gates": {
+    "resources_captured": true,
+    "corpus_generated": true,
+    "corpus_critic_passed": true,
+    "corpus_human_approved": true,
+    "reading_generated": true,
+    "reading_critic_passed": true,
+    "quiz_generated": true,
+    "quiz_critic_passed": true,
+    "diagram_generated": true,
+    "diagram_critic_passed": true,
+    "topic_artifacts_human_approved": true,
+    "module_drift_passed": true,
+    "week_human_approved": true,
+    "course_drift_passed": true
+  },
+  "history": [
+    {
+      "at": "2026-06-12T00:22:00Z",
+      "op": "set",
+      "gate": "resources_captured",
+      "value": true
+    },
+    {
+      "at": "2026-06-12T00:22:00Z",
+      "op": "stage",
+      "to": "awaiting_corpus"
+    },
+    {
+      "at": "2026-06-12T00:22:00Z",
+      "op": "log",
+      "msg": "Captured 5 resources (source=human) — all primary: Python tutorial, stdtypes, Real Python variables, Real Python data types, W3Schools variables"
+    },
+    {
+      "at": "2026-06-12T00:23:00Z",
+      "op": "set",
+      "gate": "corpus_generated",
+      "value": true
+    },
+    {
+      "at": "2026-06-12T00:23:00Z",
+      "op": "stage",
+      "to": "awaiting_corpus_critic"
+    },
+    {
+      "at": "2026-06-12T00:23:00Z",
+      "op": "log",
+      "msg": "Corpus generated — standard depth, diagram=true, 3180 words."
+    },
+    {
+      "at": "2026-06-12T00:24:00Z",
+      "op": "set",
+      "gate": "corpus_critic_passed",
+      "value": true
+    },
+    {
+      "at": "2026-06-12T00:24:00Z",
+      "op": "stage",
+      "to": "awaiting_corpus_human_review"
+    },
+    {
+      "at": "2026-06-12T00:24:00Z",
+      "op": "log",
+      "msg": "Corpus critic PASSED cycle 1 — all 6 checks green. print() properly named-and-deferred."
+    },
+    {
+      "at": "2026-06-12T00:25:00Z",
+      "op": "set",
+      "gate": "corpus_human_approved",
+      "value": true
+    },
+    {
+      "at": "2026-06-12T00:25:00Z",
+      "op": "stage",
+      "to": "corpus_approved"
+    },
+    {
+      "at": "2026-06-12T00:25:00Z",
+      "op": "log",
+      "msg": "HITL #2 complete — all sections approved, depth=standard, diagram=true."
+    },
+    {
+      "at": "2026-06-12T00:26:00Z",
+      "op": "set",
+      "gate": "diagram_generated",
+      "value": true
+    },
+    {
+      "at": "2026-06-12T00:26:00Z",
+      "op": "set",
+      "gate": "diagram_critic_passed",
+      "value": true
+    },
+    {
+      "at": "2026-06-12T00:26:00Z",
+      "op": "log",
+      "msg": "Diagram critic PASSED cycle 1 — 5 nodes, TB hub layout, visual checks all clean."
+    },
+    {
+      "at": "2026-06-12T00:27:00Z",
+      "op": "set",
+      "gate": "reading_generated",
+      "value": true
+    },
+    {
+      "at": "2026-06-12T00:27:00Z",
+      "op": "set",
+      "gate": "quiz_generated",
+      "value": true
+    },
+    {
+      "at": "2026-06-12T00:27:00Z",
+      "op": "log",
+      "msg": "Reading generated: 1341 words, 7 min, all 5 resources cited, diagram embedded. Quiz generated: 6 MCQ, positions [1,3,0,2,0,3] max_share=0.333, all length-bias ratios <1.20."
+    },
+    {
+      "at": "2026-06-12T00:28:00Z",
+      "op": "set",
+      "gate": "reading_critic_passed",
+      "value": true
+    },
+    {
+      "at": "2026-06-12T00:28:00Z",
+      "op": "log",
+      "msg": "Reading critic PASSED cycle 1 — 1341w, 7min, all 5 cited, no forward refs, scope clean."
+    },
+    {
+      "at": "2026-06-12T00:28:00Z",
+      "op": "set",
+      "gate": "quiz_critic_passed",
+      "value": true
+    },
+    {
+      "at": "2026-06-12T00:28:00Z",
+      "op": "log",
+      "msg": "Quiz critic PASSED cycle 1 — 6 MCQ, max_share=0.333, no length bias, all 6 LOs covered."
+    },
+    {
+      "at": "2026-06-12T00:28:00Z",
+      "op": "stage",
+      "to": "awaiting_topic_artifacts_review"
+    },
+    {
+      "at": "2026-06-12T00:29:00Z",
+      "op": "set",
+      "gate": "topic_artifacts_human_approved",
+      "value": true
+    },
+    {
+      "at": "2026-06-12T00:29:00Z",
+      "op": "stage",
+      "to": "topic_artifacts_approved"
+    },
+    {
+      "at": "2026-06-12T00:29:00Z",
+      "op": "log",
+      "msg": "HITL #3 approved — reading 1341w/7min, quiz 6MCQ/bias-defended, diagram 5-node TB hub (Variable→4 types). No carry-over failures."
+    },
+    {
+      "at": "2026-06-23T17:39:26Z",
+      "op": "set",
+      "gate": "course_drift_passed",
+      "value": true
+    }
+  ]
+}

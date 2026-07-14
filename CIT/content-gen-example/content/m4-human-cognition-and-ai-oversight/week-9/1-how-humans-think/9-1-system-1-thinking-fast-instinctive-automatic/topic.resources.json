@@ -1,0 +1,30 @@
+{
+  "topic_id": "9.1",
+  "captured_at": "2026-06-11T00:00:00Z",
+  "captured_by": "vishnu.vardhan@revature.com",
+  "resources_source": "web_search",
+  "web_search_query": "System 1 thinking fast instinctive automatic Kahneman cognitive psychology",
+  "resources": [
+    {
+      "type": "url",
+      "value": "https://thedecisionlab.com/reference-guide/philosophy/system-1-and-system-2-thinking",
+      "role": "primary",
+      "source": "web_search",
+      "notes": "The Decision Lab — canonical reference guide covering System 1/2 processing, heuristics, and cognitive biases."
+    },
+    {
+      "type": "url",
+      "value": "https://fs.blog/daniel-kahneman-the-two-systems/",
+      "role": "supporting",
+      "source": "web_search",
+      "notes": "Farnam Street — Kahneman's two-system model explained with concrete examples."
+    },
+    {
+      "type": "url",
+      "value": "https://arxiv.org/pdf/2305.10654",
+      "role": "supporting",
+      "source": "web_search",
+      "notes": "Academic paper connecting Kahneman System 1/2 framework to AI Common Model of Cognition."
+    }
+  ]
+}

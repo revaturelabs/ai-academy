@@ -1,0 +1,35 @@
+{
+  "artifact": "corpus",
+  "topic_id": "5.13",
+  "passed": true,
+  "checks": {
+    "required_sections": {
+      "passed": true,
+      "detail": "Sections 3 (Learning Objectives, 5 bullets), 4 (Introduction, ~150w), 5 (Core Concepts, 6 sub-sections ~700w >100w), 10 (Key Takeaways, 5 bullets ~120w) all present and non-trivial. No placeholder strings in required sections."
+    },
+    "citation_density": {
+      "passed": true,
+      "detail": "resources_source=web_search -> strict. All [N] markers resolve to {1,2,3}; no fabricated markers. Primary [1] (EU AI Act Art.2 scope) cited for every extraterritorial-reach / scope claim (LOs, 5.2, 5.4, Best Practices, Takeaways). Supporting [2] and [3] each cited >=1. >=60% of Core Concepts key claims carry [N]. As expected for a synthesis topic, prior topics (5.4/5.5/5.7/5.8/5.10/5.11/5.12) are cited heavily as back-references in addition to the three web primaries — legitimate, not a defect."
+    },
+    "sequence_drift": {
+      "passed": true,
+      "detail": "Last topic in week 5 -> no forward-ref concern. All cross-refs (5.4/5.5/5.7/5.8/5.10/5.11/5.12) confirmed against sequence.index.json as genuine earlier-position back-references. New terms defined on first use: 'jurisdiction' (the area a government's rules cover), 'extraterritorial reach' (applies even if based outside the EU when output used in EU), 'design-time decision' (like choosing a database before you write code), 'not mutually exclusive'."
+    },
+    "length_sanity": {
+      "passed": true,
+      "detail": "~1455 words. depth_profile=standard. Intentionally lean synthesis topic that recombines 5.7/5.10/5.11/5.12 rather than introducing a new framework; sits within the task's loose corpus outer band and reads standard-leaning-lean. No padding. Soft note: below the SKILL's nominal standard floor, which is expected and acceptable for a recombination/synthesis closing topic.",
+      "soft_findings": ["lean_for_synthesis: ~1455w, appropriately lean for a recombination topic"]
+    },
+    "scope_creep": {
+      "passed": true,
+      "detail": "On-headline. Teaches the DECISION: two questions (jurisdiction + risk-tier), non-exclusivity rule, engineering/design-time framing, one worked example. Frameworks are REFERENCED with back-pointers (5.7/5.10/5.11/5.12), not re-taught at depth — the risk-tier recap in 5.3 is explicitly attributed to 5.7 ('you already know its tiers from 5.7'), a recap not a re-teach. Legal compliance procedures and certification bodies are named-and-deferred only (5.6: 'named here only so you know they exist — beyond this beginner topic'). No off-headline depth taught."
+    },
+    "beginner_readability": {
+      "passed": true,
+      "detail": "All new terms defined in plain language on first use. No paragraph stacks 3+ brand-new terms (no jargon_dump). Plain register, 'you' address, short sentences, concrete worked example (India startup hiring tool). 0 hard findings; well below the 3-finding escalation threshold.",
+      "findings": []
+    }
+  },
+  "verdict": "PASS. Synthesis closing topic for week 5: required sections complete; strict web_search citation density satisfied with [1] anchoring all extraterritorial-reach/scope claims and all markers resolving to {1,2,3} (no fabrication); all cross-refs are genuine back-references with jurisdiction/extraterritorial-reach/design-time-decision defined on first use; on-headline (teaches the decision, references frameworks, defers compliance/certification specifics); beginner-readable with 0 findings. Length ~1455w is intentionally lean for a recombination topic — soft note only, no hard fail.",
+  "at": "2026-06-22T16:18:00Z"
+}

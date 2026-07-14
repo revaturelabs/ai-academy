@@ -1,0 +1,31 @@
+{
+  "passed": true,
+  "checks": {
+    "required_sections": {
+      "passed": true,
+      "detail": "All required sections present and non-trivial. Sec 3 Learning Objectives: 5 objectives. Sec 4 Introduction: ~200 words. Sec 5 Core Concepts: ~900 words (>=100). Sec 10 Key Takeaways: ~150 words (>=50)."
+    },
+    "citation_density": {
+      "passed": true,
+      "detail": "resources_source=web_search -> STRICT. Primary [1] (research.google Embedding Projector) cited multiple times (intro, 5.1, 5.2, 5.3, 5.4, 7). Applied [3] also cited (5.1, 5.4, sec 6). Supporting [2] (tensorflow.org word_embeddings) uncited by design (words-as-vectors grounding already covered by prior topics) — uncited supporting is acceptable. Only markers [1] and [3] appear; both resolve to real resources, no fabricated [N]. Core/Implementation/Real-World key claims carry markers well above the 60% threshold."
+    },
+    "sequence_drift": {
+      "passed": true,
+      "detail": "Reused vocabulary (vector, dimension, feature, point in space, dot product, embedding, cosine similarity, nearest neighbour, magnitude, angle) all appear in prior topics' concepts_introduced (6.3, 6.5, 6.6, 6.7, 6.9) — expected for the week's lab capstone. 6.10's own concepts (Projector, cluster, squashing/dimensionality-reduction, nearest neighbours in Projector, search-and-highlight) are introduced here. PCA and t-SNE appear only as bare names with explicit later-pointers ('covered later in the curriculum', 'their inner workings come later'); never bolded, never defined. No forward references taught."
+    },
+    "length_sanity": {
+      "passed": true,
+      "detail": "Corpus ~1640 words, standard profile. Within the 1500-6000w corpus band (corpus runs longer than the 1200-1600w reading profile by design)."
+    },
+    "scope_creep": {
+      "passed": true,
+      "detail": "Stays on headline 'Using the TensorFlow Embedding Projector to explore word clusters.' Embedding training and PCA/t-SNE internals/math are explicitly name-and-deferred (sec 5.2, 5.5). No teaching beyond browser-based exploration. Sec 5.5 explicitly fences the scope boundary. No scope_creep."
+    },
+    "beginner_readability": {
+      "passed": true,
+      "detail": "0 findings. Non-everyday terms defined on first use (TensorFlow explained inline, cluster defined, squashing introduced via sculpture analogy, dimension cross-referenced to 6.5). Short sentences, active voice, 'you' register, no hedging, no jargon dumps (no paragraph stacks 3+ brand-new terms)."
+    }
+  },
+  "verdict": "PASS. All six checks pass. Required sections present and non-trivial. Citation density STRICT (web_search): primary [1] cited, applied [3] cited, no fabricated markers; uncited supporting [2] is acceptable. No sequence drift — reused capstone vocabulary all from prior topics; PCA/t-SNE name-and-deferred only. Length ~1640w within 1500-6000w corpus band. No scope creep — embeddings-training and t-SNE/PCA internals deferred, exploration stays browser-only. Beginner readability clean (0 findings).",
+  "at": "2026-06-19T00:00:00Z"
+}

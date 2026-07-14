@@ -1,0 +1,49 @@
+$CATEGORY: CIT/M5/week-13/13-2-role-assignment-telling-the-model-who-it-is
+
+::q1:: A role statement placed in the system prompt is best described as ... {
+~a block of code that controls which API version the model runs on#No — a role statement is plain text in the prompt, not code; it names an identity, not an API directive.
+=a sentence that tells the model what identity or persona to adopt#Correct — the simplest form is "You are a [role]," which calibrates the model's tone, vocabulary, and domain focus.
+~a numbered list of tasks the model must complete before replying#No — role statements declare an identity, not a task list; tasks belong in the instructions that follow.
+~a rule that prevents the model from answering questions outside its specialty#No — a role statement shapes framing and register; it does not act as a content filter or blocking mechanism.
+#### Tests the definition of a role statement (corpus §5.1).
+}
+
+::q2:: A developer writing an Anthropic API call wants to add a role statement. Which approach is correct? {
+~Include it in the first `messages` entry as a 'user' role turn#No — the `messages` list carries the live conversation; persistent identity context belongs in `system`, not in a user turn.
+~Add it at the end of the `system` field, after all other instructions#No — placing the role last means instructions are read before the identity is set; the role must come first to frame everything that follows.
+~Write it in the `model` field since that field controls model behavior#No — the `model` field names the AI model to call (e.g., claude-opus-4-5); it does not accept natural-language instructions.
+=Place it as the first sentence in the `system` field, before other instructions#Correct — putting the role first gives it the highest interpretive weight so every instruction that follows is read through that established identity.
+#### Tests correct placement of a role statement in an Anthropic API call (corpus §5.3, §6 code example).
+}
+
+::q3:: When a model reads 'You are a Python tutor for beginners,' which three things shift in its responses? {
+=Vocabulary level, tone, and domain focus#Correct — a role statement calibrates these three dimensions: simpler words, an encouraging tone, and answers scoped to the beginner-Python lane.
+~Training data, safety rules, and response speed#No — a role statement does not change the model's underlying training, built-in safety constraints, or how quickly it responds.
+~Model version, context window size, and memory#No — these are technical properties of the underlying AI system; they cannot be changed by a sentence in the system prompt.
+~Grammar rules, punctuation style, and output format#No — while vocabulary may shift, the primary targets are tone and domain focus, not surface-level grammar or punctuation conventions.
+#### Tests how a role statement changes model output (corpus §5.2).
+}
+
+::q4:: A team uses 'You are a senior software engineer. Prioritize correctness first, then security, then readability.' For which task would this role add the LEAST benefit? {
+~Reviewing a function that passes user input directly to a database query#No — this security-sensitive review task maps to the role's priorities; the role shapes the order and depth of feedback.
+~Explaining a complex design decision to a developer who is new to the codebase#No — this open-ended task benefits from the role calibrating vocabulary and depth to an audience unfamiliar with the codebase.
+=Converting the integer 42 to the string '42', where only one output is correct#Correct — tasks with a single fixed answer do not benefit from role calibration; any reviewer identity would give the same response.
+~Reviewing a new API endpoint for correctness, security flaws, and style issues#No — this multi-criteria judgment task is exactly where the role's explicit priority order adds clear and measurable value.
+#### Tests when role assignment helps versus when it has little effect (corpus §5.5, §7 Pattern 3).
+}
+
+::q5:: Which of the following is one of the two anti-patterns the corpus identifies for role statements? {
+=Using a vague label such as 'You are an expert' without adding domain, level, or audience#Correct — without domain, expertise level, or relationship to the user, the model has no useful signal and responds as if there were no role.
+~Writing the role in second-person form 'You are ...' instead of first-person 'I am ...'#No — the corpus recommends second-person form 'You are a [role]' as the standard pattern; grammatical person is not identified as a problem.
+~Making the role statement longer than one sentence by adding domain or audience detail#No — the corpus encourages specificity; a multi-sentence role adding domain, expertise level, and audience is the recommended approach.
+~Placing the role statement first in the system prompt, before all other instructions#No — placing the role first is the correct practice; the anti-pattern is placing it last, where instructions are read without the established frame.
+#### Tests identification of the two main role-statement anti-patterns (corpus §8 anti-patterns).
+}
+
+::q6:: An educational platform sets the system prompt to 'You are a patient math tutor. Never give the answer directly; guide students step by step.' What does the role primarily contribute? {
+~It expands the range of math topics the model is allowed to discuss with students#No — the role does not add content permissions; it frames how the model behaves within whatever topics are already available.
+~It prevents students from sending messages about subjects outside of mathematics#No — the role shapes the model's framing and tone, not a hard filter on what topics students can ask about.
+~It stores session memory so the model can recall each student's past questions#No — role statements do not add memory; what the model can recall depends on the active context window, not the role.
+=It sets a teaching identity that the step-by-step guidance instruction builds on#Correct — a model told it is a patient tutor naturally resists giving away answers, because that behavior conflicts with the stated identity.
+#### Tests how a role interacts with following instructions in a real-world pattern (corpus §7 Pattern 2).
+}

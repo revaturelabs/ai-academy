@@ -1,0 +1,205 @@
+{
+  "topic_id": "14.2",
+  "stage": "topic_artifacts_approved",
+  "gates": {
+    "resources_captured": true,
+    "corpus_generated": true,
+    "corpus_critic_passed": true,
+    "corpus_human_approved": true,
+    "reading_generated": true,
+    "reading_critic_passed": true,
+    "quiz_generated": true,
+    "quiz_critic_passed": true,
+    "diagram_generated": true,
+    "diagram_critic_passed": true,
+    "topic_artifacts_human_approved": true,
+    "module_drift_passed": true,
+    "week_human_approved": true,
+    "course_drift_passed": true
+  },
+  "history": [
+    {
+      "at": "2026-06-15T00:05:00Z",
+      "op": "set",
+      "gate": "resources_captured",
+      "value": true
+    },
+    {
+      "at": "2026-06-15T00:05:00Z",
+      "op": "stage",
+      "to": "awaiting_corpus"
+    },
+    {
+      "at": "2026-06-15T00:05:00Z",
+      "op": "log",
+      "msg": "Captured 4 resources (source=web_search) — primary: databricks.com/glossary/rag, dev.to RAG pipeline walkthrough, promptingguide.ai/research/rag, machinelearningplus.com simple-rag-explained"
+    },
+    {
+      "at": "2026-06-15T00:15:00Z",
+      "op": "set",
+      "gate": "corpus_generated",
+      "value": true
+    },
+    {
+      "at": "2026-06-15T00:15:00Z",
+      "op": "stage",
+      "to": "awaiting_corpus_critic"
+    },
+    {
+      "at": "2026-06-15T00:15:00Z",
+      "op": "log",
+      "msg": "Corpus generated — standard depth, ~2200 words. Sections 2-11 written. RAG definition, 5-step pipeline, prompt template, two phases (index/query), common failure points. Why RAG/hallucination → 14.3, when to use → 14.4. All 4 primary resources cited."
+    },
+    {
+      "at": "2026-06-15T00:20:00Z",
+      "op": "set",
+      "gate": "corpus_critic_passed",
+      "value": false
+    },
+    {
+      "at": "2026-06-15T00:20:00Z",
+      "op": "log",
+      "msg": "Corpus critic FAIL cycle 1 — length_sanity: ~1,965w vs 3,000w standard floor (34% below). Soft: §7 paragraphs lack per-case citations. Revising corpus."
+    },
+    {
+      "at": "2026-06-15T00:25:00Z",
+      "op": "set",
+      "gate": "corpus_critic_passed",
+      "value": true
+    },
+    {
+      "at": "2026-06-15T00:25:00Z",
+      "op": "stage",
+      "to": "awaiting_corpus_human_review"
+    },
+    {
+      "at": "2026-06-15T00:25:00Z",
+      "op": "log",
+      "msg": "Corpus critic PASSED cycle 2 — all 6 checks green. ~3,600w standard range. Added: WHY+failure-mode per step, 3-element prompt-template analysis, §6 failure-point checklist, 5th real-world use case (medical Q&A), §8.5 similarity threshold. Citation rate 85%. Two soft notes (§8.2 example, §9 exercise) — non-blocking."
+    },
+    {
+      "at": "2026-06-15T00:30:00Z",
+      "op": "set",
+      "gate": "corpus_human_approved",
+      "value": true
+    },
+    {
+      "at": "2026-06-15T00:30:00Z",
+      "op": "stage",
+      "to": "corpus_approved"
+    },
+    {
+      "at": "2026-06-15T00:30:00Z",
+      "op": "log",
+      "msg": "HITL #2 complete — all 9 sections approved as written, depth=standard, expected_delivery=7min, diagram=true. Intent: 5-step RAG retrieval pipeline flow."
+    },
+    {
+      "at": "2026-06-15T00:35:00Z",
+      "op": "set",
+      "gate": "diagram_generated",
+      "value": true
+    },
+    {
+      "at": "2026-06-15T00:35:00Z",
+      "op": "set",
+      "gate": "diagram_critic_passed",
+      "value": true
+    },
+    {
+      "at": "2026-06-15T00:35:00Z",
+      "op": "log",
+      "msg": "Diagram critic PASSED cycle 1 — 7-node LR pipeline (User query → Embed query → Vector DB ANN search → Top-k chunks → Assemble prompt; User query also feeds directly to Assemble prompt). PNG rendered 1400px transparent bg. Visual inspection clean."
+    },
+    {
+      "at": "2026-06-15T07:06:05Z",
+      "op": "set",
+      "gate": "reading_generated",
+      "value": true
+    },
+    {
+      "at": "2026-06-15T07:06:05Z",
+      "op": "log",
+      "msg": "Reading generated — 1251 words, 7 min. All 4 primary resources cited. Diagram embedded. 6 fixed sections, no frontmatter."
+    },
+    {
+      "at": "2026-06-15T07:06:05Z",
+      "op": "set",
+      "gate": "quiz_generated",
+      "value": true
+    },
+    {
+      "at": "2026-06-15T07:06:05Z",
+      "op": "log",
+      "msg": "Quiz generated — 6 MCQ, positions [0,2,1,0,3,3], max_share=0.333, bias_defense_applied=true."
+    },
+    {
+      "at": "2026-06-15T07:06:05Z",
+      "op": "stage",
+      "to": "awaiting_reading_critic"
+    },
+    {
+      "at": "2026-06-15T07:07:32Z",
+      "op": "set",
+      "gate": "reading_critic_passed",
+      "value": true
+    },
+    {
+      "at": "2026-06-15T07:07:32Z",
+      "op": "log",
+      "msg": "Reading critic PASSED cycle 1 — 1251w/7min in [1200,1400], all 4 cited, format clean, no forward refs, scope tight, beginner-readable."
+    },
+    {
+      "at": "2026-06-15T07:07:32Z",
+      "op": "stage",
+      "to": "awaiting_quiz_critic"
+    },
+    {
+      "at": "2026-06-15T07:09:05Z",
+      "op": "set",
+      "gate": "quiz_critic_passed",
+      "value": true
+    },
+    {
+      "at": "2026-06-15T07:09:05Z",
+      "op": "log",
+      "msg": "Quiz critic PASSED cycle 1 — 6 MCQ, max_share=0.333, 0 absurd distractors, all 5 LOs covered, 0 out-of-scope. Soft: q3 borderline length bias (non-blocking)."
+    },
+    {
+      "at": "2026-06-15T07:09:05Z",
+      "op": "stage",
+      "to": "quiz_approved"
+    },
+    {
+      "at": "2026-06-15T07:09:20Z",
+      "op": "stage",
+      "to": "awaiting_topic_artifacts_review"
+    },
+    {
+      "at": "2026-06-15T07:09:20Z",
+      "op": "log",
+      "msg": "All artifact critics passed — advancing to HITL #3."
+    },
+    {
+      "at": "2026-06-15T07:09:55Z",
+      "op": "set",
+      "gate": "topic_artifacts_human_approved",
+      "value": true
+    },
+    {
+      "at": "2026-06-15T07:09:55Z",
+      "op": "stage",
+      "to": "topic_artifacts_approved"
+    },
+    {
+      "at": "2026-06-15T07:09:55Z",
+      "op": "log",
+      "msg": "HITL #3 approved — reading 1251w/7min PASS, quiz 6MCQ bias-defended PASS (cycle 1), diagram PASS (cycle 1). No carry-over failures."
+    },
+    {
+      "at": "2026-06-23T17:39:31Z",
+      "op": "set",
+      "gate": "course_drift_passed",
+      "value": true
+    }
+  ]
+}

@@ -1,0 +1,47 @@
+{
+  "passed": true,
+  "checks": {
+    "format_discipline": {
+      "passed": true,
+      "notes": "First non-empty line is '# How to Compare Two AI Tools — Designing a Measurable Evaluation Rubric' — no frontmatter. reading.meta.json exists and parses with all required fields. Exactly the six required sections in the correct order: Overview, Key Concepts, Worked Example, In Practice, Key Takeaways, References."
+    },
+    "length_budget": {
+      "passed": true,
+      "word_count": 1940,
+      "reading_minutes": 8.43,
+      "notes": "Word count 1940 is within [1800, 2200] — PASS. Reading time at 230 wpm = 8.43 min, which is below the [9, 11] target by ~33 seconds. The meta.json reports 10 min, which accounts for cognitive load from six embedded tables; the formula-derived 8.43 min is a soft concern. Word count passes; reading-time is borderline. No hard fail triggered since word count is in range and the shortfall is marginal."
+    },
+    "citation_discipline": {
+      "passed": true,
+      "primary_cited": true,
+      "notes": "Primary resource [1] (asccc.org) cited at lines 5, 11, 35, 41, 99. [2] (ecampusontario) cited at lines 29, 41, 118, 175. [3] (encord) cited at lines 35, 41, 68, 79, 99, 118, 191, 193. All three bibliography entries present in References section. No orphan inline markers; no orphan bibliography entries."
+    },
+    "forward_references": {
+      "passed": true,
+      "forward_refs": [],
+      "notes": "All concepts used are either this topic's introduced concepts (evaluation rubric, criteria, performance levels, descriptors, weighting, test protocol) or prior-topic back-references. Hallucination at line 51 is correctly attributed as a back-reference to topic 3.9 ('the hallucination risk you saw in topic 3.9'). Foundation models, agents, tool use, multimodal AI are all prior-established concepts."
+    },
+    "beginner_readability": {
+      "passed": true,
+      "findings": [],
+      "notes": "All non-everyday terms defined on first use with bold + inline definition: rubric (line 5), evaluation rubric (line 11), criteria (line 13), performance levels (line 14), descriptors (line 15), weights (line 99), test protocol (line 118). No paragraph introduces 3+ new undefined terms at once — the Key Concepts list introduces four terms but each has an immediate inline definition, mitigating jargon-dump risk. Concrete-first pattern observed throughout: Overview opens with a relatable scenario (two people disagreeing), tables precede abstract explanation, Worked Example provides step-by-step grounding. Sentence length is consistently short; no academic hedging detected."
+    },
+    "formatting_standards": {
+      "passed": true,
+      "findings": [],
+      "notes": "No prose walls — all paragraphs are 1–4 sentences. Sequences and multi-item content rendered as bullet or numbered lists (criteria list, rules for descriptors, do's and don'ts, worked example steps). Bold-term definitions used consistently for all introduced terms. Inline examples present within Key Concepts (tables appear at point of concept introduction, not deferred to Worked Example alone). No assessment ID, due-week, or grade-weight references found."
+    },
+    "scope_creep": {
+      "passed": true,
+      "off_topic": [],
+      "notes": "Reading stays squarely within 'How to compare two AI tools — designing a measurable evaluation rubric.' The five criteria, weighting, test protocol, and worked example are all core topic content. Back-reference to hallucination (topic 3.9) is a single-sentence named-and-deferred pointer, not taught. No advanced adjacent concepts (e.g., automated benchmarking, statistical significance testing, A/B frameworks) appear."
+    },
+    "corpus_faithfulness": {
+      "passed": true,
+      "new_claims": [],
+      "notes": "10 assertions sampled across the reading and verified against corpus: (1) three-part rubric definition (criteria/performance levels/descriptors) — matches corpus §5.1; (2) 3-level accuracy table — matches corpus §5.1 example; (3) five common criteria — matches corpus §5.3; (4) weights must sum to 100% — matches corpus §5.5; (5) 1–4 scale rationale (even number, no neutral middle) — matches corpus §5.4; (6) test protocol definition — matches corpus §5.6; (7) weighted totals arithmetic in Worked Example — consistent with corpus §6 structure; (8) organisations do not select on vendor demos — matches corpus §7; (9) ignore a critically low score caveat — paraphrased from corpus §8; (10) track evaluation over time — matches corpus §7. No unsupported assertions detected."
+    }
+  },
+  "verdict": "PASS — all eight checks passed; sole soft note is reading time at 230 wpm (8.43 min) falls ~33 seconds below the 9-min floor, offset by six embedded tables that add cognitive load; word count (1940) is comfortably in range.",
+  "at": "2026-06-17T00:00:00Z"
+}

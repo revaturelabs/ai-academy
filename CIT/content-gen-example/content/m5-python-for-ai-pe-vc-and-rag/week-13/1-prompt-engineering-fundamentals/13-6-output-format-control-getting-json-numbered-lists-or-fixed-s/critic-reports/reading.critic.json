@@ -1,0 +1,109 @@
+{
+  "critic": "reading-critic",
+  "topic_id": "13.6",
+  "topic_title": "Output format control — getting JSON, numbered lists, or fixed structure through the prompt",
+  "depth_profile": "atomic",
+  "run_at": "2026-06-14T00:00:00Z",
+  "passed": true,
+  "verdict": "PASS — all checks green. Reading is 1108 words (~4.8 min at 230 wpm), within the 800–1200 / 4–6 min atomic budget. Exactly 6 required sections in order, no frontmatter, sidecar valid. Primary resource [1] cited; all three bibliography entries match inline markers with no orphans. No forward references to 13.7+. All 7 required topic concepts (format mismatch problem, format specification, inline declaration, format example, template echo, format drift, output validator pattern) are defined at first use with bold-term / plain-meaning shape. Concrete-first ordering throughout; no jargon dumps; no hedging language; no wall-of-text paragraphs. Sequences and procedures rendered as numbered lists. Inline examples present in Key Concepts independent of Worked Example. No assessment references. No scope creep — all content is squarely within the headline. Faithfulness sampling (10 assertions) found 0 unsupported claims against corpus. No soft findings; escalation threshold not triggered. No gold example on file for this topic type; verdict is against the written standards in artifact-mix.json and SKILL.md.",
+  "checks": {
+    "format_discipline": {
+      "passed": true,
+      "frontmatter_present": false,
+      "meta_sidecar_missing": false,
+      "section_template_violation": false,
+      "sections_found": [
+        "Overview",
+        "Key Concepts",
+        "Worked Example",
+        "In Practice",
+        "Key Takeaways",
+        "References"
+      ],
+      "sections_expected": [
+        "Overview",
+        "Key Concepts",
+        "Worked Example",
+        "In Practice",
+        "Key Takeaways",
+        "References"
+      ],
+      "notes": "First non-empty line is the H1 title. Meta sidecar present and parses correctly with all required fields."
+    },
+    "length": {
+      "passed": true,
+      "word_count": 1108,
+      "word_count_range": [800, 1200],
+      "estimated_minutes_at_230wpm": 4.8,
+      "target_minute_range": [4, 6],
+      "notes": "Word count and reading time both within atomic target range."
+    },
+    "citations": {
+      "passed": true,
+      "primary_resource_cited": true,
+      "primary_resource_id": 1,
+      "all_inline_markers": [1, 2, 3],
+      "all_bibliography_entries": [1, 2, 3],
+      "orphan_markers": [],
+      "orphan_bibliography_entries": [],
+      "notes": "Primary resource [1] (CodeSignal) cited at first use in Overview and throughout. All inline markers have corresponding bibliography entries."
+    },
+    "no_forward_references": {
+      "passed": true,
+      "forward_refs_found": [],
+      "notes": "Only backward references present: topics 13.1, 13.3, 13.5, and Week 12 (prior learning). No references to 13.7 or later."
+    },
+    "faithfulness": {
+      "passed": true,
+      "assertions_sampled": 10,
+      "unsupported_assertions": 0,
+      "unsupported_threshold": 2,
+      "sample": [
+        {"assertion": "Output format control is the set of prompting techniques that declare the exact shape of a response and hold the model to it", "supported": true},
+        {"assertion": "LLM trained on enormous amounts of human-written text — articles, books, forum posts, code", "supported": true},
+        {"assertion": "Python program expects JSON but model returns prose sentence with product name and price", "supported": true},
+        {"assertion": "Format specification is writing a clear, explicit instruction in your prompt that tells the model the exact shape", "supported": true},
+        {"assertion": "Format example is the format-focused application of few-shot prompting from topic 13.3", "supported": true},
+        {"assertion": "Format drift is when a model response does not match the format you declared", "supported": true},
+        {"assertion": "Format drift happens because model treats format instructions as strong suggestions, not hard rules", "supported": true},
+        {"assertion": "Output validator pattern is checking format after a response and retrying once before returning a fallback", "supported": true},
+        {"assertion": "Without suppression instruction, many models wrap JSON in a sentence or code fence, breaking json.loads()", "supported": true},
+        {"assertion": "Automated data extraction uses JSON format instructions to pull structured fields directly into a database", "supported": true}
+      ],
+      "notes": "All sampled assertions trace directly to corpus sections 4, 5.1–5.7, and 7."
+    },
+    "beginner_readability": {
+      "passed": true,
+      "undefined_terms": [],
+      "jargon_dump": null,
+      "abstract_first": null,
+      "academic_register": null,
+      "findings_count": 0,
+      "notes": "All 7 required topic concepts defined at first use with bold-term / plain-meaning pattern. LLM, JSON, KeyError defined on first appearance. Concrete scenario leads in Overview and in each concept section before the abstract definition. No hedging language found. Sentence lengths are predominantly under 25 words."
+    },
+    "formatting": {
+      "passed": true,
+      "wall_of_text": null,
+      "unlisted_sequence": null,
+      "no_inline_examples": null,
+      "findings_count": 0,
+      "notes": "No paragraphs exceed 4–5 sentences. Output validator pattern steps and Worked Example steps rendered as numbered lists. Inline code examples present in Key Concepts sections (inline declaration bullets, format example code block, template echo code block, JSON instruction). Bold-term definitions used consistently."
+    },
+    "assessment_references": {
+      "passed": true,
+      "assessment_reference": null,
+      "notes": "No assessment IDs, due weeks, or grade weights found."
+    },
+    "scope": {
+      "passed": true,
+      "scope_creep": null,
+      "notes": "All content (inconsistent LLM output, format specification, three strategies, JSON specifics, format drift, output validator pattern) is directly on the headline topic. No adjacent or advanced material taught. Backward topic references (13.1, 13.3, 13.5) are bare named pointers only, not re-taught."
+    }
+  },
+  "soft_findings": [],
+  "hard_failures": [],
+  "escalation_triggered": false,
+  "escalation_reason": null,
+  "gold_example_on_file": false,
+  "gold_example_note": "No gold example found in .claude/references/gold-examples/reading/. Verdict assessed against written standards in artifact-mix.json and reading-critic SKILL.md."
+}

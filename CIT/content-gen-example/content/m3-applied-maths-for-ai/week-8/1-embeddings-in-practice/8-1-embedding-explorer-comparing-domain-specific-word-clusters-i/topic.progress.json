@@ -1,0 +1,183 @@
+{
+  "topic_id": "8.1",
+  "stage": "topic_artifacts_approved",
+  "gates": {
+    "resources_captured": true,
+    "corpus_generated": true,
+    "corpus_critic_passed": true,
+    "corpus_human_approved": true,
+    "reading_generated": true,
+    "reading_critic_passed": true,
+    "quiz_generated": true,
+    "quiz_critic_passed": true,
+    "diagram_generated": true,
+    "diagram_critic_passed": true,
+    "module_drift_passed": true,
+    "course_drift_passed": true,
+    "topic_artifacts_human_approved": true,
+    "week_human_approved": true,
+    "module_passed": true
+  },
+  "history": [
+    {
+      "at": "2026-06-22T05:54:25Z",
+      "op": "set",
+      "gate": "resources_captured",
+      "value": true
+    },
+    {
+      "at": "2026-06-22T05:54:26Z",
+      "op": "stage",
+      "to": "awaiting_corpus"
+    },
+    {
+      "at": "2026-06-22T05:54:26Z",
+      "op": "log",
+      "msg": "Captured 3 resources (source=web_search)"
+    },
+    {
+      "at": "2026-06-22T05:59:01Z",
+      "op": "set",
+      "gate": "corpus_generated",
+      "value": true
+    },
+    {
+      "at": "2026-06-22T05:59:01Z",
+      "op": "stage",
+      "to": "awaiting_corpus_critic"
+    },
+    {
+      "at": "2026-06-22T06:00:45Z",
+      "op": "set",
+      "gate": "corpus_critic_passed",
+      "value": true
+    },
+    {
+      "at": "2026-06-22T06:00:45Z",
+      "op": "stage",
+      "to": "awaiting_corpus_human_review"
+    },
+    {
+      "at": "2026-06-22T06:02:12Z",
+      "op": "set",
+      "gate": "corpus_human_approved",
+      "value": true
+    },
+    {
+      "at": "2026-06-22T06:02:12Z",
+      "op": "stage",
+      "to": "corpus_approved"
+    },
+    {
+      "at": "2026-06-22T06:02:12Z",
+      "op": "log",
+      "msg": "HITL#2: all sections approved as written; depth=standard accepted"
+    },
+    {
+      "at": "2026-06-22T06:10:58Z",
+      "op": "set",
+      "gate": "diagram_generated",
+      "value": true
+    },
+    {
+      "at": "2026-06-22T06:10:58Z",
+      "op": "set",
+      "gate": "diagram_critic_passed",
+      "value": true
+    },
+    {
+      "at": "2026-06-22T06:10:58Z",
+      "op": "stage",
+      "to": "awaiting_diagram_critic"
+    },
+    {
+      "at": "2026-06-22T06:13:29Z",
+      "op": "set",
+      "gate": "quiz_generated",
+      "value": true
+    },
+    {
+      "at": "2026-06-22T06:14:30Z",
+      "op": "set",
+      "gate": "reading_generated",
+      "value": true
+    },
+    {
+      "at": "2026-06-22T06:14:39Z",
+      "op": "set",
+      "gate": "quiz_critic_passed",
+      "value": true
+    },
+    {
+      "at": "2026-06-22T06:14:40Z",
+      "op": "stage",
+      "to": "quiz_approved"
+    },
+    {
+      "at": "2026-06-22T06:15:58Z",
+      "op": "set",
+      "gate": "reading_critic_passed",
+      "value": true
+    },
+    {
+      "at": "2026-06-22T06:15:58Z",
+      "op": "stage",
+      "to": "awaiting_topic_artifacts_review"
+    },
+    {
+      "at": "2026-06-22T06:16:50Z",
+      "op": "set",
+      "gate": "topic_artifacts_human_approved",
+      "value": true
+    },
+    {
+      "at": "2026-06-22T06:16:50Z",
+      "op": "stage",
+      "to": "topic_artifacts_approved"
+    },
+    {
+      "at": "2026-06-22T06:16:50Z",
+      "op": "log",
+      "msg": "HITL#3: approved all artifacts (0 carry-over failures); soft findings deferred to HITL#4"
+    },
+    {
+      "at": "2026-06-22T08:09:43Z",
+      "op": "set",
+      "gate": "module_drift_passed",
+      "value": true
+    },
+    {
+      "at": "2026-06-22T08:09:44Z",
+      "op": "log",
+      "msg": "noop"
+    },
+    {
+      "at": "2026-06-22T08:12:05Z",
+      "op": "set",
+      "gate": "week_human_approved",
+      "value": true
+    },
+    {
+      "at": "2026-06-22T08:12:05Z",
+      "op": "set",
+      "gate": "module_passed",
+      "value": true
+    },
+    {
+      "at": "2026-06-22T08:12:05Z",
+      "op": "log",
+      "msg": "HITL#4: week 8 approved (budget 52/90 lab-week undershoot accepted, no-pad); module passed."
+    },
+    {
+      "at": "2026-06-23T00:00:00Z",
+      "op": "set",
+      "gate": "course_drift_passed",
+      "value": true
+    },
+    {
+      "at": "2026-06-23T00:00:00Z",
+      "op": "log",
+      "msg": "course-drift-critic cycle 2 PASS — M3 W6/W7/W8 all checks pass; W6 warn -23.3%, W7 ok -13.3%, W8 warn -23.3%; no hard fails"
+    }
+  ]
+}

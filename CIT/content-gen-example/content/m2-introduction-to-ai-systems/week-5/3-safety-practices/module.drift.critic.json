@@ -1,0 +1,52 @@
+{
+  "module_slug": "3-safety-practices",
+  "passed": true,
+  "checks": {
+    "terminology_consistency": {
+      "passed": true,
+      "summary": "Core terms (red-teaming, prompt injection, attacker, jailbreak, data leakage, context window, system prompt, user input, adversarial) are used identically across 5.5 and 5.6. 5.6 reuses 5.5's terms with explicit back-references ('In 5.5 you met the jailbreak'; 'You met data leakage in 5.5') and never redefines a clashing meaning.",
+      "findings": []
+    },
+    "prerequisites_respected": {
+      "passed": true,
+      "summary": "Position order 5.5 (position_in_module 1) before 5.6 (position 2) is sane: test-your-own-system precedes a specific attack class. 5.5 defers prompt injection forward to 5.6; 5.6 lists 5.5 as prerequisite. Both correctly rely on earlier vocabulary (5.1 failures, 5.2 hallucination, 5.3 bias, 5.4 pillars, 3.2/3.4 LLM, 1.3 probabilistic). No forward references to later-position topics as prerequisites.",
+      "findings": []
+    },
+    "learning_arc": {
+      "passed": true,
+      "summary": "The two topics form a coherent Safety Practices arc: 5.5 establishes proactive adversarial self-testing (the defensive practice); 5.6 drills into one concrete attack the testing hunts for, then closes the loop back to 5.5 ('that is why red teams keep testing for injection'). No gap or abrupt jump; module title (Safety Practices) and both topic titles are covered by the union of objectives.",
+      "findings": []
+    },
+    "no_duplicated_core_concepts": {
+      "passed": true,
+      "summary": "Core Concepts sets are distinct: 5.5 covers red-team meaning/why-before-deploy/who/timeline/attack-categories/loop; 5.6 covers injection mechanism/why-it-works/direct-vs-indirect/impacts/vs-jailbreak. Jailbreak and data leakage are named in 5.5 and only re-referenced (not re-taught) in 5.6 via explicit back-pointers. Estimated noun-set Jaccard below the 0.6 flag threshold.",
+      "findings": []
+    },
+    "lab_activity_alignment": {
+      "passed": true,
+      "summary": "Week-5 lab is a 500-word success+failure essay covering what went right/wrong, accountability, and what should change. Both topics support the 'what should change' / harm-prevention dimension (red-teaming as the proactive fix; injection defenses and human-in-the-loop). Each topic also carries a short hands-on chatbot exercise. Connection to the essay is thematic rather than a dedicated lab artifact, which the seed permits.",
+      "findings": []
+    },
+    "audience_level_consistency": {
+      "passed": true,
+      "summary": "Both topics hold the absolute-beginner register and standard depth profile (per manifests). No later topic assumes a concept as known that no earlier topic introduced and that it fails to define.",
+      "findings": [
+        {
+          "topic": "5.6",
+          "severity": "soft",
+          "note": "'context window' is the load-bearing root-cause concept in 5.6 but appears nowhere earlier in this module (5.5 never uses it). 5.6 does define it inline on first use, so it passes; flagged only as the single arc concept lacking an earlier anchor."
+        }
+      ]
+    }
+  },
+  "findings": [
+    {
+      "topic": "5.6",
+      "check": "audience_level_consistency",
+      "severity": "soft",
+      "note": "'context window' introduced cold in 5.6 with no earlier-topic anchor; defined inline so non-blocking. Surfaces at HITL #4."
+    }
+  ],
+  "verdict": "PASS — 5.5 and 5.6 form a coherent, non-duplicative safety-practices arc with consistent terminology, sane prerequisite ordering, and essay-lab support; one soft note (context window introduced cold in 5.6 but defined inline).",
+  "at": "2026-06-22T07:35:00Z"
+}

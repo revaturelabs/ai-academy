@@ -1,0 +1,59 @@
+{
+  "critic": "reading-critic",
+  "cycle": 1,
+  "topic_id": "11.6",
+  "topic_title": "For loops — repeating an action across a list",
+  "at": "2026-06-13T04:22:00Z",
+  "passed": true,
+  "checks": {
+    "format_discipline": {
+      "passed": true,
+      "has_frontmatter": false,
+      "first_line": "# For loops — repeating an action across a list",
+      "sidecar_exists": true,
+      "sections": ["Overview", "Key Concepts", "Worked Example", "In Practice", "Key Takeaways", "References"],
+      "section_count": 6,
+      "detail": "No frontmatter. Correct 6-section structure in prescribed order. Sidecar reading.meta.json present and valid."
+    },
+    "length_budget": {
+      "passed": true,
+      "word_count": 1208,
+      "target_range": [1200, 1600],
+      "reading_minutes": 6,
+      "target_minutes": [6, 8],
+      "detail": "1208 words at 230 wpm ≈ 5.25 min; ceiling estimate 6 min. In range [6, 8] ✓."
+    },
+    "citation_discipline": {
+      "passed": true,
+      "primary_resources_cited": [1, 2, 3, 4, 5],
+      "all_primary_cited": true,
+      "detail": "All 5 primary resources cited. [1] Python docs for-statements cited in Overview, Key Concepts table, accumulator section, Worked Example, In Practice. [2] Real Python for-loop guide cited throughout. [3] W3Schools cited in for-loop anatomy table. [4] Python docs range() cited in range() table. [5] Real Python lists cited in lists section, Overview, Key Takeaways."
+    },
+    "forward_references": {
+      "passed": true,
+      "findings": [],
+      "detail": "enumerate() named-and-deferred in In Practice ('introduced in a later topic'). No other forward references. All code uses only concepts from 11.1–11.6 (list, for loop, range(), accumulator, if/else from 11.5, input() + str() from 11.4–11.5)."
+    },
+    "beginner_readability": {
+      "passed": true,
+      "findings": [],
+      "detail": "All terms defined on first use: list (Key Concepts), element (Key Concepts), index (Key Concepts), loop variable (Key Concepts table), range() (Key Concepts range table), accumulator (worked accumulator block with += shorthand explained). One idea per paragraph. Concrete examples before abstract pattern."
+    },
+    "formatting": {
+      "passed": true,
+      "findings": [],
+      "detail": "For-loop anatomy presented as a 4-column table (part / example / role). range() variants presented as a 2-column table. Accumulator explained with inline comments. Worked Example has annotated steps. No walls of text — paragraphs ≤4 sentences throughout."
+    },
+    "scope": {
+      "passed": true,
+      "findings": [],
+      "detail": "Content stays within list literals + for loop + range() + accumulator + for+if combination. enumerate() and sum() named-and-deferred. While loops, list comprehensions, nested loops not mentioned."
+    },
+    "corpus_faithfulness": {
+      "passed": true,
+      "findings": [],
+      "detail": "All claims map to corpus §§5.1–5.5 and §6–§7. Worked Example follows corpus §6 generalised grade-average script exactly. No new claims introduced."
+    }
+  },
+  "verdict": "PASS (cycle 1). 1208-word, 6-min reading is clean: no frontmatter, correct 6-section structure, all 5 primary resources cited, no forward references, no scope-creep. Diagram embedded in Key Concepts. For-loop anatomy table and range() table are clear learning aids."
+}

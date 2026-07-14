@@ -1,0 +1,45 @@
+---
+title: "Human-in-the-loop — when agents must pause for human approval"
+config:
+  theme: base
+  themeVariables:
+    primaryColor: "#a5d8ff"
+    primaryBorderColor: "#4a9eed"
+    lineColor: "#555"
+  flowchart:
+    htmlLabels: true
+    curve: basis
+    nodeSpacing: 50
+    rankSpacing: 60
+---
+flowchart TB
+    subgraph FLOW["HITL Approval Flow"]
+        direction TB
+        A(["<b>Agent detects action</b>"]):::start
+        A --> B{"<b>Irreversible or<br/>high-stakes?</b>"}
+        B -->|"<b>No</b>"| C["<b>Execute directly</b><br/><span style='font-size:11px;color:#6d28d9'>low-risk, reversible step</span>"]:::auto
+        B -->|"<b>Yes</b>"| D["<b>Propose action to human</b><br/><span style='font-size:11px;color:#6d28d9'>agent pauses — loop waits</span>"]:::hitl
+        D --> E{"<b>Human decision</b><br/><span style='font-size:11px;color:#6d28d9'>review proposal + reasoning</span>"}:::hitl
+        E -->|"<b>Approve</b>"| F["<b>Execute action</b><br/><span style='font-size:11px;color:#6d28d9'>loop resumes</span>"]:::done
+        E -->|"<b>Reject</b>"| G["<b>Halt or revise</b><br/><span style='font-size:11px;color:#6d28d9'>safe state — inaction</span>"]:::done
+    end
+
+    subgraph SPECTRUM["Autonomy Spectrum — safe zone for high-stakes work today"]
+        direction LR
+        S1["<b>Fully manual</b><br/><span style='font-size:11px;color:#6d28d9'>human does everything</span>"]:::auto
+        S2["<b>Human-in-the-loop</b><br/><span style='font-size:11px;color:#6d28d9'>agent proposes, human approves</span>"]:::safe
+        S3["<b>Human-on-the-loop</b><br/><span style='font-size:11px;color:#6d28d9'>agent acts, human monitors</span>"]:::safe
+        S4["<b>Fully autonomous</b><br/><span style='font-size:11px;color:#6d28d9'>agent acts without review</span>"]:::auto
+        S1 --> S2 --> S3 --> S4
+    end
+
+    FLOW ~~~ SPECTRUM
+
+    style FLOW fill:#f8f9fa,stroke:#adb5bd,color:#343a40
+    style SPECTRUM fill:#f8f9fa,stroke:#22c55e,color:#343a40
+
+    classDef start fill:#a5d8ff,stroke:#4a9eed,color:#1a1a1a
+    classDef hitl fill:#fff3bf,stroke:#f59e0b,stroke-width:3px,color:#1a1a1a
+    classDef auto fill:#d0bfff,stroke:#8b5cf6,color:#1a1a1a
+    classDef done fill:#b2f2bb,stroke:#22c55e,color:#1a1a1a
+    classDef safe fill:#b2f2bb,stroke:#22c55e,stroke-width:2px,color:#1a1a1a

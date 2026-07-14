@@ -1,0 +1,41 @@
+$CATEGORY: CIT/M2/week-3/3-4-how-llms-work-tokens-training-and-inference
+
+::q1:: Which of the following best explains why modern LLMs use subword tokenisation rather than splitting text into individual letters or whole words? {
+~Splitting into letters keeps sequences short, making patterns easier to learn.#No — individual letters make sequences very long and harder for the model to learn meaningful patterns.
+~Whole-word systems are the most common approach because every word gets a single unique ID.#No — whole-word systems struggle with new words and rare terms because there are too many possible words.
+=Subword pieces handle unseen words via known chunks, keeping sequences shorter than letter-by-letter splitting.#Correct — subword tokenisation gives the best of both approaches\: it can represent new words as combinations of known subword tokens and avoids the extremely long sequences that letter-by-letter splitting would produce.
+~Subword tokenisation is only used for non-English languages because English words are always one token each.#No — subword tokenisation is used for all languages, and common English words like "the" are one token, but longer or rarer words are split.
+#### Tests LO1\: understanding why subword tokenisation is the standard approach (corpus §5.1).
+}
+
+::q2:: An LLM is trained by showing it enormous amounts of text and asking it to do one core task repeatedly. What is that task, and what happens when the model gets it wrong? {
+=Predict the next token; a wrong prediction triggers backpropagation, which nudges the model's parameters slightly toward the correct answer.#Correct — next-token prediction is the training objective, and backpropagation adjusts the weights each time the model predicts incorrectly.
+~Memorise every sentence it sees; if it forgets a sentence, the training data is repeated until the model stores it exactly.#No — LLMs do not memorise text verbatim; they learn statistical patterns across billions of examples through parameter adjustment.
+~Classify text into categories; a wrong classification causes the model to add a new category to its vocabulary list.#No — LLMs are not trained as text classifiers, and the vocabulary (token list) is fixed before training begins.
+~Translate sentences into a different language; errors cause the model to download updated grammar rules from the internet.#No — LLMs do not access the internet during training, and translation is not the core training objective.
+#### Tests LO2\: next-token prediction objective and the role of backpropagation in adjusting parameters (corpus §5.2).
+}
+
+::q3:: When you send a message to an LLM and it starts generating a reply, the process happens in two phases. Which answer correctly describes what happens in each phase? {
+~The model first generates the reply one word at a time, then reviews the whole reply and corrects any mistakes in a second pass.#No — the model does not review and correct its output after generation; once a token is produced it is appended and the process moves forward.
+~In the first phase the model searches a database for a matching answer; in the second phase it formats the result into sentences.#No — LLMs do not search a database; they generate text from learned parameters without any retrieval step (unless retrieval is explicitly added).
+~Both phases happen at the same time\: the model reads the prompt while simultaneously writing the first tokens of the reply.#No — the two phases are sequential, not simultaneous; prefill must complete before decode begins.
+=Prefill\: full prompt processed in parallel. Decode\: reply generated one token at a time, each new token fed back as input for the next.#Correct — prefill handles the full input in parallel, and decode is the autoregressive loop where each generated token becomes part of the input for the next prediction.
+#### Tests LO3\: distinguishing the prefill and decode phases of inference (corpus §5.3).
+}
+
+::q4:: In the sentence "The bank by the river was flooded", how does the attention mechanism help the model understand the correct meaning of "bank"? {
+~It looks up "bank" in a built-in dictionary and selects the most common definition.#No — the model has no built-in dictionary; meaning is derived from learned relationships between tokens, not a lookup table.
+=It relates "bank" to "river" and "flooded", weighting those links so the model resolves the correct meaning.#Correct — attention lets every token look at every other token and assign weights, so "bank" can draw strongly on "river" and "flooded" to resolve its meaning.
+~It removes the word "bank" from the input and replaces it with a less ambiguous synonym before processing the sentence.#No — the model does not rewrite or remove tokens; it processes all tokens and uses attention weights to handle ambiguity in context.
+~It stores the previous conversation turn where "bank" was used and copies the definition from there.#No — attention operates within the current context window on the current input, not by copying definitions from earlier conversations.
+#### Tests LO4\: the role of the attention mechanism in context-aware token relationships (corpus §5.2).
+}
+
+::q5:: A developer notices that sending the same prompt in Hindi costs significantly more tokens than the same prompt in English and that long conversations sometimes cause the model to "forget" earlier details. Which two mechanics best explain both of these observations? {
+~Knowledge cutoff and hallucination — the model was not trained on Hindi and invents details to fill gaps.#No — these explain factual errors in outputs, not token cost differences or forgetting within a single conversation.
+~Parameter count and backpropagation — a larger model uses more tokens per word, and forgetting happens when weights are overwritten.#No — parameter count affects model capability and is fixed after training; backpropagation is a training process, not a runtime one.
+=Tokenisation asymmetry and context window limits — non-English text takes more tokens, and text beyond the context window is invisible.#Correct — English-optimised tokenisers require more tokens for non-English text, and the context window is the hard cap on what the model can see at once; text outside it is simply not available.
+~Autoregressive decoding and prefill cost — each Hindi word takes longer to decode, and prefill discards old tokens to save time.#No — autoregressive decoding applies to output generation, not input token count, and prefill does not selectively discard tokens.
+#### Tests LO5\: practical implications of tokenisation and context windows (corpus §5.1, §5.4, §7.1).
+}

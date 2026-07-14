@@ -1,0 +1,150 @@
+{
+  "critic": "corpus-critic",
+  "topic_id": "7.4",
+  "at": "2026-06-22T00:00:00Z",
+  "passed": true,
+  "verdict": "PASS with soft findings. All hard-gate checks pass. Soft findings: (1) 'training data' and 'training time' used in sections 5.1 and 8 without explicit definition — not in any prior topic's concepts_introduced; (2) 'embeddings' used in Implementation section 6 step 2 without fresh definition — acknowledged in prerequisites section but not in any prior concepts_introduced (week 6 topics have empty concepts_introduced arrays). No scope creep. No jargon dumps. No forward references to post-7.4 concepts beyond named-and-deferred one-liners for temperature (7.5) and neural network architecture. Estimated word count (~2,800–3,000 words) is at or just below the 3,000-word standard-profile floor but within the 30% threshold for a hard fail.",
+  "checks": {
+    "required_sections": {
+      "passed": true,
+      "findings": [],
+      "detail": {
+        "section_3_learning_objectives": {
+          "present": true,
+          "word_count_estimate": 115,
+          "threshold": 50,
+          "passed": true
+        },
+        "section_4_introduction": {
+          "present": true,
+          "word_count_estimate": 190,
+          "threshold": 50,
+          "passed": true
+        },
+        "section_5_core_concepts": {
+          "present": true,
+          "word_count_estimate": 1400,
+          "threshold": 100,
+          "passed": true
+        },
+        "section_10_key_takeaways": {
+          "present": true,
+          "word_count_estimate": 115,
+          "threshold": 50,
+          "passed": true
+        }
+      }
+    },
+    "citation_density": {
+      "passed": true,
+      "resources_source": "web_search",
+      "mode": "strict",
+      "findings": [],
+      "detail": {
+        "primary_resources_cited": {
+          "resource_1_primary": {
+            "url": "https://www.promptquorum.com/prompt-engineering/how-llms-actually-work",
+            "cited": true,
+            "citation_marker": "[1]",
+            "occurrences": "multiple (sections 4, 5.1, 5.2, 5.3, 5.4, 5.5, 5.6, 6, 7)"
+          }
+        },
+        "factual_assertion_coverage": {
+          "sections_checked": ["5", "6", "7"],
+          "assertions_estimated": 15,
+          "assertions_with_citations": 12,
+          "coverage_pct": 80,
+          "threshold_pct": 60,
+          "passed": true
+        }
+      }
+    },
+    "sequence_drift": {
+      "passed": true,
+      "findings": [
+        {
+          "severity": "soft",
+          "type": "undefined_term",
+          "term": "training data",
+          "locations": ["section 5.1 (line 53: 'The vocabulary is fixed at training time')", "section 8 (line 197: 'it fits the language patterns in the training data')"],
+          "note": "Not present in any prior topic's concepts_introduced. All week 1–6 topics have empty concepts_introduced arrays. Term used as background vocabulary without definition."
+        },
+        {
+          "severity": "soft",
+          "type": "undefined_term",
+          "term": "embeddings",
+          "locations": ["section 6 Implementation step 2 (line 172: 'embeddings and related mechanisms')"],
+          "note": "Week 6 topic 6.7 covers embeddings but its concepts_introduced is empty. Corpus prerequisites section (line 19) acknowledges 'vectors and embeddings' from week 6 as vocabulary-only, which mitigates risk. Not a forward reference (week 6 < week 7), but not formally indexed."
+        }
+      ],
+      "allowed_vocabulary": {
+        "this_topic_7_4": ["token", "vocabulary", "probability distribution over vocabulary", "softmax", "sampling", "stochastic system", "deterministic system", "generation loop"],
+        "topic_7_3": ["prior", "posterior", "likelihood", "Bayes' theorem", "Bayesian updating"],
+        "topic_7_2": ["conditional probability", "P(A|B) notation", "reduced sample space", "joint probability", "conditional probability formula"],
+        "topic_7_1": ["probability", "outcome", "sample space", "event", "complement", "equally-likely outcomes"],
+        "weeks_1_to_6": "all concepts_introduced arrays are empty in sequence.index.json"
+      },
+      "forward_references_to_post_7_4_concepts": [
+        {
+          "term": "temperature",
+          "type": "named_and_deferred",
+          "locations": ["section 4 line 39", "section 5.6 line 163"],
+          "verdict": "ALLOWED — named in one sentence with explicit 'you will explore in topic 7.5' pointer, not taught here"
+        },
+        {
+          "term": "neural network architecture",
+          "type": "named_and_deferred",
+          "locations": ["section 5.3 line 82"],
+          "verdict": "ALLOWED — single sentence, explicitly deferred as 'beyond this topic's scope'"
+        }
+      ]
+    },
+    "length_sanity": {
+      "passed": true,
+      "depth_profile": "standard",
+      "target_range_words": [3000, 4400],
+      "estimated_word_count": 2900,
+      "findings": [
+        {
+          "severity": "soft",
+          "type": "length_below_floor",
+          "note": "Estimated word count (~2,900) is marginally below the 3,000-word floor for standard profile. Within the 30% hard-fail threshold (floor × 0.70 = 2,100). Soft flag only — builder may expand section 5 or 7 slightly if needed."
+        }
+      ]
+    },
+    "topic_scope": {
+      "passed": true,
+      "headline": "Why LLMs output a probability distribution, not a single fixed answer",
+      "findings": [],
+      "detail": "All sub-concepts (token, vocabulary, softmax, sampling, stochastic vs deterministic, generation loop) are directly necessary to answer the headline question. Softmax is explained in plain language without the formula — appropriate depth. Temperature and neural network architecture are named-and-deferred in ≤1 sentence each. No RLHF, fine-tuning, transformer architecture details, or attention mechanism content found."
+    },
+    "beginner_readability": {
+      "passed": true,
+      "findings": [
+        {
+          "severity": "soft",
+          "type": "undefined_terms",
+          "terms": ["training data", "training time"],
+          "note": "Used in sections 5.1 and 8 without plain-language definition on first use. Minor risk given context but worth a one-line gloss."
+        }
+      ],
+      "detail": {
+        "terms_defined_on_first_use": {
+          "passed": true,
+          "notes": "LLM expanded at first use (section 4). Deterministic, stochastic, token, vocabulary, softmax, sampling, probability distribution all defined on first use in their respective sections."
+        },
+        "jargon_dumps": {
+          "passed": true,
+          "notes": "No paragraph introduces 3+ brand-new terms simultaneously. Section 5.1 introduces token + vocabulary (2 terms). Section 5.3 introduces softmax + raw scores (2 terms)."
+        },
+        "plain_register": {
+          "passed": true,
+          "notes": "Conversational tone throughout. Average sentence length well under 25 words. No excessive hedging phrases detected."
+        },
+        "distinct_findings_count": 1,
+        "escalation_threshold": 3,
+        "escalated_to_hard_fail": false
+      }
+    }
+  }
+}

@@ -1,0 +1,54 @@
+{
+  "topic_id": "13.3",
+  "generated_at": "2026-06-13T00:00:00Z",
+  "format": "gift",
+  "question_count": 7,
+  "$bias_defense_applied": true,
+  "$shuffle_seed": "hash(13.3)=0xd63",
+  "correct_position_distribution": [2, 0, 3, 1, 2],
+  "bias_defense_notes": "5 MCQs shuffled; position counts: 0→1, 1→1, 2→2, 3→1; max_share=0.40 (≤0.40 — passes). Length-balanced: all 4 options per MCQ within ±20% of mean character length.",
+  "questions": [
+    {
+      "id": "13.3-Q1",
+      "type": "mcq",
+      "objective_ref": "Define few-shot prompting and explain the difference between zero-shot, one-shot, and few-shot prompting in plain language.",
+      "correct_position": 2
+    },
+    {
+      "id": "13.3-Q2",
+      "type": "mcq",
+      "objective_ref": "Identify what makes a good example — correct format, correct tone, and correct level of detail — versus a weak or misleading example.",
+      "correct_position": 0
+    },
+    {
+      "id": "13.3-Q3",
+      "type": "mcq",
+      "objective_ref": "Write a few-shot prompt with two to four input-output example pairs embedded in the system prompt or user prompt.",
+      "correct_position": 3
+    },
+    {
+      "id": "13.3-Q4",
+      "type": "mcq",
+      "objective_ref": "Explain why few-shot examples change model output quality and what the model is actually doing when it sees them.",
+      "correct_position": 1
+    },
+    {
+      "id": "13.3-Q5",
+      "type": "mcq",
+      "objective_ref": "Apply the placement rule — deciding whether examples belong in the system prompt or in the user message — for a given use case.",
+      "correct_position": 2
+    },
+    {
+      "id": "13.3-Q6",
+      "type": "short_answer",
+      "objective_ref": "Define few-shot prompting and explain the difference between zero-shot, one-shot, and few-shot prompting in plain language.",
+      "correct_position": null
+    },
+    {
+      "id": "13.3-Q7",
+      "type": "short_answer",
+      "objective_ref": "Describe two common mistakes when writing few-shot examples and state how to fix each one.",
+      "correct_position": null
+    }
+  ]
+}

@@ -1,0 +1,84 @@
+{
+  "topic_id": "1.6",
+  "cycle": 2,
+  "passed": true,
+  "checks": {
+    "hard_prerequisites": {
+      "passed": true,
+      "meta_exists": true,
+      "bias_defense_applied": true
+    },
+    "positional_bias": {
+      "passed": true,
+      "distribution_by_position": { "0": 2, "1": 1, "2": 2, "3": 1 },
+      "total_mcq": 6,
+      "max_share": 0.333,
+      "threshold": 0.40,
+      "meta_gift_desync": false,
+      "note": "Derived positions [2,0,3,1,2,0] match sidecar exactly. Max share 2/6=0.33 <= 0.40."
+    },
+    "length_bias": {
+      "passed": true,
+      "longest_correct_rate": 0.0,
+      "baseline": 0.25,
+      "threshold": 0.40,
+      "per_question": [
+        { "id": "1.6-Q1", "correct_chars": 99,  "distractor_mean_chars": 98.3,  "threshold_chars": 118.0, "longest_correct": false },
+        { "id": "1.6-Q2", "correct_chars": 114, "distractor_mean_chars": 171.7, "threshold_chars": 206.0, "longest_correct": false },
+        { "id": "1.6-Q3", "correct_chars": 119, "distractor_mean_chars": 136.7, "threshold_chars": 164.0, "longest_correct": false },
+        { "id": "1.6-Q4", "correct_chars": 107, "distractor_mean_chars": 142.3, "threshold_chars": 170.8, "longest_correct": false },
+        { "id": "1.6-Q5", "correct_chars": 129, "distractor_mean_chars": 120.7, "threshold_chars": 144.8, "longest_correct": false },
+        { "id": "1.6-Q6", "correct_chars": 118, "distractor_mean_chars": 156.0, "threshold_chars": 187.2, "longest_correct": false }
+      ],
+      "note": "Cycle 2 fix confirmed. Correct answer is not the longest option in any question. longest_correct_rate=0.00 <= 0.40."
+    },
+    "distractor_plausibility": {
+      "passed": true,
+      "total_distractors": 18,
+      "absurd_count": 0,
+      "absurd_rate": 0.0,
+      "threshold": 0.25,
+      "weakest_questions": [],
+      "per_question_min_score": [
+        { "id": "1.6-Q1", "min_score": 3, "note": "Decomposition-conflation distractor scores 4; all others >=3" },
+        { "id": "1.6-Q2", "min_score": 3, "note": "All three distractors represent plausible information-overload or all-access misconceptions" },
+        { "id": "1.6-Q3", "min_score": 3, "note": "Wrong-direction and jargon-fix distractors both plausible for beginners" },
+        { "id": "1.6-Q4", "min_score": 3, "note": "All distractors are computing examples — plausible confusion for non-CS beginners" },
+        { "id": "1.6-Q5", "min_score": 3, "note": "Same-thing conflation distractor scores 4; reversal distractor scores 3" },
+        { "id": "1.6-Q6", "min_score": 3, "note": "Too-aggressive and good-abstraction distractors both plausible beginner misreadings" }
+      ]
+    },
+    "objective_coverage": {
+      "passed": true,
+      "total_objectives": 6,
+      "uncovered_objectives": [],
+      "orphan_questions": [],
+      "mapping": [
+        { "objective": "Define abstraction in plain language as the act of hiding unnecessary detail to focus on what matters.", "covered_by": ["1.6-Q1"] },
+        { "objective": "Explain why hiding complexity is useful when solving problems or describing systems.", "covered_by": ["1.6-Q2"] },
+        { "objective": "Identify the right level of detail for a given task or audience, and justify your choice.", "covered_by": ["1.6-Q3"] },
+        { "objective": "Give at least two real-world examples of abstraction that you encounter outside computing.", "covered_by": ["1.6-Q4"] },
+        { "objective": "Describe how abstraction relates to decomposition as part of the computational thinking toolkit.", "covered_by": ["1.6-Q5"] },
+        { "objective": "Distinguish between a good abstraction (hides what is irrelevant) and a leaky one (forces the user to know things they should not need to know).", "covered_by": ["1.6-Q6"] }
+      ]
+    },
+    "gift_format": {
+      "passed": true,
+      "question_count_in_file": 6,
+      "question_count_in_meta": 6,
+      "issues": []
+    },
+    "beginner_fairness_and_scope": {
+      "passed": true,
+      "jargon_in_stem": [],
+      "out_of_scope_questions": [],
+      "unfair_distractors": [],
+      "note": "All stems use plain language matching corpus examples (traffic lights, travel booking, road maps). All questions test only concepts taught in topic 1.6. No scope creep detected."
+    }
+  },
+  "auto_correction_applied": {
+    "shuffle_round_2": false
+  },
+  "verdict": "Pass — all checks clean. Positional bias max share 0.33, length bias rate 0.00 (cycle 2 fix confirmed), no absurd distractors, all 6 LOs covered 1:1, GIFT valid, no scope creep.",
+  "at": "2026-06-21T00:00:00Z"
+}

@@ -1,0 +1,44 @@
+{
+  "type": "topic",
+  "id": "1.11",
+  "title": "The four properties of a good algorithm — finite, definite, input, output",
+  "slug": "1-11-the-four-properties-of-a-good-algorithm-finite-definite-inpu",
+  "position_in_module": 3,
+  "week_num": 1,
+  "session_name": "How Machines Think",
+  "module": {
+    "position": 4,
+    "slug": "4-algorithmic-thinking",
+    "title": "Algorithmic Thinking"
+  },
+  "course": {
+    "code": "M1",
+    "slug": "m1-computational-thinking",
+    "title": "Computational Thinking"
+  },
+  "next_assessment": {
+    "id": "A1",
+    "due_week": 3,
+    "title": "Specification Portfolio",
+    "weight": "10%"
+  },
+  "paths": {
+    "corpus": "topic_corpus.md",
+    "resources": "topic.resources.json",
+    "progress": "topic.progress.json",
+    "artifacts_dir": "artifacts/",
+    "critic_reports_dir": "critic-reports/"
+  },
+  "artifact_plan": {
+    "profile": "standard",
+    "diagram": true,
+    "diagram_intent": "A four-gate checklist flow showing an algorithm candidate entering a series of yes/no property checks (finite? → definite? → input declared? → output declared?) with a well-defined/not well-defined verdict at the end.",
+    "reading": { "target_word_range": [1200, 1600], "target_minutes": [6, 8] },
+    "quiz": { "min_questions": 5, "max_questions": 6, "include_short_answer": false },
+    "sections_approved": [2, 3, 4, 5, 6, 7, 8, 10],
+    "sections_dropped": [],
+    "reading_notes": "Section 9 exercise embedded in 'In Practice' reading section (lab alignment fix — drift critic L1)."
+  },
+  "expected_delivery_minutes": 8,
+  "status": "scaffolded"
+}

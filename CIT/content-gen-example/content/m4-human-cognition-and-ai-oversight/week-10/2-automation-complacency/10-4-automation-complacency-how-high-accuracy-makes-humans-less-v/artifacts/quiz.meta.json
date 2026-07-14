@@ -1,0 +1,70 @@
+{
+  "topic_id": "10.4",
+  "generated_at": "2026-06-12T00:00:00Z",
+  "format": "gift",
+  "depth_profile": "deep",
+  "question_count": 7,
+  "mcq_count": 6,
+  "short_answer_count": 1,
+  "$bias_defense_applied": true,
+  "$shuffle_seed": "10.4-automation-complacency",
+  "correct_position_distribution": {"0": 2, "1": 2, "2": 1, "3": 1},
+  "max_share": 0.33,
+  "constraint_check": "max_share=0.33 <= 0.40 PASS; all 4 positions used PASS",
+  "questions": [
+    {
+      "id": "10-4-q1",
+      "type": "mcq",
+      "objective_ref": "LO1 — Define automation complacency in plain language and distinguish it from general inattention",
+      "correct_position": 0
+    },
+    {
+      "id": "10-4-q2",
+      "type": "mcq",
+      "objective_ref": "LO2 — Explain the accuracy paradox: why a highly accurate system makes the humans watching it less safe",
+      "correct_position": 1
+    },
+    {
+      "id": "10-4-q3",
+      "type": "mcq",
+      "objective_ref": "LO3 — Trace the causal chain: high accuracy → reduced vigilance → missed failure",
+      "correct_position": 2
+    },
+    {
+      "id": "10-4-q4",
+      "type": "mcq",
+      "objective_ref": "LO4 — Identify vigilance decay in a described scenario and state when it is most dangerous",
+      "correct_position": 3
+    },
+    {
+      "id": "10-4-q5",
+      "type": "mcq",
+      "objective_ref": "LO5 — Connect automation complacency to override-as-theater from topic 10.1",
+      "correct_position": 0
+    },
+    {
+      "id": "10-4-q6",
+      "type": "mcq",
+      "objective_ref": "LO6 — Name two real-world domains where automation complacency is documented and describe a consequence in each",
+      "correct_position": 1
+    },
+    {
+      "id": "10-4-q7",
+      "type": "short_answer",
+      "objective_ref": "LO5 (extended) — Connect automation complacency to override-as-theater in a scenario, with depth",
+      "correct_position": null
+    }
+  ],
+  "objective_coverage": {
+    "LO1": "10-4-q1",
+    "LO2": "10-4-q2",
+    "LO3": "10-4-q3",
+    "LO4": "10-4-q4",
+    "LO5": "10-4-q5",
+    "LO6": "10-4-q6",
+    "LO5-short": "10-4-q7"
+  },
+  "mean_option_length_chars": 97,
+  "longest_option_correct_count": 2,
+  "bias_defense_applied": true
+}

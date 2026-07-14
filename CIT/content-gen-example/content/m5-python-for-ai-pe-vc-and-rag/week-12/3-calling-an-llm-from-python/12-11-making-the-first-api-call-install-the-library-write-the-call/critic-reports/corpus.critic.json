@@ -1,0 +1,61 @@
+{
+  "critic": "corpus-critic",
+  "topic_id": "12.11",
+  "topic_title": "Making the first API call — install the library, write the call, run in Colab",
+  "depth_profile": "standard",
+  "at": "2026-06-15T00:00:00Z",
+  "pass_number": 1,
+  "passed": true,
+  "verdict": "PASS — all hard checks clear; corpus is well-structured and appropriately scoped, with two soft findings (prose word count slightly below standard floor at ~2,850w vs 3,000w target, and message.usage accessed in exercise without deep teaching).",
+  "checks": {
+    "required_sections": {
+      "passed": true,
+      "detail": "Sections 3 (Learning Objectives, ~150w), 4 (Introduction, ~273w), 5 (Core Concepts, ~1,232w across six subsections), and 10 (Key Takeaways, ~145w) all present and non-trivial. All exceed their respective word-count floors (50w for §3/4/10, 100w for §5)."
+    },
+    "citation_density": {
+      "passed": true,
+      "primary_cited": true,
+      "claim_citation_rate": 0.67,
+      "findings": [
+        "Primary resource [1] (Anthropic Colab notebook) is cited 15+ times across sections 4, 5, 6, 7, 8, and 10 — well above the minimum once.",
+        "Sections 5+6+7 combined: ~27 standalone factual assertions identified; ~18 carry [N] markers = 67% citation rate, clearing the 60% threshold.",
+        "Uncited factual claims in §5 (8 items) are mostly definitional/pedagogical statements about general Python mechanics (what import does, what a class is, what tokens are) rather than SDK-specific assertions — acceptable omissions within the 60% threshold."
+      ]
+    },
+    "sequence_drift": {
+      "passed": true,
+      "forward_refs": [],
+      "findings": [
+        "SOFT: 'os.environ' and 'environment variable' are used instrumentally in §6 Implementation and §8 Best Practices but are not in either the prior-topics or 12.11's own concepts list. Both are defined inline on first use (§5.2: 'a named value stored in the operating system, separate from your code') and are used only as a delivery mechanism for the API key — not taught as a standalone concept.",
+        "SOFT: 'stop_reason' field on the response object is explained briefly in §5.5 and §7 Pattern 4 as a completeness check. It is not listed in 12.11's own concepts_introduced but is within the scope of 'read the raw response object' (§5.5 headline). One sentence + pattern note — named-and-explained rather than taught in depth.",
+        "SOFT: 'synchronous' (§5.4) is used with an inline definition ('Python pauses at this line, waits for the network round-trip to complete'). Not in concepts list but immediately glossed — no bare use.",
+        "No forward references to 12.12 (full JSON response parsing), 12.13 (API error handling), or 12.14 (latency/cost/design decisions) found as taught concepts."
+      ]
+    },
+    "length_sanity": {
+      "passed": true,
+      "hard_fail": false,
+      "estimated_word_count": 2850,
+      "expected_range_words": [3000, 4400],
+      "detail": "Estimated prose word count (code blocks, frontmatter, and section headings excluded) is approximately 2,850 words — roughly 5% below the 3,000-word standard floor. Hard-fail threshold is <2,100 words (70% of 3,000); this corpus clears that threshold comfortably. Flagged as a soft finding: the corpus could benefit from ~150 additional prose words to reach the floor, for example by expanding the explanation of the response object structure in §5.5 or adding another real-world pattern.",
+      "findings": [
+        "SOFT: ~2,850 estimated prose words vs 3,000–4,400 standard range. Below floor by ~150 words but above the hard-fail threshold of 2,100. Not a blocker; recommend light expansion."
+      ]
+    },
+    "topic_scope": {
+      "passed": true,
+      "detail": "Corpus stays tightly on the headline (install → import+client → max_tokens → messages.create() → response object → .content[0].text → run in Colab). No full JSON response parsing (12.12 scope) beyond what is needed to locate .content[0].text. No API error-handling patterns taught (12.13). Cost and latency are not analyzed (12.14); the §8 best-practice pointer 'unnecessarily high wastes money and slows tests' is a one-liner, not a design-decisions lesson. Prompt engineering is absent. message.usage is mentioned as a field (§5.5 bullet) and accessed in the optional Step 6 and Exercise — it is not taught at depth.",
+      "findings": [
+        "SOFT: message.usage.output_tokens is printed in the optional Implementation Step 6 (§6) and in Exercise step 9 (§9). The instruction notes 'mentioning it exists is OK; teaching it is scope_creep.' The corpus mentions the field in one bullet (§5.5) and uses it in two exercise steps. This is at the permissible boundary — it is used but not explained at depth. Acceptable as written; if the corpus-builder wants to be conservative, the Step 6 usage cell and Exercise step 9 could be trimmed to just stop_reason."
+      ]
+    },
+    "beginner_readability": {
+      "passed": true,
+      "soft_findings_count": 1,
+      "detail": "All non-everyday terms are defined on first use throughout Introduction and Core Concepts. Active voice is consistent. Sentence length is appropriate. No paragraph introduces three or more new terms without accompanying definitions. One soft finding: §5.2 introduces class, object, and client in consecutive sentences; each has an inline definition, so the density is acceptable, but a beginner unfamiliar with OOP may find the rapid succession of three new mental models mildly taxing.",
+      "findings": [
+        "SOFT: §5.2 introduces 'class (a blueprint for an object)', 'object (a value that bundles data and behavior together)', and 'client' in four consecutive sentences. All three carry inline definitions, so this does not qualify as an undefined-terms violation, but the OOP conceptual load is concentrated. Consider adding one bridging sentence before the definitions (e.g., 'You do not need to know much about Python classes to use this one — the key idea is that calling anthropic.Anthropic() produces a ready-to-use connection object.')."
+      ]
+    }
+  }
+}

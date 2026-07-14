@@ -1,0 +1,87 @@
+{
+  "topic_id": "2.6",
+  "critic": "corpus-critic",
+  "cycle": 3,
+  "at": "2026-06-17T00:00:00Z",
+  "passed": true,
+  "checks": {
+    "required_sections": {
+      "passed": true,
+      "detail": "Sections 3 (Learning Objectives), 4 (Introduction), 5 (Core Concepts), and 10 (Key Takeaways) all present and non-trivial. Section 5 contains four fully-developed subsections (5.1–5.4) well above the 100-word floor. Sections 3, 4, and 10 each exceed the 50-word floor. No change from cycle-2 — patch did not alter section structure."
+    },
+    "citation_density": {
+      "passed": true,
+      "mode": "strict",
+      "resources_source": "web_search",
+      "primary_resources_cited": {
+        "passed": true,
+        "detail": "[1] (Thomson Reuters, primary) cited in §5.1, §5.3, §5.4, §6, §7, §8, §10. [2] (ABA) cited in §5.1, §5.4, §6, §7, §8, §10. [3] (NCBI/PMC) cited in §5.1, §5.2, §5.3, §6, §7, §8, §10. All 3 resources cited at least once."
+      },
+      "key_claims_coverage": {
+        "passed": true,
+        "threshold_pct": 60,
+        "estimated_pct": 64,
+        "sections_checked": ["5", "6", "7"],
+        "detail": "Approximately 21 of ~33 standalone factual assertions in §5/6/7 carry citation markers (~64%). The three parenthetical glosses added in the cycle-3 patch are definitional, not new factual assertions — they do not alter the assertion count or citation ratio. Density remains ~64%, above the 60% threshold."
+      }
+    },
+    "sequence_drift": {
+      "passed": true,
+      "forward_references": [],
+      "detail": "No forward references to future-sequence concepts. 'Hallucination' is introduced here (§5.2, §5.3) with a plain-language definition, listed in concepts_introduced for this topic. 'GDPR' named once in §5.1 with full spell-out and explicit defer pointer ('You will study these regulations in later topics') — compliant mention-and-defer. 'Data-compliant platform' carries a parenthetical definition in §5.4. The three cycle-3 parentheticals ('removed from the official list of people licensed to practise their profession', 'the professional body that regulates lawyers', 'a court ruling requiring one party to pay the other's legal costs') are definitional glosses for terms already present — no new technical noun phrases. All other terms belong to this topic's introduced concepts or were established in topics 1.1–2.5."
+    },
+    "length_sanity": {
+      "passed": true,
+      "suggested_profile": "standard",
+      "profile_word_range": [3000, 4400],
+      "hard_floor_30pct_below": 2100,
+      "estimated_word_count": 2743,
+      "detail": "Cycle-3 patch adds approximately 33 words (three parenthetical glosses) to the cycle-2 count of ~2710, yielding ~2743 words. Clears the hard floor of 2100 words. At 2743 words the corpus sits approximately 8.6% below the 3000-word standard target floor — within the 30% tolerance window (hard-fail threshold is 2100). No hard block. Soft note retained: corpus would benefit from further expansion toward 3000 words but this does not block passage."
+    },
+    "topic_scope": {
+      "passed": true,
+      "scope_creep_findings": [],
+      "detail": "All content stays within the three named dimensions: privacy, precision, and legal accountability. The cycle-3 patch adds only definitional parentheticals to §5.3 — no new concepts introduced. 'Hallucination' remains a supporting concept for the precision dimension. GDPR remains named-and-deferred in one sentence. No material teaches beyond the headline boundary. No change from cycle-2 assessment."
+    },
+    "beginner_readability": {
+      "passed": true,
+      "escalated_to_hard_fail": false,
+      "findings": [],
+      "resolved_from_cycle_2": [
+        {
+          "code": "undefined_terms",
+          "term": "struck off a professional register",
+          "location": "§5.3, paragraph 2",
+          "resolution": "Parenthetical gloss added: '(removed from the official list of people licensed to practise their profession)'. Term is now fully defined on first use for a zero-background reader."
+        },
+        {
+          "code": "undefined_terms",
+          "term": "bar association",
+          "location": "§5.3, fabricated-citation scenario",
+          "resolution": "Parenthetical gloss added: '(the professional body that regulates lawyers)'. Term is now fully defined on first use."
+        },
+        {
+          "code": "undefined_terms",
+          "term": "costs order",
+          "location": "§5.3, fabricated-citation scenario",
+          "resolution": "Parenthetical gloss added: '(a court ruling requiring one party to pay the other's legal costs)'. Term is now fully defined on first use."
+        }
+      ],
+      "detail": "All three undefined-terms findings from cycle-2 are resolved. 'Struck off a professional register' now carries a plain-language parenthetical at §5.3 line 102. 'Bar association' and 'costs order' both carry plain-language parentheticals at §5.3 line 112. The cycle-3 patch introduces no new jargon cold. The sentence containing both new glosses does not create a jargon dump (the terms were already present; only the definitions are new). No hedging phrases detected. Sentence lengths within target. Check 6 now produces 0 distinct findings — the ≥3-finding escalation rule is not triggered. Hard fail is cleared."
+    }
+  },
+  "hard_fails": [],
+  "soft_findings": [
+    {
+      "check": "length_sanity",
+      "code": "below_target_floor",
+      "detail": "~2743 words is above the hard floor (2100) but approximately 8.6% below the standard target floor (3000). No hard block. Builder should continue expanding toward the 3000-word target in subsequent iterations if content warrants it."
+    }
+  ],
+  "previously_failed_now_resolved": [
+    "citation_density (cycle 1): §5.1 data-fate bullet sequence now cites [1][2]; §5.3 residual-liability statement now cites [1]; §7 healthcare adoption now cites [3]; §7 financial-services regulatory requirement now cites [1]. Resolved in cycle 2, confirmed still resolved.",
+    "length_sanity hard floor (cycle 1): corpus raised from ~1810 to ~2710 words in cycle 2, clearing the 2100 hard floor. Cycle-3 patch brings estimate to ~2743. Confirmed still resolved.",
+    "beginner_readability hard fail (cycle 2): three undefined jargon terms in §5.3 — 'struck off a professional register', 'bar association', 'costs order' — now all carry plain-language parenthetical glosses. Hard fail cleared."
+  ],
+  "verdict": "PASS — all checks clean (cycle 3). The cycle-2 hard failure (beginner_readability, ≥3 undefined-terms escalation) is resolved: all three §5.3 jargon terms — 'struck off a professional register', 'bar association', and 'costs order' — now have plain-language parenthetical glosses that a zero-background reader can understand on first encounter. Cycle-1 fixes (citation density ~64% ≥ 60% threshold; word count ~2743 above the 2100 hard floor) remain intact. Required sections present and non-trivial. No forward references. No scope creep. One soft note retained: corpus is ~8.6% below the 3000-word standard target floor — not a hard block, but worth expanding if content coverage permits. Corpus is approved to proceed to artifact generation."
+}

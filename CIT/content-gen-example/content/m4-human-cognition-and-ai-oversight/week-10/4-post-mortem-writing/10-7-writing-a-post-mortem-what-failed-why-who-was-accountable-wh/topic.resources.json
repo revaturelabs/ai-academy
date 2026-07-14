@@ -1,0 +1,30 @@
+{
+  "topic_id": "10.7",
+  "captured_at": "2026-06-13T00:00:00Z",
+  "captured_by": "namratas@revature.com",
+  "resources_source": "web_search",
+  "web_search_query": "AI incident post-mortem writing accountability governance framework",
+  "resources": [
+    {
+      "type": "url",
+      "value": "https://arxiv.org/pdf/2404.16957",
+      "role": "primary",
+      "source": "web_search",
+      "notes": "Academic framework for attributing responsibility in AI-induced incidents — computational reflective equilibrium approach"
+    },
+    {
+      "type": "url",
+      "value": "https://incident.io/blog/sre-incident-postmortem-best-practices",
+      "role": "supporting",
+      "source": "web_search",
+      "notes": "SRE post-mortem best practices: no-blame culture, what-not-who framing, templates"
+    },
+    {
+      "type": "url",
+      "value": "https://governance.aicareer.pro/blog/managing-ai-incidents-part-1",
+      "role": "supporting",
+      "source": "web_search",
+      "notes": "AI-specific incident management lifecycle including post-incident review feeding back into governance"
+    }
+  ]
+}

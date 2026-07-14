@@ -1,0 +1,49 @@
+$CATEGORY: CIT/M2/week-5/5-1-real-ai-failure-cases-healthcare-misdiagnosis-hiring-bias-de
+
+::q1:: Which of the following correctly pairs an AI failure domain with a real harm it caused? {
+~A hiring AI rejected applications from men more often than women, because of gender-specific flaws in how the resume parser handled gendered nouns.#No — the documented Amazon case showed the system penalized women's applications, not men's.
+=Diagnostic AI trained mostly on lighter-skinned patients gave less accurate results for darker-skinned patients.#Correct — the training data underrepresented darker-skinned patients, so the model failed them at higher rates.
+~Deepfake tools were banned globally in 2019 after governments determined they posed an immediate, unmanageable risk to national security and financial systems.#No — deepfake tools are not globally banned; the DHS report notes they have become easier to use over time, not that they were banned.
+~Healthcare AI misdiagnosed patients only when it was used outside hospitals, not in clinical settings where it had been validated.#No — documented failures occurred in clinical settings where the AI was deployed for diagnostic use.
+#### Tests LO1 — ability to identify a real documented AI failure case and the specific harm it caused (corpus §5.2, §5.3).
+}
+
+::q2:: Amazon's hiring AI penalized applications from women. What was the root cause of this failure? {
+~The AI was programmed with explicit rules that ranked women lower than men, reflecting choices made deliberately by the engineers who designed it.#No — the system was not given explicit rules about gender; it learned patterns from data, not from hard-coded instructions.
+~The engineers who built the system held personal biases and deliberately encoded preferences for male candidates into the algorithm's scoring rules.#No — the corpus describes the failure as a result of training data patterns, not intentional encoding by engineers.
+~Amazon deployed the tool in countries where hiring discrimination was permitted under local law, and the AI followed those legal rules when ranking candidates.#No — the failure arose from the training data, not from legal rules in different countries.
+=The AI learned from Amazon's own ten-year hiring history, which reflected past discrimination in favor of men.#Correct — historical hiring data carried historical bias; the model learned to replicate that pattern.
+#### Tests LO2 — identifying the specific mechanism (biased training data) behind a documented AI hiring failure (corpus §5.3).
+}
+
+::q3:: A student says "AI bias just means the AI is unfair sometimes." What is a more precise explanation? {
+=Algorithmic bias is a systematic pattern of unfair AI outputs for specific groups, caused by biased training data or design choices.#Correct — this identifies the mechanism (training data or design) and the systematic, group-level pattern that makes the bias concrete rather than vague.
+~Bias means the AI makes random errors that happen to affect some groups more than others purely by chance, with no connection to how the system was built.#No — the corpus describes AI bias as systematic and patterned, not random.
+~Bias means the AI intentionally favors one group over another, as if the system has developed a preference through repeated use and reinforcement.#No — the corpus explicitly states that intent is absent; bias results from data and design, not from the system developing preferences.
+~Bias only matters when the AI operates in countries that have passed anti-discrimination laws specifically covering algorithmic decision-making.#No — the harm from biased AI exists regardless of where it is deployed; legal context does not change the technical mechanism.
+#### Tests LO3 — ability to explain AI bias using a concrete mechanism rather than vague language (corpus §5.3, §5.5).
+}
+
+::q4:: An AI tool for reading chest X-rays correctly identifies disease 94% of the time in clinical trials. A hospital deploys it and a patient group systematically receives missed diagnoses. Which statement best describes this situation? {
+~The AI is malfunctioning because a 94% accuracy rate, validated in trials, should prevent all systematic failures across any patient group in real-world use.#No — accuracy statistics are averages; they do not guarantee equal performance across all patient groups.
+~The situation is acceptable because no AI system can be 100% accurate, and a 94% rate is considered state-of-the-art performance for diagnostic imaging tools.#No — the corpus distinguishes between technical accuracy and ethical safety; a high average rate does not justify systematic harm to a specific group.
+=The AI may be working as designed while still causing harm, because accuracy on one population does not equal safety for all.#Correct — the corpus states that technical accuracy and ethical safety are not the same thing; a system can produce outputs and still cause systematic harm.
+~The hospital bears no responsibility because the AI's accuracy was independently validated in clinical trials conducted before the system was deployed.#No — the corpus states that responsibility rests with the people and organizations that deploy the system, regardless of prior validation.
+#### Tests LO4 — distinguishing between a technically functioning AI system and one that is causing harm (corpus §5.1, §5.2, §5.5).
+}
+
+::q5:: A company deploys an AI tool that screens job applications. The tool systematically filters out qualified candidates from certain groups. The company says "the algorithm made the decision, not us." Why is this response inadequate? {
+~It is adequate — once an algorithm produces an output, accountability shifts entirely to the company that built and sold the AI, not to the company that chose to deploy it.#No — the corpus states that the people and organizations that deploy a system bear responsibility; accountability does not transfer entirely to the original builder.
+=Deploying an AI system makes you accountable for its outcomes — "the algorithm decided" does not remove that responsibility.#Correct — the corpus explicitly states that deployers are accountable for outcomes their AI causes, regardless of whether the AI produced the output automatically.
+~The response would be adequate if the company could prove it had not written any of the algorithm's source code and had only purchased a commercial off-the-shelf product.#No — the corpus makes clear that deploying a system, not just building it, creates accountability for its outcomes.
+~The response is adequate because AI systems have no legal standing to be held responsible, and since no human made each individual decision, no one is accountable.#No — the corpus states that responsibility falls on people and organizations, not on the AI; the absence of AI legal standing does not mean no one is accountable.
+#### Tests LO5 — explaining why deployers bear responsibility for AI outcomes even when the AI produces the output (corpus §5.2, §5.5, §8).
+}
+
+::q6:: Diagnostic AI failures, Amazon's hiring AI, and deepfake harm look very different. What do all three cases share? {
+~All three involved AI systems deliberately programmed to cause harm by their creators, who encoded discriminatory rules or deceptive capabilities on purpose.#No — the corpus states that intent was absent in the diagnostic and hiring cases; deepfakes involve misuse, but the underlying tools were not designed to cause harm.
+~All three failures were caused entirely by end users misusing tools that worked correctly — the AI systems themselves functioned as intended without any design flaw.#No — the diagnostic and hiring cases involved systems that failed due to training data bias, not user misuse; this explanation does not fit all three.
+~All three cases were resolved quickly once the AI companies involved issued public apologies and corrections, demonstrating that transparency alone is sufficient to address AI harm.#No — the corpus does not describe quick resolutions; it notes these are ongoing patterns documented across multiple industries.
+=In all three cases, an existing human problem — inequity, discrimination, or deception — was amplified by AI to be faster, cheaper, and larger in scale.#Correct — the corpus §5.5 identifies this as the common thread: AI inherits and amplifies existing human problems without inventing them.
+#### Tests integrative understanding — the common pattern across all three failure domains (corpus §5.5).
+}

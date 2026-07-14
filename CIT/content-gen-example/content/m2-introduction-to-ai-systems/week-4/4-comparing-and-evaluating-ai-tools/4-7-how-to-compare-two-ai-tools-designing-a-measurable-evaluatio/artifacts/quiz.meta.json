@@ -1,0 +1,53 @@
+{
+  "topic_id": "4.7",
+  "generated_at": "2026-06-17T00:00:00Z",
+  "format": "gift",
+  "question_count": 7,
+  "$bias_defense_applied": true,
+  "$shuffle_seed": 47,
+  "correct_position_distribution": {"0": 2, "1": 1, "2": 1, "3": 2},
+  "questions": [
+    {
+      "id": "q1",
+      "type": "mcq",
+      "objective_ref": "LO1 — explain what a rubric is and why it produces more reliable comparisons than personal opinion",
+      "correct_position": 2
+    },
+    {
+      "id": "q2",
+      "type": "mcq",
+      "objective_ref": "LO2 — name at least four criteria that commonly appear in AI tool evaluation rubrics and describe what each one measures",
+      "correct_position": 0
+    },
+    {
+      "id": "q3",
+      "type": "mcq",
+      "objective_ref": "LO3 — distinguish vague qualitative judgement from measurable descriptor-anchored criteria",
+      "correct_position": 3
+    },
+    {
+      "id": "q4",
+      "type": "mcq",
+      "objective_ref": "LO4 — design a five-criteria rubric with performance levels and scoring descriptors",
+      "correct_position": 3
+    },
+    {
+      "id": "q5",
+      "type": "mcq",
+      "objective_ref": "LO5 — apply rubric to two tools and produce a defensible evidence-based conclusion",
+      "correct_position": 0
+    },
+    {
+      "id": "q6",
+      "type": "mcq",
+      "objective_ref": "LO1 — explain what a rubric is and why it produces more reliable comparisons than personal opinion",
+      "correct_position": 1
+    },
+    {
+      "id": "q7",
+      "type": "short_answer",
+      "objective_ref": "LO1 — explain what a rubric is and why it produces more reliable comparisons than personal opinion",
+      "correct_position": null
+    }
+  ]
+}

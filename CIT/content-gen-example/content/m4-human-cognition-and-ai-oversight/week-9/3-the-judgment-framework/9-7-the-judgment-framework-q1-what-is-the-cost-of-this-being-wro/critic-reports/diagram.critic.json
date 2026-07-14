@@ -1,0 +1,68 @@
+{
+  "verdict": "pass",
+  "cycle": 1,
+  "findings": [
+    {
+      "code": "looks_good",
+      "where": "overall structure / intent match",
+      "detail": "7-node flowchart TB. Three dimension nodes (SEV, PROB, DET) each fire an edge into COST, expressing the fan-in 'three dimensions feeding into a combined cost signal' as the intent specifies. COST then feeds VERDICT (a diamond), which branches via labelled edges 'High cost' → VERIFY and 'Low cost' → PROCEED — exactly the triage decision flow described in §5 and §6."
+    },
+    {
+      "code": "looks_good",
+      "where": "labels / concept fidelity",
+      "detail": "All seven bold labels trace directly to corpus §5–§6: 'Assess Severity' (§5 Dimension 1 / §6 Step 2), 'Assess Probability' (§5 Dimension 2 / §6 Step 3), 'Assess Detectability' (§5 Dimension 3 / §6 Step 4), 'Combined Cost Signal' (§5 formula Severity × Probability × 1/Detectability), 'Cost Verdict' (§5 high/low cost triage decision), 'Verify Before Acting' (§6 Step 5 high-cost path), 'Proceed with Care' (§6 Step 5 low-cost path). No Q2 or Q3 nodes present. No concept drift."
+    },
+    {
+      "code": "looks_good",
+      "where": "label discipline",
+      "detail": "All bold node labels ≤ 4 words: 'Assess Severity' 2w, 'Assess Probability' 2w, 'Assess Detectability' 2w, 'Combined Cost Signal' 3w, 'Cost Verdict' 2w, 'Verify Before Acting' 3w, 'Proceed with Care' 3w. Pass."
+    },
+    {
+      "code": "looks_good",
+      "where": "color tier assignment",
+      "detail": "SEV, PROB, DET, COST all use auto purple (#d0bfff/#8b5cf6) — they are the automated/systematic triage assessment steps. VERDICT uses decision/hitl yellow (#fff3bf/#f59e0b, stroke-width 3px) — it is the human judgment gate where the cost verdict is rendered. VERIFY and PROCEED use done green (#b2f2bb/#22c55e) — they are terminal action outcomes. Semantically coherent."
+    },
+    {
+      "code": "looks_good",
+      "where": "title discipline",
+      "detail": "Governing concept 'Q1 — What is the Cost of This Being Wrong?' sits in the --- config title: field as a banner above the diagram. No ghost node used for the central organizing idea."
+    },
+    {
+      "code": "looks_good",
+      "where": "layout choice",
+      "detail": "TB is correct for this intent. The relationship is genuinely non-linear: three dimension nodes converge (fan-in) to COST, then COST fans-out to two terminal branches. A TB layout expresses this naturally — dimensions align horizontally at the top rank, COST sits in the middle, VERDICT and the two terminal nodes fill the bottom ranks. An LR layout would force this fan-in/fan-out into an awkward left-right expansion."
+    },
+    {
+      "code": "looks_good",
+      "where": "subtitle content",
+      "detail": "All subtitle spans use font-size 12px (above the 11px floor), color #6d28d9. Content traces to corpus: 'How bad if the error occurs?' (§5 Dimension 1), 'How likely is this output wrong?' (§5 Dimension 2 / §5 triage checklist Q2), 'Would you catch it before harm?' (§5 Dimension 3 / §5 triage checklist Q3), 'Severity × Probability × (1 / Detectability)' (§5 formula), 'Apply deliberate scrutiny' (§6 Step 5), 'Move faster, stay alert' (§5 'move faster' phrasing). All grounded."
+    }
+  ],
+  "preflight": {
+    "mermaid_parse": "pass (valid --- YAML config block with config: wrapper; flowchart TB declaration; SEV/PROB/DET/COST in bracket notation with HTML labels; VERDICT in brace notation for diamond; VERIFY/PROCEED in bracket notation; all edges use --> and -->|\"label\"| syntax; classDef declarations for auto/start/done/decision; class assignments resolve to defined classDefs; no stray tokens)",
+    "node_count": "pass (7 nodes: SEV, PROB, DET, COST, VERDICT, VERIFY, PROCEED — within 3–8 range)",
+    "label_discipline": "pass (all bold labels ≤ 4 words — longest is 'Combined Cost Signal' at 3 words)",
+    "concept_fidelity": "pass (all labels trace to corpus §5 Core Concepts and §6 Implementation; no Q2/Q3 or adjacent-topic scope creep; 'Combined Cost Signal' maps to the § 5 formula node)",
+    "jargon_labels": "pass (no bare unexplained acronyms; all labels plain English or corpus-defined terms)",
+    "title_discipline": "pass (governing concept in config title: field; no ghost node displacement)",
+    "linear_flow_discipline": "pass (intent is explicitly non-linear: three-to-one fan-in + one-to-two branch; TB layout with convergence/divergence is appropriate; no spurious branching on a genuinely linear concept)"
+  },
+  "stats": {
+    "nodes": 7,
+    "edges": 7,
+    "layout": "flowchart TB",
+    "labels": [
+      "Assess Severity",
+      "Assess Probability",
+      "Assess Detectability",
+      "Combined Cost Signal",
+      "Cost Verdict",
+      "Verify Before Acting",
+      "Proceed with Care"
+    ],
+    "mmd_path": "content/m4-human-cognition-and-ai-oversight/week-9/3-the-judgment-framework/9-7-the-judgment-framework-q1-what-is-the-cost-of-this-being-wro/artifacts/diagram.mmd",
+    "png_path": "content/m4-human-cognition-and-ai-oversight/week-9/3-the-judgment-framework/9-7-the-judgment-framework-q1-what-is-the-cost-of-this-being-wro/artifacts/diagram.png",
+    "png_render_command": "mmdc -i diagram.mmd -o diagram.png -w 1400 -b transparent",
+    "png_render_status": "pending — mmdc not executable in current file-tool-only environment; PNG must be rendered by running the command above from the artifacts/ directory"
+  }
+}

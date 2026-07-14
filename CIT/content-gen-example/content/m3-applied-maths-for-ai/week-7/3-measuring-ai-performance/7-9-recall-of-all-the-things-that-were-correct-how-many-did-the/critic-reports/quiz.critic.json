@@ -1,0 +1,70 @@
+{
+  "topic_id": "7.9",
+  "cycle": 2,
+  "passed": true,
+  "checks": {
+    "positional_bias": {
+      "passed": true,
+      "derived_positions": [2, 0, 3, 1, 2, 0],
+      "sidecar_positions": [2, 0, 3, 1, 2, 0],
+      "meta_gift_desync": false,
+      "distribution": { "pos0": 2, "pos1": 1, "pos2": 2, "pos3": 1 },
+      "max_share": 0.333,
+      "threshold": 0.40
+    },
+    "length_bias": {
+      "passed": true,
+      "longest_correct_rate": 0.0,
+      "baseline": 0.25,
+      "threshold": 0.40,
+      "per_question": [
+        { "id": "q1", "correct_len": 71, "mean_distractor_len": 71.67, "ratio": 0.991, "longest_correct": false },
+        { "id": "q2", "correct_len": 104, "mean_distractor_len": 115.67, "ratio": 0.899, "longest_correct": false },
+        { "id": "q3", "correct_len": 84, "mean_distractor_len": 117.33, "ratio": 0.716, "longest_correct": false },
+        { "id": "q4", "correct_len": 119, "mean_distractor_len": 116.33, "ratio": 1.023, "longest_correct": false },
+        { "id": "q5", "correct_len": 91, "mean_distractor_len": 86.67, "ratio": 1.050, "longest_correct": false },
+        { "id": "q6", "correct_len": 163, "mean_distractor_len": 142.67, "ratio": 1.143, "longest_correct": false }
+      ]
+    },
+    "distractor_plausibility": {
+      "passed": true,
+      "total_distractors": 18,
+      "absurd_count": 0,
+      "absurd_rate": 0.0,
+      "threshold": 0.25,
+      "weakest_questions": [
+        {
+          "id": "q6",
+          "distractor": "A model that improves recall must be retrained from scratch, which coincidentally reduces precision as a side effect of retraining",
+          "score": 2,
+          "note": "Mechanism is implausible but not absurd; a beginner could plausibly conflate model improvement with retraining."
+        }
+      ]
+    },
+    "objective_coverage": {
+      "passed": true,
+      "uncovered_objectives": [],
+      "orphan_questions": [],
+      "mapping": [
+        { "lo": "Explain in plain English what recall measures for a classification model.", "questions": ["q1"] },
+        { "lo": "Define true positive and false negative in the context of a model's predictions.", "questions": ["q2"] },
+        { "lo": "Apply the recall formula (true positives divided by true positives plus false negatives) to a simple scenario.", "questions": ["q3"] },
+        { "lo": "Explain why a model can have high accuracy and high precision while still having low recall.", "questions": ["q4"] },
+        { "lo": "Identify at least one real-world situation where recall is the metric that matters most.", "questions": ["q5"] },
+        { "lo": "Describe, without computing it, why precision and recall pull in opposite directions.", "questions": ["q6"] }
+      ]
+    },
+    "scope": {
+      "passed": true,
+      "out_of_scope_terms_found": [],
+      "jargon_in_stem": [],
+      "out_of_scope_questions": [],
+      "note": "No F1, ROC, AUC, or specificity appear anywhere. All questions are answerable by a beginner who read this topic only. All stems use plain language consistent with corpus."
+    }
+  },
+  "auto_correction_applied": {
+    "shuffle_round_2": false
+  },
+  "verdict": "Pass — all 5 checks clean. Cycle-2 distractor length extensions resolved the length-bias failure from cycle 1; no question has correct answer exceeding 1.20x mean distractor length; correct-answer positions unchanged and within positional-bias threshold; all 6 LOs covered; no scope creep.",
+  "at": "2026-06-23T00:00:00Z"
+}

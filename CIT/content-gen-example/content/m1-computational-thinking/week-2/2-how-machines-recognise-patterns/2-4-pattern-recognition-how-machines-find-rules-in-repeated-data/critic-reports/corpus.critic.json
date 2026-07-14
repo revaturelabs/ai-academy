@@ -1,0 +1,218 @@
+{
+  "critic": "corpus-critic",
+  "topic_id": "2.4",
+  "topic_title": "Pattern recognition — how machines find rules in repeated data",
+  "at": "2026-06-17T00:00:00Z",
+  "run": 3,
+  "passed": true,
+  "profile_used": "standard",
+  "profile_note": "No suggested_profile declared in corpus frontmatter or topic.manifest.json (expected_delivery_minutes: null). Topic exhibits deep_signals per artifact-mix.json classification_signals: 6 Core Concepts subsections (5.1–5.6), 5-step Implementation section, Real-World Patterns section, Best Practices section. Conservative floor is 'standard' (3000-word corpus minimum). Atomic disqualified by presence of Implementation and Real-World Patterns sections.",
+  "estimated_word_count": 2587,
+  "word_count_basis": "Carried forward from run 2 pre-mutation count; only change between run 2 corpus and current corpus is removal of bold markers from 'model drift' at line 124 (net 4 chars removed, zero word-count impact). Count treated as stable at ~2587.",
+  "checks": {
+    "required_sections": {
+      "passed": true,
+      "detail": {
+        "section_3_learning_objectives": {
+          "present": true,
+          "word_count_approx": 95,
+          "threshold": 50,
+          "pass": true,
+          "note": "6 bullet objectives covering rule-based vs pattern-recognition, training, feature/label/classification, probabilistic outputs, and spec writing implications."
+        },
+        "section_4_introduction": {
+          "present": true,
+          "word_count_approx": 125,
+          "threshold": 50,
+          "pass": true,
+          "note": "Three paragraphs: connects to prior Week 1 pattern-recognition surface intro, poses the core question (how does a machine do it?), bridges to upcoming A1 assessment."
+        },
+        "section_5_core_concepts": {
+          "present": true,
+          "word_count_approx": 1300,
+          "threshold": 100,
+          "pass": true,
+          "note": "Six subsections (5.1 rule-based vs pattern-recognition; 5.2 training on labeled data; 5.3 features; 5.4 classification; 5.5 probabilistic outputs; 5.6 training–deployment gap). Each subsection substantive."
+        },
+        "section_10_key_takeaways": {
+          "present": true,
+          "word_count_approx": 100,
+          "threshold": 50,
+          "pass": true,
+          "note": "5 bullets covering all main concepts of the topic."
+        }
+      }
+    },
+    "citation_density": {
+      "passed": true,
+      "resources_source": "web_search",
+      "mode": "strict",
+      "primary_resources_all_cited": true,
+      "resources": {
+        "[1]": {
+          "url": "https://sam-solutions.com/blog/pattern-recognition-in-ai/",
+          "cited": true,
+          "first_appearance_line": 28,
+          "total_occurrences": 13
+        },
+        "[2]": {
+          "url": "https://viso.ai/deep-learning/pattern-recognition/",
+          "cited": true,
+          "first_appearance_line": 59,
+          "total_occurrences": 15
+        },
+        "[3]": {
+          "url": "https://saiwa.ai/blog/ai-for-pattern-recognition/",
+          "cited": true,
+          "first_appearance_line": 38,
+          "total_occurrences": 13
+        }
+      },
+      "fake_citations": false,
+      "factual_assertion_coverage": {
+        "section_5_core_concepts": {
+          "total_standalone_assertions": 23,
+          "cited": 19,
+          "pct": 83,
+          "threshold_pct": 60,
+          "pass": true
+        },
+        "section_6_implementation": {
+          "total_standalone_assertions": 5,
+          "cited": 5,
+          "pct": 100,
+          "threshold_pct": 60,
+          "pass": true
+        },
+        "section_7_real_world_patterns": {
+          "total_standalone_assertions": 6,
+          "cited": 6,
+          "pct": 100,
+          "threshold_pct": 60,
+          "pass": true
+        }
+      },
+      "findings": []
+    },
+    "sequence_drift": {
+      "passed": true,
+      "prior_topics_range": "1.1–2.3",
+      "concepts_introduced_in_prior_topics": "All empty ([]) per sequence.index.json. Only title-derivable concepts available from prior curriculum: computation (1.1), deterministic systems (1.2), probabilistic systems (1.3), pattern recognition surface intro (1.4), decomposition (1.5), abstraction (1.6), pseudocode (1.7), flowcharts (1.8), algorithmic thinking (1.9–1.11), problem statement (1.12), testable/bounded/observable/actionable spec properties (2.1), bad-vs-good spec (2.2), inputs/expected-outputs/failure-conditions/six-component checklist (2.3).",
+      "concepts_introduced_here": [
+        "rule-based system / expert system",
+        "pattern-recognition system",
+        "training",
+        "training data / dataset",
+        "label",
+        "feature",
+        "feature selection",
+        "feature extraction",
+        "classification",
+        "confidence score",
+        "training–deployment gap"
+      ],
+      "forward_references_hard": [],
+      "forward_references_soft": [
+        {
+          "term": "validation set",
+          "location": "Section 5.5, line 115",
+          "context": "\"...measured on a held-out validation set of 500 labeled emails not seen during training.\"",
+          "severity": "soft",
+          "note": "Technical ML term used without plain-language definition at first appearance. Not formally introduced until later in the sequence. Appears inside a specification example — not taught as a concept — so this is a soft forward-reference finding, not a hard block. Suggested fix: add a parenthetical gloss, e.g. '(a separate batch of emails not used during training)'."
+        }
+      ],
+      "model_drift_status": "RESOLVED — line 124 text is 'This is called model drift and is covered in a later module.' — bare name, unbolded, one sentence, explicit deferral pointer. Correct mention-and-defer form. Prior run 2 hard fail on this item is cleared.",
+      "findings": []
+    },
+    "length_sanity": {
+      "passed": true,
+      "estimated_word_count": 2587,
+      "profile": "standard",
+      "profile_corpus_range": [3000, 4400],
+      "shortfall_words": 413,
+      "shortfall_pct": 13.8,
+      "hard_fail_threshold_pct": 30,
+      "hard_fail_floor": 2100,
+      "detail": "~2,587 words is 13.8% below the standard-profile corpus floor of 3,000 words. This falls within the 30% hard-fail buffer (floor × 0.70 = 2,100 words). No hard block on length. Soft finding: corpus is slightly below target range — modest expansion of Implementation (§6) and Best Practices (§8) would bring it to standard range. Builder must also declare 'suggested_profile' in corpus frontmatter (currently missing).",
+      "findings": [
+        {
+          "severity": "soft",
+          "code": "below_range_floor",
+          "detail": "~2,587 words vs standard-profile floor 3,000. Within 30% hard-fail buffer. Surfaces to HITL #2 as an advisory — author can accept or request expansion."
+        },
+        {
+          "severity": "soft",
+          "code": "missing_suggested_profile",
+          "detail": "Corpus frontmatter does not declare 'suggested_profile' field. Builder defect — required by corpus-critic SKILL.md. Surfaces to HITL #2."
+        }
+      ]
+    },
+    "topic_scope": {
+      "passed": true,
+      "headline": "Pattern recognition — how machines find rules in repeated data",
+      "scope_creep_hard_fails": [],
+      "soft_findings": [
+        {
+          "severity": "soft",
+          "code": "undefined_technical_term_in_example",
+          "term": "validation set",
+          "location": "Section 5.5, line 115",
+          "detail": "Used in a spec-writing example without definition. Not taught at depth, does not constitute teaching an out-of-scope concept. Same instance flagged under sequence_drift and beginner_readability."
+        }
+      ],
+      "model_drift_resolution": "RESOLVED — prior hard fail cleared. Line 124: 'This is called model drift and is covered in a later module.' — bare name (no bold), one sentence, explicit 'covered in a later module' pointer. Satisfies mention-and-defer form per artifact-mix.json scope_discipline rules.",
+      "other_scope_notes": "Expert system (§5.1): defined inline as synonym for rule-based system — within scope. Feature selection/extraction (§5.3): named together in one sentence, appropriately within the 'find rules' headline scope. Confidence score: introduced here, within scope. No neural-network internals, gradient descent, backpropagation, or other advanced ML concepts taught."
+    },
+    "beginner_readability": {
+      "passed": true,
+      "escalated_to_hard_fail": false,
+      "distinct_findings_count": 1,
+      "hard_fail_threshold": 3,
+      "terms_defined_on_first_use": {
+        "rule-based system": { "line": 38, "defined": true },
+        "expert system": { "line": 38, "defined_as_synonym": true },
+        "pattern-recognition system": { "line": 46, "defined": true },
+        "training": { "line": 59, "defined": true },
+        "label": { "line": 66, "defined": true },
+        "feature": { "line": 74, "defined": true },
+        "feature selection / feature extraction": { "line": 84, "defined_implicitly": true, "note": "Defined implicitly by surrounding context ('Choosing which features to measure... This step is called...'); adequate for beginners." },
+        "classification": { "line": 88, "defined": true },
+        "deterministic": { "line": 102, "defined": true, "note": "Also introduced at topic 1.2." },
+        "probabilistic": { "line": 104, "defined": true, "note": "Also introduced at topic 1.3." },
+        "confidence score": { "line": 104, "defined_inline": true }
+      },
+      "jargon_dumps": [],
+      "hedging_phrases": [],
+      "findings": [
+        {
+          "severity": "soft",
+          "code": "undefined_terms",
+          "terms": ["validation set"],
+          "location": "Section 5.5, line 115",
+          "note": "'validation set' used in a specification example without plain-language gloss. A beginner at week 2 lacks this vocabulary. Suggested fix: add parenthetical '(a separate batch of emails set aside and not used during training)' immediately after first use."
+        }
+      ],
+      "detail": "Readability is strong overall. All primary technical terms defined on first use with bold + plain-English meanings. Sentences are short, active-voice, and learner-addressed throughout. No jargon dumps detected — no paragraph introduces 3+ undefined terms simultaneously. No hedging phrases. 'false positive' at line 186 (exercise) presents plain meaning first ('ended up in spam by mistake'), term in parentheses — acceptable form. 'precision' used in section 8 examples can be read as everyday English ('exactness') in context — borderline but not a distinct finding. One distinct soft finding (validation set) — below ≥3 threshold for hard-fail escalation."
+    }
+  },
+  "hard_fails": [],
+  "soft_findings_summary": [
+    {
+      "check": "length_sanity",
+      "code": "below_range_floor",
+      "detail": "~2,587 words vs standard-profile floor 3,000. Within 30% hard-fail buffer. Advisory only."
+    },
+    {
+      "check": "length_sanity",
+      "code": "missing_suggested_profile",
+      "detail": "Corpus frontmatter missing 'suggested_profile' field. Builder defect — surfaces at HITL #2."
+    },
+    {
+      "check": "sequence_drift / topic_scope / beginner_readability",
+      "code": "undefined_terms",
+      "terms": ["validation set"],
+      "detail": "'validation set' used at line 115 without plain-language definition. Appears in a spec example — not taught as a concept. Add a parenthetical gloss. Surfaces at HITL #2."
+    }
+  ],
+  "verdict": "PASS — all hard-fail checks clear. The prior run 2 hard fail (scope_creep: 'model drift' bolded in §5.6) is resolved — line 124 now reads as bare name with explicit deferral pointer, correct mention-and-defer form. The prior length hard fail (run 1: ~2100 words) is not a hard fail at the current ~2587-word count (13.8% below standard floor, within 30% buffer). Three soft findings surface to HITL #2: (a) corpus is ~413 words below the standard-profile floor — advisory expansion of §6/§8 recommended; (b) 'suggested_profile' missing from corpus frontmatter; (c) 'validation set' used at line 115 without definition — add a brief parenthetical gloss. No blocking issues remain."
+}

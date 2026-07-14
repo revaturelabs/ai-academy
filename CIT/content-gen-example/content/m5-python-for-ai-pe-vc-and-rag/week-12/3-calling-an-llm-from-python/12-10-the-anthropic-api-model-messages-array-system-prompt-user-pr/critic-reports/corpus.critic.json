@@ -1,0 +1,54 @@
+{
+  "critic": "corpus-critic",
+  "topic_id": "12.10",
+  "topic_title": "The Anthropic API — model, messages array, system prompt, user prompt, authentication",
+  "depth_profile": "deep",
+  "at": "2026-06-15T06:00:00Z",
+  "pass_number": 2,
+  "passed": true,
+  "verdict": "PASS — all hard checks clear. Length ~4525w is below the 5000w deep-profile floor but the shortfall (~9.5%) is well within the 30% outside-range hard-fail threshold (floor for hard-fail: 3500w). Both prior hard failures are resolved: (1) scope_creep — max_tokens no longer bolded or defined; s5.1 defers it in plain prose as 'additional parameters… introduced in topic 12.11', and it is absent from the s5.6 table. (2) The corpus is substantially expanded from ~2350w to ~4525w. Prior soft findings are also resolved: version_control now carries an inline gloss on first use in s5.5 ('a system like GitHub that tracks every change to your code'); secrets_manager is defined at first use in s8 ('a secure store for credentials, separate from your code') and again in s10. Section 6 now carries citation markers in subsections 6.1, 6.2, 6.3, and 6.4, clearing the prior section_6_no_citations soft finding. One residual soft note: word count sits at ~4525w, ~475w below the 5000w floor — not a hard fail, but the builder should note the corpus is at the lower edge of the deep-profile range.",
+  "checks": {
+    "required_sections": {
+      "passed": true,
+      "detail": "All four required sections present and non-trivial. Section 3 (Learning Objectives): 6 bullet-point objectives, ~115w — exceeds 50w minimum. Section 4 (Introduction): 4 prose paragraphs, ~130w — exceeds 50w minimum. Section 5 (Core Concepts): subsections 5.1–5.6 with ~2330w prose — well exceeds 100w minimum. Section 10 (Key Takeaways): 5 substantive bullets, ~130w — exceeds 100w minimum. No placeholder strings found in any required section."
+    },
+    "citation_density": {
+      "passed": true,
+      "resources_source": "web_search",
+      "detail": "All three resources cited. Primary [1] (docs.anthropic.com/en/api/messages) cited in sections 5.1, 5.2 (×2), 5.3, 5.5 (×3), 5.6, 6.1, 6.2, 6.3, 6.4, 7 (×2). Supporting [2] (system-prompts guide) cited in sections 5.4 (×2), 6.2, 6.3, 7, 8. Supporting [3] (upgrading-to-messages-api) cited in sections 5.3 (×2), 6.4, 7. No fake or unresolvable citation markers found. Citation density in sections 5, 6, and 7 meets the ≥60% standalone-factual-assertion threshold. Prior soft finding 'section_6_no_citations' is resolved: subsections 6.1, 6.2, 6.3, and 6.4 now carry citation markers.",
+      "findings": []
+    },
+    "sequence_drift": {
+      "passed": true,
+      "detail": "No unanchored forward references found. All foundational concepts used (API, endpoint, POST, headers, JSON, status code, API key, list, dictionary, function) were introduced in topics 12.1–12.9. Concepts introduced in this topic (Messages API, model parameter, messages array, role field, content field, system prompt, user prompt, authentication) are consistent with the sequence.index.json entry for 12.10. 'stateless' is introduced and defined inline in section 7 in a single sentence ('the API itself is stateless — it does not remember anything between calls'), acceptable as a same-topic definitional aside directly supporting the messages array explanation. 'environment variable' is introduced and defined inline in section 5.5 ('a named value stored by the operating system, not in your script'), necessary to explain API key storage and thus in scope. 'AnthropicClient' appears once in a code comment in section 5.5 with an explicit 'topic 12.11' forward pointer and is not taught here. HTTP status codes 400, 401, 429 reference the 'status code' concept already introduced in 12.9; 12.13 is cited as the error-handling topic. Prior soft finding for 'version_control' and 'secrets_manager' as undefined terms is resolved — see beginner_readability findings.",
+      "findings": []
+    },
+    "length_sanity": {
+      "passed": true,
+      "hard_fail": false,
+      "estimated_word_count": 4525,
+      "expected_range_words": [5000, 6000],
+      "percent_below_minimum": 9.5,
+      "threshold_pct": 30,
+      "detail": "Estimated prose word count ~4525 words (excluding frontmatter, code blocks, and table rows). Deep profile requires 5000–6000 words. The corpus is ~475w below the 5000w floor, a shortfall of ~9.5%. The hard-fail threshold is >30% outside the range (floor for hard-fail: 5000 × 0.70 = 3500w). At ~4525w this is not a hard fail. Represents a substantial improvement over the first-pass ~2350w. Soft note: the corpus sits near the bottom edge of the deep-profile band; additional prose in Implementation or Real-World Patterns (≈475 words) would push it into the target window.",
+      "findings": [
+        {
+          "type": "soft",
+          "code": "below_depth_floor",
+          "detail": "~4525w is approximately 475w below the 5000w deep-profile floor. Not a hard fail (shortfall <30%), but the builder may wish to add a brief elaborating paragraph in section 7 or an additional sub-exercise in section 9 to reach the 5000w target."
+        }
+      ]
+    },
+    "topic_scope": {
+      "passed": true,
+      "detail": "No scope creep found. Topic headline is 'model, messages array, system prompt, user prompt, authentication' — all five named sub-concepts are taught at appropriate depth. Prior hard failure (max_tokens bolded and defined) is fully resolved: section 5.1 now reads 'The API also requires some additional parameters (such as reply-length limits) that are introduced in topic 12.11.' — plain prose, no bold, no defining appositive. The section 5.6 summary table contains exactly four rows (model, messages, system, API key); max_tokens is absent. No other out-of-scope concept is taught at depth. In-scope adjacent concepts (stateless, environment variable, version control, secrets manager) are each handled as defined-in-one-sentence asides that serve the headline concepts rather than teaching a separate topic.",
+      "findings": []
+    },
+    "beginner_readability": {
+      "passed": true,
+      "soft_findings_count": 0,
+      "detail": "Readability is good throughout. Active voice, second-person direct address ('you'), concrete analogies (form-filling, bookshop customer-support bot, structured-output bot, travel guide). All non-everyday technical terms are defined on first use: 'endpoint' back-referenced to 12.9; 'environment variable' glossed inline in s5.5; 'version control' glossed inline in s5.5; 'secrets manager' glossed inline in s8 and s10; 'stateless' defined inline in s7. No paragraph introduces 3+ brand-new terms simultaneously. No hedging phrases detected. Average sentence length is within the ~25-word target. Prior soft finding for 'version control' and 'secrets manager' as undefined terms is fully resolved by the inline glosses added in this revision. Soft finding count: 0, well below the ≥3 hard-escalation threshold.",
+      "findings": []
+    }
+  }
+}

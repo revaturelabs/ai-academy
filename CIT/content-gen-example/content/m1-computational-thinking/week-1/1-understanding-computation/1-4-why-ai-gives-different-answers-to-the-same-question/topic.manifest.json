@@ -1,0 +1,49 @@
+{
+  "type": "topic",
+  "id": "1.4",
+  "title": "Why AI gives different answers to the same question",
+  "slug": "1-4-why-ai-gives-different-answers-to-the-same-question",
+  "position_in_module": 4,
+  "week_num": 1,
+  "session_name": "How Machines Think",
+  "module": {
+    "position": 1,
+    "slug": "1-understanding-computation",
+    "title": "Understanding Computation"
+  },
+  "course": {
+    "code": "M1",
+    "slug": "m1-computational-thinking",
+    "title": "Computational Thinking"
+  },
+  "next_assessment": {
+    "id": "A1",
+    "due_week": 3,
+    "title": "Specification Portfolio",
+    "weight": "10%"
+  },
+  "paths": {
+    "corpus": "topic_corpus.md",
+    "resources": "topic.resources.json",
+    "progress": "topic.progress.json",
+    "artifacts_dir": "artifacts/",
+    "critic_reports_dir": "critic-reports/"
+  },
+  "artifact_plan": {
+    "depth_profile": "standard",
+    "diagram": true,
+    "diagram_intent": "Flow diagram showing the token-by-token sampling chain (input → probability distribution → sample → token added → repeat), with a side-by-side branch contrasting low-temperature vs. high-temperature sampling behaviour",
+    "reading": {
+      "target_word_range": [1200, 1600],
+      "target_min_minutes": 6,
+      "target_max_minutes": 8
+    },
+    "quiz": {
+      "min_questions": 5,
+      "max_questions": 6,
+      "include_short_answer": false
+    }
+  },
+  "expected_delivery_minutes": 8,
+  "status": "corpus_drafted"
+}

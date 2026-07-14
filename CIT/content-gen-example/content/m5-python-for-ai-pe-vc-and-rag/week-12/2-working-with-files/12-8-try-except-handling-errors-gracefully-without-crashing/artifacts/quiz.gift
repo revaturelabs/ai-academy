@@ -1,0 +1,46 @@
+$CATEGORY: CIT/M5/week-12/12-8-try-except-handling-errors-gracefully-without-crashing
+
+::q1:: In Python, what is an exception?
+{
+~A mistake in the way the code is written, such as a missing colon or mismatched brackets#No — that describes a syntax error, which Python catches before the program runs at all.
+~A warning message that Python prints but then ignores so the program keeps running#No — an unhandled exception stops the program immediately; it is not just a warning.
+=An error that occurs while the program is running and stops execution unless the code catches it#Correct — exceptions are runtime errors; Python raises them during execution and the program crashes unless a try/except block handles them.
+~A special return value that functions send back when something goes wrong#No — functions use return values for results; exceptions are a separate mechanism that interrupts normal flow.
+#### Tests LO1: understanding that exceptions are runtime errors distinct from syntax errors (corpus §5.1).
+}
+
+::q2:: In a try/except block, which code goes inside the try block?
+{
+=The code that might fail — the lines you are not certain will always succeed#Correct — the try block wraps risky code; if any line in it raises an exception, Python jumps to the except block instead of crashing.
+~The code that runs only when everything worked correctly with no errors#No — code that runs only on success belongs in the else clause, not the try block.
+~The error-handling instructions that tell Python what to do when a failure occurs#No — error-handling instructions go in the except block; the try block is for the code being protected.
+~Any code you want Python to run at the very end, whether or not an error happened#No — code that always runs regardless of success or failure belongs in a finally clause, not the try block.
+#### Tests LO2: knowing that try wraps potentially-failing code and except handles the failure (corpus §5.2–5.3).
+}
+
+::q3:: A teammate writes "except\:" with no exception name listed after it. What is the problem with this approach?
+{
+~It is invalid Python syntax and the program will not start at all#No — bare except is valid Python syntax; the problem is what it does at runtime, not a syntax issue.
+~It only catches FileNotFoundError and ignores all other types of errors#No — the opposite is true; bare except catches every possible exception, which is the problem.
+~It prevents the except block from printing any message to the user#No — you can still print inside a bare except block; the issue is about which exceptions get caught.
+=It silently catches every possible exception, including bugs and keyboard interrupts, making it very hard to find real problems#Correct — bare except hides all errors under one handler; the Python community strongly discourages it because it makes debugging nearly impossible.
+#### Tests LO3: understanding why specific exception names are required and bare except is discouraged (corpus §5.4).
+}
+
+::q4:: In a try/except/else structure, when does the else block run?
+{
+~Every time the try block is entered, regardless of whether an exception was raised#No — the else block does not run unconditionally; it is skipped when an exception occurs in the try block.
+=Only when the try block finishes without raising any exception — the "everything went well" path#Correct — the else clause runs only on success; if an exception occurs and is caught by except, the else block is skipped entirely.
+~Only when the except block has already caught and handled an exception#No — that is the opposite; if the except block ran, the else block does not run.
+~Whenever Python exits the try block, whether by success, exception, or return#No — that describes the finally clause, not else; else is strictly for the no-exception case.
+#### Tests LO4: understanding the else clause as the success-only path in try/except/else (corpus §5.5).
+}
+
+::q5:: You are writing a function that opens a CSV file with open(). Which pattern correctly handles the case where the file does not exist?
+{
+~Put the open() call after the except block so Python checks for the file before trying to open it#No — putting open() after the except block means it is not protected at all; except only handles errors raised inside the try block.
+~Use an if statement to check whether the file exists before calling open()#No — while possible, this leaves a race condition and does not handle permission errors; try/except FileNotFoundError is the standard Python pattern.
+=Wrap the open() call inside a try block and catch FileNotFoundError in the except block#Correct — this is the standard pattern; if the file does not exist, FileNotFoundError is raised and the except block handles it gracefully without crashing.
+~Wrap the open() call inside a try block and use a bare except to catch any problem#No — bare except is discouraged; you should name FileNotFoundError specifically so other unexpected errors are not hidden.
+#### Tests LO5: applying try/except FileNotFoundError as the correct pattern for safe file open() calls (corpus §5.6).
+}

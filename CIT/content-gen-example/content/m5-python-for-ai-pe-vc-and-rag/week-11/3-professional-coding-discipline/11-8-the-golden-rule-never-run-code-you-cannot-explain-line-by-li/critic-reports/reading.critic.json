@@ -1,0 +1,69 @@
+{
+  "passed": true,
+  "checks": {
+    "format_discipline": {
+      "passed": true,
+      "notes": "No frontmatter. First non-empty line is the H1 title. Sidecar reading.meta.json is present and parses (word_count: 1391, estimated_read_minutes: 7, citations_used: [1,2,3,4], sections confirmed). Exactly the six required ## headings are present in the correct order: Overview, Key Concepts, Worked Example, In Practice, Key Takeaways, References. No additions, renames, or omissions."
+    },
+    "length_budget": {
+      "passed": true,
+      "word_count": 1391,
+      "reading_minutes": 7,
+      "notes": "1391 words is within the standard-profile target of 1200–1600. 1391 / 200 wpm = 6.96 min ≈ 7 min, within the 6–8 min target. Both bounds pass."
+    },
+    "citation_discipline": {
+      "passed": true,
+      "primary_cited": true,
+      "notes": "Primary resource [1] (addyo.substack.com) is cited in at least three locations: silent-failure paragraph, code-ownership section, and In Practice paragraph. All four inline markers [1]–[4] are used in the body. Bibliography lists exactly four entries matching markers 1–4. No orphan inline markers; no orphan bibliography entries."
+    },
+    "forward_references": {
+      "passed": true,
+      "findings": [
+        "edge cases: 'edge cases are covered in topic 11.9' — this is named-and-deferred form (bare name + topic pointer, not bolded, not defined). Confirmed acceptable by the open corpus soft finding."
+      ]
+    },
+    "beginner_readability": {
+      "passed": true,
+      "findings": [
+        "All new terms introduced in this topic (golden rule, loud failure, silent failure, four-question test, accumulator pattern) are bolded and given plain-English meanings at first use.",
+        "spec-first workflow is referenced as prior knowledge from topics 11.3–11.7, which is correct — it is a prior-sequence concept.",
+        "No acronyms appear unexpanded. 'AI' is used as an everyday term consistent with prior topics in the sequence.",
+        "No hedging phrases detected. Sentence register is direct and addresses the learner as 'you' throughout.",
+        "No paragraph introduces 3+ brand-new terms simultaneously. The two-term introduction (loud failure / silent failure) in one bullet-pair block is acceptable as a contrast pair.",
+        "Concrete-first discipline maintained: essay analogy precedes the golden rule definition in Overview; code example in Worked Example is walked before any abstract conclusion is drawn."
+      ]
+    },
+    "formatting": {
+      "passed": true,
+      "findings": [
+        "All paragraphs are ≤4–5 sentences; no wall-of-text blocks detected.",
+        "The 'Do:' and 'Don't:' guidance in In Practice is rendered as bullet list and table respectively — correct.",
+        "Worked Example uses numbered walk-through lines with inline four-question analysis — multi-step procedure is listed, not run-on prose.",
+        "Signs-a-line-needs-investigation block is a bullet list, not prose.",
+        "Definitions use the bold-term — plain-meaning shape throughout (loud failure, silent failure, accumulator pattern).",
+        "The 'It ran without errors' vs 'I understand it' contrast is rendered as a markdown table — correct.",
+        "Inline examples appear within Key Concepts sections (variable name examples, code snippets), not deferred entirely to Worked Example."
+      ]
+    },
+    "scope": {
+      "passed": true,
+      "findings": [
+        "All concepts taught fall within the topic title and the declared concept list: golden rule, loud/silent failure, four-question test, code ownership, plausible-looking wrong code.",
+        "spec-first workflow is reused, not re-taught — referenced as prior knowledge from 11.3–11.7.",
+        "edge cases appear as a one-sentence named-and-deferred pointer ('edge cases are covered in topic 11.9') — not bolded, not defined — compliant with scope_discipline mention-and-defer rules.",
+        "No scope_creep finding."
+      ]
+    },
+    "corpus_faithfulness": {
+      "passed": true,
+      "findings": [
+        "10 assertions sampled across all sections. All 10 trace directly to corpus sections: §5.2 (loud/silent failure), §5.3 (code ownership / Osmani quote), §5.4 (ran-without-errors code block), §5.5 (four questions verbatim), §5.6 (off-by-one/wrong-variable/wrong-default/missing-edge-case list).",
+        "The Worked Example adapts the corpus §5.4 code block (names changed from ['Ana','Bo','Cara'] to ['Alice','Bob','Charlotte']) but the logic, walkthrough structure, and analytical conclusion are faithful to the corpus.",
+        "0 unsupported assertions detected out of 10 sampled. Hard fail threshold is >2; well within tolerance.",
+        "No fabricated claims, no external material imported beyond what the corpus contains."
+      ]
+    }
+  },
+  "verdict": "PASS. All eight checks pass. The reading meets the standard-profile bar for topic 11.8. Format is clean (no frontmatter, correct six-section template, valid sidecar). Word count (1391) and reading time (7 min) are within the 1200–1600 / 6–8 min standard-profile targets. Primary source [1] (addyo.substack.com) and all four references are properly cited with no orphan markers. The sole forward reference ('edge cases, topic 11.9') is in correct named-and-deferred form. All new terms are defined at first use; no jargon dumps; concrete-first discipline held throughout. Formatting is scannable: bullet lists, a contrast table, bold-term definitions, and a numbered worked example. Scope is clean — no scope_creep; all taught concepts belong to this topic's declared concept list. Corpus faithfulness is high: all 10 sampled assertions trace to the corpus with no unsupported claims. No assessment references (A4, due-week, weight) appear in the learner-facing prose. Against the gold-example bar (2-1, standard depth): the reading matches the key quality moves — defines before use, concrete analogy first, paragraphs ≤4 sentences, lists carry the weight, stays on the headline. The reading is approved to advance.",
+  "at": "2026-06-13T00:06:00Z"
+}

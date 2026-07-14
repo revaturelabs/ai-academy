@@ -1,0 +1,21 @@
+{
+  "verdict": "pass",
+  "findings": [
+    {
+      "code": "looks_good",
+      "where": "overall",
+      "detail": "Cycle 1 source had an invalid node-to-subgraph edge (D --> SIDE) and malformed config block. Revised in cycle 2: cross-subgraph edges now target named nodes (D --> TA, D --> TB2), config block uses correct Mermaid v10 frontmatter structure. All source-level checks pass. PNG render was not attempted (mmdc not available in environment); visual inspection deferred to HITL #3."
+    }
+  ],
+  "stats": {
+    "nodes": 7,
+    "edges": 6,
+    "layout": "flowchart LR (MAIN subgraph TB + SIDE subgraph TB)",
+    "labels": ["Define Criteria", "Write Descriptors", "Run Test Protocol", "Score Each Tool", "Compare Totals", "Tool A", "Tool B"],
+    "png_path": null,
+    "png_dims": null,
+    "critic_cycles": 2,
+    "png_attempted": false,
+    "note": "Source-level pass after 2 cycles. Visual pass cannot be confirmed without mmdc render. Recommend human inspect rendered output at HITL #3."
+  }
+}

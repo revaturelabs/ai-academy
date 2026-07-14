@@ -1,0 +1,26 @@
+{
+  "topic_id": "4.4",
+  "title": "Agents — LLM plus memory, tools, and a planning loop (conceptual introduction)",
+  "estimated_read_minutes": 10,
+  "word_count": 2086,
+  "depth_profile": "deep",
+  "generated_at": "2026-06-17T00:00:00Z",
+  "revised_at": "2026-06-17T00:00:00Z",
+  "revision_note": "Reading critic cycle 1 failed: 1953 words / 8.49 min below 9-min floor. Added ~133 words across 4 natural expansion points (overview rationale sentence; agent vs LLM three-property summary paragraph; planning loop insight paragraph; design principle goal-vs-script example). New count: 2086 words / 9.07 min.",
+  "embeds_diagram": true,
+  "diagram_path": "./diagram.png",
+  "citations_used": [1, 2, 3],
+  "citation_counts": {
+    "1": 13,
+    "2": 9,
+    "3": 7
+  },
+  "sections": [
+    "Overview",
+    "Key Concepts",
+    "Worked Example",
+    "In Practice",
+    "Key Takeaways",
+    "References"
+  ]
+}

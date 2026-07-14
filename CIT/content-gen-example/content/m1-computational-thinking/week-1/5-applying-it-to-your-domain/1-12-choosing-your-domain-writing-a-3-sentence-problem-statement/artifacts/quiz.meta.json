@@ -1,0 +1,56 @@
+{
+  "topic_id": "1.12",
+  "generated_at": "2026-06-22T00:00:00Z",
+  "format": "gift",
+  "question_count": 7,
+  "$bias_defense_applied": true,
+  "$shuffle_seed": "194",
+  "$shuffle_seed_derivation": "sum(ord(c) for c in '1.12') = 49+46+49+50 = 194",
+  "correct_position_distribution": [2, 0, 3, 1, 2, 1],
+  "max_share": 0.33,
+  "max_share_passes": true,
+  "questions": [
+    {
+      "id": "1.12-Q1",
+      "type": "mcq",
+      "objective_ref": "Explain what a problem domain is using a real example.",
+      "correct_position": 2
+    },
+    {
+      "id": "1.12-Q2",
+      "type": "mcq",
+      "objective_ref": "Explain what a problem statement is and why writing one is a useful first step.",
+      "correct_position": 0
+    },
+    {
+      "id": "1.12-Q3",
+      "type": "mcq",
+      "objective_ref": "Identify the three components of a well-formed problem statement: context, specific problem, and impact.",
+      "correct_position": 3
+    },
+    {
+      "id": "1.12-Q4",
+      "type": "mcq",
+      "objective_ref": "Distinguish a focused, specific problem statement from a vague or oversized one.",
+      "correct_position": 1
+    },
+    {
+      "id": "1.12-Q5",
+      "type": "mcq",
+      "objective_ref": "Distinguish a focused, specific problem statement from a vague or oversized one.",
+      "correct_position": 2
+    },
+    {
+      "id": "1.12-Q6",
+      "type": "short_answer",
+      "objective_ref": "Identify the three components of a well-formed problem statement: context, specific problem, and impact.",
+      "correct_position": null
+    },
+    {
+      "id": "1.12-Q7",
+      "type": "mcq",
+      "objective_ref": "Write a 3-sentence problem statement for a domain of your choice.",
+      "correct_position": 1
+    }
+  ]
+}

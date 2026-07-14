@@ -1,0 +1,46 @@
+$CATEGORY: CIT/M3/week-6/6.1-why-every-ai-system-is-built-on-numbers
+
+::q1:: At the most fundamental level, why can a computer only work with numbers?
+{
+~Because human language is too ambiguous for physical circuits to interpret#No — the problem is not ambiguity; circuits physically cannot represent anything other than two electrical states.
+~Because circuits can only recognise visual shapes, not abstract symbols#No — circuits do not perceive shapes at all; they switch between two electrical states.
+=Because circuits only distinguish two electrical states, so everything becomes 0s and 1s#Correct — on/off maps directly to binary digits, which are numbers; that is the physical foundation.
+~Because all real-world data arrives pre-formatted as numbers before any circuit sees it#No — raw data (sound, light, text) is not pre-formatted; conversion into numbers is an active step.
+#### Tests the core principle that computers store everything as numbers in binary (corpus §5.1).
+}
+
+::q2:: What does it mean to say that real-world data is "converted to numbers" before an AI uses it?
+{
+=Real-world information is mapped to numerical values so circuits can store and process it#Correct — conversion assigns a number to every piece of information, making it circuit-readable.
+~Files are compressed into a smaller format and labelled with a number for identification#No — compression reduces file size but does not transform the content into a form circuits compute on.
+~Data is encrypted into a coded sequence that protects it from being read incorrectly#No — encryption is a security operation, not the same as turning raw information into computable numbers.
+~Information is broken into symbols that the AI memorises like vocabulary words in a dictionary#No — AI does not memorise a symbol dictionary; it computes on numbers that represent the information.
+#### Tests the meaning of data-to-number conversion (corpus §5.2).
+}
+
+::q3:: A smartphone photo is 4,000 pixels wide and 3,000 pixels tall. Each pixel stores three colour values. Roughly how many numbers does this single photo contain?
+{
+~About 12,000 numbers — one number per pixel, ignoring its colour channel values#No — each pixel holds three colour values, not one; this answer undercounts by a factor of three.
+=About 36,000,000 numbers — 4,000 × 3,000 pixels, with 3 colour values each#Correct — 12,000,000 pixels × 3 colour numbers per pixel equals 36,000,000 numbers.
+~About 4,000 numbers — one for each column of pixels, ignoring rows and colour#No — this counts only one row's worth of columns and ignores all other rows and colour channels.
+~About 3 numbers — one average for red, one for green, and one for blue across all pixels#No — averaging collapses the whole image to three values and discards all detail about individual pixels.
+#### Tests the concrete example of image-to-numbers conversion (corpus §5.2).
+}
+
+::q4:: Why does converting text, images, and audio all into numbers allow a single AI system to handle all three?
+{
+~Numbers take up less storage, so one AI fits where several separate type-specific systems would not#No — the benefit is not about storage savings; it is about having a shared operational language.
+~Converting to numbers erases the differences between data types, so the AI only needs one dataset#No — the data types stay different in what they represent; their shared quality is number format, not identical content.
+~All data types happen to produce identical numbers when converted, so one lookup table is enough#No — different data types produce different numbers; it is the common format, not common values, that matters.
+=Any list of numbers can be processed by the same maths, so one set of tools works across all data types#Correct — a shared number language means one toolkit of mathematical operations handles text, images, and audio alike.
+#### Tests the universality-of-numbers principle (corpus §5.3).
+}
+
+::q5:: An AI is trained on millions of labelled examples. What does the AI actually adjust as it learns from those examples?
+{
+~The labels on each example, updating them to better reflect the AI's current predictions#No — labels are the correct answers provided by humans; the AI does not alter them during training.
+~The input data values, smoothing the numbers so they are more consistent across examples#No — training data is fixed; the AI never modifies its inputs, only its internal values.
+=Its internal parameters (weights) — numbers that are adjusted until outputs match correct labels#Correct — parameters are the learnable numbers; tuning them through arithmetic is what training means.
+~The number of training examples it reviews, cutting the set shorter once accuracy seems sufficient#No — AI does not decide to stop reviewing examples; it adjusts internal numbers, not the size of the training set.
+#### Tests that pattern-finding in AI happens through arithmetic adjustments to parameters/weights (corpus §5.4).
+}

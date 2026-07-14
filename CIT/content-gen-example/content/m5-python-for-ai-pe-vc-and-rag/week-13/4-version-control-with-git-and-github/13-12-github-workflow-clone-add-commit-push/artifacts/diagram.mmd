@@ -1,0 +1,29 @@
+---
+title: "GitHub Workflow — local ↔ remote"
+config:
+  theme: base
+  themeVariables:
+    primaryColor: '#a5d8ff'
+    primaryBorderColor: '#4a9eed'
+    lineColor: '#555'
+---
+flowchart LR
+    R1["<b>Remote repo</b><br/><span style='font-size:12px;color:#6d28d9'>github.com</span>"]
+    L1["<b>Working directory</b><br/><span style='font-size:12px;color:#6d28d9'>edit files here</span>"]
+    L2["<b>Staging area</b><br/><span style='font-size:12px;color:#6d28d9'>git add</span>"]
+    L3["<b>Local history</b><br/><span style='font-size:12px;color:#6d28d9'>git commit</span>"]
+    R2["<b>Remote repo</b><br/><span style='font-size:12px;color:#6d28d9'>updated on GitHub</span>"]
+
+    R1 -->|"git clone (once)"| L1
+    L1 -->|"git add"| L2
+    L2 -->|"git commit"| L3
+    L3 -->|"git push"| R2
+
+    classDef start fill:#a5d8ff,stroke:#4a9eed
+    classDef done fill:#b2f2bb,stroke:#22c55e
+    classDef act fill:#d0bfff,stroke:#8b5cf6
+    classDef auto fill:#a5d8ff,stroke:#4a9eed
+
+    class R1 start
+    class R2 done
+    class L1,L2,L3 act

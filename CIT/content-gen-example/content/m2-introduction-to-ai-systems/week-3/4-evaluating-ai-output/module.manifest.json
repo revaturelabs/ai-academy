@@ -1,0 +1,20 @@
+{
+  "type": "module",
+  "position": 4,
+  "title": "Evaluating AI Output",
+  "slug": "4-evaluating-ai-output",
+  "course_code": "M2",
+  "course_slug": "m2-introduction-to-ai-systems",
+  "week_nums": [
+    3
+  ],
+  "session_name_by_week": {
+    "3": "What AI Is — and Isn't"
+  },
+  "narrative_seed_by_week": {
+    "3": "History of AI — symbolic → ML → deep learning → LLMs → agents / How LLMs work — tokens, training, inference, parameters / Why the same question gives different answers — temperature and sampling / AI in India today — healthcare, agriculture, vernacular translation / The jagged frontier — AI is superhuman at some tasks, unreliable at others"
+  },
+  "lab_activity_seed_by_week": {
+    "3": "Capability Probe — test Claude across 5 task types: creative, factual, logical, ethical, coding / Document what worked, what failed, where it hallucinated / Journal Entry #2 / →  Assessment 1 due this week  (see Assessment Plan)"
+  }
+}

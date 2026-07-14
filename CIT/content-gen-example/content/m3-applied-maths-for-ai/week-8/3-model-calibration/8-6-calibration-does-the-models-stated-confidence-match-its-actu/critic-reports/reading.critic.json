@@ -1,0 +1,56 @@
+{
+  "artifact": "reading",
+  "topic_id": "8.6",
+  "passed": true,
+  "at": "2026-06-22T07:50:00Z",
+  "checks": {
+    "format_discipline": {
+      "passed": true,
+      "frontmatter_present": false,
+      "meta_sidecar_present": true,
+      "section_template": "Overview, Key Concepts, Worked Example, In Practice, Key Takeaways, References — exact order, none added/dropped/renamed",
+      "notes": "First non-empty line is the H1 title; sidecar parses with word_count, estimated_read_minutes, citations_used, sections."
+    },
+    "length": {
+      "passed": true,
+      "word_count": 1230,
+      "target_word_range": [1200, 1600],
+      "read_minutes": 6.15,
+      "target_minute_range": [6, 8],
+      "notes": "Near the floor (1230 of 1200) but inside range; intuition-only course — not hard-failing near-floor alone per gating instruction."
+    },
+    "citations": {
+      "passed": true,
+      "inline_markers": [1, 2, 3],
+      "bibliography": [1, 2, 3],
+      "notes": "All three primary resources cited; no orphan markers, no orphan bibliography entries, no fabricated markers."
+    },
+    "forward_references": {
+      "passed": true,
+      "notes": "ECE (Expected Calibration Error) and calibration-fix techniques are named-and-deferred only (line 83): bare name + 'covered later, not here', no math/methods taught, not bolded, no defining appositive. Accuracy reuse from 8.5 is allowed. No multi-class content. No 8.7 capstone reference."
+    },
+    "faithfulness": {
+      "passed": true,
+      "sampled": 10,
+      "unsupported": 0,
+      "notes": "Corpus example numbers preserved: 0.90->0.70 overconfident (corpus 5.4), 0.60->0.80 underconfident (corpus 5.4), 0.70->70% well-calibrated. Bucketing mechanism, reliability-diagram axes/diagonal, decision-threshold patterns all trace to corpus sections 5.1-5.5/7. No new claims introduced."
+    },
+    "beginner_readability": {
+      "passed": true,
+      "findings": [],
+      "notes": "Define-before-use honored (confidence, calibration, bucket, reliability diagram all defined at first appearance; ECE spelled out). One idea at a time; concrete weather-app analogy leads before abstraction. Plain register, short sentences, no hedging."
+    },
+    "formatting": {
+      "passed": true,
+      "findings": [],
+      "notes": "Accuracy-vs-calibration contrast table (lines 34-37) and reliability-diagram reading table (lines 66-70) both kept. Bullets/numbered list for procedures. No paragraph exceeds ~4 sentences. Inline examples present alongside concepts. Diagram embedded inline (line 55, ./diagram.png, embeds_diagram=true) — png confirmed present by orchestrator, not raised."
+    },
+    "scope": {
+      "passed": true,
+      "findings": [],
+      "notes": "Stays on the headline — calibration as confidence-vs-accuracy match. ECE and remediation methods deferred, not taught. No scope_creep."
+    }
+  },
+  "gold_example_bar": "No reading gold example exists for 8.6; falls back to artifact-mix.json written standards. Reading meets the beginner-tone, fixed-six-section, table-rich bar set by the 3-4 and 2-1 gold examples.",
+  "verdict": "PASS — reading 8.6 clears all checks: clean format and six-section template, 1230 words within the STANDARD 1200-1600 band (near floor, accepted for intuition-only course), faithful citations [1][2][3], corpus example numbers preserved (0.90->0.70, 0.60->0.80), ECE and fix-methods named-and-deferred only, diagram embedded inline, beginner tone and required tables intact. No forward refs, no scope creep, zero unsupported assertions."
+}

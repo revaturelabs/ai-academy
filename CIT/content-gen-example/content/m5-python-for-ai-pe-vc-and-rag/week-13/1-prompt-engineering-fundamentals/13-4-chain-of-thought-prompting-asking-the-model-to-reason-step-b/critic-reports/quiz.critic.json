@@ -1,0 +1,88 @@
+{
+  "topic_id": "13.4",
+  "passed": true,
+  "at": "2026-06-14T00:00:00Z",
+  "checks": {
+    "positional_bias": {
+      "passed": true,
+      "distribution": { "pos_0": 1, "pos_1": 2, "pos_2": 2, "pos_3": 1 },
+      "max_share": 0.33,
+      "mcq_count": 6,
+      "notes": "max_share 0.33 < 0.40 threshold; all four positions occupied"
+    },
+    "length_bias": {
+      "passed": true,
+      "flagged_questions_before_fix": ["q1", "q2", "q3", "q6"],
+      "longest_correct_rate_before_fix": 0.67,
+      "longest_correct_rate_after_fix": 0.0,
+      "baseline": 0.25,
+      "auto_fixed": true,
+      "fix_detail": {
+        "q1": {
+          "original": "forces the model to produce intermediate steps that become part of its own context for generating the next step",
+          "fixed": "gives the model's own earlier steps as context for each next step",
+          "original_len": 110,
+          "fixed_len": 63,
+          "option_mean_after_fix": 63.75,
+          "threshold_after_fix": 76.5
+        },
+        "q2": {
+          "original": "Few-shot CoT, because providing example reasoning triples shows the model the exact style and structure expected",
+          "fixed": "Few-shot CoT, because reasoning triples show the exact style expected",
+          "original_len": 110,
+          "fixed_len": 68,
+          "option_mean_after_fix": 74.75,
+          "threshold_after_fix": 89.7
+        },
+        "q3": {
+          "original": "A user message that ends with \"Reason step by step before giving your final answer.\" and contains no worked examples",
+          "fixed": "A message with a step-by-step trigger phrase and no worked examples",
+          "original_len": 116,
+          "fixed_len": 67,
+          "option_mean_after_fix": 82.0,
+          "threshold_after_fix": 98.4
+        },
+        "q6": {
+          "original": "Place the step-by-step instruction in the system parameter of client.messages.create() so it applies to all messages",
+          "fixed": "Place the instruction in the system parameter so it applies to every message",
+          "original_len": 116,
+          "fixed_len": 76,
+          "option_mean_after_fix": 80.25,
+          "threshold_after_fix": 96.3
+        }
+      }
+    },
+    "distractor_plausibility": {
+      "passed": true,
+      "absurd_rate": 0.042,
+      "total_distractors": 24,
+      "absurd_count": 0,
+      "soft_findings": [
+        "q1 distractor 'instructs the model to search the internet for supporting evidence' is borderline implausible (score=2); beginner may not know LLMs cannot browse, but the feedback corrects this clearly"
+      ],
+      "notes": "absurd_rate 0.042 < 0.25 threshold; all other distractors represent plausible beginner misconceptions"
+    },
+    "objective_coverage": {
+      "passed": true,
+      "uncovered_objectives": [],
+      "orphan_questions": [],
+      "coverage_map": {
+        "LO1_define_CoT_mechanism": "q1",
+        "LO2_zero_shot_vs_few_shot": "q2",
+        "LO3_write_zero_shot_CoT": "q3",
+        "LO4_write_few_shot_CoT_triples": "q4",
+        "LO5_when_CoT_helps_vs_overhead": "q5",
+        "LO6_apply_CoT_python_api": "q6"
+      },
+      "notes": "all 6 LOs covered one-to-one; q7 short-answer covers recall of reasoning-triple parts (supplementary)"
+    },
+    "beginner_scope": {
+      "passed": true,
+      "findings": [],
+      "notes": "CoT expanded on first use in q1 stem; all stems use plain language; no out-of-scope concepts; distractors draw only on 13.1–13.3 prior knowledge; q6 API usage matches §5.3 and §6 exactly"
+    }
+  },
+  "length_bias_fix_applied": true,
+  "meta_gift_desync": false,
+  "verdict": "PASS — all 5 checks pass after auto-fix of length bias in q1, q2, q3, q6; quiz.gift and quiz.meta.json updated"
+}

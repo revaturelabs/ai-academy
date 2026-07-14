@@ -1,0 +1,99 @@
+{
+  "critic": "reading-critic",
+  "topic_id": "7.7",
+  "topic_title": "Accuracy — what proportion of outputs were correct",
+  "artifact": "artifacts/reading.md",
+  "run_at": "2026-06-23",
+  "skill_version": "reading-critic/SKILL.md",
+  "gold_example_matched": "No matching gold example for M3/week-7 standard-depth topics. Nearest: 2-1-what-makes-a-good-specification.reading.md (standard, conceptual). Reading meets that bar in structure, tone, and formatting density.",
+  "passed": true,
+  "verdict": "PASS — all checks clean on retry 2/2. The two scope_creep violations from cycle 1 (bold `**precision**`/`**recall**` in the Key Concepts subsection body and in Key Takeaways) have been resolved. Both locations now use the required bare-name + topic-pointer form: `precision (topic 7.8)` and `recall (topic 7.9)`. No bold markers on deferred concepts anywhere in the reading. All other checks (format, length, citations, forward references, faithfulness, beginner readability, formatting, assessment references) remain passing and are unchanged from cycle 1.",
+  "checks": {
+    "format_discipline": {
+      "passed": true,
+      "frontmatter_present": false,
+      "h1_opens_file": true,
+      "meta_sidecar_present": true,
+      "meta_sidecar_valid": true,
+      "section_template_violation": null,
+      "sections_found": ["Overview", "Key Concepts", "Worked Example", "In Practice", "Key Takeaways", "References"],
+      "sections_expected": ["Overview", "Key Concepts", "Worked Example", "In Practice", "Key Takeaways", "References"],
+      "notes": "Six required sections present in correct order. H1 opens file with no frontmatter. Meta sidecar parses correctly with word_count, estimated_read_minutes, citations_used, and sections fields."
+    },
+    "length": {
+      "passed": true,
+      "word_count": 1302,
+      "target_word_range": [1200, 1600],
+      "word_count_in_range": true,
+      "estimated_minutes_at_200wpm": 6.51,
+      "target_minute_range": [6, 8],
+      "minutes_in_range": true,
+      "notes": "1302 words / 200 wpm = 6.51 min. Both word count and minutes within standard-profile range [1200–1600 words, 6–8 min]."
+    },
+    "citations": {
+      "passed": true,
+      "primary_cited": true,
+      "primary_resource": "[1] Google ML Crash Course — Classification: Accuracy, Precision, Recall",
+      "primary_citation_locations": ["Overview", "Key Concepts (classification tasks)", "Key Concepts (accuracy formula)", "Key Concepts (when accuracy is useful)", "Key Concepts (imbalanced-dataset problem)", "Key Concepts (accuracy and LLM outputs)", "Worked Example", "Key Takeaways"],
+      "inline_markers_found": ["[1]", "[2]", "[3]"],
+      "bibliography_entries": 3,
+      "orphan_markers": [],
+      "orphan_bibliography_entries": [],
+      "notes": "All three resources cited inline. [1] cited in 8 locations. [2] cited in formula, when-useful, imbalanced sections, In Practice, and Key Takeaways. [3] cited in imbalanced section, precision/recall deferral, In Practice, and Key Takeaways. Bibliography matches inline markers exactly. No orphans."
+    },
+    "forward_references": {
+      "passed": true,
+      "violations": [],
+      "notes": "All concepts are from the prior-topic list (7.1–7.6) or this topic's own concept set. 'precision' and 'recall' are named-and-deferred to 7.8 and 7.9 using bare-name + topic-pointer form — forward-reference rule satisfied. LLM/temperature/probability-distribution concepts are attributed to topics 7.4 and 7.5 with explicit cross-references in prose."
+    },
+    "faithfulness": {
+      "passed": true,
+      "assertions_sampled": 10,
+      "unsupported_count": 0,
+      "unsupported_assertions": [],
+      "sample": [
+        {"assertion": "Accuracy = proportion of predictions that matched the correct answer", "corpus_location": "§4 Introduction, §5.2", "supported": true},
+        {"assertion": "Classification task defined as assigning input to one of a fixed set of categories", "corpus_location": "§5.1", "supported": true},
+        {"assertion": "Correct predictions and incorrect predictions are the two raw building-block counts", "corpus_location": "§5.1, §5.3", "supported": true},
+        {"assertion": "Accuracy = correct ÷ total; result between 0 and 1", "corpus_location": "§5.2", "supported": true},
+        {"assertion": "Spam filter on 95/100 not-spam emails scores 95% by doing nothing useful", "corpus_location": "§5.5", "supported": true},
+        {"assertion": "Dummy baseline: score by always predicting most common category", "corpus_location": "§5.5, §6, §8", "supported": true},
+        {"assertion": "LLM outputs probability distribution over vocabulary; temperature controls peakedness (topics 7.4/7.5)", "corpus_location": "§5.6", "supported": true},
+        {"assertion": "Spam filter worked example: 85 correct out of 100 = 0.85 (85%)", "corpus_location": "§5.2 worked example", "supported": true},
+        {"assertion": "Medical screening: disease affecting 1 in 1000 → 99.9% accuracy labelling everyone disease-free", "corpus_location": "§7 Real-World Patterns", "supported": true},
+        {"assertion": "Do not measure accuracy on training data — use a held-out test set", "corpus_location": "§8 Best Practices", "supported": true}
+      ],
+      "notes": "All 10 sampled assertions trace directly to corpus. No hallucinated or externally imported material detected."
+    },
+    "beginner_readability": {
+      "passed": true,
+      "undefined_terms": [],
+      "jargon_dump": null,
+      "abstract_first": null,
+      "academic_register": null,
+      "notes": "'Classification task', 'ground truth', 'imbalanced', 'dummy baseline', 'correct predictions', and 'incorrect predictions' all defined at first use using bold-term/plain-meaning shape. Concrete spam/not-spam examples precede all abstract formulations. No hedging phrases. Sentences are short and active throughout. Learner addressed as 'you'."
+    },
+    "formatting": {
+      "passed": true,
+      "wall_of_text": null,
+      "unlisted_sequence": null,
+      "no_inline_examples": null,
+      "notes": "No paragraph exceeds ~4 sentences. Worked Example step-by-step rendered as numbered list. Do/Don't in In Practice rendered as bulleted lists. Accuracy-reliability comparison rendered as a table. Inline spam/not-spam and cat/dog/rabbit examples appear in Key Concepts before the Worked Example section. All term definitions use bold-term/plain-meaning shape."
+    },
+    "assessment_reference": {
+      "passed": true,
+      "violations": [],
+      "notes": "No assessment IDs, due weeks, or grade weights appear anywhere in the reading prose."
+    },
+    "scope": {
+      "passed": true,
+      "finding_code": null,
+      "escalation": null,
+      "violations": [],
+      "notes": "Cycle-1 scope_creep violations fully resolved. 'Precision and recall — named and deferred' subsection body (Key Concepts) now reads: 'two other metrics step in: precision (topic 7.8) and recall (topic 7.9)' — bare names, no bold. Key Takeaways final bullet reads: 'precision (topic 7.8) and recall (topic 7.9) fill the gaps' — bare names, no bold. Subsection heading '### Precision and recall — named and deferred' uses plain heading text — acceptable navigational label, not bolded prose body. No deferred concepts are bolded or defined anywhere else in the reading. Scope is fully contained to the 7.7 headline."
+    }
+  },
+  "required_fixes": [],
+  "cycle": 2,
+  "max_cycles": 2
+}

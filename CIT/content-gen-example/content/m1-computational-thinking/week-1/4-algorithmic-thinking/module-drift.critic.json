@@ -1,0 +1,111 @@
+{
+  "schema_version": 1,
+  "critic": "drift-critic",
+  "module": {
+    "slug": "4-algorithmic-thinking",
+    "course_code": "M1",
+    "week_num": 1,
+    "topics_evaluated": ["1.9", "1.10", "1.11"]
+  },
+  "run_at": "2026-06-22T12:00:00Z",
+  "rerun_reason": "Topic 1.11 artifacts/reading.md updated to restore hands-on lab activity (Section 9 content) inside the 'In Practice' section. Re-run to re-evaluate check L1.",
+  "passed": true,
+  "findings_count": 5,
+  "hard_fails": [],
+  "soft_findings": [
+    {
+      "id": "T1",
+      "check": "terminology_consistency",
+      "topic": "1.9 → 1.11",
+      "severity": "soft",
+      "title": "Term drift: 'stopping point' (1.9) → 'finiteness' (1.11) has no explicit bridging note",
+      "detail": "Topic 1.9 section 5.2 introduces 'a clear stopping point' and forward-references topic 1.11 for the formal treatment. Topic 1.11 formalises this as 'finiteness.' The 1.11 reading.md explicitly bridges 'unambiguous steps' → 'definiteness' ('Definiteness is the formal name for the unambiguous steps requirement you saw in topic 1.9') but provides no equivalent mapping from 'stopping point' to 'finiteness.' A one-sentence bridge — 'The stopping point you met in topic 1.9 is what computer scientists call finiteness' — would close the terminology gap for learners. Unchanged from prior run.",
+      "affected_topics": ["1.9", "1.11"]
+    },
+    {
+      "id": "P1",
+      "check": "prerequisites_respected",
+      "topic": "1.11",
+      "severity": "soft",
+      "title": "Topic 1.1 cross-referenced in 1.11 body but absent from 1.11 prerequisite declarations",
+      "detail": "Topic 1.11 corpus sections 5.3 and 5.4 explicitly cite topic 1.1 ('How this connects to topic 1.1'). Topic 1.1 is not listed in 1.11's prerequisites in either topic.manifest.json or corpus section 2. It is present transitively (1.9 declares 1.1 as a prerequisite). The corpus body cross-reference without a prerequisite declaration creates a minor inconsistency between the manifest contract and the corpus content. Recommend adding 1.1 to 1.11's prerequisite list as a background dependency. Unchanged from prior run.",
+      "affected_path": "content/m1-computational-thinking/week-1/4-algorithmic-thinking/1-11-the-four-properties-of-a-good-algorithm-finite-definite-inpu/topic.manifest.json",
+      "field": "prerequisites (sequence.index.json entry for 1.11)"
+    },
+    {
+      "id": "D1",
+      "check": "no_duplicated_core_concepts",
+      "topic": "1.9 vs 1.10",
+      "severity": "soft",
+      "title": "Stopping-condition concept treated substantively in both 1.9 and 1.10 under different labels",
+      "detail": "Topic 1.9 introduces 'a clear stopping point' as one of three properties that push steps toward being an algorithm. Topic 1.10 re-treats the stopping condition concept in each of its three domain walkthroughs (recipe: 'Step 11: Stop'; GPS: 'Stop when destination reached'; sorting: 'Stop when no swaps needed'). Jaccard similarity between 1.9 and 1.10 core-concept noun sets is approximately 0.31, safely below the 0.6 threshold. The overlap is pedagogically motivated (1.10 applies the 1.9 definition to concrete examples), but authors should be aware that learners may feel the point is being repeated rather than advanced. Unchanged from prior run.",
+      "affected_topics": ["1.9", "1.10"]
+    },
+    {
+      "id": "AU1",
+      "check": "audience_level_consistency",
+      "topic": "1.11",
+      "severity": "soft",
+      "title": "'Infinite loop' introduced in 1.11 without prior module exposure",
+      "detail": "Topic 1.11 corpus section 5.1 and reading.md introduce 'infinite loop' as the failure mode that finiteness prevents. The term is defined inline ('a situation where the algorithm never terminates'). It has not appeared in topics 1.9 or 1.10 of this module, and sequence.index.json shows no prior topic in M1 week-1 that lists 'infinite loop' in concepts_introduced. The inline definition makes this acceptable for absolute beginners, but the term is a CS-specific compound that could be flagged at HITL review. Unchanged from prior run.",
+      "affected_topics": ["1.11"]
+    },
+    {
+      "id": "AU2",
+      "check": "audience_level_consistency",
+      "topic": "1.9",
+      "severity": "soft",
+      "title": "'Edge case' introduced in 1.9 section 5.4 without prior course exposure",
+      "detail": "Topic 1.9 corpus section 5.4 introduces 'edge case' in context ('a situation that sits at the boundary of what the instructions cover'). No earlier topic in M1 week-1 introduces 'edge case' (sequence.index.json concepts_introduced for topics 1.1–1.8 does not include it). The definition is inline and accessible. However 'edge case' is a software-testing term that may feel like an unexpected register spike for absolute beginners at this point in the course. Consider deferring the term to a later module or adding a brief aside that learners will encounter it again. Unchanged from prior run.",
+      "affected_topics": ["1.9"]
+    }
+  ],
+  "resolved_findings": [
+    {
+      "id": "L1",
+      "check": "lab_activity_alignment",
+      "topic": "1.11",
+      "severity": "hard",
+      "resolution": "RESOLVED — 1.11 artifacts/reading.md now contains a 'Try it yourself (lab activity)' block in the 'In Practice' section (three steps: write an everyday process as 5–8 numbered steps, apply the four-property checklist, swap with a partner to find definiteness gaps). This directly supports the module lab_activity_seed 'Swap with a partner — can they follow it exactly?' mechanic. All three topics (1.9, 1.10, 1.11) now supply a hands-on partner-swap exercise. Hard fail cleared.",
+      "prior_detail": "The module lab_activity_seed includes a 'can they follow it exactly?' partner exercise that maps directly to applying the algorithmic precision / four-property checklist. Topics 1.9 and 1.10 each supply a Section 9 hands-on exercise with explicit partner-swap mechanics. Topic 1.11 had no corresponding lab artifact. Restored in this run."
+    }
+  ],
+  "checks": {
+    "terminology_consistency": {
+      "result": "soft_fail",
+      "finding_ids": ["T1"],
+      "note": "One term-drift gap (stopping point → finiteness) lacks explicit bridging in 1.11 reading. All other key terms consistent across 1.9→1.10→1.11. Unchanged from prior run."
+    },
+    "prerequisites_respected": {
+      "result": "soft_fail",
+      "finding_ids": ["P1"],
+      "note": "All three topics' declared prerequisites point to topics with earlier sequence positions. Soft gap: 1.1 is cross-referenced in 1.11 body but not declared as a prerequisite. Unchanged from prior run."
+    },
+    "learning_arc": {
+      "result": "pass",
+      "finding_ids": [],
+      "note": "Arc covers all three expected module outcomes: (1) what an algorithm is (1.9), (2) algorithms in everyday life (1.10), (3) formal four-property framework (1.11). Prior soft note A1 on task-description mismatch for fourth property label is retired — it was a comment on the task brief, not on content, and is not a recurring concern."
+    },
+    "no_duplicated_core_concepts": {
+      "result": "pass",
+      "finding_ids": ["D1"],
+      "note": "Jaccard scores: 1.9 vs 1.10 ≈ 0.31, 1.9 vs 1.11 ≈ 0.23, 1.10 vs 1.11 ≈ 0.17. All well below 0.6 threshold. Soft overlap on stopping-condition sub-concept between 1.9 and 1.10. Unchanged from prior run."
+    },
+    "lab_activity_alignment": {
+      "result": "pass",
+      "finding_ids": [],
+      "note": "RESOLVED from prior run. Topic 1.11 reading.md 'Try it yourself (lab activity)' block now provides the partner-swap, four-property-checklist exercise that was missing. All three topics supply a hands-on activity aligned to the module lab_activity_seed. Note: topic.manifest.json still records sections_dropped=[9] — this is a stale manifest annotation. The content is now in reading.md's 'In Practice' section rather than as a standalone corpus Section 9. The manifest annotation is a documentation inconsistency (soft), not a content failure."
+    },
+    "audience_level_consistency": {
+      "result": "soft_fail",
+      "finding_ids": ["AU1", "AU2"],
+      "note": "Overall register is consistent (absolute-beginner, narrative/analogy-driven). Two minor upward drift points: 'edge case' introduced cold in 1.9, 'infinite loop' introduced cold in 1.11. Both have inline definitions. Unchanged from prior run."
+    }
+  },
+  "manifest_annotation_note": {
+    "topic": "1.11",
+    "field": "artifact_plan.sections_dropped",
+    "note": "topic.manifest.json still records sections_dropped=[9]. The corpus Section 9 content was not restored to the corpus file — instead the equivalent hands-on lab activity was embedded in reading.md under 'In Practice > Try it yourself.' The manifest annotation is now stale and slightly misleading. Recommend updating artifact_plan in topic.manifest.json: remove sections_dropped=[9] or annotate that Section 9 content was absorbed into the reading artifact's In Practice section. This is a documentation housekeeping item, not a content blocker."
+  },
+  "verdict": "PASS — 0 hard fails; 5 soft findings (T1 terminology bridging, P1 prerequisite declaration, D1 concept overlap, AU1 and AU2 audience-level term introductions). Hard fail L1 resolved: topic 1.11 reading.md now contains a three-step partner-swap lab activity in the In Practice section, providing hands-on coverage of the four-property checklist aligned to the module lab_activity_seed."
+}

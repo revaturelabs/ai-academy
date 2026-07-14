@@ -1,0 +1,49 @@
+{
+  "topic_id": "13.4",
+  "passed": true,
+  "at": "2026-06-14T00:00:00Z",
+  "checks": {
+    "format_discipline": {
+      "passed": true,
+      "notes": "First non-empty line is the correct H1 with no frontmatter. reading.meta.json exists and parses with all required fields (word_count, reading_minutes, citations, sections). Exactly 6 sections present in correct order: Overview, Key Concepts, Worked Example, In Practice, Key Takeaways, References."
+    },
+    "length_budget": {
+      "passed": true,
+      "word_count": 1050,
+      "reading_minutes": 5,
+      "notes": "1050 words is within the 800–1200 atomic target. At 200 wpm = 5.25 min; at 230 wpm = 4.56 min — both within the 4–6 min range. Meta reports 6 min which is at the boundary but acceptable; actual rate calculation places it comfortably inside range."
+    },
+    "citation_discipline": {
+      "passed": true,
+      "primary_cited": true,
+      "notes": "Primary resource [1] (learnprompting.org) cited in Overview, Key Concepts (multiple sub-sections), Worked Example, In Practice, and Key Takeaways. Supporting sources [2] (DataCamp) and [3] (AltexSoft) each cited multiple times. Bibliography at bottom lists all three entries matching inline markers exactly. No orphan markers; no orphan bibliography entries."
+    },
+    "forward_references": {
+      "passed": true,
+      "violations": [],
+      "notes": "References to 13.1 (system prompt, user prompt), 13.2 (role assignment), and 13.3 (few-shot prompting, example pairs) are all prior topics — permitted. No references to 13.5 or any later topic. All other concepts (LLM, token, API, Python) are from earlier weeks. No forward references detected."
+    },
+    "beginner_readability": {
+      "passed": true,
+      "finding_count": 0,
+      "findings": [],
+      "notes": "All non-everyday terms defined at first use: 'chain-of-thought (CoT)' in Overview, 'Zero-shot CoT' and 'Few-shot CoT' in Key Concepts, 'reasoning triple' defined when introduced. No paragraph introduces 3+ brand-new terms simultaneously. Concrete-first order maintained throughout — the Overview opens with a plain description of the problem before naming the technique. Sentence lengths are consistently short to medium. No academic hedging phrases detected. No assessment references (no assessment IDs, due weeks, or grade weights). Bold-term definitions used correctly in all concept introductions."
+    },
+    "formatting": {
+      "passed": true,
+      "finding_count": 0,
+      "findings": [],
+      "notes": "No walls of text — paragraphs average 3–4 sentences. Sequences and multi-item lists rendered as bullet lists (trigger phrases, when-to-use lists, do/don't lists). Inline examples appear in Key Concepts section (before-CoT / after-CoT comparison and code blocks), not only in the Worked Example section. Comparison table (CoT helps vs. does not help) is correctly tabulated. Definition shape (bold term — plain meaning) used consistently."
+    },
+    "scope_discipline": {
+      "passed": true,
+      "scope_creep": false,
+      "notes": "Reading covers only zero-shot CoT and few-shot CoT, which are the topic headline concepts. Advanced variants (least-to-most prompting, self-consistency, tree-of-thought, ReAct) do not appear. The two-turn conversation strategy mentioned in corpus section 5.6 is correctly omitted from the reading, keeping scope tight. No teaching of content beyond 'chain-of-thought prompting — asking the model to reason step by step'."
+    },
+    "faithfulness": {
+      "passed": true,
+      "notes": "Sampled 10 assertions across all sections. All trace to corpus: (1) CoT as third tool beyond role/few-shot — corpus §4; (2) each step as model context for next token — corpus §5.2; (3) zero-shot CoT trigger phrases — corpus §5.3; (4) reasoning triple structure — corpus §5.4; (5) few-shot CoT for consistent domain format — corpus §5.4; (6) CoT/no-benefit task table — corpus §5.5; (7) Answer: marker extraction code pattern — corpus §5.6; (8) code debugging real-world pattern — corpus §7; (9) data validation pipeline pattern — corpus §7; (10) max_tokens advice — corpus §8. Zero unsupported assertions found."
+    }
+  },
+  "verdict": "PASS — all 7 checks pass. Format is clean (correct H1, no frontmatter, 6 sections in order). Length 1050 words / ~5 min is within atomic budget. All three resources cited; bibliography matches inline markers. No forward references beyond permitted prior-topic concepts. No readability or formatting findings: terms defined on first use, concrete-first structure, no walls of text, lists used for sequences, bold-term definitions present. Scope is tight — advanced CoT variants absent. All sampled assertions are faithful to corpus."
+}

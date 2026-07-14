@@ -1,0 +1,29 @@
+---
+title: "Three ways to govern AI — compared side by side"
+config:
+  theme: base
+  themeVariables:
+    primaryColor: "#a5d8ff"
+    primaryBorderColor: "#4a9eed"
+    lineColor: "#555"
+  flowchart:
+    htmlLabels: true
+    curve: basis
+    nodeSpacing: 60
+    rankSpacing: 60
+---
+flowchart LR
+    EU["<b>EU AI Act</b><br><span style='font-size:12px;color:#6d28d9'>a binding law</span><br><br><b>Who issues it:</b> The European Union<br><b>Who must obey:</b> Anyone in scope, by law<br><b>How easily undone:</b> Hard — it is a law<br><b>Reach:</b> Broad"]
+
+    NIST["<b>NIST AI RMF</b><br><span style='font-size:12px;color:#6d28d9'>voluntary guidance</span><br><br><b>Who issues it:</b> NIST — a US agency<br><b>Who must obey:</b> No one — chosen freely<br><b>How easily undone:</b> Not applicable — optional<br><b>Reach:</b> As broad as you choose"]
+
+    EO["<b>EO 14110</b><br><span style='font-size:12px;color:#6d28d9'>a US Presidential order</span><br><br><b>Who issues it:</b> The US President<br><b>Who must obey:</b> US federal agencies, plus some industry reporting<br><b>How easily undone:</b> Easy — a later President can revoke it<br><b>Reach:</b> Narrower — mainly directs the government"]
+
+    EU ~~~ NIST ~~~ EO
+
+    classDef start fill:#a5d8ff,stroke:#4a9eed
+    classDef auto fill:#d0bfff,stroke:#8b5cf6
+    classDef hitl fill:#fff3bf,stroke:#f59e0b,stroke-width:3px
+    class EU start
+    class NIST auto
+    class EO hitl

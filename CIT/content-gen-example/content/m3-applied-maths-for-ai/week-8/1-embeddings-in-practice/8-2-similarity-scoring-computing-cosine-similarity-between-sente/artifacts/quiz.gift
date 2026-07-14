@@ -1,0 +1,49 @@
+$CATEGORY: CIT/M3/week-8/8.2-similarity-scoring-computing-cosine-similarity-between-sentence-pairs
+
+::q1:: You already know a word embedding turns a single word into a list of numbers. What is a sentence embedding? {
+=One list of numbers that captures the meaning of a whole sentence at once#Correct — it is the same idea as a word embedding, scaled up from one word to an entire sentence.
+~A list that stores each word of the sentence spelled out letter by letter#No — embeddings capture meaning as numbers, not the spelling of the words.
+~A count of how many words the sentence has in total#No — it is about meaning, not a simple word count of the sentence.
+~A separate number-list kept for every single word in the sentence#No — a sentence embedding is one combined list for the whole sentence, not one per word.
+#### Tests the sentence-embedding learning objective, reusing word-embedding knowledge (corpus §5 "From word vectors to sentence vectors").
+}
+
+::q2:: Picture each sentence as an arrow pointing into space. What does cosine similarity actually measure between two of these arrows? {
+~The total length of each arrow added together end to end#No — cosine similarity ignores length; that is the key thing it does not use.
+=The angle between the two arrows, where a small angle scores high#Correct — a small angle (same direction) scores high and a wide angle scores low.
+~The number of words the two sentences happen to share#No — it works on the arrows' directions, not on shared words.
+~The exact point in space where the two arrows happen to cross#No — it reads the angle between the arrows, not any crossing point.
+#### Tests cosine-similarity-as-angle and reading it on a scale (corpus §5 "Cosine similarity — the angle between two arrows").
+}
+
+::q3:: Two sentences are scored and the result is close to 1. What does that high score tell you about the two sentences? {
+~They share most of the same words but are about different topics#No — a high score follows meaning, and these sentences mean nearly the same thing.
+~They point in opposite directions and pull against each other#No — opposite directions give a score below 0, not a score close to 1.
+=They mean nearly the same thing, even if the words are different#Correct — near 1 means same meaning; near 0 would mean unrelated.
+~They are completely unrelated and have nothing in common#No — unrelated sentences score near 0, not close to 1.
+#### Tests what a high vs low score means about meaning (corpus §5 "Reading the score").
+}
+
+::q4:: In this lab, where do the number-lists (vectors) for each sentence come from? {
+~You build each sentence's vector yourself, by hand, during the lab#No — building the embeddings is not this lab's job; it was covered earlier.
+~You count the shared words in each pair to create the vectors#No — vectors come from a model's embedding step, not from counting words.
+~You draw the arrows on paper and measure them with a ruler#No — the vectors are given as ready-made number-lists, not measured by hand.
+=They are pre-computed and handed to you ready-made before scoring#Correct — the lab gives you the vectors already worked out; you only score them.
+#### Tests the pre-computed-vectors workflow for scoring pairs (corpus §5 "Pre-computed vectors" and §6).
+}
+
+::q5:: "I love this movie" and "I love this pizza" share almost all of their words, yet they score lower than you might expect. Why? {
+~Because longer sentences always score lower than shorter ones do#No — length is not what lowers the score; cosine similarity ignores length.
+~Because sharing words automatically forces the score down toward 0#No — shared words do not lower a score; the score follows meaning.
+~Because the lab tool cannot read sentences that share many words#No — the tool scores any pair; sharing words is not a problem for it.
+=Because the score follows meaning, not spelling, and these mean different things#Correct — same words do not mean same meaning; the two are about different things.
+#### Tests the "same words vs same meaning" learning objective (corpus §5 "Same words vs same meaning").
+}
+
+::q6:: You score five sentence pairs and one pair gets a result near 0. Reading the score scale, how should you describe that pair? {
+~The two sentences are nearly identical in meaning#No — near 0 means unrelated; near 1 would mean identical in meaning.
+=The two sentences are unrelated to each other#Correct — on the scale, about 0 means the directions are unrelated.
+~The two sentences must contain a spelling mistake somewhere#No — the score reads meaning, not spelling errors.
+~The two sentences are the longest pair in the set#No — the score does not measure length, so it says nothing about which pair is longest.
+#### Tests reading a low score on the scale across the five-pair exercise (corpus §5 "Reading the score" and §6).
+}

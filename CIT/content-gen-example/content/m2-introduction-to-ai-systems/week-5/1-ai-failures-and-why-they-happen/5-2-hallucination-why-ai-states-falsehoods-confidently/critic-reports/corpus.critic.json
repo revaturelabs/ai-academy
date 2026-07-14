@@ -1,0 +1,50 @@
+{
+  "passed": true,
+  "checks": {
+    "required_sections": {
+      "passed": true,
+      "notes": "All four required sections present with sufficient substance. Section 3 (Learning Objectives): 5 clear, measurable objectives well above 50 words. Section 4 (Introduction): narrative hook with real-world legal case, well above 50 words. Section 5 (Core Concepts): 8 sub-sections covering LLM orientation, next-token prediction, uncertainty signal, hallucination types, I-don't-know problem, confidence problem, domain stakes, and named mitigations — far above 100 words. Section 10 (Key Takeaways): 5 substantive bullet points, above 50 words."
+    },
+    "citation_density": {
+      "passed": true,
+      "primary_cited": true,
+      "claim_citation_rate": 0.82,
+      "notes": "resources_source is web_search — strict mode applied. Primary resource [1] (atlan.com) is cited in sections 5.2, 5.3, 5.5, 5.6, 5.7, and section 7. Supporting resource [2] (superannotate) cited in sections 5.3, 5.4, 5.5, 5.6, 5.7, and section 7. Supporting resource [3] (arxiv) cited in section 5.4. All [N] markers (1–3) resolve to real resources in topic.resources.json — no fabricated citations. Estimated 82% of standalone factual assertions in sections 5, 6, 7 carry a citation marker, exceeding the 60% threshold."
+    },
+    "sequence_drift": {
+      "passed": true,
+      "forward_refs": [],
+      "notes": "All technical terms used are either: (a) this topic's own concepts_introduced (next-token prediction, intrinsic hallucination, extrinsic hallucination, calibration, confidence problem), (b) established by prior topic 5.1 (AI failure, training data bias, diagnostic AI, algorithmic bias, deepfake, deep learning), (c) acceptable M2 vocabulary treated as established (LLM, token, training, inference — introduced in the 3.x block, not formally recorded but explicitly acknowledged in corpus prerequisites and defined in section 5.1 as a safety net), or (d) named-and-deferred forward concepts (RAG, RLHF, grounding) that are explicitly flagged as 'not taught here, covered later'. No genuine forward references found where a concept is assumed as known without prior introduction. Probability distribution is explained immediately on first use. Miscalibrated is used only after calibration is defined in the same section."
+    },
+    "length_sanity": {
+      "passed": true,
+      "word_count": 3380,
+      "profile": "standard",
+      "notes": "Builder-reported word count of 3380 falls within the standard corpus range of 3000–4400 words. No length issue."
+    },
+    "scope_creep": {
+      "passed": true,
+      "findings": [
+        {
+          "severity": "soft",
+          "concept": "RAG, RLHF",
+          "section": "5.8",
+          "detail": "Section 5.8 names RAG and RLHF with full acronym expansions in parentheses ('RAG (Retrieval-Augmented Generation)' and 'RLHF (Reinforcement Learning from Human Feedback)'). The scope_discipline bare-name rule requires deferred concepts to appear as bare names only — never followed by a defining clause or expansion. A parenthetical acronym expansion is a light defining form and technically violates the bare-name rule. However, neither concept is explained, defined, or taught in any way beyond the acronym itself, and both are explicitly deferred with 'none of them is taught in this topic, you will cover them in later topics.' The corpus does not teach these concepts. Flagged as a soft finding; builder should strip the parenthetical expansions and retain only the bare names (or the acronym alone) plus the deferral pointer."
+        }
+      ]
+    },
+    "beginner_readability": {
+      "passed": true,
+      "findings": [
+        {
+          "severity": "soft",
+          "type": "undefined_terms",
+          "detail": "Section 5.8 uses 'grounding' as a bare technical term without even a one-word explanation. For a beginner, 'grounding' has no intuitive meaning in an AI context. Since it is deferred, a full definition would be scope_creep — but a one-word parenthetical hint (e.g. 'grounding (anchoring AI output to verified sources)') would help. Minor soft finding only."
+        }
+      ],
+      "notes": "Introduction and Core Concepts are well-structured for a zero-background audience. Terms are defined on first use throughout (LLM, Token, Training, Inference, next-token prediction, calibration, intrinsic hallucination, extrinsic hallucination all defined at first appearance). No jargon dumps — new terms are introduced one at a time in separate paragraphs. 'Probability distribution' is immediately followed by a plain-English gloss. Sentence lengths are generally short to medium. No hedging phrases detected. One soft finding on 'grounding'. Total distinct readability findings: 1 (below the threshold of 3 for hard fail escalation)."
+    }
+  },
+  "verdict": "pass — corpus is well-grounded and structurally sound; soft finding: section 5.8 expands RAG and RLHF acronyms in parentheses, violating the bare-name-only rule for deferred concepts (strip the parenthetical expansions); soft finding: 'grounding' named without any contextual hint for a beginner audience",
+  "at": "2026-06-17T00:00:00Z"
+}

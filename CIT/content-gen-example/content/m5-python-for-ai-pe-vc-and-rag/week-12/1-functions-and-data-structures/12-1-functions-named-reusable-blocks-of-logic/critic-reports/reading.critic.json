@@ -1,0 +1,148 @@
+{
+  "critic": "reading-critic",
+  "topic_id": "12.1",
+  "run_at": "2026-06-13",
+  "passed": true,
+  "verdict": "PASS — all hard checks clear; 2 soft findings (SyntaxError/IndentationError used without explicit plain-language definitions, Worked Example steps formatted as bold headers rather than a markdown numbered list); neither finding crosses the escalation threshold.",
+  "gold_example_note": "Gold examples present for topics 2.1 and 3.4 — neither is a functions topic. Fallback to written standards applied. Reading matches expected sectioning, beginner tone, and formatting density at standard-profile depth.",
+  "checks": {
+    "format_discipline": {
+      "passed": true,
+      "frontmatter_present": false,
+      "meta_sidecar_missing": false,
+      "sidecar_note": "Sidecar parses and carries word_count, reading_minutes, sections, diagram_embedded, primary_resource_cited, all_resources_cited. Field 'citations_used' absent; replaced by boolean flags — functionally equivalent, no fail triggered.",
+      "section_template_violation": false,
+      "sections_found": ["Overview", "Key Concepts", "Worked Example", "In Practice", "Key Takeaways", "References"],
+      "sections_required": ["Overview", "Key Concepts", "Worked Example", "In Practice", "Key Takeaways", "References"],
+      "sections_in_order": true
+    },
+    "length": {
+      "passed": true,
+      "word_count_sidecar": 1368,
+      "target_word_range": [1200, 1600],
+      "word_count_in_range": true,
+      "reading_minutes_sidecar": 7,
+      "reading_minutes_at_200wpm": 6.84,
+      "reading_minutes_at_230wpm": 5.95,
+      "target_minute_range": [6, 8],
+      "minutes_in_range_at_200wpm": true,
+      "minutes_note": "artifact-mix.json reading_wpm=200 is the authoritative rate; 1368/200=6.84 min. Skill formula (words/230) yields 5.95 — marginally below 6, but the authoritative config rate is 200 WPM and the sidecar value of 7 min is within range."
+    },
+    "citations": {
+      "passed": true,
+      "primary_resource": {
+        "id": "[1]",
+        "url": "https://realpython.com/defining-your-own-python-function/",
+        "cited": true,
+        "occurrence_count": "11+ inline citations"
+      },
+      "all_resources_cited": true,
+      "resources": [
+        {"id": "[1]", "url": "https://realpython.com/defining-your-own-python-function/", "role": "primary", "cited_inline": true, "in_bibliography": true},
+        {"id": "[2]", "url": "https://www.w3schools.com/python/python_functions.asp", "role": "supporting", "cited_inline": true, "in_bibliography": true},
+        {"id": "[3]", "url": "https://docs.python.org/3/tutorial/index.html", "role": "supporting", "cited_inline": true, "in_bibliography": true}
+      ],
+      "orphan_markers": [],
+      "orphan_bibliography_entries": []
+    },
+    "no_forward_references": {
+      "passed": true,
+      "prior_concepts_used": ["11.2 (Colab)", "11.3 (variables)", "11.4 (data types)", "11.5 (if/else)", "11.6 (for loops)", "11.7 (spec-first)"],
+      "forward_references_found": [],
+      "deferred_mentions": [
+        {
+          "concept": "parameters and return values",
+          "topic": "12.2",
+          "line": 79,
+          "text": "How to pass data *into* a function and get a result *back* out are the next step — covered in Topic 12.2.",
+          "compliant": true,
+          "reason": "One sentence, no definition, no bolding — valid mention-and-defer per scope_discipline rules."
+        }
+      ]
+    },
+    "faithfulness": {
+      "passed": true,
+      "assertions_sampled": 10,
+      "unsupported_assertions": 0,
+      "threshold": 2,
+      "samples": [
+        {"assertion": "A function is a named, reusable block of code.", "supported": true, "corpus_section": "5.1"},
+        {"assertion": "You create a function with the keyword `def` (short for 'define')", "supported": true, "corpus_section": "5.2"},
+        {"assertion": "The colon at the end of the def line is required", "supported": true, "corpus_section": "5.2"},
+        {"assertion": "A function that is defined but never called does nothing", "supported": true, "corpus_section": "5.4"},
+        {"assertion": "A call for a function not yet defined causes a NameError", "supported": true, "corpus_section": "5.4"},
+        {"assertion": "PEP 8 — lowercase, underscores, verb phrases for function names", "supported": true, "corpus_section": "5.5"},
+        {"assertion": "Three lines of output from one print statement — that is reuse", "supported": true, "corpus_section": "6"},
+        {"assertion": "Scripts print headers/separators in multiple places — print_separator() removes duplication", "supported": true, "corpus_section": "7 Pattern 1"},
+        {"assertion": "Step 1 — Write the spec as a comment before any code", "supported": true, "corpus_section": "6 Step 1"},
+        {"assertion": "Definition must always appear first in the file; the call must come after", "supported": true, "corpus_section": "5.4"}
+      ]
+    },
+    "beginner_readability": {
+      "passed": true,
+      "soft_findings": [
+        {
+          "code": "undefined_terms",
+          "severity": "soft",
+          "detail": "SyntaxError (line 35) and IndentationError (line 35) are used without explicit bold-term/plain-meaning definitions. Context makes the meanings inferable ('Python immediately raises a SyntaxError' after 'If you forget the colon') but the terms are not formally defined on first use. Count = 2, which is at the threshold (fail requires >2).",
+          "terms": ["SyntaxError", "IndentationError"],
+          "lines": [35]
+        }
+      ],
+      "jargon_dump": false,
+      "abstract_first": false,
+      "academic_register": false,
+      "hedging_count": 0,
+      "average_sentence_length_estimate": "under 20 words",
+      "define_before_use_violations": 2,
+      "define_before_use_threshold": 2,
+      "define_before_use_fail": false
+    },
+    "formatting": {
+      "passed": true,
+      "soft_findings": [
+        {
+          "code": "unlisted_sequence",
+          "severity": "soft",
+          "detail": "Worked Example steps are formatted as **Step N —** bold headers followed by code blocks rather than a markdown `1. 2. 3.` numbered list. artifact-mix.json mandates numbered lists for ordered procedures. Steps are clearly sequential and scannable, but not technically a numbered list. Soft finding only.",
+          "lines": [85, 95, 103, 113, 123, 133]
+        }
+      ],
+      "wall_of_text": false,
+      "no_inline_examples": false,
+      "definitions_use_bold_term_shape": true
+    },
+    "assessment_references": {
+      "passed": true,
+      "occurrences": []
+    },
+    "scope": {
+      "passed": true,
+      "scope_creep": false,
+      "findings": [],
+      "deferred_concepts_handled_correctly": ["parameters (12.2)", "return values (12.2)"]
+    }
+  },
+  "soft_findings_summary": [
+    {
+      "code": "undefined_terms",
+      "detail": "SyntaxError and IndentationError at line 35 lack explicit plain-language definitions. Count = 2 (at threshold, not exceeding)."
+    },
+    {
+      "code": "unlisted_sequence",
+      "detail": "Worked Example steps use bold headers (**Step N —**) instead of markdown numbered list syntax."
+    }
+  ],
+  "escalation": {
+    "scope_creep_found": false,
+    "checks_5_6_distinct_findings": 2,
+    "escalation_threshold": 3,
+    "hard_fail_escalated": false
+  },
+  "diagram_check": {
+    "embedded": true,
+    "path": "./diagram.png",
+    "location": "Key Concepts section (Definition vs Call subsection, line 39)",
+    "compliant": true
+  }
+}

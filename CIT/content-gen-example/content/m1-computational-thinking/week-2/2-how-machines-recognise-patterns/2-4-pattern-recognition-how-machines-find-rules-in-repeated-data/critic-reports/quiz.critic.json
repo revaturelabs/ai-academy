@@ -1,0 +1,60 @@
+{
+  "passed": true,
+  "checks": {
+    "positional_bias": {
+      "passed": true,
+      "distribution": [1, 1, 2, 1],
+      "positions_used": [0, 1, 2, 3],
+      "correct_position_sequence": [1, 3, 0, 2, 1],
+      "max_share": 0.40,
+      "note": "pos1 appears twice out of 5 MCQs; max_share exactly 0.40, which satisfies the ≤0.40 threshold. Sidecar correct_position_distribution matches positions re-derived from quiz.gift."
+    },
+    "length_bias": {
+      "passed": true,
+      "longest_correct_rate": 0.0,
+      "baseline": 0.25,
+      "per_question": [
+        { "id": "q1", "correct_len": 101, "mean_distractor_len": 87, "threshold": 104, "longest_correct": false },
+        { "id": "q2", "correct_len": 91,  "mean_distractor_len": 110, "threshold": 132, "longest_correct": false },
+        { "id": "q3", "correct_len": 103, "mean_distractor_len": 107, "threshold": 128, "longest_correct": false },
+        { "id": "q4", "correct_len": 129, "mean_distractor_len": 119, "threshold": 143, "longest_correct": false },
+        { "id": "q5", "correct_len": 116, "mean_distractor_len": 109, "threshold": 131, "longest_correct": false }
+      ],
+      "note": "No MCQ has a correct answer longer than 1.20 × mean distractor length."
+    },
+    "distractor_plausibility": {
+      "passed": true,
+      "absurd_rate": 0.0,
+      "total_distractors": 12,
+      "absurd_count": 0,
+      "weakest_questions": [],
+      "scores_summary": "All distractors scored 3 or 4 (plausible misconception or strong distractor). No score-1 (obviously absurd) distractors found."
+    },
+    "objective_coverage": {
+      "passed": true,
+      "uncovered_objectives": [],
+      "orphan_questions": [],
+      "coverage_map": {
+        "Explain the difference between a rule-based system and a pattern-recognition system in plain terms.": ["q1"],
+        "Describe how a machine learns rules from repeated examples (training on labeled data).": ["q2"],
+        "Define the terms feature, label, and classification as used in pattern recognition.": ["q3", "q6"],
+        "Explain why a machine trained on data gives probabilistic (not certain) outputs.": ["q4"],
+        "Describe at least two consequences of probabilistic outputs for writing specifications.": ["q5"],
+        "Identify whether a given specification is appropriately bounded for an AI system whose output is a probability.": ["q4"]
+      }
+    },
+    "beginner_fairness_and_scope": {
+      "passed": true,
+      "jargon_in_stem": [],
+      "out_of_scope_questions": [],
+      "unfair_distractors": [],
+      "note": "All stems use plain English with concrete scenarios. All terms (rule-based system, pattern-recognition, labeling, training, classification, probabilistic output, specification) are defined in the corpus. No forward references to advanced concepts. Distractors are grounded in beginner misconceptions about this topic only."
+    }
+  },
+  "auto_correction_applied": {
+    "shuffle_round_2": false
+  },
+  "meta_gift_desync": false,
+  "verdict": "Pass — all five checks clean on cycle 1. Positional bias max_share=0.40 (at threshold, passes). Length bias 0/5 longest-correct. Zero absurd distractors. All 6 LOs covered. All questions on-headline and beginner-fair.",
+  "at": "2026-06-17T00:00:00Z"
+}

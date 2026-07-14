@@ -1,0 +1,43 @@
+{
+  "passed": true,
+  "checks": {
+    "required_sections": {
+      "passed": true,
+      "notes": "All required sections present with sufficient substance. Hook (Section 4 Introduction, ~200w analogy). Core concept (Section 5, >100w per sub-section). Types of constraints (5.4). Writing effective constraints (Section 6 Implementation steps). Common pitfalls (Section 8 Do-not block: overloading, contradictions, vagueness). Connection to prior techniques (Section 2 Prerequisites + Section 4 last paragraph + Section 6 Step 1). Worked example (Section 6 skeleton code block). Checking if constraints work (Section 6 Step 5 + Section 9 exercise). Key vocabulary embedded as bold defined terms in Sections 5 and 10 — no standalone glossary section but all six concepts_introduced terms (constraint, negative instruction, positive reframe, guardrail, content exclusion, scope limit) are defined at first use. Soft note: 'Why constraints matter' content is distributed across Introduction and Section 5.2 rather than under a discrete heading; substance is present. Soft note: no standalone 'Scope flags' section — material is incorporated into Section 5.5 (placement) and Section 8 (pitfalls)."
+    },
+    "citation_density": {
+      "passed": true,
+      "primary_cited": true,
+      "claim_citation_rate": 0.82,
+      "notes": "Primary resource [1] mitsloanedtech.mit.edu cited at lines 34, 42, 60, 76, 110, 181, 183. All three markers [1][2][3] resolve to real resources in topic.resources.json — no fabricated citations. Citation rate in Core Concepts (Section 5) and Implementation (Section 6) and Real-World Patterns (Section 7): approximately 82% of standalone factual assertions carry a marker. Uncited background statements ('language models are generative', 'their default is to keep going') are general knowledge framing rather than primary claims and do not trigger the threshold. Well above the 60% floor."
+    },
+    "sequence_drift": {
+      "passed": true,
+      "forward_refs": [],
+      "notes": "All technical terms either belong to 13.5's own concepts_introduced (constraint, negative instruction, positive reframe, guardrail, content exclusion, scope limit) or to previously introduced concepts (system prompt, user prompt — 13.1; role assignment, role statement, persona — 13.2; few-shot prompting, example pairs — 13.3; chain-of-thought, reasoning style — 13.4; API call, JSON, try/except, dictionaries — prior M5 topics). 'JSON schema structures' (line 84) is mentioned in exactly one sentence with an explicit 'covered in topic 13.6' defer pointer — within the one-sentence allowed limit. 'Grounding constraint' (line 169) used descriptively as a label in context, not taught as a new concept. No forward references detected."
+    },
+    "length_sanity": {
+      "passed": true,
+      "word_count": 2495,
+      "profile": "standard",
+      "notes": "Estimated word count ~2495. Standard profile target range is 3000–4400. The count is ~17% below the floor of 3000, which is within the 30% outside-range hard-fail threshold (hard fail threshold: below 2100). Technically passes the hard gate. However, the corpus is short of the intended standard-depth band. The builder should expand: Section 5 (Why negation is tricky is thin at ~140w), Section 7 (Real-World Patterns is only ~200w), and Section 8 (Best Practices) could each absorb 200–300 more words to reach the 3000-word floor. Flagged as a soft length warning for the builder."
+    },
+    "scope_creep": {
+      "passed": true,
+      "offending_concepts": [],
+      "notes": "All content is on-headline (constraints / negative instructions). The four constraint types (format, tone, content exclusion, scope limit), positive reframe, guardrails, placement strategy, pitfalls, and empirical testing are all direct sub-topics of the headline. JSON schema structures and detailed output-format control are mentioned once (line 84) with an explicit 'covered in topic 13.6' pointer — within the allowed one-sentence defer rule. The 5-role framework is not taught here. No scope creep detected."
+    },
+    "beginner_readability": {
+      "passed": true,
+      "findings": [
+        {
+          "type": "undefined_terms",
+          "detail": "The term 'negative instruction' is used in Section 5.1 and implied by the topic title but is never given an explicit one-sentence definition as a named concept (contrast: 'constraint', 'positive reframe', 'guardrail' all receive explicit definitions). Minor issue — context makes meaning clear — but the builder should add a one-liner: e.g. 'A negative instruction is the "do not" form of a constraint — it specifies what the model must avoid rather than what it must do.'"
+        }
+      ],
+      "notes": "Only one soft finding. All other concepts_introduced terms are defined at first use with plain-language definitions. No jargon dumps (no paragraph introduces 3+ brand-new terms simultaneously). Sentence lengths are generally under 25 words. No hedging language detected. The analogy in Section 4 (new assistant analogy) and the room-walls analogy in 5.1 are effective scaffolds for beginners. One finding is well below the ≥3 hard-fail threshold."
+    }
+  },
+  "verdict": "PASS. All six checks clear. Primary citation present; ~82% claim citation rate in core sections exceeds the 60% threshold; no forward references; no scope creep; beginner readability is strong with only one minor soft finding (no explicit definition for 'negative instruction'). One soft length warning: estimated ~2495 words is below the standard profile target floor of 3000 words but above the hard-fail threshold of 2100. Builder should expand Section 5.2, Section 7, and Section 8 by ~500 words to reach the intended depth band before artifact generation.",
+  "at": "2026-06-14T00:00:00Z"
+}

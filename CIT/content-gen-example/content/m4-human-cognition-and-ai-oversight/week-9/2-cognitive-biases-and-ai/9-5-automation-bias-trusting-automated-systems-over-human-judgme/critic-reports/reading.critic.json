@@ -1,0 +1,153 @@
+{
+  "critic": "reading-critic",
+  "topic_id": "9.5",
+  "artifact": "reading.md",
+  "run_at": "2026-06-12T00:00:00Z",
+  "verdict": "PASSED",
+  "passed": true,
+  "checks": {
+    "check_0_format_discipline": {
+      "passed": true,
+      "findings": [],
+      "detail": {
+        "frontmatter_present": false,
+        "meta_sidecar_missing": false,
+        "section_template_violation": false,
+        "sections_found": ["Overview", "Key Concepts", "Worked Example", "In Practice", "Key Takeaways", "References"],
+        "sections_expected": ["Overview", "Key Concepts", "Worked Example", "In Practice", "Key Takeaways", "References"],
+        "order_correct": true
+      }
+    },
+    "check_1_length": {
+      "passed": true,
+      "findings": [],
+      "detail": {
+        "word_count": 1389,
+        "word_count_range": [1200, 1600],
+        "word_count_in_range": true,
+        "estimated_minutes": 7,
+        "minutes_computed": 6.95,
+        "minutes_range": [6, 8],
+        "minutes_in_range": true
+      }
+    },
+    "check_2_citations": {
+      "passed": true,
+      "findings": [],
+      "detail": {
+        "primary_resources_cited": [
+          {
+            "url": "https://thedecisionlab.com/biases/automation-bias",
+            "marker": "[1]",
+            "cited_at_least_once": true,
+            "inline_count": 13
+          }
+        ],
+        "supporting_resources_cited": [
+          {
+            "url": "https://en.wikipedia.org/wiki/Automation_bias",
+            "marker": "[2]",
+            "cited_at_least_once": true
+          },
+          {
+            "url": "https://link.springer.com/article/10.1007/s00146-025-02422-7",
+            "marker": "[3]",
+            "cited_at_least_once": true
+          }
+        ],
+        "bibliography_present": true,
+        "orphan_markers": [],
+        "orphan_bibliography_entries": []
+      }
+    },
+    "check_3_no_forward_refs": {
+      "passed": true,
+      "findings": [],
+      "detail": {
+        "backward_refs_found": ["9.1 (System 1 thinking)", "9.2 (cognitive load / System 2)", "9.3 (confirmation bias)", "9.4 (anchoring bias)"],
+        "forward_refs_found": [],
+        "allowed_concepts": ["automation bias", "omission error", "commission error", "cognitive offloading", "complacency", "situational awareness", "calibrated trust", "alert fatigue"]
+      }
+    },
+    "check_4_faithfulness": {
+      "passed": true,
+      "findings": [],
+      "detail": {
+        "assertions_sampled": 10,
+        "assertions_supported": 10,
+        "assertions_unsupported": 0,
+        "unsupported_threshold": 2,
+        "sample": [
+          {"assertion": "Automation bias definition (line 5)", "corpus_section": "5.1", "supported": true},
+          {"assertion": "Mosier and Skitka 1990s research (line 11)", "corpus_section": "5.1", "supported": true},
+          {"assertion": "Omission error — radiologist example (lines 17-19)", "corpus_section": "5.2", "supported": true},
+          {"assertion": "Commission error — pilot example (lines 22-24)", "corpus_section": "5.2", "supported": true},
+          {"assertion": "Cognitive offloading definition (line 36)", "corpus_section": "5.3", "supported": true},
+          {"assertion": "Complacency definition (line 42)", "corpus_section": "5.3", "supported": true},
+          {"assertion": "Alert fatigue in medicine (line 49)", "corpus_section": "5.4", "supported": true},
+          {"assertion": "AI explanations and deference (line 50)", "corpus_section": "5.4", "supported": true},
+          {"assertion": "Resume screening worked example (lines 56-63)", "corpus_section": "6", "supported": true},
+          {"assertion": "Calibrated trust definition (line 78)", "corpus_section": "7", "supported": true}
+        ]
+      }
+    },
+    "beginner_readability": {
+      "passed": true,
+      "findings": [],
+      "detail": {
+        "undefined_terms": [],
+        "undefined_term_count": 0,
+        "undefined_term_threshold": 2,
+        "jargon_dump": null,
+        "abstract_first": null,
+        "academic_register": {
+          "hedging_count": 0,
+          "hedging_threshold": 3
+        },
+        "notes": "All non-everyday terms defined at first use with bold-term format. Concepts introduced with concrete examples before abstraction. Plain register maintained throughout. Backward references to 9.1–9.4 are explicit named pointers, not re-teaching."
+      }
+    },
+    "formatting": {
+      "passed": true,
+      "findings": [],
+      "detail": {
+        "wall_of_text": null,
+        "unlisted_sequence": null,
+        "no_inline_examples": null,
+        "bold_term_definitions_present": true,
+        "notes": "All paragraphs within 4-sentence target. Worked Example is a numbered list. In Practice uses bullet lists. Inline examples present in Key Concepts beyond the Worked Example section. Bold-term/plain-meaning format used consistently for all defined terms."
+      }
+    },
+    "check_6b_assessment_references": {
+      "passed": true,
+      "findings": [],
+      "detail": {
+        "assessment_reference_found": false
+      }
+    },
+    "scope": {
+      "passed": true,
+      "findings": [],
+      "detail": {
+        "scope_creep": null,
+        "deferred_concepts_properly_handled": [],
+        "notes": "The Judgment Framework (9.7–9.9), referenced in corpus §8, is correctly omitted from the reading — no forward reference or premature teaching. All concepts taught fall within this topic's defined scope. Backward references to prior topics (9.1–9.4) are mention-only pointers, not re-teaching."
+      }
+    }
+  },
+  "escalation": {
+    "hard_fail_triggered": false,
+    "reason": null,
+    "soft_findings_count": 0,
+    "scope_creep_count": 0
+  },
+  "gold_example_comparison": {
+    "gold_examples_checked": [
+      "2-1-what-makes-a-good-specification.reading.md",
+      "3-4-how-llms-work-tokens-training-and-inference.reading.md"
+    ],
+    "meets_gold_bar": true,
+    "notes": "Reading matches gold-example structure: six fixed sections in order, bold-term definitions, numbered worked example, inline examples alongside concept introductions, bullet lists in In Practice, no frontmatter, footnote bibliography. Tone and depth consistent with the 3-4 gold example (standard profile, 7-minute read)."
+  },
+  "summary": "All 8 checks passed. Format, length, citations, no forward refs, faithfulness, beginner readability, formatting, and scope all clear. thedecisionlab.com cited 13 times as [1]. Word count 1389 within [1200,1600]. 7-minute read within [6,8]. No scope creep, no assessment references, no undefined terms, no wall-of-text."
+}

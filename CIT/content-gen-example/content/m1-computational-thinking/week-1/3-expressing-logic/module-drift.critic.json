@@ -1,0 +1,62 @@
+{
+  "schema_version": 1,
+  "critic": "drift-critic",
+  "module": "3-expressing-logic",
+  "course_code": "M1",
+  "week_num": 1,
+  "topics_evaluated": ["1.7", "1.8"],
+  "run_at": "2026-06-22T00:00:00Z",
+  "passed": true,
+  "findings_count": 2,
+  "hard_fails": [],
+  "soft_findings": [
+    {
+      "check": "lab_activity_alignment",
+      "severity": "soft",
+      "topic_id": null,
+      "finding": "Module lab_activity_seed specifies 'using Excalidraw' for flowchart drawing, but both topic manifests set artifact_plan.diagram = true with Mermaid as the rendering tool (pipeline default per CLAUDE.md). The lab narrative and the diagram artifact toolchain are misaligned. Functionally the content is covered — both 1.7 and 1.8 hands-on exercises directly support the lab task. Recommend updating the lab_activity_seed wording to 'using Mermaid or Excalidraw' or explicitly noting the pipeline uses Mermaid-first for generated artifacts while students may use Excalidraw in the live lab."
+    },
+    {
+      "check": "audience_level_consistency",
+      "severity": "soft",
+      "topic_id": "1.8",
+      "finding": "Topic 1.8 section 4 (Introduction) uses the term 'algorithm' with an inline gloss — 'a set of step-by-step instructions for completing a task' — before the term is formally introduced in module 4 (topics 1.9–1.11). The inline definition is adequate and the usage is casual, but the term is introduced cold relative to the curriculum sequence. No upward register spike is present; depth profiles for both 1.7 and 1.8 are consistently 'standard'. Recommend either removing the inline parenthetical and replacing 'algorithm' with 'process' in that sentence, or adding a forward-reference note ('you will study algorithms formally in the next module')."
+    }
+  ],
+  "checks": {
+    "terminology_consistency": {
+      "passed": true,
+      "details": "All terms introduced in 1.7 (pseudocode, sequence, decision/conditional/branch, condition, repetition, building blocks of logic) are used consistently in 1.8 with identical meaning and the same primary labels. The shift from 'decision (IF/OTHERWISE)' in 1.7 to 'decision diamond' in 1.8 is a deliberate extension to the visual-notation context, not synonym drift. IF/OTHERWISE keyword pair is consistent across both corpora."
+    },
+    "prerequisites_respected": {
+      "passed": true,
+      "details": "1.7 prerequisites [1.1, 1.5] both have earlier positions in the sequence index (module positions 1 and 2 respectively). 1.8 prerequisite ['1.7'] is the immediately prior topic (position_in_module 1 vs 2). No forward-reference violations detected in either topic's prerequisites field."
+    },
+    "learning_arc": {
+      "passed": true,
+      "details": "Module title 'Expressing Logic' and narrative seed ('Pseudocode and flowcharts — writing logic before writing code') are fully covered. 1.7 covers written/textual expression of logic; 1.8 covers visual/diagrammatic expression. Section 5.4 of 1.8 explicitly teaches the equivalence and interchangeability of the two representations, completing the arc. No uncovered facets identified."
+    },
+    "no_duplicated_core_concepts": {
+      "passed": true,
+      "jaccard_pairs": [
+        {
+          "pair": ["1.7", "1.8"],
+          "jaccard_similarity": 0.24,
+          "intersection": ["sequence", "decision", "repetition", "condition", "building blocks", "logic"],
+          "note": "Intersection terms are intentional pedagogical carry-overs — 1.8 explicitly maps its shapes to 1.7's three building blocks (section 5.4). The structural new content (five standard shapes, flowlines, loop-as-visual-construct) is entirely distinct. Below 0.6 threshold."
+        }
+      ]
+    },
+    "lab_activity_alignment": {
+      "passed": true,
+      "with_soft_finding": true,
+      "details": "Both topics carry hands-on exercises that directly support the module lab activity (flowchart drawing + partner swap). Content alignment is strong. Soft finding raised for toolchain label mismatch (Excalidraw in lab seed vs Mermaid in artifact_plan). See soft_findings."
+    },
+    "audience_level_consistency": {
+      "passed": true,
+      "with_soft_finding": true,
+      "details": "Both topics maintain consistent absolute-beginner register. depth_profile='standard' confirmed in both manifests at HITL #2. No concept is used cold without at least a minimal gloss. Soft finding raised for 'algorithm' appearing in 1.8 introduction before its formal treatment in module 4. No depth spike detected between 1.7 and 1.8."
+    }
+  },
+  "verdict": "PASS — 2 soft findings (toolchain label in lab seed, early casual use of 'algorithm' in 1.8 intro); no hard failures; module coherence is strong."
+}

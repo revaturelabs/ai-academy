@@ -1,0 +1,115 @@
+{
+  "critic": "reading-critic",
+  "topic_id": "10.6",
+  "run_at": "2026-06-13T00:00:00Z",
+  "passed": true,
+  "verdict": "PASS — all hard checks pass; 1 minor soft finding (occasional long definition sentences) below the 3-finding escalation threshold. No forward references, no scope creep, no assessment references, diagram embed present and correctly placed.",
+  "word_count_actual": 1491,
+  "word_count_range": [1200, 1600],
+  "read_minutes_actual": 6.5,
+  "read_minutes_range": [6, 8],
+  "checks": {
+    "format_discipline": {
+      "passed": true,
+      "frontmatter_present": false,
+      "meta_sidecar_missing": false,
+      "section_template_violation": false,
+      "sections_found": ["Overview", "Key Concepts", "Worked Example", "In Practice", "Key Takeaways", "References"],
+      "notes": "First line is H1 title. Sidecar reading.meta.json present and valid. Six required sections in correct order."
+    },
+    "length": {
+      "passed": true,
+      "word_count": 1491,
+      "read_minutes": 6.5,
+      "notes": "Within 1200–1600 word range and 6–8 minute range."
+    },
+    "citations": {
+      "passed": true,
+      "primary_resources_cited": ["[1] aigovernancedesk.com — cited at lines 37, 105, 161, 167, 174"],
+      "supporting_resources_cited": ["[2] redis.io — cited at lines 61, 94, 111, 153, 155, 161", "[3] galileo.ai — cited at lines 109, 115"],
+      "orphan_markers": [],
+      "orphan_bibliography_entries": [],
+      "notes": "All three resources cited; bibliography matches inline markers exactly."
+    },
+    "no_forward_references": {
+      "passed": true,
+      "findings": [],
+      "notes": "All concepts used are either defined in this topic (component, risk-tiered component mapping, mandatory checkpoint, optional checkpoint, error budget, baseline oversight assignment, triggered oversight assignment) or listed as prior concepts (HITL/HOTL/HOOTL from 10.5, override-as-theater from 10.1, diffuse accountability from 10.3, Q1/Q2/Q3 from 9.7–9.9, acceptable error threshold from 9.10, automation bias from 9.5, automation complacency/vigilance decay from 10.4, EU AI Act risk tiers from earlier weeks). Concepts introduced by this topic that were not used in the reading body (baseline oversight assignment, triggered oversight assignment) present no issue — omission is not a violation."
+    },
+    "faithfulness": {
+      "passed": true,
+      "assertions_sampled": 12,
+      "unsupported_assertions": 0,
+      "sample": [
+        {"assertion": "Component definition as distinct step taking defined input, applying operation, producing output", "corpus_location": "§5.1", "supported": true},
+        {"assertion": "Medical triage AI 5-component table (document intake, symptom classifier, urgency scorer, routing decision, documentation writer)", "corpus_location": "§5.1", "supported": true},
+        {"assertion": "Risk-tiered component mapping definition and purpose", "corpus_location": "§5.2", "supported": true},
+        {"assertion": "EU AI Act Article 14 specifies oversight mechanisms appropriate to specific risk/function of each component", "corpus_location": "§7.1", "supported": true},
+        {"assertion": "Q1 severity + reversibility sub-dimensions; mandatory checkpoint candidate criteria", "corpus_location": "§5.3", "supported": true},
+        {"assertion": "Four mandatory checkpoint properties: Blocking, Logged, Empowered, Monitored", "corpus_location": "§5.5", "supported": true},
+        {"assertion": "Three upgrade signals: near-zero override rate, narrowing confidence distribution, new context variable", "corpus_location": "§5.4", "supported": true},
+        {"assertion": "Loan approval 6-component pipeline table", "corpus_location": "§6", "supported": true},
+        {"assertion": "Component 5 HITL for scores within 15 points of Refer/Decline boundary; HOTL for clear scores", "corpus_location": "§6", "supported": true},
+        {"assertion": "Mandatory checkpoints concentrate at decision boundaries principle", "corpus_location": "§6", "supported": true},
+        {"assertion": "At chain boundaries: human can inspect handoff without understanding internal logic", "corpus_location": "§7.2", "supported": true},
+        {"assertion": "Do not assign HOOTL solely because AI is accurate; accuracy warrants HOTL", "corpus_location": "§8", "supported": true}
+      ]
+    },
+    "beginner_readability": {
+      "passed": true,
+      "findings": [
+        {
+          "type": "long_sentences",
+          "severity": "soft",
+          "instances": [
+            {"line": 35, "length_approx_words": 38, "note": "Definition sentence for risk-tiered component mapping uses em-dash construction that extends length; content is clear but sentence exceeds ~25-word target."},
+            {"line": 115, "length_approx_words": 45, "note": "Second sentence in Signal 3 paragraph (income verification HOTL/HITL comparison) is a compound example sentence that extends beyond target length; meaning remains accessible."}
+          ],
+          "escalates_to_hard_fail": false,
+          "notes": "2 instances identified. Both are definition/example sentences where the length is justified by structural need. Below the 3-distinct-findings threshold for hard fail. No academic hedging phrases found. No undefined cold terms. No jargon dumps."
+        }
+      ],
+      "undefined_terms": [],
+      "jargon_dumps": [],
+      "abstract_first_violations": [],
+      "academic_register_phrases": []
+    },
+    "formatting": {
+      "passed": true,
+      "findings": [],
+      "wall_of_text": false,
+      "unlisted_sequences": false,
+      "no_inline_examples": false,
+      "notes": "All paragraphs ≤4 sentences. 7-step method rendered as numbered list. Mandatory checkpoint properties in table. Do/Do not guidance in bullet lists. Multiple inline examples in Key Concepts, Worked Example, and In Practice sections. Bold-term/plain-meaning pattern used for all term definitions."
+    },
+    "assessment_references": {
+      "passed": true,
+      "findings": [],
+      "notes": "Line 115 contains '10% to 40%' — statistical proportion in a worked example, not an assessment grade weight or ID. No assessment IDs, due weeks, or grade weights present."
+    },
+    "scope": {
+      "passed": true,
+      "scope_creep": [],
+      "notes": "All content (7-step method, Q1/Q2/Q3 at component level, mandatory vs optional checkpoints, four checkpoint properties, three upgrade signals, EU AI Act Article 14, worked example, In Practice application) is directly on the topic headline. No forward-reaching material detected."
+    },
+    "diagram_embed": {
+      "passed": true,
+      "embed_found": true,
+      "embed_line": 69,
+      "embed_text": "![Risk-Tiered Component Mapping](./diagram.png)",
+      "placement": "Key Concepts section, after Q1/Q2/Q3 discussion and before 7-step method — appropriate placement at the conceptual explanation it illustrates.",
+      "alt_text_matches_spec": true,
+      "notes": "./diagram.png is functionally equivalent to diagram.png for same-directory resolution."
+    }
+  },
+  "gold_example_comparison": {
+    "applicable": false,
+    "notes": "No gold example exists for M4 week-10 topics. Available gold examples are 2-1 and 3-4 (different modules). Reading cannot be benchmarked against a gold example for this topic."
+  },
+  "summary": {
+    "hard_fails": 0,
+    "soft_findings": 1,
+    "soft_findings_detail": "1 minor finding: 2 long sentences in definition/example constructions (lines 35 and 115). Below the 3-distinct-findings escalation threshold. Does not block approval.",
+    "recommendation": "Approve. Optionally split the two long sentences in Key Concepts (line 35) and Signal 3 (line 115) into shorter constructions on next revision pass — not required for HITL #3."
+  }
+}

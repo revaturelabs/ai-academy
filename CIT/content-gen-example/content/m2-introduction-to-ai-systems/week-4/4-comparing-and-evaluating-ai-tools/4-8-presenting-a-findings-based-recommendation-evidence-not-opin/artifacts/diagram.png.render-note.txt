@@ -1,0 +1,6 @@
+PNG not rendered — mmdc is not available on this machine (confirmed from prior topic critic reports in this repo).
+
+To render:
+  mmdc -i "content/m2-introduction-to-ai-systems/week-4/4-comparing-and-evaluating-ai-tools/4-8-presenting-a-findings-based-recommendation-evidence-not-opin/artifacts/diagram.mmd" -o "content/m2-introduction-to-ai-systems/week-4/4-comparing-and-evaluating-ai-tools/4-8-presenting-a-findings-based-recommendation-evidence-not-opin/artifacts/diagram.png" -w 1400 -b transparent
+
+Once rendered, delete this file.

@@ -1,0 +1,105 @@
+{
+  "passed": true,
+  "checks": {
+    "positional_bias": {
+      "passed": true,
+      "distribution": { "0": 1, "1": 2, "2": 1, "3": 2 },
+      "positions_by_question": { "q1": 1, "q2": 3, "q3": 0, "q4": 2, "q5": 1, "q6": 3 },
+      "max_share": 0.333,
+      "total_mcqs": 6,
+      "meta_gift_desync": false,
+      "note": "Derived positions [1,3,0,2,1,3] match sidecar exactly. max_share 0.333 <= 0.40 threshold."
+    },
+    "length_bias": {
+      "passed": true,
+      "longest_correct_rate": 0.00,
+      "baseline": 0.25,
+      "threshold": 0.40,
+      "total_mcqs": 6,
+      "longest_correct_count": 0,
+      "per_question": [
+        {
+          "id": "q1",
+          "correct_len": 117,
+          "distractor_mean": 121.0,
+          "threshold_120pct": 145.2,
+          "longest_correct": false
+        },
+        {
+          "id": "q2",
+          "correct_len": 130,
+          "distractor_mean": 122.67,
+          "threshold_120pct": 147.2,
+          "longest_correct": false
+        },
+        {
+          "id": "q3",
+          "correct_len": 139,
+          "distractor_mean": 210.67,
+          "threshold_120pct": 252.8,
+          "longest_correct": false
+        },
+        {
+          "id": "q4",
+          "correct_len": 162,
+          "distractor_mean": 159.67,
+          "threshold_120pct": 191.6,
+          "longest_correct": false
+        },
+        {
+          "id": "q5",
+          "correct_len": 167,
+          "distractor_mean": 163.33,
+          "threshold_120pct": 196.0,
+          "longest_correct": false
+        },
+        {
+          "id": "q6",
+          "correct_len": 169,
+          "distractor_mean": 149.67,
+          "threshold_120pct": 179.6,
+          "longest_correct": false
+        }
+      ],
+      "note": "Revision 2 length-bias fix confirmed. No question's correct answer exceeds distractor_mean * 1.20. Meta-reported longest_correct_rate=0.00 verified from .gift text. Fix strategy (shorten correct answers to ~20-word core claim, expand distractors) is effective."
+    },
+    "distractor_plausibility": {
+      "passed": true,
+      "total_distractors": 18,
+      "absurd_count": 0,
+      "absurd_rate": 0.00,
+      "threshold": 0.25,
+      "weakest_questions": [],
+      "scoring_summary": "All 18 distractors scored 3 or 4. Every distractor maps to a genuine beginner confusion point documented in the corpus: low-risk task conflation (q1-D1, q1-D3, q2-D1), downstream-step confusion (q2-D3), total-automation misconception (q1-D2), wrong-cause attribution (q3-D1 to D3, q4-D1 to D3), wrong-governance-fix (q5-D1 to D3), override-availability-vs-use confusion (q6-D2 scored 4). No score-1 or score-2 distractors found."
+    },
+    "objective_coverage": {
+      "passed": true,
+      "total_los": 6,
+      "uncovered_objectives": [],
+      "orphan_questions": [],
+      "coverage_map": {
+        "LO1": ["q1"],
+        "LO2": ["q2"],
+        "LO3": ["q3"],
+        "LO4": ["q4"],
+        "LO5": ["q5"],
+        "LO6": ["q6"]
+      },
+      "note": "All 6 LOs from corpus section 3 covered 1:1. Sidecar objective_ref strings match LO text with >= 0.95 similarity. No orphan questions."
+    },
+    "beginner_fairness_scope": {
+      "passed": true,
+      "jargon_in_stem": [],
+      "out_of_scope_questions": [],
+      "unfair_distractors": [],
+      "findings": [],
+      "note": "All stems are plain-language. Judgment Framework Q1/Q2/Q3 in q3 stem are introduced in corpus §2 prerequisites (topics 9.7-9.9 — earlier sequence topics, permitted). Automation bias in q4 is likewise listed in corpus §2 prerequisites (topic 9.5). Pipeline step numbers (step 2, 3, 4, 5) are defined in corpus §5.2. No unexplained acronyms. No out-of-scope concepts in stems or answer options. No out_of_scope_question or jargon_in_stem findings."
+    }
+  },
+  "auto_correction_applied": {
+    "shuffle_round_2": false,
+    "length_bias_auto_correct": "not_applicable"
+  },
+  "verdict": "Pass — all 5 checks clean. Positional bias max_share 0.333 (pass, <= 0.40). Length bias longest_correct_rate 0.00 (pass — revision 2 fix confirmed, down from 1.00 in attempt 1). Distractor plausibility absurd_rate 0.00 (pass, all 18 distractors plausible). Objective coverage all 6 LOs covered 1:1, no orphans (pass). Beginner-fairness and on-headline scope clean — no out-of-scope questions, no undefined jargon in stems (pass).",
+  "at": "2026-06-12T00:00:00Z"
+}

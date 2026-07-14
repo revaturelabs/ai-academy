@@ -1,0 +1,10 @@
+{
+  "topic_id": "13.3",
+  "title": "Few-shot examples — showing the model what good output looks like",
+  "estimated_read_minutes": 5,
+  "word_count": 1050,
+  "generated_at": "2026-06-13T00:00:00Z",
+  "embeds_diagram": false,
+  "citations_used": [1, 2, 3],
+  "sections": ["Overview", "Key Concepts", "Worked Example", "In Practice", "Key Takeaways", "References"]
+}

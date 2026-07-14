@@ -1,0 +1,43 @@
+{
+  "type": "topic",
+  "id": "4.4",
+  "title": "Agents — LLM plus memory, tools, and a planning loop (conceptual introduction)",
+  "slug": "4-4-agents-llm-plus-memory-tools-and-a-planning-loop-conceptual",
+  "position_in_module": 2,
+  "week_num": 4,
+  "session_name": "The 2026 AI Stack",
+  "module": {
+    "position": 2,
+    "slug": "2-retrieval-agents-and-tools",
+    "title": "Retrieval, Agents and Tools"
+  },
+  "course": {
+    "code": "M2",
+    "slug": "m2-introduction-to-ai-systems",
+    "title": "Introduction to AI Systems"
+  },
+  "next_assessment": {
+    "id": "A2",
+    "due_week": 6,
+    "title": "AI Systems Essay",
+    "weight": "15%"
+  },
+  "paths": {
+    "corpus": "topic_corpus.md",
+    "resources": "topic.resources.json",
+    "progress": "topic.progress.json",
+    "artifacts_dir": "artifacts/",
+    "critic_reports_dir": "critic-reports/"
+  },
+  "artifact_plan": {
+    "depth_profile": "deep",
+    "depth_profile_source": "hitl_override_budget_driven",
+    "depth_signals": ["conceptual introduction", "four distinct sub-concepts in Core Concepts", "lab week", "budget: 67 min remaining / 4 topics avg 16.75 min → upgrade from standard"],
+    "reading": { "target_word_range": [1800, 2200], "target_minutes": [9, 11] },
+    "quiz": { "min_questions": 5, "max_questions": 7, "include_short_answer": true },
+    "diagram": true,
+    "diagram_intent": "Four-component agent architecture — LLM core linked to memory, tools, planning loop in cyclic observe-think-act flow"
+  },
+  "expected_delivery_minutes": 10,
+  "status": "corpus_approved"
+}

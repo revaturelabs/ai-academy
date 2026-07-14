@@ -1,0 +1,1 @@
+PNG_PENDING: mmdc not on PATH in this environment. Render with: mmdc -i artifacts/diagram.mmd -o artifacts/diagram.png -w 1400 -b transparent

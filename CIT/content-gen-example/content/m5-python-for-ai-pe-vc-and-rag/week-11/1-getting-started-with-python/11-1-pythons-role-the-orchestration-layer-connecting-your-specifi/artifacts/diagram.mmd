@@ -1,0 +1,28 @@
+---
+title: Python — the orchestration layer
+config:
+  theme: base
+  themeVariables:
+    primaryColor: "#a5d8ff"
+    primaryBorderColor: "#4a9eed"
+    lineColor: "#555"
+  flowchart:
+    htmlLabels: true
+    curve: basis
+---
+flowchart TB
+    classDef start fill:#a5d8ff,stroke:#4a9eed
+    classDef hitl fill:#fff3bf,stroke:#f59e0b,stroke-width:3px
+    classDef auto fill:#d0bfff,stroke:#8b5cf6
+    classDef done fill:#b2f2bb,stroke:#22c55e
+
+    A["<b>Human Intent</b><br/><span style='font-size:12px;color:#6d28d9'>a goal or question</span>"]:::start
+    B["<b>Plain-English Specification</b><br/><span style='font-size:12px;color:#6d28d9'>describe what it should do</span>"]:::auto
+    C["<b>Python Code</b><br/><span style='font-size:12px;color:#6d28d9'>the connector — orchestration layer</span>"]:::hitl
+    D["<b>AI Service (API)</b><br/><span style='font-size:12px;color:#6d28d9'>language model, search, etc.</span>"]:::auto
+    E["<b>Output</b><br/><span style='font-size:12px;color:#6d28d9'>answer, report, action</span>"]:::done
+
+    A -->|"Step 1: describe"| B
+    B -->|"Step 2: implement"| C
+    C -->|"Step 3: call"| D
+    D -->|"Step 4: deliver"| E

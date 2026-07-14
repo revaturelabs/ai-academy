@@ -1,0 +1,30 @@
+{
+  "topic_id": "6.1",
+  "captured_at": "2026-06-18T00:00:00Z",
+  "captured_by": "bhuvaneshwarim@revature.com",
+  "resources_source": "web_search",
+  "web_search_query": "why AI systems built on numbers vectors matrices intuition explainer",
+  "resources": [
+    {
+      "type": "url",
+      "value": "https://labelbox.com/blog/inside-the-matrix-a-look-into-the-math-behind-ai/",
+      "role": "primary",
+      "source": "web_search",
+      "notes": "Canonical ML company explainer — vectors, matrices, why numbers represent everything in AI"
+    },
+    {
+      "type": "url",
+      "value": "https://towardsai.net/p/machine-learning/the-matrix-mathematics-behind-ai-how-llms-think-through-linear-algebra",
+      "role": "supporting",
+      "source": "web_search",
+      "notes": "LLM-specific angle on linear algebra intuition"
+    },
+    {
+      "type": "url",
+      "value": "https://techietory.com/ai/understanding-matrices-and-vectors-in-ai-applications/",
+      "role": "supporting",
+      "source": "web_search",
+      "notes": "Real-world applications, accessible tone"
+    }
+  ]
+}

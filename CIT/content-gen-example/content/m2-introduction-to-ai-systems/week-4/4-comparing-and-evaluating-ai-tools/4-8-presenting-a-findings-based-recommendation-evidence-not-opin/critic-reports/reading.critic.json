@@ -1,0 +1,80 @@
+{
+  "critic": "reading-critic",
+  "topic_id": "4.8",
+  "title": "Presenting a Findings-Based Recommendation — Evidence, Not Opinion",
+  "profile": "deep",
+  "run_at": "2026-06-17T00:00:00Z",
+  "passed": true,
+  "verdict": "All checks pass — reading is within word-count budget, cites primary resource throughout, no forward references, fully faithful to corpus, beginner-appropriate with concrete-first explanations and bold-term definitions, well-formatted with no walls of text, and strictly scoped to the topic headline.",
+  "checks": {
+    "format_discipline": {
+      "passed": true,
+      "findings": {
+        "frontmatter_present": false,
+        "meta_sidecar_missing": false,
+        "section_template_violation": false
+      },
+      "detail": "No frontmatter. reading.meta.json present and parses with all required fields. Exactly 6 fixed sections in correct order: Overview, Key Concepts, Worked Example, In Practice, Key Takeaways, References."
+    },
+    "length_budget": {
+      "passed": true,
+      "word_count": 1982,
+      "target_word_range": [1800, 2200],
+      "estimated_read_minutes_at_200wpm": 9.91,
+      "target_minute_range": [9, 11],
+      "detail": "1982 words (within 1800–2200). At 200 wpm = 9.91 min (within 9–11 min target)."
+    },
+    "citations": {
+      "passed": true,
+      "primary_resource_cited": true,
+      "primary_citation_count_min": 10,
+      "orphan_markers": [],
+      "orphan_bibliography_entries": [],
+      "detail": "Primary resource [1] (ReadWriteThink) cited ≥10 times across all sections. [2] and [3] cited multiple times. Bibliography lists all three references matching inline markers. No orphans in either direction."
+    },
+    "no_forward_references": {
+      "passed": true,
+      "detail": "No references to topics beyond 4.8, future modules, assessments, or post-sequence concepts. The corpus contained an A2 essay reference in sections 4 and 10; this correctly does not appear in the reading."
+    },
+    "faithfulness": {
+      "passed": true,
+      "assertions_sampled": 10,
+      "unsupported_assertions": 0,
+      "threshold": 2,
+      "detail": "All 10 sampled assertions trace directly to corpus sections 4–8: opinion/evidence distinction, three-part structure, score translation format, findings summary table (exact numbers), trade-off definition, limitations list, three common weaknesses tables, and real-world patterns. Zero unsupported assertions."
+    },
+    "beginner_readability": {
+      "passed": true,
+      "findings": {
+        "undefined_terms": [],
+        "jargon_dump": null,
+        "abstract_first": null,
+        "academic_register": null
+      },
+      "detail": "All 8 new terms (opinion, evidence statement, findings-based recommendation, findings summary, evidence anchor, recommendation statement, trade-off, limitations) are bold-defined at first appearance. No paragraph introduces 3+ new terms at once. Concepts are introduced with concrete scenarios before abstractions throughout. Zero hedging phrases detected."
+    },
+    "formatting": {
+      "passed": true,
+      "findings": {
+        "wall_of_text": null,
+        "unlisted_sequence": null,
+        "no_inline_examples": null
+      },
+      "detail": "No paragraph exceeds 5 sentences. Procedures in Key Concepts are rendered as numbered-step lists. Worked Example uses bold step labels (structurally equivalent to numbered list). Inline concrete examples appear throughout Key Concepts sections — not deferred to Worked Example alone. All definitions use bold-term / plain-meaning shape."
+    },
+    "assessment_references": {
+      "passed": true,
+      "occurrences": [],
+      "detail": "No assessment IDs, due weeks, or grade weights appear in reading.md."
+    },
+    "scope": {
+      "passed": true,
+      "scope_creep": [],
+      "detail": "Reading teaches exactly: evidence-based recommendation, findings summary, evidence anchor, recommendation statement, trade-off (evaluation context), evaluation limitations, and three common weaknesses. All are declared new concepts for 4.8. No downstream concepts introduced. No advanced material beyond the topic headline."
+    }
+  },
+  "gold_example_comparison": {
+    "applicable_examples_found": ["3-4-how-llms-work-tokens-training-and-inference", "2-1-what-makes-a-good-specification"],
+    "note": "No gold example exists for topic 4.8 specifically. Compared against the written standards in artifact-mix.json and the reading-critic SKILL.md. This reading meets or exceeds those standards on all dimensions: correct section structure, bold-term definitions, concrete-first ordering, inline examples, appropriate sentence length, and scope discipline."
+  }
+}

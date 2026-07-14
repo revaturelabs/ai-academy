@@ -1,0 +1,52 @@
+{
+  "passed": true,
+  "checks": {
+    "gift_validity": {
+      "passed": true,
+      "notes": "$CATEGORY present as first line; all 5 questions parse correctly; each has exactly one = correct answer and 3 ~ distractors; per-answer #feedback present on every option; #### general feedback present on every question; no structural defects."
+    },
+    "question_count": {
+      "passed": true,
+      "count": 5
+    },
+    "lo_coverage": {
+      "passed": true,
+      "covered": [
+        "LO1 — State the core decision rule for RAG in plain language (q1)",
+        "LO2 — Identify the four signals: freshness, private data, precision, cost-benefit (q2)",
+        "LO3 — Distinguish RAG from fine-tuning and explain which problem each solves (q3)",
+        "LO4 — Apply a simple decision framework to a real scenario and justify the recommendation (q4)",
+        "LO5 — Recognise when RAG adds unnecessary complexity (q5)"
+      ],
+      "missing": []
+    },
+    "positional_bias": {
+      "passed": true,
+      "positions": [1, 3, 0, 2, 1],
+      "distribution": { "0": 1, "1": 2, "2": 1, "3": 1 },
+      "max_share": 0.40,
+      "notes": "Position 1 appears twice (q1, q5); max_share = 2/5 = 0.40; threshold is > 0.40 to fail; 0.40 is not exceeded. Meta and .gift re-derivation agree on all positions; no meta_gift_desync. $bias_defense_applied: true confirmed in quiz.meta.json."
+    },
+    "length_bias": {
+      "passed": true,
+      "longest_is_correct_count": 0,
+      "notes": "Correct-answer length vs distractor mean (threshold 1.20x): q1 82 vs 85 mean; q2 71 vs 76 mean; q3 110 vs 114 mean; q4 113 vs 100 mean (113 < 120 threshold); q5 115 vs 100 mean (115 < 120 threshold). No question has the correct option exceeding mean_distractor * 1.20. Rate = 0/5 = 0.0."
+    },
+    "distractor_plausibility": {
+      "passed": true,
+      "absurd_rate": 0.0,
+      "weakest_distractors": [
+        "q2-d3: 'Private data, model size, prompt length, and number of users in the system' — mixes one plausible signal (private data) with pure technical parameters; plausible enough for a beginner but weakly motivated (score 2/4)",
+        "q4-d2: 'No AI assistant at all, because medical data is too sensitive for any automated retrieval system' — deflects to a governance concern rather than a RAG vs fine-tuning misconception; tangentially plausible but off-signal (score 2/4)"
+      ],
+      "findings": []
+    },
+    "scope": {
+      "passed": true,
+      "violations": [],
+      "notes": "All five questions test concepts explicitly taught in this topic's corpus (sections 5.1–5.5). No question requires knowledge from outside topics 14.1–14.4 or from advanced material not introduced here. No undefined acronyms in stems (RAG spelled out in full on first use per question). No out_of_scope_question or jargon_in_stem findings."
+    }
+  },
+  "verdict": "Pass — all 7 checks clean; 5 questions cover all 5 LOs; positional max_share at threshold (0.40, not exceeded); zero length-bias hits; zero absurd distractors; no scope violations.",
+  "at": "2026-06-15T00:00:00Z"
+}

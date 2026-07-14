@@ -1,0 +1,30 @@
+---
+title: Output Validator Pattern
+theme: base
+themeVariables:
+  primaryColor: "#a5d8ff"
+  primaryBorderColor: "#4a9eed"
+  lineColor: "#555"
+flowchart:
+  htmlLabels: true
+  curve: basis
+---
+flowchart TD
+    A["<b>Call model</b><br/><span style='font-size:12px;color:#6d28d9'>with format prompt</span>"]:::start
+    B{"<b>Format check</b><br/><span style='font-size:12px;color:#6d28d9'>does response match?</span>"}:::auto
+    C["<b>Use response</b><br/><span style='font-size:12px;color:#6d28d9'>format valid — done</span>"]:::done
+    D["<b>Retry with correction</b><br/><span style='font-size:12px;color:#6d28d9'>send corrective message</span>"]:::auto
+    E{"<b>Format check (2nd)</b><br/><span style='font-size:12px;color:#6d28d9'>does retry match?</span>"}:::auto
+    F["<b>Use response</b><br/><span style='font-size:12px;color:#6d28d9'>retry succeeded — done</span>"]:::done
+    G["<b>Return fallback</b><br/><span style='font-size:12px;color:#6d28d9'>empty structure or error flag</span>"]:::done
+
+    A --> B
+    B -- "pass" --> C
+    B -- "fail" --> D
+    D --> E
+    E -- "pass" --> F
+    E -- "fail" --> G
+
+    classDef start fill:#a5d8ff,stroke:#4a9eed
+    classDef auto fill:#d0bfff,stroke:#8b5cf6
+    classDef done fill:#b2f2bb,stroke:#22c55e

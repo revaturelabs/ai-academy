@@ -1,0 +1,102 @@
+{
+  "topic_id": "13.7",
+  "generated_at": "2026-06-14T00:00:00Z",
+  "revised_at": "2026-06-14T00:00:00Z",
+  "revision_reason": "length-bias correction (q2, q3, q4, q5) + defensive re-shuffle",
+  "format": "gift",
+  "question_count": 7,
+  "$bias_defense_applied": true,
+  "$shuffle_seed": "13.7-sha256-d4e2a1-reshuffle-r1",
+  "correct_position_distribution": [1, 3, 0, 2, 1],
+  "mcq_count": 5,
+  "short_answer_count": 2,
+  "max_share_check": {
+    "position_counts": {"0": 1, "1": 2, "2": 1, "3": 1},
+    "max_share": 0.40,
+    "passes": true
+  },
+  "length_bias_check": {
+    "passes": true,
+    "per_question": [
+      {
+        "id": "q1",
+        "correct_len": 113,
+        "distractor_mean": 103.0,
+        "ratio": 1.097,
+        "passes": true
+      },
+      {
+        "id": "q2",
+        "correct_len": 118,
+        "distractor_mean": 119.7,
+        "ratio": 0.986,
+        "passes": true
+      },
+      {
+        "id": "q3",
+        "correct_len": 289,
+        "distractor_mean": 258.3,
+        "ratio": 1.119,
+        "passes": true
+      },
+      {
+        "id": "q4",
+        "correct_len": 270,
+        "distractor_mean": 263.0,
+        "ratio": 1.027,
+        "passes": true
+      },
+      {
+        "id": "q5",
+        "correct_len": 299,
+        "distractor_mean": 288.7,
+        "ratio": 1.036,
+        "passes": true
+      }
+    ]
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "type": "mcq",
+      "objective_ref": "Name each of the five roles in the context framework and state in one sentence what each role does.",
+      "correct_position": 1
+    },
+    {
+      "id": "q2",
+      "type": "mcq",
+      "objective_ref": "Map a prompt you have already written onto the five roles, identifying which parts belong to which role.",
+      "correct_position": 3
+    },
+    {
+      "id": "q3",
+      "type": "mcq",
+      "objective_ref": "Assemble a complete 5-role prompt in Python using an f-string or a dictionary structure.",
+      "correct_position": 0
+    },
+    {
+      "id": "q4",
+      "type": "mcq",
+      "objective_ref": "Apply the priority rule (Authority > Exemplar > Constraint > Rubric > Metadata) to resolve a conflict when two roles give contradictory instructions.",
+      "correct_position": 2
+    },
+    {
+      "id": "q5",
+      "type": "mcq",
+      "objective_ref": "Evaluate a prompt for missing roles and explain what output problem each missing role is likely to cause.",
+      "correct_position": 1
+    },
+    {
+      "id": "q6",
+      "type": "short_answer",
+      "objective_ref": "Name each of the five roles in the context framework and state in one sentence what each role does.",
+      "correct_position": null
+    },
+    {
+      "id": "q7",
+      "type": "short_answer",
+      "objective_ref": "Apply the priority rule (Authority > Exemplar > Constraint > Rubric > Metadata) to resolve a conflict when two roles give contradictory instructions.",
+      "correct_position": null
+    }
+  ]
+}

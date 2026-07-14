@@ -1,0 +1,53 @@
+{
+  "topic_id": "7.1",
+  "generated_at": "2026-06-22T00:00:00Z",
+  "format": "gift",
+  "$bias_defense_applied": true,
+  "$shuffle_seed": "topic-7.1-seed-71xor3",
+  "question_count": 6,
+  "correct_position_distribution": {"0": 1, "1": 2, "2": 2, "3": 1},
+  "questions": [
+    {
+      "id": "q1",
+      "type": "mcq",
+      "objective_ref": "LO-1: Define probability in plain language and express it as a number between 0 and 1.",
+      "correct_position": 1,
+      "stem_preview": "A probability value of 0.7 means that an event is ____. Which"
+    },
+    {
+      "id": "q2",
+      "type": "mcq",
+      "objective_ref": "LO-2: Identify the sample space, an event, and an outcome for a given everyday scenario.",
+      "correct_position": 3,
+      "stem_preview": "A teacher picks one student at random from a class of 30. You"
+    },
+    {
+      "id": "q3",
+      "type": "mcq",
+      "objective_ref": "LO-3: Distinguish between impossible, unlikely, even-chance, likely, and certain events using probability values on a 0-to-1 scale.",
+      "correct_position": 0,
+      "stem_preview": "A bag contains 10 marbles. One marble is red and the rest are"
+    },
+    {
+      "id": "q4",
+      "type": "mcq",
+      "objective_ref": "LO-4: Calculate the probability of a simple event when all outcomes are equally likely (count of favourable outcomes divided by count of total outcomes).",
+      "correct_position": 2,
+      "stem_preview": "A bag holds 12 counters: 3 are green and the rest are yellow."
+    },
+    {
+      "id": "q5",
+      "type": "mcq",
+      "objective_ref": "LO-5: Explain the complement rule — how the probability of an event not happening relates to the probability that it does.",
+      "correct_position": 1,
+      "stem_preview": "In a class raffle, 40 tickets are sold and one person holds 8"
+    },
+    {
+      "id": "q6",
+      "type": "mcq",
+      "objective_ref": "LO-6: Recognise that AI systems assign a probability to every possible next word, and name this as something you will explore more deeply in later topics.",
+      "correct_position": 2,
+      "stem_preview": "When a Large Language Model (LLM) is generating text, what is h"
+    }
+  ]
+}

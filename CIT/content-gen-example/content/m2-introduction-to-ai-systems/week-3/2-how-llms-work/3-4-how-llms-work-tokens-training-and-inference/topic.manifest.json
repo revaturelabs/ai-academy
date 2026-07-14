@@ -1,0 +1,52 @@
+{
+  "type": "topic",
+  "id": "3.4",
+  "title": "How LLMs work \u00e2\u20ac\u201d tokens, training, and inference",
+  "slug": "3-4-how-llms-work-tokens-training-and-inference",
+  "position_in_module": 1,
+  "week_num": 3,
+  "session_name": "What AI Is \u00e2\u20ac\u201d and Isn't",
+  "module": {
+    "position": 2,
+    "slug": "2-how-llms-work",
+    "title": "How LLMs Work"
+  },
+  "course": {
+    "code": "M2",
+    "slug": "m2-introduction-to-ai-systems",
+    "title": "Introduction to AI Systems"
+  },
+  "next_assessment": {
+    "id": "A1",
+    "due_week": 3,
+    "title": "Specification Portfolio",
+    "weight": "10%"
+  },
+  "paths": {
+    "corpus": "topic_corpus.md",
+    "resources": "topic.resources.json",
+    "progress": "topic.progress.json",
+    "artifacts_dir": "artifacts/",
+    "critic_reports_dir": "critic-reports/"
+  },
+  "artifact_plan": {
+    "diagram": true,
+    "diagram_intent": "Tokenisation-to-generation pipeline: raw text -> tokeniser -> token IDs -> embedding lookup -> Transformer layers (with attention) -> logits -> next token selected -> appended and looped (autoregressive decode). Left-to-right pipeline showing each stage with labels for prefill and decode phases.",
+    "depth_profile": "standard",
+    "reading": {
+      "target_word_range": [
+        1200,
+        1600
+      ],
+      "target_min_minutes": 6,
+      "target_max_minutes": 8
+    },
+    "quiz": {
+      "min_questions": 5,
+      "max_questions": 6,
+      "include_short_answer": false
+    }
+  },
+  "expected_delivery_minutes": 7,
+  "status": "module_passed"
+}

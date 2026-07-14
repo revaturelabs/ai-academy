@@ -1,0 +1,42 @@
+{
+  "topic_id": "3.2",
+  "generated_at": "2026-06-17T00:00:00Z",
+  "format": "gift",
+  "question_count": 5,
+  "$bias_defense_applied": true,
+  "$shuffle_seed": "seed_147_topic3.2_xor0",
+  "correct_position_distribution": [2, 0, 3, 1, 2],
+  "bias_defense_notes": "Shuffle ran with seed derived from ord-sum of topic id '3.2' (51+46+50=147). Post-shuffle constraint check: max_share=2/5=0.40 (<=0.40 pass); all 4 positions used (pass). No redraw required.",
+  "questions": [
+    {
+      "id": "q1",
+      "type": "mcq",
+      "objective_ref": "Define what a Large Language Model (LLM) is in plain language.",
+      "correct_position": 2
+    },
+    {
+      "id": "q2",
+      "type": "mcq",
+      "objective_ref": "Describe the sequence of milestones — from early neural-network language work through word embeddings, sequence models, and the Transformer — that made LLMs possible.",
+      "correct_position": 0
+    },
+    {
+      "id": "q3",
+      "type": "mcq",
+      "objective_ref": "Explain what makes LLMs different from the earlier AI approaches covered in Topic 3.1.",
+      "correct_position": 3
+    },
+    {
+      "id": "q4",
+      "type": "mcq",
+      "objective_ref": "Identify at least three capabilities that LLMs demonstrate and two limitations they carry today.",
+      "correct_position": 1
+    },
+    {
+      "id": "q5",
+      "type": "mcq",
+      "objective_ref": "Recognise the names of landmark LLMs (BERT, GPT series) and place them on a rough timeline.",
+      "correct_position": 2
+    }
+  ]
+}

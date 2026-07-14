@@ -1,0 +1,10 @@
+{
+  "topic_id": "14.1",
+  "word_count": 1368,
+  "reading_minutes": 7,
+  "sections": ["Overview", "Key Concepts", "Worked Example", "In Practice", "Key Takeaways", "References"],
+  "resources_cited": [1, 2, 3, 4],
+  "diagram_embedded": true,
+  "forward_refs_deferred": ["RAG (14.2)"],
+  "generated_at": "2026-06-13T00:30:00Z"
+}

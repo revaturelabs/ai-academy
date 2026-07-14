@@ -1,0 +1,61 @@
+{
+  "type": "topic",
+  "id": "5.3",
+  "title": "Data bias — how biased training data produces biased model output",
+  "slug": "5-3-data-bias-how-biased-training-data-produces-biased-model-out",
+  "position_in_module": 3,
+  "week_num": 5,
+  "session_name": "AI Ethics, Safety and Governance",
+  "module": {
+    "position": 1,
+    "slug": "1-ai-failures-and-why-they-happen",
+    "title": "AI Failures and Why They Happen"
+  },
+  "course": {
+    "code": "M2",
+    "slug": "m2-introduction-to-ai-systems",
+    "title": "Introduction to AI Systems"
+  },
+  "next_assessment": {
+    "id": "A2",
+    "due_week": 6,
+    "title": "AI Systems Essay",
+    "weight": "15%"
+  },
+  "paths": {
+    "corpus": "topic_corpus.md",
+    "resources": "topic.resources.json",
+    "progress": "topic.progress.json",
+    "artifacts_dir": "artifacts/",
+    "critic_reports_dir": "critic-reports/"
+  },
+  "artifact_plan": {
+    "diagram": true,
+    "diagram_intent": "Flow showing biased training data entering the model training process, producing a biased model, which then outputs confident scores/decisions with no bias signal — contrasted with a parallel path showing diverse representative data producing fairer model output.",
+    "confirmed_profile": "standard",
+    "suggested_profile": "standard",
+    "profile_signals": [
+      "3 bias sub-types (historical/representation/measurement)",
+      "Implementation section warranted",
+      "Real-World Patterns section warranted",
+      "no pipeline/framework/system in title",
+      "word count ~2800 near standard floor"
+    ],
+    "reading": {
+      "target_word_range": [
+        1200,
+        1600
+      ],
+      "target_min_minutes": 6,
+      "target_max_minutes": 8
+    },
+    "quiz": {
+      "min_questions": 5,
+      "max_questions": 6,
+      "include_short_answer": false
+    },
+    "total_minutes_estimate": 7
+  },
+  "expected_delivery_minutes": 7,
+  "status": "module_passed"
+}

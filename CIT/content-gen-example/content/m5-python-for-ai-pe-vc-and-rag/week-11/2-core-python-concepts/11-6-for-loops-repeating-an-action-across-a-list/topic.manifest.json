@@ -1,0 +1,45 @@
+{
+  "type": "topic",
+  "id": "11.6",
+  "title": "For loops — repeating an action across a list",
+  "slug": "11-6-for-loops-repeating-an-action-across-a-list",
+  "position_in_module": 4,
+  "week_num": 11,
+  "session_name": "Python Foundations I",
+  "module": {
+    "position": 2,
+    "slug": "2-core-python-concepts",
+    "title": "Core Python Concepts"
+  },
+  "course": {
+    "code": "M5",
+    "slug": "m5-python-for-ai-pe-vc-and-rag",
+    "title": "Python for AI, PE, VC and RAG"
+  },
+  "next_assessment": {
+    "id": "A4",
+    "due_week": 13,
+    "title": "Python and Prompt Engineering Portfolio",
+    "weight": "20%"
+  },
+  "paths": {
+    "corpus": "topic_corpus.md",
+    "resources": "topic.resources.json",
+    "progress": "topic.progress.json",
+    "artifacts_dir": "artifacts/",
+    "critic_reports_dir": "critic-reports/"
+  },
+  "artifact_plan": {
+    "diagram": true,
+    "diagram_intent": "Flowchart of for loop control flow: start node with list, 'more items?' decision diamond — True branch runs loop body and loops back; False branch exits. Illustrates the general iteration pattern alongside the accumulator update.",
+    "confirmed_profile": "standard",
+    "reading_word_range": [1200, 1600],
+    "reading_min_minutes": 6,
+    "reading_max_minutes": 8,
+    "quiz_min_questions": 5,
+    "quiz_max_questions": 6,
+    "quiz_include_short_answer": false
+  },
+  "expected_delivery_minutes": 6,
+  "status": "artifacts_complete"
+}

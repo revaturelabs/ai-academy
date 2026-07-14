@@ -1,0 +1,60 @@
+{
+  "topic_id": "11.3",
+  "question_count": 6,
+  "mcq_count": 6,
+  "sa_count": 0,
+  "correct_position_distribution": [1, 3, 0, 2, 0, 3],
+  "max_share": 0.333,
+  "mean_option_length_chars": 62.5,
+  "length_bias_ratios": [1.191, 1.110, 0.848, 1.010, 0.846, 1.194],
+  "length_bias_check": "pass",
+  "$bias_defense_applied": true,
+  "$shuffle_seed": "sha256:11.3",
+  "objective_coverage": {
+    "LO1": "q1",
+    "LO2": "q2",
+    "LO3": "q3",
+    "LO4": "q4",
+    "LO5": "q5",
+    "LO6": "q6"
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "type": "mcq",
+      "objective_ref": "Explain what a variable is using a concrete everyday analogy.",
+      "correct_position": 1
+    },
+    {
+      "id": "q2",
+      "type": "mcq",
+      "objective_ref": "Assign a value to a variable using the = operator and identify what each part means.",
+      "correct_position": 3
+    },
+    {
+      "id": "q3",
+      "type": "mcq",
+      "objective_ref": "Name the four basic data types (str, int, float, bool) and give an example of each.",
+      "correct_position": 0
+    },
+    {
+      "id": "q4",
+      "type": "mcq",
+      "objective_ref": "Use type() to check the data type of a value or variable.",
+      "correct_position": 2
+    },
+    {
+      "id": "q5",
+      "type": "mcq",
+      "objective_ref": "Apply Python's naming rules to write valid, descriptive variable names in snake_case.",
+      "correct_position": 0
+    },
+    {
+      "id": "q6",
+      "type": "mcq",
+      "objective_ref": "Demonstrate that a variable can be reassigned to a new value.",
+      "correct_position": 3
+    }
+  ],
+  "generated_at": "2026-06-12T00:27:00Z"
+}

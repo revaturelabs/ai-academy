@@ -1,0 +1,30 @@
+{
+  "topic_id": "1.12",
+  "captured_at": "2026-06-22T00:00:00Z",
+  "captured_by": "namratas@revature.com",
+  "resources_source": "web_search",
+  "web_search_query": "writing a problem statement for a project beginners guide domain selection",
+  "resources": [
+    {
+      "type": "url",
+      "value": "https://resources.nu.edu/c.php?g=1013602&p=7638573",
+      "role": "primary",
+      "source": "web_search",
+      "notes": "National University LibGuides — academic structured guide to writing a problem statement with examples; covers components (context, scope, impact)"
+    },
+    {
+      "type": "url",
+      "value": "https://www.betterup.com/blog/problem-statement",
+      "role": "supporting",
+      "source": "web_search",
+      "notes": "Practical 3-component problem statement format with worked examples; beginner-accessible"
+    },
+    {
+      "type": "url",
+      "value": "https://www.notion.com/blog/problem-statements",
+      "role": "supporting",
+      "source": "web_search",
+      "notes": "Comprehensive guide covering definition, scope, and impact framing for problem statements"
+    }
+  ]
+}

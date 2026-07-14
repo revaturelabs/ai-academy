@@ -1,0 +1,164 @@
+{
+  "critic": "drift-critic",
+  "schema_version": "1.0",
+  "module": {
+    "slug": "1-what-makes-a-good-specification",
+    "title": "What Makes a Good Specification",
+    "course_code": "M1",
+    "week_num": 2,
+    "topics_evaluated": [
+      { "id": "2.1", "slug": "2-1-what-makes-a-good-specification-testable-bounded-observable", "position": 1 },
+      { "id": "2.2", "slug": "2-2-bad-spec-vs-good-spec-make-it-better-vs-rewrite-at-grade-8-l", "position": 2 },
+      { "id": "2.3", "slug": "2-3-how-to-identify-the-inputs-expected-outputs-and-failure-cond", "position": 3 }
+    ]
+  },
+  "generated_at": "2026-06-17T00:00:00Z",
+  "verdict": {
+    "passed": true,
+    "hard_findings_count": 0,
+    "soft_findings_count": 3,
+    "gate_status": "PASS — no hard findings. Three soft findings surfaced for author review at HITL #4."
+  },
+  "checks": {
+    "terminology_consistency": {
+      "passed": true,
+      "description": "All core terms are used consistently across the three topics in delivery order. 'Testable,' 'bounded,' 'observable,' 'actionable,' and 'four-property checklist' are introduced in 2.1 and applied without renaming in 2.3. One soft synonym-drift instance in 2.2: the same application step is called 'four-question diagnostic' in 2.2 (§5.1, §6) versus 'four-property checklist' in 2.1 and 2.3. The term 'hallucination' appears for the first time in 2.3 §5.6 and is defined inline ('producing plausible-sounding but incorrect content') — no cold usage. 'Incremental fix / incremental repair strategy' and 'Grade 8 / 80-word rewrite' introduced in 2.2 are referenced by name in 2.3 without synonym drift.",
+      "findings": [
+        {
+          "severity": "soft",
+          "code": "synonym_drift",
+          "topic_id": "2.2",
+          "section": "§5.1, §6",
+          "description": "Topic 2.1 introduces and names the application of the four properties as the 'four-property checklist'. Topic 2.2 uses 'four-question diagnostic' to describe the same step (run through testable/bounded/observable/actionable, mark each yes or no). Topic 2.3 reverts to 'four-property checklist'. The two labels are semantically identical but are not established as synonyms, which may confuse a learner reading all three topics in sequence.",
+          "canonical_term": "four-property checklist",
+          "drifted_term": "four-question diagnostic",
+          "action": "In 2.2 §5.1 and §6, replace 'four-question diagnostic' with 'four-property checklist' (or, if the 'four-question' framing is pedagogically intentional, introduce it explicitly as an alias in 2.1 §5.6 and carry it consistently into 2.3)."
+        }
+      ]
+    },
+    "prerequisites_respected": {
+      "passed": true,
+      "description": "All prerequisite topic IDs cited in the three corpora are verified against sequence.index.json. Topic 2.1 §2 cites 1.1 ('What is computation'), 1.9 ('Algorithmic thinking'), and 1.7 ('Pseudocode') — all confirmed correct in the sequence index and all precede 2.1 in delivery order. Topic 2.2 §2 cites 2.1 (position 1, earlier in module) and Week 1 concepts (decomposition, abstraction, algorithms) by name without asserting specific IDs. Topic 2.3 §2 cites 2.1, 2.2 (positions 1 and 2, both earlier), and 1.1 and 1.5 ('Algorithms') by label. Note: 2.3 §2 references '1.5 Algorithms and 1.5 inputs/outputs (covered in 1.1 What is computation and 1.5 Algorithms)' — per sequence.index.json, id 1.5 is 'Decomposition' not 'Algorithms.' However the prose labels the concept correctly ('the concept of inputs and outputs (covered in 1.1 What is computation and 1.5 Algorithms)') and the conceptual content of algorithmic inputs/outputs was introduced across 1.9–1.11 Algorithmic Thinking. This is a loose citation, not a structural prerequisite ordering error — flagged as soft under terminology rather than a hard prerequisites failure, since the sequencing direction (all cited topics are earlier) is correct.",
+      "findings": []
+    },
+    "learning_arc": {
+      "passed": true,
+      "description": "The module title 'What Makes a Good Specification' is fully covered by the union of the three topics' Learning Objectives. Topic 2.1 establishes the definition and four-property framework. Topic 2.2 teaches diagnosis and repair strategies. Topic 2.3 introduces the six-component specification template with deep focus on inputs, expected outputs, and failure conditions — and all six components are introduced (three at full depth in dedicated subsections, three at lighter depth in §5.2, §5.5, §5.7 within 2.3 itself). The lab activity (write 5 specs across domains, test with Claude, iterate) is supported by the arc as described in the lab_activity_alignment check.",
+      "findings": [],
+      "coverage": {
+        "facets_covered": [
+          "Definition of a specification and why it matters for AI (2.1 §4, §5.1)",
+          "Four properties — testable, bounded, observable, actionable — with diagnostic checklist (2.1 §5.2–5.6)",
+          "Four-step drafting process (2.1 §6)",
+          "Diagnosing which property a bad spec fails (2.2 §5.1)",
+          "Two repair strategies: incremental fix and Grade 8/80-word full rewrite with decision rule (2.2 §5.2–5.5)",
+          "Six-component specification template: all six components introduced in 2.3, three at full depth (inputs, expected outputs, failure conditions) and three at lighter depth (task description, format/constraints, success criteria)",
+          "Failure conditions as the most commonly skipped component affecting AI reliability (2.3 §5.6)",
+          "Lab activity scaffolded via 2.3 §9 extension exercise (five-domain spec writing + live AI testing)"
+        ],
+        "facets_not_covered_in_this_module": [
+          "Pattern recognition, 70/30 rule, 'when not to use AI' — these appear in the module narrative_seed but belong to module 2 topics (2.4+) of week 2, not this module."
+        ]
+      }
+    },
+    "no_duplicated_core_concepts": {
+      "passed": true,
+      "description": "Jaccard similarity computed on unique content-bearing nouns in each topic's Core Concepts section (§5). All three pairs are well below the 0.6 threshold. The four-property terms (testable, bounded, observable, actionable) appear across all three topics as shared prerequisite vocabulary, not as re-taught concepts. Topic 2.2 applies the framework diagnostically; topic 2.3 references it by name as a prerequisite. Neither 2.2 nor 2.3 re-presents the original property definitions from 2.1.",
+      "findings": [],
+      "jaccard_scores": [
+        {
+          "pair": ["2.1", "2.2"],
+          "score": 0.36,
+          "threshold": 0.6,
+          "flag": false,
+          "note": "Shared vocabulary: testable, bounded, observable, actionable, specification, constraint, output. Net-new in 2.2: diagnostic, incremental fix, full rewrite, Grade 8, 80-word rule, decision rule."
+        },
+        {
+          "pair": ["2.1", "2.3"],
+          "score": 0.14,
+          "threshold": 0.6,
+          "flag": false,
+          "note": "2.3 introduces six-component checklist, inputs, expected outputs, failure conditions, hallucination — largely non-overlapping with 2.1 core concepts."
+        },
+        {
+          "pair": ["2.2", "2.3"],
+          "score": 0.13,
+          "threshold": 0.6,
+          "flag": false,
+          "note": "Minimal overlap. 2.3 references repair strategies by name only; does not re-teach them."
+        }
+      ]
+    },
+    "lab_activity_alignment": {
+      "passed": true,
+      "description": "The module's lab_activity_seed_by_week[\"2\"] specifies: 'Write 5 task specifications — one each for health, transport, education, food, scheduling / Test each spec live with Claude — did you get exactly what you asked for? / Peer review — iterate based on feedback.' Topic 2.3 §9 Extension explicitly names all five lab domains and instructs learners to send their specification to an AI tool and compare the output to their expected outputs — a direct hands-on bridge. Topic 2.1 §9 and 2.2 §9 provide foundational practice (four-step drafting; diagnostic and repair) that directly underpins the lab.",
+      "findings": [
+        {
+          "severity": "soft",
+          "code": "lab_bridge_back_loaded",
+          "topics": ["2.1", "2.2"],
+          "description": "The only explicit forward pointer to the week-2 lab (five-domain structure + live AI testing) appears in 2.3 §9 Extension. Topics 2.1 §9 and 2.2 §9 hands-on exercises contain no reference to the lab. A learner working through 2.1 and 2.2 before the lab session receives no framing for the five-domain structure or the test-and-iterate cycle until they reach 2.3. The lab is fully supported by the corpus overall, but the scaffolding is back-loaded.",
+          "action": "Add a single signpost sentence to 2.1 §9 and 2.2 §9 pointing forward to the week's lab: e.g. 'In this week's lab you will apply this same process to five real-world domains — health, transport, education, food, and scheduling.' No new content required."
+        }
+      ]
+    },
+    "audience_level_consistency": {
+      "passed": true,
+      "description": "All three topics consistently target absolute beginners. Plain language, everyday analogies (recipe in 2.1, fence around a garden in 2.1, cake ordering in 2.3), and short sentences are used throughout. Register is stable across 2.1 and 2.2. One localized register spike in 2.3 §7 third paragraph introduces several above-Grade-8 or undefined terms. This does not affect the overall consistency verdict but is flagged as a soft finding for resolution before artifact generation.",
+      "findings": [
+        {
+          "severity": "soft",
+          "code": "register_spike",
+          "topic_id": "2.3",
+          "section": "§7 Real-World Patterns — third paragraph",
+          "description": "The third paragraph of 2.3 §7 uses terms above the absolute-beginner baseline: 'AI prompt engineering in production systems,' 'production AI deployment,' 'thousands of queries per day,' 'classification systems,' 'edge cases,' and 'system instructions' are all above Grade 8 level. The term 'AI agents' appears cold — it has not been introduced in any prior topic (1.1–2.2) and is not defined inline in 2.3. Per the artifact-mix audience baseline, every non-everyday term must be defined at first use; an undefined technical term used cold is a defect.",
+          "action": "Revise 2.3 §7 third paragraph: replace 'AI prompt engineering in production systems' with 'instructions that run AI tools in real businesses'; replace 'AI agents' with 'AI tools' or add an inline plain-English definition ('AI agents — AI tools that carry out a series of steps automatically'); replace 'edge cases' with 'unusual or unexpected inputs'; remove or simplify 'thousands of queries per day' and 'classification systems.' The professional real-world grounding is valuable — bring the register to Grade 8 without losing the credibility."
+        }
+      ]
+    }
+  },
+  "per_topic_summary": [
+    {
+      "topic_id": "2.1",
+      "title": "What makes a good specification — testable, bounded, observable, actionable",
+      "hard_findings": 0,
+      "soft_findings": 0,
+      "findings": []
+    },
+    {
+      "topic_id": "2.2",
+      "title": "Bad spec vs good spec — 'make it better' vs 'rewrite at Grade 8 level, max 80 words'",
+      "hard_findings": 0,
+      "soft_findings": 1,
+      "findings": [
+        {
+          "check": "terminology_consistency",
+          "severity": "soft",
+          "code": "synonym_drift",
+          "summary": "Uses 'four-question diagnostic' (§5.1, §6) where 2.1 and 2.3 consistently use 'four-property checklist' for the same application step. Labels should be aligned."
+        }
+      ]
+    },
+    {
+      "topic_id": "2.3",
+      "title": "How to identify the inputs, expected outputs, and failure conditions of a task",
+      "hard_findings": 0,
+      "soft_findings": 2,
+      "findings": [
+        {
+          "check": "lab_activity_alignment",
+          "severity": "soft",
+          "code": "lab_bridge_back_loaded",
+          "summary": "First explicit lab bridge in the module. Topics 2.1 and 2.2 exercises have no forward pointer to the week-2 five-domain lab; the scaffolding is fully back-loaded here. (Finding surfaced at 2.3 because the gap is only visible after traversing all three topics.)"
+        },
+        {
+          "check": "audience_level_consistency",
+          "severity": "soft",
+          "code": "register_spike",
+          "summary": "'AI agents,' 'AI prompt engineering,' 'production AI deployment,' 'edge cases,' 'classification systems' appear cold or above Grade 8 level in §7 third paragraph. 'AI agents' is undefined on first use."
+        }
+      ]
+    }
+  ],
+  "gate_recommendation": "PASS — no hard findings. Module may advance to HITL #4. Three soft findings should be surfaced to the author: (1) topic 2.2 §5.1 and §6 use 'four-question diagnostic' where the canonical label across 2.1 and 2.3 is 'four-property checklist' — align terminology; (2) topics 2.1 §9 and 2.2 §9 have no forward pointer to the week-2 lab — add a signpost sentence to each; (3) topic 2.3 §7 third paragraph has a register spike introducing undefined or above-Grade-8 terms ('AI agents,' 'AI prompt engineering,' 'edge cases,' 'classification systems') — revise to Grade 8 before reading artifact generation."
+}

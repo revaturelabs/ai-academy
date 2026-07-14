@@ -1,0 +1,59 @@
+{
+  "topic_id": "12.9",
+  "generated_at": "2026-06-15T00:00:00Z",
+  "format": "gift",
+  "question_count": 6,
+  "mcq_count": 6,
+  "short_answer_count": 0,
+  "$bias_defense_applied": true,
+  "$shuffle_seed": "12.9-xor0",
+  "correct_position_distribution": {"0": 1, "1": 2, "2": 1, "3": 2},
+  "max_position_share": 0.333,
+  "length_bias_violations": 0,
+  "questions": [
+    {
+      "id": "q1",
+      "type": "mcq",
+      "objective_ref": "Define what an API (Application Programming Interface) is, using the 'interface' idea to explain what the word means.",
+      "correct_position": 1
+    },
+    {
+      "id": "q2",
+      "type": "mcq",
+      "objective_ref": "Explain the request-response cycle: a client sends a request, a server processes it, and the server sends back a response.",
+      "correct_position": 3
+    },
+    {
+      "id": "q3",
+      "type": "mcq",
+      "objective_ref": "Identify the four components of an API request: endpoint (URL), HTTP method, headers, and body.",
+      "correct_position": 0
+    },
+    {
+      "id": "q4",
+      "type": "mcq",
+      "objective_ref": "Identify the three components of an API response: status code, headers, and body.",
+      "correct_position": 2
+    },
+    {
+      "id": "q5",
+      "type": "mcq",
+      "objective_ref": "Explain why LLM models like Claude are accessed through an API and how your Python code fits into that picture as the client.",
+      "correct_position": 1
+    },
+    {
+      "id": "q6",
+      "type": "mcq",
+      "objective_ref": "Explain using the waiter analogy why an API exists as an abstraction layer between your code and the server.",
+      "correct_position": 3
+    }
+  ],
+  "objective_coverage": {
+    "LO1": "q1",
+    "LO2": "q2",
+    "LO3": "q3",
+    "LO4": "q4",
+    "LO5": "q5",
+    "LO6": "q6"
+  }
+}

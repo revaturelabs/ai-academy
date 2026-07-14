@@ -1,0 +1,41 @@
+$CATEGORY: CIT/M2/week-3/3-1-history-of-ai-symbolic-ai-to-machine-learning-to-deep-learni
+
+::q1:: Which statement best describes what each of the three main phases of Artificial Intelligence (AI) history tried to do? {
+~All three phases used artificial neural networks (ANNs), but each era added more layers to make the networks more powerful.#Not quite — symbolic AI did not use neural networks at all; it relied entirely on hand-written logical rules.
+~Symbolic AI learned patterns from labelled examples; machine learning used rules written by experts; deep learning combined both approaches.#This reverses the descriptions — symbolic AI used hand-written rules, while machine learning is the approach that learns from labelled examples.
+=Symbolic AI used hand-written rules; machine learning found patterns in labelled examples; deep learning learned from raw data without hand-picked rules.#Correct — each era replaced the previous approach: hand-written rules gave way to example-based learning, which gave way to learning directly from raw data.
+~The three phases differ mainly in speed\: each generation of faster computers allowed AI to keep doing the same thing but more quickly.#Speed is not the distinguishing factor — the fundamental method changed in each era, not just the hardware.
+#### Tests LO 1\: understanding what each of the three AI phases attempted and why each emerged (corpus §5.1–5.3, §10).
+}
+
+::q2:: Symbolic AI produced impressive results in narrow tasks such as medical expert systems. Why did it struggle to work in the broader, messier real world? {
+=It broke whenever it met a situation the rule-writers had not anticipated, and writing enough rules to cover the real world in full was practically impossible.#Correct — these two problems (brittleness and the knowledge bottleneck) are exactly why symbolic AI stalled before reaching general-purpose usefulness.
+~It required enormous amounts of labelled training data and powerful graphics processing units (GPUs) to run, which were not available at the time.#These are limitations of deep learning, not symbolic AI — symbolic systems run on rules, not training data or GPU arithmetic.
+~Its rules could only be expressed in formal mathematics, which made it impossible for non-technical domain experts such as doctors to contribute their knowledge.#The corpus shows the opposite — expert systems were built by translating doctors' spoken knowledge into IF/THEN rules that non-mathematicians could understand.
+~It performed well only on image-recognition problems and consistently failed when applied to logic-based or rule-following tasks.#Image recognition was actually one of the hardest challenges for symbolic AI; it excelled at structured, rule-based tasks such as chess and medical diagnosis.
+#### Tests LO 2\: explaining the knowledge bottleneck and brittleness that limited symbolic AI (corpus §5.1).
+}
+
+::q3:: In machine learning, what does it mean for a machine to "learn from data" rather than follow hand-written rules? {
+~The machine connects to the internet each time it answers a question and searches for matching examples to copy from web pages.#Machine learning involves offline training on a fixed dataset — the machine does not search the internet in real time during a query.
+~The machine reads a human expert's notes and stores them as a lookup table it can query later when asked a question.#Storing an expert's notes as a lookup table is closer to how a symbolic expert system works — machine learning discovers patterns in data, not in text written by a human.
+~The machine randomly tries out different rules until one produces the correct answer, then saves that rule for future use.#Random trial-and-error is not how ML algorithms work — they make systematic, calculated adjustments to internal numbers guided by how wrong their current answer is.
+=The machine adjusts its internal numbers (parameters) by studying labelled examples until it improves, without a programmer writing any rules.#Correct — the defining shift in machine learning is that rules are discovered by the algorithm from examples rather than written in by hand.
+#### Tests LO 3\: explaining what "learning from data" means as opposed to following hand-written rules (corpus §5.2).
+}
+
+::q4:: IBM's Deep Blue defeated chess world champion Garry Kasparov in 1997. AlexNet won the ImageNet image-recognition competition in 2012. In which phases of AI history does each milestone belong? {
+~Both Deep Blue and AlexNet belong to the machine learning era because both systems improved their performance by training on large collections of labelled game or image data.#Deep Blue was a symbolic system that used hand-crafted evaluation rules and brute-force search — it did not learn from labelled training data the way a machine learning system does.
+=Deep Blue belongs to the symbolic AI era (hand-crafted rules and search); AlexNet belongs to the deep learning era (multi-layer neural network trained on images).#Correct — Deep Blue exemplifies rule-based symbolic AI, while AlexNet's 2012 victory is the landmark moment most researchers cite as the start of the deep learning era.
+~Deep Blue belongs to the deep learning era because it used a neural network to evaluate millions of chess positions per second during a game.#Deep Blue was not a neural network — it was a specialised symbolic AI system that searched through possible moves using hand-written evaluation functions.
+~AlexNet belongs to the symbolic AI era because its designers programmed explicit rules about edges, shapes, and colour regions to help it recognise objects in photographs.#AlexNet learned to detect edges, shapes, and features automatically from raw pixel data — no such rules were written in by its designers.
+#### Tests LO 4\: placing real-world milestones in their correct AI phase (corpus §5.1, §5.3, §9).
+}
+
+::q5:: Neural networks existed as an idea as far back as the 1980s. Why did deep learning only become a dominant approach in the 2010s and not decades earlier? {
+~The mathematical concept of neural networks had not yet been discovered before 2010 — the key equations were only published in the early 2010s.#Neural network mathematics had existed since at least the 1940s and 1950s; the idea was not new — what changed was the availability of data, computing power, and refined algorithms.
+~National governments sharply increased AI research funding around 2010, and that new money directly paid for the experiments that proved deep learning could work at scale.#Funding played a background role, but the corpus identifies three specific enablers\: massive datasets, GPU computing power, and improved training algorithms — not a government funding surge.
+=Three things converged in the 2010s: massive internet-produced datasets, GPUs that could run neural-network arithmetic, and training algorithms refined over years.#Correct — AlexNet's 2012 breakthrough is attributed to all three factors together; none alone was sufficient, and none had been available at the necessary scale in 1990.
+~A single breakthrough algorithm called the transformer, invented in 2010, finally made it possible to train neural networks with many layers reliably and at speed.#The transformer was introduced in 2017, not 2010, and it was not the reason deep learning took off — AlexNet's 2012 success predates it and is driven by data, GPUs, and earlier algorithm improvements.
+#### Tests LO 5\: explaining why deep learning became feasible in the 2010s — data, GPUs, and algorithm maturity (corpus §5.3, §10).
+}

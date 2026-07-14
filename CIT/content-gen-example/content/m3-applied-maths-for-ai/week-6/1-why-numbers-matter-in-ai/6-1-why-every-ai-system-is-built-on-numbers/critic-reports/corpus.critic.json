@@ -1,0 +1,97 @@
+{
+  "critic": "corpus-critic",
+  "topic_id": "6.1",
+  "topic_title": "Why every AI system is built on numbers",
+  "at": "2026-06-18T00:00:00Z",
+  "passed": true,
+  "depth_profile": "standard",
+  "word_count_estimate": 1850,
+  "word_count_range_expected": [1500, 3500],
+  "checks": {
+    "required_sections": {
+      "passed": true,
+      "detail": {
+        "section_3_learning_objectives": { "present": true, "word_count_estimate": 90, "threshold": 50, "passed": true },
+        "section_4_introduction":        { "present": true, "word_count_estimate": 130, "threshold": 50, "passed": true },
+        "section_5_core_concepts":       { "present": true, "word_count_estimate": 750, "threshold": 100, "passed": true },
+        "section_10_key_takeaways":      { "present": true, "word_count_estimate": 120, "threshold": 50, "passed": true }
+      }
+    },
+    "citation_density": {
+      "passed": true,
+      "resources_source": "web_search",
+      "mode": "strict",
+      "primary_resource": "https://labelbox.com/blog/inside-the-matrix-a-look-into-the-math-behind-ai/",
+      "primary_cited_at_least_once": true,
+      "citation_markers_found": ["[1]", "[2]", "[3]"],
+      "core_concepts_assertions_sampled": 14,
+      "core_concepts_assertions_with_citation": 12,
+      "citation_coverage_pct": 86,
+      "threshold_pct": 60,
+      "fake_citations_detected": false,
+      "detail": "All three resources cited throughout Core Concepts and Real-World Patterns. Primary resource [1] appears at least 8 times. Coverage well above 60% threshold."
+    },
+    "sequence_drift": {
+      "passed": true,
+      "topic_position": 46,
+      "concepts_introduced_by_this_topic": [
+        "binary representation",
+        "data-to-number conversion",
+        "pixels as numbers",
+        "parameters",
+        "number as universal data language",
+        "pattern-finding through arithmetic"
+      ],
+      "forward_reference_violations": [],
+      "deferred_concepts_with_pointer": [
+        { "concept": "richer text-to-number conversion", "deferred_to": "topics 6.5 and 6.6", "section": "5.2", "form": "name-and-defer with topic pointer" },
+        { "concept": "number-representations carrying semantic structure", "deferred_to": "topics 6.4 through 6.9", "section": "5.5", "form": "preview with explicit topic pointer" }
+      ],
+      "note": "Terms 'weight' (as alias for 'parameter'), 'binary', and 'pixels' are defined in-scope. No vector, matrix, embedding, dot product, or cosine similarity is taught or defined — all are either absent or referenced with explicit later-topic pointers."
+    },
+    "length_sanity": {
+      "passed": true,
+      "word_count_estimate": 1850,
+      "range_min": 1500,
+      "range_max": 3500,
+      "within_range": true,
+      "note": "Standard profile; word count comfortably within 1500–3500 range."
+    },
+    "topic_scope": {
+      "passed": true,
+      "findings": [
+        {
+          "code": "scope_creep",
+          "severity": "soft",
+          "section": "5.5",
+          "concept": "number-representations carrying semantic structure / mathematical closeness between related concepts",
+          "detail": "Section 5.5 ('What Happens When Numbers Represent Meaning') teaches the idea that related words end up with number-representations that are 'mathematically close to each other' and that 'Mathematical operations on those numbers can reveal relationships between concepts.' This is conceptually beyond a bare name-and-defer — it begins to explain the semantic-structure property that is the core topic of 6.7 (Embeddings) and 6.8 (king−man+woman≈queen). The section labels itself a 'preview, not a full explanation' and ends with a correct topic pointer to 6.4–6.9, but it teaches the insight rather than merely naming it. Per scope_discipline rules, a deferred concept should appear as a bare name plus topic pointer, not as a taught concept. Recommend collapsing section 5.5 to one sentence: 'The numbers AI learns carry surprising structure — you will explore this in topics 6.4 through 6.9.' This is a soft finding: no formal definition of vectors, embeddings, dot product, or cosine similarity appears, and the section is explicitly flagged as a preview."
+        }
+      ]
+    },
+    "beginner_readability": {
+      "passed": true,
+      "findings": [],
+      "undefined_terms": [],
+      "jargon_dumps": [],
+      "academic_register_violations": [],
+      "detail": {
+        "terms_defined_on_first_use": [
+          { "term": "binary", "defined_at": "section 5.1", "definition_present": true },
+          { "term": "pixels (picture elements)", "defined_at": "section 5.2", "definition_present": true },
+          { "term": "parameter", "defined_at": "section 5.4", "definition_present": true },
+          { "term": "weight", "defined_at": "section 5.4", "definition_present": true, "note": "defined as alias for parameter inline" },
+          { "term": "LLM (Large Language Model)", "defined_at": "section 5.4", "definition_present": true }
+        ],
+        "jargon_dump_paragraphs": "None — no paragraph introduces 3+ new terms at once.",
+        "hedging_phrases_count": 0,
+        "average_sentence_length_estimate": "under 20 words",
+        "voice": "active, second-person ('you') throughout"
+      }
+    }
+  },
+  "verdict": "PASS. All six checks pass. One soft scope_creep finding in section 5.5: the section teaches the semantic-structure property of number-representations (that related concepts end up mathematically close) rather than merely naming it and deferring. This is the core insight of topics 6.7–6.8 and is taught somewhat here rather than being a bare name-and-defer one-liner. Recommendation: collapse section 5.5 to a single sentence pointing forward. This soft finding does not block artifact generation. No hard fails. Required sections present and non-trivial. Citation coverage ~86% in Core Concepts (strict mode threshold 60%). Primary resource labelbox.com cited multiple times. No forward-reference violations — all deferred concepts (text-to-number richer conversion, embedding-style structure) use explicit topic pointers. Word count (~1,850) within standard-profile range (1500–3500). Beginner readability clean — all terms defined on first use, no jargon dumps, no hedging, active voice.",
+  "soft_findings_count": 1,
+  "hard_fails_count": 0,
+  "recommended_action": "proceed_to_artifact_generation"
+}

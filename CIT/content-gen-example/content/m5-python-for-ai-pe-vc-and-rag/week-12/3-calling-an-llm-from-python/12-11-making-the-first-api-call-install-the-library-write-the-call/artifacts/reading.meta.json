@@ -1,0 +1,10 @@
+{
+  "topic_id": "12.11",
+  "title": "Making the first API call — install the library, write the call, run in Colab",
+  "estimated_read_minutes": 5,
+  "word_count": 872,
+  "generated_at": "2026-06-15T00:00:00Z",
+  "embeds_diagram": false,
+  "citations_used": [1, 2, 3],
+  "sections": ["Overview", "Key Concepts", "Worked Example", "In Practice", "Key Takeaways", "References"]
+}

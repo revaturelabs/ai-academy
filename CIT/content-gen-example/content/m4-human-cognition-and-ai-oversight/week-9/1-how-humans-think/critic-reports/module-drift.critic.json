@@ -1,0 +1,45 @@
+{
+  "module": "1-how-humans-think",
+  "week_num": 9,
+  "critic_run_at": "2026-06-13",
+  "passed": true,
+  "checks": {
+    "terminology_consistency": {
+      "passed": true,
+      "findings": []
+    },
+    "prerequisites_respected": {
+      "passed": true,
+      "findings": []
+    },
+    "learning_arc": {
+      "passed": true,
+      "findings": []
+    },
+    "no_duplicated_concepts": {
+      "passed": true,
+      "findings": [
+        {
+          "pair": ["9.1", "9.2"],
+          "jaccard": 0.11,
+          "note": "Both topics reference System 1 in their core-concept sections because 9.2 defines System 2 in explicit contrast to 9.1 (which is a declared prerequisite). Overlap is structurally required and does not constitute duplication. Well below 0.6 threshold."
+        }
+      ]
+    },
+    "lab_activity_alignment": {
+      "passed": true,
+      "findings": []
+    },
+    "audience_consistency": {
+      "passed": true,
+      "findings": [
+        {
+          "topic_id": "9.2",
+          "severity": "soft",
+          "finding": "Broken image path in artifacts/reading.md line 15: '../artifacts/diagram.png' resolves incorrectly when reading.md is opened from within the artifacts/ directory. The correct relative path is './diagram.png'. This may render as a broken image for learners. Not an audience-level drift issue, but degrades reading experience."
+        }
+      ]
+    }
+  },
+  "verdict": "PASS — all six drift checks pass; one soft finding in 9.2 (broken image path in reading.md, non-blocking)."
+}

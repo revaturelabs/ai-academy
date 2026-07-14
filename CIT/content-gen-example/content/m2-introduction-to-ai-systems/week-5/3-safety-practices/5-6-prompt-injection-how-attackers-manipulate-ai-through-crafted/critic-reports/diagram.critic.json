@@ -1,0 +1,29 @@
+{
+  "verdict": "pass",
+  "cycle": 1,
+  "findings": [
+    {
+      "code": "looks_good",
+      "where": "whole diagram",
+      "detail": "Two labeled inputs (TRUSTED system prompt, UNTRUSTED user input) merge into a single Context window box feeding the LLM, with output marked 'Hijacked output'. The two-inputs-into-one-window mental model reads clearly left-to-right. Direct vs Indirect split on the untrusted side is legible (both arrow into UNTRUSTED). No overlaps, no truncation, all text readable at 1400px. Color tiers sane: context window highlighted yellow as the load-bearing merge point, output green as terminal."
+    }
+  ],
+  "source_preflight": {
+    "parse": "pass",
+    "node_count": 7,
+    "node_count_ok": true,
+    "label_discipline": "pass (all bold labels <= 4 words)",
+    "concept_fidelity": "pass (every node traces to corpus 5.1/5.2/5.4; no governance/defense/exploit-engineering nodes)",
+    "jargon_check": "pass (LLM spelled out as 'Large Language Model')",
+    "scope_creep": "none"
+  },
+  "stats": {
+    "nodes": 7,
+    "edges": 6,
+    "layout": "flowchart LR (two inputs merge into one window)",
+    "labels": ["TRUSTED", "UNTRUSTED", "Direct", "Indirect", "Context window", "LLM (Large Language Model)", "Hijacked output"],
+    "concepts_mapped": ["system prompt", "user input", "direct prompt injection", "indirect prompt injection", "context window", "large language model", "hijacked output"],
+    "png_path": "artifacts/diagram.png",
+    "png_dims": "1400px width, transparent bg"
+  }
+}

@@ -1,0 +1,7 @@
+graph LR
+    X["energy axis x"] --> A["Alice 0.8, 0.3"]
+    X --> B["Bob 0.75, 0.28"]
+    Y["mood axis y"] --> A
+    Y --> C["Carol 0.1, 0.95"]
+    A <-->|"close = similar"| B
+    A -.->|"far = different"| C

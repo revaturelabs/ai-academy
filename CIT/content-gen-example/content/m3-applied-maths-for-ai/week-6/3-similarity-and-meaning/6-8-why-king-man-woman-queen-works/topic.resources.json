@@ -1,0 +1,30 @@
+{
+  "topic_id": "6.8",
+  "captured_at": "2026-06-19T00:00:00Z",
+  "captured_by": "bhuvaneshwarim@revature.com",
+  "resources_source": "web_search",
+  "web_search_query": "king minus man plus woman queen word embedding vector arithmetic explained",
+  "resources": [
+    {
+      "type": "url",
+      "value": "https://informatics.ed.ac.uk/news-events/news/news-archive/king-man-woman-queen-the-hidden-algebraic-struct",
+      "role": "primary",
+      "source": "web_search",
+      "notes": "Edinburgh University explainer — geometric intuition and algebraic structure behind word analogy arithmetic"
+    },
+    {
+      "type": "url",
+      "value": "https://medium.com/plotly/understanding-word-embedding-arithmetic-why-theres-no-single-answer-to-king-man-woman-cd2760e2cb7f",
+      "role": "supporting",
+      "source": "web_search",
+      "notes": "Plotly article — explains approximation, cosine similarity, and why results vary"
+    },
+    {
+      "type": "url",
+      "value": "https://medium.com/data-from-the-trenches/arithmetic-properties-of-word-embeddings-e918e3fda2ac",
+      "role": "supporting",
+      "source": "web_search",
+      "notes": "Research-practitioner article — linear structure and arithmetic properties of embedding space"
+    }
+  ]
+}

@@ -1,0 +1,131 @@
+{
+  "topic_id": "1.5",
+  "artifact": "quiz.gift",
+  "cycle": 2,
+  "passed": true,
+  "pre_check": {
+    "bias_defense_applied": true,
+    "meta_gift_desync": false,
+    "derived_distribution": [2, 0, 3, 1, 0, 3],
+    "sidecar_distribution": [2, 0, 3, 1, 0, 3],
+    "note": "Derived correct-position distribution matches sidecar exactly. Answer order unchanged from cycle 1."
+  },
+  "checks": {
+    "positional_bias": {
+      "passed": true,
+      "distribution": [2, 1, 1, 2],
+      "distribution_note": "Position 0: q2,q5 (count=2); Position 1: q4 (count=1); Position 2: q1 (count=1); Position 3: q3,q6 (count=2)",
+      "max_share": 0.333,
+      "threshold": 0.40
+    },
+    "length_bias": {
+      "passed": true,
+      "longest_correct_rate": 0.0,
+      "baseline": 0.25,
+      "threshold": 0.40,
+      "detail": {
+        "q1": {
+          "correct_len": 89,
+          "distractor_lengths": [121, 101, 100],
+          "distractor_mean": 107.33,
+          "threshold_len": 128.8,
+          "longest_correct": false,
+          "note": "Distractors expanded in cycle 2; correct answer (89) is now well below the 20%-above-mean threshold (128.8)."
+        },
+        "q2": {
+          "correct_len": 151,
+          "distractor_lengths": [148, 134, 140],
+          "distractor_mean": 140.67,
+          "threshold_len": 168.8,
+          "longest_correct": false,
+          "note": "Distractors expanded to 134-148 chars; correct answer (151) is within the band, below threshold (168.8)."
+        },
+        "q3": {
+          "correct_len": 100,
+          "distractor_lengths": [99, 99, 93],
+          "distractor_mean": 97.0,
+          "threshold_len": 116.4,
+          "longest_correct": false,
+          "note": "Unchanged from cycle 1; already passing. Lengths tightly grouped."
+        },
+        "q4": {
+          "correct_len": 100,
+          "distractor_lengths": [83, 89, 98],
+          "distractor_mean": 90.0,
+          "threshold_len": 108.0,
+          "longest_correct": false,
+          "note": "Unchanged from cycle 1; already passing."
+        },
+        "q5": {
+          "correct_len": 240,
+          "distractor_lengths": [224, 218, 233],
+          "distractor_mean": 225.0,
+          "threshold_len": 270.0,
+          "longest_correct": false,
+          "note": "Distractors expanded to 218-233 chars; correct answer (240) is below threshold (270.0). Strongest fix in cycle 2."
+        },
+        "q6": {
+          "correct_len": 156,
+          "distractor_lengths": [161, 141, 163],
+          "distractor_mean": 155.0,
+          "threshold_len": 186.0,
+          "longest_correct": false,
+          "note": "Distractors expanded to 141-163 chars; two distractors are now longer than the correct answer. Threshold (186.0) not triggered."
+        }
+      },
+      "longest_correct_questions": [],
+      "cycle_1_comparison": {
+        "cycle_1_rate": 0.667,
+        "cycle_1_failing_questions": ["q1", "q2", "q5", "q6"],
+        "cycle_2_rate": 0.0,
+        "delta": -0.667
+      }
+    },
+    "distractor_plausibility": {
+      "passed": true,
+      "absurd_rate": 0.0,
+      "total_distractors": 18,
+      "absurd_count": 0,
+      "weakest_questions": [],
+      "scoring_notes": "All 18 distractors scored 2 or higher. q1 distractors (code-before-planning, flowchart conflation, data-storage confusion) are plausible beginner misconceptions about decomposition (scores: 3,3,2). q2 distractors (decomposition increases time, only works without dependencies, only for programming) are classic conceptual errors (scores: 3,3,3). q3 distractors are recognisable root/leaf identification errors (scores: 3,3,2). q4 distractors target count-of-subtasks and distribution misconceptions (scores: 3,2,3). q5 distractors are coherent negative-exemplar trios covering skip/improvise, post-activity review, and training-not-decomposition (scores: 2,2,2 — low but not absurd; negative exemplars at this level are inherently harder to make strongly plausible). q6 distractors target common avoidance patterns: act-immediately, give-up, treat-as-done (scores: 3,3,3)."
+    },
+    "objective_coverage": {
+      "passed": true,
+      "uncovered_objectives": [],
+      "orphan_questions": [],
+      "coverage_map": {
+        "LO1 - Define decomposition in plain language as a problem-solving strategy": ["q1"],
+        "LO2 - Explain why large problems are difficult to solve all at once and how breaking them down helps": ["q2"],
+        "LO3 - Identify the parts of a real-world problem and arrange them into a task tree showing how smaller parts connect to the whole": ["q3"],
+        "LO4 - Distinguish between a problem that has been well decomposed and one that has not": ["q4"],
+        "LO5 - Describe at least three real-world situations in which decomposition is used to make a complex task manageable": ["q5"],
+        "LO6 - Apply decomposition to a problem of your own choosing, producing a written or visual list of sub-tasks": ["q6"]
+      }
+    },
+    "beginner_fairness_and_scope": {
+      "passed": true,
+      "findings": [],
+      "notes": "All stems plain-language, no undefined jargon, no acronyms requiring prior knowledge. All questions answerable by a learner who read only topic_corpus.md. No out-of-scope concept tested. Distractors use only misconceptions a zero-background student would plausibly hold about decomposition."
+    },
+    "gift_validity": {
+      "passed": true,
+      "category_line_present": true,
+      "question_blocks_parsed": 6,
+      "expected_blocks": 6,
+      "structure_errors": [],
+      "notes": "All 6 blocks parse cleanly. Colons inside answer text correctly escaped as \\: throughout q3. General feedback (####) lines present and properly placed. Answer lines use = and ~ correctly with single correct answer per block."
+    },
+    "stem_discipline": {
+      "passed": true,
+      "banned_constructs_found": [],
+      "notes": "No negative stems (which is NOT). No pseudocode or algorithm-writing tasks. No undefined jargon in stems. Flowchart appears only as a distractor option in q1 (plausible misconception), not as a required concept in any stem. All stems are scenario-grounded and require application of this topic only."
+    }
+  },
+  "auto_correction_applied": {
+    "shuffle_round_2": false,
+    "length_bias_auto_correct": false,
+    "note": "No auto-correction needed. All checks pass on first evaluation of cycle 2. Positional order unchanged from cycle 1 as confirmed by sidecar match."
+  },
+  "verdict": "Pass — cycle 2 clean. Length bias resolved: distractors for q1/q2/q5/q6 expanded; longest_correct_rate dropped from 0.667 to 0.000. All 6 checks pass.",
+  "at": "2026-06-20T09:00:00Z"
+}

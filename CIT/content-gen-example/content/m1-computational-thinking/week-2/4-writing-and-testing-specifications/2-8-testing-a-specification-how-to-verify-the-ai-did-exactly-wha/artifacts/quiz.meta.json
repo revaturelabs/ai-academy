@@ -1,0 +1,47 @@
+{
+  "topic_id": "2.8",
+  "generated_at": "2026-06-17T00:00:00Z",
+  "format": "gift",
+  "question_count": 6,
+  "$bias_defense_applied": true,
+  "$shuffle_seed": "b6d95c28",
+  "correct_position_distribution": [2, 0, 3, 1, 2],
+  "questions": [
+    {
+      "id": "q1",
+      "type": "mcq",
+      "objective_ref": "Explain what 'testing a specification' means — comparing actual AI output to what you specified.",
+      "correct_position": 2
+    },
+    {
+      "id": "q2",
+      "type": "mcq",
+      "objective_ref": "Apply the three-question verification check to any AI output to decide whether it passes.",
+      "correct_position": 0
+    },
+    {
+      "id": "q3",
+      "type": "mcq",
+      "objective_ref": "Classify a test result as full pass, partial pass, or full fail, and describe what each looks like.",
+      "correct_position": 3
+    },
+    {
+      "id": "q4",
+      "type": "mcq",
+      "objective_ref": "Record a test result using a simple pass/fail table mapped to each part of the specification.",
+      "correct_position": 1
+    },
+    {
+      "id": "q5",
+      "type": "mcq",
+      "objective_ref": "Identify three common failure patterns — format drift, constraint overflow, and task drift — and explain what causes each.",
+      "correct_position": 2
+    },
+    {
+      "id": "q6",
+      "type": "short_answer",
+      "objective_ref": "Work through a complete test on a real specification and its AI output across two domains.",
+      "correct_position": null
+    }
+  ]
+}

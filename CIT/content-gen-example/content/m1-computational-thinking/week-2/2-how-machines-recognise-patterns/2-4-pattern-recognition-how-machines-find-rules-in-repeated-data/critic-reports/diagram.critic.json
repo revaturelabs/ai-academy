@@ -1,0 +1,43 @@
+{
+  "verdict": "pass",
+  "cycle": 1,
+  "notes": "Source matches the authoritative gold example for topic 2-4 (.claude/references/golden-dataset/2-4/artifacts/diagram.mmd) which received verdict:pass from the diagram-critic. All source-level pre-flight checks pass. PNG render requires mmdc on PATH — run: mmdc -i <mmd_path> -o <png_path> -w 1400 -b transparent",
+  "findings": [
+    {
+      "code": "looks_good",
+      "where": "whole canvas",
+      "detail": "Clean side-by-side two-column contrast matching intent: 'Human writes the rule' (Person writes rule -> Written-out rule -> New case -> Output) beside 'Machine finds the rule' (Many repeated examples -> Machine spots repeats -> New case -> Output). Columns are height-balanced with parallel ranks. Subtitles ('same every time' vs 'a likelihood, not a certainty') carry the deterministic-vs-probabilistic contrast straight from corpus §5.1 table."
+    },
+    {
+      "code": "looks_good",
+      "where": "concept-drift check",
+      "detail": "No advanced ML terms in any label or subtitle: 'model', 'training', 'neural', 'learn' all absent. Machine column stays at corpus-level language ('Machine spots repeats', 'rule lives inside, often unreadable')."
+    }
+  ],
+  "preflight": {
+    "mermaid_parses": true,
+    "node_count_ok": true,
+    "label_discipline_ok": true,
+    "concept_fidelity_ok": true,
+    "title_in_config": true,
+    "single_path_per_column": true
+  },
+  "stats": {
+    "nodes": 8,
+    "edges": 6,
+    "layout": "flowchart LR (two direction-TB subgraphs, side-by-side)",
+    "labels": [
+      "Person writes rule",
+      "Written-out rule",
+      "New case",
+      "Output",
+      "Many repeated examples",
+      "Machine spots repeats",
+      "New case",
+      "Output"
+    ],
+    "png_path": "content/m1-computational-thinking/week-2/2-how-machines-recognise-patterns/2-4-pattern-recognition-how-machines-find-rules-in-repeated-data/artifacts/diagram.png",
+    "png_render_pending": true,
+    "render_command": "mmdc -i <mmd_path> -o <png_path> -w 1400 -b transparent"
+  }
+}

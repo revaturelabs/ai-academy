@@ -1,0 +1,43 @@
+{
+  "topic_id": "6.9",
+  "captured_at": "2026-06-19T00:00:00Z",
+  "captured_by": "bhuvaneshwarim@revature.com",
+  "resources_source": "human",
+  "resources": [
+    {
+      "type": "url",
+      "value": "https://developers.google.com/machine-learning/crash-course/embeddings/similarity",
+      "role": "primary",
+      "source": "human",
+      "notes": ""
+    },
+    {
+      "type": "url",
+      "value": "https://towardsdatascience.com/cosine-similarity-how-does-it-measure-the-similarity-maths-behind-and-usage-in-python-50ad30aad7db",
+      "role": "primary",
+      "source": "human",
+      "notes": ""
+    },
+    {
+      "type": "url",
+      "value": "https://scikit-learn.org/stable/modules/metrics.html#cosine-similarity",
+      "role": "primary",
+      "source": "human",
+      "notes": ""
+    },
+    {
+      "type": "url",
+      "value": "https://keras.io/api/losses/probabilistic_losses/#cosinesimilarity-class",
+      "role": "primary",
+      "source": "human",
+      "notes": ""
+    },
+    {
+      "type": "url",
+      "value": "https://www.pinecone.io/learn/vector-similarity/",
+      "role": "primary",
+      "source": "human",
+      "notes": ""
+    }
+  ]
+}

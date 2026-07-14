@@ -1,0 +1,188 @@
+{
+  "topic_id": "6.6",
+  "stage": "topic_artifacts_approved",
+  "gates": {
+    "resources_captured": true,
+    "corpus_generated": true,
+    "corpus_critic_passed": true,
+    "corpus_human_approved": true,
+    "reading_generated": true,
+    "reading_critic_passed": true,
+    "quiz_generated": true,
+    "quiz_critic_passed": true,
+    "diagram_generated": true,
+    "diagram_critic_passed": true,
+    "module_drift_passed": true,
+    "course_drift_passed": true,
+    "topic_artifacts_human_approved": true,
+    "week_human_approved": true,
+    "module_passed": true
+  },
+  "history": [
+    {
+      "at": "2026-06-18T09:37:59Z",
+      "op": "set",
+      "gate": "resources_captured",
+      "value": true
+    },
+    {
+      "at": "2026-06-18T09:37:59Z",
+      "op": "stage",
+      "to": "awaiting_corpus"
+    },
+    {
+      "at": "2026-06-18T09:37:59Z",
+      "op": "log",
+      "msg": "Captured 3 resources (source=web_search, primary: apxml.com)"
+    },
+    {
+      "at": "2026-06-18T09:41:21Z",
+      "op": "set",
+      "gate": "corpus_generated",
+      "value": true
+    },
+    {
+      "at": "2026-06-18T09:41:21Z",
+      "op": "stage",
+      "to": "awaiting_corpus_critic"
+    },
+    {
+      "at": "2026-06-18T09:41:21Z",
+      "op": "log",
+      "msg": "Corpus drafted: 1980w, atomic profile, requires_diagram=true"
+    },
+    {
+      "at": "2026-06-18T00:00:00Z",
+      "op": "set",
+      "gate": "corpus_critic_passed",
+      "value": true
+    },
+    {
+      "at": "2026-06-18T00:00:00Z",
+      "op": "stage",
+      "to": "awaiting_corpus_human_review"
+    },
+    {
+      "at": "2026-06-18T00:00:00Z",
+      "op": "log",
+      "msg": "Corpus critic PASS cycle 2"
+    },
+    {
+      "at": "2026-06-19T06:58:48Z",
+      "op": "set",
+      "gate": "corpus_human_approved",
+      "value": true
+    },
+    {
+      "at": "2026-06-19T06:58:48Z",
+      "op": "stage",
+      "to": "corpus_approved"
+    },
+    {
+      "at": "2026-06-19T07:01:11Z",
+      "op": "set",
+      "gate": "diagram_generated",
+      "value": true
+    },
+    {
+      "at": "2026-06-19T07:01:11Z",
+      "op": "set",
+      "gate": "diagram_critic_passed",
+      "value": true
+    },
+    {
+      "at": "2026-06-19T07:01:11Z",
+      "op": "stage",
+      "to": "awaiting_diagram_critic"
+    },
+    {
+      "at": "2026-06-19T07:04:42Z",
+      "op": "set",
+      "gate": "reading_generated",
+      "value": true
+    },
+    {
+      "at": "2026-06-19T07:04:43Z",
+      "op": "stage",
+      "to": "awaiting_reading_critic"
+    },
+    {
+      "at": "2026-06-19T07:06:53Z",
+      "op": "set",
+      "gate": "quiz_generated",
+      "value": true
+    },
+    {
+      "at": "2026-06-19T07:06:53Z",
+      "op": "stage",
+      "to": "awaiting_quiz_critic"
+    },
+    {
+      "at": "2026-06-19T07:09:02Z",
+      "op": "set",
+      "gate": "reading_critic_passed",
+      "value": true
+    },
+    {
+      "at": "2026-06-19T07:09:03Z",
+      "op": "stage",
+      "to": "reading_approved"
+    },
+    {
+      "at": "2026-06-19T07:10:55Z",
+      "op": "set",
+      "gate": "quiz_critic_passed",
+      "value": true
+    },
+    {
+      "at": "2026-06-19T07:10:55Z",
+      "op": "stage",
+      "to": "quiz_approved"
+    },
+    {
+      "at": "2026-06-19T07:11:02Z",
+      "op": "stage",
+      "to": "awaiting_topic_artifacts_review"
+    },
+    {
+      "at": "2026-06-19T07:12:31Z",
+      "op": "set",
+      "gate": "topic_artifacts_human_approved",
+      "value": true
+    },
+    {
+      "at": "2026-06-19T07:12:31Z",
+      "op": "stage",
+      "to": "topic_artifacts_approved"
+    },
+    {
+      "at": "2026-06-19T12:21:05Z",
+      "op": "set",
+      "gate": "module_drift_passed",
+      "value": true
+    },
+    {
+      "at": "2026-06-19T12:31:06Z",
+      "op": "set",
+      "gate": "week_human_approved",
+      "value": true
+    },
+    {
+      "at": "2026-06-19T12:31:06Z",
+      "op": "set",
+      "gate": "module_passed",
+      "value": true
+    },
+    {
+      "at": "2026-06-23T00:00:00Z",
+      "op": "set",
+      "gate": "course_drift_passed",
+      "value": true
+    },
+    {
+      "at": "2026-06-23T00:00:00Z",
+      "op": "log",
+      "msg": "course-drift-critic cycle 2 PASS — M3 W6/W7/W8 all checks pass; W6 warn -23.3%, W7 ok -13.3%, W8 warn -23.3%; no hard fails"
+    }
+  ]
+}

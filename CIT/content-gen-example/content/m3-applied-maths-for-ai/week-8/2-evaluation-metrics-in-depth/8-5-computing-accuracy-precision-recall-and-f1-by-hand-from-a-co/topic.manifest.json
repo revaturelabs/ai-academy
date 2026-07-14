@@ -1,0 +1,52 @@
+{
+    "type":  "topic",
+    "id":  "8.5",
+    "title":  "Computing accuracy, precision, recall, and F1 by hand from a confusion matrix",
+    "slug":  "8-5-computing-accuracy-precision-recall-and-f1-by-hand-from-a-co",
+    "position_in_module":  3,
+    "week_num":  8,
+    "session_name":  "Applied Maths Lab",
+    "module":  {
+                   "position":  2,
+                   "slug":  "2-evaluation-metrics-in-depth",
+                   "title":  "Evaluation Metrics in Depth"
+               },
+    "course":  {
+                   "code":  "M3",
+                   "slug":  "m3-applied-maths-for-ai",
+                   "title":  "Applied Maths for AI"
+               },
+    "next_assessment":  {
+                            "id":  "A3",
+                            "due_week":  10,
+                            "title":  "Maths and Cognition Lab Report",
+                            "weight":  "15%"
+                        },
+    "paths":  {
+                  "corpus":  "topic_corpus.md",
+                  "resources":  "topic.resources.json",
+                  "progress":  "topic.progress.json",
+                  "artifacts_dir":  "artifacts/",
+                  "critic_reports_dir":  "critic-reports/"
+              },
+    "artifact_plan":  {
+                          "confirmed_profile":  "deep",
+                          "reading_word_range":  [
+                                                     1800,
+                                                     2200
+                                                 ],
+                          "reading_minutes_range":  [
+                                                        9,
+                                                        11
+                                                    ],
+                          "quiz_questions_range":  [
+                                                       5,
+                                                       7
+                                                   ],
+                          "quiz_include_short_answer":  true,
+                          "diagram":  true,
+                          "diagram_intent":  "2x2 confusion-matrix grid: rows = actual Positive/Negative, columns = predicted Positive/Negative, cells labeled TP/FN/FP/TN, diagonal marked correct and off-diagonal marked errors."
+                      },
+    "expected_delivery_minutes":  11,
+    "status":  "module_passed"
+}

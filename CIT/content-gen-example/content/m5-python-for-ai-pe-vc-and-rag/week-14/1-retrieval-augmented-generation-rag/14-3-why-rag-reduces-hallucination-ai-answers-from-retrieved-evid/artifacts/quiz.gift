@@ -1,0 +1,41 @@
+$CATEGORY: CIT/M5/week-14/14-3-why-rag-reduces-hallucination-ai-answers-from-retrieved-evid
+
+::q1:: A language model produces a confident, fluent answer that is factually wrong. What is this failure called? {
+~A retrieval failure, where the index returned no matching document for the query#No — retrieval failure means the system found no relevant chunk, which is a distinct problem from hallucination.
+~A corpus quality issue, where the stored documents contained incorrect or outdated information#No — corpus quality problems affect retrieved content, not the model's own statistical generation.
+=Hallucination, where the model generates plausible-sounding text not grounded in fact#Correct — hallucination is confident, fluent output produced by statistical generation rather than verified facts.
+~A cutoff date error, where the model's training data became outdated before deployment#No — cutoff date causes stale answers, but hallucination is the broader term for ungrounded generation.
+#### Tests LO1 — definition of hallucination and why it occurs in language models.
+}
+
+::q2:: Which of the following best describes parametric memory in a language model? {
+=Knowledge encoded into the model's weights during training, fixed at that point in time#Correct — parametric memory is baked into weights at training and cannot update after that cutoff.
+~Text chunks fetched from an external vector store at the moment a query is processed#No — fetching chunks at query time describes retrieved evidence, which is the alternative to parametric memory.
+~A database of verified facts that the model queries live before producing each response#No — this describes an external retrieval system; parametric memory is internal to the model's weights.
+~The conversation history injected into the prompt to provide the model with recent context#No — conversation history is runtime context added to the prompt, not the static knowledge in model weights.
+#### Tests LO2 — distinguishing parametric memory from retrieved evidence.
+}
+
+::q3:: In a RAG system, what role does the "answer only from the context below" instruction play? {
+~It compresses the retrieved chunks to reduce the number of tokens sent to the model#No — this instruction targets how the model uses retrieved text; it does not compress or filter chunks.
+~It tells the retrieval system which documents to select from the vector database index#No — the instruction is directed at the language model, not at the retrieval or indexing component.
+~It causes the system to return "I don't know" whenever retrieval finds fewer than three chunks#No — the fallback threshold is a separate design choice; this instruction grounds answers, not counts chunks.
+=It directs the model to base its answer on retrieved text rather than on learned weights#Correct — this prompt instruction grounds the model in retrieved evidence and suppresses reliance on parametric memory.
+#### Tests LO3 — the mechanism by which RAG's grounding instruction reduces hallucination.
+}
+
+::q4:: Even when RAG is in use, hallucination risk remains if the relevant document is not in the index. Which condition does this describe? {
+~Chunk quality risk, where the indexed documents contain ambiguous or inaccurate information#No — chunk quality risk involves bad content that is present in the index, not a document that is entirely absent.
+=Retrieval failure, where the needed document is absent from the index so grounding is impossible#Correct — if the relevant document was never indexed, retrieval returns nothing useful and grounding cannot occur.
+~Parametric drift, where the model's weights silently override retrieved evidence in the answer#No — "parametric drift" is not a defined RAG risk; the scenario here is a missing document, not weight override.
+~Instruction-following failure, where the model ignores the grounding prompt and answers freely#No — instruction-following failure is a real but separate RAG risk; here the problem is a missing document.
+#### Tests LO4 — conditions where hallucination risk persists even with a RAG system.
+}
+
+::q5:: A student reads a model response and sees a claim followed by a citation pointing to a retrieved chunk that confirms it. What does this indicate? {
+~The model used parametric memory to recall the claim and then matched a chunk to justify it#No — post-hoc matching to justify a memorized claim is not grounding; it is still a hallucination risk.
+~Graceful degradation is active, meaning the retrieval step could not find a relevant source#No — graceful degradation is the "I don't know" fallback when retrieval fails, not a successful citation.
+=The response is evidence-grounded, traceable to a specific retrieved source chunk#Correct — a claim traceable to a retrieved chunk that confirms it is the definition of factual grounding in RAG.
+~Retrieval failed but the model filled the gap using its training data and cited a chunk anyway#No — if training data filled the gap and retrieval truly failed, there would be no valid confirming chunk to cite.
+#### Tests LO5 — evaluating whether a response is evidence-grounded or memory-dependent.
+}

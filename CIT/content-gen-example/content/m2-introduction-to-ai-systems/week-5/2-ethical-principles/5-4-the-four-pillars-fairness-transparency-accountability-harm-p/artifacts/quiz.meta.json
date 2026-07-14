@@ -1,0 +1,28 @@
+{
+  "topic_id": "5.4",
+  "generated_at": "2026-06-22T00:00:00Z",
+  "format": "gift",
+  "question_count": 7,
+  "mcq_count": 6,
+  "short_answer_count": 1,
+  "$bias_defense_applied": true,
+  "$shuffle_seed": "sha256(topic_id=5.4)^salt=length_rebalance_r2",
+  "shuffle_constraint_check": {
+    "max_share": 0.333,
+    "max_share_threshold": 0.40,
+    "all_four_positions_used": true,
+    "mcq_count": 6,
+    "passed": true
+  },
+  "correct_position_distribution": [2, 1, 1, 2],
+  "correct_positions_in_order": [1, 3, 0, 2, 3, 0],
+  "questions": [
+    { "id": "q1", "type": "mcq", "objective_ref": "Define each of the four ethical pillars in plain language (transparency)", "objective_lo": "LO1", "correct_position": 1 },
+    { "id": "q2", "type": "mcq", "objective_ref": "Define each of the four ethical pillars in plain language (fairness)", "objective_lo": "LO1", "correct_position": 3 },
+    { "id": "q3", "type": "mcq", "objective_ref": "Define each of the four ethical pillars in plain language (accountability); give a concrete violation example and explain what went wrong", "objective_lo": "LO1/LO2", "correct_position": 0 },
+    { "id": "q4", "type": "mcq", "objective_ref": "Define each of the four ethical pillars in plain language (harm prevention)", "objective_lo": "LO1", "correct_position": 2 },
+    { "id": "q5", "type": "mcq", "objective_ref": "Explain why all four pillars are interdependent: removing any one weakens the others", "objective_lo": "LO3", "correct_position": 3 },
+    { "id": "q6", "type": "mcq", "objective_ref": "Connect the pillars to the AI failures studied in topics 5.1, 5.2, 5.3 (Amazon hiring, 5.1)", "objective_lo": "LO4", "correct_position": 0 },
+    { "id": "q7", "type": "short_answer", "objective_ref": "Describe the difference between a pillar as an ideal and a pillar as a practical requirement for an AI system", "objective_lo": "LO5", "correct_position": null }
+  ]
+}

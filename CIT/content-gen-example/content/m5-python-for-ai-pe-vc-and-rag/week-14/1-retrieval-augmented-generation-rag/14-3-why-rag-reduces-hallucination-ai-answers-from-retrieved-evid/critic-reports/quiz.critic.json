@@ -1,0 +1,90 @@
+{
+  "passed": true,
+  "cycle": 2,
+  "checks": {
+    "positional_bias": {
+      "passed": true,
+      "distribution": {
+        "0": 1,
+        "1": 1,
+        "2": 2,
+        "3": 1
+      },
+      "max_share": 0.4,
+      "notes": "Positions [2,0,3,1,2]. max_share=0.40 not exceeded."
+    },
+    "length_bias": {
+      "passed": true,
+      "longest_correct_rate": 0.0,
+      "baseline": 0.25,
+      "question_deltas": [
+        {
+          "q": "q1",
+          "correct_len": 86,
+          "mean_len": 86.5,
+          "delta_pct": -0.6
+        },
+        {
+          "q": "q2",
+          "correct_len": 87,
+          "mean_len": 87.0,
+          "delta_pct": 0.0
+        },
+        {
+          "q": "q3",
+          "correct_len": 88,
+          "mean_len": 87.5,
+          "delta_pct": 0.6
+        },
+        {
+          "q": "q4",
+          "correct_len": 96,
+          "mean_len": 93.25,
+          "delta_pct": 3.0
+        },
+        {
+          "q": "q5",
+          "correct_len": 81,
+          "mean_len": 89.25,
+          "delta_pct": -9.2
+        }
+      ],
+      "notes": "Cycle 2 fix: correct answers trimmed, distractors padded with parallel clauses. 0/5 flagged. Hard pass."
+    },
+    "distractor_plausibility": {
+      "passed": true,
+      "absurd_rate": 0.0,
+      "notes": "0 absurd distractors. All 5 questions capture real beginner misconceptions."
+    },
+    "objective_coverage": {
+      "passed": true,
+      "uncovered_objectives": [],
+      "coverage_map": {
+        "LO1": [
+          "q1"
+        ],
+        "LO2": [
+          "q2"
+        ],
+        "LO3": [
+          "q3"
+        ],
+        "LO4": [
+          "q4"
+        ],
+        "LO5": [
+          "q5"
+        ]
+      }
+    },
+    "beginner_fairness_scope": {
+      "passed": true,
+      "jargon_in_stem": [],
+      "out_of_scope_questions": [],
+      "notes": "Plain stems, all RAG terms expanded, all 5 questions test this topic only."
+    }
+  },
+  "verdict": "PASS (cycle 2) — length bias resolved. All 5 checks clear.",
+  "cycle1_failure": "length_bias 4/5=80% — cycle 1 fail logged in quiz.critic.json (appended cycle).",
+  "at": "2026-06-15T07:34:26Z"
+}

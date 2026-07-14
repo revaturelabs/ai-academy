@@ -1,0 +1,30 @@
+{
+  "topic_id": "5.11",
+  "captured_at": "2026-06-22T14:24:57Z",
+  "captured_by": "namratas@revature.com",
+  "resources_source": "web_search",
+  "resources": [
+    {
+      "type": "url",
+      "value": "https://www.federalregister.gov/documents/2023/11/01/2023-24283/safe-secure-and-trustworthy-development-and-use-of-artificial-intelligence",
+      "role": "primary",
+      "source": "web_search",
+      "notes": "First-party canonical text of EO 14110 (Oct 30 2023) — Safe, Secure, and Trustworthy AI."
+    },
+    {
+      "type": "url",
+      "value": "https://www.congress.gov/crs-product/R47843",
+      "role": "supporting",
+      "source": "web_search",
+      "notes": "CRS R47843 — structured highlights of the 2023 EO provisions for Congress."
+    },
+    {
+      "type": "url",
+      "value": "https://cset.georgetown.edu/article/eo-14410-on-safe-secure-and-trustworthy-ai-trackers/",
+      "role": "supporting",
+      "source": "web_search",
+      "notes": "CSET Georgetown — analysis of EO 14110's eight policy areas / implementation."
+    }
+  ],
+  "web_search_query": "White House Executive Order 14110 2023 AI key provisions frontier model safety testing"
+}

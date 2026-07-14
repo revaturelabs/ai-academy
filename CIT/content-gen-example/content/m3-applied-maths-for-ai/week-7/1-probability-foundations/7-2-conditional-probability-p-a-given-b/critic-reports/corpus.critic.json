@@ -1,0 +1,44 @@
+{
+  "passed": true,
+  "checks": {
+    "required_sections": {
+      "passed": true,
+      "notes": "All required sections present and non-trivial. Section 3 (Learning Objectives), Section 4 (Introduction), Section 5 (Core Concepts, well above 100-word threshold at ~950 words across sub-sections), Section 10 (Key Takeaways) all present. Sections 6 (Implementation) and 7 (Real-World Patterns) exceed 50-word minimum. No placeholder strings in required sections."
+    },
+    "citation_density": {
+      "passed": true,
+      "primary_cited": true,
+      "claim_citation_rate": 0.66,
+      "notes": "resources_source=web_search — STRICT mode applied. Primary resource [1] (Yale Stats 101) cited 8+ times across sections 5, 6, 7. Supporting resources [2] and [3] also cited throughout. Estimated 25 standalone factual assertions across sections 5-7; approximately 16-17 carry citation markers, giving ~66% citation rate. Meets the 60% threshold. No fabricated citations detected — all [1], [2], [3] markers correspond to declared resources."
+    },
+    "sequence_drift": {
+      "passed": true,
+      "forward_refs": [],
+      "notes": "Prior concepts available (from 7.1): probability, outcome, sample space, event, complement, equally-likely outcomes. All concepts introduced by 7.2 itself (conditional probability, P(A|B) notation, reduced sample space, joint probability, conditional probability formula) are in this topic's own concepts_introduced list. 'Bayes theorem' named and deferred to 7.3 in a single sentence in the Introduction — allowed. 'Joint probability' introduced only as a definitional aside required for the formula, explicitly deferred for deeper study — allowed. 'LLM/language model/token' appear in 7.1 cross_refs. No genuine forward references detected."
+    },
+    "length_sanity": {
+      "passed": true,
+      "word_count": 2310,
+      "profile": "standard",
+      "notes": "Standard depth profile expects 3000-4400 words. Estimated word count ~2310 is approximately 23% below the lower bound of 3000. The skill hard-fails only if count is more than 30% outside the range (floor = 2100 words for standard). At ~2310 words this is within the 30% tolerance and does not trigger a hard fail. Soft warning: corpus is lean for standard depth — builder should consider expanding Core Concepts section 5.5 (P(A) vs P(A|B)) and Implementation with a second worked example to reach the target range."
+    },
+    "scope_creep": {
+      "passed": true,
+      "violations": [],
+      "notes": "Headline is 'Conditional probability — P(A given B)'. Bayes' theorem is named in one sentence and explicitly deferred to topic 7.3 — within the allowed named-and-deferred one-liner rule. Joint probability is introduced only to the extent required to state the conditional probability formula, with an explicit 'deeper study later' pointer. Medical base-rate fallacy (section 5.5) is named and deferred. No section teaches any concept beyond the headline at depth."
+    },
+    "beginner_readability": {
+      "passed": true,
+      "findings": [
+        {
+          "type": "undefined_terms",
+          "detail": "The term 'token' (as in LLM token) is used in section 7 ('Every token an LLM generates is chosen based on a conditional probability') without a plain-language definition at first use. Earlier in section 5.6 the concept is introduced via 'next word' which is clearer; section 7 then switches to 'token' cold. Minor — the surrounding context makes the meaning recoverable for a beginner, but an inline gloss ('token — the unit of text the model processes, roughly a word or word-fragment') would strengthen it.",
+          "severity": "soft"
+        }
+      ],
+      "notes": "Only 1 soft finding (< 3 threshold for hard-fail escalation). All other key terms — conditional probability, P(A|B) notation, sample space, joint probability, reduced sample space — are defined at first use with plain-language explanations. No jargon dumps detected (no paragraph introduces 3+ new terms simultaneously). Sentence length is consistently within plain-English range. Register is accessible and example-driven throughout."
+    }
+  },
+  "verdict": "PASS. All six checks pass. No forward references; Bayes theorem and joint probability properly scoped. Primary resource cited throughout; citation rate ~66% clears the 60% STRICT-mode threshold. One soft readability finding (undefined 'token' in section 7). One soft length warning: word count ~2310 is lean for the standard 3000-4400 profile but within the 30% hard-fail tolerance — builder should expand to close the gap before artifact generation.",
+  "at": "2026-06-22T00:00:00Z"
+}

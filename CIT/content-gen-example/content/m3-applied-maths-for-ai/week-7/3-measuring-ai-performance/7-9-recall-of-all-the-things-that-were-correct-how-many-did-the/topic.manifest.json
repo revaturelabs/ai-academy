@@ -1,0 +1,42 @@
+{
+  "type": "topic",
+  "id": "7.9",
+  "title": "Recall — of all the things that were correct, how many did the model find",
+  "slug": "7-9-recall-of-all-the-things-that-were-correct-how-many-did-the",
+  "position_in_module": 4,
+  "week_num": 7,
+  "session_name": "Probability, Statistics and AI Confidence",
+  "module": {
+    "position": 3,
+    "slug": "3-measuring-ai-performance",
+    "title": "Measuring AI Performance"
+  },
+  "course": {
+    "code": "M3",
+    "slug": "m3-applied-maths-for-ai",
+    "title": "Applied Maths for AI"
+  },
+  "next_assessment": {
+    "id": "A3",
+    "due_week": 10,
+    "title": "Maths and Cognition Lab Report",
+    "weight": "15%"
+  },
+  "paths": {
+    "corpus": "topic_corpus.md",
+    "resources": "topic.resources.json",
+    "progress": "topic.progress.json",
+    "artifacts_dir": "artifacts/",
+    "critic_reports_dir": "critic-reports/"
+  },
+  "artifact_plan": {
+    "diagram": true,
+    "diagram_intent": "Side-by-side contrast of precision (looking inward at the flagged set) vs recall (looking outward at all true positives), showing which items each metric sees and ignores — confusion-matrix-style 2x2 or annotated Venn to make the two denominators visually distinct.",
+    "depth_profile": "standard",
+    "reading_word_range": [1200, 1600],
+    "quiz_questions_range": [5, 6],
+    "quiz_include_short_answer": false
+  },
+  "expected_delivery_minutes": 7,
+  "status": "scaffolded"
+}

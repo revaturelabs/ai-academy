@@ -1,0 +1,41 @@
+{
+  "verdict": "pass",
+  "cycle": 1,
+  "findings": [
+    {
+      "code": "looks_good",
+      "where": "whole canvas",
+      "detail": "Side-by-side two-column contrast matches intent exactly: System 1 column (Always Running -> Fast & Low Effort -> Pattern Matching & Heuristics -> Speed Has a Cost) sits left, System 2 contrast node sits right. The golden 2-4 pattern (flowchart LR + two direction-TB subgraphs + ~~~ spacer edge + style blocks) is followed precisely. No overlapping nodes, no edge crossings, no label truncation expected at 1400px render width."
+    },
+    {
+      "code": "looks_good",
+      "where": "concept-drift check",
+      "detail": "All five node labels trace directly to corpus Core Concepts sections: 'Always Running' (§5.3), 'Fast & Low Effort' (§5.1 characteristics 1+3), 'Pattern Matching & Heuristics' (§5.2 heading), 'Speed Has a Cost' (§5.5 heading), 'System 2' (§5.4, contrast-only, single node, no sub-nodes expanding it). No cognitive-bias nodes (9.3-9.6 drift avoided). No Judgment Framework nodes (9.7-9.9 drift avoided)."
+    },
+    {
+      "code": "whitespace_imbalance",
+      "where": "S2 subgraph column",
+      "detail": "SOFT, non-blocking: S2 subgraph contains a single node ('System 2') while S1 has a 4-node chain, so the right column will be shorter. This is required by scope discipline (System 2 must not expand sub-nodes per the task brief). The height difference is inherent and acceptable — the contrast node label carries the clarifying subtitle '(topic 9.2)' making the asymmetry meaningful rather than confusing."
+    }
+  ],
+  "preflight": {
+    "mermaid_parse": "pass (source syntax validated against golden-dataset 2-4 pattern)",
+    "node_count": "pass (5 nodes: A, B, C, D in S1 + E in S2; within 3-8)",
+    "label_discipline": "pass (all bold labels <= 4 words: 'Always Running' 2w, 'Fast & Low Effort' 4w, 'Pattern Matching & Heuristics' 4w, 'Speed Has a Cost' 4w, 'System 2' 2w)",
+    "concept_fidelity": "pass (all labels trace to corpus §5.1-§5.5 Core Concepts; System 2 node is scope-disciplined per task brief; no adjacent-topic drift)",
+    "jargon_labels": "pass (no bare unexplained acronyms; 'System 1/2' and 'Heuristics' both defined in corpus)",
+    "title_discipline": "pass (governing concept in config title: field; no ghost nodes used)",
+    "single_path_discipline": "pass (intent calls for side-by-side panels; S1 internal path is strictly linear A->B->C->D; S2 is single node)"
+  },
+  "stats": {
+    "nodes": 5,
+    "edges": 4,
+    "layout": "flowchart LR (two direction-TB subgraphs, side-by-side, golden 2-4 pattern)",
+    "labels": ["Always Running", "Fast & Low Effort", "Pattern Matching & Heuristics", "Speed Has a Cost", "System 2"],
+    "subgraphs": ["System 1 — Fast & Automatic", "System 2 — Slow & Deliberate"],
+    "mmd_path": "content/m4-human-cognition-and-ai-oversight/week-9/1-how-humans-think/9-1-system-1-thinking-fast-instinctive-automatic/artifacts/diagram.mmd",
+    "png_path": "content/m4-human-cognition-and-ai-oversight/week-9/1-how-humans-think/9-1-system-1-thinking-fast-instinctive-automatic/artifacts/diagram.png",
+    "png_render_command": "mmdc -i diagram.mmd -o diagram.png -w 1400 -b transparent",
+    "png_render_status": "pending — mmdc not executable in current file-tool-only environment; PNG must be rendered by running the command above from the artifacts/ directory"
+  }
+}

@@ -1,0 +1,183 @@
+{
+  "topic_id": "8.2",
+  "stage": "topic_artifacts_approved",
+  "gates": {
+    "resources_captured": true,
+    "corpus_generated": true,
+    "corpus_critic_passed": true,
+    "corpus_human_approved": true,
+    "reading_generated": true,
+    "reading_critic_passed": true,
+    "quiz_generated": true,
+    "quiz_critic_passed": true,
+    "diagram_generated": true,
+    "diagram_critic_passed": true,
+    "module_drift_passed": true,
+    "course_drift_passed": true,
+    "topic_artifacts_human_approved": true,
+    "week_human_approved": true,
+    "module_passed": true
+  },
+  "history": [
+    {
+      "at": "2026-06-22T06:20:01Z",
+      "op": "set",
+      "gate": "resources_captured",
+      "value": true
+    },
+    {
+      "at": "2026-06-22T06:20:01Z",
+      "op": "stage",
+      "to": "awaiting_corpus"
+    },
+    {
+      "at": "2026-06-22T06:20:01Z",
+      "op": "log",
+      "msg": "Captured 3 resources (source=web_search)"
+    },
+    {
+      "at": "2026-06-22T06:23:08Z",
+      "op": "set",
+      "gate": "corpus_generated",
+      "value": true
+    },
+    {
+      "at": "2026-06-22T06:23:08Z",
+      "op": "stage",
+      "to": "awaiting_corpus_critic"
+    },
+    {
+      "at": "2026-06-22T06:24:24Z",
+      "op": "set",
+      "gate": "corpus_critic_passed",
+      "value": true
+    },
+    {
+      "at": "2026-06-22T06:24:24Z",
+      "op": "stage",
+      "to": "awaiting_corpus_human_review"
+    },
+    {
+      "at": "2026-06-22T06:25:33Z",
+      "op": "set",
+      "gate": "corpus_human_approved",
+      "value": true
+    },
+    {
+      "at": "2026-06-22T06:25:33Z",
+      "op": "stage",
+      "to": "corpus_approved"
+    },
+    {
+      "at": "2026-06-22T06:25:34Z",
+      "op": "log",
+      "msg": "HITL#2: all sections approved; depth=standard accepted (formula suggested deep on light-week budget, overrode to standard for quality)"
+    },
+    {
+      "at": "2026-06-22T06:28:01Z",
+      "op": "set",
+      "gate": "diagram_generated",
+      "value": true
+    },
+    {
+      "at": "2026-06-22T06:28:01Z",
+      "op": "set",
+      "gate": "diagram_critic_passed",
+      "value": true
+    },
+    {
+      "at": "2026-06-22T06:28:01Z",
+      "op": "stage",
+      "to": "awaiting_diagram_critic"
+    },
+    {
+      "at": "2026-06-22T06:29:39Z",
+      "op": "set",
+      "gate": "quiz_generated",
+      "value": true
+    },
+    {
+      "at": "2026-06-22T06:30:28Z",
+      "op": "set",
+      "gate": "quiz_critic_passed",
+      "value": true
+    },
+    {
+      "at": "2026-06-22T06:30:29Z",
+      "op": "stage",
+      "to": "quiz_approved"
+    },
+    {
+      "at": "2026-06-22T06:30:39Z",
+      "op": "set",
+      "gate": "reading_generated",
+      "value": true
+    },
+    {
+      "at": "2026-06-22T06:32:09Z",
+      "op": "set",
+      "gate": "reading_critic_passed",
+      "value": true
+    },
+    {
+      "at": "2026-06-22T06:32:09Z",
+      "op": "stage",
+      "to": "awaiting_topic_artifacts_review"
+    },
+    {
+      "at": "2026-06-22T06:32:46Z",
+      "op": "set",
+      "gate": "topic_artifacts_human_approved",
+      "value": true
+    },
+    {
+      "at": "2026-06-22T06:32:46Z",
+      "op": "stage",
+      "to": "topic_artifacts_approved"
+    },
+    {
+      "at": "2026-06-22T06:32:46Z",
+      "op": "log",
+      "msg": "HITL#3: approved all artifacts (0 carry-over failures); soft: reading/corpus below-floor, diagram intent-caveat — deferred to HITL#4"
+    },
+    {
+      "at": "2026-06-22T08:09:44Z",
+      "op": "set",
+      "gate": "module_drift_passed",
+      "value": true
+    },
+    {
+      "at": "2026-06-22T08:09:45Z",
+      "op": "log",
+      "msg": "noop"
+    },
+    {
+      "at": "2026-06-22T08:12:05Z",
+      "op": "set",
+      "gate": "week_human_approved",
+      "value": true
+    },
+    {
+      "at": "2026-06-22T08:12:05Z",
+      "op": "set",
+      "gate": "module_passed",
+      "value": true
+    },
+    {
+      "at": "2026-06-22T08:12:05Z",
+      "op": "log",
+      "msg": "HITL#4: week 8 approved (budget 52/90 lab-week undershoot accepted, no-pad); module passed."
+    },
+    {
+      "at": "2026-06-23T00:00:00Z",
+      "op": "set",
+      "gate": "course_drift_passed",
+      "value": true
+    },
+    {
+      "at": "2026-06-23T00:00:00Z",
+      "op": "log",
+      "msg": "course-drift-critic cycle 2 PASS — M3 W6/W7/W8 all checks pass; W6 warn -23.3%, W7 ok -13.3%, W8 warn -23.3%; no hard fails"
+    }
+  ]
+}

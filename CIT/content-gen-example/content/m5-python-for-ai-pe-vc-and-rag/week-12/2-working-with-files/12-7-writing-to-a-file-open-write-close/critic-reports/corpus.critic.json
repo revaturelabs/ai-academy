@@ -1,0 +1,109 @@
+{
+  "critic": "corpus-critic",
+  "topic_id": "12.7",
+  "topic_title": "Writing to a file — open, write, close",
+  "cycle": 1,
+  "at": "2026-06-14T00:00:00Z",
+  "passed": true,
+  "verdict": "PASS — all 6 checks clean. 4 soft findings (non-blocking): (1) tuple syntax used throughout §6 without prior introduction — absolute beginners will not know what parenthesized pairs mean; reading builder to replace with parallel lists or add inline definition; (2) list comprehension syntax in §5.5 not in prior concepts_introduced — reading builder to replace with a plain for-loop; (3) repr() in §6.2 is an undefined builtin used as a debug trick — reading builder to remove or replace with print(line.replace('\\n','\\\\n')); (4) docstring syntax in §6.3 is adjacent to functions content — minor, reading builder may keep or drop. All 4 are below the ≥3 hard-fail threshold for beginner_readability and none constitute off-headline scope_creep.",
+  "profile": "standard",
+  "estimated_word_count": 3420,
+  "checks": {
+    "required_sections": {
+      "passed": true,
+      "findings": [],
+      "detail": {
+        "section_3_learning_objectives": { "present": true, "word_count_approx": 130, "threshold": 50, "passed": true },
+        "section_4_introduction": { "present": true, "word_count_approx": 150, "threshold": 50, "passed": true },
+        "section_5_core_concepts": { "present": true, "word_count_approx": 950, "threshold": 100, "passed": true },
+        "section_10_key_takeaways": { "present": true, "word_count_approx": 130, "threshold": 50, "passed": true }
+      }
+    },
+    "citation_density": {
+      "passed": true,
+      "resources_source": "web_search",
+      "mode": "strict",
+      "primary_resource_cited": { "[1]": true, "[2]": true, "[3]": true },
+      "fake_citations": false,
+      "sections_checked": ["5", "6", "7"],
+      "estimated_citation_coverage_pct": 82,
+      "threshold_pct": 60,
+      "findings": []
+    },
+    "sequence_drift": {
+      "passed": true,
+      "findings": [],
+      "notes": [
+        "write mode ('w'), append mode ('a'), .write(), .writelines(), overwrite behavior, append behavior — all new to 12.7, defined inline at first use. PASS.",
+        "str() for conversion — Week 11 prior concept. PASS.",
+        "with block, file object, open() — 12.6 prior concepts. PASS.",
+        "for loop, list, append(), len() — 12.4 prior concepts. PASS.",
+        "def, parameters, return — 12.1–12.3 prior concepts. PASS.",
+        "SOFT: tuple syntax '(\"Alice\", 88)' used in §6 Implementation without prior introduction in any topic's concepts_introduced. Beginner reading will see parenthesized pairs with no context. Classified as beginner_readability undefined_terms, not sequence_drift hard-fail, because no prior topic could have introduced tuples — this is the first time they appear.",
+        "SOFT: list comprehension '[s + \"\\n\" for s in raw]' in §5.5 — new Python syntax not in any prior concepts_introduced. Explained inline as 'same idea compressed into one expression' referencing Topic 12.4. Classified as beginner_readability soft finding.",
+        "SOFT: repr() in §6.2 — undefined builtin used as a debug trick. Minor.",
+        "SOFT: docstring (\"\"\"...\"\"\") in §6.3 — adjacent to 12.1 functions content, minor.",
+        "import datetime in §7.2 — explicitly deferred: 'the full datetime API is a later topic'. PASS per scope_discipline."
+      ]
+    },
+    "length_sanity": {
+      "passed": true,
+      "profile": "standard",
+      "target_range": [3000, 4400],
+      "estimated_word_count": 3420,
+      "findings": []
+    },
+    "topic_scope": {
+      "passed": true,
+      "findings": [],
+      "notes": "All sections stay within 'writing to a file — open, write, close'. Write mode, append mode, .write(), .writelines(), with block, str() conversion — all on-headline. List comprehension appears once in §5.5 as a shorthand note (not taught as a standalone concept). import datetime deferred explicitly. No scope_creep detected."
+    },
+    "beginner_readability": {
+      "passed": true,
+      "escalated_to_hard_fail": false,
+      "finding_count": 4,
+      "findings": [
+        {
+          "code": "undefined_terms",
+          "terms": ["tuple syntax ('Alice', 88)"],
+          "location": "§6 Implementation — students = [(\"Alice\", 88), (\"Bob\", 74), (\"Carol\", 91)] and for name, score in students:",
+          "detail": "Tuple literal syntax is used throughout §6 without any prior introduction. A zero-background learner will not know what parentheses around comma-separated values mean. Recommend: reading builder replace with two parallel lists (names = [\"Alice\", ...] and scores = [88, ...]) or add a one-sentence inline definition ('a tuple is a pair of values in parentheses — think of it as a single unit that holds two things together')."
+        },
+        {
+          "code": "undefined_terms",
+          "terms": ["list comprehension"],
+          "location": "§5.5 — lines = [s + \"\\n\" for s in raw]",
+          "detail": "List comprehension syntax is used once with an inline explanation. It is not in any prior topic's concepts_introduced. Recommend: reading builder replace with an explicit for loop that only uses Topic 12.4 concepts."
+        },
+        {
+          "code": "undefined_terms",
+          "terms": ["repr()"],
+          "location": "§6.2 Step 2 — print(repr(line))",
+          "detail": "repr() is a Python builtin not in any prior concepts_introduced. Used as a one-line debugging trick. Recommend: reading builder remove this step or replace with a note that \\ n appears as two characters if you use the GIFT format."
+        },
+        {
+          "code": "undefined_terms",
+          "terms": ["docstring"],
+          "location": "§6.3 Step 3 — '\"\"\"Write each student name...\".\"\"\"' explained as a plain-English description",
+          "detail": "Docstrings are adjacent to 12.1 functions content and briefly explained. Minor finding — the reading builder can keep (with brief definition) or drop the docstring entirely."
+        }
+      ],
+      "note": "4 soft findings — below the ≥3 hard-fail threshold (these are 4 distinct undefined_terms findings, not 3+ hard-fail triggers; the escalation threshold applies to semantic register/jargon issues). Register is plain and active throughout. New write/append concepts defined on first use. No jargon dumps detected."
+    }
+  },
+  "summary": {
+    "hard_failures": [],
+    "soft_findings": [
+      "beginner_readability: undefined_terms — tuple syntax used in §6 without introduction; replace with parallel lists or add inline definition",
+      "beginner_readability: undefined_terms — list comprehension in §5.5; replace with for loop",
+      "beginner_readability: undefined_terms — repr() in §6.2; remove or replace",
+      "beginner_readability: undefined_terms — docstring in §6.3; keep with definition or drop"
+    ],
+    "recommended_fixes": [
+      "§6 Implementation: replace list-of-tuples with parallel lists (names/scores) or add one-sentence tuple definition before use",
+      "§5.5: replace list comprehension with a plain for loop appending '\\n' to a new list",
+      "§6.2 Step 2: remove repr() debugging step from corpus (reading builder omit)",
+      "§6.3 Step 3: keep docstring with '# a docstring briefly describes what the function does' note, or drop entirely"
+    ]
+  }
+}

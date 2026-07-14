@@ -1,0 +1,14 @@
+---
+title: if / elif / else — Grade Assignment
+---
+flowchart TB
+    A["<b>average_rounded</b><br/>e.g. 83.7"]:::start --> B{"<b>&gt;= 90 ?</b>"}:::hitl
+    B -- "True" --> C["<b>grade = 'A'</b>"]:::done
+    B -- "False" --> D{"<b>&gt;= 80 ?</b>"}:::hitl
+    D -- "True" --> E["<b>grade = 'B'</b>"]:::done
+    D -- "False" --> F["<b>elif / else</b><br/>evaluates &gt;= 70, &gt;= 60<br/>or assigns F"]:::auto
+
+    classDef start fill:#a5d8ff,stroke:#339af0,color:#000
+    classDef hitl  fill:#fff3bf,stroke:#f59f00,color:#000
+    classDef auto  fill:#d0bfff,stroke:#7950f2,color:#000
+    classDef done  fill:#b2f2bb,stroke:#2f9e44,color:#000

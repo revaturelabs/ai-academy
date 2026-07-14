@@ -1,0 +1,38 @@
+---
+title: "Next-Token Prediction — No Truth Check Inside"
+config:
+  theme: base
+  themeVariables:
+    primaryColor: "#a5d8ff"
+    primaryBorderColor: "#4a9eed"
+    lineColor: "#555"
+  flowchart:
+    htmlLabels: true
+    curve: basis
+---
+flowchart LR
+    A["<b>User Prompt</b><br/><span style='font-size:11px;color:#fff'>Question typed by user</span>"]:::input
+    B["<b>Tokenise Input</b><br/><span style='font-size:11px;color:#ddd'>Break text into tokens</span>"]:::process
+    C{"<b>Next-Token Prediction</b><br/><span style='font-size:11px;color:#ddd'>What token is most likely next?</span>"}:::process
+    D["<b>Pick Highest-Probability Token</b><br/><span style='font-size:11px;color:#ddd'>Chosen for fluency, not truth</span>"]:::process
+    E{"<b>Response complete?</b>"}:::process
+    F["<b>Fluent Output Delivered</b><br/><span style='font-size:11px;color:#fff'>Words reach the user</span>"]:::output
+    G["<b>No Uncertainty Signal</b><br/><span style='font-size:11px;color:#fff'>Internal probabilities hidden</span>"]:::warn
+
+    ABSENT["<b>✗ Truth Check — not present</b><br/><span style='font-size:11px;color:#666'>No fact database consulted.<br/>No 'am I sure?' step exists.</span>"]:::absent
+
+    A --> B
+    B --> C
+    C --> D
+    D --> E
+    E -- "No — add token and continue" --> C
+    E -- "Yes" --> F
+    F --> G
+
+    D -. "missing step" .-> ABSENT
+
+    classDef input fill:#4A90D9,stroke:#2C5F8A,color:#fff
+    classDef process fill:#7B68EE,stroke:#5A4DB0,color:#fff
+    classDef absent fill:#E8E8E8,stroke:#999,color:#666,stroke-dasharray:5 5
+    classDef output fill:#E74C3C,stroke:#A93226,color:#fff
+    classDef warn fill:#F39C12,stroke:#B7770D,color:#fff

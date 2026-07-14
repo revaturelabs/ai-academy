@@ -1,0 +1,33 @@
+$CATEGORY: CIT/M3/week-6/6-6-dot-product-as-similarity-vectors-pointing-the-same-directio
+
+::q1:: You multiply the matching positions of two vectors together and add all the results. What kind of value does this operation always produce? {
+~A new vector with the same number of positions as the original two vectors#No — combining two vectors this way does not produce another vector; the results are collapsed into one number.
+=A single number, also called a scalar#Correct — the dot product always collapses two vectors into one number, which is a scalar.
+~A matrix made from all the possible pairs of positions#No — arranging every possible pair into a grid is a different operation; the dot product just sums the matched pairs.
+~A list of products, one for each matching pair of positions#No — those individual products are an intermediate step; the dot product is their total sum, a single number.
+#### Tests LO-1: understanding that the dot product produces a scalar, not a vector or list (corpus §5.1).
+}
+
+::q2:: Song A has the feature vector [0.8, 0.6, 0.3] and Song B has [0.7, 0.5, 0.2]. What is the dot product of Song A and Song B? {
+~0.56, because you only multiply the first positions and stop there#No — the dot product requires multiplying all matching positions and summing every result, not just the first pair.
+~0.46, because you add the vectors first and then multiply each element by the other#No — adding the vectors first is not how the dot product works; you multiply matching positions directly, then sum the products.
+~1.10, because you sum all six numbers in both vectors and then divide by two#No — the dot product does not average or sum all values; it multiplies each matching pair and adds those products.
+=0.92, because (0.8×0.7) + (0.6×0.5) + (0.3×0.2) = 0.56 + 0.30 + 0.06 = 0.92#Correct — each matching position is multiplied and the three products are summed to give 0.92.
+#### Tests LO-2: step-by-step calculation of the dot product (corpus §5.2).
+}
+
+::q3:: Two song vectors point at right angles to each other in feature space — neither the same direction nor opposite. What dot product score would you expect? {
+=A score of zero, because perpendicular vectors share no common direction#Correct — when two vectors are perpendicular, the positive and negative products cancel out exactly, giving zero.
+~A large positive score, because right angles create the most overlap between two vectors#No — a right angle means no shared direction; same direction, not perpendicular, produces a large positive score.
+~A large negative score, because right angles indicate the vectors are opposing each other#No — opposite directions give a negative score; perpendicular vectors have no opposition and produce zero.
+~A score of exactly 1, because perpendicular vectors are considered fully independent and balanced#No — 1 is not a standard result for perpendicular vectors; perpendicular always gives zero, not 1.
+#### Tests LO-3: geometric relationship between vector direction and dot product score (corpus §5.3).
+}
+
+::q4:: A music app computes dot products between a listener's taste vector and every song in its library, then suggests the song with the highest score. Why does a high dot product make that song a good recommendation? {
+~A high dot product means the song vector is longer, so it contains more musical information than low-scoring songs#No — a longer vector (higher magnitude) can inflate the score, but that is a known limitation, not a sign of more information.
+~A high dot product means the song was recently added to the library and ranked by upload order#No — the dot product has nothing to do with upload time; it measures directional similarity between two feature vectors.
+=A high dot product means both vectors lean strongly in the same direction across every feature, signalling similar taste#Correct — when matching features reinforce each other, the summed products are large and positive, indicating similarity.
+~A high dot product means the song shares exactly the same number of dimensions as the listener's taste vector#No — both vectors must always have the same number of dimensions just to compute the dot product; that condition alone says nothing about similarity.
+#### Tests LO-4 and LO-5: interpreting a high dot product as similarity and recognising AI recommendation as the application (corpus §§5.5, 7.1).
+}

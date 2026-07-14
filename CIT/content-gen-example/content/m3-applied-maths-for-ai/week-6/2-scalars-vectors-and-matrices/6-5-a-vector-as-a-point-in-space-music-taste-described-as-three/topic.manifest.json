@@ -1,0 +1,49 @@
+{
+    "type":  "topic",
+    "id":  "6.5",
+    "title":  "A vector as a point in space — music taste described as three numbers",
+    "slug":  "6-5-a-vector-as-a-point-in-space-music-taste-described-as-three",
+    "position_in_module":  4,
+    "week_num":  6,
+    "session_name":  "Numbers, Vectors and Meaning",
+    "module":  {
+                   "position":  2,
+                   "slug":  "2-scalars-vectors-and-matrices",
+                   "title":  "Scalars, Vectors and Matrices"
+               },
+    "course":  {
+                   "code":  "M3",
+                   "slug":  "m3-applied-maths-for-ai",
+                   "title":  "Applied Maths for AI"
+               },
+    "next_assessment":  {
+                            "id":  "A2",
+                            "due_week":  6,
+                            "title":  "AI Systems Essay",
+                            "weight":  "15%"
+                        },
+    "paths":  {
+                  "corpus":  "topic_corpus.md",
+                  "resources":  "topic.resources.json",
+                  "progress":  "topic.progress.json",
+                  "artifacts_dir":  "artifacts/",
+                  "critic_reports_dir":  "critic-reports/"
+              },
+    "artifact_plan":  {
+                          "diagram":  true,
+                          "diagram_intent":  "2D coordinate plane with energy (x-axis) and mood (y-axis), three labelled points: Alice (0.8, 0.3), Bob (0.75, 0.28), Carol (0.1, 0.95); arrows showing how coordinates are read off each axis; annotation indicating Alice-Bob proximity vs Alice-Carol distance",
+                          "depth_profile":  "standard",
+                          "depth_signals":  "6 tightly-scoped sub-concepts; implementation + real-world sections warranted; no multi-technology pipeline.",
+                          "reading_word_range":  [
+                                                     600,
+                                                     900
+                                                 ],
+                          "quiz_question_range":  [
+                                                      4,
+                                                      5
+                                                  ],
+                          "human_approved_at_hitl2":  true
+                      },
+    "expected_delivery_minutes":  8,
+    "status":  "corpus_drafted"
+}

@@ -1,0 +1,10 @@
+{
+  "topic_id": "13.14",
+  "title": ".gitignore — keeping API keys and secrets out of public repositories",
+  "estimated_read_minutes": 5,
+  "word_count": 1008,
+  "generated_at": "2026-06-15T00:00:00Z",
+  "embeds_diagram": true,
+  "citations_used": [1, 2, 3],
+  "sections": ["Overview", "Key Concepts", "Worked Example", "In Practice", "Key Takeaways", "References"]
+}

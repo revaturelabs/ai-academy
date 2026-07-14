@@ -1,0 +1,36 @@
+---
+config:
+  theme: base
+  themeVariables:
+    primaryColor: "#a5d8ff"
+    primaryBorderColor: "#4a9eed"
+    lineColor: "#555"
+  flowchart:
+    htmlLabels: true
+    curve: basis
+    nodeSpacing: 55
+    rankSpacing: 70
+title: "Prohibited = banned outright (no paperwork makes it legal)"
+---
+flowchart TB
+    TOP["<b>Prohibited tier — banned outright</b><br/><span style='font-size:12px;color:#6d28d9'>narrow top of the risk pyramid · you may NOT use this at all</span>"]
+
+    BANS["<b>What Article 5 bans</b><br/><span style='font-size:12px;color:#6d28d9'>Social scoring by governments · Real-time biometric surveillance in public<br/>Harmful manipulation · Exploiting vulnerabilities · Emotion recognition at work or school<br/>Untargeted face-scraping · Individual predictive policing · Sensitive biometric categorization</span>"]
+
+    EXC["<b>Narrow biometric exceptions</b><br/><span style='font-size:12px;color:#6d28d9'>pre-authorized only: missing victim · imminent threat · serious-crime suspect — default is still banned</span>"]
+
+    HIGH["<b>High-risk tier — allowed under rules</b><br/><span style='font-size:12px;color:#6d28d9'>you MAY use this, follow the rules: documentation, testing, human oversight, then launch</span>"]
+
+    TOP --> BANS
+    BANS --> EXC
+    EXC --> HIGH
+
+    class TOP hitl
+    class BANS act
+    class EXC ghostbox
+    class HIGH done
+
+    classDef hitl fill:#ffc9c9,stroke:#e03131,stroke-width:3px,color:#1f2937
+    classDef act fill:#fff3bf,stroke:#f59e0b,stroke-width:2px,color:#1f2937
+    classDef ghostbox fill:#f3f0ff,stroke:#8b5cf6,stroke-width:1px,color:#1f2937
+    classDef done fill:#b2f2bb,stroke:#22c55e,stroke-width:2px,color:#1f2937

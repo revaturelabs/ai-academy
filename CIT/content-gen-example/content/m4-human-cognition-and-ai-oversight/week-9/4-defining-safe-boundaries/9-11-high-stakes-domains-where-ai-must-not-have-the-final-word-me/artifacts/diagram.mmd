@@ -1,0 +1,44 @@
+---
+title: "AI as Tool, Human as Final Authority"
+config:
+  theme: base
+  themeVariables:
+    primaryColor: "#a5d8ff"
+    primaryBorderColor: "#4a9eed"
+    lineColor: "#555"
+  flowchart:
+    htmlLabels: true
+    curve: basis
+---
+flowchart TB
+    subgraph MED["Medical"]
+        direction TB
+        M1["<b>AI: Decision Support</b><br/><span style='font-size:11px;color:#6d28d9'>Reviews images · suggests dosages · triages</span>"]:::auto
+        M2["<b>Why Human Must Decide</b><br/><span style='font-size:11px;color:#6d28d9'>Wrong diagnosis is irreversible · no named person accountable if AI decides</span>"]:::warn
+        M1 --> M2
+    end
+
+    subgraph LEG["Legal"]
+        direction TB
+        L1["<b>AI: Decision Support</b><br/><span style='font-size:11px;color:#6d28d9'>Generates risk scores for bail and sentencing</span>"]:::auto
+        L2["<b>Why Human Must Decide</b><br/><span style='font-size:11px;color:#6d28d9'>Wrongful detention is irreversible · AI cannot be held legally responsible</span>"]:::warn
+        L1 --> L2
+    end
+
+    subgraph SAF["Safety-Critical Systems"]
+        direction TB
+        S1["<b>AI: Decision Support</b><br/><span style='font-size:11px;color:#6d28d9'>Handles routine tasks — autopilot, sensors</span>"]:::auto
+        S2["<b>Why Human Must Decide</b><br/><span style='font-size:11px;color:#6d28d9'>Manual override is mandatory · Boeing 737 MAX shows the cost without it</span>"]:::warn
+        S1 --> S2
+    end
+
+    HUMAN["<b>Human Has the Final Word</b><br/><span style='font-size:11px;color:#6d28d9'>Evaluates AI output · makes the decision · bears full accountability</span>"]:::hitl
+
+    M2 --> HUMAN
+    L2 --> HUMAN
+    S2 --> HUMAN
+
+    classDef auto fill:#d0bfff,color:#1f2937,stroke:#8b5cf6,stroke-width:2px
+    classDef hitl fill:#fff3bf,color:#1f2937,stroke:#f59e0b,stroke-width:3px
+    classDef done fill:#b2f2bb,color:#1f2937,stroke:#22c55e,stroke-width:2px
+    classDef warn fill:#fecaca,color:#7f1d1d,stroke:#dc2626,stroke-width:2px

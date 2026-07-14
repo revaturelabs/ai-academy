@@ -1,0 +1,30 @@
+{
+  "topic_id": "5.2",
+  "captured_at": "2026-06-17T00:00:00Z",
+  "captured_by": "vishnu.vardhan@revature.com",
+  "resources_source": "web_search",
+  "web_search_query": "why AI hallucination happens LLM mechanism confident falsehoods",
+  "resources": [
+    {
+      "type": "url",
+      "value": "https://atlan.com/know/llm-hallucinations/",
+      "role": "primary",
+      "source": "web_search",
+      "notes": "Comprehensive 2026 guide on LLM hallucination mechanisms, types, and mitigations — primary anchor"
+    },
+    {
+      "type": "url",
+      "value": "https://www.superannotate.com/blog/ai-hallucinations",
+      "role": "supporting",
+      "source": "web_search",
+      "notes": "Full technical guide covering intrinsic vs extrinsic hallucination, causes, real-world examples"
+    },
+    {
+      "type": "url",
+      "value": "https://arxiv.org/pdf/2401.06796",
+      "role": "supporting",
+      "source": "web_search",
+      "notes": "Academic paper — AI Hallucinations: A Misnomer Worth Clarifying — precise definitional framing"
+    }
+  ]
+}

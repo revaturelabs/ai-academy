@@ -1,0 +1,49 @@
+---
+title: "Risk-Tiered Component Mapping"
+theme: base
+themeVariables:
+  primaryColor: "#a5d8ff"
+  primaryBorderColor: "#4a9eed"
+  lineColor: "#555"
+config:
+  flowchart:
+    htmlLabels: true
+    curve: basis
+    nodeSpacing: 45
+    rankSpacing: 60
+---
+flowchart TD
+    COMP([<b>System Component</b><br/><span style='font-size:12px;color:#6d28d9'>A distinct step in the AI processing chain</span>]):::start
+
+    Q1{<b>Q1: Cost if wrong?</b><br/><span style='font-size:12px;color:#6d28d9'>Severity + reversibility of the error</span>}:::question
+
+    Q2{<b>Q2: Can human verify?</b><br/><span style='font-size:12px;color:#6d28d9'>Check output without re-running the AI?</span>}:::question
+
+    Q3{<b>Q3: Named accountable role?</b><br/><span style='font-size:12px;color:#6d28d9'>One job title owns this output?</span>}:::question
+
+    FIX[<b>Fix the Structure First</b><br/><span style='font-size:12px;color:#6d28d9'>Add explanation / name a role, then re-evaluate</span>]:::fix
+
+    HITL[<b>Human-in-the-Loop (HITL)</b><br/><span style='font-size:12px;color:#6d28d9'>Blocking · Logged · Empowered · Monitored</span>]:::hitl
+
+    HOTL[<b>Human-on-the-Loop (HOTL)</b><br/><span style='font-size:12px;color:#6d28d9'>AI acts; human audits a sample and can intervene</span>]:::hotl
+
+    HOOTL[<b>Human-out-of-the-Loop (HOOTL)</b><br/><span style='font-size:12px;color:#6d28d9'>Automated; low severity and reversible error</span>]:::hootl
+
+    COMP --> Q1
+    Q1 -- "High severity<br/>or irreversible" --> Q2
+    Q1 -- "Medium severity<br/>error reversible" --> HOTL
+    Q1 -- "Low severity<br/>and reversible" --> HOOTL
+    Q2 -- "Yes" --> Q3
+    Q2 -- "No" --> FIX
+    Q3 -- "Yes" --> HITL
+    Q3 -- "No" --> FIX
+    FIX --> HITL
+    HOTL -. "Upgrade: override rate near zero,<br/>confidence narrows, or new context" .-> HITL
+    HOOTL -. "Upgrade: override rate near zero,<br/>confidence narrows, or new context" .-> HOTL
+
+    classDef start    fill:#a5d8ff,stroke:#4a9eed,stroke-width:2px,color:#000
+    classDef question fill:#fff3bf,stroke:#f59e0b,stroke-width:2px,color:#000
+    classDef hitl     fill:#fff3bf,stroke:#f59e0b,stroke-width:3px,color:#000
+    classDef hotl     fill:#d0bfff,stroke:#8b5cf6,stroke-width:2px,color:#000
+    classDef hootl    fill:#b2f2bb,stroke:#22c55e,stroke-width:2px,color:#000
+    classDef fix      fill:#ffd8d8,stroke:#ef4444,stroke-width:2px,color:#000

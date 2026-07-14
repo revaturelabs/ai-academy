@@ -1,0 +1,49 @@
+$CATEGORY: CIT/M3/week-7/7-9-recall-of-all-the-things-that-were-correct-how-many-did-the
+
+::q1:: Recall (as a classification metric) is best described as which of the following? {
+~The fraction of flagged items that turned out to be genuinely positive#No — that describes precision, not recall. Recall looks at the genuinely positive items, not just the flagged ones.
+~The overall percentage of correct predictions a model makes across all items#No — that describes accuracy. Recall only looks at the genuinely positive items, ignoring everything the model correctly left alone.
+=The fraction of genuinely positive items that the model correctly flagged#Yes — recall measures coverage of real positives: how many of the things that were truly positive did the model actually find?
+~The number of items the model left unflagged regardless of their true label#No — unflagged items are not a fraction of anything useful on their own. Recall specifically focuses on genuinely positive items only.
+#### Tests plain-English definition of recall (corpus §4 and §5.1).
+}
+
+::q2:: A fraud-detection model reviews 500 transactions. One transaction is genuinely fraudulent, but the model marks it as safe and approves it. What is this prediction called? {
+=A false negative — the model predicted "safe" (negative) for an item that was genuinely fraudulent (positive)#Correct — a false negative is when the model fails to flag something that was truly positive; it is a missed detection.
+~A false positive — the model flagged this transaction as suspicious even though it was not genuinely fraudulent at all#No — a false positive is when the model raises an incorrect flag on something that is NOT actually positive. Here the model failed to flag real fraud, which is the opposite error.
+~A true negative — the model predicted "safe" and the transaction was genuinely not fraudulent, so the prediction was correct#No — a true negative means the model said "safe" AND the item was genuinely safe. This transaction was genuinely fraudulent, so the model was wrong.
+~A true positive — the model correctly flagged this transaction and it turned out to be genuinely fraudulent#No — a true positive means the model DID raise a flag correctly. This model failed to raise any flag at all for the fraudulent transaction.
+#### Tests the definition of false negative in context of model predictions (corpus §5.2).
+}
+
+::q3:: A spam filter is tested on 40 genuine spam emails and 160 legitimate emails. It correctly flags 28 of the 40 spam emails, and misses the remaining 12. What is the filter's recall? {
+~0.93 — because 28 of the 30 flagged emails were genuine spam, which calculates the precision of the filter rather than recall#No — that calculation (28/30) gives precision, not recall. Recall uses the total number of genuinely positive items as the denominator, not the number of flags raised.
+~0.20 — because 40 genuine spam emails out of 200 total emails in the dataset gives the proportion of spam overall#No — that figure is the proportion of spam in the dataset, not recall. Recall measures how many of those genuine spam emails the model actually caught.
+~1.00 — because the model caught more genuine spam emails correctly than it failed to catch across the whole test set#No — a recall of 1.0 would mean catching every single genuine spam email. Twelve genuine spam emails slipped through unflagged, so recall cannot be perfect.
+=0.70 — because 28 true positives divided by 40 total genuine spam emails equals 0.70#Correct — recall = true positives / (true positives + false negatives) = 28 / (28 + 12) = 28 / 40 = 0.70.
+#### Tests application of the recall formula to a simple scenario (corpus §5.3 and §6).
+}
+
+::q4:: A disease-screening model reviews 1,000 patient records. Only 20 patients actually have the disease. The model predicts "healthy" for every single patient. Which statement best describes this model's performance? {
+~The model has low accuracy and low recall, since missing every sick patient reduces both scores toward zero#No — accuracy is 980 out of 1,000 = 98%, so accuracy is actually very high. The model is deceptive precisely because accuracy looks good while recall is 0%.
+=The model has 98% accuracy but 0% recall — it predicted everyone healthy and caught none of the 20 genuinely sick patients#Correct — accuracy is 98% (980 correct predictions), and recall is 0/20 = 0%. High accuracy hides complete recall failure when the positive class is rare.
+~The model has 98% recall matching its accuracy, since both simply measure the fraction of all predictions that turned out correct#No — recall is not the same as accuracy. Recall only considers the genuinely positive cases (the 20 sick patients). The model flagged zero of them, so recall is 0%.
+~The model has reliable precision since it never raises a false alarm by predicting everyone healthy across the full dataset#No — precision is undefined here because the model made zero positive predictions. Never flagging anything cannot be called good precision; it means the metric has no value.
+#### Tests why high accuracy and apparent caution can coexist with zero recall (corpus §5.6).
+}
+
+::q5:: In which of the following real-world situations is recall the metric that matters most? {
+~A product-recommendation engine deciding which three items to show a user on a homepage#No — missing a relevant product is not catastrophic; the cost of a false negative (showing a slightly less relevant item) is low. Precision matters more here.
+~A spam filter deciding whether to move an email to a junk folder before the user sees it#No — false alarms (good emails wrongly moved to junk) are the more costly error in this context, so precision is generally prioritised over recall for spam.
+=A cancer-screening tool reviewing patient scans to identify those who may need further tests#Correct — missing a genuine cancer case (false negative) can be life-threatening. The cost of a missed positive is so high that recall is prioritised, even if it means more false alarms.
+~An autocomplete system suggesting the next word a user might want to type in a message#No — missing the exact right word is a minor inconvenience. The cost of a false negative is trivial, so recall is not the primary concern in autocomplete.
+#### Tests identification of a real-world situation where recall is the dominant metric (corpus §5.7 and §7).
+}
+
+::q6:: Why do precision and recall tend to pull in opposite directions when you adjust how cautious a model is? {
+=When a model flags more items to catch more genuine positives (raising recall), it inevitably also flags more items that are not truly positive, which lowers precision#Correct — flagging more aggressively catches more real cases (better recall) but brings in more false alarms (worse precision). The two metrics trade off against each other.
+~Precision and recall are calculated from the same formula, so changing one always changes the other by the same amount in the same direction#No — precision and recall use different denominators and move in opposite directions, not together. They share the true positive count in the numerator but differ in what they divide by.
+~Precision measures accuracy on negative items while recall measures accuracy on positive items, so they capture completely separate parts of the dataset with no connection#No — both metrics involve the genuinely positive items. Precision looks at what the model flagged; recall looks at all real positives. They overlap through true positives.
+~A model that improves recall must be retrained from scratch, which coincidentally reduces precision as a side effect of retraining#No — the precision–recall trade-off is not about retraining. It arises from adjusting a single threshold or confidence cutoff — no retraining required — and the trade-off follows logically from how flags are counted.
+#### Tests conceptual understanding of the precision–recall trade-off without computation (corpus §5.7).
+}

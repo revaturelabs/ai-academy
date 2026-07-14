@@ -1,0 +1,32 @@
+---
+title: "The Four Pillars of AI Ethics"
+config:
+  theme: base
+  themeVariables:
+    primaryColor: "#a5d8ff"
+    primaryBorderColor: "#4a9eed"
+    lineColor: "#555"
+    fontSize: "15px"
+  flowchart:
+    htmlLabels: true
+    curve: basis
+    nodeSpacing: 55
+    rankSpacing: 45
+---
+flowchart LR
+    subgraph pillars[" "]
+        direction LR
+        F["<b>Fairness</b><br/><span style='font-size:12px;color:#6d28d9'><i>No group is systematically disadvantaged</i></span><br/><br/><span style='font-size:12px'><b>Violation:</b> hiring tool ranks women lower</span><br/><span style='font-size:12px'><b>Check:</b> tested across demographic groups?</span>"]
+        T["<b>Transparency</b><br/><span style='font-size:12px;color:#6d28d9'><i>People can understand what it did and why</i></span><br/><br/><span style='font-size:12px'><b>Violation:</b> confident answer, no uncertainty shown</span><br/><span style='font-size:12px'><b>Check:</b> can it explain a specific decision?</span>"]
+        A["<b>Accountability</b><br/><span style='font-size:12px;color:#6d28d9'><i>A named human party is responsible</i></span><br/><br/><span style='font-size:12px'><b>Violation:</b> 'the algorithm decided, not us'</span><br/><span style='font-size:12px'><b>Check:</b> is there an audit trail and recourse?</span>"]
+        H["<b>Harm Prevention</b><br/><span style='font-size:12px;color:#6d28d9'><i>Risks are assessed before deployment</i></span><br/><br/><span style='font-size:12px'><b>Violation:</b> known risk shipped unmitigated</span><br/><span style='font-size:12px'><b>Check:</b> risk assessment done before launch?</span>"]
+        F ~~~ T ~~~ A ~~~ H
+    end
+
+    F:::start
+    T:::start
+    A:::start
+    H:::start
+
+    classDef start fill:#a5d8ff,stroke:#4a9eed,stroke-width:2px,color:#1a1a1a,text-align:left
+    style pillars fill:none,stroke:none

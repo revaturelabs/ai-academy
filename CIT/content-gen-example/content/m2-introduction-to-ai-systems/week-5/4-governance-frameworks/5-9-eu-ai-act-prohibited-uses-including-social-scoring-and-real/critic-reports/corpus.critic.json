@@ -1,0 +1,51 @@
+{
+  "artifact": "corpus",
+  "topic_id": "5.9",
+  "topic_title": "EU AI Act — prohibited uses including social scoring and real-time biometric surveillance",
+  "critic": "corpus-critic",
+  "hard_gate": true,
+  "passed": true,
+  "at": "2026-06-22T12:45:00Z",
+  "inputs": {
+    "corpus_path": "topic_corpus.md",
+    "resources_path": "topic.resources.json",
+    "resources_source": "web_search",
+    "depth_profile": "standard",
+    "depth_word_range": [1200, 1600]
+  },
+  "checks": {
+    "required_sections": {
+      "passed": true,
+      "detail": "Required sections 3 (Learning Objectives, ~80w), 4 (Introduction, ~150w), 5 (Core Concepts, ~900w across 5.1-5.6), 10 (Key Takeaways, ~130w) all present and non-trivial. Section 5 well above 100w; others above 50w. No placeholder strings in required sections."
+    },
+    "citation_density": {
+      "passed": true,
+      "resources_source": "web_search",
+      "detail": "Strict mode. Primary [1] (EC AI Act Service Desk Article-5 FAQ) cited repeatedly. Supporting [2] (artificialintelligenceact.eu Article 5) and [3] (EC Guidelines on prohibited practices / narrow biometric exceptions) both cited where used — [3] anchors the exceptions material in 5.4. Standalone factual assertions in sections 5/8/10 carry citation markers well above the 60% threshold. No fabricated markers: only [1][2][3] appear and all three resolve to resources."
+    },
+    "forward_references": {
+      "passed": true,
+      "forward_referenced_terms": [],
+      "detail": "All technical noun phrases resolve to 5.9 concepts_introduced (prohibited uses / Article 5, social scoring, real-time biometric surveillance, narrow biometric-ID exceptions, other Article 5 bans) or prior topics. Reuses 5.7 risk tiers, 5.4 four pillars, 5.1 failure motivation, and 5.8 high-risk obligations as contrast only. No reference to NIST RMF (5.10), White House EO (5.11), India MEITY (5.12), or framework-selection (5.13)."
+    },
+    "length_sanity": {
+      "passed": true,
+      "word_count_estimate": 1340,
+      "range": [1200, 1600],
+      "detail": "~1340 words, comfortably inside the standard profile range [1200,1600] from artifact-mix.json. Not >30% outside range."
+    },
+    "topic_scope": {
+      "passed": true,
+      "scope_creep": [],
+      "detail": "On-headline: unacceptable/prohibited tier, social scoring, real-time biometric surveillance, Article 5 bans, and the narrow biometric exceptions are exactly the topic title. High-risk obligations (5.8 — documentation, testing, human oversight) appear ONLY as a one-line contrast row in the 5.1 table and in 5.6, never taught at depth. That is allowed contrast use, not scope creep."
+    },
+    "beginner_readability": {
+      "passed": true,
+      "findings": [],
+      "detail": "Matches artifact-mix audience baseline. Non-everyday terms defined plainly on first use (prohibited use, social scoring, biometric, real-time, Article 5). No paragraph stacks 3+ new terms (no jargon_dump). Short sentences, active voice, 'you' address; no hedging phrases (no academic_register). Zero distinct soft findings — no escalation."
+    }
+  },
+  "soft_findings": [],
+  "verdict": "PASS — Topic 5.9 corpus clears all six corpus-critic checks as a hard gate. Required sections present and substantive; web_search strict citation density satisfied with all 3 EU sources cited and no fabricated markers; no forward references to 5.10-5.13 (NIST/EO/MEITY/framework-selection); length ~1340w within standard range [1200,1600]; scope held to the prohibited tier + social scoring + real-time biometric surveillance + Article 5 bans + narrow exceptions, with 5.8 high-risk obligations used as contrast only; beginner-readable with terms defined on first use. No sections require revision.",
+  "sections_needing_revision": []
+}

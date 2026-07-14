@@ -1,0 +1,9 @@
+PNG render attempted via: mmdc -i diagram.mmd -o diagram.png -w 1400 -b transparent
+
+Result: mmdc not available in this environment. PNG was not produced.
+
+To render locally:
+  npm install -g @mermaid-js/mermaid-cli
+  mmdc -i diagram.mmd -o diagram.png -w 1400 -b transparent
+
+The .mmd source is valid Mermaid flowchart LR syntax. Preview online at https://mermaid.live by pasting the .mmd content.

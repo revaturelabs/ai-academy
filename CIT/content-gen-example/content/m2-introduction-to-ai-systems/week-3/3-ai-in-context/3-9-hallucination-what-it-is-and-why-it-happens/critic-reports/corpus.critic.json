@@ -1,0 +1,43 @@
+{
+  "passed": true,
+  "checks": {
+    "required_sections": {
+      "passed": true,
+      "notes": "All four required sections present and non-trivial. §3 Learning Objectives: ~110 words (5 numbered objectives with citation markers). §4 Introduction: ~120 words across 3 paragraphs, concrete analogy, direct link to A1 assessment. §5 Core Concepts: ~1010 words across five subsections (5.1–5.5), well exceeds 100-word floor. §10 Key Takeaways: ~120 words in 5 cited bullets."
+    },
+    "citation_density": {
+      "passed": true,
+      "primary_cited": true,
+      "claim_citation_rate": 0.82,
+      "notes": "resources_source=web_search, strict mode applied. Primary resource [1] (arxiv.org/abs/2401.11817) cited 6 times (§3 LO#2, §4, §5.2 ×3, §8, §10). Supporting [2] cited 7 times across §3, §5.1, §5.3, §5.4, §5.5, §8, §10. Supporting [3] cited 4 times in §3, §5.1, §7 ×3. In §5 (Core Concepts): ~12 standalone factual assertions, ~10 carry [N] markers (~83%). §7 (Real-World Patterns): all three case sub-sections carry [3]. §6 (Implementation) is procedural how-to steps, not factual world-assertions — excluded from factual-claim count. Combined §5/§7 claim citation rate ~82%, well above 60% threshold. No fabricated citations detected — all three markers resolve to resources listed in topic.resources.json."
+    },
+    "sequence_drift": {
+      "passed": true,
+      "forward_refs": [],
+      "notes": "All technical terms used in the corpus are either (a) in this topic's concepts_introduced [factual hallucination, attributional hallucination, faithful-but-wrong hallucination, RLHF, overconfidence bias, grounding, provenance] or (b) in prior topics' concepts_introduced: LLM/hallucination (3.2), Transformer/pre-training/prompt (3.2), token/tokenisation/autoregressive decoding/context window/inference (3.4), parameter count/scaling law/emergent capability (3.5), temperature/probability distribution/greedy decoding/top-k/top-p/logits (3.6), calibration (3.8). RAG is explicitly named-and-deferred in §5.5 with 'covered in a later topic' pointer — permitted under the ≤1-sentence named+deferred rule. No forward references detected."
+    },
+    "length_sanity": {
+      "passed": true,
+      "word_count": 2210,
+      "profile": "standard",
+      "notes": "Standard profile target range: 3000–4400 words. Estimated word count ~2210 (frontmatter excluded). This is below the 3000-word floor. However, the skill hard-fails only when count is more than 30% outside the range (floor threshold = 3000 × 0.70 = 2100). At ~2210, the corpus is ~7% below the standard floor — outside the range but within the 30% tolerance band. Soft finding: corpus is shorter than the standard profile target; consider expanding §5.2 (structural mechanism) and §7 (real-world patterns) with additional examples or depth to reach 3000+ words before artifact fan-out."
+    },
+    "scope_creep": {
+      "passed": true,
+      "violations": [],
+      "notes": "Topic headline: 'Hallucination — what it is and why it happens'. Scope check results: (1) RAG architecture — named in §5.5 in two sentences with explicit deferral 'RAG is covered in a later topic.' Named-and-deferred, not taught. (2) Fine-tuning — not mentioned. (3) Prompt injection — not mentioned. (4) Adversarial attacks — not mentioned. (5) Calibration — referenced in §5.5 as 'You encountered calibration in topic 3.8' with a back-reference, not re-defined. Permitted per task brief. (6) RLHF — listed as a new concept introduced by 3.9 (in concepts_introduced); explained at §5.4 in the context of 'why hallucination happens'. Within headline scope. No scope creep violations detected."
+    },
+    "beginner_readability": {
+      "passed": true,
+      "findings": [
+        {
+          "type": "note",
+          "detail": "Table in §5.1 introduces three hallucination type terms simultaneously (factual, attributional, faithful-but-wrong). This is a borderline jargon-dump pattern, but the table format with column definitions ('What it means' + 'Quick example') mitigates the impact — each term is immediately explained. Not escalated to jargon_dump finding."
+        }
+      ],
+      "notes": "LLM spelled out on first use in §4. RLHF spelled out on first use at §5.4 heading. RAG spelled out as 'Retrieval-augmented generation (RAG)' at §5.5. Prereq terms (autoregressive decoding, logits, temperature) used without re-definition per §2 Prerequisites contract — acceptable. Register is plain and conversational throughout. Sentence length is generally under 25 words with occasional longer explanatory sentences. No hedging phrase overuse. Only 1 soft finding (table term introduction) — below the 3-finding escalation threshold. Hard fail not triggered."
+    }
+  },
+  "verdict": "PASS. All six checks pass. Primary resource [1] (arxiv.org) cited 6 times; overall §5/§7 claim citation rate ~82%. No forward references — RAG correctly named-and-deferred, all other terms are prior or newly introduced by this topic. No scope creep. Beginner readability is good with one minor note (§5.1 type table). One soft advisory: word count (~2210) is below the standard profile floor of 3000 words but within the 30% tolerance band — the builder should consider expanding §5.2 or §7 to reach at least 3000 words before downstream artifact generation.",
+  "at": "2026-06-17T00:00:00Z"
+}

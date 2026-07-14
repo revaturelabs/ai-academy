@@ -1,0 +1,30 @@
+{
+  "topic_id": "3.4",
+  "captured_at": "2026-06-17T00:00:00Z",
+  "captured_by": "bhuvaneshwarim@revature.com",
+  "resources_source": "web_search",
+  "web_search_query": "how LLMs work tokens training inference explained beginner 2024 2025",
+  "resources": [
+    {
+      "type": "url",
+      "value": "https://thenewstack.io/what-is-an-llm-token-beginner-friendly-guide-for-developers/",
+      "role": "primary",
+      "source": "web_search",
+      "notes": "Plain-language beginner guide to tokens — what they are, how text is split, why they matter"
+    },
+    {
+      "type": "url",
+      "value": "https://medium.com/@deudney/how-an-llm-actually-learns-a-hilariously-simple-guide-to-training-tokens-and-transformers-29e062427109",
+      "role": "supporting",
+      "source": "web_search",
+      "notes": "Accessible walkthrough of training process — tokens, patterns, transformers — all three concepts in scope"
+    },
+    {
+      "type": "url",
+      "value": "https://bentoml.com/llm/llm-inference-basics/how-does-llm-inference-work",
+      "role": "supporting",
+      "source": "web_search",
+      "notes": "Covers the inference (generation) phase: prefill, decode, autoregressive token prediction"
+    }
+  ]
+}

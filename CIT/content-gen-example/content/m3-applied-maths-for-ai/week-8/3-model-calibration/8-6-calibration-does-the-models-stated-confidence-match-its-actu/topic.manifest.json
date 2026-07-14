@@ -1,0 +1,52 @@
+{
+    "type":  "topic",
+    "id":  "8.6",
+    "title":  "Calibration — does the model\u0027s stated confidence match its actual accuracy?",
+    "slug":  "8-6-calibration-does-the-models-stated-confidence-match-its-actu",
+    "position_in_module":  1,
+    "week_num":  8,
+    "session_name":  "Applied Maths Lab",
+    "module":  {
+                   "position":  3,
+                   "slug":  "3-model-calibration",
+                   "title":  "Model Calibration"
+               },
+    "course":  {
+                   "code":  "M3",
+                   "slug":  "m3-applied-maths-for-ai",
+                   "title":  "Applied Maths for AI"
+               },
+    "next_assessment":  {
+                            "id":  "A3",
+                            "due_week":  10,
+                            "title":  "Maths and Cognition Lab Report",
+                            "weight":  "15%"
+                        },
+    "paths":  {
+                  "corpus":  "topic_corpus.md",
+                  "resources":  "topic.resources.json",
+                  "progress":  "topic.progress.json",
+                  "artifacts_dir":  "artifacts/",
+                  "critic_reports_dir":  "critic-reports/"
+              },
+    "artifact_plan":  {
+                          "confirmed_profile":  "standard",
+                          "reading_word_range":  [
+                                                     1200,
+                                                     1600
+                                                 ],
+                          "reading_minutes_range":  [
+                                                        6,
+                                                        8
+                                                    ],
+                          "quiz_questions_range":  [
+                                                       5,
+                                                       6
+                                                   ],
+                          "quiz_include_short_answer":  false,
+                          "diagram":  true,
+                          "diagram_intent":  "Reliability diagram: stated confidence (x) vs observed accuracy (y) with the 45-degree diagonal, one point below labeled overconfident and one above labeled underconfident."
+                      },
+    "expected_delivery_minutes":  8,
+    "status":  "module_passed"
+}

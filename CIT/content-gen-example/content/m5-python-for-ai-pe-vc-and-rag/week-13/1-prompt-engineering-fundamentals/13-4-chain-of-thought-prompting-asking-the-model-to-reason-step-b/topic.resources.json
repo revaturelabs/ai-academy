@@ -1,0 +1,30 @@
+{
+  "topic_id": "13.4",
+  "captured_at": "2026-06-13T00:00:00Z",
+  "captured_by": "namratas@revature.com",
+  "resources_source": "web_search",
+  "web_search_query": "chain-of-thought prompting step by step reasoning LLM explained",
+  "resources": [
+    {
+      "type": "url",
+      "value": "https://learnprompting.org/docs/intermediate/chain_of_thought",
+      "role": "primary",
+      "source": "web_search",
+      "notes": "Canonical open-source reference — CoT explained with examples"
+    },
+    {
+      "type": "url",
+      "value": "https://www.datacamp.com/tutorial/chain-of-thought-prompting",
+      "role": "supporting",
+      "source": "web_search",
+      "notes": "Tutorial format with practical implementation steps"
+    },
+    {
+      "type": "url",
+      "value": "https://www.altexsoft.com/blog/chain-of-thought-prompting/",
+      "role": "supporting",
+      "source": "web_search",
+      "notes": "Covers CoT variants — zero-shot, few-shot, least-to-most"
+    }
+  ]
+}

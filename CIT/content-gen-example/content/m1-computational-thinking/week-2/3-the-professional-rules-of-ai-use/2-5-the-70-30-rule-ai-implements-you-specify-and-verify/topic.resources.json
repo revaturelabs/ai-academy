@@ -1,0 +1,30 @@
+{
+  "topic_id": "2.5",
+  "captured_at": "2026-06-17",
+  "captured_by": "vishnu.vardhan@revature.com",
+  "resources_source": "web_search",
+  "web_search_query": "70/30 rule AI human specification verify professional AI use",
+  "resources": [
+    {
+      "type": "url",
+      "value": "https://www.generative.inc/what-is-the-30-rule-in-ai",
+      "role": "primary",
+      "source": "web_search",
+      "notes": "Canonical explainer — what the 30% rule is, human roles, oversight in AI collaboration"
+    },
+    {
+      "type": "url",
+      "value": "https://www.altahq.com/post/mastering-the-30-rule-for-ai-a-comprehensive-guide-to-human-ai-collaboration-in-2026",
+      "role": "supporting",
+      "source": "web_search",
+      "notes": "Practical guide — spec vs implementation split, verification steps, applied examples"
+    },
+    {
+      "type": "url",
+      "value": "https://intersog.co.il/blog/what-is-the-30-rule-in-ai/",
+      "role": "supporting",
+      "source": "web_search",
+      "notes": "Beginner-friendly overview — accessible intro to human oversight proportion"
+    }
+  ]
+}

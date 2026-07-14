@@ -1,0 +1,104 @@
+{
+  "topic_id": "9.5",
+  "cycle": 2,
+  "passed": true,
+  "checks": {
+    "positional_bias": {
+      "passed": true,
+      "distribution": [1, 2, 1, 2],
+      "distribution_note": "pos-0: 1 (q3), pos-1: 2 (q1,q6), pos-2: 1 (q4), pos-3: 2 (q2,q5)",
+      "positions_by_question": { "q1": 1, "q2": 3, "q3": 0, "q4": 2, "q5": 3, "q6": 1 },
+      "max_share": 0.333,
+      "threshold": 0.40,
+      "meta_gift_desync": false
+    },
+    "length_bias": {
+      "passed": true,
+      "longest_correct_rate": 0.0,
+      "baseline": 0.25,
+      "threshold": 0.40,
+      "per_question": {
+        "q1": {
+          "correct_len": 115,
+          "distractor_mean": 129.0,
+          "threshold_len": 154.8,
+          "longest_correct": false
+        },
+        "q2": {
+          "correct_len": 131,
+          "distractor_mean": 138.0,
+          "threshold_len": 165.6,
+          "longest_correct": false
+        },
+        "q3": {
+          "correct_len": 159,
+          "distractor_mean": 169.0,
+          "threshold_len": 202.8,
+          "longest_correct": false,
+          "note": "Cycle 1 failure resolved — distractors now avg 169 chars vs correct 159; correct is shorter than mean distractor."
+        },
+        "q4": {
+          "correct_len": 166,
+          "distractor_mean": 150.0,
+          "threshold_len": 180.0,
+          "longest_correct": false,
+          "note": "Cycle 1 failure resolved — correct (166) does not exceed 150.0 × 1.20 = 180.0."
+        },
+        "q5": {
+          "correct_len": 156,
+          "distractor_mean": 155.0,
+          "threshold_len": 186.0,
+          "longest_correct": false,
+          "note": "Cycle 1 failure resolved — correct (156) does not exceed 155.0 × 1.20 = 186.0."
+        },
+        "q6": {
+          "correct_len": 163,
+          "distractor_mean": 145.7,
+          "threshold_len": 174.8,
+          "longest_correct": false,
+          "note": "Cycle 1 failure resolved — correct (163) does not exceed 145.7 × 1.20 = 174.8."
+        }
+      },
+      "meta_reported_rate": 0.0,
+      "meta_matches_derived": true,
+      "note": "Builder claim of 0.0 independently confirmed. All four cycle-1 failures (q3, q4, q5, q6) resolved by lengthening distractor text; correct answers are not longest in any question."
+    },
+    "distractor_plausibility": {
+      "passed": true,
+      "absurd_rate": 0.0,
+      "total_distractors": 18,
+      "absurd_count": 0,
+      "weakest_questions": [
+        {
+          "id": "q2",
+          "distractor": "A calibration error, because the radiologist failed to verify the tool's confidence level before accepting the scan result as complete.",
+          "score": 2,
+          "note": "Calibration error is not a corpus-defined term; low plausibility but not absurd — a beginner could conflate it with a vague sense of system accuracy. Score 2, below absurd threshold."
+        }
+      ]
+    },
+    "objective_coverage": {
+      "passed": true,
+      "uncovered_objectives": [],
+      "orphan_questions": [],
+      "coverage_map": {
+        "LO1 — Define automation bias in plain terms and explain why it is a cognitive bias rather than a deliberate choice": ["q1"],
+        "LO2 — Distinguish between an omission error and a commission error in the context of automation bias": ["q2"],
+        "LO3 — Explain the two main cognitive mechanisms — cognitive offloading and perceived reliability — that cause automation bias to occur": ["q3"],
+        "LO4 — Identify automation bias in real-world examples drawn from aviation, medicine, and AI-assisted tools": ["q4"],
+        "LO5 — Recognise how System 1 thinking (from 9.1) amplifies automation bias when an automated recommendation is presented without explanation": ["q5"],
+        "LO6 — Describe at least two practical steps an individual or organisation can take to reduce the risk of automation bias": ["q6"]
+      }
+    },
+    "beginner_fairness_and_scope": {
+      "passed": true,
+      "findings": [],
+      "note": "All stems use plain language. System 1/System 2 terminology pre-taught in topic 9.1 (listed as prerequisite in corpus §2). Adjacent concepts (anchoring, confirmation bias) appear only as distractor options — correct answers require no knowledge beyond this topic or earlier sequence topics. No jargon_in_stem, out_of_scope_question, or unfair_distractor findings."
+    }
+  },
+  "auto_correction_applied": {
+    "shuffle_round_2": false
+  },
+  "verdict": "Pass — all five checks clean; length bias 0.0 confirmed independently (cycle 1 failure at 0.667 fully resolved).",
+  "at": "2026-06-12T00:00:00Z"
+}

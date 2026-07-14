@@ -1,0 +1,59 @@
+$CATEGORY: CIT/M5/week-13/13-3-few-shot-examples-showing-the-model-what-good-output-looks-l
+
+::13.3-Q1:: A prompt engineer adds three input-output pairs to their prompt before the live task. Which term correctly describes this technique?
+{
+~Zero-shot prompting — the model receives the task description and no worked examples to guide its response#Zero-shot means no examples at all; three pairs placed before the task is the opposite of that.
+~One-shot prompting — the model receives exactly one worked example alongside the task description#One-shot means exactly one example; three pairs exceed that count by definition.
+=Few-shot prompting — the model receives two or more worked examples embedded in the prompt#Correct — two or more example pairs in the prompt is the definition of few-shot prompting.
+~Fine-tuning — the model's internal weights are updated using the example pairs provided in the prompt#Fine-tuning changes model weights through a separate training process; in-prompt examples do not alter weights.
+#### Tests the definition of few-shot prompting and the zero/one/few-shot distinction (corpus §5.1).
+}
+
+::13.3-Q2:: A developer notices that one of their three example pairs uses bullet points while the other two use plain sentences. What problem does this create?
+{
+=The examples become inconsistent, which causes the model to average across the mixed formats rather than follow any one style#Correct — inconsistency across examples is the most common mistake; the model blends the conflicting patterns instead of matching a clear style.
+~The prompt becomes too long and will exceed the model's context window before it reaches the live task input#Length is a separate concern; three short examples rarely fill a context window, and the issue here is format mismatch, not length.
+~The model will refuse to run because it requires all example outputs to share the same punctuation style#Models do not refuse based on punctuation rules; inconsistency degrades output quality but does not cause a refusal.
+~The bullet-point example is treated as a negative example and the model learns to avoid that format completely#Negative examples must be explicitly marked as wrong; an unmarked mixed example is read as equally valid, not as a warning.
+#### Tests identification of the consistency quality dimension and its effect on model output (corpus §5.7).
+}
+
+::13.3-Q3:: You want to build a customer-support bot that always replies in a specific three-part format across every conversation session. Where should you place the few-shot examples?
+{
+~In the user message each time, so the model sees fresh examples with every new user request#Putting examples in the user message is suited to one-off or per-request tasks, not a fixed format that must persist across all sessions.
+~After the live user input so the model reads the task before seeing how to respond to it#Examples must appear before the live input so the model reads the pattern first; placing them after the task breaks the in-context learning signal.
+~In a separate file that the model downloads at runtime to read the examples before responding#Models do not download external files at runtime; all context must be present within the prompt sent in the API call.
+=In the system prompt, so the format examples are present on every call throughout the session#Correct — the system prompt carries persistent session-wide instructions; a fixed-format behaviour belongs there so every user message inherits it.
+#### Tests the placement rule — system prompt for persistent session-wide format, user message for one-off tasks (corpus §5.6).
+}
+
+::13.3-Q4:: After reading your three example pairs, the model replies in exactly the format you demonstrated. Which statement best explains what the model did?
+{
+~It updated its internal parameters using your examples, storing the pattern as new knowledge permanently#Parameter updates require a full training or fine-tuning run; in-prompt examples never change the model's weights.
+=It used in-context learning — reading the pattern from the examples in your prompt and continuing that pattern into its answer#Correct — the model identifies the structure, vocabulary, and format from your examples and extends the pattern; no weights are changed.
+~It searched its training data for identical examples and copied the matching answer from its memory#Models do not search a stored database of exact answers; they generate a response based on patterns across their entire training, guided by the in-prompt examples.
+~It compared your examples against a built-in style guide and selected the closest matching template#There is no built-in style guide or template library; the model infers the pattern from the examples you provide in the prompt.
+#### Tests understanding of in-context learning and what the model does with few-shot examples (corpus §5.2).
+}
+
+::13.3-Q5:: A team writes a few-shot prompt for a one-off data-extraction script they run in a notebook. The extraction format changes with each script. Where is the best place to put the examples?
+{
+~In the system prompt, because the system prompt is always the correct location for any examples used in a prompt#The system prompt suits fixed, session-wide behaviours; when the format changes per script, the system prompt is not the right choice.
+~Embedded in the model's configuration file so the examples persist between separate API calls automatically#Models have no configuration file that persists examples; every API call is stateless and requires the full context in each request.
+=In the user message for each call, because the format is task-specific and changes from one script to the next#Correct — when examples apply only to a single, changing task, the user message is the appropriate location; the system prompt is reserved for session-wide fixed behaviour.
+~Omitted entirely and replaced with a detailed written rule, since rule-based instructions always outperform examples#Rules and examples complement each other; examples are often clearer than rules and are not simply inferior alternatives to written instructions.
+#### Tests application of the placement rule when the use case is one-off and format varies per request (corpus §5.6).
+}
+
+::13.3-Q6:: When a prompt includes no worked examples at all and relies entirely on the model's training to produce the desired format, this approach is called ____ prompting (two words).
+{
+=zero-shot
+=zero shot
+}
+
+::13.3-Q7:: Name two common mistakes when writing few-shot examples and briefly state how to fix each one.
+{
+=Inconsistency across examples (different tones, formats, or structures): fix by making all example outputs follow the same format, tone, and length. Including an inaccurate output in an example: fix by checking every example output against the correct answer before including it in the prompt.
+=Using inconsistent formats across examples: standardise all outputs to the same structure. Using an incorrect answer in an example pair: verify each output is right before adding it to the prompt.
+=Inconsistent examples — fix by aligning all outputs to one format and tone. Wrong outputs in examples — fix by verifying each example answer is correct before adding it.
+}

@@ -1,0 +1,169 @@
+{
+  "critic": "reading-critic",
+  "topic_id": "9.8",
+  "title": "The Judgment Framework — Q2: Can I verify this without the AI?",
+  "run_at": "2026-06-13T00:00:00Z",
+  "passed": true,
+  "verdict": "PASS — all hard checks clear; one soft meta-sidecar schema note only.",
+  "checks": {
+    "format_discipline": {
+      "passed": true,
+      "frontmatter_present": false,
+      "first_line": "# The Judgment Framework — Q2: Can I verify this without the AI?",
+      "meta_sidecar_missing": false,
+      "meta_sidecar_notes": "Sidecar key names deviate slightly from SKILL spec: 'reading_minutes' instead of 'estimated_read_minutes'; 'resources_cited' instead of 'citations_used'; 'sections' key absent. File parses and values are correct — soft note only, not a hard fail.",
+      "section_template_violation": false,
+      "sections_found": [
+        "Overview",
+        "Key Concepts",
+        "Worked Example",
+        "In Practice",
+        "Key Takeaways",
+        "References"
+      ],
+      "sections_order_correct": true,
+      "findings": []
+    },
+    "length": {
+      "passed": true,
+      "word_count_reported": 1389,
+      "target_range": [1200, 1600],
+      "word_count_in_range": true,
+      "estimated_read_minutes": 6.04,
+      "target_minutes_range": [6, 8],
+      "minutes_in_range": true,
+      "findings": []
+    },
+    "citations": {
+      "passed": true,
+      "primary_resource": {
+        "id": "[1]",
+        "url": "https://www.clio.com/resources/ai-for-lawyers/verify-legal-ai-output/",
+        "cited_count": 11,
+        "minimum_required": 1,
+        "passes": true
+      },
+      "all_resources_cited": true,
+      "resources": [
+        { "id": "[1]", "role": "primary", "cited_inline": true },
+        { "id": "[2]", "role": "supporting", "cited_inline": true },
+        { "id": "[3]", "role": "supporting", "cited_inline": true }
+      ],
+      "orphan_markers": [],
+      "orphan_bibliography_entries": [],
+      "findings": []
+    },
+    "no_forward_references": {
+      "passed": true,
+      "forward_references_found": [],
+      "deferred_pointers_found": [
+        {
+          "line": 115,
+          "text": "(Who that accountable person is, and what accountability means, is the subject of topic 9.9.)",
+          "assessment": "Named-and-deferred pointer — acceptable per skill spec."
+        }
+      ],
+      "findings": []
+    },
+    "faithfulness": {
+      "passed": true,
+      "assertions_sampled": 10,
+      "unsupported_assertions": 0,
+      "threshold": 2,
+      "sampled_assertions": [
+        { "reading_line": 5, "claim": "AI cannot verify its own output; same model self-assessment only", "corpus_section": "4", "supported": true },
+        { "reading_line": 11, "claim": "Independent verification definition", "corpus_section": "5.1", "supported": true },
+        { "reading_line": 13, "claim": "Rumour analogy for independent source", "corpus_section": "5.1", "supported": true },
+        { "reading_line": 24, "claim": "Verification vs production distinction (table)", "corpus_section": "5.2", "supported": true },
+        { "reading_line": 35, "claim": "Four verification methods with examples", "corpus_section": "5.3", "supported": true },
+        { "reading_line": 45, "claim": "GDPR 72-hour breach notification, Article 33", "corpus_section": "5.4", "supported": true },
+        { "reading_line": 49, "claim": "Stock price prediction as unverifiable example", "corpus_section": "5.6", "supported": true },
+        { "reading_line": 60, "claim": "Q1 x Q2 decision matrix (4-row table)", "corpus_section": "5.7", "supported": true },
+        { "reading_line": 94, "claim": "Legal pattern — lawyer checks AI clause against legislation", "corpus_section": "7", "supported": true },
+        { "reading_line": 105, "claim": "Asking AI again is not verification; consistency is not correctness", "corpus_section": "8", "supported": true }
+      ],
+      "findings": []
+    },
+    "beginner_readability": {
+      "passed": true,
+      "undefined_terms": {
+        "passed": true,
+        "issues": [],
+        "note": "All non-everyday terms defined at first use: 'independent verification' (line 11, bolded with plain definition), 'production question'/'verification question' (table at lines 27-30 with plain meanings), four method names each followed by immediate explanation. 'Anchoring' at line 41 is back-referenced to topic 9.4 — contextual, not cold."
+      },
+      "jargon_dump": {
+        "passed": true,
+        "issues": []
+      },
+      "abstract_first": {
+        "passed": true,
+        "note": "Rumour analogy precedes abstraction in Key Concepts. Verification methods each lead with a concrete example. Easy/hard/impossible categories use examples before generalisations."
+      },
+      "academic_register": {
+        "passed": true,
+        "hedging_instances": 0,
+        "threshold": 3,
+        "note": "No hedging phrases ('it is generally considered', 'many experts believe', 'various studies have shown') detected. Average sentence length well under 25 words."
+      },
+      "distinct_findings_count": 0,
+      "findings": []
+    },
+    "formatting": {
+      "passed": true,
+      "wall_of_text": {
+        "passed": true,
+        "issues": []
+      },
+      "unlisted_sequence": {
+        "passed": true,
+        "note": "Independent sources (lines 16-20) as bullet list; four methods numbered (lines 35-41); Worked Example as numbered steps; Key Takeaways as bullet list; common mistakes as bold-prefixed bullets."
+      },
+      "no_inline_examples": {
+        "passed": true,
+        "note": "Inline examples in Key Concepts: rumour analogy (line 13), patient/drug dosage (line 31), GDPR 72-hour (line 45), engineer safety factor (line 37). Worked Example section satisfies additional requirement."
+      },
+      "bold_term_shape": {
+        "passed": true,
+        "note": "'Independent verification' bolded at line 11 with inline definition. Method names bolded (lines 35, 37, 39, 41). Common mistakes bolded at lines 105, 106, 107."
+      },
+      "distinct_findings_count": 0,
+      "findings": []
+    },
+    "assessment_references": {
+      "passed": true,
+      "assessment_ids_found": [],
+      "due_weeks_found": [],
+      "grade_weights_found": [],
+      "findings": []
+    },
+    "scope": {
+      "passed": true,
+      "topic_title": "The Judgment Framework — Q2: Can I verify this without the AI?",
+      "scope_creep": false,
+      "q3_content_taught": false,
+      "q3_pointer_only": true,
+      "pointer_line": 115,
+      "pointer_text": "(Who that accountable person is, and what accountability means, is the subject of topic 9.9.)",
+      "findings": []
+    }
+  },
+  "hard_fail_escalation": {
+    "triggered": false,
+    "reason": "scope_creep=false; combined checks-5-6 distinct findings=0 (threshold is 3)."
+  },
+  "diagram_embedded": {
+    "passed": true,
+    "location": "Key Concepts section, lines 57-58",
+    "alt_text": "Q1 × Q2 decision matrix: four cells showing recommended action by cost-of-error level and whether verification is possible",
+    "caption_present": true
+  },
+  "soft_findings_summary": [
+    {
+      "code": "meta_sidecar_key_names",
+      "severity": "soft",
+      "detail": "reading.meta.json uses 'reading_minutes' instead of 'estimated_read_minutes', 'resources_cited' instead of 'citations_used', and omits the 'sections' key. Values are correct; schema alignment to SKILL spec recommended."
+    }
+  ],
+  "total_hard_failures": 0,
+  "total_soft_findings": 1
+}

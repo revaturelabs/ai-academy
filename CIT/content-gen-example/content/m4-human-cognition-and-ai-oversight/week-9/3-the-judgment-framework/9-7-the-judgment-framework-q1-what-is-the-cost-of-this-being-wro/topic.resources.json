@@ -1,0 +1,30 @@
+{
+  "topic_id": "9.7",
+  "captured_at": "2026-06-13T00:00:00Z",
+  "captured_by": "vishnu.vardhan@revature.com",
+  "resources_source": "web_search",
+  "web_search_query": "AI decision making cost of error judgment framework risk assessment wrong",
+  "resources": [
+    {
+      "type": "url",
+      "value": "https://aicompetence.org/risk-aware-decision-framework-complex-ai-systems/",
+      "role": "primary",
+      "source": "web_search",
+      "notes": "Risk-aware decision framework: decision consequence = severity × probability × detectability. Direct match to Q1 cost-of-error framing."
+    },
+    {
+      "type": "url",
+      "value": "https://arxiv.org/pdf/2508.03714",
+      "role": "supporting",
+      "source": "web_search",
+      "notes": "\"Think First, Verify Always\" — human judgment as cognitive firewall before acting on AI output. Academic grounding for Q1 intent."
+    },
+    {
+      "type": "url",
+      "value": "https://corporatefinanceinstitute.com/resources/strategy/how-ai-affects-decision-making/",
+      "role": "supporting",
+      "source": "web_search",
+      "notes": "AI speeds decisions but weakens reasoning quality — accessible framing for why cost-of-error matters before acting on AI output."
+    }
+  ]
+}

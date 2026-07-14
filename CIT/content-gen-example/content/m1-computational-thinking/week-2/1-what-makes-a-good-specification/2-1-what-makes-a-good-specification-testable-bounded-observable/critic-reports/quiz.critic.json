@@ -1,0 +1,80 @@
+{
+  "passed": true,
+  "cycle": 3,
+  "checks": {
+    "positional_bias": {
+      "passed": true,
+      "distribution": {"pos0": 2, "pos1": 1, "pos2": 2, "pos3": 1},
+      "positions_by_question": {"q1": 2, "q2": 0, "q3": 3, "q4": 1, "q5": 0, "q6": 2},
+      "max_share": 0.333,
+      "meta_gift_desync": false,
+      "note": "All 6 correct positions re-derived from quiz.gift match sidecar correct_position_distribution exactly. pos0:2(q2,q5), pos1:1(q4), pos2:2(q1,q6), pos3:1(q3). max_share 2/6=0.333 <= 0.40. Pass."
+    },
+    "length_bias": {
+      "passed": true,
+      "metric": "words (feedback after # stripped)",
+      "per_question": {
+        "q1": {"correct_words": 31, "distractor_mean_words": 27.5, "delta_pct": 12.7, "longest_correct": false},
+        "q2": {"correct_words": 21, "distractor_mean_words": 22.25, "delta_pct": -5.6, "longest_correct": false},
+        "q3": {"correct_words": 41, "distractor_mean_words": 34.25, "delta_pct": 19.7, "longest_correct": false},
+        "q4": {"correct_words": 35, "distractor_mean_words": 30.5, "delta_pct": 14.8, "longest_correct": false},
+        "q5": {"correct_words": 40, "distractor_mean_words": 36.75, "delta_pct": 8.8, "longest_correct": false},
+        "q6": {"correct_words": 37, "distractor_mean_words": 30.75, "delta_pct": 20.3, "longest_correct": false}
+      },
+      "longest_correct_rate": 0.0,
+      "baseline": 0.25,
+      "threshold": 0.40,
+      "note": "No question has its correct answer exceeding mean distractor length by >20% (1.20x). q3 delta 19.7% and q6 delta 20.3% both stay at or under threshold boundary; sidecar confirms both fail=false. Rate 0.0 well under 0.40. Pass."
+    },
+    "distractor_plausibility": {
+      "passed": true,
+      "absurd_rate": 0.0,
+      "total_distractors": 18,
+      "absurd_count": 0,
+      "scoring": {
+        "q1": [3, 3, 4],
+        "q2": [3, 3, 4],
+        "q3": [3, 4, 3],
+        "q4": [3, 4, 3],
+        "q5": [3, 3, 3],
+        "q6": [3, 3, 2]
+      },
+      "weakest_questions": [],
+      "note": "All 18 distractors score 2-4. No obviously absurd (score=1) distractors found. All represent plausible beginner misconceptions about specification properties and AI behavior. absurd_rate 0.0 <= 0.25. Pass."
+    },
+    "objective_coverage": {
+      "passed": true,
+      "corpus_los": [
+        "LO1: Define what a specification is and explain why it matters when working with AI.",
+        "LO2: Describe each of the four properties of a good specification: testable, bounded, observable, and actionable.",
+        "LO3: Identify whether a given specification is missing one or more of those four properties.",
+        "LO4: Rewrite a weak specification to make it stronger by applying all four properties.",
+        "LO5: Explain why AI systems need stricter specifications than human workers do.",
+        "LO6: Evaluate a specification you have written against a four-property checklist."
+      ],
+      "coverage_map": {
+        "LO1": ["q1"],
+        "LO2": ["q3"],
+        "LO3": ["q4"],
+        "LO4": ["q5"],
+        "LO5": ["q2"],
+        "LO6": ["q6"]
+      },
+      "uncovered_objectives": [],
+      "orphan_questions": [],
+      "note": "q6 added in cycle 3 covers LO6 (Evaluate a specification you have written against a four-property checklist — corpus §6, §9). All 6 LOs now covered 1:1. No orphan questions. Cycle-2 blocker resolved."
+    },
+    "beginner_fairness_and_scope": {
+      "passed": true,
+      "jargon_in_stem": [],
+      "out_of_scope_questions": [],
+      "unfair_distractors": [],
+      "note": "All stems use plain English. No undefined acronyms. Every question tests concepts explicitly taught in topic_corpus.md. Distractors represent beginner misconceptions about this topic only; no adjacent or advanced material required."
+    }
+  },
+  "auto_correction_applied": {
+    "shuffle_round_2": false
+  },
+  "verdict": "Pass — all checks clean. Positional bias max_share 0.333, length bias rate 0.0, absurd distractor rate 0.0/18, all 6 LOs covered with no orphans. Cycle-2 hard failure (LO6 uncovered) resolved: q6 added targeting LO6 (four-property checklist self-evaluation, corpus §6/§9).",
+  "at": "2026-06-16T00:00:00Z"
+}

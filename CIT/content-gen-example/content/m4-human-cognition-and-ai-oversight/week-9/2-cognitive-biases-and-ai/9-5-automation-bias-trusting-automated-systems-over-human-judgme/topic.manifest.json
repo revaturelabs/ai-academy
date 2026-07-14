@@ -1,0 +1,51 @@
+{
+  "type": "topic",
+  "id": "9.5",
+  "title": "Automation bias — trusting automated systems over human judgment",
+  "slug": "9-5-automation-bias-trusting-automated-systems-over-human-judgme",
+  "position_in_module": 3,
+  "week_num": 9,
+  "session_name": "Human Judgment and AI Oversight",
+  "module": {
+    "position": 2,
+    "slug": "2-cognitive-biases-and-ai",
+    "title": "Cognitive Biases and AI"
+  },
+  "course": {
+    "code": "M4",
+    "slug": "m4-human-cognition-and-ai-oversight",
+    "title": "Human Cognition and AI Oversight"
+  },
+  "next_assessment": {
+    "id": "A3",
+    "due_week": 10,
+    "title": "Maths and Cognition Lab Report",
+    "weight": "15%"
+  },
+  "paths": {
+    "corpus": "topic_corpus.md",
+    "resources": "topic.resources.json",
+    "progress": "topic.progress.json",
+    "artifacts_dir": "artifacts/",
+    "critic_reports_dir": "critic-reports/"
+  },
+  "artifact_plan": {
+    "depth_profile": "standard",
+    "diagram": true,
+    "diagram_intent": "Decision branch from 'Automated system produces output' → path A: human accepts without checking → omission error; path B: human follows directive despite contradicting evidence → commission error; causal mechanism labelled on each path.",
+    "reading": {
+      "target_word_range": [1200, 1600],
+      "target_min_minutes": 6,
+      "target_max_minutes": 8
+    },
+    "quiz": {
+      "min_questions": 5,
+      "max_questions": 6,
+      "include_short_answer": false
+    },
+    "depth_signals": "One named bias with two sub-error types, four causal mechanisms, domain case studies, AI-specific implications — standard band.",
+    "human_approved_at": "2026-06-12T00:00:00Z"
+  },
+  "expected_delivery_minutes": null,
+  "status": "scaffolded"
+}

@@ -1,0 +1,38 @@
+{
+  "passed": true,
+  "checks": {
+    "required_sections": {
+      "passed": true,
+      "notes": "All four required sections present and non-trivial. Section 3 (Learning Objectives): 6 LOs, ~140 words — well above 50-word minimum. Section 4 (Introduction): ~310 words across 5 paragraphs — well above 50-word minimum. Section 5 (Core Concepts): 6 sub-sections (5.1–5.6) totalling ~1820 words — well above 100-word minimum. Section 10 (Key Takeaways): 5 substantive bullet points, ~135 words — above 50-word minimum. No placeholder strings in any required section."
+    },
+    "citation_density": {
+      "passed": true,
+      "primary_cited": true,
+      "claim_citation_rate": 0.87,
+      "notes": "resources_source=web_search triggers strict mode. Primary resource [1] (arxiv.org/2404.16957) cited in sections 5.1, 5.3, 5.4, 5.5, 5.6, 6, and 7 — primary-cited sub-check: PASS. Across sections 5, 6, and 7 approximately 46 standalone factual assertions identified; ~40 carry a [N] marker (~87%), well above the 60% threshold. Two uncited sentences are synthesised applications of prior case-study content rather than external factual claims (loan failure combination sentence in 5.3; no-blame definitional framing in 5.6). All [N] markers resolve to the three declared resources; no fabricated citations detected."
+    },
+    "sequence_drift": {
+      "passed": true,
+      "forward_refs": [],
+      "notes": "All technical vocabulary traces to either (a) this topic's own concepts_introduced (post-mortem, no-blame post-mortem, proximate cause, root cause, post-incident review) or (b) the nine prerequisite topics 9.7, 9.9, 9.11, 10.1–10.6 listed in the corpus prerequisites section and confirmed in sequence.index.json. 'SRE (Site Reliability Engineering)' in section 7 is spelled out on first use and used as a real-world domain reference, not a forward-curriculum concept — it does not appear in any subsequent topic's concepts_introduced. AI risk scoring and content moderation examples in section 7 apply prior-topic vocabulary (override theater from 10.1, HITL from 10.5, accountability chain from 10.3) without introducing new forward concepts. No forward references detected."
+    },
+    "length_sanity": {
+      "passed": true,
+      "word_count": 5020,
+      "profile": "deep",
+      "notes": "Word count estimated at ~5020 words. Previous run measured ~4800 words before section 7 was expanded; the criminal justice and content moderation paragraph added at line 243 contributes ~220 words, bringing the total to ~5020. This clears the deep-profile floor of 5000 words and falls within the 5000–6000 range. Count is borderline (within ~20 words of floor) — no hard-fail triggered. 30% under-floor threshold would be 3500 words, which is not approached."
+    },
+    "scope_creep": {
+      "passed": true,
+      "findings": [],
+      "notes": "Topic title boundary: 'Writing a post-mortem — what failed, why, who was accountable, what governance would have prevented it.' All content in sections 5–8 directly teaches the four-section post-mortem framework. Section 7 real-world patterns (SRE, criminal justice, content moderation) apply the framework to domain examples without teaching those domains as independent curriculum concepts. The inline definition of 'AI-assisted risk scoring tools' in the criminal justice paragraph is a one-sentence contextualising descriptor, not a bolded or formally defined curriculum concept. All governance vocabulary (HITL checkpoint, risk-tiered component mapping, triggered oversight assignment, error budget) is applied as prior-topic vocabulary with explicit attribution to topics 10.2–10.6, not re-taught. No material found that teaches beyond the headline scope."
+    },
+    "beginner_readability": {
+      "passed": true,
+      "findings": [],
+      "notes": "All non-everyday terms defined on first use: 'post-mortem' defined with Latin etymology and plain meaning in section 4; 'no-blame post-mortem' defined in section 5.1; 'proximate cause' and 'root cause' defined with explicit contrast and concrete examples in section 5.3; 'post-incident review' parenthetically introduced alongside 'post-mortem' in section 5.1; 'SRE (Site Reliability Engineering)' spelled out on first use in section 7. 'HITL' used without re-spell-out in section 8 — permissible as a prior-topic term introduced in topic 10.5 (artifact-mix audience mandate: prior-sequence terms may be reused without re-definition). No jargon dumps detected (no paragraph introduces 3+ new terms simultaneously). Sentences are active voice, second-person address throughout, generally under 25 words. No hedging phrases detected. Zero findings; below 3-finding escalation threshold."
+    }
+  },
+  "verdict": "PASS. All six checks pass on this final revision. Required sections are present and substantive. Citation density at ~87% across sections 5+6+7 substantially exceeds the 60% threshold; primary resource [1] is cited throughout; no fabricated citations. No forward references detected — all vocabulary traces to this topic's own concepts_introduced or prior topics 10.1–10.6. Word count ~5020 clears the deep-profile floor of 5000 words (the section 7 expansion addressed the single blocking issue from the previous run). Scope remains tightly bounded to the post-mortem four-section framework. Beginner readability is solid with zero findings. Corpus is cleared to proceed to HITL #2.",
+  "at": "2026-06-13T00:00:00Z"
+}

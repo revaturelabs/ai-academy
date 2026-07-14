@@ -1,0 +1,70 @@
+{
+  "passed": true,
+  "checks": {
+    "positional_bias": {
+      "passed": true,
+      "distribution": {"0": 2, "1": 1, "2": 2, "3": 1},
+      "max_share": 0.333,
+      "meta_gift_desync": false,
+      "note": "Derived positions [2,0,3,1,2,0] match sidecar exactly."
+    },
+    "length_bias": {
+      "passed": true,
+      "longest_correct_rate": 0.0,
+      "baseline": 0.25,
+      "per_question": [
+        {"id": "7.8-q1", "correct_len": 93, "mean_distractor_len": 89.3, "threshold": 107.2, "longest_correct": false},
+        {"id": "7.8-q2", "correct_len": 107, "mean_distractor_len": 94.7, "threshold": 113.6, "longest_correct": false},
+        {"id": "7.8-q3", "correct_len": 83, "mean_distractor_len": 86.0, "threshold": 103.2, "longest_correct": false},
+        {"id": "7.8-q4", "correct_len": 94, "mean_distractor_len": 94.3, "threshold": 113.2, "longest_correct": false},
+        {"id": "7.8-q5", "correct_len": 97, "mean_distractor_len": 93.0, "threshold": 111.6, "longest_correct": false},
+        {"id": "7.8-q6", "correct_len": 99, "mean_distractor_len": 100.3, "threshold": 120.4, "longest_correct": false}
+      ]
+    },
+    "distractor_plausibility": {
+      "passed": true,
+      "absurd_rate": 0.0,
+      "total_distractors": 18,
+      "absurd_count": 0,
+      "weakest_questions": [],
+      "scores": [
+        {"id": "7.8-q1", "distractors": [4, 4, 3]},
+        {"id": "7.8-q2", "distractors": [3, 3, 4]},
+        {"id": "7.8-q3", "distractors": [3, 3, 3]},
+        {"id": "7.8-q4", "distractors": [4, 3, 3]},
+        {"id": "7.8-q5", "distractors": [4, 3, 3]},
+        {"id": "7.8-q6", "distractors": [3, 4, 3]}
+      ]
+    },
+    "objective_coverage": {
+      "passed": true,
+      "lo_to_questions": {
+        "LO1 — Explain in plain English what precision means.": ["7.8-q1"],
+        "LO2 — Define true positive and false positive in the context of flagged predictions.": ["7.8-q2", "7.8-q4"],
+        "LO3 — Apply precision formula (TP / (TP+FP)) to a simple scenario.": ["7.8-q3"],
+        "LO4 — Explain why high accuracy does not equal high precision.": ["7.8-q5"],
+        "LO5 — Identify a real-world situation where precision matters most.": ["7.8-q6"]
+      },
+      "uncovered_objectives": [],
+      "orphan_questions": []
+    },
+    "scope_and_fairness": {
+      "passed": true,
+      "out_of_scope_questions": [],
+      "jargon_in_stem": [],
+      "soft_flags": [
+        {
+          "question": "7.8-q6",
+          "distractor": "d4",
+          "text": "The model should instead optimise recall so that no patient with cancer is ever missed by the system.",
+          "finding": "unfair_distractor — soft flag only. Distractor names 'recall' (topic 7.9) but does not require the learner to know its definition to eliminate it; the stem's framing (false-alarm harm) makes it rejectable on precision knowledge alone. Not a hard fail."
+        }
+      ]
+    }
+  },
+  "auto_correction_applied": {
+    "shuffle_round_2": false
+  },
+  "verdict": "Pass — all checks clean. Positional distribution {0:2,1:1,2:2,3:1} with max_share 0.33 ≤ 0.40. Length bias rate 0/6 = 0.0. Absurd distractor rate 0/18 = 0.0. All 5 LOs covered with no orphan questions. One soft scope flag on 7.8-q6 d4 (names 'recall') — not a hard fail as correct answer is reachable without recall knowledge.",
+  "at": "2026-06-23T00:00:00Z"
+}

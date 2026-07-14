@@ -1,0 +1,229 @@
+{
+  "topic_id": "4.1",
+  "stage": "module_passed",
+  "gates": {
+    "resources_captured": true,
+    "corpus_generated": true,
+    "corpus_critic_passed": true,
+    "corpus_human_approved": true,
+    "reading_generated": true,
+    "reading_critic_passed": true,
+    "quiz_generated": true,
+    "quiz_critic_passed": true,
+    "diagram_generated": true,
+    "diagram_critic_passed": true,
+    "module_drift_passed": true,
+    "course_drift_passed": true,
+    "topic_artifacts_human_approved": true,
+    "week_human_approved": true
+  },
+  "history": [
+    {
+      "at": "2026-06-16T12:47:30Z",
+      "op": "set",
+      "gate": "resources_captured",
+      "value": true
+    },
+    {
+      "at": "2026-06-16T12:47:30Z",
+      "op": "stage",
+      "to": "awaiting_corpus"
+    },
+    {
+      "at": "2026-06-16T12:47:30Z",
+      "op": "log",
+      "msg": "Captured 3 resources (source=web_search, primary: cloud.google.com/discover/what-are-foundation-models)"
+    },
+    {
+      "at": "2026-06-16T12:52:39Z",
+      "op": "set",
+      "gate": "corpus_generated",
+      "value": true
+    },
+    {
+      "at": "2026-06-16T12:52:39Z",
+      "op": "stage",
+      "to": "awaiting_corpus_critic"
+    },
+    {
+      "at": "2026-06-16T12:52:39Z",
+      "op": "log",
+      "msg": "Corpus generated — standard depth, diagram=true"
+    },
+    {
+      "at": "2026-06-16T12:55:15Z",
+      "op": "set",
+      "gate": "corpus_critic_passed",
+      "value": false
+    },
+    {
+      "at": "2026-06-16T12:55:15Z",
+      "op": "log",
+      "msg": "Critic failed: citation density ~38% in Real-World Patterns (need 60%); 5 uncited claims in s7 + 1 in s5.3"
+    },
+    {
+      "at": "2026-06-16T12:59:11Z",
+      "op": "set",
+      "gate": "corpus_critic_passed",
+      "value": true
+    },
+    {
+      "at": "2026-06-16T12:59:12Z",
+      "op": "stage",
+      "to": "awaiting_corpus_human_review"
+    },
+    {
+      "at": "2026-06-16T12:59:12Z",
+      "op": "log",
+      "msg": "Corpus critic passed (cycle 2) — 5 soft findings carry to HITL #2/#3"
+    },
+    {
+      "at": "2026-06-16T13:07:37Z",
+      "op": "set",
+      "gate": "corpus_human_approved",
+      "value": true
+    },
+    {
+      "at": "2026-06-16T13:07:37Z",
+      "op": "stage",
+      "to": "corpus_approved"
+    },
+    {
+      "at": "2026-06-16T13:07:37Z",
+      "op": "log",
+      "msg": "HITL #2 passed — all sections approved, standard profile confirmed, diagram=true"
+    },
+    {
+      "at": "2026-06-16T13:17:02Z",
+      "op": "set",
+      "gate": "diagram_generated",
+      "value": true
+    },
+    {
+      "at": "2026-06-16T13:17:02Z",
+      "op": "set",
+      "gate": "diagram_critic_passed",
+      "value": true
+    },
+    {
+      "at": "2026-06-16T13:17:02Z",
+      "op": "stage",
+      "to": "awaiting_diagram_critic"
+    },
+    {
+      "at": "2026-06-16T13:17:02Z",
+      "op": "log",
+      "msg": "Diagram generated + critic passed — two-panel contrast (FM vs narrow AI), PNG rendered 41KB"
+    },
+    {
+      "at": "2026-06-16T13:17:44Z",
+      "op": "stage",
+      "to": "corpus_approved"
+    },
+    {
+      "at": "2026-06-16T13:17:44Z",
+      "op": "log",
+      "msg": "Advanced to corpus_approved — diagram generated and critic passed"
+    },
+    {
+      "at": "2026-06-16T13:20:43Z",
+      "op": "set",
+      "gate": "reading_generated",
+      "value": true
+    },
+    {
+      "at": "2026-06-16T13:20:43Z",
+      "op": "set",
+      "gate": "quiz_generated",
+      "value": true
+    },
+    {
+      "at": "2026-06-16T13:20:44Z",
+      "op": "stage",
+      "to": "awaiting_reading_critic"
+    },
+    {
+      "at": "2026-06-16T13:20:44Z",
+      "op": "log",
+      "msg": "Reading 1700w/9min generated (slightly over standard 1600/8min). Quiz 5q generated, bias_defense=true"
+    },
+    {
+      "at": "2026-06-16T13:24:56Z",
+      "op": "set",
+      "gate": "reading_critic_passed",
+      "value": true
+    },
+    {
+      "at": "2026-06-16T13:24:56Z",
+      "op": "set",
+      "gate": "quiz_critic_passed",
+      "value": false
+    },
+    {
+      "at": "2026-06-16T13:24:57Z",
+      "op": "log",
+      "msg": "Reading critic PASS. Quiz critic FAIL — length bias 80% (correct answer longest in 4/5 MCQs, threshold 40%)"
+    },
+    {
+      "at": "2026-06-16T13:33:00Z",
+      "op": "set",
+      "gate": "quiz_critic_passed",
+      "value": true
+    },
+    {
+      "at": "2026-06-16T13:33:00Z",
+      "op": "stage",
+      "to": "awaiting_topic_artifacts_review"
+    },
+    {
+      "at": "2026-06-16T13:33:00Z",
+      "op": "log",
+      "msg": "Quiz critic PASS (cycle 2) — length bias fixed (0.80 -> 0.00). All critics passed. Awaiting HITL #3."
+    },
+    {
+      "at": "2026-06-16T13:46:14Z",
+      "op": "set",
+      "gate": "topic_artifacts_human_approved",
+      "value": true
+    },
+    {
+      "at": "2026-06-16T13:46:14Z",
+      "op": "stage",
+      "to": "topic_artifacts_approved"
+    },
+    {
+      "at": "2026-06-16T13:46:14Z",
+      "op": "log",
+      "msg": "HITL #3 approved — reading/quiz/diagram all passed. 5 soft corpus findings noted. Week running 9/90 min."
+    },
+    {
+      "at": "2026-06-17T17:23:21Z",
+      "op": "set",
+      "gate": "module_drift_passed",
+      "value": true
+    },
+    {
+      "at": "2026-06-17T17:23:21Z",
+      "op": "stage",
+      "to": "module_passed"
+    },
+    {
+      "at": "2026-06-17T17:26:01Z",
+      "op": "set",
+      "gate": "week_human_approved",
+      "value": true
+    },
+    {
+      "at": "2026-06-23T10:39:00Z",
+      "op": "set",
+      "gate": "course_drift_passed",
+      "value": true
+    },
+    {
+      "at": "2026-06-23T11:29:08Z",
+      "op": "set",
+      "gate": "course_drift_passed",
+      "value": true
+    }
+  ]
+}

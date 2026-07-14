@@ -1,0 +1,54 @@
+{
+  "topic_id": "9.3",
+  "generated_at": "2026-06-12T00:00:00Z",
+  "format": "gift",
+  "question_count": 6,
+  "depth_profile": "standard",
+  "include_short_answer": false,
+  "$bias_defense_applied": true,
+  "$shuffle_seed": "hash(9.3) = ord('9') XOR ord('.') XOR ord('3') = 56; positions cycled [0,1,2,3,0,1] with max_share check (0.33 <= 0.40) and all-positions-used check passed",
+  "correct_position_distribution": {
+    "pos0": 2,
+    "pos1": 2,
+    "pos2": 1,
+    "pos3": 1
+  },
+  "questions": [
+    {
+      "id": "9-3-q1",
+      "type": "mcq",
+      "objective_ref": "LO1 — Define confirmation bias in plain language and identify it as a systematic (not random) tendency of human cognition.",
+      "correct_position": 0
+    },
+    {
+      "id": "9-3-q2",
+      "type": "mcq",
+      "objective_ref": "LO2 — Describe the three mechanisms through which confirmation bias operates: selective search, biased interpretation, and selective memory.",
+      "correct_position": 1
+    },
+    {
+      "id": "9-3-q3",
+      "type": "mcq",
+      "objective_ref": "LO3 — Explain why confirmation bias is automatic and effortless by connecting it to System 1 heuristic processing and cognitive economy.",
+      "correct_position": 2
+    },
+    {
+      "id": "9-3-q4",
+      "type": "mcq",
+      "objective_ref": "LO4 — Recall Peter Wason's 2-4-6 task as experimental evidence that people seek confirming rather than disconfirming evidence.",
+      "correct_position": 3
+    },
+    {
+      "id": "9-3-q5",
+      "type": "mcq",
+      "objective_ref": "LO5 — Apply the concept of confirmation bias to the context of evaluating AI outputs, identifying how the bias can cause a practitioner to misjudge an AI system's quality.",
+      "correct_position": 0
+    },
+    {
+      "id": "9-3-q6",
+      "type": "mcq",
+      "objective_ref": "LO6 — Recognise that awareness of a bias does not automatically eliminate it, and that motivated reasoning can persist even under deliberate System 2 thinking.",
+      "correct_position": 1
+    }
+  ]
+}

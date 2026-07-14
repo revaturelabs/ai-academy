@@ -1,0 +1,49 @@
+$CATEGORY: CIT/M3/week-7/7-8-precision-of-the-things-the-model-flagged-how-many-were-actu
+
+::7.8-q1:: In plain English, what does precision measure for a classification model? {
+~The share of all items in the dataset the model predicted correctly, both positive and negative.#No — that describes accuracy, which counts across every prediction, not just the flags.
+~The share of all genuinely positive items that the model successfully detected and flagged.#No — that describes recall, which looks at how many real positives the model found, not how reliable its flags are.
+=The share of items the model flagged as positive that were actually positive in the real world.#Correct — precision only looks at the flagged group and asks how many of those flags were right.
+~The total number of positive predictions the model made across the entire dataset.#No — a raw count is not a share; precision is a ratio between 0 and 1, not a total count.
+#### Tests LO1\: plain-English definition of precision (corpus §5.4).
+}
+
+::7.8-q2:: A spam filter marks a legitimate email from your bank as spam. How is this outcome classified? {
+=False positive — the model flagged the email as positive (spam), but the ground truth is negative (not spam).#Correct — a false positive is a flag the model raised on an item that should not have been flagged.
+~True positive — the model correctly identified a positive case that the ground truth confirms.#No — a true positive requires the flagged item to genuinely be positive, but this email is legitimate.
+~True negative — the model correctly left a negative item unflagged and the ground truth agrees.#No — a true negative means the model did NOT flag the item; here the model did flag it.
+~False negative — the model failed to flag a positive item that the ground truth says is positive.#No — a false negative is a missed detection; here the model raised a flag, so this cannot be a false negative.
+#### Tests LO2\: definition of false positive in the context of flagged predictions (corpus §5.3).
+}
+
+::7.8-q3:: A content-moderation system flags 80 posts as harmful. After review, 64 are genuinely harmful and 16 are harmless. What is the system's precision? {
+~0.64 — derived by dividing the true positives by the total number of posts reviewed.#No — the denominator should be the total flags raised (80), not the total posts reviewed (1,000).
+~0.20 — derived by dividing the false positives by the total number of flags raised.#No — this calculates the false-alarm rate, not precision; precision uses true positives in the numerator.
+~0.70 — derived by averaging true positives and false positives and dividing by total flags.#No — precision does not average TP and FP; it divides TP by the sum TP + FP.
+=0.80 — derived by dividing the 64 true positives by the 80 total flags (64 + 16).#Correct — precision = TP / (TP + FP) = 64 / 80 = 0.80.
+#### Tests LO3\: applying the precision formula to a worked scenario (corpus §5.4, §5.6).
+}
+
+::7.8-q4:: A disease-screening algorithm reviews 500 patient records, flags 40 as likely ill, and 32 of those 40 genuinely have the disease. Which term describes those 32 correctly flagged patients? {
+~False positives, because the model flagged them and they require further clinical investigation.#No — false positives are incorrectly flagged; these 32 patients were correctly identified by the model.
+=True positives, because the model flagged them and the ground truth confirms they are positive.#Correct — a true positive is a case the model flagged that really is positive.
+~False negatives, because some patients with the disease were missed by the algorithm entirely.#No — false negatives are patients the model did NOT flag but who are actually ill; the 32 were flagged.
+~True negatives, because the algorithm correctly identified a large group within the full dataset.#No — true negatives are items the model correctly left unflagged; these 32 were flagged, not left unflagged.
+#### Tests LO2\: definition of true positive in the context of flagged predictions (corpus §5.2).
+}
+
+::7.8-q5:: A spam filter labels every single email as "not spam." It achieves 98% accuracy on a dataset where 98% of emails are legitimate. Which statement is correct about its precision? {
+~Its precision is also 98%, because precision and accuracy track the same overall success rate.#No — precision and accuracy measure different things; accuracy counts all predictions, precision only counts flagged items.
+~Its precision is 0%, because every positive item in the dataset was missed by the filter.#No — 0% precision would mean every flag was wrong; this filter raised no flags at all, making precision undefined, not 0%.
+=Its precision is undefined, because the filter never flagged anything so the denominator is zero.#Correct — precision = TP / (TP + FP); if no items were ever flagged, TP and FP are both zero, giving division by zero.
+~Its precision is 2%, because spam makes up 2% of the dataset and that sets the precision ceiling.#No — 2% would be the precision of a filter that flags everything; a filter that flags nothing has an undefined denominator.
+#### Tests LO4\: why high accuracy does not guarantee high precision (corpus §5.6).
+}
+
+::7.8-q6:: A hospital uses an AI system to flag patients for urgent cancer screening. Which concern makes precision the most critical metric to monitor closely? {
+=Each false positive sends a healthy patient through stressful, costly follow-up tests unnecessarily.#Correct — when a false alarm causes direct harm to patients, precision directly measures how often those harmful false alarms occur.
+~Each true positive confirms the model is working, so the team only needs to track the count of correct flags.#No — counting correct flags ignores the false alarms that cause patient harm; precision captures the ratio, not just the count.
+~High accuracy already guarantees the model is safe to use without checking additional metrics.#No — accuracy can be high while precision is low; a model that rarely flags anyone can achieve high accuracy while missing real cases.
+~The model should instead optimise recall so that no patient with cancer is ever missed by the system.#No — recall is about missed positives, not false alarms; when false alarms cause patient harm, precision is the metric that tracks that specific risk.
+#### Tests LO5\: identifying a real-world situation where precision is the metric that matters most (corpus §5.7, §7).
+}

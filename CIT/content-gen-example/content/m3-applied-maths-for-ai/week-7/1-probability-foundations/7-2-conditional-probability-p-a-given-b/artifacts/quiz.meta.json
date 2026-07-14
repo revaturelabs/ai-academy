@@ -1,0 +1,43 @@
+{
+  "topic_id": "7.2",
+  "generated_at": "2026-06-22T00:00:00Z",
+  "format": "gift",
+  "question_count": 5,
+  "profile": "standard",
+  "$bias_defense_applied": true,
+  "$shuffle_seed": "shuffle-7b",
+  "correct_position_distribution": {"0": 1, "1": 2, "2": 1, "3": 1},
+  "max_share": 0.40,
+  "questions": [
+    {
+      "id": "q1",
+      "type": "mcq",
+      "objective_ref": "Explain in plain language what conditional probability means — why knowing that one thing has already happened changes the likelihood of something else.",
+      "correct_position": 1
+    },
+    {
+      "id": "q2",
+      "type": "mcq",
+      "objective_ref": "Identify the reduced sample space when a condition is given, and use it to calculate a conditional probability.",
+      "correct_position": 3
+    },
+    {
+      "id": "q3",
+      "type": "mcq",
+      "objective_ref": "Apply the conditional probability formula P(A|B) = P(A and B) / P(B) to a simple worked example.",
+      "correct_position": 0
+    },
+    {
+      "id": "q4",
+      "type": "mcq",
+      "objective_ref": "Distinguish between P(A) — the probability of A on its own — and P(A|B) — the probability of A once you know B has occurred.",
+      "correct_position": 2
+    },
+    {
+      "id": "q5",
+      "type": "mcq",
+      "objective_ref": "Give one real-world example of conditional probability in everyday life and one in an AI context.",
+      "correct_position": 1
+    }
+  ]
+}

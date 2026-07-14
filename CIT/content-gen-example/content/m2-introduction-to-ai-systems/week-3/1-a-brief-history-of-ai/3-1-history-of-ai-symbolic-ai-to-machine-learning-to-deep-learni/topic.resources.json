@@ -1,0 +1,30 @@
+{
+  "topic_id": "3.1",
+  "captured_at": "2026-06-17T00:00:00Z",
+  "captured_by": "bhuvaneshwarim@revature.com",
+  "resources_source": "web_search",
+  "web_search_query": "history of AI symbolic AI machine learning deep learning LLMs evolution",
+  "resources": [
+    {
+      "type": "url",
+      "value": "https://ieeexplore.ieee.org/document/11202920",
+      "role": "primary",
+      "source": "web_search",
+      "notes": "Academic paper — full arc from classical ML to modern LLMs"
+    },
+    {
+      "type": "url",
+      "value": "https://toloka.ai/blog/history-of-llms/",
+      "role": "supporting",
+      "source": "web_search",
+      "notes": "Comprehensive chronological timeline 1950–2026"
+    },
+    {
+      "type": "url",
+      "value": "https://machinemindscape.com/artificial-intelligence-to-deep-learning-history-concepts/",
+      "role": "supporting",
+      "source": "web_search",
+      "notes": "Educational explainer — symbolic AI to deep learning arc"
+    }
+  ]
+}

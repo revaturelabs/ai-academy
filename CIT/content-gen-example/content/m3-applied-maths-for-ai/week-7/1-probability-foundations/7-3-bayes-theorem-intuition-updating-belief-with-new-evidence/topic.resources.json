@@ -1,0 +1,30 @@
+{
+  "topic_id": "7.3",
+  "captured_at": "2026-06-22T00:00:00Z",
+  "captured_by": "namratas@revature.com",
+  "resources_source": "web_search",
+  "web_search_query": "Bayes theorem intuition explained beginner updating belief evidence",
+  "resources": [
+    {
+      "type": "url",
+      "value": "https://betterexplained.com/articles/an-intuitive-and-short-explanation-of-bayes-theorem/",
+      "role": "primary",
+      "source": "web_search",
+      "notes": "Intuition-first, no-formula approach — matches narrative seed 'without formula derivation'"
+    },
+    {
+      "type": "url",
+      "value": "https://chrispiech.github.io/probabilityForComputerScientists/en/part1/bayes_theorem/",
+      "role": "supporting",
+      "source": "web_search",
+      "notes": "Stanford CS probability course — rigorous but accessible, supports 7.2 conditional probability linkage"
+    },
+    {
+      "type": "url",
+      "value": "https://towardsdatascience.com/bayesian-updating-simply-explained-c2ed3e563588/",
+      "role": "supporting",
+      "source": "web_search",
+      "notes": "Practical belief-updating examples with real-world framing matching AI confidence narrative"
+    }
+  ]
+}

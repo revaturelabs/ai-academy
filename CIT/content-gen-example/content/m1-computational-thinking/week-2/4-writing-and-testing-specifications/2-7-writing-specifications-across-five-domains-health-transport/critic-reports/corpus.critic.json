@@ -1,0 +1,83 @@
+{
+  "critic": "corpus-critic",
+  "topic_id": "2.7",
+  "topic_title": "Writing specifications across five domains — health, transport, education, food, scheduling",
+  "at": "2026-06-17T00:00:00Z",
+  "passed": true,
+  "verdict": "All six checks pass. Corpus is approved to ground downstream artifacts.",
+  "checks": {
+    "required_sections": {
+      "passed": true,
+      "detail": {
+        "section_3_learning_objectives": {
+          "passed": true,
+          "note": "Five substantive bullet LOs, well above 50-word minimum."
+        },
+        "section_4_introduction": {
+          "passed": true,
+          "note": "Three full paragraphs, well above 50-word minimum."
+        },
+        "section_5_core_concepts": {
+          "passed": true,
+          "note": "Seven subsections (5.1–5.7) covering four-part structure plus five domain examples. Well above 100-word minimum."
+        },
+        "section_10_key_takeaways": {
+          "passed": true,
+          "note": "Five substantive bullet items, well above 50-word minimum."
+        }
+      }
+    },
+    "citation_density": {
+      "passed": true,
+      "resources_source": "web_search",
+      "detail": {
+        "primary_cited": true,
+        "primary_resource": "https://mitsloanedtech.mit.edu/ai/basics/effective-prompts/",
+        "primary_citation_count": 8,
+        "sections_checked": ["5", "6", "7"],
+        "estimated_factual_assertion_blocks": 18,
+        "citation_bearing_blocks": 15,
+        "coverage_pct": 83,
+        "threshold_pct": 60,
+        "note": "Two uncited blocks identified: (a) the four-property mapping paragraph in §5.1 and (b) the 'What does not change' summary block in §5.7. Both are synthetic restatements of concepts already grounded elsewhere in the corpus rather than new standalone factual claims. Coverage is 83%, above the 60% threshold."
+      }
+    },
+    "sequence_drift": {
+      "passed": true,
+      "forward_references": [],
+      "detail": "All technical terms used in the corpus are drawn from 2.7's own concepts_introduced (domain-specific specification, four-part spec structure, domain context, domain-specific constraint, domain-specific output format, explicit exclusion) or from prior topics 1.1–2.6 (testable, bounded, observable, actionable, vague specification, constraint language, input identification, expected output, failure condition, specification template, 70/30 rule, accountability split, sensitive data, etc.). No references to 2.8 (spec testing) or 2.9 (iteration). 'GI index' in §8 is used meta-referentially as an example of domain jargon to avoid, not introduced as a concept — not a forward reference."
+    },
+    "length_sanity": {
+      "passed": true,
+      "profile": "standard",
+      "word_count_approximate": 3340,
+      "range_min": 3000,
+      "range_max": 4400,
+      "note": "~3340 words falls within the 3000–4400 standard profile range."
+    },
+    "topic_scope": {
+      "passed": true,
+      "scope_creep_findings": [],
+      "detail": "Corpus stays on 'writing specs across five domains'. §6 (Implementation) teaches the four-part writing process — on-scope. §7 (Real-World Patterns) cites external professional frameworks as evidence — on-scope. §8 (Best Practices) provides domain-specific anti-patterns — on-scope. The health-domain reminder in §5.2 is a one-sentence back-reference to 2.6, within the 'named-and-deferred one-liner' allowance. No content teaches spec testing (2.8) or iteration (2.9)."
+    },
+    "beginner_readability": {
+      "passed": true,
+      "hard_fail_escalated": false,
+      "findings": [],
+      "detail": {
+        "undefined_terms": {
+          "count": 0,
+          "note": "All non-everyday terms defined on first use. 'Four-part spec structure' fully explicated in §5.1 table. 'Testable/bounded/observable/actionable' back-referenced from §2 prerequisites. 'Specification Portfolio (A1)' introduced with full context in §4."
+        },
+        "jargon_dump": {
+          "found": false,
+          "note": "§5.1 introduces four parts via a structured table (one row = one part), not a paragraph dump. No paragraph introduces 3+ new terms simultaneously."
+        },
+        "academic_register": {
+          "found": false,
+          "note": "Register is consistently plain and conversational. No hedging phrases detected. Sentence lengths within normal range."
+        }
+      }
+    }
+  }
+}

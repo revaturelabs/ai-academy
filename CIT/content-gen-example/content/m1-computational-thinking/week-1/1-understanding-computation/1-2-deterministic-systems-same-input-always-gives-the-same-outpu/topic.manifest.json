@@ -1,0 +1,52 @@
+{
+  "type": "topic",
+  "id": "1.2",
+  "title": "Deterministic systems — same input always gives the same output",
+  "slug": "1-2-deterministic-systems-same-input-always-gives-the-same-outpu",
+  "position_in_module": 2,
+  "week_num": 1,
+  "session_name": "How Machines Think",
+  "module": {
+    "position": 1,
+    "slug": "1-understanding-computation",
+    "title": "Understanding Computation"
+  },
+  "course": {
+    "code": "M1",
+    "slug": "m1-computational-thinking",
+    "title": "Computational Thinking"
+  },
+  "next_assessment": {
+    "id": "A1",
+    "due_week": 3,
+    "title": "Specification Portfolio",
+    "weight": "10%"
+  },
+  "paths": {
+    "corpus": "topic_corpus.md",
+    "resources": "topic.resources.json",
+    "progress": "topic.progress.json",
+    "artifacts_dir": "artifacts/",
+    "critic_reports_dir": "critic-reports/"
+  },
+  "artifact_plan": {
+    "depth_profile": "standard",
+    "reading": {
+      "target_min_minutes": 6,
+      "target_max_minutes": 8,
+      "target_word_range": [
+        1200,
+        1600
+      ]
+    },
+    "quiz": {
+      "min_questions": 5,
+      "max_questions": 6,
+      "include_short_answer": false
+    },
+    "diagram": true,
+    "diagram_intent": "Side-by-side flow contrast: left column shows a deterministic system (same input to same fixed output, run 1 and run 2 identical); right column labels the non-deterministic contrast path (covered in topic 1.3)."
+  },
+  "expected_delivery_minutes": 7,
+  "status": "corpus_drafted"
+}

@@ -1,0 +1,175 @@
+{
+  "critic": "reading-critic",
+  "topic_id": "3.1",
+  "run_at": "2026-06-17T00:00:00Z",
+  "passed": true,
+  "verdict": "PASS. All checks clear. The prior scope_creep hard-fail (appositive on 'Large language models' at line 122) has been resolved — the sentence now reads 'Large language models are introduced in topic 3.2.' with no defining clause, fully compliant with scope_discipline mention-and-defer rules. Format: no frontmatter, sidecar valid, six fixed sections in correct order. Length: 1453 words within [1200–1600]; ~7.3 min at 200 wpm within [6–8]. Citations: primary [1] cited throughout; [2] and [3] cited; bibliography complete, no orphans. No forward references beyond the now-compliant single-sentence LLM defer. Faithfulness: 10 sampled assertions all trace to corpus. Beginner readability: every non-everyday term defined at first use, no jargon dumps, concrete-first ordering throughout, no academic hedging detected. Formatting: no walls of text, procedures rendered as numbered lists, inline examples in every concept section, bold-term definitions well-formed. No assessment references. No scope_creep. No gold example exists for topic 3.1 (gold-examples/reading/ holds only 2.1 and 3.4); verdict is against the written standards in artifact-mix.json and SKILL.md.",
+  "checks": {
+    "check_0_format_discipline": {
+      "passed": true,
+      "findings": [],
+      "detail": {
+        "frontmatter_present": false,
+        "meta_sidecar_missing": false,
+        "section_template_violation": false,
+        "sections_found": ["Overview", "Key Concepts", "Worked Example", "In Practice", "Key Takeaways", "References"],
+        "sections_expected": ["Overview", "Key Concepts", "Worked Example", "In Practice", "Key Takeaways", "References"],
+        "order_correct": true
+      }
+    },
+    "check_1_length_budget": {
+      "passed": true,
+      "findings": [],
+      "detail": {
+        "word_count_reported": 1453,
+        "target_word_range": [1200, 1600],
+        "word_count_in_range": true,
+        "estimated_minutes_at_200wpm": 7.3,
+        "estimated_minutes_at_230wpm": 6.3,
+        "target_minute_range": [6, 8],
+        "minutes_in_range": true
+      }
+    },
+    "check_2_citation_discipline": {
+      "passed": true,
+      "findings": [],
+      "detail": {
+        "primary_resource": "https://ieeexplore.ieee.org/document/11202920",
+        "primary_cited": true,
+        "primary_citation_marker": "[1]",
+        "primary_citation_occurrences": "lines 5, 34, 45, 55, 61, 114, 120, 121, 124, 172, 176, 192, 193",
+        "bibliography_present": true,
+        "orphan_markers": [],
+        "orphan_bibliography_entries": [],
+        "markers_used": [1, 2, 3],
+        "bibliography_entries": [1, 2, 3]
+      }
+    },
+    "check_3_no_forward_references": {
+      "passed": true,
+      "findings": [],
+      "detail": {
+        "notes": "LLM mention at line 122 now reads 'Large language models are introduced in topic 3.2.' — bare name plus topic pointer, no defining clause. AlphaGo and ChatGPT cited only as milestone events within the deep learning era timeline, not taught as systems. Transformer architecture, GPT-1, and BERT are absent from the reading."
+      }
+    },
+    "check_4_faithfulness": {
+      "passed": true,
+      "findings": [],
+      "detail": {
+        "assertions_sampled": 10,
+        "assertions_supported": 10,
+        "assertions_unsupported": 0,
+        "threshold_for_fail": 2,
+        "sampled_assertions": [
+          {
+            "assertion": "Three distinct eras — symbolic AI, machine learning, and deep learning",
+            "corpus_location": "Section 5 overview",
+            "supported": true
+          },
+          {
+            "assertion": "Symbolic AI: programmers write rules using human-readable symbols",
+            "corpus_location": "Section 5.1",
+            "supported": true
+          },
+          {
+            "assertion": "AI Winter: funding cut in late 1980s because early promises not met",
+            "corpus_location": "Section 5.1",
+            "supported": true
+          },
+          {
+            "assertion": "ML: let the computer figure out the rules itself by studying many examples",
+            "corpus_location": "Section 5.2",
+            "supported": true
+          },
+          {
+            "assertion": "Deep learning uses structures loosely inspired by the human brain called ANNs",
+            "corpus_location": "Section 5.3",
+            "supported": true
+          },
+          {
+            "assertion": "AlexNet 2012: cut error rate nearly in half",
+            "corpus_location": "Section 5.3 AlexNet milestone",
+            "supported": true
+          },
+          {
+            "assertion": "Three factors for AlexNet: more data, more compute (GPUs), better algorithms",
+            "corpus_location": "Section 5.3 AlexNet",
+            "supported": true
+          },
+          {
+            "assertion": "Symbolic AI still in use: spreadsheet formulas, tax software, traffic-light controllers, legal contract analysis",
+            "corpus_location": "Section 7",
+            "supported": true
+          },
+          {
+            "assertion": "Diabetic retinopathy screening in rural clinics where specialists are scarce",
+            "corpus_location": "Section 5.5",
+            "supported": true
+          },
+          {
+            "assertion": "Jagged frontier: superhuman on image recognition, fails on common-sense questions",
+            "corpus_location": "Section 7",
+            "supported": true
+          }
+        ]
+      }
+    },
+    "check_5_beginner_readability": {
+      "passed": true,
+      "findings": [],
+      "detail": {
+        "undefined_terms": [],
+        "undefined_term_count": 0,
+        "undefined_term_threshold": 2,
+        "jargon_dumps": [],
+        "abstract_first_violations": [],
+        "academic_register_violations": [],
+        "hedging_phrases_found": [],
+        "notes": "All non-everyday terms defined at first use: ANN (line 61), GPU (line 119), parameters (line 49), features (line 53), over-fitted (line 51), generalise (line 51), layer (line 63). No paragraph introduces 3+ new terms simultaneously. Concrete analogies precede abstractions (checklist for symbolic AI, spam-sort description for ML, face-recognition layer walkthrough for deep learning). No hedging language detected. Sentence lengths within target."
+      }
+    },
+    "check_6_formatting": {
+      "passed": true,
+      "findings": [],
+      "detail": {
+        "wall_of_text_instances": [],
+        "unlisted_sequences": [],
+        "no_inline_examples": false,
+        "bold_term_definitions_present": true,
+        "assessment_reference": false,
+        "notes": "No paragraph exceeds 6 sentences. Worked Example uses numbered lists for each era. 'Three things came together' (lines 117-120) uses a numbered list. Inline examples in every era sub-section. Bold-term definitions follow the mandated shape throughout."
+      }
+    },
+    "check_6b_assessment_references": {
+      "passed": true,
+      "findings": [],
+      "detail": {
+        "notes": "No mention of A1, due weeks, or grade weights anywhere in the reading body."
+      }
+    },
+    "check_7_scope": {
+      "passed": true,
+      "findings": [],
+      "detail": {
+        "notes": "The previously flagged scope_creep at line 122 (appositive '— the technology behind those systems —') has been removed. 'Large language models' now appears as a bare name with a single-sentence topic pointer, fully compliant with scope_discipline mention-and-defer rules. No other out-of-scope concepts detected.",
+        "previous_finding_resolved": {
+          "code": "scope_creep",
+          "line": 122,
+          "old_text": "Large language models — the technology behind those systems — are introduced in topic 3.2.",
+          "new_text": "Large language models are introduced in topic 3.2.",
+          "status": "resolved"
+        }
+      }
+    }
+  },
+  "summary": {
+    "hard_fails": 0,
+    "soft_findings": 0,
+    "checks_passed": 8,
+    "checks_failed": 0,
+    "failed_check_ids": []
+  },
+  "gold_example_used": false,
+  "gold_example_note": "No gold example for topic 3.1. The gold-examples/reading/ directory contains only 2.1 and 3.4. Verdict is against the written standards in artifact-mix.json and the reading-critic SKILL.md.",
+  "recommended_action": "Advance to HITL #3 topic-artifacts-review."
+}

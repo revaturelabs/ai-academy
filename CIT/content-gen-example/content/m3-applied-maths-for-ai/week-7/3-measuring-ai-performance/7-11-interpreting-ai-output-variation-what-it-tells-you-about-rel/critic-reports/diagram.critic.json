@@ -1,0 +1,38 @@
+{
+  "verdict": "pass",
+  "note": "Source-level pre-flight passed (cycle 1). PNG render requires mmdc + Puppeteer Chrome — run: $env:PUPPETEER_EXECUTABLE_PATH='C:\\Users\\NamrataSinha\\.cache\\puppeteer\\chrome-headless-shell\\win64-149.0.7827.22\\chrome-headless-shell-win64\\chrome-headless-shell.exe'; mmdc -i 'content/m3-applied-maths-for-ai/week-7/3-measuring-ai-performance/7-11-interpreting-ai-output-variation-what-it-tells-you-about-rel/artifacts/diagram.mmd' -o 'content/m3-applied-maths-for-ai/week-7/3-measuring-ai-performance/7-11-interpreting-ai-output-variation-what-it-tells-you-about-rel/artifacts/diagram.png' -w 1400 -b transparent",
+  "findings": [
+    {
+      "code": "looks_good",
+      "where": "full source — all pre-flight checks",
+      "detail": "4 nodes (within 3–8). Bold labels all ≤ 4 words: 'Low variation' (2 words) and 'High variation' (2 words) in both subgraphs. All four labels + subtitle interpretations trace directly to corpus §5.3 quadrant descriptions: Q1='Confident model — most trustworthy' (corpus: 'Strongest signal of model confidence. Most trustworthy for factual tasks.'); Q2='Reliability warning — model uncertain' (corpus: 'Reliability warning — model's internal probability mass is genuinely spread.'); Q3='Surprisingly robust — strong preference' (corpus: 'Surprisingly strong confidence signal — preference so strong it overrides the spread distribution.'); Q4='Expected — variety is fine here' (corpus: 'Does not signal unreliability — signals the task has many valid answers.'). No bare unexplained acronyms. Governing concept lives in the title: config field."
+    },
+    {
+      "code": "looks_good",
+      "where": "layout selection",
+      "detail": "flowchart LR with two side-by-side subgraphs (LOW_TEMP left, HIGH_TEMP right), each using direction TB to stack their two variation nodes vertically. This produces a genuine 2×2 grid: columns = temperature axis (low/high), rows = variation axis (low/high). Subgraph titles serve as column headers, matching the 2×2 grid intent. The ~~~ invisible link keeps the two columns side-by-side without unwanted edges. ClassDef palette: done=green (Q1, most trustworthy), hitl=yellow/amber (Q2, reliability warning — warns the human), act=blue (Q3, robust/trustworthy but unexpected), auto=purple (Q4, expected automated variation)."
+    },
+    {
+      "code": "looks_good",
+      "where": "color tier semantics",
+      "detail": "Palette reused for semantic meaning: green (done) = reliable/go signal; amber (hitl) = warning/human should notice; blue (act) = action-relevant positive signal; purple (auto) = expected automated outcome. No pipeline-role misuse — these are repurposed for reliability signal semantics in this non-pipeline diagram, which is acceptable since there are no actual HITL gates or auto steps to misrepresent."
+    }
+  ],
+  "stats": {
+    "nodes": 4,
+    "edges": 0,
+    "layout": "flowchart LR (2×2 grid via LR subgraphs + TB internal direction)",
+    "labels": ["Low variation (in LOW_TEMP)", "High variation (in LOW_TEMP)", "Low variation (in HIGH_TEMP)", "High variation (in HIGH_TEMP)"],
+    "png_path": "content/m3-applied-maths-for-ai/week-7/3-measuring-ai-performance/7-11-interpreting-ai-output-variation-what-it-tells-you-about-rel/artifacts/diagram.png",
+    "png_dims": "pending render",
+    "preflight": {
+      "mermaid_parse": "pass (flowchart LR + two subgraphs with direction TB + classDef + htmlLabels with <br/> and <span> — valid Mermaid v10 syntax; ~~~ invisible link supported in v10+)",
+      "node_count": "pass (4 nodes, within 3–8)",
+      "label_discipline": "pass (all <b> bold labels ≤ 4 words; subtitle detail in <span> not counted; subgraph titles not node labels)",
+      "concept_fidelity": "pass (all four quadrant labels + interpretations map to corpus §5.3 verbatim; no adjacent-concept drift; no scope-creep nodes beyond the four quadrants)",
+      "jargon_label": "pass (no bare unexplained acronyms; 'variation' and 'temperature' both defined in corpus §5.1-5.3)",
+      "title_discipline": "pass (governing concept 'Variation + temperature together reveal reliability' in title: config field; no ghost node)",
+      "single_path": "pass (2×2 grid is a non-linear relationship — branching/grid layout is appropriate; not a linear pipeline)"
+    }
+  }
+}

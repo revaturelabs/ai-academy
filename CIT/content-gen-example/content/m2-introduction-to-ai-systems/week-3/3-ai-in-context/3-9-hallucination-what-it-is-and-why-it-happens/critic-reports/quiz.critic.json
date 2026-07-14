@@ -1,0 +1,91 @@
+{
+  "topic_id": "3.9",
+  "passed": true,
+  "checks": {
+    "positional_bias": {
+      "passed": true,
+      "distribution": { "pos0": 1, "pos1": 1, "pos2": 2, "pos3": 1 },
+      "total_mcq": 5,
+      "max_share": 0.40,
+      "threshold": 0.40,
+      "note": "max_share exactly equals threshold; pass condition is strictly > 0.40",
+      "meta_gift_desync": false,
+      "derived_positions": [2, 0, 3, 1, 2],
+      "sidecar_positions": [2, 0, 3, 1, 2]
+    },
+    "length_bias": {
+      "passed": true,
+      "longest_correct_rate": 0.0,
+      "baseline": 0.25,
+      "threshold": 0.40,
+      "per_question": [
+        { "id": "q1", "correct_len": 88,  "distractor_mean": 93.0,  "threshold_len": 111.6, "longest_correct": false },
+        { "id": "q2", "correct_len": 81,  "distractor_mean": 80.3,  "threshold_len":  96.4, "longest_correct": false },
+        { "id": "q3", "correct_len": 109, "distractor_mean": 104.3, "threshold_len": 125.2, "longest_correct": false },
+        { "id": "q4", "correct_len": 107, "distractor_mean": 107.7, "threshold_len": 129.2, "longest_correct": false },
+        { "id": "q5", "correct_len": 101, "distractor_mean": 112.3, "threshold_len": 134.8, "longest_correct": false }
+      ]
+    },
+    "distractor_plausibility": {
+      "passed": true,
+      "total_distractors": 15,
+      "absurd_count": 0,
+      "absurd_rate": 0.0,
+      "threshold": 0.25,
+      "weakest_questions": [],
+      "per_distractor_scores": [
+        { "q": "q1", "d": 1, "text_prefix": "The model states a fact that is simply wrong...", "score": 4 },
+        { "q": "q1", "d": 2, "text_prefix": "The model follows a false assumption...", "score": 4 },
+        { "q": "q1", "d": 3, "text_prefix": "The model refuses to answer...", "score": 3 },
+        { "q": "q2", "d": 1, "text_prefix": "The model searches an internal database of verified facts...", "score": 4 },
+        { "q": "q2", "d": 2, "text_prefix": "The model checks each statement against a live internet source...", "score": 4 },
+        { "q": "q2", "d": 3, "text_prefix": "The model skips any topic it was not trained on...", "score": 3 },
+        { "q": "q3", "d": 1, "text_prefix": "RLHF removes hallucinations by penalising the model...", "score": 3 },
+        { "q": "q3", "d": 2, "text_prefix": "RLHF teaches the model to refuse any question...", "score": 3 },
+        { "q": "q3", "d": 3, "text_prefix": "RLHF updates the model's training data after deployment...", "score": 3 },
+        { "q": "q4", "d": 1, "text_prefix": "Medical AI refused to answer treatment questions...", "score": 3 },
+        { "q": "q4", "d": 2, "text_prefix": "Plagiarism detectors flagged AI-written essays...", "score": 2 },
+        { "q": "q4", "d": 3, "text_prefix": "AI translation systems introduced offensive errors...", "score": 2 },
+        { "q": "q5", "d": 1, "text_prefix": "Ask the AI to re-check its own answer a second time...", "score": 4 },
+        { "q": "q5", "d": 2, "text_prefix": "Switch to a larger, newer model...", "score": 4 },
+        { "q": "q5", "d": 3, "text_prefix": "Set the model's temperature to zero...", "score": 4 }
+      ]
+    },
+    "objective_coverage": {
+      "passed": true,
+      "los_found_in_corpus": [
+        "LO1: Define three distinct types of AI hallucination — factual, attributional, and faithful-but-wrong — and give a concrete example of each.",
+        "LO2: Explain why the token-prediction mechanism makes hallucination a structural property of LLMs, not a bug that can be patched away.",
+        "LO3: Describe two contributing causes — training data gaps and RLHF incentives — that make hallucination more likely in practice.",
+        "LO4: Identify real-world contexts — legal, medical, academic — where hallucination has caused documented harm.",
+        "LO5: List three detection and mitigation strategies (verification, grounding, and retrieval-augmented generation) that reduce hallucination risk without eliminating it."
+      ],
+      "coverage_map": [
+        { "lo": "LO1", "matched_questions": ["q1"] },
+        { "lo": "LO2", "matched_questions": ["q2"] },
+        { "lo": "LO3", "matched_questions": ["q3"] },
+        { "lo": "LO4", "matched_questions": ["q4"] },
+        { "lo": "LO5", "matched_questions": ["q5"] }
+      ],
+      "uncovered_objectives": [],
+      "orphan_questions": []
+    },
+    "beginner_fairness_and_scope": {
+      "passed": true,
+      "jargon_in_stem": [],
+      "out_of_scope_questions": [],
+      "unfair_distractors": [],
+      "notes": [
+        "q2 stem spells out 'LLM (Large Language Model)' inline.",
+        "q3 stem spells out 'Reinforcement Learning from Human Feedback (RLHF)' inline.",
+        "q5 distractor references 'temperature' — a prerequisite term defined in corpus §2 (topic 3.6); fair for this audience.",
+        "All questions are answerable by a beginner who read this topic corpus and nothing else."
+      ]
+    }
+  },
+  "auto_correction_applied": {
+    "shuffle_round_2": false
+  },
+  "verdict": "Pass — all five checks clean: bias_defense_applied=true, positional max_share=0.40 (at threshold, not over), length longest_correct_rate=0.0, distractor absurd_rate=0.0, all 5 LOs covered with no orphan questions, all stems beginner-fair and on-scope.",
+  "at": "2026-06-17T00:00:00Z"
+}

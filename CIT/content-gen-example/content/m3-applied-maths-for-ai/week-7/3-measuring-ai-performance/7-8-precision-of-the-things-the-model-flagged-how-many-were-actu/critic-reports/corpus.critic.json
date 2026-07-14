@@ -1,0 +1,74 @@
+{
+  "critic": "corpus-critic",
+  "topic_id": "7.8",
+  "topic_title": "Precision — of the things the model flagged, how many were actually correct",
+  "depth_profile": "standard",
+  "resources_source": "web_search",
+  "retry": 1,
+  "at": "2026-06-23T00:00:00Z",
+  "passed": true,
+  "verdict": "PASS — retry 1/2. The §5.5 scope_creep hard-fail from retry 0 is resolved: 'recall' is no longer bolded and the defining clause has been removed; the sentence now reads 'recall, covered in topic 7.9.' — bare name plus topic pointer, no bold, no appositive. All six checks pass. One soft finding (length) is carried forward for author awareness at HITL #2.",
+  "checks": {
+    "required_sections": {
+      "passed": true,
+      "detail": "Sections §3 (Learning Objectives, ~65 words), §4 (Introduction, ~200 words), §5 (Core Concepts, §5.1–§5.8 well above 100-word threshold), and §10 (Key Takeaways, ~120 words) are all present and exceed their minimum word thresholds."
+    },
+    "citation_density": {
+      "passed": true,
+      "detail": "Primary resource [1] (Google ML Crash Course) cited in §4, §5.1, §5.2, §5.3, §5.4, §5.6, §7, and §8 — exceeds the 1× minimum. Citation density across §5/§6/§7 is estimated above 60% of standalone factual assertions: all major sub-claims in §5.1–§5.8 carry [N] markers; §7 all four real-world pattern paragraphs are cited; §6 procedural steps and worked example derive directly from the previously-cited formula and demonstrated concepts — no independent factual assertions introduced that require separate citation. No fabricated or unresolvable citation markers found. Finding consistent with retry 0 assessment; corpus change in this retry was limited to §5.5 only."
+    },
+    "sequence_drift": {
+      "passed": true,
+      "forward_references": [],
+      "detail": "No technical term is used that belongs to a topic after 7.8. 'Recall' appears in §5.5, §5.7, §7, and §8 — all as a bare name with a topic pointer ('covered in topic 7.9') or as a passing reference without definition. The §5.5 fix (bold removed, defining clause removed) is confirmed applied and correct. No other forward-referenced concepts detected. All concepts used are either from prior topics 7.1–7.7 or introduced in this topic."
+    },
+    "length_sanity": {
+      "passed": true,
+      "estimated_word_count": 2350,
+      "profile_range": [3000, 4400],
+      "tolerance_rule": "fail only if >30% outside range",
+      "pct_below_minimum": 21.7,
+      "detail": "Estimated ~2,350 words. The standard profile target range is 3,000–4,400 words. The corpus is ~650 words below the lower bound (21.7% short), within the 30% hard-fail tolerance. Flagged as a soft finding: the corpus is meaningfully below the standard minimum and would benefit from additional depth in §6 (Implementation worked example) and §5.7 (consequences of low precision). Not a hard fail per skill rules. Carried forward from retry 0."
+    },
+    "topic_scope": {
+      "passed": true,
+      "finding_code": null,
+      "violations": [],
+      "detail": "Fix confirmed applied. §5.5 now reads: 'This is why precision is often discussed alongside another metric called recall, covered in topic 7.9.' — bare name, no bold, no defining clause. All other 'recall' mentions in §5.7, §7, and §8 were already in acceptable mention-and-defer form in retry 0 and remain so. No other scope-creep violations detected. All content stays within the precision headline.",
+      "recall_mentions_verified": [
+        {
+          "location": "§5.5",
+          "text": "recall, covered in topic 7.9.",
+          "status": "ACCEPTABLE — bare name + topic pointer, no bold, no defining clause. Fix confirmed."
+        },
+        {
+          "location": "§5.7 last sentence",
+          "text": "That trade-off involves recall, covered in topic 7.9.",
+          "status": "ACCEPTABLE — bare name + topic pointer, no bold, no defining clause."
+        },
+        {
+          "location": "§7 Medical screening",
+          "text": "Precision is kept in view alongside recall when making that design choice.",
+          "status": "ACCEPTABLE — bare name, no bold, no defining clause, contextual use."
+        },
+        {
+          "location": "§8 Best Practices",
+          "text": "Precision is meaningful as part of a broader picture that includes recall (topic 7.9).",
+          "status": "ACCEPTABLE — bare name + topic pointer, no bold, no defining clause."
+        }
+      ]
+    },
+    "beginner_readability": {
+      "passed": true,
+      "findings": [],
+      "detail": "All non-everyday terms defined on first use with plain-language explanations: 'precision' named in §4, formally defined in §5.4; 'true positive' bolded and defined in §5.2; 'false positive' bolded and defined in §5.3; 'flagged' explained in §5.1; 'positive/negative prediction' explained in §5.1; 'false alarm' used as a plain synonym in §5.3; 'classifier' given inline explanation in §5.8; 'retrieval systems' given inline explanation in §5.8. No undefined acronyms. No jargon dumps. Sentences short, active voice, learner addressed as 'you'. No hedging phrases. Fewer than 3 soft findings — no escalation to hard fail."
+    }
+  },
+  "soft_findings": [
+    {
+      "code": "length_below_target",
+      "detail": "Estimated word count ~2,350 is 21.7% below the standard-profile minimum of 3,000 words. Within 30% tolerance so not a hard fail. Builder should consider expanding §6 Implementation (worked example depth) and §5.7 (consequences of low precision section is brief). Surface to author at HITL #2."
+    }
+  ],
+  "required_fixes": []
+}

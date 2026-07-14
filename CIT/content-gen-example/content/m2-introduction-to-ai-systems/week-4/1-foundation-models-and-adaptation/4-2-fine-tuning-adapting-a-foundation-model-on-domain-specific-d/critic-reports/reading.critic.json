@@ -1,0 +1,94 @@
+{
+  "critic": "reading-critic",
+  "topic_id": "4.2",
+  "topic_title": "Fine-tuning — adapting a foundation model on domain-specific data",
+  "artifact": "artifacts/reading.md",
+  "run_at": "2026-06-16T00:00:00Z",
+  "passed": true,
+  "verdict": "All 8 checks pass. Reading is well-formed, within length budget, fully cites all resources (primary [1] cited at first appearance), faithful to corpus across 10 sampled assertions, free of forward-reference defects, beginner-accessible with concrete analogies before abstractions, well-formatted with no walls of prose, carries no assessment references, and stays within the fine-tuning topic boundary. Meets or exceeds the gold-example bar; notably the 4.2 reading avoids the assessment-reference defect present in the gold (3-4) example.",
+  "checks": {
+    "format_discipline": {
+      "passed": true,
+      "frontmatter_present": false,
+      "meta_sidecar_missing": false,
+      "section_template_violation": false,
+      "sections_found": ["Overview", "Key Concepts", "Worked Example", "In Practice", "Key Takeaways", "References"],
+      "notes": "First non-empty line is H1 title. Sidecar reading.meta.json present and valid. Exactly the required 6 sections in correct order."
+    },
+    "length": {
+      "passed": true,
+      "word_count_reported": 1421,
+      "target_word_range": [1200, 1600],
+      "word_count_in_range": true,
+      "estimated_read_minutes": 6.18,
+      "target_minute_range": [6, 8],
+      "minutes_in_range": true,
+      "notes": "1421 words / 230 wpm = 6.18 min. Sidecar reports 7 min (using 200 wpm baseline = 7.1 min). Both within [6, 8]."
+    },
+    "citations": {
+      "passed": true,
+      "primary_resource_cited": true,
+      "primary_resource_id": "[1]",
+      "primary_first_citation_line": 11,
+      "all_inline_markers": ["[1]", "[2]", "[3]"],
+      "bibliography_entries": ["[1]", "[2]", "[3]"],
+      "orphan_markers": [],
+      "orphan_bibliography_entries": [],
+      "notes": "Primary resource [1] (AWS SageMaker) cited at first inline use on line 11. All three markers have matching bibliography entries. No orphans."
+    },
+    "no_forward_references": {
+      "passed": true,
+      "findings": [],
+      "notes": "References to '4.3–4.5' appear at lines 116 and 124 as bare mention-and-defer pointers ('covered in topics 4.3–4.5'), which is the permitted form. No forward-defined concepts taught."
+    },
+    "faithfulness": {
+      "passed": true,
+      "assertions_sampled": 10,
+      "unsupported_count": 0,
+      "unsupported_assertions": [],
+      "notes": "10 assertions sampled across all sections: fine-tuning definition, pre-trained model definition, data quality claim, catastrophic forgetting definition, pre-training vs fine-tuning table, zero-shot use definition, epoch definition, overfitting definition, real-world scenarios (healthcare/legal/customer support/software), 'recalibrating an instrument' analogy. All trace to corpus sections 4–8."
+    },
+    "beginner_readability": {
+      "passed": true,
+      "undefined_terms": [],
+      "undefined_terms_count": 0,
+      "jargon_dump": false,
+      "jargon_dump_findings": [],
+      "abstract_first": false,
+      "abstract_first_findings": [],
+      "academic_register": false,
+      "hedging_count": 0,
+      "notes": "All non-everyday terms defined at first use with bold-term / plain-meaning format. LLM spelled out 'LLM (Large Language Model)' at first use (line 82). API spelled out at line 94. No paragraph introduces 3+ brand-new terms cold. Analogies (generalist employee, recalibrating an instrument) precede or accompany abstractions. No hedging language detected. Sentences are concise and in plain register."
+    },
+    "formatting": {
+      "passed": true,
+      "wall_of_text": false,
+      "wall_of_text_findings": [],
+      "unlisted_sequence": false,
+      "unlisted_sequence_findings": [],
+      "no_inline_examples": false,
+      "definitions_bold_shape": true,
+      "notes": "No paragraph exceeds 6 sentences. Worked Example uses numbered steps (lines 80–94). Inline analogies appear in Key Concepts (lines 13–15, line 50) outside the Worked Example section. All definitions follow '**Term** — plain meaning' shape throughout."
+    },
+    "no_assessment_references": {
+      "passed": true,
+      "finding_code": null,
+      "occurrences": [],
+      "notes": "No assessment IDs, due-week references, or grade weights found anywhere in the reading. Gold-example defect (assessment reference in Overview) is correctly absent here."
+    },
+    "scope": {
+      "passed": true,
+      "scope_creep": false,
+      "scope_creep_findings": [],
+      "notes": "Content covers exactly: fine-tuning, pre-trained model, domain-specific data, labelled data, zero-shot use, catastrophic forgetting, hallucination, overfitting, epoch. Topics 4.3–4.5 (RAG, agents, tool use) appear only as a bare mention-and-defer pointer at lines 116 and 124, never bolded or defined. No out-of-scope material taught."
+    }
+  },
+  "soft_findings_count": 0,
+  "hard_fail_triggers": [],
+  "escalation": "none",
+  "gold_example_comparison": {
+    "gold_file": ".claude/references/gold-examples/reading/3-4-how-llms-work-tokens-training-and-inference.reading.md",
+    "meets_gold_bar": true,
+    "notes": "4.2 reading matches gold on: six-section structure, H1-first (no frontmatter), bold-term definition shape, numbered steps in Worked Example, concrete analogy before abstraction, no jargon dumps, plain register, inline examples outside Worked Example. Exceeds gold on check 6b: the gold carries a flagged assessment-reference defect in Overview; the 4.2 reading correctly omits any such reference."
+  }
+}

@@ -1,0 +1,74 @@
+{
+  "critic": "reading-critic",
+  "topic_id": "6.2",
+  "run_at": "2026-06-18T00:00:00Z",
+  "passed": true,
+  "verdict": "PASS — all 11 checks clear. The previously failing citation issue is resolved: [3] (GeeksforGeeks) is now cited inline at reading.md line 50 ('Scalars are the atom; those structures are built from them [3].') — the name-and-defer sentence for vectors/matrices. No orphan bibliography entries, no orphan markers. All other checks continue to pass.",
+  "checks": {
+    "format_discipline": {
+      "passed": true,
+      "frontmatter_present": false,
+      "meta_sidecar_missing": false,
+      "section_template_violation": false,
+      "sections_found": ["Overview", "Key Concepts", "Worked Example", "In Practice", "Key Takeaways", "References"],
+      "notes": "First non-empty line is the H1 title. No leading YAML block. Meta sidecar exists and parses (field names vary slightly from SKILL spec — reading_minutes vs estimated_read_minutes, resources_cited vs citations_used — but all data is present; not a hard fail). Six required sections present in correct order."
+    },
+    "length": {
+      "passed": true,
+      "word_count": 825,
+      "target_word_range": [600, 900],
+      "estimated_read_minutes_at_230wpm": 3.6,
+      "meta_reported_minutes": 5,
+      "notes": "825 words is within the 600–900 standard depth range. Read-aloud at 230 wpm ≈ 3.6 min; word count is the authoritative gate and it passes."
+    },
+    "citations": {
+      "passed": true,
+      "inline_citations_found": ["[1]", "[2]", "[3]"],
+      "bibliography_entries": ["[1]", "[2]", "[3]"],
+      "primary_resource_cited": true,
+      "primary_resource": "machinelearningplus.com ([1])",
+      "orphan_markers": [],
+      "orphan_bibliography_entries": [],
+      "previously_failing_item_resolved": true,
+      "notes": "[3] now cited inline at line 50: 'Scalars are the atom; those structures are built from them [3].' — the name-and-defer pointer to vectors/matrices. [1] cited at lines 11, 20, 34, 42, 48, 64. [2] cited at lines 40, 42, 68, 72, 74. All three markers appear inline and in References. No orphans in either direction."
+    },
+    "no_forward_references": {
+      "passed": true,
+      "violations": [],
+      "notes": "Vectors (6.3) and matrices (6.4) each appear in exactly one name-and-defer sentence with explicit topic-number pointers and zero instructional content about how they work. Key Takeaways line 83 also names-and-defers correctly. No forward topic is taught."
+    },
+    "faithfulness": {
+      "passed": true,
+      "assertions_sampled": 10,
+      "unsupported_count": 0,
+      "notes": "All 10 sampled assertions trace to corpus §4–§8: scalar definition, temperature/battery/star-rating examples, magnitude definition, loss and learning rate explanations, one-element list distinction, config file worked example, three In Practice roles, and naming best practice all match corpus text verbatim or by close paraphrase."
+    },
+    "beginner_readability": {
+      "passed": true,
+      "undefined_terms": [],
+      "jargon_dump": false,
+      "abstract_first": false,
+      "academic_register": false,
+      "notes": "All non-everyday terms (scalar, magnitude, loss, learning rate) are bolded and defined in plain language at first use. Every concept leads with a concrete everyday example before the abstraction. No hedging phrases detected. Average sentence length well under 25 words."
+    },
+    "formatting": {
+      "passed": true,
+      "wall_of_text": false,
+      "unlisted_sequence": false,
+      "no_inline_examples": false,
+      "notes": "All prose paragraphs are 2–4 sentences. Bullet lists and a table used for multi-item content (everyday scalars, AI scalars, In Practice roles). Inline examples appear in Key Concepts and In Practice, not only in Worked Example. Bold-term/plain-meaning pattern applied consistently."
+    },
+    "no_assessment_references": {
+      "passed": true,
+      "occurrences": [],
+      "notes": "No assessment IDs, due-week references, or grade weights appear anywhere in the reading."
+    },
+    "scope": {
+      "passed": true,
+      "scope_creep_found": false,
+      "notes": "Reading stays squarely on the headline topic throughout. Vectors and matrices appear only as named-and-deferred pointers with explicit topic numbers. No vector or matrix mechanics are taught."
+    }
+  },
+  "findings_summary": [],
+  "cycle": 2
+}

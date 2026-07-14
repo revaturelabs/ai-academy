@@ -1,0 +1,187 @@
+{
+  "topic_id": "11.4",
+  "stage": "topic_artifacts_approved",
+  "gates": {
+    "resources_captured": true,
+    "corpus_generated": true,
+    "corpus_critic_passed": true,
+    "corpus_human_approved": true,
+    "reading_generated": true,
+    "reading_critic_passed": true,
+    "quiz_generated": true,
+    "quiz_critic_passed": true,
+    "diagram_generated": null,
+    "diagram_critic_passed": null,
+    "topic_artifacts_human_approved": true,
+    "module_drift_passed": true,
+    "week_human_approved": true,
+    "course_drift_passed": true
+  },
+  "history": [
+    {
+      "at": "2026-06-12T00:30:00Z",
+      "op": "set",
+      "gate": "resources_captured",
+      "value": true
+    },
+    {
+      "at": "2026-06-12T00:30:00Z",
+      "op": "stage",
+      "to": "awaiting_corpus"
+    },
+    {
+      "at": "2026-06-12T00:30:00Z",
+      "op": "log",
+      "msg": "Captured 5 resources (source=human) — all primary: stdtypes, Python tutorial, Real Python data types, Real Python strings, print() docs"
+    },
+    {
+      "at": "2026-06-12T00:31:00Z",
+      "op": "set",
+      "gate": "corpus_generated",
+      "value": true
+    },
+    {
+      "at": "2026-06-12T00:31:00Z",
+      "op": "stage",
+      "to": "awaiting_corpus_critic"
+    },
+    {
+      "at": "2026-06-12T00:31:00Z",
+      "op": "log",
+      "msg": "Corpus generated — standard depth, diagram=false, 3290 words."
+    },
+    {
+      "at": "2026-06-12T00:32:00Z",
+      "op": "log",
+      "msg": "Critic cycle 1 FAILED — list literal [88,72,91] and None forward refs."
+    },
+    {
+      "at": "2026-06-12T00:33:00Z",
+      "op": "log",
+      "msg": "Revised: list replaced with 3 int assignments; None removed from falsy list."
+    },
+    {
+      "at": "2026-06-12T00:33:00Z",
+      "op": "log",
+      "msg": "Critic cycle 2 FAILED — comparison ops in bool examples, 'implicit type conversion' bolded, 'short-circuit eval' bolded."
+    },
+    {
+      "at": "2026-06-12T00:34:00Z",
+      "op": "log",
+      "msg": "Revised: bool examples use pre-assigned literals; bold/definitions removed; bool==comparison deferred to 11.5."
+    },
+    {
+      "at": "2026-06-12T00:34:00Z",
+      "op": "log",
+      "msg": "Critic cycle 3 FAILED — print(0.1+0.2==0.3) still uses == in active code."
+    },
+    {
+      "at": "2026-06-12T00:35:00Z",
+      "op": "log",
+      "msg": "Revised: == comparison replaced with a comment line."
+    },
+    {
+      "at": "2026-06-12T00:35:00Z",
+      "op": "set",
+      "gate": "corpus_critic_passed",
+      "value": true
+    },
+    {
+      "at": "2026-06-12T00:35:00Z",
+      "op": "stage",
+      "to": "awaiting_corpus_human_review"
+    },
+    {
+      "at": "2026-06-12T00:35:00Z",
+      "op": "log",
+      "msg": "Corpus critic PASSED cycle 4 — all checks green. ~2950 words."
+    },
+    {
+      "at": "2026-06-12T00:40:00Z",
+      "op": "set",
+      "gate": "corpus_human_approved",
+      "value": true
+    },
+    {
+      "at": "2026-06-12T00:40:00Z",
+      "op": "stage",
+      "to": "corpus_approved"
+    },
+    {
+      "at": "2026-06-12T00:40:00Z",
+      "op": "log",
+      "msg": "HITL #2 complete — all 9 sections approved as written, depth=standard, diagram=false."
+    },
+    {
+      "at": "2026-06-12T00:45:00Z",
+      "op": "set",
+      "gate": "reading_generated",
+      "value": true
+    },
+    {
+      "at": "2026-06-12T00:45:00Z",
+      "op": "set",
+      "gate": "quiz_generated",
+      "value": true
+    },
+    {
+      "at": "2026-06-12T00:45:00Z",
+      "op": "stage",
+      "to": "awaiting_reading_critic"
+    },
+    {
+      "at": "2026-06-12T00:45:00Z",
+      "op": "log",
+      "msg": "Reading generated: 1330 words, 7 min, all 5 resources cited. Quiz generated: 6 MCQ, positions [0,1,2,3,0,2] max_share=0.333."
+    },
+    {
+      "at": "2026-06-12T00:50:00Z",
+      "op": "set",
+      "gate": "reading_critic_passed",
+      "value": true
+    },
+    {
+      "at": "2026-06-12T00:50:00Z",
+      "op": "log",
+      "msg": "Reading critic PASSED cycle 1 — 1330w, 7min, all 5 cited, no forward refs, scope clean."
+    },
+    {
+      "at": "2026-06-12T00:50:00Z",
+      "op": "set",
+      "gate": "quiz_critic_passed",
+      "value": true
+    },
+    {
+      "at": "2026-06-12T00:50:00Z",
+      "op": "log",
+      "msg": "Quiz critic PASSED cycle 1 — 6 MCQ, max_share=0.333, no length bias, all 6 LOs covered."
+    },
+    {
+      "at": "2026-06-12T00:50:00Z",
+      "op": "stage",
+      "to": "awaiting_topic_artifacts_review"
+    },
+    {
+      "at": "2026-06-12T00:55:00Z",
+      "op": "set",
+      "gate": "topic_artifacts_human_approved",
+      "value": true
+    },
+    {
+      "at": "2026-06-12T00:55:00Z",
+      "op": "stage",
+      "to": "topic_artifacts_approved"
+    },
+    {
+      "at": "2026-06-12T00:55:00Z",
+      "op": "log",
+      "msg": "HITL #3 approved — reading 1330w/7min, quiz 6MCQ/bias-defended. No carry-over failures."
+    },
+    {
+      "at": "2026-06-23T17:39:27Z",
+      "op": "set",
+      "gate": "course_drift_passed",
+      "value": true
+    }
+  ]
+}

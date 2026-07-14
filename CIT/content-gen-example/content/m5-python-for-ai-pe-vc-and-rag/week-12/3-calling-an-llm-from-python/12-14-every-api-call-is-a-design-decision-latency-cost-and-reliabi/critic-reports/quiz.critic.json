@@ -1,0 +1,65 @@
+{
+  "passed": true,
+  "checks": {
+    "positional_bias": {
+      "passed": true,
+      "distribution": [1, 2, 1, 2],
+      "position_labels": ["pos_0", "pos_1", "pos_2", "pos_3"],
+      "mcq_count": 6,
+      "max_share": 0.333,
+      "threshold": 0.40,
+      "meta_gift_desync": false,
+      "note": "Derived positions [1,3,0,2,3,1] match sidecar exactly. No auto-shuffle needed."
+    },
+    "length_bias": {
+      "passed": true,
+      "longest_correct_rate": 0.167,
+      "baseline": 0.25,
+      "threshold": 0.40,
+      "flagged_questions": [
+        {
+          "id": "q6",
+          "correct_len": 215,
+          "distractor_mean": 97.7,
+          "threshold_len": 117.2,
+          "note": "Correct answer notably longer; inherent to explaining pre-build reliability design. Rate 0.167 is well under the 0.40 fail threshold."
+        }
+      ]
+    },
+    "distractor_plausibility": {
+      "passed": true,
+      "absurd_rate": 0.0,
+      "total_distractors": 18,
+      "absurd_count": 0,
+      "threshold": 0.25,
+      "weakest_questions": []
+    },
+    "objective_coverage": {
+      "passed": true,
+      "uncovered_objectives": [],
+      "orphan_questions": [],
+      "coverage_map": {
+        "LO1": ["q1"],
+        "LO2": ["q2"],
+        "LO3": ["q6", "q7"],
+        "LO4": ["q3"],
+        "LO5": ["q4"],
+        "LO6": ["q5"]
+      },
+      "note": "All 6 LOs covered. LO3 now covered by q6 (MCQ — reliability as pre-build design question) and q7 (short-answer — three measurable properties). Resolves the prior-attempt LO3 gap."
+    },
+    "beginner_fairness_and_scope": {
+      "passed": true,
+      "jargon_in_stem": [],
+      "out_of_scope_questions": [],
+      "unfair_distractors": [],
+      "notes": "All stems use vocabulary established in corpus or earlier topics (12.11, 12.13). No forward references. All questions test this topic only. client.messages.create() established in 12.11 prerequisites."
+    }
+  },
+  "auto_correction_applied": {
+    "shuffle_round_2": false
+  },
+  "shuffled_at": null,
+  "verdict": "Pass — all checks clean. Positional bias max_share 0.333 (threshold 0.40, no shuffle needed). Length bias rate 0.167 (threshold 0.40; q6 correct answer longer but 1/6 MCQs, well under fail threshold). Zero absurd distractors across 18 total. All 6 LOs covered including LO3 which failed in prior attempt — now addressed by q6 (MCQ) and q7 (short-answer). Scope clean, beginner-appropriate throughout.",
+  "at": "2026-06-15T00:00:00Z"
+}

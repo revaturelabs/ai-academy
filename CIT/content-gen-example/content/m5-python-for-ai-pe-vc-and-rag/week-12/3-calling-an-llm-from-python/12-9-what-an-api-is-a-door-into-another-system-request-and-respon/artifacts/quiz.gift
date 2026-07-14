@@ -1,0 +1,49 @@
+$CATEGORY: CIT/M5/week-12/12-9-what-an-api-is-a-door-into-another-system-request-and-response
+
+::q1:: An Application Programming Interface (API) is best described as {
+~a private internal database that stores records for one application and lets other parts of that same application look them up#No — an API is not a storage mechanism; it is a communication contract between two separate programs.
+=a published contract that lets two programs communicate, defining what to ask for and what to expect in return#Correct — the API is the defined agreement (the interface) between a client and a server.
+~a programming language specifically designed for writing the server-side code that handles requests from web applications#No — an API is not a language; it is a set of rules that code written in any programming language can follow.
+~a graphical dashboard that shows a developer real-time server performance metrics, logs, and error counts#No — a dashboard is a visual tool for humans; an API is a programmatic contract used by code to communicate.
+#### Tests the core definition of API — Application Programming Interface (LO1).
+}
+
+::q2:: In the request-response cycle, what is the correct order of events? {
+~The server sends a response first, then the client processes it and automatically decides to send a follow-up request#No — a response only arrives after the client has first sent a request to start the cycle.
+~The server opens a connection to the client and pushes data to it without waiting to receive any message first#No — in the standard request-response model the client always initiates by sending the first request.
+~Both the client and the server send their messages at the same time so neither side has to wait for the other#No — the cycle is sequential: client request first, then server processing, then server response — not simultaneous.
+=The client sends a request, the server processes it, and the server sends a response back to the client#Correct — that is the complete, ordered three-step cycle that every API interaction follows.
+#### Tests the three-step request-response cycle in the correct order (LO2).
+}
+
+::q3:: Which of the four parts of an API request tells the server what format the data is in and who is making the request? {
+=Headers, which carry metadata such as content type and the API key used for authentication#Correct — headers are the metadata layer of a request, carrying format information and credentials.
+~The body, which contains the main data payload that the client is sending across to the server to be processed#No — the body holds the actual content of the request, not the metadata about the sender or data format.
+~The HTTP method, which signals whether the client is fetching existing data or sending new data for the server to process#No — the HTTP method (GET or POST) describes the action type, not the sender's identity or the data format.
+~The endpoint URL, which identifies the specific address and operation being targeted on the remote server#No — the endpoint specifies where to send the request, not who is sending it or what format is being used.
+#### Tests knowledge of the four request components, specifically the role of headers (LO3).
+}
+
+::q4:: A server returns a response with status code 401. What does this tell you? {
+~The server processed the request successfully and the response body now contains the data the client expected to receive#No — a 200 code signals success; a 401 means the request was rejected for an authorisation reason.
+~The server encountered an internal fault that is its own responsibility and was not caused by anything the client sent#No — 5xx codes such as 500 indicate a server-side fault; 401 is a client-side authorisation failure.
+=The request was rejected because the API key or other credentials supplied by the client are missing or incorrect#Correct — 401 means Unauthorized; the server cannot verify the client is permitted to make this call.
+~The endpoint address the client used does not exist on the server, so the URL in the request needs to be corrected#No — a missing endpoint returns 404 Not Found; 401 is specifically about missing or invalid credentials.
+#### Tests identification of response status codes, specifically 4xx client-error codes (LO4).
+}
+
+::q5:: When your Python code calls an LLM (Large Language Model) like Claude, what role does your Python code play? {
+~Your Python code downloads and runs the language model entirely on your own local machine, requiring no internet connection at all#No — LLMs run on the provider's remote servers; your Python code is the client that sends requests over the internet.
+=Your Python code acts as the client — it sends a request to the Anthropic server, which runs the model and returns the response#Correct — your code never touches the model directly; it communicates through the API as a client.
+~Your Python code acts as a server that sits and waits for the LLM to connect to it and send prompts to be processed and answered#No — the roles are reversed; your code always initiates as the client and never waits to receive incoming connections.
+~Your Python code connects directly to the model's internal storage system to retrieve pre-computed answers that were saved earlier#No — the model's internals are hidden behind the API; your code only interacts with the published interface contract.
+#### Tests understanding of why LLMs are accessed via API and how Python fits in as the client (LO5).
+}
+
+::q6:: Using the restaurant analogy from the reading, which statement best explains why an API acts as a layer between your code and the server? {
+~It automatically caches every server response so that when the same request is made again it is served instantly without reaching the server#No — caching is a separate performance optimisation and is not the reason the API abstraction layer exists.
+~It translates your Python code into the server's own programming language so that both sides can share and run the same logic#No — an API does not perform language translation; it defines a communication contract that both sides must follow independently.
+~It stores a local replica of all the server's data on your machine so that your application can continue working without an internet connection#No — the API is a live communication channel between client and server, not a mechanism for copying data locally.
+=It hides the server's internal implementation, provides a stable interface that does not break when internals change, and enforces authentication before allowing access#Correct — like the waiter in the analogy, the API abstracts the kitchen, keeps the contract stable, and controls who can enter.
+#### Tests the abstraction-layer concept — hidden implementation, stability, and authentication (LO6).
+}

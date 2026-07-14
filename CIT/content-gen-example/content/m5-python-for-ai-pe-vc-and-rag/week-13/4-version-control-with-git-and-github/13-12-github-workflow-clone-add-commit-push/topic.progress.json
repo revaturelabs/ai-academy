@@ -1,0 +1,253 @@
+{
+  "topic_id": "13.12",
+  "stage": "module_passed",
+  "gates": {
+    "resources_captured": true,
+    "corpus_generated": true,
+    "corpus_critic_passed": true,
+    "corpus_human_approved": true,
+    "reading_generated": true,
+    "reading_critic_passed": true,
+    "quiz_generated": true,
+    "quiz_critic_passed": true,
+    "diagram_generated": true,
+    "diagram_critic_passed": true,
+    "module_drift_passed": true,
+    "course_drift_passed": true,
+    "topic_artifacts_human_approved": true,
+    "week_human_approved": true
+  },
+  "history": [
+    {
+      "at": "2026-06-15T01:01:25Z",
+      "op": "set",
+      "gate": "resources_captured",
+      "value": true
+    },
+    {
+      "at": "2026-06-15T01:01:25Z",
+      "op": "stage",
+      "to": "awaiting_corpus"
+    },
+    {
+      "at": "2026-06-15T01:01:26Z",
+      "op": "log",
+      "msg": "Captured 3 resources (source=web_search, primary: uidaholib.github.io/get-git/3workflow.html)"
+    },
+    {
+      "at": "2026-06-15T01:07:58Z",
+      "op": "set",
+      "gate": "corpus_generated",
+      "value": true
+    },
+    {
+      "at": "2026-06-15T01:07:58Z",
+      "op": "stage",
+      "to": "awaiting_corpus_critic"
+    },
+    {
+      "at": "2026-06-15T01:07:58Z",
+      "op": "log",
+      "msg": "Corpus generated: 3350 words, standard profile, requires_diagram=true (clone-add-commit-push flow)"
+    },
+    {
+      "at": "2026-06-15T01:11:35Z",
+      "op": "set",
+      "gate": "corpus_critic_passed",
+      "value": false
+    },
+    {
+      "at": "2026-06-15T01:11:35Z",
+      "op": "log",
+      "msg": "Critic failed: scope_creep — git status taught in §8, .gitignore mechanism explained in §7.3 (13.14 content)"
+    },
+    {
+      "at": "2026-06-15T01:20:23Z",
+      "op": "set",
+      "gate": "corpus_critic_passed",
+      "value": true
+    },
+    {
+      "at": "2026-06-15T01:20:23Z",
+      "op": "stage",
+      "to": "awaiting_corpus_human_review"
+    },
+    {
+      "at": "2026-06-15T01:20:24Z",
+      "op": "log",
+      "msg": "Corpus critic passed cycle 2. Soft: git pull mention in §8 (minor scope); word count at floor (3065)."
+    },
+    {
+      "at": "2026-06-15T01:29:23Z",
+      "op": "set",
+      "gate": "corpus_human_approved",
+      "value": true
+    },
+    {
+      "at": "2026-06-15T01:29:23Z",
+      "op": "stage",
+      "to": "corpus_approved"
+    },
+    {
+      "at": "2026-06-15T01:29:23Z",
+      "op": "log",
+      "msg": "HITL#2 passed. All sections approved. Profile: standard (budget override from atomic — author decision). Diagram planned."
+    },
+    {
+      "at": "2026-06-15T01:40:45Z",
+      "op": "set",
+      "gate": "diagram_generated",
+      "value": true
+    },
+    {
+      "at": "2026-06-15T01:40:46Z",
+      "op": "set",
+      "gate": "diagram_critic_passed",
+      "value": true
+    },
+    {
+      "at": "2026-06-15T01:40:46Z",
+      "op": "stage",
+      "to": "awaiting_diagram_critic"
+    },
+    {
+      "at": "2026-06-15T01:40:46Z",
+      "op": "log",
+      "msg": "Diagram: flat LR pipeline, cycle 2 pass. Subgraphs removed — whitespace_imbalance fixed."
+    },
+    {
+      "at": "2026-06-15T01:41:12Z",
+      "op": "stage",
+      "to": "corpus_approved"
+    },
+    {
+      "at": "2026-06-15T01:43:44Z",
+      "op": "set",
+      "gate": "reading_generated",
+      "value": true
+    },
+    {
+      "at": "2026-06-15T01:43:44Z",
+      "op": "stage",
+      "to": "awaiting_reading_critic"
+    },
+    {
+      "at": "2026-06-15T01:43:44Z",
+      "op": "log",
+      "msg": "Reading generated: 1307 words, 7 min, standard profile, diagram embedded."
+    },
+    {
+      "at": "2026-06-15T01:45:33Z",
+      "op": "set",
+      "gate": "quiz_generated",
+      "value": true
+    },
+    {
+      "at": "2026-06-15T01:45:33Z",
+      "op": "stage",
+      "to": "awaiting_quiz_critic"
+    },
+    {
+      "at": "2026-06-15T01:45:33Z",
+      "op": "log",
+      "msg": "Quiz: 6q LO1-LO6, positions [2,0,3,1,0,3] max_share 0.33, bias_defense=true."
+    },
+    {
+      "at": "2026-06-15T01:47:31Z",
+      "op": "set",
+      "gate": "reading_critic_passed",
+      "value": true
+    },
+    {
+      "at": "2026-06-15T01:47:31Z",
+      "op": "stage",
+      "to": "reading_approved"
+    },
+    {
+      "at": "2026-06-15T01:47:31Z",
+      "op": "log",
+      "msg": "Reading critic passed cycle 1. Soft: assessment_reference in prose (1 finding, non-escalating)."
+    },
+    {
+      "at": "2026-06-15T01:49:12Z",
+      "op": "set",
+      "gate": "quiz_critic_passed",
+      "value": false
+    },
+    {
+      "at": "2026-06-15T01:49:12Z",
+      "op": "log",
+      "msg": "Quiz critic failed cycle 1: length_bias 50% (q1+72%, q3+52%, q4+97%). Auto-revising."
+    },
+    {
+      "at": "2026-06-15T01:51:31Z",
+      "op": "set",
+      "gate": "quiz_critic_passed",
+      "value": true
+    },
+    {
+      "at": "2026-06-15T01:51:31Z",
+      "op": "stage",
+      "to": "quiz_approved"
+    },
+    {
+      "at": "2026-06-15T01:51:31Z",
+      "op": "log",
+      "msg": "Quiz critic passed cycle 2. length_bias rate 0.333 (below 0.40 threshold)."
+    },
+    {
+      "at": "2026-06-15T01:51:38Z",
+      "op": "stage",
+      "to": "awaiting_topic_artifacts_review"
+    },
+    {
+      "at": "2026-06-15T01:51:38Z",
+      "op": "log",
+      "msg": "All critics passed. Advancing to HITL#3 artifact review."
+    },
+    {
+      "at": "2026-06-15T01:55:33Z",
+      "op": "set",
+      "gate": "topic_artifacts_human_approved",
+      "value": true
+    },
+    {
+      "at": "2026-06-15T01:55:33Z",
+      "op": "stage",
+      "to": "topic_artifacts_approved"
+    },
+    {
+      "at": "2026-06-15T01:55:33Z",
+      "op": "log",
+      "msg": "HITL#3 approved. reading 1307w/7min, quiz 6q, diagram LR pipeline. No carry-over failures."
+    },
+    {
+      "at": "2026-06-15T00:00:00Z",
+      "op": "set",
+      "gate": "module_drift_passed",
+      "value": true
+    },
+    {
+      "at": "2026-06-15T00:00:00Z",
+      "op": "stage",
+      "to": "module_passed"
+    },
+    {
+      "at": "2026-06-15T00:00:00Z",
+      "op": "log",
+      "msg": "module-drift critic PASS — verdict: PASS, 0 hard failures, 3 soft findings. Report: critic-reports/module-drift.critic.json"
+    },
+    {
+      "at": "2026-06-15T06:37:49Z",
+      "op": "set",
+      "gate": "week_human_approved",
+      "value": true
+    },
+    {
+      "at": "2026-06-23T17:39:30Z",
+      "op": "set",
+      "gate": "course_drift_passed",
+      "value": true
+    }
+  ]
+}

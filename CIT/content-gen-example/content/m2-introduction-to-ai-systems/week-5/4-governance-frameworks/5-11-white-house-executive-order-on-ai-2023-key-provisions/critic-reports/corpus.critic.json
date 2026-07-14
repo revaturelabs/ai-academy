@@ -1,0 +1,37 @@
+{
+  "topic_id": "5.11",
+  "artifact": "corpus",
+  "try": 1,
+  "passed": true,
+  "checks": {
+    "required_sections": {
+      "passed": true,
+      "detail": "Required sections all present and non-trivial. Section 3 (Learning Objectives) = 5 substantive bullets (~140w). Section 4 (Introduction) ~210w. Section 5 (Core Concepts) ~950w across sub-sections 5.1-5.8, far over the 100w floor. Section 10 (Key Takeaways) = 5 bullets, each a full sentence/clause set above the 50w-per-others spirit, ~210w total. Optional sections 6/7 skipped by builder (allowed); Best Practices placed at ## 8, Key Takeaways correctly at ## 10, Next Steps at ## 11 (canonical tail numbering, no mis-number defect)."
+    },
+    "citation_density": {
+      "passed": true,
+      "mode": "strict",
+      "detail": "resources_source=web_search -> strict. Three resources: [1]=primary (Federal Register canonical EO 14110 text), [2]=supporting (CRS R47843), [3]=supporting (CSET Georgetown). Primary [1] cited heavily throughout intro + every Core Concepts sub-section + takeaways (>= 1 satisfied). [2] cited on executive-order mechanics / revocability; [3] cited on policy-area grouping and agency-task framing. All [N] markers resolve to {1,2,3}; no marker >= [4] -> no fabricated citation. Core Concepts standalone factual assertions carry [N] well above the 60% bar (every provision sub-section and every legal-mechanism claim is marked)."
+    },
+    "sequence_drift": {
+      "passed": true,
+      "detail": "5.11 is delivery position 5 in module 4-governance-frameworks (sequence.index.json). Allowed vocabulary = this topic's concepts_introduced (executive order/EO 14110, dual-use foundation models, mandatory safety testing, civil-rights protections in AI, federal-agency AI governance guidance, revocability of executive action) plus prior-topic concepts. All cross-references point BACKWARD: 5.1 (failures), 5.2 (hallucination), 5.3 (data bias), 5.4 (four pillars), 5.5 (red-teaming), 5.7 (EU AI Act), 5.10 (NIST RMF). NO forward reference to 5.12 (India/MEITY) or 5.13 anywhere. Technical noun phrases (executive order, federal agencies, dual-use foundation models, transparency, civil rights, revoke) all resolve to home or prior concepts. No unknown / forward-referenced terms."
+    },
+    "length_sanity": {
+      "passed": true,
+      "note": "within_band",
+      "detail": "depth_profile=standard. Corpus body ~1750w. Within the gate band specified for this run (1500-6000w) and within tolerance of the standard reading band that sibling 5.10/5.7 corpus critics were calibrated against (artifact-mix.json profiles.standard reading target 1200-1600w; +30% tolerance -> ~2080w ceiling). ~1750w sits just above the 1600 nominal ceiling, deep inside the 30% tolerance, and comfortably inside the 1500-6000 gate band. Not blocking; surfaced as a soft note for HITL."
+    },
+    "scope_creep": {
+      "passed": true,
+      "detail": "Title 'EO 14110 - key provisions' is the boundary. Corpus teaches exactly the four headline provisions (safety testing/red-team reporting, transparency/reporting, civil-rights protections, federal-agency AI-use governance) plus the order's nature (executive order vs law) and revocability - all on-headline at standard depth. Adjacent material handled correctly: Defense Production Act stated factually as the legal footing in ~2 sentences with an explicit 'You do not need the details of that law' deferral (named, not taught in depth); January 2025 revocation stated factually and ties to the revocability concept that IS in concepts_introduced; later US executive actions / National Security Memorandum named-and-deferred ('named here only so you know they exist, and are not covered in this topic'). No off-topic concept taught at depth. No scope creep."
+    },
+    "beginner_readability": {
+      "passed": true,
+      "findings": [],
+      "detail": "Audience = fresher-zero-background. Non-everyday terms defined plainly on first use: 'executive order' (signed instruction from the President to agencies), 'federal agencies', 'dual-use', 'civil rights', 'revoke', 'transparency' each get a short plain-English meaning before use. Acronym EO 14110 introduced with full name and shorthand. Comparison rendered as a table (EU AI Act vs NIST RMF vs EO 14110). Short active sentences, learner addressed as 'you', no jargon-dump paragraph (no paragraph stacks 3+ brand-new terms), no academic hedging. Zero findings -> no escalation."
+    }
+  },
+  "verdict": "PASS. All six checks pass. 5.11 correctly teaches the four key provisions of EO 14110 (safety testing + red-team reporting for dual-use foundation models, transparency/reporting, civil-rights protections, federal-agency AI-use governance) plus the executive-order-vs-law nature and revocability, on-headline at standard depth. Strict web_search citation density satisfied: primary [1] (Federal Register) cited throughout, [2]/[3] both cited, all markers resolve to {1,2,3}, no fabricated [N]. Forward-reference discipline CLEAN: no mention of 5.12 (India/MEITY) or 5.13; all cross-references (5.1-5.5, 5.7, 5.10) are genuine back-references. Scope handled correctly: Defense Production Act, later executive actions, and the Jan-2025 revocation are stated factually / named-and-deferred, not taught in depth. Beginner-readable, canonical tail numbering. One soft note only: corpus body ~1750w sits just over the 1600 nominal standard ceiling but well inside both the 30% tolerance and the 1500-6000 gate band - acceptable, surfaced for HITL, not blocking.",
+  "at": "2026-06-22T15:11:43Z"
+}

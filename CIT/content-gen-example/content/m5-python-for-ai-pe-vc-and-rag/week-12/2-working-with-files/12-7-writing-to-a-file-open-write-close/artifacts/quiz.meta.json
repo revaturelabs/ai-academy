@@ -1,0 +1,109 @@
+{
+  "topic_id": "12.7",
+  "generated_at": "2026-06-14T00:00:00Z",
+  "format": "gift",
+  "$bias_defense_applied": true,
+  "$shuffle_seed": "12.7-cit-m5-week12",
+  "question_count": 6,
+  "mcq_count": 6,
+  "short_answer_count": 0,
+  "correct_position_distribution": {"0": 1, "1": 2, "2": 1, "3": 2},
+  "objective_coverage": {
+    "LO1": "q1",
+    "LO2": "q2",
+    "LO3": "q3",
+    "LO4": "q4",
+    "LO5": "q5",
+    "LO6": "q6"
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "type": "mcq",
+      "objective_ref": "Open a file in write mode ('w') and explain that it creates the file if it does not exist and erases it completely if it does.",
+      "correct_position": 1
+    },
+    {
+      "id": "q2",
+      "type": "mcq",
+      "objective_ref": "Open a file in append mode ('a') and explain that it creates the file if it does not exist and adds new content to the end if it does.",
+      "correct_position": 3
+    },
+    {
+      "id": "q3",
+      "type": "mcq",
+      "objective_ref": "Use .write(string) to write a single string to an open file and explain why you must include \\n manually.",
+      "correct_position": 0
+    },
+    {
+      "id": "q4",
+      "type": "mcq",
+      "objective_ref": "Use .writelines(list) to write every string in a list to a file in a single call.",
+      "correct_position": 2
+    },
+    {
+      "id": "q5",
+      "type": "mcq",
+      "objective_ref": "Convert numbers to strings with str() before calling .write(), and explain why writing a raw number raises a TypeError.",
+      "correct_position": 1
+    },
+    {
+      "id": "q6",
+      "type": "mcq",
+      "objective_ref": "Wrap all file-writing code in a with block so the file is always closed and flushed, even if something goes wrong.",
+      "correct_position": 3
+    }
+  ],
+  "length_bias_check": {
+    "method": "char_count_of_answer_text_stripped_of_feedback",
+    "results": [
+      {
+        "question": "q1",
+        "correct_len": 74,
+        "mean_distractor_len": 74,
+        "ratio": 1.00,
+        "flagged": false
+      },
+      {
+        "question": "q2",
+        "correct_len": 86,
+        "mean_distractor_len": 73,
+        "ratio": 1.18,
+        "flagged": false
+      },
+      {
+        "question": "q3",
+        "correct_len": 81,
+        "mean_distractor_len": 78,
+        "ratio": 1.04,
+        "flagged": false
+      },
+      {
+        "question": "q4",
+        "correct_len": 72,
+        "mean_distractor_len": 71,
+        "ratio": 1.01,
+        "flagged": false
+      },
+      {
+        "question": "q5",
+        "correct_len": 104,
+        "mean_distractor_len": 97,
+        "ratio": 1.07,
+        "flagged": false
+      },
+      {
+        "question": "q6",
+        "correct_len": 116,
+        "mean_distractor_len": 96,
+        "ratio": 1.21,
+        "flagged": true,
+        "note": "Marginally above 1.20 threshold; distractors were expanded to reduce gap — longest_correct_rate remains 1/6 = 17%"
+      }
+    ],
+    "longest_correct_count": 1,
+    "longest_correct_rate": 0.17,
+    "threshold": 0.40,
+    "passed": true
+  }
+}

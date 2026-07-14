@@ -1,0 +1,40 @@
+---
+config:
+  theme: base
+  themeVariables:
+    primaryColor: "#a5d8ff"
+    primaryBorderColor: "#4a9eed"
+    lineColor: "#555"
+  flowchart:
+    htmlLabels: true
+    curve: basis
+    nodeSpacing: 40
+    rankSpacing: 65
+title: "F1 is pulled toward the lower input — both must be high"
+---
+flowchart LR
+  prec["<b>Precision</b><br/><span style='font-size:12px;color:#6d28d9'>few false alarms</span>"]
+  rec["<b>Recall</b><br/><span style='font-size:12px;color:#6d28d9'>few misses</span>"]
+  f1["<b>F1 score</b><br/><span style='font-size:12px;color:#6d28d9'>one number, 0 to 1</span>"]
+
+  prec --> f1
+  rec --> f1
+
+  subgraph CONTRAST["Lopsided case: Precision 1.0, Recall 0.0"]
+    direction TB
+    avg["<b>Plain average</b><br/><span style='font-size:12px;color:#6d28d9'>0.5 — misleading okay</span>"]
+    harm["<b>Harmonic mean (F1)</b><br/><span style='font-size:12px;color:#6d28d9'>0 — correctly useless</span>"]
+  end
+
+  f1 -. "is the" .-> harm
+
+  prec:::start
+  rec:::start
+  f1:::done
+  avg:::bad
+  harm:::good
+
+  classDef start fill:#a5d8ff,stroke:#4a9eed,stroke-width:2px,color:#0b3d66
+  classDef done fill:#b2f2bb,stroke:#22c55e,stroke-width:2px,color:#14532d
+  classDef bad fill:#ffc9c9,stroke:#e03131,stroke-width:2px,color:#7a0c0c
+  classDef good fill:#b2f2bb,stroke:#22c55e,stroke-width:2px,color:#14532d

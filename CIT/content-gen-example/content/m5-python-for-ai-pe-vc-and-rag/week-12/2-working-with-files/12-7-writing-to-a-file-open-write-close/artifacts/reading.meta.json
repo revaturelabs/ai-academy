@@ -1,0 +1,22 @@
+{
+  "topic_id": "12.7",
+  "title": "Writing to a File — open, write, close",
+  "generated_at": "2026-06-14T00:00:00Z",
+  "word_count": 1350,
+  "reading_minutes": 7,
+  "estimated_read_minutes": 7,
+  "target_word_range": [1200, 1600],
+  "target_minutes_range": [6, 8],
+  "section_order": ["Overview", "Key Concepts", "Worked Example", "In Practice", "Key Takeaways", "References"],
+  "sections": ["Overview", "Key Concepts", "Worked Example", "In Practice", "Key Takeaways", "References"],
+  "diagram_embedded": true,
+  "embeds_diagram": true,
+  "diagram_path": "diagram.png",
+  "citations_used": ["[1]", "[2]", "[3]"],
+  "soft_findings_resolved": [
+    "list_comprehension_replaced_with_for_loop",
+    "tuple_syntax_replaced_with_parallel_lists",
+    "repr_removed",
+    "docstring_dropped_from_worked_example"
+  ]
+}

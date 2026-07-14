@@ -1,0 +1,55 @@
+$CATEGORY: CIT/M2/week-5/5.9-eu-ai-act-prohibited-uses-including-social-scoring-and-real
+
+::q1:: Under the EU AI Act (European Union Artificial Intelligence Act), what does it mean to call an AI use a "prohibited use"?
+{
+~It is allowed to run only after the provider completes documentation, testing, and human oversight steps.#No — that describes the high-risk tier; a prohibited use is not made legal by any paperwork.
+~It is permitted in most countries but still waiting for a special government permit to be issued.#No — there is no permit path; the ban is complete, not a use stuck pending approval.
+=It is banned completely and sits in the unacceptable-risk tier, with nothing able to make it legal.#Correct — prohibited uses are the top of the 5.7 risk pyramid; the law forbids them outright rather than regulating them.
+~It is a low-risk use that providers may deploy freely with no rules attached to it at all.#No — that describes minimal-risk uses; prohibited means the opposite, the use is forbidden.
+#### Tests the meaning of "prohibited uses" and its link to the unacceptable-risk tier from 5.7 (corpus §5.1).
+}
+
+::q2:: How does the corpus define "social scoring," and why is a government doing it banned?
+{
+=Rating people by their behavior over time, then treating them unfairly in unrelated parts of their life.#Correct — it turns life into a permanent grade, causing unfair treatment in unrelated situations and penalties out of all proportion.
+~Charging people different prices for products based purely on how much money they earn each year.#No — that is ordinary pricing, not the behavior-based rating-and-penalizing the Act bans as social scoring.
+~Asking citizens to rate government services so officials can improve the quality of public programs.#No — collecting feedback on services is not scoring people; social scoring grades the citizens themselves.
+~Giving every citizen the exact same public score so that everyone is treated in identical ways.#No — social scoring produces unequal treatment; equal treatment is the opposite of what the ban targets.
+#### Tests the definition of social scoring and why government social scoring is banned (corpus §5.2).
+}
+
+::q3:: What does the EU AI Act say about real-time biometric surveillance of people in public spaces?
+{
+~It is fully allowed for police anywhere, as long as the footage is reviewed by a human afterward.#No — live mass face-scanning by law enforcement in public is banned, not freely allowed.
+~It is treated as high-risk, so police may use it after filing the standard documentation and testing.#No — it is in the banned tier, not the high-risk tier; documentation does not unlock it.
+~It is permitted as long as the cameras only record footage and match the faces many hours later.#No — that confuses "real-time" with delayed matching; the ban targets live, in-the-moment scanning.
+=It is banned by default, with only narrow, pre-authorized exceptions like finding a missing child.#Correct — the default is banned; exceptions are few, tightly defined, time-limited, and approved in advance.
+#### Tests the real-time biometric surveillance ban and its narrow exceptions (corpus §5.3, §5.4).
+}
+
+::q4:: Besides social scoring and real-time biometric surveillance, which of these is also banned under Article 5 of the EU AI Act?
+{
+~A résumé-screening tool that ranks job applicants and is used under documentation and oversight rules.#No — hiring tools are high-risk (allowed under rules), not on the Article 5 banned list.
+=Untargeted face-scraping that builds face databases by mass-collecting images from the internet.#Correct — untargeted face-scraping is one of the additional practices Article 5 bans outright.
+~A spam filter that sorts incoming email into "inbox" and "junk" based on the message content.#No — a spam filter is an everyday minimal-risk use, nowhere near the banned tier.
+~A weather model that predicts tomorrow's rainfall from past temperature and pressure readings.#No — weather prediction harms no rights and is not on the prohibited list at all.
+#### Tests recognition of other Article 5 prohibited practices at a beginner's level (corpus §5.5).
+}
+
+::q5:: Why does the EU AI Act ban these uses outright instead of merely regulating them like high-risk AI?
+{
+=The harm is judged so severe that no amount of safeguards or paperwork could make the use safe.#Correct — this is the harm-prevention pillar from 5.4 at its limit: some harms are stopped only by forbidding the practice.
+~The technology behind these uses is too new and untested for any regulator to write rules about.#No — the issue is the severity of the harm, not the age or maturity of the technology.
+~These uses are too expensive for most providers, so banning them simply saves companies money.#No — cost is irrelevant; the ban exists to protect people's rights, not provider budgets.
+~Regulators have not yet had time to write the documentation rules, so a ban is a short stopgap.#No — the ban is deliberate and permanent, not a temporary placeholder until rules arrive.
+#### Tests why prohibited uses are banned rather than regulated, via the harm-prevention pillar from 5.4 (corpus §5.1, §5.6).
+}
+
+::q6:: A police force wants to live face-scan a busy shopping street every day to catch any wanted person. Which judgment fits the EU AI Act?
+{
+~It is allowed because watching a public street is the same as the missing-child exception in the law.#No — a broad, everyday sweep is not the narrow, pre-authorized exception; it sits firmly on the banned side.
+~It is high-risk, so it becomes legal once the force files documentation and adds human oversight.#No — general live face-scanning is in the banned tier, not the high-risk tier; paperwork cannot unlock it.
+~It is fine because scanning only flags wanted people, so ordinary passers-by are never identified at all.#No — live scanning identifies everyone in the crowd to check them, which is exactly the sweeping harm banned.
+=It is a prohibited use, because broad live face-scanning for general policing is banned by default.#Correct — this is everyday mass surveillance, not a narrow pre-authorized exception, so it falls on the banned side of the line.
+#### Tests applying the biometric ban and its narrow-exception boundary to a scenario (corpus §5.3, §5.4).
+}

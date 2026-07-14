@@ -1,0 +1,30 @@
+{
+  "topic_id": "13.6",
+  "captured_at": "2026-06-14T00:00:00Z",
+  "captured_by": "namratas@revature.com",
+  "resources_source": "web_search",
+  "web_search_query": "prompt engineering output format control JSON structured output LLM",
+  "resources": [
+    {
+      "type": "url",
+      "value": "https://codesignal.com/learn/courses/journey-into-format-control-in-prompt-engineering/lessons/structured-data-mastery-json-and-yaml-formats-in-llm-responses",
+      "role": "primary",
+      "source": "web_search",
+      "notes": "CodeSignal learning platform — course lesson on JSON/YAML format control in LLM outputs"
+    },
+    {
+      "type": "url",
+      "value": "https://agenta.ai/blog/the-guide-to-structured-outputs-and-function-calling-with-llms",
+      "role": "supporting",
+      "source": "web_search",
+      "notes": "Practical guide covering structured output prompting, JSON schema, format discipline"
+    },
+    {
+      "type": "url",
+      "value": "https://apxml.com/courses/prompt-engineering-llm-application-development/chapter-2-advanced-prompting-strategies/structuring-output-formats",
+      "role": "supporting",
+      "source": "web_search",
+      "notes": "Prompt engineering course chapter on structuring output formats (JSON, Markdown) for LLM applications"
+    }
+  ]
+}

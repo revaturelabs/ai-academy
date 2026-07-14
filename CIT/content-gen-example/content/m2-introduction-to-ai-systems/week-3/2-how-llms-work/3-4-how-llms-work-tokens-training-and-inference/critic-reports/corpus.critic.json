@@ -1,0 +1,75 @@
+{
+  "critic": "corpus-critic",
+  "topic_id": "3.4",
+  "topic_title": "How LLMs work — tokens, training, and inference",
+  "attempt": 2,
+  "at": "2026-06-17T00:00:00Z",
+  "passed": true,
+  "checks": {
+    "required_sections": {
+      "passed": true,
+      "findings": [],
+      "detail": "Sections 3 (Learning Objectives), 4 (Introduction), 5 (Core Concepts), 10 (Key Takeaways) all present and substantially populated. §5 is 5 sub-sections well over 100 words; §3/§4/§10 each exceed 50 words."
+    },
+    "citation_density": {
+      "passed": true,
+      "resources_source": "web_search",
+      "primary_resource_cited": true,
+      "primary_resource_url": "https://thenewstack.io/what-is-an-llm-token-beginner-friendly-guide-for-developers/",
+      "estimated_citation_coverage_sections_5_6_7": "above_60_percent",
+      "fake_citations_detected": false,
+      "findings": [],
+      "detail": "All three resources ([1] thenewstack.io, [2] medium.com, [3] bentoml.com) are cited. Primary [1] cited multiple times in §5.1. §5.1 through §5.5, §6, and §7 all carry citation markers. Coverage well above 60%. No fabricated citations detected."
+    },
+    "sequence_drift": {
+      "passed": true,
+      "hard_fail": false,
+      "soft_findings": [
+        {
+          "term": "forward pass",
+          "section": "§7 Real-World Patterns (line ~160)",
+          "resolution": "MITIGATED — parenthetical plain-English definition added: '(one complete run of the input through all model layers to produce an output)'. Definition is adequate for beginner audience. Soft flag cleared.",
+          "status": "resolved"
+        },
+        {
+          "term": "probability distribution",
+          "section": "§5.3 Inference",
+          "resolution": "Inline paraphrase 'a distribution of possible next tokens' remains adequate. Not a specialist AI concept requiring prior sequence introduction. Acceptable.",
+          "status": "acceptable"
+        },
+        {
+          "term": "batching",
+          "section": "§7 Real-World Patterns",
+          "resolution": "One-liner with parenthetical definition: 'batching (processing multiple users' decode steps together in parallel)'. Named-and-deferred form. Acceptable.",
+          "status": "acceptable"
+        }
+      ],
+      "findings": []
+    },
+    "length_sanity": {
+      "passed": true,
+      "depth_profile": "standard",
+      "word_count_estimate": 2270,
+      "range_min": 1800,
+      "range_max": 3500,
+      "findings": [],
+      "detail": "Estimated 2270 words. Within the 1800–3500 word range specified for standard profile corpus. No change from attempt 1 (only two sentences modified)."
+    },
+    "topic_scope": {
+      "passed": true,
+      "hard_fail": false,
+      "findings": [],
+      "detail": "Temperature fix verified: §5.3 line 80 now reads 'the degree of randomness is controlled by temperature (covered in topic 3.6).' The word 'temperature' is not bolded, and there is no defining clause or appositive — only a bare name plus a topic pointer. This satisfies the mention-and-defer rule. No other scope_creep candidates detected. 'Knowledge cutoff' (§5.5) is a one-line observable consequence of training, not taught as a standalone concept. 'Batching' and 'system prompt' are single passing mentions with plain-language context. All clear."
+    },
+    "beginner_readability": {
+      "passed": true,
+      "hard_fail": false,
+      "findings": [],
+      "finding_count": 0,
+      "escalated_to_hard_fail": false,
+      "detail": "The attempt-1 soft finding ('forward pass' undefined) is resolved by the parenthetical definition added in §7. All 14 new concepts introduced by this topic are defined at first use with plain-language explanations before technical phrasing. No jargon dumps detected (no paragraph stacks 3+ new terms). No academic hedging phrases detected. Sentence length is consistently short and direct."
+    }
+  },
+  "verdict": "PASS — all five checks clear on attempt 2. Hard fail on topic_scope from attempt 1 is resolved: 'temperature' is now bare and unbolded with a topic-3.6 pointer only. Soft finding on 'forward pass' is resolved by inline parenthetical definition. Corpus is ready to ground downstream artifacts.",
+  "required_fixes": []
+}

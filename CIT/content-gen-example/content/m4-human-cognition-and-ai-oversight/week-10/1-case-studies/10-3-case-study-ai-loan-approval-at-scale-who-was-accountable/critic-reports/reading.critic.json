@@ -1,0 +1,54 @@
+{
+  "topic_id": "10.3",
+  "artifact": "reading",
+  "critic_version": "1.0",
+  "evaluated_at": "2026-06-12T00:00:00Z",
+  "verdict": "PASS",
+  "profile": "standard",
+  "word_count": 1599,
+  "target_word_range": [1200, 1600],
+  "estimated_minutes": 6.95,
+  "target_minutes_range": [6, 8],
+  "checks": {
+    "format_discipline": {
+      "result": "PASS",
+      "notes": "No frontmatter. Opens with # heading. Sidecar reading.meta.json present. Six required sections present in correct order: Overview, Key Concepts, Worked Example, In Practice, Key Takeaways, References."
+    },
+    "length": {
+      "result": "PASS",
+      "notes": "1599 words — 1 word under the 1600 ceiling per meta; within tolerance. Estimated 6.95 min at 230 wpm, within 6–8 min target."
+    },
+    "citations": {
+      "result": "PASS",
+      "notes": "[1] Marda & Narayan arXiv:2205.05661 cited 5 times. [2] HES Fintech / ECOA cited 3 times. [3] Grant Thornton 2026 AI Impact Survey cited 2 times. All inline markers resolve to bibliography entries; no orphan markers or missing references."
+    },
+    "forward_references": {
+      "result": "PASS",
+      "notes": "automation bias (9.5) used without re-definition. Judgment Framework Q3 attributed to topic 9.9 explicitly. pipeline, training data (10.1) and failure mode (10.2) reused without re-definition. New terms — diffuse accountability, accountability gap, model documentation, adverse action notice — all defined on first use. No forward references to topics beyond 10.3."
+    },
+    "faithfulness": {
+      "result": "PASS",
+      "sampled_claims": 10,
+      "failures": 0,
+      "notes": "All 10 sampled claims trace directly to corpus §5.1–§6. Pipeline four-stage description, accountability three-component table, diffuse accountability and accountability gap definitions, Q3 'nobody knows' framing, ECOA specificity requirement, model documentation and adverse action notice descriptions, 78% executive statistic, and six-step audit all match corpus exactly or with appropriate condensation. No hallucinations detected. Minor omission: corpus remediation definition includes 'compensating the person harmed'; reading omits this clause — condensation within acceptable range, not a faithfulness failure."
+    },
+    "beginner_readability": {
+      "result": "PASS",
+      "notes": "ECOA spelled out in full on first use. All new terms bolded and defined inline. Concrete scenario in Overview anchors the abstract framework. No jargon without explanation."
+    },
+    "formatting": {
+      "result": "PASS",
+      "notes": "Accountability table in Key Concepts, numbered lists for pipeline and six-step audit, bullets in Key Takeaways. No unbroken walls of text. Diagram embedded with alt text and figure caption."
+    },
+    "scope": {
+      "result": "PASS",
+      "notes": "Stays on accountability in AI lending throughout. No credit scoring mathematics or model mechanics taught. Assessment-prep language from corpus §4 correctly excluded from reading artifact."
+    }
+  },
+  "issues": [],
+  "observations": [
+    "Word count at upper boundary (1599/1600) — within tolerance, no action required.",
+    "Corpus Remediation component includes 'and for compensating the person harmed'; reading condenses to 'A mechanism for correcting the decision if it was wrong.' Acceptable abbreviation for reading length target.",
+    "Diffuse accountability in Key Concepts lists three pipeline actors (bank, vendor, data provider); corpus §5.3 lists five (adds cloud infrastructure provider and regulator). Omission is appropriate for standard profile — the three named actors are the analytically salient ones and the six-step audit covers the broader enumeration."
+  ]
+}

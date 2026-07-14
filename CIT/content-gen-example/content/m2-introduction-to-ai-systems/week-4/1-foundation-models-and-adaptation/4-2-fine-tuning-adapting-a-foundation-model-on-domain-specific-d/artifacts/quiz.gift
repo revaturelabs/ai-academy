@@ -1,0 +1,49 @@
+$CATEGORY: CIT/M2/week-4/4.2-fine-tuning-adapting-a-foundation-model-on-domain-specific-d
+
+::q1:: A software company already has a powerful general-purpose language model. They want to make it useful for their internal helpdesk — one that knows their products, policies, and tone. Which process describes what they should do? {
+~Train a brand-new model from scratch using only their helpdesk data, because the general model cannot be changed.#No — starting from scratch would require the same enormous compute and data as the original training; it is not how domain adaptation works.
+=Take the existing pre-trained model and continue its training on a smaller, focused dataset drawn from the company's helpdesk records.#Correct — fine-tuning continues training from where the foundation model left off, adding domain-specific knowledge without repeating the original costly training.
+~Replace the model's learned parameters entirely with a new set trained only on helpdesk examples.#No — replacing all parameters means losing the broad general knowledge built during pre-training; fine-tuning adjusts parameters rather than replacing them.
+~Run the general model on hundreds of helpdesk examples at inference time to see how it naturally responds, with no further training.#No — this is zero-shot use, not fine-tuning; inference does not update the model's parameters or teach it anything new.
+#### Tests the definition of fine-tuning and how it differs from starting from scratch or zero-shot use (corpus §5.1).
+}
+
+::q2:: A lecturer asks students to give two examples of domain-specific data. Which answer correctly identifies both a domain and the type of data used to fine-tune a model for it? {
+~Any publicly available documents collected from the internet without labelling, used to give the model broader general knowledge.#No — this describes general pre-training data, not domain-specific labelled examples; fine-tuning requires targeted, labelled data from a specific domain.
+~Recent web pages and books from the past year, similar to the original pre-training corpus but more up to date.#No — refreshing general pre-training data is not domain-specific fine-tuning; domain-specific data must reflect the target area and include labelled examples.
+~The original dataset used during the foundation model's pre-training phase, re-used a second time to reinforce general knowledge.#No — reusing the pre-training dataset does not adapt the model to any specific domain; domain-specific data must come from the target area, not repeat the original training.
+=Clinical notes and medical guidelines for a healthcare model, or contracts and case summaries for a legal services model.#Correct — these are labelled examples drawn from a specific target domain; healthcare and legal services are precisely the domains the corpus uses to illustrate domain-specific data.
+#### Tests the meaning of domain-specific data and the ability to match a domain to representative training examples (corpus §5.3).
+}
+
+::q3:: A product team is planning to fine-tune a foundation model to assist customer support agents. Which ordering of steps correctly describes the fine-tuning sequence? {
+=Choose an appropriate base model, assemble labelled domain examples, run additional training on that data, evaluate the result on held-out examples, then deploy.#Correct — this five-step sequence matches the fine-tuning process: base model selection comes first, labelled data assembly next, then training, evaluation on unseen examples, and deployment.
+~Collect as many domain documents as possible first, then choose a base model, then train a brand-new model from scratch using those documents.#No — fine-tuning does not train a new model from scratch; it starts with an existing pre-trained model, and choosing that model comes before data collection in planning.
+~Deploy the foundation model immediately so it can answer real queries, then fine-tune it in the background by learning from live user conversations.#No — fine-tuning happens before deployment using a curated, labelled dataset; learning from live, unlabelled conversations is a different and riskier process.
+~Run additional training rounds immediately on any available data, then select the best base model afterwards and assemble a representative dataset.#No — selecting the base model and assembling representative data must happen before training begins; training on poorly chosen or unrepresentative data produces a poorly adapted model.
+#### Tests knowledge of the correct sequence of steps in the fine-tuning process (corpus §5.4).
+}
+
+::q4:: Which of the following is a scenario where fine-tuning a foundation model is the most appropriate adaptation choice? {
+~A start-up wants to launch a general-purpose chatbot for broad consumer use as quickly as possible, with no domain data available.#No — without labelled domain data and when speed matters most, zero-shot use or prompting is more appropriate; fine-tuning requires data collection and compute time.
+~A content team needs to block the model from discussing certain topics; they have no labelled examples but strong filtering rules.#No — content filtering through rules or system prompts does not require fine-tuning; fine-tuning without labelled data is not feasible.
+=A technology company wants a coding assistant that understands its internal codebase, proprietary frameworks, and team naming conventions.#Correct — the company has a stable domain, internal data (codebase, documentation, code-review comments), and accuracy requirements that a general model cannot meet without adaptation.
+~A news organisation needs the model to summarise articles published today, which post-date the model's training data cutoff.#No — fine-tuning cannot inject information about events after training cutoff; retrieval-augmented approaches are more appropriate when up-to-date information is needed.
+#### Tests the ability to identify real-world scenarios where fine-tuning is the right adaptation choice (corpus §5.1, §7).
+}
+
+::q5:: A hospital considers two options for their clinical documentation tool\: use a general foundation model directly (zero-shot), or fine-tune it on their clinical notes and guidelines. What is the most accurate description of this trade-off? {
+=Fine-tuning reduces generic responses and domain hallucinations but requires collecting labelled examples and spending compute effort; zero-shot use needs neither but risks producing inaccurate or inappropriately phrased specialist outputs.#Correct — this captures both sides: fine-tuning costs data and compute but improves specialist accuracy; zero-shot use is cheaper to start but risks hallucination and tone mismatch in specialist domains.
+~Zero-shot use is always the more accurate choice because the foundation model was trained on vastly more data than any fine-tuning dataset could provide.#No — while pre-training data is larger, it is general; fine-tuning on domain-specific labelled data specifically improves accuracy for that domain, reducing hallucination and tone errors.
+~Fine-tuning and zero-shot use produce equivalent accuracy in specialist domains; the only practical difference is that fine-tuning is faster to run at inference time.#No — accuracy in specialist domains differs significantly; fine-tuning teaches domain terminology and correct outputs, while zero-shot use relies only on general pre-training knowledge.
+~Fine-tuning is always the better choice in every situation because zero-shot use has no awareness of any domain and will always produce wrong answers.#No — zero-shot use works well for many general tasks; fine-tuning is the better choice specifically when specialist accuracy matters and labelled data is available.
+#### Tests understanding of the trade-off between fine-tuning and zero-shot use in specialist domains (corpus §5.6).
+}
+
+::q6:: A retail company is evaluating whether to fine-tune a foundation model for their product catalogue assistant. Their catalogue changes significantly every two weeks as new product lines are added. Which consideration most clearly indicates that fine-tuning may not be the right tool here? {
+~The company has a large volume of past customer enquiries that could be used as labelled training data.#No — having labelled data is an argument for fine-tuning, not against it; this consideration actually supports fine-tuning rather than disqualifying it.
+~The foundation model has never been specifically trained on retail or product catalogue content before.#No — this is exactly the kind of gap fine-tuning is designed to address; a model unfamiliar with a domain is a reason to fine-tune, not a reason to avoid it.
+~The team would need to use a cloud platform such as AWS SageMaker JumpStart to manage the fine-tuning workflow.#No — cloud platforms simplify fine-tuning and are the standard way teams without AI specialists carry it out; this is not a disqualifying factor.
+=The task requirements change so frequently that any fine-tuned model would be outdated within weeks, making the cost of repeated fine-tuning difficult to justify.#Correct — fine-tuning is most cost-effective for stable domains; when requirements shift rapidly, the labelled data and compute investment must be repeated constantly, and other adaptation methods are more appropriate.
+#### Tests the ability to recognise when fine-tuning is not the right adaptation tool — specifically when task requirements are unstable (corpus §8).
+}

@@ -1,0 +1,30 @@
+{
+  "topic_id": "1.11",
+  "captured_at": "2026-06-22T07:40:00Z",
+  "captured_by": "namratas@revature.com",
+  "resources_source": "web_search",
+  "web_search_query": "four properties of a good algorithm finite definite input output",
+  "resources": [
+    {
+      "type": "url",
+      "value": "https://www.bouraspage.com/repository/algorithmic-thinking/properties-of-an-algorithm",
+      "role": "primary",
+      "source": "web_search",
+      "notes": "Aristides Bouras' algorithmic thinking series; directly covers finite, definite, input, output properties with examples"
+    },
+    {
+      "type": "url",
+      "value": "https://study.com/academy/lesson/properties-of-algorithms.html",
+      "role": "supporting",
+      "source": "web_search",
+      "notes": "Education platform lesson covering four algorithm properties with clear definitions and examples"
+    },
+    {
+      "type": "url",
+      "value": "https://quescol.com/data-structure/algorithm-criteria-and-characteristics",
+      "role": "supporting",
+      "source": "web_search",
+      "notes": "CS education site covering algorithm criteria including finiteness, definiteness, input/output"
+    }
+  ]
+}

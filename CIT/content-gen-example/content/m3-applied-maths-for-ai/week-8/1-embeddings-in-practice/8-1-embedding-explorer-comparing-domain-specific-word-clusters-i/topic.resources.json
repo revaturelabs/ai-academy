@@ -1,0 +1,30 @@
+{
+  "topic_id": "8.1",
+  "captured_at": "2026-06-22T05:54:14Z",
+  "captured_by": "namratas@revature.com",
+  "resources_source": "web_search",
+  "resources": [
+    {
+      "type": "url",
+      "value": "https://projector.tensorflow.org/",
+      "role": "primary",
+      "source": "web_search",
+      "notes": "Live Embedding Projector tool — PCA/t-SNE/UMAP, 2D/3D, upload vectors+metadata TSV"
+    },
+    {
+      "type": "url",
+      "value": "https://www.tensorflow.org/tensorboard/tensorboard_projector_plugin",
+      "role": "supporting",
+      "source": "web_search",
+      "notes": "Official how-to: load vectors+metadata, switch to 2D, find nearest neighbors"
+    },
+    {
+      "type": "url",
+      "value": "https://research.google/blog/open-sourcing-the-embedding-projector-a-tool-for-visualizing-high-dimensional-data/",
+      "role": "historical",
+      "source": "web_search",
+      "notes": "Google Research announcement — purpose, cluster/relationship intuition"
+    }
+  ],
+  "web_search_query": "TensorFlow Embedding Projector visualize word clusters 2D"
+}

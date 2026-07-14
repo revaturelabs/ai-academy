@@ -1,0 +1,135 @@
+{
+  "topic_id": "4.6",
+  "artifact": "reading",
+  "critic_version": "reading-critic@1",
+  "run_at": "2026-06-17T00:00:00Z",
+  "passed": true,
+  "verdict": "PASS — all 7 checks clear; no hard or soft failures warranting escalation.",
+  "word_count_actual": 1973,
+  "word_count_range": [1800, 2200],
+  "estimated_read_minutes": 9,
+  "target_minutes_range": [9, 11],
+  "checks": {
+    "format_discipline": {
+      "passed": true,
+      "frontmatter_present": false,
+      "meta_sidecar_present": true,
+      "meta_sidecar_valid": true,
+      "section_template_violation": false,
+      "sections_found": ["Overview", "Key Concepts", "Worked Example", "In Practice", "Key Takeaways", "References"],
+      "sections_expected": ["Overview", "Key Concepts", "Worked Example", "In Practice", "Key Takeaways", "References"],
+      "notes": "First non-empty line is the H1 title; no YAML block. Sidecar parses with all required fields. Six fixed sections present in correct order."
+    },
+    "length": {
+      "passed": true,
+      "word_count": 1973,
+      "in_range": true,
+      "estimated_minutes": 9,
+      "minutes_in_range": true,
+      "notes": "1973 words is within [1800, 2200]. ceil(1973/230) = 9 minutes is within [9, 11]."
+    },
+    "citations": {
+      "passed": true,
+      "primary_resource_cited": true,
+      "all_inline_markers_resolve": true,
+      "no_orphan_markers": true,
+      "no_orphan_bibliography": true,
+      "citations_found": [1, 2, 3],
+      "citations_in_bibliography": [1, 2, 3],
+      "notes": "[1] cited at lines 5, 15, 24, 44, 48, 53, 73, 79, 103, 107, 113, 131, 139. [2] cited at lines 32, 44, 62, 103, 133. [3] cited at lines 15, 32, 53, 55, 62, 79, 107, 116, 133, 135. All three references resolve in the bibliography."
+    },
+    "no_forward_references": {
+      "passed": true,
+      "findings": [],
+      "notes": "All backward topic references correctly attributed: 4.1 (foundation models, line 48), 4.2 (hallucination, line 79), 4.3 (knowledge cutoff, line 121). One forward mention-and-defer found ('legal frameworks … covered in a later module', line 82) — compliant with mention-and-defer form: bare, not bolded, not defined."
+    },
+    "faithfulness": {
+      "passed": true,
+      "assertions_sampled": 10,
+      "unsupported_count": 0,
+      "hard_fail_threshold": 2,
+      "sampled_assertions": [
+        {"text": "Multimodal AI is one model that can receive, understand, and produce content across more than one type of input", "supported": true, "corpus_location": "§4 para 3"},
+        {"text": "Four modalities table (text/image/audio/video)", "supported": true, "corpus_location": "§5.1 table"},
+        {"text": "shared representation space — a common internal language", "supported": true, "corpus_location": "§5.2"},
+        {"text": "Translator-booth analogy", "supported": true, "corpus_location": "§5.2"},
+        {"text": "Foundation models trained almost entirely on text from books, websites, and conversations", "supported": true, "corpus_location": "§5.3"},
+        {"text": "White coat in hospital means something different from white coat in kitchen", "supported": true, "corpus_location": "§5.4"},
+        {"text": "Video is the most data-rich modality", "supported": true, "corpus_location": "§5.6"},
+        {"text": "Five-step flow underlying GPT-4o and Google Gemini", "supported": true, "corpus_location": "§5.7"},
+        {"text": "Three patterns in In Practice section", "supported": true, "corpus_location": "§7"},
+        {"text": "Limitations: hallucination, modality gaps, compute cost, privacy", "supported": true, "corpus_location": "§5.9"}
+      ],
+      "notes": "All 10 sampled assertions trace directly to the corpus with no material divergence."
+    },
+    "beginner_readability": {
+      "passed": true,
+      "undefined_terms": {
+        "passed": true,
+        "violations": [],
+        "notes": "All non-everyday terms defined on first use with bold-term + plain-meaning format: 'modality' (line 11), 'unimodal model' (line 24), 'shared representation space' (lines 32–34), 'encoder' (line 44), 'speech recognition' (line 57), 'audio understanding' (line 58). No unexplained acronyms present."
+      },
+      "jargon_dump": {
+        "passed": true,
+        "violations": [],
+        "notes": "No paragraph introduces 3+ new terms simultaneously."
+      },
+      "abstract_first": {
+        "passed": true,
+        "notes": "Concrete-first pattern maintained throughout: news-broadcast analogy precedes modality definitions; translator-booth analogy accompanies shared-representation-space definition; restaurant-menu scenario grounds the worked example."
+      },
+      "academic_register": {
+        "passed": true,
+        "hedging_count": 0,
+        "avg_sentence_length_estimate": "~22–24 words",
+        "long_sentence_examples": [
+          {"line": 5, "approx_words": 32, "text": "it is one model that can receive, understand, and produce content across more than one type of input — for example, text, images, audio, and video — all inside the same system [1]."},
+          {"line": 30, "approx_words": 35, "text": "The challenge is that the numbers for a sentence and the numbers for a photograph are arranged in completely different ways — like two sets of building blocks that are different shapes and sizes."}
+        ],
+        "notes": "Zero hedging phrases. Occasional sentences exceed the 20-word target (longest ~35 words) but these are isolated; the average is approximately 22–24 words, within the ~25-word ceiling defined in the skill. No systematic over-length prose. Flagged as an observation only — not a finding."
+      }
+    },
+    "formatting": {
+      "passed": true,
+      "wall_of_text": {
+        "passed": true,
+        "violations": [],
+        "notes": "No paragraph exceeds ~5 sentences. Key Concepts sub-sections chunk with tables and bullet lists throughout."
+      },
+      "unlisted_sequence": {
+        "passed": true,
+        "notes": "The five-step worked example (lines 88–101) is numbered. In Practice bullets use bold-prefixed list items. Multi-item enumerations throughout Key Concepts are rendered as bullet lists."
+      },
+      "no_inline_examples": {
+        "passed": true,
+        "notes": "Inline examples present across Key Concepts: news broadcast (modality intro), restaurant menu (worked example), hospital white coat, translator booth, customer email, voice message — not deferred to Worked Example alone."
+      },
+      "bold_term_definitions": {
+        "passed": true,
+        "notes": "Definitions follow bold-term / plain-meaning shape consistently."
+      }
+    },
+    "no_assessment_references": {
+      "passed": true,
+      "findings": [],
+      "notes": "No assessment IDs, due weeks, or grade weights appear in the reading artifact."
+    },
+    "scope": {
+      "passed": true,
+      "scope_creep_findings": [],
+      "notes": "No material outside the topic headline is taught. 'Legal frameworks' deferred with a bare mention-and-defer sentence (line 82) — compliant. 'Encoder' is on-scope as a direct component of how multimodal AI works. Hallucination referenced only as a known prior-topic concept (4.2), not taught here."
+    },
+    "diagram_inline": {
+      "passed": true,
+      "notes": "Diagram embedded at reading line 36 (![How a multimodal model works](artifacts/diagram.png)) within the Key Concepts section, under the 'shared representation' sub-heading. Caption present and descriptive."
+    }
+  },
+  "gold_example_comparison": {
+    "example_found": false,
+    "notes": "No gold example present in .claude/references/gold-examples/reading/. Checked against written standards in artifact-mix.json and reading-critic SKILL.md. Reading meets all written-standard bars."
+  },
+  "soft_findings": [],
+  "hard_findings": [],
+  "escalation": "none",
+  "recommendation": "Approve. No builder–critic retry required. Minor observation: two sentences in Overview and Key Concepts exceed 30 words; not a defect at the ~25-word average ceiling but worth noting if a second pass is requested."
+}

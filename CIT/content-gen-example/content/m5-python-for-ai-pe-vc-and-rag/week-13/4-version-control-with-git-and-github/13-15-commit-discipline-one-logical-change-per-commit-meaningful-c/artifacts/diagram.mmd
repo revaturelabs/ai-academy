@@ -1,0 +1,41 @@
+---
+title: Commit Discipline — Atomic Commits and Message Anatomy
+theme: base
+themeVariables:
+  primaryColor: "#a5d8ff"
+  primaryBorderColor: "#4a9eed"
+  lineColor: "#555"
+flowchart:
+  htmlLabels: true
+  curve: basis
+---
+flowchart LR
+    subgraph ATOMIC["Atomic vs Mixed Commits"]
+        direction TB
+        BAD["<b>Mixed Commit</b><br/><span style='font-size:12px;color:#b91c1c'>Adds README + fixes typo + adds .gitignore</span>"]
+        RULE["<b>One Logical Change</b><br/><span style='font-size:12px;color:#6d28d9'>One sentence, no &quot;and&quot;</span>"]
+        GOOD["<b>Atomic Commit</b><br/><span style='font-size:12px;color:#15803d'>Add README with project description</span>"]
+        BAD -->|"split into singles"| RULE
+        RULE -->|"result"| GOOD
+    end
+
+    subgraph MSG["Commit Message Anatomy"]
+        direction TB
+        SUBJ["<b>Subject Line</b><br/><span style='font-size:12px;color:#6d28d9'>Imperative verb · under 50 chars · no period</span>"]
+        BLANK["<b>Blank Line</b><br/><span style='font-size:12px;color:#6d28d9'>Separates subject from body</span>"]
+        BODY["<b>Message Body</b><br/><span style='font-size:12px;color:#6d28d9'>What changed and why · wrap at 72 chars</span>"]
+        SUBJ --> BLANK
+        BLANK --> BODY
+    end
+
+    classDef bad fill:#fecaca,stroke:#ef4444,stroke-width:2px
+    classDef concept fill:#d0bfff,stroke:#8b5cf6
+    classDef done fill:#b2f2bb,stroke:#22c55e
+    classDef act fill:#a5d8ff,stroke:#4a9eed
+
+    class BAD bad
+    class RULE concept
+    class GOOD done
+    class SUBJ act
+    class BLANK act
+    class BODY act

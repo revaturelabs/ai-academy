@@ -1,0 +1,10 @@
+{
+  "topic_id": "10.7",
+  "title": "Writing a post-mortem — what failed, why, who was accountable, what governance would have prevented it",
+  "estimated_read_minutes": 10,
+  "word_count": 1963,
+  "generated_at": "2026-06-13T00:00:00Z",
+  "embeds_diagram": true,
+  "citations_used": [1, 2, 3],
+  "sections": ["Overview", "Key Concepts", "Worked Example", "In Practice", "Key Takeaways", "References"]
+}

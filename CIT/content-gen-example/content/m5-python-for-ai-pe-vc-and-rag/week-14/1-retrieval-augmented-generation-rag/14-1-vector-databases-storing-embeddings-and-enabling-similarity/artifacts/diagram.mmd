@@ -1,0 +1,19 @@
+flowchart LR
+    A["Document text"] -->|"embed"| B["Embedding model"]
+    B -->|"outputs"| C["Vector\n(list of numbers)"]
+    C -->|"stored in"| D[("Vector database\nHNSW index")]
+    E["User query"] -->|"embed via\nsame model"| F["Query vector"]
+    F -->|"ANN search"| D
+    D -->|"top-k ranked"| G["Most similar\nresults"]
+
+    classDef inputNode fill:#5b9bd5,stroke:#2e75b6,color:#fff
+    classDef modelNode fill:#70ad47,stroke:#507e32,color:#fff
+    classDef dataNode fill:#ed7d31,stroke:#c55a11,color:#fff
+    classDef storeNode fill:#7030a0,stroke:#5a2387,color:#fff
+    classDef outputNode fill:#00b050,stroke:#007535,color:#fff
+
+    class A,E inputNode
+    class B modelNode
+    class C,F dataNode
+    class D storeNode
+    class G outputNode

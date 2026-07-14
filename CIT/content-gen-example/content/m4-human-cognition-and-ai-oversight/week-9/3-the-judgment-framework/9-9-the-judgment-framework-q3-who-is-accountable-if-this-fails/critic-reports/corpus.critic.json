@@ -1,0 +1,104 @@
+{
+  "critic": "corpus-critic",
+  "topic_id": "9.9",
+  "topic_title": "The Judgment Framework — Q3: Who is accountable if this fails?",
+  "passed": true,
+  "at": "2026-06-13T00:00:00Z",
+  "depth_profile_used": "standard",
+  "estimated_word_count": 3720,
+  "checks": {
+    "required_sections": {
+      "passed": true,
+      "detail": {
+        "learning_objectives": { "present": true, "estimated_words": 130, "threshold": 50, "passed": true },
+        "introduction": { "present": true, "estimated_words": 200, "threshold": 50, "passed": true },
+        "core_concepts": { "present": true, "estimated_words": 1650, "threshold": 100, "passed": true },
+        "key_takeaways": { "present": true, "estimated_words": 160, "threshold": 50, "passed": true }
+      }
+    },
+    "citation_density": {
+      "passed": true,
+      "resources_source": "web_search",
+      "primary_resource_cited": {
+        "resource_id": 1,
+        "url": "https://www.hfw.com/insights/legal-liability-for-ai-driven-decisions-when-ai-gets-it-wrong-who-can-you-turn-to/",
+        "role": "primary",
+        "cited_at_least_once": true,
+        "citation_count": 12
+      },
+      "supporting_resources_cited": [
+        { "resource_id": 2, "url": "https://www.salesforce.com/blog/ai-accountability/", "citation_count": 9 },
+        { "resource_id": 3, "url": "https://www.stephenrimmer.com/news/artificial-intelligence-who-is-accountable-for-getting-it-wrong/", "citation_count": 6 }
+      ],
+      "claim_citation_coverage": {
+        "sections_checked": ["Core Concepts (5)", "Implementation (6)", "Real-World Patterns (7)"],
+        "estimated_coverage_pct": 82,
+        "threshold_pct": 60,
+        "passed": true
+      },
+      "fake_citations": false
+    },
+    "sequence_drift": {
+      "passed": true,
+      "forward_references": [],
+      "notes": [
+        "All technical terms used are either in 9.9 concepts_introduced or prior topics 9.1-9.8.",
+        "'automation bias' used with back-reference to 9.5 — correctly contextualised.",
+        "'labelling bias', 'historical bias', 'feedback loop' back-referenced to 9.6 — correctly contextualised.",
+        "'System 1' and 'System 2' used with back-references to 9.1/9.2 in §9 only.",
+        "'EU AI Act' appears as an illustrative real-world reference in Misconception 3 — used as a named regulatory body, not introduced as a curriculum concept.",
+        "9.10 (acceptable error thresholds) and 9.11 (high-stakes domains) appear only as bare name + topic pointer in §7 (Real-World Patterns, one line) and §9 (Connections forward pointer) — correctly deferred."
+      ]
+    },
+    "length_sanity": {
+      "passed": true,
+      "estimated_word_count": 3720,
+      "depth_profile": "standard",
+      "profile_range_min": 3000,
+      "profile_range_max": 4400,
+      "within_profile_range": true,
+      "task_brief_range": "1500-6000",
+      "within_task_brief_range": true
+    },
+    "topic_scope": {
+      "passed": true,
+      "scope_boundary": "Q3 only — Who is accountable if this fails?",
+      "scope_creep_findings": [],
+      "notes": [
+        "Q1 and Q2 referenced as prerequisites only (§2, §9 backward connections); not re-taught.",
+        "9.10 (acceptable error thresholds) deferred in §7 and §9 — one-line named pointer only.",
+        "9.11 (high-stakes domains) deferred in §7 and §9 — one-line named pointer only.",
+        "EU AI Act used as illustrative regulatory context in Misconception 3 — not introduced as a curriculum topic."
+      ]
+    },
+    "beginner_readability": {
+      "passed": true,
+      "findings": [],
+      "undefined_terms": [],
+      "jargon_dumps": [],
+      "academic_register_issues": [],
+      "notes": [
+        "'Accountability', 'liability', and 'blame' all defined in §5.1 on first use — each in its own paragraph with a plain-language definition.",
+        "'Accountability chain' defined before elaboration in §5.2.",
+        "'Design-time accountability' and 'deployment-time accountability' defined at point of use in §5.6.",
+        "'Nameability' defined inline at §5.4 criterion 3.",
+        "Concrete examples lead each sub-section before abstract statements.",
+        "Register is plain and direct throughout; no hedging phrases detected.",
+        "No paragraph introduces 3+ new terms simultaneously."
+      ]
+    }
+  },
+  "soft_findings": [
+    {
+      "code": "section_11_placeholder",
+      "severity": "soft",
+      "detail": "Section 11 contains only the placeholder text '_System-derived from the next entry in curriculum/sequence.md._' — no discussion prompts or lab activity content was generated. The lab activity seed ('Apply the Judgment Framework to your domain system — Journal Entry #5') should be materialised here. Builder may fill this before artifact fan-out if desired; does not gate corpus approval."
+    },
+    {
+      "code": "assessment_alignment_absent",
+      "severity": "soft",
+      "detail": "A dedicated Assessment Alignment section for A3 (Maths and Cognition Lab Report, due week 10) is absent. A3 is mentioned briefly in the Connections section but not mapped to the Q3 procedure steps. Reading and quiz builders should ensure A3 alignment appears there. Does not gate corpus approval."
+    }
+  ],
+  "verdict": "PASS. All six corpus-critic checks pass for topic 9.9. Required sections (Learning Objectives, Introduction, Core Concepts, Key Takeaways) are present and substantive. Primary resource [1] (hfw.com) is cited 12 times; supporting resources [2] and [3] are well-distributed; claim-citation coverage ~82%, well above the 60% threshold; no fake citations. No forward references: 'accountability chain', 'pre-decision accountability', 'escalation', 'design-time accountability', 'deployment-time accountability', and 'nameability' are all introduced in 9.9; all back-references (9.1–9.8 concepts) are explicitly contextualised. Word count ~3720 is comfortably within the standard-profile 3000–4400 band. Scope is correctly bounded to Q3; 9.10 and 9.11 are named-and-deferred. Two soft findings (Section 11 placeholder; A3 assessment alignment absent) — neither gates approval."
+}

@@ -1,0 +1,54 @@
+$CATEGORY: CIT/M3/week-8/8.5-computing-accuracy-precision-recall-and-f1-by-hand-from-a-confusion-matrix
+
+::q1:: In a confusion matrix, one cell counts the cases where the model said "yes" but the real answer was "no." What is that cell called? {
+~A true positive, because the model made a positive prediction about the case.#No — a true positive is when the model said "yes" AND the real answer was "yes" (a correct catch).
+~A false negative, because the model's prediction did not match the truth.#No — a false negative is the opposite miss: the model said "no" but the real answer was "yes."
+=A false positive, because the model said "yes" while the truth was "no."#Correct — false positive is a false alarm: the model predicted positive, but it was actually negative. Second word = what the model said; first word = whether it was right.
+~A true negative, because the case was genuinely a negative one.#No — a true negative is when the model said "no" and the real answer really was "no" (a correct pass).
+#### Tests reading and naming the four confusion-matrix cells, especially distinguishing FP from the other outcomes (corpus §5).
+}
+
+::q2:: Which formula correctly gives accuracy from the four confusion-matrix cells? {
+=(TP + TN) divided by (TP + TN + FP + FN)#Correct — accuracy is the two "right" cells (TP and TN) over all four cells, i.e. right answers divided by total cases.
+~(TP + FP) divided by (TP + TN + FP + FN)#No — that numerator adds the false alarms to the correct catches; accuracy counts only the cells where the model was right (TP and TN).
+~(TP + TN) divided by (TP + FP)#No — that denominator is only the "model said positive" column, not all four cells; accuracy divides by every case tested.
+~(TP + FN) divided by (TP + TN + FP + FN)#No — that numerator mixes a correct catch with a miss; the two right cells are TP and TN, not TP and FN.
+#### Tests the definition and formula of accuracy in terms of the four cells (corpus §5).
+}
+
+::q3:: A model is tested and gives TP = 10, FP = 5, FN = 4, TN = 11. What is its precision? {
+~0.71, found by dividing TP by (TP + FN), the model's correct catches over all real positives.#No — that is recall, not precision; precision divides by (TP + FP), the "model said positive" column.
+~0.50, found by dividing TP by (TP + FN + FP), spreading TP over all the model's mistakes.#No — precision uses only TP and FP in the denominator, not FN as well; the correct denominator is TP + FP.
+~0.75, found by dividing TP by (TP + TN), comparing correct catches to correct passes.#No — TN belongs to recall and accuracy reasoning, never to precision; precision is TP over (TP + FP).
+=0.67, found by dividing TP by (TP + FP), so 10 over (10 + 5).#Correct — precision = TP / (TP + FP) = 10 / 15 = 0.67; look only down the "model said positive" column.
+#### Tests computing precision by hand and reading the correct column, not the row (corpus §5, §6).
+}
+
+::q4:: Using the same counts (TP = 10, FP = 5, FN = 4, TN = 11), what is the model's recall? {
+~0.67, found by dividing TP by (TP + FP), the "model said positive" column total.#No — that is precision; recall divides by (TP + FN), the "actually positive" row, not the predicted-positive column.
+=0.71, found by dividing TP by (TP + FN), so 10 over (10 + 4).#Correct — recall = TP / (TP + FN) = 10 / 14 ≈ 0.71; look across the "actually positive" row.
+~0.91, found by dividing TP by (TP + TN), comparing the two correct cells to each other.#No — TN never appears in recall; recall is TP over (TP + FN), the real positives the model should have caught.
+~0.40, found by dividing FN by (TP + FN), the share of real positives that were missed.#No — that computes the miss rate, not recall; recall uses TP (the catches) in the numerator, not FN.
+#### Tests computing recall by hand and reading the correct row, not the column (corpus §5, §6).
+}
+
+::q5:: You test a filter on 10 cases. It correctly flags 3 real positives, raises 1 false alarm, misses 2 real positives, and correctly passes the other 4. Reading these tallies into the 2x2 grid, which set of cell counts is correct? {
+~TP = 3, FP = 2, FN = 1, TN = 4, because the misses and the false alarms can be entered in either order.#No — the 2 misses are false negatives and the 1 false alarm is a false positive; swapping FP and FN is the most common tallying error.
+~TP = 4, FP = 1, FN = 2, TN = 3, because the larger correct count belongs to the catches.#No — TP is the correct catches of real positives (3 here); TN is the correct passes (4); these two have been swapped.
+=TP = 3, FP = 1, FN = 2, TN = 4, and they sum to 10, matching the cases tested.#Correct — correct catches = TP = 3, false alarm = FP = 1, misses = FN = 2, correct passes = TN = 4; 3+1+2+4 = 10, so the sanity check holds.
+~TP = 3, FP = 1, FN = 2, TN = 5, because every leftover case is a true negative.#No — the four cells must sum to the 10 cases tested; 3+1+2+5 = 11, which fails the sanity check, so a count is wrong.
+#### Tests building a confusion matrix by tallying predictions against truth and sanity-checking the total (corpus §5, §6).
+}
+
+::q6:: A confusion matrix shows TP = 8, FP = 4, FN = 3, TN = 5. Compute the precision and enter it as a decimal rounded to two places (e.g. 0.67). {
+=0.67
+=0.67 plus or minus 0.01
+=2/3
+=0.6666666666666666
+}
+
+::q7:: A fraud detector is tested on 100 transactions: only 12 are real fraud. The model labels everything "legit," scoring 88 percent accuracy yet catching zero fraud. Name the single metric that exposes this failure, and explain in one sentence why accuracy hid it. {
+=recall
+=Recall. Recall is TP divided by (TP + FN), and here TP = 0 so recall = 0, exposing that the model caught none of the real fraud; accuracy hid this because the rare positive class (12 of 100) barely affects a total dominated by the 88 correctly-passed negatives.
+=Recall exposes it because recall = TP / (TP + FN) = 0, while accuracy looked high since the many true negatives dominate the total when the positive class is rare.
+}

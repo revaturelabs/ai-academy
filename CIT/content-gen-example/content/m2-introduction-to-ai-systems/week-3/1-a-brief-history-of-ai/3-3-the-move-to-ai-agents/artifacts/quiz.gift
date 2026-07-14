@@ -1,0 +1,41 @@
+$CATEGORY: CIT/M2/week-3/3-3-the-move-to-ai-agents
+
+::q1:: A student types a question into an AI assistant and gets a single reply. A colleague uses a different system: they give it a goal, and it searches the web, runs calculations, and writes a report on its own. What best explains the difference between these two systems? {
+~The second system uses a more powerful language model with extra training data.#No — the underlying language model need not be different; the key change is what surrounds it.
+~The second system skips the language model entirely and uses rules instead.#No — an AI agent still uses a language model as its reasoning core; it does not replace the model.
+=An AI agent: a language model with a goal, tools, and a loop to act across many steps.#Correct — an agent keeps the language model but adds the extra layers (goal, tools, feedback loop) that allow multi-step autonomous action.
+~The second system is faster because it caches answers from previous users.#No — caching has nothing to do with the agent architecture described here.
+#### Tests LO1: defining an AI agent and distinguishing it from a standalone LLM (corpus §5.1).
+}
+
+::q2:: Which list correctly names all five core components of an agent loop as described in this topic? {
+=Goal, planning, tool use, memory, and feedback loop.#Correct — these are exactly the five building blocks covered in corpus §5.3.
+~Goal, training data, fine-tuning, output filter, and feedback loop.#No — training data and fine-tuning are how a language model is built, not components of an agent loop.
+~Input, tokenisation, attention, decoding, and output.#No — these describe internal steps of a language model, not the agent loop structure.
+~Goal, prompting, chain-of-thought, memory, and output parser.#No — prompting and chain-of-thought are techniques, not the five named agent-loop components.
+#### Tests LO2: identifying and naming the five core components of an agent loop (corpus §5.3).
+}
+
+::q3:: A plain language model can only produce text in reply to a prompt. According to this topic, what two additions are most responsible for turning that model into an autonomous actor? {
+~Larger training data and a longer context window.#No — scaling up the model alone does not make it autonomous; the loop and tools do.
+~A system prompt and output formatting rules.#No — system prompts guide tone and format but do not by themselves enable autonomous multi-step action.
+~Fine-tuning on task-specific examples and a faster GPU.#No — neither fine-tuning nor hardware speed creates the agent loop that enables autonomy.
+=Tools it can call and an act-observe-repeat loop.#Correct — tool use gives the model real-world reach; the feedback loop keeps it acting until the goal is reached (corpus §5.2).
+#### Tests LO3: explaining why planning and tool use transform an LLM into an autonomous actor (corpus §5.2).
+}
+
+::q4:: A financial team needs a system to gather data from regulatory filings, news sources, and market databases, then draft a first-version report for an analyst to review. Why is an agent architecture better suited to this task than a single-prompt language model call? {
+~A single-prompt call cannot understand financial language, but an agent can be trained on finance data.#No — this conflates training with architecture; the issue is multi-step action, not domain vocabulary.
+=The task has multiple steps across several sources — an agent chains them, where a single prompt cannot.#Correct — the multi-step, multi-source nature of the task is exactly where the agent loop adds value over a one-shot prompt (corpus §7).
+~A single-prompt call is too slow for real-time financial data, but an agent runs in parallel threads.#No — speed and parallelism are not the distinction drawn in this topic between agents and standalone LLM calls.
+~Agents have been specifically certified for financial use, whereas raw language models have not.#No — there is no certification distinction; the relevant difference is the multi-step architecture.
+#### Tests LO4: describing real-world scenarios where agent architecture is more useful than a single-prompt LLM call (corpus §7).
+}
+
+::q5:: A developer deploys an AI agent to process customer complaints. After several runs they notice the agent sometimes acts on a wrong fact it produced in an early step, carrying that error through all later steps. Which known limitation of today's AI agents does this best illustrate? {
+~Agents cannot use more than one tool in a single run.#No — agents are designed to call multiple tools; tool count is not a described limitation.
+~Agents require a human to approve every individual tool call before it executes.#No — most agents do not require per-call approval; supervised checkpoints are recommended for high-stakes actions, not every tool call.
+=Hallucinations propagate — one wrong step corrupts all steps that follow.#Correct — the corpus explicitly warns that hallucination propagates and that long chains amplify errors (corpus §5.4).
+~Agents can only handle tasks that take fewer than five steps.#No — there is no five-step limit described; agents can run many steps, though longer chains increase error risk.
+#### Tests LO5: recognising current limitations of AI agents and why human oversight matters (corpus §5.4).
+}

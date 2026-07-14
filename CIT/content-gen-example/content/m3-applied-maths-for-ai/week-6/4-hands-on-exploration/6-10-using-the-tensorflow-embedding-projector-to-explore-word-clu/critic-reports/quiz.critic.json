@@ -1,0 +1,41 @@
+{
+  "passed": true,
+  "checks": {
+    "positional_bias": {
+      "passed": true,
+      "distribution": [2, 0, 3, 1, 2, 0],
+      "counts": { "0": 2, "1": 1, "2": 2, "3": 1 },
+      "max_share": 0.33,
+      "meta_gift_desync": false
+    },
+    "length_bias": {
+      "passed": true,
+      "longest_correct_rate": 0.0,
+      "baseline": 0.25,
+      "correct_is_strict_longest_count": 2,
+      "note": "Correct option is strict-longest only in q4 and q5, and never exceeds 1.20x distractor mean; pattern not present."
+    },
+    "distractor_plausibility": {
+      "passed": true,
+      "absurd_rate": 0.0,
+      "total_distractors": 18,
+      "weakest_questions": []
+    },
+    "objective_coverage": {
+      "passed": true,
+      "uncovered_objectives": [],
+      "orphan_questions": [],
+      "lo_map": { "LO1": ["q1"], "LO2": ["q2"], "LO3": ["q3", "q6"], "LO4": ["q4"], "LO5": ["q5"] }
+    },
+    "beginner_scope": {
+      "passed": true,
+      "out_of_scope_questions": [],
+      "jargon_in_stem": [],
+      "unfair_distractors": [],
+      "note": "PCA/t-SNE referenced only as named buttons per corpus 5.2/8; no embedding-training or squashing-internals questions."
+    }
+  },
+  "auto_correction_applied": { "shuffle_round_2": false },
+  "verdict": "Pass - positional max_share 0.33, length_bias longest_correct_rate 0.00, absurd_rate 0.00, all 5 LOs covered, on-headline scope clean.",
+  "at": "2026-06-19T00:00:00Z"
+}

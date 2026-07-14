@@ -1,0 +1,13 @@
+{
+  "topic_id": "12.6",
+  "topic_title": "Reading from a file — open, read lines, close",
+  "generated_at": "2026-06-14T00:00:00Z",
+  "word_count": 1325,
+  "reading_minutes": 7,
+  "target_word_range": [1200, 1600],
+  "target_minutes_range": [6, 8],
+  "profile": "standard",
+  "citations_used": ["[1]", "[2]", "[3]"],
+  "diagram_embedded": true,
+  "sections": ["Overview", "Key Concepts", "Worked Example", "In Practice", "Key Takeaways", "References"]
+}

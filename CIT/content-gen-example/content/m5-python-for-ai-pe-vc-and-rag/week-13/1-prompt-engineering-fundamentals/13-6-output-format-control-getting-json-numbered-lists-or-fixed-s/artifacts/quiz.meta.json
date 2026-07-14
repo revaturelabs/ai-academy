@@ -1,0 +1,53 @@
+{
+  "topic_id": "13.6",
+  "generated_at": "2026-06-14T00:00:00Z",
+  "format": "gift",
+  "question_count": 6,
+  "$bias_defense_applied": true,
+  "$shuffle_seed": "b1f9e2c4a3d8f071",
+  "correct_position_distribution": [1, 3, 0, 2, 1],
+  "bias_defense_notes": "5 MCQ positions: pos0=1 (20%), pos1=2 (40%), pos2=1 (20%), pos3=1 (20%). max_share=0.40, constraint max_share<=0.40 satisfied. All 4 positions represented. Short-answer q6 excluded from MCQ position count. Length-bias fix applied 2026-06-14: longest_correct_rate reduced from 0.80 to 0.00 (0 of 5 MCQs have correct answer >120% of mean distractor length). q2 JSON-mode distractor replaced with prompt-level misconception about mentioning format keyword without specifying keys or suppression.",
+  "questions": [
+    {
+      "id": "q1",
+      "type": "mcq",
+      "objective_ref": "Explain why a language model produces inconsistently formatted output when given no format instruction, and why that inconsistency matters in a Python program.",
+      "correct_position": 1,
+      "length_ratio_correct_to_mean_distractor": 1.16
+    },
+    {
+      "id": "q2",
+      "type": "mcq",
+      "objective_ref": "Write a prompt instruction that requests a specific output format — JSON object, numbered list, or fixed text template — using exact, testable language.",
+      "correct_position": 3,
+      "length_ratio_correct_to_mean_distractor": 1.00
+    },
+    {
+      "id": "q3",
+      "type": "mcq",
+      "objective_ref": "Apply the three format-specification strategies (inline declaration, format example, and template echo) to a prompt of your own.",
+      "correct_position": 0,
+      "length_ratio_correct_to_mean_distractor": 1.09
+    },
+    {
+      "id": "q4",
+      "type": "mcq",
+      "objective_ref": "Identify format drift in a model response by comparing it against the declared format contract.",
+      "correct_position": 2,
+      "length_ratio_correct_to_mean_distractor": 1.15
+    },
+    {
+      "id": "q5",
+      "type": "mcq",
+      "objective_ref": "Describe the output validator pattern — checking format after a response and retrying once before returning a fallback — and explain why it is needed even when format instructions are present.",
+      "correct_position": 1,
+      "length_ratio_correct_to_mean_distractor": 0.93
+    },
+    {
+      "id": "q6",
+      "type": "short_answer",
+      "objective_ref": "Write a prompt instruction that requests a specific output format — JSON object, numbered list, or fixed text template — using exact, testable language.",
+      "correct_position": null
+    }
+  ]
+}

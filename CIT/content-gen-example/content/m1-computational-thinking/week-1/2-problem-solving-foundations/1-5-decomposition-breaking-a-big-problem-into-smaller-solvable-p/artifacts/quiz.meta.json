@@ -1,0 +1,47 @@
+{
+  "topic_id": "1.5",
+  "generated_at": "2026-06-20T00:00:00Z",
+  "format": "gift",
+  "question_count": 6,
+  "$bias_defense_applied": true,
+  "$shuffle_seed": "1.5-decomposition",
+  "correct_position_distribution": [2, 0, 3, 1, 0, 3],
+  "questions": [
+    {
+      "id": "q1",
+      "type": "mcq",
+      "objective_ref": "Define decomposition in plain language as a problem-solving strategy.",
+      "correct_position": 2
+    },
+    {
+      "id": "q2",
+      "type": "mcq",
+      "objective_ref": "Explain why large problems are difficult to solve all at once and how breaking them down helps.",
+      "correct_position": 0
+    },
+    {
+      "id": "q3",
+      "type": "mcq",
+      "objective_ref": "Identify the parts of a real-world problem and arrange them into a task tree showing how smaller parts connect to the whole.",
+      "correct_position": 3
+    },
+    {
+      "id": "q4",
+      "type": "mcq",
+      "objective_ref": "Distinguish between a problem that has been well decomposed and one that has not.",
+      "correct_position": 1
+    },
+    {
+      "id": "q5",
+      "type": "mcq",
+      "objective_ref": "Describe at least three real-world situations in which decomposition is used to make a complex task manageable.",
+      "correct_position": 0
+    },
+    {
+      "id": "q6",
+      "type": "mcq",
+      "objective_ref": "Apply decomposition to a problem of your own choosing, producing a written or visual list of sub-tasks. (Test via scenario recognition)",
+      "correct_position": 3
+    }
+  ]
+}

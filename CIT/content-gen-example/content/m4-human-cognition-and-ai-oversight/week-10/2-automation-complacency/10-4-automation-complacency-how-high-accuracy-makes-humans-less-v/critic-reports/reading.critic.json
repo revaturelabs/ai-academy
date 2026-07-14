@@ -1,0 +1,44 @@
+{
+  "passed": true,
+  "checks": {
+    "format_discipline": {
+      "passed": true,
+      "notes": "First non-empty line is the H1 title with no frontmatter. reading.meta.json present and parses correctly (word_count, estimated_minutes, citations_used, sections all present — word_count field shows 1843 which is the pre-expansion value; field is structurally valid). Six fixed sections appear in correct order: Overview, Key Concepts, Worked Example, In Practice, Key Takeaways, References. No added, dropped, or renamed headings."
+    },
+    "length_budget": {
+      "passed": true,
+      "word_count": 2073,
+      "estimated_minutes": 9.0,
+      "notes": "Pre-expansion count was 1843 (8.01 min, below the 9-min floor). Pass-2 expansion added ~230 words: Worked Example bullet 1 (Steps 3–4 invisibility elaboration, ~59 net words), new bullet 2 (6% base error rate illustration, ~83 words), In Practice structural-conditions paragraph (line 111, ~105 words), and countermeasures named-and-deferred sentence (line 113, ~44 words) — total ~291 words added, yielding ~2073 words. At 230 wpm: 2073 / 230 = 9.01 min. Word count 2073 is within the 1800–2200 target range; 9.0 min is at the 9-min floor of the 9–11 min target window. Passes both bounds."
+    },
+    "citation_discipline": {
+      "passed": true,
+      "primary_cited": true,
+      "notes": "Primary resource ScienceDirect [1] cited at lines 5, 11, 19, 29, 36, 40, 63, 98. Supporting resources [2] (Harvard JOLT) cited at lines 40, 48, 63, 102; [3] (UXmatters) cited at lines 92, 94. Bibliography in References section has all three entries. All inline markers [1][2][3] resolve to bibliography entries. No orphan markers; no orphan bibliography entries."
+    },
+    "forward_references": {
+      "passed": true,
+      "findings": [],
+      "notes": "All prior-topic terms used correctly: 'human override point' and 'override-as-theater' referenced and attributed to topic 10.1 at line 63. 'failure mode', 'override accountability', and 'accountability chain' from 10.2/10.3 are not used in this reading — no violation. 'out-of-the-loop performance decrement' defined inline at first use (line 94). No undefined technical terms introduced cold."
+    },
+    "readability_formatting_scope": {
+      "passed": true,
+      "findings": [
+        {
+          "type": "wall_of_text",
+          "severity": "soft",
+          "location": "line 111 (In Practice — structural conditions paragraph)",
+          "detail": "Paragraph contains approximately 9 sentences, exceeding the ≤4-sentence target. Content is substantively correct and valuable but could be split at 'Understanding this is important...' into two paragraphs for beginner scannability.",
+          "escalated": false
+        }
+      ],
+      "notes": "1 soft finding (wall_of_text). No scope_creep found. Checks 5–6 total soft findings = 1, below the ≥3 hard-fail threshold — does not escalate. All non-everyday terms defined on first use with bold-term format. No assessment references (A3 ID, due-week, grade weight) present. Countermeasures (audit sampling, uncertainty surfacing, performance monitoring) named-and-deferred in one sentence without teaching or defining them — correct scope discipline. Concrete inline examples present: spell-checker analogy (Overview), security guard analogy (Vigilance subsection), numeric 99%/50-minute example (Accuracy paradox), 94%-accuracy/80-scans illustration (Worked Example). No jargon dumps. No academic hedging register detected."
+    },
+    "corpus_faithfulness": {
+      "passed": true,
+      "notes": "Sampled 10 assertions across the reading. All trace to corpus: automation complacency definition (corpus §5), vigilance decay definition (corpus §5), accuracy paradox with 99%/50-minute numeric (corpus §5), trust calibration and drift pattern (corpus §5), 7-step causal chain in table (corpus §6), invisibility of steps 3–4 from outside (corpus §6), out-of-the-loop performance decrement in aviation (corpus §7), radiologist attention shift to AI-flagged areas (corpus §7), content moderation vigilance decay (corpus §7). The '80 scans / ~5 findings' calculation (line 84) is a direct arithmetic derivation from the 94% accuracy figure stated in the scenario — supported inference, not a new external claim. No new claims introduced beyond the corpus. 0 unsupported assertions found (threshold is >2)."
+    }
+  },
+  "verdict": "pass",
+  "at": "2026-06-12T00:00:00Z"
+}

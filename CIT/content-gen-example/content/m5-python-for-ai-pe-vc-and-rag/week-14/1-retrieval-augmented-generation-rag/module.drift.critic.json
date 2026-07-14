@@ -1,0 +1,98 @@
+{
+  "critic": "module-drift-critic",
+  "module": "1-retrieval-augmented-generation-rag",
+  "week_num": 14,
+  "at": "2026-06-16T00:00:00Z",
+  "passed": true,
+  "checks": {
+    "concept_sequence": {
+      "passed": true,
+      "violations": [
+        {
+          "severity": "soft",
+          "topic": "14.3",
+          "term": "context window",
+          "detail": "Used in 14.3 §5.5 (Risk 4) without prior introduction in any module topic. The corpus mitigates this inline: 'Context window is introduced here as a straightforward size concept; its deeper implications are explored in later courses.' The inline note is adequate containment but the term is not listed in any prior topic's introduced concepts."
+        }
+      ]
+    },
+    "coverage_gaps": {
+      "passed": true,
+      "gaps": []
+    },
+    "overlap_redundancy": {
+      "passed": true,
+      "instances": [
+        {
+          "severity": "soft",
+          "topics": ["14.2", "14.3"],
+          "sections": ["14.2 §5.2 (five-step pipeline)", "14.3 §5.3 (mechanism walkthrough)"],
+          "detail": "Both sections walk the same five pipeline steps (receive query → embed → ANN search → top-k → inject + generate). Estimated Jaccard similarity of core nouns exceeds 0.6. The 14.3 re-walk is framed around the hallucination-reduction mechanism rather than pipeline mechanics, which adds incremental purpose, but the structural overlap is substantive. Learners may perceive this as repetition. Recommend a cross-reference pointer in 14.3 §5.3 ('As you traced in 14.2 §5.2, …') rather than a full re-walk.",
+          "recommendation": "Replace the step-by-step re-walk in 14.3 §5.3 with a brief connector ('Recall the five-step pipeline from 14.2') followed immediately by the hallucination-grounding analysis at each step. Saves ~200 words and eliminates the perception of duplication."
+        },
+        {
+          "severity": "soft",
+          "topics": ["14.2", "14.3", "14.4"],
+          "sections": ["14.2 §7", "14.3 §7", "14.4 §7"],
+          "detail": "'Enterprise customer support', 'legal/medical Q&A', and 'internal knowledge base' real-world examples appear in the §7 Real-World Patterns section of all three topics. Each re-use adapts the framing to the topic's angle (pipeline, hallucination, when-to-use), but the underlying scenarios are identical. No two sections exceed 0.6 Jaccard on their full noun set; the finding is qualitative. Risk: a learner reading all four topics in a session may feel the examples are recycled. Severity is low."
+        }
+      ]
+    },
+    "scope_creep": {
+      "passed": true,
+      "instances": [
+        {
+          "severity": "soft",
+          "topic": "14.4",
+          "concept": "fine-tuning",
+          "detail": "Fine-tuning is introduced and explained at length in 14.4 §5.4 via a comparison table and four concrete examples. Fine-tuning is an adjacent concept outside this module's stated focus. However, it is introduced solely to establish a contrast decision boundary required to answer the module's 'when to use RAG' question, and the treatment is explicitly bounded with 'combined use is a Semester 2 implementation topic.' No implementation detail of fine-tuning is taught. Scope creep is minimal and purposeful; flagged as soft only for awareness."
+        }
+      ]
+    },
+    "terminology_consistency": {
+      "passed": true,
+      "violations": [
+        {
+          "severity": "soft",
+          "topics": ["14.2", "14.3", "14.4"],
+          "terms": ["parametric knowledge", "parametric memory"],
+          "detail": "14.2 introduces this concept as 'parametric knowledge' (§5.1, §5.3, Key Takeaways). 14.3 §5.1 switches to 'parametric memory' as the primary label and adds a reconciliation note ('parametric memory … You met the related term parametric knowledge in 14.2; parametric memory refers to the same idea'). 14.4 uses 'parametric memory' exclusively, cementing the label shift. The reconciliation note in 14.3 prevents a hard confusion, but the dual labelling introduces unnecessary cognitive load. Recommend standardising on one term module-wide. 'Parametric memory' (14.3/14.4) is the more descriptive label for beginners; if adopted, 14.2 should introduce it from the outset."
+        }
+      ]
+    }
+  },
+  "hard_findings": [],
+  "soft_findings": [
+    {
+      "id": "SF-01",
+      "topic": "14.3",
+      "check": "concept_sequence",
+      "summary": "'context window' used without prior module introduction. Inline caveat present but term not in any prior topic's concepts_introduced list."
+    },
+    {
+      "id": "SF-02",
+      "topics": ["14.2", "14.3"],
+      "check": "overlap_redundancy",
+      "summary": "Five-step RAG pipeline re-walked in 14.3 §5.3 with Jaccard > 0.6 overlap to 14.2 §5.2. Different framing (hallucination mechanism vs. pipeline mechanics) justifies some repetition, but a cross-reference pointer would be leaner."
+    },
+    {
+      "id": "SF-03",
+      "topics": ["14.2", "14.3", "14.4"],
+      "check": "overlap_redundancy",
+      "summary": "Same three real-world example categories (enterprise customer support, legal/medical, internal knowledge base) reused across three topics' §7 sections. Framing differs per topic; no single-pair Jaccard exceeds 0.6. Qualitative repetition risk only."
+    },
+    {
+      "id": "SF-04",
+      "topic": "14.4",
+      "check": "scope_creep",
+      "summary": "Fine-tuning introduced and compared at length. Bounded to contrast role; no implementation detail. Purposeful and contained."
+    },
+    {
+      "id": "SF-05",
+      "topics": ["14.2", "14.3", "14.4"],
+      "check": "terminology_consistency",
+      "summary": "Synonym drift: 'parametric knowledge' (14.2) vs 'parametric memory' (14.3, 14.4). Reconciliation note present in 14.3 §5.1 but module should standardise on one label."
+    }
+  ],
+  "verdict": "PASS with 5 soft findings. No hard violations. The module arc (what → how → why → when) is coherent and complete. Concept sequencing is clean across 14.1→14.4 with no true forward references. The primary actionable item is the 'parametric knowledge' vs 'parametric memory' terminology split across 14.2/14.3/14.4 (SF-05), which should be resolved to a single label before artifact generation. The pipeline re-walk overlap between 14.2 §5.2 and 14.3 §5.3 (SF-02) is the second-priority edit: replacing the re-walk with a connector reference saves words and eliminates perceived duplication."
+}

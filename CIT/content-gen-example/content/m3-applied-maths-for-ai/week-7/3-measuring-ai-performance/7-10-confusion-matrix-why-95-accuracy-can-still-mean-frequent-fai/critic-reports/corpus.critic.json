@@ -1,0 +1,63 @@
+{
+  "critic": "corpus-critic",
+  "topic_id": "7.10",
+  "topic_title": "Confusion matrix — why 95% accuracy can still mean frequent failure",
+  "cycle": 2,
+  "at": "2026-06-23T00:00:00Z",
+  "passed": true,
+  "verdict": "PASSED — all 6 checks clear. Citation density: [1] present on every factual paragraph in §5 and §6; ≥60% coverage confirmed in both sections. Sequence drift: 'ground truth' and 'positive class' now in 7.10's concepts_introduced; both defined on first use with explicit bold-term + plain-language blocks; 'negative class' defined in the same sentence as 'positive class' at §5.1; 'threshold' removed entirely. Length: estimated ~3200 words, within standard corpus range [1500–4000]. Scope: confusion matrix + four cells + accuracy paradox only; F1/ROC/AUC/sensitivity/specificity absent; no scope creep. Readability: all three cycle-1 undefined-term findings resolved; 0 distinct soft findings; no jargon dumps; terms defined on first use throughout.",
+  "checks": {
+    "required_sections": {
+      "passed": true,
+      "findings": []
+    },
+    "citation_density": {
+      "passed": true,
+      "resources_source": "web_search",
+      "mode": "strict",
+      "primary_cited": true,
+      "findings": [
+        {
+          "code": "citation_density_note",
+          "severity": "soft",
+          "detail": "Section 5.6, line 192: the bridging sentence 'Why does TN matter, then? Because TN is what inflates accuracy in imbalanced datasets (as shown in section 5.4).' lacks a [1] marker, but the surrounding sentences in the same paragraph carry [1]. Coverage in §5.6 remains above 60%. Not a hard fail."
+        }
+      ]
+    },
+    "sequence_drift": {
+      "passed": true,
+      "findings": []
+    },
+    "length_sanity": {
+      "passed": true,
+      "depth_profile": "standard",
+      "allowed_range_words": [1500, 4000],
+      "estimated_word_count": 3200,
+      "findings": []
+    },
+    "topic_scope": {
+      "passed": true,
+      "findings": []
+    },
+    "beginner_readability": {
+      "passed": true,
+      "escalated_to_hard_fail": false,
+      "findings": [],
+      "distinct_finding_count": 0,
+      "cycle1_resolutions": [
+        {
+          "term": "ground truth",
+          "resolution": "Explicit bold-term definition added at §5.1 (line 53): 'Ground truth — the actual correct label for each item in the dataset, determined by a human expert or a reliable reference before the model is run.' Used consistently thereafter."
+        },
+        {
+          "term": "positive class / negative class",
+          "resolution": "Explicit bold-term definitions added at §5.1 (line 51): 'Positive class — the category the model is trained to detect' with concrete spam/disease examples; negative class defined as 'everything that is not the positive class — the default, unremarkable outcome the model is trying to separate from.' Both carry [1]."
+        },
+        {
+          "term": "threshold",
+          "resolution": "Removed entirely from corpus. No occurrence found."
+        }
+      ]
+    }
+  }
+}

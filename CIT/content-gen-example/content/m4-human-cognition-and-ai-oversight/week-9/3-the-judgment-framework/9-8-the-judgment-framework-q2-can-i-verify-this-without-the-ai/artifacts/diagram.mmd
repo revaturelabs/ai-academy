@@ -1,0 +1,28 @@
+---
+title: "Q1 × Q2 — Which action is right?"
+theme: base
+themeVariables:
+  primaryColor: "#a5d8ff"
+  primaryBorderColor: "#4a9eed"
+  lineColor: "#555"
+flowchart:
+  htmlLabels: true
+  curve: basis
+  nodeSpacing: 50
+  rankSpacing: 60
+---
+flowchart TB
+    subgraph LOW["Cost of error: Low"]
+        direction LR
+        LL["<b>Act, verify later</b><br/><span style='font-size:12px;color:#14532d'>Can verify (Q2 = Yes)</span>"]:::done
+        LR_["<b>Act with awareness</b><br/><span style='font-size:12px;color:#14532d'>Cannot verify (Q2 = No)</span>"]:::done
+    end
+    subgraph HIGH["Cost of error: High"]
+        direction LR
+        HL["<b>Verify before acting</b><br/><span style='font-size:12px;color:#3b0764'>Can verify (Q2 = Yes)</span>"]:::auto
+        HR["<b>Stop — escalate</b><br/><span style='font-size:12px;color:#92400e'>Cannot verify — critical stop</span>"]:::hitl
+    end
+
+    classDef done fill:#b2f2bb,stroke:#22c55e,color:#14532d
+    classDef auto fill:#d0bfff,stroke:#8b5cf6,color:#3b0764
+    classDef hitl fill:#fff3bf,stroke:#f59e0b,stroke-width:3px,color:#78350f

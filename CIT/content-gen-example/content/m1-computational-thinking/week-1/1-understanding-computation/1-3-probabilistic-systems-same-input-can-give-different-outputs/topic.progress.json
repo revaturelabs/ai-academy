@@ -1,0 +1,199 @@
+{
+  "topic_id": "1.3",
+  "stage": "topic_artifacts_approved",
+  "gates": {
+    "resources_captured": true,
+    "corpus_generated": true,
+    "corpus_critic_passed": true,
+    "corpus_human_approved": true,
+    "reading_generated": true,
+    "reading_critic_passed": true,
+    "quiz_generated": true,
+    "quiz_critic_passed": true,
+    "diagram_generated": true,
+    "diagram_critic_passed": true,
+    "module_drift_passed": true,
+    "course_drift_passed": true,
+    "topic_artifacts_human_approved": true,
+    "week_human_approved": true
+  },
+  "history": [
+    {
+      "at": "2026-06-19T11:49:12Z",
+      "op": "set",
+      "gate": "resources_captured",
+      "value": true
+    },
+    {
+      "at": "2026-06-19T11:49:12Z",
+      "op": "stage",
+      "to": "awaiting_corpus"
+    },
+    {
+      "at": "2026-06-19T11:49:12Z",
+      "op": "log",
+      "msg": "Captured 3 resources (source=web_search)"
+    },
+    {
+      "at": "2026-06-19T11:55:07Z",
+      "op": "set",
+      "gate": "corpus_generated",
+      "value": true
+    },
+    {
+      "at": "2026-06-19T11:55:07Z",
+      "op": "stage",
+      "to": "awaiting_corpus_critic"
+    },
+    {
+      "at": "2026-06-19T11:55:07Z",
+      "op": "log",
+      "msg": "Corpus generated — standard depth, diagram=true"
+    },
+    {
+      "at": "2026-06-19T11:57:55Z",
+      "op": "set",
+      "gate": "corpus_critic_passed",
+      "value": false
+    },
+    {
+      "at": "2026-06-19T11:57:56Z",
+      "op": "log",
+      "msg": "Corpus critic fail cycle 1: scope_creep S5.7 (LLM/ML mechanics), sequence_drift (statistical model/RNG/LLM/training data), readability hard-fail (jargon dumps)"
+    },
+    {
+      "at": "2026-06-19T12:02:52Z",
+      "op": "set",
+      "gate": "corpus_critic_passed",
+      "value": true
+    },
+    {
+      "at": "2026-06-19T12:02:52Z",
+      "op": "stage",
+      "to": "awaiting_corpus_human_review"
+    },
+    {
+      "at": "2026-06-19T12:02:52Z",
+      "op": "log",
+      "msg": "Corpus critic passed cycle 2 — soft finding: ~2680 words (below 3000 soft floor, above hard fail)"
+    },
+    {
+      "at": "2026-06-19T12:12:30Z",
+      "op": "set",
+      "gate": "corpus_human_approved",
+      "value": true
+    },
+    {
+      "at": "2026-06-19T12:12:30Z",
+      "op": "stage",
+      "to": "corpus_approved"
+    },
+    {
+      "at": "2026-06-19T12:12:31Z",
+      "op": "log",
+      "msg": "HITL#2 approved — all sections approved, standard depth, diagram=true"
+    },
+    {
+      "at": "2026-06-19T12:16:31Z",
+      "op": "set",
+      "gate": "diagram_generated",
+      "value": true
+    },
+    {
+      "at": "2026-06-19T12:16:31Z",
+      "op": "set",
+      "gate": "diagram_critic_passed",
+      "value": true
+    },
+    {
+      "at": "2026-06-19T12:16:31Z",
+      "op": "log",
+      "msg": "Diagram critic passed cycle 1 — PNG clean, branches legible"
+    },
+    {
+      "at": "2026-06-19T12:19:42Z",
+      "op": "set",
+      "gate": "quiz_critic_passed",
+      "value": false
+    },
+    {
+      "at": "2026-06-19T12:19:42Z",
+      "op": "log",
+      "msg": "Quiz critic fail cycle 1: length_bias 5/6 correct answers longest option (0.833 > 0.40 threshold)"
+    },
+    {
+      "at": "2026-06-19T12:20:09Z",
+      "op": "set",
+      "gate": "reading_generated",
+      "value": true
+    },
+    {
+      "at": "2026-06-19T12:20:09Z",
+      "op": "set",
+      "gate": "reading_critic_passed",
+      "value": true
+    },
+    {
+      "at": "2026-06-19T12:20:10Z",
+      "op": "log",
+      "msg": "Reading critic passed cycle 1 — 1432w, 7min, all checks clean"
+    },
+    {
+      "at": "2026-06-19T12:24:11Z",
+      "op": "set",
+      "gate": "quiz_generated",
+      "value": true
+    },
+    {
+      "at": "2026-06-19T12:24:11Z",
+      "op": "set",
+      "gate": "quiz_critic_passed",
+      "value": true
+    },
+    {
+      "at": "2026-06-19T12:24:11Z",
+      "op": "stage",
+      "to": "awaiting_topic_artifacts_review"
+    },
+    {
+      "at": "2026-06-19T12:24:11Z",
+      "op": "log",
+      "msg": "Quiz critic passed cycle 2 — length_bias fixed (0.833->0.333), 4 soft findings, no hard fails"
+    },
+    {
+      "at": "2026-06-20T17:22:28Z",
+      "op": "set",
+      "gate": "topic_artifacts_human_approved",
+      "value": true
+    },
+    {
+      "at": "2026-06-20T17:22:31Z",
+      "op": "stage",
+      "to": "topic_artifacts_approved"
+    },
+    {
+      "at": "2026-06-22T11:08:21Z",
+      "op": "set",
+      "gate": "module_drift_passed",
+      "value": true
+    },
+    {
+      "at": "2026-06-22T12:14:24Z",
+      "op": "set",
+      "gate": "week_human_approved",
+      "value": true
+    },
+    {
+      "at": "2026-06-23T08:12:31Z",
+      "op": "set",
+      "gate": "course_drift_passed",
+      "value": true
+    },
+    {
+      "at": "2026-06-23T11:14:15Z",
+      "op": "set",
+      "gate": "course_drift_passed",
+      "value": true
+    }
+  ]
+}

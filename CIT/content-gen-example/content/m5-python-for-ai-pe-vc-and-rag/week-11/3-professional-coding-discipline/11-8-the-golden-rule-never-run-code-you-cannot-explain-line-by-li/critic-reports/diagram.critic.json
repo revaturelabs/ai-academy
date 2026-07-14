@@ -1,0 +1,62 @@
+{
+  "critic": "diagram-critic",
+  "cycle": 1,
+  "topic_id": "11.8",
+  "at": "2026-06-13T00:00:00Z",
+  "passed": true,
+  "source_preflight": {
+    "mermaid_parses": true,
+    "node_count": 7,
+    "node_count_in_range": true,
+    "label_discipline": true,
+    "concept_fidelity": true,
+    "label_plainness": true,
+    "notes": "7 nodes (GEN, GATE, RUN_NOW, SILENT, READ, FOUR_Q, RUN_CONF). All bold labels <= 4 words. All map to named corpus phrases: 'AI generates code' (§4/§5.3), 'Read first?' (§6 Step 1), 'Run immediately' (§8 anti-pattern), 'Silent failure risk' (§5.2), 'Read whole block' (§6 Step 2), 'Four-question test' (§5.5), 'Run — confirmed' (§6 Step 5). No scope-creep. No unexplained acronyms."
+  },
+  "visual_checks": {
+    "nodes_overlap": false,
+    "label_truncated": false,
+    "crossings_illegible": false,
+    "layout_wrong_for_intent": false,
+    "missing_side_panel_pattern": false,
+    "side_panels_hollow": false,
+    "whitespace_imbalance": false,
+    "subtitle_illegible": false,
+    "color_tier_violation": false,
+    "edge_label_collision": false
+  },
+  "stats": {
+    "node_count": 7,
+    "edge_count": 4,
+    "layout": "flowchart LR (two direction:TB subgraphs — side-by-side panels)",
+    "png_path": "artifacts/diagram.png",
+    "render_command": "mmdc -i artifacts/diagram.mmd -o artifacts/diagram.png -w 1400 -b transparent",
+    "color_assignment": {
+      "GEN": "start (#a5d8ff) — entry: AI generates code",
+      "GATE": "hitl (#fff3bf) — decision gate: Read first?",
+      "RUN_NOW": "auto (#d0bfff) — automated/impulsive step: Run immediately",
+      "SILENT": "fail (#ffd6d6) — terminal risk: Silent failure risk",
+      "READ": "act (#a5d8ff) — sub-action: Read whole block",
+      "FOUR_Q": "act (#a5d8ff) — sub-action: Four-question test",
+      "RUN_CONF": "done (#b2f2bb) — terminal success: Run — confirmed"
+    }
+  },
+  "findings": [
+    {
+      "code": "looks_good",
+      "where": "overall diagram",
+      "detail": "7-node LR side-by-side contrast diagram. GEN (blue entry) feeds GATE (yellow decision diamond). GATE routes 'No' to PATH_A (purple RUN_NOW -> red SILENT) and 'Yes' to PATH_B (blue READ -> blue FOUR_Q -> green RUN_CONF). Two-path contrast intent fully realized. No overlaps, no truncation, no illegible edges expected at 1400px width."
+    },
+    {
+      "code": "looks_good",
+      "where": "concept fidelity and scope",
+      "detail": "All 7 nodes map to topic 11.8 corpus only. Subtitle text 'What / Where / Why / Spec?' accurately abbreviates the four questions from §5.5 without introducing external terminology. 'Silent failure risk' correctly names the §5.2 concept. 'Run — confirmed' accurately paraphrases §6 Step 5 ('running is a confirmation, not a discovery')."
+    },
+    {
+      "code": "looks_good",
+      "where": "color tier semantics",
+      "detail": "GATE uses :::hitl (yellow) which is the correct tier for a human judgment point — the decision to read before running is the professional discipline checkpoint. RUN_CONF uses :::done (green) and SILENT uses :::fail (custom red) giving clear visual contrast between the two path outcomes. No color tier violations."
+    }
+  ],
+  "verdict": "PASS (cycle 1). 7-node LR side-by-side contrast. GEN (blue) -> GATE (yellow) -> PATH_A: Run immediately (purple) -> Silent failure risk (red) | PATH_B: Read whole block (blue) -> Four-question test (blue) -> Run confirmed (green). All labels <= 4 words, all corpus-grounded, no acronyms, correct color tiers, layout matches two-path contrast intent."
+}

@@ -1,0 +1,32 @@
+{
+  "verdict": "pass",
+  "findings": [
+    {
+      "code": "looks_good",
+      "where": "overall",
+      "detail": "Pipeline flows LR with ghost gap annotations at both organisational handoffs; CONTROLS panel shows two controls side-by-side with no spurious ordering edge; dashed arrows from Approval/Rejection to both controls are legible; all colour tiers correct; subtitles readable at viewer scale."
+    },
+    {
+      "code": "whitespace_imbalance",
+      "where": "upper-left quadrant",
+      "detail": "Mermaid LR+nested-TB layout places CONTROLS top-right and PIPELINE bottom-left, leaving ~40% of the upper-left canvas empty. This is a structural Mermaid constraint for this topology — content is clear and unambiguous. Accepted as minor cosmetic."
+    }
+  ],
+  "stats": {
+    "nodes": 8,
+    "edges": 8,
+    "layout": "flowchart LR (PIPELINE: direction TB, CONTROLS: default)",
+    "labels": [
+      "Input Collection",
+      "Accountability Gap",
+      "Credit Model",
+      "Accountability Gap",
+      "Approval / Rejection",
+      "Consequence",
+      "Model Documentation",
+      "Adverse Action Notice"
+    ],
+    "png_path": "content/m4-human-cognition-and-ai-oversight/week-10/1-case-studies/10-3-case-study-ai-loan-approval-at-scale-who-was-accountable/artifacts/diagram.png",
+    "png_dims": "1400px wide"
+  }
+}

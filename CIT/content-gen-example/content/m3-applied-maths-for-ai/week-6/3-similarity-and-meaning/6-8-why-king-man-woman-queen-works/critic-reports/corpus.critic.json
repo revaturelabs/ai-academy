@@ -1,0 +1,41 @@
+{
+  "critic": "corpus-critic",
+  "topic_id": "6.8",
+  "cycle": 1,
+  "at": "2026-06-19T00:00:00Z",
+  "passed": true,
+  "checks": {
+    "required_sections": {
+      "passed": true,
+      "notes": "All four required sections present and non-trivial. §3 Learning Objectives: 5 well-formed objectives (~90w). §4 Introduction: ~170w with clear hook and framing. §5 Core Concepts: 5 sub-sections (§5.1–§5.5), well over 100w, substantive and sequenced. §10 Key Takeaways: ~150w, 5 distinct bullets covering all major concepts."
+    },
+    "citation_density": {
+      "passed": true,
+      "primary_cited": true,
+      "claim_citation_rate": 0.88,
+      "notes": "Primary resource [1] (Edinburgh) cited throughout: §4 intro claim, §5.1 cluster discovery, §5.2 direction finding, §5.3 arithmetic steps, §5.4 implicit learning, §5.5 distributional hypothesis, §6 Step 4, §7 search/bias, §8 best practices, §10 takeaways. Supporting [2] (Plotly) cited for approximation, nearest-neighbour, and bias findings. Supporting [3] (Data from the Trenches) cited for pattern frequency, cross-lingual, and analogy examples. Approximately 88% of key claims in §5 and §7 carry a citation marker. No fabricated markers detected — all citations are [1], [2], or [3] consistent with the 3 resources in topic.resources.json."
+    },
+    "sequence_drift": {
+      "passed": true,
+      "forward_refs": [],
+      "notes": "No forward references to undefined concepts. All prior-topic concepts used correctly: vectors/feature (6.3), coordinate space/point in space/distance as similarity (6.5), dot product/similarity score (6.6), embedding/distributional hypothesis/Word2Vec/embedding space/dense vector (6.7), weight matrix (6.4). 'Cosine similarity' appears once in §6 Step 4 with explicit deferral to 6.9 ('you will see the formula in 6.9') — this is a name-and-defer, not a teaching instance, which is within scope per the critic brief. All 6 new concepts (analogy_direction, gender_direction, vector_arithmetic, approximate_equality, nearest_neighbour_answer, embedding_offset) are defined on or before first substantive use."
+    },
+    "length_sanity": {
+      "passed": true,
+      "word_count": 2050,
+      "profile": "deep",
+      "notes": "Corpus builder reported 2050 words. Manual review of section volumes is consistent with this estimate. The deep profile target range is 1800–2500 words; 2050 sits comfortably within range at roughly the midpoint."
+    },
+    "topic_scope": {
+      "passed": true,
+      "scope_creep_findings": [],
+      "notes": "Topic boundary (direction theory, vector offset arithmetic, approximate equality, distributional basis for why it works) is fully respected. Cosine similarity formula is not taught — it is named and deferred to 6.9 in one sentence in §6. Word2Vec training internals are not re-detailed; the distributional hypothesis is referenced as prior knowledge from 6.7 without re-teaching the algorithm. All three Real-World Patterns (analogy search, bias auditing, cross-lingual alignment) are appropriate downstream applications of the vector arithmetic concept and do not introduce out-of-scope mechanics."
+    },
+    "beginner_readability": {
+      "passed": true,
+      "findings": [],
+      "notes": "All new terms defined on or near first use: 'direction' (§5.2 opening sentence), 'gender direction' (§5.2 named after the example is built up), 'approximate equality' (§4 inline with the '≈' symbol), 'nearest word/nearest neighbour' (§5.4 explained in a dedicated paragraph). No paragraph introduces 3 or more simultaneous undefined terms. The step-by-step structure in §5.3 and §6 keeps each concept atomic. The 2D paper exercise in §9 provides a concrete numeric grounding. Language throughout is plain-English first, with mathematical notation introduced only after prose explanation."
+    }
+  },
+  "verdict": "PASS — all 6 checks passed; corpus is well-structured, correctly scoped, thoroughly cited, within deep-profile word-count range, sequence-safe, and beginner-readable."
+}

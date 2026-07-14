@@ -1,0 +1,76 @@
+{
+  "topic_id": "2.8",
+  "artifact": "reading",
+  "critic_cycle": 1,
+  "evaluated_at": "2026-06-17T00:00:00Z",
+  "verdict": "pass",
+  "reading_critic_passed": true,
+  "checks": {
+    "format_discipline": {
+      "result": "pass",
+      "findings": []
+    },
+    "length": {
+      "result": "pass",
+      "word_count": 2075,
+      "estimated_minutes": 9.0,
+      "target_word_range": [1800, 2200],
+      "target_minute_range": [9, 11],
+      "in_word_range": true,
+      "in_minute_range": true
+    },
+    "citations": {
+      "result": "pass",
+      "primary_resources_cited": ["[1] CSUN library guide"],
+      "all_primary_cited": true,
+      "inline_markers": [1, 2, 3],
+      "bibliography_entries": [1, 2, 3],
+      "orphan_markers": [],
+      "orphan_bibliography": []
+    },
+    "forward_references": {
+      "result": "pass",
+      "findings": [
+        "One forward pointer to next topic in 'In Practice' step 6: 'covered in the next topic' — named and deferred, not taught. Acceptable."
+      ]
+    },
+    "faithfulness": {
+      "result": "pass",
+      "assertions_sampled": 8,
+      "unsupported_assertions": 0,
+      "notes": "All assertions trace to corpus sections 5.1–5.7 and section 6. Both worked examples reproduce the corpus spec, output, analysis, and tables faithfully."
+    },
+    "beginner_readability": {
+      "result": "pass",
+      "findings": [],
+      "undefined_terms": [],
+      "jargon_dumps": [],
+      "abstract_first": [],
+      "academic_register": [],
+      "notes": "All new terms (testing a specification, verification, format drift, constraint overflow, task drift, pass/fail table) are defined in bold-term / plain-meaning format at first use. Concrete examples precede each abstract concept. Average sentence length under 20 words. No hedging language."
+    },
+    "formatting": {
+      "result": "pass",
+      "findings": [],
+      "wall_of_text": [],
+      "unlisted_sequence": [],
+      "no_inline_examples": false,
+      "notes": "Six-step process rendered as numbered list. Failure pattern examples rendered as bullets. Every concept introduction has an inline example. All paragraphs under 4 sentences. Tables used for Q1/Q2/Q3 summary and failure-pattern summary."
+    },
+    "assessment_reference": {
+      "result": "pass",
+      "findings": []
+    },
+    "scope": {
+      "result": "pass",
+      "findings": [],
+      "notes": "No teaching beyond the headline. The forward pointer to revision/re-running (topic 2.9) is a single sentence naming the next step without explaining it."
+    }
+  },
+  "gold_example_bar": {
+    "gold_file": "2-1-what-makes-a-good-specification.reading.md",
+    "meets_bar": true,
+    "notes": "Matches gold on: ### subsections for each concept, bold-term definitions at first use, inline examples via bullets, short paragraphs (≤4 sentences), no assessment prose, concrete-first ordering. Depth is higher than gold (deep vs. standard profile) as expected."
+  },
+  "summary": "All eight critic checks pass on cycle 1. The reading is within the 1800–2200 word range, cites all three resources, defines every new term before use, uses concrete examples before abstractions, renders all procedures as numbered lists or tables, and stays on the topic headline. Both worked examples are faithfully reproduced from the corpus with full pass/fail tables. No assessment references. No scope creep. No frontmatter."
+}

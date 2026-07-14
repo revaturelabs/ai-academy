@@ -1,0 +1,48 @@
+{
+  "topic_id": "1.9",
+  "generated_at": "2026-06-22T00:00:00Z",
+  "format": "gift",
+  "profile": "standard",
+  "question_count": 5,
+  "question_types": ["MCQ"],
+  "$bias_defense_applied": true,
+  "$shuffle_seed": "topic_id='1.9' -> hash=0x312e39 XOR salt=0 -> positions assigned [2,0,3,1,2]; constraint check: max_share=2/5=0.40 <= 0.40 PASS; all positions used at least once among {0,1,2,3}: position 0 used 1x, 1 used 1x, 2 used 2x, 3 used 1x PASS",
+  "correct_position_distribution": {"0": 1, "1": 1, "2": 2, "3": 1},
+  "questions": [
+    {
+      "id": "q1",
+      "type": "mcq",
+      "objective_ref": "LO1 — Explain what an algorithm is in plain language, without using programming jargon",
+      "correct_position": 2,
+      "answer_order": ["distractor", "distractor", "correct", "distractor"]
+    },
+    {
+      "id": "q2",
+      "type": "mcq",
+      "objective_ref": "LO2 — Describe the key characteristics that distinguish an algorithm from an arbitrary list of steps",
+      "correct_position": 0,
+      "answer_order": ["correct", "distractor", "distractor", "distractor"]
+    },
+    {
+      "id": "q3",
+      "type": "mcq",
+      "objective_ref": "LO3 — Apply the idea of algorithmic thinking to a familiar everyday task",
+      "correct_position": 3,
+      "answer_order": ["distractor", "distractor", "distractor", "correct"]
+    },
+    {
+      "id": "q4",
+      "type": "mcq",
+      "objective_ref": "LO4 — Identify, by inspection, whether a given set of steps qualifies as an algorithm or falls short",
+      "correct_position": 1,
+      "answer_order": ["distractor", "correct", "distractor", "distractor"]
+    },
+    {
+      "id": "q5",
+      "type": "mcq",
+      "objective_ref": "LO5 — Explain why clear, unambiguous instructions matter when writing steps for a computer to follow",
+      "correct_position": 2,
+      "answer_order": ["distractor", "distractor", "correct", "distractor"]
+    }
+  ]
+}

@@ -1,0 +1,41 @@
+$CATEGORY: CIT/M3/week-8/8.1-embedding-explorer-comparing-domain-specific-word-clusters
+
+::q1:: You open the TensorFlow Embedding Projector for this lab and a screen full of dots appears. What does each single dot on the screen represent? {
+~A whole sentence the model read while it was being trained on text.#No — the Projector plots single words, not sentences; each dot is one word, not a phrase.
+~A button you click to change the picture from a 2D view to a 3D view.#No — view buttons sit on the side panel; the dots in the main area are the data, not controls.
+=One word, placed so that words with related meanings land near each other.#Correct — each dot is a single word, and the distance between dots reflects how related the meanings are.
+~A folder of saved screenshots you took during an earlier run of the tool.#No — the dots are live data words; saved screenshots are files kept outside the tool entirely.
+#### Tests recognizing what each dot represents after opening the Projector (corpus §5 "what the tool is", LO: open the tool / recognize a dot).
+}
+
+::q2:: For the cooking lab you must choose words to plot. Why is picking 10 focused words from one subject better than throwing in 30 random unrelated words? {
+=A focused set gives a clean, readable shape, while random words make a confusing scatter.#Correct — a focused domain set forms a clear group; random unrelated words spread into a mess you cannot read.
+~A focused set runs faster because the tool has fewer total dots to draw on the screen.#No — speed is not the point; the corpus says the reason is a clean readable shape versus a confusing scatter.
+~Random words are blocked by the tool, so you are forced to use a focused set anyway.#No — the tool does not block words; you simply get a harder-to-read picture if you mix them in.
+~A focused set is required before the tool will let you switch into the flat 2D view.#No — the 2D view works regardless of which words you pick; focus is about readability, not unlocking views.
+#### Tests why a focused domain-specific word set beats a random one (corpus §5 "domain-specific", LO: pick focused words).
+}
+
+::q3:: After choosing a projection method you switch to the flat 2D view. Which statement best describes what this "2D projection" actually is? {
+~The exact, true distances between every word stored in the full number-list.#No — the flat picture is an approximation; it is explicitly not the exact truth of the full number-list.
+~A list of the 10 words sorted from most common to least common in the data.#No — a projection is a flattened spatial picture, not a frequency-sorted list of words.
+~A 3D model of the words that you rotate to inspect them from every side.#No — 2D means a flat left-right and up-down picture; the rotatable model is the separate 3D view.
+=A squashed flat picture of the many-number data, kept readable but losing some exact detail.#Correct — a projection flattens the many-dimension data to two directions; it keeps the overall shape but is an approximation.
+#### Tests what a 2D projection is and is not (corpus §5 "2D projection", LO: 2D projection meaning).
+}
+
+::q4:: You plot your 10 cooking words and notice the word "plate" sitting alone, far from the bunched-up cooking-action words. What are you looking at, and what does it tell you? {
+~A cluster — a tight group showing that "plate" shares meaning with the cooking actions.#No — a lonely far-off dot is an outlier, not a cluster; a cluster is a tight bunch of dots.
+=An outlier — a lonely dot whose meaning does not fit neatly with the rest of the group.#Correct — a single dot off on its own is an outlier; "plate" drifts because it is also plain dinnerware, not a cooking step.
+~A projection error that the tool made, which you should fix by reloading the word list.#No — a lonely dot is meaningful information, not a bug; it shows the word's meaning sits apart.
+~A nearest-neighbor link, drawn to show "plate" is the closest dot to every other word.#No — an isolated dot is an outlier; nearest neighbors are the dots sitting closest, not a lonely far one.
+#### Tests identifying an outlier versus a cluster by eye (corpus §5 "clusters and outliers", LO: cluster vs outlier).
+}
+
+::q5:: You load cooking words and football words together into the tool. You see two separate bunches with a wide gap between them. What does that layout tell you about the two domains? {
+~The two domains mean almost the same thing, which is why both bunches appeared.#No — a wide gap signals the opposite; it means the domains share little meaning, not that they match.
+~The tool failed to separate them, so you should reload the words one domain at a time.#No — two separate bunches is exactly the expected, correct result, not a failure to fix.
+=They share little meaning, since a wide gap between the two clusters means the domains differ.#Correct — each domain forms its own cluster, and the wide gap between them signals they share little meaning.
+~The words were plotted in 3D, so the gap is just an angle you can rotate away.#No — the gap reflects meaning, not a viewing angle; it stays meaningful in the flat 2D view.
+#### Tests comparing two domains and reading what the layout means (corpus §5 "comparing two domains", LO: compare two domains).
+}

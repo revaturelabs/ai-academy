@@ -1,0 +1,30 @@
+{
+  "topic_id": "8.7",
+  "captured_at": "2026-06-22T07:49:22Z",
+  "captured_by": "namratas@revature.com",
+  "resources_source": "web_search",
+  "resources": [
+    {
+      "type": "url",
+      "value": "https://www.nature.com/articles/s41598-024-56706-x",
+      "role": "primary",
+      "source": "web_search",
+      "notes": "Evaluation metrics and statistical tests for ML (Scientific Reports) - which metric for which task; canonical primary."
+    },
+    {
+      "type": "url",
+      "value": "https://arxiv.org/pdf/2310.06800",
+      "role": "supporting",
+      "source": "web_search",
+      "notes": "Test & Evaluation Best Practices for ML-Enabled Systems - designing the eval, test suites, pass criteria."
+    },
+    {
+      "type": "url",
+      "value": "https://arxiv.org/pdf/2412.12148",
+      "role": "supporting",
+      "source": "web_search",
+      "notes": "How to Choose a Threshold for an Evaluation Metric for LLMs - the pass/fail-threshold piece, capstone-relevant."
+    }
+  ],
+  "web_search_query": "how to design a machine learning evaluation plan choose metric test set size pass threshold"
+}

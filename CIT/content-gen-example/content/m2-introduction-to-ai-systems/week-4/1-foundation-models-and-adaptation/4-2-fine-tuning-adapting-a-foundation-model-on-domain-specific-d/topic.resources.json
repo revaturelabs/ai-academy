@@ -1,0 +1,30 @@
+{
+  "topic_id": "4.2",
+  "captured_at": "2026-06-16T00:00:00Z",
+  "captured_by": "namratas@revature.com",
+  "resources_source": "web_search",
+  "web_search_query": "fine-tuning foundation model domain-specific data LLM adaptation explained",
+  "resources": [
+    {
+      "type": "url",
+      "value": "https://docs.aws.amazon.com/sagemaker/latest/dg/jumpstart-foundation-models-fine-tuning-domain-adaptation.html",
+      "role": "primary",
+      "source": "web_search",
+      "notes": "AWS SageMaker official docs — domain adaptation fine-tuning, canonical first-party source"
+    },
+    {
+      "type": "url",
+      "value": "https://outlier.ai/blog/fine-tuning-llm",
+      "role": "supporting",
+      "source": "web_search",
+      "notes": "Clear conceptual explainer on LLM fine-tuning mechanics and what comes next"
+    },
+    {
+      "type": "url",
+      "value": "https://www.opensourceforu.com/2026/04/how-to-fine-tune-llms-for-domain-specific-adaptation/",
+      "role": "supporting",
+      "source": "web_search",
+      "notes": "Practical 2026 guide on domain-specific fine-tuning steps"
+    }
+  ]
+}

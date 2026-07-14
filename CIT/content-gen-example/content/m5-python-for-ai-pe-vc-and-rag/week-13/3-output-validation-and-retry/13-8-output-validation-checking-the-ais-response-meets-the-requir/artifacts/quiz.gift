@@ -1,0 +1,47 @@
+$CATEGORY: CIT/M5/week-13/13-8-output-validation-checking-the-ais-response-meets-the-requir
+
+::q1:: What does output validation check about an AI's response? {
+~Whether the AI model understood the meaning of your question#No — validation is not about meaning or correctness, only about format and structure.
+=Whether the response has the right structure and format#Correct — validation checks shape and structure (keys, types, length), not the quality of the answer.
+~Whether the AI model is connected to the internet and working properly#No — validation does not test the model's connectivity or availability.
+~Whether the response was generated quickly enough to meet a time limit#No — speed is not what a format validator measures.
+#### Tests the definition of output validation — what it checks and what it does not check (corpus §5a).
+}
+
+::q2:: A student writes a Rubric role that requires the AI to return JSON with three keys\: `title`, `summary`, and `score`. Which of the following best describes how the validator should be written? {
+~The validator only needs to check that the response is valid JSON, not which keys it contains#No — checking for valid JSON is just one of the checks; required keys are a separate, equally important check.
+~The validator can check for any keys the developer finds useful, even ones not in the Rubric#No — checking for keys never mentioned in the Rubric means validating against rules the model was never given.
+~The validator and the Rubric do not need to match as long as the program runs without errors#No — a mismatch between validator and Rubric produces false passes and false failures even when the code runs without crashing.
+=The validator should check for all three keys, matching every rule stated in the Rubric role#Correct — every rule in the Rubric becomes one check in the validator; they must agree exactly.
+#### Tests where the validation checklist comes from — the direct link between Rubric role and validator (corpus §5d).
+}
+
+::q3:: A beginner writes this validation function. What is the most serious mistake? `def check(r): try\: json.loads(r) except\: return True; return True` {
+=The function returns `True` on a JSON parse failure, so bad responses always pass#Correct — swallowing the exception and returning `True` on failure means bad responses are silently accepted, making the validator useless.
+~The function uses `json.loads` instead of `json.load`, which only works with files#No — `json.loads` is the correct function for parsing a string; `json.load` reads a file object.
+~The function does not import the `json` module at the top of the file, so it will crash on any call#No — while the import is missing, the logic error in the exception handler is more fundamental to the validator's purpose.
+~The function checks only JSON validity and not whether required keys are present in the data#No — missing key checks are a gap, but there is an even more serious flaw in the error handling itself.
+#### Tests recognising the "swallow errors silently" mistake — a validator that returns True on failure (corpus §8).
+}
+
+::q4:: Your validation function returns `False, "missing keys\: {'cooking_time'}"`. What should your program do next? {
+~Ignore the result and use the response anyway because the other keys are probably fine#No — using a response that failed validation risks crashing downstream code that expects all keys to be present.
+~Raise a Python exception and stop the program immediately without logging anything#No — stopping without logging discards the reason string, which is the key information you need for debugging.
+=Log the reason and treat the response as unusable until the issue is resolved or retried#Correct — when validation returns False you record why it failed and do not proceed with the response; retry is covered in topic 13.9.
+~Automatically fix the missing key by inserting a default value and set it to None#No — inserting a fabricated value changes the response content and hides the real problem from the prompt Rubric side.
+#### Tests interpreting a False validation result and deciding what the next step should be (corpus §6 Step 4).
+}
+
+::q5:: Which of the following is a common beginner mistake when writing an output validator? {
+~Writing separate `if` checks for each constraint instead of one combined check#No — separate `if` checks per constraint is the recommended pattern; it produces a clear, specific reason for each failure.
+=Only testing the validator with good inputs and never running it against bad or malformed data#Correct — if you only test with good inputs, your validator may not catch the errors it was built to catch; you must test with invalid responses too.
+~Using a function that takes the response text as a parameter to pass it into the checks#No — accepting the response as a parameter is the correct design; it keeps the validator reusable.
+~Including a reason string when returning False so the caller knows what broke#No — returning a reason string alongside False is a best practice, not a mistake.
+#### Tests recognising common validator mistakes — specifically, not testing with bad inputs (corpus §8).
+}
+
+::q6:: In one or two words, what is the term for the error that occurs when an AI response fails a format check inside a validator? {
+=validation error
+=format error
+#### Tests vocabulary — "validation error" is the term used when a response breaks one of the format rules (corpus §5c).
+}

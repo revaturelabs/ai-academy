@@ -1,0 +1,49 @@
+$CATEGORY: CIT/M5/week-12/12-10-the-anthropic-api
+
+::q1:: Which of the following lists the five parts every Anthropic API call must include? {
+~The messages array, the system prompt, a JSON parser, an HTTP header, and the response body#No — a JSON parser and the response body are not parts you supply in a request; the five parts are model, messages array, system prompt, user prompt, and API key.
+~The model name, the system prompt, the API key, the response format, and the endpoint URL#No — response format and endpoint URL are not among the five named parts; the user prompt (inside the messages array) is.
+=The model name, the messages array, the system prompt, the user prompt, and the API key#Correct — these are the five parts identified in the corpus (section 5.1 and 5.4).
+~The API key, the messages array, the content field, the role field, and the endpoint URL#No — role and content are fields inside a message item, not separate top-level parts of the call.
+#### Tests identification of the five required parts of an Anthropic API call (LO1, corpus §5.1 and §5.4).
+}
+
+::q2:: Each item in the Anthropic API messages array must be a dictionary. What two keys are required in every such dictionary? {
+=A "role" key (set to "user" or "assistant") and a "content" key (holding the text)#Correct — both fields are required; omitting either causes an invalid_request_error (corpus §5.3).
+~A "sender" key (set to "human" or "model") and a "text" key (holding the message text)#No — the valid key names are "role" and "content"; "sender" and "text" are not recognised by the API.
+~A "turn" key (a number showing its position) and a "message" key (holding the text)#No — the API does not use positional numbering or a "message" key; it uses "role" and "content".
+~A "type" key (set to "question" or "answer") and a "body" key (holding the text)#No — "type" and "body" are not valid keys in a messages array item; the required keys are "role" and "content".
+#### Tests knowledge of the required structure of each item in the messages array (LO2, corpus §5.3).
+}
+
+::q3:: A developer builds a bookshop chatbot. She writes the instruction "Only answer questions about books and orders" and also types "Where is my order?" in the conversation. Where does each of these belong in an Anthropic API request? {
+~Both belong inside the messages array — the instruction as an "assistant" role turn and the question as a "user" role turn#No — placing behavioral instructions as an "assistant" turn is invalid; the API reserves the "assistant" role only for Claude's own prior replies.
+=The instruction belongs in the "system" parameter (the system prompt), and the question belongs as a "user" turn inside the messages array#Correct — the system prompt is a top-level "system" parameter; user inputs are "user"-role turns inside messages (corpus §5.4).
+~Both belong inside the messages array — the instruction as the first "user" turn and the question as the second "user" turn in sequence#No — two consecutive "user" turns violate the alternation rule, and mixing instructions with conversation turns is not the intended design.
+~The instruction belongs in the messages array as a special "system" role turn, and the question belongs in the separate system parameter outside messages#No — "system" is not a valid role value inside the messages array; the API rejects it with an error (corpus §5.3).
+#### Tests the difference between system prompt and user prompt and where each lives in the request (LO3, corpus §5.4).
+}
+
+::q4:: What does the "model" parameter in an Anthropic API request control? {
+~It controls the maximum length of Claude's reply for that particular API request#No — reply-length limits are set by a separate parameter introduced in topic 12.11, not by the "model" field.
+~It controls how formal or casual Claude's tone should be for that particular request#No — tone is set via the system prompt, not the "model" parameter.
+~It controls whether the SDK attaches the API key to the request headers automatically#No — the API key is handled separately; the "model" field only identifies the Claude version to use.
+=It selects which specific Claude model version (e.g., "claude-haiku-3-5") will handle the request#Correct — the model parameter must be an exact published model-name string; it determines capability and cost (corpus §5.2).
+#### Tests what the model parameter controls (LO4, corpus §5.2).
+}
+
+::q5:: Why must an Anthropic API key be kept secret, and what is the safest way to store it in your code? {
+=It must be kept secret because anyone who has it can make API calls charged to your account; store it in an environment variable, not hardcoded in source files#Correct — a leaked key lets others run up costs on your account; environment variables keep the key out of your code (corpus §5.5).
+~It must be kept secret because it contains your password, and it should be placed directly in your Python script so it is always available#No — the key is not literally a password, and hardcoding it in a script risks accidental exposure via version control or sharing.
+~It must be kept secret because it contains your model preferences; store it in the messages array so it is included with each request automatically#No — the key carries no model preferences, and placing it inside the messages array is incorrect; it belongs in the request headers.
+~It must be kept secret to prevent Claude from changing its behavior; commit it to version control inside an encrypted config file for safety#No — the key authenticates your account, not Claude's behavior; committing it to version control (even encrypted) risks exposure in commit history.
+#### Tests why the API key must be kept secret and how to store it safely (LO5, corpus §5.5).
+}
+
+::q6:: Look at this skeleton request structure. What is the purpose of the "system" key at the top level? {
+~"system" is a required role value for the first turn inside the messages array that sets up Claude's behavior for that session#No — "system" is not a valid role inside the messages array; attempting to use it there causes an invalid_request_error (corpus §5.3).
+=The "system" key holds the system prompt — a top-level string of instructions that shapes Claude's behavior for the whole conversation#Correct — "system" is a top-level parameter (not inside messages) containing persistent behavioral instructions (corpus §5.4 and §5.6).
+~"system" holds the name of the Anthropic model version you want to use, like the "model" key but specific to system-level settings#No — the model version is set by the "model" key, not "system"; the "system" key holds behavioral instructions for Claude.
+~"system" is an optional messages-array key that overrides the "role" field when you need to pass special instructions to Claude#No — there is no "system" key inside message dictionaries; each message item only uses "role" and "content".
+#### Tests the ability to label the "system" field in a skeleton request structure (LO6, corpus §5.4 and §5.6).
+}

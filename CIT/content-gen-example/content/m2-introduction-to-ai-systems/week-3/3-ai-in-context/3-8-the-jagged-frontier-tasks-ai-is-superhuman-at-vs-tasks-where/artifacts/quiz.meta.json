@@ -1,0 +1,55 @@
+{
+  "topic_id": "3.8",
+  "generated_at": "2026-06-17T00:00:00Z",
+  "format": "gift",
+  "question_count": 5,
+  "$bias_defense_applied": true,
+  "$shuffle_seed": "b2a4f1c9",
+  "correct_position_distribution": [1, 3, 0, 2, 1],
+  "length_bias_check": {
+    "method": "correct_char_len vs mean_distractor_char_len, threshold 120%",
+    "q1": { "correct_chars": 119, "mean_distractor_chars": 107, "ratio_pct": 111, "pass": true },
+    "q2": { "correct_chars": 164, "mean_distractor_chars": 154, "ratio_pct": 106, "pass": true },
+    "q3": { "correct_chars": 167, "mean_distractor_chars": 155, "ratio_pct": 108, "pass": true },
+    "q4": { "correct_chars": 167, "mean_distractor_chars": 157, "ratio_pct": 106, "pass": true },
+    "q5": { "correct_chars": 152, "mean_distractor_chars": 148, "ratio_pct": 103, "pass": true }
+  },
+  "shuffle_constraint_check": {
+    "max_share": 0.40,
+    "all_positions_used": true,
+    "position_counts": { "0": 1, "1": 2, "2": 1, "3": 1 },
+    "pass": true
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "type": "mcq",
+      "objective_ref": "Define the jagged frontier and explain why AI capability is uneven across task types rather than uniformly strong or weak",
+      "correct_position": 1
+    },
+    {
+      "id": "q2",
+      "type": "mcq",
+      "objective_ref": "Give at least two examples of tasks where AI performs at or above expert human level, and explain why AI tends to excel there",
+      "correct_position": 3
+    },
+    {
+      "id": "q3",
+      "type": "mcq",
+      "objective_ref": "Give at least two examples of tasks where AI remains unreliable, and explain the underlying reason for each failure",
+      "correct_position": 0
+    },
+    {
+      "id": "q4",
+      "type": "mcq",
+      "objective_ref": "Explain what calibration means in the context of AI confidence, and describe why poor calibration is a safety risk",
+      "correct_position": 2
+    },
+    {
+      "id": "q5",
+      "type": "mcq",
+      "objective_ref": "Apply a simple probing method to test an AI system on an unfamiliar task and interpret whether the result is inside or outside the reliable zone",
+      "correct_position": 1
+    }
+  ]
+}

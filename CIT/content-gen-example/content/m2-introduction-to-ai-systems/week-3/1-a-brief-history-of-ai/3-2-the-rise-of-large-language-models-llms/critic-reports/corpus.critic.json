@@ -1,0 +1,132 @@
+{
+  "critic": "corpus-critic",
+  "topic_id": "3.2",
+  "attempt": 5,
+  "at": "2026-06-17T00:00:00Z",
+  "passed": true,
+  "checks": {
+    "required_sections": {
+      "passed": true,
+      "detail": {
+        "section_3_learning_objectives": { "present": true, "word_count_approx": 90,   "threshold": 50,  "passed": true },
+        "section_4_introduction":        { "present": true, "word_count_approx": 175,  "threshold": 50,  "passed": true },
+        "section_5_core_concepts":       { "present": true, "word_count_approx": 1470, "threshold": 100, "passed": true },
+        "section_10_key_takeaways":      { "present": true, "word_count_approx": 130,  "threshold": 50,  "passed": true }
+      }
+    },
+    "citation_density": {
+      "passed": true,
+      "resources_source": "web_search",
+      "primary_resource": "https://www.ibm.com/think/topics/large-language-models",
+      "primary_cited_at_least_once": true,
+      "sections_checked": ["5_core_concepts", "6_implementation", "7_real_world_patterns"],
+      "section_results": {
+        "section_5_core_concepts": {
+          "passed": true,
+          "estimated_assertions": 24,
+          "estimated_cited": 21,
+          "density_pct": 87.5,
+          "uncited_assertions": [
+            "Summarisation capability bullet — no citation marker (line 140)",
+            "Question answering capability bullet — no citation marker (line 141)",
+            "Few-shot adaptation capability bullet — no citation marker (line 142)"
+          ],
+          "note": "87.5% > 60% threshold; three uncited capability bullets are well-known LLM properties adequately grounded by surrounding cited assertions."
+        },
+        "section_6_implementation": {
+          "passed": true,
+          "estimated_assertions": 5,
+          "estimated_cited": 5,
+          "density_pct": 100.0,
+          "fix_applied": "Attempt 5: [1] appended to all four numbered steps (lines 175-178) as required by attempt-4 fix instruction. Verified present.",
+          "step_citations": [
+            "Step 1 (pre-training): '...costs millions of dollars and takes months. [1]' — line 175",
+            "Step 2 (fine-tuning): '...by the same or a different organisation. [1]' — line 176",
+            "Step 3 (API deployment): '...so applications can send text to it and receive text back. [1]' — line 177",
+            "Step 4 (practitioner access): '...receives the model's response. [1]' — line 178",
+            "Closing key-insight: '...managed by the provider behind the API. [1]' — line 182"
+          ]
+        },
+        "section_7_real_world_patterns": {
+          "passed": true,
+          "estimated_assertions": 7,
+          "estimated_cited": 7,
+          "density_pct": 100.0
+        }
+      },
+      "fake_citations_check": "No [N] markers found that do not resolve to a listed resource. [1], [2], [3] all verified against topic.resources.json."
+    },
+    "sequence_drift": {
+      "passed": true,
+      "hard_violations": [],
+      "previous_violation_sites_verified_clean": {
+        "attention_site": {
+          "clean": true,
+          "location": "§5.2 Step 4 (line 96)",
+          "evidence": "'The key innovation is a mechanism called attention (covered in detail in topic 3.4).' — bare name + explicit topic pointer; no defining clause, no appositive, not bolded."
+        },
+        "jagged_frontier": {
+          "clean": true,
+          "detail": "The phrase 'jagged frontier' does not appear anywhere in the corpus. §5.3 last paragraph uses 'uneven across task types... examined in topic 3.8' (correct deferral). §8 final paragraph uses 'the unevenness pattern from Section 5.3' — no forward-concept label. §10 bullet uses 'performance is uneven — excellent at some tasks, surprisingly poor at others (covered in topic 3.8)' — correct form."
+        }
+      },
+      "soft_findings": [
+        {
+          "severity": "soft",
+          "code": "forward_concept_no_pointer",
+          "term": "vector",
+          "location": "§5.2 Step 2 (line 74)",
+          "evidence": "'...turning each word into a list of numbers (a vector) in such a way that...'",
+          "detail": "'vector' is formally introduced at topic 6.3. Used here as a bare parenthetical label inside the definition of word_embedding. Low severity — the surrounding prose gives the full plain-English meaning ('a list of numbers') without requiring the learner to know the term. Recommend either dropping '(a vector)' or appending '(formally covered in topic 6.3)'."
+        },
+        {
+          "severity": "soft",
+          "code": "forward_concept_no_pointer",
+          "term": "multimodal",
+          "location": "§5.2 Step 5 GPT milestone table (line 112)",
+          "evidence": "GPT-4 row: 'Multimodal; near-human on many benchmarks'",
+          "detail": "'Multimodal' is formally introduced at topic 4.6. Appears as a single-word capability label in a table cell — not taught or defined. Low severity. Recommend appending '(topic 4.6)' in a table note."
+        }
+      ],
+      "soft_finding_count": 2
+    },
+    "length_sanity": {
+      "passed": true,
+      "severity": "soft",
+      "depth_profile": "standard",
+      "corpus_word_count_approx": 2890,
+      "target_range_words": [3000, 4400],
+      "hard_fail_floor_words": 2100,
+      "hard_fail_ceiling_words": 5720,
+      "detail": "Estimated ~2,890 words. Below the 3,000-word standard-profile floor but above the hard-fail floor of 2,100 (30% below range minimum = 2,100). Does not trigger a hard fail per SKILL rule ('more than 30% outside the range'). Soft advisory: a light expansion pass or addition of cited context in §5 would bring the count into the target range."
+    },
+    "topic_scope": {
+      "passed": true,
+      "finding": "No material found that teaches beyond the headline 'The rise of large language models (LLMs)'. All previously identified scope-creep sites across attempts 1-4 are confirmed resolved. Attention is named and deferred (line 96). 'Jagged frontier' term is absent from the corpus. The 'multimodal' table label is a bare forward reference (not a teaching of topic 4.6's concept). §8 Best Practices characterises LLM limitations — squarely within the headline scope — without introducing a new named concept. §6 Implementation covers the practitioner workflow of using LLMs, which is within the headline scope of the rise and practical significance of LLMs."
+    },
+    "beginner_readability": {
+      "passed": true,
+      "findings": [
+        {
+          "severity": "soft",
+          "code": "undefined_term_support",
+          "terms": ["vector"],
+          "location": "§5.2 Step 2 (line 74)",
+          "detail": "Same root as sequence-drift soft finding: 'a list of numbers (a vector)' uses the term 'vector' as a label before it is formally introduced in the sequence. Low severity — the plain-English description 'a list of numbers' gives the meaning immediately; the label adds no confusion. Addressed by either removing the parenthetical or adding a topic-6.3 pointer."
+        }
+      ],
+      "undefined_terms_hard_fail": false,
+      "jargon_dump_violations": [],
+      "academic_register_violations": [],
+      "distinct_finding_count": 1,
+      "hard_fail_threshold": 3,
+      "escalated_to_hard_fail": false
+    }
+  },
+  "verdict": "PASS. All 6 checks pass. The hard failure from attempt 4 (§6 citation density) is resolved: [1] markers are now present on all four numbered steps in §6 Implementation (lines 175-178, verified), bringing §6 citation density to 100%. Check 1 (required sections): all four required sections present and non-trivial. Check 2 (citation density): primary resource [1] cited; §5 ~87.5%, §6 100%, §7 100% — all above 60% threshold; no fake citations. Check 3 (sequence drift): no hard forward references; attention correctly deferred (line 96); 'jagged frontier' absent from corpus; two soft findings ('vector' parenthetical, 'multimodal' table label) — neither hard fails. Check 4 (length sanity): ~2,890 words, below 3,000-word standard floor but above the hard-fail floor of 2,100 — not a hard fail. Check 5 (topic scope): no scope creep; all prior violation sites confirmed clean. Check 6 (beginner readability): all terms defined on first use, no jargon dumps, plain register; 1 soft finding ('vector' label) — well below the 3-finding escalation threshold. Remaining soft advisories for HITL #2 consideration: (a) light word-count expansion toward 3,000-word floor; (b) add topic-6.3 pointer at 'vector' parenthetical in §5.2; (c) add topic-4.6 pointer for 'multimodal' in GPT-4 table row.",
+  "soft_advisories_for_hitl2": [
+    "Word count (~2,890) is slightly below the 3,000-word standard target — a light expansion pass is recommended but not required.",
+    "§5.2 Step 2 (line 74): consider replacing '(a vector)' with '(formally covered in topic 6.3)' or removing the parenthetical to avoid an unlabelled forward reference.",
+    "§5.2 Step 5 GPT table (line 112): consider appending '(topic 4.6)' after 'Multimodal' in the GPT-4 capability cell."
+  ]
+}

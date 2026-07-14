@@ -1,0 +1,76 @@
+{
+  "topic_id": "9.11",
+  "artifact": "corpus",
+  "critic_run_at": "2026-06-13",
+  "passed": true,
+  "checks": {
+    "required_sections": {
+      "passed": true,
+      "sections_found": [
+        "2. Prerequisites",
+        "3. Learning Objectives",
+        "4. Introduction",
+        "5. Core Concepts",
+        "6. Implementation",
+        "7. Real-World Patterns",
+        "8. Common Misconceptions",
+        "9. Key Takeaways",
+        "10. Discussion Prompts",
+        "11. Further Reading"
+      ],
+      "notes": "All 11 sections present and non-trivial. Core Concepts (5.1–5.4) is the bulk section at ~2500 words. Key Takeaways has 7 substantive bullets. All required sections exceed minimum word thresholds."
+    },
+    "citation_density": {
+      "passed": true,
+      "resources_source": "web_search",
+      "primary_cited": true,
+      "primary_resource": "[1] jolt.law.harvard.edu — cited 20+ times across all major sections",
+      "all_resources_cited": true,
+      "total_citation_markers": 54,
+      "citation_markers_unique": ["[1]", "[2]", "[3]"],
+      "claim_citation_rate": 0.85,
+      "notes": "54 total citation markers. [1] primary cited extensively. [2] and [3] both cited in Core Concepts, Implementation, and Real-World Patterns. Citation density well above 60% threshold."
+    },
+    "sequence_drift": {
+      "passed": true,
+      "forward_refs": [],
+      "notes": "All topic refs are to 9.1–9.10 (prior topics). No refs beyond 9.11. COMPAS, MCAS, EASA, FAA, NHS, XAI, EU AI Act all defined on first use within the corpus. Type II error pre-established in 9.10 — used without re-definition correctly."
+    },
+    "length_sanity": {
+      "passed": true,
+      "word_count": 5121,
+      "profile": "deep",
+      "acceptable_range": "1500–6000 for deep",
+      "notes": "5121 words — within deep profile range. Appropriate for capstone topic synthesising 4 prior topics across 3 named domains."
+    },
+    "scope_discipline": {
+      "passed": true,
+      "scope_creep": false,
+      "notes": "All content within topic headline: high-stakes domains (medical, legal, safety) where AI must not have the final word. Boeing 737 MAX MCAS is a safety-domain example — in scope. COMPAS is a legal-domain example — in scope. No advanced adjacent concepts taught beyond headline."
+    },
+    "beginner_readability": {
+      "passed": true,
+      "hard_fail_threshold": 3,
+      "distinct_findings_count": 2,
+      "findings": [
+        {
+          "code": "undefined_acronym",
+          "severity": "soft",
+          "location": "§5. Core Concepts, medicine list (line 78)",
+          "detail": "MRI used without expansion ('MRI scans'). Should be 'MRI (Magnetic Resonance Imaging) scans' on first use.",
+          "impact": "minor — list-context example; main concept (medical imaging domain) not affected"
+        },
+        {
+          "code": "undefined_acronym",
+          "severity": "soft",
+          "location": "§7. Real-World Patterns, Pattern 1 (line 251)",
+          "detail": "CT used without expansion ('CT scans'). Should be 'CT (computed tomography) scans' on first use.",
+          "impact": "minor — list-context example alongside X-rays and mammograms"
+        }
+      ],
+      "notes": "2 soft findings (MRI, CT) — below hard-fail threshold of 3. All other acronyms and terms defined on first use: COMPAS, MCAS, EASA, FAA, NHS, XAI, EU AI Act, accountability gap, high-stakes domain, decision support, explainability, final word, automation bias back-referenced to 9.5, System 2 back-referenced to 9.2."
+    }
+  },
+  "verdict": "PASS — all checks clear. 5121 words deep profile within range. 54 citations, all resources cited. No forward refs. Scope confined to headline. 2 soft readability findings (MRI, CT not expanded) — below escalation threshold.",
+  "cycle": 1
+}

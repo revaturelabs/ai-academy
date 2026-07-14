@@ -1,0 +1,58 @@
+{
+  "critic": "corpus-critic",
+  "topic_id": "3.5",
+  "topic_title": "What parameters are and why they matter",
+  "at": "2026-06-17T00:00:00Z",
+  "passed": true,
+  "verdict": "PASS — all five checks pass; two soft findings: (1) §6 Implementation contains zero inline citation markers despite carrying factual figures (memory sizes) that are derived from §5.4's cited content; (2) acronym 'GPU' is never spelled out on first use.",
+  "checks": {
+    "required_sections": {
+      "passed": true,
+      "detail": "§3 Learning Objectives (5 numbered LOs, >50 words), §4 Introduction (3 paragraphs, >50 words), §5 Core Concepts (5 sub-sections, well >100 words), §10 Key Takeaways (5 bulleted items with citations, >50 words) — all present and substantial. No placeholder strings."
+    },
+    "citation_density": {
+      "passed": true,
+      "resources_source": "web_search",
+      "primary_cited": true,
+      "primary_resource": "[1] https://towardsai.net/p/machine-learning/what-are-llm-parameters-a-simple-explanation-of-weights-biases-and-scale",
+      "detail": "Primary [1] cited at least once — confirmed, cited extensively across §5, §7, §8, §10. §5 and §7 exceed 60% claim-coverage with [1]/[2]/[3] markers. §6 Implementation has zero inline markers (soft finding); the underlying figures are derived directly from §5.4's cited fp16/int8/int4 table, so no fabricated citations are present. No fake [N] markers detected.",
+      "soft_findings": [
+        "§6 Implementation contains no inline [N] citation markers despite stating specific memory figures (14 GB, 7 GB, 4 GB) — these figures are already cited in §5.4 but are repeated without markers in §6."
+      ]
+    },
+    "sequence_drift": {
+      "passed": true,
+      "forward_refs": [],
+      "detail": "All technical noun phrases resolve to either this topic's concepts_introduced (parameter/weight, weight matrix, bias, scaling law, quantisation, model size/GB, parameter count, emergent capability, fp16, int8, int4) or prior topics 3.1–3.4 (machine learning, deep learning, artificial neural network, LLM, Transformer architecture, pre-training/fine-tuning, hallucination, prompt, token, tokenisation, backpropagation, attention mechanism, inference, context window, next-token prediction). 'fine-tuning' referenced twice with explicit 'covered in a later topic' deferral — correctly scoped. 'model card' named in §6 with inline explanation; not a hard forward ref.",
+      "soft_findings": [
+        "'model card' used in §6 without a prior formal sequence introduction; adequately explained inline ('published by the model creators on platforms like Hugging Face')."
+      ]
+    },
+    "length_sanity": {
+      "passed": true,
+      "estimated_word_count": 2480,
+      "depth_profile": "standard",
+      "range_applied": "1800–3500",
+      "detail": "Estimated ~2480 words across all prose sections (§2–§10). Within the standard profile range of 1800–3500 words."
+    },
+    "topic_scope": {
+      "passed": true,
+      "scope_creep_items": [],
+      "detail": "Title boundary 'What parameters are and why they matter' respected throughout. Temperature/sampling not mentioned. Fine-tuning appears twice as named-and-deferred one-liners ('covered in a later topic') — within the allowed one-sentence pointer rule. RLHF not mentioned. RAG not mentioned. No concept is taught at depth beyond the headline scope."
+    },
+    "beginner_readability": {
+      "passed": true,
+      "hard_fail_triggered": false,
+      "findings_count": 1,
+      "detail": "All key terms defined on first use: parameter/weight (§5.1), weight matrix (§5.1), bias (§5.1), scaling laws (§5.3), emergent capability (§5.3), quantisation (§5.4), fp16/int8/int4 (§5.4 table). No jargon dumps (no paragraph introduces 3+ brand-new terms simultaneously). Register is plain and accessible; hedging phrases are minimal ('roughly speaking' appears once). Average sentence length well under 25 words.",
+      "soft_findings": [
+        "undefined_terms: 'GPU' used in §5.5, §6, §7, §8 without spell-out on first use (Graphics Processing Unit). 'API' used in §6 and §8 without spell-out — however 'API' is a general computing abbreviation widely understood at this audience level; GPU is the higher-priority callout."
+      ]
+    }
+  },
+  "summary_soft_findings": [
+    "§6 Implementation: no inline citation markers (figures derived from §5.4's cited content — not fabricated, but not traceable in §6 itself).",
+    "Sequence: 'model card' used without prior sequence introduction; explained inline.",
+    "Readability: 'GPU' not spelled out on first use."
+  ]
+}

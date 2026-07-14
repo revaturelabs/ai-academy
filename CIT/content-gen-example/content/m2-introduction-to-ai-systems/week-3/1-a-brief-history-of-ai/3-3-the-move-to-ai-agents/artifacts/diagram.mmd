@@ -1,0 +1,37 @@
+---
+title: "The Agent Loop"
+theme: base
+themeVariables:
+  primaryColor: "#a5d8ff"
+  primaryBorderColor: "#4a9eed"
+  lineColor: "#555"
+flowchart:
+  htmlLabels: true
+  curve: basis
+---
+flowchart TD
+    GOAL["<b>Goal</b><br/><span style='font-size:11px;color:#6d28d9'>What success looks like</span>"]
+    PLAN["<b>Plan</b><br/><span style='font-size:11px;color:#6d28d9'>LLM breaks goal into next steps</span>"]
+    ACT["<b>Act — Use a Tool</b><br/><span style='font-size:11px;color:#6d28d9'>Web search, calculator, API, code…</span>"]
+    OBS["<b>Observe</b><br/><span style='font-size:11px;color:#6d28d9'>Receive the tool result</span>"]
+    CHECK{"<b>Goal met?</b>"}
+    DONE["<b>Done</b><br/><span style='font-size:11px;color:#6d28d9'>Deliver final answer</span>"]
+
+    GOAL --> PLAN
+    PLAN --> ACT
+    ACT --> OBS
+    OBS --> CHECK
+    CHECK -->|"Yes"| DONE
+    CHECK -->|"No — update plan"| PLAN
+
+    classDef start fill:#a5d8ff,stroke:#4a9eed
+    classDef auto fill:#d0bfff,stroke:#8b5cf6
+    classDef act fill:#a5d8ff,stroke:#4a9eed
+    classDef hitl fill:#fff3bf,stroke:#f59e0b,stroke-width:3
+    classDef done fill:#b2f2bb,stroke:#22c55e
+
+    class GOAL start
+    class PLAN,OBS auto
+    class ACT act
+    class CHECK hitl
+    class DONE done

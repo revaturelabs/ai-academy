@@ -1,0 +1,57 @@
+{
+  "passed": true,
+  "checks": {
+    "positional_bias": {
+      "passed": true,
+      "distribution": [1, 2, 2, 1],
+      "max_share": 0.33,
+      "notes": "6 MCQs (Q6 short-answer excluded). Position bucket counts: pos-0=1, pos-1=2, pos-2=2, pos-3=1. Sidecar per-question positions confirmed against .gift — no meta_gift_desync. max_share 0.33 <= 0.40."
+    },
+    "length_bias": {
+      "passed": true,
+      "longest_correct_rate": 0.33,
+      "baseline": 0.25,
+      "longest_correct_questions": ["1.12-Q2", "1.12-Q3"],
+      "notes": "Q2: correct=134 chars vs distractor mean=110.0 (threshold 132.0) — marginally over. Q3: correct=80 chars vs distractor mean=56.33 (threshold 67.6). 2 of 6 MCQs longest-correct. Rate 0.33 <= 0.40 threshold — passes."
+    },
+    "distractor_plausibility": {
+      "passed": true,
+      "absurd_rate": 0.0,
+      "total_distractors": 18,
+      "absurd_count": 0,
+      "weakest_questions": [],
+      "notes": "All 18 distractors scored >=2. All represent plausible beginner misconceptions grounded in the corpus concepts (technology-vs-domain confusion, solution-vs-problem confusion, format misidentification). No score-1 (obviously absurd) distractors found."
+    },
+    "objective_coverage": {
+      "passed": true,
+      "uncovered_objectives": [],
+      "orphan_questions": [],
+      "coverage_map": {
+        "LO1 — Explain what a problem domain is using a real example": ["1.12-Q1"],
+        "LO2 — Explain what a problem statement is and why writing one is a useful first step": ["1.12-Q2"],
+        "LO3 — Identify the three components of a well-formed problem statement: context, specific problem, and impact": ["1.12-Q3", "1.12-Q6"],
+        "LO4 — Write a 3-sentence problem statement for a domain of your choice": ["1.12-Q7"],
+        "LO5 — Distinguish a focused, specific problem statement from a vague or oversized one": ["1.12-Q4", "1.12-Q5"]
+      },
+      "notes": "All 5 LOs covered. Q7 (added in cycle 2) maps cleanly to LO4 — restaurant food-waste scenario tests ability to identify a correctly-formed Sentence 2, directly exercising the 3-sentence writing skill."
+    },
+    "beginner_fairness": {
+      "passed": true,
+      "jargon_in_stem": [],
+      "out_of_scope_questions": [],
+      "notes": "All stems are plain-language and self-contained. Q7 scenario uses only concepts taught in this corpus (3-sentence format, Sentence 2 = specific problem, no solution language). No undefined terms, no forward references, no outside-curriculum knowledge required."
+    }
+  },
+  "hard_prerequisites": {
+    "meta_json_exists": true,
+    "meta_json_parses": true,
+    "bias_defense_applied": true,
+    "meta_gift_desync": false
+  },
+  "auto_correction_applied": {
+    "shuffle_round_2": false
+  },
+  "cycle": 2,
+  "verdict": "Pass — all checks clean after cycle-2 LO4 fix; Q7 covers the previously uncovered objective with a well-formed beginner-accessible scenario.",
+  "at": "2026-06-22T00:00:00Z"
+}

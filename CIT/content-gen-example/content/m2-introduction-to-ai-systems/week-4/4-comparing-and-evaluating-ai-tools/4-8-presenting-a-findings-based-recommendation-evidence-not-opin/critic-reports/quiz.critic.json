@@ -1,0 +1,92 @@
+{
+  "passed": true,
+  "cycle": 2,
+  "checks": {
+    "positional_bias": {
+      "passed": true,
+      "distribution": { "0": 1, "1": 1, "2": 2, "3": 1 },
+      "max_share": 0.40,
+      "note": "Derived from GIFT: q1=pos2, q2=pos0, q3=pos1, q4=pos3, q5=pos2. Matches sidecar correct_position_distribution [2,0,1,3,2]. No desync. max_share=2/5=0.40; threshold is strictly >0.40, so this passes."
+    },
+    "length_bias": {
+      "passed": true,
+      "longest_correct_rate": 0.20,
+      "baseline": 0.25,
+      "longest_correct_questions": ["q4"],
+      "detail": {
+        "q1": {
+          "correct_len": 89,
+          "distractor_mean": 78.3,
+          "threshold_1_20x": 93.9,
+          "longest_correct": false
+        },
+        "q2": {
+          "correct_len": 60,
+          "distractor_mean": 60.3,
+          "threshold_1_20x": 72.4,
+          "longest_correct": false
+        },
+        "q3": {
+          "correct_len": 105,
+          "distractor_mean": 89.3,
+          "threshold_1_20x": 107.2,
+          "longest_correct": false
+        },
+        "q4": {
+          "correct_len": 113,
+          "distractor_mean": 93.7,
+          "threshold_1_20x": 112.4,
+          "longest_correct": true
+        },
+        "q5": {
+          "correct_len": 125,
+          "distractor_mean": 110.0,
+          "threshold_1_20x": 132.0,
+          "longest_correct": false
+        }
+      },
+      "note": "Only q4 marginally exceeds 1.20x (113 vs 112.4 threshold). Rate 1/5=0.20, well under the 0.40 limit. Cycle 1 failure resolved: correct answers trimmed and distractors expanded across q1, q3, q5."
+    },
+    "distractor_plausibility": {
+      "passed": true,
+      "absurd_rate": 0.00,
+      "total_distractors": 15,
+      "absurd_count": 0,
+      "weakest_questions": [],
+      "scores_summary": {
+        "q1": [2, 3, 3],
+        "q2": [3, 3, 4],
+        "q3": [3, 3, 3],
+        "q4": [4, 3, 3],
+        "q5": [4, 4, 3]
+      },
+      "note": "All distractors score >=2 (wrong-but-unrelated at minimum). q1-distractor-0 scores 2 (number-of-tools confusion is unrelated to core distinction but not absurd). No score=1 found."
+    },
+    "objective_coverage": {
+      "passed": true,
+      "uncovered_objectives": [],
+      "orphan_questions": [],
+      "coverage_map": {
+        "LO1 — Explain the difference between an evidence-based recommendation and a personal opinion": "q1",
+        "LO2 — Identify the three parts of a well-formed recommendation: findings summary, evidence anchor, and recommendation statement": "q2",
+        "LO3 — Translate rubric scores and test observations into specific, citable evidence statements": "q3",
+        "LO4 — Write a short recommendation that a sceptical audience can follow and verify": "q4",
+        "LO5 — Recognise and correct three common patterns that weaken a recommendation: vague claims, unsupported assertions, and ignored trade-offs": "q5",
+        "LO6 — Acknowledge limitations of a rubric-based evaluation honestly and briefly": "q6"
+      }
+    },
+    "beginner_fairness_and_scope": {
+      "passed": true,
+      "jargon_in_stem": [],
+      "out_of_scope_questions": [],
+      "unfair_distractors": [],
+      "note": "All stems use corpus-defined vocabulary (rubric, criteria, findings summary, evidence anchor, recommendation statement). No acronyms undefined. All correct answers and distractors are grounded exclusively in this topic's corpus §5.1-§5.6."
+    },
+    "meta_gift_desync": false
+  },
+  "auto_correction_applied": {
+    "shuffle_round_2": false
+  },
+  "verdict": "Pass — all checks clean: positional max_share 0.40 (not > threshold), length bias rate 0.20 (1/5, well under 0.40), zero absurd distractors (absurd_rate 0.00), all 6 LOs covered 1-to-1, no out-of-scope items.",
+  "at": "2026-06-17T00:00:00Z"
+}

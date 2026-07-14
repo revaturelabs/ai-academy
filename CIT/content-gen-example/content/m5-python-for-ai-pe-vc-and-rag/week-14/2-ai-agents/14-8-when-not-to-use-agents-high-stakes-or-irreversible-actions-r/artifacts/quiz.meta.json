@@ -1,0 +1,50 @@
+{
+  "topic_id": "14.8",
+  "generated_at": "2026-06-16T00:00:00Z",
+  "$bias_defense_applied": true,
+  "$shuffle_seed": "14.8-positions-0-1-2-3-2-sa",
+  "question_count": 6,
+  "mcq_count": 5,
+  "sa_count": 1,
+  "correct_position_distribution": [0, 1, 2, 3, 2],
+  "max_share": 0.4,
+  "length_bias_violations": 0,
+  "per_question": [
+    {
+      "id": "q1",
+      "objective_ref": "LO1 — Define irreversible action",
+      "correct_position": 0,
+      "type": "mcq"
+    },
+    {
+      "id": "q2",
+      "objective_ref": "LO3 — HITL four-step approval flow",
+      "correct_position": 1,
+      "type": "mcq"
+    },
+    {
+      "id": "q3",
+      "objective_ref": "LO2 — Why agents are dangerous for these actions",
+      "correct_position": 2,
+      "type": "mcq"
+    },
+    {
+      "id": "q4",
+      "objective_ref": "LO4 — Autonomy spectrum safe zone",
+      "correct_position": 3,
+      "type": "mcq"
+    },
+    {
+      "id": "q5",
+      "objective_ref": "LO5 — Extended decision matrix, checkpoint candidate identification",
+      "correct_position": 2,
+      "type": "mcq"
+    },
+    {
+      "id": "q6",
+      "objective_ref": "LO2 + LO3 — Failure modes, short answer recall",
+      "correct_position": null,
+      "type": "short_answer"
+    }
+  ]
+}

@@ -1,0 +1,30 @@
+{
+  "topic_id": "1.9",
+  "captured_at": "2026-06-22T00:00:00Z",
+  "captured_by": "namratas@revature.com",
+  "resources_source": "web_search",
+  "web_search_query": "algorithmic thinking what makes a set of steps an algorithm properties finiteness definiteness",
+  "resources": [
+    {
+      "type": "url",
+      "value": "https://www.bouraspage.com/repository/algorithmic-thinking/properties-of-an-algorithm",
+      "role": "primary",
+      "source": "web_search",
+      "notes": "Dedicated algorithmic-thinking textbook page covering finiteness, definiteness, input/output, effectiveness with examples."
+    },
+    {
+      "type": "url",
+      "value": "https://en.wikipedia.org/wiki/Algorithm_characterizations",
+      "role": "supporting",
+      "source": "web_search",
+      "notes": "Canonical reference tracing formal definitions of algorithm across CS literature."
+    },
+    {
+      "type": "url",
+      "value": "https://www.cs.purdue.edu/homes/spa/courses/cs182/algorithms-rego.pdf",
+      "role": "supporting",
+      "source": "web_search",
+      "notes": "Purdue CS course material — formal algorithm properties and growth functions intro."
+    }
+  ]
+}

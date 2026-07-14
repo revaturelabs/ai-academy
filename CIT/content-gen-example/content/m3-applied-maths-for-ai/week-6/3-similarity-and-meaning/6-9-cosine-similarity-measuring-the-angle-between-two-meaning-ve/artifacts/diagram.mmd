@@ -1,0 +1,39 @@
+---
+title: Cosine Similarity — Direction, Not Size
+theme: base
+themeVariables:
+  primaryColor: "#a5d8ff"
+  primaryBorderColor: "#4a9eed"
+  lineColor: "#555"
+flowchart:
+  htmlLabels: true
+  curve: basis
+---
+flowchart LR
+    subgraph ANGLES["The angle between two vectors"]
+        direction TB
+        A1["<b>Same direction (0°)</b><br/><span style='font-size:12px;color:#6d28d9'>cos = 1 — identical meaning</span>"]
+        A2["<b>Perpendicular (90°)</b><br/><span style='font-size:12px;color:#6d28d9'>cos = 0 — unrelated</span>"]
+        A3["<b>Opposite direction (180°)</b><br/><span style='font-size:12px;color:#6d28d9'>cos = −1 — opposite meaning</span>"]
+        A1 -->|"rotate 90°"| A2
+        A2 -->|"rotate 90°"| A3
+    end
+
+    subgraph FORMULA["Cosine similarity formula"]
+        direction TB
+        F1["<b>Dot product A · B</b><br/><span style='font-size:12px;color:#6d28d9'>from topic 6.6</span>"]
+        F2["<b>Magnitudes |A| and |B|</b><br/><span style='font-size:12px;color:#6d28d9'>√(sum of squares) for each vector</span>"]
+        F3["<b>Divide: A·B ÷ (|A| × |B|)</b><br/><span style='font-size:12px;color:#6d28d9'>normalises out vector size</span>"]
+        F4["<b>Score: −1 to 1</b><br/><span style='font-size:12px;color:#6d28d9'>direction only — size removed</span>"]
+        F1 --> F3
+        F2 --> F3
+        F3 --> F4
+    end
+
+    classDef start fill:#a5d8ff,stroke:#4a9eed
+    classDef auto fill:#d0bfff,stroke:#8b5cf6
+    classDef done fill:#b2f2bb,stroke:#22c55e
+
+    class A1,A2,A3 start
+    class F1,F2,F3 auto
+    class F4 done

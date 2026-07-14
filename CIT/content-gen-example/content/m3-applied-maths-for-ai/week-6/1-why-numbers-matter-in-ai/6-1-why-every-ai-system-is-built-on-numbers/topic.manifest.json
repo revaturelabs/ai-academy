@@ -1,0 +1,43 @@
+{
+  "type": "topic",
+  "id": "6.1",
+  "title": "Why every AI system is built on numbers",
+  "slug": "6-1-why-every-ai-system-is-built-on-numbers",
+  "position_in_module": 1,
+  "week_num": 6,
+  "session_name": "Numbers, Vectors and Meaning",
+  "module": {
+    "position": 1,
+    "slug": "1-why-numbers-matter-in-ai",
+    "title": "Why Numbers Matter in AI"
+  },
+  "course": {
+    "code": "M3",
+    "slug": "m3-applied-maths-for-ai",
+    "title": "Applied Maths for AI"
+  },
+  "next_assessment": {
+    "id": "A2",
+    "due_week": 6,
+    "title": "AI Systems Essay",
+    "weight": "15%"
+  },
+  "paths": {
+    "corpus": "topic_corpus.md",
+    "resources": "topic.resources.json",
+    "progress": "topic.progress.json",
+    "artifacts_dir": "artifacts/",
+    "critic_reports_dir": "critic-reports/"
+  },
+  "artifact_plan": {
+    "diagram": false,
+    "diagram_intent": null,
+    "depth_profile": "standard",
+    "depth_signals": "Framing/WHY topic with real-world patterns section warranted and lab activity grounding, but no implementation procedure and no multi-part pipeline — standard fits cleanly.",
+    "reading_word_range": [600, 900],
+    "quiz_question_range": [4, 5],
+    "human_approved_at_hitl2": true
+  },
+  "expected_delivery_minutes": 5,
+  "status": "corpus_drafted"
+}

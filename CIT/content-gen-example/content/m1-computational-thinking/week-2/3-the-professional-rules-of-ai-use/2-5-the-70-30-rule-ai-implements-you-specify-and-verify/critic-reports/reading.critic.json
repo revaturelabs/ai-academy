@@ -1,0 +1,101 @@
+{
+  "critic": "reading-critic",
+  "topic_id": "2.5",
+  "topic_title": "The 70/30 rule — AI implements, you specify and verify",
+  "at": "2026-06-17T00:00:00Z",
+  "passed": true,
+  "verdict": "PASS — all checks pass. Reading is within the deep-profile word range (1985 words, ~10 min), all three primary resources cited, no frontmatter, fixed six sections in order, diagram embedded inline at the verification-loop section, no assessment references, no scope creep, beginner-accessible throughout. Matches gold-example tone and formatting density from 2-1.",
+  "checks": {
+    "format_discipline": {
+      "passed": true,
+      "frontmatter_present": false,
+      "sidecar_meta_present": true,
+      "sidecar_parses": true,
+      "section_template_violation": false,
+      "sections_found": ["Overview", "Key Concepts", "Worked Example", "In Practice", "Key Takeaways", "References"],
+      "detail": "File opens with '# The 70/30 rule...' H1 — no YAML block. Sidecar reading.meta.json present and valid. Exactly six fixed sections in correct order."
+    },
+    "length": {
+      "passed": true,
+      "word_count": 1985,
+      "target_word_range": [1800, 2200],
+      "estimated_minutes": 9.9,
+      "target_minute_range": [9, 11],
+      "in_word_range": true,
+      "in_minute_range": true,
+      "detail": "1985 words / 200 wpm = 9.9 min. Both word and minute targets met."
+    },
+    "citations": {
+      "passed": true,
+      "all_primary_resources_cited": true,
+      "inline_markers": [1, 2, 3],
+      "bibliography_entries": [1, 2, 3],
+      "orphan_markers": [],
+      "orphan_bibliography": [],
+      "detail": "All three resources cited multiple times inline. Bibliography entries match exactly. No orphans on either side."
+    },
+    "no_forward_references": {
+      "passed": true,
+      "forward_references_found": [],
+      "detail": "All terms used are from prior topics (1.1 deterministic systems, 1.3 probabilistic systems, 2.1 four properties, 2.3 failure conditions) or introduced and defined within this reading."
+    },
+    "faithfulness": {
+      "passed": true,
+      "assertions_sampled": 10,
+      "assertions_unsupported": 0,
+      "sample": [
+        { "assertion": "70 percent implementation / 30 percent specification and verification", "corpus_section": "5.1" },
+        { "assertion": "AI output can look polished while still being wrong for your purpose", "corpus_section": "5.3" },
+        { "assertion": "Specification steps: decide task, set constraints, define success condition, write it down", "corpus_section": "5.2" },
+        { "assertion": "Verification: check success condition, scope, factual accuracy, failure conditions, decide next step", "corpus_section": "5.3" },
+        { "assertion": "Loop: specify → implement → verify → revise → verify again", "corpus_section": "5.5" },
+        { "assertion": "Well-written specification typically takes 1–3 iterations", "corpus_section": "5.5" },
+        { "assertion": "Software testing real-world pattern", "corpus_section": "7" },
+        { "assertion": "Data journalism real-world pattern", "corpus_section": "7" },
+        { "assertion": "Healthcare support tools real-world pattern", "corpus_section": "7" },
+        { "assertion": "Do not outsource specification to AI", "corpus_section": "8" }
+      ],
+      "detail": "All 10 sampled assertions trace directly to corpus sections 5.1–5.5, 7, and 8. Zero unsupported claims."
+    },
+    "beginner_readability": {
+      "passed": true,
+      "undefined_terms": [],
+      "jargon_dump_paragraphs": [],
+      "abstract_first": false,
+      "academic_register_violations": 0,
+      "detail": "All non-everyday terms defined on first use with bold-term / plain-meaning shape: '70/30 rule', 'implementation', 'specification', 'verification'. 'Probabilistic' correctly treated as prior learning from Topic 1.3 — not re-defined, just referenced. Concrete examples lead every concept (customer feedback worked example, chef analogy in corpus mapped to direct product in reading). Sentences short, active voice, learner addressed as 'you' throughout. Zero hedging phrases detected."
+    },
+    "formatting": {
+      "passed": true,
+      "wall_of_text": false,
+      "unlisted_sequence": false,
+      "no_inline_examples": false,
+      "bold_definitions_used": true,
+      "detail": "All procedures rendered as numbered lists (specification steps, verification steps, loop steps, worked-example steps). Comparisons rendered as tables (AI capabilities table, do/don't table). No paragraph exceeds 4 sentences. Inline examples present in each subsection (summary task in specification section, customer feedback in worked example). Definitions use bold-term / plain-meaning shape."
+    },
+    "assessment_references": {
+      "passed": true,
+      "assessment_references_found": [],
+      "detail": "No mention of A1, due weeks, grade weights, or 'Specification Portfolio' anywhere in the reading. Corpus section 9 (Hands-On Exercise) and its A1 reference were correctly excluded."
+    },
+    "scope": {
+      "passed": true,
+      "scope_creep_findings": [],
+      "detail": "Reading stays squarely on the 70/30 rule topic. Real-world patterns (software testing, data journalism, healthcare tools) are illustrative examples, not new concepts taught. No drift into prompt engineering, AI governance, hallucination mechanics, or other adjacent material."
+    },
+    "diagram_embedding": {
+      "passed": true,
+      "diagram_embedded": true,
+      "embed_location": "Key Concepts — The verification loop subsection",
+      "relative_path_correct": true,
+      "detail": "Diagram embedded as ./diagram.png with caption at the verification-loop section, exactly where the loop concept is first explained. Placement replaces a paragraph of structure prose, not added as an appendix."
+    },
+    "gold_example_match": {
+      "reference": ".claude/references/gold-examples/reading/2-1-what-makes-a-good-specification.reading.md",
+      "passed": true,
+      "detail": "Reading matches gold example in: six-section structure, bold-term definitions, numbered-step procedures, inline examples within Key Concepts, do/don't table in In Practice, short plain-language sentences addressing learner as 'you'. Deep profile appropriately extends length with a fuller worked example and richer In Practice section compared to the standard-profile gold."
+    }
+  },
+  "summary_findings": [],
+  "cycle": 1
+}

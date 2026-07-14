@@ -1,0 +1,54 @@
+{
+  "module": "1-case-studies",
+  "week_num": 10,
+  "generated_at": "2026-06-13T00:00:00Z",
+  "verdict": "pass",
+  "topics_checked": ["10.1", "10.2", "10.3"],
+  "checks": {
+    "terminology_consistency": {
+      "status": "pass",
+      "findings": [
+        {
+          "severity": "soft",
+          "topic": "10.3",
+          "finding": "Prerequisites section lists 'evaluation gap' but topic 10.2 names it 'evaluation design' (Gap 1). Minor synonym drift.",
+          "fix": "Align 10.3 prerequisite label to 'evaluation design gap' to match 10.2 terminology."
+        },
+        {
+          "severity": "info",
+          "topic": "10.1, 10.2, 10.3",
+          "finding": "automation bias appears substantively in section 5 of all three topics. Cross-referenced to 9.5 each time, not re-taught. High lexical overlap is intentional as a running thread.",
+          "fix": "No action required."
+        }
+      ]
+    },
+    "prerequisites_respected": {
+      "status": "pass",
+      "findings": []
+    },
+    "learning_arc": {
+      "status": "pass",
+      "findings": []
+    },
+    "no_duplicated_core_concepts": {
+      "status": "pass",
+      "findings": []
+    },
+    "lab_activity_alignment": {
+      "status": "pass",
+      "findings": []
+    },
+    "audience_level_consistency": {
+      "status": "pass",
+      "findings": [
+        {
+          "severity": "soft",
+          "topic": "10.2",
+          "location": "section 5.4",
+          "finding": "'models drift' used without explicit definition. Contextually recoverable.",
+          "fix": "Add a parenthetical: 'models drift (become less accurate as the real world changes)'."
+        }
+      ]
+    }
+  }
+}

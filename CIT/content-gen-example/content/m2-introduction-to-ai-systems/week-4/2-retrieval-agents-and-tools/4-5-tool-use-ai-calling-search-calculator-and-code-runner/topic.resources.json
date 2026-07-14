@@ -1,0 +1,30 @@
+{
+  "topic_id": "4.5",
+  "captured_at": "2026-06-17T00:00:00Z",
+  "captured_by": "namratas@revature.com",
+  "resources_source": "web_search",
+  "web_search_query": "AI tool use LLM calling search calculator code runner explained",
+  "resources": [
+    {
+      "type": "url",
+      "value": "https://www.ibm.com/think/topics/tool-calling",
+      "role": "primary",
+      "source": "web_search",
+      "notes": "IBM educational explainer — plain language, first-party canonical source for what tool calling is and why it matters"
+    },
+    {
+      "type": "url",
+      "value": "https://www.martinfowler.com/articles/function-call-LLM.html",
+      "role": "supporting",
+      "source": "web_search",
+      "notes": "Martin Fowler — respected CS author, solid conceptual walkthrough of function/tool calling mechanics"
+    },
+    {
+      "type": "url",
+      "value": "https://www.theregister.com/2024/08/26/ai_llm_tool_calling/",
+      "role": "supporting",
+      "source": "web_search",
+      "notes": "The Register — accessible tech-journalist overview, beginner-friendly framing"
+    }
+  ]
+}

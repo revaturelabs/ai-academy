@@ -1,0 +1,30 @@
+{
+  "topic_id": "3.2",
+  "captured_at": "2026-06-17T00:00:00Z",
+  "captured_by": "bhuvaneshwarim@revature.com",
+  "resources_source": "web_search",
+  "web_search_query": "rise of large language models LLMs history GPT BERT explained",
+  "resources": [
+    {
+      "type": "url",
+      "value": "https://www.ibm.com/think/topics/large-language-models",
+      "role": "primary",
+      "source": "web_search",
+      "notes": "Canonical IBM first-party explainer — definition, how LLMs work, history"
+    },
+    {
+      "type": "url",
+      "value": "https://arxiv.org/html/2402.06853v3",
+      "role": "supporting",
+      "source": "web_search",
+      "notes": "Academic introductory survey — full LLM arc from early NLP to GPT-4 era"
+    },
+    {
+      "type": "url",
+      "value": "https://snorkel.ai/large-language-models/",
+      "role": "supporting",
+      "source": "web_search",
+      "notes": "Practitioner overview — LLM history, capabilities, limitations"
+    }
+  ]
+}

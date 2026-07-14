@@ -1,0 +1,46 @@
+{
+  "module_slug": "1-why-numbers-matter-in-ai",
+  "week_num": 6,
+  "passed": true,
+  "checks": {
+    "terminology": {
+      "status": "pass",
+      "notes": "Single-topic module. 6.1 introduces 'parameter' and explicitly bridges the synonym 'weight' (corpus 5.4, reading lines 39-44), which downstream 6.2 (hyperparameter, learning rate, loss value) and 6.4 (weight_matrix) rely on without drift. 'binary', 'pixels as numbers', and 'data-to-number conversion' are consistent with downstream 6.4 (image_pixel_grid) and 6.5. No synonym drift detected.",
+      "per_topic_findings": []
+    },
+    "prereq_ordering": {
+      "status": "pass",
+      "notes": "6.1 prerequisites [1.1, 1.2, 2.1, 3.1, 5.1] all reference earlier-week topics (weeks 1-5). No forward or self prerequisites. Corpus section 2 correctly frames the 1.1-5.13 backdrop.",
+      "per_topic_findings": []
+    },
+    "arc_completeness": {
+      "status": "pass",
+      "notes": "6.1's five Learning Objectives fully cover the module title 'Why Numbers Matter in AI' (computers only process numbers; real-world data conversion; universal number language; arithmetic pattern-finding; numbers carrying meaning). Section 5.5 seeds the week's vector -> embedding meaning arc and now forward-references it precisely. RE-VALIDATION (post-fix): the two prior soft forward-reference imprecisions are RESOLVED. Text/word-meaning conversion now points to topics 6.7 and 6.8 (corpus 5.2 and section 7; reading line 27) — correct, since 6.7 = 'Embeddings — turning words into vectors that capture meaning' and 6.8 = 'Why king-man+woman~queen works'. The meaning arc now reads '6.5 through 6.9' (corpus 5.5; reading line 48) and reading takeaway (line 90) now reads 'starts at topic 6.5' — correct, since 6.5 = vector-as-point and 6.9 = cosine similarity. Verified against sequence.index.json. No new drift introduced.",
+      "per_topic_findings": []
+    },
+    "no_duplication": {
+      "status": "pass",
+      "notes": "Single-topic module; no intra-module Core Concept pairs to compare. Jaccard check not applicable.",
+      "per_topic_findings": []
+    },
+    "lab_alignment": {
+      "status": "pass",
+      "notes": "Module lab seed is the TensorFlow Embedding Projector ('no coding this week — understanding only', Journal Entry #3, Assessment 2 due). 6.1's Hands-On Exercise (corpus section 9) primes that lab by having learners predict word-pair closeness before verifying in the Projector. The executed lab itself lands in module 4 (6.10), which is appropriate for a WHY/framing topic. next_assessment correctly points to A2 (AI Systems Essay, due week 6), matching the cross_ref 'AI Systems Essay A2'.",
+      "per_topic_findings": []
+    },
+    "audience_consistency": {
+      "status": "pass",
+      "notes": "Register is consistently absolute-beginner. binary, pixel, parameter/weight, and LLM are all defined in-place at first use; no concept is assumed cold. No depth spike relative to a 'standard' depth profile.",
+      "per_topic_findings": []
+    }
+  },
+  "findings": [],
+  "revalidation": {
+    "prior_findings": "Two soft forward-reference imprecisions in 6.1: (1) word/text->meaning conversion cited topics 6.5/6.6 (embeddings actually lands at 6.7); (2) the meaning arc said to start at 6.4/Matrices (it begins at 6.5).",
+    "status": "RESOLVED",
+    "evidence": "Corpus §5.2 now reads 'topics 6.7 and 6.8'; §7 reads 'topics 6.7 and 6.8'; §5.5 reads '6.5 through 6.9'. reading.md mirrors: line 27 'topics 6.7 and 6.8', line 48 '6.5 through 6.9', line 90 takeaway 'starts at topic 6.5'. Cross-checked against sequence.index.json: 6.5=vector-as-point, 6.7=Embeddings, 6.8=king-man+woman, 6.9=cosine similarity. No new drift introduced by the edits.",
+    "re_run_at": "2026-06-19T00:00:00Z"
+  },
+  "verdict": "PASS — module 6.1 is coherent, correctly ordered, and sets up the week-6 vector/embedding arc. RE-VALIDATION after fix: the two prior soft forward-reference imprecisions (6.5/6.6 and 6.4 cited for the text->meaning/embedding concept that lands at 6.7) are RESOLVED in both corpus and reading, and no new drift was introduced. All five checks pass with zero open findings.",
+  "at": "2026-06-19T00:00:00Z"
+}

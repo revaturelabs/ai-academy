@@ -1,0 +1,44 @@
+{
+  "topic_id": "5.11",
+  "artifact": "reading",
+  "try": 1,
+  "passed": true,
+  "checks": {
+    "format_discipline": {
+      "passed": true,
+      "detail": "No frontmatter — first non-empty line is the H1 '# White House Executive Order on AI (2023) — key provisions' (no leading --- YAML block). Sidecar reading.meta.json exists, parses, and carries word_count (1245), estimated_read_minutes (6), citations_used ([1,2,3]), sections. Exactly the six fixed sections present in canonical order: Overview, Key Concepts, Worked Example, In Practice, Key Takeaways, References. None added/renamed/dropped. References present (3 citations exist)."
+    },
+    "length": {
+      "passed": true,
+      "detail": "word_count = 1245, inside the standard band [1200,1600]. Read-aloud minutes at the canonical artifact-mix reading_wpm of 200 = 1245/200 = 6.2 min, inside the manifest reading_minutes_range [6,8]. (The skill's 230-wpm note yields 5.4; the manifest band was derived from the config's 200 wpm, which is canonical for this curriculum, so 200 wpm governs and the reading clears the band.) Sits in the lower third of the word band — acceptable, not blocking."
+    },
+    "citations": {
+      "passed": true,
+      "detail": "Three resources: [1] primary (Federal Register canonical EO 14110 text), [2] supporting (CRS R47843), [3] supporting (CSET Georgetown). Primary [1] cited throughout (Overview, every provision sub-section, Worked Example, Takeaways) — >=1 satisfied. [2] cited on executive-order mechanics/revocability (lines 13-19, 78, 106, 110). [3] cited on agency-task framing and AI-content labeling (lines 27, 40, 47, 55, 59, 61, 92, 93). All inline [N] markers resolve to {1,2,3}; bibliography lists exactly [1][2][3]. No orphan markers, no orphan bibliography entries, no fabricated [N]>=4."
+    },
+    "forward_references": {
+      "passed": true,
+      "detail": "5.11 is delivery position 5 in module 4-governance-frameworks. No mention of 5.12 (India/MEITY), 5.13 (which-framework-applies), or any later topic — grep for 5.12-5.x / India / MEITY / 'which governance framework' returns zero matches. All cross-references point backward: 5.3 (data bias), 5.4 (four pillars), 5.5 (red-teaming), 5.7 (EU AI Act), 5.10 (NIST RMF). Clean."
+    },
+    "faithfulness": {
+      "passed": true,
+      "detail": "Sampled 12 assertions, all trace to topic_corpus.md: EO signed Oct 30 2023 (corpus L35); formal name/title (L35); executive order = instruction to federal agencies, not from legislature (L43-47); revocable by next President (L48); dual-use foundation models + dual-use meaning (L65); safety tests incl. red-team + report to government (L68-70); reached private companies through an existing law (L72); NIST tasked to write standards (L74); civil-rights definition (L89); governance of government's own AI use (L94-97); revoked January 2025 (L118); comparison-table cell values (L103-111). Zero unsupported assertions. No invented claims beyond corpus."
+    },
+    "beginner_readability": {
+      "passed": true,
+      "findings": [],
+      "detail": "Audience = fresher-zero-background. Non-everyday terms defined plainly at first appearance: executive order (L13), federal agencies (L14), revoke (L19), dual-use (L33), transparency (L44), civil rights (L53). Acronym EO 14110 introduced with full Executive Order spelled out (L25). One idea at a time; no paragraph stacks 3+ brand-new terms. Concrete-first (the 'President assigning homework across the government' analogy, L27; the step-by-step Worked Example). Short active sentences, learner addressed as 'you', no academic hedging. Zero findings."
+    },
+    "formatting": {
+      "passed": true,
+      "findings": [],
+      "detail": "Scannable and chunked: provisions broken into bulleted lists, the Worked Example rendered as a numbered 4-step procedure (L90-93), In Practice and Key Takeaways as bullets. No paragraph exceeds ~4 sentences; no wall of text. Definitions use bold-term / plain-meaning shape. Inline examples appear where concepts are introduced (homework analogy, hiring/housing/lending/policing for civil rights). The 3-way comparison appears as BOTH the embedded diagram (./diagram.png, L67, with caption L68) AND a markdown table (L70-76) — diagram PNG renders cleanly with three columns x four axes, matching the table. No assessment IDs / due weeks / grade weights in body (no A2 / 15% / due-week leakage). No script/meta artifacts (no 'Next Steps' / 'System-derived' / topic_id / generated_at) in the learner prose; the lone '---' match is the table separator."
+    },
+    "scope": {
+      "passed": true,
+      "detail": "Title 'EO 14110 — key provisions' is the boundary. Reading teaches exactly the four headline provisions (safety testing + red-team reporting for dual-use foundation models, transparency/reporting, civil-rights protections, federal-agency AI-use governance) plus the executive-order-vs-law nature and revocability — all on-headline at standard depth. Adjacent material handled correctly: the legal-footing law is referred to only as 'an existing law' (not even named in the reading — more conservative than required, no defining clause, not taught); later US executive actions named-and-deferred as a bare mention ('Other US executive actions on AI followed after 2023; those exist but are not covered here', L82, no bold, no defining clause); Jan-2025 revocation stated factually (L82). No NSM taught. No scope_creep."
+    }
+  },
+  "verdict": "PASS. All checks clear. Format discipline clean: no frontmatter (H1 first), valid sidecar, exactly the six fixed sections in order. Length 1245w in [1200,1600]; 6.2 read-aloud min at the canonical 200 wpm, in [6,8]. Citation discipline satisfied — primary [1] cited throughout, [2]/[3] both cited, all markers resolve to {1,2,3}, bibliography matches. No forward references to 5.12 (India/MEITY), 5.13, or any later topic; cross-refs (5.3, 5.4, 5.5, 5.7, 5.10) are genuine back-references. Faithful to corpus — 12/12 sampled assertions trace, zero invented claims. Beginner-readable and well-formatted with zero readability/formatting findings (no escalation). Scope held: the legal-footing law referred to only as 'an existing law', later executive actions named-and-deferred as a bare mention, Jan-2025 revocation factual. The 3-way governance comparison appears as BOTH the embedded diagram.png (renders cleanly, three columns x four axes) AND a markdown table. No assessment prose / assessment-ref line and no script/meta artifacts in the body. No gold reading example present in .claude/references/gold-examples/reading/ for this slot; falls back to written standards, which the reading meets.",
+  "at": "2026-06-22T15:24:00Z"
+}

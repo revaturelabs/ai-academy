@@ -1,0 +1,56 @@
+{
+  "topic_id": "6.8",
+  "generated_at": "2026-06-19T00:00:00Z",
+  "format": "gift",
+  "question_count": 6,
+  "depth_profile": "deep",
+  "$bias_defense_applied": true,
+  "$shuffle_seed": 42,
+  "correct_position_distribution": {"0": 2, "1": 2, "2": 1, "3": 1},
+  "questions": [
+    {
+      "id": "q1",
+      "type": "mcq",
+      "objective_ref": "Define what a direction in embedding space means and give an example of a direction that encodes a real-world relationship.",
+      "correct_position": 0
+    },
+    {
+      "id": "q2",
+      "type": "mcq",
+      "objective_ref": "Explain how the analogy 'king − man + woman ≈ queen' can be described as a sequence of vector arithmetic steps.",
+      "correct_position": 1
+    },
+    {
+      "id": "q3",
+      "type": "mcq",
+      "objective_ref": "Describe why the result of the arithmetic is approximate rather than exact, and what 'nearest word' means in that context.",
+      "correct_position": 2
+    },
+    {
+      "id": "q4",
+      "type": "mcq",
+      "objective_ref": "Identify at least two other analogies that follow the same vector arithmetic pattern.",
+      "correct_position": 3
+    },
+    {
+      "id": "q5",
+      "type": "mcq",
+      "objective_ref": "Interpret a simple 2D diagram showing words as points with arrows, identifying which arrow represents a shared direction.",
+      "correct_position": 0
+    },
+    {
+      "id": "q6",
+      "type": "mcq",
+      "objective_ref": "Applied: interpret a real-world analogy arithmetic result as a bias audit finding (corpus §7).",
+      "correct_position": 1
+    }
+  ],
+  "length_balance_check": {
+    "q1": {"max_words": 17, "min_words": 14, "ratio": 1.21},
+    "q2": {"max_words": 26, "min_words": 23, "ratio": 1.13},
+    "q3": {"max_words": 22, "min_words": 21, "ratio": 1.05},
+    "q4": {"max_words": 21, "min_words": 16, "ratio": 1.31},
+    "q5": {"max_words": 23, "min_words": 21, "ratio": 1.10},
+    "q6": {"max_words": 25, "min_words": 22, "ratio": 1.14}
+  }
+}

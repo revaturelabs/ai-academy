@@ -1,0 +1,51 @@
+{
+  "topic_id": "14.9",
+  "generated_at": "2026-06-16T00:00:00Z",
+  "format": "gift",
+  "question_count": 5,
+  "$bias_defense_applied": true,
+  "$shuffle_seed": "manual length-balanced regeneration cycle 2",
+  "correct_position_distribution": {
+    "0": 1,
+    "1": 2,
+    "2": 1,
+    "3": 1
+  },
+  "max_share": 0.40,
+  "longest_correct_rate": 1.08,
+  "bias_defense_applied": true,
+  "objectives_covered": [1, 2, 3, 4, 5],
+  "include_short_answer": false,
+  "questions": [
+    {
+      "id": "q1",
+      "type": "mcq",
+      "objective_ref": "Explain the token cost model for LLM calls — input tokens versus output tokens — and estimate the relative cost of a direct call, a RAG call, and an agent loop call.",
+      "correct_position": 1
+    },
+    {
+      "id": "q2",
+      "type": "mcq",
+      "objective_ref": "Define time to first token (TTFT) and total completion time, and explain why streaming matters for user experience.",
+      "correct_position": 0
+    },
+    {
+      "id": "q3",
+      "type": "mcq",
+      "objective_ref": "Describe at least two strategies for reducing cost (model tier selection, prompt caching) and explain the trade-off each introduces.",
+      "correct_position": 3
+    },
+    {
+      "id": "q4",
+      "type": "mcq",
+      "objective_ref": "Identify the main reliability failure modes in production AI systems (rate limits, context window overflow, LLM service downtime) and name a pattern that addresses each.",
+      "correct_position": 2
+    },
+    {
+      "id": "q5",
+      "type": "mcq",
+      "objective_ref": "Explain the cost–latency–quality triangle: why optimising for any two of the three typically requires accepting a trade-off on the third.",
+      "correct_position": 1
+    }
+  ]
+}

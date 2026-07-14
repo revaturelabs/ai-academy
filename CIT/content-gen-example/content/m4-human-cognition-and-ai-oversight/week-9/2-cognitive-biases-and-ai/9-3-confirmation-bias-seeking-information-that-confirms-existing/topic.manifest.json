@@ -1,0 +1,51 @@
+{
+  "type": "topic",
+  "id": "9.3",
+  "title": "Confirmation bias — seeking information that confirms existing beliefs",
+  "slug": "9-3-confirmation-bias-seeking-information-that-confirms-existing",
+  "position_in_module": 1,
+  "week_num": 9,
+  "session_name": "Human Judgment and AI Oversight",
+  "module": {
+    "position": 2,
+    "slug": "2-cognitive-biases-and-ai",
+    "title": "Cognitive Biases and AI"
+  },
+  "course": {
+    "code": "M4",
+    "slug": "m4-human-cognition-and-ai-oversight",
+    "title": "Human Cognition and AI Oversight"
+  },
+  "next_assessment": {
+    "id": "A3",
+    "due_week": 10,
+    "title": "Maths and Cognition Lab Report",
+    "weight": "15%"
+  },
+  "paths": {
+    "corpus": "topic_corpus.md",
+    "resources": "topic.resources.json",
+    "progress": "topic.progress.json",
+    "artifacts_dir": "artifacts/",
+    "critic_reports_dir": "critic-reports/"
+  },
+  "artifact_plan": {
+    "depth_profile": "standard",
+    "diagram": true,
+    "diagram_intent": "Three-mechanism flow: belief held → selective search (only confirming evidence gathered) → biased interpretation (ambiguous evidence read as confirming) → selective memory (confirming evidence better recalled) → belief reinforced — showing how all three mechanisms form a self-reinforcing loop.",
+    "reading": {
+      "target_word_range": [1200, 1600],
+      "target_min_minutes": 6,
+      "target_max_minutes": 8
+    },
+    "quiz": {
+      "min_questions": 5,
+      "max_questions": 6,
+      "include_short_answer": false
+    },
+    "depth_signals": "Topic covers one named bias with three sub-mechanisms plus experimental evidence and AI application layer — more than atomic but not requiring multi-session depth treatment.",
+    "human_approved_at": "2026-06-12T00:00:00Z"
+  },
+  "expected_delivery_minutes": 7,
+  "status": "corpus_drafted"
+}

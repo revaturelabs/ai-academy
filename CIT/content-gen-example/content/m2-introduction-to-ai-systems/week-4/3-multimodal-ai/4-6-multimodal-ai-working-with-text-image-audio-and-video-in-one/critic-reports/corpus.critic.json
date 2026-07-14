@@ -1,0 +1,88 @@
+{
+  "critic": "corpus-critic",
+  "topic_id": "4.6",
+  "topic_title": "Multimodal AI — working with text, image, audio, and video in one system",
+  "passed": true,
+  "at": "2026-06-17T00:00:00Z",
+  "depth_profile": "deep",
+  "resources_source": "web_search",
+  "estimated_word_count": 2400,
+  "checks": {
+    "required_sections": {
+      "passed": true,
+      "detail": "All four required sections present and non-trivial. Section 3 (Learning Objectives): 6 substantive objectives, ~110 words. Section 4 (Introduction): ~220 words, well above 50-word minimum. Section 5 (Core Concepts): 9 sub-sections covering all four modalities plus shared representation space, step-by-step flow, comparison table, and limitations — far above 100-word minimum. Section 10 (Key Takeaways): 5 bullet points, ~115 words, above 50-word minimum."
+    },
+    "citation_density": {
+      "passed": true,
+      "mode": "strict",
+      "findings": [
+        {
+          "severity": "soft",
+          "code": "uncited_quantitative_claim",
+          "location": "Section 5.6",
+          "detail": "Claim ‘A one-minute video at standard quality contains around 1,800 individual frames’ carries no citation marker. This is a specific quantitative assertion that should be grounded in [2] or [3]."
+        },
+        {
+          "severity": "soft",
+          "code": "uncited_factual_claim",
+          "location": "Section 5.5",
+          "detail": "Two claims lack citations: (1) the meeting-summariser scenario (‘A meeting summariser transcribes spoken discussion and reads any slides’) and (2) the assertion that speech recognition alone is not the same as a full multimodal model. Both are presented as factual but carry no [N] marker."
+        },
+        {
+          "severity": "soft",
+          "code": "uncited_factual_claim",
+          "location": "Section 5.9",
+          "detail": "Three limitation sub-claims lack citation markers: (1) modality gaps due to uneven training data distribution, (2) video’s higher memory and compute cost, and (3) the privacy/consent framing. The hallucination sub-claim is correctly cited [3]. Overall citation density across sections 5, 6, 7 is approximately 75–80%, above the 60% threshold, so no hard fail — but the uncited sub-claims in 5.9 weaken the limitations section."
+        }
+      ],
+      "primary_resources_cited": {
+        "[1] McKinsey (primary)": true,
+        "[2] arxiv.org survey": true,
+        "[3] aijourn.com": true
+      },
+      "estimated_citation_coverage_pct": 78
+    },
+    "sequence_drift": {
+      "passed": true,
+      "forward_references": [],
+      "detail": "No forward references detected. EU AI Act and NIST RMF are named with an explicit ‘covered in a later module’ pointer and are not bolded or defined — valid mention-and-defer per scope_discipline rules. GPT-4o and Google Gemini are used as product-name examples, not as curriculum concepts. All concepts taught here (modality, unimodal, shared representation space, encoder, video understanding, multimodal AI system) are either defined in this topic or drawn from prior topics 4.1–4.5. Speech recognition is explained inline at point of use without being formally introduced as a curriculum concept."
+    },
+    "length_sanity": {
+      "passed": true,
+      "estimated_word_count": 2400,
+      "depth_profile": "deep",
+      "expected_range": [3000, 4400],
+      "outer_sanity_band": [1500, 6000],
+      "pct_below_expected_minimum": 20,
+      "hard_fail_threshold_pct": 30,
+      "findings": [
+        {
+          "severity": "soft",
+          "code": "short_for_depth_profile",
+          "detail": "At approximately 2,400 words the corpus is 20% below the 3,000-word expected minimum for a deep-profile topic. This is within the 30% hard-fail tolerance, but the gap is material. A deep topic covering four distinct modalities plus a shared representation mechanism, a step-by-step flow, a comparison table, and three real-world patterns would normally warrant fuller treatment. The builder should consider expanding the limitations section (5.9), the implementation prose, or the real-world patterns with additional depth."
+        }
+      ]
+    },
+    "topic_scope": {
+      "passed": true,
+      "scope_creep_items": [],
+      "detail": "No scope creep detected. The corpus stays on the headline (text, image, audio, and video in one system). Encoder and shared representation space internals are introduced at the level needed to explain the headline concept and are appropriately deferred for deeper treatment: ‘The technical details of how this translation is learned — involving mechanisms named in some sources — are covered in later modules.’ Document intelligence (section 7) is presented as a named real-world pattern, not taught as a separate concept. The EU AI Act and NIST RMF are name-and-deferred in one sentence with a module pointer."
+    },
+    "beginner_readability": {
+      "passed": true,
+      "findings": [
+        {
+          "severity": "soft",
+          "code": "undefined_terms",
+          "terms": ["video understanding"],
+          "detail": "‘Video understanding’ is listed in concepts_introduced for this topic and is used as the section 5.6 sub-heading title, but it is never formatted as a bold term followed by a plain-English definition (the standard used throughout the corpus for modality, unimodal, shared representation space, and encoder). The concept is described functionally but the formal definition marker is missing. The builder should add ‘**Video understanding** — [plain definition]’ at the start of 5.6."
+        }
+      ],
+      "jargon_dumps": [],
+      "undefined_acronyms": [],
+      "academic_register_instances": 0,
+      "detail": "Terms are defined on first use throughout. The international-conference translator analogy for shared representation space is effective for a zero-background audience. No paragraph introduces three or more brand-new terms simultaneously. Active voice, second-person address, and short sentences are used consistently. No hedging phrases detected."
+    }
+  },
+  "verdict": "PASS — no hard failures on any of the six checks. Three soft findings to address before artifact generation: (1) Citation: the quantitative ‘1,800 frames’ claim in 5.6 and the meeting-summariser + speech-recognition-distinction claims in 5.5 should each receive a [N] citation marker; the limitations sub-claims in 5.9 on modality gaps, compute cost, and privacy are also uncited. (2) Length: at ~2,400 words the corpus is 20% below the deep-profile 3,000-word floor — within tolerance but the builder should expand coverage, particularly in 5.9 (Limitations) and section 6 (Implementation). (3) Readability: ‘video understanding’ is a concepts_introduced term that lacks the standard bold-term-plus-definition treatment; add a formal definition at the opening of 5.6. No forward references, no scope creep, all required sections present and substantive."
+}

@@ -1,0 +1,42 @@
+{
+  "passed": true,
+  "topic_id": "5.1",
+  "cycle": 2,
+  "profile_used": "standard",
+  "checks": {
+    "required_sections": {
+      "passed": true,
+      "notes": "All four required sections present and non-trivial. §3 Learning Objectives: 5 bullets, ~95 words — exceeds 50-word minimum. §4 Introduction: 5 paragraphs, ~130 words — exceeds 50-word minimum. §5 Core Concepts: 6 sub-sections (5.1–5.6), well over 1000 words — exceeds 100-word minimum. §10 Key Takeaways: 5 bullets, ~130 words — exceeds 50-word minimum. No placeholder strings detected in required sections."
+    },
+    "citation_density": {
+      "passed": true,
+      "primary_cited": true,
+      "claim_citation_rate": 0.95,
+      "notes": "resources_source=web_search — strict mode applies. Primary resource [1] (aistandardofcare.com) is cited in §5.2 (lines 70, 72, 78) and §7 (line 179). Supporting resource [2] (MIT Tech Review) is cited throughout §5.3 (lines 88, 94, 102, 104) and §7 (line 181). Supporting resource [3] (DHS report) is cited throughout §5.4 (lines 123, 125, 127, 129, 131, 133) and §7 (line 183). Estimated citation rate across §§5, 6, 7: ~19 cited factual assertions out of ~20 total — approximately 95%, well above the 60% strict-mode threshold. The one uncited claim ('AI failures are not rare edge cases. They happen across industries, at scale, every day.' §5.1) is a general framing orientation statement, not a quantitative empirical assertion, and is acceptable. §6 (Implementation) is a procedural framework with no external factual claims requiring citation. All three resources cited at least once. PASS."
+    },
+    "sequence_drift": {
+      "passed": true,
+      "forward_refs": [],
+      "notes": "Cycle 1 forward reference 'supervised learning' has been removed. The revised §5.3 line reads: 'When you train an AI on historically biased decisions, it replicates those biases — a pattern you will explore more deeply when you study the training techniques behind these systems in a later topic.' The term 'supervised learning' does not appear anywhere in the corpus. All other technical noun phrases checked: 'AI failure', 'training data bias', 'diagnostic AI', 'algorithmic bias', 'deepfake', 'deep learning' are all listed in this topic's concepts_introduced and defined on first use. 'radiologist' is defined inline at first use. 'hallucination' is a backward reference to prerequisite topic 3.9 (valid). 'accountability', 'fairness', 'transparency', 'harm prevention' appear as bare names in §5.5 with an explicit deferral pointer ('You will cover those concepts beginning in topic 5.4') — compliant with mention-and-defer rules. No prior topic (1.1–4.x) has any entries in concepts_introduced, so no prior-topic conflicts. PASS."
+    },
+    "length_sanity": {
+      "passed": true,
+      "word_count_estimate": 3120,
+      "profile": "standard",
+      "range": [3000, 4400],
+      "notes": "Cycle 1 reported ~3100 words. Revision removed the 'supervised learning' mechanistic sentence (~20 words) and replaced it with a same-length deferral line; added several [2] citation markers to §5.3. Net change is negligible (~+20 words). Estimated word count ~3120, within the standard-profile range of 3000–4400. PASS."
+    },
+    "topic_scope": {
+      "passed": true,
+      "scope_creep_findings": [],
+      "notes": "Cycle 1 scope_creep ('supervised learning' taught at mechanistic level in §5.3) is fully resolved. The revised corpus contains no explanation of how supervised learning works. 'deep learning' is defined at a single-sentence surface level in §5.4, explicitly bounded by 'You do not need to understand the technical details of deep learning for this topic', and is listed in this topic's concepts_introduced — not scope_creep. No other out-of-scope mechanistic explanations detected. The corpus stays within the headline scope: documented failure cases in healthcare, hiring, and deepfakes — their mechanisms described at the level of data problems, design flaws, and misuse — without jumping into training technique detail. PASS."
+    },
+    "beginner_readability": {
+      "passed": true,
+      "findings": [],
+      "notes": "Cycle 1 soft finding ('supervised learning' undefined) is resolved by removal. Re-scan of Introduction and Core Concepts: all non-everyday terms are bold-defined on first use with plain-language meaning before formal phrasing (AI failure §5.1, diagnostic AI + radiologist §5.2, training data bias §5.2, algorithmic bias §5.3, deepfake + deep learning §5.4). DHS spelled out in full with plain gloss ('the federal agency responsible for national security') before acronym abbreviation. No jargon dumps detected — no paragraph introduces 3+ new terms simultaneously. Sentences are direct and address the learner as 'you' throughout. No hedging phrases detected. Average sentence length is well under 25 words. 0 soft findings — below the 3-finding escalation threshold. PASS."
+    }
+  },
+  "verdict": "PASS — all 6 checks pass. Cycle 1 failures fully resolved: (1) Citation density: revised corpus achieves ~95% citation rate across §§5, 6, 7 — well above the 60% strict-mode threshold; all three resources cited. (2) Sequence drift: 'supervised learning' removed entirely from the corpus; no forward references remain. (3) Scope creep: the supervised-learning mechanistic explanation is gone; no out-of-scope concept is taught at depth. Length sanity, required sections, and beginner readability all pass cleanly. Corpus is approved to ground downstream reading, quiz, and diagram artifacts.",
+  "at": "2026-06-17T00:01:00Z"
+}

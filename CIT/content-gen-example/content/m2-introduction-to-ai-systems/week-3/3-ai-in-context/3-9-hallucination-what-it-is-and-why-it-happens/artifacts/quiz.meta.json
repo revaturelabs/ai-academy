@@ -1,0 +1,41 @@
+{
+  "topic_id": "3.9",
+  "generated_at": "2026-06-17T00:00:00Z",
+  "format": "gift",
+  "question_count": 5,
+  "$bias_defense_applied": true,
+  "$shuffle_seed": "154",
+  "correct_position_distribution": [2, 0, 3, 1, 2],
+  "questions": [
+    {
+      "id": "q1",
+      "type": "mcq",
+      "objective_ref": "Define three distinct types of AI hallucination — factual, attributional, and faithful-but-wrong — and give a concrete example of each.",
+      "correct_position": 2
+    },
+    {
+      "id": "q2",
+      "type": "mcq",
+      "objective_ref": "Explain why the token-prediction mechanism makes hallucination a structural property of LLMs, not a bug that can be patched away.",
+      "correct_position": 0
+    },
+    {
+      "id": "q3",
+      "type": "mcq",
+      "objective_ref": "Describe two contributing causes — training data gaps and RLHF incentives — that make hallucination more likely in practice.",
+      "correct_position": 3
+    },
+    {
+      "id": "q4",
+      "type": "mcq",
+      "objective_ref": "Identify real-world contexts (legal, medical, academic) where hallucination has caused documented harm.",
+      "correct_position": 1
+    },
+    {
+      "id": "q5",
+      "type": "mcq",
+      "objective_ref": "List three detection and mitigation strategies (verification, grounding, RAG) that reduce hallucination risk without eliminating it.",
+      "correct_position": 2
+    }
+  ]
+}

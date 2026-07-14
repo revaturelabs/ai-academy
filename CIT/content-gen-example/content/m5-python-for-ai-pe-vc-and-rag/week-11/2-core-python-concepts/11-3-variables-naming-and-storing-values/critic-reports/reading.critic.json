@@ -1,0 +1,48 @@
+{
+  "passed": true,
+  "checks": {
+    "format_discipline": {
+      "passed": true,
+      "notes": "No YAML frontmatter; H1 title is first non-empty line. Sidecar reading.meta.json present and valid with all required fields. Exactly 6 fixed sections in correct order: Overview, Key Concepts, Worked Example, In Practice, Key Takeaways, References."
+    },
+    "length_budget": {
+      "passed": true,
+      "word_count": 1341,
+      "reading_minutes": 7,
+      "target_range": [1200, 1600]
+    },
+    "citation_discipline": {
+      "passed": true,
+      "primary_cited": true,
+      "citations_found": ["[1]", "[2]", "[3]", "[4]", "[5]"],
+      "notes": "All five primary resources cited inline. Bibliography entries [1]–[5] at end match inline markers. No orphan markers or orphan bibliography entries."
+    },
+    "no_forward_refs": {
+      "passed": true,
+      "violations": [],
+      "notes": "print() appears with explicit deferral note to 11.4 (line 81). call_ai_model() labeled 'hypothetical — API calls covered in week 12' (line 161) — named-and-deferred pointer, not teaching. Back-references to 11.1 (runtime errors) and 11.2 (Colab) are backward, not forward. No forward-ref violations."
+    },
+    "beginner_readability": {
+      "passed": true,
+      "findings": [],
+      "notes": "All non-everyday terms defined on first use with plain-language definitions and analogies (sticky-note analogy for variable, label vs box mental model, light-switch analogy for bool, counting analogy for int, measurement analogy for float). No paragraph introduces 3+ brand-new terms at once. Concrete analogies precede abstractions throughout. No hedging language detected. No assessment ID references."
+    },
+    "formatting": {
+      "passed": true,
+      "findings": [],
+      "notes": "No prose walls; all paragraphs are 4 sentences or fewer. Naming rules presented as a numbered list. Worked Example presented as numbered steps. Bold-term definitions used consistently for all introduced concepts. Inline examples present in Key Concepts sections. Do/Don't table in In Practice section. Summary table for valid/invalid names."
+    },
+    "scope": {
+      "passed": true,
+      "scope_creep": [],
+      "notes": "Content stays within 'variables and naming': variable concept, assignment operator, four basic data types, type(), naming rules, snake_case, reassignment, dynamic typing. The hypothetical call_ai_model() snippet is a labeled pointer to week 12 with no teaching. No conditionals, loops, functions, or other out-of-scope concepts taught."
+    },
+    "faithfulness": {
+      "passed": true,
+      "new_claims": [],
+      "notes": "Sampled 9 assertions across all sections; all trace directly to corpus sections 5.1–5.6. No claims introduced in the reading that are absent from the corpus. Analogies (sticky note, light switch, counting whole items, measurements) are all present in corpus sections 5.3 and 5.1. Dynamic typing characterization matches corpus section 5.6."
+    }
+  },
+  "verdict": "All 8 checks pass — reading is within word budget (1341 words, 7 min), cites all 5 resources, introduces no forward references, defines all terms before use, is well-formatted with no prose walls, stays on scope, and every assertion is supported by the corpus.",
+  "at": "2026-06-12T00:28:00Z"
+}

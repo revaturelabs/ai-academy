@@ -1,0 +1,228 @@
+{
+  "topic_id": "13.9",
+  "stage": "module_passed",
+  "gates": {
+    "resources_captured": true,
+    "corpus_generated": true,
+    "corpus_critic_passed": true,
+    "corpus_human_approved": true,
+    "reading_generated": true,
+    "reading_critic_passed": true,
+    "quiz_generated": true,
+    "quiz_critic_passed": true,
+    "diagram_generated": true,
+    "diagram_critic_passed": true,
+    "module_drift_passed": true,
+    "course_drift_passed": true,
+    "topic_artifacts_human_approved": true,
+    "week_human_approved": true
+  },
+  "history": [
+    {
+      "at": "2026-06-14T12:16:16Z",
+      "op": "set",
+      "gate": "resources_captured",
+      "value": true
+    },
+    {
+      "at": "2026-06-14T12:16:16Z",
+      "op": "stage",
+      "to": "awaiting_corpus"
+    },
+    {
+      "at": "2026-06-14T12:16:16Z",
+      "op": "log",
+      "msg": "Captured 3 resources (source=web_search, primary: apxml.com/courses/prompt-engineering-llm-application-development/...)"
+    },
+    {
+      "at": "2026-06-14T12:28:57Z",
+      "op": "set",
+      "gate": "corpus_generated",
+      "value": true
+    },
+    {
+      "at": "2026-06-14T12:28:57Z",
+      "op": "stage",
+      "to": "awaiting_corpus_critic"
+    },
+    {
+      "at": "2026-06-14T12:29:01Z",
+      "op": "log",
+      "msg": "Corpus generated (1050 words, atomic profile, diagram=true)"
+    },
+    {
+      "at": "2026-06-14T12:32:17Z",
+      "op": "set",
+      "gate": "corpus_critic_passed",
+      "value": false
+    },
+    {
+      "at": "2026-06-14T12:32:17Z",
+      "op": "log",
+      "msg": "Corpus critic failed: citation density §5 ~47% (need ≥60%). Fixing: add [1]/[2] to 8 uncited claims in §5."
+    },
+    {
+      "at": "2026-06-14T12:34:30Z",
+      "op": "set",
+      "gate": "corpus_critic_passed",
+      "value": true
+    },
+    {
+      "at": "2026-06-14T12:34:30Z",
+      "op": "stage",
+      "to": "awaiting_corpus_human_review"
+    },
+    {
+      "at": "2026-06-14T12:34:30Z",
+      "op": "log",
+      "msg": "Corpus critic passed attempt 2 — citation density fix applied (8 claims cited). All checks green."
+    },
+    {
+      "at": "2026-06-14T12:42:35Z",
+      "op": "set",
+      "gate": "corpus_human_approved",
+      "value": true
+    },
+    {
+      "at": "2026-06-14T12:42:35Z",
+      "op": "stage",
+      "to": "corpus_approved"
+    },
+    {
+      "at": "2026-06-14T12:42:35Z",
+      "op": "log",
+      "msg": "HITL#2 approved — atomic profile, diagram=true. All sections approved. Week running total: 54/90 min."
+    },
+    {
+      "at": "2026-06-14T12:48:25Z",
+      "op": "set",
+      "gate": "diagram_generated",
+      "value": true
+    },
+    {
+      "at": "2026-06-14T12:48:25Z",
+      "op": "set",
+      "gate": "diagram_critic_passed",
+      "value": true
+    },
+    {
+      "at": "2026-06-14T12:48:25Z",
+      "op": "log",
+      "msg": "Diagram generated (mermaid flowchart TD, 8 nodes, critic passed source+visual). PNG rendered at 1400px."
+    },
+    {
+      "at": "2026-06-14T12:50:56Z",
+      "op": "set",
+      "gate": "reading_generated",
+      "value": true
+    },
+    {
+      "at": "2026-06-14T12:50:56Z",
+      "op": "stage",
+      "to": "awaiting_reading_critic"
+    },
+    {
+      "at": "2026-06-14T12:50:56Z",
+      "op": "log",
+      "msg": "Reading generated (1253w/7min, atomic, diagram embedded). Slightly over 1200w max — critic will check."
+    },
+    {
+      "at": "2026-06-14T12:52:52Z",
+      "op": "set",
+      "gate": "quiz_generated",
+      "value": true
+    },
+    {
+      "at": "2026-06-14T12:52:52Z",
+      "op": "log",
+      "msg": "Quiz generated (6q: 5 MCQ + 1 SA, bias_defense=true, positions [2,0,3,1,2,null] max_share=0.40, all 5 LOs covered)."
+    },
+    {
+      "at": "2026-06-14T12:55:47Z",
+      "op": "set",
+      "gate": "reading_critic_passed",
+      "value": true
+    },
+    {
+      "at": "2026-06-14T12:55:47Z",
+      "op": "log",
+      "msg": "Reading critic passed. Soft: meta word_count corrected 1060→1253 (7min). All hard checks clear."
+    },
+    {
+      "at": "2026-06-14T12:55:47Z",
+      "op": "set",
+      "gate": "quiz_critic_passed",
+      "value": false
+    },
+    {
+      "at": "2026-06-14T12:55:47Z",
+      "op": "log",
+      "msg": "Quiz critic failed attempt 1: length_bias 0.80 (threshold 0.40) — q1/q2/q4/q5 correct answers too long. Also: q5 stem missing code body, q2/q3 weak distractors. Revising."
+    },
+    {
+      "at": "2026-06-14T13:01:08Z",
+      "op": "set",
+      "gate": "quiz_critic_passed",
+      "value": true
+    },
+    {
+      "at": "2026-06-14T13:01:08Z",
+      "op": "stage",
+      "to": "quiz_approved"
+    },
+    {
+      "at": "2026-06-14T13:01:08Z",
+      "op": "log",
+      "msg": "Quiz critic passed attempt 2. Positions [0,3,1,2,3,null] max_share=0.40. Length bias longest_correct_rate=0.20. All 5 LOs. Soft: q4 ratio 1.219 (marginal), q3-D3 stale feedback text."
+    },
+    {
+      "at": "2026-06-14T13:01:13Z",
+      "op": "stage",
+      "to": "awaiting_topic_artifacts_review"
+    },
+    {
+      "at": "2026-06-14T13:02:14Z",
+      "op": "set",
+      "gate": "topic_artifacts_human_approved",
+      "value": true
+    },
+    {
+      "at": "2026-06-14T13:02:14Z",
+      "op": "stage",
+      "to": "topic_artifacts_approved"
+    },
+    {
+      "at": "2026-06-14T13:02:14Z",
+      "op": "log",
+      "msg": "HITL#3 approved. Reading 1253w/7min, quiz 6q (2 revise cycles), diagram mermaid 8-node. Soft: quiz q4 ratio 1.219, q3-D3 stale feedback (accepted). Week total: 56/90 min."
+    },
+    {
+      "at": "2026-06-15T00:00:00Z",
+      "op": "set",
+      "gate": "module_drift_passed",
+      "value": true
+    },
+    {
+      "at": "2026-06-15T00:00:00Z",
+      "op": "stage",
+      "to": "module_passed"
+    },
+    {
+      "at": "2026-06-15T00:00:00Z",
+      "op": "log",
+      "msg": "Module drift critic passed — all 5 checks + audience-level consistency green. Report: critic-reports/module-drift.critic.json"
+    },
+    {
+      "at": "2026-06-15T06:37:49Z",
+      "op": "set",
+      "gate": "week_human_approved",
+      "value": true
+    },
+    {
+      "at": "2026-06-23T17:39:30Z",
+      "op": "set",
+      "gate": "course_drift_passed",
+      "value": true
+    }
+  ]
+}

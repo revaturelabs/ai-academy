@@ -1,0 +1,39 @@
+{
+  "verdict": "pass",
+  "cycle": 2,
+  "findings": [
+    {
+      "code": "layout_wrong_for_intent",
+      "where": "subgraph NARROW + subgraph FM — cycle 1 draft",
+      "detail": "Cycle 1 draft included direction TB overrides inside both subgraphs of a flowchart LR root. Project history (topic 1.3) shows this combination produces vertical stacks that collapse the LR side-by-side contrast into a single column on this renderer. Fixed in cycle 2 by removing direction TB from subgraph declarations, allowing LR root to govern layout throughout."
+    },
+    {
+      "code": "looks_good",
+      "where": "whole canvas (cycle 2)",
+      "detail": "Two-panel LR layout: NARROW subgraph (left, NA→NC chain) contrasts against FM subgraph (right, FB→FA→FO chain). No direction overrides inside subgraphs — Mermaid LR root governs. Node count 5, all within 3-8. All five bold labels are 2-4 words and trace directly to corpus sections 5.1-5.4. RAG appears only as subtitle text (not a bare node label). Governing concept in title: field. No ghost nodes misused."
+    },
+    {
+      "code": "looks_good",
+      "where": "concept fidelity",
+      "detail": "Many task-specific models → S5.3 narrow AI contrast; Cost paid per task → S5.2/S5.3 training cost contrast; One base model → S5.1/S5.2 definition + trained once; Adaptation layer → S5.4 three methods named without expanding mechanics; Many applications → S5.3 generalisation list. No scope creep into 4.2 (fine-tuning mechanics) or 4.3 (RAG internals)."
+    }
+  ],
+  "png_render": "skipped — mmdc shell execution not available in this tool context; .mmd written and source-level pre-flight passed",
+  "stats": {
+    "nodes": 5,
+    "edges": 4,
+    "layout": "flowchart LR (two-panel contrast subgraphs)",
+    "labels": ["Many task-specific models", "Cost paid per task", "One base model", "Adaptation layer", "Many applications"],
+    "mmd_path": "content/m2-introduction-to-ai-systems/week-4/1-foundation-models-and-adaptation/4-1-foundation-models-trained-once-at-scale-usable-for-many-task/artifacts/diagram.mmd",
+    "png_path": null,
+    "preflight": {
+      "mermaid_parse": "expected pass (syntax matches gold example format exactly; no shell tool available to run mmdc)",
+      "node_count": "pass (5, within 3-8)",
+      "label_discipline": "pass (all bold labels 2-4 words)",
+      "concept_fidelity": "pass (all 5 labels trace to corpus S5.1-S5.4; no forward refs to 4.2/4.3 mechanics)",
+      "jargon_label": "pass (RAG only in subtitle span, not bare node label)",
+      "title_discipline": "pass (governing concept in title: field; no ghost node misuse)",
+      "single_path": "pass (each panel is a linear chain; side-by-side panels are sanctioned by intent)"
+    }
+  }
+}

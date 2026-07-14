@@ -1,0 +1,15 @@
+{
+  "topic_id": "1.7",
+  "title": "Pseudocode — writing logic in plain English before writing code",
+  "generated_at": "2026-06-21T00:00:00Z",
+  "word_count": 1340,
+  "reading_minutes": 7,
+  "profile": "standard",
+  "target_word_range": [1200, 1600],
+  "citations": ["[1]", "[2]", "[3]"],
+  "diagram_embedded": true,
+  "estimated_read_minutes": 7,
+  "embeds_diagram": true,
+  "citations_used": [1, 2, 3],
+  "sections": ["Overview", "Key Concepts", "Worked Example", "In Practice", "Key Takeaways", "References"]
+}

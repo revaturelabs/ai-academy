@@ -1,0 +1,49 @@
+{
+  "type": "topic",
+  "id": "3.3",
+  "title": "The move to AI agents",
+  "slug": "3-3-the-move-to-ai-agents",
+  "position_in_module": 3,
+  "week_num": 3,
+  "session_name": "What AI Is — and Isn't",
+  "module": {
+    "position": 1,
+    "slug": "1-a-brief-history-of-ai",
+    "title": "A Brief History of AI"
+  },
+  "course": {
+    "code": "M2",
+    "slug": "m2-introduction-to-ai-systems",
+    "title": "Introduction to AI Systems"
+  },
+  "next_assessment": {
+    "id": "A1",
+    "due_week": 3,
+    "title": "Specification Portfolio",
+    "weight": "10%"
+  },
+  "paths": {
+    "corpus": "topic_corpus.md",
+    "resources": "topic.resources.json",
+    "progress": "topic.progress.json",
+    "artifacts_dir": "artifacts/",
+    "critic_reports_dir": "critic-reports/"
+  },
+  "artifact_plan": {
+    "diagram": true,
+    "diagram_intent": "Agent loop cycle: Goal → Plan → Act (tool use) → Observe → Update Plan → [repeat until done] — a flow/cycle diagram showing the five components and their relationships",
+    "depth_profile": "standard",
+    "reading": {
+      "target_word_range": [1200, 1600],
+      "target_min_minutes": 6,
+      "target_max_minutes": 8
+    },
+    "quiz": {
+      "min_questions": 5,
+      "max_questions": 6,
+      "include_short_answer": false
+    }
+  },
+  "expected_delivery_minutes": 7,
+  "status": "scaffolded"
+}

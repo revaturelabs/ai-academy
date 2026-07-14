@@ -1,0 +1,23 @@
+{
+  "topic_id": "10.3",
+  "generated_at": "2026-06-12T00:00:00Z",
+  "question_count": 6,
+  "$bias_defense_applied": true,
+  "$shuffle_seed": "manual-spread: Q1→pos2, Q2→pos0, Q3→pos3, Q4→pos1, Q5→pos2, Q6→pos0; target distribution avoids runs of same position",
+  "correct_position_distribution": {
+    "10.3-Q1": 2,
+    "10.3-Q2": 0,
+    "10.3-Q3": 3,
+    "10.3-Q4": 1,
+    "10.3-Q5": 2,
+    "10.3-Q6": 0
+  },
+  "objective_ref": {
+    "10.3-Q1": "LO1",
+    "10.3-Q2": "LO2",
+    "10.3-Q3": "LO3",
+    "10.3-Q4": "LO4",
+    "10.3-Q5": "LO5",
+    "10.3-Q6": "LO6"
+  }
+}

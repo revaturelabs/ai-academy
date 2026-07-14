@@ -1,0 +1,87 @@
+{
+  "module": "4-post-mortem-writing",
+  "week_num": 10,
+  "generated_at": "2026-06-13T00:00:00Z",
+  "verdict": "pass",
+  "topics_checked": ["10.7"],
+  "checks": {
+    "terminology_consistency": {
+      "status": "pass",
+      "findings": [
+        {
+          "severity": "info",
+          "topic": "10.7",
+          "finding": "Module contains a single topic, so cross-topic terminology drift cannot occur. Within topic 10.7, 'post-mortem', 'post-incident review', and 'incident retrospective' are explicitly declared as synonyms in §5.1 — no hidden drift.",
+          "fix": "No action required."
+        }
+      ]
+    },
+    "prerequisites_respected": {
+      "status": "pass",
+      "findings": [
+        {
+          "severity": "info",
+          "topic": "10.7",
+          "finding": "All nine listed prerequisites (9.7, 9.9, 9.11, 10.1, 10.2, 10.3, 10.4, 10.5, 10.6) have IDs strictly earlier than 10.7 and are confirmed present in sequence.index.json. Every prerequisite term used in the corpus is traceable to its declared source topic via the §2 prerequisites section.",
+          "fix": "No action required."
+        }
+      ]
+    },
+    "learning_arc": {
+      "status": "pass",
+      "findings": [
+        {
+          "severity": "info",
+          "topic": "10.7",
+          "finding": "Module title 'Post-Mortem Writing' implies learners can produce a structured post-mortem document for an AI failure. Topic 10.7 LOs cover: defining a post-mortem (LO1), the four-section framework (LO2), applying it to a case study (LO3), distinguishing proximate vs root cause (LO4), proposing a named governance control (LO5), and recognising no-blame framing (LO6). The module outcome is fully addressed.",
+          "fix": "No action required."
+        }
+      ]
+    },
+    "no_duplicated_core_concepts": {
+      "status": "pass",
+      "findings": [
+        {
+          "severity": "info",
+          "topic": "10.7",
+          "finding": "Module contains a single topic; pairwise Jaccard overlap check is not applicable. No duplication possible.",
+          "fix": "No action required."
+        }
+      ]
+    },
+    "lab_activity_alignment": {
+      "status": "pass",
+      "findings": [
+        {
+          "severity": "info",
+          "topic": "10.7",
+          "finding": "Lab seed primary item — 'Case study debrief: write a 200-word post-mortem — what governance control would have prevented the failure?' — is directly and fully supported by the §9 Hands-On Exercise, which instructs learners to draft a 200-word post-mortem for a Week 10 case study using the step-by-step procedure in §6.",
+          "fix": "No action required."
+        },
+        {
+          "severity": "soft",
+          "topic": "10.7",
+          "finding": "Lab seed also specifies 'Apply the Judgment Framework to your domain system — answer all three questions per component.' Topic 10.7's corpus references Judgment Framework Q1 and Q3 from topics 9.7 and 9.9 in context, but does not include an explicit hands-on exercise step that requires students to answer all three Judgment Framework questions for their own domain system. This task is more naturally resident in topic 10.6, which is a prerequisite, but the lab seed attaches it to this module.",
+          "fix": "Consider adding a brief sub-step in §9 asking students to confirm they have answered all three Judgment Framework questions for their own domain component before selecting a case study for the post-mortem exercise. Alternatively, note in §9 that the Judgment Framework domain exercise was completed in 10.6 and this exercise builds on it."
+        }
+      ]
+    },
+    "audience_level_consistency": {
+      "status": "pass",
+      "findings": [
+        {
+          "severity": "soft",
+          "topic": "10.7",
+          "finding": "In §7, the text reads 'Site Reliability Engineering (SRE)' on first use — the full form leads correctly, but the acronym SRE is not used subsequently in a way that would confuse a beginner. Nonetheless, no prior week topic in the curriculum introduced SRE, so a beginner encountering it for the first time without the parenthetical expansion would have no anchor. The expansion is present, but it appears mid-sentence rather than as a defined term.",
+          "fix": "Add a one-sentence parenthetical explaining what SRE is in plain terms before or after the acronym, e.g., '(SRE — the engineering discipline responsible for keeping large software systems reliable at scale)'. This is a beginner-facing corpus and any professional jargon should be grounded immediately."
+        },
+        {
+          "severity": "info",
+          "topic": "10.7",
+          "finding": "All other technical terms used in the corpus — automation complacency, diffuse accountability, HITL, HOTL, accuracy paradox, evaluation gap, proximate cause, root cause, no-blame post-mortem, error budget, confidence routing, escalation trigger, risk-tiered component mapping — are either (a) defined in this topic's §5 Core Concepts, or (b) explicitly flagged in §2 Prerequisites as belonging to a named prior topic. No cold-use violations detected.",
+          "fix": "No action required."
+        }
+      ]
+    }
+  }
+}

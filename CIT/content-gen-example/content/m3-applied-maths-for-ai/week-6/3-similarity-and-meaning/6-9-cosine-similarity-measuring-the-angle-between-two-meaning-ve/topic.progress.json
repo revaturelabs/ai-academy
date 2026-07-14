@@ -1,0 +1,194 @@
+{
+  "topic_id": "6.9",
+  "stage": "topic_artifacts_approved",
+  "gates": {
+    "resources_captured": true,
+    "corpus_generated": true,
+    "corpus_critic_passed": true,
+    "corpus_human_approved": true,
+    "reading_generated": true,
+    "reading_critic_passed": true,
+    "quiz_generated": true,
+    "quiz_critic_passed": true,
+    "diagram_generated": true,
+    "diagram_critic_passed": true,
+    "module_drift_passed": true,
+    "course_drift_passed": true,
+    "topic_artifacts_human_approved": true,
+    "week_human_approved": true,
+    "module_passed": true
+  },
+  "history": [
+    {
+      "at": "2026-06-19T09:39:17Z",
+      "op": "set",
+      "gate": "resources_captured",
+      "value": true
+    },
+    {
+      "at": "2026-06-19T09:39:17Z",
+      "op": "stage",
+      "to": "awaiting_corpus"
+    },
+    {
+      "at": "2026-06-19T09:39:17Z",
+      "op": "log",
+      "msg": "Captured 5 resources (source=human, primary: developers.google.com)"
+    },
+    {
+      "at": "2026-06-19T09:43:17Z",
+      "op": "set",
+      "gate": "corpus_generated",
+      "value": true
+    },
+    {
+      "at": "2026-06-19T09:43:18Z",
+      "op": "stage",
+      "to": "awaiting_corpus_critic"
+    },
+    {
+      "at": "2026-06-19T09:43:18Z",
+      "op": "log",
+      "msg": "Corpus drafted: 3380w, standard profile, requires_diagram=true"
+    },
+    {
+      "at": "2026-06-19T09:45:47Z",
+      "op": "set",
+      "gate": "corpus_critic_passed",
+      "value": true
+    },
+    {
+      "at": "2026-06-19T09:45:47Z",
+      "op": "stage",
+      "to": "awaiting_corpus_human_review"
+    },
+    {
+      "at": "2026-06-19T09:48:27Z",
+      "op": "set",
+      "gate": "corpus_human_approved",
+      "value": true
+    },
+    {
+      "at": "2026-06-19T09:48:27Z",
+      "op": "stage",
+      "to": "corpus_approved"
+    },
+    {
+      "at": "2026-06-19T09:51:01Z",
+      "op": "set",
+      "gate": "diagram_generated",
+      "value": true
+    },
+    {
+      "at": "2026-06-19T09:51:01Z",
+      "op": "set",
+      "gate": "diagram_critic_passed",
+      "value": true
+    },
+    {
+      "at": "2026-06-19T09:51:02Z",
+      "op": "stage",
+      "to": "awaiting_diagram_critic"
+    },
+    {
+      "at": "2026-06-19T09:58:46Z",
+      "op": "set",
+      "gate": "reading_generated",
+      "value": true
+    },
+    {
+      "at": "2026-06-19T09:58:46Z",
+      "op": "set",
+      "gate": "quiz_generated",
+      "value": true
+    },
+    {
+      "at": "2026-06-19T09:58:46Z",
+      "op": "stage",
+      "to": "awaiting_reading_critic"
+    },
+    {
+      "at": "2026-06-19T10:01:11Z",
+      "op": "set",
+      "gate": "reading_critic_passed",
+      "value": true
+    },
+    {
+      "at": "2026-06-19T10:01:11Z",
+      "op": "set",
+      "gate": "quiz_critic_passed",
+      "value": false
+    },
+    {
+      "at": "2026-06-19T10:01:11Z",
+      "op": "log",
+      "msg": "Quiz critic FAIL cycle 1: length_bias ALL 6 questions — correct answers > 1.20x mean distractor length"
+    },
+    {
+      "at": "2026-06-19T11:47:49Z",
+      "op": "stage",
+      "to": "awaiting_quiz_critic"
+    },
+    {
+      "at": "2026-06-19T11:49:04Z",
+      "op": "set",
+      "gate": "quiz_critic_passed",
+      "value": true
+    },
+    {
+      "at": "2026-06-19T11:49:04Z",
+      "op": "stage",
+      "to": "awaiting_topic_artifacts_review"
+    },
+    {
+      "at": "2026-06-19T11:49:04Z",
+      "op": "log",
+      "msg": "Quiz critic PASS cycle 2: length_bias resolved (longest_correct_rate 0.00). All critics green (reading/diagram/quiz)."
+    },
+    {
+      "at": "2026-06-19T11:51:42Z",
+      "op": "set",
+      "gate": "topic_artifacts_human_approved",
+      "value": true
+    },
+    {
+      "at": "2026-06-19T11:51:42Z",
+      "op": "stage",
+      "to": "topic_artifacts_approved"
+    },
+    {
+      "at": "2026-06-19T11:51:42Z",
+      "op": "log",
+      "msg": "HITL #3 approved as-is. Reading PASS, quiz PASS (length-bias fixed cycle 2), diagram PASS source-level only (PNG not rendered, mmdc unavailable, visual check bypassed)."
+    },
+    {
+      "at": "2026-06-19T12:21:05Z",
+      "op": "set",
+      "gate": "module_drift_passed",
+      "value": true
+    },
+    {
+      "at": "2026-06-19T12:31:07Z",
+      "op": "set",
+      "gate": "week_human_approved",
+      "value": true
+    },
+    {
+      "at": "2026-06-19T12:31:07Z",
+      "op": "set",
+      "gate": "module_passed",
+      "value": true
+    },
+    {
+      "at": "2026-06-23T00:00:00Z",
+      "op": "set",
+      "gate": "course_drift_passed",
+      "value": true
+    },
+    {
+      "at": "2026-06-23T00:00:00Z",
+      "op": "log",
+      "msg": "course-drift-critic cycle 2 PASS — M3 W6/W7/W8 all checks pass; W6 warn -23.3%, W7 ok -13.3%, W8 warn -23.3%; no hard fails"
+    }
+  ]
+}

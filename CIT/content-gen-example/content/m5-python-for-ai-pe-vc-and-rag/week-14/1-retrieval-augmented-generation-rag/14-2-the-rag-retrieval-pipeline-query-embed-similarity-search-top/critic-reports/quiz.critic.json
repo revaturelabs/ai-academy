@@ -1,0 +1,65 @@
+{
+  "passed": true,
+  "cycle": 1,
+  "checks": {
+    "positional_bias": {
+      "passed": true,
+      "distribution": {
+        "0": 2,
+        "1": 1,
+        "2": 1,
+        "3": 2
+      },
+      "max_share": 0.333,
+      "notes": "Positions [0,2,1,0,3,3]. Max share 2/6=0.333 below 0.40 threshold."
+    },
+    "length_bias": {
+      "passed": true,
+      "longest_correct_rate": 0.167,
+      "baseline": 0.25,
+      "notes": "q3 correct answer ~20.2% longer than mean (borderline soft). 1/6=16.7% below 25% hard-fail threshold. All other questions clean.",
+      "soft_findings": [
+        "q3: correct answer ~20.2% over mean — borderline, below hard-fail threshold"
+      ]
+    },
+    "distractor_plausibility": {
+      "passed": true,
+      "absurd_rate": 0.0,
+      "notes": "All distractors capture plausible beginner misconceptions. q5 security-attack distractor is particularly strong (real alternate meaning of prompt injection). 0 absurd distractors."
+    },
+    "objective_coverage": {
+      "passed": true,
+      "uncovered_objectives": [],
+      "coverage_map": {
+        "LO1": [
+          "q1"
+        ],
+        "LO2": [
+          "q2"
+        ],
+        "LO3": [
+          "q5"
+        ],
+        "LO4": [
+          "q4"
+        ],
+        "LO5": [
+          "q3",
+          "q6"
+        ]
+      }
+    },
+    "beginner_fairness_scope": {
+      "passed": true,
+      "jargon_in_stem": [],
+      "out_of_scope_questions": [],
+      "unfair_distractors": [],
+      "notes": "All stems plain language. Embedding model from 14.1 prereq. No untaught concepts tested. No out-of-scope questions."
+    }
+  },
+  "soft_findings": [
+    "q3 length_bias: correct answer 20.2% longer than mean (1/6 questions, below 25% hard-fail threshold — non-blocking)"
+  ],
+  "verdict": "PASS (cycle 1) — all 5 checks green. max_share=0.333, 0 absurd distractors, all 5 LOs covered, 0 out-of-scope. Soft: q3 borderline length bias (16.7% rate < 25% threshold).",
+  "at": "2026-06-15T07:09:05Z"
+}

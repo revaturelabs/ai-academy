@@ -1,0 +1,51 @@
+{
+  "topic_id": "9.3",
+  "passed": true,
+  "checks": {
+    "format_discipline": {
+      "passed": true,
+      "notes": "No frontmatter; first line is '# Confirmation Bias — Seeking Information That Confirms Existing Beliefs'; reading.meta.json is present and valid (word_count, reading_minutes, citations, sections all present); exactly 6 sections in correct order: Overview, Key Concepts, Worked Example, In Practice, Key Takeaways, References."
+    },
+    "length_budget": {
+      "passed": true,
+      "word_count": 1362,
+      "minutes_estimate": 7,
+      "notes": "1362 words is within the 1200–1600 target range. At 200 wpm = 6.8 min, within the 6–8 min target. meta.json reports 1362 / 7 min, consistent."
+    },
+    "citation_discipline": {
+      "passed": true,
+      "primary_cited": true,
+      "notes": "Primary resource [1] (simplypsychology.org) is cited in the Overview and multiple times throughout. [2] (britannica.com) and [3] (arxiv.org/abs/2604.01366) are both used inline and resolve in References. No orphan inline markers; no orphan bibliography entries."
+    },
+    "forward_references": {
+      "passed": true,
+      "violations": [],
+      "notes": "Line 83: 'the Judgment Framework (topics 9.7–9.9)' is a bare name-and-defer pointer with no bold, no defining clause — compliant with scope_discipline rules. System 1 (9.1) and System 2 (9.2) are backward references to already-taught vocabulary. No topic 9.4+ concepts are introduced or taught."
+    },
+    "readability": {
+      "passed": true,
+      "findings": [
+        "Lines 40–42 (System 1 processing paragraph): 5 sentences — slightly over the 4-sentence soft target; content is clear and concrete, not a jargon dump.",
+        "Lines 47–49 (motivated reasoning paragraph): 5 sentences — slightly over the soft target; all terms are defined inline before use."
+      ],
+      "notes": "All non-everyday terms are defined at first use with bold-term + plain meaning format. No jargon dumps found (no paragraph introduces 3+ new terms simultaneously). Concrete examples and analogies precede abstractions throughout (coding bootcamp scenario in Overview; AI evaluator scenario for biased interpretation). No hedging phrases detected. Two paragraphs are 5 sentences rather than the 4-sentence target — soft findings only; total distinct readability findings is 2, below the hard-fail threshold of 3."
+    },
+    "formatting": {
+      "passed": true,
+      "findings": [],
+      "notes": "No prose walls found. Sequences and multi-item content are rendered as bullet lists (In Practice section lines 69–73 and practical steps lines 78–82). Bold-term definitions used consistently. Worked Example uses a numbered list for the three mechanism steps. Inline examples appear within concept introductions, not deferred solely to the Worked Example section. No assessment references (A3, due week, grade weight) appear in learner prose."
+    },
+    "scope_discipline": {
+      "passed": true,
+      "offscope_concepts": [],
+      "notes": "Judgment Framework (topics 9.7–9.9) is named and deferred in one sentence with a topic pointer, not bolded, and not defined — compliant. No anchoring bias, automation bias, or other 9.4+ bias concepts are taught. Topic 9.6 (confirmation bias in AI training data) is named and deferred in one sentence on line 128 of the corpus, and the reading's In Practice section references it similarly without teaching it."
+    },
+    "corpus_faithfulness": {
+      "passed": true,
+      "new_claims": [],
+      "notes": "8 assertions sampled across Overview, Key Concepts, Worked Example, In Practice, and Key Takeaways sections. All trace to the corpus: definition of confirmation bias (corpus §5), Wason 2-4-6 task description (corpus §5 mechanism 1), cognitive economy (corpus §5 'Why confirmation bias is so automatic'), motivated reasoning (corpus §5 'Limits of System 2 correction'), AI practitioner misjudgment scenario (corpus §8), awareness not switching off the mechanism (corpus §7 misconception 3), selective memory mechanism (corpus §5 mechanism 3), developer evaluation scenario (corpus §6 worked example). No fabricated claims detected."
+    }
+  },
+  "verdict": "Reading passes all checks — format, length (1362 words / 7 min), citation discipline, forward-reference discipline, corpus faithfulness, scope, readability, and formatting are all within tolerances, with two minor 5-sentence paragraphs noted as soft findings that do not reach the hard-fail threshold.",
+  "at": "2026-06-12T00:00:00Z"
+}

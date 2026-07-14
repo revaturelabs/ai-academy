@@ -1,0 +1,41 @@
+$CATEGORY: CIT/M5/week-14/14-10-writing-an-architectural-decision-choosing-the-right-pattern
+
+::q1:: A new engineer joins a team six months after a system was built and asks "Why are we using RAG here instead of just calling the model directly?" What is the primary reason professional teams write an ADR (Architectural Decision Record)? {
+~To automatically generate unit and integration tests for the code that implements the chosen architectural decision#No — ADRs are documentation that records reasoning, not tools for generating tests.
+=To record what was decided, why, and what the consequences are, so future teammates can answer that question without a meeting#Correct — ADRs move design reasoning out of people's heads and into a version-controlled document that survives team changes.
+~To document every design alternative that was evaluated, together with benchmark scores comparing their performance characteristics#No — ADRs are lightweight one-page records; they name the chosen option and its primary reason, not exhaustive evaluation reports.
+~To serve as the formal implementation specification that all engineers on the team are required to follow when building the system#No — ADRs are decision logs that record why a choice was made; they are not implementation specifications.
+#### Tests LO1: understanding what an ADR is and why teams write it (corpus §5.1).
+}
+
+::q2:: A teammate hands you an ADR to review. You notice it has sections for Title, Status, Context, and Decision — but is missing one. Which section is absent? {
+~Rationale#No — "Rationale" is not one of the five standard ADR sections; the reasoning lives inside Context and Decision.
+~Alternatives#No — "Alternatives" is not a standard ADR section in the Nygard format.
+~References#No — "References" is not one of the five standard ADR sections.
+=Consequences#Correct — The five sections in order are Title, Status, Context, Decision, and Consequences.
+#### Tests LO2: naming the five standard ADR sections (corpus §5.2).
+}
+
+::q3:: You are writing the Context section of an ADR for an AI system that answers customer questions about a company's internal HR policies. Which statement belongs in the Context section? {
+=The answers depend on internal HR documents not in any public training dataset, and the system only retrieves information — it takes no actions#Correct — Context describes the problem and constraints (un-trained data, no actions needed) that make a decision necessary, without yet naming what was chosen.
+~We decided to use RAG because the HR policy documents are not part of the model's training data and need to be retrieved at query time#No — naming the chosen tier and reasoning belongs in the Decision section, not the Context section.
+~RAG will increase the cost per request because it requires an embedding computation and a vector similarity search before generation begins#No — naming trade-offs and cost consequences belongs in the Consequences section, not the Context section.
+~The system will store HR documents in a vector database and use a mid-tier language model to generate grounded responses#No — naming the implementation details (vector database, model tier) belongs in the Decision section, not the Context section.
+#### Tests LO3: writing the Context section by mapping a domain problem onto the decision-matrix questions (corpus §5.3).
+}
+
+::q4:: Which of the following is a correctly written Decision section for an AI ADR? {
+~"The system should use RAG because it will improve answer quality, reduce hallucination, and allow us to update the knowledge base without retraining."#No — this uses future tense and lists multiple reasons; the Decision section requires past tense and one primary reason.
+~"We decided to use RAG. It has lower latency than an agent, better accuracy than a direct call, and is easier to monitor than either."#No — listing several comparative benefits makes it impossible to tell which reason was actually decisive; give one primary reason.
+=We decided to use RAG because the answers depend on internal policy documents the model was never trained on#Correct — past tense, one primary reason, names the tier clearly.
+~"We decided to use RAG. The trade-off is higher cost per request due to the embedding and retrieval steps."#No — trade-offs belong in the Consequences section, not the Decision section.
+#### Tests LO4: writing the Decision section with correct tense and a single primary reason (corpus §5.4).
+}
+
+::q5:: A team chose RAG for their system and is writing the Consequences section. Which entry correctly names the cost–latency–quality trade-off that RAG introduces? {
+~Answers are limited to what the model already knows, which risks stale responses if the domain changes frequently or depends on private data#No — that is the trade-off for a direct call, not RAG; a direct call cannot access un-trained private data.
+=Answers are grounded in retrieved documents and show less hallucination, but each request costs more due to the embedding step and similarity search#Correct — RAG's benefit is grounded answers; its cost is higher per-request expense from embedding and retrieval before generation.
+~The system can complete multi-step tasks by calling external tools, but loop count is unpredictable and latency is highest of all three tiers#No — that describes the agent tier trade-off, not RAG; agents loop through Reason-Act-Observe, RAG does not.
+~Cost and latency are lowest of all three tiers, but the system cannot access private data or information not present in its training set#No — lowest cost and latency describes the direct-call tier, not RAG; RAG adds retrieval steps that increase both cost and latency.
+#### Tests LO5: naming the RAG cost–latency–quality trade-off in the Consequences section (corpus §5.5).
+}

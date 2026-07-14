@@ -1,0 +1,49 @@
+{
+  "type": "topic",
+  "id": "12.2",
+  "title": "Parameters and return values — defining what goes in and what comes out",
+  "slug": "12-2-parameters-and-return-values-defining-what-goes-in-and-what",
+  "position_in_module": 2,
+  "week_num": 12,
+  "session_name": "Python Foundations II and Calling an LLM",
+  "module": {
+    "position": 1,
+    "slug": "1-functions-and-data-structures",
+    "title": "Functions and Data Structures"
+  },
+  "course": {
+    "code": "M5",
+    "slug": "m5-python-for-ai-pe-vc-and-rag",
+    "title": "Python for AI, PE, VC and RAG"
+  },
+  "next_assessment": {
+    "id": "A4",
+    "due_week": 13,
+    "title": "Python and Prompt Engineering Portfolio",
+    "weight": "20%"
+  },
+  "paths": {
+    "corpus": "topic_corpus.md",
+    "resources": "topic.resources.json",
+    "progress": "topic.progress.json",
+    "artifacts_dir": "artifacts/",
+    "critic_reports_dir": "critic-reports/"
+  },
+  "artifact_plan": {
+    "depth_profile": "standard",
+    "depth_profile_confirmed_by": "hitl2",
+    "diagram": true,
+    "diagram_intent": "Flow diagram showing the parameter→function body→return value pipeline: argument value at call site flows into the parameter slot in the def, the body processes it, the return keyword sends a value back to the caller where it is assigned to a variable. A second contrasting panel shows a function with no return, producing None.",
+    "reading": {
+      "target_word_range": [1200, 1600],
+      "target_minutes_range": [6, 8]
+    },
+    "quiz": {
+      "min_questions": 5,
+      "max_questions": 6,
+      "include_short_answer": false
+    }
+  },
+  "expected_delivery_minutes": 7,
+  "status": "scaffolded"
+}

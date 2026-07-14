@@ -1,0 +1,203 @@
+{
+  "topic_id": "1.10",
+  "stage": "topic_artifacts_approved",
+  "gates": {
+    "resources_captured": true,
+    "corpus_generated": true,
+    "corpus_critic_passed": true,
+    "corpus_human_approved": true,
+    "reading_generated": true,
+    "reading_critic_passed": true,
+    "quiz_generated": true,
+    "quiz_critic_passed": true,
+    "diagram_generated": true,
+    "diagram_critic_passed": true,
+    "module_drift_passed": true,
+    "course_drift_passed": true,
+    "topic_artifacts_human_approved": true,
+    "week_human_approved": true
+  },
+  "history": [
+    {
+      "at": "2026-06-22T07:07:13Z",
+      "op": "set",
+      "gate": "resources_captured",
+      "value": true
+    },
+    {
+      "at": "2026-06-22T07:07:13Z",
+      "op": "stage",
+      "to": "awaiting_corpus"
+    },
+    {
+      "at": "2026-06-22T07:07:13Z",
+      "op": "log",
+      "msg": "Captured 3 resources (source=web_search, primary: learning.com/blog/7-examples-of-algorithms-in-everyday-life-for-students/)"
+    },
+    {
+      "at": "2026-06-22T07:13:28Z",
+      "op": "set",
+      "gate": "corpus_generated",
+      "value": true
+    },
+    {
+      "at": "2026-06-22T07:13:28Z",
+      "op": "stage",
+      "to": "awaiting_corpus_critic"
+    },
+    {
+      "at": "2026-06-22T07:13:28Z",
+      "op": "log",
+      "msg": "Corpus generated: 2850 words, standard profile, requires_diagram=true"
+    },
+    {
+      "at": "2026-06-22T07:15:53Z",
+      "op": "set",
+      "gate": "corpus_critic_passed",
+      "value": true
+    },
+    {
+      "at": "2026-06-22T07:15:53Z",
+      "op": "stage",
+      "to": "awaiting_corpus_human_review"
+    },
+    {
+      "at": "2026-06-22T07:15:53Z",
+      "op": "log",
+      "msg": "Corpus critic passed cycle 1 — soft: word count 2850w ~5% below 3000w floor (not hard fail)"
+    },
+    {
+      "at": "2026-06-22T07:18:00Z",
+      "op": "set",
+      "gate": "corpus_human_approved",
+      "value": true
+    },
+    {
+      "at": "2026-06-22T07:18:00Z",
+      "op": "log",
+      "msg": "HITL#2 approved: all sections pass, profile=standard, diagram=true, expected_delivery=7min"
+    },
+    {
+      "at": "2026-06-22T07:18:05Z",
+      "op": "stage",
+      "to": "corpus_approved"
+    },
+    {
+      "at": "2026-06-22T07:20:59Z",
+      "op": "set",
+      "gate": "diagram_generated",
+      "value": true
+    },
+    {
+      "at": "2026-06-22T07:20:59Z",
+      "op": "set",
+      "gate": "diagram_critic_passed",
+      "value": true
+    },
+    {
+      "at": "2026-06-22T07:20:59Z",
+      "op": "log",
+      "msg": "Diagram built: 13 nodes, side-by-side LR panels (RECIPE:4, GPS:4, SORT:5), critic passed cycle 1"
+    },
+    {
+      "at": "2026-06-22T07:23:15Z",
+      "op": "set",
+      "gate": "reading_generated",
+      "value": true
+    },
+    {
+      "at": "2026-06-22T07:23:15Z",
+      "op": "log",
+      "msg": "Reading generated: 1392w, 7min, diagram embedded, all citations used"
+    },
+    {
+      "at": "2026-06-22T07:23:15Z",
+      "op": "set",
+      "gate": "quiz_generated",
+      "value": true
+    },
+    {
+      "at": "2026-06-22T07:23:15Z",
+      "op": "log",
+      "msg": "Quiz generated: 6 MCQ, bias_defense=true, positions [1,3,0,2,3,1], all LOs covered"
+    },
+    {
+      "at": "2026-06-22T07:25:45Z",
+      "op": "set",
+      "gate": "reading_critic_passed",
+      "value": true
+    },
+    {
+      "at": "2026-06-22T07:25:45Z",
+      "op": "log",
+      "msg": "Reading critic PASS: 1392w/7min, all 6 sections, primary cited 10x, clean scope/readability"
+    },
+    {
+      "at": "2026-06-22T07:25:45Z",
+      "op": "set",
+      "gate": "quiz_critic_passed",
+      "value": false
+    },
+    {
+      "at": "2026-06-22T07:25:45Z",
+      "op": "log",
+      "msg": "Quiz critic FAIL: length_bias rate=0.833 (5/6 correct answers longest, threshold=0.40). Auto-rebalancing cycle 2."
+    },
+    {
+      "at": "2026-06-22T07:32:02Z",
+      "op": "set",
+      "gate": "quiz_critic_passed",
+      "value": true
+    },
+    {
+      "at": "2026-06-22T07:32:02Z",
+      "op": "stage",
+      "to": "awaiting_topic_artifacts_review"
+    },
+    {
+      "at": "2026-06-22T07:32:02Z",
+      "op": "log",
+      "msg": "All artifact critics passed: reading 1392w/7min, quiz 6MCQ bias-clean (cycle 2), diagram 13-node side-by-side"
+    },
+    {
+      "at": "2026-06-22T07:33:11Z",
+      "op": "set",
+      "gate": "topic_artifacts_human_approved",
+      "value": true
+    },
+    {
+      "at": "2026-06-22T07:33:11Z",
+      "op": "stage",
+      "to": "topic_artifacts_approved"
+    },
+    {
+      "at": "2026-06-22T07:33:11Z",
+      "op": "log",
+      "msg": "HITL#3 approved: reading 1392w/7min, quiz 6MCQ bias-clean (2 cycles), diagram 13-node side-by-side. Week budget: 71/90 min"
+    },
+    {
+      "at": "2026-06-22T12:13:01Z",
+      "op": "set",
+      "gate": "module_drift_passed",
+      "value": true
+    },
+    {
+      "at": "2026-06-22T12:14:25Z",
+      "op": "set",
+      "gate": "week_human_approved",
+      "value": true
+    },
+    {
+      "at": "2026-06-23T08:12:31Z",
+      "op": "set",
+      "gate": "course_drift_passed",
+      "value": true
+    },
+    {
+      "at": "2026-06-23T11:14:17Z",
+      "op": "set",
+      "gate": "course_drift_passed",
+      "value": true
+    }
+  ]
+}

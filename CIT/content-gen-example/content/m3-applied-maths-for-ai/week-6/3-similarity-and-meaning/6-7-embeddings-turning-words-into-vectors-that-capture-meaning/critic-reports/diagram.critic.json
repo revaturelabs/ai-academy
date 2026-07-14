@@ -1,0 +1,18 @@
+{
+  "verdict": "pass",
+  "findings": [
+    {
+      "code": "looks_good",
+      "where": "overall",
+      "detail": "Source-level pre-flight passed: 7 nodes (within 3–8), all labels ≤ 4 words in bold, all concepts trace directly to §5.1/§5.2/§5.4/§5.6 of the corpus, no bare acronyms, title in config block, layout LR with nested TB subgraphs matches side-by-side-contrast intent. Edge label removed to avoid edge_label_collision. PNG render required externally via: npx @mermaid-js/mermaid-cli -i <mmd_path> -o <png_path> -w 1400 -b transparent"
+    }
+  ],
+  "stats": {
+    "nodes": 7,
+    "edges": 5,
+    "layout": "flowchart LR (side-by-side panels with nested TB subgraphs)",
+    "labels": ["Word", "Sparse vector", "No meaning captured", "Word", "Dense vector", "Embedding space", "Word clusters"],
+    "png_path": "content/m3-applied-maths-for-ai/week-6/3-similarity-and-meaning/6-7-embeddings-turning-words-into-vectors-that-capture-meaning/artifacts/diagram.png",
+    "png_dims": "pending render"
+  }
+}

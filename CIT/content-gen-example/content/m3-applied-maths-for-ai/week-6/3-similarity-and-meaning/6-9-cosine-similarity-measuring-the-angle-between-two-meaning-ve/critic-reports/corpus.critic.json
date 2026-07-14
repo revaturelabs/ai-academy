@@ -1,0 +1,43 @@
+{
+  "passed": true,
+  "checks": {
+    "required_sections": {
+      "passed": true,
+      "notes": "Section 3 (LOs): 5 numbered objectives, ~100w — PASS. Section 4 (Intro): 4 paragraphs, ~200w — PASS. Section 5 (Core Concepts): 4 sub-sections with formula, tables, worked examples, ~900w — PASS (well above 100w). Section 10 (Key Takeaways): 5 bullets, ~110w — PASS."
+    },
+    "citation_density": {
+      "passed": true,
+      "primary_cited": true,
+      "claim_citation_rate": 0.68,
+      "notes": "resources_source=human, strict mode. All 5 primary resources ([1]–[5]) cited at least once: [1] cited in §4, §5.2, §5.3, §6, §7, §8, §10; [2] cited in §4, §5.1, §5.2, §5.3, §6, §7, §8, §9; [3] cited in §4, §5.3, §5.4, §8, §10; [4] cited in §5.4, §7; [5] cited in §5.2, §5.3, §6, §7, §8, §9, §10. Estimated 68% of standalone factual assertions in §5/§6/§7 carry a citation marker — above the 60% threshold. The un-cited portion consists mainly of the angle→cosine bullet table in §5.2 (which is bracketed by [1][5] context) and the re-statement of the dot-product formula from 6.6."
+    },
+    "sequence_drift": {
+      "passed": true,
+      "forward_refs": ["scikit-learn", "Keras", "triangle inequality", "clustering algorithms"],
+      "notes": "These four terms are not in the prior-concept vocabulary (6.1–6.8) or this topic's concepts_introduced list. However, each appears in a single-sentence, citation-backed mention without being defined or taught: 'scikit-learn' (§5.4 [3]), 'Keras' (§5.4 [4], §7 [4]), 'triangle inequality' (§8 [3][5]), 'clustering algorithms' (§8). None are explained, bolded, or given a defining clause — they are tool/math names used in passing. Flagged for human awareness at HITL #2, but treated as pass-level because no forward concept is taught at depth."
+    },
+    "length_sanity": {
+      "passed": true,
+      "word_count": 2575,
+      "profile": "standard",
+      "notes": "Standard corpus range is 1500–6000w. Estimated word count ~2575w (body text, excluding YAML front-matter). Within range. (Artifact reading range per manifest is 1200–1600w; corpus is intentionally denser than the final reading artifact.)"
+    },
+    "scope_creep": {
+      "passed": true,
+      "findings": [
+        "§5.4 and §7: Keras CosineSimilarity loss function mentioned — this is an ML-training use of cosine similarity slightly beyond the 'measuring angle between two meaning-vectors' headline. Each mention is a single sentence with a citation ([4]); not defined or taught at depth. Borderline but within allowed mention-and-defer threshold.",
+        "§8: 'cosine distance = 1 − cosine similarity' taught explicitly. 'cosine_distance' IS in this topic's concepts_introduced list, so this is in-scope."
+      ]
+    },
+    "beginner_readability": {
+      "passed": true,
+      "findings": [
+        "undefined_terms: 'scikit-learn' (§5.4) and 'Keras' (§5.4, §7) used as bare library names with no explanation of what they are. Zero-background learner has no context for these. Soft finding.",
+        "undefined_terms: 'triangle inequality' (§8) used without explanation. One sentence, Best Practices section, does not break the explanation. Soft finding."
+      ],
+      "notes": "2 soft findings (both undefined_terms). Below the 3-distinct-findings hard-fail threshold. No jargon dumps detected (no paragraph introduces 3+ new terms simultaneously). Register is active, uses 'you', sentences mostly under 25 words. No hedging phrases detected. Core concepts have good inline definitions: 'theta (θ)' defined in §5.2, 'magnitude' defined in §5.3, 'normalisation' defined in §5.3. Introduction uses 'loudness' analogy effectively."
+    }
+  },
+  "verdict": "PASS — all 6 checks pass; 4 technical terms (scikit-learn, Keras, triangle inequality, clustering algorithms) appear as brief passing mentions without being taught, flagged for HITL #2 awareness but not blocking.",
+  "at": "2026-06-19T00:00:00Z"
+}

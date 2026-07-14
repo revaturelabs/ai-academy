@@ -1,0 +1,39 @@
+{
+  "module_slug": "3-similarity-and-meaning",
+  "week_num": 6,
+  "passed": true,
+  "checks": {
+    "terminology": {
+      "status": "pass",
+      "notes": "Core terms are used consistently across 6.6-6.9: 'dot product' (A.B, always a scalar), 'embedding'/'embedding space', 'vector', 'magnitude'/'length' (explicitly equated in 6.9 5.3), 'cosine similarity', 'normalisation', 'distributional hypothesis', 'gender direction'. The nearest-neighbour concept is introduced loosely in 6.7 ('nearest neighbours'), formalised as 'nearest-neighbour answer' in 6.8, and used as 'nearest-word lookup' in 6.9 - same concept, no synonym drift. 6.6 names embeddings forward (6.7) and cosine forward (6.9) with explicit topic tags.",
+      "findings": []
+    },
+    "prereq_ordering": {
+      "status": "pass",
+      "notes": "Every prerequisite resolves to an earlier topic. 6.6 -> {6.2,6.3,6.4,6.5}; 6.7 -> {6.3,6.5,6.6}; 6.8 -> {6.3,6.5,6.6,6.7}; 6.9 -> {6.6,6.5,6.3}. 6.9 cosine explicitly builds on 6.6 dot product: the formula numerator IS the dot product, and 6.6's magnitude-sensitivity limitation is the stated problem cosine solves. Backward references only.",
+      "findings": []
+    },
+    "arc_completeness": {
+      "status": "pass",
+      "notes": "The four topics form a coherent 'similarity and meaning' arc: dot product as a raw similarity score (6.6) -> words become meaning-vectors via embeddings (6.7) -> meaning-as-direction enables analogy arithmetic (6.8) -> cosine similarity as the magnitude-robust similarity measure that powers the nearest-word lookup (6.9). One soft note recorded under findings.",
+      "findings": [
+        "SOFT (6.8/6.9 ordering): 6.8's nearest-neighbour step (and its worked example) needs a similarity measure, but the precise tool - cosine similarity - is not taught until 6.9. 6.8 forward-references 6.9 explicitly and uses only by-hand coordinate arithmetic, so no hard prerequisite gap exists, but a reader meets 'find the nearest word' before the formula that does it. Acceptable as authored; flag for HITL #4 awareness."
+      ]
+    },
+    "no_duplication": {
+      "status": "pass",
+      "notes": "Magnitude sensitivity appears in both 6.6 (5.6) and 6.9 (5.1), but this is a deliberate defer-and-resolve handoff: 6.6 introduces it as a limitation and explicitly defers the fix to 6.9; 6.9 recaps it as the motivating problem. Worked examples are distinct (music-taste vectors in 6.6 vs cat/kitten/car in 6.9). Distributional hypothesis is introduced in 6.7 and re-applied (not re-taught) in 6.8. No two topics share substantively overlapping Core Concepts.",
+      "findings": []
+    },
+    "lab_alignment": {
+      "status": "pass",
+      "notes": "Module lab seed: 'no coding this week - understanding only', paper-first ranking then browser verification, TensorFlow Embedding Projector. Each topic carries a paper Hands-On Exercise; 6.7 and 6.9 implement by-hand-then-verify similarity ranking; 6.7 and 6.8 direct learners to the Projector (projector.tensorflow.org). The Projector itself is the dedicated 6.10 topic in module 4, so this module supports rather than owns it. Aligned.",
+      "findings": []
+    }
+  },
+  "findings": [
+    "SOFT (arc_completeness, 6.8): the analogy topic uses a 'nearest word' similarity step before cosine similarity (6.9) is formally introduced; handled via explicit forward reference and a by-hand example that needs no formula. No hard gap."
+  ],
+  "verdict": "PASS - the four topics (6.6 dot product, 6.7 embeddings, 6.8 analogy arithmetic, 6.9 cosine similarity) cohere into a consistent 'Similarity and Meaning' arc with consistent terminology, backward-only prerequisites, a deliberate magnitude-sensitivity handoff rather than duplication, and lab exercises aligned to the understanding-only / paper-then-Projector seed. One soft, non-blocking ordering note recorded for HITL #4.",
+  "at": "2026-06-19T00:00:00Z"
+}

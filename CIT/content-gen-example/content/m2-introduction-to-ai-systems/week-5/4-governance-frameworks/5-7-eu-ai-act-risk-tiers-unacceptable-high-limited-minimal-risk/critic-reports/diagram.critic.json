@@ -1,0 +1,35 @@
+{
+  "verdict": "pass",
+  "cycles_run": 2,
+  "preflight": {
+    "mermaid_parse": "pass (mmdc exit 0)",
+    "node_count": 4,
+    "node_count_ok": true,
+    "label_discipline": "pass — bold labels: 'Unacceptable' (1w), 'High risk' (2w), 'Limited risk' (2w), 'Minimal risk' (2w), all <= 4 words",
+    "concept_fidelity": "pass — all four tiers + responses + examples trace to corpus 5.6 table and sections 5.2-5.5",
+    "scope_discipline": "pass — no NIST / Executive Order / India MEITY nodes, no article-number nodes; only this topic's four tiers",
+    "title_discipline": "pass — governing pyramid/population idea lives in the title banner, not a ghost node",
+    "single_path_discipline": "pass — one straight TB path T1 --> T2 --> T3 --> T4"
+  },
+  "findings": [
+    {
+      "code": "looks_good",
+      "where": "whole diagram",
+      "detail": "Four tiers read top-down in correct risk order (Unacceptable -> High -> Limited -> Minimal). Each box shows tier + law's response + one example, all legible. Risk-coded colors red(apex) -> orange -> yellow -> green(base) reinforce the hierarchy. Title banner plus 'very few systems' (apex) and 'most systems live here' (base) annotations convey the pyramid population gradient. No overlaps, no truncation, no unreadable text."
+    },
+    {
+      "code": "cycle1_fixed_label_truncated",
+      "where": "all nodes (cycle 1)",
+      "detail": "RESOLVED. Cycle 1 used numeric HTML entities (&#9650; &#8212; &#9660;) and &nbsp; padding to force pyramid width; htmlLabels rendered the entities literally ('&▲', '&—', '▼') and the nbsp padding wrapped bold tier names onto two lines. Cycle 2 dropped entities/padding, used progressively longer plain subtitle text to widen boxes downward, and plain-word population notes. Re-rendered clean."
+    }
+  ],
+  "stats": {
+    "nodes": 4,
+    "edges": 3,
+    "layout": "flowchart TB (stacked four-tier pyramid, top-to-bottom)",
+    "labels": ["Unacceptable", "High risk", "Limited risk", "Minimal risk"],
+    "concepts_mapped": ["unacceptable risk (banned)", "high risk (heavily regulated)", "limited risk (transparency required)", "minimal risk (no mandatory rules)"],
+    "png_path": "artifacts/diagram.png",
+    "render_cmd": "mmdc -i artifacts/diagram.mmd -o artifacts/diagram.png -w 1400 -b transparent"
+  }
+}

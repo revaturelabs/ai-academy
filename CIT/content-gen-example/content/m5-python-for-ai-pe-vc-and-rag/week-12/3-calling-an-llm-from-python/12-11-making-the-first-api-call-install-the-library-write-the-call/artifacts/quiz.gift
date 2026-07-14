@@ -1,0 +1,56 @@
+$CATEGORY: CIT/M5/week-12/12-11-making-the-first-api-call-install-the-library-write-the-call
+
+::q1:: Which command do you type in a Google Colab cell to install the Anthropic Python library? {
+~`import anthropic`#This imports the library into your script but only works after it is already installed; it does not download or install the package.
+=`!pip install anthropic`#The `!` prefix routes the line to the shell instead of Python's interpreter, and `pip install` downloads and installs the named package.
+~`pip install anthropic`#This is missing the `!` prefix; inside a Colab Python cell, Python tries to parse this as code and raises a syntax error rather than installing anything.
+~`!install anthropic`#`install` is not a valid standalone shell command; the package installer that must be named is `pip`, making the correct form `!pip install anthropic`.
+#### Tests whether learners know the exact Colab install command and the role of the `!` prefix (corpus §5.1).
+}
+
+::q2:: After installing the anthropic package, which pair of lines correctly imports the library and creates a client object? {
+~`from anthropic import Client` / `client = Client()`#The class exported by the SDK is named `Anthropic`, not `Client`; this raises a NameError because `Client` does not exist in the package.
+~`import anthropic` / `client = anthropic.AnthropicClient()`#The callable that creates a client is `anthropic.Anthropic()`, not `anthropic.AnthropicClient()`; that name is not defined in the SDK.
+~`import anthropic` / `client = anthropic.create()`#There is no top-level `create()` function in the module; a client is made by instantiating the `Anthropic` class, not by calling a factory function.
+=`import anthropic` / `client = anthropic.Anthropic()`#This is the correct pattern: the `import` statement loads the module, and `anthropic.Anthropic()` instantiates the class to produce a ready-to-use client object.
+#### Tests whether learners know the correct import statement and class name for creating a client (corpus §5.2).
+}
+
+::q3:: Why is the `max_tokens` parameter required in every `client.messages.create()` call? {
+=It caps how many output tokens Claude will generate, so a single call cannot produce an unexpectedly large or costly response.#Correct: without an explicit upper limit the SDK raises a TypeError at the call site, before any network request is sent.
+~It tells the API how many input tokens your message contains so the server can reserve memory before processing.#Incorrect: the API counts input tokens automatically; `max_tokens` only controls the ceiling on output tokens.
+~It sets the quality level of Claude's reply, so higher values produce more accurate or detailed answers.#Incorrect: `max_tokens` controls the maximum length of the output in tokens, not the quality, accuracy, or detail of the reply.
+~It limits how many messages from the conversation history the API will read before generating its response.#Incorrect: `max_tokens` governs the output token count, not the number of messages the API reads from the `messages` array.
+#### Tests understanding of what `max_tokens` controls and why it is mandatory (corpus §5.3).
+}
+
+::q4:: Which `client.messages.create()` call includes all four required elements\: model, max_tokens, the messages list, and at least one message dictionary? {
+~`client.messages.create(model="claude-opus-4-5", messages=[{"role": "user", "content": "Hi"}])`#This call is missing `max_tokens`; the SDK raises a TypeError before the request leaves the machine because that parameter is required.
+~`client.messages.create(max_tokens=1024, messages=[{"role": "user", "content": "Hi"}])`#This call is missing the `model` parameter; the API cannot determine which Claude model to use without it.
+=`client.messages.create(model="claude-opus-4-5", max_tokens=1024, messages=[{"role": "user", "content": "Hi"}])`#All four required elements are present: `model`, `max_tokens`, the `messages` list, and a message dictionary with `role` and `content`.
+~`client.messages.create(model="claude-opus-4-5", max_tokens=1024, role="user", content="Hi")`#The message text must be inside a list of dictionaries passed to the `messages` key; `role` and `content` cannot be passed as separate top-level arguments.
+#### Tests whether learners can identify a syntactically complete `messages.create()` call with all required parameters (corpus §5.4).
+}
+
+::q5:: When `client.messages.create()` returns, where does Claude's reply text appear inside the response object? {
+~As the direct return value of the call, so you can print it immediately without any attribute access.#The call returns a structured response object, not a plain string; you must navigate its attributes to reach the reply text.
+=Inside `message.content`, as a list of content blocks, where the first block's `.text` attribute holds the reply string.#Correct: the SDK wraps the reply in a `content` list of content block objects; the text is accessed via `message.content[0].text`.
+~In `message.reply`, a string attribute the SDK adds for quick access to the most recent assistant turn.#There is no `.reply` attribute on the response object; the reply text is reached through `.content[0].text`.
+~In `message.output`, a string attribute that mirrors the raw `output` field in the API's JSON response.#The attribute is `message.content`, not `message.output`; the SDK does not expose a top-level `.output` string attribute.
+#### Tests whether learners understand the structure of the response object and where reply text is stored (corpus §5.5).
+}
+
+::q6:: Given a response stored in a variable called `message`, which expression returns Claude's reply as a plain Python string? {
+~`message.text`#`.text` is an attribute of a content block object, not of the top-level message object; using it directly on `message` raises an AttributeError.
+~`message.content.text`#`message.content` is a Python list, and lists do not have a `.text` attribute; you must index the list first before accessing `.text`.
+~`message.content[0]`#This evaluates to the first content block object, not a string; one more step — appending `.text` — is needed to get the actual reply text.
+=`message.content[0].text`#Correct: `.content` retrieves the list of content blocks, `[0]` selects the first block, and `.text` is the string attribute holding Claude's reply.
+#### Tests whether learners can write the exact expression to extract the reply string from the response object (corpus §5.6).
+}
+
+::q_sa:: In a Google Colab Python cell, what single character must appear at the very start of `pip install anthropic` to send the command to the shell rather than Python's interpreter? {
+=!
+=exclamation mark
+=exclamation point
+#### Tests recall of the `!` prefix that routes shell commands inside Colab cells (corpus §5.1).
+}

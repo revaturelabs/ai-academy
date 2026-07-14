@@ -1,0 +1,144 @@
+{
+  "critic": "corpus-critic",
+  "topic_id": "13.12",
+  "topic_title": "GitHub workflow — clone, add, commit, push",
+  "cycle": 2,
+  "passed": true,
+  "at": "2026-06-15T10:00:00Z",
+  "profile_used": "standard",
+  "word_count_estimate": 3065,
+  "word_count_range_target": [3000, 4400],
+  "verdict": "PASSED (cycle 2) — all cycle-1 hard fails resolved: git status subsection removed (now a single inline aside in §6 Step 4), .gitignore trimmed to one-sentence named-and-defer in both §7.3 and §8, HTTPS spelled out on first use, personal access token defined on first use, word count raised to ~3065 (above the 3000-word floor). One residual soft finding: §8 subsection 'Always pull before you push when collaborating' introduces git pull with a usage example outside the four headline commands — acceptable as a brief collaborative habits pointer but noted for HITL review.",
+  "checks": {
+    "required_sections": {
+      "passed": true,
+      "finding": null,
+      "detail": {
+        "section_3_learning_objectives": { "present": true, "word_count_approx": 95, "threshold": 50, "passed": true },
+        "section_4_introduction": { "present": true, "word_count_approx": 135, "threshold": 50, "passed": true },
+        "section_5_core_concepts": { "present": true, "word_count_approx": 1165, "threshold": 100, "passed": true },
+        "section_10_key_takeaways": { "present": true, "word_count_approx": 115, "threshold": 50, "passed": true }
+      }
+    },
+    "citation_density": {
+      "passed": true,
+      "finding": null,
+      "detail": {
+        "resources_source": "web_search",
+        "mode": "strict",
+        "primary_resource": "https://uidaholib.github.io/get-git/3workflow.html",
+        "primary_cited_at_least_once": true,
+        "citation_evidence": "[1] appears at §5.1, §5.2, §5.3, §5.4, §5.5, §5.6, §6 intro, §7, §8 — well-distributed throughout",
+        "estimated_pct_claims_with_citation_in_sections_5_6_7": "~78%",
+        "threshold": "60%",
+        "fake_citations_detected": false
+      }
+    },
+    "sequence_drift": {
+      "passed": true,
+      "severity": null,
+      "finding": null,
+      "detail": {
+        "terms_reviewed": ["git status", "HTTPS", "personal access token", "git pull", "git push --force", "commit hash", "SHA", "origin", "staging area", "index"],
+        "clean": ["commit hash (SHA)", "origin", "staging area (index)"],
+        "resolved_from_cycle_1": [
+          {
+            "term": "HTTPS",
+            "resolution": "Now spelled out as 'HTTPS (HyperText Transfer Protocol Secure)' with explanatory sentence on first use in §6 Step 2. FIXED."
+          },
+          {
+            "term": "personal access token",
+            "resolution": "Defined immediately on first use in §6 Step 6: 'A personal access token is a password alternative generated in your GitHub settings — you use it instead of your account password when pushing from the command line.' FIXED."
+          },
+          {
+            "term": "git status (subsection)",
+            "resolution": "Dedicated subsection removed. Reduced to a single inline aside in §6 Step 4: 'You can run git status at any time to see which files are staged — you'll use this more as you build your git habits.' One sentence, no subsection heading, no output explanation. Within allowed name-and-defer pattern. FIXED."
+          }
+        ],
+        "remaining_soft_items": [
+          {
+            "term": "git pull",
+            "used_in": "§8 Best Practices — subsection 'Always pull before you push when collaborating'",
+            "in_concepts_introduced": false,
+            "severity": "soft",
+            "note": "git pull is introduced with a syntax example (git pull origin main) in a subsection of Best Practices. It is not one of the four headline commands (clone, add, commit, push). Treatment is brief (two instructional sentences, no output explanation, no error handling), framed as a collaborative habit. Does not rise to a hard scope_creep failure but noted for HITL awareness."
+          }
+        ]
+      }
+    },
+    "length_sanity": {
+      "passed": true,
+      "finding": null,
+      "word_count_estimate": 3065,
+      "target_range": [3000, 4400],
+      "pct_above_floor": "~2%",
+      "note": "Word count has risen from ~2450 (cycle 1) to ~3065, clearing the 3000-word floor. Implementation section expanded with annotated terminal output (§6 Steps 5-6), Best Practices section deepened. Marginally above floor; within standard profile range."
+    },
+    "topic_scope": {
+      "passed": true,
+      "finding": null,
+      "resolved_from_cycle_1": [
+        {
+          "concept": "git status",
+          "prior_section": "Section 8 — dedicated subsection with subsection heading and output format guidance",
+          "current_treatment": "Single inline aside within §6 Step 4 (git add step). No subsection heading. One sentence. FIXED."
+        },
+        {
+          "concept": ".gitignore mechanism",
+          "prior_section": "Section 7.3 — explained how .gitignore works mechanically",
+          "current_treatment": "§7.3 now reads: 'You will also create a .gitignore file to keep secrets out of GitHub — that is covered in topic 13.14.' One sentence, explicit defer. §8 also uses one sentence with defer. FIXED."
+        }
+      ],
+      "residual_soft_findings": [
+        {
+          "concept": "git pull",
+          "section": "§8 Best Practices — subsection 'Always pull before you push when collaborating'",
+          "severity": "soft",
+          "description": "git pull is presented with a usage example (git pull origin main) outside the four headline commands. The subsection has its own heading and two instructional sentences. This is a minor overstep — the command is not taught in depth (no output, no conflict resolution) and is framed as a habit note. Allowed to pass as soft; builder may consider tightening to a single sentence on future revision."
+        }
+      ]
+    },
+    "beginner_readability": {
+      "passed": true,
+      "distinct_finding_count": 0,
+      "escalated_to_hard_fail": false,
+      "findings": [],
+      "resolved_from_cycle_1": [
+        {
+          "type": "undefined_terms",
+          "terms_fixed": [
+            {
+              "term": "HTTPS",
+              "resolution": "Spelled out as 'HTTPS (HyperText Transfer Protocol Secure)' with plain-language sentence explaining its role. §6 Step 2."
+            },
+            {
+              "term": "personal access token",
+              "resolution": "Defined as 'a password alternative generated in your GitHub settings' with context about why it exists (GitHub stopped accepting account passwords in 2021). §6 Step 6."
+            }
+          ]
+        }
+      ],
+      "note": "No undefined terms, no jargon dumps, no academic register issues detected in revised corpus. Acronym 'PAT' introduced only after 'personal access token (PAT)' is spelled out. commit hash and SHA are defined in a callout box in §5.4."
+    }
+  },
+  "hard_fails": [],
+  "soft_findings": [
+    {
+      "check": "topic_scope",
+      "code": "scope_creep_minor",
+      "detail": "§8 subsection 'Always pull before you push when collaborating' introduces git pull with usage syntax (git pull origin main) — a command outside the four headline commands. Two instructional sentences with subsection heading. Minor overstep; does not block passage but surfaced for HITL #2/#3 awareness."
+    },
+    {
+      "check": "length_sanity",
+      "code": "at_floor",
+      "detail": "Word count ~3065 is marginally above the 3000-word floor (2% margin). Corpus passes but has little headroom; any future trimming should be checked against the floor."
+    }
+  ],
+  "builder_revision_instructions": [
+    "No hard fails — corpus approved for downstream artifact generation.",
+    "",
+    "Optional soft-finding improvements (can address at HITL #2 or defer to post-A4):",
+    "1. §8 'Always pull before you push when collaborating': consider whether to reduce to a single sentence without a subsection heading, e.g., absorb into a general best-practices note, to keep the four headline commands as the only named commands in the corpus.",
+    "2. Word count is at the floor (~3065 vs 3000 minimum). If any trimming occurs elsewhere, recheck total does not drop below 3000."
+  ]
+}

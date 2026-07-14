@@ -1,0 +1,39 @@
+---
+title: The Embedding Projector — See Words as Dots
+theme: base
+themeVariables:
+  primaryColor: "#a5d8ff"
+  primaryBorderColor: "#4a9eed"
+  lineColor: "#555"
+flowchart:
+  htmlLabels: true
+  curve: basis
+---
+flowchart LR
+    subgraph PIPELINE["From long vectors to clusters"]
+        direction LR
+        P1["<b>Long word vectors</b><br/><span style='font-size:12px;color:#6d28d9'>100-300 numbers each</span>"]
+        P2["<b>Squash to 2D or 3D</b><br/><span style='font-size:12px;color:#6d28d9'>PCA / t-SNE buttons</span>"]
+        P3["<b>Cloud of dots</b><br/><span style='font-size:12px;color:#6d28d9'>spin and zoom on screen</span>"]
+        P4["<b>Clusters of dots</b><br/><span style='font-size:12px;color:#6d28d9'>nearby = similar words</span>"]
+        P1 --> P2 --> P3 --> P4
+    end
+
+    subgraph SEARCH["Search callout"]
+        direction TB
+        S1["<b>Search a word</b><br/><span style='font-size:12px;color:#6d28d9'>type apple, king, paris</span>"]
+        S2["<b>Nearest neighbours lit up</b><br/><span style='font-size:12px;color:#6d28d9'>ranked by cosine similarity</span>"]
+        S1 --> S2
+    end
+
+    P4 -.->|"pick a dot"| S1
+
+    classDef start fill:#a5d8ff,stroke:#4a9eed
+    classDef auto fill:#d0bfff,stroke:#8b5cf6
+    classDef done fill:#b2f2bb,stroke:#22c55e
+
+    class P1 start
+    class P2,P3 auto
+    class P4 done
+    class S1 start
+    class S2 done

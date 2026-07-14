@@ -1,0 +1,112 @@
+{
+  "critic": "reading-critic",
+  "topic_id": "3.7",
+  "title": "AI in India Today — Healthcare, Agriculture, Vernacular Translation",
+  "run_at": "2026-06-17T00:00:00Z",
+  "verdict": "PASS",
+  "passed": true,
+  "word_count_actual": 1452,
+  "word_count_range": [1200, 1600],
+  "estimated_read_minutes_actual": 7,
+  "estimated_read_minutes_range": [6, 8],
+  "checks": {
+    "format_discipline": {
+      "passed": true,
+      "frontmatter_present": false,
+      "meta_sidecar_missing": false,
+      "section_template_violation": false,
+      "sections_found": [
+        "Overview",
+        "Key Concepts",
+        "Worked Example",
+        "In Practice",
+        "Key Takeaways",
+        "References"
+      ],
+      "notes": "First non-empty line is H1 title. Sidecar reading.meta.json present and valid. All six fixed sections present in correct order."
+    },
+    "length": {
+      "passed": true,
+      "word_count": 1452,
+      "in_range": true,
+      "read_minutes_at_200wpm": 7.26,
+      "read_minutes_at_230wpm": 6.3,
+      "in_minute_range": true,
+      "notes": "1452 words is within 1200–1600. Both WPM formulae place reading within the 6–8 min target."
+    },
+    "citations": {
+      "passed": true,
+      "primary_cited": true,
+      "primary_citation_count": {
+        "[1]": 6,
+        "[2]": 4,
+        "[3]": 7
+      },
+      "bibliography_complete": true,
+      "orphan_inline_markers": [],
+      "orphan_bibliography_entries": [],
+      "notes": "All three resources cited inline. Bibliography entries [1][2][3] present and match inline markers."
+    },
+    "no_forward_references": {
+      "passed": true,
+      "violations": [],
+      "notes": "All cross-references are to prior topics: supervised learning (3.1), LLMs/hallucination (3.2), tokenisation (3.4). All 3.7 introduced concepts are self-contained. No reference to topics beyond 3.7."
+    },
+    "faithfulness": {
+      "passed": true,
+      "assertions_sampled": 10,
+      "unsupported_count": 0,
+      "unsupported_assertions": [],
+      "notes": "All 10 sampled assertions trace directly to corpus sections 5.1–5.4 and section 6–7. Key figures (300M eSanjeevani consultations, 800M internet subscribers, 75% native-language preference, 22 scheduled languages, 11 scripts, 2023–2028 IndiaAI Mission funding window) all confirmed in corpus."
+    },
+    "beginner_readability": {
+      "passed": true,
+      "findings": [
+        {
+          "code": "third_person_register",
+          "severity": "soft",
+          "description": "Reading does not address the learner as 'you' throughout. Artifact-mix mandate requires active second-person address. All Key Concepts and In Practice paragraphs are written in third person. This is a style drift from the audience mandate.",
+          "line_range": "9–93"
+        },
+        {
+          "code": "long_sentences",
+          "severity": "soft",
+          "description": "Several sentences exceed the 25-word target. Notable example at line 17 (telemedicine paragraph): 'AI triage tools are now integrated into eSanjeevani to collect symptoms before the patient reaches a doctor, flag red-alert cases for immediate priority, and pre-fill patient records — reducing the time a doctor spends on history-taking and increasing the number of patients seen per session [1].' (~42 words). Not pervasive but present in 3–4 other sentences.",
+          "line_range": "17, 47, 53"
+        }
+      ],
+      "undefined_terms": [],
+      "jargon_dump": false,
+      "abstract_first": false,
+      "academic_register": false,
+      "total_soft_findings": 2,
+      "escalation_threshold_met": false,
+      "notes": "Two soft findings (third-person register, occasional long sentences). Threshold for hard-fail escalation is ≥3 distinct findings across checks 5–6 combined. Threshold not met. Terms are defined on first use. Concrete-first ordering maintained throughout. No hedging language detected."
+    },
+    "formatting": {
+      "passed": true,
+      "findings": [],
+      "wall_of_text": false,
+      "unlisted_sequence": false,
+      "no_inline_examples": false,
+      "definition_shape_used": true,
+      "notes": "No paragraph exceeds 6 sentences. Kisan e-Mitra 5-step process rendered as numbered list (lines 25–29). Worked Example rendered as bold-labelled numbered steps (lines 61–78). Table used for multilingual AI challenge comparison (lines 41–45). All introduced terms use bold-term + plain-meaning shape."
+    },
+    "assessment_references": {
+      "passed": true,
+      "violations": [],
+      "notes": "No assessment IDs, due weeks, or grade weights found in reading text."
+    },
+    "scope": {
+      "passed": true,
+      "scope_creep": false,
+      "violations": [],
+      "notes": "Reading stays within the topic boundary: healthcare AI (computer vision screening, telemedicine), agricultural AI (Kisan e-Mitra, satellite monitoring), and vernacular/multilingual AI (BharatGen, digital divide) in India. All introduced concepts (computer vision, telemedicine, IndiaAI Mission, Kisan e-Mitra, vernacular NLP, multilingual AI, BharatGen, digital divide) are listed in the topic's own artifact_plan. No advanced material imported beyond the depth profile. Prior concepts (supervised learning, LLM, hallucination, tokenisation) cross-referenced with correct prior-topic pointers."
+    }
+  },
+  "gold_example_comparison": {
+    "gold_example_found": false,
+    "notes": "No gold example found at .claude/references/gold-examples/reading/. Evaluation conducted against written standards in artifact-mix.json and reading-critic SKILL.md."
+  },
+  "summary": "Reading passes all hard checks. Format is clean (no frontmatter, correct six-section structure, valid sidecar). Word count 1452 and estimated read time 7 min are within spec. All three resources cited; bibliography complete. No forward references, no faithfulness failures (10/10 assertions corpus-backed), no scope creep. Two soft findings logged under beginner_readability (third-person register throughout; occasional long sentences) — total 2/3 soft-finding threshold, escalation not triggered. Reading is beginner-usable, well-structured, and appropriately scoped."
+}

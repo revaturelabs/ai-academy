@@ -1,0 +1,17 @@
+{
+  "topic_id": "5.5",
+  "title": "Red-teaming — systematically testing your own system for failure before deployment",
+  "estimated_read_minutes": 7,
+  "reading_minutes": 7,
+  "word_count": 1255,
+  "generated_at": "2026-06-22T07:30:00Z",
+  "embeds_diagram": true,
+  "diagram_embedded": true,
+  "citations_used": [1, 2, 3],
+  "citations_map": {
+    "1": "https://www.paloaltonetworks.com/cyberpedia/what-is-ai-red-teaming",
+    "2": "https://www.promptfoo.dev/docs/red-team/",
+    "3": "https://mindgard.ai/blog/what-is-ai-red-teaming"
+  },
+  "sections": ["Overview", "Key Concepts", "Worked Example", "In Practice", "Key Takeaways", "References"]
+}

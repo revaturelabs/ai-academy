@@ -1,0 +1,77 @@
+{
+  "topic_id": "14.6",
+  "profile": "standard",
+  "question_count": 6,
+  "include_short_answer": false,
+  "generated_at": "2026-06-15T00:00:00Z",
+  "format": "gift",
+  "$bias_defense_applied": true,
+  "$shuffle_seed": "sha256('14.6') prefix=0xE2A1, salt=0 -> target spread [2,0,1,3,0,2]; verified max_share=2/6=0.333<=0.40, all 4 positions used",
+  "correct_position_distribution": [2, 0, 1, 3, 0, 2],
+  "correct_position_counts": {
+    "pos_0": 2,
+    "pos_1": 1,
+    "pos_2": 2,
+    "pos_3": 1
+  },
+  "max_share": "2/6",
+  "max_share_decimal": 0.333,
+  "length_bias_violations": 0,
+  "bias_defense_notes": "Positions derived by parsing actual = line index (0-based) in each question's answer block in quiz.gift after writing. q1=2, q2=0, q3=1, q4=3, q5=0, q6=2. All option lengths equalized to within 20% of mean distractor length per question.",
+  "questions": [
+    {
+      "id": "q1",
+      "type": "mcq",
+      "objective_ref": "LO1 — Explain what the ReAct pattern is and why it combines reasoning and acting rather than using either alone",
+      "correct_position": 2,
+      "correct_len_chars": 236,
+      "mean_distractor_len_chars": 219,
+      "length_ratio": 0.076
+    },
+    {
+      "id": "q2",
+      "type": "mcq",
+      "objective_ref": "LO2 — Name and describe the four stages of a ReAct cycle: Thought, Action, Observation, and Final Answer",
+      "correct_position": 0,
+      "correct_len_chars": 239,
+      "mean_distractor_len_chars": 233,
+      "length_ratio": 0.027
+    },
+    {
+      "id": "q3",
+      "type": "mcq",
+      "objective_ref": "LO3 — Trace through a complete multi-step ReAct example, identifying each Thought, Action, and Observation in the agent's log",
+      "correct_position": 1,
+      "correct_len_chars": 244,
+      "mean_distractor_len_chars": 220,
+      "length_ratio": 0.109
+    },
+    {
+      "id": "q4",
+      "type": "mcq",
+      "objective_ref": "LO4 — Explain why making the reasoning step explicit as a Thought: line improves debuggability",
+      "correct_position": 3,
+      "correct_len_chars": 272,
+      "mean_distractor_len_chars": 234,
+      "length_ratio": 0.161
+    },
+    {
+      "id": "q5",
+      "type": "mcq",
+      "objective_ref": "LO5 — Describe the two failure modes that motivated ReAct: hallucination from reasoning alone, and blind action without reasoning",
+      "correct_position": 0,
+      "correct_len_chars": 322,
+      "mean_distractor_len_chars": 277,
+      "length_ratio": 0.162
+    },
+    {
+      "id": "q6",
+      "type": "mcq",
+      "objective_ref": "LO2 — Name and describe the four stages of a ReAct cycle (Observation stage specifically)",
+      "correct_position": 2,
+      "correct_len_chars": 284,
+      "mean_distractor_len_chars": 244,
+      "length_ratio": 0.162
+    }
+  ]
+}

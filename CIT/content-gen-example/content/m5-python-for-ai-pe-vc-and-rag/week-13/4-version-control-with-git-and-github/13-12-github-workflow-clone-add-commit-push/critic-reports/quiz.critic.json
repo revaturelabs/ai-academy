@@ -1,0 +1,129 @@
+{
+  "passed": true,
+  "cycle": 2,
+  "checks": {
+    "bias_defense_applied": {
+      "passed": true,
+      "value": true
+    },
+    "positional_bias": {
+      "passed": true,
+      "distribution": { "pos0": 2, "pos1": 1, "pos2": 1, "pos3": 2 },
+      "max_share": 0.333,
+      "threshold": 0.40,
+      "meta_gift_desync": false,
+      "derived_positions": [2, 0, 3, 1, 0, 3],
+      "meta_positions": [2, 0, 3, 1, 0, 3]
+    },
+    "length_bias": {
+      "passed": true,
+      "longest_correct_rate": 0.333,
+      "threshold": 0.40,
+      "baseline": 0.25,
+      "per_question": [
+        {
+          "id": "q1",
+          "correct_len": 110,
+          "distractor_mean": 86.0,
+          "threshold_len": 103.2,
+          "longest_correct": true,
+          "note": "Correct answer is 28% longer than distractor mean — still over 120% but rate stays under 0.40 threshold"
+        },
+        {
+          "id": "q2",
+          "correct_len": 15,
+          "distractor_mean": 16.33,
+          "threshold_len": 19.6,
+          "longest_correct": false
+        },
+        {
+          "id": "q3",
+          "correct_len": 85,
+          "distractor_mean": 65.33,
+          "threshold_len": 78.4,
+          "longest_correct": true,
+          "note": "Correct answer is 30% longer than distractor mean — still over 120% but rate stays under 0.40 threshold"
+        },
+        {
+          "id": "q4",
+          "correct_len": 93,
+          "distractor_mean": 77.67,
+          "threshold_len": 93.2,
+          "longest_correct": false,
+          "note": "Fix effective — correct (93) is at 99.8% of threshold (93.2); q4 no longer flagged"
+        },
+        {
+          "id": "q5",
+          "correct_len": 20,
+          "distractor_mean": 20.0,
+          "threshold_len": 24.0,
+          "longest_correct": false
+        },
+        {
+          "id": "q6",
+          "correct_len": 43,
+          "distractor_mean": 43.33,
+          "threshold_len": 52.0,
+          "longest_correct": false
+        }
+      ],
+      "flagged_count": 2,
+      "total_mcq": 6,
+      "auto_correction_applied": false
+    },
+    "distractor_plausibility": {
+      "passed": true,
+      "total_distractors": 18,
+      "absurd_count": 0,
+      "absurd_rate": 0.0,
+      "threshold": 0.25,
+      "weakest_questions": [
+        {
+          "id": "q2",
+          "distractor": "git add .",
+          "score": 2,
+          "note": "Wrong but unrelated to a common clone misconception; low plausibility but not absurd"
+        },
+        {
+          "id": "q4",
+          "distractor": "It sends a notification to teammates that you have finished a piece of work.",
+          "score": 2,
+          "note": "Wrong and unrelated to commit behavior; low plausibility but not absurd"
+        }
+      ],
+      "carry_forward_from_cycle1": true
+    },
+    "objective_coverage": {
+      "passed": true,
+      "total_los": 6,
+      "uncovered_objectives": [],
+      "orphan_questions": [],
+      "coverage_map": {
+        "LO1 — Explain local vs remote repository": "q1",
+        "LO2 — Use git clone": "q2",
+        "LO3 — Use git add": "q3",
+        "LO4 — Use git commit": "q4",
+        "LO5 — Use git push": "q5",
+        "LO6 — Trace edit-add-commit-push order": "q6"
+      },
+      "carry_forward_from_cycle1": true
+    },
+    "beginner_fairness_and_scope": {
+      "passed": true,
+      "findings": [],
+      "note": "All stems use plain language; all commands are contextualised in corpus; no PRs, branching, rebasing, or out-of-scope knowledge required",
+      "carry_forward_from_cycle1": true
+    }
+  },
+  "auto_correction_applied": {
+    "shuffle_round_2": false,
+    "length_rebalance": false
+  },
+  "cycle1_failure_resolved": {
+    "q4_length_fix": "Effective — correct answer trimmed from 148 to 93 chars; no longer exceeds 120% of distractor mean",
+    "q1_length_partial": "Trimmed from 155 to 110 chars; still exceeds 120% of distractor mean (86.0 * 1.2 = 103.2) but overall rate 2/6 = 0.333 is within 0.40 threshold",
+    "q3_length_partial": "Trimmed from 101 to 85 chars; still exceeds 120% of distractor mean (65.33 * 1.2 = 78.4) but overall rate 2/6 = 0.333 is within 0.40 threshold"
+  },
+  "verdict": "Pass — length_bias resolved: longest_correct_rate dropped from 0.50 (cycle 1) to 0.333 (cycle 2), below the 0.40 threshold; all five checks pass.",
+  "at": "2026-06-15T00:00:00Z"
+}

@@ -1,0 +1,20 @@
+{
+  "type": "module",
+  "position": 4,
+  "title": "Hands-On Exploration",
+  "slug": "4-hands-on-exploration",
+  "course_code": "M3",
+  "course_slug": "m3-applied-maths-for-ai",
+  "week_nums": [
+    6
+  ],
+  "session_name_by_week": {
+    "6": "Numbers, Vectors and Meaning"
+  },
+  "narrative_seed_by_week": {
+    "6": "Why maths matters — every AI system is built entirely on numbers / Scalars, vectors, matrices — arrows and grids, not equations / A vector as a point in space — music taste described as three numbers / Dot product as similarity — vectors pointing the same direction score high / Embeddings — turning words into vectors that capture meaning / Why ‘king − man + woman ≈ queen’ actually works / Cosine similarity — measuring the angle between two meaning-vectors"
+  },
+  "lab_activity_seed_by_week": {
+    "6": "TensorFlow Embedding Projector — watch word clusters form in 2D / Rank 5 pre-computed sentence vectors by similarity — by hand first, then verify in the browser / No coding this week — understanding only / Journal Entry #3 / →  Assessment 2 due this week  (see Assessment Plan)"
+  }
+}

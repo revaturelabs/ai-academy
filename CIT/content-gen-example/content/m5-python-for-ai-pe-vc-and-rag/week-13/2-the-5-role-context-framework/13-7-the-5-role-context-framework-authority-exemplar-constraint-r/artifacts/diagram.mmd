@@ -1,0 +1,36 @@
+---
+title: "5-Role Context Framework — conflict wins upward (Priority 1 beats all)"
+config:
+  theme: base
+  themeVariables:
+    primaryColor: "#a5d8ff"
+    primaryBorderColor: "#4a9eed"
+    lineColor: "#555"
+  flowchart:
+    htmlLabels: true
+    curve: basis
+    nodeSpacing: 40
+    rankSpacing: 60
+---
+flowchart TB
+    subgraph CP["📦  Context Package"]
+        direction TB
+        A["<b>1 · Authority</b><br/><span style='font-size:11px;color:#6d28d9'>Who the model is + primary purpose</span>"]
+        E["<b>2 · Exemplar</b><br/><span style='font-size:11px;color:#6d28d9'>Example of good output (sample pairs)</span>"]
+        C["<b>3 · Constraint</b><br/><span style='font-size:11px;color:#6d28d9'>What the model must NOT do</span>"]
+        R["<b>4 · Rubric</b><br/><span style='font-size:11px;color:#6d28d9'>Required output structure + quality criteria</span>"]
+        M["<b>5 · Metadata</b><br/><span style='font-size:11px;color:#6d28d9'>Per-request facts (date, user tier, language)</span>"]
+    end
+
+    A -->|"overrides everything below ↓"| E
+    E -->|"overrides 3 · 4 · 5 ↓"| C
+    C -->|"overrides 4 · 5 ↓"| R
+    R -->|"overrides 5 ↓"| M
+
+    classDef start fill:#a5d8ff,stroke:#4a9eed
+    classDef auto fill:#d0bfff,stroke:#8b5cf6
+    classDef done fill:#b2f2bb,stroke:#22c55e
+
+    class A start
+    class E,C,R auto
+    class M done

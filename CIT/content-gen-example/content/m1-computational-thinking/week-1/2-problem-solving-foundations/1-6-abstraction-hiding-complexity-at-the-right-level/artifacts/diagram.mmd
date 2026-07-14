@@ -1,0 +1,43 @@
+---
+title: "Abstraction — hiding complexity at the right level"
+config:
+  theme: base
+  themeVariables:
+    primaryColor: "#a5d8ff"
+    primaryBorderColor: "#4a9eed"
+    lineColor: "#555"
+  flowchart:
+    htmlLabels: true
+    curve: basis
+---
+flowchart TB
+
+  subgraph LAYERS["Abstraction: hides detail"]
+    direction TB
+    USER["<b>You (the user)</b><br/><span style='font-size:11px;color:#6d28d9'>Sees: "cheese sandwich please"</span>"]
+    IFACE["<b>Interface layer</b><br/><span style='font-size:11px;color:#6d28d9'>Passes the order — hides the kitchen</span>"]
+    INTERN["<b>Hidden internals</b><br/><span style='font-size:11px;color:#6d28d9'>How bread is baked, kitchen workflow</span>"]
+
+    USER -->|"clean surface ↓"| IFACE
+    IFACE -->|"detail hidden ↓"| INTERN
+  end
+
+  subgraph DECOMP["Decomposition: breaks apart"]
+    direction TB
+    ROOT["<b>Big problem</b>"]
+    SUBA["<b>Sub-task A</b>"]
+    SUBB["<b>Sub-task B</b>"]
+
+    ROOT --> SUBA
+    ROOT --> SUBB
+  end
+
+  classDef primary fill:#a5d8ff,stroke:#4a9eed,color:#1a1a2e
+  classDef secondary fill:#d0bfff,stroke:#8b5cf6,color:#1a1a2e
+  classDef hidden fill:#F0F0F0,stroke:#999,color:#555,stroke-dasharray: 5 5
+  classDef done fill:#b2f2bb,stroke:#22c55e,color:#1a1a2e
+
+  class USER primary
+  class IFACE secondary
+  class INTERN hidden
+  class ROOT,SUBA,SUBB done

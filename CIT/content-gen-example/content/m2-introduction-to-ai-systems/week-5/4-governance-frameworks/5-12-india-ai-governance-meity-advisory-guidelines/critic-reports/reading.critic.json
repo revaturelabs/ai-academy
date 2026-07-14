@@ -1,0 +1,84 @@
+{
+  "artifact": "reading",
+  "topic_id": "5.12",
+  "passed": true,
+  "checks": {
+    "format_discipline": {
+      "passed": true,
+      "frontmatter_present": false,
+      "meta_sidecar_present": true,
+      "section_template_violation": false,
+      "sections_found": ["Overview", "Key Concepts", "Worked Example", "In Practice", "Key Takeaways", "References"],
+      "notes": "First non-empty line is the # H1 title; no leading YAML. reading.meta.json exists, parses, and carries word_count/estimated_read_minutes/citations_used/sections. Exactly the six fixed sections, correct order."
+    },
+    "length": {
+      "passed": true,
+      "word_count": 1010,
+      "target_word_range": [800, 1200],
+      "read_minutes_230wpm": 4.39,
+      "read_minutes_200wpm": 5.05,
+      "target_minute_range": [4, 6],
+      "notes": "Word count and read-aloud minutes both inside the atomic profile budget under either wpm convention."
+    },
+    "citations": {
+      "passed": true,
+      "primary_resources_cited": [1, 2, 3],
+      "orphan_markers": false,
+      "orphan_bibliography_entries": false,
+      "notes": "All three primary resources cited inline >=1 and present in the footnote-style References block; markers and bibliography match exactly."
+    },
+    "forward_references": {
+      "passed": true,
+      "notes": "Anchors referenced are all prior (5.4, 5.7, 5.10, 5.11). The In Practice softness-scale table LISTS the four frameworks with descriptive attributes (what/who/how-binding/how-fast) but teaches NO selection logic — no 'use X when', no 'which framework applies', no decision criteria. Selection-synthesis stays correctly deferred to 5.13. No reference to 5.13."
+    },
+    "beginner_readability": {
+      "passed": true,
+      "undefined_terms": [],
+      "jargon_dump": false,
+      "abstract_first": false,
+      "academic_register": false,
+      "notes": "MEITY (L13), advisory (L17), intermediary/platform (L26), deepfake (L35), due diligence (L38) all defined in plain language on first use via bold-term shape. One idea at a time; concrete-first; plain register; no hedging stacks."
+    },
+    "formatting": {
+      "passed": true,
+      "wall_of_text": false,
+      "unlisted_sequence": false,
+      "no_inline_examples": false,
+      "notes": "Heavy bullet/numbered-list structure, bold-term definitions, comparison table, numbered March-2024 Worked Example. No paragraph exceeds ~4 sentences. Inline examples appear at concept introduction."
+    },
+    "assessment_reference": {
+      "passed": true,
+      "notes": "No assessment IDs, due weeks, or grade weights in learner prose. Complies with gold decision 2026-06-11."
+    },
+    "scope": {
+      "passed": true,
+      "scope_creep": false,
+      "notes": "Stays on India MEITY advisories. IT Rules (2021), future tech legislation named-and-deferred only ('you do not need their detail' / 'not covered in this topic'); AIGG absent. Presented as evolving 2024 soft-law, not settled statute. No selection logic (reserved for 5.13)."
+    },
+    "faithfulness": {
+      "passed": true,
+      "unsupported_assertions": 0,
+      "sampled": [
+        "MEITY = Ministry of Electronics and Information Technology (corpus 5.1)",
+        "advisory is guidance not statute, can change fast (corpus 5.1)",
+        "intermediary = online platform (corpus 5.1)",
+        "advisories build on IT Rules 2021 (corpus 5.1)",
+        "two asks: label unreliable/AI output + due diligence (corpus 5.2)",
+        "deepfake definition (corpus 5.2)",
+        "due diligence definition (corpus 5.2)",
+        "transparency + harm prevention map to 5.4 pillars (corpus 5.2)",
+        "March 1 prior-permission, March 15 dropped (corpus 5.3)",
+        "directionally aligned with global frameworks (corpus 5.4)",
+        "softness scale table NIST<MEITY<EO<EU (corpus 5.5)"
+      ],
+      "notes": "Every sampled assertion traces verbatim or paraphrased to topic_corpus.md. No invented claims."
+    },
+    "diagram_integrity": {
+      "passed": true,
+      "embeds_diagram": false,
+      "notes": "embeds_diagram=false is correct; artifact_plan.diagram=false. No image references in reading.md, no broken refs. No script/meta artifacts leaked into learner prose."
+    }
+  },
+  "verdict": "PASS — reading 5.12 meets the atomic-profile reading-critic bar: clean format (no frontmatter, sidecar valid, six sections in order), 1010 words / ~5 min in range, all three primary refs cited and bibliographized, no forward references (softness-scale table lists the four frameworks but teaches no selection logic — correctly deferred to 5.13), MEITY/advisory/intermediary/deepfake/due-diligence all defined on first use, IT Rules 2021 and future legislation named-and-deferred, presented as evolving 2024 soft-law, fully faithful to corpus, no assessment prose, embeds_diagram=false correct. Meets the reading gold-example bar.",
+  "at": "2026-06-22T16:05:00Z"
+}

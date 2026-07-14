@@ -1,0 +1,75 @@
+{
+  "passed": true,
+  "checks": {
+    "meta_prerequisites": {
+      "passed": true,
+      "bias_defense_applied": true,
+      "meta_parseable": true
+    },
+    "positional_bias": {
+      "passed": true,
+      "distribution": { "pos0": 1, "pos1": 2, "pos2": 1, "pos3": 1 },
+      "positions_by_question": [1, 3, 0, 2, 1],
+      "total_mcq": 5,
+      "max_share": 0.40,
+      "threshold": 0.40,
+      "note": "max_share=0.40 equals the threshold; rule is fail if >0.40. Boundary satisfied. GIFT-derived positions [1,3,0,2,1] match sidecar correct_position_distribution exactly — no meta_gift_desync. Auto-correction not needed.",
+      "auto_correction_applied": false
+    },
+    "length_bias": {
+      "passed": true,
+      "per_question": [
+        { "id": "q1", "length_ratio_correct_to_mean_distractor": 1.16, "longest_correct": false },
+        { "id": "q2", "length_ratio_correct_to_mean_distractor": 1.00, "longest_correct": false },
+        { "id": "q3", "length_ratio_correct_to_mean_distractor": 1.09, "longest_correct": false },
+        { "id": "q4", "length_ratio_correct_to_mean_distractor": 1.15, "longest_correct": false },
+        { "id": "q5", "length_ratio_correct_to_mean_distractor": 0.93, "longest_correct": false }
+      ],
+      "longest_correct_rate": 0.00,
+      "baseline": 0.25,
+      "threshold": 0.40,
+      "note": "0 of 5 MCQs have correct answer length >120% of mean distractor length. Builder's length-bias fix (applied 2026-06-14 per sidecar) confirmed effective — prior rate was 0.80, now 0.00. Spot-check of q1: correct answer ~153 chars, distractor mean ~130.7 chars, ratio ~1.17, consistent with sidecar-reported 1.16."
+    },
+    "distractor_plausibility": {
+      "passed": true,
+      "total_distractors": 15,
+      "absurd_count": 0,
+      "absurd_rate": 0.00,
+      "threshold": 0.25,
+      "per_question_scores": [
+        { "id": "q1", "scores": [3, 3, 3], "weakest": null },
+        { "id": "q2", "scores": [4, 4, 3], "weakest": null },
+        { "id": "q3", "scores": [3, 2, 2], "weakest": "q3-d2 (score 2: 'model to choose own field names'), q3-d3 (score 2: 'users prefer template structure') — wrong-but-unrelated, not absurd" },
+        { "id": "q4", "scores": [3, 3, 2], "weakest": "q4-d3 (score 2: 'context overflow caused key name change') — mechanistically implausible but not absurd" },
+        { "id": "q5", "scores": [3, 4, 2], "weakest": "q5-d3 (score 2: 'ask user to manually fix JSON') — breaks automation premise but not absurd" }
+      ],
+      "weakest_questions": ["q3", "q4", "q5"],
+      "note": "No distractor scored 1 (absurd). Three score-2 distractors are weak but above the absurd floor. The previous first-pass finding about a 'JSON mode API setting' distractor in q2 is resolved — the revised q2 distractors (mentioning 'just mentioning JSON', 'clearly labelled machine-readable format', 'placement at end only') are all prompt-level misconceptions grounded in corpus §5.2. absurd_rate=0.00."
+    },
+    "objective_coverage": {
+      "passed": true,
+      "lo_map": [
+        { "lo": 1, "lo_text": "Explain why a language model produces inconsistently formatted output when given no format instruction", "covered_by": ["q1"] },
+        { "lo": 2, "lo_text": "Write a prompt instruction requesting a specific output format using exact, testable language", "covered_by": ["q2", "q6"] },
+        { "lo": 3, "lo_text": "Apply the three format-specification strategies (inline declaration, format example, template echo)", "covered_by": ["q3"] },
+        { "lo": 4, "lo_text": "Identify format drift in a model response by comparing it against the declared format contract", "covered_by": ["q4"] },
+        { "lo": 5, "lo_text": "Describe the output validator pattern and explain why it is needed even when format instructions are present", "covered_by": ["q5"] }
+      ],
+      "uncovered_objectives": [],
+      "orphan_questions": [],
+      "note": "All 5 LOs covered. LO2 doubly covered (q2 MCQ + q6 short-answer). No orphan questions."
+    },
+    "beginner_fairness_and_scope": {
+      "passed": true,
+      "out_of_scope_questions": [],
+      "jargon_in_stem": [],
+      "unfair_distractors": [],
+      "note": "All stems readable by a beginner who read this topic only. Acronyms LLM and JSON spelled out in stems. All correct answers and distractors grounded in corpus §5.1–§5.7. Previously-flagged 'JSON mode API setting' distractor in q2 has been replaced by a prompt-level misconception ('requires switching to a structured-output library'), which tests the corpus statement that format control needs no special API settings — not a prohibited API-level feature. No out_of_scope_question or jargon_in_stem hard findings."
+    }
+  },
+  "auto_correction_applied": {
+    "shuffle_round_2": false
+  },
+  "verdict": "Pass — all checks clean on second critic pass. Positional bias max_share=0.40 (boundary satisfied, not exceeded). Length bias longest_correct_rate=0.00 (builder's length-fix from pass 1 confirmed). Distractor plausibility absurd_rate=0.00. All 5 LOs covered, no orphan questions. No out-of-scope or jargon hard findings. Previously-flagged JSON-mode distractor resolved.",
+  "at": "2026-06-14T00:00:00Z"
+}

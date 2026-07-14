@@ -1,0 +1,26 @@
+{
+  "verdict": "pass",
+  "findings": [
+    {
+      "code": "looks_good",
+      "where": "full diagram",
+      "detail": "7-node TD flowchart cleanly maps the three-path output validator pattern from corpus §5.7 and §6. Decision diamonds B and E correctly branch pass/fail. All node labels (2-3 words each) trace directly to corpus phrases. Color tiers correct: start (blue) for entry, auto (purple) for validation steps and retry, done (green) for all three terminal outcomes. Title 'Output Validator Pattern' properly placed in config block, not as a ghost node. No label exceeds 4 words. No bare unexplained acronyms. Branching is appropriate for the three-path intent (not linear-flow-branched violation)."
+    }
+  ],
+  "stats": {
+    "nodes": 7,
+    "edges": 6,
+    "layout": "flowchart TD",
+    "labels": [
+      "Call model",
+      "Format check",
+      "Use response",
+      "Retry with correction",
+      "Format check (2nd)",
+      "Use response",
+      "Return fallback"
+    ],
+    "png_path": "artifacts/diagram.png",
+    "png_dims": "1400xN"
+  }
+}

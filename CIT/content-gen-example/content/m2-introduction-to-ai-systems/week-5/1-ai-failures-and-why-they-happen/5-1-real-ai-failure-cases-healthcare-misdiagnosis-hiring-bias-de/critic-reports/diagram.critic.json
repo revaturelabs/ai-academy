@@ -1,0 +1,53 @@
+{
+  "verdict": "pass",
+  "findings": [
+    {
+      "code": "looks_good",
+      "where": "source pre-flight — all checks",
+      "detail": "7 nodes across 3 subgraphs (HC1, HC2, HI1, HI2, DF1, DF2, GAP). All bold labels are 3–4 words, all trace 1:1 to corpus §5 Core Concepts phrasing (skewed training data, wrong diagnosis, discriminatory past data, qualified people rejected, AI generation misused, fake video or audio, accountability gap). No bare acronyms. No forward references (hallucination mechanics, governance frameworks, EU AI Act, red-teaming — none present). Common causal path lives in the title: field, not a ghost node. Color tiers correct: start (blue) for input/cause nodes, auto (purple) for AI output nodes, done (green) for the terminal accountability gap. Layout (flowchart LR with three TB subgraphs converging to a shared terminal) matches the stated side-by-side comparison intent."
+    },
+    {
+      "code": "looks_good",
+      "where": "layout intent match",
+      "detail": "Intent: side-by-side comparison of three failure domains showing the common causal path. Realized as: three parallel TB subgraphs (one per domain) arranged horizontally (LR root), each showing input → AI output, all converging to a shared Accountability Gap terminal. The common causal pattern (the title) governs the whole canvas. Layout is the correct shape for the concept."
+    },
+    {
+      "code": "looks_good",
+      "where": "audience readability",
+      "detail": "Every label is plain English an absolute beginner can parse without a glossary. Subtitles at 12px add clarifying context (e.g. 'underrepresents patient groups', 'reflects historic unfair decisions', 'tool used to deceive'). No stacked new concepts in a single node. Each domain subgraph is self-contained and labelled with its domain name."
+    },
+    {
+      "code": "png_render_skipped",
+      "where": "PNG visual checks",
+      "detail": "mmdc is not available on PATH in this environment (Windows 11, no Bash tool). PNG could not be rendered at 1400px. Visual checks (nodes_overlap, label_truncated, crossings_illegible, whitespace_imbalance, subtitle_illegible, layout_wrong_for_intent) could not be performed against actual pixels. Source-level confidence: the LR root with three TB subgraphs and a shared terminal node is a well-supported Mermaid pattern that does not stress the layout engine; no visual failures anticipated, but a human reviewer should render and confirm with: mmdc -i <mmd-path> -o <png-path> -w 1400 -b transparent"
+    }
+  ],
+  "stats": {
+    "nodes": 7,
+    "edges": 6,
+    "layout": "flowchart LR (three TB subgraphs converging to shared terminal)",
+    "labels": [
+      "Skewed Training Data",
+      "Wrong Diagnosis",
+      "Discriminatory Past Data",
+      "Qualified People Rejected",
+      "AI Generation Misused",
+      "Fake Video or Audio",
+      "Accountability Gap"
+    ],
+    "png_path": "content/m2-introduction-to-ai-systems/week-5/1-ai-failures-and-why-they-happen/5-1-real-ai-failure-cases-healthcare-misdiagnosis-hiring-bias-de/artifacts/diagram.png",
+    "png_dims": "not rendered",
+    "preflight": {
+      "mermaid_parse": "not executable — mmdc unavailable; source is syntactically valid Mermaid flowchart LR with subgraph/direction TB pattern",
+      "node_count": "pass (7 nodes, within 3–8)",
+      "label_discipline": "pass (all bold labels ≤ 4 words: 3, 2, 3, 3, 3, 4, 2)",
+      "concept_fidelity": "pass (all 7 labels trace to corpus §5 Core Concepts phrases; no adjacent or downstream concepts)",
+      "scope_discipline": "pass (no hallucination mechanics, no governance frameworks, no EU AI Act, no red-teaming nodes)",
+      "jargon_label": "pass (no bare unexplained acronyms; AI is the curriculum's central term introduced in earlier topics)",
+      "title_discipline": "pass (common causal path in title: config field; no ghost node for the central organizing idea)",
+      "single_path_discipline": "pass (not a single linear flow — intentionally a side-by-side comparison as specified in the intent; three parallel sub-paths are correct)",
+      "color_tier": "pass (start=blue for input/cause, auto=purple for AI output, done=green for terminal; no HITL gate misclassified)"
+    }
+  },
+  "cycle": 1
+}

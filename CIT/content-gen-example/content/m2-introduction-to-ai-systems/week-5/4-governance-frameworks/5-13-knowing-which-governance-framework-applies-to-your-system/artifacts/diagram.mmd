@@ -1,0 +1,35 @@
+---
+title: "Which governance framework applies? (more than one can)"
+config:
+  theme: base
+  themeVariables:
+    primaryColor: "#a5d8ff"
+    primaryBorderColor: "#4a9eed"
+    lineColor: "#555"
+  flowchart:
+    htmlLabels: true
+    curve: basis
+    nodeSpacing: 55
+    rankSpacing: 70
+---
+flowchart TD
+    START{"<b>My AI system</b><br><span style='font-size:11px;color:#6d28d9'>answer EVERY question — not just the first yes</span>"}
+
+    EU["<b>EU AI Act</b><br><span style='font-size:11px;color:#6d28d9'>then sort: high / limited / minimal risk</span>"]
+    EO["<b>EO 14110</b><br><span style='font-size:11px;color:#6d28d9'>US federal guidance</span>"]
+    MEITY["<b>MEITY advisories</b><br><span style='font-size:11px;color:#6d28d9'>online platforms in India</span>"]
+    NIST["<b>NIST AI RMF</b><br><span style='font-size:11px;color:#6d28d9'>voluntary, anywhere</span>"]
+
+    START -->|"output reaches / used in EU?"| EU
+    START -->|"US federal agency, or selling to one?"| EO
+    START -->|"online platform in India?"| MEITY
+    START -->|"want voluntary risk mgmt?"| NIST
+
+    START:::start
+    EU:::done
+    EO:::done
+    MEITY:::done
+    NIST:::done
+
+    classDef start fill:#a5d8ff,stroke:#4a9eed,stroke-width:2px,color:#000
+    classDef done fill:#b2f2bb,stroke:#22c55e,color:#000

@@ -1,0 +1,51 @@
+{
+  "type": "topic",
+  "id": "10.4",
+  "title": "Automation complacency — how high accuracy makes humans less vigilant",
+  "slug": "10-4-automation-complacency-how-high-accuracy-makes-humans-less-v",
+  "position_in_module": 1,
+  "week_num": 10,
+  "session_name": "Cognition in Practice — Case Studies",
+  "module": {
+    "position": 2,
+    "slug": "2-automation-complacency",
+    "title": "Automation Complacency"
+  },
+  "course": {
+    "code": "M4",
+    "slug": "m4-human-cognition-and-ai-oversight",
+    "title": "Human Cognition and AI Oversight"
+  },
+  "next_assessment": {
+    "id": "A3",
+    "due_week": 10,
+    "title": "Maths and Cognition Lab Report",
+    "weight": "15%"
+  },
+  "paths": {
+    "corpus": "topic_corpus.md",
+    "resources": "topic.resources.json",
+    "progress": "topic.progress.json",
+    "artifacts_dir": "artifacts/",
+    "critic_reports_dir": "critic-reports/"
+  },
+  "artifact_plan": {
+    "diagram": true,
+    "diagram_intent": "Causal chain flow: high accuracy → rising trust → reduced monitoring effort → vigilance decay → rare system failure → missed failure becomes harmful outcome — seven nodes in a linear pipeline with the human operator's state shown at each step",
+    "depth_profile": "deep",
+    "depth_profile_suggestion": "standard",
+    "depth_profile_override_reason": "budget: per-future-topic avg ~17 min with generous headroom; 3 deep signals present",
+    "reading": {
+      "target_min_minutes": 9,
+      "target_max_minutes": 11,
+      "target_word_range": [1800, 2200]
+    },
+    "quiz": {
+      "min_questions": 5,
+      "max_questions": 7,
+      "include_short_answer": true
+    }
+  },
+  "expected_delivery_minutes": 10,
+  "status": "corpus_drafted"
+}

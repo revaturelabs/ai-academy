@@ -1,0 +1,64 @@
+{
+  "verdict": "pass",
+  "cycle": 1,
+  "notes": "Source-level pre-flight all pass. Node count reduced from initial 12 to 8 by merging gap-type + patch nodes into combined nodes (format drift/fix, constraint overflow/fix, task drift/fix) — stays within the 3–8 limit while preserving all intent nodes. PNG render requires mmdc on PATH — run: mmdc -i content/m1-computational-thinking/week-2/4-writing-and-testing-specifications/2-9-iterating-a-specification-based-on-output-gaps/artifacts/diagram.mmd -o content/m1-computational-thinking/week-2/4-writing-and-testing-specifications/2-9-iterating-a-specification-based-on-output-gaps/artifacts/diagram.png -w 1400 -b transparent",
+  "findings": [
+    {
+      "code": "looks_good",
+      "where": "loop structure — RETEST --> DECISION",
+      "detail": "Critical loop-back edge RETEST --> DECISION is present. The iteration cycle closes correctly: Start → Test → Full pass? → (Yes) Stop / (No) gap-type branch → patch → Retest → back to Full pass? decision. This is exactly the four-step cycle from corpus §5.4."
+    },
+    {
+      "code": "looks_good",
+      "where": "concept-drift check",
+      "detail": "All 8 node labels trace directly to corpus §5.2 and §5.4. 'Format drift' → §5.2 gap type 1; 'Constraint overflow' → §5.2 gap type 2; 'Task drift' → §5.2 gap type 3; 'Test the spec' → §5.4 step 1 three-question check; 'Full pass?' → §5.4 decision point; 'Retest updated spec' → §5.4 step 4; 'STOP — spec is done' → §5.4 full-pass termination. No out-of-scope concepts (minimum viable patch principle kept in subtitles, not promoted to a node)."
+    },
+    {
+      "code": "looks_good",
+      "where": "label discipline",
+      "detail": "All bold node labels are ≤4 words: 'Start: spec to test' (4), 'Test the spec' (3), 'Full pass?' (2), 'STOP — spec is done' (4), 'Format drift' (2), 'Constraint overflow' (2), 'Task drift' (2), 'Retest updated spec' (3). Subtitles carry qualifying detail at 12px — adequate readability at 1400px viewer width. No bare unexplained acronyms."
+    },
+    {
+      "code": "looks_good",
+      "where": "color tiers",
+      "detail": "Color tiers correctly applied: START (:::start, blue #a5d8ff); TEST/DECISION/RETEST (:::act, blue — automated test steps); STOP (:::done, green #b2f2bb); FDPATCH/COPATCH/TDPATCH (:::hitl, yellow #fff3bf with 3px stroke — gap-type diagnosis + patch nodes, matching the task requirement for gap-type branches in hitl yellow). No color tier violations."
+    },
+    {
+      "code": "looks_good",
+      "where": "title discipline",
+      "detail": "'Iteration Cycle — fix one gap, retest, repeat' appears in the --- config block title: field, not as a ghost node. The governing concept (the repeating cycle from §5.4) sits above the whole diagram as a banner."
+    },
+    {
+      "code": "looks_good",
+      "where": "layout choice",
+      "detail": "flowchart TB is correct for this iteration-loop intent: the main decision spine runs top-to-bottom (Start → Test → Full pass? → STOP), and the three gap-type branches fan out horizontally from the decision node, reconverging at RETEST which loops back up. nodeSpacing:55 and rankSpacing:65 provide adequate breathing room. The LR alternative was considered but TB is cleaner for a loop diagram where the back-edge (RETEST → DECISION) is the key visual element."
+    }
+  ],
+  "preflight": {
+    "mermaid_parses": true,
+    "node_count_ok": true,
+    "node_count": 8,
+    "label_discipline_ok": true,
+    "concept_fidelity_ok": true,
+    "title_in_config": true,
+    "single_path_discipline": "n/a — intentional decision + loop flow, branching is the intent"
+  },
+  "stats": {
+    "nodes": 8,
+    "edges": 10,
+    "layout": "flowchart TB (decision spine vertical, gap-type branches horizontal, loop-back from RETEST to DECISION)",
+    "labels": [
+      "Start: spec to test",
+      "Test the spec",
+      "Full pass?",
+      "STOP — spec is done",
+      "Format drift",
+      "Constraint overflow",
+      "Task drift",
+      "Retest updated spec"
+    ],
+    "png_path": "content/m1-computational-thinking/week-2/4-writing-and-testing-specifications/2-9-iterating-a-specification-based-on-output-gaps/artifacts/diagram.png",
+    "png_render_pending": true,
+    "render_command": "mmdc -i content/m1-computational-thinking/week-2/4-writing-and-testing-specifications/2-9-iterating-a-specification-based-on-output-gaps/artifacts/diagram.mmd -o content/m1-computational-thinking/week-2/4-writing-and-testing-specifications/2-9-iterating-a-specification-based-on-output-gaps/artifacts/diagram.png -w 1400 -b transparent"
+  }
+}

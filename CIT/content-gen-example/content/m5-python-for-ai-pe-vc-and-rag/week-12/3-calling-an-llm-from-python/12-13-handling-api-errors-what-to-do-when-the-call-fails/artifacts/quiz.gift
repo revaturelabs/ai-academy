@@ -1,0 +1,48 @@
+$CATEGORY: CIT/M5/week-12/12-13-handling-api-errors-what-to-do-when-the-call-fails
+
+::q1:: Your Python script sends fifty requests to the Anthropic API in a tight loop. On request forty-eight, the SDK raises an exception. The HTTP status code in the response is 429. Which exception class did the SDK raise? {
+~`anthropic.AuthenticationError` — because the API key failed to authenticate on a later request.#No — HTTP 429 means Too Many Requests, not an authentication problem; AuthenticationError is tied to HTTP 401.
+~`anthropic.APIConnectionError` — because the server stopped accepting connections after too many requests.#No — APIConnectionError means no HTTP response was received at all; a 429 is a received HTTP response, not a dropped connection.
+=`anthropic.RateLimitError` — because the account has exceeded the allowed request rate and the server returned HTTP 429.#Correct — HTTP 429 (Too Many Requests) maps directly to RateLimitError in the Anthropic SDK's exception hierarchy.
+~`anthropic.BadRequestError` — because repeated requests with the same parameters violate the API's rules.#No — BadRequestError corresponds to HTTP 400 or 422, meaning the request itself was malformed, not that it was sent too frequently.
+#### Tests identification of RateLimitError as the exception for HTTP 429 rate-limit responses (corpus §5.1, §5.4).
+}
+
+::q2:: In the Anthropic SDK exception hierarchy, which class sits at the very top — the one that all other Anthropic exceptions inherit from? {
+=`anthropic.AnthropicError` — it is the root base class; every exception the SDK can raise inherits from it.#Correct — AnthropicError is the top of the Anthropic exception tree; catching it would catch everything the SDK raises.
+~`anthropic.APIError` — it is the root base class because all Anthropic errors involve an API call.#No — APIError inherits from AnthropicError; it covers errors that received an HTTP response, but network-level errors like APIConnectionError are not under APIError.
+~`anthropic.APIStatusError` — it is the root because every SDK exception has an HTTP status code attached.#No — APIStatusError is a subclass of APIError and covers non-2xx HTTP status codes; it is near the leaf of the tree, not the root.
+~`anthropic.APIConnectionError` — it is the root class because network failures are the most fundamental error type.#No — APIConnectionError sits at the same level as APIError, both inheriting from AnthropicError; it is not the root of the hierarchy.
+#### Tests knowledge of the SDK exception hierarchy with AnthropicError as the root class (corpus §5.2).
+}
+
+::q3:: A developer writes a `try/except` block for an Anthropic API call. They want to handle `RateLimitError` with a sleep-and-retry and handle any other Anthropic SDK error with a generic log. In which order should the `except` clauses appear? {
+~`except anthropic.AnthropicError` first, then `except anthropic.RateLimitError` — general first so nothing is missed.#No — Python matches the first clause that fits; putting AnthropicError first means RateLimitError is caught by the general clause and the specific handler never runs.
+~Either order works — Python checks all `except` clauses before deciding which one to use for a given exception.#No — Python matches `except` clauses strictly top to bottom and stops at the first match; order is critical.
+~`except anthropic.APIError` first, then `except anthropic.RateLimitError` — parent classes must always precede subclasses.#No — this is the opposite of the correct rule; placing the parent first makes the subclass handler unreachable dead code, because APIError already matches RateLimitError.
+=`except anthropic.RateLimitError` first, then `except anthropic.AnthropicError` — most-specific class must come before more-general ones.#Correct — Python stops at the first matching clause, so the specific handler must appear before any parent class that would also match.
+#### Tests the rule that most-specific except clauses must come before more-general ones to avoid unreachable handlers (corpus §5.2, §6).
+}
+
+::q4:: The Anthropic API returns HTTP 401 and the SDK raises `AuthenticationError`. What is the correct next action? {
+~Add `time.sleep(10)` and retry the call — the server may have temporarily rejected valid credentials.#No — AuthenticationError means the API key is missing or wrong; sleeping and retrying the same invalid key will always produce the same 401 response and wastes time.
+=Fix the API key — check that `ANTHROPIC_API_KEY` is set correctly, then rerun; retrying the same key will always fail.#Correct — a 401 means the credentials are rejected; the key is either absent, incorrect, or revoked, and no number of retries will change that outcome.
+~Catch the error silently with a bare `except` and continue to the next item — authentication errors are usually transient.#No — AuthenticationError is not transient; silently ignoring it hides the root cause and every subsequent call will also fail until the key is fixed.
+~Wrap the call in a loop and retry up to three times — the SDK sometimes raises AuthenticationError due to a timing issue.#No — there is no timing-based 401; the key either passes authentication or it does not, and repeated retries do not help.
+#### Tests the correct response to AuthenticationError — fix credentials, do not retry (corpus §5.3, §8).
+}
+
+::q5:: Inside a retry loop for `RateLimitError`, a developer adds `time.sleep(10)` between attempts. What does `time.sleep(10)` do, and why is it used here? {
+~It cancels any in-flight requests from the previous attempt and resets the SDK connection pool before the next try.#No — `time.sleep` simply pauses execution; it does not interact with the network, cancel requests, or reset connection pools.
+~It tells Anthropic's servers to pause billing for ten seconds so the rate-limit quota refills faster.#No — `time.sleep` affects only the local Python process; it has no communication with Anthropic's servers and does not influence billing or quota timers remotely.
+=It pauses the Python process for ten seconds, giving Anthropic's servers time to replenish the request quota before the next attempt.#Correct — rate limits are time-based; sleeping gives the quota window time to reset on the server side, so the next attempt is more likely to succeed.
+~It sets a ten-second timeout on the next API call so that a slow server response is automatically cancelled.#No — `time.sleep` is a pause before the call, not a timeout on the call; request timeouts are set via SDK parameters, not `time.sleep`.
+#### Tests understanding of what time.sleep() does in a retry pattern and why it is needed for RateLimitError (corpus §5.4).
+}
+
+::q6:: Name the Anthropic SDK exception that is raised when your request is malformed (for example, you passed an invalid model name), and name the exception raised when your script cannot reach Anthropic's servers at all. For each one, state whether you should retry the call immediately or fix the underlying problem first. {
+=BadRequestError; do not retry, fix the code
+=BadRequestError and APIConnectionError; BadRequestError means fix the code, APIConnectionError means check connectivity before retrying
+=BadRequestError is raised for a malformed request — it indicates a bug in your code and should not be retried because the same bad request will always fail. APIConnectionError is raised when the SDK cannot reach Anthropic's servers — it indicates a network problem such as no internet connection or a firewall, and a tight retry loop will not help; check connectivity first.
+#### Tests knowledge of BadRequestError and APIConnectionError, what each indicates, and the correct response to each (corpus §5.1, §5.5).
+}

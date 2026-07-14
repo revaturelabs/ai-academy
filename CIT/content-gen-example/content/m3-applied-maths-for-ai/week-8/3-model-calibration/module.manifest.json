@@ -1,0 +1,20 @@
+{
+  "type": "module",
+  "position": 3,
+  "title": "Model Calibration",
+  "slug": "3-model-calibration",
+  "course_code": "M3",
+  "course_slug": "m3-applied-maths-for-ai",
+  "week_nums": [
+    8
+  ],
+  "session_name_by_week": {
+    "8": "Applied Maths Lab"
+  },
+  "narrative_seed_by_week": {
+    "8": "Embeddings hands-on: use the TensorFlow Embedding Projector to compare domain-specific word clusters / Similarity scoring: compute cosine similarity between 5 sentence pairs using pre-computed vectors / Evaluation metrics deepdive: precision vs recall trade-off — when does recall matter more than precision? / Confusion matrix in practice: given a 20-row classification table, compute accuracy, precision, recall, F1 / Calibration: does the model’s confidence match its actual accuracy? / Domain evaluation plan: which statistical measure will you use to evaluate your Capstone system?"
+  },
+  "lab_activity_seed_by_week": {
+    "8": "Embedding explorer: pick 10 domain words; plot 2D projections; identify clusters and outliers / Confusion matrix exercise: given a 20-case table, compute all four metrics by hand / Calibration check: run a 10-question quiz with Claude; record confidence vs actual accuracy / Domain evaluation plan: write a one-page evaluation design — metric, test set size, pass threshold / Journal Entry #4"
+  }
+}

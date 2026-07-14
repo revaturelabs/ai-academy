@@ -1,0 +1,17 @@
+{
+  "topic_id": "14.10",
+  "title": "Writing an architectural decision — choosing the right pattern for your system",
+  "word_count": 1310,
+  "reading_minutes": 7,
+  "generated_at": "2026-06-16T00:00:00Z",
+  "target_word_range": [1200, 1400],
+  "sections": ["Overview", "Key Concepts", "Worked Example", "In Practice", "Key Takeaways", "References"],
+  "diagram_embedded": true,
+  "citations": [
+    "[1] adr.github.io",
+    "[2] AWS ADR guide",
+    "[3] Chip Huyen AI Engineering",
+    "[4] Nygard blog cognitect.com",
+    "[5] Fowler martinfowler.com"
+  ]
+}

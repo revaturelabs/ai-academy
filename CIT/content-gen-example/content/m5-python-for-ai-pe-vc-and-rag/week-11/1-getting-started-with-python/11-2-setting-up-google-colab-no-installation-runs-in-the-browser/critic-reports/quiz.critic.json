@@ -1,0 +1,41 @@
+{
+  "passed": true,
+  "checks": {
+    "positional_bias": {
+      "passed": true,
+      "distribution": [2, 1, 2, 1],
+      "max_share": 0.333,
+      "note": "Correct answers at positions 0-3 hold shares 0.333, 0.167, 0.333, 0.167 — all below the 0.40 threshold."
+    },
+    "length_bias": {
+      "passed": true,
+      "longest_correct_rate": 0,
+      "per_question_ratios": [1.010, 1.104, 1.190, 1.130, 1.147, 1.165],
+      "note": "No question has a correct-answer length ratio above 1.20. Rate of violations = 0/6 = 0.00, well below the 0.25 threshold."
+    },
+    "distractor_plausibility": {
+      "passed": true,
+      "absurd_rate": 0.0,
+      "note": "All 18 distractors reflect plausible beginner misconceptions (confusing runtime reset with cell deletion, confusing Shift+Enter with Ctrl+M B, etc.). Zero absurd free-point distractors."
+    },
+    "objective_coverage": {
+      "passed": true,
+      "uncovered_objectives": [],
+      "coverage_map": {
+        "LO1_identify_interface_parts": "q1",
+        "LO2_open_notebook_add_cells": "q2",
+        "LO3_run_code_cell_output_area": "q3",
+        "LO4_runtime_session_reset": "q4",
+        "LO5_save_drive_download_ipynb": "q5",
+        "LO6_keyboard_shortcuts": "q6"
+      }
+    },
+    "beginner_scope": {
+      "passed": true,
+      "findings": [],
+      "note": "All stems use plain language; acronyms (.ipynb, Ctrl+M B, Shift+Enter) are introduced in this topic's corpus. No concepts from 11.3 or later appear."
+    }
+  },
+  "verdict": "All 5 checks pass — positional distribution even (max 33%), no length bias, all distractors plausible, all 6 LOs covered 1-to-1, beginner-appropriate scope throughout.",
+  "at": "2026-06-12T00:20:00Z"
+}

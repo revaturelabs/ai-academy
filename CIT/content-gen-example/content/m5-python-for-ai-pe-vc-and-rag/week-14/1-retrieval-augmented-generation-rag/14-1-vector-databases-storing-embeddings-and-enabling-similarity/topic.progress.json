@@ -1,0 +1,184 @@
+{
+  "topic_id": "14.1",
+  "stage": "topic_artifacts_approved",
+  "gates": {
+    "resources_captured": true,
+    "corpus_generated": true,
+    "corpus_critic_passed": true,
+    "corpus_human_approved": true,
+    "reading_generated": true,
+    "reading_critic_passed": true,
+    "quiz_generated": true,
+    "quiz_critic_passed": true,
+    "diagram_generated": true,
+    "diagram_critic_passed": true,
+    "topic_artifacts_human_approved": true,
+    "module_drift_passed": true,
+    "week_human_approved": true,
+    "course_drift_passed": true
+  },
+  "history": [
+    {
+      "at": "2026-06-13T00:00:00Z",
+      "op": "set",
+      "gate": "resources_captured",
+      "value": true
+    },
+    {
+      "at": "2026-06-13T00:00:00Z",
+      "op": "stage",
+      "to": "awaiting_corpus"
+    },
+    {
+      "at": "2026-06-13T00:00:00Z",
+      "op": "log",
+      "msg": "Captured 4 resources (source=web_search) — primary: ibm.com/think/topics/vector-database, ibm.com/think/topics/vector-search, towardsai.net vector-databases-101, zilliz.com HNSW explainer"
+    },
+    {
+      "at": "2026-06-13T00:10:00Z",
+      "op": "set",
+      "gate": "corpus_generated",
+      "value": true
+    },
+    {
+      "at": "2026-06-13T00:10:00Z",
+      "op": "stage",
+      "to": "awaiting_corpus_critic"
+    },
+    {
+      "at": "2026-06-13T00:10:00Z",
+      "op": "log",
+      "msg": "Corpus generated — standard depth, diagram=true, ~2900 words. 15 concepts introduced. Sections 2-11 all written. 14.2 RAG named-and-deferred. All 4 primary resources cited."
+    },
+    {
+      "at": "2026-06-13T00:15:00Z",
+      "op": "set",
+      "gate": "corpus_critic_passed",
+      "value": true
+    },
+    {
+      "at": "2026-06-13T00:15:00Z",
+      "op": "stage",
+      "to": "awaiting_corpus_human_review"
+    },
+    {
+      "at": "2026-06-13T00:15:00Z",
+      "op": "log",
+      "msg": "Corpus critic PASSED cycle 1 — all 6 checks green. Soft notes: ~2908w (3% below standard floor, not hard fail); 'sentence-transformers' in §6 unglossed (low severity). No forward refs, no scope creep, all 4 primary resources cited."
+    },
+    {
+      "at": "2026-06-13T00:20:00Z",
+      "op": "set",
+      "gate": "corpus_human_approved",
+      "value": true
+    },
+    {
+      "at": "2026-06-13T00:20:00Z",
+      "op": "stage",
+      "to": "corpus_approved"
+    },
+    {
+      "at": "2026-06-13T00:20:00Z",
+      "op": "log",
+      "msg": "HITL #2 complete — all 9 sections approved as written, depth=standard, expected_delivery=7min, diagram=true."
+    },
+    {
+      "at": "2026-06-13T00:25:00Z",
+      "op": "set",
+      "gate": "diagram_generated",
+      "value": true
+    },
+    {
+      "at": "2026-06-13T00:25:00Z",
+      "op": "set",
+      "gate": "diagram_critic_passed",
+      "value": true
+    },
+    {
+      "at": "2026-06-13T00:25:00Z",
+      "op": "log",
+      "msg": "Diagram critic PASSED cycle 1 — 7-node LR pipeline (Document text → Embedding model → Vector → Vector DB/HNSW + User query → Query vector → Vector DB → Top-k). PNG rendered 1400px, visual inspection clean."
+    },
+    {
+      "at": "2026-06-13T00:30:00Z",
+      "op": "set",
+      "gate": "reading_generated",
+      "value": true
+    },
+    {
+      "at": "2026-06-13T00:30:00Z",
+      "op": "stage",
+      "to": "awaiting_reading_critic"
+    },
+    {
+      "at": "2026-06-13T00:30:00Z",
+      "op": "log",
+      "msg": "Reading generated — 1368 words, 7 min. All 4 primary resources cited. Diagram embedded. sentence-transformers soft finding resolved (omitted from reading). 6 fixed sections, no frontmatter."
+    },
+    {
+      "at": "2026-06-13T00:30:00Z",
+      "op": "set",
+      "gate": "quiz_generated",
+      "value": true
+    },
+    {
+      "at": "2026-06-13T00:30:00Z",
+      "op": "log",
+      "msg": "Quiz generated — 6 MCQ, positions [1,3,0,2,1,3], max_share=0.333, bias_defense_applied=true. Length bias resolved in Q1/Q2/Q4/Q5/Q6."
+    },
+    {
+      "at": "2026-06-13T00:35:00Z",
+      "op": "set",
+      "gate": "reading_critic_passed",
+      "value": true
+    },
+    {
+      "at": "2026-06-13T00:35:00Z",
+      "op": "log",
+      "msg": "Reading critic PASSED cycle 1 — 1368w, 7min, all 4 cited, diagram embedded, no forward refs, scope clean, beginner readable."
+    },
+    {
+      "at": "2026-06-13T00:35:00Z",
+      "op": "set",
+      "gate": "quiz_critic_passed",
+      "value": true
+    },
+    {
+      "at": "2026-06-13T00:35:00Z",
+      "op": "log",
+      "msg": "Quiz critic PASSED cycle 1 — 6 MCQ, all 6 LOs covered, max_share=0.333, bias_defense_applied, no length bias violations, no out-of-scope questions."
+    },
+    {
+      "at": "2026-06-13T00:35:00Z",
+      "op": "stage",
+      "to": "awaiting_topic_artifacts_review"
+    },
+    {
+      "at": "2026-06-13T00:35:00Z",
+      "op": "log",
+      "msg": "All artifact critics passed — advancing to HITL #3."
+    },
+    {
+      "at": "2026-06-15T00:00:00Z",
+      "op": "set",
+      "gate": "topic_artifacts_human_approved",
+      "value": true
+    },
+    {
+      "at": "2026-06-15T00:00:00Z",
+      "op": "stage",
+      "to": "topic_artifacts_approved"
+    },
+    {
+      "at": "2026-06-15T00:00:00Z",
+      "op": "log",
+      "msg": "HITL #3 approved — reading 1368w/7min PASS, quiz 6MCQ bias-defended PASS (cycle 1), diagram 7-node LR PASS (cycle 1). No carry-over failures."
+    },
+    {
+      "at": "2026-06-23T17:39:31Z",
+      "op": "set",
+      "gate": "course_drift_passed",
+      "value": true
+    }
+  ]
+}

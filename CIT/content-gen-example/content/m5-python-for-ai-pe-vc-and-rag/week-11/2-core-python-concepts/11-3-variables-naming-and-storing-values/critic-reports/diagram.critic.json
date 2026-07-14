@@ -1,0 +1,38 @@
+{
+  "verdict": "pass",
+  "cycle": 1,
+  "findings": [],
+  "preflight": {
+    "mermaid_parse_error": false,
+    "node_overflow": false,
+    "node_underflow": false,
+    "label_too_long": false,
+    "concept_drift": false,
+    "jargon_label": false,
+    "dangling_concept_node": false,
+    "linear_flow_branched": false
+  },
+  "visual_checks": {
+    "nodes_overlap": false,
+    "label_truncated": false,
+    "crossings_illegible": false,
+    "layout_wrong_for_intent": false,
+    "missing_side_panel_pattern": false,
+    "side_panels_hollow": false,
+    "whitespace_imbalance": false,
+    "subtitle_illegible": false,
+    "color_tier_violation": false,
+    "edge_label_collision": false
+  },
+  "stats": {
+    "nodes": 5,
+    "edges": 4,
+    "layout": "flowchart TB (hub — Variable → str, int, float, bool)",
+    "labels": ["Variable", "str", "int", "float", "bool"],
+    "concepts_mapped": ["variable/assignment operator", "string data type", "integer data type", "float data type", "boolean data type"],
+    "mmd_path": "artifacts/diagram.mmd",
+    "png_path": "artifacts/diagram.png",
+    "png_dims": "~1000x300px rendered at 1400px width"
+  },
+  "at": "2026-06-12T00:26:00Z"
+}

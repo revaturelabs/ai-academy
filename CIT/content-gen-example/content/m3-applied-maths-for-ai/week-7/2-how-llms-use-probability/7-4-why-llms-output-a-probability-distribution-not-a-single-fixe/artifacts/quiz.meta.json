@@ -1,0 +1,41 @@
+{
+  "topic_id": "7.4",
+  "generated_at": "2026-06-22T00:00:00Z",
+  "format": "gift",
+  "question_count": 5,
+  "$bias_defense_applied": true,
+  "$shuffle_seed": "7.4-hash1",
+  "correct_position_distribution": [1, 3, 0, 2, 1],
+  "questions": [
+    {
+      "id": "q1",
+      "type": "mcq",
+      "objective_ref": "Explain in plain language what a probability distribution over a vocabulary is and why an LLM produces one at each step.",
+      "correct_position": 1
+    },
+    {
+      "id": "q2",
+      "type": "mcq",
+      "objective_ref": "Describe what a token is and why LLMs work on tokens rather than whole words or whole sentences.",
+      "correct_position": 3
+    },
+    {
+      "id": "q3",
+      "type": "mcq",
+      "objective_ref": "Trace the three-stage loop — take in context, compute a distribution, pick a token — and explain what happens at each stage.",
+      "correct_position": 0
+    },
+    {
+      "id": "q4",
+      "type": "mcq",
+      "objective_ref": "Explain the difference between a deterministic system (always gives the same answer) and a stochastic system (can give different answers), and identify which category LLMs belong to.",
+      "correct_position": 2
+    },
+    {
+      "id": "q5",
+      "type": "mcq",
+      "objective_ref": "Give one everyday analogy and one LLM-specific example that illustrate why the same prompt can produce different outputs on different runs.",
+      "correct_position": 1
+    }
+  ]
+}

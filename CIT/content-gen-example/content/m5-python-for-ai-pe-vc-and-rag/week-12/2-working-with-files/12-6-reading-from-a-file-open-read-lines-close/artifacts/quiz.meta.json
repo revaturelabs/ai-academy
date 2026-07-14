@@ -1,0 +1,21 @@
+{
+  "topic_id": "12.6",
+  "topic_title": "Reading from a file — open, read lines, close",
+  "generated_at": "2026-06-14T00:00:00Z",
+  "$bias_defense_applied": true,
+  "$shuffle_seed": "manual-positional-spread",
+  "question_count": 6,
+  "mcq_count": 6,
+  "short_answer_count": 0,
+  "correct_position_distribution": [1, 2, 0, 1, 3, 2],
+  "position_counts": {"0": 1, "1": 2, "2": 2, "3": 1},
+  "max_position_share": 0.333,
+  "objective_refs": {
+    "q1": "LO1 — open() return value and file object concept",
+    "q2": "LO2 — .read() return value",
+    "q3": "LO3 — .readlines() vs .readline() and trailing \\n",
+    "q4": "LO4 — .close() and resource cleanup",
+    "q5": "LO5 — with block and automatic close",
+    "q6": "LO6 — for line in f: iteration and .strip()"
+  }
+}

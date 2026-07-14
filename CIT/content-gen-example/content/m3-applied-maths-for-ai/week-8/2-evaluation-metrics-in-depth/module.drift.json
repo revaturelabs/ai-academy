@@ -1,0 +1,45 @@
+{
+  "type": "module-drift-critic-report",
+  "module_slug": "2-evaluation-metrics-in-depth",
+  "module_title": "Evaluation Metrics in Depth",
+  "course_code": "M3",
+  "week_num": 8,
+  "topics_examined": ["8.3", "8.4", "8.5"],
+  "passed": true,
+  "verdict": "PASS — the 8.3 -> 8.4 -> 8.5 trio is a coherent, well-ordered progression with consistent terminology, no forward references, and no duplicated teaching.",
+  "at": "2026-06-22T08:15:00Z",
+  "checks": {
+    "terminology_consistency": {
+      "passed": true,
+      "summary": "precision, recall, false positive/FP, false negative/FN, true positive/TP, true negative/TN, F1, harmonic mean, threshold, and accuracy are used identically across all three topics. Formula notation matches verbatim: precision = TP/(TP+FP), recall = TP/(TP+FN), F1 = 2x(precision x recall)/(precision + recall). The 'false alarm' = FP and 'miss' = FN glosses introduced in 8.3 are reused unchanged in 8.4 and 8.5. TP/FP/FN abbreviations are introduced in 8.5 as the short forms of the full names taught in 8.3, with explicit '(from 8.3)' tags — no synonym drift.",
+      "findings": []
+    },
+    "prerequisites_respected": {
+      "passed": true,
+      "summary": "8.3 prerequisites=[] (entry point); 8.4 prerequisites=[8.3]; 8.5 prerequisites=[8.3, 8.4]. All references point strictly backward in delivery order. No prerequisite references a later-positioned topic.",
+      "findings": []
+    },
+    "learning_arc": {
+      "passed": true,
+      "summary": "The trio forms the intended arc: 8.3 defines the two base metrics (precision, recall) and the trade-off; 8.4 combines them into a single metric (F1) via the harmonic mean; 8.5 synthesizes all of it, introduces the confusion matrix + true negative + accuracy, and computes all four metrics by hand. The union of objectives covers the module title 'Evaluation Metrics in Depth' — define the two metrics, combine into F1, compute all by hand. No uncovered facet within this trio.",
+      "findings": []
+    },
+    "no_duplicated_core_concepts": {
+      "passed": true,
+      "summary": "Precision and recall are taught once (8.3) and only refreshed downstream: 8.4 restates them in one recap sentence before building F1; 8.5 re-lists the formulas explicitly tagged '(from 8.3)'/'(from 8.4)' as a labeled refresher cast in confusion-matrix-cell terms, not a re-teach. The harmonic mean is taught once in 8.4 and only referenced in 8.5. New material is cleanly partitioned: F1/harmonic mean live in 8.4; confusion matrix, true negative, and accuracy debut in 8.5. No pair exceeds the 0.6 Core-Concepts overlap threshold.",
+      "findings": []
+    },
+    "lab_activity_alignment": {
+      "passed": true,
+      "summary": "The sprint lab seed 'Confusion matrix exercise: given a 20-case table, compute all four metrics by hand' is directly supported by 8.5: its Worked Example uses a 20-email confusion matrix and computes accuracy, precision, recall, and F1 step by step, and its 'Try it yourself' provides a second 25-case matrix for independent practice. The narrative seed 'precision vs recall trade-off — when does recall matter more than precision?' maps to 8.3. Lab is supported by at least one topic's hands-on artifact.",
+      "findings": []
+    },
+    "audience_level_consistency": {
+      "passed": true,
+      "summary": "All three topics hold the absolute-beginner register: concrete spam/cat-photo/fraud framings, formulas always glossed in plain words, no calculus or unexplained jargon. No later topic assumes a concept cold — every term used in 8.4/8.5 is either introduced earlier in delivery order (precision, recall, FP, FN, TP in 8.3; F1, harmonic mean in 8.4) or defined in place (TN, accuracy, confusion matrix in 8.5). No register/depth spike above neighbors. The accepted 8.5 deep-floor word-count deviation (~1520w, accepted at HITL#3 on no-pad grounds) is a per-topic length matter, not a cross-topic drift defect, and is not flagged here.",
+      "findings": []
+    }
+  },
+  "findings": [],
+  "notes": "8.5 status field in sequence.index.json reads 'corpus_drafted' but topic is reported at topic_artifacts_approved per HITL#3 input; status-field staleness is a manifest bookkeeping matter, out of scope for cross-topic coherence drift."
+}

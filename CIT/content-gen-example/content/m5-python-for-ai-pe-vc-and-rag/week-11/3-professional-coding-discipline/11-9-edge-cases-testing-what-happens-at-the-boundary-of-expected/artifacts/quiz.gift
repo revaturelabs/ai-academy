@@ -1,0 +1,46 @@
+$CATEGORY: CIT/M5/week-11/11-9-edge-cases-testing-what-happens-at-the-boundary-of-expected
+
+::q1:: A function calculates the average mark for a class. A developer tests it with marks of 55, 72, and 84 and it works perfectly. Why does this NOT mean the function is fully tested?
+{
+~Those three marks cover every possible group of inputs, so the function is fully tested#Three inputs from the comfortable middle do not represent all groups — the boundaries of the valid range remain untested.
+=Those marks are comfortable middle values — boundary inputs like zero or an empty list may still fail#Correct — bugs hide at the edges of the input range, not in the middle. Normal inputs that work prove nothing about boundary inputs.
+~The function should be tested with much larger numbers first before declaring it fully tested#Scale is not the issue; the problem is that boundary inputs — the minimum, maximum, and empty cases — have not been tried.
+~A function that passes three tests is statistically reliable enough for production use#The number of tests matters less than which inputs are chosen; three middle-range tests all skip the boundary cases where bugs concentrate.
+#### Tests why passing normal inputs does not confirm boundary correctness (corpus §5.3). Bugs hide at the edges of the input range, not in its comfortable middle.
+}
+
+::q2:: A function checks whether a student's mark earns a grade. Which THREE inputs together cover the most important edge-case categories for this function?
+{
+~75, 80, and 85 — one from each of the B and C bands plus a passing score#All three are comfortable middle values inside a single grade band; none of them sits on a boundary or at the extremes of the range.
+~50, 60, and 70 — a spread of failing and passing scores across the lower range#50 and 60 are middle-band values; only 70 is a boundary. The empty-input and zero categories are not represented.
+~10, 50, and 90 — values that cover the low, middle, and high parts of the range#10 and 90 are closer to the ends but are not the actual minimum/maximum (0, 100); the empty-input category is entirely absent.
+=0 (minimum), 100 (maximum), and an empty list [] — one from each edge-case category#Correct — these three represent the zero, minimum/maximum value, and empty-input categories. Each targets a distinct type of boundary failure.
+#### Tests identification of the three main edge-case categories (corpus §5.4). Zero, min/max, and empty input each expose a different class of boundary bug.
+}
+
+::q3:: A developer writes a grade function. Which of the following inputs is a normal case, NOT an edge case?
+{
+=A mark of 78 — comfortably inside the C band, away from any boundary#Correct — 78 is comfortably inside a single grade band and does not sit near any boundary. It is a typical normal-case input.
+~A mark of 0 — the lowest value a student can receive#Zero is the minimum boundary of the valid range and also a falsy value in Python — it is a textbook edge case, not a normal case.
+~A mark of 100 — the highest value a student can receive#100 is the maximum boundary of the valid range; it is an edge case that tests the top end of all grade conditions.
+~A mark of 70 — the exact dividing line between the C and F grades#70 is a boundary value — the precise input where a > versus >= error in the code would produce a wrong grade. That is an edge case.
+#### Tests the distinction between normal inputs and edge-case inputs (corpus §5.2). A normal case sits in the middle of a group; an edge case sits at or on the boundary between groups.
+}
+
+::q4:: Before running her grade-calculator script with the edge-case input [70, 70, 70], a student should do which of the following FIRST?
+{
+~Run the script immediately and record whatever output appears, then decide afterwards whether the result is correct#Running first and then deciding what is correct defeats the purpose of testing — the brain accepts whatever it sees as right.
+~Ask a classmate to run the same input and compare results to confirm the script works#Comparing outputs with a classmate does not replace predicting the correct result; both scripts could share the same bug.
+=Read the spec, then write down what the output should be before running anything#Correct — writing a prediction from the spec before running is the core test-prediction technique. It is the only way to know whether the actual output is right or wrong.
+~Change the input slightly to 71, 71, 71 so the test is easier to reason about#Changing the input away from the boundary defeats the purpose — 70 is the edge case precisely because it sits on the C/F dividing line.
+#### Tests the test-prediction technique — write the expected output before running (corpus §5.5). Without a prior prediction, any output looks acceptable and the test cannot detect a bug.
+}
+
+::q5:: A student tests a grade function with a mark of 75 and gets grade C. She tests with 60 and gets grade F. Both results look right. She then tests with exactly 70 and gets grade F — but the spec says 70–79 is C. What type of error does this reveal, and which line of code most likely caused it?
+{
+~A silent failure caused by an empty list — the function received no input and returned a default grade F#An empty list is a different edge-case category. The student supplied mark 70 successfully; the function ran and returned a result.
+~A type error because Python treats the integer 70 as a string in comparisons, producing a wrong result#Python does not silently convert integers to strings in comparisons; a type mismatch would cause a loud error, not a wrong grade.
+~A scope error — a global variable holding a threshold overwrote the boundary value 70 inside the function#Variable scope issues do not cause a consistent off-by-one at exactly one boundary value; that pattern points to the comparison operator.
+=An off-by-one error — the condition reads `if mark > 70\:` instead of `if mark >= 70\:`, excluding 70 from C#Correct — using strict greater-than excludes the boundary value itself. Only the exact input of 70 fails; everything above it passes, matching the classic off-by-one pattern.
+#### Tests recognition of an off-by-one error caught by a boundary edge case (corpus §5.3). The strict > operator excludes the boundary value; changing it to >= fixes the bug.
+}

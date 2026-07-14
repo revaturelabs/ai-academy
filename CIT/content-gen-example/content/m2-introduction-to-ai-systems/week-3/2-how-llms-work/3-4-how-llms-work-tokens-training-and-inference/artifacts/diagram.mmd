@@ -1,0 +1,39 @@
+---
+title: "From Raw Text to Generated Token — LLM Inference Pipeline"
+config:
+  theme: base
+  themeVariables:
+    primaryColor: "#a5d8ff"
+    primaryBorderColor: "#4a9eed"
+    lineColor: "#555"
+  flowchart:
+    htmlLabels: true
+    curve: basis
+---
+flowchart LR
+    classDef start  fill:#a5d8ff,stroke:#4a9eed,stroke-width:2px,color:#1e3a5f
+    classDef auto   fill:#d0bfff,stroke:#8b5cf6,stroke-width:2px,color:#2e1065
+    classDef done   fill:#b2f2bb,stroke:#22c55e,stroke-width:2px,color:#14532d
+
+    subgraph PREFILL["PREFILL PHASE — full prompt processed in parallel"]
+        direction LR
+        A["<b>Raw Text</b><br/><span style='font-size:11px;color:#6d28d9'>your prompt as typed</span>"]
+        B["<b>Tokeniser</b><br/><span style='font-size:11px;color:#6d28d9'>splits text into subword chunks</span>"]
+        C["<b>Token IDs</b><br/><span style='font-size:11px;color:#6d28d9'>each chunk → unique integer</span>"]
+        D["<b>Embedding Lookup</b><br/><span style='font-size:11px;color:#6d28d9'>integer → meaning vector</span>"]
+        E["<b>Transformer Layers</b><br/><span style='font-size:11px;color:#6d28d9'>attention relates all tokens</span>"]
+    end
+
+    subgraph DECODE["DECODE PHASE — one new token generated per step"]
+        direction LR
+        F["<b>Vocabulary Scores</b><br/><span style='font-size:11px;color:#6d28d9'>probability for every possible next token</span>"]
+        G["<b>Next Token Selected</b><br/><span style='font-size:11px;color:#6d28d9'>sampled from score distribution</span>"]
+    end
+
+    A --> B --> C --> D --> E --> F --> G
+    G -- "<span style='font-size:11px'>appended and fed back in<br/>(autoregressive decode)</span>" --> E
+
+    class A start
+    class B,C,D,E auto
+    class F auto
+    class G done

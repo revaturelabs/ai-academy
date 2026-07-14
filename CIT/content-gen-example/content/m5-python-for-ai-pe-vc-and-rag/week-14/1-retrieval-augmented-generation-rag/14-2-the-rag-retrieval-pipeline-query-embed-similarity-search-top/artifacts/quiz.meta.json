@@ -1,0 +1,24 @@
+{
+  "topic_id": "14.2",
+  "artifact": "quiz",
+  "question_count": 6,
+  "correct_answer_positions": [
+    0,
+    2,
+    1,
+    0,
+    3,
+    3
+  ],
+  "max_share": 0.333,
+  "bias_defense_applied": true,
+  "lo_coverage": [
+    "LO1",
+    "LO2",
+    "LO3",
+    "LO4",
+    "LO5",
+    "LO5"
+  ],
+  "generated_at": "2026-06-15T00:35:00Z"
+}

@@ -1,0 +1,58 @@
+{
+  "topic_id": "5.7",
+  "generated_at": "2026-06-22T08:20:00Z",
+  "format": "gift",
+  "question_count": 6,
+  "$bias_defense_applied": true,
+  "$shuffle_seed": "5.7-eu-ai-act-risk-tiers",
+  "correct_position_distribution": [2, 0, 3, 1, 0, 3],
+  "shuffle_constraint_check": {
+    "max_share": 0.33,
+    "max_share_threshold": 0.40,
+    "max_share_ok": true,
+    "all_four_positions_used": true,
+    "positions_present": [0, 1, 2, 3]
+  },
+  "option_length_balance": {
+    "method": "Each option set kept within ~20% of mean word count; correct answer is NOT systematically the longest. Longest option is the CORRECT answer in 1 of 6 questions (q1), well below the bias threshold.",
+    "longest_option_correct_count": 1
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "type": "mcq",
+      "objective_ref": "Explain what the EU AI Act is, in one or two plain sentences.",
+      "correct_position": 2
+    },
+    {
+      "id": "q2",
+      "type": "mcq",
+      "objective_ref": "Name the four risk tiers — unacceptable, high, limited, and minimal — and order them from most to least dangerous.",
+      "correct_position": 0
+    },
+    {
+      "id": "q3",
+      "type": "mcq",
+      "objective_ref": "Give a concrete example of an AI system in each tier (social scoring = unacceptable).",
+      "correct_position": 3
+    },
+    {
+      "id": "q4",
+      "type": "mcq",
+      "objective_ref": "Describe, at a high level, what the law requires for each tier — high-risk obligations: documentation, testing, human oversight.",
+      "correct_position": 1
+    },
+    {
+      "id": "q5",
+      "type": "mcq",
+      "objective_ref": "Give a concrete example of an AI system in each tier + what the law requires per tier (minimal = no mandatory rules; conformity assessment is high-risk only).",
+      "correct_position": 0
+    },
+    {
+      "id": "q6",
+      "type": "mcq",
+      "objective_ref": "Connect the Act back to the four pillars from 5.4 — see how it turns ethics into enforceable law.",
+      "correct_position": 3
+    }
+  ]
+}

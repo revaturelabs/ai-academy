@@ -1,0 +1,185 @@
+{
+  "topic_id": "10.7",
+  "stage": "topic_artifacts_approved",
+  "gates": {
+    "resources_captured": true,
+    "corpus_generated": true,
+    "corpus_critic_passed": true,
+    "corpus_human_approved": true,
+    "reading_generated": true,
+    "reading_critic_passed": true,
+    "quiz_generated": true,
+    "quiz_critic_passed": true,
+    "diagram_generated": true,
+    "diagram_critic_passed": true,
+    "module_drift_passed": true,
+    "course_drift_passed": false,
+    "topic_artifacts_human_approved": true,
+    "week_human_approved": true
+  },
+  "history": [
+    {
+      "at": "2026-06-13T03:46:26Z",
+      "op": "set",
+      "gate": "resources_captured",
+      "value": true
+    },
+    {
+      "at": "2026-06-13T03:46:27Z",
+      "op": "stage",
+      "to": "awaiting_corpus"
+    },
+    {
+      "at": "2026-06-13T03:46:27Z",
+      "op": "log",
+      "msg": "Captured 3 resources (source=web_search, primary: arxiv.org/2404.16957)"
+    },
+    {
+      "at": "2026-06-13T03:53:59Z",
+      "op": "set",
+      "gate": "corpus_generated",
+      "value": true
+    },
+    {
+      "at": "2026-06-13T03:53:59Z",
+      "op": "stage",
+      "to": "awaiting_corpus_critic"
+    },
+    {
+      "at": "2026-06-13T03:53:59Z",
+      "op": "log",
+      "msg": "Corpus generated: 5280 words, deep profile, diagram=true"
+    },
+    {
+      "at": "2026-06-13T03:57:48Z",
+      "op": "set",
+      "gate": "corpus_critic_passed",
+      "value": false
+    },
+    {
+      "at": "2026-06-13T03:57:48Z",
+      "op": "log",
+      "msg": "Corpus critic failed try 1: citation density ~35% (need >=60%) in sections 5,6,7"
+    },
+    {
+      "at": "2026-06-13T04:11:09Z",
+      "op": "set",
+      "gate": "corpus_critic_passed",
+      "value": true
+    },
+    {
+      "at": "2026-06-13T04:11:09Z",
+      "op": "stage",
+      "to": "awaiting_corpus_human_review"
+    },
+    {
+      "at": "2026-06-13T04:11:09Z",
+      "op": "log",
+      "msg": "Corpus critic passed (try 3): ~87% citation rate, 5020 words, all checks pass"
+    },
+    {
+      "at": "2026-06-13T04:22:58Z",
+      "op": "set",
+      "gate": "corpus_human_approved",
+      "value": true
+    },
+    {
+      "at": "2026-06-13T04:22:58Z",
+      "op": "stage",
+      "to": "corpus_approved"
+    },
+    {
+      "at": "2026-06-13T04:22:58Z",
+      "op": "log",
+      "msg": "HITL #2 approved: all sections, deep profile, expected_delivery_minutes=10"
+    },
+    {
+      "at": "2026-06-13T04:25:10Z",
+      "op": "set",
+      "gate": "diagram_generated",
+      "value": true
+    },
+    {
+      "at": "2026-06-13T04:25:10Z",
+      "op": "set",
+      "gate": "diagram_critic_passed",
+      "value": true
+    },
+    {
+      "at": "2026-06-13T04:25:10Z",
+      "op": "log",
+      "msg": "Diagram generated: 6-node pipeline-LR, critic passed, PNG deferred to CI (mmdc not on PATH)"
+    },
+    {
+      "at": "2026-06-13T04:28:00Z",
+      "op": "set",
+      "gate": "reading_generated",
+      "value": true
+    },
+    {
+      "at": "2026-06-13T04:28:00Z",
+      "op": "set",
+      "gate": "quiz_generated",
+      "value": true
+    },
+    {
+      "at": "2026-06-13T04:28:00Z",
+      "op": "stage",
+      "to": "awaiting_reading_critic"
+    },
+    {
+      "at": "2026-06-13T04:28:00Z",
+      "op": "log",
+      "msg": "Reading (1963w, 10min) + quiz (7q, bias_defense=true) generated"
+    },
+    {
+      "at": "2026-06-13T04:30:13Z",
+      "op": "set",
+      "gate": "reading_critic_passed",
+      "value": true
+    },
+    {
+      "at": "2026-06-13T04:30:13Z",
+      "op": "set",
+      "gate": "quiz_critic_passed",
+      "value": false
+    },
+    {
+      "at": "2026-06-13T04:30:13Z",
+      "op": "log",
+      "msg": "Reading critic PASS. Quiz critic fail try 1: length bias 3/6 MCQs (q1,q3,q5) \u00e2\u20ac\u201d auto-revising distractors"
+    },
+    {
+      "at": "2026-06-13T04:34:38Z",
+      "op": "set",
+      "gate": "quiz_critic_passed",
+      "value": true
+    },
+    {
+      "at": "2026-06-13T04:34:38Z",
+      "op": "stage",
+      "to": "awaiting_topic_artifacts_review"
+    },
+    {
+      "at": "2026-06-13T04:34:39Z",
+      "op": "log",
+      "msg": "Quiz critic PASS (try 2): length bias fixed, all 6 LOs covered, positional bias clean"
+    },
+    {
+      "at": "2026-06-13T04:37:26Z",
+      "op": "set",
+      "gate": "topic_artifacts_human_approved",
+      "value": true
+    },
+    {
+      "at": "2026-06-13T04:37:26Z",
+      "op": "stage",
+      "to": "topic_artifacts_approved"
+    },
+    {
+      "at": "2026-06-13T04:37:26Z",
+      "op": "log",
+      "msg": "HITL #3 approved: reading 1963w/10min, quiz 7q bias-clean, diagram 6-node pipeline-LR"
+    }
+  ]
+}

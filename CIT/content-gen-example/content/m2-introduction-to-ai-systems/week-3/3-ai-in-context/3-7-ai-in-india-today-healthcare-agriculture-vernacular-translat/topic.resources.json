@@ -1,0 +1,30 @@
+{
+  "topic_id": "3.7",
+  "captured_at": "2026-06-17T00:00:00Z",
+  "captured_by": "bhuvaneshwarim@revature.com",
+  "resources_source": "web_search",
+  "web_search_query": "AI applications India healthcare agriculture vernacular translation real-world 2024 2025",
+  "resources": [
+    {
+      "type": "url",
+      "value": "https://www.weforum.org/stories/2025/04/india-healthcare-ai-innovation/",
+      "role": "primary",
+      "source": "web_search",
+      "notes": "WEF April 2025 — AIIMS Centres of Excellence, diagnostics, telemedicine deployments across India"
+    },
+    {
+      "type": "url",
+      "value": "https://indiaai.gov.in/article/ai-in-agriculture-in-2025-transforming-indian-farms-for-a-sustainable-future",
+      "role": "supporting",
+      "source": "web_search",
+      "notes": "Government of India IndiaAI portal — Kisan e-Mitra chatbot, crop health monitoring, satellite data"
+    },
+    {
+      "type": "url",
+      "value": "https://netzeroindia.org/vernacular-ai-apps-india-2025/",
+      "role": "supporting",
+      "source": "web_search",
+      "notes": "Vernacular AI apps 2025 — BharatGen 22-language LLM, regional language chatbots, 75% native-language preference"
+    }
+  ]
+}

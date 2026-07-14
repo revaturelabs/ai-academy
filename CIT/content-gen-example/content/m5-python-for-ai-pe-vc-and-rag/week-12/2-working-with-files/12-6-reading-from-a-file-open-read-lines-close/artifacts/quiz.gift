@@ -1,0 +1,49 @@
+$CATEGORY: CIT/M5/week-12/12-6-reading-from-a-file-open-read-lines-close
+
+::q1:: What does Python's built-in `open("data.txt", "r")` return? {
+~A string containing all the file's text content, newlines included#Incorrect — .read() returns the file's text as a string. open() itself returns the file object that you then call .read() on.
+=A file object — a live connection to the file on disk#Correct — open() returns a file object (file handle) representing the connection. Reading methods like .read() and .readlines() belong to this object.
+~A list containing one string per line of the file, with \n preserved#Incorrect — .readlines() returns a list of lines. open() returns the file object, not any file content.
+~An integer equal to the total number of characters stored in the file#Incorrect — open() returns a file object, not a count. Use len(f.read()) after opening to count characters.
+#### Tests LO1: what open() returns and the concept of a file object (corpus §5.2)
+}
+
+::q2:: After running `content = f.read()`, what does `content` hold? {
+~A Python list of every word in the file, split on whitespace boundaries#Incorrect — .read() returns a single string, not a list. To get a word list you would call .split() on the string afterward.
+~Only the first line of the file, returned as a single string value#Incorrect — .readline() (singular) reads one line at a time. .read() consumes the entire file from the current position.
+=The entire file as one string, including all newline characters#Correct — .read() reads from the current bookmark to the end of the file and returns it as one string. Newlines (\n) are part of that string.
+~A count of characters in the file, returned as a Python integer#Incorrect — .read() returns a string, not a number. Wrap the result in len() if you need the character count.
+#### Tests LO2: .read() return value (corpus §5.3)
+}
+
+::q3:: Which statement about `.readlines()` is correct? {
+=A list of strings, one per line, each retaining its trailing \n#Correct — .readlines() reads all lines at once and returns a Python list. Each item ends with \n. All Topic 12.4 list operations (len, index, for) apply.
+~The whole file as a single string, the same result as calling .read() directly#Incorrect — .read() returns one big string. .readlines() returns a list, with one string per line of the file.
+~One line of text per call, returning an empty string '' when the file ends#Incorrect — that describes .readline() (singular). .readlines() (plural) reads all lines at once into a list.
+~A list of stripped strings with all leading and trailing whitespace removed automatically#Incorrect — .readlines() keeps each line exactly as stored in the file, \n and all. You must call .strip() on each item yourself.
+#### Tests LO3: .readlines() vs .readline() and the trailing \n (corpus §5.3)
+}
+
+::q4:: Why is it important to close a file after reading it? {
+~All edits made during reading need saving, and closing flushes them to disk#Incorrect — you opened the file in read mode ("r"); writing is not possible. Closing a read-only file saves nothing.
+=The OS limits how many files a program can hold open; unclosed files cause resource leaks#Correct — every open file uses an OS resource (a file handle). Accumulating handles in a long-running program exhausts them, causing crashes.
+~Closing resets the internal bookmark to position zero so you can re-read the file again#Incorrect — closing ends the connection entirely. To re-read a file you must call open() on it again from scratch.
+~Python pauses all further execution until every open file in the program is explicitly closed#Incorrect — Python continues running normally. The problem is gradual resource exhaustion over time, not immediate freezing.
+#### Tests LO4: .close() and resource leak prevention (corpus §5.4)
+}
+
+::q5:: What is the main advantage of `with open("marks.txt", "r") as f:` over `f = open("marks.txt", "r")`? {
+~The with block processes each line in roughly half the time of a normal open() call#Incorrect — the with block has no speed benefit over plain open(). Its purpose is guaranteed resource cleanup.
+~The with block calls .strip() on each line automatically, so no \n characters remain#Incorrect — lines inside a with block still include trailing \n. You must call .strip() on each line yourself.
+~The with block reads all lines into a list so you can access them by index afterward#Incorrect — the with block does not change how reading works. You still choose .read(), .readlines(), or for.
+=The with block automatically closes the file when the block ends, even if an error occurs#Correct — this guarantee is the key benefit: the file closes cleanly whether the block finishes normally or raises an error, with no explicit .close() needed.
+#### Tests LO5: with block and automatic file cleanup (corpus §5.5)
+}
+
+::q6:: A line read from a file is the string `"Carol,95\n"`. After `clean = line.strip()`, what does `clean` contain? {
+~"Carol,95\n" — .strip() only removes leading whitespace, not trailing newlines#Incorrect — .strip() removes both leading AND trailing whitespace, which includes the trailing \n. The result no longer contains \n.
+~"Carol" — .strip() removes everything after the comma character#Incorrect — .strip() only touches whitespace at the very start and end. Commas in the middle are untouched. Use .split(",") to separate fields.
+="Carol,95" — .strip() removes the trailing \n and any surrounding whitespace#Correct — .strip() is a string method that trims all whitespace (including \n) from both ends. The result is the clean data line without the invisible newline.
+~["Carol", "95"] — .strip() splits the line at the comma and returns a list#Incorrect — .strip() returns a cleaned string, not a list. To split on commas, call .split(",") as a separate step.
+#### Tests LO6: for line in f: iteration and .strip() (corpus §5.7)
+}

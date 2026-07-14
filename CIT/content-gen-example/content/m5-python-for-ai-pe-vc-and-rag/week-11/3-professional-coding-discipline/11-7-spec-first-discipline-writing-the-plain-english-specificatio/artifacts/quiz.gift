@@ -1,0 +1,55 @@
+$CATEGORY: CIT/M5/week-11/11-7-spec-first-discipline
+
+::q1:: A plain-English specification written before any code or AI prompt is best described as which of the following?
+{
+~A record of every variable name, loop structure, and if-statement the program will use#No — the spec describes what the program does, not how it does it. Variables and loops are implementation details.
+=A written description of a program's inputs, outputs, constraints, and examples#Yes — the spec answers what goes in, what comes out, what rules apply, and shows at least two concrete examples.
+~A step-by-step guide the programmer follows while typing out each line of code#No — that is closer to an algorithm or pseudocode, which describes how. The spec describes what.
+~A summary document written after the code is finished to record what was built and why#No — writing the spec after the code reverses the discipline. The spec must come first so it can serve as the verification standard.
+#### Tests LO1\: what a specification is. Corpus §5.1 defines the four-part spec and §4 explains why it must precede the code.
+}
+
+::q2:: A student writes this spec for a simple program\: "Input\: some marks. Output\: print the grade." Which part is missing that makes this spec unusable as a verification standard?
+{
+~A title and a short summary of the program so the AI assistant knows what to build#No — a title is helpful but not one of the four required parts. The deeper problem is about what the spec must contain.
+~The name of the programming language the code will be written in and the tools needed#No — the spec describes what the program does; the language and tools are not spec elements.
+~A step-by-step algorithm showing how the grade will be computed step by step from the marks#No — how the grade is computed is the code's job. A spec must not include implementation steps.
+=Typed inputs with ranges, constraints on the rules, and at least two concrete input-to-output examples#Yes — without these, any output the code produces could be called correct because correct was never defined.
+#### Tests LO2\: what a complete spec requires. Corpus §5.4 contrasts a complete spec with a vague one and explains why vagueness makes verification impossible.
+}
+
+::q3:: According to the spec-first workflow, what are the four steps in the correct order?
+{
+=Specify, then prompt the AI, then explain every line, then test edge cases#Yes — Step 1 is the spec, Step 2 uses the spec as the prompt, Step 3 (11.8) is the golden rule, Step 4 (11.9) is edge-case testing.
+~Prompt the AI, then write the spec from the code output, then test edge cases, then explain every line#No — writing the spec from the code reverses the discipline. The spec must exist before any prompting.
+~Specify, then test edge cases, then prompt the AI, then explain every line#No — testing comes last as Step 4. Prompting the AI must follow the spec directly in Step 2.
+~Explain every line, then specify, then prompt the AI, then test edge cases#No — you cannot explain lines that do not yet exist. Specifying always comes before any other step.
+#### Tests LO3\: the four-step workflow. Corpus §5.3 names all four steps and notes that Steps 3 and 4 belong to 11.8 and 11.9.
+}
+
+::q4:: You ask an AI to write a grade-average script and it returns code. Why is running the code immediately — without reading it first — a problem?
+{
+~Running code immediately is fine as long as the terminal shows no syntax errors or import failures#No — code can run without errors and still produce wrong output. A clean run does not confirm correctness.
+~The AI may have used a library you have not imported, which will cause an import error at runtime#No — missing imports produce a visible error. The deeper problem is about verifying that the output is correct, not about spotting import errors.
+=Without predicting the output from the spec first, there is no way to know whether the code produces a correct result#Yes — the spec's examples are the verification standard. Without predicting output first, a wrong answer can look right.
+~Running the code first is only risky if you are planning to share it with other people or submit it#No — the verification problem exists for solo work too, regardless of who will eventually see the code.
+#### Tests LO4\: why the spec is the verification standard before running. Corpus §5.2 Reason 3 and §5.5 explain the predict-before-run principle.
+}
+
+::q5:: In the grade-average lab spec, which row of the spec table contains the rule "A if average >= 90; B if average >= 80"?
+{
+~The Inputs row, because it defines what values are acceptable#No — the Inputs row names the data going in and their types and ranges, not the rules that govern behaviour.
+=The Constraints row, because it states the rules that govern the program's behaviour#Yes — grading thresholds are rules that constrain output. They belong in Constraints, not in Inputs or Outputs.
+~The Outputs row, because the letter grade is part of what the program prints#Partially — the output format shows where the letter appears, but the thresholds that determine which letter belong in Constraints.
+~The Examples row, because each example shows a grade letter in the result#No — examples show sample input-to-output pairs; they do not define the rules. Rules belong in Constraints.
+#### Tests LO5\: mapping the grade-average script to spec parts. Corpus §5.1 (spec table) and §6 show how grading thresholds map to the Constraints row.
+}
+
+::q6:: A classmate argues\: "I only need to write a spec for complex projects. For a ten-line beginner script, I just start coding." Which response best explains why this reasoning is flawed?
+{
+~The classmate is right — specs are only worth writing when the code will be longer than 50 lines#No — length does not determine whether a spec is needed. A spec serves as both a thinking tool and a verification standard at any scale.
+~The classmate is right — a spec is only needed when working with a team, not when coding on your own#No — the spec benefits a solo developer equally, forcing clarity of thought and providing a verification standard regardless of team size.
+~Writing a spec is helpful but optional; the AI can always spot and fix the code once mistakes appear#No — the AI cannot fix a problem that was never specified. If the expected output is not written down, there is no basis for knowing what correct means.
+=A spec you cannot write means a problem you do not understand — and incomplete understanding causes bugs at any scale#Yes — the spec is a thinking test. If you cannot fill in all four parts, the program is not ready to be written, no matter how short it is.
+#### Tests LO1 (why spec-first reduces errors) and LO2 (completeness requirement). Corpus §5.2 Reason 2 states\: "A spec you cannot write means a problem you do not understand."
+}

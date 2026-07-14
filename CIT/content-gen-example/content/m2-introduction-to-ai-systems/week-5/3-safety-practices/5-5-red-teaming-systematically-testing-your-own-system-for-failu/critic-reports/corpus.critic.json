@@ -1,0 +1,38 @@
+{
+  "passed": true,
+  "topic_id": "5.5",
+  "try": 1,
+  "resources_source": "web_search",
+  "citation_mode": "strict",
+  "suggested_profile": "deep",
+  "checks": {
+    "required_sections": {
+      "passed": true,
+      "detail": "Sections 3 (Learning Objectives ~80w), 4 (Introduction ~150w), 5 (Core Concepts ~700w, well over 100w floor), 10 (Key Takeaways ~110w) all present and non-trivial. No placeholder strings in required sections."
+    },
+    "citation_density": {
+      "passed": true,
+      "detail": "STRICT (web_search). Primary [1] paloaltonetworks cited (lines 34,42,63,85,128). Supporting [2] promptfoo (63,67,101,110,131) and [3] mindgard (50,73,112,116,129) both cited. Only markers [1][2][3] used — all resolve to the 3 declared resources, zero fabricated/unresolved markers. Sections 5/6/7 factual assertions carry markers above the 60% bar."
+    },
+    "sequence_drift": {
+      "passed": true,
+      "detail": "All taught terms (red-teaming, adversarial testing, red team vs blue team, jailbreak, data leakage, data poisoning, testing timeline, test-find-fix-regression loop) are in 5.5 concepts_introduced; cross-refs to hallucination/bias/harm-prevention resolve to priors 5.1-5.4. Forward concept 'prompt injection' (5.6) is named-and-deferred only (line 92: bare name + 'cover this in detail next, in topic 5.6', no bold, no defining clause). 'NIST AI 600-1' / governance frameworks named with later-pointer only (line 112). No unknown or taught forward references."
+    },
+    "length_sanity": {
+      "passed": true,
+      "is_note": true,
+      "detail": "Body ~1320 words. Deep band per artifact-mix.json is 1800-2200; 30%-below threshold = 1260. 1320 > 1260, so NOT >30% outside range -> not a hard fail. Word count actually sits in the standard band (1200-1600). This is the deep-vs-standard tension the builder flagged: structurally deep (5 sub-concepts + 5-step loop + 3-point timeline + diagram-warranted home topic) but length reads standard. Content is a genuine, non-padded beginner overview with all required sections present — no padding into 5.6/governance scope. NOTE, not a fail: HITL #2 depth call resolves it (accept deep for diagram+structure, or override to standard)."
+    },
+    "scope_creep": {
+      "passed": true,
+      "detail": "Red-teaming taught in full — CORRECT, this is its home topic (5.4 deferred it here). Attack classes jailbreak/data leakage/data poisoning are in 5.5's own inventory, so teaching them is in-scope. Prompt injection (5.6) only named-and-deferred, not defined/bolded/expanded. Governance frameworks (EU AI Act / NIST RMF / Executive Order / NIST AI 600-1) appear only as bare-name later-pointers (line 112), not taught. No material teaches beyond the headline."
+    },
+    "beginner_readability": {
+      "passed": true,
+      "findings": [],
+      "detail": "Terms defined on first use with bold-term + plain meaning: red-teaming (34), red team/blue team (42), adversarial (44), deployment (50), jailbreak (87), data leakage (89), data poisoning (90), regression test (104). Lead-with-analogy pattern (locksmith) before abstract definition. No acronym used cold (NIST left as bare name + defer). No paragraph stacks 3+ new terms (no jargon_dump). Plain register, short active sentences, no hedging phrases. Zero distinct readability findings — no escalation."
+    }
+  },
+  "verdict": "PASS (try 1). All six checks pass. Strict citation mode satisfied: primary [1] cited, no fabricated markers. No forward references — prompt injection (5.6) and governance frameworks correctly named-and-deferred only. No scope creep — red-teaming is the home topic and is taught in full; jailbreak/leakage/poisoning are in 5.5's own inventory. Beginner readability clean. ONE NON-BLOCKING NOTE: body ~1320 words is structurally deep but length-wise sits in the standard band (deep budget 1800-2200); within the 30% tolerance so not a fail. Surface the deep-vs-standard depth decision at HITL #2 — accept deep (diagram + 5-part structure justify it) or override to standard to match length.",
+  "at": "2026-06-22T07:18:42Z"
+}

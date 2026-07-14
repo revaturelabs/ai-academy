@@ -1,0 +1,41 @@
+$CATEGORY: CIT/M1/week-2/2.2-bad-spec-vs-good-spec-make-it-better-vs-rewrite-at-grade-8-l
+
+::q1:: A student gives an AI this instruction\: "Write an email." They run the four-property diagnostic and find it fails the **testable** property. Which answer best explains why that property fails? {
+~The instruction does not name a recipient or topic, so the AI cannot tell what the email should cover.#No — that is the actionable property failing. Testable asks whether you can check if the output is correct.
+=There is no measurable threshold — "an email" sets no word count or standard to verify the output.#Correct — testable fails when you have no way to measure whether the output is right. No standard means no way to verify.
+~The instruction uses complicated words and is too long for the AI to read correctly.#No — length and word complexity do not affect whether a property passes or fails.
+~The instruction asks the AI to produce several different things at the same time.#No — this instruction asks for one thing only. Multiple outputs is not what makes testable fail here.
+#### Tests LO 1 — identifying which property a spec fails, and why (corpus §5.1).
+}
+
+::q2:: A specification reads\: "Give me feedback." After running the four-question diagnostic, a learner finds it fails three of the four properties. Which repair strategy should they choose, and why? {
+=Full rewrite at Grade 8 level, under 80 words, because three failing properties mean the foundation is broken and needs a fresh start.#Correct — the decision rule says three or four failures call for a full rewrite. Patching three broken properties one by one takes longer and rarely produces a passing spec.
+~Incremental fix, because adding one concrete word like "written" to the spec is enough to repair all three failing properties at once.#No — a single word cannot fix three failing properties. Incremental fix is for one or two failures when the core task is still clear.
+~Incremental fix, because the word "feedback" still identifies the task clearly enough to build a working specification on top of.#No — "feedback" alone does not anchor the task. Three failures mean the foundation is unsound, and patching it takes longer than starting fresh.
+~No repair is needed, because modern AI tools can interpret a vague request like "give me feedback" reliably on their own.#No — the whole point of the diagnostic is that vague specs produce unpredictable output. Three failures require a deliberate repair strategy.
+#### Tests LO 5 — choosing the right strategy based on the failure count (corpus §5.3, §5.5).
+}
+
+::q3:: Which of the following correctly states the decision rule for choosing between an incremental fix and a full rewrite? {
+=If one or two properties fail, use an incremental fix. If three or four properties fail, use a full rewrite.#Correct — this is the exact decision rule from the corpus. The count of failing properties drives the strategy choice.
+~If any property fails, always do a full rewrite to guarantee a clean result.#No — a full rewrite is slower than an incremental fix and unnecessary when only one or two properties fail.
+~If the specification is longer than 80 words, always do a full rewrite regardless of how many properties fail.#No — length of the original spec is not part of the decision rule. The rule is based on the count of failing properties.
+~If any property fails, patch each failing property in the order it appears in the diagnostic checklist.#No — this describes incremental fixing only. It does not account for when three or four properties fail, which requires a full rewrite instead.
+#### Tests LO 5 — the decision rule for repair strategy (corpus §5.5).
+}
+
+::q4:: A learner rewrites a vague specification from scratch and produces this result\: "List three ways a small business can reduce its energy bill. Keep the answer under 100 words. Use a numbered list." Does this rewrite follow the Grade 8 / 80-word rule? {
+~Yes, because it uses a numbered list format, which is always the sign of a Grade 8 level specification.#No — format alone does not determine Grade 8 level. The rule is about plain words, short sentences, and staying under 80 words in the spec itself.
+~No, because a good rewrite must use exactly 80 words — anything shorter is incomplete.#No — the rule sets a maximum of 80 words, not an exact target. Shorter is fine as long as all four properties still pass.
+~No, because the rewrite still uses the word "reduce," which is jargon and not plain enough for Grade 8 level.#No — "reduce" is a common everyday word well within Grade 8 reading level. Jargon means technical shorthand, not ordinary verbs.
+=Yes, because it uses plain everyday words, one clear task per sentence, and the spec itself is well under 80 words.#Correct — plain words, short sentences, and staying within 80 words are the two constraints of the full-rewrite strategy. All three sentences here meet those standards.
+#### Tests LO 4 — applying the Grade 8 / 80-word rewrite constraint (corpus §5.3).
+}
+
+::q5:: A learner tries an incremental fix on a specification that fails two properties. After the fix, they re-run the diagnostic and one property still fails. What should they do next? {
+~Declare the specification good enough and submit it, because one remaining failure after an incremental fix is an acceptable margin.#No — one failing property still produces unreliable output. The diagnostic is a pass/fail check, not a scoring system where one failure is acceptable.
+~Switch immediately to a full rewrite, because any property still failing after the first fix proves the spec is broken at its core.#Not quite — the rule allows two rounds of incremental fixing before escalating. One remaining failure after one attempt does not automatically trigger a rewrite.
+~Add more words and extra detail to the specification so it covers every possible interpretation of the task the AI might produce.#No — adding more words can bury the task rather than fix it. The goal is a targeted constraint for the failing property, not more length.
+=Try one more incremental fix targeting the remaining failing property, then re-run the diagnostic. Switch to a full rewrite only if it still fails.#Correct — the corpus allows two rounds of incremental fixing before escalating. One remaining failure after one attempt does not trigger an immediate rewrite.
+#### Tests LO 2 and LO 5 — distinguishing strategies and applying the two-rounds rule (corpus §5.2, §5.5).
+}

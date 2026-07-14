@@ -1,0 +1,49 @@
+$CATEGORY: CIT/M3/week-6/6-8-why-king-man-woman-queen-works
+
+::q1:: In an embedding space, what does a "direction" mean? {
+=The geometric path from one word-point to another; when shared by many pairs, it encodes a relationship.#Correct — a path shared across many word pairs encodes a real-world relationship such as gender.
+~The count of dimensions that separate two word vectors in the shared embedding space.#No — dimension count is fixed for all words; a direction is the path between two points, not a count.
+~The similarity score between two words, as computed by the dot product during training.#No — the dot product gives a similarity score, not a direction; direction is a geometric concept.
+~The axis label the model assigns to each dimension when the embedding is first built.#No — axes are not labelled by the model; directions emerge from where word vectors land after training.
+#### Tests the definition of "direction" in embedding space and what a semantically meaningful direction encodes (corpus §5.2).
+}
+
+::q2:: Which sequence of steps correctly describes the vector arithmetic for "king − man + woman ≈ queen"? {
+~Start at king, add the woman vector first to form a female-royalty concept, then subtract the man vector and compare directly to the queen vector.#No — the order is subtract man then add woman; the final step is nearest-word search, not direct comparison to queen.
+=Start at king, subtract the man vector to remove the male component, add the woman vector for the female component, then find the nearest vocabulary word.#Correct — these are the four steps from §5.3: start at king, subtract man, add woman, find nearest word.
+~Compute the dot product between king and queen, then subtract the dot product between man and woman to derive the final analogy result.#No — the arithmetic uses position-by-position vector addition and subtraction, not dot products between word pairs.
+~Subtract the woman vector from king, then add the man vector, and round the result to the nearest whole-number coordinate in the space.#No — the operation subtracts man and adds woman, not the reverse; nearest-word search is used, not rounding.
+#### Tests the ordered sequence of vector arithmetic steps in the king − man + woman analogy (corpus §5.3).
+}
+
+::q3:: Why does king − man + woman produce a result close to queen's vector but not exactly queen? {
+~The arithmetic is approximate because vector addition and subtraction are not fully defined when the embedding has more than two dimensions.#No — vector arithmetic works for any number of dimensions; dimensionality does not cause the approximation.
+~It is approximate because the dot product rounds each coordinate value to the nearest integer before computing the final similarity score.#No — the dot product does not round to integers; the approximation arises from how vectors were learned, not from rounding.
+=Training noise and king's extra contexts shift the result near queen but not exactly on it; nearest-word search gives the final answer.#Correct — imperfect learning from statistics means the computed point is close to queen but not identical; nearest-neighbour lookup gives the answer.
+~The arithmetic is not approximate; the result is always exact when all three words appeared frequently enough in the training corpus.#No — the result is always approximate because vectors are learned from noisy statistics, regardless of word frequency.
+#### Tests the reasons for approximation and the meaning of "nearest word" in embedding space (corpus §5.4).
+}
+
+::q4:: Which pair of analogies follows the same vector arithmetic pattern as king − man + woman ≈ queen? {
+~Paris + France − Berlin and king + woman − man, because both swap a country name for a city name.#No — the correct country-to-capital form is Paris − France + Germany ≈ Berlin; the operations here are mis-ordered.
+~cat − pet + wild ≈ lion and happy − positive + negative ≈ sad, because emotion and category are also directions.#No — neither example appears in the corpus; these directions are not discussed in this topic.
+~king − queen + princess ≈ prince and man − woman + girl ≈ boy, because subtracting and re-adding within the same category works.#No — while plausible, these examples are not given in the corpus; the topic explicitly names actor/actress and Paris/Berlin.
+=actor − man + woman ≈ actress, and Paris − France + Germany ≈ Berlin — both strip one property and add another via the same shared direction.#Correct — these are the two other analogies from §5.3, encoding the gender direction and the country-to-capital direction.
+#### Tests ability to identify other analogies that follow the same vector arithmetic pattern (corpus §5.3).
+}
+
+::q5:: Look at this 2D diagram. Four words are plotted\: man at (1, 0.5), woman at (1, 2.5), king at (3, 0.5), queen at (3, 2.5). Arrow A goes from man to woman; Arrow B goes from king to queen. Both arrows are parallel and the same length. What does this tell you? {
+=Both arrows represent the same shared direction — the encoded relationship (gender) is geometrically consistent across both word pairs in the space.#Correct — parallel equal-length arrows mean the path from man to woman is geometrically identical to the path from king to queen, showing a shared direction.
+~Arrow A and Arrow B being parallel means the dot product of man and king equals the dot product of woman and queen.#No — parallel arrows indicate a shared geometric direction; dot products measure similarity between two vectors, which is a separate property.
+~The parallel arrows show that man and king are synonyms, and that woman and queen are synonyms, because they share the same coordinate.#No — sharing one axis coordinate does not make words synonyms; parallel arrows encode a relationship, not identical meaning.
+~The arrows being equal length means these four words appear equally often in training text, since frequent words produce longer arrows.#No — arrow length reflects the geometric step between two word-points; it is not a measure of word frequency in training.
+#### Tests reading of a 2D diagram to identify a shared direction arrow (corpus §5.2 and the hands-on exercise §9).
+}
+
+::q6:: A researcher computes doctor − man + woman using a pre-trained embedding and finds the nearest result is "nurse." What is the most accurate interpretation? {
+~The analogy arithmetic has failed for job-title words, since professional terms are too rare for the model to learn reliable gender directions.#No — the arithmetic is working as intended; the result shows what pattern the model learned, not a breakdown in the method.
+=Training data bias is revealed — "doctor" appeared mainly in male contexts and "nurse" in female ones; this is a bias audit finding about the data.#Correct — the arithmetic surfaces what the model absorbed from text; §7 describes exactly this pattern as a bias auditing application.
+~The analogy cannot apply to job-title words because no gender direction exists for professional terms in an embedding space trained on general text.#No — the finding is evidence that a gender direction does exist for professional words; "nurse" as the result demonstrates it clearly.
+~The result is a confirmed fact showing the model correctly identified that doctors are always male and nurses are always female in the real world.#No — analogy results reflect patterns in training text, not facts about the world; treating them as facts is a known misuse of the technique.
+#### Tests applied understanding of what a skewed analogy result reveals about bias in training data (corpus §5.4, §5.5, and §7).
+}

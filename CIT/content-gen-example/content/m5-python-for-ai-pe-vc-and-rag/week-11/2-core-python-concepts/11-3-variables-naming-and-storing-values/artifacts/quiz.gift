@@ -1,0 +1,49 @@
+$CATEGORY: CIT/M5/week-11/11-3-variables-naming-and-storing-values
+
+::q1:: In Python, what is a variable? {
+~A box that permanently stores a value and cannot be changed#Not quite — a variable can be reassigned at any time, so "permanent box" is the wrong mental model.
+=A named label pointing to a value in memory, like a sticky note you can update#Correct — a variable is a label (not a container) that you can move to a new value whenever you like.
+~A math equation that proves two quantities are equal in value#No — the = sign in Python is not about equality; it is an assignment instruction, not a proof.
+~A file saved on your hard drive that persists between program runs#No — variables live in the computer's working memory only while the program is running, not on disk.
+#### Tests the sticky-note analogy for what a variable is (corpus §5.1, LO1).
+}
+
+::q2:: Look at this line of Python code\: `age = 20`. Which statement correctly describes what each part means? {
+~`age` is the value, `=` checks for equality, and `20` is the variable name#No — the parts are reversed. The name is always on the left of `=`, and the value is on the right.
+~`age` is a reserved keyword, `=` stores it, and `20` is the resulting output#No — `age` is a programmer-chosen label, not a reserved keyword; and `20` is the value being stored.
+~`age` and `20` are both values; `=` is a comparison operator here#No — `=` in Python is assignment, not comparison. Comparison uses `==`.
+=`age` is the variable name, `=` assigns it a value, and `20` is what gets stored#Correct — the left side is always the name, `=` is the assignment operator, and the right side is the value.
+#### Tests reading an assignment statement correctly (corpus §5.2, LO2).
+}
+
+::q3:: What are the four basic data types in Python that you will use for everyday values? {
+=`str`, `int`, `float`, `bool`#Correct — these are Python's four core types: text, whole numbers, decimal numbers, and True/False values.
+~`text`, `number`, `decimal`, `switch`#No — these are informal English descriptions, not Python's actual type names.
+~`str`, `int`, `double`, `bool`#No — Python uses `float` for decimal numbers, not `double` (that name comes from other languages like Java).
+~`string`, `integer`, `float`, `boolean`#No — Python's type names are abbreviated: `str` not `string`, `int` not `integer`, `bool` not `boolean`.
+#### Tests recall of the four fundamental data types (corpus §5.3, LO3).
+}
+
+::q4:: You run `print(type(42))` in a code cell. What does Python display? {
+~It displays just `42`, the number itself#No — `type()` returns the data type, not the value. `print(42)` would display the value.
+~It displays `<class 'number'>`, since 42 is a number#No — Python does not have a type called `number`. The whole-number type is called `int`.
+=It displays `<class 'int'>`, showing the data type#Correct — `type(42)` returns `<class 'int'>` because 42 is a whole number with no decimal point.
+~It displays `integer`, the plain English name for the type#No — Python's output format is `<class 'int'>`, not the spelled-out English word `integer`.
+#### Tests use of type() to inspect a value's data type (corpus §5.4, LO4).
+}
+
+::q5:: Which of the following is a valid Python variable name that also follows the snake_case convention? {
+=`grade_average` — uses snake_case and starts with a letter#Correct — all lowercase, words separated by an underscore, starts with a letter: this follows every rule and convention.
+~`3rd_grade` — begins with a digit, which violates Python's naming rules#Wrong choice — a name starting with a digit is a syntax error in Python; `marks_3` would be valid instead.
+~`grade average` — contains a space, making it an invalid variable name#Wrong choice — spaces are not allowed inside a variable name; use an underscore to join words instead.
+~`if` — this is a Python reserved keyword and cannot be used as a name#Wrong choice — `if` has a special meaning in Python and is off-limits as a variable name.
+#### Tests Python naming rules and the snake_case convention (corpus §5.5, LO5).
+}
+
+::q6:: A program assigns `score = 55`, then later runs `score = 72`. What happens to the variable `score`? {
+~Python keeps both values in memory and the variable can return either one#No — a variable holds exactly one value at a time; after reassignment only the newest value is reachable through that name.
+~Python raises an error, since a variable can only be assigned a value once#No — reassignment is perfectly normal in Python and never causes an error on its own.
+~Python automatically renames the variable and creates a fresh one for the new value#No — Python does not create extra variables silently; reassignment simply moves the existing label to the new value.
+=Python points the variable at the new value; the old value is no longer reachable through that name#Correct — the label moves to 72, and 55 is no longer accessible via `score`. This is standard Python reassignment.
+#### Tests understanding that variables can be reassigned and what that means for the old value (corpus §5.6, LO6).
+}

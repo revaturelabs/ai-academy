@@ -1,0 +1,49 @@
+$CATEGORY: CIT/M4/week-9/9-5-automation-bias-trusting-automated-systems-over-human-judgme
+
+::q1:: Automation bias is classified as a cognitive bias rather than a deliberate choice because it {
+~it only emerges in workers who have been formally instructed by their employer to treat automated system outputs as authoritative.#No — automation bias arises from universal cognitive tendencies, not from instructions or organisational policy.
+=it is a systematic, predictable skew in judgment that normal cognitive processes produce, not a conscious intent to defer.#Correct — a bias is a systematic, predictable deviation; automation bias is rooted in how cognition works under complexity and time pressure.
+~it affects only people who lack technical training and fades once operators learn how their automated tools actually reach decisions.#No — research consistently shows that highly trained experts, including experienced pilots and physicians, exhibit automation bias at high rates.
+~it applies to any recommendation from an external source, whether that source is an automated system or a trusted human colleague.#No — automation bias specifically involves deference to automated system outputs and has distinct features separating it from general authority effects.
+#### Tests LO1 — definition of automation bias and why it is a cognitive bias, not a deliberate choice (corpus §5.1).
+}
+
+::q2:: A radiologist uses a computer-aided detection tool. The tool misses a tumour and raises no flag for that area. The radiologist also misses it. What type of automation bias error does this illustrate? {
+~A commission error, because the radiologist performed the positive action of reviewing a scan and that action produced an incorrect outcome.#No — commission error is an incorrect action taken because the system directed it; reviewing a scan is not a system-directed action.
+~Alert fatigue, because a history of repeated low-priority automated alerts has trained the radiologist to dismiss flags without reading them.#No — alert fatigue involves dismissing alerts that do appear; here no alert appeared at all, so alert fatigue is not the mechanism.
+~A calibration error, because the radiologist failed to verify the tool's confidence level before accepting the scan result as complete.#No — calibration error is not one of the two automation bias error types; the corpus defines only omission and commission errors.
+=An omission error, because the tool's silence — no flag raised — reduced the radiologist's vigilance and caused the missed finding.#Correct — omission error is a failure to notice or act caused by the automated system not flagging the item, so the operator misses what the system missed.
+#### Tests LO2 — distinguishing omission error from commission error (corpus §5.2).
+}
+
+::q3:: Which two mechanisms does the corpus identify as the primary causes of automation bias? {
+=Cognitive offloading — moving mental work to a tool to reduce working memory load — and perceived reliability — trusting systems that have been accurate before.#Correct — the corpus explicitly names cognitive offloading and perceived reliability (the authority heuristic) as the two primary mechanisms driving automation bias (§5.3).
+~Cognitive fatigue — mental energy depleted over a long shift — and confirmation bias — the tendency to seek information that confirms existing beliefs about a topic.#No — cognitive fatigue can worsen automation bias and confirmation bias is a related concept, but the corpus does not name either as a primary cause.
+~Complacency — vigilance that gradually declines after many reliable automated interactions — and alert fatigue — habitually dismissing repeated automated warnings without reading them.#No — complacency and alert fatigue are downstream consequences of automation bias, not the two primary cognitive mechanisms the corpus identifies as causes.
+~Anchoring — where the system's first output sets an adjustment reference point — and System 2 override — where deliberate reasoning rejects the automated output.#No — anchoring is a related but separate bias from topic 9.4, and System 2 override describes resisting automation bias; the corpus does not name either as a primary cause.
+#### Tests LO3 — the two main cognitive mechanisms behind automation bias (corpus §5.3).
+}
+
+::q4:: A pilot is told by the automated navigation system to turn left. The pilot can see a mountainside ahead to the left but turns left anyway. Which concept best describes this event? {
+~An omission error, because the pilot overlooked a terrain warning that the automated system had silently failed to flag for that area.#No — omission error arises from the system's silence; here the pilot actively followed the system's directive despite contradicting visual evidence that was plainly visible.
+~Calibrated trust, because the pilot weighed the automated recommendation alongside independent terrain observations before deciding to comply with the turn instruction.#No — calibrated trust means accepting output at the level the evidence warrants; following the system against clear contradictory evidence is the opposite of calibrated trust.
+=A commission error, because the pilot took an incorrect action — turning left — directly because the automated system recommended it, ignoring contradictory evidence.#Correct — commission error is an incorrect action taken because the automated system directed it, even when independent information should have prompted hesitation (corpus §5.2).
+~Complacency, because hundreds of hours of reliable autopilot use have gradually and imperceptibly lowered the pilot's baseline vigilance level over time.#No — complacency is a slow erosion of alertness over time; this scenario describes an in-the-moment action error caused by following a specific automated directive.
+#### Tests LO4 — identifying commission error in a real-world aviation scenario (corpus §5.2, §5.4).
+}
+
+::q5:: Why does System 1 thinking amplify automation bias when an automated recommendation appears under time pressure? {
+~System 1 is the slow, deliberate reasoning mode, so it carefully weighs every incoming automated recommendation before committing to any course of action.#No — System 1 is the fast, automatic mode; slow, deliberate weighing of evidence is System 2, which requires conscious effort to engage.
+~System 1 generates active scepticism toward external recommendations, making people scrutinise automated outputs more carefully than unaided information sources.#No — System 1 is oriented toward fast acceptance of familiar-looking patterns; active sceptical scrutiny requires the deliberate engagement of System 2 thinking.
+~System 1 is only active when cognitive load is low and therefore plays no role in the high-pressure conditions where automation bias is most severe.#No — System 1 runs continuously and becomes more dominant under high load; System 2 engagement, not System 1 activity, is what gets suppressed under pressure.
+=System 1 treats the automated recommendation as a familiar pattern and accepts it as a shortcut, bypassing the deliberate reasoning that could catch errors.#Correct — System 1's automatic, pattern-matching mode shortcuts past System 2 evaluation, amplifying reliance on the automated output under pressure (corpus §5.3).
+#### Tests LO5 — how System 1 thinking amplifies automation bias (corpus §5.3, building on topic 9.1).
+}
+
+::q6:: What kind of mitigation does the corpus say is most effective for reducing automation bias in a team's decision workflow? {
+~Telling team members to stop using automated tools entirely and to rely on their own unaided professional judgment for all decisions.#No — the corpus explicitly warns against this overcorrection; the goal is calibrated trust, not a blanket rejection of automated decision-support systems.
+=Building mandatory procedures that enforce independent verification by design — such as auditing a random sample of low-scoring outputs before finalising decisions.#Correct — the corpus states that structural and procedural changes, rather than individual willpower or awareness training alone, reliably reduce automation bias (corpus §6, §7).
+~Replacing automated decision-support tools with human expert panels, because human recommendations do not trigger the same automatic cognitive deference as machine outputs.#No — the corpus does not recommend removing automation; it focuses on designing procedures that maintain independent judgment alongside automated tools, not eliminating those tools.
+~Requiring team members to study the academic research on automation bias so that awareness of the bias is enough to prevent it in practice.#No — the corpus explicitly states awareness alone is insufficient, because automation bias operates largely through fast, automatic System 1 processing that knowledge does not override (corpus §7).
+#### Tests LO6 — practical mitigation steps for reducing automation bias (corpus §6, §7).
+}

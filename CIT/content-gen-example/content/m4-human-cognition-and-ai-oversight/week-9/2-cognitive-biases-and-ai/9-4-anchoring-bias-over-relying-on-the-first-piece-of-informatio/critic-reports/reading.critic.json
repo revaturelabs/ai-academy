@@ -1,0 +1,119 @@
+{
+  "critic": "reading-critic",
+  "topic_id": "9.4",
+  "topic_title": "Anchoring Bias — Over-Relying on the First Piece of Information Received",
+  "run_at": "2026-06-12T00:00:00Z",
+  "verdict": "PASSED",
+  "passed": true,
+  "hard_fails": [],
+  "soft_findings": [
+    {
+      "code": "meta_field_name_mismatch",
+      "severity": "soft",
+      "description": "reading.meta.json uses 'reading_minutes' instead of 'estimated_read_minutes', and 'primary_resources_cited' instead of 'citations_used'. The required data is present and correct; only the field names deviate from the SKILL spec. Does not block pass.",
+      "location": "artifacts/reading.meta.json lines 5, 8"
+    }
+  ],
+  "checks": {
+    "format_discipline": {
+      "passed": true,
+      "frontmatter_present": false,
+      "meta_sidecar_missing": false,
+      "section_template_violation": false,
+      "sections_found": ["Overview", "Key Concepts", "Worked Example", "In Practice", "Key Takeaways", "References"],
+      "sections_expected": ["Overview", "Key Concepts", "Worked Example", "In Practice", "Key Takeaways", "References"],
+      "notes": "First non-empty line is '# Anchoring Bias...' (no frontmatter). Meta parses successfully. All 6 sections present in correct order."
+    },
+    "length_budget": {
+      "passed": true,
+      "word_count": 1340,
+      "word_count_range": [1200, 1600],
+      "word_count_in_range": true,
+      "reading_minutes": 7,
+      "reading_minutes_range": [6, 8],
+      "reading_minutes_in_range": true,
+      "depth_profile": "standard",
+      "notes": "1340 words at 200 wpm = 6.7 min → 7 min. Both within standard profile budget."
+    },
+    "citation_discipline": {
+      "passed": true,
+      "primary_resource": "https://www.simplypsychology.org/what-is-the-anchoring-bias.html",
+      "primary_cited": true,
+      "inline_markers_found": [1, 2, 3],
+      "bibliography_entries_found": [1, 2, 3],
+      "orphan_markers": [],
+      "orphan_bibliography_entries": [],
+      "notes": "[1] simplypsychology.org cited at lines 5, 11, 13, 24, 28, 36, 91, 104 in reading. Bibliography entries [1]–[3] all matched. No orphans."
+    },
+    "no_forward_references": {
+      "passed": true,
+      "forward_refs_found": [],
+      "notes": "Reading references only 9.1 (System 1), 9.2 (System 2), 9.3 (confirmation bias) — all prior topics. No mention of Judgment Framework, automation bias, or any topic 9.5+."
+    },
+    "faithfulness": {
+      "passed": true,
+      "assertions_sampled": 10,
+      "unsupported_assertions": 0,
+      "threshold": 2,
+      "sample": [
+        {"assertion": "Definition of anchoring bias as over-weighting first information", "supported": true, "corpus_location": "section 4 Introduction"},
+        {"assertion": "Tversky & Kahneman wheel-of-fortune experiment: 10/65 anchors, 25%/45% responses, ~20pp shift", "supported": true, "corpus_location": "section 5.1"},
+        {"assertion": "Adjustment heuristic: start at anchor, nudge up/down, stop when feels right", "supported": true, "corpus_location": "section 5.2"},
+        {"assertion": "4-step adjustment process", "supported": true, "corpus_location": "section 5.2"},
+        {"assertion": "System 2 is effortful and stops early (insufficient adjustment)", "supported": true, "corpus_location": "section 5.3 Reason 1"},
+        {"assertion": "Anchor activates anchor-consistent information in memory", "supported": true, "corpus_location": "section 5.3 Reason 2"},
+        {"assertion": "Anchors shift estimates 10–35% in typical experiments", "supported": true, "corpus_location": "section 5.4"},
+        {"assertion": "Worked example: $180k AI estimate → $160k adjusted vs $95k–$110k independent range", "supported": true, "corpus_location": "section 6"},
+        {"assertion": "First-pass anchor: AI first draft anchors all revision cycles", "supported": true, "corpus_location": "section 8.3"},
+        {"assertion": "Experts show anchoring effects — just slightly reduced", "supported": true, "corpus_location": "sections 5.3 and 5.4"}
+      ]
+    },
+    "beginner_readability": {
+      "passed": true,
+      "undefined_terms": [],
+      "undefined_terms_count": 0,
+      "undefined_terms_threshold": 2,
+      "jargon_dump": null,
+      "abstract_first": false,
+      "academic_register": {
+        "hedging_instances": 1,
+        "hedging_threshold": 3,
+        "instances": ["'Research suggests' (line 29 — borderline but single occurrence)"],
+        "passed": true
+      },
+      "notes": "All non-everyday terms (anchor, adjustment heuristic, insufficient adjustment) are bold-defined on first use. Concepts introduced with concrete examples before abstractions. One mild hedging phrase ('Research suggests') — well under the 3-instance threshold."
+    },
+    "formatting": {
+      "passed": true,
+      "wall_of_text": null,
+      "unlisted_sequence": null,
+      "no_inline_examples": false,
+      "bold_term_definitions_used": true,
+      "findings": [],
+      "notes": "No paragraph exceeds 4 sentences. The 4-step adjustment process is a numbered list. Worked Example uses numbered steps. Two comparison tables present. Inline examples appear in Overview and Key Concepts. Bold-term definitions used throughout (Anchor, Adjustment heuristic, Insufficient adjustment, etc.)."
+    },
+    "assessment_references": {
+      "passed": true,
+      "findings": [],
+      "notes": "No assessment IDs, due weeks, or grade weights found."
+    },
+    "scope": {
+      "passed": true,
+      "scope_creep": null,
+      "notes": "Reading covers exactly anchoring bias, adjustment heuristic, insufficient adjustment, primacy-effect-as-anchor (brief inline mention, not taught as separate concept). No automation bias. No Judgment Framework. Comparison with confirmation bias (9.3) is within scope as a named-and-contrasted prior concept. All AI-context applications are anchoring-bias applications, not adjacent topics."
+    }
+  },
+  "escalation_check": {
+    "hard_fail_triggered": false,
+    "scope_creep_any": false,
+    "soft_findings_checks_5_6_count": 0,
+    "escalation_threshold": 3,
+    "result": "No escalation — 0 scope_creep findings, 0 combined checks-5-6 findings."
+  },
+  "gold_example": {
+    "checked": true,
+    "gold_file": null,
+    "notes": "No gold example exists for topic 9.4 in .claude/references/gold-examples/reading/. Evaluated against written standards only."
+  },
+  "summary": "All checks passed. One soft non-blocking finding: reading.meta.json field names deviate from SKILL spec ('reading_minutes' vs 'estimated_read_minutes', 'primary_resources_cited' vs 'citations_used') — data is correct, names differ. Reading is well-structured, beginner-accessible, faithfully derived from corpus, within length budget, and scope-clean."
+}

@@ -1,0 +1,43 @@
+---
+title: "Production AI Trade-off Triangle — optimise any two, sacrifice the third"
+theme: base
+themeVariables:
+  primaryColor: "#a5d8ff"
+  primaryBorderColor: "#4a9eed"
+  lineColor: "#555"
+  fontSize: "16px"
+---
+flowchart TD
+    %% ── Three vertex nodes — one per "optimise two" scenario ─────────────
+    TOP["<b>Cost + Quality</b><br/><span style='font-size:11px;color:#6d28d9'>→ accept higher latency<br/>large model · many retrieved chunks<br/>multiple reasoning passes</span>"]
+
+    BL["<b>Cost + Latency</b><br/><span style='font-size:11px;color:#6d28d9'>→ accept lower quality<br/>small cheap model · skip retrieval<br/>reply immediately</span>"]
+
+    BR["<b>Latency + Quality</b><br/><span style='font-size:11px;color:#6d28d9'>→ accept higher cost<br/>large model · full retrieval<br/>cache aggressively · parallel calls</span>"]
+
+    %% ── Axis labels as ghost annotations ─────────────────────────────────
+    AX_COST["<b>Cost</b><br/><span style='font-size:11px'>token spend per request</span>"]
+    AX_LAT["<b>Latency</b><br/><span style='font-size:11px'>time to first response</span>"]
+    AX_QUAL["<b>Quality</b><br/><span style='font-size:11px'>correctness · depth · helpfulness</span>"]
+
+    %% ── Triangle edges (the three trade-off axes) ─────────────────────────
+    TOP --> BL
+    TOP --> BR
+    BL  --> BR
+
+    %% ── Axis annotation links ─────────────────────────────────────────────
+    AX_COST -.- TOP
+    AX_LAT  -.- BL
+    AX_QUAL -.- BR
+
+    %% ── Classes (project palette) ─────────────────────────────────────────
+    classDef start fill:#a5d8ff,stroke:#4a9eed,stroke-width:2
+    classDef hitl  fill:#fff3bf,stroke:#f59e0b,stroke-width:3
+    classDef auto  fill:#d0bfff,stroke:#8b5cf6
+    classDef act   fill:#a5d8ff,stroke:#4a9eed
+    classDef done  fill:#b2f2bb,stroke:#22c55e
+    classDef ghost fill:none,stroke:none,color:#6d28d9
+
+    %% All three vertex scenarios are peer choices — same class (act/blue)
+    class TOP,BL,BR act
+    class AX_COST,AX_LAT,AX_QUAL ghost

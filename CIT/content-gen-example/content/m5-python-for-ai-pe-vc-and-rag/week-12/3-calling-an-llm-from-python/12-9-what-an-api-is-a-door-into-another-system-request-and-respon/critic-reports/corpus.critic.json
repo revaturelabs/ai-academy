@@ -1,0 +1,42 @@
+{
+  "topic_id": "12.9",
+  "critic": "corpus-critic",
+  "cycle": 2,
+  "at": "2026-06-15T00:30:00Z",
+  "passed": true,
+  "checks": {
+    "required_sections": {
+      "passed": true,
+      "detail": "Section 3 (Learning Objectives, 6 items, ~120 words), Section 4 (Introduction, 3 paragraphs, ~155 words), Section 5 (Core Concepts §5.1-§5.7, well over 100 words), and Section 10 (Key Takeaways, 5 bullets, ~120 words) all present and non-trivial. All required-section word thresholds met (§5 ≥100 words; §3/§4/§10 ≥50 words each)."
+    },
+    "citation_density": {
+      "passed": true,
+      "detail": "resources_source=web_search. Primary resource [1] (Postman blog) cited in §4, §5.1, §5.3, §5.4, §5.5, §5.7, §7, §8. Supporting [2] (GetStream) cited in §5.2, §5.4, §8. Supporting [3] (dev.to) cited in §5.4, §5.5, §7. No fake citations detected — all [1]/[2]/[3] markers resolve to declared resources. Approximately 70-75% of standalone factual assertions in §5/§6/§7 carry [N] markers, meeting the ≥60% threshold."
+    },
+    "sequence_drift": {
+      "passed": true,
+      "findings": [],
+      "detail": "No hard forward references. All technical terms introduced in 12.9 (API, client, server, request-response cycle, endpoint, HTTP method, GET, POST, headers, body/payload, JSON, status code, API key, rate limit, abstraction layer) are listed in the topic's concepts_introduced list. Prior concepts used without re-defining: functions/parameters/return (12.1-12.3), lists/for-loop (12.4), dictionaries/key-value/.get() (12.5), open()/with block (12.6-12.7), try/except/FileNotFoundError (12.8). Downstream topics 12.10-12.13 are named as forward-pointers only in §6 (Implementation/deferral section) and inline deferral sentences — never taught."
+    },
+    "length_sanity": {
+      "passed": true,
+      "severity": null,
+      "suggested_profile": "standard",
+      "word_range": [3000, 4400],
+      "estimated_word_count": 3018,
+      "detail": "Corpus estimated at approximately 3000-3050 words (prose + table content; code block literals excluded). Standard corpus floor is 3000 words. Cycle-1 shortfall has been remediated: §5.4 was expanded with a full GET-vs-POST comparison table and a 'Putting the four parts together' synthesis paragraph (~100 additional words); §7 Real-World Patterns was expanded with a second explanatory paragraph per pattern (~180 additional words); §8 Best Practices was expanded with additional sentences and the .get() cross-reference (~50 additional words). Total word count now at or just above the 3000-word floor. Length sanity passes."
+    },
+    "topic_scope": {
+      "passed": true,
+      "findings": [],
+      "detail": "Both hard scope_creep findings from cycle 1 are resolved. (1) §5.5: The exact key path 'content[0][\"text\"]' is gone. The current text reads: 'The model's generated text is nested inside the response body — how to extract it from the JSON structure is covered in topic 12.12.' This is a clean bare deferral — no key path, no extraction instruction. The JSON code block in §5.5 illustrates what a response body looks like (a 12.9 concept) without naming extraction steps. (2) §5.6: The sentence 'When Python receives a JSON response, its built-in `json` module converts it straight into a Python dictionary. You do not need to parse it character by character.' is gone. No mention of the `json` module anywhere in cycle 2. §5.6 now only describes JSON's format and its cosmetic differences from Python dict literals (both definitional properties of JSON — a named 12.9 concept), then defers full handling to 12.12. The 'main differences' note (double quotes, true/false casing) characterises what JSON is, not how to parse it — within scope. No new scope_creep findings detected in §5.4 or elsewhere."
+    },
+    "beginner_readability": {
+      "passed": true,
+      "findings": [],
+      "detail": "All acronyms spelled out on first use: API = Application Programming Interface (§4 + §5.1 full word-by-word expansion), HTTP = HyperText Transfer Protocol (§5.2), JSON = JavaScript Object Notation (§5.4, with analogy to Python dict), URL = Uniform Resource Locator (§5.4), LLM = Large Language Model (§4). GET and POST explained in a table with plain-English meanings (§5.4). No jargon dumps detected (no paragraph introduces 3+ new terms simultaneously). Sentence length well under 25 words on average. No hedging phrases. Active voice throughout. Register is plain, direct, and appropriate for the fresher-zero-background audience."
+    }
+  },
+  "verdict": "PASS — all 6 checks pass in cycle 2. Cycle-1 hard failures resolved: (1) §5.5 no longer contains the 'content[0][\"text\"]' key path — replaced with a clean bare deferral to 12.12; (2) §5.6 no longer mentions the `json` module or its conversion behavior — JSON is treated as a format concept only, with full handling deferred to 12.12. Cycle-1 soft length finding resolved: estimated word count ~3018 meets the standard-profile corpus floor of 3000 words, driven by expansions in §5.4 (GET-vs-POST comparison table + synthesis paragraph), §7 (second explanatory paragraph per pattern), and §8 (additional practice guidance). Citation density, sequence drift, required sections, and beginner readability all remain passing from cycle 1.",
+  "required_fixes": []
+}

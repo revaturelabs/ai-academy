@@ -1,0 +1,95 @@
+{
+  "topic_id": "14.7",
+  "artifact": "corpus",
+  "passed": true,
+  "at": "2026-06-15T00:00:00Z",
+  "checks": {
+    "required_sections": {
+      "passed": true,
+      "detail": {
+        "learning_objectives_s3": { "present": true, "word_count_gte_50": true },
+        "introduction_s4": { "present": true, "word_count_gte_50": true },
+        "core_concepts_s5": { "present": true, "word_count_gte_100": true },
+        "key_takeaways_s10": { "present": true, "word_count_gte_50": true }
+      }
+    },
+    "citation_density": {
+      "passed": true,
+      "resources_source": "human",
+      "primary_resources_cited": {
+        "[1] https://python.langchain.com/docs/modules/agents/": true,
+        "[2] https://docs.anthropic.com/en/docs/build-with-claude/tool-use": true,
+        "[3] Chip Huyen — AI Engineering (O'Reilly)": true,
+        "[4] https://cloud.google.com/discover/what-are-ai-agents": true,
+        "[5] https://lilianweng.github.io/posts/2023-06-23-agent/": true
+      },
+      "all_5_primary_cited": true,
+      "claim_density_sections_5_6_7": "pass — key factual assertions in §5.2–5.5 and §7 carry citation markers; §5.6 (decision matrix questions) and §5.7 (worked examples) are synthesized framework/application, not standalone factual assertions; §6 implementation checklist has end-section citation [1][2]; density across factual assertion sentences estimated ≥60%",
+      "fake_citations": false
+    },
+    "sequence_drift": {
+      "passed": true,
+      "forward_references": [],
+      "unintroduced_terms_used_technically": [
+        {
+          "term": "output parsing",
+          "location": "§5.1 overview table, 'Added complexity vs tier below' column for Chained calls",
+          "severity": "soft — brief technical phrase used as a label without definition; prior topics do not introduce it",
+          "finding_code": "undefined_terms"
+        }
+      ],
+      "note": "All RAG, agent, ReAct, hallucination, parametric memory, planning loop, Thought/Action/Observation step, freshness/private/precision signal vocabulary reused from 14.1–14.6 without re-definition — correct. 14.8 referenced by topic ID only as a pointer, no 14.8 concept taught here."
+    },
+    "length_sanity": {
+      "passed": true,
+      "profile": "standard",
+      "estimated_word_count": 3500,
+      "target_range_words": [1500, 6000],
+      "within_range": true,
+      "note": "Corpus word count estimated ~3500w; comfortably within the 1500–6000w standard corpus target specified for this check."
+    },
+    "topic_scope": {
+      "passed": true,
+      "scope_creep_findings": [],
+      "note": "§5.4 RAG sub-section contains a single recap sentence of RAG internals ('the user's question is embedded…') preceded by an explicit disclaimer that the topic does not re-teach RAG internals. This is a one-sentence positioning recap, not teaching. §6 Implementation section is a decision-checklist procedure, not code or build instructions. No agent anatomy internals taught beyond what is needed to position Tier 4 in the matrix."
+    },
+    "beginner_readability": {
+      "passed": true,
+      "findings": [
+        {
+          "code": "undefined_terms",
+          "terms": [
+            {
+              "term": "output parsing",
+              "first_use_location": "§5.1 table, Chained calls row",
+              "note": "Used as a technical label without a plain-language gloss. Soft finding."
+            },
+            {
+              "term": "system prompt",
+              "first_use_location": "§7 Real-World Patterns, FAQ chatbot section",
+              "note": "'The developer embeds the entire FAQ in the system prompt' — term used without prior introduction in this sequence. Soft finding."
+            },
+            {
+              "term": "sentiment analysis",
+              "first_use_location": "§5.7 Scenario D",
+              "note": "Used as an example tool name in a scenario. Plain-language enough for a motivated reader but not formally introduced. Soft finding."
+            }
+          ],
+          "severity": "soft — 3 instances under the undefined_terms code. Per SKILL.md, escalation to hard fail requires ≥3 distinct finding CODES (e.g., undefined_terms + jargon_dump + academic_register). All three instances fall under one code; no escalation."
+        }
+      ],
+      "jargon_dump": false,
+      "academic_register": false,
+      "sentence_length_ok": true,
+      "active_voice_ok": true,
+      "learner_addressed_as_you": true
+    }
+  },
+  "hard_findings": [],
+  "soft_findings": [
+    "undefined_terms: 'output parsing' used as a table label in §5.1 without definition (prior topics do not introduce it)",
+    "undefined_terms: 'system prompt' used in §7 FAQ chatbot section without prior introduction in the sequence",
+    "undefined_terms: 'sentiment analysis' used as an example tool name in §5.7 Scenario D without definition"
+  ],
+  "verdict": "PASS — all 5 primary resources cited, all required sections present and non-trivial, no forward references to undefined concepts, word count within standard profile range, scope stays on the decision-matrix headline without teaching RAG or agent internals at depth, beginner readability good with 3 soft undefined-term findings (output parsing, system prompt, sentiment analysis) that do not escalate to hard fail as they share a single finding code."
+}

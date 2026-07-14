@@ -1,0 +1,45 @@
+{
+  "type": "topic",
+  "id": "7.2",
+  "title": "Conditional probability — P(A given B)",
+  "slug": "7-2-conditional-probability-p-a-given-b",
+  "position_in_module": 2,
+  "week_num": 7,
+  "session_name": "Probability, Statistics and AI Confidence",
+  "module": {
+    "position": 1,
+    "slug": "1-probability-foundations",
+    "title": "Probability Foundations"
+  },
+  "course": {
+    "code": "M3",
+    "slug": "m3-applied-maths-for-ai",
+    "title": "Applied Maths for AI"
+  },
+  "next_assessment": {
+    "id": "A3",
+    "due_week": 10,
+    "title": "Maths and Cognition Lab Report",
+    "weight": "15%"
+  },
+  "paths": {
+    "corpus": "topic_corpus.md",
+    "resources": "topic.resources.json",
+    "progress": "topic.progress.json",
+    "artifacts_dir": "artifacts/",
+    "critic_reports_dir": "critic-reports/"
+  },
+  "artifact_plan": {
+    "depth_profile": "standard",
+    "depth_profile_confirmed": true,
+    "depth_signals": "Single focused concept (conditional probability) with 2–3 sub-concepts and Real-World Patterns warranted, but no multi-technology pipeline or lab system — standard profile fits cleanly.",
+    "diagram": true,
+    "diagram_intent": "Full sample space vs reduced sample space side-by-side: left panel shows all 6 die outcomes with event A highlighted; right panel shows the reduced space after condition B is applied, with the same event A re-highlighted within the smaller set.",
+    "reading_word_range": [1200, 1600],
+    "reading_minutes_range": [6, 8],
+    "quiz_mcq_range": [5, 6],
+    "quiz_short_answer": false
+  },
+  "expected_delivery_minutes": 7,
+  "status": "corpus_drafted"
+}

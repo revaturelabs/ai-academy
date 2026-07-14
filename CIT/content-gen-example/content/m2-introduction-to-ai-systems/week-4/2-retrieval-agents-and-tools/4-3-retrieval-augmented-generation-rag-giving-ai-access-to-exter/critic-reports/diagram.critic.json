@@ -1,0 +1,45 @@
+{
+  "verdict": "pass",
+  "findings": [
+    {
+      "code": "looks_good",
+      "where": "whole canvas",
+      "detail": "Clean horizontal LR pipeline with 6 nodes on a single straight path: User Question -> Knowledge Source -> Retrieved Passages -> Enriched Prompt -> AI Model -> Grounded Answer. No branches, no overlaps possible at nodeSpacing:55/rankSpacing:70 with short 2-word labels. 1400px width is ample for 6 nodes with 2-word bold labels + 12px subtitles. Linear left-to-right pipeline layout matches the three-step sequential RAG intent exactly."
+    },
+    {
+      "code": "looks_good",
+      "where": "labels / concept fidelity",
+      "detail": "All 6 node labels map 1:1 to the corpus Core Concepts: 'User Question' (query), 'Knowledge Source' (Step 1 retrieve entity), 'Retrieved Passages' (Step 1 output), 'Enriched Prompt' (Step 2 augment output), 'AI Model' (Step 3 generator), 'Grounded Answer' (Step 3 output). No embeddings, vector DB, similarity search, or chunking nodes present (Week 14 deferred concepts correctly excluded). All labels <= 4 words. No bare unexplained acronyms as node labels. Title 'RAG - Retrieve, Augment, Generate' in config title: field, not a ghost node."
+    },
+    {
+      "code": "looks_good",
+      "where": "color tiers",
+      "detail": "Entry (User Question) uses start/act blue (#a5d8ff), pipeline steps (Retrieved Passages, Enriched Prompt, AI Model) use auto purple (#d0bfff), terminal (Grounded Answer) uses done green (#b2f2bb). Knowledge Source uses act blue to visually distinguish it as the external entity. No color tier violations."
+    }
+  ],
+  "stats": {
+    "nodes": 6,
+    "edges": 5,
+    "layout": "flowchart LR",
+    "labels": [
+      "User Question",
+      "Knowledge Source",
+      "Retrieved Passages",
+      "Enriched Prompt",
+      "AI Model",
+      "Grounded Answer"
+    ],
+    "png_path": "content/m2-introduction-to-ai-systems/week-4/2-retrieval-agents-and-tools/4-3-retrieval-augmented-generation-rag-giving-ai-access-to-exter/artifacts/diagram.png",
+    "png_dims": "1400x~220 (estimated — render with: mmdc -i diagram.mmd -o diagram.png -w 1400 -b transparent)",
+    "preflight": {
+      "mermaid_parse": "pass (source-level syntax valid; config block uses correct nested config: themeVariables: flowchart: structure)",
+      "node_count": "pass (6 nodes, within 3-8)",
+      "label_discipline": "pass (all bold labels <= 4 words: 'User Question', 'Knowledge Source', 'Retrieved Passages', 'Enriched Prompt', 'AI Model', 'Grounded Answer')",
+      "concept_fidelity": "pass (all labels trace to corpus Step 1/2/3 language; no Week-14 deferred concepts included)",
+      "jargon_label": "pass (no bare unexplained acronyms; 'AI Model' is corpus-defined)",
+      "title_discipline": "pass (governing concept 'RAG - Retrieve, Augment, Generate' in title: config field)",
+      "single_path": "pass (strictly linear Q->KS->RP->EP->AM->GA; no branches)"
+    },
+    "render_note": "PNG requires mmdc on PATH. Run: mmdc -i <mmd_path> -o <png_path> -w 1400 -b transparent"
+  }
+}

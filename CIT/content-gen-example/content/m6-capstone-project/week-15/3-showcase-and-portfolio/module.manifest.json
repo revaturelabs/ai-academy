@@ -1,0 +1,20 @@
+{
+  "type": "module",
+  "position": 3,
+  "title": "Showcase and Portfolio",
+  "slug": "3-showcase-and-portfolio",
+  "course_code": "M6",
+  "course_slug": "m6-capstone-project",
+  "week_nums": [
+    15
+  ],
+  "session_name_by_week": {
+    "15": "Capstone Build Sprint and Showcase"
+  },
+  "narrative_seed_by_week": {
+    "15": "Version 1 of the domain system chosen in Week 1 — the first complete, tested, documented release / Must include: formal spec, Python orchestration layer, LLM API call with 5-role context-engineered prompt, structured JSON output, 5-case eval harness / Apply the Judgment Framework — document the human override point for each component / Cost and latency note — estimated API calls and cost per day / Red-team own system — 3 adversarial inputs, results and mitigations documented / Failure handling — what does the system return when the AI call fails or output validation fails?"
+  },
+  "lab_activity_seed_by_week": {
+    "15": "Hour 1 — problem statement + 1-page spec; faculty sign-off required before build begins / Hour 2 — core feature implementation; faculty check-in per student / Hour 3 — edge case testing, red-team, documentation, GitHub commit /  / Presentation format — Problem → Spec → Live Demo → Eval Results → Judgment Framework applied → Cost note → 3 Learnings (10 minutes) / Individual live presentations to faculty panel — 10 minutes + 5 minutes Q&A each / Cohort debrief — ‘What do you know now that you didn’t on Day 1?’ / →  Assessment 5 due this week  (see Assessment Plan)"
+  }
+}

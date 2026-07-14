@@ -1,0 +1,47 @@
+{
+  "topic_id": "13.1",
+  "generated_at": "2026-06-13T00:00:00Z",
+  "format": "gift",
+  "question_count": 6,
+  "$bias_defense_applied": true,
+  "$shuffle_seed": 1301,
+  "correct_position_distribution": {"0": 2, "1": 1, "2": 2, "3": 1},
+  "questions": [
+    {
+      "id": "q1",
+      "type": "mcq",
+      "objective_ref": "Distinguish between the system prompt and the user prompt in a Large Language Model (LLM) API call, stating what each one is and what it controls.",
+      "correct_position": 2
+    },
+    {
+      "id": "q2",
+      "type": "mcq",
+      "objective_ref": "Explain why the system prompt is described as 'persistent context' and why the user prompt is described as the 'live request.'",
+      "correct_position": 0
+    },
+    {
+      "id": "q3",
+      "type": "mcq",
+      "objective_ref": "Identify which type of content belongs in the system prompt (role, tone, constraints, output format) versus which belongs in the user prompt (the specific question or task).",
+      "correct_position": 3
+    },
+    {
+      "id": "q4",
+      "type": "mcq",
+      "objective_ref": "Describe the concept of authority and precedence — why instructions in the system prompt generally take priority over conflicting instructions in the user prompt.",
+      "correct_position": 1
+    },
+    {
+      "id": "q5",
+      "type": "mcq",
+      "objective_ref": "Apply the system prompt / user prompt split by rewriting a single mixed-up prompt into two correctly separated parts.",
+      "correct_position": 0
+    },
+    {
+      "id": "q6",
+      "type": "mcq",
+      "objective_ref": "Recognize the downstream effect of a well-separated prompt structure on the quality and consistency of model outputs.",
+      "correct_position": 2
+    }
+  ]
+}

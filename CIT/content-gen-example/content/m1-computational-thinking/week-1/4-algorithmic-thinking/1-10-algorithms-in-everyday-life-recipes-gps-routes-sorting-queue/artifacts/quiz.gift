@@ -1,0 +1,55 @@
+$CATEGORY: CIT/M1/week-1/1.10-algorithms-in-everyday-life-recipes-gps-routes-sorting-queues
+
+::q1:: A recipe for scrambled eggs lists exact quantities, tells you what to do at each step, and ends with "Slide the eggs onto a plate. Stop." Which statement best explains why this recipe counts as an algorithm?
+{
+~It uses a frying pan and heat, which are tools that only machines can control with consistent, repeatable precision.#No — the tools used do not determine whether something is an algorithm; the structure of the steps does.
+=It has precise ordered steps, a decision point, and a defined stopping condition — all three core algorithm properties.#Correct — precise steps, a decision branch, and a clear stopping point are exactly the properties that make it an algorithm.
+~It was written before computers existed, which proves it was designed as a reusable, machine-independent algorithm.#No — age of documentation is irrelevant; many old recipes are vague and fail the algorithm test entirely.
+~It produces food, and any process that creates a useful result through physical actions is automatically an algorithm.#No — producing a result is only one requirement; the steps also need to be precise, complete, and unambiguous.
+#### Tests LO1: identifying a real-world process as an algorithm (corpus §5.1).
+}
+
+::q2:: You open a maps app and type in your home address and the library address. The app gives you turn-by-turn directions. Which row correctly identifies the input, process, and output of what the maps app did?
+{
+~Input\: the map image displayed on screen; Process\: drawing the shortest-looking line on the map; Output\: your estimated travel time in minutes.#No — the map image is not the input; the app calculates a route, not just a line, and the primary output is the sequence of directions.
+~Input\: live traffic camera footage from nearby roads; Process\: watching camera feeds for signs of congestion; Output\: a delay warning message.#No — traffic camera data may be one factor, but the core input is start and destination, and the output is a route, not a warning.
+~Input\: the speed limit on every road in the city; Process\: averaging all speed limits together; Output\: your recommended driving speed for the trip.#No — this describes averaging speed limits, which has nothing to do with finding a route between two locations.
+=Input\: your start and destination; Process\: evaluating road segments by travel time and choosing the lowest-cost path; Output\: turn-by-turn directions.#Correct — start and destination are the inputs, the routing steps form the process, and the turn-by-turn sequence is the output.
+#### Tests LO2 and LO4: tracing input→process→output through GPS navigation (corpus §5.2).
+}
+
+::q3:: A recipe card says "bake until done." A classmate says this instruction would cause a problem if a machine had to follow it. Which explanation is correct?
+{
+="Done" has no single testable definition — a machine needs a precise condition, like "bake 25 minutes or until a toothpick comes out clean."#Correct — "done" is ambiguous; a machine needs a rule it can check without using judgment.
+~A machine would bake for exactly one minute, because machines always pick the shortest possible action when a stopping condition is unclear or undefined.#No — machines do not guess the shortest action; they halt or loop forever when the instruction has no defined stopping condition.
+~The instruction is fine for a machine because machines can examine food visually and judge when it looks ready, just as an experienced cook would.#No — machines cannot apply visual judgment unless programmed with a specific, testable rule; "looks ready" is not machine-executable.
+~The word "bake" is the problem, not "done" — machines need explicit hardware commands before they can control an oven at any temperature.#No — the hardware is not the issue; the problem is whether the step is precise enough to follow, not about physical control systems.
+#### Tests LO3: spotting where a vague instruction fails and describing the fix (corpus §5.1).
+}
+
+::q4:: A GPS app always gives you the same route between two locations when traffic conditions are identical, but a different route when there is a road closure. Which algorithm property from topic 1.9 does this behaviour demonstrate?
+{
+~Completeness — the algorithm includes every possible road in the city so it can always find a valid path to any destination.#No — completeness means every needed step is included, not that every road is stored; this behaviour is about consistent outputs from consistent inputs.
+~Finiteness — the algorithm stops as soon as it reaches your destination rather than continuing to calculate routes indefinitely.#No — finiteness is about having a stopping point, not about producing the same output for the same input on every run.
+=Determinism — same inputs (start, destination, traffic data) always produce the same output (route); a changed input produces a different output.#Correct — determinism means same input, same steps, same output every time; a new input produces a different output while the procedure stays unchanged.
+~Unambiguousness — each turn instruction has exactly one valid interpretation, so the driver cannot misread or make a wrong turn.#No — unambiguousness describes individual instruction clarity, not why identical inputs produce identical routes on separate runs.
+#### Tests LO4 and LO6: GPS as algorithm and connecting to algorithm properties from 1.9 (corpus §5.2, §5.4).
+}
+
+::q5:: A teacher has 10 homework papers in a random pile and wants them in alphabetical order by student name. She compares the first two names, swaps them if they are out of order, moves to the next pair, and repeats until she goes through the whole pile without making any swaps. What does the "no swaps in a full pass" condition do in this process?
+{
+~It tells the teacher how many students are in the class so she knows when all papers have been marked.#No — the count of students is not determined by whether swaps occurred; this condition is about order, not count.
+~It skips the papers the teacher has already read so she does not compare the same pair twice.#No — the process compares every adjacent pair in each pass; the "no swaps" condition signals when to stop, not which pairs to skip.
+~It removes any paper whose name is already in the correct position so the pile gets shorter with each pass.#No — papers are not removed; all items stay in the pile and the process simply stops when ordering is confirmed.
+=It acts as the stopping condition — when a full pass has no swaps, the list is sorted and the process is complete.#Correct — "no swaps in a full pass" is a testable, precise stopping condition that signals the sorting algorithm is done.
+#### Tests LO5: describing what a sorting algorithm does using a real-world example (corpus §5.3).
+}
+
+::q6:: All three examples in this topic — a recipe, a GPS route, and a sorting process — share the same structure. Which description correctly captures what they all have in common?
+{
+~They all require a computer to run because the individual steps are too numerous and too fast for any person to perform manually.#No — recipes and even sorting can be run entirely by a person; being computer-executed is not what makes something an algorithm.
+=Each has a defined input, an exact repeatable procedure, and a defined output — and all share the four algorithm properties from topic 1.9.#Correct — input, a precise procedure, and a defined output, combined with the four algorithm properties, are what all three share.
+~They all produce a physical object as their output — a meal, a printed map, and a sorted paper pile that you can hold in your hands.#No — a GPS route's output is a sequence of directions, not a physical object; the shared feature is structural, not about physical outputs.
+~They are all teaching examples invented by computer scientists, not genuine real-world processes that exist outside the classroom.#No — recipes predate computers by centuries; GPS routing and sorting are observed from real technology and everyday tasks, not invented for teaching.
+#### Tests LO6: connecting all three domains back to algorithm properties from topic 1.9 (corpus §5.4).
+}

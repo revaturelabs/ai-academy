@@ -1,0 +1,141 @@
+{
+  "critic": "corpus-critic",
+  "topic_id": "7.6",
+  "topic_title": "Mean, median, mode — measuring consistency across AI runs",
+  "run": "retry-1",
+  "depth_profile": "standard",
+  "resources_source": "web_search",
+  "passed": true,
+  "at": "2026-06-23T00:00:00Z",
+  "checks": {
+    "required_sections": {
+      "passed": true,
+      "findings": [],
+      "detail": {
+        "section_3_learning_objectives": "present, ~90 words — PASS (>=50 words)",
+        "section_4_introduction": "present, ~200 words — PASS (>=50 words)",
+        "section_5_core_concepts": "present, ~1170 words across 6 sub-sections — PASS (>=100 words)",
+        "section_10_key_takeaways": "present, ~120 words — PASS (>=50 words)"
+      }
+    },
+    "citation_density": {
+      "passed": true,
+      "findings": [
+        {
+          "code": "khan_academy_primary_cited",
+          "severity": "info",
+          "detail": "Khan Academy [1] (primary resource) cited 14+ times across §4, §5.1, §5.2, §5.3, §5.4, §5.5, §6, §7. Primary citation requirement met."
+        }
+      ],
+      "resources": {
+        "[1]": "https://www.khanacademy.org/math/statistics-probability/summarizing-quantitative-data/mean-median-basics/a/mean-median-and-mode-review",
+        "[2]": "https://statistics.laerd.com/statistical-guides/measures-central-tendency-mean-mode-median.php",
+        "[3]": "https://www.statisticshowto.com/probability-and-statistics/statistics-definitions/mean-median-mode/"
+      },
+      "citation_count_by_section": {
+        "section_5": "~11/16 key claims cited (~69%) — PASS (threshold 60%)",
+        "section_6": "~5/6 key claims cited (~83%) — PASS (threshold 60%); fix applied: [1][2] on intro line, [1] on steps 2+3, [1][3] on step 4, [2][3] on step 5",
+        "section_7": "~6/7 key claims cited (~86%) — PASS (threshold 60%)",
+        "combined": "~22/29 key claims cited (~76%) — PASS (threshold 60%)"
+      },
+      "fake_citations": false,
+      "fix_verified": "Section 6 citation-density failure from prior run is resolved. Markers [1][2], [1], [1], [1][3], [2][3] added to all five procedural steps. Combined density now ~76%, above the 60% threshold."
+    },
+    "sequence_drift": {
+      "passed": true,
+      "forward_references": [],
+      "findings": [
+        {
+          "code": "undefined_terms_in_context",
+          "severity": "soft",
+          "detail": "Three terms in §7 (Real-World Patterns) are used descriptively without a plain-language gloss but are not being taught as defined concepts. Not a hard forward-reference fail.",
+          "terms": [
+            {
+              "term": "red-teaming",
+              "location": "§7 sub-heading 'Red-teaming and worst-case analysis'",
+              "issue": "Used as a section label without definition. Freshers will not know this term."
+            },
+            {
+              "term": "adversarial",
+              "location": "§7: 'adversarial outliers'",
+              "issue": "Used as a modifier without definition. Not in the allowed prior-topic vocabulary."
+            },
+            {
+              "term": "benchmark",
+              "location": "§7: 'our benchmark'",
+              "issue": "Used without a one-line plain-language gloss. Not in the allowed prior-topic vocabulary."
+            }
+          ]
+        }
+      ],
+      "note": "No hard forward references to variance, standard deviation, IQR, hypothesis testing, or any post-7.6 concept found. Soft terms above appear in a Real-World Patterns illustration and are not being taught as defined concepts."
+    },
+    "length_sanity": {
+      "passed": true,
+      "estimated_word_count": 2450,
+      "profile_range_required": "3000–4400 (standard corpus range per SKILL.md)",
+      "pct_below_minimum": 18.3,
+      "hard_fail_threshold_pct": 30,
+      "hard_fail_floor": 2100,
+      "finding_level": "soft",
+      "finding": "word_count_below_range",
+      "detail": "Estimated ~2450 words falls below the standard-profile corpus floor of 3000 words by ~18%. This is within the 30% hard-fail tolerance (floor = 2100 words), so no hard fail is triggered. Surface to HITL #2 for depth-profile confirmation — the author may wish to expand §6/§7 or accept the shorter length with an atomic-profile reclassification."
+    },
+    "topic_scope": {
+      "passed": true,
+      "scope_creep_findings": [],
+      "detail": "Boundary is mean/median/mode for AI consistency measurement. Variance, standard deviation, IQR, and hypothesis testing are absent. Temperature is referenced only as a previously introduced concept (7.5) to contextualise how the three measures behave, not re-taught. Descriptive statistics is correctly introduced as the umbrella term. No scope creep detected."
+    },
+    "beginner_readability": {
+      "passed": true,
+      "hard_fail": false,
+      "finding_count": 2,
+      "hard_fail_threshold": 3,
+      "findings": [
+        {
+          "code": "undefined_terms",
+          "severity": "soft",
+          "detail": "Three terms used without plain-language definition on first use: 'red-teaming' (§7 heading), 'adversarial' (§7), 'benchmark' (§7). All appear in Real-World Patterns and would be opaque to a zero-background fresher.",
+          "terms": ["red-teaming", "adversarial", "benchmark"],
+          "recommendation": "Add one-line plain-language gloss for each, e.g. 'red-teaming — stress-testing a system by deliberately crafting difficult inputs'; 'adversarial — intentionally tricky or edge-case'; 'benchmark — a standard test used to measure performance'. Alternatively, replace with simpler phrasing."
+        },
+        {
+          "code": "potential_jargon_density",
+          "severity": "soft",
+          "detail": "§4 Introduction names five terms in close succession (descriptive statistics, mean, median, mode, measures of central tendency) across two paragraphs. Each is explained immediately after naming, which mitigates density, but the clustering may feel fast for a zero-background learner.",
+          "location": "§4 Introduction, paragraphs 2–3",
+          "recommendation": "Add a single bridging sentence before listing the five terms to signal that each will be unpacked one-by-one."
+        }
+      ],
+      "other_checks": {
+        "terms_defined_on_first_use": "PASS — 'descriptive statistics', 'measures of central tendency', 'mean', 'median', 'mode', 'outliers' all receive plain-language definitions at first use.",
+        "jargon_dumps": "PASS — no single paragraph introduces 3+ brand-new terms simultaneously (the §4 cluster is spread across two paragraphs with immediate definitions).",
+        "plain_register": "PASS — sentences are short and active; no hedging phrases detected; learner addressed as 'you' throughout.",
+        "lead_with_example": "PASS — each sub-concept in §5 leads with a concrete example before any formal definition."
+      },
+      "note": "2 soft findings — below the >=3 threshold for escalation to hard fail. Surfaces to HITL #2 for author awareness."
+    }
+  },
+  "soft_findings_summary": [
+    {
+      "code": "word_count_below_range",
+      "check": "length_sanity",
+      "message": "Corpus estimated at ~2450 words; standard-profile floor is 3000. Within 30% hard-fail tolerance but below target. Surface at HITL #2 for depth-profile confirmation."
+    },
+    {
+      "code": "undefined_terms",
+      "check": "beginner_readability",
+      "terms": ["red-teaming", "adversarial", "benchmark"],
+      "message": "Three terms in §7 Real-World Patterns used without plain-language gloss. Recommend adding brief definitions or simplifying phrasing."
+    },
+    {
+      "code": "potential_jargon_density",
+      "check": "beginner_readability",
+      "message": "§4 Introduction names five new terms across two paragraphs. Mitigated by immediate definitions, but a bridging sentence would help zero-background readers."
+    }
+  ],
+  "hard_fail_count": 0,
+  "soft_finding_count": 3,
+  "verdict": "PASS (retry-1): citation-density fix verified — §6 Implementation now has markers on all five procedural steps, combined §5+§6+§7 density ~76% (threshold 60%). All 6 checks pass. 3 soft findings (word count below standard-profile floor at ~2450 vs 3000; 3 undefined terms in §7; minor term-clustering in §4) surface at HITL #2 but do not block corpus approval.",
+  "recommended_action": "Corpus approved to advance to HITL #2. Author should review 3 soft findings: (1) consider expanding §6/§7 or accepting atomic-profile reclassification for the shorter word count; (2) add plain-language glosses for red-teaming/adversarial/benchmark in §7; (3) optionally add a bridging sentence in §4 before listing the five central-tendency terms."
+}

@@ -1,0 +1,49 @@
+{
+  "type": "topic",
+  "id": "1.6",
+  "title": "Abstraction — hiding complexity at the right level",
+  "slug": "1-6-abstraction-hiding-complexity-at-the-right-level",
+  "position_in_module": 2,
+  "week_num": 1,
+  "session_name": "How Machines Think",
+  "module": {
+    "position": 2,
+    "slug": "2-problem-solving-foundations",
+    "title": "Problem-Solving Foundations"
+  },
+  "course": {
+    "code": "M1",
+    "slug": "m1-computational-thinking",
+    "title": "Computational Thinking"
+  },
+  "next_assessment": {
+    "id": "A1",
+    "due_week": 3,
+    "title": "Specification Portfolio",
+    "weight": "10%"
+  },
+  "paths": {
+    "corpus": "topic_corpus.md",
+    "resources": "topic.resources.json",
+    "progress": "topic.progress.json",
+    "artifacts_dir": "artifacts/",
+    "critic_reports_dir": "critic-reports/"
+  },
+  "artifact_plan": {
+    "depth_profile": "standard",
+    "depth_signals": [
+      "title contains two distinct sub-ideas (hiding complexity + right level)",
+      "Core Concepts has 6 sub-sections including a comparison concept and a named failure mode",
+      "Implementation section with 6-step process and a worked example",
+      "3000-4400 word range fits standard budget"
+    ],
+    "diagram": true,
+    "diagram_intent": "Layered abstraction diagram showing three levels (user / interface / internals) with arrows indicating what each level sees and what it hides — contrasting with a decomposition task tree to show the two tools side by side.",
+    "reading": { "target_word_range": [1200, 1600], "target_minutes": [6, 8] },
+    "quiz": { "min_questions": 5, "max_questions": 6, "include_short_answer": false },
+    "confirmed_by": "human",
+    "confirmed_at": "2026-06-21T00:00:00Z"
+  },
+  "expected_delivery_minutes": 7,
+  "status": "corpus_drafted"
+}

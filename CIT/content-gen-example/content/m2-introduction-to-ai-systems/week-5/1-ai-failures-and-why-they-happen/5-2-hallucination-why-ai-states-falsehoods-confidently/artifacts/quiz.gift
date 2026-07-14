@@ -1,0 +1,41 @@
+$CATEGORY: CIT/M2/week-5/5-2-hallucination-why-ai-states-falsehoods-confidently
+
+::q1:: Why does an LLM (Large Language Model) produce a confident-sounding answer even when that answer is false? {
+~The model queries a live database during inference, but that database is often out of date.#No — LLMs do not query a live database at inference time. They generate text purely from learned patterns.
+~The model was trained on too little data, so it guesses at random whenever its knowledge runs out.#No — the issue is not a data shortage. Even well-trained LLMs hallucinate because generation has no truth-check.
+=The model predicts likely tokens, not verified facts, so false and true outputs both sound equally fluent.#Correct — next-token prediction optimises for statistical likelihood, not accuracy, making hallucinated text indistinguishable on the surface.
+~The model deliberately shortens uncertain answers, and that compression sometimes strips out accuracy.#No — the model has no intent; it does not modify answers because of uncertainty. It always picks the most likely next token.
+#### Tests LO1 — why confident false outputs occur. Corpus §5.3 and §5.6.
+}
+
+::q2:: Which of the following best describes how an LLM (Large Language Model) generates each word in a response? {
+=The model picks the most statistically likely next token given all prior context, one token at a time.#Correct — this is next-token prediction: a repeated single-step calculation with no separate truth-checking step.
+~The model retrieves the best-matching passage from its training data and copies it into the response.#No — the model does not retrieve or copy stored text. It generates tokens from learned probability patterns.
+~The model evaluates the full meaning of the prompt and then writes the whole response in one pass.#No — the model works token by token; each token is chosen based only on the context built up so far.
+~The model runs a fact-check on each candidate word and removes any tokens flagged as unverified.#No — there is no internal fact-checking layer. Token selection is entirely probabilistic.
+#### Tests LO2 — the next-token prediction mechanism. Corpus §5.2.
+}
+
+::q3:: A student summarizes a document using an AI. The summary says the report recommends Option A, but the document clearly recommends Option B. Which type of hallucination is this? {
+~Extrinsic hallucination, because the model invented a recommendation that had no source anywhere.#No — extrinsic means invented content with no source. Here the source existed; the model contradicted it.
+~Neither type — this is a retrieval error, not a hallucination, because the document was provided.#No — contradicting provided source material is the defining feature of intrinsic hallucination.
+~Extrinsic hallucination, because the model produced output that cannot be checked against any text.#No — the document is right there and can be checked; the model had the correct source and ignored it.
+=Intrinsic hallucination, because the model contradicted information that was present in the source.#Correct — intrinsic hallucination is when the model had the correct information but did not use it faithfully.
+#### Tests LO3 — distinguishing intrinsic hallucination from extrinsic hallucination. Corpus §5.4.
+}
+
+::q4:: Why can't an LLM (Large Language Model) simply say "I don't know" whenever it is uncertain? {
+~The phrase is blocked by a safety filter applied after training to keep responses consistently helpful.#No — no such filter removes uncertainty phrases. LLMs can and do output "I don't know" in some contexts.
+="I don't know" is just another token sequence; the model uses it based on training patterns, not real self-knowledge.#Correct — the model has no internal mechanism to assess what it knows. Token output depends on statistical likelihood.
+~LLMs always include uncertainty signals; the real problem is that users routinely ignore those signals.#No — the corpus states that LLMs frequently produce confident assertions with no uncertainty signal at all.
+~Regulations require AI systems to always deliver a direct answer rather than leave users without one.#No — there is no such regulation. The cause is structural, rooted in how the model was trained on text.
+#### Tests LO4 — why the model cannot reliably say "I don't know." Corpus §5.5.
+}
+
+::q5:: A doctor asks an AI assistant to draft a clinical summary. The AI produces a fluent, confident note that includes a hallucinated drug dosage. Why is the AI's confident tone particularly dangerous here? {
+~Confident tone raises the reading level of the note, which makes it harder for clinicians to spot errors.#No — the danger is not about readability. It is about how confidence affects the decision to verify output.
+~High confidence signals machine-generated text, so clinicians become more likely to double-check it.#No — the opposite is true. Confident, fluent text looks authoritative and reduces the urge to verify.
+=Users trust a confident output and act on it without checking, so a false dosage can cause harm before anyone verifies it.#Correct — the corpus explains that confidence suppresses verification; users trust fluent text and may act on it unchecked.
+~Hallucination risk is equal across all confidence levels, so the AI's tone does not change the danger.#No — the corpus specifically identifies confidence as the factor that allows hallucination to cause harm at scale.
+#### Tests LO5 — real-world harm domains and why confidence makes hallucination worse. Corpus §5.7.
+}

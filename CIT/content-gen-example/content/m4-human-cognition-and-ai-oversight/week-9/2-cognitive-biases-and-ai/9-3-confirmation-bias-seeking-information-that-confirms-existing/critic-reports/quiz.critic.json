@@ -1,0 +1,54 @@
+{
+  "topic_id": "9.3",
+  "passed": true,
+  "checks": {
+    "positional_bias": {
+      "passed": true,
+      "distribution": [2, 2, 1, 1],
+      "max_share": 0.333,
+      "reshuffled": false,
+      "notes": "Positions (0-based): q1=0, q2=1, q3=2, q4=3, q5=0, q6=1. Distribution pos0=2, pos1=2, pos2=1, pos3=1 confirmed against sidecar — exact match, no desync. max_share 0.333 <= 0.40 threshold. Pass."
+    },
+    "length_bias": {
+      "passed": true,
+      "longest_correct_rate": 0.167,
+      "baseline": 0.25,
+      "flagged_questions": [
+        {
+          "id": "9-3-q6",
+          "correct_len": 197,
+          "distractor_mean": 135,
+          "ratio": 1.459,
+          "note": "Correct answer (197 chars) exceeds distractor mean (135) by 45.9%, well above the 20% flag threshold. Does not push overall rate past the 0.40 hard-fail threshold."
+        }
+      ],
+      "notes": "1 of 6 MCQs shows length-bias flag (q6 correct answer is longest by >20% of distractor mean). longest_correct_rate = 0.167 <= 0.40. Pass. q6 flagged for author awareness but does not block."
+    },
+    "distractor_plausibility": {
+      "passed": true,
+      "absurd_rate": 0.0,
+      "flagged_distractors": [],
+      "notes": "18 distractors evaluated across 6 MCQs. Zero scored 1 (obviously absurd). All distractors represent plausible beginner misconceptions about confirmation bias: mechanism-ordering errors, confusions between cause and effect, and reversals of the bias direction. absurd_rate 0.0 <= 0.25. Pass."
+    },
+    "objective_coverage": {
+      "passed": true,
+      "covered_objectives": [
+        "LO1 — Define confirmation bias in plain language and identify it as a systematic (not random) tendency of human cognition. [q1]",
+        "LO2 — Describe the three mechanisms through which confirmation bias operates: selective search, biased interpretation, and selective memory. [q2]",
+        "LO3 — Explain why confirmation bias is automatic and effortless by connecting it to System 1 heuristic processing and cognitive economy. [q3]",
+        "LO4 — Recall Peter Wason's 2-4-6 task as experimental evidence that people seek confirming rather than disconfirming evidence. [q4]",
+        "LO5 — Apply the concept of confirmation bias to the context of evaluating AI outputs, identifying how the bias can cause a practitioner to misjudge an AI system's quality. [q5]",
+        "LO6 — Recognise that awareness of a bias does not automatically eliminate it, and that motivated reasoning can persist even under deliberate System 2 thinking. [q6]"
+      ],
+      "uncovered_objectives": [],
+      "notes": "All 6 LOs have exactly one mapped question each. objective_ref values in sidecar match corpus §3 LOs at high similarity. No orphan questions. Pass."
+    },
+    "beginner_scope": {
+      "passed": true,
+      "findings": [],
+      "notes": "All stems use plain language. No unexplained acronyms. 'System 1' and 'System 2' references are valid — both terms defined in prerequisite topics 9.1 and 9.2 listed in corpus §2. 'Motivated reasoning' and 'cognitive economy' are defined within this topic's corpus. No forward references to topics 9.4+. No out_of_scope_question findings. No jargon_in_stem findings. Distractors draw exclusively on beginner misconceptions about confirmation bias. Pass."
+    }
+  },
+  "verdict": "Pass — all five checks clean; q6 correct answer is notably longer than its distractors (flagged for author awareness) but longest_correct_rate of 0.167 is well under the 0.40 hard-fail threshold.",
+  "at": "2026-06-12T00:00:00Z"
+}

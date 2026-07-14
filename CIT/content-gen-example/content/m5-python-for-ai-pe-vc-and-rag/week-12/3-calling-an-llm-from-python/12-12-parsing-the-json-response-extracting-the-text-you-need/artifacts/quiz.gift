@@ -1,0 +1,53 @@
+$CATEGORY: CIT/M5/week-12/12-12-parsing-the-json-response-extracting-the-text-you-need
+
+::q1:: Which of the following is a top-level field found directly on the Anthropic API response object? {
+~`messages` — a list of the conversation turns you sent to the API#No — `messages` is the argument you pass in your request, not a field on the response object.
+=`stop_reason` — a string explaining why Claude stopped generating text#Correct — `stop_reason` is one of the named top-level fields on the response object, alongside `id`, `model`, `role`, `usage`, and `content`.
+~`system` — the system prompt text you provided before the user message#No — `system` is an optional input parameter, not a field returned on the response object.
+~`temperature` — the setting that controls how creative Claude's reply is#No — `temperature` is a call parameter you may send; it is not returned on the response object.
+#### Tests identification of the top-level fields of the Anthropic API response object (corpus §5.1).
+}
+
+::q2:: Why is `message.content` a list rather than a single string? {
+~Because every API call always produces more than one text block in the reply#No — for standard beginner calls there is almost always exactly one text block; the list is not a signal that multiple blocks exist.
+~Because the list holds one item per token in Claude's reply, making it easy to count them#No — tokens are tracked in `message.usage`, not in the content list; each item in the list is a content block, not a token.
+~Because strings cannot be stored directly in a response object, so they are always wrapped in a container#No — the response object contains plain strings in many fields, such as `id`, `model`, and `role`.
+=Because the API is designed to support multiple types of output in one response, so content is always a list of blocks for consistency#Correct — the list structure exists so advanced use cases (multiple block types) work without changing the response shape; for standard calls it has exactly one item.
+#### Tests understanding of why message.content is a list and what each content block contains (corpus §5.2).
+}
+
+::q3:: Complete this code so it safely extracts text from every content block in `message.content`. Which line fills the blank correctly?
+
+```
+for block in message.content:
+    ________
+        print(block.text)
+``` {
+=`if block.type == "text":` — checks the block's type field before accessing its text field#Correct — this guard ensures only blocks that carry a `text` field are accessed, making the loop safe regardless of block type.
+~`if block == "text":` — compares the whole block object to the string "text"#No — `block` is a content-block object, not a string; comparing it directly to `"text"` will always be False and no text will print.
+~`if block.text == "text":` — compares the actual reply string to the word "text"#No — this checks whether the content of the reply literally equals the word "text", not whether the block type is text.
+~`if block[0] == "text":` — indexes into the block the same way you index a list#No — content blocks are objects with named fields, not lists; indexing them with `[0]` raises an error.
+#### Tests writing a for-loop that safely iterates over content blocks by type (corpus §5.4).
+}
+
+::q4:: Your code calls Claude with `max_tokens=50`. When you print `message.stop_reason` you see `"max_tokens"`. What does that tell you? {
+~The call succeeded and Claude deliberately chose to give a short answer#No — `"max_tokens"` means the token cap was reached; Claude did not finish voluntarily.
+~The model rejected the request because the token limit is set too high for the selected model#No — `"max_tokens"` means the reply hit the cap you set; it is not a rejection and has nothing to do with the cap being too high.
+=The reply was cut off before Claude finished, because it reached the `max_tokens` limit you set#Correct — `"max_tokens"` as `stop_reason` means the generation was truncated at your cap; the reply is incomplete.
+~Claude ran out of information and stopped early even though the token cap was not reached#No — if Claude stops without hitting the cap, `stop_reason` is `"end_turn"`, not `"max_tokens"`.
+#### Tests using stop_reason to detect a truncated reply (corpus §5.5).
+}
+
+::q5:: After a successful API call, `message.usage.output_tokens` is `127`. What does that number represent? {
+~The number of characters in Claude's reply, counted one letter at a time#No — tokens are not individual characters; one token is roughly three to four characters on average.
+=The number of tokens in Claude's reply, which is what Anthropic uses to calculate the cost of that output#Correct — `output_tokens` counts the tokens in Claude's generated reply and is the basis for billing the output side of the call.
+~The total number of tokens used by both the request and the reply combined#No — `output_tokens` covers the reply only; `input_tokens` covers the request; you add them to get the total.
+~The number of words in Claude's reply, split on spaces#No — tokens split on subword boundaries, not spaces; word count and token count are different measures.
+#### Tests reading output_tokens from message.usage and understanding what it measures (corpus §5.6).
+}
+
+::q_sa:: What value does `message.stop_reason` hold when Claude finishes its reply naturally, without hitting the token limit? {
+=end_turn
+="end_turn"
+#### Tests recall of the stop_reason value that signals a complete, untruncated reply (corpus §5.5).
+}

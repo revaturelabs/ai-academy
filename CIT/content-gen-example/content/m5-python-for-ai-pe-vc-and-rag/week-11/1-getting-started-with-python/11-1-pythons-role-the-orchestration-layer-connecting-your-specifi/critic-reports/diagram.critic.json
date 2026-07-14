@@ -1,0 +1,39 @@
+{
+  "passed": true,
+  "cycle": 1,
+  "source_preflight": {
+    "mermaid_parses": true,
+    "node_count": 5,
+    "node_count_in_range": true,
+    "label_discipline": true,
+    "concept_fidelity": true,
+    "label_plainness": true,
+    "title_in_config": true,
+    "single_path_discipline": true
+  },
+  "visual_checks": {
+    "nodes_overlap": false,
+    "label_truncated": false,
+    "crossings_illegible": false,
+    "layout_wrong_for_intent": false,
+    "missing_side_panel_pattern": false,
+    "side_panels_hollow": false,
+    "whitespace_imbalance": false,
+    "subtitle_illegible": false,
+    "color_tier_violation": false,
+    "edge_label_collision": false
+  },
+  "findings": [],
+  "stats": {
+    "nodes": 5,
+    "edges": 4,
+    "layout": "flowchart TB (linear single-path)",
+    "labels": ["Human Intent", "Plain-English Specification", "Python Code", "AI Service (API)", "Output"],
+    "png_path": "artifacts/diagram.png",
+    "png_rendered": true,
+    "png_size_bytes": 27630,
+    "cycle": 1
+  },
+  "verdict": "PASS. Clean 5-node TB pipeline. Color tiers correct (blue start, purple×2 auto, yellow 3px-border hitl for focal Python Code node, green done). Subtitles legible at 12px. Edge labels Step 1-4 centered on arrows, no node collision. Title renders as top banner. No visual defects found on visual inspection of rendered PNG.",
+  "at": "2026-06-12T00:07:00Z"
+}

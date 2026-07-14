@@ -1,0 +1,54 @@
+{
+  "topic_id": "14.7",
+  "generated_at": "2026-06-15T00:00:00Z",
+  "format": "gift",
+  "question_count": 6,
+  "$bias_defense_applied": true,
+  "$shuffle_seed": "31342e37",
+  "correct_position_distribution": [2, 0, 3, 1, 2, 0],
+  "bias_defense_notes": {
+    "max_share": "2/6 = 0.333 (threshold 0.40 — PASS)",
+    "all_positions_used": true,
+    "positions_used": [0, 1, 2, 3],
+    "length_bias_violations": 0,
+    "length_bias_method": "All distractors written as 2 full sentences comparable in length to the correct answer"
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "type": "mcq",
+      "objective_ref": "LO1 — Name and describe the four tiers of AI system complexity: direct call, chained calls, RAG, and agent",
+      "correct_position": 2
+    },
+    {
+      "id": "q2",
+      "type": "mcq",
+      "objective_ref": "LO2 — State the defining criterion for each tier — what makes a task belong to that tier and not a simpler one",
+      "correct_position": 0
+    },
+    {
+      "id": "q3",
+      "type": "mcq",
+      "objective_ref": "LO3 — Apply the four-question decision matrix to a task description and identify the correct tier",
+      "correct_position": 3
+    },
+    {
+      "id": "q4",
+      "type": "mcq",
+      "objective_ref": "LO4 — Explain why starting with the simplest tier that works is the right engineering default",
+      "correct_position": 1
+    },
+    {
+      "id": "q5",
+      "type": "mcq",
+      "objective_ref": "LO5 — Recognize over-engineering (agent when direct call suffices) and under-engineering (no RAG when model lacks data)",
+      "correct_position": 2
+    },
+    {
+      "id": "q6",
+      "type": "mcq",
+      "objective_ref": "LO3 — Apply the four-question decision matrix to a task description and identify the correct tier",
+      "correct_position": 0
+    }
+  ]
+}

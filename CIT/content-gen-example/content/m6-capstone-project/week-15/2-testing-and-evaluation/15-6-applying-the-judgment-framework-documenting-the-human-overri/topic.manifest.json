@@ -1,0 +1,35 @@
+{
+  "type": "topic",
+  "id": "15.6",
+  "title": "Applying the Judgment Framework — documenting the human override point per component",
+  "slug": "15-6-applying-the-judgment-framework-documenting-the-human-overri",
+  "position_in_module": 2,
+  "week_num": 15,
+  "session_name": "Capstone Build Sprint and Showcase",
+  "module": {
+    "position": 2,
+    "slug": "2-testing-and-evaluation",
+    "title": "Testing and Evaluation"
+  },
+  "course": {
+    "code": "M6",
+    "slug": "m6-capstone-project",
+    "title": "Capstone Project"
+  },
+  "next_assessment": {
+    "id": "A5",
+    "due_week": 15,
+    "title": "Capstone Project and Portfolio",
+    "weight": "40%"
+  },
+  "paths": {
+    "corpus": "topic_corpus.md",
+    "resources": "topic.resources.json",
+    "progress": "topic.progress.json",
+    "artifacts_dir": "artifacts/",
+    "critic_reports_dir": "critic-reports/"
+  },
+  "artifact_plan": null,
+  "expected_delivery_minutes": null,
+  "status": "scaffolded"
+}

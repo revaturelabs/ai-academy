@@ -1,0 +1,41 @@
+$CATEGORY: CIT/M4/week-9/9-7-the-judgment-framework-q1-what-is-the-cost-of-this-being-wro
+
+::q1:: The Judgment Framework gives people a structured pause before acting on an AI output. What is the Judgment Framework's first question (Q1) actually asking you to think about? {
+~Whether the AI system is generally reliable across all the tasks it has been trained on#Q1 is not a general assessment of the AI — it is specific to this output in this context. General reliability is a different question.
+~Whether you personally have doubts about the AI output before you decide to act on it#Q1 is designed to be asked before doubt arises, not only when you already feel uncertain. Waiting for doubt to appear is exactly what the framework aims to prevent.
+=How bad it would be if the AI output turned out to be wrong in this specific situation#Correct — Q1 focuses on the cost of a wrong answer here and now: how serious the harm would be, how likely the error is, and how quickly it would be caught.
+~Whether the output was produced by an AI rather than a human expert with relevant credentials#Q1 is about the consequences of being wrong, not about who or what produced the output.
+#### Tests LO1 — stating Q1 of the Judgment Framework and explaining what it is asking (corpus §5.1).
+}
+
+::q2:: The Judgment Framework's Q1 breaks the "cost of being wrong" into three distinct dimensions. Which of the following correctly names all three? {
+=Severity, probability, and detectability#Correct — severity is the size of the harm, probability is the likelihood this output is wrong in this context, and detectability is how easily the error would be caught before causing harm.
+~Severity, confidence, and transparency#Confidence and transparency describe AI system properties, not dimensions of error cost. Detectability — whether an error is caught before harm — is the third dimension, not those two.
+~Frequency, reversibility, and scope#These are related ideas but not the three named dimensions of Q1 analysis. The correct triad is severity, probability, and detectability.
+~Impact, urgency, and accountability#Accountability is covered by Q3 of the Judgment Framework, not Q1. The three Q1 dimensions are severity, probability, and detectability.
+#### Tests LO2 — defining the three dimensions of error cost (corpus §5.2).
+}
+
+::q3:: A junior engineer uses an AI tool to check whether a proposed chemical storage configuration meets safety regulations. The AI outputs "no issues found." The engineer files the report without independent review. Which Q1 analysis best fits this situation? {
+~Severity is low because regulatory compliance is a routine check; probability is low because AI tools are designed for this task; detectability is high because auditors review the file later#Regulatory compliance errors in chemical storage can have severe physical consequences, so severity is not low. Routine-seeming tasks can still carry high-cost errors.
+~Severity is medium; probability is low because the AI expresses no uncertainty; detectability is high because the error would appear in the filed report immediately#AI confidence does not mean AI accuracy — this reasoning conflates the two. Detectability refers to whether harm is caught before it occurs, not whether a document is visible.
+~Severity is low; probability is moderate; detectability is medium — overall cost is low and no further review is needed#Safety-critical engineering almost always returns high cost from Q1. A "no issues" report that is wrong may only surface after a safety failure, making detectability low, not medium.
+=Severity is high (physical harm possible if storage is wrong); probability is meaningful (AI may not cover this configuration); detectability is low (the "clean" report suppresses further review) — overall cost is high#Correct — this is a safety-critical domain where all three dimensions point toward high cost. The AI's clean output reduces the chance anyone looks again, which lowers detectability further.
+#### Tests LO3 — applying the three-dimension Q1 analysis to a real-world scenario (corpus §5.4, §7).
+}
+
+::q4:: A content writer uses an AI tool to suggest a headline for a blog post that only internal staff will read. She can edit the headline before it is published and plans to re-read it herself. A colleague argues she should still apply rigorous Q1 scrutiny — identical to what she would use in a medical context — every time the AI suggests a headline. Why is the colleague's advice not quite right, even though Q1 is a good habit? {
+~Because Q1 only applies in medical, legal, and financial domains, so there is no point asking it for creative writing tasks at all#Q1 applies to any AI output, not only high-stakes professional domains. The advice in the corpus is to ask Q1 broadly — the answer may simply be "low cost," which is still a useful answer.
+=Because all three dimensions point toward low cost here — harm is minor and reversible, only she is affected, and she will review the output again — so Q1 correctly signals that light scrutiny is proportionate#Correct — recognising low-cost situations is part of using the framework well. Q1 should still be asked, but in this case it returns "low cost," which means spending medical-level effort would be disproportionate.
+~Because the AI is reliable for creative tasks, so the probability dimension is always low for headline generation and Q1 is unnecessary#Blanket claims about AI reliability for a task category are not how Q1 works. Probability must be assessed per output in context, not assumed from a task label.
+~Because detectability is always high for written content, which makes the overall cost formula return zero regardless of severity or probability#Detectability is not automatically high for written content — this would need to be assessed. Even if detectability were high here, the reasoning should come from Q1 analysis, not from a blanket rule about content type.
+#### Tests LO4 — distinguishing low-cost and high-cost errors and explaining how the distinction affects the level of scrutiny warranted (corpus §5.5, §8).
+}
+
+::q5:: The Judgment Framework has three questions. A student correctly states Q1 as "What is the cost of this being wrong?" but cannot remember the other two. Which answer correctly names Q2 and Q3, and explains why Q1 must be asked before them? {
+~Q2 is "Who is accountable if this fails?" and Q3 is "Can I verify this without the AI?" — Q1 comes first because accountability cannot be assigned until the AI's output is accepted#This has Q2 and Q3 swapped. Q2 is about verification and Q3 is about accountability. The explanation of why Q1 comes first is also inaccurate.
+~Q2 is "Is the AI confident in this output?" and Q3 is "Who built this AI system?" — Q1 comes first because it filters out low-quality AI tools before you use them#Neither question correctly describes Q2 or Q3. Q2 concerns independent verification and Q3 concerns accountability. Q1 is not about filtering AI tools.
+=Q2 is "Can I verify this without the AI?" and Q3 is "Who is accountable if this fails?" — Q1 comes first because you need to know whether the stakes are high enough to justify verification and accountability thinking at all#Correct — if Q1 returns "negligible cost," the intensity of Q2 and Q3 work is calibrated accordingly. Q1 is the triage step that decides how much effort the rest of the framework needs.
+~Q2 is "Can I verify this without the AI?" and Q3 is "Who is accountable if this fails?" — Q1 comes first because Q1 tells you whether the AI is trustworthy in general, which you must know before verifying anything#The names of Q2 and Q3 are correct, but the reason Q1 comes first is wrong. Q1 assesses the cost of being wrong in this context, not the AI's general trustworthiness.
+#### Tests LO5 — naming Q2 and Q3 and explaining why Q1 must come first (corpus §5.1).
+}

@@ -1,0 +1,78 @@
+{
+  "critic": "reading-critic",
+  "topic_id": "14.9",
+  "at": "2026-06-16T00:00:00Z",
+  "passed": true,
+  "checks": {
+    "format_discipline": {
+      "passed": true,
+      "findings": [
+        "First non-empty line is '# Production AI patterns — cost, latency, and reliability trade-offs' — no YAML frontmatter present.",
+        "reading.meta.json exists and parses correctly with all required fields: word_count, reading_minutes, target_word_range, resources_cited, diagram_embedded, sections.",
+        "Exactly 6 sections in correct order: Overview, Key Concepts, Worked Example, In Practice, Key Takeaways, References."
+      ]
+    },
+    "length_budget": {
+      "passed": true,
+      "word_count": 1382,
+      "target": [1200, 1400],
+      "notes": "Word count 1382 is within the 1200–1400 target range. meta.json reports 7 reading minutes (1382/230 ≈ 6.0 minutes; meta reports 7 — minor rounding, within acceptable range). No flag needed."
+    },
+    "citation_discipline": {
+      "passed": true,
+      "primary_cited": true,
+      "notes": "[1] Chip Huyen cited at lines 5, 11, 26, 30, 41, 48, 66, 72, 104, 120, 126, 130, 144, 146, 147, 151, 154. [2] Anthropic cited at lines 11, 16, 35, 62, 78, 104, 130, 145, 146. [3] OpenAI cited at lines 5, 16, 26, 35, 41, 48, 62, 66, 72, 76, 84, 104, 120, 126, 144, 145, 147, 154. [4] Google Cloud cited at lines 72, 84, 140. All four primary resources cited at least once. Bibliography in References section lists all four with titles and URLs/descriptions. No orphan inline markers and no orphan bibliography entries."
+    },
+    "forward_references": {
+      "passed": true,
+      "forward_refs": [],
+      "notes": "The reading references only concepts from prior topics 14.1–14.8 (RAG, vectors, embeddings, agents, ReAct, HITL, decision matrix) and this topic's corpus. No references to topic 14.10 or any content beyond 14.9 appear in the reading.md body. (The corpus section 11 mentions 14.10 but that section does not appear in reading.md.)"
+    },
+    "beginner_readability": {
+      "passed": true,
+      "findings": [
+        "All required terms defined on first use: 'tokens' (line 11 — 'small chunks a model uses to read and write text; one token is roughly four characters'); 'Input tokens' (line 14 — bolded, defined inline); 'Output tokens' (line 16 — bolded, defined inline); 'Model tiers' (line 26 — defined with cost comparison); 'Latency' (line 30 — 'time between sending a request and receiving a usable response'); 'TTFT (time to first token)' (line 32 — acronym spelled out, plain-language meaning given); 'Streaming' (line 35 — typewriter analogy used); 'prompt caching' (line 62 — defined with mechanism); 'context window' (line 78 — 'maximum tokens it can process in one call'); 'rate limit' (line 74 — 'maximum number of requests and tokens per minute'); 'exponential backoff' (line 76 — mechanism 1s→2s→4s→8s shown); 'jitter' (line 76 — 'a slight random delay' in parentheses); 'thundering herd' (line 76 — 'a problem called a thundering herd' defined inline); 'circuit breaker' (line 84 — full mechanism described).",
+        "No jargon dumps detected — concepts are introduced one at a time with supporting explanation.",
+        "Concrete examples precede abstractions throughout (e.g., typewriter analogy for streaming before the formal description; tuition fee scenario in Worked Example before the mapping table).",
+        "No academic hedging phrases detected. Sentence lengths are consistently short to moderate (well under 25-word average)."
+      ]
+    },
+    "formatting": {
+      "passed": true,
+      "findings": [
+        "No paragraph exceeds 4–5 sentences; most substantive content is delivered via bullet lists and tables.",
+        "Sequences and multi-item concepts (token types, latency tiers, reliability patterns, cost reduction strategies) are presented as bullet lists or numbered lists, not run-on prose.",
+        "Inline examples present throughout Key Concepts (e.g., '+5,000 tokens' for RAG, '1s→2s→4s→8s' for backoff, '$0.005' cost in Worked Example) — not confined to Worked Example section alone.",
+        "Bold-term / plain-meaning shape used consistently for all new terms at first introduction.",
+        "No assessment references (no 'A5', 'due week 15', '40%', or assessment metadata) present in reading.md."
+      ]
+    },
+    "scope": {
+      "passed": true,
+      "scope_creep_instances": [],
+      "notes": "Reading stays tightly within 'production AI cost/latency/reliability trade-offs'. No ML training mechanics, no hardware or GPU details, no LLM architecture internals (tokenizer internals not taught — only the consumer-facing consequence of tokens). The diagram reference on line 45 points to an artifact already in the artifact plan (diagram: true) and describes the cost-latency-quality triangle, which is squarely in-scope."
+    },
+    "corpus_faithfulness": {
+      "passed": true,
+      "findings": [
+        "Sampled 12 assertions against corpus — all 12 fully supported:",
+        "'One token is roughly four characters, or about three-quarters of a word' — corpus §5.1 verbatim match.",
+        "'output tokens cost 2x–5x more than input tokens' — corpus §5.1: 'often 2x to 5x the input token rate'.",
+        "'smaller model may cost 10–50x less per token' — corpus §5.1 exact match.",
+        "'TTFT is what users feel as response lag' — corpus §5.2 exact paraphrase.",
+        "'Streaming: server sends tokens to the client as it generates them' — corpus §5.2 match.",
+        "'Prompt caching: cached tokens re-processed at a lower rate' — corpus §5.3 match.",
+        "'Rate limits: maximum number of requests and tokens per minute' — corpus §5.4 match.",
+        "'exponential backoff with jitter / thundering herd' — corpus §8 Best Practices match.",
+        "'context window: maximum tokens in one call (input + output)' — corpus §5.4 match.",
+        "'circuit breaker: after threshold consecutive failures, opens and routes to fallback' — corpus §5.4 exact match.",
+        "'Cost+Quality → Slow' triangle vertex — corpus §5.5 match.",
+        "'graceful degradation' definition — corpus §7 Real-World Patterns exact match.",
+        "Zero unsupported assertions found (threshold is >2 for fail)."
+      ]
+    }
+  },
+  "hard_findings": [],
+  "soft_findings": [],
+  "verdict": "PASS — All 6 checks pass. Format is clean (no frontmatter, correct 6-section template, valid sidecar). Word count 1382 is within [1200, 1400] target. All four primary resources cited inline and in bibliography with no orphan markers. No forward references to topics beyond 14.9. All required beginner terms (token, TTFT, prompt caching, model tier, context window, rate limit, exponential backoff, jitter, thundering herd, circuit breaker) are defined on first use with plain-language meanings. Formatting uses bullets, tables, and inline examples throughout — no prose walls. Scope is clean: no ML training, no hardware, no LLM architecture internals. Corpus faithfulness check: 12/12 sampled assertions fully supported by corpus; zero unsupported claims."
+}

@@ -1,0 +1,83 @@
+{
+  "critic": "module-drift-critic",
+  "module": "3-production-ai-patterns",
+  "week_num": 14,
+  "at": "2026-06-16T00:00:00Z",
+  "passed": true,
+  "checks": {
+    "concept_sequence": {
+      "passed": true,
+      "violations": [],
+      "notes": [
+        "14.9 (position_in_module: 1) lists prerequisites 14.1–14.8, all of which precede it in the sequence. No forward-reference violations.",
+        "14.10 (position_in_module: 2) lists prerequisites 14.4, 14.7, and 14.9 — all earlier positions. ADR (Architectural Decision Record) is the one concept introduced fresh in 14.10; it is fully scaffolded within that topic (historical context, template, writing rules, worked example) before the learner is asked to apply it. No concept is used cold without a within-topic or prior-topic introduction."
+      ]
+    },
+    "coverage_gaps": {
+      "passed": true,
+      "gaps": [],
+      "notes": [
+        "Module title 'Production AI Patterns' and narrative seed ('cost, latency, reliability trade-offs when RAG and agents are in the loop / write a one-paragraph architectural decision') are fully covered. 14.9 learning objectives cover the token cost model, TTFT, streaming, prompt caching, model tier routing, reliability failure modes (rate limits, context overflow, provider downtime), and the cost–latency–quality triangle. 14.10 learning objectives cover ADR definition, the five-section template, and writing all three substantive sections (Context, Decision, Consequences) using 14.7 and 14.9 inputs. The lab activity (Journal Entry #9, write a one-paragraph ADR) is directly and explicitly addressed in 14.10 section 9, which calls itself the lab activity.",
+        "Learn → apply arc is coherent and complete: 14.9 teaches the production trade-off concepts; 14.10 teaches how to document a design decision that synthesises those concepts. No uncovered facets identified."
+      ]
+    },
+    "overlap_redundancy": {
+      "passed": true,
+      "instances": [],
+      "soft_instances": [
+        {
+          "topics": ["14.9", "14.10"],
+          "description": "14.10 section 5.5 contains a three-row summary table (direct call / RAG / agent — what gets better / what gets harder) that recaps tier trade-off profiles. The content originates in 14.7 (decision matrix, prior module) and 14.9 (token cost model, section 5.1). In 14.10 the table is presented as a prescriptive writing tool for the Consequences section of an ADR, not as explanatory instruction. Noun Jaccard similarity between 14.9 section 5 and 14.10 section 5 is estimated well below the 0.6 threshold: 14.10 section-5 vocabulary is dominated by ADR-specific terms (record, status, title, consequences, append-only, Nygard, one-decision-per-record) absent from 14.9. Classified as soft finding only; does not fail the check.",
+          "severity": "soft"
+        }
+      ]
+    },
+    "scope_creep": {
+      "passed": true,
+      "instances": [],
+      "notes": [
+        "14.9 stays within production operations territory (token billing, latency measurement, cost-reduction strategies, reliability patterns). It does not re-enter RAG pipeline construction (handled in 14.1–14.4) or agent implementation internals (handled in 14.5–14.6). Circuit breaker and exponential backoff are production ops patterns — they are in scope for this module.",
+        "14.10 uses references to 14.4 (when-to-use-RAG question), 14.7 (decision matrix flowchart), and 14.9 (cost–latency–quality triangle, reliability patterns) as named inputs to specific ADR sections (Context draws on 14.7; Consequences draws on 14.9). These concepts are used as inputs, not re-taught. The topic does not drift into RAG-module or agents-module instructional territory."
+      ]
+    },
+    "terminology_consistency": {
+      "passed": true,
+      "violations": [],
+      "soft_instances": [
+        {
+          "topic": "14.9",
+          "description": "Within 14.9 alone, section 5.1 uses the heading 'Model tiers' (capitalised) while section 5.3 uses 'model tier selection' (lowercase) and section 5.5 uses 'model tier'. This is a within-topic capitalisation inconsistency, not a cross-topic terminology drift. Soft finding.",
+          "severity": "soft"
+        }
+      ]
+    },
+    "lab_activity_alignment": {
+      "passed": true,
+      "notes": [
+        "Lab activity seed requires: 'Write a one-paragraph architectural decision with justification using the decision matrix / Journal Entry #9.' 14.10 section 9 (Hands-On Exercise) explicitly states 'This exercise IS the lab activity (Journal Entry #9)' and provides a five-step scaffold that produces a complete ADR of 80–120 words. Alignment is direct and explicit."
+      ]
+    },
+    "audience_level_consistency": {
+      "passed": true,
+      "notes": [
+        "Both topics maintain absolute-beginner register. 14.9 avoids implementation code; 14.10 avoids implementation code. Depth profiles are comparable: both are 'standard' confirmed_profile per topic.manifest.json. No register spike detected. All technical terms used without prior introduction (token, RAG, agent, vector database, HITL, streaming, prompt caching, circuit breaker) are explicitly listed in 14.9 section 2 as 'used freely without re-definition' — learners are expected to bring this vocabulary from 14.1–14.8. 14.10 similarly scopes its re-definition boundary in its prerequisites section."
+      ]
+    }
+  },
+  "hard_findings": [],
+  "soft_findings": [
+    {
+      "id": "SF-1",
+      "topic": "14.10",
+      "check": "overlap_redundancy",
+      "description": "Section 5.5 summary table (direct call / RAG / agent trade-off profiles) reuses tier comparison content from 14.7 and 14.9 in condensed form. Function is prescriptive (a writing aid for the Consequences section), not instructional re-teaching. Jaccard similarity below threshold. Monitor if the table expands in future revisions."
+    },
+    {
+      "id": "SF-2",
+      "topic": "14.9",
+      "check": "terminology_consistency",
+      "description": "Within-topic capitalisation inconsistency: 'Model tiers' (heading, section 5.1) vs 'model tier selection' / 'model tier' (sections 5.3, 5.5). Does not affect cross-topic consistency. Recommend normalising to lowercase 'model tier' throughout 14.9."
+    }
+  ],
+  "verdict": "PASSED. The module arc is coherent: 14.9 teaches the production trade-off concepts (token cost, latency, reliability patterns, cost–latency–quality triangle) and 14.10 applies them as inputs to a structured architectural decision record. All concept sequences are respected — ADR is the only freshly introduced concept in 14.10 and it is fully scaffolded before use. No duplicated core concepts above the Jaccard threshold. No scope creep into RAG-module or agents-module territory. Lab activity (Journal Entry #9) is directly and explicitly addressed in 14.10 section 9. Two soft findings are noted but neither gates approval."
+}

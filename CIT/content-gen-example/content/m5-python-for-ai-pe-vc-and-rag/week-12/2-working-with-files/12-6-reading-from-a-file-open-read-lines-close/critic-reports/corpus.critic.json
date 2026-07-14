@@ -1,0 +1,93 @@
+{
+  "critic": "corpus-critic",
+  "topic_id": "12.6",
+  "topic_title": "Reading from a file — open, read lines, close",
+  "cycle": 1,
+  "at": "2026-06-14T00:00:00Z",
+  "passed": true,
+  "verdict": "PASS — all 6 checks clean. 2 soft findings (non-blocking): (1) sum() used in §7 Pattern 1 code example without prior entry in any topic's concepts_introduced — a built-in used alongside len() but not formally introduced; recommend either adding 'sum() built-in' to this topic's concepts_introduced or replacing with a manual addition loop in §7; (2) %%writefile in §9 Hands-On Exercise is a Jupyter/Colab cell magic, not Python — a zero-background learner may not know what it means; recommend adding a one-line parenthetical: '(this is a Colab shortcut to create a file — your instructor will show you this in the lab)'. Both findings are below the ≥3 hard-fail threshold.",
+  "profile": "standard",
+  "estimated_word_count": 3060,
+  "checks": {
+    "required_sections": {
+      "passed": true,
+      "findings": [],
+      "detail": {
+        "section_3_learning_objectives": { "present": true, "word_count_approx": 95, "threshold": 50, "passed": true },
+        "section_4_introduction": { "present": true, "word_count_approx": 155, "threshold": 50, "passed": true },
+        "section_5_core_concepts": { "present": true, "word_count_approx": 1100, "threshold": 100, "passed": true },
+        "section_10_key_takeaways": { "present": true, "word_count_approx": 120, "threshold": 50, "passed": true }
+      }
+    },
+    "citation_density": {
+      "passed": true,
+      "resources_source": "web_search",
+      "mode": "strict",
+      "primary_resource_cited": { "[1]": true, "[2]": true, "[3]": true },
+      "fake_citations": false,
+      "sections_checked": ["5", "6", "7"],
+      "estimated_citation_coverage_pct": 85,
+      "threshold_pct": 60,
+      "findings": []
+    },
+    "sequence_drift": {
+      "passed": true,
+      "findings": [],
+      "notes": [
+        "All 8 concepts_introduced are new to 12.6. File object, open(), read mode, .read(), .readlines(), .readline(), with block, FileNotFoundError all defined inline at first use. PASS.",
+        ".strip() and .split() referenced as Week 11 string methods — prior concept. PASS.",
+        "int() referenced as type conversion — Week 11 prior concept. PASS.",
+        "TypeError referenced in §8 best-practices table — in 12.5 concepts_introduced. PASS.",
+        "split('=', 1) two-argument form used in §7 Pattern 2 — explained inline ('splits at the first = only'). PASS.",
+        "Write/append modes ('w', 'a') appear in §5.2 table — explicitly deferred to Topic 12.7. PASS per scope_discipline.",
+        "FileNotFoundError: introduced inline; try/except handling deferred to 'a later topic'. PASS.",
+        "Binary files: 'not covered here' explicit defer. PASS.",
+        "sum() in §7 Pattern 1: NOT in any prior concepts_introduced. Used alongside len() in a code comment. Flagged as beginner_readability soft finding (undefined_terms), not sequence_drift hard fail, because it is used as a named built-in in a practical context without being taught.",
+        "%%writefile in §9: Jupyter cell magic, not Python. Flagged as beginner_readability soft finding."
+      ]
+    },
+    "length_sanity": {
+      "passed": true,
+      "profile": "standard",
+      "target_range": [3000, 4400],
+      "estimated_word_count": 3060,
+      "findings": []
+    },
+    "topic_scope": {
+      "passed": true,
+      "findings": [],
+      "notes": "All sections stay within 'reading from a file'. Write/append modes named in table but deferred. FileNotFoundError introduced inline as direct consequence of open() with non-existent file — on-headline. try/except deferred. Binary files deferred. CSV module not mentioned. No scope_creep detected."
+    },
+    "beginner_readability": {
+      "passed": true,
+      "escalated_to_hard_fail": false,
+      "finding_count": 2,
+      "findings": [
+        {
+          "code": "undefined_terms",
+          "terms": ["sum()"],
+          "location": "§7 Real-World Patterns — Pattern 1 code example: print('Average:', sum(scores) / len(scores))",
+          "detail": "sum() is used as a built-in alongside len() but has no prior entry in any topic's concepts_introduced. For a strict zero-background learner, it is undefined. Recommend either: (a) adding 'sum() built-in' to this topic's concepts_introduced and defining it inline ('sum(list) adds up all the numbers in a list'); or (b) replacing with a manual accumulator loop that uses only taught concepts."
+        },
+        {
+          "code": "undefined_terms",
+          "terms": ["%%writefile"],
+          "location": "§9 Hands-On Exercise step 1",
+          "detail": "%%writefile is a Jupyter/Colab cell magic command, not Python. A zero-background learner has no context for this syntax. Recommend adding a parenthetical: '(this is a Colab shortcut that creates a file — your instructor will demonstrate it in the lab)' or replacing with explicit Python write-mode instructions."
+        }
+      ],
+      "note": "2 soft findings — below the ≥3 hard-fail threshold. Register is plain, active, 'you'-addressed throughout. All new terms bold-defined on first use. with block broken down line by line. No jargon dumps detected."
+    }
+  },
+  "summary": {
+    "hard_failures": [],
+    "soft_findings": [
+      "beginner_readability: undefined_terms — sum() used in §7 Pattern 1 without prior introduction; add to concepts_introduced or replace with manual loop",
+      "beginner_readability: undefined_terms — %%writefile in §9 is Jupyter magic, not Python; add clarifying parenthetical"
+    ],
+    "recommended_fixes": [
+      "Add 'sum() built-in' to concepts_introduced and a one-line inline definition in §7 Pattern 1, OR replace sum() with a for-loop accumulator.",
+      "§9 step 1: add '(%%writefile is a Colab shortcut — your instructor will show you this)' or replace with a Python open()-write approach."
+    ]
+  }
+}

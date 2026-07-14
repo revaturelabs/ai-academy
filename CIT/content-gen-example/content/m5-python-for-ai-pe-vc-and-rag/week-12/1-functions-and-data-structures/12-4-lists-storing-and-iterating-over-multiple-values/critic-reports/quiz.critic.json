@@ -1,0 +1,63 @@
+{
+  "passed": true,
+  "checks": {
+    "positional_bias": {
+      "passed": true,
+      "distribution": {"0": 1, "1": 2, "2": 2, "3": 0},
+      "max_share": 0.40,
+      "note": "max_share exactly at 0.40 threshold — not strictly greater than, so passes. GIFT-derived positions [2,1,0,1,2] differ from sidecar [2,3,0,1,2] on q2 (sidecar says pos=3, GIFT shows =line at 0-based index 1). meta_gift_desync flagged on q2; sidecar should be corrected but does not affect quiz quality or bias result."
+    },
+    "length_bias": {
+      "passed": true,
+      "longest_correct_rate": 0.0,
+      "baseline": 0.25,
+      "per_question": [
+        {"id": "q1", "correct_len": 22, "distractor_mean": 21.33, "threshold": 25.6, "longest_correct": false},
+        {"id": "q2", "correct_len": 9,  "distractor_mean": 9.0,   "threshold": 10.8, "longest_correct": false},
+        {"id": "q3", "correct_len": 14, "distractor_mean": 17.0,  "threshold": 20.4, "longest_correct": false},
+        {"id": "q4", "correct_len": 20, "distractor_mean": 23.33, "threshold": 28.0, "longest_correct": false},
+        {"id": "q5", "correct_len": 1,  "distractor_mean": 13.33, "threshold": 16.0, "longest_correct": false}
+      ]
+    },
+    "distractor_plausibility": {
+      "passed": true,
+      "absurd_rate": 0.0,
+      "total_distractors": 15,
+      "absurd_count": 0,
+      "weakest_questions": [],
+      "scoring_notes": "All 15 distractors scored 3–4 (plausible misconception or strong distractor). q1: tuple/set/implicit-tuple confusions (4,4,3). q2: off-by-one and parentheses-vs-brackets (4,4,4). q3: wrong index, dict-method confusion, append-vs-modify (4,3,3). q4: swapped variables, function-call confusion, range-list confusion (4,4,3). q5: off-by-one count, wrong count, index-vs-count confusion (3,3,3)."
+    },
+    "objective_coverage": {
+      "passed": true,
+      "uncovered_objectives": [],
+      "orphan_questions": [],
+      "coverage_map": {
+        "LO1 — Create a list with square-bracket syntax": ["q1"],
+        "LO2 — Access by index (zero-based)": ["q2"],
+        "LO3 — Modify by index assignment": ["q3"],
+        "LO4 — Iterate with for-item-in-list": ["q4"],
+        "LO5 — append() and len()": ["q5"],
+        "LO6 — Real-world AI/Python context (dropped per standard profile rule)": []
+      }
+    },
+    "beginner_scope": {
+      "passed": true,
+      "findings": [],
+      "notes": "All stems use plain language with HTML code tags for inline code. No acronyms introduced without explanation. No out-of-scope concepts (no list comprehensions, slicing, sorting, dicts, classes, or other un-taught constructs). All distractors are beginner misconceptions rooted in this topic (tuple vs list, wrong index, wrong method, function-call syntax, range confusion). q3 distractor marks.update(2,70) is a plausible list-method confusion for beginners; does not require dict knowledge to evaluate. q4 distractor range(scores) plausibly targets the range(len(...)) pattern taught in corpus §5.7."
+    }
+  },
+  "auto_correction_applied": {
+    "shuffle_round_2": false
+  },
+  "flags": {
+    "meta_gift_desync": {
+      "question": "q2",
+      "sidecar_correct_position": 3,
+      "gift_derived_correct_position": 1,
+      "severity": "non_blocking",
+      "recommendation": "Update quiz.meta.json correct_position_distribution[1] from 3 to 1 and q2.correct_position from 3 to 1."
+    }
+  },
+  "verdict": "Pass — all five checks clean. One non-blocking sidecar desync: q2 correct_position in quiz.meta.json is 3 but GIFT places the = line at index 1; update the sidecar.",
+  "at": "2026-06-14T00:00:00Z"
+}

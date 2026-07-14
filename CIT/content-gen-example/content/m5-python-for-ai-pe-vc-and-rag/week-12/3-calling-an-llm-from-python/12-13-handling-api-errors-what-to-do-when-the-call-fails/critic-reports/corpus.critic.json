@@ -1,0 +1,52 @@
+{
+  "critic": "corpus-critic",
+  "topic_id": "12.13",
+  "topic_title": "Handling API errors — what to do when the call fails",
+  "depth_profile": "atomic",
+  "at": "2026-06-15T00:00:00Z",
+  "pass_number": 1,
+  "passed": true,
+  "verdict": "PASS. All six checks passed. Sections 3/4/5/10 are present and non-trivial. Primary resource [1] (docs.anthropic.com/en/api/errors) is cited in every major factual claim across §5, §6, §7, §8, and §10; citation rate is approximately 95%, well above the 60% threshold. No sequence drift: PermissionDeniedError and NotFoundError appear only in the hierarchy diagram and one code comment as named children of APIError — they are not taught at depth and are not standalone topics. No forward references to 12.14 material (latency, cost, design decisions about when to call). Word count is estimated at ~2050 words, within the atomic 1500–2400w range. Topic stays on headline scope throughout; no advanced retry libraries, no logging frameworks, no design-decision teaching. Two minor soft readability findings (DNS and VPN used as passing examples without definition) — below the hard-fail threshold of 3 distinct findings.",
+  "checks": {
+    "required_sections": {
+      "passed": true,
+      "detail": "Section 3 (Learning Objectives) ~120 words — exceeds 50w minimum. Section 4 (Introduction) ~220 words — exceeds 50w minimum. Section 5 (Core Concepts) ~950 words of prose across 5 subsections — exceeds 100w minimum. Section 10 (Key Takeaways) ~150 words — exceeds 50w minimum. All required sections present and non-trivial."
+    },
+    "citation_density": {
+      "passed": true,
+      "primary_cited": true,
+      "claim_citation_rate": 0.95,
+      "findings": []
+    },
+    "sequence_drift": {
+      "passed": true,
+      "forward_refs": [],
+      "findings": [
+        "PermissionDeniedError and NotFoundError appear in the exception hierarchy tree (§5.2 diagram) and one code comment in §6. These are not in 12.13's concepts_introduced list but are presented purely as named hierarchy members, not taught as separate topics. Acceptable — named-in-passing within a reference diagram.",
+        "DNS (line 52), VPN (line 197), HTTPS (line 197) appear as incidental examples but are not technical programming concepts being introduced — they are real-world context words. No drift."
+      ]
+    },
+    "length_sanity": {
+      "passed": true,
+      "hard_fail": false,
+      "estimated_word_count": 2050,
+      "expected_range_words": [1500, 2400],
+      "detail": "Estimated ~2050 words of prose (excluding code block bodies, counting code-block inline comments). Solidly within the atomic 1500–2400w window.",
+      "findings": []
+    },
+    "topic_scope": {
+      "passed": true,
+      "detail": "Corpus stays on headline scope throughout. No advanced retry libraries (tenacity, backoff not mentioned). No logging frameworks (only print() used). No design decisions about when to call the API (12.14 territory). Line 206 defers 'more complex network resilience' in one sentence as beyond this topic. Line 275 defers 're-raising in advanced code' in one sentence. Both are named-and-deferred one-liners within the allowed rule.",
+      "findings": []
+    },
+    "beginner_readability": {
+      "passed": true,
+      "soft_findings_count": 2,
+      "detail": "All major technical terms introduced by 12.13 (AnthropicError, APIError, RateLimitError, AuthenticationError, BadRequestError, APIConnectionError, APIStatusError, InternalServerError, time.sleep, status_code) are defined on first use. Two soft findings for incidental terms used in passing examples without explicit definition. Below the 3-finding hard-fail threshold. No jargon dumps identified (no paragraph introduces 3+ brand-new terms simultaneously). Sentence register is clear and plain.",
+      "findings": [
+        "undefined_term: 'DNS lookup' (line 52) — used as an example cause of APIConnectionError without defining DNS. Incidental/contextual; not a teaching term.",
+        "undefined_term: 'VPN' (line 197) — used as an example cause of APIConnectionError without spelling out the acronym. Incidental/contextual; not a teaching term."
+      ]
+    }
+  }
+}

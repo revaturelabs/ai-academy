@@ -1,0 +1,109 @@
+{
+  "topic_id": "9.11",
+  "artifact": "reading",
+  "critic_run_at": "2026-06-13",
+  "verdict": "pass",
+  "passed": true,
+  "checks": {
+    "format_discipline": {
+      "passed": true,
+      "frontmatter_present": false,
+      "first_line": "# High-stakes domains where AI must not have the final word — medical, legal, safety",
+      "meta_sidecar_missing": false,
+      "sections_found": ["Overview", "Key Concepts", "Worked Example", "In Practice", "Key Takeaways", "References"],
+      "sections_order_correct": true,
+      "findings": []
+    },
+    "length_budget": {
+      "passed": true,
+      "word_count": 1883,
+      "target_range": [1800, 2200],
+      "word_count_in_range": true,
+      "estimated_minutes_at_200wpm": 9.4,
+      "target_minutes_range": [9, 11],
+      "minutes_in_range": true,
+      "findings": []
+    },
+    "citation_discipline": {
+      "passed": true,
+      "primary_resource": {
+        "id": "[1]",
+        "url": "https://jolt.law.harvard.edu/digest/redefining-the-standard-of-human-oversight-for-ai-negligence",
+        "cited_count": 8,
+        "minimum_required": 1,
+        "passes": true
+      },
+      "all_resources_cited": true,
+      "resources": [
+        { "id": "[1]", "role": "primary", "cited_inline": true, "locations": ["Key Concepts (high-stakes domain def)", "medicine accountability gap", "four arguments cost-of-error + accountability", "meaningful oversight", "Worked Example x3", "In Practice COMPAS", "Key Takeaways"] },
+        { "id": "[2]", "role": "supporting", "cited_inline": true, "locations": ["medicine decision support", "safety-critical aviation", "cognitive bias argument", "meaningful oversight", "Worked Example cognitive bias", "In Practice NHS + Boeing", "Key Takeaways"] },
+        { "id": "[3]", "role": "supporting", "cited_inline": true, "locations": ["three named domains EU AI Act", "explainability argument", "Worked Example explainability", "In Practice NHS", "Key Takeaways high-risk AI"] }
+      ],
+      "findings": []
+    },
+    "no_forward_references": {
+      "passed": true,
+      "forward_references_found": [],
+      "backward_refs_verified": ["9.7", "9.10", "9.9", "9.5", "9.1-9.6"],
+      "findings": []
+    },
+    "beginner_readability": {
+      "passed": true,
+      "undefined_terms": {
+        "passed": true,
+        "issues": [],
+        "resolved_corpus_soft_findings": [
+          "MRI expanded: 'MRI (Magnetic Resonance Imaging)' on first use",
+          "CT expanded: 'CT (computed tomography)' on first use"
+        ]
+      },
+      "jargon_dump": { "passed": true, "issues": [] },
+      "abstract_first": { "passed": true, "note": "Three-signal table follows concrete film-vs-cancer-treatment example. COMPAS introduced with full name before use." },
+      "academic_register": { "passed": true, "hedging_instances": 0 },
+      "distinct_findings_count": 0,
+      "findings": []
+    },
+    "formatting": {
+      "passed": true,
+      "wall_of_text": { "passed": true, "issues": [] },
+      "unlisted_sequence": { "passed": true, "note": "Four arguments as numbered list. Four meaningful-oversight conditions as numbered list. Worked Example steps as bold-header walkthrough." },
+      "no_inline_examples": { "passed": true, "note": "Concrete examples inline throughout: film vs cancer treatment, radiologist scenario, NHS mammography, COMPAS, Boeing 737 MAX." },
+      "bold_term_shape": { "passed": true, "note": "high-stakes domain, decision support, meaningful, safety-critical, high-risk AI, XAI all bolded at first use." },
+      "comparison_table": { "passed": true, "note": "Three-signal table in Key Concepts. Failure/lesson/fix table in In Practice." },
+      "distinct_findings_count": 0,
+      "findings": []
+    },
+    "scope_discipline": {
+      "passed": true,
+      "topic_title": "High-stakes domains where AI must not have the final word — medical, legal, safety",
+      "scope_creep": false,
+      "findings": []
+    },
+    "corpus_faithfulness": {
+      "passed": true,
+      "assertions_sampled": 8,
+      "unsupported_assertions": 0,
+      "sampled_assertions": [
+        { "claim": "three signals: irreversibility, fundamental interests, asymmetric error cost", "corpus_section": "5.1", "supported": true },
+        { "claim": "EU AI Act 2024 classifies three domains as high-risk", "corpus_section": "5.2", "supported": true },
+        { "claim": "COMPAS produced systematically different error rates across demographic groups (ProPublica 2016)", "corpus_section": "5.2 Law", "supported": true },
+        { "claim": "MCAS nose-down from faulty sensor, 346 deaths", "corpus_section": "5.2 Safety", "supported": true },
+        { "claim": "four arguments: cost-of-error, accountability, explainability, cognitive bias", "corpus_section": "5.3", "supported": true },
+        { "claim": "meaningful oversight: time + data + training + easy override", "corpus_section": "5.3 Arg4", "supported": true },
+        { "claim": "NHS mammography AI pre-screener, radiologist as authority", "corpus_section": "7.1", "supported": true },
+        { "claim": "Boeing 737 MAX regulatory changes: pilot training, simplified override, enhanced alerting", "corpus_section": "7.3", "supported": true }
+      ],
+      "findings": []
+    }
+  },
+  "diagram_embedded": {
+    "passed": true,
+    "location": "Key Concepts, after three-named-domains intro paragraph",
+    "alt_text": "High-stakes domains and the human final authority principle",
+    "caption_present": true
+  },
+  "soft_findings_summary": [],
+  "total_hard_failures": 0,
+  "total_soft_findings": 0,
+  "cycle": 1
+}

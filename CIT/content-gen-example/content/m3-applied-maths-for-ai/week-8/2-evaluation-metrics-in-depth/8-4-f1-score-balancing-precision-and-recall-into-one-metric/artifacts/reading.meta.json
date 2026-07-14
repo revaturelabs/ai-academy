@@ -1,0 +1,10 @@
+{
+  "topic_id": "8.4",
+  "title": "F1 score — balancing precision and recall into one metric",
+  "estimated_read_minutes": 7,
+  "word_count": 1290,
+  "generated_at": "2026-06-22T08:00:00Z",
+  "embeds_diagram": true,
+  "citations_used": [1, 2, 3],
+  "sections": ["Overview", "Key Concepts", "Worked Example", "In Practice", "Key Takeaways", "References"]
+}

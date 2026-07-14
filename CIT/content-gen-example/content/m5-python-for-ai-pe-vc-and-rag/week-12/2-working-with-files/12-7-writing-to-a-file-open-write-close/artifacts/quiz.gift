@@ -1,0 +1,49 @@
+$CATEGORY: CIT/M5/week-12/12-7-writing-to-a-file-open-write-close
+
+::q1:: A program opens "results.txt" using open("results.txt", "w"). The file already contains three lines of data. What happens to those three lines? {
+~The three lines are kept and new content is added after them#No — that is the behaviour of append mode ('a'), not write mode ('w').
+=All three lines are erased immediately, before anything new is written#Correct — write mode truncates the file to zero bytes the moment open() is called, even before the first .write().
+~The three lines are kept and new content is added before them#No — write mode does not preserve existing content in any form; the file is emptied right away.
+~Python raises an error because the file already exists#No — write mode silently overwrites an existing file without any error or warning.
+#### Tests whether the learner understands that 'w' erases existing content on open (corpus §5.1).
+}
+
+::q2:: A script runs every day and uses open("run_log.txt", "a") to record what happened. After ten days, how many entries does the file contain? {
+~One entry — append mode overwrites the previous entry each time the file is opened#No — that is what write mode ('w') does; append mode never removes existing content.
+~One entry — Python only keeps the most recent .write() result in append mode#No — each .write() in append mode adds to the file; nothing is removed.
+~Zero entries — append mode opens the file but does not allow writing#No — .write() and .writelines() work normally in append mode; the difference is only the starting position.
+=Ten entries — append mode adds new content at the end without erasing what is already there#Correct — each run opens the file at the end and adds a new line, so entries accumulate across runs.
+#### Tests whether the learner understands that 'a' preserves existing content and grows the file (corpus §5.2).
+}
+
+::q3:: A learner writes two lines like this\: f.write("Alice,88") then f.write("Bob,74"). When they open the file, they see "Alice,88Bob,74" on a single line instead of two separate lines. What is the most likely cause? {
+=The strings passed to .write() did not include the \n newline character at the end#Correct — .write() copies the string exactly as given; without \n the next write continues on the same line.
+~The file was opened in the wrong mode and does not support line breaks#No — both 'w' and 'a' modes support newlines; the mode is not the cause here.
+~Python automatically removes newline characters from strings before writing them#No — Python never silently strips characters from strings; what you pass to .write() is written verbatim.
+~The .write() method only writes the first character of each string#No — .write() writes the entire string argument; a partial-write like that does not happen here.
+#### Tests whether the learner knows that .write() does not add \n automatically and they must include it explicitly (corpus §5.3–5.4).
+}
+
+::q4:: A learner has a list lines = ["Alice,88\n", "Bob,74\n", "Carol,91\n"] and wants to write all three strings to an open file object f in a single call. Which statement achieves this? {
+~f.write(lines)#No — .write() only accepts a single string; passing a list raises a TypeError.
+~f.write("\n".join(lines))#No — joining the list first would insert extra blank lines between entries because each string already ends with \n; also this is not the purpose of .writelines().
+=f.writelines(lines)#Correct — .writelines() accepts a list of strings and writes each element to the file in order.
+~f.write(*lines)#No — the * unpacking syntax does not work with .write(); .write() takes exactly one positional argument.
+#### Tests whether the learner can use .writelines() to write a list of strings to a file in one call (corpus §5.5).
+}
+
+::q5:: A learner tries to write a student score with f.write(score) where score = 91. Python raises a TypeError. Which statement best explains why, and what is the fix? {
+~The variable name score is reserved by Python and cannot be used inside a with block; rename it first#No — score is not a reserved word; the error is caused by the type of the value, not the variable name.
+=The .write() method only accepts strings; since score is an integer, it must be converted first using f.write(str(score))#Correct — .write() raises TypeError on any non-string argument; str() converts the integer to its string form "91".
+~The file must be closed and reopened before writing a number; use open() again with mode 'w'#No — reopening the file would erase its contents; the real fix is simply converting the value to a string with str().
+~Python requires numbers to be formatted with format() before any file operation; str() alone does not work#No — str() is the standard and sufficient conversion for writing numbers to files; format() is optional and for layout only.
+#### Tests whether the learner knows that .write() requires a string argument and str() must be used to convert numbers (corpus §5.7).
+}
+
+::q6:: Which of the following is the main reason to use a with block when writing to a file instead of calling f.close() manually at the end of the script? {
+~The with block makes .write() run faster because it bypasses the internal buffer#No — the with block does not change write speed; it guarantees the file is closed and the buffer is flushed when the block exits.
+~Only the with block allows append mode ('a'); f.close() only works with write mode ('w')#No — both open modes work with or without a with block; the choice of mode is independent of how you close the file.
+~The with block prevents Python from creating a temporary copy of the file during writing#No — Python does not make a temporary copy during normal file writes; that is not related to the with block.
+=If an error occurs inside the block, the with statement still closes the file and flushes buffered data to disk automatically#Correct — a manual f.close() placed after the error line would never execute, potentially losing data; the with block's __exit__ always runs.
+#### Tests whether the learner understands that the with block guarantees close-and-flush even when exceptions occur (corpus §5.6).
+}

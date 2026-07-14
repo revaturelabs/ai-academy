@@ -1,0 +1,20 @@
+{
+  "type": "module",
+  "position": 3,
+  "title": "The Judgment Framework",
+  "slug": "3-the-judgment-framework",
+  "course_code": "M4",
+  "course_slug": "m4-human-cognition-and-ai-oversight",
+  "week_nums": [
+    9
+  ],
+  "session_name_by_week": {
+    "9": "Human Judgment and AI Oversight"
+  },
+  "narrative_seed_by_week": {
+    "9": "System 1 vs System 2 thinking (Kahneman) — fast/instinctive vs slow/deliberate / Cognitive biases — confirmation bias, anchoring, automation bias / How human biases get encoded into AI training data / The Judgment Framework — three questions before acting on any AI output: / 1. What is the cost of this being wrong? / 2. Can I verify this without the AI? / 3. Who is accountable if this fails? / Acceptable error — defining the failure threshold that is tolerable for your use case / High-stakes domains where AI must not be the final word — medical, legal, safety"
+  },
+  "lab_activity_seed_by_week": {
+    "9": "Apply the Judgment Framework to your domain system — answer all three questions per component / Define acceptable error thresholds — what failure rate is tolerable and why? / Journal Entry #5"
+  }
+}

@@ -1,0 +1,43 @@
+{
+  "type": "topic",
+  "id": "12.10",
+  "title": "The Anthropic API — model, messages array, system prompt, user prompt, authentication",
+  "slug": "12-10-the-anthropic-api-model-messages-array-system-prompt-user-pr",
+  "position_in_module": 2,
+  "week_num": 12,
+  "session_name": "Python Foundations II and Calling an LLM",
+  "module": {
+    "position": 3,
+    "slug": "3-calling-an-llm-from-python",
+    "title": "Calling an LLM from Python"
+  },
+  "course": {
+    "code": "M5",
+    "slug": "m5-python-for-ai-pe-vc-and-rag",
+    "title": "Python for AI, PE, VC and RAG"
+  },
+  "next_assessment": {
+    "id": "A4",
+    "due_week": 13,
+    "title": "Python and Prompt Engineering Portfolio",
+    "weight": "20%"
+  },
+  "paths": {
+    "corpus": "topic_corpus.md",
+    "resources": "topic.resources.json",
+    "progress": "topic.progress.json",
+    "artifacts_dir": "artifacts/",
+    "critic_reports_dir": "critic-reports/"
+  },
+  "artifact_plan": {
+    "diagram": true,
+    "diagram_intent": "Annotated request skeleton showing the four top-level fields (model, system, messages, API key header) with the messages array expanded to show role+content structure inside each turn.",
+    "depth_profile": "standard",
+    "depth_signals": ["5 named sub-concepts in Core Concepts", "Implementation section warranted", "Real-World Patterns warranted", "spans Python + Anthropic API", "week has Lab activity"],
+    "depth_override_reason": "budget — 22 min left for 4 remaining topics, downgraded from deep",
+    "reading": {"target_word_range": [1200, 1600], "target_min_minutes": 6, "target_max_minutes": 8},
+    "quiz": {"min_questions": 5, "max_questions": 6, "include_short_answer": false}
+  },
+  "expected_delivery_minutes": 7,
+  "status": "artifacts_complete"
+}

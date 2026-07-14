@@ -1,0 +1,31 @@
+{
+  "verdict": "pass",
+  "cycles_run": 2,
+  "findings": [
+    {
+      "code": "looks_good",
+      "where": "whole diagram",
+      "detail": "Top flow strip (Pick -> Search -> Switch to 2D -> Read) is a clean single LR path under a 'Step 1' banner. 2D plane conveys the cluster/outlier/gap/in-between story: cooking + football clusters apart, plate centered as the labelled outlier, coach as borderless ghost text genuinely in the gap between the two clusters. No node overlap, no truncation, 12px subtitles legible, color tiers correct."
+    },
+    {
+      "code": "edge_label_collision",
+      "where": "PLANE — 'wide gap = little shared meaning' label on the cooking==>football arc",
+      "detail": "RESIDUAL/minor (not blocking). The directed-edge label renders with a faint green-tinted background box on the lower-left, sitting on the thick gap arc. It now reads as a label on a visible edge (not the cycle-1 phantom-node masquerade). Acceptable at pass; a future polish could shorten it to 'wide gap' to lighten the box."
+    }
+  ],
+  "resolved_in_cycle_2": [
+    "cycle-1 nodes_overlap-ish / crossings_illegible: the 'wide gap' label rendered as a centered green box mimicking a 4th dot — fixed by moving it onto a directed ==> edge",
+    "cycle-1 layout-contradicts-message: 'coach' (in-between word) was dumped at the bottom margin below the plane — now positioned in the gap to the right between the two clusters via dotted .-> links",
+    "cycle-1 color_tier ambiguity: plate (done/green outlier) and the green 'wide gap' label box read as the same kind of object — disambiguated by demoting the gap text to an edge label on a real arc"
+  ],
+  "stats": {
+    "nodes": 8,
+    "edges": 7,
+    "layout": "flowchart TB — top LR flow strip + side-by-side 2D-plane contrast",
+    "labels": ["Pick 10 words", "Search each word", "Switch to 2D view", "Read the groups", "Cooking cluster", "coach", "Football cluster", "plate"],
+    "concepts_mapped": ["pick focused word set", "search/highlight dot", "2D projection view", "read groups + compare domains", "cooking cluster", "in-between/gap word", "football cluster", "outlier"],
+    "scope_check": "PASS — no PCA/t-SNE/UMAP nodes, no cosine similarity, no projection-method internals",
+    "png_path": "artifacts/diagram.png",
+    "png_dims": "~785x1050 (rendered -w 1400, transparent bg)"
+  }
+}

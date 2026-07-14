@@ -1,0 +1,120 @@
+{
+  "module": "2-how-llms-use-probability",
+  "week_num": 7,
+  "course_code": "M3",
+  "generated_at": "2026-06-23T00:00:00Z",
+  "cycle": 2,
+  "topics_inspected": ["7.4", "7.5"],
+  "passed": true,
+  "checks": {
+    "terminology_consistency": {
+      "passed": true,
+      "findings": [
+        {
+          "id": "TC-01",
+          "severity": "resolved",
+          "topic": "7.5",
+          "artifact": "artifacts/reading.md",
+          "description": "RESOLVED. 'raw scores' is no longer re-defined in 7.5 reading. The section now reads 'recall from topic 7.4 that the model first computes a raw score for each token in its vocabulary — a number where higher means \"more likely.\"' — a recall cue, not a new definition. No terminology drift remains.",
+          "cycle_1_finding": "TC-01"
+        },
+        {
+          "id": "TC-02",
+          "severity": "resolved",
+          "topic": "7.5",
+          "artifact": "artifacts/reading.md",
+          "description": "RESOLVED. 7.5 reading overview now reads 'a probability distribution — a list where every token in the vocabulary has a score between 0 and 1 and all scores sum to 1 — and then samples from that list.' The defining sum-to-1 property established in 7.4 is now present and consistent.",
+          "cycle_1_finding": "TC-02"
+        }
+      ]
+    },
+    "prerequisites_respected": {
+      "passed": true,
+      "findings": [
+        {
+          "id": "PR-01",
+          "severity": "pass-note",
+          "description": "7.4 (position 1) lists prerequisites 7.1, 7.2, 7.3, and week-6 vectors/embeddings — all earlier positions in the sequence. 7.5 (position 2) lists prerequisites 7.4 and 7.1 — both earlier. No forward-referencing prerequisite found."
+        }
+      ]
+    },
+    "learning_arc": {
+      "passed": true,
+      "findings": [
+        {
+          "id": "LA-ARC-01",
+          "severity": "pass-note",
+          "description": "Module title 'How LLMs Use Probability' is fully covered. 7.4 LOs cover the generation loop, probability distribution, stochastic vs deterministic, and sampling. 7.5 LOs cover temperature as the control knob on sampling, distribution sharpening/flattening, deterministic case (temp 0), and task-appropriate settings. The module narrative seed (distribution, temperature, variation, trust) maps directly onto the union of LOs with no uncovered facet."
+        }
+      ]
+    },
+    "no_duplicated_core_concepts": {
+      "passed": true,
+      "findings": [
+        {
+          "id": "DC-01",
+          "severity": "pass-note",
+          "description": "Jaccard similarity of core-concept noun sets: 7.4 = {token, vocabulary, probability distribution, raw scores, softmax, sampling, stochastic, deterministic, generation loop, cascade} (10 nouns); 7.5 = {temperature, distribution shape, softmax, sampling, deterministic, stochastic, raw scores, sharp, flat} (9 nouns); shared = {softmax, sampling, deterministic, stochastic, raw scores, probability distribution} (6 nouns); Jaccard = 6/13 ≈ 0.46, below the 0.6 flag threshold. The shared nouns appear in 7.5 exclusively as the acknowledged prerequisite foundation, not as concepts being re-taught."
+        }
+      ]
+    },
+    "lab_activity_alignment": {
+      "passed": true,
+      "findings": [
+        {
+          "id": "LA-01",
+          "severity": "pass-note",
+          "description": "Module lab seed ('Run the same prompt 10x at temperature 0 and 10x at temperature 1 / Tally unique responses, measure variation, compute accuracy on a 5-question yes/no task / Write a 200-word interpretation') is directly supported by 7.5 corpus §9 Hands-On Exercise (steps 2–5 match the seed exactly: 10 runs at low setting, 10 at high setting, tally unique responses, write 200-word interpretation; the 5 yes/no factual questions parallel the accuracy computation). 7.4 corpus §9 provides the stochastic-observation lead-in. Full coverage."
+        }
+      ]
+    },
+    "audience_level_consistency": {
+      "passed": true,
+      "findings": [
+        {
+          "id": "AL-01",
+          "severity": "pass-note",
+          "description": "Both topics maintain absolute-beginner register throughout. 7.4 defines every term on first use with plain analogies (calculator, weighted lottery). 7.5 opens with a recall of the 7.4 framework and introduces temperature with a dial analogy; the thermodynamics etymology is briefly explained rather than assumed. No term appears cold in 7.5 that was not introduced in 7.4 or defined in 7.5 itself. No register spike detected between topics."
+        }
+      ]
+    },
+    "diagram_path_consistency": {
+      "passed": true,
+      "findings": [
+        {
+          "id": "DP-01",
+          "severity": "resolved",
+          "topic": "7.5",
+          "artifact": "artifacts/reading.md",
+          "description": "RESOLVED. 7.5 reading now references its diagram as './diagram.png' (line 31), matching the convention established by 7.4 reading. Both topics use the same-folder relative path pattern.",
+          "cycle_1_finding": "DP-01"
+        }
+      ]
+    }
+  },
+  "findings": [],
+  "resolved_findings": [
+    {
+      "id": "TC-01",
+      "check": "terminology_consistency / vocabulary_introduced_once",
+      "severity": "minor",
+      "resolved_in_cycle": 2,
+      "resolution": "Replaced inline re-definition of 'raw scores' with recall cue: 'recall from topic 7.4 that the model first computes a raw score for each token in its vocabulary — a number where higher means \"more likely.\"'"
+    },
+    {
+      "id": "TC-02",
+      "check": "terminology_consistency",
+      "severity": "minor",
+      "resolved_in_cycle": 2,
+      "resolution": "Overview now reads 'a probability distribution — a list where every token in the vocabulary has a score between 0 and 1 and all scores sum to 1 — and then samples from that list.' Sum-to-1 property restored."
+    },
+    {
+      "id": "DP-01",
+      "check": "diagram_path_consistency",
+      "severity": "minor",
+      "resolved_in_cycle": 2,
+      "resolution": "Diagram path changed from '../artifacts/diagram.png' to './diagram.png' in 7.5 artifacts/reading.md."
+    }
+  ],
+  "verdict": "Module passes all checks on cycle 2. All 3 cycle-1 findings (TC-01, TC-02, DP-01) are confirmed resolved. Terminology is consistent across both topics, prerequisites are respected, learning arc covers the module outcome, core concepts do not duplicate, lab activity is fully supported, and both topics maintain absolute-beginner register throughout."
+}

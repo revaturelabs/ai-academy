@@ -1,0 +1,30 @@
+{
+  "topic_id": "13.12",
+  "captured_at": "2026-06-15T00:00:00Z",
+  "captured_by": "namratas@revature.com",
+  "resources_source": "web_search",
+  "web_search_query": "GitHub workflow clone add commit push beginner tutorial",
+  "resources": [
+    {
+      "type": "url",
+      "value": "https://uidaholib.github.io/get-git/3workflow.html",
+      "role": "primary",
+      "source": "web_search",
+      "notes": "University of Idaho library course page — step-by-step clone, add, commit, push walkthrough"
+    },
+    {
+      "type": "url",
+      "value": "https://rogerdudler.github.io/git-guide/",
+      "role": "supporting",
+      "source": "web_search",
+      "notes": "Classic no-fluff git reference covering all core workflow commands"
+    },
+    {
+      "type": "url",
+      "value": "https://www.freecodecamp.org/news/practical-git-and-git-workflows/",
+      "role": "supporting",
+      "source": "web_search",
+      "notes": "freeCodeCamp practical guide with worked examples"
+    }
+  ]
+}

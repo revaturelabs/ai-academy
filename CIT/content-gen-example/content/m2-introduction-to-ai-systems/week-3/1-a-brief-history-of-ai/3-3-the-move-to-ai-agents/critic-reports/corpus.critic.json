@@ -1,0 +1,89 @@
+{
+  "critic": "corpus-critic",
+  "topic_id": "3.3",
+  "topic_title": "The move to AI agents",
+  "at": "2026-06-17T00:00:00Z",
+  "passed": true,
+  "depth_profile": "standard",
+  "word_count_estimate": 2960,
+  "checks": {
+    "required_sections": {
+      "passed": true,
+      "findings": [],
+      "detail": {
+        "section_3_learning_objectives": { "present": true, "word_count_estimate": 90, "threshold": 50, "passed": true },
+        "section_4_introduction":        { "present": true, "word_count_estimate": 235, "threshold": 50, "passed": true },
+        "section_5_core_concepts":       { "present": true, "word_count_estimate": 1210, "threshold": 100, "passed": true },
+        "section_10_key_takeaways":      { "present": true, "word_count_estimate": 165, "threshold": 50, "passed": true }
+      }
+    },
+    "citation_density": {
+      "passed": true,
+      "resources_source": "web_search",
+      "mode": "strict",
+      "findings": [],
+      "detail": {
+        "primary_resource_1_cited": true,
+        "primary_resource_url": "https://www.apideck.com/blog/ai-agents-explained-everything-you-need-to-know-in-2025",
+        "section_5_citation_coverage_pct": 100,
+        "section_6_citation_coverage_pct": 65,
+        "section_7_citation_coverage_pct": 100,
+        "note": "All primary and supporting resources cited at least once. Key factual claims across §5, §6, §7 carry [N] markers at well above the 60% threshold."
+      }
+    },
+    "sequence_drift": {
+      "passed": true,
+      "hard_forward_refs": [],
+      "soft_findings": [
+        {
+          "term": "context window",
+          "note": "Used in §5.3 with a back-reference '(the context window you met in 3.2)'. The term is not in 3.2's formal concepts_introduced list in sequence.index.json, but is clearly an LLM-architecture concept from 3.2 and is correctly attributed as prior knowledge rather than introduced fresh."
+        },
+        {
+          "term": "orchestration",
+          "note": "Listed in 3.3 concepts_introduced in sequence.index.json but never defined or mentioned in the corpus body. The concept is absent, creating a gap between the declared concepts_introduced and actual corpus coverage."
+        }
+      ]
+    },
+    "length_sanity": {
+      "passed": true,
+      "word_count_estimate": 2960,
+      "target_range": { "min": 3000, "max": 4400, "profile": "standard" },
+      "within_30pct_tolerance": true,
+      "findings": [
+        {
+          "severity": "soft",
+          "finding": "word_count_below_floor",
+          "detail": "Estimated ~2960 words is approximately 40 words (1.3%) below the 3000-word standard floor. Well within the 30% failure tolerance (floor for hard fail = 2100 words). Recommend builder pad §5.4, §8, or §9 by one paragraph to clear the floor cleanly."
+        }
+      ]
+    },
+    "topic_scope": {
+      "passed": true,
+      "scope_creep_items": [],
+      "findings": [],
+      "detail": "No out-of-scope material found. LangChain, AutoGen, CrewAI appear in §6 as a single one-liner with a 'covered in later topics' pointer — within the allowed one-sentence defer rule. No multi-agent systems content, no RAG, no attention-mechanism content. The §6 Implementation section is conceptual scaffolding for the agent loop and remains within scope."
+    },
+    "beginner_readability": {
+      "passed": true,
+      "hard_fail": false,
+      "finding_count": 2,
+      "findings": [
+        {
+          "type": "undefined_terms",
+          "terms": ["API"],
+          "detail": "'API' is used in §5.3 (tool use bullet list: 'API calls — talk to external services') without spelling out 'Application Programming Interface'. The inline gloss '...talk to external services (book a flight, send an email, read a database)' partially compensates, but the acronym itself is never expanded."
+        },
+        {
+          "type": "missing_concept_coverage",
+          "terms": ["orchestration"],
+          "detail": "'orchestration' is declared in the topic's concepts_introduced (sequence.index.json) but does not appear anywhere in the corpus body. Beginners completing this topic will not have encountered the concept despite the curriculum expecting it to be introduced here."
+        }
+      ],
+      "jargon_dump": false,
+      "academic_register": false,
+      "note": "2 soft findings, below the ≥3 threshold for escalation to hard fail. Readability is generally excellent — plain register, analogies used well, terms defined on first use throughout."
+    }
+  },
+  "verdict": "PASS. All six checks pass. Three soft findings that do not individually or collectively trigger a hard fail: (1) word count ~2960 is ~40 words below the 3000-word standard floor but within the 30% tolerance — builder should add one short paragraph to §5.4 or §8 to clear the floor; (2) 'API' acronym is used in §5.3 without expansion — add '(Application Programming Interface)' on first use; (3) 'orchestration' is listed in this topic's concepts_introduced in sequence.index.json but is never defined or mentioned in the corpus body — either define it briefly (one sentence) in §5.3 or §5.2, or remove it from concepts_introduced if the sequencing team decides it belongs later. No hard forward references, no scope creep, no citation gaps, no jargon dumps, no fake citations."
+}

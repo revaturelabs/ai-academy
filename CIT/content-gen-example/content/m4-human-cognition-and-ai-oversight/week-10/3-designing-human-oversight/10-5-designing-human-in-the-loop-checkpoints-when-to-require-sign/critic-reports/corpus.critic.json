@@ -1,0 +1,50 @@
+{
+  "critic": "corpus-critic",
+  "topic_id": "10.5",
+  "at": "2026-06-13T00:00:00Z",
+  "passed": true,
+  "checks": {
+    "required_sections": {
+      "passed": true,
+      "detail": "Sections 3 (Learning Objectives), 4 (Introduction), 5 (Core Concepts), and 10 (Key Takeaways) all present and non-trivial. Section 3: ~150 words (≥50 required). Section 4: ~250 words (≥50 required). Section 5: ~900 words (≥100 required). Section 10: ~200 words (≥50 required).",
+      "findings": []
+    },
+    "citation_density": {
+      "passed": true,
+      "resources_source": "web_search",
+      "primary_resources_cited": {
+        "[1] zapier.com": true
+      },
+      "detail": "Primary resource [1] cited multiple times across sections 5, 6, 7, and 8. Supporting resources [2] (digitalapplied.com) and [3] (famulor.io) each cited multiple times in sections 5, 7, and 8. Sections 5, 6, and 7 carry citation markers on the majority of standalone factual assertions, exceeding the 60% threshold. No fabricated citations detected — all [1], [2], [3] markers resolve to declared resources.",
+      "findings": []
+    },
+    "sequence_drift": {
+      "passed": true,
+      "detail": "All technical terms introduced in this corpus are either: (a) defined here as new concepts for topic 10.5 (human-in-the-loop / HITL, human-on-the-loop / HOTL, human-out-of-the-loop / HOOTL, checkpoint, confidence routing, escalation trigger, checkpoint matrix), or (b) explicitly carried forward from prior topics 9.6–10.4 as listed in the prerequisites section. Section 11 'Next Steps' contains only a system-derived placeholder, not a forward reference to a named concept. No undefined forward-referenced terms found.",
+      "forward_references": []
+    },
+    "length_sanity": {
+      "passed": true,
+      "depth_profile": "standard",
+      "word_count_estimate": 3290,
+      "required_range": [3000, 4400],
+      "detail": "Estimated word count ~3290 falls within the standard corpus range of 3000–4400 words. Count is not more than 30% outside the range in either direction.",
+      "findings": []
+    },
+    "topic_scope": {
+      "passed": true,
+      "detail": "All concepts introduced and taught are directly bounded by the topic title 'Designing human-in-the-loop checkpoints — when to require sign-off vs allow autonomous action'. The seven core concepts (HITL, HOTL, HOOTL, checkpoint, confidence routing, escalation trigger, checkpoint matrix) and the Implementation section's Judgment Framework decision procedure are all components of checkpoint design. The Section 7 re-analysis of case studies 10.1–10.3 applies the new framework without teaching new concepts. No adjacent or advanced material taught beyond the headline scope.",
+      "scope_creep_findings": []
+    },
+    "beginner_readability": {
+      "passed": true,
+      "detail": "Acronyms HITL, HOTL, and HOOTL are all spelled out in full on first use (Section 3 uses full names; Section 5 introduces each with bold header in the form 'Human-in-the-loop (HITL)'). Terms from prior topics (override as theater, failure mode, diffuse accountability, automation complacency, etc.) are reused without re-definition in compliance with the sequence rule. No jargon dumps detected — each new concept gets its own subsection with a definition and a concrete example. Sentence length is consistently under 25 words; learner is addressed as 'you'; active voice used throughout. No hedging phrases found. Fewer than 2 distinct readability findings — soft-fail threshold not reached.",
+      "findings": {
+        "undefined_terms": [],
+        "jargon_dump": [],
+        "academic_register": []
+      }
+    }
+  },
+  "verdict": "PASS — all 6 checks pass. Required sections present and non-trivial. Primary resource [1] cited; citation density in sections 5/6/7 exceeds 60% threshold; no fabricated citations. No forward references to undefined concepts; section 11 contains only a system placeholder. Estimated word count ~3290 is within the standard corpus range (3000–4400). No scope creep: all seven introduced concepts (HITL, HOTL, HOOTL, checkpoint, confidence routing, escalation trigger, checkpoint matrix) are squarely within the topic headline. Beginner readability is sound: acronyms spelled out on first use, no jargon dumps, no hedging, appropriate sentence length. Corpus is cleared to proceed to HITL #2 corpus review."
+}

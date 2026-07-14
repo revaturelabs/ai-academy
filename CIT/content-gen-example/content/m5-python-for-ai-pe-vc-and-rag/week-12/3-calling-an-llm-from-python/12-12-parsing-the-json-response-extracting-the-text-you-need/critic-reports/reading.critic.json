@@ -1,0 +1,96 @@
+{
+  "critic": "reading-critic",
+  "topic_id": "12.12",
+  "title": "Parsing the JSON response — extracting the text you need",
+  "depth_profile": "atomic",
+  "target_word_range": [800, 1200],
+  "target_minute_range": [4, 6],
+  "run_at": "2026-06-15T00:00:00Z",
+  "passed": true,
+  "verdict": "PASS — all 6 check groups clean; 942 words / 5 min within budget; [1] cited 12+ times, [2] once, bibliography complete; no forward refs to 12.13/12.14; 10/10 sampled assertions trace to corpus; six fixed sections in correct order; no frontmatter; sidecar valid; scope stays on response-object navigation throughout.",
+  "checks": {
+    "format": {
+      "passed": true,
+      "frontmatter_present": false,
+      "meta_sidecar_missing": false,
+      "section_template_violation": false,
+      "sections_found": ["Overview", "Key Concepts", "Worked Example", "In Practice", "Key Takeaways", "References"],
+      "sections_expected": ["Overview", "Key Concepts", "Worked Example", "In Practice", "Key Takeaways", "References"],
+      "notes": "First non-empty line is the H1 title. Sidecar parses with all required fields (word_count, estimated_read_minutes, citations_used, sections). Six sections present in correct order."
+    },
+    "length": {
+      "passed": true,
+      "word_count": 942,
+      "estimated_read_minutes": 5,
+      "word_range": [800, 1200],
+      "minute_range": [4, 6],
+      "notes": "942 words within [800, 1200]; 5 min within [4, 6]."
+    },
+    "citations": {
+      "passed": true,
+      "primary_cited": true,
+      "citations_used": [1, 2],
+      "inline_markers_found": [1, 2],
+      "bibliography_entries": [1, 2],
+      "orphan_markers": [],
+      "orphan_bibliography": [],
+      "notes": "[1] cited at lines 11, 32, 51, 70, 74, 85, 95, 117, 179, 183, 185, 189. [2] cited at line 95. Both entries present in References section. No orphans."
+    },
+    "no_forward_references": {
+      "passed": true,
+      "forward_refs_found": [],
+      "notes": "No references to topic 12.13 (error handling) or 12.14 (latency/cost). The cost motivation sentence attached to usage.output_tokens is in-scope for this topic (reading the field), not teaching cost optimization as an independent concept."
+    },
+    "faithfulness": {
+      "passed": true,
+      "assertions_sampled": 10,
+      "unsupported_assertions": 0,
+      "hard_fail_threshold": 2,
+      "sample_results": [
+        {"assertion": "SDK returns structured response object — container with named fields (reply text, model, stop reason, token counts)", "supported": true, "corpus_section": "Section 4 Introduction"},
+        {"assertion": "client.messages.create() returns a Message object, similar to a Python dictionary with named slots", "supported": true, "corpus_section": "5.1"},
+        {"assertion": "Fields id, model, role, stop_reason, usage, content with matching type/description", "supported": true, "corpus_section": "5.1 table"},
+        {"assertion": "message.content is a Python list — ordered collection indexed with [0], [1]", "supported": true, "corpus_section": "5.2"},
+        {"assertion": "Each item in content list is a content block with type and text fields", "supported": true, "corpus_section": "5.2"},
+        {"assertion": "API designed for future multi-output use; standard text calls have exactly one block at [0]", "supported": true, "corpus_section": "5.2"},
+        {"assertion": "stop_reason table: end_turn = finished naturally, max_tokens = cut short", "supported": true, "corpus_section": "5.5"},
+        {"assertion": "max_tokens stop_reason means content[0].text ends mid-thought", "supported": true, "corpus_section": "5.5"},
+        {"assertion": "usage.input_tokens = tokens in request; usage.output_tokens = tokens in reply", "supported": true, "corpus_section": "5.6"},
+        {"assertion": "If stop_reason == max_tokens and output_tokens exactly equals cap, need higher limit", "supported": true, "corpus_section": "5.6"}
+      ],
+      "notes": "All 10 sampled assertions trace to corpus. 0 unsupported."
+    },
+    "beginner_readability": {
+      "passed": true,
+      "findings": [],
+      "undefined_terms": [],
+      "jargon_dump_lines": null,
+      "abstract_first": false,
+      "academic_register": false,
+      "notes": "All non-everyday terms (response object, dot notation, content block, list) defined at or near first use. No paragraph introduces 3+ new terms at once. Concrete examples (ASCII diagram, code snippets) precede or accompany abstractions. Average sentence length well under 25 words. No hedging phrases detected."
+    },
+    "formatting": {
+      "passed": true,
+      "findings": [],
+      "wall_of_text_lines": null,
+      "unlisted_sequence": false,
+      "no_inline_examples": false,
+      "bold_term_definitions_present": true,
+      "notes": "No paragraphs exceed 6 sentences. Step-by-step procedures in Worked Example use numbered steps. Bullet lists used in In Practice and Key Takeaways. Inline code examples accompany concept introductions in Key Concepts. Bold-term/plain-meaning shape used for type, text, input_tokens, output_tokens."
+    },
+    "assessment_reference": {
+      "passed": true,
+      "findings": [],
+      "notes": "No assessment IDs, due weeks, or grade weights found in the reading."
+    },
+    "scope": {
+      "passed": true,
+      "scope_creep": false,
+      "findings": [],
+      "notes": "Reading stays within response-object navigation throughout: top-level fields, content list structure, text extraction patterns, stop_reason for truncation detection, usage token counts. No error handling taught (12.13 scope). Cost tracking is limited to motivating why to read usage fields — not teaching cost optimization as a distinct concept."
+    }
+  },
+  "hard_fail_triggers": [],
+  "soft_findings_count": 0,
+  "escalated_to_hard_fail": false
+}

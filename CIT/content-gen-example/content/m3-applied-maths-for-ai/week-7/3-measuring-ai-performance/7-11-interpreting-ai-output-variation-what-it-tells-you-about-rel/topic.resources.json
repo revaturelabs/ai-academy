@@ -1,0 +1,30 @@
+{
+  "topic_id": "7.11",
+  "captured_at": "2026-06-23T00:00:00Z",
+  "captured_by": "namratas@revature.com",
+  "resources_source": "web_search",
+  "web_search_query": "AI output variation reliability temperature LLM consistency explained",
+  "resources": [
+    {
+      "type": "url",
+      "value": "https://www.ibm.com/think/topics/llm-temperature",
+      "role": "primary",
+      "source": "web_search",
+      "notes": "IBM Think — What is LLM Temperature? Canonical first-party explainer, covers temperature, consistency, reliability"
+    },
+    {
+      "type": "url",
+      "value": "https://cybernews.com/ai-tools/what-is-llm-temperature/",
+      "role": "supporting",
+      "source": "web_search",
+      "notes": "Cybernews — connects temperature to reliability for non-technical readers"
+    },
+    {
+      "type": "url",
+      "value": "https://tetrate.io/learn/ai/llm-temperature-guide",
+      "role": "supporting",
+      "source": "web_search",
+      "notes": "Tetrate — practical temperature/consistency guide for developers"
+    }
+  ]
+}

@@ -1,0 +1,47 @@
+{
+  "topic_id": "12.3",
+  "generated_at": "2026-06-14T00:00:00Z",
+  "format": "gift",
+  "question_count": 5,
+  "$bias_defense_applied": true,
+  "$shuffle_seed": "12.3-cit-m5-w12-one-job-r1",
+  "correct_position_distribution": [1, 3, 0, 2, 1],
+  "bias_defense_notes": "Draft positions were all 0 (LLM prior). Shuffled deterministically using seed. Final distribution: pos0=1 (20%), pos1=2 (40%), pos2=1 (20%), pos3=1 (20%). max_share=0.40 — constraint satisfied (<=0.40). All 4 positions used.",
+  "questions": [
+    {
+      "id": "q1",
+      "type": "mcq",
+      "objective_ref": "LO1 — Explain what it means for a function to have one job, and why that matters for testing.",
+      "stem_summary": "Student claims mixing compute + file-write in one function is fine; asks why that reasoning is wrong.",
+      "correct_position": 1
+    },
+    {
+      "id": "q2",
+      "type": "mcq",
+      "objective_ref": "LO2 — Identify a function doing more than one job by reading its body and name.",
+      "stem_summary": "Given function name validate_and_save_mark, what does the name alone reveal?",
+      "correct_position": 3
+    },
+    {
+      "id": "q3",
+      "type": "mcq",
+      "objective_ref": "LO3 — Use the 'and' naming heuristic to detect multi-job functions.",
+      "stem_summary": "Which of four function names most clearly signals a single-job function?",
+      "correct_position": 0
+    },
+    {
+      "id": "q4",
+      "type": "mcq",
+      "objective_ref": "LO4 — Refactor a multi-job function into two or more single-job functions.",
+      "stem_summary": "After splitting compute_and_save_average into two functions, how do you connect them at the call site?",
+      "correct_position": 2
+    },
+    {
+      "id": "q5",
+      "type": "mcq",
+      "objective_ref": "LO5 — Write a short spec-first manual test for a single-job function.",
+      "stem_summary": "Which approach correctly describes a manual test for compute_average?",
+      "correct_position": 1
+    }
+  ]
+}

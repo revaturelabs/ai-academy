@@ -1,0 +1,40 @@
+{
+  "type": "topic",
+  "id": "2.2",
+  "title": "Bad spec vs good spec — 'make it better' vs 'rewrite at Grade 8 level, max 80 words'",
+  "slug": "2-2-bad-spec-vs-good-spec-make-it-better-vs-rewrite-at-grade-8-l",
+  "position_in_module": 2,
+  "week_num": 2,
+  "session_name": "Specifying for AI",
+  "module": {
+    "position": 1,
+    "slug": "1-what-makes-a-good-specification",
+    "title": "What Makes a Good Specification"
+  },
+  "course": {
+    "code": "M1",
+    "slug": "m1-computational-thinking",
+    "title": "Computational Thinking"
+  },
+  "next_assessment": {
+    "id": "A1",
+    "due_week": 3,
+    "title": "Specification Portfolio",
+    "weight": "10%"
+  },
+  "paths": {
+    "corpus": "topic_corpus.md",
+    "resources": "topic.resources.json",
+    "progress": "topic.progress.json",
+    "artifacts_dir": "artifacts/",
+    "critic_reports_dir": "critic-reports/"
+  },
+  "artifact_plan": {
+    "profile": "standard",
+    "diagram": false,
+    "reading": { "target_word_range": [1200, 1600], "target_minutes": [6, 8] },
+    "quiz": { "min_questions": 5, "max_questions": 6, "include_short_answer": false }
+  },
+  "expected_delivery_minutes": 6,
+  "status": "scaffolded"
+}

@@ -1,0 +1,28 @@
+{
+  "topic_id": "14.8",
+  "generated_at": "2026-06-16T00:00:00Z",
+  "profile": "deep",
+  "target_word_range": [1800, 2200],
+  "target_minutes_range": [9, 11],
+  "word_count": 2166,
+  "reading_minutes": 11,
+  "diagram_embedded": true,
+  "diagram_path": "./diagram.png",
+  "resources_cited": ["[1]", "[2]", "[3]", "[4]", "[5]"],
+  "sections": [
+    "Overview",
+    "Key Concepts",
+    "Worked Example",
+    "In Practice",
+    "Key Takeaways",
+    "References"
+  ],
+  "concepts_taught": [
+    "irreversible action",
+    "high-stakes action",
+    "human-in-the-loop (HITL)",
+    "autonomy spectrum",
+    "approval gate",
+    "extended five-question decision matrix"
+  ]
+}

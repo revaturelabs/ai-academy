@@ -1,0 +1,84 @@
+{
+  "topic_id": "2.9",
+  "artifact": "reading",
+  "critic_version": "1.0",
+  "evaluated_at": "2026-06-17T00:00:00Z",
+  "cycle": 1,
+  "verdict": "pass",
+  "reading_critic_passed": true,
+  "checks": {
+    "format_discipline": {
+      "result": "pass",
+      "frontmatter_present": false,
+      "meta_sidecar_missing": false,
+      "section_template_violation": false,
+      "sections_found": ["Overview", "Key Concepts", "Worked Example", "In Practice", "Key Takeaways", "References"],
+      "sections_order_correct": true
+    },
+    "length": {
+      "result": "pass",
+      "word_count": 2090,
+      "target_word_range": [1800, 2200],
+      "in_word_range": true,
+      "estimated_minutes": 9.1,
+      "target_minute_range": [9, 11],
+      "in_minute_range": true
+    },
+    "citations": {
+      "result": "pass",
+      "primary_resources_cited": true,
+      "resources": [
+        { "index": 1, "url": "https://www.ibm.com/think/topics/iterative-prompting", "role": "primary", "cited": true, "first_appearance": "Overview" },
+        { "index": 2, "url": "https://whitebeardstrategies.com/blog/ai-prompt-debugging-fixing-issues-through-iteration/", "role": "supporting", "cited": true, "first_appearance": "Key Concepts — What iterating means" },
+        { "index": 3, "url": "https://catlintucker.com/2025/08/refine-ai-prompting/", "role": "supporting", "cited": true, "first_appearance": "Key Concepts — The three gap types" }
+      ],
+      "orphan_inline_markers": [],
+      "orphan_bibliography_entries": []
+    },
+    "no_forward_references": {
+      "result": "pass",
+      "findings": []
+    },
+    "faithfulness": {
+      "result": "pass",
+      "sampled_assertions": 10,
+      "unsupported_assertions": 0,
+      "unsupported_list": [],
+      "notes": "All 10 sampled assertions trace directly to corpus sections 4, 5.1–5.5, 6, and 7."
+    },
+    "beginner_readability": {
+      "result": "pass",
+      "undefined_terms": [],
+      "jargon_dumps": [],
+      "abstract_first": false,
+      "academic_register": false,
+      "notes": "All new terms (iteration, gap type, minimum viable patch, format drift, constraint overflow, task drift) are defined with bold-term / plain-meaning pattern before use. Soup-salt analogy introduces the iteration concept before the formal definition. Concrete inline examples present for each gap type."
+    },
+    "formatting": {
+      "result": "pass",
+      "wall_of_text": false,
+      "unlisted_sequence": false,
+      "no_inline_examples": false,
+      "notes": "Longest prose paragraphs are 3–4 sentences. The four-step iteration cycle is a numbered list. Gap type elaborations are bulleted. Both do/don't sections are tables. Concrete examples inline for every concept in Key Concepts."
+    },
+    "assessment_references": {
+      "result": "pass",
+      "assessment_reference_found": false,
+      "findings": []
+    },
+    "scope": {
+      "result": "pass",
+      "scope_creep": false,
+      "findings": [],
+      "notes": "REFINE framework referenced as an analogue to reinforce the same four-step cycle — not taught as a separate topic. No material beyond the headline scope (iterating a specification based on output gaps)."
+    },
+    "gold_example_match": {
+      "gold_example_used": "2-1-what-makes-a-good-specification.reading.md",
+      "result": "pass",
+      "notes": "Matches gold example in: bold-term definitions before use, concrete inline examples per concept, tables for comparisons and do/don't, short paragraphs (3–4 sentences), no assessment references anywhere in the reading."
+    }
+  },
+  "hard_fails": [],
+  "soft_findings": [],
+  "summary": "Reading passes all checks in cycle 1. Word count ~2090 (range 1800–2200). Estimated read time 9.1 min (range 9–11 min). All three resources cited at least once. Six fixed sections present in correct order. No frontmatter. No assessment references. No scope creep. Beginner readability and formatting standards met. Diagram embedded after the iteration cycle explanation in Key Concepts. All assertions trace to corpus."
+}

@@ -1,0 +1,30 @@
+{
+  "topic_id": "6.10",
+  "captured_at": "2026-06-19T00:00:00Z",
+  "captured_by": "namratas@revature.com",
+  "resources_source": "web_search",
+  "resources": [
+    {
+      "type": "url",
+      "value": "https://research.google/blog/open-sourcing-the-embedding-projector-a-tool-for-visualizing-high-dimensional-data/",
+      "role": "primary",
+      "source": "web_search",
+      "notes": "Canonical first-party origin: what the Embedding Projector is, how related points form clusters, PCA/t-SNE, nearest-neighbour interaction."
+    },
+    {
+      "type": "url",
+      "value": "https://www.tensorflow.org/text/guide/word_embeddings",
+      "role": "supporting",
+      "source": "web_search",
+      "notes": "Concept grounding for words-as-vectors / embeddings that feed the Projector."
+    },
+    {
+      "type": "url",
+      "value": "https://www.tensorflow.org/tensorboard/tensorboard_projector_plugin",
+      "role": "applied",
+      "source": "web_search",
+      "notes": "Step-by-step Projector UI walkthrough — PCA/t-SNE, searching a word for nearest neighbours. Best how-to source for the no-coding lab."
+    }
+  ],
+  "web_search_query": "TensorFlow Embedding Projector explore word clusters embeddings"
+}

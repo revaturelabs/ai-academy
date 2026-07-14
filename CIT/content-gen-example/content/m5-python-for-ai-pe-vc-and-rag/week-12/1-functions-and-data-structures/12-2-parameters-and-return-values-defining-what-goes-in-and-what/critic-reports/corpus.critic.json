@@ -1,0 +1,265 @@
+{
+  "critic": "corpus-critic",
+  "topic_id": "12.2",
+  "artifact": "corpus",
+  "cycle": 2,
+  "at": "2026-06-14T00:00:00Z",
+  "passed": true,
+  "depth_profile_used": "standard",
+  "word_count_estimate": 2919,
+
+  "checks": {
+
+    "required_sections": {
+      "passed": true,
+      "details": {
+        "section_3_learning_objectives": {
+          "present": true,
+          "word_count_estimate": 96,
+          "threshold": 50,
+          "passed": true,
+          "note": "6 Bloom-level objectives covering all concepts introduced."
+        },
+        "section_4_introduction": {
+          "present": true,
+          "word_count_estimate": 148,
+          "threshold": 50,
+          "passed": true,
+          "note": "3 paragraphs; opens with calculator analogy before introducing terms."
+        },
+        "section_5_core_concepts": {
+          "present": true,
+          "word_count_estimate": 700,
+          "threshold": 100,
+          "passed": true,
+          "note": "Five numbered subsections (5.1.1 through 5.2.5) with full prose, annotated code examples, and definitions for every concept introduced."
+        },
+        "section_10_key_takeaways": {
+          "present": true,
+          "word_count_estimate": 120,
+          "threshold": 50,
+          "passed": true,
+          "note": "5 substantive bullets; each is a standalone assertion the learner should be able to state independently."
+        }
+      }
+    },
+
+    "citation_density": {
+      "passed": true,
+      "resources_source": "web_search",
+      "mode": "strict",
+      "primary_resource_cited": {
+        "resource_1_url": "https://realpython.com/python-return-statement/",
+        "marker": "[1]",
+        "cited": true,
+        "first_occurrence_line": 43,
+        "passed": true
+      },
+      "supporting_resources_cited": {
+        "resource_2": {
+          "url": "https://realpython.com/defining-your-own-python-function/",
+          "marker": "[2]",
+          "cited": true
+        },
+        "resource_3": {
+          "url": "https://runestone.academy/ns/books/published/fopp/Functions/Returningavaluefromafunction.html",
+          "marker": "[3]",
+          "cited": true
+        }
+      },
+      "fake_citations_detected": false,
+      "density_in_sections_5_6_7": {
+        "estimated_standalone_assertions": 52,
+        "cited_assertions": 37,
+        "density_pct": 71,
+        "threshold_pct": 60,
+        "passed": true,
+        "breakdown_by_section": {
+          "section_5": {
+            "sampled_assertions": 34,
+            "cited": 25,
+            "density_pct": 74,
+            "note": "All return-keyword rules carry [1]; parameter/argument definitions carry [2] per bullet; implicit-None mechanic carries [1][3]; vending-machine analogy carries [2]; 'one definition many inputs' carries [2][3]; print-vs-return conclusion carries [1][2]."
+          },
+          "section_6": {
+            "sampled_assertions": 8,
+            "cited": 6,
+            "density_pct": 75,
+            "note": "Steps 2, 3, 4, 5, 7 each carry [1] or [2]. Step 6 (read the output) and the spec-comment line are procedural/display steps with no factual claim to cite — acceptable omissions."
+          },
+          "section_7": {
+            "sampled_assertions": 10,
+            "cited": 6,
+            "density_pct": 60,
+            "note": "Pattern 1 carries [1][3]; Pattern 2 carries [1][2]; Pattern 3 carries [1]; None-flag explanation carries [3]. Introductory framing sentence ('bread and butter') carries [1]. At threshold."
+          }
+        }
+      },
+      "cycle_1_failures_resolved": [
+        "sum() replaced with explicit loop — §7 Pattern 1 now uses the for-loop accumulator shown in §6; no sum() appears anywhere in the file.",
+        "§7 Pattern 2 file-I/O block (with open, for line in f, .strip(), .append(), int()) is removed; replaced with format_report(student_name, score) which stays within prior concepts.",
+        "marks[0] initialisation removed; §7 Pattern 1 uses the None-flag pattern (highest = None) instead.",
+        ".append() removed from the file entirely.",
+        "§6 Implementation citation density improved from 14% to 75%.",
+        "§5 Core Concepts citation density improved from 38% to 74%."
+      ]
+    },
+
+    "sequence_drift": {
+      "passed": true,
+      "forward_references_found": [],
+      "cleared_hard_failures_from_cycle_1": [
+        {
+          "term": "sum()",
+          "resolution": "Removed. Replaced with explicit for-loop accumulator throughout §7 Pattern 1 and §8. No occurrence of sum() in corpus."
+        },
+        {
+          "term": "file I/O (with open / for line in f / .strip() / .append() / int())",
+          "resolution": "Removed. §7 Pattern 2 now uses format_report(student_name, score) — operates only on strings and the classify_mark return value, both within prior concepts."
+        },
+        {
+          "term": "marks[0] list indexing",
+          "resolution": "Removed. find_highest and find_lowest now initialise with highest = None / lowest = None and use the is-None check on first iteration."
+        },
+        {
+          "term": ".append()",
+          "resolution": "Removed from corpus entirely."
+        }
+      ],
+      "soft_findings": [
+        {
+          "term": "str()",
+          "locations": [
+            "§7 Pattern 2 line 390: `return student_name + \": \" + str(score) + \" — \" + outcome`",
+            "§9 Hands-On Exercise line 480: `label + \": \" + str(square(number))`"
+          ],
+          "assessment": "str() is used as a built-in type-conversion call without prior introduction in the listed concepts for topics 11.3–12.1. It appears in code examples only (not in prose definitions), in a string-concatenation context where its purpose is inferable from context. Per the task-level scope note, str() for string concatenation is a 'common beginner pattern' and the critic should 'use judgment.' The usage is contextually clear; the term is not formally defined here (so it is not taught as a forward concept). Escalated to soft finding for HITL #3 awareness.",
+          "severity": "soft",
+          "recommendation": "Add a one-line gloss when str() first appears in §7: 'str(score) converts the number to text so it can be joined to the string — Python requires all parts of a joined string to be the same type.'"
+        }
+      ],
+      "cleared_soft_from_cycle_1": [
+        {
+          "term": ".strip()",
+          "resolution": "Removed with file-I/O block."
+        },
+        {
+          "term": "int() conversion",
+          "resolution": "Removed with file-I/O block."
+        },
+        {
+          "term": "global variables",
+          "resolution": "Phrase 'No global variables' retained in §7 Pattern 3 commentary but now presented as a consequence visible from the code (reader can observe there are no global variables), not as a defined concept. Low-severity; acceptable."
+        },
+        {
+          "term": "separation of concerns",
+          "resolution": "Still present in §7 Pattern 3: 'clean separation of concerns [1].' Used as a descriptive label (one sentence, carries [1]) rather than a taught concept. Low-severity; acceptable."
+        },
+        {
+          "term": "TypeError",
+          "resolution": "Retained in §8 Best Practices common-mistake block as error output only ('TypeError: unsupported operand type(s) for +: NoneType and int'). Not taught; shown as consequence. Soft finding retained from cycle 1 but does not escalate."
+        }
+      ],
+      "remaining_noted_items": [
+        {
+          "term": "len()",
+          "note": "Used in §6 Step 3 with an inline plain-English gloss: 'len(marks) gives the number of items in the list — a built-in that tells you the length.' This constitutes an adequate first-use explanation for a self-explanatory built-in. Acceptable per scope note."
+        },
+        {
+          "term": "keyword arguments, default values",
+          "note": "Named in one sentence in §5.1.3 with explicit 'covered in later topics' pointer. Mention-and-defer form is compliant — not bolded, not defined."
+        },
+        {
+          "term": "classify_mark call in §7 Pattern 2",
+          "note": "classify_mark is defined in §5.2.2 (lines 140–150) and Pattern 3. Not a forward reference."
+        },
+        {
+          "term": "None flag pattern",
+          "note": "None introduced by this corpus in §5.2.4. The 'highest is None' pattern in §7 Pattern 1 post-dates that introduction. Not a forward reference."
+        }
+      ]
+    },
+
+    "length_sanity": {
+      "passed": true,
+      "profile": "standard",
+      "profile_range_skill_md": { "min": 3000, "max": 4400 },
+      "tolerance_floor_30pct_below_min": 2100,
+      "word_count_estimate": 2919,
+      "counting_method": "all prose, code comments, and code block text; excluding YAML frontmatter lines 1–7",
+      "in_profile_range": false,
+      "pct_below_min": 2.7,
+      "within_30pct_tolerance": true,
+      "hard_fail_triggered": false,
+      "note": "Estimated count ~2919 is 2.7% below the 3000 floor — well within the 30% tolerance band (failure requires >30% outside range, i.e. <2100). PASS. Soft advisory: corpus is lean for standard depth. The removal of the file-I/O block (scope creep from cycle 1) accounts for the shortfall. If future revision occurs, expanding §7 commentary or adding a fourth real-world pattern would reach 3000+. No action required this cycle."
+    },
+
+    "topic_scope": {
+      "passed": true,
+      "scope_creep_findings": [],
+      "cycle_1_failures_resolved": [
+        "§7 Pattern 2 file-I/O block removed. Replaced with format_report(student_name, score) — a string-building function using only parameters, return values, and classify_mark (all within this topic's scope).",
+        "sum() removed from §7 Pattern 1 and §8; explicit loop used throughout.",
+        "marks[0] removed; None-flag initialisation used instead."
+      ],
+      "remaining_scope_notes": [
+        "'separation of concerns' in §7 Pattern 3 is used as a descriptive phrase (one sentence, cited [1]) rather than a taught concept — compliant.",
+        "TypeError in §8 appears as code output only — not taught. Acceptable."
+      ]
+    },
+
+    "beginner_readability": {
+      "passed": true,
+      "escalated_to_hard_fail": false,
+      "undefined_terms": {
+        "count": 1,
+        "terms": [
+          "str() — used in §7 Pattern 2 and §9 without plain-language definition (also flagged in sequence_drift.soft_findings)"
+        ],
+        "threshold_for_soft_fail": 2,
+        "soft_fail_triggered": false
+      },
+      "jargon_dumps": {
+        "found": false,
+        "note": "Parameter and argument introduced together in §5.1.1 but via separate bullets, plain-language vending-machine analogy, and the 'where you are standing' contrast frame — compliant with the one-new-idea-at-a-time mandate."
+      },
+      "plain_register": {
+        "hedging_phrases_found": 0,
+        "threshold": 3,
+        "average_sentence_length_estimate": "under 20 words",
+        "active_voice": true,
+        "addresses_learner_as_you": true,
+        "passed": true
+      },
+      "concrete_examples_before_abstraction": {
+        "passed": true,
+        "note": "§4 leads with calculator / light-switch analogy. §5.1.1 uses vending machine before formal definitions. §5.2.1 gives working add(a, b) code before stating the return-mechanism rule."
+      },
+      "distinct_findings_count": 1,
+      "escalation_threshold": 3,
+      "cycle_1_soft_findings_resolved": [
+        "'separation of concerns' — still present as a descriptive phrase but no longer counts as an undefined term requiring resolution.",
+        "'TypeError' — still present as error output; not a teaching term. Soft finding noted but below escalation threshold."
+      ]
+    }
+
+  },
+
+  "aggregate_soft_findings": [
+    {
+      "code": "undefined_term",
+      "term": "str()",
+      "locations": ["§7 Pattern 2 (line 390)", "§9 Hands-On Exercise (line 480)"],
+      "action": "Surface at HITL #3 for author awareness. Recommendation: add one-line inline gloss on first use in §7."
+    },
+    {
+      "code": "length_advisory",
+      "detail": "Word count estimated ~2919, marginally below the 3000 standard-profile floor (2.7% below). Within 30% tolerance band — not a hard fail. Shortfall attributable to removal of cycle-1 scope-creep material (file-I/O block). Informational only.",
+      "action": "No action required this cycle."
+    }
+  ],
+
+  "hard_fail_reasons": [],
+
+  "verdict": "PASS — cycle 2. All six hard checks clear. Four hard failures from cycle 1 are resolved: sum() replaced with explicit loop throughout, file-I/O block (with open / .strip() / .append() / int()) removed from §7 Pattern 2 and replaced with a within-scope format_report function, marks[0] list-indexing removed and replaced with the None-flag pattern, and citation density lifted from 37% to 71% overall (§6 from 14% to 75%, §5 from 38% to 74%). Two soft findings remain: str() is used without definition in §7 Pattern 2 and §9 (soft — one undefined term, below the two-term soft-fail threshold; recommend inline gloss on first use); word count ~2919 is 2.7% below the 3000 standard floor but well within the 30% tolerance band (soft advisory only). Corpus is cleared to ground reading, quiz, and diagram artifacts."
+}

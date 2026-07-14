@@ -1,0 +1,49 @@
+$CATEGORY: CIT/M5/week-13/13.13-folder-structure-and-readme
+
+::q1:: A professional Python project uses a standard folder layout. What is the main reason developers follow this convention? {
+~It makes Python execute the code faster by reducing the distance between files#No — Python's execution speed is not affected by where files are stored in a folder layout.
+=It lets any developer open the project and immediately find each type of file without searching#Correct — the shared convention means folder layout communicates purpose before a single line of code is read.
+~It is a rule enforced by GitHub that all repositories must satisfy before they can be published#No — GitHub places no folder-layout requirements on repositories at all.
+~It stops Git from accidentally tracking files that are placed inside subfolders#No — Git tracks files inside subfolders just as it tracks root-level files.
+#### Tests why the Python community's standard folder layout exists (corpus §5.1–5.2).
+}
+
+::q2:: A README file for a professional project must answer the question "What is this project and how do I use it?" Which set of five sections is the correct template for doing that? {
+~Introduction, Background, Architecture, Known Issues, Changelog#No — these sections describe a software design document, not a project README.
+~Summary, Prerequisites, Examples, Glossary, Licence#No — this mixes useful elements but omits the setup and file-structure sections the template requires.
+~Overview, Dependencies, Contribution Guide, Roadmap, Credits#No — roadmap and contribution guides suit open-source libraries but are not the five-section template taught here.
+=Title and description, Setup, Usage, File structure, Author#Correct — these five sections cover what the project does, how to install it, how to run it, the layout, and who made it.
+#### Tests knowledge of the five-section README template (corpus §5.3).
+}
+
+::q3:: You are about to run `git add .` on a new project that has a `.env` file containing your API (Application Programming Interface) key. What must you do before running that command? {
+=Add `.env` to a `.gitignore` file in the root folder before any `git add` runs#Correct — `.gitignore` must list `.env` before the first `git add`; a key already in Git history is very difficult to remove.
+~Rename `.env` to `env.txt` so that GitHub's automated scanner does not flag the key#No — renaming the file does not prevent it from being committed; `.gitignore` is the correct solution.
+~Push to a private repository first, because private repositories do not expose credentials#No — private repositories can become public, and the key remains in Git history regardless of visibility settings.
+~Delete the `.env` file before staging, and recreate it after the push is complete#No — this leaves the project broken during the commit and does not establish a lasting protection pattern.
+#### Tests the critical ordering rule for `.gitignore` and API key safety (corpus §5.4, §6 Step 2).
+}
+
+::q4:: Which of the following is the correct minimal folder structure for a new Python Capstone project? {
+~A single root folder containing `main.py`, `data.csv`, and `README.txt` with no subfolders created#No — code and data should be in subfolders, and the README uses the `.md` extension, not `.txt`.
+~A root folder with `src/`, `tests/`, `docs/`, `venv/`, and `data/` all set up before any code is written#No — `venv/` belongs in `.gitignore` and must not be committed; `tests/` and `docs/` are optional extras.
+=A root folder with `README.md`, `.gitignore`, `requirements.txt`, and a `src/` subfolder holding `main.py`#Correct — these four elements cover documentation, ignore rules, dependency list, and the code in its own subfolder.
+~A root folder with only `main.py` and `requirements.txt`, adding README and .gitignore later as needed#No — `.gitignore` must exist before the first `git add`; delaying it risks committing secrets in early commits.
+#### Tests the ability to identify a minimal but complete project layout (corpus §5.2, §6).
+}
+
+::q5:: A learner's repository root contains `script.py`, `script_old.py`, `script_final.py`, `script_FINAL_v2.py`, and `data.csv` all in one flat folder with no subfolders and no README. Which two mistakes does this layout demonstrate? {
+~Failing to push the repository to GitHub, and omitting a `requirements.txt` file entirely#No — whether the project was pushed or has a `requirements.txt` cannot be determined from folder layout alone.
+~Placing the data file in the root instead of a `data/` subfolder, and using `pip freeze` incorrectly#No — a root-level data file is a mistake, but `pip freeze` is a valid and correct tool; it is not shown as an error here.
+~Omitting a `.gitignore` file, and picking `script.py` as a name instead of the conventional `main.py`#No — a missing `.gitignore` is a concern, but a naming preference for `script.py` is a clarity issue, not a primary mistake.
+=Versioned filenames like `script_old.py` instead of Git commits, and all files dumped flat with no subfolders#Correct — version-tracking through filenames bypasses Git's purpose, and a flat file pile makes the project hard to navigate.
+#### Tests identification of the most common folder-organisation mistakes (corpus §5.1, §5.6, §8).
+}
+
+::q6:: A hiring manager opens a candidate's GitHub repository and sees a clear `src/` subfolder, a `README.md` with all five sections, and a `.gitignore` that excludes `.env`. Why does this layout shape the reviewer's impression before they read any Python code? {
+~It proves the code has no bugs, because only bug-free projects are typically organised this way#No — folder layout has no connection to whether the code contains bugs or errors.
+=It shows the candidate knows professional conventions, so competence is communicated by the structure itself#Correct — the layout tells the reviewer where code is, how to install it, and that credentials are protected, all without reading a line.
+~It confirms the project passes the employer's automated code-quality pipeline checks automatically#No — folder layout does not determine outcomes in code-quality or continuous-integration tools.
+~It signals the candidate used a scaffolding tool, which most technical hiring managers specifically look for#No — there is no such industry preference; the value lies in the organisation itself, not how it was generated.
+#### Tests the connection between folder organisation and professional portfolio presentation (corpus §7 Pattern 1, §7 Pattern 5).
+}

@@ -1,0 +1,40 @@
+---
+title: "Conditional Probability: Full vs Reduced Sample Space"
+config:
+  theme: base
+  themeVariables:
+    primaryColor: "#a5d8ff"
+    primaryBorderColor: "#4a9eed"
+    lineColor: "#555"
+  flowchart:
+    htmlLabels: true
+    curve: basis
+    nodeSpacing: 50
+    rankSpacing: 38
+---
+flowchart LR
+  subgraph FULL["Full Sample Space — no condition"]
+    direction TB
+    F1["<b>All outcomes</b><br/><span style='font-size:11px;color:#6d28d9'>{1, 2, 3, 4, 5, 6} — 6 total</span>"]:::start
+    F2["<b>Event A: even rolls</b><br/><span style='font-size:11px;color:#6d28d9'>{2, 4, 6} — 3 of 6 outcomes</span>"]:::hitl
+    F1 --> F2
+  end
+
+  subgraph REDUCED["Reduced Sample Space — condition B applied"]
+    direction TB
+    R1["<b>Condition B: die &gt; 3</b><br/><span style='font-size:11px;color:#6d28d9'>discard {1, 2, 3} — 3 remain</span>"]:::auto
+    R2["<b>Event A inside B</b><br/><span style='font-size:11px;color:#6d28d9'>{4, 6} — 2 of 3 remaining</span>"]:::hitl
+    R3["<b>P(A | B) = 2/3</b><br/><span style='font-size:11px;color:#555'>count in B with A / size of B</span>"]:::done
+    R1 --> R2
+    R2 --> R3
+  end
+
+  FULL ~~~ REDUCED
+
+  style FULL fill:#f8f9fa,stroke:#adb5bd,color:#343a40
+  style REDUCED fill:#f8f9fa,stroke:#adb5bd,color:#343a40
+
+  classDef start fill:#a5d8ff,stroke:#4a9eed,color:#1a1a1a
+  classDef hitl fill:#fff3bf,stroke:#f59e0b,stroke-width:3px,color:#1a1a1a
+  classDef auto fill:#d0bfff,stroke:#8b5cf6,color:#1a1a1a
+  classDef done fill:#b2f2bb,stroke:#22c55e,color:#1a1a1a

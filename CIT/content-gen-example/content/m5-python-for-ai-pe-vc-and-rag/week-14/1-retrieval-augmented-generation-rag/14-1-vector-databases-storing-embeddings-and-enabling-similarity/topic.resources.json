@@ -1,0 +1,38 @@
+{
+  "topic_id": "14.1",
+  "resources_source": "web_search",
+  "resources": [
+    {
+      "id": "R1",
+      "type": "primary",
+      "title": "What Is a Vector Database?",
+      "url": "https://www.ibm.com/think/topics/vector-database",
+      "publisher": "IBM",
+      "notes": "Authoritative beginner-friendly overview: embeddings, similarity search, use cases"
+    },
+    {
+      "id": "R2",
+      "type": "primary",
+      "title": "What is vector search?",
+      "url": "https://www.ibm.com/think/topics/vector-search",
+      "publisher": "IBM",
+      "notes": "Covers distance metrics (cosine, Euclidean, inner product) and how similarity search works"
+    },
+    {
+      "id": "R3",
+      "type": "primary",
+      "title": "Vector Databases 101: A Beginner's Guide to Vector Search and Indexing",
+      "url": "https://towardsai.net/p/artificial-intelligence/vector-databases-101-a-beginners-guide-to-vector-search-and-indexing",
+      "publisher": "Towards AI",
+      "notes": "Step-by-step: from raw data → embedding → indexing → ANN search"
+    },
+    {
+      "id": "R4",
+      "type": "primary",
+      "title": "Understanding Hierarchical Navigable Small Worlds (HNSW)",
+      "url": "https://zilliz.com/learn/hierarchical-navigable-small-worlds-HNSW",
+      "publisher": "Zilliz",
+      "notes": "Plain-language explainer of HNSW — the dominant ANN index algorithm used in production vector DBs"
+    }
+  ]
+}

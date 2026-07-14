@@ -1,0 +1,130 @@
+{
+  "cycle": 2,
+  "passed": true,
+  "checks": {
+    "positional_bias": {
+      "passed": true,
+      "distribution": [2, 1, 1, 2],
+      "distribution_detail": {
+        "pos0": 2,
+        "pos1": 1,
+        "pos2": 1,
+        "pos3": 2
+      },
+      "max_share": 0.333,
+      "threshold": 0.40,
+      "meta_gift_desync": false,
+      "verified_positions": {
+        "q1": 1,
+        "q2": 3,
+        "q3": 0,
+        "q4": 2,
+        "q5": 0,
+        "q6": 3
+      },
+      "note": "Derived positions from quiz.gift answer-line order match sidecar correct_position_distribution [1,3,0,2,0,3] exactly. pos0=2/6=33%, pos3=2/6=33% — max_share 0.333 within threshold."
+    },
+    "length_bias": {
+      "passed": true,
+      "longest_correct_rate": 0.167,
+      "baseline": 0.25,
+      "threshold": 0.40,
+      "longest_correct_count": 1,
+      "per_question": [
+        {
+          "id": "q1",
+          "correct_len": 50,
+          "distractor_mean": 54.3,
+          "ratio": 0.92,
+          "longest_correct": false
+        },
+        {
+          "id": "q2",
+          "correct_len": 47,
+          "distractor_mean": 33.7,
+          "ratio": 1.39,
+          "longest_correct": true,
+          "note": "Ratio 1.39 exceeds 1.20 per-question signal; however only 1/6 questions are flagged so longest_correct_rate 0.167 is well below the 0.40 fail threshold. Builder self-report of max 1.10 was measured differently (may have included longer feedback-stripped variants). Actual ratio on cycle-2 answer text is 1.39 for q2 only — rate-level check passes."
+        },
+        {
+          "id": "q3",
+          "correct_len": 75,
+          "distractor_mean": 74.7,
+          "ratio": 1.004,
+          "longest_correct": false
+        },
+        {
+          "id": "q4",
+          "correct_len": 71,
+          "distractor_mean": 66.3,
+          "ratio": 1.07,
+          "longest_correct": false
+        },
+        {
+          "id": "q5",
+          "correct_len": 59,
+          "distractor_mean": 70.3,
+          "ratio": 0.84,
+          "longest_correct": false
+        },
+        {
+          "id": "q6",
+          "correct_len": 73,
+          "distractor_mean": 67.0,
+          "ratio": 1.09,
+          "longest_correct": false
+        }
+      ]
+    },
+    "distractor_plausibility": {
+      "passed": true,
+      "total_distractors": 18,
+      "absurd_count": 1,
+      "absurd_rate": 0.056,
+      "threshold": 0.25,
+      "absurd_distractors": [
+        {
+          "question": "q4",
+          "distractor": "It is too short to be stored in memory by Python",
+          "score": 1,
+          "note": "Python has no minimum identifier length; no beginner misconception grounds this claim. Rate 0.056 is far below 0.25 threshold — check passes with a soft flag."
+        }
+      ],
+      "weakest_questions": ["q4"],
+      "soft_flag": "q4 distractor 2 scores 1/4 (absurd). absurd_rate 0.056 within threshold; no blocking action."
+    },
+    "objective_coverage": {
+      "passed": true,
+      "los_from_corpus": [
+        "Explain in plain words what a Python function is and why functions exist.",
+        "Write a function using the `def` keyword with correct Python syntax.",
+        "Call (run) a function by name and observe when the code inside it executes.",
+        "Choose a clear, descriptive name for a function that signals what it does.",
+        "Recognise the difference between defining a function and calling a function.",
+        "Identify where functions appear in real AI-adjacent Python scripts."
+      ],
+      "coverage_map": {
+        "LO1": ["q1"],
+        "LO2": ["q2"],
+        "LO3": ["q3"],
+        "LO4": ["q4"],
+        "LO5": ["q5"],
+        "LO6": ["q6"]
+      },
+      "uncovered_objectives": [],
+      "orphan_questions": []
+    },
+    "beginner_fairness_and_scope": {
+      "passed": true,
+      "jargon_in_stem": [],
+      "out_of_scope_questions": [],
+      "unfair_distractors": [],
+      "note": "All 6 questions test only 12.1 concepts: function definition, def syntax, calling, naming conventions, define-vs-call distinction, recognising calls in real scripts. No parameters, return values, lists, or classes appear. Python terms (def, NameError, PEP 8) were defined in the corpus. All stems are plain English accessible to an absolute beginner."
+    }
+  },
+  "auto_correction_applied": {
+    "shuffle_round_2": false
+  },
+  "verdict": "Pass — all bias, coverage, and scope checks clean across 6 MCQs; one soft distractor flag on q4 (below threshold).",
+  "at": "2026-06-13T00:00:00Z"
+}

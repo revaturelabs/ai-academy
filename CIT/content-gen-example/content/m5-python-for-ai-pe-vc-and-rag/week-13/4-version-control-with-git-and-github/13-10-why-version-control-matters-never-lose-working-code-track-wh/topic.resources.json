@@ -1,0 +1,30 @@
+{
+  "topic_id": "13.10",
+  "captured_at": "2026-06-14T00:00:00Z",
+  "captured_by": "namratas@revature.com",
+  "resources_source": "web_search",
+  "web_search_query": "why version control matters never lose working code track changes beginners",
+  "resources": [
+    {
+      "type": "url",
+      "value": "https://git-scm.com/book/en/v2/Getting-Started-About-Version-Control",
+      "role": "primary",
+      "source": "web_search",
+      "notes": "Official Git book chapter on what VCS is, why it exists, types (local/centralised/distributed). Canonical first-party."
+    },
+    {
+      "type": "url",
+      "value": "https://www.atlassian.com/git/tutorials/what-is-version-control",
+      "role": "supporting",
+      "source": "web_search",
+      "notes": "Atlassian beginner tutorial — concrete benefits, team collaboration angle, history tracking."
+    },
+    {
+      "type": "url",
+      "value": "https://careerfoundry.com/en/blog/web-development/whats-version-control-and-why-do-i-need-it/",
+      "role": "supporting",
+      "source": "web_search",
+      "notes": "Beginner-focused, 6 practical reasons. Uses folder_v2/project_final analogy — good for absolute beginners."
+    }
+  ]
+}

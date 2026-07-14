@@ -1,0 +1,147 @@
+{
+  "passed": true,
+  "cycle": 2,
+  "checks": {
+    "gift_syntax": {
+      "passed": true,
+      "note": "All 6 question blocks parse cleanly. q1–q5 are valid MCQ (1 correct + 3 distractors each, general feedback via ####). q6 is valid short-answer (8 accepted answers, no distractors). No malformed braces, no missing answer-line markers."
+    },
+    "positional_bias": {
+      "passed": true,
+      "distribution": { "pos0": 1, "pos1": 1, "pos2": 2, "pos3": 1 },
+      "max_share": 0.40,
+      "threshold": 0.40,
+      "note": "max_share == threshold (not strictly greater than). Boundary pass — same as cycle 1; no regression. Derived positions [0,1,2,3,2] match meta correct_position_distribution [0,1,2,3,2] exactly — no meta/GIFT desync."
+    },
+    "length_bias": {
+      "passed": true,
+      "longest_correct_rate": 0.0,
+      "baseline": 0.25,
+      "threshold": 0.40,
+      "per_question": [
+        {
+          "id": "q1",
+          "correct_chars": 107,
+          "distractor_mean": 105.7,
+          "threshold_chars": 126.8,
+          "longest_correct": false,
+          "note": "Correct (107) well below threshold (126.8). Fix from cycle 1 confirmed."
+        },
+        {
+          "id": "q2",
+          "correct_chars": 107,
+          "distractor_mean": 113.7,
+          "threshold_chars": 136.4,
+          "longest_correct": false,
+          "note": "Correct (107) shorter than distractor mean (113.7). Fix from cycle 1 confirmed."
+        },
+        {
+          "id": "q3",
+          "correct_chars": 88,
+          "distractor_mean": 98.3,
+          "threshold_chars": 118.0,
+          "longest_correct": false,
+          "note": "Correct (88) shorter than distractor mean (98.3). Fix from cycle 1 confirmed."
+        },
+        {
+          "id": "q4",
+          "correct_chars": 101,
+          "distractor_mean": 96.7,
+          "threshold_chars": 116.0,
+          "longest_correct": false,
+          "note": "Unchanged from cycle 1; already clean."
+        },
+        {
+          "id": "q5",
+          "correct_chars": 136,
+          "distractor_mean": 124.0,
+          "threshold_chars": 148.8,
+          "longest_correct": false,
+          "note": "Correct (136) below threshold (148.8). Fix from cycle 1 confirmed. Replacing the absurd regulation distractor also incidentally raised the distractor mean, widening the margin."
+        }
+      ],
+      "cycle_1_comparison": "Cycle 1: longest_correct_rate=0.80 (q1,q2,q3,q5 all failed). Cycle 2: longest_correct_rate=0.00. All four flagged questions now clean."
+    },
+    "distractor_plausibility": {
+      "passed": true,
+      "total_distractors": 15,
+      "absurd_count": 0,
+      "absurd_rate": 0.0,
+      "threshold": 0.25,
+      "scores_summary": {
+        "score_1_absurd": 0,
+        "score_2_wrong_unrelated": 0,
+        "score_3_plausible_misconception": 14,
+        "score_4_strong_distractor": 1
+      },
+      "weakest_questions": [],
+      "cycle_1_comparison": "Cycle 1 had 1 score-1 absurd distractor on q5 (invented regulation constraint). Replacement distractor — 'multimodal models can read handwritten text on the invoice, which is the main advantage over a text-only system' — scores 3: plausible beginner misconception about document OCR capability, grounded in §7 Pattern 2 context, no invented constraints.",
+      "note": "q2-D1 ('converts the photo into a written text description first…') is the only score-4 strong distractor — it correctly represents a real two-stage pipeline architecture that beginners commonly conflate with a true multimodal system."
+    },
+    "objective_coverage": {
+      "passed": true,
+      "lo_count": 6,
+      "uncovered_objectives": [],
+      "orphan_questions": [],
+      "mapping": [
+        {
+          "question_id": "q1",
+          "lo": "Define multimodal AI and explain why combining multiple types of information in one system produces results that separate single-type systems cannot."
+        },
+        {
+          "question_id": "q2",
+          "lo": "Describe, in plain language, how a multimodal model converts different types of input into a shared representation so they can be processed together."
+        },
+        {
+          "question_id": "q3",
+          "lo": "Distinguish between a unimodal model and a multimodal model using a concrete scenario."
+        },
+        {
+          "question_id": "q4",
+          "lo": "Name the four main modalities — text, image, audio, and video — and give one real example of each."
+        },
+        {
+          "question_id": "q5",
+          "lo": "Identify at least three real-world applications of multimodal AI and explain what problem each one is solving."
+        },
+        {
+          "question_id": "q6",
+          "lo": "Explain one key limitation of multimodal AI systems that users and organisations need to keep in mind."
+        }
+      ]
+    },
+    "question_count": {
+      "passed": true,
+      "count": 6,
+      "min": 5,
+      "max": 7
+    },
+    "short_answer_present": {
+      "passed": true,
+      "short_answer_question_ids": ["q6"],
+      "accepted_answer_count": 8,
+      "note": "q6 accepts 8 answer variants covering hallucination, modality gaps, compute cost, and privacy — all drawn directly from corpus §5.9."
+    },
+    "meta_gift_sync": {
+      "passed": true,
+      "question_count_match": true,
+      "position_distribution_match": true,
+      "bias_defense_flag": true,
+      "derived_positions": [0, 1, 2, 3, 2],
+      "meta_positions": [0, 1, 2, 3, 2]
+    },
+    "beginner_fairness_and_scope": {
+      "passed": true,
+      "jargon_in_stem": [],
+      "out_of_scope_questions": [],
+      "soft_findings": [],
+      "note": "All stems use plain language. All acronyms (AI, RAG) were defined in the corpus before use. Every question is answerable by a beginner who read this topic and nothing else. The cycle-1 soft finding on q5 (unfair_distractor: invented regulatory constraint) is resolved — replacement distractor is a plausible beginner misconception with no un-taught external knowledge required."
+    }
+  },
+  "auto_correction_applied": {
+    "shuffle_round_2": false,
+    "length_rebalance": false
+  },
+  "verdict": "PASS — all checks clean. Length bias resolved: cycle-1 longest_correct_rate of 0.80 reduced to 0.00 across all four previously flagged questions (q1, q2, q3, q5). Absurd distractor on q5 replaced with a plausible misconception (absurd_rate now 0.00). Positional bias at boundary 0.40 (not strictly over threshold — pass, consistent with cycle 1). All 6 LOs covered 1-to-1. Question count 6 within 5–7 range. Short answer present (q6). Meta/GIFT fully in sync. No jargon, no out-of-scope questions, no soft findings.",
+  "at": "2026-06-17T08:00:00Z"
+}

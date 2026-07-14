@@ -1,0 +1,67 @@
+{
+  "critic": "corpus-critic",
+  "topic_id": "12.14",
+  "topic_title": "Every API call is a design decision — latency, cost, and reliability considered upfront",
+  "at": "2026-06-15T00:00:00Z",
+  "passed": true,
+  "checks": {
+    "required_sections": {
+      "passed": true,
+      "detail": {
+        "section_3_learning_objectives": { "present": true, "word_count_estimate": 150, "threshold": 50, "passed": true },
+        "section_4_introduction": { "present": true, "word_count_estimate": 200, "threshold": 50, "passed": true },
+        "section_5_core_concepts": { "present": true, "word_count_estimate": 900, "threshold": 100, "passed": true },
+        "section_10_key_takeaways": { "present": true, "word_count_estimate": 155, "threshold": 50, "passed": true }
+      }
+    },
+    "citation_density": {
+      "passed": true,
+      "resources_source": "web_search",
+      "primary_resource_cited": true,
+      "primary_resource": "https://artificialanalysis.ai/providers/anthropic",
+      "primary_citation_marker": "[1]",
+      "primary_cited_in_sections": ["5.1", "5.2", "5.3", "5.4", "5.5", "7", "8", "10"],
+      "numerical_claims_in_s5_s6_s7_total": 18,
+      "numerical_claims_with_citation_marker": 16,
+      "citation_density_pct": 89,
+      "threshold_pct": 60,
+      "soft_findings": [
+        "§5.4 line 161: 'sixty times more expensive than Haiku' — no citation marker on that exact sentence (same fact is cited in §5.2 and §7; not a fabrication, minor omission).",
+        "§6 code block comment says 'Source: Anthropic pricing page' in plain text rather than a [N] marker — numerical constants in code are not prose assertions; acceptable but noted."
+      ]
+    },
+    "sequence_drift": {
+      "passed": true,
+      "forward_references": [],
+      "detail": "All API and Python terms (client.messages.create, message.usage, message.content[0].text, try/except, time.sleep, RateLimitError, APIConnectionError, AuthenticationError, BadRequestError) introduced in 12.1–12.13. New concepts introduced here: latency, token pricing, input/output token cost formula, model-tier trade-off, Haiku/Sonnet/Opus, three-question design checklist, cost-and-latency note, time.time(). Batch API and prompt caching are named-and-deferred in one sentence each with explicit 'not in scope for this module' pointer — compliant with mention-and-defer rule. No prompt engineering (13.x) or RAG/agents (14.x) forward references found."
+    },
+    "length_sanity": {
+      "passed": true,
+      "profile": "atomic",
+      "word_count_estimate": 2100,
+      "range_min": 1500,
+      "range_max": 2400,
+      "hard_fail_threshold": 1050,
+      "detail": "Estimated ~2100 words (prose + inline code comments). Within atomic corpus range of 1500–2400w. Comfortably above hard-fail floor of 1050w."
+    },
+    "topic_scope": {
+      "passed": true,
+      "scope_creep_findings": [],
+      "detail": "All five subsections (5.1 Latency, 5.2 Cost, 5.3 Reliability, 5.4 Model tiers, 5.5 Three-question checklist) and the §6 cost-and-latency note implementation are squarely on the headline. Batch API and prompt caching are mention-and-defer only ('mentioned here so you know they exist; they are not in scope for this module'). No prompt engineering techniques, RAG, or agent frameworks taught. Scope is clean."
+    },
+    "beginner_readability": {
+      "passed": true,
+      "hard_fail_triggered": false,
+      "soft_findings": [
+        {
+          "code": "undefined_terms",
+          "detail": "§5.1: 'Larger models (more parameters, more capability)' — 'parameters' (ML model weight count) is used without a plain-language definition. Used in passing context; meaning is inferable from surrounding sentence. Single instance, below the ≥2 undefined-terms soft-fail threshold."
+        }
+      ],
+      "jargon_dump": false,
+      "academic_register": false,
+      "detail": "Introduction and Core Concepts are written in plain, direct, second-person prose. Terms defined on first use: Latency (§5.1), Tokens (§5.2), Rate limits (§5.3) with RPM/TPM spelled out inline. One borderline term ('parameters') used without definition but in a context that does not impede comprehension. No jargon dumps (no paragraph introduces 3+ new terms simultaneously). Sentence lengths are predominantly under 20 words. No hedging phrases detected. Total soft findings: 1 — below the ≥3 escalation threshold."
+    }
+  },
+  "verdict": "PASS — all 6 checks passed. Primary resource [1] (artificialanalysis.ai) is cited in 8 sections; citation density across §5/6/7 is ~89% (threshold 60%). No forward references to 13.x or 14.x material; batch API and prompt caching are correctly mention-and-deferred. Word count ~2100w is within atomic corpus range 1500–2400w. Sections 3, 4, 5, 10 are all present and non-trivial. Scope is clean — no scope_creep findings. One beginner-readability soft finding (ML 'parameters' used without plain-language gloss in §5.1) — below escalation threshold. Corpus is ready to ground downstream artifacts."
+}

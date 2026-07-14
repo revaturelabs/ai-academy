@@ -1,0 +1,55 @@
+$CATEGORY: CIT/M5/week-13/13-4-chain-of-thought-prompting-asking-the-model-to-reason-step-b
+
+::q1:: Chain-of-thought (CoT) prompting improves model output on multi-step problems primarily because it {
+~gives the model access to facts it would otherwise not know#No — CoT does not supply missing knowledge; it helps the model reason better with what it already has.
+=gives the model's own earlier steps as context for each next step#Correct — earlier reasoning steps appear in the model's context, providing the right information for each subsequent token.
+~instructs the model to search the internet for supporting evidence#No — a language model does not browse the internet when prompted to reason step by step.
+~prevents the model from generating more tokens than strictly necessary#No — CoT typically increases token output, not decreases it.
+#### Tests LO1\: the definition of CoT and the mechanism by which step-by-step reasoning improves output quality (corpus §5.1–5.2).
+}
+
+::q2:: A developer has a complex legal-analysis task that must follow a strict domain reasoning pattern, and she needs the model to produce a consistent format every time. Which form of chain-of-thought prompting is most appropriate? {
+~Zero-shot CoT, because adding "think step by step" is always sufficient for complex tasks#No — zero-shot CoT leaves the reasoning style unspecified, making output format unpredictable across runs.
+~Standard few-shot prompting showing only the final answers, not the working#No — standard few-shot examples (input → answer only) do not demonstrate the reasoning structure the model should follow.
+~Zero-shot CoT placed in the user message rather than the system prompt#No — location (system vs user) does not determine whether the reasoning style will be consistent; the lack of examples does.
+=Few-shot CoT, because reasoning triples show the exact style expected#Correct — few-shot CoT lets you demonstrate the specific domain reasoning pattern and output format you need.
+#### Tests LO2\: distinguishing zero-shot CoT from few-shot CoT and knowing when each is appropriate (corpus §5.3–5.4).
+}
+
+::q3:: Which of the following is a correctly formed zero-shot chain-of-thought (CoT) prompt? {
+=A message with a step-by-step trigger phrase and no worked examples#Correct — zero-shot CoT adds only a trigger phrase asking for step-by-step reasoning; no examples are provided.
+~A user message that includes two input-reasoning-answer examples before the actual question#No — including worked examples makes this few-shot CoT, not zero-shot CoT.
+~A system prompt that lists the correct final answer for the model to confirm#No — providing the answer removes the need for any reasoning; this is neither zero-shot nor few-shot CoT.
+~A user message with no special instruction, relying on the model to reason on its own by default#No — without a trigger phrase, no CoT instruction has been given; the model may skip intermediate steps entirely.
+#### Tests LO3\: writing a zero-shot CoT prompt by adding a step-by-step instruction (corpus §5.3).
+}
+
+::q4:: A few-shot CoT prompt contains Example 1 and Example 2. What must each example include to qualify as a reasoning triple? {
+~The input question, the final answer, and a citation to the source used#No — a reasoning triple does not include a citation; citations are not part of the CoT framework.
+~The input question and the final answer only, matching the format used in standard few-shot prompts#No — showing only input and final answer is standard few-shot; the reasoning chain (step-by-step working) is what makes it a CoT triple.
+=The input question, a step-by-step reasoning chain, and the final answer#Correct — all three parts (input, working, answer) together form a reasoning triple and show the model how to think through the problem.
+~The input question, a list of facts the model should know, and the final answer#No — listing background facts is not a reasoning chain; a reasoning chain is the step-by-step working from question to answer.
+#### Tests LO4\: writing a few-shot CoT prompt with correct reasoning triples (corpus §5.4).
+}
+
+::q5:: A student adds "Think step by step." to every prompt she writes, including "What is the capital of France?" and "Convert this list to JSON." What is the most accurate assessment of this approach? {
+~It is best practice because consistent CoT instructions always improve model reliability#No — CoT helps on multi-step reasoning tasks but adds unnecessary tokens and latency on single-step tasks.
+=It is unnecessary for single-step tasks and wastes tokens without improving accuracy on those tasks#Correct — simple factual lookups and direct format conversions do not benefit from CoT; the step-by-step instruction adds overhead with no quality gain.
+~It is harmful because CoT instructions cause the model to second-guess correct answers it would otherwise get right#No — CoT does not make correct simple answers wrong; it is simply wasteful overhead on tasks that need no reasoning chain.
+~It is required whenever the system prompt assigns a role to the model#No — role assignment and CoT prompting are independent techniques; using a role does not require CoT.
+#### Tests LO5\: identifying tasks where CoT helps most versus where it adds overhead without benefit (corpus §5.5).
+}
+
+::q6:: A developer wants to apply zero-shot CoT in a Python script using the Anthropic API so that the reasoning instruction applies to every message in the session. Which approach matches the corpus guidance? {
+~Pass the trigger phrase as an extra positional argument to client.messages.create()#No — client.messages.create() does not accept a positional trigger-phrase argument; the API call uses named parameters only.
+~Add the trigger phrase as a separate item in the messages list with role "system"#No — the Anthropic messages API uses a dedicated system parameter for the system prompt, not a message with role "system".
+=Place the instruction in the system parameter so it applies to every message#Correct — putting the CoT instruction in the system prompt makes it apply to every user message in the session (corpus §5.3, §6).
+~Add the trigger phrase only inside the "content" of the first assistant-role message#No — pre-filling an assistant turn with a reasoning instruction is not the standard pattern for applying CoT; the system prompt is the correct location for session-wide instructions.
+#### Tests LO6\: applying CoT prompting in a Python client.messages.create() call using the Anthropic API (corpus §5.3, §6).
+}
+
+::q7:: In chain-of-thought prompting, each example must include three parts\: the input, the step-by-step reasoning chain, and the ____. {
+=final answer
+=answer
+=conclusion
+}

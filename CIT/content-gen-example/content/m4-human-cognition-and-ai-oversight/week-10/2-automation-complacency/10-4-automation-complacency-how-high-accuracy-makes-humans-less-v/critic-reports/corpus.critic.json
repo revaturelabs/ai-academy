@@ -1,0 +1,45 @@
+{
+  "passed": false,
+  "checks": {
+    "required_sections": {
+      "passed": true,
+      "notes": "All four required sections present with substance. LO (section 3): 6 objectives, ~120 words — above 50-word threshold. Intro (section 4): 3 paragraphs, ~179 words — above 50-word threshold. Core Concepts (section 5): 5 named subsections (automation complacency, vigilance, vigilance decay, accuracy paradox, trust calibration), ~530 words — above 100-word threshold. Key Takeaways (section 10): 5 bullets, ~115 words — above 50-word threshold."
+    },
+    "citation_density": {
+      "passed": true,
+      "primary_cited": true,
+      "claim_citation_rate": 0.65,
+      "notes": "resources_source=web_search — strict mode applies. Primary resource [1] (ScienceDirect) cited in sections 5, 6, and 7. Estimated 11 of ~17 standalone factual assertions in sections 5–7 carry a [N] marker (~65%), clearing the 60% threshold. Uncited claims: trust-calibration drift sentence (section 5 end), causal-chain steps 1–6 introduction sequence (section 6), 'out-of-the-loop performance decrement' attribution (section 7 aviation), content-moderation AI intro sentence (section 7). Borderline pass — builder should add [1] or [3] to the out-of-loop term sentence and [1] to the causal-chain step-sequence introductory paragraph on next revision."
+    },
+    "sequence_drift": {
+      "passed": true,
+      "forward_refs": ["base error rate"],
+      "notes": "Prior failures resolved: 'distributional shifts' removed from section 6 step 5 (now reads 'corner cases, novel inputs the system has never encountered before, or simple errors' — plain language only). 'Judgment Framework' in section 8 now appears as a bare name inside a single deferral sentence with no bolding or defining clause. All terms imported from prior topics resolve correctly: 'human override point', 'override as theater' (10.1); 'failure mode', 'override accountability' (10.2); 'accountability chain', 'diffuse accountability' (10.3). All five concepts introduced in this topic are defined inline. Section 8 deferred terms (audit sampling, uncertainty surfacing, performance monitoring for human operators, Judgment Framework) appear as bare unbolded names with '— covered later.' format. Soft note: 'base error rate' (section 7, medical imaging paragraph: 'which it will, at its base error rate') is used parenthetically without definition and is absent from all prior topics' concepts_introduced. Contextually inferrable but technically undefined for a zero-background learner. Not a hard fail — single soft term."
+    },
+    "length_sanity": {
+      "passed": false,
+      "word_count": 1900,
+      "profile": "standard",
+      "notes": "Standard corpus profile requires 3000–4400 words per the corpus-critic SKILL.md depth-profile ranges. Estimated word count of ~1900 words is approximately 37% below the 3000-word lower bound — exceeds the 30% outside-range hard-fail threshold. The corpus covers all required sections and concepts but each is thin: Core Concepts (~530 words across 5 subsections, ~106 words per concept) lacks worked examples or contrast cases per concept; Implementation section 6 (~300 words) lists the 7-step causal chain with minimal per-step elaboration; Real-World Patterns section 7 (~340 words) covers three domains at roughly 110 words each with no domain-specific depth. Builder must expand to reach 3000–3500 words. Suggested additions: (a) add a concrete worked scenario per concept in section 5, especially for accuracy paradox and trust calibration (~350 words); (b) expand each causal-chain step in section 6 with a concrete illustration or question-and-answer (~200 words); (c) extend real-world domain examples in section 7 — add a fourth domain or deepen existing three with specific consequences (~300 words); (d) add a compare/contrast table in section 5, e.g. well-calibrated trust vs over-trust, or complacency vs active error (~100 words)."
+    },
+    "scope_creep": {
+      "passed": true,
+      "findings": [],
+      "notes": "Prior failures resolved. Section 8 now contains bare unbolded names only — 'Audit sampling — covered later.', 'Uncertainty surfacing — covered later.', 'Performance monitoring for human operators — covered later.' — with no defining clauses, no appositive phrases, no bolding. The introductory sentence 'Designing systems to counteract complacency — including audit sampling, uncertainty surfacing, and the Judgment Framework — is covered in later topics' correctly names without teaching. All content in sections 5–7 is within the headline boundary: accuracy paradox, vigilance decay, trust calibration, the seven-step causal chain, and the three real-world domain illustrations are direct expressions of 'automation complacency — how high accuracy makes humans less vigilant.'"
+    },
+    "beginner_readability": {
+      "passed": true,
+      "findings": [
+        {
+          "code": "undefined_terms",
+          "terms": ["base error rate"],
+          "location": "Section 7, medical imaging paragraph: 'When the AI misses a finding (which it will, at its base error rate)'",
+          "note": "Parenthetical use without a plain-language gloss. A zero-background learner may not parse 'base error rate.' Suggest replacing with 'at the rate it normally makes mistakes' or appending a brief inline gloss."
+        }
+      ],
+      "notes": "1 soft finding only — below the 3-finding hard-fail threshold; does not escalate. All five Core Concepts terms defined on first use with plain language before formal phrasing. Introduction leads with everyday spell-checker analogy before the abstract concept — correct for beginner audience. Sentences are short, active voice, second-person register throughout. No jargon dumps: each Core Concepts subsection introduces exactly one new term per subsection. No hedging phrases detected. 'corner cases' in section 6 step 5 is self-defined via appositive ('novel inputs the system has never encountered before'). 'Out-of-the-loop performance decrement' in section 7 is contextually defined inline."
+    }
+  },
+  "verdict": "FAIL — length_sanity: corpus is ~1900 words against the standard-profile floor of 3000 words (37% below, exceeds 30% hard-fail threshold). Both prior failures are resolved: 'distributional shifts' replaced with plain language in section 6, and Section 8 Best Practices stripped to bare unbolded names with single 'covered later' lines (Judgment Framework included). Builder must expand Core Concepts subsections with worked examples, deepen causal-chain step elaborations, and extend real-world domain coverage to reach 3000–3500 words. Secondary soft notes: (1) citation_density borderline at ~65% — add [1]/[3] to out-of-loop term and causal-chain intro; (2) 'base error rate' in section 7 undefined — add inline gloss.",
+  "at": "2026-06-12T00:00:00Z"
+}

@@ -1,0 +1,94 @@
+{
+  "critic": "corpus-critic",
+  "topic_id": "3.6",
+  "topic_title": "Temperature and sampling — why the same question gives different answers",
+  "at": "2026-06-17T00:00:00Z",
+  "passed": true,
+  "checks": {
+    "required_sections": {
+      "passed": true,
+      "detail": "All required sections present and non-trivial. §3 Learning Objectives, §4 Introduction, §5 Core Concepts (5.1–5.5), §10 Key Takeaways all exceed minimum word thresholds (§5 >> 100 words; others >> 50 words). §6 Implementation, §7 Real-World Patterns, §8 Best Practices, §9 Hands-On Exercise also present and substantive."
+    },
+    "citation_density": {
+      "passed": true,
+      "resources_source": "web_search",
+      "mode": "strict",
+      "primary_cited": true,
+      "resources_cited": {
+        "[1]": { "url": "https://www.hopsworks.ai/dictionary/llm-temperature", "role": "primary", "cited": true, "citation_count": "8+" },
+        "[2]": { "url": "https://medium.com/thinking-sand/the-definitive-guide-to-llm-temperatures-abab311260a6", "role": "supporting", "cited": true, "citation_count": "8+" },
+        "[3]": { "url": "https://www.vellum.ai/llm-parameters/temperature", "role": "supporting", "cited": true, "citation_count": "6+" }
+      },
+      "sections_5_6_7_density": ">>60% of standalone factual assertions in §§5–7 carry [N] markers. Citation coverage is dense and consistent throughout Core Concepts, Implementation, and Real-World Patterns.",
+      "fake_citations": false,
+      "detail": "All three resources cited multiple times. Primary resource [1] cited in §4, §5.1, §5.2, §5.4, §5.5, §7. No fabricated citations detected."
+    },
+    "sequence_drift": {
+      "passed": true,
+      "findings": [
+        {
+          "term": "random seed",
+          "section": "§7 Real-World Patterns",
+          "context": "AI researchers who need to replicate results set temperature to 0 and fix the random seed so every run produces identical output.",
+          "severity": "soft",
+          "note": "Term used without definition. Not in prior concepts_introduced (3.1–3.5) and not in 3.6 concepts_introduced. Used in one illustrative sentence; does not constitute teaching the concept. Recommend adding a brief parenthetical definition: 'random seed (a fixed starting point that makes the random draw repeatable)'."
+        }
+      ],
+      "forward_reference_terms": [],
+      "undefined_but_minor": ["random seed"],
+      "detail": "No hard forward references found. All core technical terms used (autoregressive decoding, context window, parameters/weights, vocabulary, forward pass, hallucination, token, tokenisation, LLM, prompt) are from prior topics 3.2 and 3.4. 'API' defined inline on first use. 'Ollama' named inline with brief description. 'Random seed' is the only term used without definition — one-sentence illustrative use, soft finding only."
+    },
+    "length_sanity": {
+      "passed": true,
+      "depth_profile": "standard",
+      "target_range_words": [1500, 3000],
+      "estimated_word_count": 3650,
+      "within_hard_limit": true,
+      "within_30pct_overage_threshold": true,
+      "detail": "Estimated ~3650 words, approximately 22% over the 3000-word upper bound for standard profile. The SKILL hard-fail threshold is >30% outside the range (>3900 words). Current length is below the hard-fail threshold. Soft warning: corpus is on the long side for a standard reading of 1200–1600 words downstream; the reading-builder will need to compress substantially. No hard fail triggered.",
+      "soft_warning": "Corpus word count (~3650) is ~22% over the standard 3000-word ceiling. Below the 30% hard-fail threshold but close. Builder may trim §8 Best Practices (table + anti-patterns) or consolidate §5.4 practical settings table with §7 Real-World Patterns to reduce overlap."
+    },
+    "topic_scope": {
+      "passed": true,
+      "scope_creep_findings": [],
+      "detail": "All material in §§5–7 is within the headline scope of temperature and sampling. Topics covered: probability distributions over tokens (§5.1), logits, temperature mechanics (§5.2), greedy decoding / top-k / top-p (§5.3), practical temperature settings (§5.4), limitations and misconceptions (§5.5). Product names (OpenAI API, Anthropic API, Ollama) appear as illustrative context only, not taught as concepts. 'A/B testing' defined inline in one sentence as illustrative use case — not taught. 'Random seed' mentioned once in §7 as a research-reproducibility note — not defined or taught at depth. No scope creep detected."
+    },
+    "beginner_readability": {
+      "passed": true,
+      "hard_fail_triggered": false,
+      "finding_count": 2,
+      "findings": [
+        {
+          "code": "undefined_terms",
+          "severity": "soft",
+          "terms": ["random seed", "re-normalise"],
+          "detail": "'random seed' used in §7 without definition. 're-normalise' used in §6 pseudocode comments without explanation. Both are single-occurrence technical terms in illustrative/pseudocode contexts. Recommend: add parenthetical for 'random seed' in §7; note in §6 pseudocode that 're-normalise' means 'adjust the remaining probabilities so they still add up to 1'."
+        },
+        {
+          "code": "term_density_warning",
+          "severity": "soft",
+          "section": "§5.1",
+          "detail": "§5.1 introduces 'probability distribution', 'logit', 'deterministic output', and 'stochastic output' across two closing paragraphs. Four new terms in close proximity. Mitigated by the fact that each is accompanied by a plain-language definition. Not a jargon dump per se (definitions are present), but dense for absolute beginners. Consider splitting the deterministic/stochastic distinction into its own short paragraph with a concrete everyday example before the formal definition."
+        }
+      ],
+      "strengths": [
+        "API defined inline on first use in §4",
+        "Roulette wheel analogy for probability distributions is effective and beginner-appropriate",
+        "Temperature analogy (physical heat) is clear and memorable",
+        "Frequent use of 'you' and active voice throughout",
+        "Concrete example table in §5.2 (sky is ___ completion) grounds abstract probabilities",
+        "Pseudocode in §6 is plain-English, not actual code",
+        "No unexplained acronyms detected beyond those caught above",
+        "Hedging phrases within limits (< 3 total)"
+      ]
+    }
+  },
+  "verdict": "PASS — all five hard checks pass; two soft findings (undefined 'random seed' in §7 and term density in §5.1) do not trigger hard-fail escalation; corpus is well-cited, on-scope, sequentially clean, and beginner-readable. Soft warning on word count (~3650 words, 22% over standard ceiling but below 30% hard-fail threshold); reading-builder should compress to 1200–1600 words.",
+  "revision_required": false,
+  "soft_findings_for_hitl": [
+    "random seed used without definition in §7 — add brief parenthetical",
+    "re-normalise used without definition in §6 pseudocode — add inline note",
+    "§5.1 term density: four new terms (probability distribution, logit, deterministic, stochastic) introduced in two paragraphs — consider splitting for beginner clarity",
+    "Corpus word count ~3650 is 22% over standard 3000-word ceiling — reading-builder compression required; consider trimming §8 anti-patterns or merging §5.4 table with §7"
+  ]
+}

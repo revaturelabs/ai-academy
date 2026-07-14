@@ -1,0 +1,61 @@
+{
+  "topic_id": "4.6",
+  "generated_at": "2026-06-17T00:00:00Z",
+  "format": "gift",
+  "question_count": 6,
+  "$bias_defense_applied": true,
+  "$shuffle_seed": "hash(4.6)=152",
+  "correct_position_distribution": [0, 1, 2, 3, 2],
+  "shuffle_constraint_check": {
+    "mcq_count": 5,
+    "max_share": 0.40,
+    "max_share_threshold": 0.40,
+    "all_positions_used": true,
+    "passed": true
+  },
+  "length_bias_check": {
+    "q1": { "correct_chars": 107, "distractor_mean": 105.0, "threshold": 126.0, "passed": true },
+    "q2": { "correct_chars": 107, "distractor_mean": 114.0, "threshold": 136.8, "passed": true },
+    "q3": { "correct_chars": 88, "distractor_mean": 98.3, "threshold": 118.0, "passed": true },
+    "q4": { "skipped": "unchanged" },
+    "q5": { "correct_chars": 136, "distractor_mean": 122.3, "threshold": 146.8, "passed": true }
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "type": "mcq",
+      "objective_ref": "Define multimodal AI and explain why combining multiple types of information in one system produces results that separate single-type systems cannot.",
+      "correct_position": 0
+    },
+    {
+      "id": "q2",
+      "type": "mcq",
+      "objective_ref": "Describe, in plain language, how a multimodal model converts different types of input into a shared representation so they can be processed together.",
+      "correct_position": 1
+    },
+    {
+      "id": "q3",
+      "type": "mcq",
+      "objective_ref": "Distinguish between a unimodal model and a multimodal model using a concrete scenario.",
+      "correct_position": 2
+    },
+    {
+      "id": "q4",
+      "type": "mcq",
+      "objective_ref": "Name the four main modalities — text, image, audio, and video — and give one real example of each.",
+      "correct_position": 3
+    },
+    {
+      "id": "q5",
+      "type": "mcq",
+      "objective_ref": "Identify at least three real-world applications of multimodal AI and explain what problem each one is solving.",
+      "correct_position": 2
+    },
+    {
+      "id": "q6",
+      "type": "short_answer",
+      "objective_ref": "Explain one key limitation of multimodal AI systems that users and organisations need to keep in mind.",
+      "correct_position": null
+    }
+  ]
+}

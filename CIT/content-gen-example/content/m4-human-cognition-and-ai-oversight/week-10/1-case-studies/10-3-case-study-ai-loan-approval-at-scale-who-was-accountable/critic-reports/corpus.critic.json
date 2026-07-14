@@ -1,0 +1,74 @@
+{
+  "critic": "corpus-critic",
+  "topic_id": "10.3",
+  "at": "2026-06-12T00:00:00Z",
+  "passed": true,
+  "checks": {
+    "required_sections": {
+      "passed": true,
+      "detail": {
+        "section_3_learning_objectives": { "present": true, "word_count_ge_50": true },
+        "section_4_introduction": { "present": true, "word_count_ge_50": true },
+        "section_5_core_concepts": { "present": true, "word_count_ge_100": true },
+        "section_10_key_takeaways": { "present": true, "word_count_ge_50": true }
+      }
+    },
+    "citation_density": {
+      "passed": true,
+      "resources_source": "web_search",
+      "mode": "strict",
+      "primary_resource_cited": {
+        "[1]": { "url": "https://arxiv.org/pdf/2205.05661", "role": "primary", "cited": true, "citation_count": 10 }
+      },
+      "supporting_resources_cited": {
+        "[2]": { "url": "https://hesfintech.com/blog/all-legislative-trends-regulating-ai-in-lending/", "cited": true, "citation_count": 4 },
+        "[3]": { "url": "https://www.grantthornton.com/services/advisory-services/artificial-intelligence/2026-ai-impact-survey", "cited": true, "citation_count": 2 }
+      },
+      "fabricated_markers": false,
+      "sections_5_6_7_density_ge_60pct": true,
+      "notes": "Citation coverage in §5 is dense — every substantive claim in 5.1–5.6 carries [1] or [2]. §6 (Implementation audit) is procedural guidance without factual assertions requiring citation — acceptable. §7 Real-World Patterns carries [1] and [3] on all factual claims."
+    },
+    "sequence_drift": {
+      "passed": true,
+      "forward_references": [],
+      "notes": "All technical terms check out. ECOA spelled out as 'Equal Credit Opportunity Act (ECOA)' on first use (line 125). RBI spelled out as 'Reserve Bank of India (RBI)' on first use (line 125). 'model card' used only as parenthetical alias for model documentation (allowed). 'sub-group performance audit' (§8 Best Practices) is a prior concept introduced in 10.2. 'EU AI Act' named in §7 in one sentence as a regulatory reference with explanatory pointer — name-and-defer, not taught at depth. 'Power asymmetry' used as plain-language descriptor in §7, not defined/taught as a new technical concept."
+    },
+    "length_sanity": {
+      "passed": true,
+      "profile": "standard",
+      "target_range": "3000–4400",
+      "estimated_word_count": 2900,
+      "within_30pct_tolerance": true,
+      "notes": "Estimated ~2,900 words — marginally below the 3,000-word standard floor but well within the 30% tolerance band (hard-fail threshold is <2,100 words). No hard fail. Soft note: corpus could benefit from slight expansion of §5.4 or §6 to comfortably clear the 3,000-word floor, but this does not block downstream artifact generation."
+    },
+    "topic_scope": {
+      "passed": true,
+      "scope_creep": [],
+      "notes": "Corpus stays tightly on accountability in AI lending throughout. §5.1 provides minimal pipeline context (four steps) necessary to ground the accountability analysis — not credit-scoring mechanics or underwriting theory. EU AI Act reference in §7 is a one-liner with no depth teaching. No broader financial AI topics introduced."
+    },
+    "beginner_readability": {
+      "passed": true,
+      "undefined_terms": [],
+      "jargon_dumps": [],
+      "academic_register": false,
+      "notes": "All non-everyday terms defined on first use: 'loan approval system' (§5.1), 'diffuse accountability' (§5.3), 'accountability gap' (§5.3), 'model documentation' (§5.6), 'adverse action notice' (§5.6). Automation bias referenced back to prior topic 9.5 with inline definition reminder. ECOA and RBI both spelled out. Machine learning model given parenthetical plain-language explanation. Register is plain and direct with consistent 'you' address. No jargon dumps detected."
+    }
+  },
+  "expected_findings_verified": {
+    "assessment_3_note_in_section_4": {
+      "present": true,
+      "flagged_as_violation": false,
+      "note": "Line 47 — 'A preparation note: Assessment 3 (Maths and Cognition Lab Report, 15%) is due this week.' Allowed as an introduction orientation pointer; not flagged."
+    },
+    "ecoa_spelled_out_on_first_use": {
+      "verified": true,
+      "location": "§5.5 line 125 — 'Equal Credit Opportunity Act (ECOA)'"
+    },
+    "model_card_as_parenthetical_alias": {
+      "verified": true,
+      "location": "§5.6 line 135 — 'sometimes called a model card or model risk report'",
+      "flagged_as_violation": false
+    }
+  },
+  "verdict": "PASS. All six checks pass. Primary resource [1] (arxiv.org algorithmic accountability) cited ten times across §4–§8. Supporting resources [2] and [3] each cited at appropriate claim points. No fabricated markers. Required sections §3, §4, §5, §10 all present and non-trivial. No forward references detected; ECOA and RBI correctly spelled out on first use; model card used only as parenthetical alias (allowed per task spec). Corpus length estimated ~2,900 words — marginally below the 3,000-word standard floor but within the 30% hard-fail tolerance; soft note only. Topic scope stays tightly on accountability in AI lending with no scope creep. Beginner readability is strong: all terms defined on first use, no jargon dumps, plain register throughout. Expected findings all verified correctly."
+}

@@ -1,0 +1,53 @@
+{
+  "topic_id": "13.14",
+  "generated_at": "2026-06-15T00:00:00Z",
+  "format": "gift",
+  "question_count": 7,
+  "$bias_defense_applied": true,
+  "$shuffle_seed": "1314-gitignore-secrets-a7f2e1",
+  "correct_position_distribution": [1, 3, 0, 2, 3, 1],
+  "questions": [
+    {
+      "id": "q1",
+      "type": "mcq",
+      "objective_ref": "Explain what can happen when an API key is accidentally committed to a public GitHub repository.",
+      "correct_position": 1
+    },
+    {
+      "id": "q2",
+      "type": "mcq",
+      "objective_ref": "Describe the .env file + .gitignore pattern and why it keeps secrets out of version control.",
+      "correct_position": 3
+    },
+    {
+      "id": "q3",
+      "type": "mcq",
+      "objective_ref": "Write the correct entries in a .gitignore file to prevent .env from being tracked.",
+      "correct_position": 0
+    },
+    {
+      "id": "q4",
+      "type": "mcq",
+      "objective_ref": "Use os.getenv() in Python to load a secret from a .env file at runtime without hardcoding it.",
+      "correct_position": 2
+    },
+    {
+      "id": "q5",
+      "type": "mcq",
+      "objective_ref": "State the critical ordering rule: .gitignore must include .env before running git add.",
+      "correct_position": 3
+    },
+    {
+      "id": "q6",
+      "type": "mcq",
+      "objective_ref": "Identify the first action to take if a secret is accidentally committed (rotate the key immediately).",
+      "correct_position": 1
+    },
+    {
+      "id": "q7",
+      "type": "short_answer",
+      "objective_ref": "Describe the .env file + .gitignore pattern and why it keeps secrets out of version control.",
+      "correct_position": null
+    }
+  ]
+}

@@ -1,0 +1,30 @@
+{
+  "topic_id": "4.7",
+  "captured_at": "2026-06-17T00:00:00Z",
+  "captured_by": "namratas@revature.com",
+  "resources_source": "web_search",
+  "web_search_query": "how to compare AI tools evaluation rubric measurable criteria framework",
+  "resources": [
+    {
+      "type": "url",
+      "value": "https://www.asccc.org/sites/default/files/Criteria_for_evaluating_AI_tools_2024_rubric_r.pdf",
+      "role": "primary",
+      "source": "web_search",
+      "notes": "Academic rubric for AI tool evaluation: functionality, accessibility, privacy, ethics, pedagogy — direct criteria reference"
+    },
+    {
+      "type": "url",
+      "value": "https://ecampusontario.pressbooks.pub/mcmasterpracticalaiguide/chapter/evaluating-ai-tools/",
+      "role": "supporting",
+      "source": "web_search",
+      "notes": "Educator-facing guide with structured criteria for assessing AI tools — student-accessible framing"
+    },
+    {
+      "type": "url",
+      "value": "https://encord.com/rubric-evaluation-generative-ai-assessment/",
+      "role": "supporting",
+      "source": "web_search",
+      "notes": "Practitioner overview of rubric-based AI assessment: dimensions, scoring levels, measurable criteria design"
+    }
+  ]
+}

@@ -1,0 +1,56 @@
+$CATEGORY: CIT/M4/week-10/10-7-writing-a-post-mortem-what-failed-why-who-was-accountable-wh
+
+::q1:: In the context of an artificial intelligence (AI) system incident, what is the primary purpose of a post-mortem? {
+~To assign moral fault to the individuals whose decisions caused the incident, so that they can be held personally responsible.#No — assigning personal fault is exactly what a post-mortem is designed to avoid; blame shuts down honest reporting.
+=To produce a structured learning document that captures what went wrong so the failure does not happen again.#Correct — a post-mortem is a learning document, not a punishment document; its job is to prevent recurrence.
+~To provide a complete audit of every decision made throughout the system's entire operational lifetime, from build to retirement.#No — a post-mortem is fast and focused on a single incident; a full lifetime audit is separate work.
+~To demonstrate to regulators that the organisation identified the incident and responded quickly to limit further legal exposure.#No — the purpose is internal learning and governance improvement, not regulatory compliance signalling.
+#### Tests the definition and purpose of a post-mortem in an AI context (corpus §5.1 and §4).
+}
+
+::q2:: A post-mortem has four sections. Which of the following correctly describes what should appear in Section 1 — "What failed"? {
+~A list of the root causes and contributing structural conditions that made the failure possible.#No — root causes belong in Section 2 ("Why it failed"); Section 1 records only observable facts about the failure event.
+~The names of the individuals designated as accountable and an assessment of whether they acted correctly.#No — accountability analysis belongs in Section 3; Section 1 does not assign responsibility.
+~A proposal for the specific governance control that would have prevented this failure from occurring.#No — the governance fix is Section 4; Section 1 is purely a factual description of what happened.
+=A factual, specific account of the system involved, the wrong output it produced, the scope, and the measurable harm.#Correct — Section 1 names the system, the failure event, how many decisions were affected, and the real-world consequence, without causes or blame.
+#### Tests knowledge of what belongs in Section 1 of the post-mortem four-section framework (corpus §5.2).
+}
+
+::q3:: A post-mortem's "Why it failed" section distinguishes between proximate cause and root cause. Which statement correctly defines the difference? {
+=The proximate cause is the immediate trigger that directly produced the bad output; the root cause is the underlying structural condition that allowed the failure to exist and persist.#Correct — fixing only the proximate cause leaves the structural root cause in place, so the same or similar failure will recur.
+~The proximate cause is the most important cause because it directly caused the harm; the root cause is only a secondary or background factor of much lesser importance that can usually be addressed later.#No — the root cause is at least as important; it is the condition that made the proximate cause possible and that must be fixed to prevent recurrence.
+~Proximate cause refers to human error made by specific individuals; root cause refers strictly to technical errors present in the model code or training data pipeline itself.#No — both can involve human or technical factors; the distinction is about immediacy and structural depth, not human versus technical.
+~The proximate cause is identified and documented in Section 3 of the framework (accountability); the root cause is separately identified in Section 4 (the governance fix and prevention plan).#No — both proximate and root cause belong in Section 2 ("Why it failed"); they are two levels of the same causal analysis.
+#### Tests the distinction between proximate and root cause and their correct placement in the post-mortem (corpus §5.3).
+}
+
+::q4:: An AI loan approval system was found to reject applicants from lower-income areas at nearly three times the rate of comparable applicants from higher-income areas. The root cause was an evaluation gap — no sub-group performance audit was run before or after deployment. Which governance control most directly addresses this root cause? {
+~A human-in-the-loop checkpoint placed at the point where each individual loan decision is made.#No — an HITL checkpoint addresses a missing-checkpoint root cause; the identified root cause here is an evaluation gap, which requires an audit mechanism, not a per-decision human reviewer.
+~A named accountability role with model documentation requirements assigned to a specific team.#No — this addresses an accountability gap root cause; while useful, it does not directly close an evaluation gap that allowed the performance disparity to go undetected.
+=A mandatory sub-group performance audit run on a defined cycle before and after deployment, owned by a named role.#Correct — this directly closes the evaluation gap by requiring regular checks of sub-group outcomes, which would have detected the income-based disparity in the first audit period.
+~A periodic re-calibration exercise combined with an escalation trigger when overall model accuracy drifts.#No — re-calibration targets automation complacency and overall accuracy drift; it would not detect a sub-group disparity if overall average accuracy remained high.
+#### Tests the ability to propose a specific, named governance control matched to the identified root cause type (corpus §5.5).
+}
+
+::q5:: A team reviewing a post-mortem draft notices it says: "The data scientist responsible for the model should have run a fairness check before deployment." A colleague says this sentence violates the no-blame framing. Why is the colleague correct? {
+~The colleague is wrong — naming a role alongside a missing action is exactly what a no-blame post-mortem should do, because it pairs responsibility with a concrete, correctable gap in the process.#No — the colleague is correct; the draft sentence assigns personal fault to an individual rather than identifying a structural gap, which is a blame-based framing.
+=The sentence directs fault at an individual person rather than at the absence of a required process or control, which is the structural problem a no-blame post-mortem must address.#Correct — no-blame means accountability is directed at roles, processes, and design gaps, not at an individual's character or decisions; the fix is to say "no sub-group fairness audit was required at model sign-off."
+~A no-blame post-mortem cannot name any accountability gaps or missing actions at all, so any sentence identifying what should have been done differently must be removed entirely from the document.#No — no-blame does not mean no accountability; the post-mortem must name accountability failures, but in role-based and structural language rather than by assigning personal fault.
+~The sentence is incorrect because data scientists are never accountable for fairness outcomes — that responsibility belongs exclusively to the legal and compliance team, not the technical staff.#No — this misunderstands the issue; the problem is the framing (personal blame) not the role named; and in practice accountability for model fairness is a design decision, not a legal one alone.
+#### Tests understanding of the no-blame framing and why it produces more useful governance improvements than blame-assigning language (corpus §5.6).
+}
+
+::q6:: In the four-section post-mortem framework, which section should contain the statement: "No contract clause specified which party — the hospital or the vendor — was responsible for post-deployment sub-group monitoring, so no role was obligated to detect the scoring gap"? {
+~Section 1 — What failed, because this describes the observable outcome of the missing contract clause.#No — Section 1 records what the system did wrong and who was harmed; it does not analyse contractual or accountability structures.
+~Section 2 — Why it failed, because the missing contract clause is the root cause of the failure.#No — the missing contract clause is an accountability gap, which is a type of root cause; however, the specific statement about who was responsible belongs in Section 3, which analyses the accountability structure retrospectively.
+~Section 4 — What governance would have prevented it, because adding a contract clause is a governance fix.#No — this statement describes the accountability gap as it existed, not a proposed remedy; proposed fixes belong in Section 4.
+=Section 3 — Who was accountable, because this statement identifies the accountability structure and its specific gap.#Correct — Section 3 analyses whether accountability was real or diffuse; this statement names the contractual gap that left no party obligated to monitor sub-group performance.
+#### Tests knowledge of what belongs in Section 3 of the four-section framework, including diffuse accountability analysis (corpus §5.4).
+}
+
+::q7:: A student is writing a post-mortem for the college admissions AI case (topic 10.1). They have gathered the following four pieces of information. For each piece, identify which post-mortem section it belongs in\: Section 1 (What failed), Section 2 (Why it failed), Section 3 (Who was accountable), or Section 4 (What governance would have prevented it). Piece of information\: "The AI system collapsed a multi-factor holistic review into a single score, and no human override point was meaningfully enforced during the admissions cycle." Which section does this belong in? {
+=Section 1
+=What failed
+=section 1
+=what failed
+}

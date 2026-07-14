@@ -1,0 +1,57 @@
+{
+  "schema_version": 1,
+  "generated_at": "2026-06-22T00:00:00Z",
+  "module": {
+    "slug": "2-problem-solving-foundations",
+    "title": "Problem-Solving Foundations",
+    "course_code": "M1",
+    "week_num": 1,
+    "topics_evaluated": ["1.5", "1.6"]
+  },
+  "passed": true,
+  "findings_count": 2,
+  "hard_fails": [],
+  "soft_findings": [
+    {
+      "check": "lab_activity_alignment",
+      "topic_id": "1.5",
+      "severity": "soft",
+      "finding": "The module lab_activity_seed expects learners to decompose 'the problem area you will build toward all semester' (their domain problem). Topic 1.5 section 9 Hands-On Exercise offers a generic task instead ('cooking a meal, organising a study group, or setting up a social media profile'). Topic 1.6 section 9 then back-references 'the domain problem you identified in the Topic 1.5 exercise' — but 1.5 never required domain problem selection. The lab-to-corpus thread is frayed at 1.5: learners may arrive at 1.6's exercise without a domain problem, breaking the continuity the lab seed intends.",
+      "recommendation": "Add a short prompt at the end of topic 1.5 section 9 inviting the learner to optionally apply the decomposition exercise to their semester domain problem, or reorder so that domain selection (topic 1.12) precedes or runs parallel to the lab activity for module 2."
+    },
+    {
+      "check": "prerequisites_schema_consistency",
+      "topic_id": "1.5",
+      "severity": "soft",
+      "finding": "In sequence.index.json, topic 1.5 prerequisites are stored as an array of strings: [\"1.1\"]. Topic 1.6 prerequisites are stored as an array of numbers: [1.1, 1.5]. Mixed types for the same field across entries in the same index is a schema inconsistency that will cause type-comparison bugs in any downstream consumer that checks prerequisite ordering programmatically.",
+      "recommendation": "Normalise all prerequisite values in sequence.index.json to strings (e.g., \"1.1\", \"1.5\") to match the established string format seen in topics 1.5, 1.8, 1.9, 1.10, 1.11, and 1.12."
+    }
+  ],
+  "checks": {
+    "terminology_consistency": {
+      "result": "pass",
+      "detail": "All terms introduced in topic 1.5 (decomposition, task tree, root, sub-task, leaf, iterative refinement) are referenced in topic 1.6 using identical names. No synonym drift detected. Topic 1.6 section 5.4 explicitly contrasts the two concepts using a side-by-side table that reinforces both term sets consistently."
+    },
+    "prerequisites_respected": {
+      "result": "pass",
+      "detail": "Topic 1.5 prerequisite is 1.1 (module 1, earlier in sequence). Topic 1.6 prerequisites are 1.1 and 1.5 (both earlier in sequence; 1.5 is position 1 in this module, 1.6 is position 2). No forward-reference violations. Ancillary schema note: prerequisite values use mixed types (string vs number) across the two entries — flagged as a soft finding."
+    },
+    "learning_arc": {
+      "result": "pass",
+      "detail": "Module title 'Problem-Solving Foundations' scopes to two foundational computational thinking strategies. Topic 1.5 covers decomposition end-to-end (definition, task trees, quality criteria, iterative refinement, relation to computation). Topic 1.6 covers abstraction end-to-end (definition, layering, right-level selection, model concept, leaky abstractions, relationship to decomposition). Together they fully cover the module's stated scope. The narrative seed also mentions pseudocode, flowcharts, and algorithmic thinking, but those topics belong to modules 3 and 4 and are outside this module's boundary."
+    },
+    "no_duplicated_core_concepts": {
+      "result": "pass",
+      "detail": "Jaccard similarity of core-concept noun sets between 1.5 and 1.6 is approximately 0.065 (intersection {level, task} over union of ~31 distinct nouns). Well below the 0.6 flag threshold. The topics share no substantive conceptual overlap: 1.5 is entirely about structural decomposition; 1.6 is entirely about detail-hiding and layering. Section 5.4 of 1.6 explicitly distinguishes the two to prevent conceptual conflation."
+    },
+    "lab_activity_alignment": {
+      "result": "pass_with_soft_finding",
+      "detail": "The lab_activity_seed's 'Decompose the problem into a task tree using Excalidraw' is directly supported by topic 1.5 section 9. The lab seed's 'Draw flowcharts' activity is not in this module — it belongs to module 3 (Expressing Logic) and is correctly absent here. Topic 1.6 section 9 supports the abstraction strand of the lab. One soft finding: topic 1.5's exercise does not anchor to the learner's semester domain problem as the lab seed assumes, creating a continuity gap that 1.6 relies on being closed."
+    },
+    "audience_level_consistency": {
+      "result": "pass",
+      "detail": "Both topics are rated 'standard' depth profile. Both use exclusively everyday, non-computing analogies (party planning, party recipe, car pedal, smartphone icon, travel booking, maps). All technical terms are defined at first use with a plain-language definition. Topic 1.6 introduces 'leaky abstraction' — a term with technical currency — but introduces it via a relatable non-computing example (a travel booking site) before naming it, which is appropriate for absolute beginners. No term is used cold in 1.6 that was not either defined in 1.5 or defined in 1.6 itself. No register spike between topics."
+    }
+  },
+  "verdict": "Module 2 passes drift: 0 hard fails, 2 soft findings (lab exercise does not anchor to semester domain problem as the lab seed expects; prerequisite values use mixed string/number types in sequence.index.json)."
+}

@@ -1,0 +1,103 @@
+{
+  "critic": "reading-critic",
+  "topic_id": "10.1",
+  "run_at": "2026-06-12T00:00:00Z",
+  "profile": "standard",
+  "target_word_range": [1200, 1600],
+  "target_minute_range": [6, 8],
+  "passed": true,
+  "verdict": "PASS — all checks clear. Word count 1487 is within the 1200–1600 standard ceiling (the prior 2221-word version has been replaced by a trimmed artifact). The known-issue flag is resolved in the current file.",
+  "checks": {
+    "format": {
+      "passed": true,
+      "frontmatter_present": false,
+      "meta_sidecar_missing": false,
+      "section_template_violation": false,
+      "sections_found": ["Overview", "Key Concepts", "Worked Example", "In Practice", "Key Takeaways", "References"],
+      "notes": "No frontmatter. Sidecar reading.meta.json parses cleanly (word_count, estimated_read_minutes, citations_used, sections all present). Six required sections present in correct order."
+    },
+    "length": {
+      "passed": true,
+      "word_count_meta": 1487,
+      "word_range": [1200, 1600],
+      "within_range": true,
+      "estimated_minutes_at_200wpm": 7.4,
+      "estimated_minutes_at_230wpm": 6.5,
+      "minute_range": [6, 8],
+      "minutes_within_range": true,
+      "notes": "1487 words is within ceiling. Prior 2221-word flag does not apply to this file. Both WPM estimates fall within the 6–8 minute window."
+    },
+    "citations": {
+      "passed": true,
+      "primary_resource_cited": true,
+      "primary_url": "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC10569720/",
+      "citation_1_uses": ["line 29", "line 46", "line 50", "line 54", "line 84", "line 152"],
+      "citation_2_uses": ["line 62", "line 84", "line 148", "line 156"],
+      "citation_3_uses": ["line 58", "line 70", "line 133", "line 136", "line 156"],
+      "bibliography_entries": [1, 2, 3],
+      "inline_markers": [1, 2, 3],
+      "orphan_markers": [],
+      "orphan_bibliography_entries": [],
+      "notes": "All three resources cited inline; bibliography matches exactly. No orphans."
+    },
+    "no_forward_references": {
+      "passed": true,
+      "findings": [],
+      "notes": "All references to Judgment Framework and automation bias are backward-pointing to established prerequisites (9.5, 9.7–9.9). No mentions of future topics or weeks. 'automation complacency' (corpus §7.2 forward reference) is correctly excluded from the reading."
+    },
+    "faithfulness": {
+      "passed": true,
+      "assertions_sampled": 10,
+      "unsupported_count": 0,
+      "unsupported_threshold": 2,
+      "samples_checked": [
+        {"assertion": "holistic review collapsed: the AI score became the decision", "corpus_location": "§5.1", "supported": true},
+        {"assertion": "review time per application dropped as reviewers deferred to the AI's output", "corpus_location": "§5.4 Cause 1", "supported": true},
+        {"assertion": "incentive structure rewarded speed, not accuracy of review", "corpus_location": "§5.4 Cause 2", "supported": true},
+        {"assertion": "absence of a written override policy as the single most common governance gap", "corpus_location": "§5.4 Cause 3", "supported": true},
+        {"assertion": "institutions where reviewers lacked a practical verification path showed higher error persistence", "corpus_location": "§5.4 Cause 4", "supported": true},
+        {"assertion": "Stage 3 is where the override point is effectively lost", "corpus_location": "§5.6", "supported": true},
+        {"assertion": "92% of applications below 60 were rejected without any human review", "corpus_location": "§9 exercise scenario", "supported": true},
+        {"assertion": "five-property table: Defined/Sampled/Documented/Empowered/Monitored", "corpus_location": "§5.8", "supported": true},
+        {"assertion": "when accountability is diffused, the AI must not have the final word", "corpus_location": "§5.5", "supported": true},
+        {"assertion": "near-zero override rate means either the AI is extraordinarily accurate or reviewers have stopped genuinely reviewing", "corpus_location": "§5.8", "supported": true}
+      ],
+      "notes": "All 10 sampled assertions traced to corpus verbatim or as close paraphrase. No new assertions introduced."
+    },
+    "beginner_readability": {
+      "passed": true,
+      "undefined_terms": [],
+      "undefined_terms_count": 0,
+      "undefined_terms_threshold": 2,
+      "jargon_dump": false,
+      "abstract_first": false,
+      "academic_register": false,
+      "hedging_phrases_found": [],
+      "notes": "All non-everyday terms defined at first use with bold-term pattern: 'pipeline', 'holistic review', 'human override point', 'holistic review collapse', 'override as theater', 'calibration'. 'Automation bias' and 'Judgment Framework' correctly back-referenced as covered in earlier topics (prerequisites declared in corpus §2). Concrete examples lead abstraction throughout. No hedging language detected. Average sentence length well under 25 words."
+    },
+    "formatting": {
+      "passed": true,
+      "wall_of_text": false,
+      "unlisted_sequence": false,
+      "no_inline_examples": false,
+      "definitions_bold_format": true,
+      "notes": "No paragraph exceeds 4–5 sentences. All procedures rendered as numbered lists (admissions pipeline lines 13–17, five-stage collapse lines 86–90, audit method steps in Worked Example). Inline examples present: '72/100' in Cause 1, adversity narrative in Worked Example. Two comparison tables present (risk-level table, functioning-override-point property table). Bold-definition format used consistently for all defined terms."
+    },
+    "no_assessment_references": {
+      "passed": true,
+      "findings": [],
+      "notes": "No assessment IDs, due weeks, or grade weights appear in learner prose. The '15%' on line 124 is a review-sample percentage inside a blockquote policy statement, not an assessment reference."
+    },
+    "scope": {
+      "passed": true,
+      "scope_creep": false,
+      "findings": [],
+      "notes": "Content stays on the headline topic (AI in college admissions, where human override was missed). Corpus §5.7 (AI training bias deep-dive) is not imported; only the governance-relevant surface appears in In Practice as a single auditing action. Corpus §7.2 forward reference to 'automation complacency' is correctly excluded. No teaching of advanced/adjacent concepts."
+    }
+  },
+  "soft_findings_count": 0,
+  "hard_fail": false,
+  "escalation": "none",
+  "gold_example_comparison": "No gold example exists for topic 10.1. Evaluated against written standards in artifact-mix.json and reading-critic SKILL.md. Reading meets all stated bars.",
+  "summary": "All 8 check groups pass. Length check resolves the flagged known issue — current file is 1487 words, within the 1200–1600 standard ceiling. No soft findings. No hard fails. Reading is cleared for HITL #3."
+}

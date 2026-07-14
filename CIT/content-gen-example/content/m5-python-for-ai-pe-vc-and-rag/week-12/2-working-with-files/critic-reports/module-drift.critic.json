@@ -1,0 +1,70 @@
+{
+  "module": "2-working-with-files",
+  "week_num": 12,
+  "passed": true,
+  "topics_checked": ["12.6", "12.7", "12.8"],
+  "checks": {
+    "terminology_consistency": {
+      "passed": true,
+      "findings": [
+        "All key terms introduced in 12.6 — open(), file object, with block, bookmark, newline character (\\n), .strip() — are used with identical naming in 12.7 and 12.8. No synonym drift detected.",
+        "12.7 explicitly states 'The exact same pattern works for writing' when referencing the with block from 12.6, signalling deliberate reuse rather than redefinition.",
+        "12.8 references 'write mode, append mode, .write(), .writelines()' by the same names established in 12.7.",
+        "Minor observation: 12.6 §5.4 introduces 'resource leak' framing for unclosed files; 12.7 §5.6 introduces 'buffer flush' as an additional close-time concern. These are complementary facets of the same close-the-file rule, not conflicting terminology."
+      ]
+    },
+    "prerequisites_respected": {
+      "passed": true,
+      "findings": [
+        "12.6 (position 1): prerequisites list 12.1 (functions), 12.4 (lists), 12.5 (dicts), Week 11 strings/loops — all from earlier modules or weeks. No forward references.",
+        "12.7 (position 2): prerequisites list 12.6 (position 1 in this module), 12.4, 12.1-12.3, Week 11 — all earlier in sequence. No forward references.",
+        "12.8 (position 3): prerequisites list 12.6 (position 1) and 12.7 (position 2) — both strictly earlier in this module. No forward references."
+      ]
+    },
+    "module_learning_arc": {
+      "passed": true,
+      "findings": [
+        "Module title 'Working with Files' maps to three expected facets: read files, write files, handle file errors.",
+        "12.6 LOs cover the complete read workflow: open() in 'r' mode, .read()/.readlines()/.readline(), .close(), with block, for-line iteration, .strip(). Reading facet fully covered.",
+        "12.7 LOs cover the complete write workflow: 'w' vs 'a' mode semantics, .write(), .writelines(), explicit \\n requirement, str() conversion, with block for writing. Writing facet fully covered.",
+        "12.8 LOs cover exception handling applied to file operations: exception definition, try/except structure, specific exception types, else clause, wrapping open() calls, common mistakes (bare except, silent swallow). Error-handling facet fully covered.",
+        "Lab seed requires: read CSV, compute stats, write summary, test 2 edge cases. All three topics jointly address every lab deliverable. No module-level outcome gap detected."
+      ]
+    },
+    "no_duplicated_material": {
+      "passed": true,
+      "findings": [
+        "12.6 and 12.7 share the terms 'file object', 'with block', and 'newline character' across their §5 sections. These are carry-forward references — 12.7 defers to 12.6 for the with-block explanation and builds on the file object concept. Substantive re-teaching does not occur. Estimated Jaccard similarity on §5 noun sets: ~0.15, well below the 0.6 flag threshold.",
+        "12.7 and 12.8 share 'FileNotFoundError', 'PermissionError', and 'with block' across §5 sections. 12.7 §8 Best Practice #7 names these exceptions as forward references ('error handling comes later — Topic 12.8'). 12.8 does not re-explain with-block mechanics; it uses them as given context. Estimated Jaccard similarity: ~0.12.",
+        "12.6 and 12.8 overlap only on 'open()' and 'with' as contextual anchors for the try/except motivation. No substantive concept re-teaching. Estimated Jaccard similarity: ~0.10.",
+        "No topic pair exceeds the 0.6 Jaccard threshold. All overlaps are deliberate referential scaffolding."
+      ]
+    },
+    "lab_activity_alignment": {
+      "passed": true,
+      "findings": [
+        "Lab Part 1 seed: 'read a CSV of 10 student marks → compute average, highest, lowest → write summary file. Spec-first. Test with 2 edge cases.'",
+        "Read-CSV requirement: satisfied by 12.6 §6 Implementation (load_marks() function reading marks.txt CSV) and §7 Pattern 1 (load_scores() for statistical processing including len/average computation).",
+        "Write-summary requirement: satisfied by 12.7 §6 Implementation (save_results() function, complete worked example) and §7 Pattern 1, which contains an explicit lab callout: 'In the Week 12 lab, after computing averages...you will write the marks summary to disk using exactly this pattern.'",
+        "Edge-case testing requirement: satisfied by 12.8 §9 Hands-On Exercise step 3, which directly mirrors the lab: 'Run the script when student_marks.csv does not exist' and 'Add a non-numeric line and check that the rest of the marks still load.' Both map to the lab's required 2 edge cases.",
+        "The lab CSV format (name,score per line) is consistent across all three topics — 12.6 reads it, 12.7 writes it, 12.8 handles errors around it."
+      ]
+    }
+  },
+  "per_topic_findings": {
+    "12.6": [
+      "PASS — introduces complete read workflow with no terminology drift. Soft carry-forward from HITL #2: sum() in §7 without concepts_introduced entry (reading builder to handle); %%writefile in §9 is Jupyter magic (reading builder to add note or use Python open()). Neither finding affects module-drift checks.",
+      "File object concept cleanly established here and carried forward correctly by 12.7 and 12.8."
+    ],
+    "12.7": [
+      "PASS — introduces complete write workflow. Soft carry-forwards from HITL #2: §5.5 list comprehension (reading builder to replace with plain loop); §6 tuple syntax (reading builder to use parallel lists); §6.2 repr() debug step (reading builder to remove); §6.3 docstring (reading builder to trim). None affect module-drift checks.",
+      "Write mode / append mode distinction is clearly established and correctly referenced as context by 12.8."
+    ],
+    "12.8": [
+      "PASS — introduces try/except pattern. Profile override to atomic (budget constraint) documented at HITL #2. Soft carry-forward: §8 finally block to be trimmed to 1 sentence by reading builder. Does not affect module-drift checks.",
+      "Prerequisites reference 12.6 and 12.7 correctly. Exception handling applied to file operations directly closes the loop on the module's 'Working with Files' outcome."
+    ]
+  },
+  "verdict": "PASS. All five drift checks pass for module 2-working-with-files (week 12). Terminology is stable across the three-topic sequence with no synonym drift. Prerequisites are strictly ordered. The union of learning objectives fully covers the module outcome (read files, write files, handle errors). Core Concept overlap between adjacent topics is referential scaffolding, not duplication (all Jaccard estimates below 0.2). The lab activity seed is directly and explicitly supported by hands-on content in all three topics, with 12.7 containing a named lab callout and 12.8's exercise mirroring the lab edge-case requirement. Soft carry-forward findings from HITL #2 are artifact-builder concerns and do not alter this verdict.",
+  "at": "2026-06-15T00:00:00Z"
+}

@@ -1,0 +1,189 @@
+{
+  "topic_id": "11.5",
+  "stage": "topic_artifacts_approved",
+  "gates": {
+    "resources_captured": true,
+    "corpus_generated": true,
+    "corpus_critic_passed": true,
+    "corpus_human_approved": true,
+    "reading_generated": true,
+    "reading_critic_passed": true,
+    "quiz_generated": true,
+    "quiz_critic_passed": true,
+    "diagram_generated": true,
+    "diagram_critic_passed": true,
+    "topic_artifacts_human_approved": true,
+    "module_drift_passed": true,
+    "week_human_approved": true,
+    "course_drift_passed": true
+  },
+  "history": [
+    {
+      "at": "2026-06-12T01:00:00Z",
+      "op": "set",
+      "gate": "resources_captured",
+      "value": true
+    },
+    {
+      "at": "2026-06-12T01:00:00Z",
+      "op": "stage",
+      "to": "awaiting_corpus"
+    },
+    {
+      "at": "2026-06-12T01:00:00Z",
+      "op": "log",
+      "msg": "Captured 5 resources (source=human) — all primary."
+    },
+    {
+      "at": "2026-06-12T01:02:00Z",
+      "op": "set",
+      "gate": "corpus_generated",
+      "value": true
+    },
+    {
+      "at": "2026-06-12T01:02:00Z",
+      "op": "stage",
+      "to": "awaiting_corpus_critic"
+    },
+    {
+      "at": "2026-06-12T01:02:00Z",
+      "op": "log",
+      "msg": "Corpus generated — standard depth, diagram=true, ~2500 words."
+    },
+    {
+      "at": "2026-06-12T01:05:00Z",
+      "op": "set",
+      "gate": "corpus_critic_passed",
+      "value": true
+    },
+    {
+      "at": "2026-06-12T01:05:00Z",
+      "op": "stage",
+      "to": "awaiting_corpus_human_review"
+    },
+    {
+      "at": "2026-06-12T01:05:00Z",
+      "op": "log",
+      "msg": "Corpus critic PASSED cycle 1 — 2 soft findings, 0 hard fails."
+    },
+    {
+      "at": "2026-06-12T01:10:00Z",
+      "op": "set",
+      "gate": "corpus_human_approved",
+      "value": true
+    },
+    {
+      "at": "2026-06-12T01:10:00Z",
+      "op": "stage",
+      "to": "corpus_approved"
+    },
+    {
+      "at": "2026-06-12T01:10:00Z",
+      "op": "log",
+      "msg": "HITL #2 complete — all 9 sections approved as written, depth=standard, diagram=true."
+    },
+    {
+      "at": "2026-06-12T01:15:00Z",
+      "op": "set",
+      "gate": "diagram_generated",
+      "value": true
+    },
+    {
+      "at": "2026-06-12T01:15:00Z",
+      "op": "log",
+      "msg": "Diagram generated — 6-node TB flowchart (if/elif/else grade assignment). diagram.mmd + diagram.png written."
+    },
+    {
+      "at": "2026-06-12T01:15:00Z",
+      "op": "set",
+      "gate": "diagram_critic_passed",
+      "value": true
+    },
+    {
+      "at": "2026-06-12T01:15:00Z",
+      "op": "log",
+      "msg": "Diagram critic PASSED cycle 1 — color tiers correct, no visual defects."
+    },
+    {
+      "at": "2026-06-12T01:25:00Z",
+      "op": "set",
+      "gate": "reading_generated",
+      "value": true
+    },
+    {
+      "at": "2026-06-12T01:25:00Z",
+      "op": "log",
+      "msg": "Reading generated — 1316 words, 7 min, all 5 primary resources cited, diagram embedded."
+    },
+    {
+      "at": "2026-06-12T01:25:00Z",
+      "op": "stage",
+      "to": "awaiting_reading_critic"
+    },
+    {
+      "at": "2026-06-12T01:30:00Z",
+      "op": "set",
+      "gate": "quiz_generated",
+      "value": true
+    },
+    {
+      "at": "2026-06-12T01:30:00Z",
+      "op": "log",
+      "msg": "Quiz generated — 6 MCQ, positions [0,3,2,1,3,0], max_share=0.333, bias_defense=true."
+    },
+    {
+      "at": "2026-06-12T01:35:00Z",
+      "op": "set",
+      "gate": "reading_critic_passed",
+      "value": true
+    },
+    {
+      "at": "2026-06-12T01:35:00Z",
+      "op": "log",
+      "msg": "Reading critic PASSED cycle 1 — 1316w, 7min, all 5 primary cited, no forward refs, no scope-creep."
+    },
+    {
+      "at": "2026-06-12T01:35:00Z",
+      "op": "set",
+      "gate": "quiz_critic_passed",
+      "value": true
+    },
+    {
+      "at": "2026-06-12T01:35:00Z",
+      "op": "log",
+      "msg": "Quiz critic PASSED cycle 1 — positions [0,3,2,1,3,0], max_share=0.333, all 5 LOs covered, 0 absurd distractors."
+    },
+    {
+      "at": "2026-06-12T01:35:00Z",
+      "op": "stage",
+      "to": "awaiting_topic_artifacts_review"
+    },
+    {
+      "at": "2026-06-12T01:35:00Z",
+      "op": "log",
+      "msg": "All artifact critics passed. Awaiting HITL #3."
+    },
+    {
+      "at": "2026-06-12T01:40:00Z",
+      "op": "set",
+      "gate": "topic_artifacts_human_approved",
+      "value": true
+    },
+    {
+      "at": "2026-06-12T01:40:00Z",
+      "op": "stage",
+      "to": "topic_artifacts_approved"
+    },
+    {
+      "at": "2026-06-12T01:40:00Z",
+      "op": "log",
+      "msg": "HITL #3 approved. Week budget: 35/90 min (11.1–11.5 × 7 min each)."
+    },
+    {
+      "at": "2026-06-23T17:39:27Z",
+      "op": "set",
+      "gate": "course_drift_passed",
+      "value": true
+    }
+  ]
+}

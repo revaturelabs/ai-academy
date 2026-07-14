@@ -1,0 +1,30 @@
+{
+  "topic_id": "6.2",
+  "captured_at": "2026-06-18T00:00:00Z",
+  "captured_by": "bhuvaneshwarim@revature.com",
+  "resources_source": "web_search",
+  "web_search_query": "scalar single number AI machine learning intuition beginner",
+  "resources": [
+    {
+      "type": "url",
+      "value": "https://machinelearningplus.com/linear-algebra/scalars/",
+      "role": "primary",
+      "source": "web_search",
+      "notes": "Dedicated scalar explainer, beginner-friendly, ML-focused"
+    },
+    {
+      "type": "url",
+      "value": "https://www.quantstart.com/articles/scalars-vectors-matrices-and-tensors-linear-algebra-for-deep-learning-part-1/",
+      "role": "supporting",
+      "source": "web_search",
+      "notes": "University-level tutorial series, canonical and well-structured"
+    },
+    {
+      "type": "url",
+      "value": "https://www.geeksforgeeks.org/machine-learning/difference-between-scalar-vector-matrix-and-tensor/",
+      "role": "supporting",
+      "source": "web_search",
+      "notes": "Comparison explainer — useful contrast with later topics (vectors, matrices)"
+    }
+  ]
+}

@@ -1,0 +1,113 @@
+{
+  "topic_id": "6.4",
+  "passed": true,
+  "cycle": 3,
+  "checks": {
+    "hard_prerequisites": {
+      "passed": true,
+      "meta_exists": true,
+      "bias_defense_applied": true
+    },
+    "positional_bias": {
+      "passed": true,
+      "distribution": { "0": 2, "1": 1, "2": 1, "3": 1 },
+      "positions_by_question": { "q1": 0, "q2": 1, "q3": 2, "q4": 3, "q5": 0 },
+      "max_share": 0.40,
+      "threshold": 0.40,
+      "meta_gift_desync": false,
+      "note": "max_share == 0.40 is not > 0.40; threshold is exclusive. Sidecar positions [0,1,2,3,0] confirmed against .gift — no desync. No auto-correction needed."
+    },
+    "length_bias": {
+      "passed": true,
+      "longest_correct_rate": 0.20,
+      "baseline": 0.25,
+      "threshold": 0.40,
+      "per_question": [
+        { "id": "q1", "correct_len": 56, "distractor_mean": 57.33, "threshold_len": 68.80, "longest_correct": false },
+        { "id": "q2", "correct_len": 103, "distractor_mean": 85.33, "threshold_len": 102.40, "longest_correct": true },
+        { "id": "q3", "correct_len": 85, "distractor_mean": 80.33, "threshold_len": 96.40, "longest_correct": false },
+        { "id": "q4", "correct_len": 89, "distractor_mean": 90.67, "threshold_len": 108.80, "longest_correct": false },
+        { "id": "q5", "correct_len": 80, "distractor_mean": 75.33, "threshold_len": 90.40, "longest_correct": false }
+      ],
+      "note": "Q2 correct answer (103 chars) marginally exceeds distractor_mean * 1.20 (102.40) by 0.6 chars. The extra length is structurally necessary: the stem asks for size AND row-meaning in a single question (dual-mapped LO2+LO3), so the correct answer must address both clauses. Only 1 of 5 questions is longest-correct; rate = 0.20, well under the 0.40 fail threshold. Feedback text stripped before all measurements."
+    },
+    "distractor_plausibility": {
+      "passed": true,
+      "absurd_rate": 0.00,
+      "total_distractors": 15,
+      "absurd_count": 0,
+      "threshold": 0.25,
+      "weakest_questions": [],
+      "score_summary": {
+        "q1": [4, 4, 2],
+        "q2": [4, 3, 3],
+        "q3": [3, 3, 3],
+        "q4": [2, 3, 3],
+        "q5": [3, 3, 3]
+      },
+      "note": "q1-D3 ('set of instructions for neural network learning') and q4-D1 ('list of 784 pixel labels in alphabetical order') score 2 — wrong but not aligned to a common misconception. Neither is absurd (score 1). All other distractors score 3 or 4. absurd_rate = 0.00."
+    },
+    "objective_coverage": {
+      "passed": true,
+      "corpus_los": [
+        "LO1: Describe what a matrix is in plain language — a rectangular grid of scalars arranged in rows and columns.",
+        "LO2: Read standard matrix notation, including how to state its size using rows x columns.",
+        "LO3: Identify a row in a matrix as a feature vector that describes one data sample.",
+        "LO4: Explain how AI uses matrices to store images, representing each pixel value as one cell in a grid.",
+        "LO5: Recognise the term 'weight matrix' and describe, in one sentence, why neural networks use one.",
+        "LO6: Name four advanced matrix operations — multiplication, transpose, determinant, eigenvalues — and state that each is covered in a later topic."
+      ],
+      "coverage_map": {
+        "LO1-describe-matrix": ["q1"],
+        "LO2-rows-x-cols-notation": ["q2"],
+        "LO3-row-as-feature-vector": ["q2"],
+        "LO4-image-pixel-grid": ["q4"],
+        "LO5-weight-matrix": ["q5"],
+        "LO6-name-four-advanced-ops": ["q3"]
+      },
+      "uncovered_objectives": [],
+      "orphan_questions": [],
+      "dual_map_accepted": {
+        "question": "q2",
+        "los": ["LO2", "LO3"],
+        "rationale": "Q2's objective_ref explicitly states both LO2 ('rows x columns notation') and LO3 ('each row is one feature vector — one data sample'). The stem asks for BOTH the matrix size AND what one row represents. The correct answer states '200 x 6' (satisfying LO2) AND 'each row holds one customer's complete feature values — making it a feature vector' (satisfying LO3). Similarity to each LO exceeds the 0.70 threshold. Dual-mapping accepted per stated skill rule: objective_ref fuzzy-match >= 0.70 against the LO text."
+      },
+      "note": "All six LOs covered. LO3 coverage restored by Q2 redesign without adding a sixth question. No orphan questions."
+    },
+    "beginner_fairness": {
+      "passed": true,
+      "jargon_in_stem": [],
+      "out_of_scope_questions": [],
+      "unfair_distractors": [],
+      "note": "All stems use plain language consistent with the corpus. 'Feature vector' appears in Q2 — defined in corpus §5.3 and listed as prerequisite from topic 6.3 in corpus §2; not jargon for this audience. Q3 names matrix multiplication, transpose, determinant, and eigenvalues — all explicitly introduced and scoped to later topics in corpus §5.6. No out-of-scope knowledge required to answer any question correctly."
+    }
+  },
+  "auto_correction_applied": {
+    "shuffle_round_2": false
+  },
+  "cycle_history": [
+    {
+      "cycle": 1,
+      "passed": false,
+      "fail_check": "objective_coverage",
+      "uncovered": ["LO6: Name four advanced matrix operations and state each is covered in a later topic."],
+      "fix_applied": "Q3 replaced — new LO6 recognition question asking learner to identify all four deferred operations."
+    },
+    {
+      "cycle": 2,
+      "passed": false,
+      "fail_check": "objective_coverage",
+      "uncovered": ["LO3: Identify a row in a matrix as a feature vector that describes one data sample."],
+      "fix_applied": "Q2 redesigned: stem asks for size AND row meaning; correct answer explicitly names the row as a feature vector; objective_ref updated to dual-map LO2 + LO3."
+    },
+    {
+      "cycle": 3,
+      "passed": true,
+      "fail_check": null,
+      "uncovered": [],
+      "fix_applied": null
+    }
+  ],
+  "verdict": "Pass — all checks clean. positional_bias max_share=0.40 (boundary, not exceeded). length_bias longest_correct_rate=0.20 (Q2 marginally longest-correct by 0.6 chars, structurally justified by dual-LO stem; rate below 0.40 threshold). distractor absurd_rate=0.00. objective_coverage: all six LOs covered — Q2 dual-maps LO2 (rows x cols notation) and LO3 (row as feature vector); stem and correct answer both explicitly test both concepts; fuzzy similarity to each LO exceeds 0.70. Beginner-fairness clean. No orphan questions.",
+  "at": "2026-06-18T00:00:00Z"
+}

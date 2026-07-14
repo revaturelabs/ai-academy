@@ -1,0 +1,67 @@
+{
+  "critic": "drift-critic",
+  "module": "2-how-machines-recognise-patterns",
+  "module_title": "How Machines Recognise Patterns",
+  "course_code": "M1",
+  "week_num": 2,
+  "run_at": "2026-06-17T00:00:00Z",
+  "passed": true,
+  "topics_evaluated": ["2.4"],
+  "summary": "Single-topic module. All five drift checks pass. One soft audience-level finding logged (deferred term 'model drift' mentioned but not bolded and explicitly deferred to a later module — acceptable). Lab activity alignment confirmed. No scope drift detected.",
+  "checks": {
+    "terminology_consistency": {
+      "passed": true,
+      "findings": [],
+      "notes": "Only one topic in module; no cross-topic synonym drift possible. Within topic 2.4, key terms (feature, label, classification, training, probabilistic, deterministic) are introduced once in dedicated subsections and used consistently throughout."
+    },
+    "prerequisites_respected": {
+      "passed": true,
+      "findings": [],
+      "notes": "Topic 2.4 declares prerequisites 1.4, 2.1, and 2.3. All three have lower sequence positions than 2.4 and belong to earlier topics in the delivery order. No forward-reference violations found."
+    },
+    "learning_arc": {
+      "passed": true,
+      "findings": [],
+      "notes": "Module scope: 'Pattern recognition — how machines find rules in repeated data.' Topic 2.4's six LOs collectively cover: (a) rule-based vs pattern-recognition distinction, (b) training from labeled data, (c) feature/label/classification vocabulary, (d) probabilistic vs deterministic outputs, (e) consequences of probabilistic outputs for specification writing, (f) writing bounded specifications for AI systems. Full module scope is addressed. No uncovered facets."
+    },
+    "no_duplicated_core_concepts": {
+      "passed": true,
+      "findings": [],
+      "notes": "Only one topic in module; Jaccard similarity check across pairs is not applicable."
+    },
+    "lab_activity_alignment": {
+      "passed": true,
+      "findings": [],
+      "notes": "lab_activity_seed_by_week['2'] calls for writing and live-testing task specifications. Topic 2.4 section 9 (Hands-On Exercise) asks students to inspect a spam filter, identify shared features across correctly-classified spam, identify a false-positive and its likely cause, then rewrite 'The spam filter must work well' as a testable bounded specification using the six-component checklist from topic 2.3. Direct alignment confirmed."
+    },
+    "audience_level_consistency": {
+      "passed": true,
+      "findings": [
+        {
+          "topic_id": "2.4",
+          "severity": "soft",
+          "location": "section 5.6, line 124 and section 8 table row 4",
+          "finding": "The term 'model drift' is introduced in section 5.6 ('This is called model drift and is covered in a later module') and referenced again in section 8 best-practices table. The term is not bolded and is explicitly deferred. This is acceptable — it names a concept for forward orientation without teaching it. Previous corpus-critic runs flagged a bolded form of this term as scope creep; the bold was removed in the approved corpus. The plain mention with explicit deferral is within bounds for an absolute-beginner audience.",
+          "recommendation": "No action required. If a future module introduces model drift formally, verify the section 5.6 forward-reference still matches that module's terminology."
+        }
+      ],
+      "notes": "All technical terms introduced in topic 2.4 (feature, label, classification, training data, confidence score, precision) are immediately defined in their introducing section. No term is used cold without a definition. Depth is appropriate for absolute-beginner audience throughout; no register spike detected between sections."
+    }
+  },
+  "per_topic_findings": {
+    "2.4": {
+      "topic_title": "Pattern recognition — how machines find rules in repeated data",
+      "coherence_with_module_scope": "pass — topic directly addresses and fully covers the module's stated scope",
+      "scope_drift": "pass — content stays within pattern-recognition and its specification-writing implications; no out-of-scope tangents",
+      "self_contained": "pass — all terms defined in-topic; prerequisites are named and come from prior sequence positions; no unresolved references to sibling topics",
+      "findings": [
+        {
+          "check": "audience_level_consistency",
+          "severity": "soft",
+          "detail": "model drift mentioned but not taught — deferred to later module (acceptable)"
+        }
+      ]
+    }
+  },
+  "gate_recommendation": "Set module_drift_passed = true for topic 2.4. One soft finding surfaced for HITL #4 awareness; no hard failures."
+}

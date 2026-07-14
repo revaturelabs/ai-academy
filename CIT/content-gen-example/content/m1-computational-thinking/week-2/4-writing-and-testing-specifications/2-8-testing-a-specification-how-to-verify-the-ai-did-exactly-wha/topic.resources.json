@@ -1,0 +1,30 @@
+{
+  "topic_id": "2.8",
+  "captured_at": "2026-06-17T00:00:00Z",
+  "captured_by": "vishnu.vardhan@revature.com",
+  "resources_source": "web_search",
+  "web_search_query": "how to verify AI output matches specification testing prompt results",
+  "resources": [
+    {
+      "type": "url",
+      "value": "https://libguides.csun.edu/c.php?g=1377855&p=11076059",
+      "role": "primary",
+      "source": "web_search",
+      "notes": "CSUN university library guide — beginner audience, practical checklist for evaluating AI-generated output"
+    },
+    {
+      "type": "url",
+      "value": "https://libguides.stkate.edu/generativeai/evaluatingAI",
+      "role": "supporting",
+      "source": "web_search",
+      "notes": "St. Catherine University student-focused guide on checking AI output accuracy and relevance"
+    },
+    {
+      "type": "url",
+      "value": "https://verifywise.ai/lexicon/ai-output-validation",
+      "role": "supporting",
+      "source": "web_search",
+      "notes": "Structured validation methods and checklists for AI output verification"
+    }
+  ]
+}

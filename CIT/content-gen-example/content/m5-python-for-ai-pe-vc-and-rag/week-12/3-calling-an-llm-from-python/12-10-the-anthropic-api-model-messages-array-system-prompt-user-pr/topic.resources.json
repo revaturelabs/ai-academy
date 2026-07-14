@@ -1,0 +1,30 @@
+{
+  "topic_id": "12.10",
+  "captured_at": "2026-06-15T00:00:00Z",
+  "captured_by": "vishnu.vardhan@revature.com",
+  "resources_source": "web_search",
+  "web_search_query": "Anthropic API messages array system prompt user prompt model authentication Python",
+  "resources": [
+    {
+      "type": "url",
+      "value": "https://docs.anthropic.com/en/api/messages",
+      "role": "primary",
+      "source": "web_search",
+      "notes": "Official Messages API reference — model, messages array, system param, auth; covers all 5 headline concepts"
+    },
+    {
+      "type": "url",
+      "value": "https://docs.anthropic.com/en/docs/build-with-claude/prompt-engineering/system-prompts",
+      "role": "supporting",
+      "source": "web_search",
+      "notes": "System prompt best practices — explains system vs user prompt distinction and usage"
+    },
+    {
+      "type": "url",
+      "value": "https://docs.anthropic.com/en/docs/upgrading-to-the-messages-api",
+      "role": "supporting",
+      "source": "web_search",
+      "notes": "Messages API structure overview — shows messages array format with role/content"
+    }
+  ]
+}

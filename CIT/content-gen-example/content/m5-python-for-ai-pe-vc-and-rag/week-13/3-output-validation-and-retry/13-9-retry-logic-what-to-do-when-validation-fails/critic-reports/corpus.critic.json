@@ -1,0 +1,44 @@
+{
+  "topic_id": "13.9",
+  "critic": "corpus-critic",
+  "attempt": 2,
+  "at": "2026-06-14T00:00:00Z",
+  "passed": true,
+  "checks": {
+    "required_sections": {
+      "passed": true,
+      "detail": "Sections 3, 4, 5, and 10 all present and exceed word minimums. §3 Learning Objectives ~75w (≥50w ✓), §4 Introduction ~162w (≥50w ✓), §5 Core Concepts ~400w across six sub-sections (≥100w ✓), §10 Key Takeaways ~110w (≥50w ✓)."
+    },
+    "citation_density": {
+      "passed": true,
+      "resources_source": "web_search",
+      "mode": "strict",
+      "primary_cited": true,
+      "estimated_density_pct": 100,
+      "detail": "All 8 previously uncited claims in §5 now carry citation markers. Primary resource [1] is cited in §4, throughout §5, and in §6. Supporting resources [2] and [3] are cited in §5 (corrective message, max retries, fallback, How-the-pieces-connect), §6, and §7. Specific fixes verified: (a) 'Simply calling the model again...usually does not help' — [1] ✓; (b) 'Without a counter, a retry loop could keep running forever' — [1] ✓; (c) 'A common default for simple applications is 2 or 3 retries' — [1][2] ✓; (d) 'Higher numbers are possible but each retry costs time and money' — [1][2] ✓; (e) 'For a beginner application, 2 extra attempts...is a practical ceiling' — [1][2] ✓; (f) 'The fallback is not a crash. It is a graceful exit' — [1] ✓; (g) 'A fallback might be a default JSON object, an empty result...' — [1][2] ✓; (h) 'How the pieces connect' six-step list — [1][2] ✓. §5 citation density is now approximately 100%, well above the 60% threshold. §6 cited at end of walk-through paragraph [1][3] ✓. §7 cited on examples list [2][3] ✓. No fake or unresolvable citation markers detected — all [1], [2], [3] resolve to resources in topic.resources.json."
+    },
+    "sequence_drift": {
+      "passed": true,
+      "forward_references": [],
+      "detail": "All technical terms are either from this topic's concepts_introduced (retry loop, corrective message, retry counter, max retries, fallback response) or from prior topics 13.1–13.8 (validation function, validation error, output validator pattern, format check, schema check, LLM, JSON, prompt, format specification). Two downstream terms appear in §7: 'exponential backoff' and 'structured output libraries' — both in a single sentence with an explicit 'you will see more advanced techniques... in later topics and courses' deferral pointer, neither bolded, neither followed by a defining clause. Mention-and-defer rule fully satisfied."
+    },
+    "length_sanity": {
+      "passed": true,
+      "depth_profile": "atomic",
+      "acceptable_range_words": [800, 1200],
+      "estimated_word_count": 1055,
+      "detail": "Citation additions in attempt 2 are punctuation-level (8–16 tokens). Word count remains approximately 1050–1060 words, within the 800–1200 atomic range. The 30%-buffer hard-fail ceiling is 1560 words — not approached."
+    },
+    "topic_scope": {
+      "passed": true,
+      "scope_creep_findings": [],
+      "detail": "All five concepts taught (retry loop, corrective message, retry counter, max retries, fallback response) are facets of the headline 'Retry logic — what to do when validation fails.' The 'How the pieces connect' sub-section integrates the five into a unified sequence without introducing new scope. §8 Best Practices and §9 Hands-On Exercise remain tightly within the retry-loop boundary. 'Exponential backoff' and 'structured output libraries' are named-and-deferred in §7 without bolding or defining clauses — compliant with the mention-and-defer rule."
+    },
+    "beginner_readability": {
+      "passed": true,
+      "findings": [],
+      "detail": "All five concepts_introduced are bolded and defined on first use with plain-language meanings before any technical phrasing. No jargon dump found (no paragraph introduces 3+ new terms simultaneously — each sub-section introduces one concept). Sentences are short and active-voice. No hedging phrases detected. 'LLM' is used without re-spelling 'Large Language Model' — acceptable at Week 13, Topic 9; the term was introduced in earlier sequence topics and the artifact-mix audience rule permits reuse of prior-defined terms without re-definition."
+    }
+  },
+  "verdict": "PASS — all 6 checks pass on attempt 2. The 8 uncited claims identified in attempt 1 have all been addressed with [1] or [1][2] citation markers; §5 Core Concepts citation density is now approximately 100%, well above the 60% threshold required for web_search (strict) mode. Required sections are present and non-trivial. No forward references. Word count (~1055 words) is within the 800–1200 atomic range. No scope creep. Beginner readability is satisfactory with zero soft findings. Corpus is cleared to proceed to HITL #2 (corpus human review)."
+}

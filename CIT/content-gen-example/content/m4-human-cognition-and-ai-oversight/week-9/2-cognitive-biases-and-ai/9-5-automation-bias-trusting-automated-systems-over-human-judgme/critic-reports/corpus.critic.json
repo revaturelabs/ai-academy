@@ -1,0 +1,91 @@
+{
+  "critic": "corpus-critic",
+  "topic_id": "9.5",
+  "topic_title": "Automation bias — trusting automated systems over human judgment",
+  "cycle": 2,
+  "passed": true,
+  "at": "2026-06-12T00:01:00Z",
+  "depth_profile": "standard",
+  "resources_source": "web_search",
+  "word_count_estimate": 3350,
+  "checks": {
+    "required_sections": {
+      "passed": true,
+      "detail": {
+        "section_3_learning_objectives": { "present": true, "word_count_gte_50": true },
+        "section_4_introduction": { "present": true, "word_count_gte_50": true },
+        "section_5_core_concepts": { "present": true, "word_count_gte_100": true },
+        "section_10_key_vocabulary": { "present": true, "word_count_gte_50": true }
+      }
+    },
+    "citation_density": {
+      "passed": true,
+      "detail": {
+        "primary_resource_cited": true,
+        "primary_url": "https://thedecisionlab.com/biases/automation-bias",
+        "primary_citation_marker": "[1]",
+        "primary_citation_count": 19,
+        "core_concepts_assertions_sampled": 22,
+        "core_concepts_citations_found": 18,
+        "core_concepts_citation_pct": 82,
+        "threshold_pct": 60,
+        "fake_citations_detected": false
+      }
+    },
+    "sequence_drift": {
+      "passed": true,
+      "findings": [
+        {
+          "severity": "soft",
+          "term": "authority heuristic",
+          "location": "Section 5.3 sub-heading 'Perceived Reliability and the Authority Heuristic'",
+          "detail": "Used as a sub-heading and explanatory label but does not appear in any prior topic's concepts_introduced. Defined inline within the same paragraph so not a hard forward-reference failure, but the sub-heading elevates it to a named concept status not sanctioned by the sequence index."
+        }
+      ],
+      "hard_failures": []
+    },
+    "length_sanity": {
+      "passed": true,
+      "word_count_estimate": 3350,
+      "profile": "standard",
+      "acceptable_range": [3000, 4400],
+      "within_range": true
+    },
+    "topic_scope": {
+      "passed": true,
+      "finding_code": null,
+      "cycle1_fix_verified": {
+        "concept": "Judgment Framework",
+        "location": "Section 8 (Connection to AI Context), final paragraph",
+        "previous_offending_text": "A framework for doing this systematically — the Judgment Framework: three questions before acting on any AI output — will be introduced in Topics 9.7–9.9.",
+        "current_text": "A framework for doing this systematically — the Judgment Framework — will be introduced in Topics 9.7–9.9.",
+        "fix_assessment": "VERIFIED. The appositive clause 'three questions before acting on any AI output' has been removed. The current form is a bare name ('the Judgment Framework') followed by a topic pointer ('will be introduced in Topics 9.7–9.9'). The term is not bolded and carries no defining clause. This satisfies the mention-and-defer rule in scope_discipline."
+      },
+      "failures": []
+    },
+    "beginner_readability": {
+      "passed": true,
+      "findings": [
+        {
+          "finding_code": "undefined_terms",
+          "severity": "soft",
+          "terms": ["authority heuristic"],
+          "detail": "The term 'authority heuristic' appears as a section sub-heading (Section 5.3) before any plain-language definition is given. The concept is explained in the paragraph body, but a beginner encounters the compound noun cold in the heading. Recommend prepending a plain-language meaning to the heading or replacing the heading with a descriptive phrase."
+        }
+      ],
+      "hard_fail": false,
+      "distinct_soft_finding_count": 1,
+      "escalation_threshold": 3
+    }
+  },
+  "verdict": "PASSED. Cycle 2 scope_creep fix verified: Section 8 final paragraph now reads 'the Judgment Framework — will be introduced in Topics 9.7–9.9' — bare name plus topic pointer, no appositive, not bolded. All 6 checks pass. Required sections present and non-trivial. Primary source thedecisionlab.com cited 19 times with ~82% citation density in Core Concepts; no fake citations. Word count ~3350 within the standard 3000–4400 range. No hard sequence-drift failures. One carry-over soft finding: sub-heading 'Perceived Reliability and the Authority Heuristic' in Section 5.3 uses a term not in any prior topic's concepts_introduced; surfaced to HITL #2 for awareness but does not block corpus approval.",
+  "required_fixes": [],
+  "optional_improvements": [
+    {
+      "check": "sequence_drift / beginner_readability",
+      "severity": "soft",
+      "location": "Section 5.3 sub-heading",
+      "action": "Rename sub-heading 'Perceived Reliability and the Authority Heuristic' to 'Perceived Reliability' or add a plain-language gloss in the first sentence of the section. The term 'authority heuristic' is not in the glossary and not in any prior topic's concepts_introduced."
+    }
+  ]
+}

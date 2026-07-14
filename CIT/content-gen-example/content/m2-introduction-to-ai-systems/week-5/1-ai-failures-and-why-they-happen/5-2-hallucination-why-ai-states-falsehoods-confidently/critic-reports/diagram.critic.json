@@ -1,0 +1,36 @@
+{
+  "passed": true,
+  "cycle": 1,
+  "checks": {
+    "node_count": {
+      "passed": true,
+      "count": 8,
+      "notes": "8 nodes (A, B, C, D, E, F, G, ABSENT) — at the upper bound of 3–8 range."
+    },
+    "plain_labels": {
+      "passed": true,
+      "findings": []
+    },
+    "scope_discipline": {
+      "passed": true,
+      "findings": [
+        "All nodes map directly to corpus sections: §5.2 (next-token prediction loop: B, C, D, E), §5.2/§5.5 (absent truth check: ABSENT), §5.3 (no uncertainty signal: G), §5.6 (fluent output: F). No RAG, RLHF, grounding, or mitigation nodes introduced."
+      ]
+    },
+    "absent_concept_visual": {
+      "passed": true,
+      "notes": "ABSENT node uses 'absent' classDef: fill:#E8E8E8, stroke:#999, color:#666, stroke-dasharray:5 5 — visually distinct grey dashed-border node. Connected to the prediction loop via a dashed edge (-.->) labeled 'missing step', making the absence structurally explicit in the graph."
+    },
+    "flow_clarity": {
+      "passed": true,
+      "notes": "LR pipeline flows left-to-right. Prediction loop is explicit: E -- 'No — add token and continue' --> C. Exit path labeled 'Yes' leads to output nodes. Dashed missing-step edge to ABSENT does not interrupt the main pipeline readability."
+    },
+    "palette_applied": {
+      "passed": true,
+      "notes": "All 5 classDef classes used: input (A), process (B,C,D,E), absent (ABSENT), output (F), warn (G). No unclassified nodes."
+    }
+  },
+  "verdict": "pass",
+  "png_status": "skipped — mmdc not available in this environment; diagram.mmd is the primary deliverable",
+  "at": "2026-06-17T00:00:00Z"
+}

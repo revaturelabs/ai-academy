@@ -1,0 +1,40 @@
+---
+title: "Same question, different answer — how token sampling works"
+config:
+  theme: base
+  themeVariables:
+    primaryColor: "#a5d8ff"
+    primaryBorderColor: "#4a9eed"
+    lineColor: "#555"
+  flowchart:
+    htmlLabels: true
+    curve: basis
+    nodeSpacing: 60
+    rankSpacing: 65
+---
+flowchart LR
+
+  subgraph MAIN["Sampling chain — repeats token by token"]
+    direction TB
+    A["<b>Input Question</b><br/><span style='font-size:12px;color:#6d28d9'>your prompt</span>"]:::start
+    B["<b>Probability Distribution</b><br/><span style='font-size:12px;color:#6d28d9'>which token is likely next?</span>"]:::auto
+    C["<b>Token Sampling</b><br/><span style='font-size:12px;color:#6d28d9'>one token picked — varies each run</span>"]:::auto
+    D["<b>Token Added to Response</b><br/><span style='font-size:12px;color:#6d28d9'>repeat for next token</span>"]:::auto
+    E["<b>LLM Output Complete</b><br/><span style='font-size:12px;color:#6d28d9'>answer ready</span>"]:::done
+
+    A --> B --> C --> D --> E
+  end
+
+  subgraph SIDE["Temperature controls the sampling step"]
+    direction TB
+    LT["<b>Low Temperature</b><br/><span style='font-size:12px;color:#6d28d9'>most-likely token chosen<br/>→ consistent, predictable output</span>"]:::done
+    HT["<b>High Temperature</b><br/><span style='font-size:12px;color:#6d28d9'>freely sampled across distribution<br/>→ varied, creative output</span>"]:::warn
+  end
+
+  C -->|"near 0"| LT
+  C -->|"near 1+"| HT
+
+  classDef start fill:#a5d8ff,stroke:#4a9eed,color:#000
+  classDef auto  fill:#d0bfff,stroke:#8b5cf6,color:#000
+  classDef done  fill:#b2f2bb,stroke:#22c55e,color:#000
+  classDef warn  fill:#ffa94d,stroke:#e67700,color:#000

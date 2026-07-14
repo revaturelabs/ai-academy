@@ -1,0 +1,30 @@
+{
+  "topic_id": "13.9",
+  "captured_at": "2026-06-14T12:45:00Z",
+  "captured_by": "namratas@revature.com",
+  "resources_source": "web_search",
+  "web_search_query": "retry logic LLM output validation failure Python beginner",
+  "resources": [
+    {
+      "type": "url",
+      "value": "https://apxml.com/courses/prompt-engineering-llm-application-development/chapter-7-output-parsing-validation-reliability/implementing-retry-mechanisms",
+      "role": "primary",
+      "source": "web_search",
+      "notes": "Course-style walkthrough of max-retries pattern, catching validation failures, retry with feedback message."
+    },
+    {
+      "type": "url",
+      "value": "https://python.useinstructor.com/learning/validation/retry_mechanisms/",
+      "role": "supporting",
+      "source": "web_search",
+      "notes": "Concrete retry patterns for LLM output parsing. Instructor-specific but concepts transfer."
+    },
+    {
+      "type": "url",
+      "value": "https://mirascope.com/tutorials/more_advanced/llm_validation_with_retries/",
+      "role": "supporting",
+      "source": "web_search",
+      "notes": "End-to-end tutorial covering validation + retry loop with code examples."
+    }
+  ]
+}

@@ -1,0 +1,14 @@
+{
+  "topic_id": "10.5",
+  "title": "Designing human-in-the-loop checkpoints — when to require sign-off vs allow autonomous action",
+  "generated_at": "2026-06-13T00:00:00Z",
+  "word_count": 1375,
+  "reading_minutes": 7,
+  "profile": "standard",
+  "target_word_range": [1200, 1600],
+  "citations": ["[1] zapier.com", "[2] digitalapplied.com", "[3] famulor.io"],
+  "diagram_embedded": true,
+  "embeds_diagram": true,
+  "citations_used": [1, 2, 3],
+  "sections": ["Overview", "Key Concepts", "Worked Example", "In Practice", "Key Takeaways", "References"]
+}

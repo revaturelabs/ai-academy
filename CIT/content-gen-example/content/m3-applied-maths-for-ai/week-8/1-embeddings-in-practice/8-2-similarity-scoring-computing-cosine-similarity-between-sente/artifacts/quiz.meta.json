@@ -1,0 +1,32 @@
+{
+  "topic_id": "8.2",
+  "generated_at": "2026-06-22T06:25:00Z",
+  "format": "gift",
+  "question_count": 6,
+  "$bias_defense_applied": true,
+  "$shuffle_seed": "sha256(8.2)=f4d8b2c1a9e0",
+  "correct_position_distribution": [0, 1, 2, 3, 3, 1],
+  "answer_position_distribution": {
+    "A": 1,
+    "B": 2,
+    "C": 1,
+    "D": 2,
+    "max_single_position_share": 0.33,
+    "all_four_positions_used": true
+  },
+  "lo_coverage": {
+    "sentence_embedding": ["q1"],
+    "cosine_as_angle_read_on_scale": ["q2"],
+    "high_vs_low_score_meaning": ["q3", "q6"],
+    "score_five_pairs_precomputed_vectors": ["q4", "q6"],
+    "same_words_not_same_meaning": ["q5"]
+  },
+  "questions": [
+    { "id": "q1", "type": "mcq", "objective_ref": "Explain what a sentence embedding is, reusing what you know about word embeddings.", "correct_position": 0 },
+    { "id": "q2", "type": "mcq", "objective_ref": "Describe cosine similarity as the angle between two arrows, and read its score from a simple scale.", "correct_position": 1 },
+    { "id": "q3", "type": "mcq", "objective_ref": "State what a high score and a low score mean about two sentences' meaning.", "correct_position": 2 },
+    { "id": "q4", "type": "mcq", "objective_ref": "Walk through scoring five sentence pairs using pre-computed vectors the lab hands you.", "correct_position": 3 },
+    { "id": "q5", "type": "mcq", "objective_ref": "Tell the difference between 'same words' and 'same meaning' when you read a similarity score.", "correct_position": 3 },
+    { "id": "q6", "type": "mcq", "objective_ref": "State what a high score and a low score mean about two sentences' meaning (low-score reading across the five-pair exercise).", "correct_position": 1 }
+  ]
+}

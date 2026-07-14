@@ -1,0 +1,41 @@
+$CATEGORY: CIT/M3/week-6/6.2-scalars-a-single-number-representing-one-property
+
+::q1:: In the context of AI and mathematics, a scalar is best described as {
+~a list of numbers that together describe one object#No — a list of numbers is a vector, which you will study in topic 6.3.
+=a single number that captures exactly one measurable property#Correct — one number, one property is the plain-language definition of a scalar.
+~a table of numbers arranged in rows and columns#No — a table of numbers arranged in rows and columns is a matrix, not a scalar.
+~a formula that converts raw data into a useful output#No — that describes a function or computation, not a scalar value.
+#### Tests the core plain-language definition of a scalar (corpus §5, Learning Objective 1).
+}
+
+::q2:: A data scientist checks her model's configuration file and sees these four entries. Which one is a scalar value? {
+~`pixel_grid: [[187, 204, 91], [33, 210, 7]]` — the full brightness grid of a small image#No — this is a grid (matrix) of many numbers, not a single standalone value.
+~`word_tokens: [42, 17, 305, 88]` — the list of token IDs for one sentence#No — an ordered list of numbers is a vector, not a scalar.
+~`weight_matrix: [[0.3, 0.1], [0.7, 0.9]]` — the model's internal weight table#No — this is a matrix of multiple values, not one single number.
+=`learning_rate: 0.001` — the single number controlling how fast the model adjusts#Correct — one number with one label capturing one property is exactly a scalar.
+#### Tests the ability to identify a scalar value in a realistic AI configuration (corpus §5, §7, Learning Objective 2).
+}
+
+::q3:: When we say a scalar has "magnitude," we mean that it {
+=has a size or amount that can be measured on a numerical scale#Correct — magnitude is the size or amount of the value; a scalar has magnitude but no direction or structure.
+~points in a specific direction as well as having a size#No — having both size and direction is the property of a vector, not a scalar.
+~can only take positive whole-number values like 1, 2, or 3#No — scalars can be decimals, negative numbers, or zero; they are not limited to positive integers.
+~must be stored as a whole number without any decimal places#No — scalars are commonly stored as floating-point (decimal) values in AI systems.
+#### Tests understanding of what "magnitude" means for a scalar (corpus §5, Learning Objective 3).
+}
+
+::q4:: How does a scalar differ from a vector? {
+~A scalar uses decimal numbers while a vector uses whole numbers only#No — both scalars and vectors can use any type of number; the difference is not about number type.
+~A scalar is used only in training while a vector is used only in predictions#No — both scalars and vectors appear in training and in predictions; context is not the distinction.
+=A scalar is one single number, whereas a vector groups several scalars together in an ordered list#Correct — a vector is a collection of scalars; a scalar stands alone as exactly one value.
+~A scalar represents a direction, whereas a vector represents only a size#No — this is backwards; it is a vector that can represent direction, while a scalar has no direction.
+#### Tests the ability to distinguish scalar from vector by name and basic description (corpus §5, §"Scalars compared to what comes next", Learning Objective 4).
+}
+
+::q5:: During AI model training, the "loss" is described as a scalar. What does that tell you about it? {
+~It is a list of errors, one for each training example processed so far#No — a list of multiple values is not a scalar; the loss at any moment is one single summary number.
+=It is one number that summarises how wrong the model's current output is#Correct — the loss is a single value measuring overall error at a given moment, making it a scalar.
+~It is a table comparing predicted values against correct values side by side#No — a comparative table contains many numbers; that is not a scalar.
+~It is a percentage that the model displays after every tenth training step#No — loss is not necessarily a percentage, and describing its display schedule is not what "scalar" means.
+#### Tests recognition of the loss as a scalar and understanding of what a single-number summary implies (corpus §5, §"The learning rate and the loss", Learning Objective 5).
+}

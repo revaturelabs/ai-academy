@@ -1,0 +1,41 @@
+$CATEGORY: CIT/M3/week-7/7-2-conditional-probability-p-a-given-b
+
+::q1:: Before leaving home you glance outside and see heavy rain already falling. Which statement best explains how "conditional probability" applies here? {
+~Rain is either happening or it is not, so the probability of rain is always 0 or 1 — there is nothing to condition on.#No — even certain observations in probability are modelled as events; conditional probability is about updating likelihood given evidence, not about certainty.
+=Seeing rain is new information that updates how likely other outcomes seem — conditional probability captures exactly this shift in likelihood once a fact is known.#Correct — conditional probability captures how knowing one thing (rain is falling) reshapes the probability of other events; the condition is the already-established fact.
+~Conditional probability only applies when two events happen in sequence, not when you simply observe the current state of things.#No — a condition does not have to involve a sequence; it just means a piece of information is already established as true.
+~Because the rain is observable, you already have complete certainty — conditional probability is only needed for hidden or future events.#No — conditional probability applies whenever a known fact is used to update a probability, regardless of whether the event is observable or hidden.
+#### Tests understanding of what conditional probability means in plain language — why knowing something has happened changes likelihood (corpus §5.1, §5.6, LO1).
+}
+
+::q2:: You roll a six-sided die and are told the result is greater than 3. Which set of outcomes forms the reduced sample space, and what is the probability the result is even given this condition? {
+~The reduced sample space is {1, 2, 3, 4, 5, 6} — all six faces remain because you have not yet seen the die; P(even given >3) = 3/6 = 0.5.#No — once you are told the result is greater than 3, outcomes 1, 2, and 3 are ruled out; the sample space shrinks to {4, 5, 6}.
+~The reduced sample space is {2, 4, 6} — the even numbers — because those are the outcomes you care about; P(even given >3) = 3/3 = 1.#No — the condition restricts by the given information (>3), not by the event you are asking about; the reduced space is the set where the condition holds.
+~The reduced sample space is {1, 3, 5} — the odd numbers not greater than 3 — and P(even given >3) = 0 because even and >3 do not overlap.#No — this confuses which outcomes to keep; the condition >3 keeps outcomes 4, 5, 6, among which two (4 and 6) are even.
+=The reduced sample space is {4, 5, 6}; two of those outcomes are even, so P(even given >3) = 2/3.#Correct — knowing the result exceeds 3 discards {1, 2, 3} and leaves {4, 5, 6}; events {4, 6} satisfy "even," giving 2 out of 3.
+#### Tests identification of the reduced sample space and calculation of conditional probability by counting (corpus §5.3, LO2).
+}
+
+::q3:: Using the conditional probability formula, which calculation correctly gives P(rain given dark clouds) when P(dark clouds) = 0.30 and P(rain and dark clouds) = 0.24? {
+=P(rain given dark clouds) = 0.24 / 0.30 = 0.80#Correct — the formula is P(A given B) = P(A and B) / P(B); dividing the joint probability 0.24 by the condition probability 0.30 gives 0.80.
+~P(rain given dark clouds) = 0.30 / 0.24 = 1.25#No — this inverts the numerator and denominator, producing a result greater than 1, which is impossible for a probability.
+~P(rain given dark clouds) = 0.24 × 0.30 = 0.072#No — multiplying the two probabilities gives the joint probability of two independent events, not the conditional probability.
+~P(rain given dark clouds) = 0.30 − 0.24 = 0.06#No — subtracting probabilities has no role in the conditional probability formula; the formula requires division, not subtraction.
+#### Tests direct application of the formula P(A given B) = P(A and B) / P(B) to a worked example (corpus §5.4, LO3).
+}
+
+::q4:: In a job application scenario, P(hired) = 0.05 across all applicants and P(hired given passed the technical test) = 0.60. Which statement correctly explains the difference between these two figures? {
+~They are both correct ways of writing the same probability — the formula just reformats 0.05 into 0.60 depending on notation.#No — P(A) and P(A given B) are distinct quantities; the condition changes the sample space, so they almost never share the same value.
+~P(hired given passed the technical test) = 0.60 is always larger than P(hired) = 0.05, which shows that a condition always raises probability.#No — a condition can raise or lower a probability depending on the relationship between the events; the condition here happens to raise it, but that is not a general rule.
+=P(hired) = 0.05 spans all applicants; P(hired given passed the test) = 0.60 restricts to those who cleared the test — a smaller, more relevant pool.#Correct — the unconditional probability spans all applicants; the conditional probability restricts to those who cleared the test, dramatically changing the relevant pool and the resulting number.
+~P(hired) = 0.05 applies before the test is announced, and P(hired given passed) = 0.60 replaces it permanently once the test policy is introduced.#No — both probabilities can exist simultaneously; they answer different questions about different groups, not different time periods.
+#### Tests the distinction between unconditional P(A) and conditional P(A given B) using a realistic scenario (corpus §5.5, LO4).
+}
+
+::q5:: A student gives two examples of conditional probability\: (1) a weather app that shows a higher rain chance when it detects low pressure and high humidity, and (2) an AI language model choosing its next word based on all the words typed so far. Which statement about these examples is most accurate? {
+~Example 1 is a valid use of conditional probability, but Example 2 is not — language models select words by memorising fixed phrases, so no conditioning occurs at runtime.#No — language model inference is built on conditional probability; at each step the model calculates the probability of every possible next token given the entire preceding sequence.
+=Both examples show conditional probability — the weather app conditions rain probability on sensor readings; the language model conditions each word choice on preceding words.#Correct — in both cases a known set of facts (sensor readings; prior tokens) forms the condition B that reshapes the probability of the next outcome.
+~Neither example is a valid illustration because conditional probability requires exactly two events, and both examples involve more than two variables.#No — the formula P(A given B) allows B to represent any combination of known facts; there is no restriction to exactly two events.
+~Example 2 is valid, but Example 1 is not — weather forecasting uses statistics, not probability, so the rain percentage is not a conditional probability.#No — weather forecasting is one of the clearest real-world applications of conditional probability; every forecast percentage is conditioned on observed measurements.
+#### Tests the ability to recognise conditional probability in an everyday context and an AI context (corpus §5.6, §7, LO5).
+}

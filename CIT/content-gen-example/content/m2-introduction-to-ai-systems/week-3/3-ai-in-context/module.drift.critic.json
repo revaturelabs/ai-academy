@@ -1,0 +1,63 @@
+{
+  "module_slug": "3-ai-in-context",
+  "passed": true,
+  "checks": {
+    "terminology_consistency": {
+      "passed": true,
+      "notes": "All cross-topic terms are used consistently. 'hallucination' is first named in 3.2 (prerequisites), referenced with back-attribution in 3.7 and 3.8, and defined in depth in 3.9 — clean progressive elaboration. 'calibration' is introduced in 3.8 and referenced without re-definition in 3.9 ('topic 3.8 covers calibration'). 'tokenisation' is back-attributed to 3.4 wherever used in 3.7 and 3.9. 'benchmark' is introduced in 3.8 and not used independently in 3.7 or 3.9. One soft finding: the 3.9 corpus (not the reading artifact) attributes RLHF's first mention to topic 3.1, but 3.1's concepts_introduced in sequence.index.json does not list RLHF. The reading.md for 3.9 correctly defines RLHF inline and does not misattribute it. Non-blocking corpus-level inconsistency.",
+      "violations": [
+        {
+          "severity": "soft",
+          "topic": "3.9",
+          "artifact": "topic_corpus.md (section 5.4)",
+          "finding": "RLHF attributed to topic 3.1 ('You learned in topic 3.1 that models can be trained with human feedback'), but RLHF does not appear in 3.1's concepts_introduced in sequence.index.json. The reading.md defines RLHF inline correctly. Non-blocking."
+        }
+      ]
+    },
+    "prerequisites_respected": {
+      "passed": true,
+      "notes": "All prerequisite references point to topics with earlier positions in the sequence. 3.7 requires [3.1, 3.2] — both in module 1 (position 1). 3.8 requires [3.2, 3.5] — both in modules 1-2 (positions 1-2). 3.9 requires [3.2, 3.4, 3.6] — all in modules 1-2. Within-module ordering is 3.7 (position 1) → 3.8 (position 2) → 3.9 (position 3). 3.8 does not formally list 3.7 as a prerequisite, which is acceptable since 3.8 builds on 3.2+3.5 and the India context of 3.7 is not a logical dependency for the jagged frontier concept.",
+      "violations": []
+    },
+    "learning_arc": {
+      "passed": true,
+      "notes": "The module title 'AI in Context' and its narrative seed ('AI in India today / The jagged frontier / Tasks AI is superhuman at vs unreliable') are fully covered. 3.7 provides real-world application context (India deployments — healthcare, agriculture, language access). 3.8 provides the capability landscape (what AI can and cannot do, calibration, benchmarks, the jagged frontier concept). 3.9 provides the key failure mode (hallucination — mechanism, taxonomy, mitigation). Together the three topics form a coherent arc: AI deployed in the real world (3.7) → understanding where AI is reliable vs not (3.8) → understanding why AI fails confidently (3.9). The lab_activity_seed (Capability Probe across 5 task types, document hallucinations, Journal Entry #2) is directly anchored: 3.8 maps the 5-task probe, 3.9 maps the hallucination-hunt exercise, 3.7 maps language and domain testing plus Journal Entry #2."
+    },
+    "concept_consistency": {
+      "passed": true,
+      "violations": []
+    },
+    "no_duplicated_core_concepts": {
+      "passed": true,
+      "notes": "Jaccard similarity across all topic pairs is well below 0.6. 3.7 core concepts (computer vision, telemedicine, IndiaAI Mission, Kisan e-Mitra, vernacular NLP, multilingual AI, BharatGen, digital divide) share no substantive overlap with 3.8 (jagged frontier, benchmark, capability cliff, reasoning task, spatial reasoning, calibration) or 3.9 (factual hallucination, attributional hallucination, faithful-but-wrong hallucination, RLHF, overconfidence bias, grounding, provenance). 3.8 introduces 'calibration' and 3.9 uses it as a back-reference without re-introducing it as a new concept — this is correct cross-referencing, not duplication.",
+      "violations": []
+    },
+    "cross_module_drift": {
+      "passed": true,
+      "notes": "All concepts belong to the 'AI in Context' module's scope. 3.7's India deployment cases (BharatGen, IndiaAI Mission, Kisan e-Mitra, digital divide) are applied context appropriate to module 3, not to module 1 (history) or module 2 (how LLMs work). 3.8's jagged frontier and calibration are correctly positioned here: topic 3.10 in module 4 (Evaluating AI Output) uses 3.8 as a prerequisite and builds evaluation rubrics on top of the frontier concept — the split is correct. 3.9's RAG is introduced only as a forward-reference ('covered in a later topic') and no RAG content is imported; 4.3 in module 2 week-4 covers RAG in full. No content belongs in a different module.",
+      "violations": []
+    },
+    "lab_activity_alignment": {
+      "passed": true,
+      "notes": "lab_activity_seed_by_week[3]: 'Capability Probe — test Claude across 5 task types: creative, factual, logical, ethical, coding / Document what worked, what failed, where it hallucinated / Journal Entry #2'. Coverage: 3.8 hands-on (section 9) provides the full 5-task Capability Probe procedure mapped exactly to the 5 categories, references Journal Entry #2, and uses the lab framing explicitly. 3.7 hands-on (section 9) provides the language-switch probe and Journal Entry #2 link. 3.9 hands-on (section 9) provides the 'Hunt for a hallucination' exercise mapping to 'document where it hallucinated'. Full lab coverage across the three topics."
+    },
+    "scope_coherence": {
+      "passed": true,
+      "notes": "Module covers 'AI in Context' coherently across three dimensions: (1) real-world application — 3.7 grounds AI capability in live Indian deployments, making the abstract concrete; (2) capability landscape — 3.8 gives learners a mental model for where AI is reliable vs unreliable, with the jagged frontier as the organising metaphor; (3) failure modes — 3.9 explains hallucination as the most practically dangerous failure, with mitigation strategies. The three topics are complementary and non-redundant. The progression is logical for an absolute-beginner audience: encounter AI doing real things → understand the uneven capability shape → understand the specific failure mode that makes it dangerous."
+    },
+    "audience_level_consistency": {
+      "passed": true,
+      "notes": "All three topics maintain an absolute-beginner register. 3.7 uses everyday analogies (farmer in rural Telangana, cheap smartphone) and defines every technical term inline. 3.8 uses workplace analogies (hiring a colleague who passes a bar exam, coding assistant scenario) and defines all terms inline. 3.9 uses a student-citation scenario and defines RLHF, autoregressive decoding, and provenance inline. No topic assumes a concept as known that was not introduced in prior topics or defined within the topic itself. No register spike between topics. One soft finding in 3.9 corpus (RLHF attribution to 3.1) does not surface to the learner in the reading artifact.",
+      "violations": [
+        {
+          "severity": "soft",
+          "topic": "3.9",
+          "artifact": "topic_corpus.md only",
+          "finding": "Corpus section 5.4 references 'topic 3.1' as the source of RLHF, but 3.1's concepts_introduced does not include RLHF. The reading.md defines RLHF inline and is correct. Does not affect learner experience."
+        }
+      ]
+    }
+  },
+  "verdict": "PASS. Module 3-ai-in-context passes all five drift-critic checks. The three topics form a coherent 'AI in Context' arc: real-world deployment (3.7) → capability landscape and calibration (3.8) → hallucination as structural failure mode (3.9). Terminology is consistent across all corpora and reading artifacts. Prerequisites are all correctly back-referenced to earlier sequence positions. No core concept duplication above the 0.6 Jaccard threshold. No cross-module content drift. The lab activity (Capability Probe, hallucination hunt, Journal Entry #2) is fully supported by the three topics collectively. One soft finding: the 3.9 corpus (not the reading artifact) incorrectly attributes RLHF to topic 3.1; non-blocking since the reading.md defines RLHF correctly inline.",
+  "at": "2026-06-18T00:00:00Z"
+}

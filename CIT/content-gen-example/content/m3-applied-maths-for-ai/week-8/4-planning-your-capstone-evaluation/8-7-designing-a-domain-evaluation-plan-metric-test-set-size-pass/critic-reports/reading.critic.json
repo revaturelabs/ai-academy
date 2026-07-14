@@ -1,0 +1,47 @@
+{
+  "artifact": "reading",
+  "topic_id": "8.7",
+  "passed": true,
+  "at": "2026-06-22T08:10:00Z",
+  "checks": {
+    "format_discipline": {
+      "passed": true,
+      "notes": "No frontmatter (first line is H1 title). Sidecar reading.meta.json present and valid (word_count, estimated_read_minutes, citations_used, sections). Exactly six sections in order: Overview, Key Concepts, Worked Example, In Practice, Key Takeaways, References."
+    },
+    "length": {
+      "passed": true,
+      "word_count": 1825,
+      "target_word_range": [1800, 2200],
+      "notes": "DEEP profile. 1825 words in range; ~7.9 min aloud at 230 wpm consistent with deep band."
+    },
+    "citations": {
+      "passed": true,
+      "notes": "[1][2][3] all used inline; bibliography lists all three; no orphan markers, no orphan entries, no fabricated markers."
+    },
+    "forward_references": {
+      "passed": true,
+      "notes": "Confidence intervals, train/validation/test split (line 54) and K-fold cross-validation (line 69) appear as bare names with you-will-meet-later pointers only, unbolded and undefined. Correct mention-and-defer."
+    },
+    "faithfulness": {
+      "passed": true,
+      "notes": "Sampled assertions (metric-choice table, 30-100 example sizing, held-out/representative, threshold-by-stakes, both worked sketches with recall>=0.90 and accuracy+calibration) all trace to corpus. No new claims or numbers."
+    },
+    "beginner_readability": {
+      "passed": true,
+      "notes": "Terms (evaluation plan, metric, test set, labeled, held-out, representative, pass/fail threshold) defined in plain language before use. Concrete-first, short paragraphs, no jargon dumps, no academic hedging."
+    },
+    "formatting": {
+      "passed": true,
+      "notes": "Metric-choice table, threshold-by-stakes table, 6-step procedure, two worked sketches all present. Inline examples beside concepts (spam, 5-ticket noise). No walls of text (<=4 sentence paragraphs)."
+    },
+    "scope": {
+      "passed": true,
+      "notes": "Synthesis topic: reuse of 8.3/8.4/8.5/8.6 metrics to GUIDE metric choice is on-headline, not drift. No teaching beyond the title; advanced statistics name-and-deferred only. No scope_creep."
+    },
+    "diagram_embed": {
+      "passed": true,
+      "notes": "Diagram embedded inline at line 17 with descriptive alt text and caption. PNG existence confirmed by orchestrator via long-path; not raising png-absent."
+    }
+  },
+  "verdict": "PASS. Reading 8.7 meets the DEEP bar: 1825 words in range, faithful to corpus, citations [1][2][3] clean, beginner tone and scannable formatting (two tables, 6-step procedure, two worked sketches), diagram embedded inline. Advanced statistics (confidence intervals, train/validation/test split, K-fold cross-validation) are name-and-deferred only; cross-topic metric reuse is correct synthesis, not scope creep."
+}

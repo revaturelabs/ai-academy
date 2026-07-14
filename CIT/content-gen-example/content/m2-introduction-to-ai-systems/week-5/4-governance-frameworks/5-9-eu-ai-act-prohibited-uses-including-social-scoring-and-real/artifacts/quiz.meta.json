@@ -1,0 +1,54 @@
+{
+  "topic_id": "5.9",
+  "generated_at": "2026-06-22T09:10:00Z",
+  "format": "gift",
+  "question_count": 6,
+  "$bias_defense_applied": true,
+  "$shuffle_seed": "sha256(topic_id=5.9)",
+  "correct_position_distribution": [2, 0, 3, 1, 0, 3],
+  "shuffle_constraint_check": {
+    "position_counts": [2, 1, 1, 2],
+    "max_share": 0.333,
+    "max_share_threshold": 0.40,
+    "all_positions_used": true,
+    "passed": true
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "type": "mcq",
+      "objective_ref": "Explain what \"prohibited uses\" means under the EU AI Act, and connect it to the unacceptable-risk tier from 5.7.",
+      "correct_position": 2
+    },
+    {
+      "id": "q2",
+      "type": "mcq",
+      "objective_ref": "Define social scoring and explain why governments doing it is banned.",
+      "correct_position": 0
+    },
+    {
+      "id": "q3",
+      "type": "mcq",
+      "objective_ref": "Define real-time biometric surveillance and explain the narrow exceptions where it is allowed.",
+      "correct_position": 3
+    },
+    {
+      "id": "q4",
+      "type": "mcq",
+      "objective_ref": "Name the other main practices banned under Article 5, at a beginner's level.",
+      "correct_position": 1
+    },
+    {
+      "id": "q5",
+      "type": "mcq",
+      "objective_ref": "Explain why these uses are banned outright instead of merely regulated, using the harm-prevention pillar from 5.4.",
+      "correct_position": 0
+    },
+    {
+      "id": "q6",
+      "type": "mcq",
+      "objective_ref": "Define real-time biometric surveillance and explain the narrow exceptions where it is allowed.",
+      "correct_position": 3
+    }
+  ]
+}

@@ -1,0 +1,30 @@
+---
+title: Anatomy of a Colab Notebook
+config:
+  theme: base
+  themeVariables:
+    primaryColor: "#a5d8ff"
+    primaryBorderColor: "#4a9eed"
+    lineColor: "#555"
+  flowchart:
+    htmlLabels: true
+    curve: basis
+---
+flowchart TB
+    classDef start fill:#a5d8ff,stroke:#4a9eed
+    classDef hitl fill:#fff3bf,stroke:#f59e0b,stroke-width:3px
+    classDef auto fill:#d0bfff,stroke:#8b5cf6
+    classDef done fill:#b2f2bb,stroke:#22c55e
+
+    A["<b>Menu Bar</b><br/>File · Edit · Runtime · Tools"]:::start
+    B["<b>Toolbar</b><br/>+ Code &nbsp;&nbsp; + Text &nbsp;&nbsp; shortcuts"]:::start
+    C["<b>Runtime Status</b><br/>● Connected / ○ Disconnected"]:::hitl
+    D["<b>Code Cell [▶]</b><br/>Type Python here<br/>Execution count [1] [2] …"]:::auto
+    E["<b>Output Area</b><br/>Result appears here<br/>after Shift+Enter"]:::done
+    F["<b>Text Cell</b><br/>Write explanations<br/>and headings"]:::hitl
+
+    A --> B
+    B --> D
+    B --> F
+    C -.->|"monitors"| D
+    D -->|"Shift+Enter"| E

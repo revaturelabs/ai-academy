@@ -1,0 +1,30 @@
+{
+  "topic_id": "13.1",
+  "captured_at": "2026-06-13T00:00:00Z",
+  "captured_by": "namratas@revature.com",
+  "resources_source": "web_search",
+  "web_search_query": "system prompt vs user prompt LLM context setting explained",
+  "resources": [
+    {
+      "type": "url",
+      "value": "https://tetrate.io/learn/ai/system-prompts-vs-user-prompts",
+      "role": "primary",
+      "source": "web_search",
+      "notes": "Design patterns for LLM apps — covers authority, precedence, what goes where"
+    },
+    {
+      "type": "url",
+      "value": "https://hamel.dev/blog/posts/evals-faq/what-should-go-in-the-system-prompt-vs-the-user-prompt.html",
+      "role": "supporting",
+      "source": "web_search",
+      "notes": "Practitioner FAQ — practical guidance on static vs dynamic content split"
+    },
+    {
+      "type": "url",
+      "value": "https://www.prompthub.us/blog/the-difference-between-system-messages-and-user-messages-in-prompt-engineering",
+      "role": "supporting",
+      "source": "web_search",
+      "notes": "Beginner-friendly overview of system vs user message distinction"
+    }
+  ]
+}

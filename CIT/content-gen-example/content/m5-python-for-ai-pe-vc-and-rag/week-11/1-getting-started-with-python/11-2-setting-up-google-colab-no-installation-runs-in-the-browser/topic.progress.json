@@ -1,0 +1,185 @@
+{
+  "topic_id": "11.2",
+  "stage": "topic_artifacts_approved",
+  "gates": {
+    "resources_captured": true,
+    "corpus_generated": true,
+    "corpus_critic_passed": true,
+    "corpus_human_approved": true,
+    "reading_generated": true,
+    "reading_critic_passed": true,
+    "quiz_generated": true,
+    "quiz_critic_passed": true,
+    "diagram_generated": true,
+    "diagram_critic_passed": true,
+    "topic_artifacts_human_approved": true,
+    "module_drift_passed": true,
+    "week_human_approved": true,
+    "course_drift_passed": true
+  },
+  "history": [
+    {
+      "at": "2026-06-12T00:13:00Z",
+      "op": "set",
+      "gate": "resources_captured",
+      "value": true
+    },
+    {
+      "at": "2026-06-12T00:13:00Z",
+      "op": "stage",
+      "to": "awaiting_corpus"
+    },
+    {
+      "at": "2026-06-12T00:13:00Z",
+      "op": "log",
+      "msg": "Captured 5 resources (source=human) — all primary: Colab homepage, intro.ipynb, basic_features_overview.ipynb, FAQ, io.ipynb"
+    },
+    {
+      "at": "2026-06-12T00:14:00Z",
+      "op": "set",
+      "gate": "corpus_generated",
+      "value": true
+    },
+    {
+      "at": "2026-06-12T00:14:00Z",
+      "op": "stage",
+      "to": "awaiting_corpus_critic"
+    },
+    {
+      "at": "2026-06-12T00:14:00Z",
+      "op": "log",
+      "msg": "Corpus generated — standard depth, diagram=true, 2041 words."
+    },
+    {
+      "at": "2026-06-12T00:15:00Z",
+      "op": "set",
+      "gate": "corpus_critic_passed",
+      "value": false
+    },
+    {
+      "at": "2026-06-12T00:15:00Z",
+      "op": "log",
+      "msg": "Critic cycle 1 FAILED — sequence_drift: 'variable' 5x without deferral; scope_creep: print() taught in Implementation + Exercise."
+    },
+    {
+      "at": "2026-06-12T00:16:00Z",
+      "op": "log",
+      "msg": "Corpus revised (cycle 2): variable replaced with output/result language + one deferral pointer to 11.3; print() replaced with 2+2/10+5."
+    },
+    {
+      "at": "2026-06-12T00:16:00Z",
+      "op": "set",
+      "gate": "corpus_critic_passed",
+      "value": true
+    },
+    {
+      "at": "2026-06-12T00:16:00Z",
+      "op": "stage",
+      "to": "awaiting_corpus_human_review"
+    },
+    {
+      "at": "2026-06-12T00:16:00Z",
+      "op": "log",
+      "msg": "Corpus critic PASSED cycle 2 — all 6 checks green."
+    },
+    {
+      "at": "2026-06-12T00:17:00Z",
+      "op": "set",
+      "gate": "corpus_human_approved",
+      "value": true
+    },
+    {
+      "at": "2026-06-12T00:17:00Z",
+      "op": "stage",
+      "to": "corpus_approved"
+    },
+    {
+      "at": "2026-06-12T00:17:00Z",
+      "op": "log",
+      "msg": "HITL #2 complete — all sections approved, depth=standard, expected_delivery=7min, diagram=true."
+    },
+    {
+      "at": "2026-06-12T00:18:00Z",
+      "op": "set",
+      "gate": "diagram_generated",
+      "value": true
+    },
+    {
+      "at": "2026-06-12T00:18:00Z",
+      "op": "set",
+      "gate": "diagram_critic_passed",
+      "value": true
+    },
+    {
+      "at": "2026-06-12T00:18:00Z",
+      "op": "log",
+      "msg": "Diagram critic PASSED cycle 1 — 6 nodes, TB layout, all visual checks clean. PNG rendered at 1400px."
+    },
+    {
+      "at": "2026-06-12T00:19:00Z",
+      "op": "set",
+      "gate": "reading_generated",
+      "value": true
+    },
+    {
+      "at": "2026-06-12T00:19:00Z",
+      "op": "set",
+      "gate": "quiz_generated",
+      "value": true
+    },
+    {
+      "at": "2026-06-12T00:19:00Z",
+      "op": "log",
+      "msg": "Reading generated: 1268 words, 7 min, all 5 resources cited, diagram embedded. Quiz generated: 6 MCQ, positions [2,0,3,1,0,2] max_share=0.333, all length-bias ratios <1.20."
+    },
+    {
+      "at": "2026-06-12T00:20:00Z",
+      "op": "set",
+      "gate": "reading_critic_passed",
+      "value": true
+    },
+    {
+      "at": "2026-06-12T00:20:00Z",
+      "op": "log",
+      "msg": "Reading critic PASSED cycle 1 — 1268w, 7min, all 5 resources cited, no forward refs, scope clean, beginner-accessible."
+    },
+    {
+      "at": "2026-06-12T00:20:00Z",
+      "op": "set",
+      "gate": "quiz_critic_passed",
+      "value": true
+    },
+    {
+      "at": "2026-06-12T00:20:00Z",
+      "op": "log",
+      "msg": "Quiz critic PASSED cycle 1 — 6 MCQ, positional max_share=0.333, no length bias, all 6 LOs covered, distractors plausible."
+    },
+    {
+      "at": "2026-06-12T00:20:00Z",
+      "op": "stage",
+      "to": "awaiting_topic_artifacts_review"
+    },
+    {
+      "at": "2026-06-12T00:21:00Z",
+      "op": "set",
+      "gate": "topic_artifacts_human_approved",
+      "value": true
+    },
+    {
+      "at": "2026-06-12T00:21:00Z",
+      "op": "stage",
+      "to": "topic_artifacts_approved"
+    },
+    {
+      "at": "2026-06-12T00:21:00Z",
+      "op": "log",
+      "msg": "HITL #3 approved — reading 1268w/7min, quiz 6MCQ/bias-defended, diagram 6-node TB anatomy. No carry-over failures."
+    },
+    {
+      "at": "2026-06-23T17:39:26Z",
+      "op": "set",
+      "gate": "course_drift_passed",
+      "value": true
+    }
+  ]
+}

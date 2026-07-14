@@ -1,0 +1,30 @@
+{
+  "topic_id": "10.4",
+  "captured_at": "2026-06-12T00:00:00Z",
+  "captured_by": "namratas@revature.com",
+  "resources_source": "web_search",
+  "web_search_query": "automation complacency high accuracy AI human vigilance oversight",
+  "resources": [
+    {
+      "type": "url",
+      "value": "https://www.sciencedirect.com/science/article/pii/S2949882124000598",
+      "role": "primary",
+      "source": "web_search",
+      "notes": "Peer-reviewed study on efficiency-accountability tradeoff and over-reliance effects in AI integration"
+    },
+    {
+      "type": "url",
+      "value": "https://jolt.law.harvard.edu/digest/redefining-the-standard-of-human-oversight-for-ai-negligence",
+      "role": "supporting",
+      "source": "web_search",
+      "notes": "Harvard JOLT — legal/academic framing of human oversight standards for AI negligence"
+    },
+    {
+      "type": "url",
+      "value": "https://www.uxmatters.com/mt/archives/2025/12/ux-research-insights-balancing-ai-automation-and-human-oversight-in-it-operations.php",
+      "role": "supporting",
+      "source": "web_search",
+      "notes": "UX research insights on balancing automation and human oversight in IT operations"
+    }
+  ]
+}

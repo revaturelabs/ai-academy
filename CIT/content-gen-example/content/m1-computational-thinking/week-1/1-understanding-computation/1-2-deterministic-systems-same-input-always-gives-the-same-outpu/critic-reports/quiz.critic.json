@@ -1,0 +1,121 @@
+{
+  "topic_id": "1.2",
+  "cycle": 2,
+  "passed": true,
+  "checks": {
+    "positional_bias": {
+      "passed": true,
+      "distribution": { "0": 1, "1": 1, "2": 2, "3": 1 },
+      "positions_by_question": { "1.2-Q1": 2, "1.2-Q2": 0, "1.2-Q3": 3, "1.2-Q4": 1, "1.2-Q5": 2 },
+      "max_share": 0.40,
+      "max_share_position": 2,
+      "total_mcq": 5,
+      "meta_gift_desync": false,
+      "note": "max_share is exactly 0.40; threshold is > 0.40 (strict), so this passes. All 4 positions (0–3) represented. Matches sidecar correct_position_distribution [2,0,3,1,2]."
+    },
+    "length_bias": {
+      "passed": true,
+      "longest_correct_rate": 0.00,
+      "baseline": 0.25,
+      "threshold": 0.40,
+      "total_mcq": 5,
+      "per_question": {
+        "1.2-Q1": {
+          "correct_len": 104,
+          "distractor_lengths": [82, 97, 90],
+          "distractor_mean": 89.67,
+          "threshold_len": 107.60,
+          "longest_correct": false
+        },
+        "1.2-Q2": {
+          "correct_len": 103,
+          "distractor_lengths": [101, 99, 107],
+          "distractor_mean": 102.33,
+          "threshold_len": 122.80,
+          "longest_correct": false
+        },
+        "1.2-Q3": {
+          "correct_len": 133,
+          "distractor_lengths": [114, 127, 170],
+          "distractor_mean": 137.00,
+          "threshold_len": 164.40,
+          "longest_correct": false,
+          "note": "D3 (len=170) is longer than the correct answer; length bias direction fully reversed from cycle 1."
+        },
+        "1.2-Q4": {
+          "correct_len": 138,
+          "distractor_lengths": [133, 134, 131],
+          "distractor_mean": 132.67,
+          "threshold_len": 159.20,
+          "longest_correct": false
+        },
+        "1.2-Q5": {
+          "correct_len": 131,
+          "distractor_lengths": [110, 113, 116],
+          "distractor_mean": 113.00,
+          "threshold_len": 135.60,
+          "longest_correct": false
+        }
+      },
+      "cycle_1_rate": 0.60,
+      "cycle_2_rate": 0.00,
+      "fix_confirmed": true,
+      "fix_note": "Cycle-1 failing questions Q3/Q4/Q5 all resolved. Correct-answer text shortened in each; now within 1.20x distractor mean for all five questions."
+    },
+    "distractor_plausibility": {
+      "passed": true,
+      "absurd_rate": 0.00,
+      "total_distractors": 15,
+      "absurd_count": 0,
+      "distractor_scores": [
+        { "question": "1.2-Q1", "distractor_index": 0, "score": 3, "text_stripped": "The calculator runs on electricity, so the result is fixed by the hardware it uses" },
+        { "question": "1.2-Q1", "distractor_index": 1, "score": 3, "text_stripped": "The calculation is simple enough that any person could work it out, making the result predictable" },
+        { "question": "1.2-Q1", "distractor_index": 2, "score": 3, "text_stripped": "The calculator has been tested many times, which proves it is reliable enough to be trusted" },
+        { "question": "1.2-Q2", "distractor_index": 0, "score": 4, "text_stripped": "It proves the system will always give correct answers, because it was consistent across two separate runs" },
+        { "question": "1.2-Q2", "distractor_index": 1, "score": 3, "text_stripped": "It tells you the system has stored your previous answer and replayed it rather than recalculating it" },
+        { "question": "1.2-Q2", "distractor_index": 2, "score": 4, "text_stripped": "It shows the system is non-deterministic, because a random system would have given a different answer by now" },
+        { "question": "1.2-Q3", "distractor_index": 0, "score": 3, "text_stripped": "A classroom countdown timer, an AI poem writer, and a payroll calculator — because all three are run on computers" },
+        { "question": "1.2-Q3", "distractor_index": 1, "score": 3, "text_stripped": "A search engine result page, a weather forecast model, and a currency converter — because all three deal with numbers and data" },
+        { "question": "1.2-Q3", "distractor_index": 2, "score": 3, "text_stripped": "A vending machine (fixed price list), a postcode lookup (fixed table), and an AI chatbot answering factual questions — because all three give answers reliably most of the time" },
+        { "question": "1.2-Q4", "distractor_index": 0, "score": 4, "text_stripped": "The colleague is correct — a deterministic system must always output the same number, so any variation proves randomness is involved" },
+        { "question": "1.2-Q4", "distractor_index": 1, "score": 3, "text_stripped": "The colleague is correct — a truly deterministic payroll system should ignore any changes in working hours and always pay the same amount" },
+        { "question": "1.2-Q4", "distractor_index": 2, "score": 2, "text_stripped": "The colleague is wrong because payroll law requires systems to be deterministic, so the output difference must be a user-entry mistake" },
+        { "question": "1.2-Q5", "distractor_index": 0, "score": 2, "text_stripped": "Because the new system would be far more expensive to build and the hospital does not have the budget for it" },
+        { "question": "1.2-Q5", "distractor_index": 1, "score": 2, "text_stripped": "Because regulators require all medical software to be written in programming languages that cannot produce variable outputs" },
+        { "question": "1.2-Q5", "distractor_index": 2, "score": 2, "text_stripped": "Because the hospital's existing system is newer and technically more capable, making any replacement an unnecessary downgrade" }
+      ],
+      "weakest_questions": ["1.2-Q5"],
+      "note": "Q5 distractors score 2 (wrong but unrelated to direct determinism misconceptions). Not absurd — beginner can dismiss without outside knowledge. absurd_rate=0.00."
+    },
+    "objective_coverage": {
+      "passed": true,
+      "uncovered_objectives": [],
+      "orphan_questions": [],
+      "coverage_map": [
+        { "lo_index": 1, "lo_text": "Define what a deterministic system is in plain, everyday terms.", "covered_by": ["1.2-Q1"] },
+        { "lo_index": 2, "lo_text": "Explain why the phrase 'same input always gives the same output' is the test for determinism.", "covered_by": ["1.2-Q2"] },
+        { "lo_index": 3, "lo_text": "Give at least three real-world examples of deterministic systems and identify why each one qualifies.", "covered_by": ["1.2-Q3"] },
+        { "lo_index": 4, "lo_text": "Distinguish a deterministic system from one where the output can vary — without needing to define the technical details of that variation.", "covered_by": ["1.2-Q4"] },
+        { "lo_index": 5, "lo_text": "Explain why predictability and reproducibility matter in practical computing systems.", "covered_by": ["1.2-Q5"] }
+      ]
+    },
+    "beginner_fairness_scope": {
+      "passed": true,
+      "jargon_in_stem": [],
+      "out_of_scope_questions": [],
+      "unfair_distractors": [],
+      "soft_findings": [
+        {
+          "question": "1.2-Q5",
+          "finding": "Distractors reference 'programming languages that cannot produce variable outputs' and 'system age/capability' — unrelated to core determinism misconceptions, but beginner can dismiss without prior knowledge. Weak but not unfair."
+        }
+      ]
+    }
+  },
+  "auto_correction_applied": {
+    "shuffle_round_2": false,
+    "length_rebalance": false
+  },
+  "verdict": "Pass — all five checks clean. Length-bias fix confirmed: longest_correct_rate dropped from 0.60 (cycle 1) to 0.00 (cycle 2). Q3/Q4/Q5 correct answers shortened; all within 1.20x distractor mean. Positional bias max_share=0.40 at threshold. All 5 LOs covered 1-to-1. Distractor plausibility absurd_rate=0.00. Beginner-fairness and on-headline scope clear.",
+  "at": "2026-06-19T00:00:00Z"
+}

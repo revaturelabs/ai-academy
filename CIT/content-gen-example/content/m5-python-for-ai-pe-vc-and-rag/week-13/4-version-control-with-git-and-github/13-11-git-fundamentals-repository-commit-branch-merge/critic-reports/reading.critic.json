@@ -1,0 +1,114 @@
+{
+  "critic": "reading-critic",
+  "topic_id": "13.11",
+  "title": "Git fundamentals — repository, commit, branch, merge",
+  "run_at": "2026-06-14T00:00:00Z",
+  "profile": "standard",
+  "target_word_range": [1200, 1600],
+  "target_minute_range": [6, 8],
+  "wpm_used": 200,
+  "passed": true,
+  "verdict": "PASS with 1 soft finding. The reading is well-structured, faithfully traces to the corpus, stays within scope (repository/commit/branch/merge only), and meets the standard depth profile (1312 words, 6.56 min at 200 wpm). All six fixed sections are present in order, no frontmatter, sidecar parses. Primary resource [1] (git-scm.com) cited six times. No forward references. All ten sampled assertions trace to the corpus. No assessment references. One soft defect: the inline diagram reference at line 83 uses a broken relative path `../artifacts/diagram.png`; since reading.md lives inside `artifacts/`, the correct relative path is `diagram.png`. This does not affect text quality or scope but will break image rendering. Gold examples on record (2-1, 3-4 slots) are for different topics; written standards were the operative bar — reading meets them.",
+  "checks": {
+    "format_discipline": {
+      "passed": true,
+      "frontmatter_present": false,
+      "meta_sidecar_missing": false,
+      "section_template_violation": false,
+      "sections_found": ["Overview", "Key Concepts", "Worked Example", "In Practice", "Key Takeaways", "References"],
+      "sections_expected": ["Overview", "Key Concepts", "Worked Example", "In Practice", "Key Takeaways", "References"],
+      "notes": "All six fixed sections present in correct order. No frontmatter. Sidecar exists and parses with all required fields."
+    },
+    "length": {
+      "passed": true,
+      "word_count_meta": 1312,
+      "word_count_in_range": true,
+      "estimated_minutes_at_200wpm": 6.56,
+      "estimated_minutes_at_230wpm": 5.7,
+      "minutes_in_range_at_200wpm": true,
+      "minutes_in_range_at_230wpm": false,
+      "notes": "Word count 1312 is within the 1200–1600 target. At the artifact-mix.json authoritative rate of 200 wpm, reading time is 6.56 min, within the 6–8 min window. At 230 wpm the reading falls to 5.7 min, just under the 6 min floor. The artifact-mix.json WPM (200) is the authoritative standard and passes. Soft observation only."
+    },
+    "citations": {
+      "passed": true,
+      "primary_resource_cited": true,
+      "primary_resource_url": "https://git-scm.com/book/en/v2/Git-Branching-Basic-Branching-and-Merging",
+      "primary_resource_marker": "[1]",
+      "primary_citation_count": 6,
+      "markers_used": [1, 2, 3],
+      "bibliography_entries": [1, 2, 3],
+      "orphan_markers": [],
+      "orphan_bibliography_entries": [],
+      "notes": "Primary resource [1] cited at lines 11, 28, 38, 55, 65, 79. All inline markers have matching bibliography entries; no orphans either direction."
+    },
+    "no_forward_references": {
+      "passed": true,
+      "findings": [],
+      "notes": "GitHub/clone/push/pull named and deferred in a single sentence at line 156 ('not covered here') — this is the correct mention-and-defer pattern. Merge conflict introduced at line 92 with a one-sentence deferral. HEAD introduced within this topic's own scope. No concepts from future topics taught."
+    },
+    "faithfulness": {
+      "passed": true,
+      "assertions_sampled": 10,
+      "unsupported_assertions": 0,
+      "details": [
+        {"assertion": "Repository has two parts: working directory and .git folder", "line": "13-17", "corpus_ref": "5.1", "supported": true},
+        {"assertion": "Commit is a permanent snapshot of all files at a specific moment", "line": "28", "corpus_ref": "5.2", "supported": true},
+        {"assertion": "Pressing Save analogy for commit", "line": "30", "corpus_ref": "5.2", "supported": true},
+        {"assertion": "Each commit carries unique ID, commit message, pointer to previous commit", "line": "34-36", "corpus_ref": "5.2", "supported": true},
+        {"assertion": "main branch (or master on older systems)", "line": "57", "corpus_ref": "5.3", "supported": true},
+        {"assertion": "Commit chain diagram A→B→C→HEAD", "line": "49-51", "corpus_ref": "5.2", "supported": true},
+        {"assertion": "Merge commit is a special commit with two parents", "line": "92", "corpus_ref": "5.4", "supported": true},
+        {"assertion": "experiment-few-shot / experiment-chain-of-thought branch pattern", "line": "163-164", "corpus_ref": "7", "supported": true},
+        {"assertion": "Commit discipline Do/Don't table", "line": "170-174", "corpus_ref": "8", "supported": true},
+        {"assertion": "Merge when the branch goal is complete and code works", "line": "182", "corpus_ref": "8", "supported": true}
+      ]
+    },
+    "beginner_readability": {
+      "passed": true,
+      "undefined_terms": [],
+      "jargon_dump": null,
+      "abstract_first": null,
+      "academic_register": null,
+      "soft_findings": [],
+      "notes": "All non-everyday terms defined on first use with bold-term format. Concrete-first pattern followed throughout (analogy before abstraction for commit and branch). No hedging language. Sentences are direct. Minor observation: the commit subsection introduces three sub-items (unique ID, commit message, pointer) together in a numbered list — mitigated by list formatting, not a jargon dump."
+    },
+    "formatting": {
+      "passed": true,
+      "wall_of_text": null,
+      "unlisted_sequence": null,
+      "no_inline_examples": null,
+      "soft_findings": [
+        {
+          "code": "broken_image_path",
+          "severity": "soft",
+          "line_range": "83-84",
+          "detail": "Diagram image reference uses path `../artifacts/diagram.png`. Since reading.md is located inside the `artifacts/` directory, the correct relative path to the sibling diagram file is `diagram.png`. The current path resolves one level above artifacts and back in, which will break image rendering in most Markdown renderers.",
+          "fix": "Change `../artifacts/diagram.png` to `diagram.png` on line 83."
+        }
+      ],
+      "notes": "No paragraph exceeds 4 sentences. Worked Example uses numbered steps throughout. Inline examples present within Key Concepts sections (commit message table, branch diagram). Bold-term definitions used consistently."
+    },
+    "assessment_references": {
+      "passed": true,
+      "findings": [],
+      "notes": "No assessment IDs, due weeks, or grade weights appear in the reading artifact. (Note: the corpus section 7 references Assessment 4, but that text was correctly excluded from the reading.)"
+    },
+    "scope": {
+      "passed": true,
+      "scope_creep": [],
+      "notes": "Scope held to exactly the four headline concepts: repository, commit, branch, merge. GitHub/remote operations named and deferred in one sentence. Merge conflict named and deferred in one sentence. Staging (`git add`) treated as a mechanical sub-step of commit, which is within scope and supported by the corpus Implementation section."
+    }
+  },
+  "soft_findings_count": 1,
+  "hard_fail_triggered": false,
+  "escalation_check": {
+    "scope_creep_found": false,
+    "checks_5_6_distinct_findings": 1,
+    "hard_fail_threshold": 3,
+    "escalated": false
+  },
+  "gold_example_match": {
+    "applicable_example": null,
+    "notes": "No gold example exists for topic 13.11 or its module. Operative bar was the written standards in artifact-mix.json + reading-critic SKILL.md. Reading meets the structural, scope, readability, and formatting requirements of those standards."
+  }
+}

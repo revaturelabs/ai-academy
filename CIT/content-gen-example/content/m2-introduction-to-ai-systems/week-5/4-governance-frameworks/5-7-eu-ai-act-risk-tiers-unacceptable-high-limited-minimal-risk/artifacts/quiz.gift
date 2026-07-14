@@ -1,0 +1,49 @@
+$CATEGORY: CIT/M2/week-5/5.7-5-7-eu-ai-act-risk-tiers-unacceptable-high-limited-minimal-risk
+
+::q1:: Which statement best describes what the EU AI Act (European Union Artificial Intelligence Act) is? {
+~A voluntary code of conduct that AI companies may choose to follow if they wish.#No — the Act is a binding law, not an optional guideline that organizations can ignore.
+~A complete ban that makes all artificial intelligence systems illegal across Europe.#No — only the top tier is banned; most AI is allowed, sometimes with rules.
+=A binding law that sorts AI systems by how much risk they pose and applies heavier rules to higher risk.#Correct — the Act is the first broad AI law, and its core idea is risk-based regulation.
+~A technical standard describing how to build artificial intelligence models more accurately.#No — the Act governs how AI may be used, not the engineering of how models are built.
+#### Tests the plain definition of the EU AI Act and its risk-based core idea (corpus §4, §5.1).
+}
+
+::q2:: The EU AI Act sorts AI systems into four risk tiers. What is the correct order from most dangerous to least dangerous? {
+=Unacceptable, high, limited, minimal.#Correct — the pyramid runs from banned at the top down to no mandatory rules at the bottom.
+~Minimal, limited, high, unacceptable.#No — this is the reverse order; unacceptable is the most dangerous tier, not the least.
+~High, unacceptable, minimal, limited.#No — unacceptable sits above high, and limited sits above minimal.
+~Limited, minimal, high, unacceptable.#No — the tiers are not ordered this way; unacceptable is the most dangerous.
+#### Tests naming the four tiers and ordering them most to least dangerous (corpus §5.2-§5.6).
+}
+
+::q3:: A government runs a system that rates citizens by their behavior and grants or denies them services based on that score. Which risk tier does this fall into under the EU AI Act? {
+~High risk — it is allowed but only under strict documentation and oversight rules.#No — social scoring by governments is not merely controlled; it is forbidden outright.
+~Limited risk — it only has to disclose to citizens that AI is being used.#No — disclosure is the limited-risk rule; government social scoring is banned, not just disclosed.
+~Minimal risk — most everyday AI systems carry no mandatory rules at all.#No — this use is a clear threat to rights, the opposite of minimal risk.
+=Unacceptable risk — government social scoring is banned outright under the Act.#Correct — it strikes at human dignity and freedom, so the top tier prohibits it entirely.
+#### Tests mapping a social-scoring example to the unacceptable (banned) tier (corpus §5.2, §5.6).
+}
+
+::q4:: Under the EU AI Act, a high-risk AI system (such as hiring or healthcare AI) is allowed but tightly controlled. At a high level, what must its provider do before it is used? {
+~Nothing special, since high-risk simply means the system is technically advanced.#No — high-risk is about potential harm to people, not how clever the technology is.
+=Keep documentation, test the system, and provide human oversight so a person can review and override it.#Correct — these are the headline obligations the law places on high-risk systems before launch.
+~Only display a small label telling users that an AI system is involved.#No — that disclosure-only rule belongs to the limited-risk tier, not high-risk.
+~Pay a fee to the government and then deploy the system with no further checks.#No — the law requires testing, records, and oversight, not a one-time payment.
+#### Tests the high-level obligations on high-risk systems\: documentation, testing, human oversight (corpus §5.3, §10).
+}
+
+::q5:: A learner claims, "An AI spam filter is minimal risk, so it must still pass an official conformity check before launch." What is wrong with this claim? {
+=Minimal-risk systems carry no mandatory rules, so a spam filter needs no conformity check.#Correct — conformity assessment is a high-risk obligation; minimal-risk systems are free of mandatory rules.
+~Nothing is wrong, because every AI system under the Act must pass a conformity check.#No — only high-risk systems must pass a conformity assessment, not every system.
+~A spam filter is actually limited risk, so it must instead be labeled as AI to users.#No — a spam filter is minimal risk, and the labeling duty belongs to the limited-risk tier.
+~A spam filter is actually high risk, because filtering email seriously affects people's lives.#No — a spam filter does not seriously harm people if it fails, so it stays minimal risk.
+#### Tests the minimal-risk tier and the misconception that all systems need a conformity check (corpus §5.3, §5.5).
+}
+
+::q6:: How does the EU AI Act relate to the four pillars from topic 5.4 (fairness, transparency, accountability, harm prevention)? {
+~It replaces the four pillars with an entirely new and unrelated set of ethical goals.#No — the Act does not invent new ethics; it builds on the pillars you already know.
+~It ignores the pillars and instead focuses only on making AI systems run faster.#No — the Act is about risk and rights, not the speed or performance of AI systems.
+~It applies the pillars only to companies based inside the European Union.#No — the pillars are turned into rules about AI use and risk, not a company-location test.
+=It turns the four pillars into enforceable law\: bans worst harms, forces oversight, requires AI disclosure.#Correct — the Act gives the familiar ethical pillars legal teeth across its risk tiers.
+#### Tests how the Act enforces the four pillars from 5.4 (corpus §5.7, §10).
+}

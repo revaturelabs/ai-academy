@@ -1,0 +1,69 @@
+{
+  "topic_id": "9.4",
+  "generated_at": "2026-06-12T00:00:00Z",
+  "format": "gift",
+  "question_count": 6,
+  "depth_profile": "standard",
+  "include_short_answer": false,
+  "$bias_defense_applied": true,
+  "$shuffle_seed": "topic_id='9.4' hash-xor-salt=0 — positions assigned deterministically: q1=1, q2=3, q3=0, q4=2, q5=1, q6=2; max_share=2/6=0.33 (<=0.40 pass); all 4 positions used (pass); longest_correct_rate=1/6=0.17 (<=0.40 pass)",
+  "correct_position_distribution": [1, 3, 0, 2, 1, 2],
+  "correct_position_counts": {"pos0": 1, "pos1": 2, "pos2": 2, "pos3": 1},
+  "length_bias_check": {
+    "longest_correct_rate": 0.17,
+    "longest_correct_count": 1,
+    "longest_correct_questions": ["9-4-q2"],
+    "per_question_word_counts": {
+      "9-4-q1": {"correct": 19, "distractor_mean": 16.3, "threshold": 19.6, "correct_is_longest": false},
+      "9-4-q2": {"correct": 26, "distractor_mean": 20.0, "threshold": 24.0, "correct_is_longest": true},
+      "9-4-q3": {"correct": 20, "distractor_mean": 19.7, "threshold": 23.6, "correct_is_longest": false},
+      "9-4-q4": {"correct": 22, "distractor_mean": 20.0, "threshold": 24.0, "correct_is_longest": false},
+      "9-4-q5": {"correct": 28, "distractor_mean": 25.3, "threshold": 30.4, "correct_is_longest": false},
+      "9-4-q6": {"correct": 24, "distractor_mean": 20.0, "threshold": 24.0, "correct_is_longest": false}
+    }
+  },
+  "questions": [
+    {
+      "id": "9-4-q1",
+      "type": "mcq",
+      "stem_preview": "Anchoring bias is best described as the tendency to",
+      "objective_ref": "LO1 — Define anchoring bias in plain language and identify its two core components: the initial anchor and the adjustment heuristic",
+      "correct_position": 1
+    },
+    {
+      "id": "9-4-q2",
+      "type": "mcq",
+      "stem_preview": "Which two factors, working together, best explain why people stop adjusting too soon",
+      "objective_ref": "LO2 — Explain why the adjustment heuristic consistently produces insufficient adjustment — why people stop adjusting too soon",
+      "correct_position": 3
+    },
+    {
+      "id": "9-4-q3",
+      "type": "mcq",
+      "stem_preview": "In the Tversky and Kahneman wheel-of-fortune experiment, participants who saw the wheel land on 65",
+      "objective_ref": "LO3 — Recall the original Tversky and Kahneman wheel-of-fortune experiment as empirical evidence that anchoring bias is real, measurable, and independent of the relevance of the anchor",
+      "correct_position": 0
+    },
+    {
+      "id": "9-4-q4",
+      "type": "mcq",
+      "stem_preview": "A project manager asks an AI tool to estimate a software project budget",
+      "objective_ref": "LO4 — Identify at least three ways anchoring bias appears in AI-assisted work, including first-pass AI outputs acting as anchors",
+      "correct_position": 2
+    },
+    {
+      "id": "9-4-q5",
+      "type": "mcq",
+      "stem_preview": "A colleague says: 'Both anchoring bias and confirmation bias are cognitive biases, so they must work the same way'",
+      "objective_ref": "LO5 — Distinguish anchoring bias from confirmation bias by describing the mechanism that drives each one",
+      "correct_position": 1
+    },
+    {
+      "id": "9-4-q6",
+      "type": "mcq",
+      "stem_preview": "You are about to ask an AI assistant to suggest a project timeline",
+      "objective_ref": "LO6 — Apply awareness of anchoring bias to a self-check question: 'What number or starting point did I see first, and am I still too close to it?'",
+      "correct_position": 2
+    }
+  ]
+}

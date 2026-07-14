@@ -1,0 +1,30 @@
+{
+  "verdict": "pass",
+  "cycles_used": 2,
+  "findings": [
+    {
+      "code": "looks_good",
+      "where": "whole diagram",
+      "detail": "Reads cleanly as the three calibration states arranged on a vertical axis that echoes the reliability-diagram geometry: Above the diagonal (underconfident) at top, On the diagonal (well-calibrated, green) as the central reference, Below the diagonal (overconfident, red) at bottom. Edge labels 'more accurate than it claims' / 'less accurate than it claims' make the deviation direction explicit. Diagonal is the visual reference; below = dangerous overconfident case is carried by both color (red, thick border) and text. Axis labels (x = stated confidence, y = observed accuracy) stated in the title banner."
+    }
+  ],
+  "cycle_history": [
+    {
+      "cycle": 1,
+      "verdict": "fail",
+      "code": "layout_wrong_for_intent",
+      "detail": "First version laid out 3 independent column-pairs (diagonal | above | below) so the diagonal did not read as the central REFERENCE the other two states deviate from. Geometry of the reliability diagram (above = higher accuracy, below = lower accuracy) was not echoed. Revised to a single vertical path with the diagonal at center."
+    }
+  ],
+  "stats": {
+    "nodes": 3,
+    "edges": 2,
+    "layout": "flowchart TB (single vertical path: above -> diagonal -> below)",
+    "labels": ["Above the diagonal", "On the diagonal", "Below the diagonal"],
+    "concepts_mapped": ["above the diagonal / underconfident", "on the diagonal / well-calibrated", "below the diagonal / overconfident", "stated confidence vs observed accuracy", "the diagonal reference"],
+    "color_tiers": "green = on diagonal (well-calibrated, trustworthy); red = below (overconfident, dangerous); blue = above (underconfident)",
+    "png_path": "artifacts/diagram.png",
+    "png_dims": "approx 1400px wide",
+    "scope_creep_check": "no ECE / temperature-scaling / multi-class / confusion-matrix nodes present"
+  }
+}

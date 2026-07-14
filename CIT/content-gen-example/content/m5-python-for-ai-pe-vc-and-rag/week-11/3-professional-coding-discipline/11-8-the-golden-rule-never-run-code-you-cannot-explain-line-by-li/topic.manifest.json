@@ -1,0 +1,45 @@
+{
+  "type": "topic",
+  "id": "11.8",
+  "title": "The golden rule — never run code you cannot explain line by line",
+  "slug": "11-8-the-golden-rule-never-run-code-you-cannot-explain-line-by-li",
+  "position_in_module": 2,
+  "week_num": 11,
+  "session_name": "Python Foundations I",
+  "module": {
+    "position": 3,
+    "slug": "3-professional-coding-discipline",
+    "title": "Professional Coding Discipline"
+  },
+  "course": {
+    "code": "M5",
+    "slug": "m5-python-for-ai-pe-vc-and-rag",
+    "title": "Python for AI, PE, VC and RAG"
+  },
+  "next_assessment": {
+    "id": "A4",
+    "due_week": 13,
+    "title": "Python and Prompt Engineering Portfolio",
+    "weight": "20%"
+  },
+  "paths": {
+    "corpus": "topic_corpus.md",
+    "resources": "topic.resources.json",
+    "progress": "topic.progress.json",
+    "artifacts_dir": "artifacts/",
+    "critic_reports_dir": "critic-reports/"
+  },
+  "artifact_plan": {
+    "diagram": true,
+    "diagram_intent": "Two-path contrast: 'paste-and-run' path (AI generates code → run immediately → silent failure possible) vs 'golden rule' path (AI generates code → read → four-question test per line → run → confirmed output), showing the decision gate between the two paths.",
+    "confirmed_profile": "standard",
+    "reading_word_range": [1200, 1600],
+    "reading_min_minutes": 6,
+    "reading_max_minutes": 8,
+    "quiz_min_questions": 5,
+    "quiz_max_questions": 6,
+    "quiz_include_short_answer": false
+  },
+  "expected_delivery_minutes": 7,
+  "status": "corpus_drafted"
+}

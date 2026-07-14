@@ -1,0 +1,116 @@
+{
+  "passed": true,
+  "topic_id": "12.10",
+  "cycle": 2,
+  "checks": {
+    "positional_bias": {
+      "passed": true,
+      "distribution_from_gift": {"0": 2, "1": 2, "2": 1, "3": 1},
+      "distribution_from_sidecar": {"0": 2, "1": 2, "2": 1, "3": 1},
+      "meta_gift_desync": false,
+      "max_share": 0.333,
+      "total_mcq": 6,
+      "threshold": 0.40,
+      "note": "Re-derived positions match sidecar exactly. q2+q5 at 0, q3+q6 at 1, q1 at 2, q4 at 3."
+    },
+    "length_bias": {
+      "passed": true,
+      "longest_correct_rate": 0.0,
+      "baseline": 0.25,
+      "threshold": 0.40,
+      "per_question": [
+        {
+          "id": "q1",
+          "correct_len": 87,
+          "mean_distractor_len": 89.33,
+          "ratio": 0.97,
+          "longest_correct": false
+        },
+        {
+          "id": "q2",
+          "correct_len": 80,
+          "mean_distractor_len": 82.33,
+          "ratio": 0.97,
+          "longest_correct": false
+        },
+        {
+          "id": "q3",
+          "correct_len": 138,
+          "mean_distractor_len": 136.33,
+          "ratio": 1.01,
+          "longest_correct": false
+        },
+        {
+          "id": "q4",
+          "correct_len": 98,
+          "mean_distractor_len": 82.0,
+          "ratio": 1.195,
+          "longest_correct": false,
+          "note": "Ratio 1.195 is just under the 1.20 threshold — clean."
+        },
+        {
+          "id": "q5",
+          "correct_len": 160,
+          "mean_distractor_len": 142.33,
+          "ratio": 1.124,
+          "longest_correct": false
+        },
+        {
+          "id": "q6",
+          "correct_len": 134,
+          "mean_distractor_len": 128.0,
+          "ratio": 1.047,
+          "longest_correct": false
+        }
+      ],
+      "note": "All 6 questions clean. No correct answer exceeds mean_distractor_len * 1.20. Cycle-1 failure resolved by revision."
+    },
+    "distractor_plausibility": {
+      "passed": true,
+      "absurd_rate": 0.0,
+      "total_distractors": 18,
+      "absurd_count": 0,
+      "weakest_questions": [
+        {
+          "id": "q5",
+          "distractor": "It must be kept secret because it contains your model preferences; store it in the messages array so it is included with each request automatically",
+          "score": 2,
+          "note": "Borderline score-2: placing key in messages array is clearly wrong, but clause about model preferences is a plausible (if incorrect) beginner belief. Not absurd (score 1)."
+        }
+      ]
+    },
+    "objective_coverage": {
+      "passed": true,
+      "learning_objectives": [
+        "Identify the five parts of an Anthropic API call: the model name, the messages array, the system prompt, the user prompt, and the API key.",
+        "Describe what the messages array is, and explain why each item in that array must have a role field and a content field.",
+        "Explain the difference between a system prompt and a user prompt, and state when you would use each.",
+        "Describe what the model parameter controls and give an example of a valid model name.",
+        "Explain what an API key is, why it must be kept secret, and how it is used to authenticate a request.",
+        "Read a skeleton request structure and correctly label each field."
+      ],
+      "coverage_map": [
+        {"lo_index": 1, "lo_text": "Identify the five parts of an Anthropic API call...", "covered_by": ["q1"]},
+        {"lo_index": 2, "lo_text": "Describe what the messages array is...", "covered_by": ["q2"]},
+        {"lo_index": 3, "lo_text": "Explain the difference between a system prompt and a user prompt...", "covered_by": ["q3"]},
+        {"lo_index": 4, "lo_text": "Describe what the model parameter controls...", "covered_by": ["q4"]},
+        {"lo_index": 5, "lo_text": "Explain what an API key is, why it must be kept secret...", "covered_by": ["q5"]},
+        {"lo_index": 6, "lo_text": "Read a skeleton request structure and correctly label each field.", "covered_by": ["q6"]}
+      ],
+      "uncovered_objectives": [],
+      "orphan_questions": []
+    },
+    "beginner_fairness_scope": {
+      "passed": true,
+      "jargon_in_stem": [],
+      "out_of_scope_questions": [],
+      "unfair_distractors": [],
+      "note": "All stems use plain language. Acronyms API and JSON are defined in prerequisite topic 12.9 (referenced in corpus §2). Every question tests only concepts taught in this topic (corpus §5.1–§5.6). No question requires knowledge from beyond this topic."
+    }
+  },
+  "auto_correction_applied": {
+    "shuffle_round_2": false
+  },
+  "verdict": "Pass — all checks clean. Positional distribution balanced (max_share 0.333, no position >40%). Zero length-bias flags (all correct-answer ratios under 1.20 threshold; cycle-1 failure of 4/6 questions resolved). Zero absurd distractors (absurd_rate 0.0). All 6 LOs covered, no orphan questions. All questions on-headline and beginner-fair. Sidecar desync from cycle-1 report is resolved — gift and sidecar now agree.",
+  "at": "2026-06-15T00:00:00Z"
+}

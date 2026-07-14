@@ -1,0 +1,30 @@
+{
+  "topic_id": "13.5",
+  "captured_at": "2026-06-14T00:00:00Z",
+  "captured_by": "namratas@revature.com",
+  "resources_source": "web_search",
+  "web_search_query": "prompt engineering constraints negative instructions telling AI what not to do LLM",
+  "resources": [
+    {
+      "type": "url",
+      "value": "https://mitsloanedtech.mit.edu/ai/basics/effective-prompts/",
+      "role": "primary",
+      "source": "web_search",
+      "notes": "MIT Sloan university teaching resource on effective prompting including constraint techniques"
+    },
+    {
+      "type": "url",
+      "value": "https://help.openai.com/en/articles/6654000-best-practices-for-prompt-engineering-with-the-openai-api",
+      "role": "supporting",
+      "source": "web_search",
+      "notes": "OpenAI first-party official guidance covering negative instruction and constraint patterns"
+    },
+    {
+      "type": "url",
+      "value": "https://www.palantir.com/docs/foundry/aip/best-practices-prompt-engineering",
+      "role": "supporting",
+      "source": "web_search",
+      "notes": "Palantir enterprise official docs covering constraint and instruction structuring for LLMs"
+    }
+  ]
+}

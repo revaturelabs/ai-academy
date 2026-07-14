@@ -1,0 +1,97 @@
+{
+  "critic": "reading-critic",
+  "topic_id": "3.6",
+  "title": "Temperature and Sampling — Why the Same Question Gives Different Answers",
+  "run_at": "2026-06-17T00:00:00Z",
+  "verdict": "PASS",
+  "passed": true,
+  "hard_fails": [],
+  "soft_findings": [],
+  "checks": {
+    "format_discipline": {
+      "passed": true,
+      "frontmatter_present": false,
+      "meta_sidecar_missing": false,
+      "section_template_violation": false,
+      "sections_found": [
+        "Overview",
+        "Key Concepts",
+        "Worked Example",
+        "In Practice",
+        "Key Takeaways",
+        "References"
+      ],
+      "notes": "No frontmatter. Sidecar reading.meta.json present and valid (word_count=1389, estimated_read_minutes=7, citations_used=[1,2,3], sections correct). All six required sections present in correct order."
+    },
+    "length": {
+      "passed": true,
+      "word_count_reported": 1389,
+      "target_word_range": [1200, 1600],
+      "word_count_in_range": true,
+      "estimated_read_minutes": 7,
+      "target_minute_range": [6, 8],
+      "minutes_in_range": true,
+      "notes": "1389 words at 200 wpm = 6.95 min → 7 min. Both within standard-profile budget."
+    },
+    "citations": {
+      "passed": true,
+      "primary_cited": true,
+      "primary_resource": "[1] hopsworks.ai/dictionary/llm-temperature",
+      "primary_citation_lines": [5, 32, 77, 95],
+      "all_inline_markers_have_bibliography": true,
+      "all_bibliography_entries_cited_inline": true,
+      "orphan_markers": [],
+      "orphan_bibliography_entries": [],
+      "notes": "[1] cited 4 times; [2] cited 3 times; [3] cited 3 times. Bibliography entries [1],[2],[3] all match inline markers."
+    },
+    "no_forward_references": {
+      "passed": true,
+      "violations": [],
+      "notes": "All terms reused from prior topics (forward pass 3.4, LLM/hallucination 3.2, vocabulary/tokens/autoregressive 3.4, weights 3.5) are permitted without re-definition. All new terms introduced in 3.6 (logits, probability distribution over tokens, temperature, greedy decoding, top-k sampling, top-p/nucleus sampling, deterministic output, stochastic output) are defined on first use within this reading."
+    },
+    "faithfulness": {
+      "passed": true,
+      "assertions_sampled": 10,
+      "unsupported_assertions": 0,
+      "threshold": 2,
+      "findings": [],
+      "notes": "All 10 sampled assertions trace to corpus sections 5.1–5.5 and §7. Illustrative probability values in temperature table (e.g. 88%/10%/2% at temp 0.2 vs corpus ~95%/~4%/~1%) are both presented as approximate examples — acceptable divergence. API range claims (OpenAI 0–2.0, Anthropic 0–1.0) are factually correct and sourced from cited resources."
+    },
+    "beginner_readability": {
+      "passed": true,
+      "undefined_terms": [],
+      "jargon_dump": null,
+      "abstract_first": null,
+      "academic_register": null,
+      "notes": "All 8 new terms bolded and defined at first use. Roulette-wheel analogy precedes formal definition of probability distribution. Temperature 'dial' metaphor precedes formal description. Sentence lengths short-to-medium; active voice; addresses learner as 'you'. No academic hedging detected. No paragraph introduces 3+ new terms simultaneously."
+    },
+    "formatting": {
+      "passed": true,
+      "wall_of_text": null,
+      "unlisted_sequence": null,
+      "no_inline_examples": null,
+      "notes": "All paragraphs 2–4 sentences. Three sampling strategies rendered as numbered list (lines 49–53). 'How to set it in practice' rendered as bulleted list. Inline example table ('The sky is ___') appears immediately when probability distributions are introduced, not deferred. All term definitions use bold-term / plain-meaning shape."
+    },
+    "assessment_references": {
+      "passed": true,
+      "violations": [],
+      "notes": "No assessment IDs, due weeks, or grade weights appear in the reading. Correctly avoids the defect present in gold example 3-4."
+    },
+    "scope": {
+      "passed": true,
+      "scope_creep": [],
+      "notes": "All material (logits, probability distributions, temperature, greedy/top-k/top-p, practical task matching, accuracy anti-pattern) is directly on the topic headline. No adjacent concepts (RLHF, RAG, KV cache, batching, agent architectures) taught or introduced. API parameter names in 'In Practice' are practical temperature-setting guidance, fully on-scope."
+    }
+  },
+  "gold_example_comparison": {
+    "applicable_example": "3-4-how-llms-work-tokens-training-and-inference.reading.md",
+    "profile_note": "Gold example is deep-depth (~1900 words); this reading is standard-depth (1389 words). Notes file explicitly states the 3-4 bar is NOT the bar for standard topics. Structural moves match: terms bolded and defined at first use, overview leads with big picture, worked example walks one concrete scenario, multi-item sets as lists, no assessment reference. Reading meets the gold standard adapted for standard depth.",
+    "meets_gold_bar": true
+  },
+  "escalation": {
+    "hard_fail_triggered": false,
+    "soft_finding_count": 0,
+    "escalation_threshold": 3,
+    "escalated": false
+  }
+}

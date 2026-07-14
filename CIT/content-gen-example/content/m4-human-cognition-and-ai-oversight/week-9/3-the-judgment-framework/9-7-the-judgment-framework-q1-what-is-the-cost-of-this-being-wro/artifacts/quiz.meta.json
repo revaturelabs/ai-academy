@@ -1,0 +1,43 @@
+{
+  "topic_id": "9.7",
+  "generated_at": "2026-06-13",
+  "format": "gift",
+  "question_count": 5,
+  "$bias_defense_applied": true,
+  "$shuffle_seed": "topic-9.7-xor-salt0",
+  "correct_position_distribution": [2, 0, 3, 1, 2],
+  "max_share": 0.40,
+  "bias_defense_notes": "Correct answer positions spread across all four slots (0,1,2,3). Position 2 used twice (2/5 = 0.40, at constraint ceiling). Positions 0, 1, 3 each used once. max_share constraint satisfied.",
+  "questions": [
+    {
+      "id": "q1",
+      "type": "mcq",
+      "objective_ref": "State the first question of the Judgment Framework and explain what it is asking.",
+      "correct_position": 2
+    },
+    {
+      "id": "q2",
+      "type": "mcq",
+      "objective_ref": "Define the three dimensions of error cost: severity, probability, and detectability.",
+      "correct_position": 0
+    },
+    {
+      "id": "q3",
+      "type": "mcq",
+      "objective_ref": "Apply the three-dimension cost analysis to at least two real-world scenarios involving AI-assisted decisions.",
+      "correct_position": 3
+    },
+    {
+      "id": "q4",
+      "type": "mcq",
+      "objective_ref": "Distinguish between low-cost and high-cost errors and explain why the distinction changes how much scrutiny an AI output deserves.",
+      "correct_position": 1
+    },
+    {
+      "id": "q5",
+      "type": "mcq",
+      "objective_ref": "Name the other two Judgment Framework questions and explain why Q1 must come first.",
+      "correct_position": 2
+    }
+  ]
+}

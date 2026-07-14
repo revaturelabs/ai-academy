@@ -1,0 +1,53 @@
+{
+  "topic_id": "12.2",
+  "generated_at": "2026-06-14T00:00:00Z",
+  "format": "gift",
+  "question_count": 6,
+  "$bias_defense_applied": true,
+  "$shuffle_seed": "12.2-cit-m5-w12-params-return-r1",
+  "correct_position_distribution": [2, 0, 3, 1, 2, 0],
+  "questions": [
+    {
+      "id": "q1",
+      "type": "mcq",
+      "objective_ref": "LO1 — Distinguish between a parameter (placeholder in definition) and an argument (actual value at call)",
+      "stem_summary": "Identify which term is the parameter and which is the argument in a greet() example",
+      "correct_position": 2
+    },
+    {
+      "id": "q2",
+      "type": "mcq",
+      "objective_ref": "LO2 — Write a function that accepts one or more positional parameters",
+      "stem_summary": "Predict output of two calls to describe_student() where one call passes arguments in the wrong order",
+      "correct_position": 0
+    },
+    {
+      "id": "q3",
+      "type": "mcq",
+      "objective_ref": "LO3 — Write a function that uses the return keyword to send a value back to the caller",
+      "stem_summary": "Explain what the return keyword does when Python reaches it inside a function",
+      "correct_position": 3
+    },
+    {
+      "id": "q4",
+      "type": "mcq",
+      "objective_ref": "LO4 — Assign the value returned by a function to a variable and use it in further code",
+      "stem_summary": "Identify what happens when a return value is not assigned to a variable",
+      "correct_position": 1
+    },
+    {
+      "id": "q5",
+      "type": "mcq",
+      "objective_ref": "LO5 — Explain what Python produces when a function has no return statement (implicit None)",
+      "stem_summary": "Predict what print(result) displays after result = show_greeting('Alice') where show_greeting only prints",
+      "correct_position": 2
+    },
+    {
+      "id": "q6",
+      "type": "mcq",
+      "objective_ref": "LO6 — Identify when a function should return a value versus when it only needs to print",
+      "stem_summary": "Explain why using print inside a function instead of return does not let the caller capture a useful value",
+      "correct_position": 0
+    }
+  ]
+}

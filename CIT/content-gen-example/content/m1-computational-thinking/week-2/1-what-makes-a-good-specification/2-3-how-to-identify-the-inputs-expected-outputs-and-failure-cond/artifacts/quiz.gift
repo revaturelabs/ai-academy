@@ -1,0 +1,49 @@
+$CATEGORY: CIT/M1/week-2/2.3-how-to-identify-the-inputs-expected-outputs-and-failure-cond
+
+::q1:: A complete specification for an AI task has six named components. Which of the following lists all six correctly? {
+~Task description, inputs, expected outputs, format and constraints, and success criteria#No — that is only five components. Failure conditions are missing from this list.
+~Inputs, expected outputs, failure conditions, success criteria, task description, and a timeline#No — a timeline is not one of the six components. The sixth component is format and constraints.
+=Task description, inputs, expected outputs, format and constraints, failure conditions, and success criteria#Correct — all six components are present. Together they leave no guesswork for the AI.
+~Task description, inputs, format and constraints, failure conditions, success criteria, and a priority level#No — a priority level is not one of the six components. The missing component here is expected outputs.
+#### Tests whether learners can name all six components of the specification checklist (corpus §5.1).
+}
+
+::q2:: You want to ask an AI tool to rewrite a customer email. To identify the inputs for this task, you should ask which question? {
+="What does the AI need to have before it can start?"#Correct — asking what raw material the AI needs before it can begin is the standard way to identify inputs.
+~"How long should the rewritten email be?"#No — that question identifies expected outputs (specifically the amount dimension), not inputs.
+~"What counts as a successful rewrite?"#No — that question identifies success criteria, which is a different component of the specification.
+~"What could go wrong if the email is in a foreign language?"#No — that question identifies a failure condition, not an input.
+#### Tests the correct question to ask when identifying inputs (corpus §5.3 and §6 Step 1).
+}
+
+::q3:: When specifying the expected output for an AI task, you must describe three dimensions. Which set of three dimensions is correct? {
+~Format, tone, and length#No — tone and format are not the three named dimensions. The correct dimensions are type, content, and amount.
+~Purpose, structure, and word count#No — purpose describes the task, not the output. The three dimensions are type, content, and amount.
+~Topic, audience, and examples#No — audience describes an input, not an output dimension. The three dimensions are type, content, and amount.
+=Type, content, and amount#Correct — type (what kind of thing), content (what it must contain), and amount (how many) together make the output fully observable.
+#### Tests the three dimensions of an expected output (corpus §5.4).
+}
+
+::q4:: A learner writes a specification for an AI summarisation task but leaves out the failure conditions. Which of the following is most likely to happen? {
+~The AI will stop running and prompt the learner to supply the missing conditions before continuing#No — most AI tools do not pause and request clarification when a specification is incomplete; they continue.
+=The AI may hallucinate, skip steps silently, or build its output on unstated assumptions#Correct — without failure conditions the AI proceeds and guesses, which can produce plausible-sounding but incorrect content.
+~The AI will produce a noticeably shorter output to signal that key instructions are absent#No — AI tools have no built-in mechanism to flag incomplete specifications by reducing output length.
+~The AI will return an error message and redirect the learner to revise the specification first#No — AI tools do not generate structured error messages about missing specification components.
+#### Tests the consequence of omitting failure conditions (corpus §5.6).
+}
+
+::q5:: Why are failure conditions especially important when using AI tools, compared with asking a human worker to do the same task? {
+~AI tools process tasks more slowly than humans, so explicit failure conditions reduce unnecessary computation time#No — processing speed is not the reason failure conditions matter; the issue is how AI tools handle unexpected or ambiguous inputs.
+~Failure conditions teach the AI the subject-matter content and context it needs to complete the task correctly#No — failure conditions do not supply topic knowledge; they define what the AI should do when the input is missing, out of scope, or ambiguous.
+~Failure conditions make expected outputs unnecessary in simple tasks, which removes one required component#No — failure conditions and expected outputs are separate, required components; neither can substitute for the other.
+=Unlike most human workers, AI tools do not stop to ask for help when inputs are wrong — they produce output anyway#Correct — a human tends to stop and ask; an AI tool in most workflows proceeds and guesses, making explicit failure conditions essential.
+#### Tests why failure conditions are specific to AI reliability (corpus §5.6 and §8).
+}
+
+::q6:: You are writing a specification asking an AI to summarise a job applicant's cover letter. Which of the following options best lists the failure conditions for this task? {
+=If the cover letter is missing, write "No cover letter provided" and stop. If the letter is fewer than 50 words, write "Cover letter too short to summarise" and stop. If the letter is not in English, state "Translation required" and stop.#Correct — each failure condition names a concrete situation (missing input, input too short, input outside scope) and a concrete response, so the AI cannot guess.
+~If the output is too long, instruct the AI to shorten it to the required length. If the output is too short, instruct the AI to expand it with more detail. If the output reads unclearly, instruct the AI to rewrite it in plain language.#No — these describe corrective actions applied to the output after it is generated, not instructions for what the AI should do when the input itself is missing or out of scope.
+~Summarise only the first paragraph when the letter exceeds two pages. Skip any bullet-pointed sections if they appear difficult to interpret. Ignore portions of the letter that seem unrelated to the applicant's qualifications.#No — these are informal editing preferences applied during processing, not explicit failure conditions that name the situations where the AI should stop or flag a problem.
+~Before summarising, list the applicant's key qualifications, scan the full letter for spelling errors, and record any sections where information appears to be missing or incomplete.#No — these describe preparatory content tasks to perform on the letter, not rules for what the AI should do when the input is absent, out of scope, or in an unsupported format.
+#### Tests the ability to write failure conditions for a practical task by identifying concrete situations and responses (corpus §5.6 and §5.9).
+}

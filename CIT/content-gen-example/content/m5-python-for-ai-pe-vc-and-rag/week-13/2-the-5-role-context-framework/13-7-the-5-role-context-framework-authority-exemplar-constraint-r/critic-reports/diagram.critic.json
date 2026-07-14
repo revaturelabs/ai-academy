@@ -1,0 +1,75 @@
+{
+  "critic": "diagram-critic",
+  "topic_id": "13.7",
+  "passed": true,
+  "at": "2026-06-14T00:00:00Z",
+  "stats": {
+    "node_count": 5,
+    "edge_count": 4,
+    "layout": "flowchart TB",
+    "png_path": "artifacts/diagram.png",
+    "mmd_path": "artifacts/diagram.mmd"
+  },
+  "preflight": {
+    "parse": {
+      "passed": true
+    },
+    "node_count": {
+      "passed": true,
+      "count": 5
+    },
+    "label_discipline": {
+      "passed": true,
+      "notes": "Bold labels all <=4 words"
+    },
+    "concept_fidelity": {
+      "passed": true,
+      "notes": "All 5 nodes map to Core Concepts roles"
+    },
+    "label_plainness": {
+      "passed": true
+    }
+  },
+  "visual_checks": {
+    "nodes_overlap": {
+      "passed": true
+    },
+    "label_truncated": {
+      "passed": true,
+      "severity": "soft",
+      "notes": "Rubric and Metadata subtitles wrap to 2 lines; readable at 1400px viewer scale"
+    },
+    "crossings_illegible": {
+      "passed": true
+    },
+    "layout_wrong_for_intent": {
+      "passed": true,
+      "notes": "TB stack matches vertically-stacked intent"
+    },
+    "whitespace_imbalance": {
+      "passed": true,
+      "notes": "Edge-label boxes take vertical space but balanced"
+    },
+    "subtitle_illegible": {
+      "passed": true,
+      "notes": "11px italics readable at 1400px"
+    },
+    "color_tier_violation": {
+      "passed": true,
+      "notes": "Authority=blue(start), Exemplar/Constraint/Rubric=purple(auto), Metadata=green(done)"
+    },
+    "edge_label_collision": {
+      "passed": true,
+      "notes": "Edge labels render as separate boxes, no node collision"
+    }
+  },
+  "soft_findings": [
+    {
+      "code": "label_truncated",
+      "where": "Rubric and Metadata nodes",
+      "detail": "Subtitles wrap to 2 lines. Readable but slightly cramped. Fix if desired: shorten 'Required output structure + quality criteria' to 'Output structure & quality' and 'Per-request facts (date, user tier, language)' to 'Per-request context facts'.",
+      "severity": "soft"
+    }
+  ],
+  "verdict": "PASSED — all hard checks pass. 1 soft finding: subtitle wrapping in Rubric/Metadata nodes (readable at viewer scale, below hard-fail threshold). Priority stack clearly communicates conflict-resolution direction. All 5 roles present with correct labels and color tiers."
+}

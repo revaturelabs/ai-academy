@@ -1,0 +1,53 @@
+{
+  "type": "topic",
+  "id": "5.13",
+  "title": "Knowing which governance framework applies to your system",
+  "slug": "5-13-knowing-which-governance-framework-applies-to-your-system",
+  "position_in_module": 7,
+  "week_num": 5,
+  "session_name": "AI Ethics, Safety and Governance",
+  "module": {
+    "position": 4,
+    "slug": "4-governance-frameworks",
+    "title": "Governance Frameworks"
+  },
+  "course": {
+    "code": "M2",
+    "slug": "m2-introduction-to-ai-systems",
+    "title": "Introduction to AI Systems"
+  },
+  "next_assessment": {
+    "id": "A2",
+    "due_week": 6,
+    "title": "AI Systems Essay",
+    "weight": "15%"
+  },
+  "paths": {
+    "corpus": "topic_corpus.md",
+    "resources": "topic.resources.json",
+    "progress": "topic.progress.json",
+    "artifacts_dir": "artifacts/",
+    "critic_reports_dir": "critic-reports/"
+  },
+  "artifact_plan": {
+    "depth_profile": "standard",
+    "confirmed_by": "namratas@revature.com",
+    "reading_word_range": [
+      1200,
+      1600
+    ],
+    "reading_minutes_range": [
+      6,
+      8
+    ],
+    "quiz_questions_range": [
+      5,
+      6
+    ],
+    "quiz_include_short_answer": false,
+    "diagram": true,
+    "diagram_intent": "Decision flowchart: start → 'output reaches/used in EU?' → EU AI Act (then risk-tier branch); 'US federal agency / selling to one?' → EO 14110 federal guidance; 'online platform in India?' → MEITY advisories; 'want voluntary risk mgmt anywhere?' → NIST AI RMF — branches are non-exclusive (a system can land on several). Distinct from 5.11's static side-by-side comparison."
+  },
+  "expected_delivery_minutes": 7,
+  "status": "module_passed"
+}

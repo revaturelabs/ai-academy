@@ -1,0 +1,29 @@
+---
+title: "Writing a 3-Sentence Problem Statement"
+config:
+  theme: base
+  themeVariables:
+    primaryColor: "#a5d8ff"
+    primaryBorderColor: "#4a9eed"
+    lineColor: "#555"
+  flowchart:
+    htmlLabels: true
+    curve: basis
+    nodeSpacing: 60
+    rankSpacing: 80
+---
+flowchart LR
+    A["<b>Sentence 1 — Context</b><br/><span style='font-size:12px;color:#6d28d9'>Who is affected, and in what situation?</span>"]
+    B["<b>Sentence 2 — Problem</b><br/><span style='font-size:12px;color:#6d28d9'>What exactly goes wrong for those people?</span>"]
+    C["<b>Sentence 3 — Impact</b><br/><span style='font-size:12px;color:#6d28d9'>Why does this matter? What is the consequence?</span>"]
+    D["<b>Well-formed Problem Statement</b><br/><span style='font-size:12px;color:#6d28d9'>Specific · One problem · No solution embedded</span>"]
+
+    A --> B --> C --> D
+
+    classDef start fill:#a5d8ff,stroke:#4a9eed
+    classDef auto fill:#d0bfff,stroke:#8b5cf6
+    classDef done fill:#b2f2bb,stroke:#22c55e
+
+    class A start
+    class B,C auto
+    class D done

@@ -1,0 +1,30 @@
+{
+  "topic_id": "3.3",
+  "captured_at": "2026-06-17T00:00:00Z",
+  "captured_by": "bhuvaneshwarim@revature.com",
+  "resources_source": "web_search",
+  "web_search_query": "AI agents autonomous LLM-based agents explained 2024 2025",
+  "resources": [
+    {
+      "type": "url",
+      "value": "https://www.apideck.com/blog/ai-agents-explained-everything-you-need-to-know-in-2025",
+      "role": "primary",
+      "source": "web_search",
+      "notes": "Practical beginner-friendly explainer — what agents are, how they work, real-world uses"
+    },
+    {
+      "type": "url",
+      "value": "https://datasciencedojo.com/blog/agentic-llm-in-2025/",
+      "role": "supporting",
+      "source": "web_search",
+      "notes": "LLM-to-agent transition: planning, memory, tool use, autonomy components"
+    },
+    {
+      "type": "url",
+      "value": "https://proactivemgmt.com/blog/2025/01/22/2025-the-year-of-the-agent-building-on-the-foundation-of-llms/",
+      "role": "supporting",
+      "source": "web_search",
+      "notes": "Positions agents as next step after LLMs — why and how the shift happened"
+    }
+  ]
+}

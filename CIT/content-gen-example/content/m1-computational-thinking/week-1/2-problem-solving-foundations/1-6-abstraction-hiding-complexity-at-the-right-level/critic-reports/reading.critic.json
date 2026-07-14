@@ -1,0 +1,50 @@
+{
+  "passed": true,
+  "checks": {
+    "format_discipline": {
+      "passed": true,
+      "findings": []
+    },
+    "length": {
+      "passed": true,
+      "word_count": 1374,
+      "target_range": [1200, 1600]
+    },
+    "citations": {
+      "passed": true,
+      "primary_cited": true,
+      "notes": "Resource [1] (learning.com) cited on first paragraph and throughout all sections. All three resources cited inline; bibliography entries match inline markers exactly. No orphan markers or orphan entries. Citation density across factual claims well exceeds 50%."
+    },
+    "prereq_alignment": {
+      "passed": true,
+      "forward_refs": [],
+      "notes": "All technical terms used in the reading belong to the valid concept space: 1.1 (computational thinking), 1.5 (decomposition, task tree, sub-task), and 1.6 self-concepts (abstraction, layer, right level of abstraction, model, leaky abstraction). 'Interface layer' appears only as an illustrative diagram label within the abstraction-layer concept — not taught as a standalone term. No references to topics 1.7+ (pseudocode, flowcharts, etc.)."
+    },
+    "scope": {
+      "passed": true,
+      "offending_concepts": [],
+      "notes": "Content stays within the headline boundary 'Abstraction — hiding complexity at the right level.' The decomposition cross-reference (Topic 1.5) is an in-scope relationship explicitly listed in 1.6 concepts. No advanced concepts (algorithms, programming constructs, OOP, design patterns) are taught or defined. Everyday terms like 'semiconductor physics' and 'molecular physics' appear only as negative examples illustrating wrong abstraction level — not taught."
+    },
+    "readability": {
+      "passed": true,
+      "findings": [],
+      "notes": "All non-everyday terms are defined on first use with bold-term/plain-meaning format. Concrete-before-abstract ordering observed throughout: car accelerator (Overview), sandwich layers (Key Concepts), table examples (right level), library catalogue (Worked Example), maps/recipes/buttons (In Practice). No jargon dumps detected — each paragraph introduces at most one new concept. No hedging language. Sentences are concise, active voice, address the learner as 'you'."
+    },
+    "diagram_embedded": {
+      "passed": true,
+      "notes": "reading.meta.json reports embeds_diagram=true. A mermaid fenced block is present at lines 25–69 of reading.md, rendering a flowchart TB diagram contrasting abstraction layers vs decomposition sub-tasks with appropriate captions."
+    },
+    "formatting": {
+      "passed": true,
+      "findings": [],
+      "notes": "Procedures rendered as numbered lists (Worked Example, lines 119–134; In Practice, lines 140–151). Comparisons rendered as tables (too much/right/little detail table, lines 79–82; decomposition vs abstraction table, lines 105–110). All paragraphs are 4 sentences or fewer. Definitions follow bold-term / plain-meaning pattern throughout. No unlisted sequences, no wall-of-text paragraphs."
+    },
+    "faithfulness": {
+      "passed": true,
+      "unsupported_assertions": 0,
+      "notes": "8 assertions sampled and verified against corpus: car accelerator example, abstraction layers (sandwich), leaky abstraction (travel booking), library catalogue worked example, map/metro map, recipe abstraction, delete-button example, scientific atom model. All trace to corpus §4–7."
+    }
+  },
+  "verdict": "PASS — all 8 checks pass. Length 1374 words is within [1200, 1600]. Primary resource [1] cited; citation density high. No forward references or scope creep. All terms defined on first use, concrete-before-abstract throughout, no jargon dumps. Mermaid diagram embedded as declared. Formatting standards met (tables, numbered lists, bold definitions, max-4-sentence paragraphs). All sampled assertions are faithful to corpus.",
+  "at": "2026-06-21T00:00:00Z"
+}

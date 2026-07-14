@@ -1,0 +1,98 @@
+{
+  "critic": "reading-critic",
+  "topic_id": "4.3",
+  "artifact": "reading.md",
+  "run_at": "2026-06-16T00:00:00Z",
+  "verdict": "PASS",
+  "passed": true,
+  "profile": "standard",
+  "target_word_range": [1200, 1600],
+  "target_minute_range": [6, 8],
+  "checks": {
+    "format_discipline": {
+      "passed": true,
+      "frontmatter_present": false,
+      "meta_sidecar_missing": false,
+      "section_template_violation": false,
+      "sections_found": ["Overview", "Key Concepts", "Worked Example", "In Practice", "Key Takeaways", "References"],
+      "notes": "H1 is first non-empty line. Sidecar parses cleanly. All six required sections present in correct order."
+    },
+    "length": {
+      "passed": true,
+      "word_count": 1335,
+      "estimated_read_minutes": 7,
+      "in_range": true,
+      "notes": "1335 words within 1200–1600 target. 1335/200 = 6.68 min, within 6–8 min target."
+    },
+    "citations": {
+      "passed": true,
+      "resources_cited": [1, 2, 3],
+      "orphan_markers": [],
+      "orphan_bibliography_entries": [],
+      "notes": "All three primary resources cited inline and in bibliography. No orphans."
+    },
+    "no_forward_references": {
+      "passed": true,
+      "notes": "Embeddings, vector databases, similarity search, chunking all deferred to Week 14 in correct bare-name + pointer form (lines 29, 113). No other forward references found."
+    },
+    "faithfulness": {
+      "passed": true,
+      "assertions_sampled": 12,
+      "unsupported_count": 1,
+      "threshold": 2,
+      "notes": "11/12 sampled assertions trace directly to corpus. One borderline: the specific Sona Masoori rice product/price detail in the Worked Example is not in the corpus verbatim, but the customer-support chatbot / product-catalogue scenario is corpus-grounded (corpus §7.2). The specific product name and price are a plausible concretisation of a corpus-described scenario — not a factual fabrication. Count: 1, below the fail threshold of >2."
+    },
+    "beginner_readability": {
+      "passed": true,
+      "undefined_terms": [],
+      "jargon_dump": null,
+      "abstract_first": null,
+      "academic_register": null,
+      "notes": "All non-everyday terms (RAG, knowledge cutoff, query, knowledge source, enriched prompt) bolded and defined at first use. Hallucination cross-referenced to prior topic 4.2 per prerequisites. Deferred terms (embeddings, vector databases, similarity search) named-and-deferred, not defined. No cold unexplained acronyms. No hedging phrases. Register is plain, active, second-person throughout."
+    },
+    "formatting": {
+      "passed": true,
+      "wall_of_text": null,
+      "unlisted_sequence": {
+        "finding": "soft",
+        "description": "The three RAG pipeline steps in the Key Concepts section are rendered as bold-headed sub-paragraphs (Step 1 —, Step 2 —, Step 3 —) rather than a numbered list as required by formatting_standards for procedures/sequences.",
+        "line_range": "25–37",
+        "severity": "soft"
+      },
+      "no_inline_examples": null,
+      "definition_shape": true,
+      "diagram_embedded": true,
+      "diagram_caption_present": true,
+      "notes": "Diagram embedded at line 22 with alt-text and caption. All definitions use bold-term pattern. Worked Example uses correctly numbered list. One soft finding: pipeline steps use headed paragraphs instead of numbered list."
+    },
+    "assessment_reference": {
+      "passed": true,
+      "finding": null,
+      "notes": "No assessment IDs, due weeks, or grade weights mentioned anywhere in the reading."
+    },
+    "scope": {
+      "passed": true,
+      "scope_creep": null,
+      "notes": "All content is within the topic headline. Fine-tuning referenced as prior topic 4.2 (appropriate). Advanced RAG components correctly named-and-deferred to Week 14 without bolding or defining. No scope_creep found."
+    }
+  },
+  "soft_findings": [
+    {
+      "code": "unlisted_sequence",
+      "severity": "soft",
+      "description": "Three RAG pipeline steps in Key Concepts use bold-headed sub-paragraphs instead of a numbered list.",
+      "line_range": "25–37"
+    }
+  ],
+  "hard_findings": [],
+  "escalation_triggered": false,
+  "escalation_reason": null,
+  "soft_finding_count": 1,
+  "soft_finding_escalation_threshold": 3,
+  "gold_example_comparison": {
+    "reference": ".claude/references/gold-examples/reading/3-4-how-llms-work-tokens-training-and-inference.reading.md",
+    "meets_gold_bar": true,
+    "notes": "Matches gold standard moves: bold-term-then-definition, concrete worked example in numbered steps, diagram embedded with caption, Key Takeaways as self-contained bullets. Does not replicate the gold example's assessment_reference defect (A1 line). 4.3 reading meets or exceeds the gold bar."
+  },
+  "summary": "Reading passes all hard checks. One soft finding (unlisted_sequence: pipeline steps in Key Concepts use headed paragraphs instead of a numbered list). Soft finding count (1) is below the escalation threshold (3). No scope_creep. No assessment references. Diagram correctly embedded. Word count in range. All corpus LOs addressed. Recommend PASS at HITL #3 with soft finding noted for author awareness."
+}

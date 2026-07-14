@@ -1,0 +1,130 @@
+{
+  "critic": "corpus-critic",
+  "topic_id": "13.6",
+  "topic_title": "Output format control — getting JSON, numbered lists, or fixed structure through the prompt",
+  "pass_number": 2,
+  "passed": true,
+  "at": "2026-06-14T00:00:00Z",
+  "depth_profile": "standard",
+  "word_count_estimate": 3370,
+  "checks": {
+    "required_sections": {
+      "passed": true,
+      "detail": {
+        "section_3_learning_objectives": { "present": true, "word_count_estimate": 120, "threshold": 50, "passed": true },
+        "section_4_introduction": { "present": true, "word_count_estimate": 220, "threshold": 50, "passed": true },
+        "section_5_core_concepts": { "present": true, "word_count_estimate": 1450, "threshold": 100, "passed": true },
+        "section_10_key_takeaways": { "present": true, "word_count_estimate": 130, "threshold": 50, "passed": true }
+      }
+    },
+    "citation_density": {
+      "passed": true,
+      "resources_source": "web_search",
+      "mode": "strict",
+      "primary_resource_cited": true,
+      "primary_resource": "https://codesignal.com/learn/courses/journey-into-format-control-in-prompt-engineering/lessons/structured-data-mastery-json-and-yaml-formats-in-llm-responses",
+      "primary_citation_marker": "[1]",
+      "fake_citations_detected": false,
+      "key_claims_citation_rate": {
+        "section_5": {
+          "assessment": "Citations are dense throughout all seven sub-sections (5.1–5.7). Every causal claim about LLM format inconsistency, every strategy description, and every named pattern carries at least one marker. Estimated citation rate well above 60%.",
+          "passed": true,
+          "prior_gaps_resolved": ["5.1 pattern-matching claims now carry [1]", "5.6 format-drift causes now carry [1][2]", "5.7 retry best-practice steps now carry [2][3]"]
+        },
+        "section_6": {
+          "assessment": "Implementation steps 1–6 now carry inline citations on every factual claim: Step 1 [1][2], Step 2 [1][2][3], Step 3 [1][2], Step 5 [2][3], Step 6 [2][1][3]. The placeholder-call note at line 288 cites [2][3]. Prior gap resolved.",
+          "passed": true,
+          "prior_gaps_resolved": ["Steps 1-6 now have citations throughout"]
+        },
+        "section_7": {
+          "assessment": "All three real-world pattern descriptions cite [1][2] or [2][3]. Final synthesis sentence cites [2].",
+          "passed": true
+        },
+        "combined_sections_5_6_7": {
+          "assessment": "Combined citation rate is estimated at >85% of standalone factual assertions — well above the 60% strict-mode threshold.",
+          "passed": true
+        }
+      },
+      "notes": "All citation markers [1], [2], [3] resolve to declared resources. No markers beyond [1]–[3] appear anywhere in the corpus."
+    },
+    "sequence_drift": {
+      "passed": true,
+      "forward_references_found": [],
+      "terms_checked": [
+        { "term": "LLM (Large Language Model)", "status": "defined inline at first use (section 5.1, line 41)" },
+        { "term": "token", "status": "defined inline at first use (section 5.1, line 43)" },
+        { "term": "JSON (JavaScript Object Notation)", "status": "defined inline at first use (section 5.4, line 146)" },
+        { "term": "code fence marker / fenced code block", "status": "defined inline (section 5.4, line 168)" },
+        { "term": "probability distribution", "status": "prior curriculum: probabilistic systems (M1 topics 1.3–1.4)" },
+        { "term": "json.loads()", "status": "prior curriculum: weeks 11-12 Python + LLM API; in topic cross_refs" },
+        { "term": "try/except", "status": "prior curriculum: weeks 11-12 Python basics" },
+        { "term": "KeyError", "status": "prior curriculum: weeks 11-12 Python basics (borderline soft — not formally introduced but Python exception handling is covered)" },
+        { "term": "few-shot technique", "status": "back-referenced explicitly to topic 13.3; not a forward reference" },
+        { "term": "system prompt", "status": "introduced in 13.1" },
+        { "term": "constraint", "status": "introduced in 13.5" }
+      ],
+      "notes": "No references to topics 13.7 or later detected anywhere in the corpus."
+    },
+    "length_sanity": {
+      "passed": true,
+      "profile": "standard",
+      "word_count_estimate": 3370,
+      "valid_range": [3000, 4400],
+      "within_range": true,
+      "notes": "Estimate is prose-only; including code block content pushes total higher. Either way within the standard-profile range."
+    },
+    "topic_scope": {
+      "passed": true,
+      "scope_boundary": "Output format control through the prompt",
+      "scope_creep_findings": [],
+      "assessment_prose_findings": [],
+      "notes": [
+        "All prior assessment-prose findings (A4 references in section 5.7 body, step 6, section 9) have been removed from this revision.",
+        "Output validator pattern is a listed concept for this topic in the sequence index — its inclusion in sections 5.7 and 6 is within scope.",
+        "No API-level structured output features (JSON mode, response_format parameter, function calling, JSON Schema) appear anywhere in the corpus.",
+        "Real-World Patterns section contextualises prompt-based format control without introducing adjacent advanced concepts."
+      ]
+    },
+    "beginner_readability": {
+      "passed": true,
+      "escalated_to_hard_fail": false,
+      "distinct_finding_count": 1,
+      "findings": [
+        {
+          "code": "undefined_terms",
+          "severity": "soft",
+          "terms": ["KeyError"],
+          "detail": "KeyError appears in the Introduction ('your code throws a KeyError') without an inline definition. Python exception types are prior curriculum (weeks 11-12), making this borderline only. Noted as a single soft finding.",
+          "prior_pass_item_resolved": "code fence marker — now defined inline at section 5.4 line 168 as '(the triple backtick ` ``` ` that opens a fenced code block)'. Prior soft finding resolved."
+        }
+      ],
+      "no_jargon_dumps": true,
+      "no_hedging_phrases": true,
+      "register_ok": true,
+      "notes": "1 soft finding — does not reach the ≥3 threshold for escalation to hard fail. All introduced concepts (format mismatch problem, format specification, inline declaration, format example, template echo, format drift, output validator pattern) are defined at first use with plain-language meanings and concrete examples. Learner is addressed as 'you' throughout. Sentences are generally under 25 words."
+    }
+  },
+  "prior_pass_issues_resolved": [
+    {
+      "issue": "citation_density — section 6 had only 1 marker across ~8 claims",
+      "resolved": true,
+      "evidence": "Steps 1-6 in section 6 now each carry [1][2] or [2][3] citation markers on factual claims"
+    },
+    {
+      "issue": "citation_density — section 5 marginally below threshold (~58%)",
+      "resolved": true,
+      "evidence": "Sections 5.1, 5.6, 5.7 now have citations on all previously uncited causal claims"
+    },
+    {
+      "issue": "assessment_prose_in_body — three A4 cross-references in corpus body",
+      "resolved": true,
+      "evidence": "No Assessment A4 references appear anywhere in the current corpus"
+    },
+    {
+      "issue": "undefined_terms — code fence marker undefined",
+      "resolved": true,
+      "evidence": "Section 5.4 line 168 now defines it inline: '(the triple backtick ` ``` ` that opens a fenced code block)'"
+    }
+  ],
+  "verdict": "PASS — all six checks clear on second pass. Required sections 3, 4, 5, and 10 are present and non-trivial. Citation density across sections 5+6+7 is estimated at >85%, well above the 60% strict-mode threshold; the single primary resource [1] is cited throughout; no fake citations detected. No forward references: all technical terms are grounded in prior curriculum (weeks 11-12 Python, M1 probabilistic systems) or this topic's own introduced concepts, with back-references to 13.1/13.3/13.5 made explicit. Word count ~3370 falls within the standard-profile range of 3000–4400. No scope creep: corpus stays entirely within prompt-based format control; output validator pattern is an in-scope introduced concept; no API-level structured output features appear. Beginner readability passes: all introduced terms defined at first use, no jargon dumps, no hedging phrases, plain register throughout; one residual soft finding (KeyError in Introduction, prior Python curriculum) does not meet the 3-finding escalation threshold. All four issues flagged in pass 1 are resolved."
+}

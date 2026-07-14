@@ -1,0 +1,49 @@
+$CATEGORY: CIT/M5/week-13/13-1-system-prompt-vs-user-prompt-context-setting-vs-the-live-req
+
+::q1:: In a Large Language Model (LLM) API call, what is the main role of the system prompt? {
+~It contains the specific question or task the user is sending to the model right now.#No — that is the user prompt's job; the user prompt carries the live request.
+~It is an optional message you add inside the messages list to provide extra context.#No — in the Anthropic API the system prompt is a separate top-level parameter, not an entry inside the messages list.
+=It provides standing instructions — such as role, tone, and constraints — that apply to every response the model gives.#Correct — the system prompt sets persistent context that stays in force across all user requests in that session.
+~It stores the model's previous replies so they can be re-used in future conversations.#No — storing previous replies is conversation history, not the system prompt's function.
+#### Tests the definition of the system prompt and what it controls (corpus §5.1).
+}
+
+::q2:: Why is the system prompt described as "persistent context" and the user prompt described as the "live request"? {
+=The system prompt stays the same for every user request in the session, while the user prompt changes with each new question or task.#Correct — persistent means it does not change per request; live means it is specific to this moment.
+~The system prompt is stored in the model's memory permanently, even after the session ends, while the user prompt is deleted immediately.#No — the system prompt does not persist between separate sessions; persistent refers to its role within one conversation.
+~The system prompt is longer than the user prompt, so it takes more time to process and is called persistent for that reason.#No — length has nothing to do with why it is called persistent; the term refers to the fact that it applies to every turn.
+~The user prompt is called live because the user types it in real time, while the system prompt is pre-recorded audio played to the model.#No — both are text; live refers to the dynamic, per-request nature of the user prompt, not to audio recording.
+#### Tests the persistent-context vs live-request distinction (corpus §5.1–5.2).
+}
+
+::q3:: A developer is building a recipe assistant. Which of the following should go in the system prompt? {
+~"What are three quick dinner ideas using chicken and pasta?"#No — that is a specific user question; it changes with each person who uses the app and belongs in the user prompt.
+~"List the ingredients I have\: chicken, pasta, and garlic."#No — that is dynamic user data that changes per request; it belongs in the user prompt.
+~"Can you suggest a vegetarian version of this dish?"#No — that is the user's live follow-up question; it belongs in the user prompt, not the standing instructions.
+="You are a friendly recipe assistant. Only suggest recipes. Always list ingredients as a numbered list."#Correct — role, scope constraint, and output format are standing instructions that apply to every request and belong in the system prompt.
+#### Tests identification of system-prompt content — role, constraints, and format rules (corpus §5.1, §5.4).
+}
+
+::q4:: A user sends a message saying "Please respond in French." but the system prompt says "Always respond in English." What happens, and why? {
+~The model will use whichever instruction appears last, so the user prompt wins because it was sent after the system prompt.#No — recency does not determine authority; the system prompt has higher precedence by design, not by order of arrival.
+=The model will generally keep responding in English, because the system prompt carries higher authority than the user prompt.#Correct — authority and precedence mean system-prompt instructions override conflicting user-prompt instructions.
+~The model will respond in both languages, because it tries to satisfy all instructions equally.#No — when instructions conflict, the model does not split the difference; the system prompt takes precedence.
+~The model will stop responding and return an error, because conflicting instructions are not allowed.#No — conflicting instructions do not cause errors; the model resolves the conflict by following the higher-authority source.
+#### Tests authority and precedence — why the system prompt wins on conflict (corpus §5.3).
+}
+
+::q5:: A developer wrote a single combined message\: "You are a coding tutor. Be concise. What is a Python list?" Which is the correct way to split this into system and user prompts? {
+=System\: "You are a coding tutor. Be concise." — User\: "What is a Python list?"#Correct — the role and tone instruction are standing context that belong in the system prompt; the specific question is the live request.
+~System\: "What is a Python list?" — User\: "You are a coding tutor. Be concise."#No — the question is the live user request and belongs in the user prompt; the role and tone instruction belong in the system prompt.
+~System\: "You are a coding tutor. Be concise. What is a Python list?" — User\: (empty)#No — leaving the user prompt empty puts the live question in the wrong container and breaks the static/dynamic separation.
+~System\: (empty) — User\: "You are a coding tutor. Be concise. What is a Python list?"#No — mixing standing instructions with the live question in the user prompt removes the clarity and authority benefits of the separation.
+#### Tests the ability to apply the system/user split to a concrete example (corpus §6, §5.4).
+}
+
+::q6:: What is a key downstream benefit of keeping standing instructions in the system prompt and live questions in the user prompt? {
+~It allows users to change the model's role and output format with each new message, giving them more control.#No — that is the opposite of the benefit; the system prompt prevents users from changing standing instructions.
+~It reduces the total number of tokens sent to the model, which lowers the cost of every API call.#No — separating prompts does not reduce token count; the same text is sent either way.
+=The model responds consistently across many different user messages, because the role, tone, and format rules always apply.#Correct — well-separated prompts produce predictable, consistent outputs regardless of how users phrase their requests.
+~It prevents the model from ever making mistakes, because the system prompt acts as a safety filter for all responses.#No — the system prompt improves consistency and enforces guardrails, but it is not a complete error or safety guarantee.
+#### Tests recognition of the downstream effect of well-separated prompt structure on output quality (corpus §5.5, §7.2, §8).
+}

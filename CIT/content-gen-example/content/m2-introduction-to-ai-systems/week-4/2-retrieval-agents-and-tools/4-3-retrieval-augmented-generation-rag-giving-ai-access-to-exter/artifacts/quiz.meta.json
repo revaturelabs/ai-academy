@@ -1,0 +1,47 @@
+{
+  "topic_id": "4.3",
+  "generated_at": "2026-06-16T00:00:00Z",
+  "format": "gift",
+  "question_count": 6,
+  "$bias_defense_applied": true,
+  "$shuffle_seed": "4619",
+  "correct_position_distribution": [1, 2, 0, 3, 1, 2],
+  "questions": [
+    {
+      "id": "q1",
+      "type": "mcq",
+      "objective_ref": "Define Retrieval-Augmented Generation (RAG) in plain language and explain what problem it solves.",
+      "correct_position": 1
+    },
+    {
+      "id": "q2",
+      "type": "mcq",
+      "objective_ref": "Describe the three-step RAG pipeline in sequence: retrieve, augment, generate.",
+      "correct_position": 2
+    },
+    {
+      "id": "q3",
+      "type": "mcq",
+      "objective_ref": "Explain why RAG reduces hallucination compared with a foundation model used without retrieval.",
+      "correct_position": 0
+    },
+    {
+      "id": "q4",
+      "type": "mcq",
+      "objective_ref": "Distinguish RAG from fine-tuning — what each method changes and when each is more appropriate.",
+      "correct_position": 3
+    },
+    {
+      "id": "q5",
+      "type": "mcq",
+      "objective_ref": "Give two real-world examples of applications that benefit from RAG and explain why retrieval is the key enabler.",
+      "correct_position": 1
+    },
+    {
+      "id": "q6",
+      "type": "mcq",
+      "objective_ref": "Name the advanced technical components of RAG — embeddings, vector databases, similarity search, chunking — and recognise that these are studied in Week 14.",
+      "correct_position": 2
+    }
+  ]
+}

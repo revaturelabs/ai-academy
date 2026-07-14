@@ -1,0 +1,37 @@
+---
+title: "Self-Reinforcing Belief Loop"
+theme: base
+themeVariables:
+  primaryColor: "#a5d8ff"
+  primaryBorderColor: "#4a9eed"
+  lineColor: "#555"
+config:
+  flowchart:
+    htmlLabels: true
+    curve: basis
+---
+flowchart LR
+    BELIEF["<b>Existing Belief</b><br/><span style='font-size:11px;color:#6d28d9'>the prior — belief already held</span>"]:::hitl
+
+    SS["<b>Selective Search</b><br/><span style='font-size:11px;color:#6d28d9'>only confirming cases tested;<br/>disconfirming evidence not sought</span>"]:::auto
+
+    BI["<b>Biased Interpretation</b><br/><span style='font-size:11px;color:#6d28d9'>ambiguous evidence<br/>read as confirming</span>"]:::auto
+
+    SM["<b>Selective Memory</b><br/><span style='font-size:11px;color:#6d28d9'>confirming outcomes<br/>better recalled</span>"]:::auto
+
+    REINF["<b>Belief Reinforced</b><br/><span style='font-size:11px;color:#6d28d9'>belief grows stronger</span>"]:::done
+
+    DISC["<b>Disconfirming Evidence</b><br/><span style='font-size:11px;color:#6d28d9'>ignored or explained away</span>"]:::ghost
+
+    BELIEF --> SS
+    SS --> BI
+    BI --> SM
+    SM --> REINF
+    REINF -->|"loop back — stronger belief"| BELIEF
+
+    SS -.->|suppressed| DISC
+
+    classDef hitl fill:#fff3bf,stroke:#f59e0b,stroke-width:3px,color:#000
+    classDef auto fill:#d0bfff,stroke:#8b5cf6,color:#000
+    classDef done fill:#b2f2bb,stroke:#22c55e,color:#000
+    classDef ghost fill:none,stroke:none,color:#6d28d9

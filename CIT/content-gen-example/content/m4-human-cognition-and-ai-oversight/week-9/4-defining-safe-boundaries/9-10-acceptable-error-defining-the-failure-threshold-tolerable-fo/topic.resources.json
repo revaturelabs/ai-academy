@@ -1,0 +1,27 @@
+{
+  "topic_id": "9.10",
+  "captured_at": "2026-06-13T00:00:00Z",
+  "captured_by": "vishnu.vardhan@revature.com",
+  "resources_source": "web_search",
+  "web_search_query": "acceptable error rate AI failure threshold tolerable use case decision making",
+  "resources": [
+    {
+      "type": "url",
+      "value": "https://pmc.ncbi.nlm.nih.gov/articles/PMC10301708/",
+      "role": "primary",
+      "source": "web_search"
+    },
+    {
+      "type": "url",
+      "value": "https://www.appsignal.com/learning-center/what-are-good-and-acceptable-error-rates",
+      "role": "supporting",
+      "source": "web_search"
+    },
+    {
+      "type": "url",
+      "value": "https://www.llamaindex.ai/glossary/what-is-confidence-threshold",
+      "role": "supporting",
+      "source": "web_search"
+    }
+  ]
+}

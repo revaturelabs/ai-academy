@@ -1,0 +1,54 @@
+$CATEGORY: CIT/M1/week-2/2.8-testing-a-specification-how-to-verify-the-ai-did-exactly-wha
+
+::q1:: You send a specification to an AI tool and receive an output. What does "testing the specification" mean at this point?
+{
+~Deciding whether the output looks reasonable and moving on if it seems about right to you.#No — "seems about right" is an opinion, not a comparison. Testing requires checking the output against the written specification, part by part.
+~Re-writing the specification so it is clearer before you send the same task to the AI again.#No — re-writing is revision, not testing. Testing happens first to find out what the current output actually delivered.
+=Checking the output against each part of the specification and noting what matched and what did not.#Correct — testing is a part-by-part comparison of the output to the written specification, with a recorded result for each component.
+~Asking the AI to summarise what it did so that you can judge whether it followed your instructions.#No — asking the AI to self-report is not testing. Testing is done by you, comparing the output directly to your own written specification.
+#### Tests the definition of testing a specification (corpus §5.1).
+}
+
+::q2:: Which of the following correctly states the three questions in the verification check?
+{
+=Format — did the output have the shape I asked for? Constraints — did it stay within my limits? Task statement — did it do the task I described?#Correct — these three questions map directly onto the three main parts of a specification\: format requirements, constraints, and the task statement.
+~Purpose — why did I write this spec in the first place? Structure — is the output well organised and easy to read? Length — is the response the right number of words?#No — purpose, structure, and length are not the three verification questions. The check is tied to specific named parts of the specification.
+~Accuracy — is the information factually correct? Tone — does the writing sound professional and appropriate? Scope — did it cover the topic I needed?#No — accuracy, tone, and scope are not the three verification questions. The check does not evaluate whether the AI's facts are true.
+~Input — did I provide the right information to the AI? Process — did the AI follow the correct steps to produce an answer? Output — did it produce something usable?#No — these questions are about the AI's process. The three-question check is about comparing the output to what you specified, not how the AI worked.
+#### Tests knowledge of the three-question verification check (corpus §5.2).
+}
+
+::q3:: A learner runs the three-question check. Q1 (format) passes. Q2 (constraints) fails — one constraint was not respected. Q3 (task statement) passes. What is the correct classification?
+{
+~Full pass, because two questions out of three answered yes and the core task was completed correctly.#No — a full pass requires all three questions to pass without exception. Two out of three is not a full pass.
+~Full fail, because the specification was not completely met and any unmet part means a total failure.#No — a full fail means all three questions fail. Having two questions pass and one fail is not a full fail.
+~No classification is possible yet — you must fix the constraint and ask the AI again before you can classify.#No — you classify the result of the current test first, then decide what to do next. Classification always precedes any revision decision.
+=Partial pass — some questions passed and one failed, meaning the output partly met the specification but not fully.#Correct — a partial pass means one or more questions fail. It is not a pass; the specification was not fully met and the specific gap is now named.
+#### Tests classifying a test result as full pass, partial pass, or full fail (corpus §5.3).
+}
+
+::q4:: A learner builds a pass/fail table after testing a specification. What should each row in the table represent?
+{
+~One of the three verification questions (format, constraints, task statement), with a yes or no answer written next to it.#No — the three-question check is a summary tool. The table has a row per specification component, which can be more detailed than just three rows.
+=One component of the specification — what was specified, what the output contained, and whether it passed or failed.#Correct — each row maps one specification component to the matching part of the output, with a Pass or Fail verdict recorded for each.
+~One sentence taken from the AI's output, compared against the closest matching part of the written specification.#No — the table is organised by specification component, not by the AI's individual sentences. Mapping sentence by sentence is not the structure.
+~One thing the AI got right, listed one by one so you can count the total number of components that passed.#No — the table records both Pass and Fail results for every component. Recording only what passed misses the Fail entries that identify specific gaps.
+#### Tests the ability to record a test result using a pass/fail table (corpus §5.4).
+}
+
+::q5:: A student specifies\: "Write a three-bullet summary of the health benefits of walking. Do not mention equipment or costs." The AI produces exactly three bullets, all about health benefits. The third bullet ends with\: "A good pair of walking shoes makes the activity more comfortable." Which failure pattern does this output show?
+{
+~Format drift — the third bullet added extra text and changed the shape of the output.#No — format drift is when the output arrives in the wrong shape (wrong structure, wrong number of items). The output here is still three bullets with no shape problem.
+~Task drift — the AI shifted away from writing a summary about the benefits of walking.#No — task drift means the AI did a different task altogether. The AI did summarise health benefits of walking, so the core task was not lost.
+=Constraint overflow — the AI included equipment content that the specification explicitly excluded.#Correct — constraint overflow happens when the output crosses a boundary you drew. The spec said no equipment; the mention of walking shoes violates that constraint.
+~Full fail — one bullet did not fully meet the specification, so the entire output receives a fail verdict.#No — a full fail means all three verification questions fail. Here format and task statement both pass. One constraint failure makes this a partial pass, not a full fail.
+#### Tests identification of the constraint overflow failure pattern in a scenario (corpus §5.5).
+}
+
+::q6:: What is the name of the step that comes between receiving the AI's output and deciding whether to revise your specification? (One or two words.) {
+=verification
+=testing
+=the verification step
+=spec testing
+=specification testing
+}

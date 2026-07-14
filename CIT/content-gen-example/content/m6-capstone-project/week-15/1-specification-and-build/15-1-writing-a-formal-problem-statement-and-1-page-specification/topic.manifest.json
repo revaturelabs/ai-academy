@@ -1,0 +1,35 @@
+{
+  "type": "topic",
+  "id": "15.1",
+  "title": "Writing a formal problem statement and 1-page specification",
+  "slug": "15-1-writing-a-formal-problem-statement-and-1-page-specification",
+  "position_in_module": 1,
+  "week_num": 15,
+  "session_name": "Capstone Build Sprint and Showcase",
+  "module": {
+    "position": 1,
+    "slug": "1-specification-and-build",
+    "title": "Specification and Build"
+  },
+  "course": {
+    "code": "M6",
+    "slug": "m6-capstone-project",
+    "title": "Capstone Project"
+  },
+  "next_assessment": {
+    "id": "A5",
+    "due_week": 15,
+    "title": "Capstone Project and Portfolio",
+    "weight": "40%"
+  },
+  "paths": {
+    "corpus": "topic_corpus.md",
+    "resources": "topic.resources.json",
+    "progress": "topic.progress.json",
+    "artifacts_dir": "artifacts/",
+    "critic_reports_dir": "critic-reports/"
+  },
+  "artifact_plan": null,
+  "expected_delivery_minutes": null,
+  "status": "scaffolded"
+}

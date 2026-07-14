@@ -1,0 +1,38 @@
+---
+config:
+  theme: base
+  themeVariables:
+    primaryColor: "#a5d8ff"
+    primaryBorderColor: "#4a9eed"
+    lineColor: "#555"
+  flowchart:
+    htmlLabels: true
+    curve: basis
+---
+flowchart LR
+  subgraph PIPELINE["Pipeline  —  Accountability Gaps"]
+    direction TB
+    IC["<b>Input Collection</b><br><span style='font-size:12px;color:#6d28d9'>data provider supplies</span>"]:::start
+    GAP1["<b>⚠ Accountability Gap</b>"]:::ghost
+    CM["<b>Credit Model</b><br><span style='font-size:12px;color:#6d28d9'>vendor builds model</span>"]:::auto
+    GAP2["<b>⚠ Accountability Gap</b>"]:::ghost
+    AR["<b>Approval / Rejection</b><br><span style='font-size:12px;color:#6d28d9'>bank configures threshold</span>"]:::hitl
+    CON["<b>Consequence</b><br><span style='font-size:12px;color:#6d28d9'>applicant affected</span>"]:::act
+    IC --> GAP1 --> CM --> GAP2 --> AR --> CON
+  end
+
+  subgraph CONTROLS["Accountability Controls"]
+    MD["<b>Model Documentation</b><br><span style='font-size:12px;color:#6d28d9'>names who approved each stage</span>"]:::done
+    AAN["<b>Adverse Action Notice</b><br><span style='font-size:12px;color:#6d28d9'>forces explanation per decision</span>"]:::done
+    MD ~~~ AAN
+  end
+
+  AR -.-> MD
+  AR -.-> AAN
+
+  classDef start fill:#a5d8ff,stroke:#4a9eed
+  classDef hitl fill:#fff3bf,stroke:#f59e0b,stroke-width:3
+  classDef auto fill:#d0bfff,stroke:#8b5cf6
+  classDef act fill:#a5d8ff,stroke:#4a9eed
+  classDef done fill:#b2f2bb,stroke:#22c55e
+  classDef ghost fill:none,stroke:none,color:#6d28d9

@@ -1,0 +1,30 @@
+{
+  "topic_id": "7.6",
+  "captured_at": "2026-06-23T00:00:00Z",
+  "captured_by": "namratas@revature.com",
+  "resources_source": "web_search",
+  "web_search_query": "mean median mode statistics explained beginners AI consistency",
+  "resources": [
+    {
+      "type": "url",
+      "value": "https://www.khanacademy.org/math/statistics-probability/summarizing-quantitative-data/mean-median-basics/a/mean-median-and-mode-review",
+      "role": "primary",
+      "source": "web_search",
+      "notes": "Khan Academy canonical explainer — non-profit, beginner-perfect, visual examples"
+    },
+    {
+      "type": "url",
+      "value": "https://statistics.laerd.com/statistical-guides/measures-central-tendency-mean-mode-median.php",
+      "role": "supporting",
+      "source": "web_search",
+      "notes": "Academic stats reference — covers when to use each measure, skewed data considerations"
+    },
+    {
+      "type": "url",
+      "value": "https://www.statisticshowto.com/probability-and-statistics/statistics-definitions/mean-median-mode/",
+      "role": "supporting",
+      "source": "web_search",
+      "notes": "Clear worked examples and definitions for all three measures"
+    }
+  ]
+}

@@ -1,0 +1,54 @@
+{
+  "topic_id": "13.5",
+  "generated_at": "2026-06-14T00:00:00Z",
+  "format": "gift",
+  "question_count": 7,
+  "$bias_defense_applied": true,
+  "$shuffle_seed": "13.5-cit-quiz-shuffle",
+  "correct_position_distribution": [2, 0, 3, 1, 2, 3],
+  "bias_defense_notes": "6 MCQs shuffled. Position counts: pos0=1 (17%), pos1=1 (17%), pos2=2 (33%), pos3=2 (33%). max_share=33% ≤ 40%. All 4 positions used. Both post-shuffle constraint checks passed. q7 is short-answer; excluded from distribution.",
+  "questions": [
+    {
+      "id": "q1",
+      "type": "mcq",
+      "objective_ref": "Define a constraint in the context of prompt engineering and explain how it differs from a positive instruction.",
+      "correct_position": 2
+    },
+    {
+      "id": "q2",
+      "type": "mcq",
+      "objective_ref": "Identify the four main types of constraints — format, tone, content exclusion, and scope limit — and give one example of each.",
+      "correct_position": 0
+    },
+    {
+      "id": "q3",
+      "type": "mcq",
+      "objective_ref": "Apply the positive-reframe technique to convert a vague negative instruction into a clear, model-friendly constraint.",
+      "correct_position": 3
+    },
+    {
+      "id": "q4",
+      "type": "mcq",
+      "objective_ref": "Explain why models sometimes ignore or misapply negated instructions, and choose placement strategies that reduce this risk.",
+      "correct_position": 1
+    },
+    {
+      "id": "q5",
+      "type": "mcq",
+      "objective_ref": "Recognise common constraint pitfalls — vague negations, overloading, and contradictions — and describe what goes wrong in each case.",
+      "correct_position": 2
+    },
+    {
+      "id": "q6",
+      "type": "mcq",
+      "objective_ref": "Know where constraints belong: system prompt (persistent) vs user message (single-turn).",
+      "correct_position": 3
+    },
+    {
+      "id": "q7",
+      "type": "short_answer",
+      "objective_ref": "Apply the positive-reframe technique to convert a vague negative instruction into a clear, model-friendly constraint.",
+      "correct_position": null
+    }
+  ]
+}

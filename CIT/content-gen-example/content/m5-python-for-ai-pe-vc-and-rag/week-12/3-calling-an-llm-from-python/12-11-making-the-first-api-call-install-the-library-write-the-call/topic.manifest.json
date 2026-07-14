@@ -1,0 +1,42 @@
+{
+  "type": "topic",
+  "id": "12.11",
+  "title": "Making the first API call — install the library, write the call, run in Colab",
+  "slug": "12-11-making-the-first-api-call-install-the-library-write-the-call",
+  "position_in_module": 3,
+  "week_num": 12,
+  "session_name": "Python Foundations II and Calling an LLM",
+  "module": {
+    "position": 3,
+    "slug": "3-calling-an-llm-from-python",
+    "title": "Calling an LLM from Python"
+  },
+  "course": {
+    "code": "M5",
+    "slug": "m5-python-for-ai-pe-vc-and-rag",
+    "title": "Python for AI, PE, VC and RAG"
+  },
+  "next_assessment": {
+    "id": "A4",
+    "due_week": 13,
+    "title": "Python and Prompt Engineering Portfolio",
+    "weight": "20%"
+  },
+  "paths": {
+    "corpus": "topic_corpus.md",
+    "resources": "topic.resources.json",
+    "progress": "topic.progress.json",
+    "artifacts_dir": "artifacts/",
+    "critic_reports_dir": "critic-reports/"
+  },
+  "artifact_plan": {
+    "diagram": false,
+    "depth_profile": "atomic",
+    "depth_override_reason": "budget — 17 min left for 3 remaining topics after this; downgraded from standard intrinsic",
+    "depth_signals": ["6 subsections in Core Concepts", "full 6-step implementation walkthrough", "real-world patterns with code", "spans install + import + call + response navigation", "lab-week context"],
+    "reading": {"target_word_range": [800, 1200], "target_min_minutes": 4, "target_max_minutes": 6},
+    "quiz": {"min_questions": 5, "max_questions": 7, "include_short_answer": true}
+  },
+  "expected_delivery_minutes": 5,
+  "status": "artifacts_complete"
+}

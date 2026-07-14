@@ -1,0 +1,30 @@
+{
+  "topic_id": "7.4",
+  "captured_at": "2026-06-22T00:00:00Z",
+  "captured_by": "namratas@revature.com",
+  "resources_source": "web_search",
+  "web_search_query": "why LLMs output probability distribution over tokens not single fixed answer",
+  "resources": [
+    {
+      "type": "url",
+      "value": "https://www.promptquorum.com/prompt-engineering/how-llms-actually-work",
+      "role": "primary",
+      "source": "web_search",
+      "notes": "Primer on tokenization, probability distribution over vocab, sampling loop."
+    },
+    {
+      "type": "url",
+      "value": "https://hakanozerdem.medium.com/the-anatomy-of-an-llm-tokenization-attention-and-the-art-of-probability-d3a68a4e0fc7",
+      "role": "supporting",
+      "source": "web_search",
+      "notes": "Step-by-step from input tokens to softmax probability distribution."
+    },
+    {
+      "type": "url",
+      "value": "https://dev.to/nicklucas/llms-do-know-what-theyre-going-to-say-54mh",
+      "role": "supporting",
+      "source": "web_search",
+      "notes": "Explains why same prompt gives different outputs via stochastic sampling."
+    }
+  ]
+}

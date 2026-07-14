@@ -1,0 +1,117 @@
+{
+  "critic": "corpus-critic",
+  "topic_id": "1.10",
+  "topic_title": "Algorithms in everyday life — recipes, GPS routes, sorting queues",
+  "at": "2026-06-22T00:00:00Z",
+  "passed": true,
+  "verdict": "PASS with 1 soft finding. All hard checks pass. Soft finding: word count (2,850) is ~5% below the standard profile floor of 3,000 words — not a hard fail but author may wish to expand Core Concepts or Implementation by ~150 words to meet the floor. No forward references, no scope creep, no readability issues, primary resource cited, citation density well above 60%.",
+  "checks": {
+    "required_sections": {
+      "passed": true,
+      "detail": {
+        "section_3_learning_objectives": {
+          "present": true,
+          "word_count_estimate": 95,
+          "threshold": 50,
+          "passed": true
+        },
+        "section_4_introduction": {
+          "present": true,
+          "word_count_estimate": 155,
+          "threshold": 50,
+          "passed": true
+        },
+        "section_5_core_concepts": {
+          "present": true,
+          "word_count_estimate": 1600,
+          "threshold": 100,
+          "passed": true
+        },
+        "section_10_key_takeaways": {
+          "present": true,
+          "word_count_estimate": 201,
+          "threshold": 50,
+          "passed": true
+        }
+      }
+    },
+    "citation_density": {
+      "passed": true,
+      "resources_source": "web_search",
+      "mode": "strict",
+      "primary_resource_cited": {
+        "resource": "https://www.learning.com/blog/7-examples-of-algorithms-in-everyday-life-for-students/",
+        "role": "primary",
+        "citation_marker": "[1]",
+        "cited_at_least_once": true,
+        "passed": true
+      },
+      "density_check": {
+        "sections_checked": ["5 (Core Concepts)", "6 (Implementation)", "7 (Real-World Patterns)"],
+        "threshold_pct": 60,
+        "estimated_density_pct": 85,
+        "passed": true,
+        "note": "Nearly all factual paragraphs in sections 5, 6, and 7 end with at least one citation marker ([1], [2], [3]). Tables are anchored by citations in immediately surrounding prose. No uncited claim blocks detected."
+      },
+      "fake_citations_check": {
+        "markers_present": ["[1]", "[2]", "[3]"],
+        "resources_count": 3,
+        "all_markers_resolve": true,
+        "passed": true
+      }
+    },
+    "sequence_drift": {
+      "passed": true,
+      "forward_references_found": [],
+      "note": "All technical terms used are either introduced in topics 1.1–1.9 or in this topic's own concepts_introduced list (recipe as algorithm, route-finding, sorting algorithm, comparison rule, stopping condition, tie-breaking rule). 'Determinism' is correctly attributed back to topic 1.2 with an explicit pointer. No named future concepts used without a 'covered later' pointer. No CS theory terms (Big-O, graph, node, edge, Dijkstra, bubble sort) appear. Email routing mentioned in Real-World Patterns as a one-sentence analogy, not defined or taught."
+    },
+    "length_sanity": {
+      "passed": true,
+      "hard_failed": false,
+      "soft_finding": true,
+      "profile": "standard",
+      "profile_range_words": [3000, 4400],
+      "reported_word_count": 2850,
+      "hard_fail_floor": 1500,
+      "hard_fail_ceiling": 6000,
+      "finding": "Word count 2,850 is approximately 5% below the standard profile floor of 3,000 words. This is a soft finding only (count is above the hard-fail floor of 1,500). Recommend expanding Core Concepts or Implementation by ~150 words to meet the 3,000-word floor.",
+      "severity": "soft"
+    },
+    "topic_scope": {
+      "passed": true,
+      "scope_creep_found": [],
+      "note": "Content stays within the headline scope: recipes, GPS routes, and sorting queues as algorithm examples. No Big-O notation, no code implementation, no algorithmic complexity, no CS data structure theory. Section 6 (Implementation) applies the three domains practically and is within scope. Section 7 (Real-World Patterns) names email routing and content delivery servers in one-sentence analogies without defining or teaching them. No deferred concept is bolded or given a defining clause."
+    },
+    "beginner_readability": {
+      "passed": true,
+      "hard_failed": false,
+      "findings_count": 0,
+      "findings": [],
+      "detail": {
+        "undefined_terms": {
+          "finding_code": "undefined_terms",
+          "triggered": false,
+          "note": "'Route-finding' defined inline at first use (section 5.2). 'Sorting algorithm' defined inline at first use (section 5.3). 'Algorithm' correctly reused from topic 1.9 without re-definition. 'Determinism' attributed to topic 1.2 with an explicit pointer. No unexplained acronyms."
+        },
+        "jargon_dump": {
+          "finding_code": "jargon_dump",
+          "triggered": false,
+          "note": "No single paragraph introduces 3 or more new terms simultaneously. New terms are introduced one per section (route-finding in 5.2, sorting algorithm in 5.3)."
+        },
+        "academic_register": {
+          "finding_code": "academic_register",
+          "triggered": false,
+          "note": "Prose is active voice, addressed to 'you', concrete before abstract throughout. No hedging phrases detected. Sentence lengths are within target range."
+        }
+      }
+    }
+  },
+  "soft_findings_summary": [
+    {
+      "check": "length_sanity",
+      "severity": "soft",
+      "finding": "Word count 2,850 is ~5% below the standard profile floor of 3,000 words. Recommend adding ~150 words to Core Concepts or Implementation. Not a hard fail."
+    }
+  ],
+  "hard_failures": []
+}

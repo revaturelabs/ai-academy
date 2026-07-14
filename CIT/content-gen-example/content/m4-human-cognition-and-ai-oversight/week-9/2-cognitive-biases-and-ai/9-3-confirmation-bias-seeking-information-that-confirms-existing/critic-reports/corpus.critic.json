@@ -1,0 +1,41 @@
+{
+  "topic_id": "9.3",
+  "passed": true,
+  "checks": {
+    "required_sections": {
+      "passed": true,
+      "notes": "All four required sections present and non-trivial. §3 Learning Objectives: 6 objectives, well over 50 words. §4 Introduction: 3 substantive paragraphs, ~170 words. §5 Core Concepts: 6 subsections covering definition, three mechanisms, automaticity, System 2 limits, and universality — well over 100 words. §10 Key Vocabulary: 8 terms with full plain-language definitions, well over 50 words."
+    },
+    "citation_density": {
+      "passed": true,
+      "primary_cited": true,
+      "claim_citation_rate": 0.78,
+      "notes": "resources_source=web_search — strict mode applied. Primary resource [1] (simplypsychology.org) cited at least once; appears at §4 line 33, §5 definition, three-mechanisms intro, selective search, selective memory, cognitive economy, motivated reasoning, universality, and §7 misconceptions — 10+ citations. Supporting [2] (Britannica) cited at §5 three-mechanisms intro, Wason task, biased interpretation, motivated reasoning. Supporting [3] (CogBias arxiv) cited at §8 AI context. Estimated 78% of standalone factual assertions in §§5–8 carry a citation marker, exceeding the 60% threshold. No fabricated markers — [1], [2], [3] all resolve to resources listed in topic.resources.json."
+    },
+    "sequence_drift": {
+      "passed": true,
+      "forward_refs": [],
+      "notes": "All technical terms used in the corpus are either: (a) introduced in this topic (confirmation bias, selective search, biased interpretation, selective memory, motivated reasoning, cognitive economy, Wason 2-4-6 task, disconfirming evidence — the last is used as a plain explanatory descriptor and is defined inline by context before appearing in §10 Vocabulary); or (b) established in prior topics 9.1 (System 1 thinking, pattern matching, automatic processing) and 9.2 (System 2 thinking, deliberate processing, cognitive load). Forward topics 9.4–9.9 are mentioned only as bare-name pointers with 'covered in topic X' pointers in §8 (AI training data → 9.6, Judgment Framework → 9.7–9.9) — no definitions or teaching of those future concepts. No sequence drift detected."
+    },
+    "length_sanity": {
+      "passed": true,
+      "word_count": 2380,
+      "profile": "standard",
+      "notes": "Estimated word count ~2380 words across all sections. Task-specified range for standard profile is 1500–6000 words — corpus is within range. Note: SKILL.md specifies a tighter corpus range of 3000–4400 for standard; at ~2380 words the corpus sits below that tighter bound. However, the corpus covers all required content at appropriate depth for a single-concept topic with three sub-mechanisms, and the task instructions specify 1500–6000 as the operative range. Marked passing; the author may wish to note this at HITL #2 if depth expansion is desired."
+    },
+    "scope_discipline": {
+      "passed": true,
+      "offscope_concepts": [],
+      "notes": "The corpus teaches only confirmation bias and its three mechanisms (selective search, biased interpretation, selective memory), plus the directly explanatory concepts cognitive economy and motivated reasoning (both in concepts_introduced for 9.3). The Wason 2-4-6 task is used as experimental evidence for selective search — appropriate scope. §8 names AI training data bias (9.6) and the Judgment Framework (9.7–9.9) as one-line mention-and-defer pointers without bold markers or definitions — compliant with scope_discipline rules. No anchoring bias, automation bias, or other 9.4+ content is taught. Scope discipline maintained throughout."
+    },
+    "readability": {
+      "passed": true,
+      "findings": [
+        "soft: 'disconfirming evidence' appears in §5 Core Concepts before its formal §10 vocabulary entry — it is clarified inline via 'what would prove me wrong?' but could receive a one-line parenthetical on first use to match the mandate 'define every non-everyday term in plain language the FIRST time it appears'."
+      ],
+      "notes": "Only one soft finding. All major terms defined on first use. No jargon dumps — each subsection introduces one concept at a time. No hedging phrases detected. Sentence length generally under 25 words; active voice; addresses learner as 'you' throughout. Concrete examples precede abstract definitions (bootcamp scenario in §4, legal summary scenario in §5, developer evaluation in §6). Plain register maintained. One soft finding does not reach the ≥3 threshold for hard fail."
+    }
+  },
+  "verdict": "Corpus passes all six checks: required sections are complete and substantive, primary citation [1] is well-evidenced throughout with ~78% claim citation rate in core sections, no sequence drift or forward-teaching detected, word count (~2380) is within the task-specified 1500–6000 standard range, scope is disciplined to confirmation bias and its three mechanisms with only compliant mention-and-defer pointers to 9.6 and 9.7–9.9, and readability has only one minor soft finding (disconfirming evidence used before its §10 definition).",
+  "at": "2026-06-12T00:00:00Z"
+}

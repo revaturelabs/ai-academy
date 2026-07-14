@@ -1,0 +1,164 @@
+{
+  "topic_id": "14.8",
+  "stage": "topic_artifacts_approved",
+  "gates": {
+    "resources_captured": true,
+    "corpus_generated": true,
+    "corpus_critic_passed": true,
+    "corpus_human_approved": true,
+    "reading_generated": true,
+    "reading_critic_passed": true,
+    "quiz_generated": true,
+    "quiz_critic_passed": true,
+    "diagram_generated": true,
+    "diagram_critic_passed": true,
+    "module_drift_passed": true,
+    "week_human_approved": true,
+    "course_drift_passed": true,
+    "topic_artifacts_human_approved": true
+  },
+  "history": [
+    {
+      "at": "2026-06-15T17:35:59Z",
+      "op": "set",
+      "gate": "resources_captured",
+      "value": true
+    },
+    {
+      "at": "2026-06-15T17:35:59Z",
+      "op": "stage",
+      "to": "awaiting_corpus"
+    },
+    {
+      "at": "2026-06-15T17:35:59Z",
+      "op": "log",
+      "msg": "Captured 5 resources (source=human) — primary: anthropic.com/responsible-scaling-policy, EU AI Act, lilianweng.github.io/posts/2023-06-23-agent/, anthropic.com/model-card, nist.gov/artificial-intelligence/ai-risk-management-framework"
+    },
+    {
+      "at": "2026-06-15T17:43:12Z",
+      "op": "set",
+      "gate": "corpus_generated",
+      "value": true
+    },
+    {
+      "at": "2026-06-15T17:43:12Z",
+      "op": "stage",
+      "to": "awaiting_corpus_critic"
+    },
+    {
+      "at": "2026-06-15T17:43:12Z",
+      "op": "log",
+      "msg": "Corpus generated — standard depth, diagram=true, ~3450 words. 6 concepts introduced. All 5 primary resources cited. HITL approval loop + autonomy spectrum + decision matrix Q5 extension. 14.9 deferred."
+    },
+    {
+      "at": "2026-06-15T17:45:49Z",
+      "op": "set",
+      "gate": "corpus_critic_passed",
+      "value": true
+    },
+    {
+      "at": "2026-06-15T17:45:49Z",
+      "op": "stage",
+      "to": "awaiting_corpus_human_review"
+    },
+    {
+      "at": "2026-06-15T17:45:49Z",
+      "op": "log",
+      "msg": "Corpus critic PASSED cycle 1 — all 6 checks green. ~4020w standard. All 5 cited. 1 soft: autonomy spectrum 4 terms in §5.4 paced across separate paragraphs (non-blocking)."
+    },
+    {
+      "at": "2026-06-15T18:22:51Z",
+      "op": "set",
+      "gate": "corpus_human_approved",
+      "value": true
+    },
+    {
+      "at": "2026-06-15T18:22:51Z",
+      "op": "stage",
+      "to": "corpus_approved"
+    },
+    {
+      "at": "2026-06-15T18:22:51Z",
+      "op": "log",
+      "msg": "HITL #2 complete — all 9 sections approved as written, depth=deep (budget upgrade from standard), expected_delivery=10min, diagram=true. Intent: HITL approval loop + autonomy spectrum. 1 soft accepted (autonomy spectrum 4 terms)."
+    },
+    {
+      "at": "2026-06-15T18:28:00Z",
+      "op": "set",
+      "gate": "diagram_generated",
+      "value": true
+    },
+    {
+      "at": "2026-06-15T18:28:00Z",
+      "op": "set",
+      "gate": "diagram_critic_passed",
+      "value": true
+    },
+    {
+      "at": "2026-06-16T02:49:36Z",
+      "op": "set",
+      "gate": "reading_generated",
+      "value": true
+    },
+    {
+      "at": "2026-06-16T02:49:36Z",
+      "op": "stage",
+      "to": "awaiting_reading_critic"
+    },
+    {
+      "at": "2026-06-16T02:52:34Z",
+      "op": "set",
+      "gate": "quiz_generated",
+      "value": true
+    },
+    {
+      "at": "2026-06-16T02:52:34Z",
+      "op": "stage",
+      "to": "awaiting_quiz_critic"
+    },
+    {
+      "at": "2026-06-16T03:04:42Z",
+      "op": "set",
+      "gate": "reading_critic_passed",
+      "value": true
+    },
+    {
+      "at": "2026-06-16T03:04:43Z",
+      "op": "stage",
+      "to": "reading_approved"
+    },
+    {
+      "at": "2026-06-16T03:07:48Z",
+      "op": "set",
+      "gate": "quiz_critic_passed",
+      "value": true
+    },
+    {
+      "at": "2026-06-16T03:07:48Z",
+      "op": "stage",
+      "to": "quiz_approved"
+    },
+    {
+      "at": "2026-06-16T03:07:48Z",
+      "op": "stage",
+      "to": "awaiting_topic_artifacts_review"
+    },
+    {
+      "at": "2026-06-16T03:09:56Z",
+      "op": "set",
+      "gate": "topic_artifacts_human_approved",
+      "value": true
+    },
+    {
+      "at": "2026-06-16T03:09:56Z",
+      "op": "stage",
+      "to": "topic_artifacts_approved"
+    },
+    {
+      "at": "2026-06-23T17:39:32Z",
+      "op": "set",
+      "gate": "course_drift_passed",
+      "value": true
+    }
+  ]
+}

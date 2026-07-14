@@ -1,0 +1,50 @@
+{
+  "critic": "diagram-critic",
+  "topic_id": "12.7",
+  "topic_title": "Writing to a file — open, write, close",
+  "cycle": 1,
+  "at": "2026-06-14T00:00:00Z",
+  "passed": true,
+  "verdict": "PASS — intent fully covered. Side-by-side contrast of write mode ('w') vs append mode ('a') rendered clearly with color coding: red/pink panel (erase ✗) vs green panel (kept intact ✓). Open → write → auto-close lifecycle visible in both subgraphs. 8 nodes at upper limit — acceptable. LR subgraphs rendered stacked vertically by mmdc rather than truly side-by-side; contrast remains legible. No scope-creep nodes, no bare acronyms, all labels beginner-clear.",
+  "checks": {
+    "node_count": {
+      "passed": true,
+      "count": 8,
+      "range": "3–8",
+      "note": "4 nodes per subgraph (open, erase/keep, write methods, auto-close). At upper limit — acceptable for side-by-side contrast layout."
+    },
+    "label_clarity": {
+      "passed": true,
+      "findings": [],
+      "note": "open('out.txt', 'w') / open('out.txt', 'a') — file name concrete. 'existing content erased ✗' / 'existing content kept intact ✓' — plain language, checkmark/cross reinforce meaning. '.write() or .writelines()' — method names exact. 'with block → auto-close' — self-explanatory."
+    },
+    "intent_coverage": {
+      "passed": true,
+      "intent": "Side-by-side contrast: write mode ('w') erases file then writes from beginning; append mode ('a') adds to end. Both show open → write → auto-close lifecycle.",
+      "findings": [],
+      "note": "Both branches present. Erase vs keep distinction is the visual anchor — red node vs green node with explicit text. Lifecycle (open → write → close) readable in each panel."
+    },
+    "scope_discipline": {
+      "passed": true,
+      "findings": [],
+      "note": "All 8 nodes strictly within 12.7 scope. No advanced mode nodes (e.g. binary 'rb'/'wb', seek, truncate). No adjacent-topic nodes."
+    },
+    "render_quality": {
+      "passed": true,
+      "png_bytes": 23463,
+      "findings": [
+        {
+          "code": "layout_deviation",
+          "severity": "soft",
+          "detail": "LR flowchart with two subgraphs rendered as vertically stacked panels by mmdc rather than side-by-side. This is a known Mermaid rendering behavior. Contrast is still legible and intent is clear. Not a hard fail."
+        }
+      ]
+    }
+  },
+  "summary": {
+    "hard_failures": [],
+    "soft_findings": [
+      "render_quality: LR subgraphs stacked vertically by mmdc — contrast still clear, not a hard fail"
+    ]
+  }
+}

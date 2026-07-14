@@ -1,0 +1,43 @@
+{
+  "topic_id": "11.4",
+  "captured_at": "2026-06-12T00:30:00Z",
+  "captured_by": "bhuvaneshwarim@revature.com",
+  "resources_source": "human",
+  "resources": [
+    {
+      "type": "url",
+      "value": "https://docs.python.org/3/library/stdtypes.html",
+      "role": "primary",
+      "source": "human",
+      "notes": "Python built-in types reference — str, int, float, bool operations and methods in depth"
+    },
+    {
+      "type": "url",
+      "value": "https://docs.python.org/3/tutorial/introduction.html",
+      "role": "primary",
+      "source": "human",
+      "notes": "Python official tutorial — numbers, strings, and using the interpreter interactively"
+    },
+    {
+      "type": "url",
+      "value": "https://realpython.com/python-data-types/",
+      "role": "primary",
+      "source": "human",
+      "notes": "Real Python — basic data types: what each type is, examples, and operations"
+    },
+    {
+      "type": "url",
+      "value": "https://realpython.com/python-strings/",
+      "role": "primary",
+      "source": "human",
+      "notes": "Real Python — strings in Python: creation, concatenation, len(), slicing basics"
+    },
+    {
+      "type": "url",
+      "value": "https://docs.python.org/3/library/functions.html#print",
+      "role": "primary",
+      "source": "human",
+      "notes": "Python docs — print() function reference: syntax, sep, end parameters"
+    }
+  ]
+}

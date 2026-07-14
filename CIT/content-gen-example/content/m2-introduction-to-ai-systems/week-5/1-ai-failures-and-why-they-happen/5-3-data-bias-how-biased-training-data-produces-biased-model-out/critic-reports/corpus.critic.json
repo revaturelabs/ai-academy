@@ -1,0 +1,89 @@
+{
+  "critic": "corpus-critic",
+  "topic_id": "5.3",
+  "topic_title": "Data bias — how biased training data produces biased model output",
+  "at": "2026-06-17T00:00:00Z",
+  "passed": true,
+  "verdict": "PASS with soft findings. All six checks either pass or produce soft findings only; no hard-fail thresholds are crossed. Corpus is well-structured, beginner-appropriate, correctly cites the primary resource [1] across all factual sections, and introduces all seven planned concepts (data bias, historical bias, representation bias, measurement bias, GIGO, objectivity illusion, disaggregated metrics) with clear plain-language definitions. Two soft findings are surfaced for HITL #2 human review: (1) Section 6 (Implementation) contains zero citation markers across its five diagnostic questions — these are procedural/synthesized guidance rather than standalone factual assertions about AI behavior, so they do not trigger a hard fail, but the absence is noted; (2) Section 5.6 mitigation list (debiasing techniques, fairness constraints, algorithmic audits) uses em-dash defining clauses on deferred concepts, technically violating the bare-name-only scope_discipline rule, though the section is explicitly labeled orientation-only and each description is a single sentence.",
+  "checks": {
+    "required_sections": {
+      "passed": true,
+      "detail": {
+        "section_3_learning_objectives": { "present": true, "word_count_ge_50": true, "placeholder_only": false },
+        "section_4_introduction": { "present": true, "word_count_ge_50": true, "placeholder_only": false },
+        "section_5_core_concepts": { "present": true, "word_count_ge_100": true, "placeholder_only": false },
+        "section_10_key_takeaways": { "present": true, "word_count_ge_50": true, "placeholder_only": false }
+      }
+    },
+    "citation_density": {
+      "passed": true,
+      "resources_source": "web_search",
+      "mode": "strict",
+      "primary_resource_cited": true,
+      "primary_resource": "https://www.ibm.com/think/topics/data-bias",
+      "fake_citations_found": false,
+      "section_5_coverage": "high — nearly every factual assertion in §5.1–5.5 carries [1], [2], or [3] markers",
+      "section_6_coverage": "zero citations — five diagnostic questions contain no [N] markers; these are synthesized procedural guidance, not direct factual assertions, so hard-fail not triggered",
+      "section_7_coverage": "high — all four real-world patterns paragraphs carry citation markers",
+      "findings": [
+        {
+          "code": "section_6_uncited",
+          "severity": "soft",
+          "detail": "Section 6 (Implementation) — five diagnostic questions carry no citation markers. Under strict web_search mode the 60% factual-assertion threshold applies to sections 5, 6, 7. The Implementation section here is a derived procedural checklist (not direct factual claims about AI behavior) and the underlying facts are cited in Section 5. Surfaced for author awareness at HITL #2."
+        }
+      ]
+    },
+    "sequence_drift": {
+      "passed": true,
+      "forward_references": [],
+      "detail": "All technical terms used are either (a) introduced in this topic's own concepts_introduced list [data bias, historical bias, representation bias, measurement bias, GIGO, objectivity illusion, disaggregated metrics], (b) introduced by prior topics 5.1 [AI failure, training data bias, algorithmic bias, diagnostic AI] or 5.2 [hallucination, confidence problem], or (c) introduced in weeks 3–4 [parameters, training data, LLMs, AI agents]. 'EU AI Act' is named once in §7 with an explicit 'you will cover in a later topic' pointer — correctly deferred. 'Feedback loop' is used descriptively in §7 without being defined as a technical concept — acceptable. No genuine forward references found."
+    },
+    "length_sanity": {
+      "passed": true,
+      "suggested_profile": "standard",
+      "profile_source": "default (corpus frontmatter contains no suggested_profile field; artifact-mix default_profile is 'standard')",
+      "profile_word_range": [3000, 4400],
+      "estimated_word_count": 2800,
+      "hard_fail_lower_threshold": 2100,
+      "within_30pct_tolerance": true,
+      "findings": [
+        {
+          "code": "below_standard_lower_bound",
+          "severity": "soft",
+          "detail": "Estimated corpus word count (~2,800 words) falls below the standard profile lower bound of 3,000 words, but remains above the hard-fail threshold of 2,100 words (30% below lower bound). No hard fail. The corpus-builder did not embed a suggested_profile; if the HITL #2 reviewer selects 'deep' profile, the builder will need to expand the corpus to ~5,000+ words."
+        }
+      ]
+    },
+    "topic_scope": {
+      "passed": true,
+      "findings": [
+        {
+          "code": "scope_creep",
+          "severity": "soft",
+          "location": "Section 5.6 — What can be done (named and deferred)",
+          "concepts_flagged": [
+            "debiasing techniques",
+            "fairness constraints",
+            "algorithmic audits"
+          ],
+          "detail": "Each of the three flagged concepts is followed by an em-dash defining clause ('— mathematical adjustments to training data or model outputs to reduce measured disparities', '— requirements built into the model training process that limit the degree of disparity in outputs across groups', '— independent reviews of a deployed model's outputs to detect discriminatory patterns'). The scope_discipline rule requires bare name plus topic pointer only; defining clauses constitute teaching rather than naming. Mitigating factor: the section is explicitly labelled 'named and deferred', each description is a single sentence, and the section closes with 'These approaches are named here as orientation only.' This does not cross the threshold for a hard scope_creep fail, but the em-dash format should be corrected to bare names + 'covered in later coursework' pointer at HITL #2."
+        }
+      ]
+    },
+    "beginner_readability": {
+      "passed": true,
+      "findings": [],
+      "detail": {
+        "terms_defined_on_first_use": "PASS — 'data bias', 'GIGO' (spelled out as garbage in, garbage out), 'objectivity illusion', 'disaggregated metrics' all defined at first appearance with bold + plain-language meaning. No cold acronyms found.",
+        "jargon_dumps": "PASS — no paragraph introduces 3+ brand-new undefined terms simultaneously.",
+        "plain_register": "PASS — no hedging phrases ('it is generally considered', 'many believe') found. Learner addressed as 'you' throughout. Concrete analogies (orange tabby cat example) precede abstract definitions. Average sentence length appears within target."
+      }
+    }
+  },
+  "soft_findings_summary": [
+    "section_6_uncited: Section 6 (Implementation) has no citation markers — procedural checklist, not standalone factual assertions; surfaced for HITL #2",
+    "below_standard_lower_bound: estimated ~2,800 words is slightly below the standard profile 3,000-word floor, but above hard-fail threshold",
+    "scope_creep (soft): Section 5.6 mitigation list uses em-dash defining clauses on three deferred concepts; should be converted to bare names + defer pointer"
+  ],
+  "hard_fails": []
+}

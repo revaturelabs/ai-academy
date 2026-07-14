@@ -1,0 +1,190 @@
+{
+  "topic_id": "13.8",
+  "stage": "module_passed",
+  "gates": {
+    "resources_captured": true,
+    "corpus_generated": true,
+    "corpus_critic_passed": true,
+    "corpus_human_approved": true,
+    "reading_generated": true,
+    "reading_critic_passed": true,
+    "quiz_generated": true,
+    "quiz_critic_passed": true,
+    "diagram_generated": null,
+    "diagram_critic_passed": null,
+    "module_drift_passed": true,
+    "course_drift_passed": true,
+    "topic_artifacts_human_approved": true,
+    "week_human_approved": true
+  },
+  "history": [
+    {
+      "at": "2026-06-14T06:43:19Z",
+      "op": "set",
+      "gate": "resources_captured",
+      "value": true
+    },
+    {
+      "at": "2026-06-14T06:43:19Z",
+      "op": "stage",
+      "to": "awaiting_corpus"
+    },
+    {
+      "at": "2026-06-14T06:43:19Z",
+      "op": "log",
+      "msg": "Captured 3 resources (source=web_search, primary: machinelearningmastery.com/pydantic-validating-llm-outputs)"
+    },
+    {
+      "at": "2026-06-14T06:47:21Z",
+      "op": "set",
+      "gate": "corpus_generated",
+      "value": true
+    },
+    {
+      "at": "2026-06-14T06:47:21Z",
+      "op": "stage",
+      "to": "awaiting_corpus_critic"
+    },
+    {
+      "at": "2026-06-14T06:47:21Z",
+      "op": "log",
+      "msg": "Corpus generated (1820 words, standard profile, diagram=false)"
+    },
+    {
+      "at": "2026-06-14T06:49:23Z",
+      "op": "set",
+      "gate": "corpus_critic_passed",
+      "value": true
+    },
+    {
+      "at": "2026-06-14T06:49:23Z",
+      "op": "stage",
+      "to": "awaiting_corpus_human_review"
+    },
+    {
+      "at": "2026-06-14T06:49:23Z",
+      "op": "log",
+      "msg": "Corpus critic passed — 2 soft findings: Pydantic defining clause (mention-and-defer violation, soft), Section 5d citation gap (soft)"
+    },
+    {
+      "at": "2026-06-14T07:07:07Z",
+      "op": "set",
+      "gate": "corpus_human_approved",
+      "value": true
+    },
+    {
+      "at": "2026-06-14T07:07:07Z",
+      "op": "stage",
+      "to": "corpus_approved"
+    },
+    {
+      "at": "2026-06-14T07:07:07Z",
+      "op": "log",
+      "msg": "HITL#2 approved — atomic profile (budget-adjusted from standard), diagram=false. Soft fixes applied inline (Pydantic bare-name, 5d citations). Week running total: 49/90 min."
+    },
+    {
+      "at": "2026-06-14T07:08:55Z",
+      "op": "set",
+      "gate": "reading_generated",
+      "value": true
+    },
+    {
+      "at": "2026-06-14T07:08:55Z",
+      "op": "set",
+      "gate": "quiz_generated",
+      "value": true
+    },
+    {
+      "at": "2026-06-14T07:08:55Z",
+      "op": "stage",
+      "to": "awaiting_reading_critic"
+    },
+    {
+      "at": "2026-06-14T07:08:55Z",
+      "op": "log",
+      "msg": "Reading (951w/5min) + quiz (6q, bias_defense=true) generated."
+    },
+    {
+      "at": "2026-06-14T07:11:01Z",
+      "op": "set",
+      "gate": "reading_critic_passed",
+      "value": true
+    },
+    {
+      "at": "2026-06-14T07:11:01Z",
+      "op": "stage",
+      "to": "reading_approved"
+    },
+    {
+      "at": "2026-06-14T07:11:02Z",
+      "op": "set",
+      "gate": "quiz_critic_passed",
+      "value": false
+    },
+    {
+      "at": "2026-06-14T07:11:02Z",
+      "op": "log",
+      "msg": "Reading critic passed (soft: retry named 3x, acceptable). Quiz critic failed: length bias 0.60 (q1,q3,q5) — fixing."
+    },
+    {
+      "at": "2026-06-14T12:11:42Z",
+      "op": "set",
+      "gate": "quiz_critic_passed",
+      "value": true
+    },
+    {
+      "at": "2026-06-14T12:11:42Z",
+      "op": "stage",
+      "to": "quiz_approved"
+    },
+    {
+      "at": "2026-06-14T12:11:50Z",
+      "op": "log",
+      "msg": "Quiz critic passed (attempt 2 on revised quiz). Positional [1,2,1,1] max_share=0.40. Length bias 0.00. All 5 LOs covered. Beginner-fair, scope clean."
+    },
+    {
+      "at": "2026-06-14T12:12:40Z",
+      "op": "set",
+      "gate": "topic_artifacts_human_approved",
+      "value": true
+    },
+    {
+      "at": "2026-06-14T12:12:40Z",
+      "op": "stage",
+      "to": "topic_artifacts_approved"
+    },
+    {
+      "at": "2026-06-14T12:12:41Z",
+      "op": "log",
+      "msg": "HITL#3 approved. Reading 951w/5min, quiz 6q (2 revise cycles). Soft: 13.9 named 3x (accepted). Week running total: 49/90 min."
+    },
+    {
+      "at": "2026-06-15T00:00:00Z",
+      "op": "set",
+      "gate": "module_drift_passed",
+      "value": true
+    },
+    {
+      "at": "2026-06-15T00:00:00Z",
+      "op": "stage",
+      "to": "module_passed"
+    },
+    {
+      "at": "2026-06-15T00:00:00Z",
+      "op": "log",
+      "msg": "Module drift critic passed — all 5 checks + audience-level consistency green. Report: critic-reports/module-drift.critic.json"
+    },
+    {
+      "at": "2026-06-15T06:37:49Z",
+      "op": "set",
+      "gate": "week_human_approved",
+      "value": true
+    },
+    {
+      "at": "2026-06-23T17:39:30Z",
+      "op": "set",
+      "gate": "course_drift_passed",
+      "value": true
+    }
+  ]
+}

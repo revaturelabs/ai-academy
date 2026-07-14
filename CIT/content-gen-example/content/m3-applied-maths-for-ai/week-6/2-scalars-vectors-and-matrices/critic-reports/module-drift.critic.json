@@ -1,0 +1,61 @@
+{
+  "module_slug": "2-scalars-vectors-and-matrices",
+  "week_num": 6,
+  "passed": true,
+  "checks": {
+    "terminology": {
+      "passed": true,
+      "summary": "scalar / vector / matrix / feature vector used identically across 6.2-6.5. 6.2 defines scalar (magnitude, no direction); 6.3 reuses 'ordered list of scalars'; 6.4 reuses 'grid of scalars / stacked feature vectors'; 6.5 reuses vector and feature_vector and extends with coordinate/axis/origin. No synonym drift.",
+      "findings": [
+        "SOFT: 6.5 corpus (section 5.1, section 2) refers to topic 6.3's ordering concept as 'position_order', whereas 6.3 itself names it 'consistent position-to-property mapping'. Same concept, two labels. The 6.5 reading.md repeats 'position_order'. Cosmetic/expected; non-blocking; no code change required."
+      ]
+    },
+    "prereq_ordering": {
+      "passed": true,
+      "summary": "Prerequisites are strictly increasing with delivery order: 6.2<-{6.1}; 6.3<-{6.1,6.2}; 6.4<-{6.1,6.2,6.3}; 6.5<-{6.1,6.2,6.3,6.4}. No forward references. All forward-looking concepts (dot product 6.6, matrix multiplication/transpose/determinant/eigenvalues, embeddings, cosine similarity, distance metrics) are explicitly deferred with 'covered in a later topic' framing.",
+      "findings": []
+    },
+    "arc_completeness": {
+      "passed": true,
+      "summary": "The four topics fully cover the module concept 'Scalars, Vectors and Matrices': scalar (atom) -> vector (ordered list of scalars) -> matrix (stacked vectors) -> vector-as-point (geometric reading). The arc builds without gaps; each topic hands off cleanly to the next. Dot-product/similarity (6.6) correctly sits in the next module (3-similarity-and-meaning), not a gap here.",
+      "findings": []
+    },
+    "no_duplication": {
+      "passed": true,
+      "summary": "No re-teaching. Vector is defined once (6.3); 6.4 states 'Vectors and scalars are not re-defined here; they are used freely as prior knowledge' and 6.5 states concepts 'will not be re-defined - only extended'. 6.4 reuses feature-vector-as-row; 6.5 reuses vector geometrically. Core Concepts sets are distinct across all four pairs (well below the 0.6 Jaccard threshold).",
+      "findings": []
+    },
+    "lab_alignment": {
+      "passed": true,
+      "summary": "Week-6 lab_activity_seed ('TensorFlow Embedding Projector / Rank 5 vectors by similarity - by hand first, then verify in browser / No coding this week - understanding only / Journal Entry #3') is supported. 6.3 hands-on explicitly uses the TensorFlow Embedding Projector and states it 'mirrors the week's lab activity'; 6.5 hands-on is a by-hand plot-and-compare (matches 'by hand first'). All four exercises are no-code, consistent with 'No coding this week'.",
+      "findings": [
+        "SOFT: No single topic in this module references 'Journal Entry #3' by name. This is a week-level rollup artifact (HITL #4 framing), not a per-topic obligation, so not treated as a defect - noted for the end-of-week wrapper. Expected; non-blocking."
+      ]
+    }
+  },
+  "findings": [
+    {
+      "topic": "6.5",
+      "check": "terminology",
+      "severity": "soft",
+      "detail": "Uses 'position_order' to name the ordering concept that topic 6.3 calls 'consistent position-to-property mapping'. Cosmetic/expected label mismatch; non-blocking; carried forward as a known soft finding."
+    },
+    {
+      "topic": "module",
+      "check": "lab_alignment",
+      "severity": "soft",
+      "detail": "Journal Entry #3 (in the week lab seed) is not anchored by any single topic; expected to land in the week-level review wrapper, not per-topic. Non-blocking."
+    }
+  ],
+  "resolved_findings": [
+    {
+      "topic": "6.4",
+      "check": "artifact_integrity",
+      "severity": "actionable",
+      "status": "resolved",
+      "detail": "Prior pass flagged 6.4 artifacts/reading.md image reference as 'artifacts/diagram.png' (broken relative path, since reading.md lives inside artifacts/). Re-validation confirms line 31 now reads '![Matrix structure diagram](./diagram.png)', matching sibling readings 6.3 (line 15) and 6.5 (line 39), both './diagram.png'. Fix verified; finding cleared."
+    }
+  ],
+  "verdict": "PASS - all five coherence checks pass on re-validation. The previously-flagged actionable 6.4 image-path finding ('artifacts/diagram.png' -> './diagram.png') is confirmed RESOLVED. Two soft findings remain (6.5 'position_order' vs 'consistent position-to-property mapping' label synonym; week-level Journal Entry #3 note) - both cosmetic/expected, non-blocking, surface at HITL #4.",
+  "at": "2026-06-19T00:00:00Z"
+}

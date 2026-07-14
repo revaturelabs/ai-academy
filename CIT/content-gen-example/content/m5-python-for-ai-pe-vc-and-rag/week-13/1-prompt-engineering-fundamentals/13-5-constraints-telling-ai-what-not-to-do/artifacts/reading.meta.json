@@ -1,0 +1,10 @@
+{
+  "topic_id": "13.5",
+  "title": "Constraints — Telling AI What NOT to Do",
+  "estimated_read_minutes": 5,
+  "word_count": 1047,
+  "generated_at": "2026-06-14T00:00:00Z",
+  "embeds_diagram": true,
+  "citations_used": [1, 2, 3],
+  "sections": ["Overview", "Key Concepts", "Worked Example", "In Practice", "Key Takeaways", "References"]
+}

@@ -1,0 +1,39 @@
+{
+  "type": "topic",
+  "id": "5.9",
+  "title": "EU AI Act — prohibited uses including social scoring and real-time biometric surveillance",
+  "slug": "5-9-eu-ai-act-prohibited-uses-including-social-scoring-and-real",
+  "position_in_module": 3,
+  "week_num": 5,
+  "session_name": "AI Ethics, Safety and Governance",
+  "module": {
+    "position": 4,
+    "slug": "4-governance-frameworks",
+    "title": "Governance Frameworks"
+  },
+  "course": {
+    "code": "M2",
+    "slug": "m2-introduction-to-ai-systems",
+    "title": "Introduction to AI Systems"
+  },
+  "next_assessment": {
+    "id": "A2",
+    "due_week": 6,
+    "title": "AI Systems Essay",
+    "weight": "15%"
+  },
+  "paths": {
+    "corpus": "topic_corpus.md",
+    "resources": "topic.resources.json",
+    "progress": "topic.progress.json",
+    "artifacts_dir": "artifacts/",
+    "critic_reports_dir": "critic-reports/"
+  },
+  "artifact_plan": {
+    "diagram": true,
+    "diagram_intent": "Risk pyramid with the unacceptable/prohibited tier at the narrow top highlighted, listing the Article 5 bans, contrasted against the lower high-risk tier (banned-outright vs allowed-under-rules)",
+    "suggested_depth_profile": "standard"
+  },
+  "expected_delivery_minutes": 7,
+  "status": "module_passed"
+}

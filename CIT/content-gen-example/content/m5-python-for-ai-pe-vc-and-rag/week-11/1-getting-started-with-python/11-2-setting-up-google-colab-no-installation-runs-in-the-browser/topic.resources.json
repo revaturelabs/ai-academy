@@ -1,0 +1,43 @@
+{
+  "topic_id": "11.2",
+  "captured_at": "2026-06-12T00:13:00Z",
+  "captured_by": "bhuvaneshwarim@revature.com",
+  "resources_source": "human",
+  "resources": [
+    {
+      "type": "url",
+      "value": "https://colab.research.google.com/",
+      "role": "primary",
+      "source": "human",
+      "notes": "Google Colab homepage — the environment students will use throughout the course"
+    },
+    {
+      "type": "url",
+      "value": "https://colab.research.google.com/notebooks/intro.ipynb",
+      "role": "primary",
+      "source": "human",
+      "notes": "Official Colab intro notebook — walkthrough of the interface and basic usage"
+    },
+    {
+      "type": "url",
+      "value": "https://colab.research.google.com/notebooks/basic_features_overview.ipynb",
+      "role": "primary",
+      "source": "human",
+      "notes": "Colab features overview — code cells, text cells, runtime concepts"
+    },
+    {
+      "type": "url",
+      "value": "https://research.google.com/colaboratory/faq.html",
+      "role": "primary",
+      "source": "human",
+      "notes": "Official Colab FAQ — limits, storage, runtime connect/disconnect, Google Drive"
+    },
+    {
+      "type": "url",
+      "value": "https://colab.research.google.com/notebooks/io.ipynb",
+      "role": "primary",
+      "source": "human",
+      "notes": "Colab I/O notebook — saving to Drive, file uploads, persistence across sessions"
+    }
+  ]
+}

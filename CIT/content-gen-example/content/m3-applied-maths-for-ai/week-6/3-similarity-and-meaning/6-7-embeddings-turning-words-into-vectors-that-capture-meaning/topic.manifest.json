@@ -1,0 +1,48 @@
+{
+  "type": "topic",
+  "id": "6.7",
+  "title": "Embeddings \u00e2\u20ac\u201d turning words into vectors that capture meaning",
+  "slug": "6-7-embeddings-turning-words-into-vectors-that-capture-meaning",
+  "position_in_module": 2,
+  "week_num": 6,
+  "session_name": "Numbers, Vectors and Meaning",
+  "module": {
+    "position": 3,
+    "slug": "3-similarity-and-meaning",
+    "title": "Similarity and Meaning"
+  },
+  "course": {
+    "code": "M3",
+    "slug": "m3-applied-maths-for-ai",
+    "title": "Applied Maths for AI"
+  },
+  "next_assessment": {
+    "id": "A2",
+    "due_week": 6,
+    "title": "AI Systems Essay",
+    "weight": "15%"
+  },
+  "paths": {
+    "corpus": "topic_corpus.md",
+    "resources": "topic.resources.json",
+    "progress": "topic.progress.json",
+    "artifacts_dir": "artifacts/",
+    "critic_reports_dir": "critic-reports/"
+  },
+  "artifact_plan": {
+    "diagram": true,
+    "diagram_intent": "Side-by-side contrast of one-hot encoding (sparse 10000-dim vector) vs embedding (dense 300-dim vector), plus a 2D scatter plot showing word clusters (cat/kitten/dog vs car/skyscraper) to illustrate the embedding space",
+    "depth_profile": "standard",
+    "depth_signals": "One-hot vs embedding contrast + embedding space geometry = 2 distinct concepts; standard appropriate.",
+    "reading_word_range": [
+      650,
+      900
+    ],
+    "quiz_question_range": [
+      4,
+      5
+    ]
+  },
+  "expected_delivery_minutes": 6,
+  "status": "scaffolded"
+}

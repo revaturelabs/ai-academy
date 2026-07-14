@@ -1,0 +1,30 @@
+{
+  "topic_id": "13.8",
+  "captured_at": "2026-06-14T00:00:00Z",
+  "captured_by": "namratas@revature.com",
+  "resources_source": "web_search",
+  "web_search_query": "output validation AI response format check Python LLM",
+  "resources": [
+    {
+      "type": "url",
+      "value": "https://machinelearningmastery.com/the-complete-guide-to-using-pydantic-for-validating-llm-outputs/",
+      "role": "primary",
+      "source": "web_search",
+      "notes": "Complete guide to Pydantic for validating LLM outputs — schema definition, format enforcement, validation pattern with try/except."
+    },
+    {
+      "type": "url",
+      "value": "https://cohere.com/llmu/validating-llm-outputs",
+      "role": "supporting",
+      "source": "web_search",
+      "notes": "Cohere LLM University — first-party course page on validating LLM outputs."
+    },
+    {
+      "type": "url",
+      "value": "https://xebia.com/blog/enforce-and-validate-llm-output-with-pydantic/",
+      "role": "supporting",
+      "source": "web_search",
+      "notes": "Practical tutorial: enforce and validate LLM output with Pydantic, includes Python code examples."
+    }
+  ]
+}

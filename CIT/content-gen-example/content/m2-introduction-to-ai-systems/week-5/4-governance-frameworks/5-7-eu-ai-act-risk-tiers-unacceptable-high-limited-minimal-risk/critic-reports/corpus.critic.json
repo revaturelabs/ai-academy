@@ -1,0 +1,37 @@
+{
+  "topic_id": "5.7",
+  "artifact": "corpus",
+  "try": 1,
+  "passed": true,
+  "checks": {
+    "required_sections": {
+      "passed": true,
+      "detail": "Required sections 3 (Learning Objectives), 4 (Introduction), 5 (Core Concepts), 10 (Key Takeaways) all present and non-trivial. Section 5 well over 100w; others over 50w. Optional 6 and 7 skipped by builder (allowed). Tail numbering is CANONICAL: Best Practices=## 8, Hands-On Exercise=## 9, Key Takeaways=## 10, Next Steps=## 11. Key Takeaways correctly at ## 10 (the mis-numbering that tripped sibling 5.6 is NOT present here)."
+    },
+    "citation_density": {
+      "passed": true,
+      "mode": "strict",
+      "detail": "resources_source=web_search -> strict. Primary [1] (ec.europa.eu) cited throughout (intro, 5.1-5.7, table, takeaways). Supporting [2] (europarl) and [3] (artificialintelligenceact.eu) both cited. No marker above [3] -> no fabricated [N]. Core Concepts (5) factual assertions carry [N] well above 60%."
+    },
+    "sequence_drift": {
+      "passed": true,
+      "detail": "All technical terms resolve to 5.7 concepts_introduced (EU AI Act, risk-based regulation, four tiers, conformity assessment) or prior topics (5.1 failure cases, 5.4 four pillars, 5.5 red-teaming). Forward references to 5.8/5.9/5.10/5.11/5.12 verified as genuinely LATER topics in sequence.index.json -> legitimate deferrals, not fabricated forward refs. No unknown terms."
+    },
+    "length_sanity": {
+      "passed": true,
+      "note": "just_under",
+      "detail": "depth_profile=standard, manifest reading target 1200-1600w. Corpus body ~1185w -> ~1% under the 1200 floor. Within reasonable deviation (well inside 30% tolerance). Surfaced as a soft note for HITL, not a hard fail."
+    },
+    "scope_creep": {
+      "passed": true,
+      "detail": "This IS the home topic for the EU AI Act risk-tier structure; teaching all four tiers (unacceptable/high/limited/minimal) fully is CORRECT and on-headline. Deferred concepts verified as bare-name + pointer only, no bold, no defining clause: prohibited-uses list -> '(5.9)' (5.2), high-risk obligations -> 'next topic (5.8)' (5.3), NIST AI RMF (5.10) / US Executive Order (5.11) / India MEITY (5.12) named-and-deferred in 5.8. None taught or defined here."
+    },
+    "beginner_readability": {
+      "passed": true,
+      "findings": [],
+      "detail": "EU AI Act spelled out on first use. 'regulation', 'biometric', 'conformity assessment', 'transparency' each defined plainly at first appearance (analogy-led, e.g. conformity assessment = pre-sale car safety inspection). No article numbers, penalty schedules, or legal minutiae. Short active sentences, no jargon dumps, no hedging. Fewer than 3 findings -> no escalation."
+    }
+  },
+  "verdict": "PASS. All six checks pass. Home topic correctly teaches the four risk tiers in full; sibling-governance frameworks (5.8 high-risk obligations, 5.9 prohibited uses, 5.10 NIST, 5.11 US EO, 5.12 MEITY) are named-and-deferred (bare name + pointer, not taught) and confirmed as genuinely later topics. Canonical tail numbering (Key Takeaways at ## 10). Strict citation density satisfied with no fabricated [N]. One soft note only: ~1185w is a hair under the 1200 standard floor (~1%) - acceptable deviation, surfaced for HITL not blocking. No forward references, no scope creep, beginner-readable.",
+  "at": "2026-06-22T08:12:34Z"
+}

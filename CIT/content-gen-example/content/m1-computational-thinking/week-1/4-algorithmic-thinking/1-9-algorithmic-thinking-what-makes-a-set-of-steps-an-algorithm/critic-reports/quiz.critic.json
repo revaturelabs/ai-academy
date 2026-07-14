@@ -1,0 +1,122 @@
+{
+  "passed": true,
+  "cycle": 2,
+  "checks": {
+    "positional_bias": {
+      "passed": true,
+      "derived_positions": [2, 0, 3, 1, 2],
+      "distribution": {"0": 1, "1": 1, "2": 2, "3": 1},
+      "max_share": 0.40,
+      "meta_gift_desync": false,
+      "note": "Derived positions match sidecar exactly. max_share=0.40 is at the threshold boundary (<=0.40); pass."
+    },
+    "length_bias": {
+      "passed": true,
+      "longest_correct_rate": 0.0,
+      "baseline": 0.25,
+      "threshold": 0.40,
+      "per_question": [
+        {
+          "id": "q1",
+          "correct_len": 81,
+          "distractor_mean": 77.0,
+          "threshold_len": 92.4,
+          "longest_correct": false,
+          "note": "correct(81) < threshold(92.4); pass"
+        },
+        {
+          "id": "q2",
+          "correct_len": 79,
+          "distractor_mean": 89.0,
+          "threshold_len": 106.8,
+          "longest_correct": false,
+          "note": "correct(79) < distractor mean(89.0); pass"
+        },
+        {
+          "id": "q3",
+          "correct_len": 105,
+          "distractor_mean": 109.3,
+          "threshold_len": 131.2,
+          "longest_correct": false,
+          "note": "correct(105) < distractor mean(109.3); pass"
+        },
+        {
+          "id": "q4",
+          "correct_len": 106,
+          "distractor_mean": 109.67,
+          "threshold_len": 131.6,
+          "longest_correct": false,
+          "note": "correct(106) < distractor mean(109.67); pass"
+        },
+        {
+          "id": "q5",
+          "correct_len": 102,
+          "distractor_mean": 114.33,
+          "threshold_len": 137.2,
+          "longest_correct": false,
+          "note": "correct(102) < distractor mean(114.33); pass"
+        }
+      ],
+      "note": "Cycle-1 failure resolved. Correct-answer stems shortened: in 4 of 5 questions the correct answer is now shorter than the distractor mean. Rate=0.0, well below the 0.40 threshold."
+    },
+    "distractor_plausibility": {
+      "passed": true,
+      "absurd_rate": 0.0,
+      "total_distractors": 15,
+      "absurd_count": 0,
+      "weakest_questions": [
+        {
+          "id": "q2",
+          "distractor": "It is too short — a real algorithm always needs at least ten steps to count as one",
+          "score": 2,
+          "note": "Wrong but unrelated to the most common misconceptions; not absurd, but weakest in set. Distractor text unchanged from cycle 1; plausibility verdict unchanged."
+        }
+      ],
+      "note": "Shortening correct-answer stems did not affect distractor text. All 15 distractors remain plausible beginner misconceptions. No absurd distractors."
+    },
+    "objective_coverage": {
+      "passed": true,
+      "uncovered_objectives": [],
+      "orphan_questions": [],
+      "mapping": [
+        {
+          "question_id": "q1",
+          "objective_ref": "LO1 — Explain what an algorithm is in plain language, without using programming jargon",
+          "lo_matched": "LO1"
+        },
+        {
+          "question_id": "q2",
+          "objective_ref": "LO2 — Describe the key characteristics that distinguish an algorithm from an arbitrary list of steps",
+          "lo_matched": "LO2"
+        },
+        {
+          "question_id": "q3",
+          "objective_ref": "LO3 — Apply the idea of algorithmic thinking to a familiar everyday task",
+          "lo_matched": "LO3"
+        },
+        {
+          "question_id": "q4",
+          "objective_ref": "LO4 — Identify, by inspection, whether a given set of steps qualifies as an algorithm or falls short",
+          "lo_matched": "LO4"
+        },
+        {
+          "question_id": "q5",
+          "objective_ref": "LO5 — Explain why clear, unambiguous instructions matter when writing steps for a computer to follow",
+          "lo_matched": "LO5"
+        }
+      ]
+    },
+    "beginner_fairness_and_scope": {
+      "passed": true,
+      "findings": [],
+      "note": "All stems use plain everyday language. No undefined jargon. All questions are on-headline for topic 1.9. q5 references determinism introduced in topic 1.2 (earlier in sequence) — within-sequence knowledge, not out-of-scope. Shortened correct-answer stems did not introduce any scope or fairness issues."
+    }
+  },
+  "auto_correction_applied": {
+    "shuffle_round_2": false,
+    "length_rebalance": false,
+    "note": "No auto-corrections needed. All checks passed."
+  },
+  "verdict": "Pass — all checks clean. Cycle-1 length bias resolved: correct-answer rate above distractor mean*1.20 dropped from 1.00 to 0.00. Positional bias, distractor plausibility, objective coverage, and beginner-fairness all confirmed passing.",
+  "at": "2026-06-22T00:00:00Z"
+}

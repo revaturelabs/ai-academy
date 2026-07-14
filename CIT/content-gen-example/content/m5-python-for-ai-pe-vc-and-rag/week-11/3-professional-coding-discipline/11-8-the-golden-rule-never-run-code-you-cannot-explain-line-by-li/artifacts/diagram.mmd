@@ -1,0 +1,30 @@
+%%{init: {"theme": "base", "themeVariables": {"primaryColor": "#a5d8ff", "primaryBorderColor": "#4a9eed", "lineColor": "#555", "fontSize": "15px"}, "flowchart": {"htmlLabels": true, "curve": "basis", "nodeSpacing": 55, "rankSpacing": 65}}}%%
+flowchart LR
+    classDef start fill:#a5d8ff,stroke:#4a9eed,color:#000
+    classDef hitl  fill:#fff3bf,stroke:#f59e0b,stroke-width:3,color:#000
+    classDef auto  fill:#d0bfff,stroke:#8b5cf6,color:#000
+    classDef act   fill:#a5d8ff,stroke:#4a9eed,color:#000
+    classDef done  fill:#b2f2bb,stroke:#22c55e,color:#000
+    classDef fail  fill:#ffd6d6,stroke:#ef4444,stroke-width:2,color:#000
+
+    GEN["<b>AI generates code</b>"]:::start
+
+    GEN --> GATE{"<b>Read first?</b>"}:::hitl
+
+    subgraph PATH_A["  Path A — Paste and Run  "]
+        direction TB
+        RUN_NOW["<b>Run immediately</b><br/><span style='font-size:12px;color:#6d28d9'>no review step</span>"]:::auto
+        SILENT["<b>Silent failure risk</b><br/><span style='font-size:12px;color:#6d28d9'>wrong output, no error</span>"]:::fail
+        RUN_NOW --> SILENT
+    end
+
+    subgraph PATH_B["  Path B — Golden Rule  "]
+        direction TB
+        READ["<b>Read whole block</b><br/><span style='font-size:12px;color:#6d28d9'>top to bottom first</span>"]:::act
+        FOUR_Q["<b>Four-question test</b><br/><span style='font-size:12px;color:#6d28d9'>What / Where / Why / Spec?</span>"]:::act
+        RUN_CONF["<b>Run — confirmed</b><br/><span style='font-size:12px;color:#6d28d9'>output matches expectation</span>"]:::done
+        READ --> FOUR_Q --> RUN_CONF
+    end
+
+    GATE -- "No" --> PATH_A
+    GATE -- "Yes" --> PATH_B

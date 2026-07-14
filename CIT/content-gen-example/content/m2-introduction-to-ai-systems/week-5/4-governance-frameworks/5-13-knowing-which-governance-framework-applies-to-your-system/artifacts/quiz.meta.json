@@ -1,0 +1,25 @@
+{
+  "topic_id": "5.13",
+  "generated_at": "2026-06-22T16:25:00Z",
+  "format": "gift",
+  "question_count": 6,
+  "$bias_defense_applied": true,
+  "$shuffle_seed": "sha256(5.13)=ec3d... salt=0; distribution constraint-checked (max_share=0.333, all 4 positions used)",
+  "correct_position_distribution": [0, 2, 1, 3, 2, 0],
+  "answer_position_distribution": { "A": 2, "B": 1, "C": 2, "D": 1 },
+  "lo_coverage": [
+    "Explain why 'which framework applies' is an engineering decision, not just ethics",
+    "Use the two questions (where it operates / what it does) to find applicable frameworks",
+    "EU AI Act extraterritorial reach (applies even if based outside the EU when output used in EU)",
+    "Frameworks are not mutually exclusive (more than one can apply at once)",
+    "Walk through a concrete example and name the framework(s) that apply"
+  ],
+  "questions": [
+    { "id": "5.13-Q1", "type": "mcq", "objective_ref": "Why framework choice is a design-time engineering decision (corpus 5.5)", "correct_position": 0 },
+    { "id": "5.13-Q2", "type": "mcq", "objective_ref": "The two questions and their order: jurisdiction then risk (corpus 5.1)", "correct_position": 2 },
+    { "id": "5.13-Q3", "type": "mcq", "objective_ref": "EU AI Act extraterritorial reach (corpus 5.2)", "correct_position": 1 },
+    { "id": "5.13-Q4", "type": "mcq", "objective_ref": "Frameworks are not mutually exclusive (corpus 5.4)", "correct_position": 3 },
+    { "id": "5.13-Q5", "type": "mcq", "objective_ref": "Risk-tier classification as the second question (corpus 5.3)", "correct_position": 2 },
+    { "id": "5.13-Q6", "type": "mcq", "objective_ref": "Apply two questions + non-exclusivity to a concrete example (corpus 5.4, Hands-On)", "correct_position": 0 }
+  ]
+}

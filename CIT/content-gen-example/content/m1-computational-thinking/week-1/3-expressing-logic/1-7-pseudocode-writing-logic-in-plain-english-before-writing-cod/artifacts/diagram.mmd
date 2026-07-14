@@ -1,0 +1,50 @@
+---
+title: "Three Building Blocks of Pseudocode"
+config:
+  theme: base
+  themeVariables:
+    primaryColor: "#a5d8ff"
+    primaryBorderColor: "#4a9eed"
+    lineColor: "#555"
+  flowchart:
+    htmlLabels: true
+    curve: basis
+---
+flowchart LR
+    subgraph SEQ["1 — Sequence"]
+        direction TB
+        s1["<b>First Step</b><br/><span style='font-size:12px;color:#6d28d9'>do this action</span>"]
+        s2["<b>Next Step</b><br/><span style='font-size:12px;color:#6d28d9'>then do this action</span>"]
+        s1 --> s2
+    end
+
+    subgraph DEC["2 — Decision"]
+        direction TB
+        cond{"<b>Condition</b><br/><span style='font-size:12px;color:#6d28d9'>is something true?</span>"}
+        yes["<b>IF path</b><br/><span style='font-size:12px;color:#6d28d9'>action when true</span>"]
+        no["<b>OTHERWISE path</b><br/><span style='font-size:12px;color:#6d28d9'>action when false</span>"]
+        cond -->|"yes"| yes
+        cond -->|"no"| no
+    end
+
+    subgraph REP["3 — Repetition"]
+        direction TB
+        check{"<b>Condition</b><br/><span style='font-size:12px;color:#6d28d9'>keep looping?</span>"}
+        body["<b>Repeated Step</b><br/><span style='font-size:12px;color:#6d28d9'>do the action again</span>"]
+        fin(["<b>Done — move on</b>"])
+        check -->|"yes, repeat"| body
+        body -->|"loop back"| check
+        check -->|"no, stop"| fin
+    end
+
+    SEQ ~~~ DEC ~~~ REP
+
+    classDef start fill:#a5d8ff,stroke:#4a9eed
+    classDef auto fill:#d0bfff,stroke:#8b5cf6
+    classDef done fill:#b2f2bb,stroke:#22c55e
+    classDef hitl fill:#fff3bf,stroke:#f59e0b,stroke-width:3
+
+    class s1,s2 start
+    class yes,no,body auto
+    class fin done
+    class cond,check hitl

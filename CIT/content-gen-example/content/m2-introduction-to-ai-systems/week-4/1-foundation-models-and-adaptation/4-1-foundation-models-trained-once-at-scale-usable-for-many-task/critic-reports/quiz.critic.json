@@ -1,0 +1,140 @@
+{
+  "passed": true,
+  "cycle": 2,
+  "checks": {
+    "positional_bias": {
+      "passed": true,
+      "distribution": { "pos0": 1, "pos1": 2, "pos2": 1, "pos3": 1 },
+      "max_share": 0.40,
+      "threshold": 0.40,
+      "note": "max_share of 0.40 satisfies the strict >0.40 fail condition; at-threshold is a pass. Positions unchanged from cycle 1 — no re-shuffle was applied.",
+      "meta_gift_desync": false,
+      "derived_positions_from_gift": [1, 3, 0, 2, 1],
+      "sidecar_positions": [1, 3, 0, 2, 1]
+    },
+    "length_bias": {
+      "passed": true,
+      "longest_correct_rate": 0.00,
+      "baseline": 0.25,
+      "threshold": 0.40,
+      "per_question": [
+        {
+          "id": "q1",
+          "correct_len": 176,
+          "distractor_mean_len": 190.67,
+          "threshold_len": 228.80,
+          "longest_correct": false,
+          "note": "Correct answer (176) is shorter than distractor mean (190.67). Distractors successfully expanded in revision."
+        },
+        {
+          "id": "q2",
+          "correct_len": 194,
+          "distractor_mean_len": 196.67,
+          "threshold_len": 236.00,
+          "longest_correct": false,
+          "note": "Correct answer (194) marginally below distractor mean (196.67). Well within threshold."
+        },
+        {
+          "id": "q3",
+          "correct_len": 237,
+          "distractor_mean_len": 223.33,
+          "threshold_len": 268.00,
+          "longest_correct": false,
+          "note": "Correct answer (237) does not exceed distractor mean * 1.20 (268.00). Passes."
+        },
+        {
+          "id": "q4",
+          "correct_len": 177,
+          "distractor_mean_len": 211.00,
+          "threshold_len": 253.20,
+          "longest_correct": false,
+          "note": "Correct answer (177) is shorter than distractor mean (211.00). Distractors successfully expanded."
+        },
+        {
+          "id": "q5",
+          "correct_len": 211,
+          "distractor_mean_len": 178.00,
+          "threshold_len": 213.60,
+          "longest_correct": false,
+          "note": "Correct answer (211) does not exceed distractor mean * 1.20 (213.60). q5 was within threshold in cycle 1 and unchanged; still passes."
+        }
+      ],
+      "note": "Cycle-1 rate was 0.80 (4/5 questions). Cycle-2 rate is 0.00 (0/5). Revision target fully achieved."
+    },
+    "distractor_plausibility": {
+      "passed": true,
+      "absurd_rate": 0.00,
+      "total_distractors": 15,
+      "absurd_count": 0,
+      "plausibility_scores": {
+        "q1": [3, 3, 3],
+        "q2": [3, 3, 2],
+        "q3": [4, 3, 3],
+        "q4": [4, 4, 4],
+        "q5": [4, 3, 3]
+      },
+      "weakest_questions": [
+        {
+          "id": "q2",
+          "distractor": "It illustrates that only government organisations and national research institutes can afford to train foundation models, meaning all commercial Artificial Intelligence products must build their own from scratch.",
+          "score": 2,
+          "note": "Wrong but not a common beginner misconception — the corpus clearly names large technology companies as trainers. Weakest distractor in the set but not absurd; does not breach the 0.25 absurd_rate threshold."
+        }
+      ],
+      "note": "Expanded distractors remain plausible beginner misconceptions. Lengthening did not introduce absurdity — distractors describe factually incorrect but structurally coherent claims about the topic."
+    },
+    "objective_coverage": {
+      "passed": true,
+      "uncovered_objectives": [],
+      "orphan_questions": [],
+      "coverage_map": [
+        {
+          "lo": 1,
+          "lo_text": "Define what a foundation model is and explain how it differs from the narrow, task-specific AI systems that came before it.",
+          "questions": ["q1"]
+        },
+        {
+          "lo": 2,
+          "lo_text": "Explain what 'trained once at scale' means and why the scale of training matters.",
+          "questions": ["q2"]
+        },
+        {
+          "lo": 3,
+          "lo_text": "Describe what 'usable for many tasks' means, and give two examples of different tasks the same foundation model can perform.",
+          "questions": ["q3"]
+        },
+        {
+          "lo": 4,
+          "lo_text": "Identify at least three real-world foundation models by name and describe the type of input each one handles.",
+          "questions": ["q4"]
+        },
+        {
+          "lo": 5,
+          "lo_text": "Explain the general idea of adaptation — that a foundation model can be adjusted or guided for a specific use — without confusing adaptation with the original training process.",
+          "questions": ["q5"]
+        }
+      ],
+      "note": "No questions changed between cycles — only distractor text lengths were adjusted. LO coverage unchanged and intact."
+    },
+    "beginner_fairness_and_scope": {
+      "passed": true,
+      "jargon_in_stem": [],
+      "out_of_scope_questions": [],
+      "unfair_distractors": [],
+      "notes": [
+        "All stems are plain language and self-contained. 'Artificial Intelligence' spelled out in full in all stems.",
+        "q3 distractor mentions 'fine-tuning'; the stem explicitly states no retraining occurred, making the distractor self-defeating on its face without requiring the learner to know fine-tuning mechanics.",
+        "q4 models (Whisper, GPT-4o, Llama) are all named and characterised in corpus §7. On-scope.",
+        "q5 uses 'adaptation through prompting'; prompting is defined in corpus §5.4 and the scenario describes the act explicitly. Answerable from the corpus alone.",
+        "No question requires knowledge from topic 4.2 (fine-tuning) or 4.3 (RAG) to identify the correct answer.",
+        "Expanded distractor text in q1–q4 introduces no new jargon or out-of-scope concepts."
+      ]
+    }
+  },
+  "auto_correction_applied": {
+    "shuffle_round_2": false,
+    "length_rebalance": false
+  },
+  "verdict": "Pass — length-bias revision succeeded (longest_correct_rate 0.80 → 0.00, well below 0.40 threshold); positional bias at threshold (max_share=0.40, passes strict >0.40 rule); 0 absurd distractors across 15 (absurd_rate=0.00); all 5 LOs covered 1-to-1 with no orphan questions; no out-of-scope questions or undefined jargon in stems.",
+  "at": "2026-06-16T00:00:00Z"
+}

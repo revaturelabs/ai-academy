@@ -1,0 +1,30 @@
+{
+  "topic_id": "3.9",
+  "captured_at": "2026-06-17T00:00:00Z",
+  "captured_by": "bhuvaneshwarim@revature.com",
+  "resources_source": "web_search",
+  "web_search_query": "LLM hallucination what it is why it happens mechanism 2024 2025",
+  "resources": [
+    {
+      "type": "url",
+      "value": "https://arxiv.org/abs/2401.11817",
+      "role": "primary",
+      "source": "web_search",
+      "notes": "Peer-reviewed paper: Hallucination is Inevitable — An Innate Limitation of Large Language Models. Explains structural/mathematical basis of why hallucination cannot be eliminated from LLMs."
+    },
+    {
+      "type": "url",
+      "value": "https://www.lakera.ai/blog/guide-to-hallucinations-in-large-language-models",
+      "role": "supporting",
+      "source": "web_search",
+      "notes": "Lakera 2026 practitioner guide: causes of hallucination (token prediction, training data gaps, RLHF incentives) and mitigation approaches."
+    },
+    {
+      "type": "url",
+      "value": "https://www.morphllm.com/ai-hallucination-examples",
+      "role": "supporting",
+      "source": "web_search",
+      "notes": "Catalog of real-world hallucination examples by category — legal citations, factual errors, fabricated references — with explanations of why each type occurs."
+    }
+  ]
+}

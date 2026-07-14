@@ -1,0 +1,23 @@
+{
+  "type": "course",
+  "code": "M6",
+  "title": "Capstone Project",
+  "slug": "m6-capstone-project",
+  "weeks_range": "15",
+  "total_hours": "3 hrs",
+  "scope": "Every student builds and ships their own working, tested, documented tool. All work is individual.",
+  "source_label": "M6 – Capstone Project",
+  "week_nums": [
+    15
+  ],
+  "assessments": [
+    {
+      "id": "A5",
+      "due_week": 15,
+      "title": "Capstone Project and Portfolio",
+      "mode": "Individual",
+      "weight": "40%",
+      "requirement": "Individual 10-minute live demo to faculty panel: Problem → Spec → Live Demo → Eval Results → Judgment Framework applied → Cost and latency note → 3 Learnings; 5 min Q&A. Panel probes: model selection, prompt design, output validation logic, failure handling, API cost estimation. Portfolio via GitHub: all lab notebooks, specs, eval harness, red-team results, AI Decision Journal, 400-word technical reflection."
+    }
+  ]
+}

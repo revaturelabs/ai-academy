@@ -1,0 +1,43 @@
+---
+title: "Choosing the right AI pattern"
+config:
+  theme: base
+  themeVariables:
+    primaryColor: "#a5d8ff"
+    primaryBorderColor: "#4a9eed"
+    lineColor: "#555"
+  flowchart:
+    htmlLabels: true
+    curve: basis
+---
+flowchart TB
+    START([<b>Task to build</b>]):::start
+
+    Q1{<b>Answer already in<br/>training data?</b>}:::decision
+    Q2{<b>Fixed LLM sub-steps,<br/>all facts in prompts?</b>}:::decision
+    Q3{<b>Needs external<br/>documents?</b><br/><span style='font-size:11px;color:#6d28d9'>private / fresh / precise</span>}:::decision
+    Q4{<b>Multiple tools or<br/>dynamic steps?</b>}:::decision
+
+    T1[<b>Direct Call</b><br/><span style='font-size:11px;color:#6d28d9'>single prompt → response</span>]:::tier1
+    T2[<b>Chained Calls</b><br/><span style='font-size:11px;color:#6d28d9'>pipeline of LLM steps</span>]:::tier2
+    T3[<b>RAG</b><br/><span style='font-size:11px;color:#6d28d9'>Retrieval-Augmented Generation</span>]:::tier3
+    T4[<b>Agent</b><br/><span style='font-size:11px;color:#6d28d9'>autonomous tool selection</span>]:::tier4
+    T5[<b>Reconsider the task</b><br/><span style='font-size:11px;color:#6d28d9'>scope may be unclear</span>]:::neutral
+
+    START --> Q1
+    Q1 -->|Yes| T1
+    Q1 -->|No| Q2
+    Q2 -->|Yes| T2
+    Q2 -->|No| Q3
+    Q3 -->|Yes| T3
+    Q3 -->|No| Q4
+    Q4 -->|Yes| T4
+    Q4 -->|No| T5
+
+    classDef start    fill:#a5d8ff,stroke:#4a9eed,stroke-width:2px,color:#1e3a5f
+    classDef decision fill:#fff3bf,stroke:#f59e0b,stroke-width:2px,color:#7c3a00
+    classDef tier1    fill:#e0f5e9,stroke:#22c55e,stroke-width:2px,color:#14532d
+    classDef tier2    fill:#d0bfff,stroke:#8b5cf6,stroke-width:2px,color:#3b0764
+    classDef tier3    fill:#a5d8ff,stroke:#4a9eed,stroke-width:2px,color:#1e3a5f
+    classDef tier4    fill:#fde8d8,stroke:#f97316,stroke-width:2px,color:#7c2d12
+    classDef neutral  fill:#e5e7eb,stroke:#9ca3af,stroke-width:2px,color:#374151

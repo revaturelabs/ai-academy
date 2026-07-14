@@ -1,0 +1,58 @@
+{
+  "artifact": "reading",
+  "topic_id": "8.5",
+  "passed": true,
+  "at": "2026-06-22T07:35:00Z",
+  "profile": "deep",
+  "checks": {
+    "format_discipline": {
+      "passed": true,
+      "notes": "First non-empty line is the '# <title>' H1; no leading YAML frontmatter. Sidecar reading.meta.json present and parses with word_count, estimated_read_minutes, citations_used, sections. Exactly the six required ## sections in order: Overview, Key Concepts, Worked Example, In Practice, Key Takeaways, References."
+    },
+    "length": {
+      "passed": true,
+      "severity": "soft",
+      "word_count": 1520,
+      "target_word_range": "1800-2200",
+      "estimated_read_minutes": 8,
+      "notes": "SOFT FINDING: 1520 words is ~16% under the deep floor (1800). Per the length ruling, depth=deep was a human HITL#2 light-week budget call and the builder honestly elaborated the worked example without padding (no-pad principle). Not hard-failed; recorded so it surfaces at HITL#3/#4. read-aloud minutes 1520/230 = 6.6, sidecar lists 8."
+    },
+    "citations": {
+      "passed": true,
+      "notes": "Markers [1][2][3] all used inline and all present in the References bibliography; no orphan markers, no orphan bibliography entries; no fabricated markers. citations_used [1,2,3] matches."
+    },
+    "forward_references": {
+      "passed": true,
+      "notes": "8.6 calibration is name-and-deferred only ('Calibration is a different question, covered in 8.6.', line 100) — not taught. Reuse of 8.3/8.4 (TP/FP/FN, precision/recall, F1 harmonic mean) is explicitly allowed and flagged '(from 8.3)'/'(from 8.4)'. No undefined-forward dependencies."
+    },
+    "faithfulness": {
+      "passed": true,
+      "notes": "Every sampled assertion traces to topic_corpus.md (four outcomes, naming mnemonic, 2x2 matrix, accuracy formula + rare-class caution, precision/recall/F1 cell formulas, worked example, six-step procedure, best-practice Do/Don'ts). No new claims. CRUCIAL number check: only the two corpus matrices appear — spam TP6/FP3/FN2/TN9 (total 20) and fraud TP8/FP2/FN4/TN11 (total 25). No numbers beyond the corpus."
+    },
+    "arithmetic": {
+      "passed": true,
+      "notes": "Spam worked example verified: total 6+2+3+9=20 OK; accuracy (6+9)/20=15/20=0.75 OK; precision 6/(6+3)=6/9=0.667 -> 0.67 OK; recall 6/(6+2)=6/8=0.75 OK; F1 2*(0.67*0.75)/(0.67+0.75)=1.005/1.42=0.708 -> shown 0.71 OK (intermediate 2*0.50/1.42 is a display rounding of 0.5025; final value correct). Fraud matrix is an unsolved exercise — no computed values asserted, nothing to verify, counts match corpus."
+    },
+    "beginner_readability": {
+      "passed": true,
+      "notes": "Concrete-first (spam-filter scenario opens Overview before any abstraction). Acronyms TP/FP/FN/TN spelled out and defined at first use; 'binary' glossed as 'yes/no'; 'harmonic mean' carried from 8.4. No jargon dump. Plain register, minimal hedging, short sentences."
+    },
+    "formatting": {
+      "passed": true,
+      "notes": "Confusion matrices rendered as tables; procedure as numbered steps; best practices and cell-formulas as bullet lists; bold-term/plain-meaning definition shape used. Paragraphs <=4 sentences. Inline examples appear in Key Concepts (rare-class 99% example), not only in Worked Example."
+    },
+    "scope": {
+      "passed": true,
+      "notes": "On the headline. Accuracy is newly taught (in-scope for this topic). No multi-class, ROC, AUC, macro/micro/weighted averaging, or PR-curve content. Calibration named-and-deferred only. No scope_creep."
+    },
+    "assessment_references": {
+      "passed": true,
+      "notes": "No assessment IDs, due weeks, or grade weights in learner prose."
+    },
+    "diagram_embed": {
+      "passed": true,
+      "notes": "Diagram embedded inline at line 26 (![A 2x2 confusion matrix grid](./diagram.png)) with caption. embeds_diagram=true in sidecar. PNG exists per orchestrator confirmation (topic path exceeds Windows MAX_PATH; absence not raised)."
+    }
+  },
+  "verdict": "PASS. Reading is faithful to corpus, on-headline (accuracy newly taught; calibration deferred to 8.6), beginner-clear, well-formatted, correctly cited, diagram embedded, and all worked arithmetic is correct (spam: acc 0.75 / prec 0.67 / rec 0.75 / F1 0.71). One SOFT finding: word count 1520 is ~16% under the deep floor (1800-2200) — accepted per no-pad ruling and recorded for HITL#3/#4 visibility. No hard defects."
+}

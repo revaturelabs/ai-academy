@@ -1,0 +1,201 @@
+{
+  "topic_id": "7.8",
+  "stage": "topic_artifacts_approved",
+  "gates": {
+    "resources_captured": true,
+    "corpus_generated": true,
+    "corpus_critic_passed": true,
+    "corpus_human_approved": true,
+    "reading_generated": true,
+    "reading_critic_passed": true,
+    "quiz_generated": true,
+    "quiz_critic_passed": true,
+    "diagram_generated": null,
+    "diagram_critic_passed": null,
+    "module_drift_passed": true,
+    "course_drift_passed": true,
+    "topic_artifacts_human_approved": true,
+    "week_human_approved": true
+  },
+  "history": [
+    {
+      "at": "2026-06-23T04:26:00Z",
+      "op": "set",
+      "gate": "resources_captured",
+      "value": true
+    },
+    {
+      "at": "2026-06-23T04:26:00Z",
+      "op": "stage",
+      "to": "awaiting_corpus"
+    },
+    {
+      "at": "2026-06-23T04:26:00Z",
+      "op": "log",
+      "msg": "Captured 3 resources (source=web_search, primary: developers.google.com ML Crash Course)"
+    },
+    {
+      "at": "2026-06-23T04:31:09Z",
+      "op": "set",
+      "gate": "corpus_generated",
+      "value": true
+    },
+    {
+      "at": "2026-06-23T04:31:09Z",
+      "op": "stage",
+      "to": "awaiting_corpus_critic"
+    },
+    {
+      "at": "2026-06-23T04:31:09Z",
+      "op": "log",
+      "msg": "Corpus generated (depth=standard, diagram=false, words=3310)"
+    },
+    {
+      "at": "2026-06-23T04:33:52Z",
+      "op": "set",
+      "gate": "corpus_critic_passed",
+      "value": false
+    },
+    {
+      "at": "2026-06-23T04:33:53Z",
+      "op": "log",
+      "msg": "Corpus critic FAIL: §5.5 recall bolded+defined (forward ref). Auto-retry 1/2."
+    },
+    {
+      "at": "2026-06-23T04:37:18Z",
+      "op": "set",
+      "gate": "corpus_critic_passed",
+      "value": true
+    },
+    {
+      "at": "2026-06-23T04:37:18Z",
+      "op": "stage",
+      "to": "awaiting_corpus_human_review"
+    },
+    {
+      "at": "2026-06-23T04:37:18Z",
+      "op": "log",
+      "msg": "Corpus critic passed retry-1: recall bold+defining-clause removed in §5.5. Soft: corpus ~2350w (below 3000w floor but within tolerance)"
+    },
+    {
+      "at": "2026-06-23T04:41:55Z",
+      "op": "set",
+      "gate": "corpus_human_approved",
+      "value": true
+    },
+    {
+      "at": "2026-06-23T04:41:56Z",
+      "op": "stage",
+      "to": "corpus_approved"
+    },
+    {
+      "at": "2026-06-23T04:41:56Z",
+      "op": "log",
+      "msg": "HITL#2 approved: all sections kept, depth=standard, diagram=false, edm=7"
+    },
+    {
+      "at": "2026-06-23T04:43:24Z",
+      "op": "set",
+      "gate": "reading_generated",
+      "value": true
+    },
+    {
+      "at": "2026-06-23T04:43:24Z",
+      "op": "stage",
+      "to": "awaiting_reading_critic"
+    },
+    {
+      "at": "2026-06-23T04:43:24Z",
+      "op": "log",
+      "msg": "Reading generated: 1080 words, 6 min, no diagram (below 1200w floor — thin corpus)"
+    },
+    {
+      "at": "2026-06-23T04:43:49Z",
+      "op": "set",
+      "gate": "quiz_generated",
+      "value": true
+    },
+    {
+      "at": "2026-06-23T04:43:50Z",
+      "op": "stage",
+      "to": "awaiting_quiz_critic"
+    },
+    {
+      "at": "2026-06-23T04:43:50Z",
+      "op": "log",
+      "msg": "Quiz generated: 6 MCQs, all LOs covered, bias_defense_applied=true, max_share=33.3%"
+    },
+    {
+      "at": "2026-06-23T04:45:36Z",
+      "op": "set",
+      "gate": "quiz_critic_passed",
+      "value": true
+    },
+    {
+      "at": "2026-06-23T04:45:36Z",
+      "op": "log",
+      "msg": "Quiz critic passed: length bias 0/6, positions {0:2,1:1,2:2,3:1}, 1 soft scope flag on q6-d4 (recall named, not a hard fail)"
+    },
+    {
+      "at": "2026-06-23T04:46:05Z",
+      "op": "set",
+      "gate": "reading_critic_passed",
+      "value": true
+    },
+    {
+      "at": "2026-06-23T04:46:05Z",
+      "op": "stage",
+      "to": "awaiting_topic_artifacts_review"
+    },
+    {
+      "at": "2026-06-23T04:46:05Z",
+      "op": "log",
+      "msg": "Reading critic passed: 1080w (soft: 10% below floor, within tolerance); recall clean"
+    },
+    {
+      "at": "2026-06-23T04:47:30Z",
+      "op": "set",
+      "gate": "topic_artifacts_human_approved",
+      "value": true
+    },
+    {
+      "at": "2026-06-23T04:47:30Z",
+      "op": "stage",
+      "to": "topic_artifacts_approved"
+    },
+    {
+      "at": "2026-06-23T04:47:30Z",
+      "op": "log",
+      "msg": "HITL#3 approved: reading(1080w/6min) + quiz(6MCQ) — all critics passed"
+    },
+    {
+      "at": "2026-06-23T07:33:15Z",
+      "op": "set",
+      "gate": "module_drift_passed",
+      "value": true
+    },
+    {
+      "at": "2026-06-23T07:33:43Z",
+      "op": "set",
+      "gate": "week_human_approved",
+      "value": true
+    },
+    {
+      "at": "2026-06-23T07:33:52Z",
+      "op": "set",
+      "gate": "module_drift_passed",
+      "value": true
+    },
+    {
+      "at": "2026-06-23T00:00:00Z",
+      "op": "set",
+      "gate": "course_drift_passed",
+      "value": true
+    },
+    {
+      "at": "2026-06-23T00:00:00Z",
+      "op": "log",
+      "msg": "course-drift-critic cycle 2 PASS — M3 W6/W7/W8 all checks pass; W6 warn -23.3%, W7 ok -13.3%, W8 warn -23.3%; no hard fails"
+    }
+  ]
+}

@@ -1,0 +1,56 @@
+$CATEGORY: CIT/M5/week-12/12-14-every-api-call-is-a-design-decision-latency-cost-and-reliabi
+
+::q1:: In the context of a `client.messages.create()` call, latency is best described as {
+~The total dollar cost of sending and receiving tokens during an API call#No — cost is measured in money, not time; latency is specifically a time measurement.
+=The time that passes between sending a request and receiving the first part of the reply#Correct — latency is the elapsed time from when your code sends the request to when the first response arrives.
+~The maximum number of tokens your account can send per minute before being slowed down#No — that describes a rate limit, which caps throughput; it has nothing to do with time-per-call.
+~The number of parameters inside a model that determine how capable it is#No — parameter count relates to model size and capability, not the elapsed time for a single call.
+#### Tests the core definition of API latency and why it is distinct from cost and rate limits (corpus §5.1).
+}
+
+::q2:: A lab script sends 300 input tokens and receives 100 output tokens using Claude Haiku (input price = $0.25 per million tokens, output price = $1.25 per million tokens). What is the correct estimated cost for that single call? {
+~$0.000075 — calculated by applying only the input price to all 300 tokens and ignoring output tokens#No — cost has two parts; you must calculate (input_tokens × input_price) and (output_tokens × output_price) separately and add them.
+~$0.000200 — calculated by applying the input price of $0.25 per million to the total of 400 tokens#No — input and output tokens carry different prices; treating them all at the input rate ignores the higher output price.
+~$0.000500 — calculated by applying the output price of $1.25 per million to all 400 tokens combined#No — applying the output price to every token overcharges the input portion; each token type must use its own per-million rate.
+=(300 × $0.25 / 1,000,000) + (100 × $1.25 / 1,000,000) = $0.0000750 + $0.0001250 = $0.000200#Correct — input and output tokens are billed at different rates; summing both products gives the total call cost.
+#### Tests the two-part cost formula: (input_tokens × input_price) + (output_tokens × output_price) from corpus §5.2.
+}
+
+::q3:: A developer needs to classify short customer messages into one of five categories. Each message is under twenty words and only needs a single-word label in reply. Which model tier is the best starting choice? {
+=Claude Haiku, because the task produces a short factual one-word label where speed and low cost matter most#Correct — Haiku is the right starting tier for classification tasks with short outputs; the design rule is to start cheap and escalate only when quality evidence demands it (corpus §5.4).
+~Claude Opus, because using the most capable model ensures the highest accuracy for any task#No — defaulting to Opus "just to be safe" is the beginner mistake the corpus warns against; it costs up to sixty times more than Haiku for tasks Haiku handles equally well.
+~Claude Sonnet, because any production system should start with the balanced middle tier to avoid quality gaps#No — Sonnet is the right default for multi-step reasoning and longer documents; for a one-word classification Sonnet over-spends on cost without adding value.
+~It does not matter which tier you pick for classification because only the prompt wording affects output quality#No — model tier directly affects latency and cost, and for demanding tasks it affects capability too; tier choice is always a design decision.
+#### Tests the Haiku/Sonnet/Opus trade-off and the rule "start cheap, escalate on evidence" from corpus §5.4.
+}
+
+::q4:: Before writing a new `client.messages.create()` call, a developer runs through the three-question design checklist from the corpus. Which of the following correctly lists all three questions? {
+~"What is my latency budget?", "Which error types might occur?", and "Should I use streaming or batch mode?"#No — these cover implementation details; the three checklist questions are about need, call volume, and model tier before any code is written.
+~"Which programming language am I using?", "How many tokens does my prompt contain?", and "What is the API key rotation policy?"#No — none of these are the three checklist questions; language choice and key management are infrastructure concerns separate from the per-call design decision.
+="Does this task need a call at all?", "How many calls will this feature make at scale?", and "Which model tier fits this task?"#Correct — these are the three questions from corpus §5.5; they address necessity, volume, and tier selection before writing any code.
+~"Is the model available right now?", "What is my retry count limit?", and "Does the output need to be cached?"#No — availability checks and caching are operational concerns; the design checklist focuses on deciding whether and how to make the call before building it.
+#### Tests recall and application of the three-question design checklist from corpus §5.5.
+}
+
+::q5:: A student submits this cost-and-latency note\: "Model\: claude-haiku-4-5 | Latency\: 0.82 s | Input tokens\: 210 | Output tokens\: 95 | Estimated cost per call\: $0.000171." What is missing for this note to meet the standard described in the corpus? {
+~The note is missing the total number of API calls made during the full lab session#No — total session call count is not listed as a required element; the corpus format focuses on model, token counts, latency, and a reasoning sentence.
+~The note is missing the API key identifier used to authenticate the call#No — API key identifiers are credentials and must never appear in a submission; they are not part of the cost-and-latency note format.
+~The note is missing the raw Python output from `message.usage` printed as a dictionary object#No — the corpus pattern shows formatted values; the required missing element is a written explanation, not a specific print format.
+=The note is missing a sentence explaining why that model tier was chosen for this task#Correct — corpus §6 specifies that a written reasoning sentence (for example, "I chose Haiku because…") is a required part of the cost-and-latency note.
+#### Tests knowledge of what a complete cost-and-latency note must contain per corpus §6 and §5.5.
+}
+
+::q6:: The corpus says reliability is "a design question you ask before you build, not a bug-fix you add after a crash." Which of the following best explains what this means in practice? {
+~It means running your script once to check whether it crashes, then adding error handling only if it does#No — that is the reactive approach the corpus warns against; reliability decisions must be made before writing the first call, not after discovering a problem.
+=It means deciding before writing the call how your code will respond to rate limit errors, connection failures, and when retries are appropriate — because call volume and context determine which safeguards are needed#Correct — asking the reliability question upfront means choosing error-handling and retry strategies as part of the design, proportionate to how often and at what scale the call will run.
+~It means choosing the most capable model tier so the API returns fewer errors overall#No — model tier affects quality and cost, not error rate; rate limit errors and connection failures occur regardless of which tier you pick.
+~It means setting `max_tokens` high enough so the model always returns a complete answer without cutting off#No — `max_tokens` controls response length, not the reliability of the call under error or rate-limit conditions.
+#### Tests LO3 — reliability as a pre-build design question covering retries, error handling, and rate limits (corpus §5.3).
+}
+
+::q7:: According to the corpus, every API call has three measurable properties that should all be considered before writing the call. Name all three. {
+=latency, cost, reliability
+=latency, cost, and reliability
+=cost, latency, reliability
+=cost, latency, and reliability
+}

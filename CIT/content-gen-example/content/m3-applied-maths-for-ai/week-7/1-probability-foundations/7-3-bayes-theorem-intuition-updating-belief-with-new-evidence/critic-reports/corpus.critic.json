@@ -1,0 +1,91 @@
+{
+  "topic_id": "7.3",
+  "artifact": "corpus",
+  "passed": true,
+  "at": "2026-06-22T00:00:00Z",
+  "depth_profile": "standard",
+  "estimated_word_count": 2445,
+  "checks": {
+    "required_sections": {
+      "passed": true,
+      "detail": {
+        "section_3_learning_objectives": { "present": true, "word_count_estimate": 100, "threshold": 50, "passed": true },
+        "section_4_introduction": { "present": true, "word_count_estimate": 155, "threshold": 50, "passed": true },
+        "section_5_core_concepts": { "present": true, "word_count_estimate": 1115, "threshold": 100, "passed": true },
+        "section_10_key_takeaways": { "present": true, "word_count_estimate": 120, "threshold": 50, "passed": true }
+      }
+    },
+    "citation_density": {
+      "passed": true,
+      "resources_source": "web_search",
+      "mode": "strict",
+      "primary_resources_cited": {
+        "[1] betterexplained.com": { "cited_at_least_once": true, "citation_count_estimate": 10 }
+      },
+      "sections_checked": ["5", "6", "7"],
+      "key_claims_with_citation_pct_estimate": 80,
+      "threshold_pct": 60,
+      "fake_citations_detected": false,
+      "detail": "All three resources ([1] primary, [2] supporting, [3] supporting) appear throughout §5–§7. Key factual assertions in Core Concepts, Implementation, and Real-World Patterns carry citation markers. No unresolved [N] markers found."
+    },
+    "sequence_drift": {
+      "passed": true,
+      "forward_references": [],
+      "soft_findings": [
+        {
+          "term": "marginal probability",
+          "location": "§5.3 table, line 92",
+          "detail": "Used only as a parenthetical label '(marginal probability of B)' in a table row for P(B). Not in prior topics' concepts_introduced nor 7.3's introduced concepts list. However, it is not taught or defined — it appears solely as an alternate label in parentheses. Soft finding only."
+        }
+      ],
+      "detail": "All technical terms used in core exposition are present in the 7.1/7.2 prior-concept pool (probability, outcome, sample space, event, conditional probability, P(A|B) notation, reduced sample space, joint probability, conditional probability formula) or in 7.3's own introduced concepts (prior, posterior, likelihood, Bayes' theorem, Bayesian updating). The law-of-total-probability computation in §5.4 is derived from known joint/conditional probability concepts without naming the law. LLM probability distributions appear in one mention-and-defer sentence in §7 pointing to topic 7.4 — compliant. Base rate fallacy unnamed and deferred correctly in §8."
+    },
+    "length_sanity": {
+      "passed": true,
+      "hard_fail_threshold_triggered": false,
+      "estimated_word_count": 2445,
+      "profile_range_min": 3000,
+      "profile_range_max": 4400,
+      "below_floor_by_pct": 18.5,
+      "hard_fail_threshold_pct": 30,
+      "soft_finding": true,
+      "detail": "Estimated word count (~2445) is below the standard-profile floor of 3000 words by approximately 18.5%. This does not exceed the 30% hard-fail threshold (which would require <2100 words). Soft finding: corpus is lean relative to profile. The worked example, procedure, four real-world patterns, and best-practices sections are complete but concise. Builder may expand §5 sub-sections or §7 patterns if depth review flags thin coverage."
+    },
+    "topic_scope": {
+      "passed": true,
+      "scope_creep_findings": [],
+      "detail": "Topic headline 'Bayes theorem intuition — updating belief with new evidence' is well respected. No formula derivation or algebraic proof appears — §4 and §5.3 explicitly state the learner is not expected to derive or prove the formula. Bayes' theorem is presented as a named equation only. Base rate fallacy is mentioned as an unnamed 'reasoning error you will encounter later' — not named, not defined, correctly deferred. Conjugate priors not mentioned. Full Bayesian inference pipeline not mentioned. LLM probability distributions appear in exactly one sentence in §7 with an explicit deferral to topic 7.4. §5.5 ('conditional probability reorganised') stays within the scope of showing conceptual equivalence without teaching new advanced material."
+    },
+    "beginner_readability": {
+      "passed": true,
+      "hard_fail_triggered": false,
+      "findings_count": 1,
+      "findings": [
+        {
+          "type": "undefined_term",
+          "term": "marginal probability",
+          "location": "§5.3 table, line 92",
+          "detail": "The parenthetical '(marginal probability of B)' in the P(B) table row uses a term not previously defined in this corpus or in prior topics. Soft finding — the label is parenthetical only and the concept P(B) is fully explained by the surrounding prose."
+        }
+      ],
+      "undefined_terms_count": 1,
+      "undefined_terms_threshold_for_soft_fail": 2,
+      "jargon_dump_findings": [],
+      "academic_register_findings": [],
+      "detail": "Prior, posterior, likelihood, and Bayesian updating are each defined clearly on first use with plain-language definitions preceding formal notation. LLM is spelled out on first use ('LLM (Large Language Model)'). No paragraph introduces 3+ new terms simultaneously. Sentence length is well-controlled throughout. No hedging phrases detected. Running rain-and-clouds example provides progressive concreteness. One soft finding: 'marginal probability' appears undefined as a parenthetical table label."
+    }
+  },
+  "soft_findings_summary": [
+    {
+      "code": "length_below_range",
+      "severity": "soft",
+      "detail": "Estimated ~2445 words is below the 3000-word standard-profile floor (18.5% below; hard-fail threshold is 30%). Corpus is complete but lean — builder may expand Core Concepts sub-sections or Real-World Patterns."
+    },
+    {
+      "code": "undefined_term_parenthetical",
+      "severity": "soft",
+      "detail": "'marginal probability' used as parenthetical label in §5.3 table without definition. Not a taught concept — parenthetical only. Low risk."
+    }
+  ],
+  "verdict": "PASS — 2 soft findings (word count ~2445 below 3000-word standard floor but within 30% hard-fail threshold; 'marginal probability' used as undefined parenthetical in §5.3 table). All hard checks pass: required sections present and non-trivial, primary citation [1] cited 10+ times with ≥80% factual-claim coverage in §5/§6/§7, no forward references beyond prior-topic concepts, no scope creep (no derivation, base rate fallacy unnamed-and-deferred, LLM distributions deferred to 7.4), beginner readability good with all key terms defined on first use."
+}

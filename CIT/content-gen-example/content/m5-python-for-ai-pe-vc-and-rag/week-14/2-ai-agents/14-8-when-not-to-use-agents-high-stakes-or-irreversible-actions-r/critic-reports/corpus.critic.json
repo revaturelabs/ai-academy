@@ -1,0 +1,125 @@
+{
+  "critic": "corpus-critic",
+  "topic_id": "14.8",
+  "topic_title": "When NOT to use agents — high-stakes or irreversible actions require human oversight",
+  "at": "2026-06-15T00:00:00Z",
+  "passed": true,
+  "profile_used": "standard",
+  "estimated_word_count": 4020,
+  "word_count_range": [3000, 4400],
+  "checks": {
+    "required_sections": {
+      "passed": true,
+      "findings": [],
+      "detail": {
+        "learning_objectives": { "present": true, "word_count_estimate": 130, "threshold": 50, "passed": true },
+        "introduction": { "present": true, "word_count_estimate": 210, "threshold": 50, "passed": true },
+        "core_concepts": { "present": true, "word_count_estimate": 1800, "threshold": 100, "passed": true },
+        "key_takeaways": { "present": true, "word_count_estimate": 130, "threshold": 50, "passed": true }
+      }
+    },
+    "citation_density": {
+      "passed": true,
+      "resources_source": "human",
+      "mode": "strict",
+      "findings": [],
+      "detail": {
+        "all_primary_cited": true,
+        "citations_found": {
+          "[1]": "anthropic.com/responsible-scaling-policy — cited in §4, §5.1, §5.2, §5.3, §5.4, §5.5, §6, §7, §8",
+          "[2]": "EU AI Act — cited in §5.1, §5.2, §5.3, §5.4, §6, §7, §8",
+          "[3]": "lilianweng.github.io agents post — cited in §4, §5.1, §5.2, §5.3, §5.4, §5.5, §6, §7, §8",
+          "[4]": "anthropic.com/model-card — cited in §5.1, §5.4",
+          "[5]": "nist.gov AI RMF — cited in §5.2, §5.3, §5.4, §5.5, §6, §7, §8"
+        },
+        "key_claims_pct_with_citation_sections_5_6_7": "estimated >80%",
+        "threshold": "60%"
+      }
+    },
+    "sequence_drift": {
+      "passed": true,
+      "findings": [],
+      "detail": {
+        "forward_references_found": [],
+        "concepts_used_from_prior_topics": [
+          "AI agent (14.5)",
+          "LLM / Large Language Model (prior topics)",
+          "planning loop (14.5)",
+          "ReAct pattern (14.6)",
+          "Thought/Action/Observation steps (14.6)",
+          "tool (14.5)",
+          "hallucination (14.3)",
+          "RAG / Retrieval-Augmented Generation (14.3–14.4)",
+          "direct call (14.7)",
+          "chained calls (14.7)",
+          "decision matrix (14.7)",
+          "tier (14.7)",
+          "over-engineering / under-engineering (14.7)"
+        ],
+        "new_concepts_introduced": [
+          "irreversible action",
+          "high-stakes action",
+          "human-in-the-loop (HITL)",
+          "human oversight",
+          "autonomy spectrum",
+          "approval gate"
+        ],
+        "14_9_defer_check": {
+          "referenced": true,
+          "form": "Section 11 (Next Steps) defers to 14.9 by name in one sentence: 'Topic 14.9 covers production AI patterns — cost, latency, and reliability trade-offs...' — name-only defer, acceptable",
+          "passed": true
+        },
+        "eu_ai_act_nist_rmf_check": {
+          "note": "Both appear in topic 14.8 cross_refs in sequence.index.json. Used as one-sentence supporting citations, not taught in depth. Acceptable."
+        }
+      }
+    },
+    "length_sanity": {
+      "passed": true,
+      "findings": [],
+      "profile": "standard",
+      "range": [3000, 4400],
+      "estimated_word_count": 4020,
+      "within_range": true,
+      "note": "Estimated ~4,020 words; comfortably within standard corpus range 3000–4400."
+    },
+    "topic_scope": {
+      "passed": true,
+      "findings": [],
+      "scope_creep_instances": [],
+      "detail": {
+        "headline": "When NOT to use agents — high-stakes or irreversible actions require human oversight",
+        "implementation_section": "Describes logical/conceptual structure of a checkpoint pattern only. No code. Explicitly defers implementation to 'Semester 2 work.' Appropriate.",
+        "eu_ai_act_nist_rmf": "Referenced as cross_refs for this topic; used as one-liner supporting citations for human oversight argument — not taught as regulatory compliance content.",
+        "anthropic_rsp": "One sentence naming Anthropic's responsible scaling policy as supporting evidence. Acceptable mention-and-cite."
+      }
+    },
+    "beginner_readability": {
+      "passed": true,
+      "findings": [
+        {
+          "code": "autonomy_spectrum_term_density",
+          "severity": "soft",
+          "description": "Section 5.4 introduces four named positions on the autonomy spectrum (fully manual, human-in-the-loop, human-on-the-loop, fully autonomous) in quick succession. Each has its own labeled paragraph with a definition and example, so this is NOT a jargon dump within a single paragraph. No action required, but the reading artifact should pace these definitions carefully.",
+          "section": "5.4"
+        }
+      ],
+      "detail": {
+        "undefined_terms": [],
+        "acronyms_without_expansion": [],
+        "jargon_dumps": [],
+        "academic_register_violations": [],
+        "plain_register": "Consistent direct address ('you'), active voice, concrete examples before abstract definitions throughout.",
+        "hitl_expansion": "HITL spelled out as 'human-in-the-loop (HITL)' on first use in §4. Pass.",
+        "rag_expansion": "RAG spelled out as 'RAG (Retrieval-Augmented Generation)' in prerequisites. Pass.",
+        "nist_expansion": "NIST AI Risk Management Framework given in full on first use in §5.2. Pass.",
+        "escalation_rule": "Only 1 soft finding in check 6 — does not meet the ≥3 distinct findings escalation threshold. Remains soft."
+      }
+    }
+  },
+  "hard_findings": [],
+  "soft_findings": [
+    "autonomy_spectrum_term_density: Section 5.4 introduces four named positions (fully manual, human-in-the-loop, human-on-the-loop, fully autonomous) in close succession — each is separately defined and exemplified, so not a jargon dump, but the reading artifact builder should pace these carefully."
+  ],
+  "verdict": "PASS — all 6 checks pass. All 5 primary resources cited throughout (dense coverage in §5–§8). No forward references. ~4,020 words within standard corpus range (3000–4400). No scope creep: implementation is conceptual-only with an explicit Semester 2 defer, and EU AI Act / NIST RMF are listed cross_refs used as one-sentence supporting citations only. Beginner readability is strong; one soft note on the autonomy spectrum's four terms in §5.4 (paced across separate paragraphs — not a jargon dump). Corpus is ready to ground downstream artifacts."
+}

@@ -1,0 +1,53 @@
+{
+  "type": "topic",
+  "id": "1.7",
+  "title": "Pseudocode — writing logic in plain English before writing code",
+  "slug": "1-7-pseudocode-writing-logic-in-plain-english-before-writing-cod",
+  "position_in_module": 1,
+  "week_num": 1,
+  "session_name": "How Machines Think",
+  "module": {
+    "position": 3,
+    "slug": "3-expressing-logic",
+    "title": "Expressing Logic"
+  },
+  "course": {
+    "code": "M1",
+    "slug": "m1-computational-thinking",
+    "title": "Computational Thinking"
+  },
+  "next_assessment": {
+    "id": "A1",
+    "due_week": 3,
+    "title": "Specification Portfolio",
+    "weight": "10%"
+  },
+  "paths": {
+    "corpus": "topic_corpus.md",
+    "resources": "topic.resources.json",
+    "progress": "topic.progress.json",
+    "artifacts_dir": "artifacts/",
+    "critic_reports_dir": "critic-reports/"
+  },
+  "artifact_plan": {
+    "diagram": true,
+    "diagram_intent": "Flowchart-style diagram showing the three pseudocode building blocks — sequence (straight line), decision (IF/OTHERWISE branch), and repetition (loop back) — as distinct structural shapes side by side",
+    "depth_profile": "standard",
+    "depth_profile_confirmed_at_hitl2": true,
+    "reading": {
+      "target_word_range": [
+        1200,
+        1600
+      ],
+      "target_min_minutes": 6,
+      "target_max_minutes": 8
+    },
+    "quiz": {
+      "min_questions": 5,
+      "max_questions": 6,
+      "include_short_answer": false
+    }
+  },
+  "expected_delivery_minutes": 7,
+  "status": "corpus_drafted"
+}

@@ -1,0 +1,30 @@
+{
+  "topic_id": "4.3",
+  "captured_at": "2026-06-16T00:00:00Z",
+  "captured_by": "namratas@revature.com",
+  "resources_source": "web_search",
+  "web_search_query": "retrieval augmented generation RAG how it works external knowledge LLM",
+  "resources": [
+    {
+      "type": "url",
+      "value": "https://www.ibm.com/think/topics/retrieval-augmented-generation",
+      "role": "primary",
+      "source": "web_search",
+      "notes": "IBM canonical overview — retrieval+generation pipeline, hallucination reduction, beginner-friendly"
+    },
+    {
+      "type": "url",
+      "value": "https://weaviate.io/blog/introduction-to-rag",
+      "role": "supporting",
+      "source": "web_search",
+      "notes": "Technical intro from vector DB makers — embeddings, vector retrieval, similarity search"
+    },
+    {
+      "type": "url",
+      "value": "https://stackoverflow.blog/2023/10/18/retrieval-augmented-generation-keeping-llms-relevant-and-current/",
+      "role": "supporting",
+      "source": "web_search",
+      "notes": "Practitioner overview — query-time retrieval pattern, keeping LLMs current"
+    }
+  ]
+}

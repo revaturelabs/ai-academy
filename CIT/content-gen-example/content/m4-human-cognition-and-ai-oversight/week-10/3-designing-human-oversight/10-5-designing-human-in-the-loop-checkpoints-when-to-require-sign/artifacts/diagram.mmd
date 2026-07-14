@@ -1,0 +1,49 @@
+---
+title: "Judgment Framework: Which Oversight Mode?"
+theme: base
+themeVariables:
+  primaryColor: "#a5d8ff"
+  primaryBorderColor: "#4a9eed"
+  lineColor: "#555"
+config:
+  flowchart:
+    htmlLabels: true
+    curve: basis
+    nodeSpacing: 40
+    rankSpacing: 55
+---
+flowchart TD
+    START([<b>AI Decision Point</b><br/><span style='font-size:12px;color:#6d28d9'>A choice the AI will make</span>]):::start
+
+    Q1{<b>Q1: Error cost?</b><br/><span style='font-size:12px;color:#6d28d9'>High / Medium / Low</span>}:::question
+
+    Q2{<b>Q2: Human can verify?</b><br/><span style='font-size:12px;color:#6d28d9'>Yes / No</span>}:::question
+
+    Q3{<b>Q3: Named accountable role?</b><br/><span style='font-size:12px;color:#6d28d9'>Yes / No</span>}:::question
+
+    FIX[<b>Fix the Gap First</b><br/><span style='font-size:12px;color:#6d28d9'>Close verification or accountability gap, then restart</span>]:::fix
+
+    HITL["<b>Human-in-the-Loop (HITL)</b><br/><span style='font-size:12px;color:#6d28d9'>Human approves before action takes effect</span>"]:::hitl
+
+    HOTL["<b>Human-on-the-Loop (HOTL)</b><br/><span style='font-size:12px;color:#6d28d9'>AI acts; human monitors and can intervene</span>"]:::hotl
+
+    HOOTL["<b>Human-out-of-the-Loop (HOOTL)</b><br/><span style='font-size:12px;color:#6d28d9'>AI fully autonomous; periodic human audit</span>"]:::hootl
+
+    START --> Q1
+    Q1 -- "High" --> Q2
+    Q1 -- "Medium" --> HOTL
+    Q1 -- "Low" --> HOOTL
+    Q2 -- "Yes" --> Q3
+    Q2 -- "No" --> FIX
+    Q3 -- "Yes" --> HITL
+    Q3 -- "No" --> FIX
+    FIX --> HITL
+    HOTL  -. "Escalation trigger fires" .-> HITL
+    HOOTL -. "Escalation trigger fires" .-> HITL
+
+    classDef start    fill:#a5d8ff,stroke:#4a9eed,stroke-width:2px,color:#000
+    classDef question fill:#fff3bf,stroke:#f59e0b,stroke-width:2px,color:#000
+    classDef hitl     fill:#fff3bf,stroke:#f59e0b,stroke-width:3px,color:#000
+    classDef hotl     fill:#d0bfff,stroke:#8b5cf6,stroke-width:2px,color:#000
+    classDef hootl    fill:#b2f2bb,stroke:#22c55e,stroke-width:2px,color:#000
+    classDef fix      fill:#ffd8d8,stroke:#ef4444,stroke-width:2px,color:#000

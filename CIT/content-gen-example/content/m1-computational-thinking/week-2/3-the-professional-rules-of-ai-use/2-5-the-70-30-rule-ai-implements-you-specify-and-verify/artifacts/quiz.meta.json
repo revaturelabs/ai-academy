@@ -1,0 +1,64 @@
+{
+  "topic_id": "2.5",
+  "generated_at": "2026-06-17T00:00:00Z",
+  "format": "gift",
+  "question_count": 7,
+  "$bias_defense_applied": true,
+  "$shuffle_seed": "2.5-seed-149",
+  "correct_position_distribution": [1, 3, 0, 2, 0, 1],
+  "bias_defense_notes": {
+    "method": "Deterministic uniform shuffle. Seed derived from topic ID hash: ord('2')+ord('.')+ord('5')=149. Six MCQ correct positions: [1,3,0,2,0,1]. Distribution: pos0=2, pos1=2, pos2=1, pos3=1. max_share=2/6=0.333 ≤ 0.40 ✓. All 4 positions used ✓. Q7 is short-answer — excluded from positional/length bias checks.",
+    "length_bias_check": {
+      "Q1": { "correct_words": 20, "mean_distractor_words": 18.3, "ratio": 1.09, "passed": true },
+      "Q2": { "correct_words": 13, "mean_distractor_words": 13.3, "ratio": 0.98, "passed": true },
+      "Q3": { "correct_words": 13, "mean_distractor_words": 13.7, "ratio": 0.95, "passed": true },
+      "Q4": { "correct_words": 17, "mean_distractor_words": 19.3, "ratio": 0.88, "passed": true },
+      "Q5": { "correct_words": 24, "mean_distractor_words": 22.7, "ratio": 1.06, "passed": true },
+      "Q6": { "correct_words": 24, "mean_distractor_words": 20.0, "ratio": 1.20, "passed": true }
+    }
+  },
+  "questions": [
+    {
+      "id": "2.5-Q1",
+      "type": "mcq",
+      "objective_ref": "Explain what the 70/30 rule is and what it says about how humans and AI should divide work.",
+      "correct_position": 1
+    },
+    {
+      "id": "2.5-Q2",
+      "type": "mcq",
+      "objective_ref": "Describe the two human roles in the rule: specifying a task and verifying the result.",
+      "correct_position": 3
+    },
+    {
+      "id": "2.5-Q3",
+      "type": "mcq",
+      "objective_ref": "Identify which parts of a task should stay with the human and which parts can be handed to AI.",
+      "correct_position": 0
+    },
+    {
+      "id": "2.5-Q4",
+      "type": "mcq",
+      "objective_ref": "Apply the rule by writing a specification, sending it to an AI, and then checking whether the output meets the specification.",
+      "correct_position": 2
+    },
+    {
+      "id": "2.5-Q5",
+      "type": "mcq",
+      "objective_ref": "Explain why verification is a required step — not an optional one — even when the AI output looks correct at first glance.",
+      "correct_position": 0
+    },
+    {
+      "id": "2.5-Q6",
+      "type": "mcq",
+      "objective_ref": "Identify which parts of a task should stay with the human and which parts can be handed to AI.",
+      "correct_position": 1
+    },
+    {
+      "id": "2.5-Q7",
+      "type": "short_answer",
+      "objective_ref": "Explain why verification is a required step — not an optional one — even when the AI output looks correct at first glance.",
+      "correct_position": null
+    }
+  ]
+}

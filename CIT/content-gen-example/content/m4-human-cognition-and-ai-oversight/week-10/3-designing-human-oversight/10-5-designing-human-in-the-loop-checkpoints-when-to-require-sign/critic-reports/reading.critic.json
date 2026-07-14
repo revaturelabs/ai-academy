@@ -1,0 +1,125 @@
+{
+  "critic": "reading-critic",
+  "topic_id": "10.5",
+  "artifact": "artifacts/reading.md",
+  "run_at": "2026-06-13T00:00:00Z",
+  "passed": true,
+  "verdict": "PASS with 2 soft findings (abstract_first, unlisted_sequence). No hard failures. No scope_creep. Soft-finding count (2) is below the 3-finding escalation threshold. Findings surface at HITL #3 for author triage. No gold example matched for this topic; assessment against written standards in artifact-mix.json.",
+  "checks": {
+    "format_discipline": {
+      "passed": true,
+      "frontmatter_present": false,
+      "meta_sidecar_missing": false,
+      "section_template_violation": false,
+      "sections_found": ["Overview", "Key Concepts", "Worked Example", "In Practice", "Key Takeaways", "References"],
+      "sections_expected": ["Overview", "Key Concepts", "Worked Example", "In Practice", "Key Takeaways", "References"],
+      "notes": "No frontmatter. Meta sidecar present and valid. All six required sections present in correct order."
+    },
+    "length": {
+      "passed": true,
+      "word_count_meta": 1375,
+      "target_word_range": [1200, 1600],
+      "word_count_in_range": true,
+      "reading_minutes_meta": 7,
+      "reading_minutes_calculated_200wpm": 6.9,
+      "reading_minutes_calculated_230wpm": 6.0,
+      "target_minute_range": [6, 8],
+      "minutes_in_range": true,
+      "notes": "1375 words at 200 wpm = 6.9 min; at 230 wpm = 6.0 min. Both in 6–8 min target. Meta reports 7 min. All in range."
+    },
+    "citations": {
+      "passed": true,
+      "primary_resource_cited": true,
+      "primary_resource": "[1] zapier.com",
+      "primary_citation_occurrences": "Overview, Key Concepts (HITL, HOTL, HOOTL, checkpoint, checkpoint matrix), Worked Example (Q2, Q3 steps, result table), In Practice (10.1, 10.3, do/don't bullets)",
+      "all_resources_cited": true,
+      "inline_markers": ["[1]", "[2]", "[3]"],
+      "bibliography_entries": ["[1] zapier.com", "[2] digitalapplied.com", "[3] famulor.io"],
+      "orphan_markers": [],
+      "orphan_bibliography_entries": [],
+      "notes": "All three resources cited inline. Bibliography matches inline markers exactly. No orphans."
+    },
+    "no_forward_references": {
+      "passed": true,
+      "forward_references_found": [],
+      "notes": "All topic cross-references point to earlier topics (10.1, 10.2, 10.3, 10.4, 9.7–9.9). No references to 10.6 or later topics. No forward-pointing conceptual mentions detected."
+    },
+    "faithfulness": {
+      "passed": true,
+      "assertions_sampled": 10,
+      "unsupported_assertions": 0,
+      "fail_threshold": 2,
+      "sample": [
+        {"assertion": "HITL definition: AI proposes; the human decides.", "corpus_support": "Corpus §5 HITL — verbatim match.", "supported": true},
+        {"assertion": "HOTL: AI acts autonomously in real time, human monitors and retains authority to intervene.", "corpus_support": "Corpus §5 HOTL — verbatim match.", "supported": true},
+        {"assertion": "HOOTL appropriate only for low-stakes, highly reversible, well-understood decisions.", "corpus_support": "Corpus §5 HOOTL — verbatim match.", "supported": true},
+        {"assertion": "Confidence routing: AI routes only low-confidence decisions to a human.", "corpus_support": "Corpus §5 confidence routing — verbatim match.", "supported": true},
+        {"assertion": "Escalation trigger: defined condition that automatically elevates a decision from a lower oversight mode to a higher one.", "corpus_support": "Corpus §5 escalation trigger — verbatim match.", "supported": true},
+        {"assertion": "Q2=no → HITL at that position is override as theater; creates appearance of oversight while providing none.", "corpus_support": "Corpus §6 Step 2 — verbatim match.", "supported": true},
+        {"assertion": "College admissions 10.1: notional HITL but Q2 never answered; checkpoint matrix would have exposed gap before deployment.", "corpus_support": "Corpus §7 college admissions — paraphrase match.", "supported": true},
+        {"assertion": "Medical triage 10.2: no escalation trigger for subgroup performance divergence.", "corpus_support": "Corpus §7 medical triage — verbatim match.", "supported": true},
+        {"assertion": "Do: write checkpoint matrix before system is built, not after; retrofitting is expensive and often incomplete.", "corpus_support": "Corpus §8 Do list — verbatim match.", "supported": true},
+        {"assertion": "Do not: treat HITL as universally better than HOTL; Q2=no produces override as theater.", "corpus_support": "Corpus §8 Do not list — paraphrase match.", "supported": true}
+      ],
+      "notes": "All 10 sampled assertions directly traceable to corpus. Zero unsupported assertions."
+    },
+    "beginner_readability": {
+      "passed": true,
+      "soft_finding": true,
+      "findings": [
+        {
+          "code": "abstract_first",
+          "severity": "soft",
+          "description": "Key Concepts subsections for HITL, HOTL, HOOTL, and 'Checkpoint' all deliver the abstract definition before the concrete example. Artifact-mix mandate requires: lead with a concrete everyday example or analogy, THEN give the abstract definition. Four of seven new-term introductions follow definition-then-example order rather than example-then-definition.",
+          "affected_sections": ["Key Concepts — HITL subsection", "Key Concepts — HOTL subsection", "Key Concepts — HOOTL subsection", "Key Concepts — Checkpoint subsection"],
+          "note": "Confidence routing and escalation trigger subsections also follow definition-then-example, making the pattern consistent across all 7 new terms. Severity: soft (does not alone trigger escalation)."
+        }
+      ],
+      "undefined_terms": [],
+      "jargon_dump": false,
+      "hedging_count": 0,
+      "notes": "All 7 new terms (HITL, HOTL, HOOTL, checkpoint, confidence routing, escalation trigger, checkpoint matrix) are bolded and defined on first use. No jargon dumps (each term gets its own subsection). No hedging phrases detected. Single soft finding: abstract_first pattern throughout Key Concepts."
+    },
+    "formatting": {
+      "passed": true,
+      "soft_finding": true,
+      "findings": [
+        {
+          "code": "unlisted_sequence",
+          "severity": "soft",
+          "description": "The four-step procedure in the Worked Example section (Step 1 through Step 4) is rendered as bold-labeled prose paragraphs rather than a markdown numbered list. Artifact-mix formatting standard: 'Render any procedure, sequence, or ordered set of steps as a NUMBERED list — never a run-on paragraph.' The steps are separated and labeled but use bold inline headers (e.g., '**Step 1 — Answer Q1:**') rather than a '1. / 2. / 3. / 4.' numbered list structure.",
+          "location": "Worked Example section, all four step paragraphs",
+          "remediation": "Convert the four bold-step paragraphs to a numbered markdown list (1., 2., 3., 4.) with the step content indented or following inline."
+        }
+      ],
+      "wall_of_text": false,
+      "no_inline_examples": false,
+      "definitions_use_bold_shape": true,
+      "notes": "No wall-of-text paragraphs found (longest paragraph ~3–4 sentences). Inline examples present in every Key Concepts subsection. Definitions consistently use bold-term dash plain-meaning shape. Result table properly formatted. One soft finding: unlisted_sequence for the 4-step Worked Example procedure."
+    },
+    "no_assessment_references": {
+      "passed": true,
+      "assessment_references_found": [],
+      "notes": "No assessment IDs, due-week references, or grade weights found in the reading text."
+    },
+    "scope": {
+      "passed": true,
+      "scope_creep_found": false,
+      "findings": [],
+      "notes": "All content falls within the topic headline 'Designing human-in-the-loop checkpoints — when to require sign-off vs allow autonomous action'. Confidence routing, escalation triggers, and the checkpoint matrix are directly within scope. The brief mention of underrepresented training data groups is tied instrumentally to confidence routing pitfalls and does not teach bias/fairness as a separate concept. No advanced or adjacent concept is taught beyond the topic headline."
+    }
+  },
+  "soft_findings_summary": {
+    "count": 2,
+    "findings": ["abstract_first", "unlisted_sequence"],
+    "escalation_threshold": 3,
+    "escalated_to_hard_fail": false,
+    "scope_creep_auto_escalation": false,
+    "note": "2 soft findings, below the 3-finding escalation threshold. No scope_creep detected. Both findings surface at HITL #3 for author review."
+  },
+  "gold_example_comparison": {
+    "gold_example_found": false,
+    "gold_example_path": ".claude/references/gold-examples/reading/",
+    "note": "No gold example file exists for topic 10.5. Assessment performed against written standards in artifact-mix.json formatting_standards and audience baseline. Available gold examples (2-1, 3-4) are for different modules and not directly comparable by topic scope."
+  }
+}

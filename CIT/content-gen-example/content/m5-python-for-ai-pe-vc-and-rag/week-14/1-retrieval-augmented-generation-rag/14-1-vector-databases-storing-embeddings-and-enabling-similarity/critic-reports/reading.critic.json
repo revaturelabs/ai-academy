@@ -1,0 +1,50 @@
+{
+  "passed": true,
+  "checks": {
+    "no_frontmatter": {
+      "passed": true
+    },
+    "six_fixed_sections": {
+      "passed": true,
+      "found_sections": [
+        "## Overview",
+        "## Key Concepts",
+        "## Worked Example",
+        "## In Practice",
+        "## Key Takeaways",
+        "## References"
+      ]
+    },
+    "word_count": {
+      "passed": true,
+      "word_count": 1368,
+      "notes": "1368 words — within standard 1200–1400 target range."
+    },
+    "all_primary_cited": {
+      "passed": true,
+      "missing": []
+    },
+    "diagram_embedded": {
+      "passed": true
+    },
+    "no_forward_refs": {
+      "passed": true,
+      "violations": []
+    },
+    "scope_clean": {
+      "passed": true,
+      "violations": []
+    },
+    "beginner_readable": {
+      "passed": true,
+      "findings": [
+        "All key terms (embedding, vector, vector database, cosine similarity, k-NN, ANN, HNSW) are defined on first use.",
+        "Concrete 3D table example precedes abstract high-dimensional-space explanation.",
+        "No paragraph walls detected — longest prose blocks are 3–4 sentences; HNSW section uses bulleted layers.",
+        "RAG is named-and-deferred (one sentence, topic pointer to 14.2) — not taught here."
+      ]
+    }
+  },
+  "verdict": "PASS — all 8 checks passed. The reading is structurally correct (H1 title, 6 fixed sections in order, no frontmatter), word count is 1368 (within 1200–1400 target), all four primary resources are cited, the diagram is embedded in Key Concepts, no forward topics are taught (RAG is named-and-deferred with a topic pointer only), content stays on-scope for vector databases and similarity search, and the writing is beginner-readable with terms defined on first use and no paragraph walls.",
+  "at": "2026-06-13T00:35:00Z"
+}

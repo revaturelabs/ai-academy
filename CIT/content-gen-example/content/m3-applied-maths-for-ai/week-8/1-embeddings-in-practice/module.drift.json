@@ -1,0 +1,80 @@
+{
+  "type": "module_drift_report",
+  "module": {
+    "slug": "1-embeddings-in-practice",
+    "title": "Embeddings in Practice",
+    "course_code": "M3",
+    "week_num": 8
+  },
+  "topics_examined": [
+    { "id": "8.1", "title": "Embedding explorer — comparing domain-specific word clusters in 2D", "position_in_module": 1 },
+    { "id": "8.2", "title": "Similarity scoring — computing cosine similarity between sentence pairs", "position_in_module": 2 }
+  ],
+  "passed": true,
+  "verdict": "PASS — 8.1 and 8.2 form a clean eye-to-number arc with consistent terminology, no forward refs, no duplication, and labs aligned to the module seed. No blocking findings; two soft notes for awareness.",
+  "checks": {
+    "terminology_consistency": {
+      "passed": true,
+      "findings": [
+        {
+          "severity": "info",
+          "topics": ["8.1", "8.2"],
+          "note": "Vector is framed as a 'dot/point in space' in 8.1 and re-framed as an 'arrow' in 8.2. This is a deliberate, signposted shift (8.2's prerequisite line for 6.5 explicitly says 'picture a list of numbers as an arrow pointing somewhere in space') driving the angle intuition, not silent synonym drift. 'embedding' / 'number-list' / 'cluster' / 'outlier' / 'nearest neighbors' are used identically across both topics."
+        }
+      ]
+    },
+    "prerequisites_respected": {
+      "passed": true,
+      "findings": [
+        {
+          "severity": "info",
+          "topics": ["8.2"],
+          "note": "8.2 correctly cites 8.1 (position 1 < position 2) and only earlier-sequence topics (6.5, 6.6, 6.7, 6.9, 6.10, all week-6). No forward references. Minor: 8.2 abbreviates 8.1's title to 'comparing word clusters in 2D' vs canonical 'comparing domain-specific word clusters in 2D' — unambiguous, cosmetic only."
+        }
+      ]
+    },
+    "learning_arc": {
+      "passed": true,
+      "findings": [
+        {
+          "severity": "info",
+          "topics": ["8.1", "8.2"],
+          "note": "Arc is complete for the two-topic module scope: 8.1 teaches qualitative reading of embeddings (clusters/outliers/domain gaps by eye); 8.2 turns that into a quantitative score (cosine similarity). 8.2 opens by explicitly bridging from 8.1's eyeballing ('In the last topic you read closeness with your eyes ... but that is a feeling, not a measurement'). Module outcome 'Embeddings in Practice' is covered."
+        }
+      ]
+    },
+    "no_duplicated_core_concepts": {
+      "passed": true,
+      "findings": [
+        {
+          "severity": "none",
+          "topics": ["8.1", "8.2"],
+          "note": "Core Concepts noun sets are largely disjoint (8.1: domain, projector, dot, projection, 2D, cluster, outlier, gap; 8.2: sentence embedding, cosine similarity, angle, arrow, score, scale, meaning). Only the one-paragraph embedding/number-list recap overlaps, which is an intentional prerequisite bridge. Estimated Jaccard well below the 0.6 flag threshold."
+        }
+      ]
+    },
+    "lab_activity_alignment": {
+      "passed": true,
+      "findings": [
+        {
+          "severity": "none",
+          "topics": ["8.1", "8.2"],
+          "note": "Module lab seed ('Embedding explorer: pick 10 domain words; plot 2D projections; identify clusters and outliers') is directly supported by 8.1's Hands-On Exercise. The similarity-scoring activity in 8.2 (rank and score five sentence pairs from pre-computed vectors) is supported by 8.2's Hands-On Exercise and matches the week narrative seed. Both topics carry a hands-on artifact aligned to their seed."
+        }
+      ]
+    },
+    "audience_level_consistency": {
+      "passed": true,
+      "findings": [
+        {
+          "severity": "soft",
+          "topics": ["8.2"],
+          "note": "8.2 uses 'arrow', 'angle', and 'dot product divided by lengths (magnitudes)' — each anchored to an earlier topic (6.5, 6.6, 6.9) and re-explained in plain language before use, with an explicit 'you do not need to compute that by hand'. This is mention-and-defer within the fresher-zero-background baseline, not a cold advanced-concept jump. No register/depth spike above 8.1 for the shared standard profile. Surfaced soft at HITL #4 for awareness only."
+        }
+      ]
+    }
+  },
+  "findings": [],
+  "topics_with_findings": [],
+  "at": "2026-06-22T08:15:00Z"
+}

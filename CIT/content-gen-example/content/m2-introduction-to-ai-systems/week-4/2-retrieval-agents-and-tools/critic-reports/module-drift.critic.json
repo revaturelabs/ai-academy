@@ -1,0 +1,138 @@
+{
+  "critic": "drift-critic",
+  "module": "2-retrieval-agents-and-tools",
+  "course_code": "M2",
+  "week_num": 4,
+  "run_at": "2026-06-17T00:00:00Z",
+  "topics_evaluated": ["4.3", "4.4", "4.5"],
+  "passed": true,
+  "verdict": "Module PASS — TC-03 hard finding resolved (4.4 CORPUS-META depth_profile now 'deep'); 5 soft findings carry to HITL #4 for author awareness, none blocking.",
+  "checks": {
+    "terminology_consistency": {
+      "passed": true,
+      "summary": "The single hard inconsistency (TC-03, stale depth_profile in 4.4 CORPUS-META block) is confirmed resolved: line 247 now reads 'depth_profile: deep' with 'depth_profile_source: hitl_override_budget_driven'. Two soft synonym-drift items remain in the corpus text and carry to HITL #4.",
+      "findings": [
+        {
+          "id": "TC-01",
+          "severity": "soft",
+          "topics": ["4.3", "4.5"],
+          "description": "Primary term for the model shifts between 'foundation model' (used consistently in 4.1–4.3 and reinforced by 4.3 HITL #2 soft finding at line 174) and 'LLM' (used as the dominant term throughout 4.5). Topic 4.5 introduces LLM with parenthetical expansion ('Large Language Model') in Section 2, but 'foundation model' appears only once thereafter. This is a register drift from the curriculum convention established in M2 topic 4.1.",
+          "location": "4.5 topic_corpus.md — Sections 4, 5.1, 5.2, 5.3, 5.4, 5.5, 5.6 and Key Takeaways",
+          "recommendation": "In 4.5 reading artifact, bridge with: 'LLMs — the foundation models introduced in topic 4.1 — face exactly this problem.' Maintain 'foundation model' as the canonical term; use 'LLM' as a shorthand only after the bridge sentence.",
+          "status": "open_soft_carry"
+        },
+        {
+          "id": "TC-02",
+          "severity": "soft",
+          "topics": ["4.4", "4.5"],
+          "description": "Tool example name inconsistency: 4.4 Section 5.2.3 names the code execution tool 'code executor'; 4.5 Section 5.3 names the same tool 'code runner' (with parenthetical 'code execution tool or interpreter tool'). Students moving from 4.4 to 4.5 encounter three different names for the same concept.",
+          "location": "4.4 topic_corpus.md §5.2.3 — 'A code executor'; 4.5 topic_corpus.md §5.3 heading 'Code runner (also called a code execution tool or interpreter tool)'",
+          "recommendation": "Align on 'code runner' as the canonical term in both topics (it is more descriptive for beginners). Update 4.4 §5.2.3 to say 'a code runner' with a parenthetical '(also called code executor)' on first use.",
+          "status": "open_soft_carry"
+        },
+        {
+          "id": "TC-03",
+          "severity": "hard",
+          "topics": ["4.4"],
+          "description": "RESOLVED. 4.4 topic_corpus.md CORPUS-META block previously declared 'depth_profile: standard'. Verified fixed: line 247 now reads 'depth_profile: deep', line 248 'depth_profile_source: hitl_override_budget_driven'. Consistent with topic.manifest.json artifact_plan, HITL #2 approval, and the generated reading artifact (2086w / ~9 min). No downstream tooling will read a stale standard-depth flag from this corpus.",
+          "location": "4.4 topic_corpus.md — CORPUS-META block, lines 247–248",
+          "status": "resolved"
+        }
+      ]
+    },
+    "prerequisites_respected": {
+      "passed": true,
+      "summary": "All three topics reference only topics with earlier positions in the delivery sequence. 4.3 references 4.1 and 4.2; 4.4 references 4.1, 4.2, and 4.3; 4.5 references 4.4 (and notes 4.1–4.3 as background). No forward references found.",
+      "findings": []
+    },
+    "learning_arc": {
+      "passed": true,
+      "summary": "The union of all three topics' Learning Objectives fully covers the module title 'Retrieval, Agents and Tools'. RAG is covered by 4.3 LOs 1–6; agent architecture and planning loop by 4.4 LOs 1–6; tool mechanics by 4.5 LOs 1–6. The module narrative seed references Multimodal AI (4.6) and Foundation Models / Fine-tuning (module 1 topics), which are correctly handled in their respective modules and are out of scope here.",
+      "findings": [
+        {
+          "id": "LA-01",
+          "severity": "soft",
+          "topics": ["4.4", "4.5"],
+          "description": "No formal Learning Objective in 4.5 covers the 'tools-within-agents' integration (i.e., how the four-step tool-use cycle maps onto the 'act' phase of the observe-think-act cycle). The concept is taught in 4.5 Section 5.6, but the absence of a corresponding LO means assessment cannot formally target this integration point. This is a minor arc gap — the concept exists in corpus but is not LO-anchored.",
+          "location": "4.5 topic_corpus.md §5.6 — content exists; topic.manifest.json LO list — no corresponding objective",
+          "recommendation": "Add a sixth LO to 4.5: 'Explain how a single tool call maps onto the act phase of the observe-think-act cycle introduced in topic 4.4.' This closes the module-arc connection.",
+          "status": "open_soft_carry"
+        }
+      ]
+    },
+    "no_duplicated_core_concepts": {
+      "passed": true,
+      "summary": "Pairwise Jaccard similarity of Core Concepts (Section 5 noun sets) across all three topic pairs is well below the 0.6 threshold. The 'tool' concept appears in both 4.4 and 4.5, but 4.4 introduces it at a definitional level while 4.5 teaches the mechanics — intentional pedagogical layering, not duplication.",
+      "jaccard_estimates": {
+        "4.3_vs_4.4": 0.05,
+        "4.3_vs_4.5": 0.07,
+        "4.4_vs_4.5": 0.10
+      },
+      "findings": []
+    },
+    "lab_activity_alignment": {
+      "passed": true,
+      "summary": "Two of the three lab activity items are supported by topic hands-on exercises. Lab item 1 (live RAG demo) is anchored by 4.3 §9. Lab item 3 (present findings, defend with evidence) is supported by 4.5 §9's comparison exercise. Lab item 2 (5-criteria evaluation rubric design) has no direct topic anchor; one soft finding is carried.",
+      "findings": [
+        {
+          "id": "LAB-01",
+          "severity": "soft",
+          "topics": ["4.3", "4.4", "4.5"],
+          "description": "Lab seed item 2 ('Each student independently designs a 5-criteria evaluation rubric to compare two AI tools') is not anchored by any topic's Learning Objectives or Hands-On Exercise. Topic 4.5 §9 prepares students to compare AI assistant outputs with and without tools, but no topic teaches rubric construction methodology. Students arriving at the lab without rubric-design scaffolding may produce inconsistent criteria.",
+          "location": "module.manifest.json lab_activity_seed_by_week.4 item 2; 4.3 §9, 4.4 §9, 4.5 §9 — none reference rubric design",
+          "recommendation": "Add a brief rubric scaffold to the week 4 lab guide (not the topic corpora — scope is correctly constrained). Alternatively, add one sentence to 4.5 §9 suggesting that students draft three evaluation criteria before the lab session.",
+          "status": "open_soft_carry"
+        }
+      ]
+    },
+    "audience_level_consistency": {
+      "passed": true,
+      "summary": "All three topics maintain an absolute-beginner register throughout. Two soft upward-drift items were carried from corpus critic runs and remain present in the published corpora. No topic assumes a concept as known that no earlier topic introduced at a level that would block comprehension. Both items are noted for HITL #4 awareness.",
+      "findings": [
+        {
+          "id": "AUD-01",
+          "severity": "soft",
+          "topics": ["4.4"],
+          "description": "'API' is used without expansion in 4.4 §5.2.3 ('An API call — the agent can communicate with an external software service'). This was flagged as a soft finding by the corpus critic (cycle 2 log: 'API acronym not expanded first use') and accepted as non-blocking. No prior topic in the module introduces 'API'. The term is used as a tool example, not as a taught concept, which reduces impact.",
+          "location": "4.4 topic_corpus.md §5.2.3",
+          "carry_forward_from_corpus_critic": true,
+          "recommendation": "Expand on first use: 'an API call (a structured request to an external software service)' — three words resolve the gap.",
+          "status": "open_soft_carry"
+        },
+        {
+          "id": "AUD-02",
+          "severity": "soft",
+          "topics": ["4.5"],
+          "description": "'Sandboxed environment' is used in 4.5 §5.3 without inline definition. The term was flagged as a soft finding at corpus critic cycle 1 and accepted with the note 'sandboxed environment gloss deferred to reading artifact'. If the reading artifact does not provide the gloss, students encounter a cold technical term.",
+          "location": "4.5 topic_corpus.md §5.3 — 'runs it in a sandboxed environment'",
+          "carry_forward_from_corpus_critic": true,
+          "recommendation": "Confirm that 4.5 reading artifact includes a parenthetical gloss: '(an isolated execution space that cannot affect the rest of the system)'. If absent, flag to author.",
+          "status": "open_soft_carry"
+        }
+      ]
+    }
+  },
+  "hard_findings": [],
+  "soft_findings_for_hitl4": [
+    { "ref": "TC-01", "check": "terminology_consistency", "topic": "4.5", "summary": "'LLM' vs 'foundation model' drift in 4.5 corpus — bridge sentence recommended in reading artifact." },
+    { "ref": "TC-02", "check": "terminology_consistency", "topics": ["4.4", "4.5"], "summary": "'code executor' (4.4) vs 'code runner' (4.5) — same tool, two names; align on 'code runner'." },
+    { "ref": "LA-01", "check": "learning_arc", "topic": "4.5", "summary": "Section 5.6 tool-in-agent integration taught in corpus but missing from LO list — add one LO." },
+    { "ref": "LAB-01", "check": "lab_activity_alignment", "topics": ["4.3", "4.4", "4.5"], "summary": "Lab rubric-design activity (item 2) has no topic-level anchor — add scaffold to lab guide." },
+    { "ref": "AUD-01", "check": "audience_level_consistency", "topic": "4.4", "summary": "'API' unexpanded on first use — three-word fix resolves." },
+    { "ref": "AUD-02", "check": "audience_level_consistency", "topic": "4.5", "summary": "'sandboxed environment' unglosssed — verify gloss present in 4.5 reading artifact." }
+  ],
+  "resolved_since_last_run": [
+    {
+      "ref": "TC-03",
+      "check": "terminology_consistency",
+      "topic": "4.4",
+      "description": "4.4 CORPUS-META depth_profile corrected from 'standard' to 'deep'; depth_profile_source 'hitl_override_budget_driven' added. Verified at lines 247–248 of 4.4 topic_corpus.md."
+    }
+  ],
+  "gate_update_required": {
+    "gate": "module_drift_passed",
+    "current_value": false,
+    "recommended_value": true,
+    "reason": "Hard finding TC-03 is resolved. No remaining hard findings. 5 soft findings surface at HITL #4 for author decision; none block the gate. Set module_drift_passed=true and proceed to HITL #4 end-of-week rollup."
+  }
+}

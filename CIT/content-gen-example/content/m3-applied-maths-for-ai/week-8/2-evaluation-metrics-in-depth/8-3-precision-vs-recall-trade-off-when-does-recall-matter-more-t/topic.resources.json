@@ -1,0 +1,30 @@
+{
+  "topic_id": "8.3",
+  "captured_at": "2026-06-22T06:42:25Z",
+  "captured_by": "namratas@revature.com",
+  "resources_source": "web_search",
+  "resources": [
+    {
+      "type": "url",
+      "value": "https://apxml.com/courses/basics-model-evaluation-metrics/chapter-2-metrics-for-classification/precision-recall-tradeoff",
+      "role": "primary",
+      "source": "web_search",
+      "notes": "Course chapter on the precision/recall trade-off and threshold tuning."
+    },
+    {
+      "type": "url",
+      "value": "https://www.datacamp.com/tutorial/precision-vs-recall",
+      "role": "supporting",
+      "source": "web_search",
+      "notes": "Worked guide with false-positive vs false-negative cost framing."
+    },
+    {
+      "type": "url",
+      "value": "https://viso.ai/computer-vision/precision-recall/",
+      "role": "supporting",
+      "source": "web_search",
+      "notes": "Domain examples where recall is prioritized (screening, security)."
+    }
+  ],
+  "web_search_query": "precision recall trade-off when does recall matter more than precision"
+}

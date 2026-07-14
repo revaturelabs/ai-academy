@@ -1,0 +1,25 @@
+{
+  "topic_id": "2.1",
+  "captured_at": "2026-06-16",
+  "source": "web_search",
+  "resources": [
+    {
+      "type": "primary",
+      "title": "Effective Prompts for AI: The Essentials",
+      "url": "https://mitsloanedtech.mit.edu/ai/basics/effective-prompts/",
+      "notes": "MIT Sloan institutional guide — covers clarity, boundedness, and success criteria for AI prompts"
+    },
+    {
+      "type": "primary",
+      "title": "The Ultimate Guide to Prompt Engineering in 2026",
+      "url": "https://www.lakera.ai/blog/prompt-engineering-guide",
+      "notes": "Lakera comprehensive guide — testability, observable outputs, specification quality criteria"
+    },
+    {
+      "type": "primary",
+      "title": "A Simple Framework for Writing Better AI Prompts",
+      "url": "https://www.pmi.org/blog/how-to-write-better-prompts-framework",
+      "notes": "PMI practical framework — actionable specification properties, CORE method"
+    }
+  ]
+}

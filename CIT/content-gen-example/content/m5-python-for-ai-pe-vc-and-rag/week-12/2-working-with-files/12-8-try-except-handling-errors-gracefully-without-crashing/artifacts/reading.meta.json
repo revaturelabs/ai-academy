@@ -1,0 +1,14 @@
+{
+  "topic_id": "12.8",
+  "generated_at": "2026-06-15T00:00:00Z",
+  "word_count": 930,
+  "reading_minutes": 4,
+  "target_word_range": [800, 1000],
+  "target_minutes_range": [4, 5],
+  "section_order": ["Overview", "Key Concepts", "Worked Example", "In Practice", "Key Takeaways", "References"],
+  "diagram_embedded": true,
+  "diagram_path": "diagram.png",
+  "citations_used": ["[1]", "[2]", "[3]"],
+  "profile": "atomic",
+  "soft_findings_resolved": ["finally_trimmed_to_one_sentence"]
+}

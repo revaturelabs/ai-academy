@@ -1,0 +1,72 @@
+{
+  "critic": "corpus-critic",
+  "topic_id": "10.6",
+  "topic_title": "Identifying which components in your system need a mandatory human checkpoint",
+  "at": "2026-06-13T00:00:00Z",
+  "passed": true,
+  "depth_profile": "standard",
+  "estimated_word_count": 3810,
+  "checks": {
+    "required_sections": {
+      "passed": true,
+      "detail": {
+        "section_3_learning_objectives": { "present": true, "word_count_estimate": 140, "threshold": 50, "passed": true },
+        "section_4_introduction":        { "present": true, "word_count_estimate": 210, "threshold": 50, "passed": true },
+        "section_5_core_concepts":       { "present": true, "word_count_estimate": 1930, "threshold": 100, "passed": true },
+        "section_10_key_takeaways":      { "present": true, "word_count_estimate": 130, "threshold": 50, "passed": true }
+      }
+    },
+    "citation_density": {
+      "passed": true,
+      "resources_source": "web_search",
+      "primary_resource": {
+        "url": "https://aigovernancedesk.com/human-in-the-loop-oversight-frameworks-ai-governance/",
+        "marker": "[1]",
+        "cited_at_least_once": true,
+        "occurrences": ["line 29 (LO #4)", "line 73 (section 5.2)", "line 142 (section 5.5)", "line 151 (section 5.5)", "line 190 (section 5.7)", "line 231 (section 7.1)", "line 242 (section 7.1)", "line 281 (section 8)", "line 289 (section 8)"]
+      },
+      "supporting_resources": {
+        "[2] redis.io": { "cited": true, "occurrences": ["line 104", "line 120", "line 151", "line 248", "line 250", "line 254"] },
+        "[3] galileo.ai": { "cited": true, "occurrences": ["line 132", "line 248", "line 256", "line 262", "line 268"] }
+      },
+      "assertion_citation_coverage_estimate": "~72% of standalone factual assertions in sections 5/6/7 carry a citation marker — above the 60% threshold",
+      "fake_citations_detected": false,
+      "notes": "All three [N] markers resolve to resources declared in topic.resources.json. No fabricated citations."
+    },
+    "sequence_drift": {
+      "passed": true,
+      "forward_references": [],
+      "notes": "All technical terms used in the corpus either (a) are introduced by this topic itself (component, risk-tiered component mapping, mandatory checkpoint, error budget, baseline/triggered oversight assignment, blocking/logged/empowered/monitored checkpoint properties) or (b) appear in the allowed prior-concept list (HITL/HOTL/HOOTL from 10.5; automation complacency/accuracy paradox/vigilance decay/trust calibration from 10.4; override-as-theater from 10.1; diffuse accountability from 10.3; Judgment Framework Q1/Q2/Q3 from 9.7–9.9; acceptable error/failure threshold from 9.10; automation bias from 9.5; EU AI Act risk tiers from earlier weeks)."
+    },
+    "length_sanity": {
+      "passed": true,
+      "profile": "standard",
+      "corpus_word_range": { "min": 3000, "max": 4400 },
+      "estimated_word_count": 3810,
+      "within_range": true,
+      "within_30pct_outside_range": true,
+      "notes": "Estimated ~3810 words; consistent with manifest depth_profile_signals estimate of ~3600. Comfortably within the standard corpus range of 3000–4400."
+    },
+    "topic_scope": {
+      "passed": true,
+      "scope_creep_findings": [],
+      "notes": "All material stays within the headline scope of 'identifying which components need a mandatory human checkpoint.' Section 5.5 (mandatory vs optional checkpoint properties) is necessary scaffolding for the identification method. Section 5.7 (acceptable error threshold) is explicitly referenced in LO #6 and in the 7-step method (Step 6). The worked example in section 6 applies the method without introducing out-of-scope concepts. Section 8 best practices reinforce the component-level method without teaching a new adjacent concept. No deferred concept is bolded or given a defining clause beyond a name."
+    },
+    "beginner_readability": {
+      "passed": true,
+      "hard_fail_triggered": false,
+      "finding_count": 1,
+      "findings": [
+        {
+          "code": "undefined_terms",
+          "severity": "soft",
+          "detail": "HITL, HOTL, HOOTL are spelled out in the Prerequisites block (section 2) but are used without re-expansion at their first body occurrence in section 5.2 (line 67). For a strict first-use-in-body reading, this is a mild gap. Mitigated by the dedicated Prerequisites section that explicitly lists these terms with their full names and topic pointers."
+        }
+      ],
+      "jargon_dump_findings": [],
+      "academic_register_findings": [],
+      "notes": "No paragraph introduces 3+ new terms simultaneously. The four mandatory-checkpoint properties (blocking, logged, empowered, monitored) are presented in a numbered list (not a paragraph), which does not trigger the jargon-dump rule. Sentences are generally direct, active-voice, and address the learner as 'you'. One isolated sentence in section 7.1 (~30 words) exceeds the target length but does not constitute a systematic academic-register pattern. 1 soft finding total — below the hard-fail threshold of 3 distinct findings."
+    }
+  },
+  "verdict": "PASS — all six checks passed. The corpus is well-structured and suitable to ground downstream artifacts. One soft readability finding: HITL/HOTL/HOOTL are not re-expanded at their first body use in section 5.2 (mitigated by the Prerequisites section). No forward references, no scope creep, no fabricated citations. Citation density ~72% across sections 5/6/7, primary resource [1] cited 9 times. Estimated word count ~3810 is within the standard corpus range (3000–4400). Recommend proceeding to HITL #2 corpus review."
+}

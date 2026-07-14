@@ -1,0 +1,223 @@
+{
+  "topic_id": "7.9",
+  "stage": "topic_artifacts_approved",
+  "gates": {
+    "resources_captured": true,
+    "corpus_generated": true,
+    "corpus_critic_passed": true,
+    "corpus_human_approved": true,
+    "reading_generated": true,
+    "reading_critic_passed": true,
+    "quiz_generated": true,
+    "quiz_critic_passed": true,
+    "diagram_generated": true,
+    "diagram_critic_passed": true,
+    "module_drift_passed": true,
+    "course_drift_passed": true,
+    "topic_artifacts_human_approved": true,
+    "week_human_approved": true
+  },
+  "history": [
+    {
+      "at": "2026-06-23T04:51:19Z",
+      "op": "set",
+      "gate": "resources_captured",
+      "value": true
+    },
+    {
+      "at": "2026-06-23T04:51:19Z",
+      "op": "stage",
+      "to": "awaiting_corpus"
+    },
+    {
+      "at": "2026-06-23T04:51:19Z",
+      "op": "log",
+      "msg": "Captured 3 resources (source=web_search)"
+    },
+    {
+      "at": "2026-06-23T05:04:24Z",
+      "op": "set",
+      "gate": "corpus_generated",
+      "value": true
+    },
+    {
+      "at": "2026-06-23T05:04:24Z",
+      "op": "stage",
+      "to": "awaiting_corpus_critic"
+    },
+    {
+      "at": "2026-06-23T05:04:24Z",
+      "op": "log",
+      "msg": "Corpus generated — standard depth, diagram required (precision-recall contrast)"
+    },
+    {
+      "at": "2026-06-23T05:06:46Z",
+      "op": "set",
+      "gate": "corpus_critic_passed",
+      "value": true
+    },
+    {
+      "at": "2026-06-23T05:06:46Z",
+      "op": "stage",
+      "to": "awaiting_corpus_human_review"
+    },
+    {
+      "at": "2026-06-23T05:10:29Z",
+      "op": "set",
+      "gate": "corpus_human_approved",
+      "value": true
+    },
+    {
+      "at": "2026-06-23T05:10:29Z",
+      "op": "stage",
+      "to": "corpus_approved"
+    },
+    {
+      "at": "2026-06-23T05:10:30Z",
+      "op": "log",
+      "msg": "HITL #2 passed — all sections approved, standard depth, diagram required"
+    },
+    {
+      "at": "2026-06-23T05:42:01Z",
+      "op": "set",
+      "gate": "diagram_generated",
+      "value": true
+    },
+    {
+      "at": "2026-06-23T05:42:01Z",
+      "op": "set",
+      "gate": "diagram_critic_passed",
+      "value": true
+    },
+    {
+      "at": "2026-06-23T05:42:01Z",
+      "op": "stage",
+      "to": "awaiting_diagram_critic"
+    },
+    {
+      "at": "2026-06-23T05:42:01Z",
+      "op": "log",
+      "msg": "Diagram generated + critic passed — side-by-side precision/recall denominator contrast"
+    },
+    {
+      "at": "2026-06-23T05:44:13Z",
+      "op": "set",
+      "gate": "quiz_generated",
+      "value": true
+    },
+    {
+      "at": "2026-06-23T05:44:14Z",
+      "op": "stage",
+      "to": "awaiting_quiz_critic"
+    },
+    {
+      "at": "2026-06-23T05:44:14Z",
+      "op": "log",
+      "msg": "Quiz generated — 6 MCQ, bias defense applied, positions [2,0,3,1,2,0]"
+    },
+    {
+      "at": "2026-06-23T05:44:20Z",
+      "op": "set",
+      "gate": "reading_generated",
+      "value": true
+    },
+    {
+      "at": "2026-06-23T05:44:20Z",
+      "op": "stage",
+      "to": "awaiting_reading_critic"
+    },
+    {
+      "at": "2026-06-23T05:44:20Z",
+      "op": "log",
+      "msg": "Reading generated — 1307 words, 7 min, diagram embedded, ground_truth fixed"
+    },
+    {
+      "at": "2026-06-23T05:46:26Z",
+      "op": "set",
+      "gate": "reading_critic_passed",
+      "value": true
+    },
+    {
+      "at": "2026-06-23T05:46:26Z",
+      "op": "stage",
+      "to": "reading_approved"
+    },
+    {
+      "at": "2026-06-23T05:46:57Z",
+      "op": "set",
+      "gate": "quiz_critic_passed",
+      "value": false
+    },
+    {
+      "at": "2026-06-23T05:46:57Z",
+      "op": "log",
+      "msg": "Quiz critic fail cycle 1 — length bias: q2/q3/q4 correct answer >1.20x mean distractor length"
+    },
+    {
+      "at": "2026-06-23T05:51:33Z",
+      "op": "set",
+      "gate": "quiz_critic_passed",
+      "value": true
+    },
+    {
+      "at": "2026-06-23T05:51:34Z",
+      "op": "stage",
+      "to": "quiz_approved"
+    },
+    {
+      "at": "2026-06-23T05:51:34Z",
+      "op": "log",
+      "msg": "Quiz critic passed cycle 2 — length bias resolved, all 5 checks pass"
+    },
+    {
+      "at": "2026-06-23T05:51:39Z",
+      "op": "stage",
+      "to": "awaiting_topic_artifacts_review"
+    },
+    {
+      "at": "2026-06-23T05:52:15Z",
+      "op": "set",
+      "gate": "topic_artifacts_human_approved",
+      "value": true
+    },
+    {
+      "at": "2026-06-23T05:52:15Z",
+      "op": "stage",
+      "to": "topic_artifacts_approved"
+    },
+    {
+      "at": "2026-06-23T05:52:16Z",
+      "op": "log",
+      "msg": "HITL #3 approved — reading 1307w/7min, quiz 6MCQ cycle-2, diagram pass"
+    },
+    {
+      "at": "2026-06-23T07:33:15Z",
+      "op": "set",
+      "gate": "module_drift_passed",
+      "value": true
+    },
+    {
+      "at": "2026-06-23T07:33:43Z",
+      "op": "set",
+      "gate": "week_human_approved",
+      "value": true
+    },
+    {
+      "at": "2026-06-23T07:33:52Z",
+      "op": "set",
+      "gate": "module_drift_passed",
+      "value": true
+    },
+    {
+      "at": "2026-06-23T00:00:00Z",
+      "op": "set",
+      "gate": "course_drift_passed",
+      "value": true
+    },
+    {
+      "at": "2026-06-23T00:00:00Z",
+      "op": "log",
+      "msg": "course-drift-critic cycle 2 PASS — M3 W6/W7/W8 all checks pass; W6 warn -23.3%, W7 ok -13.3%, W8 warn -23.3%; no hard fails"
+    }
+  ]
+}

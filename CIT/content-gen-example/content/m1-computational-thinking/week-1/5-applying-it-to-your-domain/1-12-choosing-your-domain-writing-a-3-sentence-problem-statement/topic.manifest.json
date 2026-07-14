@@ -1,0 +1,44 @@
+{
+  "type": "topic",
+  "id": "1.12",
+  "title": "Choosing your domain — writing a 3-sentence problem statement",
+  "slug": "1-12-choosing-your-domain-writing-a-3-sentence-problem-statement",
+  "position_in_module": 1,
+  "week_num": 1,
+  "session_name": "How Machines Think",
+  "module": {
+    "position": 5,
+    "slug": "5-applying-it-to-your-domain",
+    "title": "Applying It to Your Domain"
+  },
+  "course": {
+    "code": "M1",
+    "slug": "m1-computational-thinking",
+    "title": "Computational Thinking"
+  },
+  "next_assessment": {
+    "id": "A1",
+    "due_week": 3,
+    "title": "Specification Portfolio",
+    "weight": "10%"
+  },
+  "paths": {
+    "corpus": "topic_corpus.md",
+    "resources": "topic.resources.json",
+    "progress": "topic.progress.json",
+    "artifacts_dir": "artifacts/",
+    "critic_reports_dir": "critic-reports/"
+  },
+  "artifact_plan": {
+    "profile": "atomic",
+    "diagram": true,
+    "diagram_intent": "Three-slot linear structure showing the 3-sentence format: Sentence 1 (Context) → Sentence 2 (Specific Problem) → Sentence 3 (Impact); reinforces the ordered, one-job-per-slot pattern visually",
+    "reading": { "target_word_range": [800, 1200], "target_minutes": [4, 6] },
+    "quiz": { "min_questions": 5, "max_questions": 7, "include_short_answer": true },
+    "sections_approved": [2, 3, 4, 5, 6, 7, 8, 10],
+    "sections_dropped": [9],
+    "reading_notes": "Strip A1/Specification Portfolio assessment references from reading.md — LMS metadata only, not learner prose."
+  },
+  "expected_delivery_minutes": 5,
+  "status": "scaffolded"
+}

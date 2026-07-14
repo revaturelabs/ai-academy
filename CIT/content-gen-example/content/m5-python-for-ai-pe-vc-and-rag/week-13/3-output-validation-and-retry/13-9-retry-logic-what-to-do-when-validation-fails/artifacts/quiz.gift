@@ -1,0 +1,58 @@
+$CATEGORY: CIT/M5/week-13/13-9-retry-logic-what-to-do-when-validation-fails
+
+::q1:: What does a retry loop do when an LLM response fails validation? {
+=It calls the LLM again, looping until the response passes or the limit is hit.#Correct — the retry loop detects the failure and calls the model again until the response is valid or the maximum attempt count is reached.
+~It stops the program and raises an error to signal the failure.#No — stopping abruptly is the opposite of a retry loop; the loop is designed to keep trying rather than give up.
+~It returns an empty result to the caller without making another LLM call.#No — returning immediately without another attempt skips the whole purpose of the retry loop.
+~It modifies the LLM's response directly until the format check passes.#No — the loop calls the model again with a new message; it does not modify the model's output after the fact.
+#### Tests the definition of a retry loop (corpus §5, "The retry loop").
+}
+
+::q2:: Why does a corrective message help the model do better on a retry, while repeating the original prompt does not? {
+~The corrective message increases the model's memory so it remembers the previous error.#No — LLMs do not have persistent memory between calls; the corrective message works by adding new instructions in the current message, not by improving memory.
+~Repeating the original prompt resets the model to a clean state, which sometimes resolves formatting issues.#No — each call is independent and stateless; an identical prompt gives the model nothing new to work with.
+~Repeating the same prompt works eventually because the model self-corrects between calls.#No — the model has no awareness of prior calls; without new information the second attempt is no more likely to succeed than the first.
+=It tells the model what went wrong and restates the required output format.#Correct — those two pieces of information (what failed + expected format) are what make the second attempt more likely to succeed.
+#### Tests the role of the corrective message (corpus §5, "The corrective message").
+}
+
+::q3:: In a retry loop, what does the retry counter track? {
+~The number of times the LLM returned a valid response during the session.#No — the counter tracks attempts (including failed ones), not successful responses.
+=The number of LLM call attempts made so far, starting from zero.#Correct — the retry counter is an integer starting at 0 that increments by one each time the loop makes another call, giving the loop a way to enforce a limit.
+~The number of times the corrective message has been updated.#No — the message may change on each retry, but the counter measures attempts, not message revisions.
+~The number of times the validation function returned False during the loop.#No — token usage is a separate concern; the counter is a simple integer that counts call attempts.
+#### Tests the purpose of the retry counter (corpus §5, "The retry counter").
+}
+
+::q4:: What happens when the retry counter reaches the max retries limit and the response is still invalid? {
+~The loop raises an exception so the calling code can handle the crash.#No — the intent of retry logic is a graceful exit, not a crash; an unhandled exception would break the application.
+~The loop resets the counter to zero and starts over indefinitely.#No — resetting and looping forever defeats the purpose of having a max retries limit, which exists precisely to prevent infinite loops.
+=It exits the loop and returns a pre-written fallback response the application can rely on.#Correct — the fallback response is returned so the application can continue functioning even though the model never produced a valid response.
+~The loop pauses for a fixed delay and makes one final attempt before stopping entirely.#No — the basic retry pattern described here exits immediately when the limit is reached; a timed extra attempt is a more advanced pattern not covered in this topic.
+#### Tests the max retries limit and fallback response (corpus §5, "Max retries" and "The fallback response").
+}
+
+::q5:: The function below uses `max_retries=2`. If `is_valid` always returns `False`, how many total times does `call_llm` run before the fallback is returned?
+
+```python
+attempts = 0
+while attempts <= max_retries:
+    response = call_llm(message)
+    if is_valid(response):
+        return response
+    attempts += 1
+    if attempts > max_retries:
+        break
+return {"error": "max retries exceeded"}
+``` {
+~One time — the loop calls the model once, fails, and immediately returns the fallback.#No — with max_retries=2 the loop allows additional attempts beyond the first call before reaching the limit.
+~Two times — the loop calls the model on the first attempt and one retry.#No — with max_retries=2 the counter runs from 0 up through 2, allowing a first call plus two retry calls.
+~Four times — the loop overshoots by one because of the off-by-one in the while condition.#No — the `if attempts > max_retries: break` check inside the loop prevents any call beyond the third attempt.
+=Three — attempts runs 0, 1, 2; the break fires after the third call.#Correct — the while condition is `attempts <= max_retries`, so the loop body runs when attempts is 0, 1, and 2, giving three total calls before the break exits the loop.
+#### Tests the ability to trace the retry loop code and predict its output (corpus §6, "Implementation").
+}
+
+::q6:: Complete the sentence: when max retries is reached and the response is still invalid, the loop returns a ____ response instead of crashing. {
+=fallback#Correct — a fallback response is the safe, pre-written default returned when the retry limit is exhausted.
+=fallback response#Correct — "fallback response" is the full term used in the corpus for the safe default returned at the retry limit.
+}

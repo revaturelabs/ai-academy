@@ -1,0 +1,45 @@
+{
+  "type": "topic",
+  "id": "11.5",
+  "title": "If / else — writing decision logic in code",
+  "slug": "11-5-if-else-writing-decision-logic-in-code",
+  "position_in_module": 3,
+  "week_num": 11,
+  "session_name": "Python Foundations I",
+  "module": {
+    "position": 2,
+    "slug": "2-core-python-concepts",
+    "title": "Core Python Concepts"
+  },
+  "course": {
+    "code": "M5",
+    "slug": "m5-python-for-ai-pe-vc-and-rag",
+    "title": "Python for AI, PE, VC and RAG"
+  },
+  "next_assessment": {
+    "id": "A4",
+    "due_week": 13,
+    "title": "Python and Prompt Engineering Portfolio",
+    "weight": "20%"
+  },
+  "paths": {
+    "corpus": "topic_corpus.md",
+    "resources": "topic.resources.json",
+    "progress": "topic.progress.json",
+    "artifacts_dir": "artifacts/",
+    "critic_reports_dir": "critic-reports/"
+  },
+  "artifact_plan": {
+    "diagram": true,
+    "diagram_intent": "Flowchart of the grade-assignment if/elif/else chain: decision diamonds for >=90 (Grade A), >=80 (Grade B), with remaining elif/else branches (C/D/F) as continuation — mirrors the Week 1 decision diamond",
+    "confirmed_profile": "deep",
+    "reading_word_range": [1600, 2200],
+    "reading_min_minutes": 8,
+    "reading_max_minutes": 12,
+    "quiz_min_questions": 5,
+    "quiz_max_questions": 6,
+    "quiz_include_short_answer": false
+  },
+  "expected_delivery_minutes": 9,
+  "status": "artifacts_complete"
+}

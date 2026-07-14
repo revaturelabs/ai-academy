@@ -1,0 +1,38 @@
+---
+title: "Decomposition — one big problem, broken into parts"
+config:
+  theme: base
+  themeVariables:
+    primaryColor: "#a5d8ff"
+    primaryBorderColor: "#4a9eed"
+    lineColor: "#555"
+  flowchart:
+    htmlLabels: true
+    curve: basis
+    nodeSpacing: 50
+    rankSpacing: 60
+---
+flowchart TB
+    ROOT["<b>Plan a party</b><br/><span style='font-size:12px;color:#6d28d9'>Root — the big problem</span>"]:::start
+
+    ST1["<b>Choose date and venue</b><br/><span style='font-size:12px;color:#6d28d9'>Sub-task</span>"]:::auto
+    ST2["<b>Invite guests</b><br/><span style='font-size:12px;color:#6d28d9'>Sub-task</span>"]:::auto
+    ST3["<b>Organise food</b><br/><span style='font-size:12px;color:#6d28d9'>Sub-task</span>"]:::auto
+    ST4["<b>Set up entertainment</b><br/><span style='font-size:12px;color:#6d28d9'>Sub-task</span>"]:::auto
+
+    L1["<b>Check availability</b><br/><span style='font-size:12px;color:#6d28d9'>Leaf — act on directly</span>"]:::done
+    L2["<b>Book the location</b><br/><span style='font-size:12px;color:#6d28d9'>Leaf — act on directly</span>"]:::done
+    L3["<b>Write invitation</b><br/><span style='font-size:12px;color:#6d28d9'>Leaf — act on directly</span>"]:::done
+
+    ROOT --> ST1
+    ROOT --> ST2
+    ROOT --> ST3
+    ROOT --> ST4
+
+    ST1 --> L1
+    ST1 --> L2
+    ST2 --> L3
+
+    classDef start fill:#a5d8ff,stroke:#4a9eed,color:#000
+    classDef auto  fill:#d0bfff,stroke:#8b5cf6,color:#000
+    classDef done  fill:#b2f2bb,stroke:#22c55e,color:#000

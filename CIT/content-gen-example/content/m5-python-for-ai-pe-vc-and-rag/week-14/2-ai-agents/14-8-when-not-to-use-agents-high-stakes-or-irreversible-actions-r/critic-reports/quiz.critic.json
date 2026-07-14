@@ -1,0 +1,55 @@
+{
+  "critic": "quiz-critic",
+  "topic_id": "14.8",
+  "cycle": 1,
+  "at": "2026-06-16T00:00:00Z",
+  "passed": true,
+  "checks": {
+    "positional_bias": {
+      "passed": true,
+      "distribution": [1, 1, 2, 1, 0],
+      "max_share": 0.40,
+      "notes": "GIFT = positions verified against meta: q1=pos0, q2=pos1, q3=pos2, q4=pos3, q5=pos2. All match. Max share 0.40 meets threshold (<=0.40). No single position dominates."
+    },
+    "length_bias": {
+      "passed": true,
+      "violations": [],
+      "longest_correct_rate": 0.0,
+      "baseline": 0.25,
+      "notes": "q1: correct=53 chars, mean-distractor=50.3, threshold=60.4 — no violation. q2: correct=61, mean-distractor=55.7, threshold=66.8 — no violation. q3: correct=80, mean-distractor=78.3, threshold=94.0 — no violation. q4: correct=73 (shortest), mean-distractor=97.0 — no violation. q5: correct=61 (shortest), mean-distractor=72.7 — no violation. 0/5 questions show length-bias pattern."
+    },
+    "distractor_plausibility": {
+      "passed": true,
+      "absurd_rate": 0.0,
+      "notes": "All 15 distractors across 5 MCQ are plausible beginner misconceptions grounded in 14.8 concepts. q1 distractors conflate irreversibility with cost, tool-count, and probabilistic output — recognisable confusions. q2 distractors confuse HITL with retry loops, passive logging, and time-delay safety. q3 distractors present plausible but incorrect agent failure characterisations. q4 distractors represent the three wrong autonomy-spectrum choices a beginner might pick. q5 distractors plausibly flag read-only tools or over-apply checkpoints. 0 absurd options identified."
+    },
+    "objective_coverage": {
+      "passed": true,
+      "covered_los": [
+        "LO1 — Define irreversible action and high-stakes action (q1)",
+        "LO2 — Explain why agents are dangerous for these actions (q3, q6)",
+        "LO3 — Define HITL and four-step approval flow (q2, q6)",
+        "LO4 — Describe autonomy spectrum and identify safe zones (q4)",
+        "LO5 — Apply extended five-question decision matrix (q5)"
+      ],
+      "uncovered_los": []
+    },
+    "beginner_scope": {
+      "passed": true,
+      "findings": [
+        "SOFT: q2 stem expands 'HITL' as 'human-in-the-loop' inline — good first-use practice. All subsequent uses of HITL in other stems are consistent with corpus usage after first definition in §4.",
+        "SOFT: q5 references 'extended five-question decision matrix' which is a 14.8 concept (§5.5) built on 14.7 vocabulary. The question tests only the 14.8 application (which tool needs a checkpoint), not 14.7 matrix recall. Scope clean."
+      ]
+    },
+    "gift_format": {
+      "passed": true,
+      "notes": "SOFT: Six '// LO...' comment lines present in the .gift file (lines 3, 12, 21, 30, 39, 48). GIFT syntax allows '//' comments and parsers will ignore them, but the pipeline spec states 'No metadata comments in the .gift file — meta content in quiz.meta.json only.' These lines duplicate LO labels already captured in quiz.meta.json per_question[].objective_ref. They do not break parsing but violate the pipeline rule. $CATEGORY line present. All 5 MCQ have = correct with #feedback, ~ distractors with #feedback, and #### general feedback. q6 uses {} essay format — acceptable. No structural GIFT errors."
+    }
+  },
+  "hard_findings": [],
+  "soft_findings": [
+    "GIFT file contains 6 '// LO...' comment lines (lines 3, 12, 21, 30, 39, 48). These are valid GIFT comments and do not break parsing, but violate the pipeline rule 'no metadata comments in the .gift file'. The LO labels are already captured in quiz.meta.json per_question[].objective_ref. Recommend removing these comment lines in a future revision to keep metadata out of the .gift file.",
+    "q5 stem references 'extended five-question decision matrix' — a 14.8 concept that builds on 14.7 vocabulary. No out-of-scope knowledge is required to answer correctly; the question is self-contained within 14.8. No action required."
+  ],
+  "verdict": "PASS. All 6 checks passed. Positional distribution [1,1,2,1,0] max_share=0.40 meets threshold. Zero length-bias violations across 5 MCQ. All 15 distractors are plausible beginner misconceptions. All 5 LOs covered (LO1 by q1, LO2 by q3+q6, LO3 by q2+q6, LO4 by q4, LO5 by q5). Beginner scope clean — no 14.9+ knowledge required. GIFT structure valid. Two soft findings logged: (1) six '//' metadata comment lines in the .gift file violate the pipeline no-comments rule but do not break parsing; (2) q5 stem references the 14.7-origin matrix by name, which is in scope for 14.8. Neither soft finding warrants a cycle-2 rebuild."
+}

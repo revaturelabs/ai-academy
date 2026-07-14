@@ -1,0 +1,49 @@
+{
+  "topic_id": "12.13",
+  "generated_at": "2026-06-15T00:00:00Z",
+  "format": "gift",
+  "question_count": 6,
+  "$bias_defense_applied": true,
+  "$shuffle_seed": "hash('12.13')=738",
+  "correct_position_distribution": {"0": 1, "1": 1, "2": 2, "3": 1},
+  "max_share": 0.40,
+  "bias_constraint_passed": true,
+  "questions": [
+    {
+      "id": "q1",
+      "type": "mcq",
+      "objective_ref": "Identify three common reasons an Anthropic API call can fail (authentication, rate limit, network)",
+      "correct_position": 2
+    },
+    {
+      "id": "q2",
+      "type": "mcq",
+      "objective_ref": "Name the SDK exception hierarchy (AnthropicError → APIError → specific classes)",
+      "correct_position": 0
+    },
+    {
+      "id": "q3",
+      "type": "mcq",
+      "objective_ref": "Write a try/except block that catches AuthenticationError and RateLimitError separately",
+      "correct_position": 3
+    },
+    {
+      "id": "q4",
+      "type": "mcq",
+      "objective_ref": "Distinguish the correct response for each exception type: fix credentials for AuthenticationError",
+      "correct_position": 1
+    },
+    {
+      "id": "q5",
+      "type": "mcq",
+      "objective_ref": "Implement a basic retry loop for RateLimitError using time.sleep()",
+      "correct_position": 2
+    },
+    {
+      "id": "q6",
+      "type": "short_answer",
+      "objective_ref": "Describe what BadRequestError and APIConnectionError indicate and the correct response to each",
+      "correct_position": null
+    }
+  ]
+}

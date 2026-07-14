@@ -1,0 +1,47 @@
+$CATEGORY: CIT/M4/week-9/9-11-high-stakes-domains-where-ai-must-not-have-the-final-word-me
+
+::q1:: Which combination of three signals correctly identifies a high-stakes domain? {
+=Decisions that are irreversible, directly affect fundamental interests, and carry asymmetric error cost#Correct — irreversibility, direct impact on fundamental interests, and asymmetric error cost are the three defining signals (corpus §5.1).
+~Decisions that are expensive, time-consuming, and require specialist training to execute correctly#Cost, time, and expertise describe complexity — they do not capture the severity or irreversibility of harm that defines a high-stakes domain.
+~Decisions that involve large data sets, real-time processing, and high volumes of simultaneous users#These are technical characteristics of an AI system's operation, not the harm-based signals used to classify a domain as high-stakes.
+~Decisions that are automated, repeated at scale, and subject to ongoing regulatory compliance audits#Automation, scale, and auditability describe how a system runs, not the domain's risk level or the severity of errors within it.
+#### Tests LO1 — defining "high-stakes domain" and its three distinguishing signals (corpus §5.1).
+}
+
+::q2:: A regulator asks why human oversight is mandatory in medical AI decisions. Which pair of reasons — one from cognitive science, one from law — best answers this question? {
+~Error propagation at scale under time pressure, and hospital procurement rules mandating a second clinical opinion for every case#Error propagation is a technical concern, not a cognitive science concept; procurement rules are administrative policy, not a legal mandate for oversight.
+~Clinician distrust of AI recommendations under time pressure, and data-protection law restricting AI from accessing patient records#Personal preference or distrust is not a cognitive science argument; data-protection law governs data access rights, not final decision authority.
+~Deep learning accuracy limitations under data distribution shift, and accreditation body guidance formally preferring human review#Accuracy limitations are a technical concern, not a cognitive science concept; accreditation guidance is a preference, not a legally binding mandate.
+=Automation bias (over-trusting AI outputs under pressure) and the EU AI Act's high-risk classification requiring mandatory human oversight#Correct — automation bias is the cognitive science reason; the EU AI Act's high-risk classification is the legal/regulatory reason (corpus §5.2, §5.3).
+#### Tests LO2 — identifying one cognitive-science reason (automation bias) and one legal/regulatory reason (EU AI Act) for mandatory human final authority (corpus §5.3).
+}
+
+::q3:: An AI system triages emergency-department patients and sends discharge recommendations directly to a nurse coordinator, who has 90 seconds per case and no access to underlying patient data. Applying the Judgment Framework, what is the most accurate verdict? {
+~Human oversight is satisfied because a qualified nurse reviews each AI recommendation before it is acted upon#The nurse is present but cannot meaningfully override — 90 seconds with no underlying data is nominal oversight, not meaningful oversight (corpus §5.3 Argument 4).
+=All three Judgment Framework checks fail\: catastrophic error cost (Q1), a broken accountability chain (Q3), and an exceeded failure threshold#Correct — Q1 shows triage errors are catastrophic and irreversible; Q3 shows no real override capacity; the failure threshold is crossed because any non-trivial error rate is intolerable (corpus §5.3, §6).
+~The system is acceptable because emergency triage is time-sensitive and AI processes cases far faster than human clinicians#Speed does not reduce the cost of error; time-sensitivity is a constraint, not a justification for removing meaningful human oversight.
+~The accountability chain is intact because a named nurse coordinator is officially listed as responsible in the workflow#Being named in a workflow does not satisfy Q3 if the person lacks the time, data, and authority to exercise genuinely independent judgment (corpus §6 Step 2).
+#### Tests LO3 — applying Q1, Q3, and failure threshold to a scenario to determine whether human final authority is genuinely present (corpus §5.3, §6).
+}
+
+::q4:: What does the EU AI Act's "high-risk AI" classification require of AI systems used in medicine, law enforcement, and safety infrastructure? {
+~It bans AI in these domains outright until a demonstrably safer and independently validated alternative technology exists#The EU AI Act does not ban high-risk AI; it permits deployment under mandatory conditions, including human oversight and explainability requirements.
+~It requires AI systems in these domains to achieve a verified minimum accuracy threshold before they can receive deployment approval#The EU AI Act sets no numerical accuracy threshold; it mandates explainability and demonstrable human oversight as the primary conditions.
+=It mandates explainability and demonstrable human oversight, placing legal obligations on both the developers and the deploying organisations#Correct — the EU AI Act requires explainability (XAI) and demonstrable human oversight, and holds both developers and deployers legally responsible (corpus §5.2, §5.3 Argument 3).
+~It requires government certification of the AI model but places no direct legal obligation on the organisation that ultimately deploys it#The EU AI Act explicitly places obligations on deployers as well as developers — a nominal human approval step does not exempt the deploying organisation (corpus §8 Misconception 3).
+#### Tests LO4 — explaining what the EU AI Act's high-risk AI category means and how it connects to mandatory human oversight and explainability (corpus §5.2, §5.3, §8).
+}
+
+::q5:: In the Boeing 737 MAX accidents, 346 people died after the MCAS repeatedly pushed the aircraft nose down. What accountability failure does this case illustrate? {
+=Nominal override existed but was unworkable — pilots lacked MCAS knowledge and the override procedure was non-obvious under extreme stress#Correct — pilots nominally had override authority but lacked the training and easy procedure to use it, showing that human final authority must be engineered in, not merely declared (corpus §5.2, §7 Pattern 3).
+~Aviation regulations did not cover autonomous flight-control systems at the time of the 737 MAX's original type certification#Regulatory coverage of sensors and flight-control certification is a separate issue; the core lesson is about the design of meaningful human override authority.
+~Pilots ignored MCAS nose-down warnings because of overconfidence in their own manual flying skills and prior experience#Investigations did not attribute the accidents to pilot overconfidence; pilots were not adequately informed about MCAS or how to override it effectively.
+~The automation was too transparent, presenting pilots with far more sensor data than could be processed in the available response time#Excess transparency was not the finding; the problem was the opposite — pilots lacked information about how MCAS operated and what was required to override it.
+#### Tests LO5 — describing a concrete accountability failure when AI/automation has effective final authority in a safety-critical domain (corpus §5.2, §7 Pattern 3).
+}
+
+::q6:: A hospital deploys an AI diagnostic tool and places a doctor in the review loop. The doctor receives only the AI's conclusion — not the underlying scan — and must review 30 cases per hour. In one or two sentences, explain why this arrangement does NOT satisfy the requirement for meaningful human oversight, using the distinction from the corpus. {
+=This is nominal oversight, not meaningful oversight: the doctor lacks access to the underlying data and has insufficient time to evaluate the AI output independently, so they cannot realistically override the AI's conclusion and function as a rubber stamp rather than a genuine decision-maker.
+=This arrangement is a rubber-stamp setup rather than meaningful oversight, because meaningful oversight requires the reviewer to have time, access to underlying data, training, and easy override capability — none of which the doctor here possesses.
+#### Tests applied understanding of meaningful vs nominal oversight (corpus §5.3 Argument 4, §6 Step 4), linked to LO2 and LO3.
+}

@@ -1,0 +1,45 @@
+{
+  "type": "topic",
+  "id": "7.4",
+  "title": "Why LLMs output a probability distribution, not a single fixed answer",
+  "slug": "7-4-why-llms-output-a-probability-distribution-not-a-single-fixe",
+  "position_in_module": 1,
+  "week_num": 7,
+  "session_name": "Probability, Statistics and AI Confidence",
+  "module": {
+    "position": 2,
+    "slug": "2-how-llms-use-probability",
+    "title": "How LLMs Use Probability"
+  },
+  "course": {
+    "code": "M3",
+    "slug": "m3-applied-maths-for-ai",
+    "title": "Applied Maths for AI"
+  },
+  "next_assessment": {
+    "id": "A3",
+    "due_week": 10,
+    "title": "Maths and Cognition Lab Report",
+    "weight": "15%"
+  },
+  "paths": {
+    "corpus": "topic_corpus.md",
+    "resources": "topic.resources.json",
+    "progress": "topic.progress.json",
+    "artifacts_dir": "artifacts/",
+    "critic_reports_dir": "critic-reports/"
+  },
+  "artifact_plan": {
+    "depth_profile": "standard",
+    "depth_profile_confirmed": true,
+    "depth_signals": "Title is a conceptual question requiring 4+ sub-concepts (token, softmax, sampling, stochastic vs deterministic), a worked generation-loop trace, and real-world patterns — more than atomic but no multi-technology pipeline warranting deep.",
+    "diagram": true,
+    "diagram_intent": "Three-stage generation loop: context tokens → softmax → probability distribution → sample → output token → append to context (cycle arrow back to start)",
+    "reading_word_range": [1200, 1600],
+    "reading_minutes_range": [6, 8],
+    "quiz_mcq_range": [5, 6],
+    "quiz_short_answer": false
+  },
+  "expected_delivery_minutes": 7,
+  "status": "corpus_drafted"
+}

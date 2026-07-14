@@ -1,0 +1,30 @@
+{
+  "topic_id": "7.1",
+  "captured_at": "2026-06-22T00:00:00Z",
+  "captured_by": "namratas@revature.com",
+  "resources_source": "web_search",
+  "web_search_query": "probability basics likelihood events outcomes introductory explainer",
+  "resources": [
+    {
+      "type": "url",
+      "value": "https://seeing-theory.brown.edu/basic-probability/index.html",
+      "role": "primary",
+      "source": "web_search",
+      "notes": "Brown University interactive visualizer — likelihood, events, outcomes with visual intuition"
+    },
+    {
+      "type": "url",
+      "value": "https://math.libretexts.org/Courses/Fullerton_College/Math_100:_Liberal_Arts_Math_(Claassen_and_Ikeda)/06:_Probability/6.01:_Basic_Probability_Concepts",
+      "role": "supporting",
+      "source": "web_search",
+      "notes": "LibreTexts open textbook — structured definitions of sample space, events, probability"
+    },
+    {
+      "type": "url",
+      "value": "https://www.mathsisfun.com/data/probability.html",
+      "role": "supporting",
+      "source": "web_search",
+      "notes": "Approachable zero-jargon explainer — examples-first, no proofs, aligns with M3 intuition-only mandate"
+    }
+  ]
+}

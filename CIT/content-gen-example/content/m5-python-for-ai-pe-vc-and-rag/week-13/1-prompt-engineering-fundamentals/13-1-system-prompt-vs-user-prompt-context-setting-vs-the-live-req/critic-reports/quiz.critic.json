@@ -1,0 +1,70 @@
+{
+  "passed": true,
+  "checks": {
+    "positional_bias": {
+      "passed": true,
+      "distribution": {"0": 2, "1": 1, "2": 2, "3": 1},
+      "max_share": 0.333,
+      "note": "Derived distribution matches sidecar exactly — no meta_gift_desync."
+    },
+    "length_bias": {
+      "passed": true,
+      "longest_correct_rate": 0.333,
+      "baseline": 0.25,
+      "threshold": 0.40,
+      "longest_correct_questions": ["q1", "q3"],
+      "note": "q1 correct answer 115 chars vs distractor mean 84.3 (1.36x); q3 correct answer 101 chars vs distractor mean 55.3 (1.83x). Both flagged individually but aggregate rate 0.333 is below the 0.40 hard-fail threshold."
+    },
+    "distractor_plausibility": {
+      "passed": true,
+      "absurd_rate": 0.056,
+      "total_distractors": 18,
+      "absurd_count": 1,
+      "weakest_questions": [
+        {
+          "question_id": "q2",
+          "distractor": "The user prompt is called live because the user types it in real time, while the system prompt is pre-recorded audio played to the model.",
+          "score": 1,
+          "note": "Pre-recorded audio framing is implausible for any text-API context. Weak but does not breach 0.25 threshold."
+        }
+      ]
+    },
+    "objective_coverage": {
+      "passed": true,
+      "uncovered_objectives": [],
+      "orphan_questions": [],
+      "coverage_map": {
+        "LO1 — Distinguish system/user prompt": ["q1"],
+        "LO2 — Explain persistent context / live request": ["q2"],
+        "LO3 — Identify content belonging to each prompt": ["q3"],
+        "LO4 — Describe authority and precedence": ["q4"],
+        "LO5 — Apply system/user split by rewriting": ["q5"],
+        "LO6 — Recognize downstream effect on output quality": ["q6"]
+      }
+    },
+    "beginner_fairness_and_scope": {
+      "passed": true,
+      "jargon_in_stem": [],
+      "out_of_scope_questions": [],
+      "unfair_distractors": []
+    },
+    "gift_syntax": {
+      "passed": true,
+      "issues": []
+    },
+    "meta_prerequisites": {
+      "passed": true,
+      "bias_defense_applied": true,
+      "meta_gift_desync": false
+    }
+  },
+  "auto_correction_applied": {
+    "shuffle_round_2": false
+  },
+  "soft_findings": [
+    "q2 has one weak distractor (pre-recorded audio, score=1) that is borderline absurd but does not breach the 0.25 absurd_rate threshold.",
+    "q1 and q3 have a length imbalance where the correct answer is noticeably longer than distractors; aggregate rate (0.333) stays below the 0.40 hard-fail threshold but author should consider tightening those answers in a future revision."
+  ],
+  "verdict": "Pass — all positional-bias, length-bias, distractor-plausibility, and LO-coverage checks clean. Two soft findings logged (q2 weak distractor; q1/q3 length skew) but neither crosses a hard-fail threshold.",
+  "at": "2026-06-13T00:00:00Z"
+}

@@ -1,0 +1,124 @@
+{
+  "critic": "corpus-critic",
+  "topic_id": "13.7",
+  "topic_title": "The 5-role context framework — Authority, Exemplar, Constraint, Rubric, Metadata",
+  "attempt": 2,
+  "passed": true,
+  "at": "2026-06-14T00:00:00Z",
+  "checks": {
+    "required_sections": {
+      "passed": true,
+      "detail": {
+        "section_3_learning_objectives": { "present": true, "word_count_approx": 120, "threshold": 50, "passed": true },
+        "section_4_introduction":        { "present": true, "word_count_approx": 160, "threshold": 50, "passed": true },
+        "section_5_core_concepts":       { "present": true, "word_count_approx": 750, "threshold": 100, "passed": true },
+        "section_10_assessment_alignment":{ "present": true, "word_count_approx": 130, "threshold": 50, "passed": true }
+      }
+    },
+    "citation_density": {
+      "passed": true,
+      "resources_source": "web_search",
+      "mode": "strict",
+      "primary_resource_cited": true,
+      "primary_resource": "[1] https://arxiv.org/abs/2604.04258",
+      "primary_citation_locations": [
+        "line 55 (context package definition)",
+        "line 69 (Authority priority position)",
+        "line 84 (Exemplar priority position)",
+        "line 94 (Constraint priority position)",
+        "line 104 (Rubric priority position)",
+        "line 114 (Metadata priority position)",
+        "line 128 (priority table + practical rule — 2 occurrences)",
+        "line 133 (checklist)",
+        "line 218 (Mistake 1 — Authority vs Constraint distinction)",
+        "line 227 (Mistake 4 — Authority stability)",
+        "line 342 (Section 9 new-concept summary)"
+      ],
+      "citation_density_sections_5_7_8": {
+        "section_5_core_concepts": {
+          "counting_method": "per-conceptual-block (each role is one block; priority table, practical rule, and checklist are individual assertion units)",
+          "blocks_counted": 10,
+          "blocks_with_citation": 8,
+          "density_pct": 80,
+          "threshold_pct": 60,
+          "passed": true,
+          "note": "Each of the five role blocks now carries at least one [1] marker at its priority-position statement. Priority table covered by 'defined in [1]' at line 128. Practical rule [1] at line 128. Checklist [1] at line 133. Context package + research-defines [1] at line 55. Uncited blocks: 5 missing-role consequence bullets (lines 134-138) — these are logical derivations from the cited priority framework and do not constitute independent empirical claims. Block-level density 80% passes the 60% floor."
+        },
+        "section_7_common_mistakes": {
+          "standalone_factual_assertions_counted": 5,
+          "assertions_with_citation": 4,
+          "density_pct": 80,
+          "threshold_pct": 60,
+          "passed": true,
+          "note": "Mistake 1: [1] (priority stack distinction). Mistake 3: [2] (model chooses own format). Mistake 4: [1] (Authority should be stable). Mistake 5: [2] (remove conflicting examples). Mistake 2 (split prompt for debuggability) is a practical recommendation without a source claim — borderline, but overall section density is 80%."
+        },
+        "section_8_implementation_notes": {
+          "assertion_type": "procedural_steps_and_code",
+          "standalone_factual_assertions_counted": 1,
+          "assertions_with_citation": 1,
+          "density_pct": 100,
+          "threshold_pct": 60,
+          "passed": true,
+          "note": "Section 8 consists of eight ordered implementation steps with Python code snippets — procedural content, not empirical claims. The one prose factual assertion ('This structure is directly reusable across your three A4 prompt versions') carries [3] at line 331. PASS."
+        }
+      },
+      "fake_citations": false,
+      "finding": null
+    },
+    "sequence_drift": {
+      "passed": true,
+      "forward_references": [],
+      "verified_resolutions": [
+        {
+          "term": "import anthropic / anthropic.Anthropic() / client.messages.create()",
+          "location": "Section 8 step 8 (lines 316-329)",
+          "status": "RESOLVED — revised corpus now uses the Anthropic SDK consistently with the taught curriculum interface (introduced topics 12.10-12.11, reused 13.1-13.6). Model identifier 'claude-haiku-4-5-20251001' is an Anthropic model; no OpenAI SDK or 'gpt-4o-mini' references remain."
+        }
+      ],
+      "finding": null
+    },
+    "length_sanity": {
+      "passed": true,
+      "depth_profile": "standard",
+      "word_count_range_required": [3000, 4400],
+      "word_count_estimated": 3250,
+      "note": "Estimated word count (~3250 prose words, ~3500 including code blocks) is within the standard profile range (3000–4400). PASS.",
+      "finding": null
+    },
+    "topic_scope": {
+      "passed": true,
+      "boundary": "The 5-role context framework — Authority, Exemplar, Constraint, Rubric, Metadata",
+      "scope_creep_items": [],
+      "note": "Corpus stays on the 5-role framework, its sub-concepts, and its Python implementation throughout. No teaching of RAG, agents, multi-agent systems, or other advanced adjacent topics. Resource [3] ('context-engineered AI prompt framework for AI agents') is used only as an applied example citation — the corpus does not teach agent concepts. Section 9 correctly maps roles back to prior topics (13.1–13.6). PASS."
+    },
+    "beginner_readability": {
+      "passed": true,
+      "undefined_terms": [
+        {
+          "term": "f-string",
+          "location": "Section 6 (line 208) and Section 8 (step 6)",
+          "severity": "soft",
+          "note": "Python f-string syntax used without a definition. However, given that Week 12 topics established Anthropic SDK usage (implying Python fluency), and f-strings are a Python fundamental introduced earlier in M5, this is acceptable in context. One soft finding does not reach the ≥2-cold-terms threshold for a soft-fail."
+        }
+      ],
+      "jargon_dump_paragraphs": [],
+      "academic_register": false,
+      "soft_findings_count": 1,
+      "escalation_threshold": 3,
+      "note": "LLM spelled out on first use ('large language model (LLM)', line 47). All five roles defined on first use with everyday analogy before formal definition. Sentences are short and active-voice throughout. No hedging phrases. No paragraph introduces 3+ new terms simultaneously. 1 soft finding (f-string) — well below the ≥3 escalation threshold. PASS."
+    }
+  },
+  "attempt_1_failures_resolved": [
+    {
+      "check": "citation_density",
+      "original_finding": "Section 5 role definitions (Roles 1–5), priority table, and missing-role consequence list carried no citation markers; Sections 6 and 7 also below threshold; overall density ~25%.",
+      "resolution": "Each role block now has [1] at its priority-position statement; priority table covered by [1] at line 128; Section 7 Mistakes 1, 3, 4, 5 now carry [1] or [2]; Section 6 and 8 carry [3]. Block-level density in Section 5 is now 80%."
+    },
+    {
+      "check": "sequence_drift",
+      "original_finding": "Section 8 step 8 used `import openai`, `openai.chat.completions.create()`, and model `gpt-4o-mini` — OpenAI SDK never introduced in curriculum.",
+      "resolution": "Section 8 step 8 now uses `import anthropic`, `anthropic.Anthropic()`, `client.messages.create()`, and model `claude-haiku-4-5-20251001` — consistent with taught curriculum interface."
+    }
+  ],
+  "verdict": "PASSED — all six checks pass on second attempt. Both first-attempt hard failures have been resolved: (1) citation density in Sections 5, 7, and 8 now meets the 60% floor (block-level density in Section 5 is 80%; Section 7 is 80%; Section 8 procedural steps are appropriately cited); (2) forward reference to the OpenAI SDK has been replaced with the Anthropic SDK pattern used throughout the curriculum. Required sections present and non-trivial. Length within standard range (~3250 words). No scope creep. Beginner readability passes with one negligible soft finding (f-string undefined — acceptable given established Python context from Week 12). Corpus is ready to ground downstream artifacts."
+}

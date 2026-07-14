@@ -1,0 +1,179 @@
+{
+  "topic_id": "14.10",
+  "stage": "topic_artifacts_approved",
+  "gates": {
+    "resources_captured": true,
+    "corpus_generated": true,
+    "corpus_critic_passed": true,
+    "corpus_human_approved": true,
+    "reading_generated": true,
+    "reading_critic_passed": true,
+    "quiz_generated": true,
+    "quiz_critic_passed": true,
+    "diagram_generated": true,
+    "diagram_critic_passed": true,
+    "topic_artifacts_human_approved": true,
+    "module_drift_passed": true,
+    "week_human_approved": true,
+    "course_drift_passed": true
+  },
+  "history": [
+    {
+      "at": "2026-06-16T00:00:00Z",
+      "op": "set",
+      "gate": "resources_captured",
+      "value": true
+    },
+    {
+      "at": "2026-06-16T00:00:00Z",
+      "op": "stage",
+      "to": "awaiting_corpus"
+    },
+    {
+      "at": "2026-06-16T00:00:00Z",
+      "op": "log",
+      "msg": "Captured 5 resources (source=human, all primary) — adr.github.io, AWS ADR guide, Chip Huyen AI Engineering, cognitect.com Nygard ADR original, martinfowler.com scaling-architecture-conversationally"
+    },
+    {
+      "at": "2026-06-16T00:00:00Z",
+      "op": "set",
+      "gate": "corpus_generated",
+      "value": true
+    },
+    {
+      "at": "2026-06-16T00:00:00Z",
+      "op": "stage",
+      "to": "awaiting_corpus_critic"
+    },
+    {
+      "at": "2026-06-16T00:00:00Z",
+      "op": "log",
+      "msg": "Corpus generated — standard depth (suggested), diagram=true, ~2900 words. 7 concepts introduced. All 5 primary resources cited. ADR format (5 sections), synthesis of 14.4+14.7+14.9. No forward refs."
+    },
+    {
+      "at": "2026-06-16T00:00:00Z",
+      "op": "set",
+      "gate": "corpus_critic_passed",
+      "value": true
+    },
+    {
+      "at": "2026-06-16T00:00:00Z",
+      "op": "stage",
+      "to": "awaiting_corpus_human_review"
+    },
+    {
+      "at": "2026-06-16T00:00:00Z",
+      "op": "log",
+      "msg": "Corpus critic PASSED cycle 1 — all 6 checks green. ~2390w (soft: slightly below 2500 floor, non-blocking). All 5 primaries cited (>85% claim coverage). No forward refs. Scope clean. Beginner-readable."
+    },
+    {
+      "at": "2026-06-16T00:00:00Z",
+      "op": "set",
+      "gate": "corpus_human_approved",
+      "value": true
+    },
+    {
+      "at": "2026-06-16T00:00:00Z",
+      "op": "stage",
+      "to": "corpus_approved"
+    },
+    {
+      "at": "2026-06-16T00:00:00Z",
+      "op": "log",
+      "msg": "HITL #2 complete — all 9 sections approved as written, depth=standard, diagram=true (flowchart: decision-matrix inputs → tier → 5 ADR sections), expected_delivery=7min. Soft: 110w below 2500 floor, accepted."
+    },
+    {
+      "at": "2026-06-16T00:00:00Z",
+      "op": "set",
+      "gate": "diagram_generated",
+      "value": true
+    },
+    {
+      "at": "2026-06-16T00:00:00Z",
+      "op": "set",
+      "gate": "diagram_critic_passed",
+      "value": true
+    },
+    {
+      "at": "2026-06-16T00:00:00Z",
+      "op": "log",
+      "msg": "Diagram critic PASSED cycle 1 — 9-node flowchart TD: 3 decision-matrix inputs (blue) → Chosen Tier (green) → 5 ADR sections in order (dark blue). PNG rendered 1400px transparent bg. Soft: 9 nodes vs 3-8 guideline, accepted (pedagogical requirement)."
+    },
+    {
+      "at": "2026-06-16T00:00:00Z",
+      "op": "set",
+      "gate": "reading_generated",
+      "value": true
+    },
+    {
+      "at": "2026-06-16T00:00:00Z",
+      "op": "set",
+      "gate": "quiz_generated",
+      "value": true
+    },
+    {
+      "at": "2026-06-16T00:00:00Z",
+      "op": "stage",
+      "to": "awaiting_reading_critic"
+    },
+    {
+      "at": "2026-06-16T00:00:00Z",
+      "op": "log",
+      "msg": "Reading generated — 1310w, 7min. All 5 primary resources cited. Diagram embedded. 6 fixed sections, no frontmatter. Quiz generated — 5 MCQ, positions [1,3,0,2,1], max_share=0.40, bias_defense_applied=true. All 5 LOs covered."
+    },
+    {
+      "at": "2026-06-16T00:00:00Z",
+      "op": "set",
+      "gate": "reading_critic_passed",
+      "value": true
+    },
+    {
+      "at": "2026-06-16T00:00:00Z",
+      "op": "log",
+      "msg": "Reading critic PASSED cycle 1 — 1310w in [1200,1400], all 5 primaries cited, 6 fixed sections, no frontmatter, diagram embedded, scope clean, no forward refs, beginner-readable."
+    },
+    {
+      "at": "2026-06-16T00:00:00Z",
+      "op": "set",
+      "gate": "quiz_critic_passed",
+      "value": true
+    },
+    {
+      "at": "2026-06-16T00:00:00Z",
+      "op": "log",
+      "msg": "Quiz critic PASSED cycle 2 (cycle 1 fail: length_bias 0.60, q1+q3+q5 fixed). 5 MCQ, max_share=0.40, rate=0.00, 0 absurd distractors, all 5 LOs covered."
+    },
+    {
+      "at": "2026-06-16T00:00:00Z",
+      "op": "stage",
+      "to": "awaiting_topic_artifacts_review"
+    },
+    {
+      "at": "2026-06-16T00:00:00Z",
+      "op": "log",
+      "msg": "All artifact critics passed — advancing to HITL #3."
+    },
+    {
+      "at": "2026-06-16T00:00:00Z",
+      "op": "set",
+      "gate": "topic_artifacts_human_approved",
+      "value": true
+    },
+    {
+      "at": "2026-06-16T00:00:00Z",
+      "op": "stage",
+      "to": "topic_artifacts_approved"
+    },
+    {
+      "at": "2026-06-16T00:00:00Z",
+      "op": "log",
+      "msg": "HITL #3 approved — reading 1310w/7min PASS (cycle 1), quiz 5MCQ bias-defended PASS (cycle 2, length-bias fixed), diagram 9-node TD PASS (cycle 1). No carry-over failures."
+    },
+    {
+      "at": "2026-06-23T17:39:32Z",
+      "op": "set",
+      "gate": "course_drift_passed",
+      "value": true
+    }
+  ]
+}

@@ -1,0 +1,84 @@
+{
+  "passed": true,
+  "cycle": 2,
+  "checks": {
+    "positional_bias": {
+      "passed": true,
+      "distribution": [2, 1, 0, 2],
+      "max_share": 0.40,
+      "note": "Positions 0 and 3 each appear twice (q2+q3 at 0; q4+q5 at 3). max_share = 0.40, which is not strictly > 0.40. Pass."
+    },
+    "length_bias": {
+      "passed": true,
+      "longest_correct_rate": 0.00,
+      "baseline": 0.25,
+      "longest_correct_questions": [],
+      "detail": {
+        "q1": {
+          "correct_len": 98,
+          "distractor_mean": 87.7,
+          "threshold_1_20x": 105.2,
+          "flag": false
+        },
+        "q2": {
+          "correct_len": 133,
+          "distractor_mean": 127.3,
+          "threshold_1_20x": 152.8,
+          "flag": false
+        },
+        "q3": {
+          "correct_len": 107,
+          "distractor_mean": 95.7,
+          "threshold_1_20x": 114.8,
+          "flag": false
+        },
+        "q4": {
+          "correct_len": 115,
+          "distractor_mean": 98.7,
+          "threshold_1_20x": 118.4,
+          "flag": false
+        },
+        "q5": {
+          "correct_len": 147,
+          "distractor_mean": 130.3,
+          "threshold_1_20x": 156.4,
+          "flag": false
+        }
+      },
+      "note": "All five MCQs clear the 1.20x threshold. Distractors in previously-flagged q1, q2, q5 were lengthened in cycle 2; correct answers no longer stand out by length. longest_correct_rate = 0.00."
+    },
+    "distractor_plausibility": {
+      "passed": true,
+      "absurd_rate": 0.00,
+      "total_distractors": 15,
+      "absurd_count": 0,
+      "weakest_questions": [],
+      "note": "All distractors score 2-4 on the 1-4 plausibility scale. No score-1 (obviously absurd) options found."
+    },
+    "objective_coverage": {
+      "passed": true,
+      "uncovered_objectives": [],
+      "orphan_questions": [],
+      "coverage_map": {
+        "LO1 — Identify which of the four properties a bad specification fails": ["q1"],
+        "LO2 — Distinguish between an incremental fix and a full rewrite using the Grade 8 / 80-word rule": ["q3"],
+        "LO3 — Apply the four-property checklist to diagnose exactly what is wrong with a given specification": ["q5"],
+        "LO4 — Rewrite a vague specification using the Grade 8 / 80-word constraint": ["q4"],
+        "LO5 — Choose the right repair strategy — incremental fix or full rewrite — based on how many properties a specification fails": ["q2"]
+      }
+    },
+    "beginner_fairness": {
+      "passed": true,
+      "jargon_in_stem": [],
+      "out_of_scope_questions": [],
+      "unfair_distractors": [],
+      "note": "All stems use plain language; all four properties are defined in corpus §5.1 and prerequisite topic 2.1. All distractors represent plausible beginner misconceptions drawn from content explicitly covered in this topic."
+    }
+  },
+  "meta_gift_desync": false,
+  "auto_correction_applied": {
+    "shuffle_round_2": false
+  },
+  "verdict": "Pass — all five checks clean. Length-bias fix verified: distractors for q1, q2, and q5 were lengthened in cycle 2; longest_correct_rate dropped from 0.60 to 0.00, well under the 0.40 threshold. Positional bias, distractor plausibility, objective coverage, and beginner-fairness all pass.",
+  "at": "2026-06-16T00:00:00Z"
+}

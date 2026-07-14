@@ -1,0 +1,57 @@
+$CATEGORY: CIT/M2/week-4/4-5-tool-use-ai-calling-search-calculator-and-code-runner
+
+::q1:: What does it mean for an AI to "call a tool"? {
+=The AI sends a structured request to an external system and uses the result to answer.#Correct — the model forms a precise request, an external system executes it, and the result comes back to the model.
+~The AI re-reads its training data more carefully to find a better-stored answer.#No — re-reading training data is not a tool call; the model's training is fixed and cannot be re-queried at runtime.
+~The AI holds new facts it learns during the conversation in a growing memory store.#No — a standard LLM does not memorise new facts mid-conversation; that would require a different architecture.
+~The AI generates a longer, more detailed reply by activating extra internal parameters.#No — producing a longer response is purely internal; a tool call reaches an external system outside the model.
+#### Tests whether learners understand the core definition of a tool call (corpus §5.1, §5.2).
+}
+
+::q2:: A classmate says the four-step tool-use cycle goes: "Execute first, then decide what you needed." Which of the options below shows the correct order? {
+~Execute → Decide → Return → Request#No — execution cannot happen before the model has decided a tool is needed and formed a request.
+=Decide → Request → Execute → Return#Correct — the model first decides a tool is needed, then requests it, then the external system executes, then the result returns to the model.
+~Request → Execute → Decide → Return#No — the model must decide before it can form a request; deciding comes first.
+~Return → Decide → Request → Execute#No — the result cannot return before the request has been sent and executed.
+#### Tests recall of the four-step cycle in the correct sequence (corpus §5.2).
+}
+
+::q3:: Which of the following is a concrete example of a search tool being used by an AI assistant? {
+~The AI converts a temperature in Celsius to Fahrenheit and returns the exact figure.#No — a temperature conversion is arithmetic; that would use a calculator tool, not a search tool.
+~The AI rewrites a user's paragraph in simpler language using its training knowledge.#No — rewriting uses the model's language ability directly; no external look-up is involved.
+=The AI queries a live search engine to find the result of last week's football match.#Correct — a sports result is time-sensitive and not in training data, so a live search is the right tool.
+~The AI runs a short piece of code to check whether it produces an error message.#No — running code is what a code runner tool does, not a search tool.
+#### Tests the ability to identify a search tool example by what gap it fixes (corpus §5.3).
+}
+
+::q4:: A Large Language Model (LLM) is asked "What is 14,763 × 892?" with no tools available. What is the most likely problem with its answer? {
+~The model refuses to engage with multiplication questions at all.#No — the model will attempt the calculation; the problem is accuracy, not refusal.
+~The model searches its training data until it finds the exact stored multiplication result.#No — training data does not contain pre-computed answers to arbitrary multiplications; the model approximates.
+~The model asks the user to open a separate calculator application before it can continue.#No — the model will produce an answer; it does not pause to ask the user for a tool.
+=The model produces a plausible-looking number that may be subtly or significantly wrong.#Correct — LLMs work with tokens, not numbers, so large multiplications often yield confident-sounding but incorrect results.
+#### Tests understanding of the precise-arithmetic gap and why a calculator tool is needed (corpus §5.1, §5.3).
+}
+
+::q5:: Which of the following is a real-world AI product feature that relies directly on tool use? {
+~An AI assistant that only answers questions about topics covered in its original training.#No — answering from training data alone requires no tool; this describes an LLM without any tools.
+~A grammar checker that highlights spelling and punctuation errors in a document.#No — a rule-based grammar checker does not use an LLM tool-use cycle; it applies fixed linguistic rules.
+=ChatGPT searching the web when its web browsing feature is switched on.#Correct — web browsing in ChatGPT is a search tool integration; the model routes time-sensitive queries to a live search engine.
+~An AI chatbot that returns the same canned response regardless of the current date.#No — a fixed-response chatbot uses no reasoning or tool calls; it is the opposite of tool-augmented AI.
+#### Tests recognition of a real-world product feature built on tool use (corpus §7).
+}
+
+::q6:: Which of the following best explains why tool use is what turns a standalone language model into a genuinely capable AI assistant? {
+=Without tools the LLM can only generate text from its training; tools let it act on current data, do exact arithmetic, and run code — closing the three gaps the model cannot close on its own.#Correct — the three capabilities tools add (freshness, arithmetic accuracy, execution) directly address the three fixed gaps that limit a standalone LLM.
+~Tool use makes the LLM faster by reducing the number of tokens it needs to generate for each response.#No — tool use may add latency because the external call takes time; speed is not the defining reason tools matter.
+~Tool use gives the LLM access to a larger training dataset so it can answer more questions from memory.#No — tools do not extend the training dataset; they let the model reach external systems at query time, which is fundamentally different from training.
+~Tool use replaces the LLM's reasoning with a faster rule-based engine that is less likely to make mistakes.#No — the LLM core remains the reasoning engine throughout; tools add external capability but do not replace the model's reasoning step.
+#### Tests recognition of why tool use is central to AI capability — the headline claim of this topic (corpus §5.1, §5.4, §10).
+}
+
+::q7:: Short answer — trace the cycle. A user asks an AI assistant\: "What is the current price of gold?" Describe, in your own words, each of the four steps the AI goes through to answer this question using a search tool. {
+=decide request execute return
+=the model decides a tool is needed then requests a search then the search executes then the result returns
+=decide then request then execute then return
+=step 1 decide step 2 request step 3 execute step 4 return
+}
+

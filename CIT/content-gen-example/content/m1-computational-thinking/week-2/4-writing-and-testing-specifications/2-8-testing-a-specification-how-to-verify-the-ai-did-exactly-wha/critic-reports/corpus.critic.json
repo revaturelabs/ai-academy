@@ -1,0 +1,62 @@
+{
+  "critic": "corpus-critic",
+  "topic_id": "2.8",
+  "corpus_path": "topic_corpus.md",
+  "passed": true,
+  "at": "2026-06-17T00:00:00Z",
+  "checks": {
+    "required_sections": {
+      "passed": true,
+      "detail": {
+        "section_3_learning_objectives": { "present": true, "word_count_estimate": 95, "threshold": 50, "pass": true },
+        "section_4_introduction":        { "present": true, "word_count_estimate": 155, "threshold": 50, "pass": true },
+        "section_5_core_concepts":       { "present": true, "word_count_estimate": 2100, "threshold": 100, "pass": true },
+        "section_10_key_takeaways":      { "present": true, "word_count_estimate": 120, "threshold": 50, "pass": true }
+      }
+    },
+    "citation_density": {
+      "passed": true,
+      "resources_source": "web_search",
+      "mode": "strict",
+      "primary_resource_cited": {
+        "resource_index": 1,
+        "url": "https://libguides.csun.edu/c.php?g=1377855&p=11076059",
+        "cited_at_least_once": true,
+        "citation_count_estimate": 10,
+        "pass": true
+      },
+      "factual_assertions_with_markers_pct_estimate": 78,
+      "threshold_pct": 60,
+      "fake_citations_detected": false,
+      "detail": "All three resources ([1][2][3]) cited across §4, §5.1–5.7, §6, §7, §8. No unresolvable citation markers found. Estimated 78% of standalone factual assertions in §5/6/7 carry at least one [N] marker, exceeding the 60% threshold."
+    },
+    "sequence_drift": {
+      "passed": true,
+      "forward_referenced_terms": [],
+      "detail": "All technical terms used are either (a) defined in this topic's concepts_introduced list (testing a specification, three-question verification check, full pass, partial pass, full fail, pass/fail table, format drift, constraint overflow, task drift), or (b) introduced in prior topics 2.1–2.7 (testable/bounded/observable specification, four-part spec structure, verification, inputs/outputs/failure conditions). The term 'three-question check' from 2.6 is a different concept (privacy/precision/accountability check); 2.8 uses 'three-question verification check' as its own named concept with no collision in meaning. References to iteration/revision in §5.3 and §6 Step 6 are single-sentence deferrals with explicit 'covered in topic 2.9' pointers — within the allowed one-sentence naming rule."
+    },
+    "length_sanity": {
+      "passed": true,
+      "profile": "standard",
+      "range_min": 3000,
+      "range_max": 4400,
+      "word_count_estimate": 3420,
+      "within_range": true,
+      "detail": "Estimated ~3420 words. Falls within the standard profile range of 3000–4400 words."
+    },
+    "topic_scope": {
+      "passed": true,
+      "scope_creep_findings": [],
+      "detail": "Corpus stays tightly on the headline: testing/verifying a specification via the three-question check, pass/fail classification, pass/fail table, and three failure patterns. No iteration or spec-revision process is taught — all such references are single-sentence deferrals to 2.9. No content from adjacent topics (pattern recognition, 70/30 rule, privacy/precision checks) bleeds in. The two worked examples (health domain §5.6, scheduling domain §5.7) are appropriate applications of the testing process, not new spec-writing instruction."
+    },
+    "beginner_readability": {
+      "passed": true,
+      "soft_findings": [],
+      "undefined_terms": [],
+      "jargon_dump_paragraphs": [],
+      "academic_register_instances": 0,
+      "detail": "All non-everyday terms (testing a specification, verification, format drift, constraint overflow, task drift, full pass, partial pass, full fail, pass/fail table) are defined at or near first use. No acronyms used without spell-out. No paragraph introduces 3+ new terms simultaneously. Sentences are direct and action-oriented; no hedging language found. Average sentence length is well under 25 words. 0 soft findings — no escalation threshold triggered."
+    }
+  },
+  "verdict": "PASS. All 6 corpus-critic checks pass with no hard failures and no soft findings. (1) Required sections §3, §4, §5, §10 are all present and non-trivial. (2) Citation density meets the web_search strict standard: primary resource [1] cited ~10 times; all three resources cited across §4–§8; estimated 78% of factual assertions in §5/6/7 carry markers, exceeding the 60% threshold; no fake citations detected. (3) No forward references: all terms are either introduced here or drawn from 2.1–2.7; the two single-sentence deferrals to topic 2.9 (iteration/revision) are within the allowed one-sentence naming rule. (4) Estimated ~3420 words — within the standard profile range of 3000–4400. (5) No scope creep: corpus stays on testing/verifying, does not teach iteration or spec-writing; both worked examples apply the testing process only. (6) Beginner readability is strong: all terms defined on first use, no jargon dumps, no academic register, 0 soft findings."
+}

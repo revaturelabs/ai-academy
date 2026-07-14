@@ -1,0 +1,51 @@
+{
+  "critic": "corpus-critic",
+  "topic_id": "14.10",
+  "at": "2026-06-16T00:00:00Z",
+  "passed": true,
+  "checks": {
+    "required_sections": {
+      "passed": true,
+      "findings": []
+    },
+    "citation_density": {
+      "passed": true,
+      "primary_cited": true,
+      "notes": "All 5 primary resources cited. [1]=adr.github.io cited at §4, §5.1, §5.2, §7, §8. [2]=AWS ADR guide cited at §5.1, §5.5, §7, §8. [3]=Chip Huyen cited at §5.3, §5.4, §5.5, §7. [4]=Nygard blog cited at §4, §5.1, §5.2, §8. [5]=Fowler cited at §5.3, §5.4, §8. Estimated >85% of key factual assertions in §5/§6/§7 carry citation markers. The only uncited standalone factual claim is the append-only rule in §5.1 (implicit to [4] Nygard). No fabricated citations detected."
+    },
+    "sequence_drift": {
+      "passed": true,
+      "forward_refs": [],
+      "notes": "All technical terms used in the corpus (vector database, embeddings, RAG pipeline, hallucination, grounded generation, ReAct pattern, HITL, decision matrix, token cost, TTFT, streaming, prompt caching, model tier routing, circuit breaker, cost-latency-quality triangle, top-k chunks, chained calls) are either introduced by this topic (ADR, Status, Context, Decision, Consequences, append-only, model tier field) or were introduced in prior topics 14.1-14.9. No forward references detected."
+    },
+    "length_sanity": {
+      "passed": false,
+      "word_count": 2390,
+      "range": [2500, 4500],
+      "notes": "Estimated word count is approximately 2,390 words — roughly 110 words (4-5%) below the 2,500-word lower bound for the standard profile. This is within 10% of the boundary so does not trigger the >30% hard-fail threshold from the SKILL, but the corpus is thin for a capstone topic. The worked example in §6 and §7/§8 sections are the thinnest. Adding one more side-by-side example or expanding the Real-World Patterns section would push the count into range."
+    },
+    "topic_scope": {
+      "passed": true,
+      "scope_creep_instances": [],
+      "notes": "Corpus stays on the ADR-writing headline throughout. AI concepts from 14.1-14.9 (RAG, agents, HITL, streaming, circuit breaker, cost-latency-quality triangle) appear exclusively as inputs into the ADR template sections — not re-taught or defined. The AI-specific ADR extensions (model tier field, estimated cost per request) in §7 are legitimate on-scope additions to the ADR writing guide for AI systems. No concept is explained/defined at depth beyond ADR writing."
+    },
+    "beginner_readability": {
+      "passed": true,
+      "findings": [
+        {
+          "type": "info",
+          "note": "The five-section template table in §5.2 introduces Title/Status/Context/Decision/Consequences simultaneously. This is acceptable because each term is immediately defined inline in the table. Not flagged as a jargon dump."
+        }
+      ]
+    }
+  },
+  "hard_findings": [],
+  "soft_findings": [
+    {
+      "check": "length_sanity",
+      "severity": "soft",
+      "detail": "Estimated word count ~2,390 is approximately 110 words below the 2,500-word lower bound for the standard depth profile. Recommend expanding §6 (add a second worked example for the agent tier, currently absent) or §7 (add one more real-world ADR pattern detail) to reach the 2,500-word floor. The shortfall is ~4% — well within the 30% hard-fail threshold, so not blocking."
+    }
+  ],
+  "verdict": "PASS — All hard checks pass. Citation density is strong (all 5 primaries cited, >85% claim coverage in §5-7). No sequence drift or forward references. Topic scope is clean — ADR writing throughout, prior AI concepts used as inputs only. Beginner readability is solid with all new terms defined on first use. One soft finding: estimated word count (~2,390) falls slightly below the 2,500-word standard-profile floor; builder should add ~110 words to §6 or §7 before artifact generation."
+}

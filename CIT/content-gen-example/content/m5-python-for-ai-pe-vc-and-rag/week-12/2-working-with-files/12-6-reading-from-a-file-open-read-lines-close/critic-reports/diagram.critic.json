@@ -1,0 +1,48 @@
+{
+  "critic": "diagram-critic",
+  "topic_id": "12.6",
+  "topic_title": "Reading from a file — open, read lines, close",
+  "cycle": 1,
+  "at": "2026-06-14T00:00:00Z",
+  "passed": true,
+  "verdict": "PASS — all checks clean. TD flowchart with 6 nodes correctly maps the file-reading lifecycle. Open → Read → branch (close how?) → Manual (.close()) / Preferred (with block) → file closed. Labels are plain-language, no unexplained acronyms, all concepts within topic scope. Preferred path visually distinguished (green, ★ edge label). PNG renders cleanly at 30,456 bytes with no overlap or truncation.",
+  "checks": {
+    "node_count": {
+      "passed": true,
+      "count": 6,
+      "threshold_range": [3, 8],
+      "nodes": ["OPEN", "READ", "CHOOSE", "MANUAL", "AUTO", "DONE"]
+    },
+    "label_clarity": {
+      "passed": true,
+      "findings": [],
+      "notes": "All node labels are plain-language and self-explanatory. 'open(file.txt, r) returns a file object', 'read the content .read() • .readlines() • for line in f:', 'close how?', 'f.close() manual — easy to forget', 'with block closed automatically at end', 'file closed ✓ resources freed'. No bare acronyms. Edge labels 'manual pattern' and 'preferred ★' are unambiguous."
+    },
+    "scope_discipline": {
+      "passed": true,
+      "findings": [],
+      "notes": "All 6 nodes represent 12.6 concepts exclusively: open(), three read methods (.read/.readlines/for-line), the close decision, manual .close(), with block, and terminal state. No advanced/adjacent material (write mode, try/except, CSV, binary files) appears."
+    },
+    "intent_coverage": {
+      "passed": true,
+      "intent": "Flowchart of the file-reading lifecycle: open() → read content → close, with the with block shown as the auto-close alternative path vs manual .close()",
+      "notes": "Lifecycle shown in order. Branch at 'close how?' cleanly separates the two paths. with block labeled as 'preferred ★', manual path labeled 'easy to forget' — reinforces the best-practice message without prose."
+    },
+    "visual_render": {
+      "passed": true,
+      "png_bytes": 30456,
+      "findings": [],
+      "notes": "PNG renders cleanly. No text truncation, no node overlap, no arrow crossings. Color coding legible: blue = process steps, yellow = decision diamond, green = preferred path, purple-blue stadium = terminal."
+    },
+    "beginner_clarity": {
+      "passed": true,
+      "findings": [],
+      "notes": "Preferred path (with block) visually distinguished via color (green) and edge label (★). Manual path annotated with 'easy to forget' — directly addresses the common beginner mistake. Terminal node 'file closed ✓ resources freed' explains why closing matters."
+    }
+  },
+  "summary": {
+    "hard_failures": [],
+    "soft_findings": [],
+    "recommended_fixes": []
+  }
+}

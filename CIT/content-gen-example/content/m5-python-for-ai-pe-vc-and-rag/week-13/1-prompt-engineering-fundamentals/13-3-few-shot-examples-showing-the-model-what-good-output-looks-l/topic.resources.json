@@ -1,0 +1,30 @@
+{
+  "topic_id": "13.3",
+  "captured_at": "2026-06-13T00:00:00Z",
+  "captured_by": "namratas@revature.com",
+  "resources_source": "web_search",
+  "web_search_query": "few-shot prompting examples LLM prompt engineering guide",
+  "resources": [
+    {
+      "type": "url",
+      "value": "https://www.prompthub.us/blog/the-few-shot-prompting-guide",
+      "role": "primary",
+      "source": "web_search",
+      "notes": "Dedicated guide — design principles, positive/negative examples, practical setup"
+    },
+    {
+      "type": "url",
+      "value": "https://learnprompting.org/docs/basics/few_shot",
+      "role": "supporting",
+      "source": "web_search",
+      "notes": "Canonical open-source reference — zero/one/few-shot comparison"
+    },
+    {
+      "type": "url",
+      "value": "https://www.comet.com/site/blog/few-shot-prompting/",
+      "role": "supporting",
+      "source": "web_search",
+      "notes": "Applied context — few-shot in agentic systems"
+    }
+  ]
+}

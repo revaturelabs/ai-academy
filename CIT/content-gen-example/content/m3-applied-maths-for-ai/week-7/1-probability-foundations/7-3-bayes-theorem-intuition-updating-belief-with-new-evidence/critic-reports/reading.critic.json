@@ -1,0 +1,105 @@
+{
+  "critic": "reading-critic",
+  "topic_id": "7.3",
+  "artifact": "artifacts/reading.md",
+  "sidecar": "artifacts/reading.meta.json",
+  "run_at": "2026-06-22T00:00:00Z",
+  "passed": true,
+  "verdict": "All 8 check groups pass — format clean, length 1387w / ~6.9 min within budget, primary [1] cited 10+ times, no forward-taught concepts, all 10 sampled assertions trace to corpus, beginner readability and formatting standards met, no assessment references, no scope creep.",
+  "checks": {
+    "format_discipline": {
+      "passed": true,
+      "frontmatter_present": false,
+      "first_line": "# Bayes' theorem intuition — updating belief with new evidence",
+      "meta_sidecar_missing": false,
+      "section_template_violation": false,
+      "sections_found": ["Overview", "Key Concepts", "Worked Example", "In Practice", "Key Takeaways", "References"],
+      "sections_expected": ["Overview", "Key Concepts", "Worked Example", "In Practice", "Key Takeaways", "References"],
+      "notes": "Exactly 6 sections in correct order; sidecar valid with all required fields."
+    },
+    "length": {
+      "passed": true,
+      "word_count": 1387,
+      "target_word_range": [1200, 1600],
+      "estimated_read_minutes_200wpm": 6.9,
+      "estimated_read_minutes_230wpm": 6.03,
+      "target_minute_range": [6, 8],
+      "notes": "Word count and reading time both within target ranges at both 200wpm and 230wpm."
+    },
+    "citations": {
+      "passed": true,
+      "primary_resource": "[1] BetterExplained — https://betterexplained.com/articles/an-intuitive-and-short-explanation-of-bayes-theorem/",
+      "primary_cited_count": 10,
+      "primary_cited_at_least_once": true,
+      "all_inline_markers": [1, 2, 3],
+      "bibliography_entries": [1, 2, 3],
+      "orphan_markers": [],
+      "orphan_bibliography": [],
+      "notes": "[1] cited 10+ times; [2] cited 6 times; [3] cited 9 times. Bibliography matches inline markers exactly, footnote style."
+    },
+    "no_forward_references": {
+      "passed": true,
+      "prior_topics_used_correctly": ["7.1 probability/event/sample space (backward ref)", "7.2 P(A|B) notation / conditional probability formula (backward ref, line 53)"],
+      "forward_pointers_named_and_deferred": [
+        {"text": "You will explore how LLMs use probability distributions in topic 7.4", "line": 134, "status": "one-sentence named-and-deferred — allowed"},
+        {"text": "base rate fallacy — by name in a later topic", "line": 136, "status": "named-and-deferred — allowed"},
+        {"text": "a reasoning error you will encounter by name later", "line": 144, "status": "named-and-deferred — allowed"}
+      ],
+      "forward_concepts_taught": [],
+      "notes": "No forward concepts taught. Three forward pointers are all one-sentence named-and-deferred; none introduce new material."
+    },
+    "faithfulness": {
+      "passed": true,
+      "assertions_sampled": 10,
+      "unsupported_count": 0,
+      "unsupported_assertions": [],
+      "sample_verified": [
+        "Prior definition — corpus §5.1",
+        "Posterior definition — corpus §5.1",
+        "P(rain)=0.3 prior example — corpus §5.1",
+        "Likelihood = P(evidence|claim) — corpus §5.2",
+        "P(dark clouds|rain)=0.9 — corpus §5.4",
+        "Worked example posterior ≈ 0.66 — corpus §5.4",
+        "Bayesian updating definition — corpus §5.6",
+        "Medical testing 5% prior / 95% likelihood — corpus §7",
+        "Spam filter as first commercial application — corpus §7",
+        "Bayes' theorem as 'conditional probability reorganised' — corpus §4"
+      ],
+      "notes": "All 10 sampled assertions trace directly to corpus. No new claims introduced."
+    },
+    "beginner_readability": {
+      "passed": true,
+      "undefined_terms": [],
+      "undefined_terms_count": 0,
+      "jargon_dump": false,
+      "abstract_first": false,
+      "academic_register": false,
+      "hedging_phrases_found": [],
+      "notes": "All key terms (prior, posterior, likelihood, Bayesian updating) defined in bold + plain-language at first use. Rain analogy introduced before abstraction throughout. No hedging language. Average sentence length well under 25 words."
+    },
+    "formatting": {
+      "passed": true,
+      "wall_of_text": false,
+      "unlisted_sequence": false,
+      "no_inline_examples": false,
+      "bold_definitions_present": true,
+      "notes": "No paragraph exceeds 6 sentences. Bullet lists and tables used for multi-item content. Inline examples present in Key Concepts (rain analogy at lines 13, 28–31) independent of Worked Example. Bold-term definitions used throughout."
+    },
+    "assessment_reference": {
+      "passed": true,
+      "assessment_ids_found": [],
+      "due_week_refs": [],
+      "grade_weight_refs": [],
+      "notes": "No assessment IDs, due weeks, or grade weights found in the reading."
+    },
+    "scope": {
+      "passed": true,
+      "scope_creep": false,
+      "scope_creep_findings": [],
+      "notes": "No formula derivation or proof. Bayes' theorem shown as named equation only with explicit disclaimer ('not expected to derive or prove it'). Base rate fallacy named and deferred. LLM detail deferred to 7.4. Navigation example is an application of Bayesian updating within topic scope."
+    }
+  },
+  "soft_findings": [],
+  "hard_fail_escalations": [],
+  "gold_example_comparison": "No gold example found at .claude/references/gold-examples/reading/ — comparison skipped."
+}

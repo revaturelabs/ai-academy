@@ -1,0 +1,42 @@
+{
+  "critic": "diagram-critic",
+  "topic_id": "12.9",
+  "topic_title": "What an API is — a door into another system; request and response",
+  "cycle": 1,
+  "at": "2026-06-15T00:00:00Z",
+  "passed": true,
+  "verdict": "PASS — intent fully covered. 4-node LR pipeline shows the complete request-response round trip with numbered edge labels (1. POST request → 2. forwards → 3. returns → 4. back to client). Client (blue), API Endpoint (indigo), Anthropic Server (yellow), JSON Response (green) — color tiers semantically appropriate. 'runs Claude internally' on Server node correctly names the internal system without teaching it. Numbered edges give beginners explicit reading order. Scope clean to 12.9 concepts.",
+  "checks": {
+    "node_count": {
+      "passed": true,
+      "count": 4,
+      "range": "3–8",
+      "note": "YOUR Python Code → API Endpoint → Anthropic Server → JSON Response. Cycle via edge 4 back to client. Minimal and complete."
+    },
+    "label_clarity": {
+      "passed": true,
+      "findings": [],
+      "note": "All labels plain-language: 'Your Python Code / the client', 'API Endpoint / URL + method + headers + body', 'Anthropic Server / runs Claude internally', 'JSON Response / status code + body'. Subtitles reinforce main labels."
+    },
+    "intent_coverage": {
+      "passed": true,
+      "intent": "Client-server request-response cycle: Your Python code (client) → API endpoint → Server → Response back to client.",
+      "findings": [],
+      "note": "All 4 stages of the round trip present and sequenced. Numbered steps make the reading order explicit."
+    },
+    "scope_discipline": {
+      "passed": true,
+      "findings": [],
+      "note": "No JSON parsing nodes (12.12), no Anthropic library code nodes (12.11), no rate limit/API key nodes beyond what the corpus §7 covers conceptually. Clean."
+    },
+    "render_quality": {
+      "passed": true,
+      "png_bytes": 26568,
+      "findings": []
+    }
+  },
+  "summary": {
+    "hard_failures": [],
+    "soft_findings": []
+  }
+}

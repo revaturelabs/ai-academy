@@ -1,0 +1,43 @@
+{
+  "type": "topic",
+  "id": "1.8",
+  "title": "Flowcharts — visualising logic with standard shapes and arrows",
+  "slug": "1-8-flowcharts-visualising-logic-with-standard-shapes-and-arrows",
+  "position_in_module": 2,
+  "week_num": 1,
+  "session_name": "How Machines Think",
+  "module": {
+    "position": 3,
+    "slug": "3-expressing-logic",
+    "title": "Expressing Logic"
+  },
+  "course": {
+    "code": "M1",
+    "slug": "m1-computational-thinking",
+    "title": "Computational Thinking"
+  },
+  "next_assessment": {
+    "id": "A1",
+    "due_week": 3,
+    "title": "Specification Portfolio",
+    "weight": "10%"
+  },
+  "paths": {
+    "corpus": "topic_corpus.md",
+    "resources": "topic.resources.json",
+    "progress": "topic.progress.json",
+    "artifacts_dir": "artifacts/",
+    "critic_reports_dir": "critic-reports/"
+  },
+  "artifact_plan": {
+    "diagram": true,
+    "diagram_intent": "Side-by-side: pseudocode snippet (left) and equivalent flowchart (right), with each standard shape labelled by name",
+    "depth_profile": "standard",
+    "depth_profile_signals": ["5 standard shapes — concrete but not deep", "explicit pseudocode-to-flowchart bridge", "hands-on lab drawing task", "loop concept adds one extra sub-concept but total fits standard budget"],
+    "reading": { "target_min_minutes": 6, "target_max_minutes": 8, "target_word_range": [1200, 1600] },
+    "quiz": { "min_questions": 5, "max_questions": 6, "include_short_answer": false },
+    "hitl2_approved_at": "2026-06-21"
+  },
+  "expected_delivery_minutes": 7,
+  "status": "scaffolded"
+}

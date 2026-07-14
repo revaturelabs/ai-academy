@@ -1,0 +1,10 @@
+{
+  "topic_id": "2.9",
+  "title": "Iterating a specification based on output gaps",
+  "estimated_read_minutes": 9,
+  "word_count": 2090,
+  "generated_at": "2026-06-17T00:00:00Z",
+  "embeds_diagram": true,
+  "citations_used": [1, 2, 3],
+  "sections": ["Overview", "Key Concepts", "Worked Example", "In Practice", "Key Takeaways", "References"]
+}

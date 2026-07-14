@@ -1,0 +1,53 @@
+$CATEGORY: CIT/M4/week-10/10-4-automation-complacency
+
+::10-4-q1:: Automation complacency is best described as a gradual reduction in attention caused by ... {
+=a system performing correctly over a long period of time#Right — complacency grows precisely when the system keeps getting things right, not when it breaks down.
+~a poorly designed interface that is hard to monitor#No — complacency is driven by correct system performance, not by bad design.
+~an operator who has not received enough training#No — training level is separate; even well-trained operators develop complacency when a system rarely fails.
+~a system making frequent small errors that go unnoticed#No — frequent errors would actually increase alertness; complacency builds when errors are rare.
+#### Tests LO1 — the plain-language definition of automation complacency and how it differs from general inattention.
+}
+
+::10-4-q2:: The "accuracy paradox" in automated systems means that ... {
+~a highly accurate system is more likely to produce sudden unexpected failures than a less accurate one#No — accuracy says nothing about the type of failure; the paradox is about human readiness, not failure probability.
+=the more accurate a system is, the less ready operators are to catch its rare failures#Correct — rare failures mean operators have fewer chances to practise catching errors, so they are least ready when a failure matters most.
+~operators trust accurate systems too little because they doubt the results#No — the paradox runs the other way: operators over-trust, not under-trust.
+~improving system accuracy always reduces the need for human oversight#No — higher accuracy reduces the *frequency* of oversight moments but not the *need* for genuine oversight.
+#### Tests LO2 — explaining the accuracy paradox and why high accuracy makes human monitoring less safe.
+}
+
+::10-4-q3:: Trace the correct order through the causal chain that leads from high system accuracy to real harm. {
+~Trust rises → accuracy observed → monitoring drops → operator misses failure → harm occurs#No — trust rising before accuracy is observed reverses the first two steps; observed accuracy is what causes trust to rise.
+~Monitoring drops → high accuracy observed → vigilance decays → system fails → harm#No — monitoring cannot drop before accuracy is observed; the sequence starts with observing accuracy.
+=High accuracy → trust rises → monitoring drops → vigilance decays → failure → missed → harm#Correct — this is the full chain: observed accuracy builds trust, trust reduces monitoring, monitoring lets vigilance decay, and the decayed state is present when failure finally arrives.
+~High accuracy observed → vigilance decays → system fails → trust rises → harm#No — trust does not rise after failure; and vigilance decay is not the direct next step after observing accuracy.
+#### Tests LO3 — tracing the complete causal chain from high accuracy to harm.
+}
+
+::10-4-q4:: A safety auditor reviews an airport baggage-screening system. The system has had zero false negatives for 18 months. The auditor spends less and less time scrutinising each scan. Which concept best describes what is happening to the auditor? {
+~Trust calibration — the auditor is updating trust to match the system's true reliability#No — trust calibration is the appropriate matching of trust to performance; what is described here is trust drifting beyond what is warranted, not calibrating correctly.
+~Automation bias — the auditor is accepting system outputs without any personal check#No — automation bias is the tendency to follow automated decisions; vigilance decay is specifically the erosion of attention over time due to incident-free operation.
+~Override-as-theater — the auditor performs checks that have no real scrutiny behind them#No — override-as-theater describes the moment of a decision point; the slow erosion of attention over months is vigilance decay.
+=Vigilance decay — sustained, incident-free operation has eroded the auditor's ability to detect errors#Correct — the longer a system runs without incident, the harder it is to maintain the active attention needed to catch the rare failure.
+#### Tests LO4 — identifying vigilance decay in a scenario and recognising when it is most dangerous.
+}
+
+::10-4-q5:: A hospital uses an AI triage tool that flags urgent patients. A nurse knows the tool is 97% accurate and stops reading each alert carefully, just clicking "confirm." A rare misclassification slips through. How does this relate to "override-as-theater" from earlier in the week? {
+=The override exists on paper but the scrutiny behind it has gone, so the gate provides no real protection#Correct — override-as-theater means the physical act of approving is performed but the cognitive check that gives it meaning is absent; complacency strips away the scrutiny.
+~The override is working correctly because the nurse is confirming valid alerts most of the time#No — an override that only works when the system is right provides no safety value; the point is catching the cases when the system is wrong.
+~The AI tool should be replaced with a lower-accuracy system to keep the nurse alert#No — the problem is the human response to high accuracy, not the accuracy itself; reducing accuracy would cause other harms.
+~The nurse needs additional training so that she reads every alert carefully regardless of the AI's accuracy#No — while training can help, the mechanism here is automation complacency driven by high accuracy, not a knowledge gap in the nurse.
+#### Tests LO5 — connecting automation complacency to override-as-theater from topic 10.1.
+}
+
+::10-4-q6:: Which pair of real-world domains has documented cases of automation complacency, and what is a recorded consequence in each? {
+~Retail inventory management and social media recommendation engines, where complacency leads to systematic data-entry errors#No — these domains are not the documented examples in this topic; the corpus documents aviation, medical imaging, and content moderation.
+=Aviation (pilots slow to recover when autopilot disengages) and medical imaging (radiologists miss findings the AI did not flag)#Correct — both are studied domains: pilots disengage from manual flying skills, and radiologists shift attention away from the rest of the scan when an AI reads it first.
+~Cybersecurity threat detection and financial fraud screening, where operator fatigue reduces the quality of manual review over time#No — these domains may show related effects, but the corpus specifically documents aviation, medical imaging, and content moderation as the named examples.
+~Weather forecasting and autonomous vehicle testing, where operators increasingly miss subtle sensor-drift warnings over long deployments#No — these are plausible scenarios but are not the domains named in the corpus for this topic.
+#### Tests LO6 — naming two documented real-world domains and describing a consequence of automation complacency in each.
+}
+
+::10-4-q7:: A content-moderation team uses an AI tool that correctly removes harmful posts 99% of the time. After six months of near-perfect performance, a human auditor admits she barely reads the posts the AI flags as safe. Explain, in your own words, how automation complacency has developed here and why this situation is especially dangerous ... {
+#### Model answer: A correct response should cover — (1) the auditor's reduced attention is caused by the system's high accuracy and long incident-free run, not by laziness or poor design (automation complacency definition); (2) because harmful posts appear so rarely, the auditor has had almost no practice catching them, so her ability to detect them has decayed (vigilance decay / accuracy paradox); (3) the moment a harmful post does slip through the AI, the auditor is the last line of defence but is psychologically unprepared — the human review step exists in name only (override-as-theater). Tests LO5 (override-as-theater connection) with depth.
+}

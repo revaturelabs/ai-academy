@@ -1,0 +1,49 @@
+$CATEGORY: CIT/M2/week-4/4.3-retrieval-augmented-generation-rag-giving-ai-access-to-exter
+
+::q1:: What problem is Retrieval-Augmented Generation (RAG) primarily designed to solve? {
+~Making the AI model run faster by using less computing power#No — RAG is not about speed or computational efficiency.
+=Giving an AI model access to external knowledge it did not see during training#Correct — RAG supplies fresh information at query time, addressing the knowledge cutoff and private-knowledge limits.
+~Replacing the model's training data with a smaller, more focused dataset#No — RAG does not alter or replace the model's training data.
+~Teaching the AI model to write in a more formal and professional tone#No — adjusting tone is a use case for fine-tuning, not RAG.
+#### Tests the definition of RAG and the problem it solves (corpus §5.1).
+}
+
+::q2:: What is the correct order of the three steps in a RAG pipeline? {
+~Generate, retrieve, augment#No — generation is the final step, not the first; this order reverses the pipeline.
+~Augment, generate, retrieve#No — retrieval must come first so that the augmentation step has material to work with.
+=Retrieve, augment, generate#Correct — the system first retrieves relevant passages, augments the question with them, then generates the answer.
+~Retrieve, generate, augment#No — augmentation (combining the question with retrieved material) must happen before generation, not after.
+#### Tests the three-step RAG pipeline in the correct sequence (corpus §5.2).
+}
+
+::q3:: Why does RAG reduce the chance that an AI model produces a hallucinated answer? {
+=The model generates its answer from retrieved source material it can read, rather than relying on memory alone#Correct — grounding the response in actual documents means the model does not have to fabricate content from patterns it memorised.
+~The model is retrained each time a question is asked, so its knowledge is always up to date#No — RAG does not retrain the model; the model's parameters are never changed.
+~The model is given a longer conversation history, which helps it remember previous correct answers#No — RAG provides retrieved documents, not a longer chat history, and does not help the model "remember."
+~The model checks its own output against a spelling and grammar tool before responding#No — RAG does not involve a grammar check; it provides source documents to ground factual content.
+#### Tests why RAG reduces hallucination compared with a plain foundation model (corpus §5.3).
+}
+
+::q4:: A company needs to update its AI system daily with new pricing information. Why would RAG be a better choice than fine-tuning for this situation? {
+~Fine-tuning cannot handle any kind of numerical data, such as prices or quantities#No — fine-tuning can handle numerical data; the issue is how frequently the information changes.
+~RAG produces longer and more detailed answers than fine-tuning for all types of questions#No — answer length depends on the question and the model, not on which adaptation method is used.
+~Fine-tuning is only available to large technology companies and is not accessible to most organisations#No — fine-tuning is widely available; accessibility is not the reason to prefer RAG here.
+=RAG updates the document library without retraining the model, so new information is available immediately#Correct — because RAG retrieves fresh documents at query time, updating the knowledge source takes effect instantly without a new training run.
+#### Tests the distinction between RAG and fine-tuning for frequently changing knowledge (corpus §5.4).
+}
+
+::q5:: Which of the following best describes a real-world application where RAG provides the most important benefit? {
+~A music-streaming service that recommends songs based on a user's listening history#No — music recommendation relies on preference matching, not retrieval of text documents to ground AI answers.
+=A customer-support chatbot that answers questions using the company's current product catalogue and pricing#Correct — the chatbot needs access to documents that change frequently and are private to the organisation — exactly the problem RAG solves.
+~A photo-editing app that automatically removes unwanted objects from images#No — image editing does not involve retrieval of documents or text-based knowledge at query time.
+~A voice assistant that sets reminders and manages calendar appointments#No — scheduling tasks do not require retrieving and grounding answers in an external document library.
+#### Tests recognition of real-world RAG applications and why retrieval is the key enabler (corpus §7).
+}
+
+::q6:: Which group of technical terms names the advanced RAG components that this course covers fully in Week 14? {
+~Fine-tuning, backpropagation, gradient descent, and labelled datasets#No — these are concepts from model training, not the retrieval step of RAG.
+~Parameters, weights, layers, and activation functions#No — these describe the internal structure of a neural network, not the retrieval components of RAG.
+=Embeddings, vector databases, similarity search, and chunking#Correct — these four components power the retrieval step and are introduced by name here; their full technical detail is taught in Week 14.
+~Tokens, attention heads, prompts, and context windows#No — these are concepts related to how language models process text, not the named RAG retrieval components.
+#### Tests awareness of the Week-14 deferred RAG components named in this topic (corpus §5.5).
+}

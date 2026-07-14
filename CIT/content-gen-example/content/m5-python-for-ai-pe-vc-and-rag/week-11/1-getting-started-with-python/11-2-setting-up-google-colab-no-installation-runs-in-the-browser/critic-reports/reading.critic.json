@@ -1,0 +1,48 @@
+{
+  "passed": true,
+  "checks": {
+    "format_discipline": {
+      "passed": true,
+      "notes": "First line is H1 title with no YAML frontmatter. reading.meta.json exists and parses with all required fields (word_count, estimated_read_minutes, citations_used, sections). Exactly six sections present in correct order: Overview, Key Concepts, Worked Example, In Practice, Key Takeaways, References."
+    },
+    "length_budget": {
+      "passed": true,
+      "word_count": 1268,
+      "reading_minutes": 7,
+      "target_range": [1200, 1600]
+    },
+    "citation_discipline": {
+      "passed": true,
+      "primary_cited": true,
+      "citations_found": [1, 2, 3, 4, 5],
+      "notes": "[1] cited at lines 5,13,84,103; [2] cited at lines 24,28,35,49,104,105,106,113; [3] cited at lines 11,21,49,55,65,96; [4] cited at lines 65,68,98,99,106,107; [5] cited at lines 76,78,107. All 5 primary resources cited. Bibliography at end contains all 5 entries. No orphan markers or missing entries."
+    },
+    "no_forward_refs": {
+      "passed": true,
+      "violations": [],
+      "notes": "syntax error and runtime error attributed explicitly to topic 11.1 (line 61). Variables deferred with named-and-deferred pointer to topic 11.3 (line 96, In Practice). No concepts from 11.4+ appear."
+    },
+    "beginner_readability": {
+      "passed": true,
+      "findings": [],
+      "notes": "All non-everyday terms defined on first use: server (line 11), notebook (line 16), cells (line 21), code cell/text cell/output area (lines 23-24), Markdown (line 24), execution count (line 56), runtime (line 65), session (line 65). No jargon dumps (concepts introduced one sub-section at a time). Concrete examples precede abstractions throughout. Plain register with no hedging phrases detected."
+    },
+    "formatting": {
+      "passed": true,
+      "findings": [],
+      "notes": "No walls of text: longest paragraphs are 4-5 sentences, session-end conditions use bullet list. Worked Example uses numbered list (lines 84-91); run-a-cell procedure uses bullets (lines 51-58). Inline examples present (2+2 -> 4, keyboard shortcuts). Bold-term definitions consistently used for all introduced terms."
+    },
+    "scope": {
+      "passed": true,
+      "scope_creep": [],
+      "notes": "All content is squarely within the headline topic (setting up and navigating Colab). Markdown mentioned briefly as parenthetical context without being taught. Variables explicitly deferred to 11.3. No advanced or adjacent concepts taught."
+    },
+    "faithfulness": {
+      "passed": true,
+      "new_claims": [],
+      "notes": "8 assertions sampled: (1) no installation needed, (2) code sent to Google server, (3) execution count records run order, (4) 90-minute idle timeout, (5) Ctrl+M B shortcut, (6) All changes saved confirmation, (7) File->Download->Download .ipynb path, (8) green/grey runtime status dots. All trace directly to corpus sections 5.1-5.7."
+    }
+  },
+  "verdict": "All 8 checks pass — reading is well-formed, 1268 words (within [1200,1600]), all 5 primary sources cited, no forward references, no scope creep, beginner-accessible with all terms defined, and fully faithful to corpus.",
+  "at": "2026-06-12T00:20:00Z"
+}

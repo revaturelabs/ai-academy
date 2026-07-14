@@ -1,0 +1,59 @@
+{
+  "critic": "reading-critic",
+  "cycle": 1,
+  "topic_id": "11.5",
+  "topic_title": "If / else — writing decision logic in code",
+  "at": "2026-06-12T01:35:00Z",
+  "passed": true,
+  "checks": {
+    "format_discipline": {
+      "passed": true,
+      "has_frontmatter": false,
+      "first_line": "# If / else — writing decision logic in code",
+      "sidecar_exists": true,
+      "sections": ["Overview", "Key Concepts", "Worked Example", "In Practice", "Key Takeaways", "References"],
+      "section_count": 6,
+      "detail": "No frontmatter. Correct 6-section structure in prescribed order. Sidecar reading.meta.json present and valid."
+    },
+    "length_budget": {
+      "passed": true,
+      "word_count": 1316,
+      "target_range": [1200, 1600],
+      "reading_minutes": 7,
+      "target_minutes": [6, 8],
+      "detail": "1316 words at 230 wpm ≈ 5.7 min; round-up estimate 7 min. In range [6, 8] ✓."
+    },
+    "citation_discipline": {
+      "passed": true,
+      "primary_resources_cited": [1, 2, 3, 4, 5],
+      "all_primary_cited": true,
+      "detail": "All 5 primary resources cited at least once. Bibliography in References section complete."
+    },
+    "forward_references": {
+      "passed": true,
+      "findings": [],
+      "detail": "No forward references detected. ValueError named-and-deferred to 11.6 in one sentence — acceptable. Spec-first named-and-deferred to 11.7 in one sentence — acceptable. All code uses only concepts from 11.1–11.5."
+    },
+    "beginner_readability": {
+      "passed": true,
+      "findings": [],
+      "detail": "All terms defined on first use (comparison operator, if statement, elif, input()). Comparison operators presented in a table — concrete before abstract. No jargon dumps. Paragraphs ≤ 4 sentences throughout."
+    },
+    "formatting": {
+      "passed": true,
+      "findings": [],
+      "detail": "Operator table in Key Concepts. Code blocks for each concept. Numbered list for 3 if-statement syntax rules. Line-by-line notes in Worked Example. No walls of text."
+    },
+    "scope": {
+      "passed": true,
+      "findings": [],
+      "detail": "Content stays within if/else, comparison operators, elif, compound conditions, input(). No material taught beyond 11.5 headline."
+    },
+    "corpus_faithfulness": {
+      "passed": true,
+      "findings": [],
+      "detail": "All claims map to corpus §§5.1–5.5 and §6. No new claims introduced by the reading."
+    }
+  },
+  "verdict": "PASS (cycle 1). 1316-word, 7-min reading is clean: no frontmatter, correct section structure, all 5 resources cited, no forward references, no scope-creep. Diagram embedded correctly in Key Concepts. Beginner-clear throughout."
+}

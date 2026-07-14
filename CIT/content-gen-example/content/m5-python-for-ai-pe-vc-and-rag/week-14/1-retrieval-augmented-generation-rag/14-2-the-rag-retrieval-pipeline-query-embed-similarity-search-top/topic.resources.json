@@ -1,0 +1,38 @@
+{
+  "topic_id": "14.2",
+  "resources_source": "web_search",
+  "resources": [
+    {
+      "id": "R1",
+      "type": "primary",
+      "title": "What is Retrieval Augmented Generation (RAG)?",
+      "url": "https://www.databricks.com/glossary/retrieval-augmented-generation-rag",
+      "publisher": "Databricks",
+      "notes": "Authoritative overview: definition, pipeline components, why RAG reduces hallucination"
+    },
+    {
+      "id": "R2",
+      "type": "primary",
+      "title": "What is RAG? A Beginner's Guide to Retrieval-Augmented Generation (With a Full Pipeline Walkthrough)",
+      "url": "https://dev.to/egepakten/what-is-rag-a-beginners-guide-to-retrieval-augmented-generation-with-a-full-pipeline-walkthrough-3djm",
+      "publisher": "DEV Community",
+      "notes": "Step-by-step beginner walkthrough of the full RAG pipeline including prompt injection"
+    },
+    {
+      "id": "R3",
+      "type": "primary",
+      "title": "Retrieval-Augmented Generation (RAG) for LLMs",
+      "url": "https://www.promptingguide.ai/research/rag",
+      "publisher": "Prompt Engineering Guide",
+      "notes": "Authoritative reference covering RAG mechanics, prompt augmentation, and retrieval pipeline"
+    },
+    {
+      "id": "R4",
+      "type": "primary",
+      "title": "Simple RAG Explained: A Beginner's Guide to Retrieval-Augmented Generation",
+      "url": "https://machinelearningplus.com/gen-ai/simple-rag-explained-a-beginners-guide-to-retrieval-augmented-generation/",
+      "publisher": "Machine Learning Plus",
+      "notes": "Plain-language step-by-step explanation ideal for absolute beginners"
+    }
+  ]
+}

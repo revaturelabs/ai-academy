@@ -1,0 +1,80 @@
+{
+  "critic": "corpus-critic",
+  "topic_id": "7.9",
+  "topic_title": "Recall — of all the things that were correct, how many did the model find",
+  "at": "2026-06-23T00:00:00Z",
+  "passed": true,
+  "depth_profile": "standard",
+  "estimated_word_count": 2350,
+  "checks": {
+    "required_sections": {
+      "passed": true,
+      "detail": "Sections 3, 4, 5, and 10 all present and non-trivial. Section 3 (Learning Objectives) ~94 words ≥ 50. Section 4 (Introduction) ~165 words ≥ 50. Section 5 (Core Concepts) ~1130 words across 7 subsections ≥ 100. Section 10 (Key Takeaways) ~115 words ≥ 50. No placeholder strings in required sections."
+    },
+    "citation_density": {
+      "passed": true,
+      "resources_source": "web_search",
+      "primary_resource_cited": true,
+      "primary_resource_url": "https://developers.google.com/machine-learning/crash-course/classification/accuracy-precision-recall",
+      "citation_marker": "[1]",
+      "citation_coverage_estimate": "≥70% of standalone factual assertions in sections 5, 6, 7 carry [N] markers. [1] appears in sections 4, 5.1, 5.2, 5.3, 5.4, 5.5, 5.6, 5.7, 7, 8. [2] and [3] also distributed throughout. A small number of explanatory/definitional sentences in section 5.4 are uncited but do not drop coverage below 60%.",
+      "findings": []
+    },
+    "sequence_drift": {
+      "passed": true,
+      "findings": [
+        {
+          "severity": "soft",
+          "code": "assumed_prior_term",
+          "term": "ground truth",
+          "detail": "'ground truth' is used repeatedly (sections 5.2, 5.5, 5.6) as an assumed ML term. It does not appear in the prior-concepts allow-list for topics 7.1–7.8 or earlier weeks, and is not listed in 7.9's concepts_introduced. While context hints at its meaning in section 5.2 ('the item was actually positive in the real world (ground truth says yes)'), it is never explicitly defined as a term. Recommend adding a plain-English definition on first use or confirming it was introduced in an earlier topic not captured in the allow-list."
+        }
+      ]
+    },
+    "length_sanity": {
+      "passed": true,
+      "profile": "standard",
+      "expected_range_words": [1500, 4000],
+      "estimated_word_count": 2350,
+      "detail": "Estimated ~2350 words. Falls within the standard corpus range of 1500–4000 words. Not more than 30% outside the range."
+    },
+    "topic_scope": {
+      "passed": true,
+      "boundary": "recall as a standalone metric",
+      "detail": "No teaching of F1-score, ROC, AUC, specificity, or any metric beyond recall found. Section 5.7 covers the precision-recall trade-off, which is explicitly listed in 7.9's concepts_introduced and is needed to explain recall's denominator difference from precision. The last sentence of 5.7 properly names-and-defers any balancing metric ('covered in a later topic') without bolding or defining it. Precision calculations appear only as a comparison reference in section 5.5, which is appropriate scope.",
+      "findings": []
+    },
+    "beginner_readability": {
+      "passed": true,
+      "escalated_to_hard_fail": false,
+      "distinct_finding_count": 1,
+      "findings": [
+        {
+          "severity": "soft",
+          "code": "undefined_terms",
+          "terms": ["ground truth"],
+          "detail": "'ground truth' is used starting in section 5.2 without a plain-English definition on first use. The parenthetical '(ground truth says yes)' provides implicit context but does not define the term for a zero-background learner. Recommend inserting a one-clause definition, e.g., 'the ground truth — the actual correct label in the dataset'."
+        }
+      ],
+      "no_jargon_dumps": true,
+      "plain_register": true,
+      "terms_defined_on_first_use": "All introduced terms (false negative, recall) are defined on first use with bold formatting and plain-English explanation. 'true negatives' is given an inline parenthetical that is sufficient."
+    }
+  },
+  "soft_findings_summary": [
+    {
+      "check": "sequence_drift",
+      "code": "assumed_prior_term",
+      "term": "ground truth",
+      "action_required": "Add a plain-English definition of 'ground truth' on first use (section 5.2), or confirm the term was introduced in a prior topic."
+    },
+    {
+      "check": "beginner_readability",
+      "code": "undefined_terms",
+      "term": "ground truth",
+      "action_required": "Same as above — surfaces in both checks because it is both an unverified prior term and undefined on first use for a zero-background learner."
+    }
+  ],
+  "hard_failures": [],
+  "verdict": "PASSED — all 6 hard-gate checks pass. 2 soft findings (both relating to the same term, 'ground truth', used without definition or prior introduction). Corpus is cleared for downstream artifact generation. Soft findings should be addressed before HITL #3 review."
+}

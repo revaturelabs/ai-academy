@@ -1,0 +1,48 @@
+{
+  "topic_id": "2.3",
+  "generated_at": "2026-06-16T00:00:00Z",
+  "format": "gift",
+  "question_count": 6,
+  "$bias_defense_applied": true,
+  "$shuffle_seed": "147-c1",
+  "correct_position_distribution": [2, 0, 3, 1, 3, 0],
+  "length_bias_rate": 0.0,
+  "questions": [
+    {
+      "id": "q1",
+      "type": "mcq",
+      "objective_ref": "Name all six components of a complete specification and describe the purpose of each one.",
+      "correct_position": 2
+    },
+    {
+      "id": "q2",
+      "type": "mcq",
+      "objective_ref": "Identify the inputs of a task by asking what raw material the AI needs before it can begin.",
+      "correct_position": 0
+    },
+    {
+      "id": "q3",
+      "type": "mcq",
+      "objective_ref": "Describe expected outputs precisely — format, length, and content — so the result is observable and testable.",
+      "correct_position": 3
+    },
+    {
+      "id": "q4",
+      "type": "mcq",
+      "objective_ref": "Apply the three core components (inputs, expected outputs, failure conditions) to a real-world task.",
+      "correct_position": 1
+    },
+    {
+      "id": "q5",
+      "type": "mcq",
+      "objective_ref": "Explain why specifying failure conditions matters for AI reliability.",
+      "correct_position": 3
+    },
+    {
+      "id": "q6",
+      "type": "mcq",
+      "objective_ref": "Write failure conditions for a task by thinking through what could go wrong and how the AI should respond.",
+      "correct_position": 0
+    }
+  ]
+}

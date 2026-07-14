@@ -1,0 +1,37 @@
+{
+  "topic_id": "11.8",
+  "captured_at": "2026-06-13T00:00:00Z",
+  "captured_by": "bhuvaneshwarim@revature.com",
+  "resources_source": "web_search",
+  "web_search_query": "never run code you cannot explain line by line programming discipline AI-generated code",
+  "resources": [
+    {
+      "type": "url",
+      "value": "https://addyo.substack.com/p/code-review-in-the-age-of-ai",
+      "role": "primary",
+      "source": "web_search",
+      "notes": "Addy Osmani (Google Chrome eng) — owning AI-generated code, code review discipline."
+    },
+    {
+      "type": "url",
+      "value": "https://spectrum.ieee.org/ai-coding-degrades",
+      "role": "supporting",
+      "source": "web_search",
+      "notes": "IEEE Spectrum — risks of running unexplained AI-generated code, silent failures."
+    },
+    {
+      "type": "url",
+      "value": "https://medium.com/@guvencanguven965/stop-using-ai-to-write-code-you-dont-understand-6a10b21ebf33",
+      "role": "supporting",
+      "source": "web_search",
+      "notes": "Directly on topic — stop using AI code you cannot explain."
+    },
+    {
+      "type": "url",
+      "value": "https://8thlight.com/insights/ai-assisted-coding-is-not-doing-my-dishes-and-laundry",
+      "role": "supporting",
+      "source": "web_search",
+      "notes": "8th Light — professional accountability for AI-assisted coding."
+    }
+  ]
+}

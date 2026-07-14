@@ -1,0 +1,35 @@
+---
+title: "One base model, many uses — foundation model vs narrow AI"
+config:
+  theme: base
+  themeVariables:
+    primaryColor: "#a5d8ff"
+    primaryBorderColor: "#4a9eed"
+    lineColor: "#555"
+    edgeLabelBackground: "#ffffff"
+  flowchart:
+    htmlLabels: true
+    curve: basis
+    nodeSpacing: 55
+    rankSpacing: 70
+---
+flowchart LR
+
+  subgraph NARROW["Narrow AI — one model per task"]
+    NA["<b>Many task-specific models</b><br/><span style='font-size:12px;color:#6d28d9'>Q&amp;A · translation · image labels — each trained separately</span>"]:::start
+    NC["<b>Cost paid per task</b><br/><span style='font-size:12px;color:#6d28d9'>separate training run each time — not shared</span>"]:::auto
+    NA --> NC
+  end
+
+  subgraph FM["Foundation Model — trained once, used everywhere"]
+    FB["<b>One base model</b><br/><span style='font-size:12px;color:#6d28d9'>broad data · billions of parameters · trained once at scale</span>"]:::act
+    FA["<b>Adaptation layer</b><br/><span style='font-size:12px;color:#6d28d9'>prompting · fine-tuning · RAG — base model unchanged</span>"]:::auto
+    FO["<b>Many applications</b><br/><span style='font-size:12px;color:#6d28d9'>writing · summarisation · code · translation</span>"]:::done
+    FB --> FA --> FO
+  end
+
+  classDef start fill:#a5d8ff,stroke:#4a9eed,color:#1e293b
+  classDef auto fill:#d0bfff,stroke:#8b5cf6,color:#1e293b
+  classDef act fill:#a5d8ff,stroke:#4a9eed,color:#1e293b
+  classDef done fill:#b2f2bb,stroke:#22c55e,color:#1e293b
+  classDef ghost fill:none,stroke:none,color:#6d28d9

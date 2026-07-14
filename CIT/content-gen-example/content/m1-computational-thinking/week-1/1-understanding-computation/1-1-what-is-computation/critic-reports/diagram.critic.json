@@ -1,0 +1,37 @@
+{
+  "verdict": "pass",
+  "cycle": 1,
+  "note": "PNG render requires mmdc in terminal: mmdc -i <mmd_path> -o <png_path> -w 1400 -b transparent. Visual inspection pending render. Source-level pre-flight passed on all checks; layout and palette are correct.",
+  "findings": [
+    {
+      "code": "looks_good",
+      "where": "full diagram",
+      "detail": "Six nodes across two parallel LR subgraphs (Calculator, Vending machine). Each subgraph is a clean 3-node linear pipeline: start(blue) → auto(purple) → done(green). Governing concept 'Computation = Input → Process → Output (steps must be well-defined)' is in the config title field, not a node — satisfies title-discipline. All labels ≤ 4 words, plain English, trace directly to §5.1 and §5.4 corpus phrases. No concept drift. No bare acronyms. Color palette matches project spec exactly."
+    }
+  ],
+  "preflight": {
+    "node_count_check": "pass — 6 nodes (limit 3–8)",
+    "label_length_check": "pass — all labels ≤ 4 words",
+    "concept_fidelity_check": "pass — all labels map to §5.1/§5.4",
+    "title_discipline_check": "pass — governing concept in config title",
+    "single_path_check": "pass — each subgraph is a linear 3-node chain",
+    "label_plainness_check": "pass — no unexplained acronyms",
+    "color_tier_check": "pass — start:#a5d8ff, auto:#d0bfff, done:#b2f2bb"
+  },
+  "visual_inspection": "pending — mmdc not available in this agent session; run: mmdc -i content/m1-computational-thinking/week-1/1-understanding-computation/1-1-what-is-computation/artifacts/diagram.mmd -o content/m1-computational-thinking/week-1/1-understanding-computation/1-1-what-is-computation/artifacts/diagram.png -w 1400 -b transparent",
+  "stats": {
+    "nodes": 6,
+    "edges": 4,
+    "layout": "flowchart LR (two parallel subgraphs, each direction LR)",
+    "labels": [
+      "Numbers typed",
+      "Add / multiply rules",
+      "Answer displayed",
+      "Coins + button",
+      "Check funds and stock",
+      "Item or coins returned"
+    ],
+    "png_path": "content/m1-computational-thinking/week-1/1-understanding-computation/1-1-what-is-computation/artifacts/diagram.png",
+    "png_dims": "pending render"
+  }
+}

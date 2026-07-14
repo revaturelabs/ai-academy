@@ -1,0 +1,44 @@
+{
+  "type": "topic",
+  "id": "13.13",
+  "title": "Folder structure and README — how to organise a professional codebase",
+  "slug": "13-13-folder-structure-and-readme-how-to-organise-a-professional-c",
+  "position_in_module": 4,
+  "week_num": 13,
+  "session_name": "Prompt Engineering and Version Control",
+  "module": {
+    "position": 4,
+    "slug": "4-version-control-with-git-and-github",
+    "title": "Version Control with Git and GitHub"
+  },
+  "course": {
+    "code": "M5",
+    "slug": "m5-python-for-ai-pe-vc-and-rag",
+    "title": "Python for AI, PE, VC and RAG"
+  },
+  "next_assessment": {
+    "id": "A4",
+    "due_week": 13,
+    "title": "Python and Prompt Engineering Portfolio",
+    "weight": "20%"
+  },
+  "paths": {
+    "corpus": "topic_corpus.md",
+    "resources": "topic.resources.json",
+    "progress": "topic.progress.json",
+    "artifacts_dir": "artifacts/",
+    "critic_reports_dir": "critic-reports/"
+  },
+  "artifact_plan": {
+    "diagram": true,
+    "diagram_intent": "Annotated folder tree showing the standard Python project layout — root folder with README.md, .gitignore, requirements.txt at top level and src/, data/, tests/ subfolders below, each node labelled with its purpose",
+    "suggested_depth_profile": "deep",
+    "depth_signals": "Five Core Concepts sub-sections, a nine-step Implementation procedure, five Real-World Patterns, and the topic spans both Git configuration and Python tooling — all deep signals fire.",
+    "confirmed_depth_profile": "standard",
+    "depth_override_reason": "Budget: 78/90 min already spent; 2 unset topics remain. Author overrode atomic recommendation to standard.",
+    "reading": { "target_min_minutes": 6, "target_max_minutes": 8, "target_word_range": [1200, 1600] },
+    "quiz": { "min_questions": 5, "max_questions": 6, "include_short_answer": false }
+  },
+  "expected_delivery_minutes": 7,
+  "status": "scaffolded"
+}

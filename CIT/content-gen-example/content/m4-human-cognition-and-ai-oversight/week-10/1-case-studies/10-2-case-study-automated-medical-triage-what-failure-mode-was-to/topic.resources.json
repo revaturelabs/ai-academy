@@ -1,0 +1,30 @@
+{
+  "topic_id": "10.2",
+  "captured_at": "2026-06-12T00:00:00Z",
+  "captured_by": "namratas@revature.com",
+  "resources_source": "web_search",
+  "web_search_query": "automated medical triage AI failure mode tolerated case study oversight",
+  "resources": [
+    {
+      "type": "url",
+      "value": "https://www.jmir.org/2026/1/e88396",
+      "role": "primary",
+      "source": "web_search",
+      "notes": "Peer-reviewed JMIR 2026 on real-world AI triage risks, governance gaps, and tolerated failure modes"
+    },
+    {
+      "type": "url",
+      "value": "https://arxiv.org/html/2506.12482v2",
+      "role": "supporting",
+      "source": "web_search",
+      "notes": "Oversight architecture study — AI triage errors compound without hierarchical human checkpoints"
+    },
+    {
+      "type": "url",
+      "value": "https://arxiv.org/pdf/2603.11413",
+      "role": "supporting",
+      "source": "web_search",
+      "notes": "Triage failure driven by evaluation gaps, not model capability — systematic tolerated failures"
+    }
+  ]
+}

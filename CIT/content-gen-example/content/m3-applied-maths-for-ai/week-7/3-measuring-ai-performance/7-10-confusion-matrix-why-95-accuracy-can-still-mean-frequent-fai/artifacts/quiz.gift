@@ -1,0 +1,41 @@
+$CATEGORY: CIT/M3/week-7/7-10-confusion-matrix-why-95-accuracy-can-still-mean-frequent-fai
+
+::q1:: A classification model makes a prediction about one patient. The model predicts "has the disease" and the patient truly does have the disease. Which of the four confusion-matrix outcomes does this represent? {
+~False positive — the model raised an alarm that turned out to be wrong.#No — a false positive occurs when the model predicts positive but the ground truth is negative. Here the ground truth is also positive, so the model was right.
+=True positive — the model predicted positive and the ground truth is also positive.#Correct — a true positive is when the model flags an item and that item genuinely belongs to the positive class.
+~True negative — the model correctly left the item alone.#No — a true negative is when the model predicts negative and the ground truth is also negative. Here the model predicted positive.
+~False negative — the model missed a real case by predicting negative.#No — a false negative occurs when the model predicts negative but the ground truth is positive. Here the model predicted positive.
+#### Tests LO1: naming and describing the four confusion-matrix cells (corpus §5.1).
+}
+
+::q2:: A spam filter is tested on 200 emails. 40 are genuine spam and 160 are legitimate. The filter correctly flags 30 spam emails, wrongly flags 8 legitimate emails, lets 10 spam emails through, and correctly clears 152 legitimate emails. What is the false negative count in the confusion matrix for this test? {
+~8#No — 8 is the number of legitimate emails wrongly flagged as spam, which is the false positive count, not the false negative count.
+~30#No — 30 is the number of spam emails correctly caught, which is the true positive count.
+~152#No — 152 is the number of legitimate emails correctly cleared, which is the true negative count.
+=10#Correct — 10 spam emails slipped through unflagged. The model predicted "not spam" but the ground truth was "spam," making each one a false negative.
+#### Tests LO2: constructing and reading a confusion matrix from a worked scenario (corpus §6).
+}
+
+::q3:: A disease-screening model is tested on 1,000 patients. Only 50 patients actually have the condition; the other 950 are healthy. The model labels every single patient "healthy" and never flags anyone. What accuracy does this model achieve, and why is that misleading? {
+=The model achieves 95% accuracy because it correctly classifies all 950 healthy patients as negative, but its recall is 0% — it misses every genuinely sick patient.#Correct — the large true-negative count (950) dominates the accuracy formula, making the model look effective while it catches no real cases at all.
+~The model achieves 50% accuracy because it only handles one class and ignores the other — treating every patient as healthy means it gets all the disease cases wrong, so each class contributes equally to the error rate.#No — accuracy counts all correct predictions divided by total. The model correctly labels 950 healthy patients as healthy, giving 950/1000 = 95%, not 50%.
+~The model achieves 95% accuracy, and this is a genuinely reliable signal that it is performing well, because the test set reflects the real-world proportion of healthy patients in the population.#No — high accuracy here is not a reliable signal. The model catches zero sick patients, which means it completely fails at the task it was built for, despite the impressive headline number.
+~The model achieves 0% accuracy because a model that never raises a positive flag has failed completely — if it never predicts the disease class, then every one of its predictions about the disease class must be wrong.#No — accuracy counts all correct predictions, including true negatives. The model correctly classifies 950 healthy patients as healthy, so its accuracy is 950/1000 = 95%, not 0%.
+#### Tests LO3: explaining why 95% accuracy can hide complete failure on the positive class (corpus §5.4).
+}
+
+::q4:: You have a confusion matrix with four cells: true positive, false positive, false negative, and true negative. Which cells does the precision formula read from, and which does the recall formula read from? {
+~Precision reads from true positive and false negative; recall reads from true positive and true negative — they share the true-positive numerator but each pulls in a different error type and a different correct-prediction type as the denominator.#No — precision is about the model's positive flags only. False negative is not part of the precision formula; true negative is not part of the recall formula.
+=Precision reads from true positive and false positive (the top row); recall reads from true positive and false negative (the left column).#Correct — precision is TP / (TP + FP), using only the top row of the matrix. Recall is TP / (TP + FN), using only the left column.
+~Precision reads from true positive and true negative, capturing both types of correct prediction; recall reads from false positive and false negative, capturing both types of mistake the model makes.#No — true negative is not part of the precision formula, and false positive is not part of the recall formula. Each metric uses only two specific cells, not both correct or both error cells together.
+~Both precision and recall read from all four cells of the confusion matrix in the same way that accuracy does — since all three metrics ultimately measure how well the model predicts across the full dataset.#No — accuracy uses all four cells. Precision uses only TP and FP; recall uses only TP and FN. Each formula deliberately ignores two of the four cells to focus on a specific failure mode.
+#### Tests LO4: identifying which confusion-matrix cells feed precision vs recall (corpus §5.5).
+}
+
+::q5:: A bank builds a fraud-detection model and reports 99% accuracy. A colleague argues the confusion matrix is still necessary. Which scenario best explains why the matrix reveals something accuracy cannot? {
+~The confusion matrix is only useful when accuracy is below 90%, because at 99% the high score signals that all four cells are well-distributed and no single cell is inflating the total at the expense of another.#No — accuracy can be high precisely because the dataset is imbalanced, which is exactly when the matrix is most revealing, not least useful.
+~The confusion matrix is only needed for models with more than two output classes, not for the binary fraud-or-no-fraud case where there are just two outcomes and accuracy already tells the full story.#No — the confusion matrix was designed for binary classification. It is the standard tool for exactly this kind of two-class task, and it is most valuable when class imbalance hides failures.
+=If only 1% of transactions are fraudulent, a model that flags nothing achieves 99% accuracy but has zero true positives — the matrix exposes this immediately through a true-positive count of zero.#Correct — when the negative class dominates, a model can reach very high accuracy by ignoring the positive class entirely. The matrix separates true positives from true negatives and makes this failure visible.
+~The confusion matrix would show the same information as accuracy alone, because both metrics are ultimately computed from the total number of correct predictions divided by the total number of predictions made.#No — accuracy collapses all correct predictions into one number. The matrix separates true positives from true negatives, showing whether correctness is driven by catching fraud or by ignoring it.
+#### Tests LO5: describing a real-world situation where the confusion matrix reveals what accuracy hides (corpus §7).
+}

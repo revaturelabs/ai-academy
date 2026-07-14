@@ -1,0 +1,69 @@
+{
+  "topic_id": "5.5",
+  "generated_at": "2026-06-22T07:30:00Z",
+  "format": "gift",
+  "question_count": 6,
+  "profile": "standard",
+  "include_short_answer": false,
+  "$bias_defense_applied": true,
+  "$shuffle_seed": "topic-id-hash:sha256('5.5')",
+  "shuffle_method": "Per-MCQ uniform random shuffle of =/~ answer lines, seeded by topic-id hash; redrawn with incrementing salt until post-shuffle constraint held (max_share <= 0.40 and all 4 positions used, since quiz has >=6 MCQs).",
+  "correct_position_distribution": [0, 2, 1, 3, 0, 3],
+  "correct_position_constraint_check": {
+    "counts_by_position": { "0": 2, "1": 1, "2": 1, "3": 2 },
+    "max_share": 0.3333,
+    "max_share_threshold": 0.40,
+    "max_share_ok": true,
+    "all_four_positions_used": true,
+    "passes": true
+  },
+  "option_length_balance": {
+    "note": "Within each MCQ, all four options were equalized in word count so the correct (=) option is NOT systematically the longest; correct-option length is comparable to its distractors (within ~+/-20% of the per-question mean). Length-bias defect avoided.",
+    "longest_option_is_correct_count": 0,
+    "per_question_longest_is_correct": [false, false, false, false, false, false]
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "type": "mcq",
+      "objective_ref": "Explain in plain language what AI red-teaming is and why a team tests its own system on purpose.",
+      "lo": "LO1",
+      "correct_position": 0
+    },
+    {
+      "id": "q2",
+      "type": "mcq",
+      "objective_ref": "Describe why this adversarial testing happens before deployment, not after.",
+      "lo": "LO2",
+      "correct_position": 2
+    },
+    {
+      "id": "q3",
+      "type": "mcq",
+      "objective_ref": "Name who typically does red-teaming and the three points in time when it happens.",
+      "lo": "LO3",
+      "correct_position": 1
+    },
+    {
+      "id": "q4",
+      "type": "mcq",
+      "objective_ref": "List the main categories of attacks and failures a red team probes for.",
+      "lo": "LO4",
+      "correct_position": 3
+    },
+    {
+      "id": "q5",
+      "type": "mcq",
+      "objective_ref": "Connect red-teaming back to the harm-prevention pillar and to the real failures from topics 5.1-5.3.",
+      "lo": "LO5",
+      "correct_position": 0
+    },
+    {
+      "id": "q6",
+      "type": "mcq",
+      "objective_ref": "Describe why this adversarial testing happens before deployment, not after; applied via the test->find->fix->re-test loop and the ongoing timeline.",
+      "lo": "LO2+LO3 (applied: regression loop + ongoing timeline)",
+      "correct_position": 3
+    }
+  ]
+}

@@ -1,0 +1,53 @@
+$CATEGORY: CIT/M5/week-13/13-7-the-5-role-context-framework-authority-exemplar-constraint-r
+
+::q1:: In the 5-role context framework, which role tells the model who it is and what its highest-level purpose is — and takes priority over all other roles if there is a conflict? {
+~Constraint#No — Constraint tells the model what it must not do, not who it is.
+=Authority#Correct — Authority defines the model's identity and primary purpose, and sits at the top of the priority stack.
+~Rubric#No — Rubric describes the required output structure and quality, not the model's identity.
+~Metadata#No — Metadata supplies per-request facts such as the date or user tier; it does not define identity.
+#### Tests LO1: naming the Authority role and its position in the priority stack (corpus §5, Role 1).
+}
+
+::q2:: A student writes a prompt that starts with "You are a homework-help tutor." Then she adds an example showing a correct worked solution, followed by the instruction\: "Never give the final answer directly — guide the student step by step." Which part of the 5-role context framework does that final instruction belong to? {
+~Authority#No — Authority sets the model's identity and primary purpose, not a list of prohibited behaviours.
+~Exemplar#No — Exemplar provides one or more example input-output pairs that show the model what a good response looks like, not a rule about what to avoid.
+~Rubric#No — Rubric describes the required format and quality structure of the output, not a prohibition on specific behaviours.
+=Constraint#Correct — the Constraint role holds negative instructions and guardrails about what the model must not do.
+#### Tests LO2: mapping a prompt fragment onto the correct role (corpus §5, Role 3).
+}
+
+::q3:: A developer wants to build a 5-role prompt in Python so she can update one role at a time and clearly see the effect on output. Which approach does the corpus recommend? {
+=Creating a Python dictionary with one key per role, then assembling with "\n\n".join() in priority order#Correct — the corpus recommends a dictionary with one key per role so each role can be inspected, updated, and versioned independently, then joined in priority order for final assembly.
+~Concatenating all five role strings into one variable with + and passing the result to the model#No — concatenation creates one undifferentiated block, so you cannot inspect, update, or version each role independently; any change requires editing the whole combined string.
+~Writing all context directly in the system= argument of the API call as a single multiline string#No — embedding all roles inline as one string makes each role invisible and hard to change; you lose the ability to update a single role without rewriting the entire block.
+~Storing the full prompt in a text file and reading it at runtime with open()#No — a text file still mixes all five roles in one block; you cannot update one role independently or see which text belongs to which role without reading the whole file.
+#### Tests LO3: assembling a 5-role prompt using a Python dictionary structure (corpus §8, steps 1–7).
+}
+
+::q4:: A bank-support prompt includes an Exemplar (example exchange) where the assistant shares a customer's full account number, and a Constraint that says "Never share full account numbers." According to the 5-role priority rule, which role wins this conflict? {
+~Exemplar wins because the model directly observes the correct behaviour in the example#No — although the model does observe the example, the priority rule explicitly places Constraint above Exemplar; when they conflict, Constraint wins and the designer should fix the example.
+~Rubric wins because it defines what a well-formed response looks like#No — Rubric sits at priority 4 in the stack and cannot override Exemplar (priority 2) or Constraint (priority 3); only Authority and Exemplar outrank Constraint, and neither is in conflict here.
+=Constraint wins because the priority rule states Constraint overrides Exemplar when they conflict#Correct — the corpus states that if an example shows something a constraint forbids, the constraint wins; the designer should also fix the example to remove the contradiction.
+~Metadata wins because it provides the most specific per-request context for this interaction#No — Metadata is the lowest priority (5) in the stack and cannot override any other role; it supplies facts but has no authority to resolve a conflict between higher-priority roles.
+#### Tests LO4: applying the priority rule to resolve a conflict between Exemplar and Constraint (corpus §5, priority table; §7, Mistake 5).
+}
+
+::q5:: A student builds a recipe-assistant prompt that includes Authority, Constraint, and Metadata, but leaves out both Exemplar and Rubric. According to the corpus, what output problem is most likely caused specifically by the missing Rubric? {
+~The model will produce unsafe recipe suggestions because it lacks identity guidance#No — safety failures are caused by a missing Constraint, which is already included in this prompt; a missing Rubric causes format inconsistency, not safety failures, so this distractor confuses two separate roles.
+=The output structure will vary from request to request — sometimes numbered steps, sometimes paragraphs — because the model picks its own format without a Rubric#Correct — the corpus states that without a Rubric the model chooses its own output format every time, producing inconsistent structure.
+~The model will give generic answers because it does not have per-request facts about the user#No — generic answers instead of personalised ones are the consequence of missing Metadata, not missing Rubric; Metadata supplies per-request facts like user name or date, which Rubric does not.
+~The model will adopt the wrong persona because it does not know what style to imitate#No — persona and tone are controlled by Authority and Exemplar, both of which may be absent here; a missing Rubric causes format and length variation, not persona drift.
+#### Tests LO5: evaluating a prompt for a missing role and identifying the resulting output problem (corpus §5 "Why does this matter?"; §7, Mistake 3).
+}
+
+::q6:: List all five role names in the 5-role context framework in order from highest to lowest priority. {
+=Authority, Exemplar, Constraint, Rubric, Metadata
+=authority, exemplar, constraint, rubric, metadata
+#### Tests LO1: recalling all five role names and their priority order (corpus §5, priority table).
+}
+
+::q7:: When two roles in a prompt give contradictory instructions, the 5-role framework resolves the conflict using a priority rule. Write that rule as a sequence of role names from highest to lowest priority, separated by ">" symbols. {
+=Authority > Exemplar > Constraint > Rubric > Metadata
+=authority > exemplar > constraint > rubric > metadata
+#### Tests LO4: recalling the full priority order used for conflict resolution (corpus §5, priority table).
+}

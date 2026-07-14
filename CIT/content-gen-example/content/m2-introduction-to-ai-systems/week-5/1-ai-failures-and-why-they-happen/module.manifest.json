@@ -1,0 +1,20 @@
+{
+  "type": "module",
+  "position": 1,
+  "title": "AI Failures and Why They Happen",
+  "slug": "1-ai-failures-and-why-they-happen",
+  "course_code": "M2",
+  "course_slug": "m2-introduction-to-ai-systems",
+  "week_nums": [
+    5
+  ],
+  "session_name_by_week": {
+    "5": "AI Ethics, Safety and Governance"
+  },
+  "narrative_seed_by_week": {
+    "5": "Real failure cases — healthcare misdiagnosis, hiring bias, deepfake harm / Hallucination — why AI states falsehoods confidently / Data bias — biased training data produces biased model output / The four pillars — fairness, transparency, accountability, harm prevention / Red-teaming — systematically breaking your own system before deploying / Prompt injection — how attackers manipulate AI through crafted inputs / AI Governance Frameworks (brief overview) / EU AI Act: risk-tiered regulation — unacceptable / high / limited / minimal risk; high-risk system obligations include documentation, testing, human oversight; prohibited uses include social scoring and real-time biometric surveillance / NIST AI Risk Management Framework (RMF): four functions — Govern, Map, Measure, Manage; voluntary but widely adopted in enterprise and government / White House Executive Order on AI (2023): mandatory safety testing for frontier models, transparency requirements, civil rights protections, federal agency AI governance guidance / India AI governance: MEITY advisory guidelines — evolving but directionally aligned with global frameworks / Key takeaway: knowing which framework applies to your system is part of the engineering job — not just an ethics discussion"
+  },
+  "lab_activity_seed_by_week": {
+    "5": "Each student writes a 500-word structured essay — one AI success + one AI failure case / Must cover: what went right/wrong, who was accountable, what should change / 3-minute individual presentation to faculty, one challenge question"
+  }
+}

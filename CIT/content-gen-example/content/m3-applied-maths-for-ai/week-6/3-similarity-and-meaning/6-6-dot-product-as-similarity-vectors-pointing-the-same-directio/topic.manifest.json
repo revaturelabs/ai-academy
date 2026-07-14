@@ -1,0 +1,48 @@
+{
+  "type": "topic",
+  "id": "6.6",
+  "title": "Dot product as similarity \u00e2\u20ac\u201d vectors pointing the same direction score high",
+  "slug": "6-6-dot-product-as-similarity-vectors-pointing-the-same-directio",
+  "position_in_module": 1,
+  "week_num": 6,
+  "session_name": "Numbers, Vectors and Meaning",
+  "module": {
+    "position": 3,
+    "slug": "3-similarity-and-meaning",
+    "title": "Similarity and Meaning"
+  },
+  "course": {
+    "code": "M3",
+    "slug": "m3-applied-maths-for-ai",
+    "title": "Applied Maths for AI"
+  },
+  "next_assessment": {
+    "id": "A2",
+    "due_week": 6,
+    "title": "AI Systems Essay",
+    "weight": "15%"
+  },
+  "paths": {
+    "corpus": "topic_corpus.md",
+    "resources": "topic.resources.json",
+    "progress": "topic.progress.json",
+    "artifacts_dir": "artifacts/",
+    "critic_reports_dir": "critic-reports/"
+  },
+  "artifact_plan": {
+    "diagram": true,
+    "diagram_intent": "Arrow diagram: left panel = vectors A and B pointing same direction (dot product high positive); right panel = A and opposite vector (negative); third = perpendicular (zero). Reinforces direction-score relationship.",
+    "depth_profile": "atomic",
+    "depth_signals": "Single core algorithm (multiply pairs, sum); one geometric concept; no branching sub-procedures.",
+    "reading_word_range": [
+      400,
+      650
+    ],
+    "quiz_question_range": [
+      3,
+      4
+    ]
+  },
+  "expected_delivery_minutes": 5,
+  "status": "corpus_drafted"
+}

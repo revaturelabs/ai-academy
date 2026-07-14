@@ -1,0 +1,11 @@
+{
+  "topic_id": "14.3",
+  "artifact": "reading",
+  "word_count": 1473,
+  "reading_minutes": 8,
+  "target_word_range": [1200, 1600],
+  "sections": ["Overview", "Key Concepts", "Worked Example", "In Practice", "Key Takeaways", "References"],
+  "citations": {"R1": true, "R2": true, "R3": true, "R4": true, "R5": true},
+  "diagram_embedded": false,
+  "generated_at": "2026-06-15T00:00:00Z"
+}

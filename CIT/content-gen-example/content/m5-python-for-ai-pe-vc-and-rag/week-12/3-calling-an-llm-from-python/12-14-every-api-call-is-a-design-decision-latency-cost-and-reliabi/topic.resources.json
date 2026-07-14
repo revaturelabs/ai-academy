@@ -1,0 +1,23 @@
+{
+  "topic_id": "12.14",
+  "captured_at": "2026-06-15T00:00:00Z",
+  "captured_by": "vishnu.vardhan@revature.com",
+  "resources_source": "web_search",
+  "web_search_query": "Anthropic API latency cost reliability model selection design considerations 2026",
+  "resources": [
+    {
+      "type": "url",
+      "value": "https://artificialanalysis.ai/providers/anthropic",
+      "role": "primary",
+      "source": "web_search",
+      "notes": "Independent latency/throughput/cost data across Claude models — concrete numbers for model selection trade-offs (Haiku vs Sonnet vs Opus)"
+    },
+    {
+      "type": "url",
+      "value": "https://www.finout.io/blog/anthropic-api-pricing",
+      "role": "supporting",
+      "source": "web_search",
+      "notes": "Anthropic API pricing 2026 — model tier costs, batch/caching savings, cost optimization strategies"
+    }
+  ]
+}

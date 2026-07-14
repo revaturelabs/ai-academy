@@ -1,0 +1,41 @@
+$CATEGORY: CIT/M1/week-1/1-9-algorithmic-thinking-what-makes-a-set-of-steps-an-algorithm
+
+::q1::[html]Which of the following best describes what an algorithm is? {
+~A step-by-step method that only works when written in a programming language#Not quite — an algorithm is defined by the precision of its steps, not the language they are written in. A recipe or a set of directions can be an algorithm too.
+~Any numbered list of instructions that tells someone what to do#Not quite — numbering steps alone does not make them an algorithm. The steps also need to be precise, complete, and leave no room for guesswork.
+=A precise set of steps that anyone can follow to reach the same result every time#Correct — an algorithm is precise, complete, and anyone-can-follow, producing the same result regardless of who runs it.
+~A plan that gives the overall goal of a task, leaving the details to the person carrying it out#Not quite — leaving details to the person defeats the purpose. An algorithm spells out every step so no judgment is needed.
+#### Tests the core definition of an algorithm (corpus §5.1). A common beginner mistake is to confuse any list of steps, or any code, with an algorithm.
+}
+
+::q2::[html]A student writes two steps for making toast\: "1. Put bread in the toaster. 2. Enjoy your toast." What is the main reason this does NOT qualify as an algorithm? {
+=It is missing steps — the process cannot be completed from what is written alone#Correct — missing steps are a core failure mode. An algorithm must include every action needed to reach the goal, with no gaps.
+~It is too short — a real algorithm always needs at least ten steps to count as one#No — length is not the standard. An algorithm can be short; what matters is that every needed step is present and precise.
+~It uses everyday language instead of code — algorithms must be written in a programming syntax#No — algorithms can be written in plain language. The medium is not the requirement; completeness and precision are.
+~It does not state a goal at the top — algorithms must always begin with a purpose statement#No — an algorithm does not need a purpose statement at the top. The gap here is missing actions, not a missing header.
+#### Tests the distinction between an arbitrary list of steps and a true algorithm (corpus §5.2). The "missing steps" failure mode is one of three ways a list of steps can fall short.
+}
+
+::q3::[html]You are writing instructions for a friend who has never used a washing machine before. Which approach best reflects algorithmic thinking? {
+~Write a short note saying "Wash clothes as usual — you will figure it out once you see the machine"#This relies entirely on judgment and leaves every decision open. A person with no experience cannot follow it, and a machine certainly could not.
+~List the main stages — "sort, load, set, run, unload" — and trust that the details are obvious from the labels#Listing stages without filling in the details leaves vague gaps. "Set" and "run" still require knowing which settings to choose and which buttons to press.
+~Describe the goal ("clean clothes") and the expected result, and let the reader decide the best method for their machine#Describing only the goal and result, without the steps in between, is not algorithmic. An algorithm must specify each action, not just the start and end.
+=Write every step in precise order — each setting, each action — so the friend can follow without guessing#Correct — algorithmic thinking means writing instructions precise enough to follow without judgment or extra knowledge. Every decision is spelled out.
+#### Tests applying algorithmic thinking to a familiar everyday task (corpus §5.3). The mindset is: could someone follow this without asking me anything?
+}
+
+::q4::[html]Look at these four steps for deciding whether a student passed an exam (passing mark\: 50 or above)\: "1. Read the score. 2. If the score is 50 or above, write Pass. 3. If the score is below 50, write Fail. 4. Stop." Do these steps form an algorithm? {
+~No — the steps are too simple. A real algorithm must handle many different situations and edge cases before it counts#No — simplicity does not disqualify a set of steps. These four steps satisfy all requirements of an algorithm.
+=Yes — the steps are unambiguous, the decision rule is explicit, and there is a stopping point and a result#Correct — these steps meet all three properties of an algorithm\: unambiguous steps, a clear stopping point, and a defined result.
+~No — the steps are written in plain language, not in code, so they are a description rather than an algorithm#No — an algorithm does not need to be in code. Plain language can express an algorithm perfectly well, as long as the steps are precise and complete.
+~Yes, but only barely — the steps would only become a true algorithm after being entered into a computer#No — whether steps are entered into a computer is irrelevant to whether they qualify as an algorithm. These steps already meet all the criteria.
+#### Tests identifying whether a given set of steps qualifies as an algorithm (corpus §5.6). This is the "Version B" contrast from the worked example.
+}
+
+::q5::[html]Why does a vague instruction — such as "do the right thing here" — cause a problem when a computer tries to follow it? {
+~Computers can only read instructions written in specific formats, so plain-language phrases cause a syntax error#This confuses a formatting issue with a precision issue. The problem is not the format; it is that there is no defined rule for the machine to follow.
+~Computers are too fast to stop and interpret vague language, so they skip unclear steps automatically#Computers do not skip steps on their own. The problem is that a vague step provides no defined action, not that the machine is moving too quickly.
+=A vague instruction gives no rule to follow, so the same input can produce different outputs each time#Correct — vagueness destroys determinism. Without a precise rule, different runs of the same process can produce different results, which breaks the core promise of computation.
+~Vague instructions slow computation down because the machine must spend time searching for extra information before it can proceed#Computers do not search for missing information on their own. They either halt, pick an arbitrary action, or produce unpredictable output.
+#### Tests why unambiguous instructions matter for computation (corpus §5.4). Links to the determinism concept introduced in topic 1.2.
+}

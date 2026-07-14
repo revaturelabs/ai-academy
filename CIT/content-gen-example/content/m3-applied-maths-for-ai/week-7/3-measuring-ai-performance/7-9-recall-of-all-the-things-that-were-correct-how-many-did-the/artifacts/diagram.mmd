@@ -1,0 +1,54 @@
+---
+title: "Precision vs Recall — Two Different Denominators"
+config:
+  theme: base
+  themeVariables:
+    primaryColor: "#a5d8ff"
+    primaryBorderColor: "#4a9eed"
+    lineColor: "#555"
+  flowchart:
+    htmlLabels: true
+    curve: basis
+    nodeSpacing: 50
+    rankSpacing: 70
+---
+flowchart LR
+    classDef start fill:#a5d8ff,stroke:#4a9eed
+    classDef auto fill:#d0bfff,stroke:#8b5cf6
+    classDef done fill:#b2f2bb,stroke:#22c55e
+    classDef miss fill:#ffd8d8,stroke:#e05555
+
+    subgraph PREC["PRECISION — denominator: flagged set only"]
+        direction TB
+        P1["<b>Items model flagged</b><br/><span style='font-size:12px;color:#555'>60 posts flagged</span>"]
+        P2["<b>Correct flags</b><br/><span style='font-size:12px;color:#555'>True Positives = 50</span>"]
+        P3["<b>Wrong flags</b><br/><span style='font-size:12px;color:#555'>False Positives = 10</span>"]
+        P4["<b>Precision = 50 ÷ 60 = 0.83</b><br/><span style='font-size:12px;color:#6d28d9'>out of everything flagged</span>"]
+        P1 --> P2
+        P1 --> P3
+        P2 --> P4
+        P3 --> P4
+    end
+
+    subgraph RECL["RECALL — denominator: ALL genuinely positive items"]
+        direction TB
+        R1["<b>All genuinely harmful items</b><br/><span style='font-size:12px;color:#555'>100 posts total</span>"]
+        R2["<b>Correct flags</b><br/><span style='font-size:12px;color:#555'>True Positives = 50</span>"]
+        R3["<b>Missed by model</b><br/><span style='font-size:12px;color:#555'>False Negatives = 50</span>"]
+        R4["<b>Recall = 50 ÷ 100 = 0.50</b><br/><span style='font-size:12px;color:#6d28d9'>out of ALL genuinely positive</span>"]
+        R1 --> R2
+        R1 --> R3
+        R2 --> R4
+        R3 --> R4
+    end
+
+    PREC ~~~ RECL
+
+    class P1 start
+    class P2 done
+    class P3 miss
+    class P4 auto
+    class R1 start
+    class R2 done
+    class R3 miss
+    class R4 auto

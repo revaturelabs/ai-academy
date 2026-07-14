@@ -1,0 +1,60 @@
+{
+  "type": "topic",
+  "id": "5.5",
+  "title": "Red-teaming — systematically testing your own system for failure before deployment",
+  "slug": "5-5-red-teaming-systematically-testing-your-own-system-for-failu",
+  "position_in_module": 1,
+  "week_num": 5,
+  "session_name": "AI Ethics, Safety and Governance",
+  "module": {
+    "position": 3,
+    "slug": "3-safety-practices",
+    "title": "Safety Practices"
+  },
+  "course": {
+    "code": "M2",
+    "slug": "m2-introduction-to-ai-systems",
+    "title": "Introduction to AI Systems"
+  },
+  "next_assessment": {
+    "id": "A2",
+    "due_week": 6,
+    "title": "AI Systems Essay",
+    "weight": "15%"
+  },
+  "paths": {
+    "corpus": "topic_corpus.md",
+    "resources": "topic.resources.json",
+    "progress": "topic.progress.json",
+    "artifacts_dir": "artifacts/",
+    "critic_reports_dir": "critic-reports/"
+  },
+  "artifact_plan": {
+    "diagram": true,
+    "diagram_intent": "Cycle diagram of the red-team loop Plan→Attack→Find→Fix→Re-test (regression) looping back to Attack, with the 3-point timeline (before deploy / after updates / ongoing) as surrounding context.",
+    "suggested_profile": "deep",
+    "suggested_profile_signals": "title contains 'system'; Core Concepts has 5 sub-concepts (what/why/who/timeline/attack-categories); Implementation 5-step loop; Real-World Patterns warranted; home topic 5.4 deferred red-teaming here; week has a Lab. NOTE: honest beginner word count (~1320) sits in standard band, not deep — builder refused to pad into 5.6/governance scope.",
+    "confirmed_profile": "standard",
+    "confirmed_at_hitl2": true,
+    "hitl2_depth_note": "Intrinsic signal deep (structural), but downgraded one step to standard at HITL #2: honest beginner length is standard-band and padding would force 5.6/governance scope creep; budget also favors standard (6.4 vs 6.0 min/future). Diagram retained (cycle is visual).",
+    "reading": {
+      "target_word_range": [
+        1200,
+        1600
+      ],
+      "target_minutes": [
+        6,
+        8
+      ]
+    },
+    "quiz": {
+      "min_questions": 5,
+      "max_questions": 6,
+      "include_short_answer": false
+    }
+  },
+  "depth_profile": "standard",
+  "depth_signals": "Confirmed standard at HITL #2 (downgraded from structural-deep). Reading ~1200-1600w; diagram kept for the Plan→Attack→Find→Fix→Re-test cycle.",
+  "expected_delivery_minutes": 7,
+  "status": "module_passed"
+}

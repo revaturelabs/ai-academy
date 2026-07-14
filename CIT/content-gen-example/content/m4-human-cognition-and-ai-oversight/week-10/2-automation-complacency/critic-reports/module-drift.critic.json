@@ -1,0 +1,87 @@
+{
+  "module": "2-automation-complacency",
+  "week_num": 10,
+  "generated_at": "2026-06-13T00:00:00Z",
+  "verdict": "pass",
+  "topics_checked": ["10.4"],
+  "checks": {
+    "terminology_consistency": {
+      "status": "pass",
+      "findings": [
+        {
+          "severity": "info",
+          "topic": "10.4",
+          "finding": "Single-topic module — cross-topic synonym drift check is trivially satisfied. All six introduced concepts (automation complacency, vigilance, vigilance decay, accuracy paradox, trust calibration, out-of-the-loop performance decrement) are used with consistent labelling throughout the corpus.",
+          "fix": "No action required."
+        }
+      ]
+    },
+    "prerequisites_respected": {
+      "status": "pass",
+      "findings": [
+        {
+          "severity": "info",
+          "topic": "10.4",
+          "finding": "All listed prerequisites (10.1, 10.2, 10.3) have lower topic IDs and appear earlier in sequence.index.json. The corpus's Section 2 correctly maps each borrowed term to its source topic: 'human override point' and 'override as theater' from 10.1, 'failure mode' from 10.2, 'accountability chain' and 'diffuse accountability' from 10.3.",
+          "fix": "No action required."
+        }
+      ]
+    },
+    "learning_arc": {
+      "status": "pass",
+      "findings": [
+        {
+          "severity": "info",
+          "topic": "10.4",
+          "finding": "The module's stated outcome (automation complacency — how high accuracy makes humans less vigilant) is fully covered by the six Learning Objectives: definition and distinction from general inattention (LO1), accuracy paradox (LO2), causal chain (LO3), vigilance decay identification (LO4), connection to override-as-theater (LO5), and real-world domain examples (LO6). No facet of the module title is left uncovered.",
+          "fix": "No action required."
+        }
+      ]
+    },
+    "no_duplicated_core_concepts": {
+      "status": "pass",
+      "findings": [
+        {
+          "severity": "info",
+          "topic": "10.4",
+          "finding": "Single-topic module — duplicate Core Concepts check is trivially satisfied.",
+          "fix": "No action required."
+        }
+      ]
+    },
+    "lab_activity_alignment": {
+      "status": "pass",
+      "findings": [
+        {
+          "severity": "soft",
+          "topic": "10.4",
+          "finding": "The module lab seed for week 10 references three primary activities: (1) Apply the Judgment Framework to your domain system, (2) Design the human-in-the-loop checkpoint for your Capstone, (3) write a 200-word post-mortem. Topic 10.4's hands-on exercise (Section 9) is a personal vigilance self-audit — appropriate for the complacency concept but does not scaffold activity (1) or (3). The Judgment Framework is explicitly deferred to later topics in Section 8. This is acceptable because the lab seed is a week-level activity spanning all six week-10 topics; activities (1) and (3) are scaffolded by later topics (10.5, 10.6, 10.7). However, no week-10 topic in this module currently introduces the Judgment Framework before the lab applies it.",
+          "fix": "Verify that topic 10.5 or 10.6 introduces the Judgment Framework before the lab session. If 10.4 is used as a standalone lab stop-point, add a forward pointer in Section 8 confirming which topic number covers the Judgment Framework."
+        }
+      ]
+    },
+    "audience_level_consistency": {
+      "status": "pass",
+      "findings": [
+        {
+          "severity": "soft",
+          "topic": "10.4",
+          "finding": "The term 'cognitive' appears several times (e.g. 'cognitively expensive', 'cognitive trap', 'cognitive self-audit') without an explicit definition. For an absolute-beginner audience this is likely familiar enough from everyday usage to be non-blocking, but a one-line gloss on first use ('cognitive — relating to mental thought processes') would reduce the vocabulary burden.",
+          "fix": "On first use of 'cognitively expensive' (Section 5, Vigilance sub-section), add a parenthetical: '(cognitively — relating to mental effort and thought processes)'."
+        },
+        {
+          "severity": "info",
+          "topic": "10.4",
+          "finding": "'Base error rate' is used in Section 7 (Medical Imaging AI sub-section) with an inline gloss: 'the irreducible percentage of cases any system gets wrong'. Adequate for beginners.",
+          "fix": "No action required."
+        },
+        {
+          "severity": "info",
+          "topic": "10.4",
+          "finding": "'Out-of-the-loop performance decrement' is introduced and explained within the corpus (Section 7, Aviation sub-section). Not a cold use.",
+          "fix": "No action required."
+        }
+      ]
+    }
+  }
+}

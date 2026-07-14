@@ -1,0 +1,53 @@
+{
+  "topic_id": "5.2",
+  "question_count": 5,
+  "bias_defense_applied": true,
+  "$bias_defense_applied": true,
+  "shuffle_seed": "cycle2-length-fix",
+  "$shuffle_seed": "cycle2-length-fix",
+  "correct_position_distribution": {"0": 1, "1": 1, "2": 2, "3": 1},
+  "correct_positions_ordered": [2, 0, 3, 1, 2],
+  "max_share": 0.40,
+  "length_parity_check": "pass",
+  "length_parity_notes": "All 5 questions: correct/mean ratio — q1:1.06, q2:1.03, q3:1.01, q4:1.12, q5:1.14 — all within 1.20 threshold",
+  "objective_ref": {
+    "q1": "LO1 — why confident false outputs",
+    "q2": "LO2 — next-token prediction",
+    "q3": "LO3 — intrinsic vs extrinsic",
+    "q4": "LO4 — I don't know problem",
+    "q5": "LO5 — real-world harm + confidence"
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "type": "mcq",
+      "objective_ref": "LO1 — why an LLM produces a confident-sounding answer even when that answer is false",
+      "correct_position": 2
+    },
+    {
+      "id": "q2",
+      "type": "mcq",
+      "objective_ref": "LO2 — what next-token prediction is and how it drives both correct and incorrect outputs",
+      "correct_position": 0
+    },
+    {
+      "id": "q3",
+      "type": "mcq",
+      "objective_ref": "LO3 — distinguishing intrinsic hallucination from extrinsic hallucination",
+      "correct_position": 3
+    },
+    {
+      "id": "q4",
+      "type": "mcq",
+      "objective_ref": "LO4 — why an LLM cannot simply say I don't know by default",
+      "correct_position": 1
+    },
+    {
+      "id": "q5",
+      "type": "mcq",
+      "objective_ref": "LO5 — real-world harm domains and why confidence makes hallucination worse",
+      "correct_position": 2
+    }
+  ],
+  "generated_at": "2026-06-17T00:00:00Z"
+}

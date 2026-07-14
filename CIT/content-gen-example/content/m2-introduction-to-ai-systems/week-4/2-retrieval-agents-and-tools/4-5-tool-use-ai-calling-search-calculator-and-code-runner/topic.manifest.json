@@ -1,0 +1,44 @@
+{
+  "type": "topic",
+  "id": "4.5",
+  "title": "Tool use — AI calling search, calculator, and code runner",
+  "slug": "4-5-tool-use-ai-calling-search-calculator-and-code-runner",
+  "position_in_module": 3,
+  "week_num": 4,
+  "session_name": "The 2026 AI Stack",
+  "module": {
+    "position": 2,
+    "slug": "2-retrieval-agents-and-tools",
+    "title": "Retrieval, Agents and Tools"
+  },
+  "course": {
+    "code": "M2",
+    "slug": "m2-introduction-to-ai-systems",
+    "title": "Introduction to AI Systems"
+  },
+  "next_assessment": {
+    "id": "A2",
+    "due_week": 6,
+    "title": "AI Systems Essay",
+    "weight": "15%"
+  },
+  "paths": {
+    "corpus": "topic_corpus.md",
+    "resources": "topic.resources.json",
+    "progress": "topic.progress.json",
+    "artifacts_dir": "artifacts/",
+    "critic_reports_dir": "critic-reports/"
+  },
+  "artifact_plan": {
+    "depth_profile": "deep",
+    "depth_profile_source": "hitl_override_budget_driven",
+    "depth_signals": ["focused sub-concept of agent architecture from 4.4", "6-subsection Core Concepts", "budget avg 18 min/topic for remaining 3 topics exceeds 14-min upgrade threshold", "corpus builder intrinsic: standard — upgraded one step"],
+    "reading": { "target_word_range": [1800, 2200], "target_minutes": [9, 11] },
+    "quiz": { "min_questions": 5, "max_questions": 7, "include_short_answer": true },
+    "diagram": true,
+    "diagram_intent": "Four-step tool-use cycle: LLM decides → structured request → routing software executes external tool (search / calculator / code runner) → result returns to LLM → final answer to user.",
+    "corpus_review_notes": "sandboxed environment gloss deferred to reading artifact (soft finding accepted as-is in corpus)"
+  },
+  "expected_delivery_minutes": 10,
+  "status": "corpus_approved"
+}

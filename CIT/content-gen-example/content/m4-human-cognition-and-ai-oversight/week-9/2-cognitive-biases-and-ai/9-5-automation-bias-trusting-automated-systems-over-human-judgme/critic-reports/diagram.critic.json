@@ -1,0 +1,55 @@
+{
+  "verdict": "pass",
+  "cycle": 1,
+  "findings": [
+    {
+      "code": "label_too_long",
+      "where": "nodes PA and PB (cycle 0, pre-revision)",
+      "detail": "Bold label 'Human accepts without independent check' was 5 words and 'Human follows directive despite contradicting evidence' was 6 words. Revised to 'Accepts without checking' (3 words) and 'Follows despite contradicting evidence' (4 words) in cycle 1. Causal detail moved to 12px subtitle spans. Findings resolved before final write."
+    },
+    {
+      "code": "looks_good",
+      "where": "whole canvas",
+      "detail": "Clean 5-node TD branch diagram: SRC (blue) forks via 'Path A' and 'Path B' edges to PA and PB (both purple), which each flow to their respective error terminals EA and EB (both red). Two-column layout at TD direction; no node overlap or truncation expected at 1400px. All causal mechanism labels placed as 12px subtitle spans inside nodes rather than edge labels, avoiding edge-label collision risk. Color palette: blue start (source), purple path (process nodes), red error (terminal results) — semantically coherent and distinct from HITL yellow."
+    },
+    {
+      "code": "looks_good",
+      "where": "concept-drift check",
+      "detail": "All five node labels trace directly to corpus §5 Core Concepts: 'Automated system produces output' (§5.1, Introduction §4), 'Accepts without checking' (§5.2 omission pathway + §5.3 cognitive offloading), 'Follows despite contradicting evidence' (§5.2 commission error definition), 'Omission error' (§5.2, §10 vocabulary), 'Commission error' (§5.2, §10 vocabulary). Subtitle terms 'Cognitive offloading', 'System 1 shortcut', 'Complacency', 'perceived reliability' are all defined in §5.3. No Judgment Framework (9.7–9.9) or other forward-topic nodes present."
+    },
+    {
+      "code": "looks_good",
+      "where": "title discipline",
+      "detail": "Governing concept 'Automation Bias — Two Error Paths' placed in --- config title: field. No ghost node displacement of the central organizing idea. The two branch paths and their causal labels correctly represent the two error types as intermediate nodes, not title-level concepts."
+    },
+    {
+      "code": "looks_good",
+      "where": "branch discipline",
+      "detail": "Intent explicitly specifies a decision branch (two parallel paths from one source), so SRC having 2 outgoing edges is correct per the spec. This is a genuinely non-linear relationship, not a linear_flow_branched violation. The branch structure reads cleanly top-down as intended."
+    },
+    {
+      "code": "looks_good",
+      "where": "layout direction",
+      "detail": "flowchart TD matches the spec requirement ('flowchart TD — top-down, one source node branching into two parallel paths, each ending in an error result node'). 5 nodes, 4 edges: within 3–8 node range."
+    }
+  ],
+  "preflight": {
+    "mermaid_parse": "pass (valid --- config block with title/theme/themeVariables/flowchart keys; flowchart TD declaration; bracket-notation nodes with HTML labels; classDef and class assignments all resolved; edge labels quoted)",
+    "node_count": "pass (5 nodes: SRC, PA, PB, EA, EB — within 3–8 range)",
+    "label_discipline": "pass (all bold labels ≤ 4 words after cycle-1 revision: 'Automated system produces output' 4w, 'Accepts without checking' 3w, 'Follows despite contradicting evidence' 4w, 'Omission error' 2w, 'Commission error' 2w)",
+    "concept_fidelity": "pass (all labels trace to corpus §5.1–5.3 Core Concepts; subtitles trace to §5.3 mechanisms; no adjacent-topic drift)",
+    "jargon_labels": "pass (no bare unexplained acronyms; 'System 1' appears only in a subtitle, defined in corpus §5.3 via prerequisite 9.1; all bold node labels are plain English)",
+    "title_discipline": "pass (governing concept in config title: field; no ghost nodes used)",
+    "branch_discipline": "pass (intent calls for a two-path decision branch; SRC outgoing edges are intentional non-linear structure, not a collapsed-linear violation)"
+  },
+  "stats": {
+    "nodes": 5,
+    "edges": 4,
+    "layout": "flowchart TD (top-down branch)",
+    "labels": ["Automated system produces output", "Accepts without checking", "Follows despite contradicting evidence", "Omission error", "Commission error"],
+    "mmd_path": "content/m4-human-cognition-and-ai-oversight/week-9/2-cognitive-biases-and-ai/9-5-automation-bias-trusting-automated-systems-over-human-judgme/artifacts/diagram.mmd",
+    "png_path": "content/m4-human-cognition-and-ai-oversight/week-9/2-cognitive-biases-and-ai/9-5-automation-bias-trusting-automated-systems-over-human-judgme/artifacts/diagram.png",
+    "png_render_command": "mmdc -i diagram.mmd -o diagram.png -w 1400 -b transparent",
+    "png_render_status": "pending — mmdc not executable in current file-tool-only environment; PNG must be rendered by running the command above from the artifacts/ directory"
+  }
+}

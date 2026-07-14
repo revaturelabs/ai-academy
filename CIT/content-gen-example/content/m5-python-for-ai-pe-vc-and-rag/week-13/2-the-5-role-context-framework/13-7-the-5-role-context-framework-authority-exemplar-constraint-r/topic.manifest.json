@@ -1,0 +1,61 @@
+{
+  "type": "topic",
+  "id": "13.7",
+  "title": "The 5-role context framework — Authority, Exemplar, Constraint, Rubric, Metadata",
+  "slug": "13-7-the-5-role-context-framework-authority-exemplar-constraint-r",
+  "position_in_module": 1,
+  "week_num": 13,
+  "session_name": "Prompt Engineering and Version Control",
+  "module": {
+    "position": 2,
+    "slug": "2-the-5-role-context-framework",
+    "title": "The 5-Role Context Framework"
+  },
+  "course": {
+    "code": "M5",
+    "slug": "m5-python-for-ai-pe-vc-and-rag",
+    "title": "Python for AI, PE, VC and RAG"
+  },
+  "next_assessment": {
+    "id": "A4",
+    "due_week": 13,
+    "title": "Python and Prompt Engineering Portfolio",
+    "weight": "20%"
+  },
+  "paths": {
+    "corpus": "topic_corpus.md",
+    "resources": "topic.resources.json",
+    "progress": "topic.progress.json",
+    "artifacts_dir": "artifacts/",
+    "critic_reports_dir": "critic-reports/"
+  },
+  "artifact_plan": {
+    "diagram": true,
+    "diagram_intent": "A vertically stacked diagram showing the five roles in priority order from top (Authority) to bottom (Metadata), with a left-side arrow labelled 'conflict wins upward' and right-side labels showing what each role controls.",
+    "depth_profile": "atomic",
+    "depth_profile_source": "budget_adjusted",
+    "reading": {
+      "target_min_minutes": 4,
+      "target_max_minutes": 6,
+      "target_word_range": [
+        800,
+        1200
+      ]
+    },
+    "quiz": {
+      "min_questions": 5,
+      "max_questions": 7,
+      "include_short_answer": true
+    },
+    "suggested_depth_profile": "standard",
+    "depth_signals": [
+      "five named sub-concepts each requiring individual definition",
+      "priority/conflict-resolution table",
+      "8-step implementation section",
+      "annotated worked example with table",
+      "prior-topic mapping table"
+    ]
+  },
+  "expected_delivery_minutes": 5,
+  "status": "scaffolded"
+}

@@ -1,0 +1,239 @@
+{
+  "topic_id": "7.10",
+  "stage": "topic_artifacts_approved",
+  "gates": {
+    "resources_captured": true,
+    "corpus_generated": true,
+    "corpus_critic_passed": true,
+    "corpus_human_approved": true,
+    "reading_generated": true,
+    "reading_critic_passed": true,
+    "quiz_generated": true,
+    "quiz_critic_passed": true,
+    "diagram_generated": true,
+    "diagram_critic_passed": true,
+    "module_drift_passed": true,
+    "course_drift_passed": true,
+    "topic_artifacts_human_approved": true,
+    "week_human_approved": true
+  },
+  "history": [
+    {
+      "at": "2026-06-23T05:56:03Z",
+      "op": "set",
+      "gate": "resources_captured",
+      "value": true
+    },
+    {
+      "at": "2026-06-23T05:56:04Z",
+      "op": "stage",
+      "to": "awaiting_corpus"
+    },
+    {
+      "at": "2026-06-23T05:56:04Z",
+      "op": "log",
+      "msg": "Captured 1 resource (source=web_search)"
+    },
+    {
+      "at": "2026-06-23T06:00:04Z",
+      "op": "set",
+      "gate": "corpus_generated",
+      "value": true
+    },
+    {
+      "at": "2026-06-23T06:00:05Z",
+      "op": "stage",
+      "to": "awaiting_corpus_critic"
+    },
+    {
+      "at": "2026-06-23T06:00:05Z",
+      "op": "log",
+      "msg": "Corpus generated — standard depth, diagram required (2x2 confusion matrix)"
+    },
+    {
+      "at": "2026-06-23T06:02:41Z",
+      "op": "set",
+      "gate": "corpus_critic_passed",
+      "value": false
+    },
+    {
+      "at": "2026-06-23T06:02:41Z",
+      "op": "log",
+      "msg": "Corpus critic fail cycle 1 — citation density §5/§6, drift: ground_truth/threshold/positive_class, readability x3"
+    },
+    {
+      "at": "2026-06-23T06:07:58Z",
+      "op": "set",
+      "gate": "corpus_critic_passed",
+      "value": true
+    },
+    {
+      "at": "2026-06-23T06:07:59Z",
+      "op": "stage",
+      "to": "awaiting_corpus_human_review"
+    },
+    {
+      "at": "2026-06-23T06:07:59Z",
+      "op": "log",
+      "msg": "Corpus critic passed cycle 2 — citations fixed, ground_truth/positive_class defined, threshold removed"
+    },
+    {
+      "at": "2026-06-23T06:18:26Z",
+      "op": "set",
+      "gate": "corpus_human_approved",
+      "value": true
+    },
+    {
+      "at": "2026-06-23T06:18:26Z",
+      "op": "stage",
+      "to": "corpus_approved"
+    },
+    {
+      "at": "2026-06-23T06:18:26Z",
+      "op": "log",
+      "msg": "HITL #2 passed — all sections approved, standard depth, diagram required"
+    },
+    {
+      "at": "2026-06-23T06:22:31Z",
+      "op": "set",
+      "gate": "diagram_generated",
+      "value": true
+    },
+    {
+      "at": "2026-06-23T06:22:31Z",
+      "op": "set",
+      "gate": "diagram_critic_passed",
+      "value": true
+    },
+    {
+      "at": "2026-06-23T06:22:31Z",
+      "op": "stage",
+      "to": "awaiting_diagram_critic"
+    },
+    {
+      "at": "2026-06-23T06:22:32Z",
+      "op": "log",
+      "msg": "Diagram generated + critic passed — 2x2 confusion matrix, annotation fix applied cycle 2"
+    },
+    {
+      "at": "2026-06-23T06:24:36Z",
+      "op": "set",
+      "gate": "reading_generated",
+      "value": true
+    },
+    {
+      "at": "2026-06-23T06:24:37Z",
+      "op": "stage",
+      "to": "awaiting_reading_critic"
+    },
+    {
+      "at": "2026-06-23T06:24:37Z",
+      "op": "log",
+      "msg": "Reading generated — 1298 words, 7 min, diagram embedded"
+    },
+    {
+      "at": "2026-06-23T06:24:45Z",
+      "op": "set",
+      "gate": "quiz_generated",
+      "value": true
+    },
+    {
+      "at": "2026-06-23T06:24:45Z",
+      "op": "stage",
+      "to": "awaiting_quiz_critic"
+    },
+    {
+      "at": "2026-06-23T06:24:45Z",
+      "op": "log",
+      "msg": "Quiz generated — 5 MCQ, positions [1,3,0,1,2], max_share 40%"
+    },
+    {
+      "at": "2026-06-23T06:26:28Z",
+      "op": "set",
+      "gate": "quiz_critic_passed",
+      "value": false
+    },
+    {
+      "at": "2026-06-23T06:26:28Z",
+      "op": "log",
+      "msg": "Quiz critic fail cycle 1 — length bias q3/q4/q5 (ratios 1.77/1.33/1.76)"
+    },
+    {
+      "at": "2026-06-23T06:27:27Z",
+      "op": "set",
+      "gate": "reading_critic_passed",
+      "value": true
+    },
+    {
+      "at": "2026-06-23T06:27:27Z",
+      "op": "stage",
+      "to": "reading_approved"
+    },
+    {
+      "at": "2026-06-23T06:29:43Z",
+      "op": "set",
+      "gate": "quiz_critic_passed",
+      "value": true
+    },
+    {
+      "at": "2026-06-23T06:29:43Z",
+      "op": "stage",
+      "to": "quiz_approved"
+    },
+    {
+      "at": "2026-06-23T06:29:44Z",
+      "op": "log",
+      "msg": "Quiz critic passed cycle 2 — length bias resolved (rate 1/5)"
+    },
+    {
+      "at": "2026-06-23T06:29:44Z",
+      "op": "stage",
+      "to": "awaiting_topic_artifacts_review"
+    },
+    {
+      "at": "2026-06-23T06:40:04Z",
+      "op": "set",
+      "gate": "topic_artifacts_human_approved",
+      "value": true
+    },
+    {
+      "at": "2026-06-23T06:40:05Z",
+      "op": "stage",
+      "to": "topic_artifacts_approved"
+    },
+    {
+      "at": "2026-06-23T06:40:05Z",
+      "op": "log",
+      "msg": "HITL #3 approved — reading 1298w/7min, quiz 5MCQ cycle-2, diagram pass"
+    },
+    {
+      "at": "2026-06-23T07:33:16Z",
+      "op": "set",
+      "gate": "module_drift_passed",
+      "value": true
+    },
+    {
+      "at": "2026-06-23T07:33:43Z",
+      "op": "set",
+      "gate": "week_human_approved",
+      "value": true
+    },
+    {
+      "at": "2026-06-23T07:33:52Z",
+      "op": "set",
+      "gate": "module_drift_passed",
+      "value": true
+    },
+    {
+      "at": "2026-06-23T00:00:00Z",
+      "op": "set",
+      "gate": "course_drift_passed",
+      "value": true
+    },
+    {
+      "at": "2026-06-23T00:00:00Z",
+      "op": "log",
+      "msg": "course-drift-critic cycle 2 PASS — M3 W6/W7/W8 all checks pass; W6 warn -23.3%, W7 ok -13.3%, W8 warn -23.3%; no hard fails"
+    }
+  ]
+}

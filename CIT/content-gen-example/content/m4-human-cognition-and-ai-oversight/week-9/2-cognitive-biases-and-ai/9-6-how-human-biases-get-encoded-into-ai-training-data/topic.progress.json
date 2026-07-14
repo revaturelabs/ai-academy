@@ -1,0 +1,223 @@
+{
+  "topic_id": "9.6",
+  "stage": "topic_artifacts_approved",
+  "gates": {
+    "resources_captured": true,
+    "corpus_generated": true,
+    "corpus_critic_passed": true,
+    "corpus_human_approved": true,
+    "reading_generated": true,
+    "reading_critic_passed": true,
+    "quiz_generated": true,
+    "quiz_critic_passed": true,
+    "diagram_generated": true,
+    "diagram_critic_passed": true,
+    "module_drift_passed": true,
+    "course_drift_passed": false,
+    "topic_artifacts_human_approved": true,
+    "week_human_approved": true
+  },
+  "history": [
+    {
+      "at": "2026-06-12T11:02:25Z",
+      "op": "set",
+      "gate": "resources_captured",
+      "value": true
+    },
+    {
+      "at": "2026-06-12T11:02:25Z",
+      "op": "stage",
+      "to": "awaiting_corpus"
+    },
+    {
+      "at": "2026-06-12T11:02:25Z",
+      "op": "log",
+      "msg": "Captured 3 resources (source=web_search)"
+    },
+    {
+      "at": "2026-06-12T11:07:10Z",
+      "op": "set",
+      "gate": "corpus_generated",
+      "value": true
+    },
+    {
+      "at": "2026-06-12T11:07:11Z",
+      "op": "stage",
+      "to": "awaiting_corpus_critic"
+    },
+    {
+      "at": "2026-06-12T11:09:48Z",
+      "op": "set",
+      "gate": "corpus_critic_passed",
+      "value": true
+    },
+    {
+      "at": "2026-06-12T11:09:48Z",
+      "op": "stage",
+      "to": "awaiting_corpus_human_review"
+    },
+    {
+      "at": "2026-06-12T11:09:48Z",
+      "op": "log",
+      "msg": "Corpus critic pass (2 soft findings fixed inline: proxy variable defined, LO6 appositive stripped)"
+    },
+    {
+      "at": "2026-06-12T12:46:28Z",
+      "op": "set",
+      "gate": "corpus_human_approved",
+      "value": true
+    },
+    {
+      "at": "2026-06-12T12:46:28Z",
+      "op": "stage",
+      "to": "corpus_approved"
+    },
+    {
+      "at": "2026-06-12T12:46:28Z",
+      "op": "log",
+      "msg": "HITL #2 approved — all sections pass, depth=standard"
+    },
+    {
+      "at": "2026-06-12T12:48:46Z",
+      "op": "set",
+      "gate": "diagram_generated",
+      "value": true
+    },
+    {
+      "at": "2026-06-12T12:48:46Z",
+      "op": "set",
+      "gate": "diagram_critic_passed",
+      "value": true
+    },
+    {
+      "at": "2026-06-12T12:48:46Z",
+      "op": "stage",
+      "to": "corpus_approved"
+    },
+    {
+      "at": "2026-06-12T13:39:32Z",
+      "op": "set",
+      "gate": "reading_generated",
+      "value": true
+    },
+    {
+      "at": "2026-06-12T13:39:32Z",
+      "op": "set",
+      "gate": "quiz_generated",
+      "value": true
+    },
+    {
+      "at": "2026-06-12T13:39:32Z",
+      "op": "stage",
+      "to": "awaiting_reading_critic"
+    },
+    {
+      "at": "2026-06-12T13:41:50Z",
+      "op": "set",
+      "gate": "reading_critic_passed",
+      "value": true
+    },
+    {
+      "at": "2026-06-12T13:41:50Z",
+      "op": "set",
+      "gate": "quiz_critic_passed",
+      "value": false
+    },
+    {
+      "at": "2026-06-12T13:41:50Z",
+      "op": "log",
+      "msg": "Quiz critic cycle 1 failed: length_bias=0.50 (q1,q3,q6 correct longest); LO6 uncovered (Judgment Framework name question missing)"
+    },
+    {
+      "at": "2026-06-12T13:47:30Z",
+      "op": "log",
+      "msg": "Quiz critic cycle 2: manual fix applied — q1/q3 correct trimmed, q6 replaced with LO6 Judgment Framework question, meta updated"
+    },
+    {
+      "at": "2026-06-12T13:57:02Z",
+      "op": "set",
+      "gate": "quiz_critic_passed",
+      "value": false
+    },
+    {
+      "at": "2026-06-12T13:57:02Z",
+      "op": "log",
+      "msg": "CARRY-OVER: quiz LO3 (critic: q2-q5 test mechanism recognition, not example-to-mechanism recall) + LO4 partial (only automation bias half tested by q5; confirmation bias side untested). All bias checks PASS. Cycle 2 exhausted."
+    },
+    {
+      "at": "2026-06-12T13:57:06Z",
+      "op": "stage",
+      "to": "awaiting_topic_artifacts_review"
+    },
+    {
+      "at": "2026-06-13T06:42:06Z",
+      "op": "stage",
+      "to": "awaiting_quiz_critic"
+    },
+    {
+      "at": "2026-06-13T06:42:13Z",
+      "op": "log",
+      "msg": "HITL #3 request-changes: quiz walk-back to awaiting_quiz_critic. Rework: add LO3 example-recall question (canonical case not named in stem) + LO4 confirmation-bias-in-data-collection question; replace weakest existing question(s), keep total at 6q."
+    },
+    {
+      "at": "2026-06-13T06:49:29Z",
+      "op": "set",
+      "gate": "quiz_generated",
+      "value": true
+    },
+    {
+      "at": "2026-06-13T06:49:30Z",
+      "op": "stage",
+      "to": "awaiting_quiz_critic"
+    },
+    {
+      "at": "2026-06-13T06:54:03Z",
+      "op": "set",
+      "gate": "quiz_critic_passed",
+      "value": true
+    },
+    {
+      "at": "2026-06-13T06:54:03Z",
+      "op": "stage",
+      "to": "quiz_approved"
+    },
+    {
+      "at": "2026-06-13T06:54:03Z",
+      "op": "log",
+      "msg": "Quiz critic cycle 3 PASS: LO3 (q3 healthcare proxy case + q4 facial recognition retagged) + LO4+LO5 (q5 combo retraining loop question). All 5 checks pass."
+    },
+    {
+      "at": "2026-06-13T06:54:12Z",
+      "op": "stage",
+      "to": "awaiting_topic_artifacts_review"
+    },
+    {
+      "at": "2026-06-13T06:56:26Z",
+      "op": "set",
+      "gate": "topic_artifacts_human_approved",
+      "value": true
+    },
+    {
+      "at": "2026-06-13T06:56:26Z",
+      "op": "stage",
+      "to": "topic_artifacts_approved"
+    },
+    {
+      "at": "2026-06-13T06:56:27Z",
+      "op": "log",
+      "msg": "HITL #3 approved — reading 1530w/7min, quiz 6MCQ cycle-3 pass (LO3+LO4 gaps resolved), diagram cycle-1 pass"
+    },
+    {
+      "at": "2026-06-13T17:52:40Z",
+      "op": "set",
+      "gate": "module_drift_passed",
+      "value": true
+    },
+    {
+      "at": "2026-06-13T17:56:25Z",
+      "op": "set",
+      "gate": "week_human_approved",
+      "value": true
+    }
+  ]
+}

@@ -1,0 +1,80 @@
+{
+  "topic_id": "3.5",
+  "generated_at": "2026-06-17T00:00:00Z",
+  "format": "gift",
+  "question_count": 5,
+  "$bias_defense_applied": true,
+  "$shuffle_seed": "topic-3.5-hash-xor-0",
+  "correct_position_distribution": [2, 0, 3, 1, 2],
+  "position_share": {
+    "0": 1,
+    "1": 1,
+    "2": 2,
+    "3": 1
+  },
+  "max_share_fraction": 0.40,
+  "max_share_constraint_passed": true,
+  "all_positions_used": true,
+  "questions": [
+    {
+      "id": "q1",
+      "type": "mcq",
+      "objective_ref": "Define what a parameter (weight) is in a neural network, using a plain-language explanation that a non-technical person could follow.",
+      "correct_position": 2,
+      "length_check": {
+        "correct_chars": 61,
+        "mean_distractor_chars": 54.0,
+        "threshold_120pct": 64.8,
+        "passed": true
+      }
+    },
+    {
+      "id": "q2",
+      "type": "mcq",
+      "objective_ref": "Explain how parameters encode knowledge — describing what gets compressed into weights during training.",
+      "correct_position": 0,
+      "length_check": {
+        "correct_chars": 52,
+        "mean_distractor_chars": 48.3,
+        "threshold_120pct": 58.0,
+        "passed": true
+      }
+    },
+    {
+      "id": "q3",
+      "type": "mcq",
+      "objective_ref": "Describe why parameter count (scale) matters for capability, with reference to the concept of scaling laws.",
+      "correct_position": 3,
+      "length_check": {
+        "correct_chars": 67,
+        "mean_distractor_chars": 62.0,
+        "threshold_120pct": 74.4,
+        "passed": true
+      }
+    },
+    {
+      "id": "q4",
+      "type": "mcq",
+      "objective_ref": "Explain what quantisation is and why the same model can appear at different file sizes without changing its parameter count.",
+      "correct_position": 1,
+      "length_check": {
+        "correct_chars": 61,
+        "mean_distractor_chars": 65.3,
+        "threshold_120pct": 78.4,
+        "passed": true
+      }
+    },
+    {
+      "id": "q5",
+      "type": "mcq",
+      "objective_ref": "Apply an understanding of parameter count to practical model-selection decisions, such as trading capability for speed or cost.",
+      "correct_position": 2,
+      "length_check": {
+        "correct_chars": 73,
+        "mean_distractor_chars": 76.7,
+        "threshold_120pct": 92.0,
+        "passed": true
+      }
+    }
+  ]
+}

@@ -1,0 +1,65 @@
+{
+  "type": "topic",
+  "id": "12.5",
+  "title": "Dictionaries — key-value pairs for structured data",
+  "slug": "12-5-dictionaries-key-value-pairs-for-structured-data",
+  "position_in_module": 5,
+  "week_num": 12,
+  "session_name": "Python Foundations II and Calling an LLM",
+  "module": {
+    "position": 1,
+    "slug": "1-functions-and-data-structures",
+    "title": "Functions and Data Structures"
+  },
+  "course": {
+    "code": "M5",
+    "slug": "m5-python-for-ai-pe-vc-and-rag",
+    "title": "Python for AI, PE, VC and RAG"
+  },
+  "next_assessment": {
+    "id": "A4",
+    "due_week": 13,
+    "title": "Python and Prompt Engineering Portfolio",
+    "weight": "20%"
+  },
+  "paths": {
+    "corpus": "topic_corpus.md",
+    "resources": "topic.resources.json",
+    "progress": "topic.progress.json",
+    "artifacts_dir": "artifacts/",
+    "critic_reports_dir": "critic-reports/"
+  },
+  "artifact_plan": {
+    "diagram": true,
+    "diagram_intent": "Side-by-side visual of a list (numbered slots) vs a dictionary (labelled key→value slots) to make the index-vs-key distinction concrete",
+    "confirmed_profile": "standard",
+    "suggested_profile": "standard",
+    "profile_signals": ["title is a data structure with multiple access and iteration patterns", "Implementation section warranted", "Real-World Patterns section warranted", "parallel scope to 12.4 which was standard"],
+    "reading": {
+      "target_word_range": [1200, 1600],
+      "target_minutes_range": [6, 8]
+    },
+    "quiz": {
+      "min_questions": 5,
+      "max_questions": 6,
+      "include_short_answer": false
+    },
+    "sections_approved": {
+      "2_prerequisites": true,
+      "3_learning_objectives": true,
+      "4_introduction": true,
+      "5_core_concepts": true,
+      "6_implementation": true,
+      "7_real_world_patterns": true,
+      "8_best_practices": true,
+      "9_hands_on_exercise": true,
+      "10_key_takeaways": true
+    },
+    "soft_findings_carry_forward": [
+      "API acronym not spelled out on first use (§4) — insert 'API (Application Programming Interface)' at first occurrence in reading",
+      "IndexError in §5.2 comparison table undefined — replace with plain label or add defer pointer in reading"
+    ]
+  },
+  "expected_delivery_minutes": 7,
+  "status": "scaffolded"
+}

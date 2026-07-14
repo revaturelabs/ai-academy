@@ -1,0 +1,75 @@
+{
+  "topic_id": "1.11",
+  "critic": "quiz-critic",
+  "cycle": 2,
+  "passed": true,
+  "checks": {
+    "hard_prerequisites": {
+      "passed": true,
+      "meta_exists": true,
+      "bias_defense_applied": true
+    },
+    "positional_bias": {
+      "passed": true,
+      "distribution": {"0": 1, "1": 2, "2": 2, "3": 1},
+      "max_share": 0.333,
+      "threshold": 0.40,
+      "meta_gift_desync": false,
+      "note": "Derived positions from GIFT match sidecar exactly; max_share 0.333 < 0.40."
+    },
+    "length_bias": {
+      "passed": true,
+      "longest_correct_rate": 0.0,
+      "baseline": 0.25,
+      "threshold": 0.40,
+      "per_question": [
+        {"id": "1-11-q1", "correct_len": 75, "distractor_mean": 83.0,  "ratio": 0.904, "longest_correct": false},
+        {"id": "1-11-q2", "correct_len": 76, "distractor_mean": 65.67, "ratio": 1.157, "longest_correct": false},
+        {"id": "1-11-q3", "correct_len": 77, "distractor_mean": 72.0,  "ratio": 1.069, "longest_correct": false},
+        {"id": "1-11-q4", "correct_len": 96, "distractor_mean": 92.67, "ratio": 1.036, "longest_correct": false},
+        {"id": "1-11-q5", "correct_len": 94, "distractor_mean": 91.33, "ratio": 1.029, "longest_correct": false},
+        {"id": "1-11-q6", "correct_len": 110, "distractor_mean": 93.33, "ratio": 1.179, "longest_correct": false}
+      ],
+      "note": "All six ratios < 1.20; 0/6 questions are longest-correct. Cycle 2 fixes to Q1/Q4/Q5 confirmed effective."
+    },
+    "distractor_plausibility": {
+      "passed": true,
+      "absurd_rate": 0.0,
+      "total_distractors": 18,
+      "absurd_count": 0,
+      "threshold": 0.25,
+      "weakest_questions": [],
+      "note": "All 18 distractors encode plausible beginner misconceptions (minimum score 3/4). Length-only edits in cycle 2 did not introduce absurd options."
+    },
+    "objective_coverage": {
+      "passed": true,
+      "learning_objectives_found": 5,
+      "uncovered_objectives": [],
+      "orphan_questions": [],
+      "coverage_map": {
+        "LO1 — State the four properties and explain each in plain language": ["1-11-q1", "1-11-q2"],
+        "LO2 — Identify whether a given set of steps satisfies each property": ["1-11-q4"],
+        "LO3 — Give an everyday example that illustrates each property": ["1-11-q3"],
+        "LO4 — Explain why failing any one property makes instructions unreliable": ["1-11-q5"],
+        "LO5 — Apply the four-property checklist to evaluate a simple algorithm": ["1-11-q6"]
+      }
+    },
+    "beginner_fairness_and_scope": {
+      "passed": true,
+      "jargon_in_stem": [],
+      "out_of_scope_questions": [],
+      "unfair_distractors": [],
+      "note": "All stems use plain language; all terms (finiteness, definiteness, input, output) are defined in corpus. No advanced or adjacent-topic content detected."
+    }
+  },
+  "auto_correction_applied": {
+    "shuffle_round_2": false
+  },
+  "cycle_1_failures_resolved": {
+    "q1_length_bias": {"cycle_1_ratio": 1.26, "cycle_2_ratio": 0.904, "resolved": true},
+    "q4_length_bias": {"cycle_1_ratio": 1.46, "cycle_2_ratio": 1.036, "resolved": true},
+    "q5_length_bias": {"cycle_1_ratio": 1.33, "cycle_2_ratio": 1.029, "resolved": true}
+  },
+  "verdict": "Pass — all five checks clean; Q1/Q4/Q5 length-bias failures from cycle 1 resolved, 0/6 questions are longest-correct.",
+  "at": "2026-06-22T00:00:00Z"
+}

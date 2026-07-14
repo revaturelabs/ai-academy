@@ -1,0 +1,10 @@
+{
+  "topic_id": "12.10",
+  "title": "The Anthropic API — model, messages array, system prompt, user prompt, authentication",
+  "estimated_read_minutes": 7,
+  "word_count": 1319,
+  "generated_at": "2026-06-15T00:00:00Z",
+  "embeds_diagram": true,
+  "citations_used": [1, 2, 3],
+  "sections": ["Overview", "Key Concepts", "Worked Example", "In Practice", "Key Takeaways", "References"]
+}

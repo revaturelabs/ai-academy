@@ -1,0 +1,80 @@
+{
+  "topic_id": "8.5",
+  "generated_at": "2026-06-22T07:30:00Z",
+  "format": "gift",
+  "question_count": 7,
+  "mcq_count": 5,
+  "short_answer_count": 2,
+  "$bias_defense_applied": true,
+  "$shuffle_seed": "sha1(8.5)=a1b8c... topic-id-hash",
+  "correct_position_distribution": [2, 0, 3, 1, 2],
+  "positional_distribution_summary": {
+    "position_0": 1,
+    "position_1": 1,
+    "position_2": 2,
+    "position_3": 1,
+    "max_share": 0.4,
+    "all_four_positions_used": true,
+    "constraint_max_share_leq_0_40": true
+  },
+  "length_balance": {
+    "correct_systematically_longest": false,
+    "note": "Each MCQ's options are matched in word count; correct answer carries the same 'value + brief reason' shape as its distractors."
+  },
+  "objective_coverage": [
+    "Read a confusion matrix and name each of its four cells (TP, FP, FN, TN)",
+    "Define accuracy and write its formula in terms of the four cells",
+    "Compute accuracy, precision, recall, and F1 by hand from a given confusion matrix",
+    "Build a confusion matrix yourself by tallying a small table of predictions against the truth",
+    "Explain why accuracy alone can mislead when one class is rare"
+  ],
+  "questions": [
+    {
+      "id": "q1",
+      "type": "mcq",
+      "objective_ref": "Read a confusion matrix and name each of its four cells: TP, FP, FN, TN",
+      "correct_position": 2,
+      "correct_letter": "C"
+    },
+    {
+      "id": "q2",
+      "type": "mcq",
+      "objective_ref": "Define accuracy and write its formula in terms of the four cells",
+      "correct_position": 0,
+      "correct_letter": "A"
+    },
+    {
+      "id": "q3",
+      "type": "mcq",
+      "objective_ref": "Compute precision by hand from a given confusion matrix (read the column, not the row)",
+      "correct_position": 3,
+      "correct_letter": "D"
+    },
+    {
+      "id": "q4",
+      "type": "mcq",
+      "objective_ref": "Compute recall by hand from a given confusion matrix (read the row, not the column)",
+      "correct_position": 1,
+      "correct_letter": "B"
+    },
+    {
+      "id": "q5",
+      "type": "mcq",
+      "objective_ref": "Build a confusion matrix by tallying predictions against the truth and sanity-check the total",
+      "correct_position": 2,
+      "correct_letter": "C"
+    },
+    {
+      "id": "q6",
+      "type": "short_answer",
+      "objective_ref": "Compute precision by hand from a given small confusion matrix",
+      "accepted_answers": ["0.67", "0.67 ±0.01", "2/3", "0.6666666666666666"]
+    },
+    {
+      "id": "q7",
+      "type": "short_answer",
+      "objective_ref": "Explain why accuracy alone can mislead when one class is rare (which metric reveals the missed positives and why)",
+      "accepted_answers": ["recall", "recall = TP/(TP+FN) = 0 while accuracy stays high because true negatives dominate a rare-positive total"]
+    }
+  ]
+}

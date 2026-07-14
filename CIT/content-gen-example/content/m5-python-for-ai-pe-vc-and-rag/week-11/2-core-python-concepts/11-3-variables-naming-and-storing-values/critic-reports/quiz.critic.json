@@ -1,0 +1,42 @@
+{
+  "passed": true,
+  "checks": {
+    "positional_bias": {
+      "passed": true,
+      "distribution": [
+        {"position": 0, "count": 2, "share": 0.333},
+        {"position": 1, "count": 1, "share": 0.167},
+        {"position": 2, "count": 1, "share": 0.167},
+        {"position": 3, "count": 2, "share": 0.333}
+      ],
+      "max_share": 0.333
+    },
+    "length_bias": {
+      "passed": true,
+      "longest_correct_rate": 0.0,
+      "per_question_ratios": [1.191, 1.110, 0.848, 1.010, 0.846, 1.194]
+    },
+    "distractor_plausibility": {
+      "passed": true,
+      "absurd_rate": 0.0
+    },
+    "objective_coverage": {
+      "passed": true,
+      "uncovered_objectives": [],
+      "coverage_map": {
+        "LO1": "q1",
+        "LO2": "q2",
+        "LO3": "q3",
+        "LO4": "q4",
+        "LO5": "q5",
+        "LO6": "q6"
+      }
+    },
+    "beginner_scope": {
+      "passed": true,
+      "findings": []
+    }
+  },
+  "verdict": "All 5 checks pass — no positional or length bias, all 6 LOs covered, distractors plausible, no out-of-scope concepts.",
+  "at": "2026-06-12T00:28:00Z"
+}

@@ -1,0 +1,25 @@
+{
+  "topic_id": "2.3",
+  "captured_at": "2026-06-16",
+  "source": "web_search",
+  "resources": [
+    {
+      "type": "primary",
+      "title": "Specification-Driven Development: How AI is Transforming Software Engineering",
+      "url": "https://medium.com/@wanimohit1/specification-driven-development-how-ai-is-transforming-software-engineering-c01510ea03e3",
+      "notes": "Covers specification components: inputs, expected outputs, verification — directly maps to the six-component checklist"
+    },
+    {
+      "type": "primary",
+      "title": "Prompt Engineering Best Practices",
+      "url": "https://launchdarkly.com/blog/prompt-engineering-best-practices/",
+      "notes": "LaunchDarkly guide — specifying output format, edge cases, and failure conditions for AI tasks"
+    },
+    {
+      "type": "primary",
+      "title": "AI Agent Failure Modes: What Goes Wrong in Production",
+      "url": "https://galileo.ai/blog/agent-failure-modes-guide",
+      "notes": "Galileo — six failure modes including specification drift and silent failure; grounding for why failure conditions matter"
+    }
+  ]
+}

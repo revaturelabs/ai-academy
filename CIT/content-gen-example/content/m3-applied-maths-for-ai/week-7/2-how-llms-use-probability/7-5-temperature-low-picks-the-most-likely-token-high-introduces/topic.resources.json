@@ -1,0 +1,30 @@
+{
+  "topic_id": "7.5",
+  "captured_at": "2026-06-23T00:00:00Z",
+  "captured_by": "namratas@revature.com",
+  "resources_source": "web_search",
+  "web_search_query": "LLM temperature sampling token probability distribution explained",
+  "resources": [
+    {
+      "type": "url",
+      "value": "https://www.ibm.com/think/topics/llm-temperature",
+      "role": "primary",
+      "source": "web_search",
+      "notes": "IBM canonical explainer — authoritative, accessible, audience-appropriate"
+    },
+    {
+      "type": "url",
+      "value": "https://arxiv.org/pdf/2402.05201",
+      "role": "supporting",
+      "source": "web_search",
+      "notes": "Primary research — empirical evidence on temperature effects on LLM problem solving"
+    },
+    {
+      "type": "url",
+      "value": "https://machinelearningplus.com/gen-ai/llm-temperature-top-p-top-k-explained/",
+      "role": "supporting",
+      "source": "web_search",
+      "notes": "Practical walkthrough with Python simulations of temperature, top-p, top-k"
+    }
+  ]
+}

@@ -1,0 +1,45 @@
+{
+  "type": "topic",
+  "id": "12.4",
+  "title": "Lists — storing and iterating over multiple values",
+  "slug": "12-4-lists-storing-and-iterating-over-multiple-values",
+  "position_in_module": 4,
+  "week_num": 12,
+  "session_name": "Python Foundations II and Calling an LLM",
+  "module": {
+    "position": 1,
+    "slug": "1-functions-and-data-structures",
+    "title": "Functions and Data Structures"
+  },
+  "course": {
+    "code": "M5",
+    "slug": "m5-python-for-ai-pe-vc-and-rag",
+    "title": "Python for AI, PE, VC and RAG"
+  },
+  "next_assessment": {
+    "id": "A4",
+    "due_week": 13,
+    "title": "Python and Prompt Engineering Portfolio",
+    "weight": "20%"
+  },
+  "paths": {
+    "corpus": "topic_corpus.md",
+    "resources": "topic.resources.json",
+    "progress": "topic.progress.json",
+    "artifacts_dir": "artifacts/",
+    "critic_reports_dir": "critic-reports/"
+  },
+  "artifact_plan": {
+    "diagram": true,
+    "diagram_intent": "Ordered list of boxes (index 0–4) showing the list structure, followed by an iteration flow arrow stepping through each box in sequence — illustrates both the storage structure and the for-loop traversal in one visual",
+    "confirmed_profile": "standard",
+    "suggested_profile": "standard",
+    "profile_signals": ["title is a mid-length concept phrase covering a data structure AND an iteration pattern", "Implementation section warranted", "Real-World Patterns section warranted", "lab activity in Week 12 directly uses lists", "Core Concepts has 7 sub-concepts but all tightly scoped to the headline", "no pipeline or multi-technology span — deep signals not met"],
+    "reading": { "target_word_range": [1200, 1600], "target_min_minutes": 6, "target_max_minutes": 8 },
+    "quiz": { "min_questions": 5, "max_questions": 6, "include_short_answer": false },
+    "sections_approved": ["2","3","4","5","6","7","8","9","10","11"],
+    "soft_findings_carry_forward": ["§7: LLM appositive — strip to bare name+pointer in reading", "§7: API appositive — strip to bare name+pointer in reading", "§7: CSV not expanded — add (Comma-Separated Values) in reading"]
+  },
+  "expected_delivery_minutes": 7,
+  "status": "corpus_approved"
+}

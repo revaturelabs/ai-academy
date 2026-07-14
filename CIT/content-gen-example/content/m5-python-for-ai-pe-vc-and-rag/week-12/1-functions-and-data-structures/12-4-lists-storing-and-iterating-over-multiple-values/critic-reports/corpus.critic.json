@@ -1,0 +1,58 @@
+{
+  "passed": true,
+  "checks": {
+    "required_sections": {
+      "passed": true,
+      "notes": "Sections 3 (Learning Objectives, 6 numbered objectives, ~120w), 4 (Introduction, ~180w), 5 (Core Concepts, 7 subsections, well over 100w), and 10 (Key Takeaways, ~130w) are all present with substantial, non-placeholder content. No literal placeholder strings found in any required section."
+    },
+    "citation_density": {
+      "passed": true,
+      "primary_cited": true,
+      "claim_citation_rate": 0.82,
+      "notes": "resources_source=web_search — strict mode applied. Primary resource [1] (Software Carpentry) is cited in nearly every subsection of Core Concepts (5.1–5.7), Implementation (6), and Real-World Patterns (7). Supporting resources [2] and [3] are cited throughout. Estimated ≥80% of standalone factual assertions in sections 5, 6, and 7 carry a [N] marker. Well above the 60% threshold. All three citation numbers resolve to declared resources; no fabricated citations detected."
+    },
+    "sequence_drift": {
+      "passed": true,
+      "forward_refs": [],
+      "notes": "All technical terms used are within the valid concept space. Concepts from 12.1 (def, function call), 12.2 (parameters, return), 12.3 (single-responsibility, refactoring context) are referenced in prerequisites only. This topic's concepts_introduced (list, item, element, index, square brackets, len(), append(), method, iterating, for item in list pattern, range(len()) pattern) are all taught here. 'dot notation' is introduced as the mechanism for explaining append() and method — both in-scope concepts. 'IndexError' is named in one sentence with an explicit 'you will learn how to handle errors in a later topic' deferral — acceptable named-and-deferred usage. 'range()' is used as part of the explicitly in-scope 'range(len()) pattern'. 'send_to_model()' appears only as a placeholder in a code comment with inline deferral. No forward references found."
+    },
+    "length_sanity": {
+      "passed": true,
+      "word_count": 2480,
+      "profile": "standard",
+      "notes": "Standard profile corpus target is 3000–4400 words. Estimated prose word count is approximately 2480 words (441 total lines; code blocks, blank lines, and table rows excluded from prose count). This is below the 3000-word lower bound but above the 30% tolerance floor (2100 words). Hard fail threshold (more than 30% outside range) is not met — corpus passes the hard rule. However, the builder should note the corpus is lean for a standard-depth topic with 7 Core Concept subsections. Recommend the builder consider expanding the Introduction or adding a brief 'Common Mistakes Explained' sub-section to bring it within the 3000–4400 target range before the reading artifact is generated."
+    },
+    "scope_creep": {
+      "passed": true,
+      "violations": [
+        {
+          "concept": "LLM with defining appositive",
+          "section": "7 (Real-World Patterns)",
+          "finding": "Section 7 writes 'LLM (Large Language Model — an AI system that generates text)'. Per scope_discipline, mention-and-defer form requires a bare name plus a topic pointer — never a defining clause or appositive. The phrase '— an AI system that generates text' constitutes a defining appositive. The violation is minimal (one clause, no further teaching), and the surrounding paragraph is clearly about list iteration patterns, not about LLMs. Soft finding only.",
+          "severity": "soft"
+        },
+        {
+          "concept": "API with defining appositive",
+          "section": "7 (Real-World Patterns)",
+          "finding": "Section 7 writes 'APIs (Application Programming Interfaces — connections to external services like AI models, which you will cover later in Week 12)'. The parenthetical expands the acronym AND adds a defining phrase. Expanding the acronym is correct (readability rule); the additional defining clause '— connections to external services...' technically violates the bare-name-plus-pointer rule. Soft finding only — the material remains about lists, not APIs.",
+          "severity": "soft"
+        }
+      ],
+      "notes": "Two soft scope_discipline infractions in section 7 — both involve minimal defining appositives on deferred concepts (LLM, API). Neither concept is taught, exercised, or examined in the corpus. No concept is taught beyond list creation, indexing, mutation by index, append(), len(), for-item-in-list iteration, and range(len()) iteration — all within the headline scope. The range(len()) pattern is explicitly in 12.4 concepts_introduced. find_highest() in section 6 uses prior-topic concepts (def, return, if/else) correctly. No hard scope_creep violations."
+    },
+    "beginner_readability": {
+      "passed": true,
+      "findings": [
+        {
+          "code": "undefined_terms",
+          "terms": ["CSV"],
+          "location": "Section 7 (Real-World Patterns), Pattern 3",
+          "detail": "'CSV file' is used in the phrase 'you will read a CSV file containing ten student marks' without expanding the acronym. CSV (Comma-Separated Values) should be spelled out on first use per the artifact-mix audience mandate 'Spell out every acronym on first use'. One-word fix: 'CSV (Comma-Separated Values) file'."
+        }
+      ],
+      "notes": "One soft finding: 'CSV' unexpanded in section 7. All other technical terms are defined on first use: list (§5.1), index (§5.2), len() (§5.4), append() (§5.5), method (§5.5), iterating (§5.6), dot notation (§5.5). No jargon dumps detected — subsections introduce terms one at a time in vocabulary bullet blocks. Register is plain, active voice, second-person throughout. No hedging language found. Sentence lengths are appropriate for a fresher audience. Fewer than 3 distinct readability findings — soft findings only, no hard escalation."
+    }
+  },
+  "verdict": "PASSED. All six checks pass at the hard-fail threshold. The corpus is well-structured, citation-dense, and stays within the headline scope. Three soft findings to address before the reading artifact is generated: (1) word count (~2480w) is below the 3000-word standard target — consider expanding the Introduction or adding a 'Common Mistakes Explained' section; (2) 'CSV' is used in section 7 without expanding the acronym — add '(Comma-Separated Values)' on first use; (3) 'LLM' and 'API' in section 7 carry short defining appositives that technically violate the bare-name-plus-pointer mention-and-defer rule — strip the defining clauses and retain only the acronym expansion + 'you will cover this later in Week 12'. No forward references. No fabricated citations. No hard scope violations.",
+  "at": "2026-06-14T00:00:00Z"
+}

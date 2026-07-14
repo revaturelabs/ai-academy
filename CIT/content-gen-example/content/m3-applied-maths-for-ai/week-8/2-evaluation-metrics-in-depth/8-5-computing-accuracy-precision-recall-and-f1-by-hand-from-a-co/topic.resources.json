@@ -1,0 +1,30 @@
+{
+  "topic_id": "8.5",
+  "captured_at": "2026-06-22T07:17:35Z",
+  "captured_by": "namratas@revature.com",
+  "resources_source": "web_search",
+  "resources": [
+    {
+      "type": "url",
+      "value": "https://developers.google.com/machine-learning/crash-course/classification/accuracy-precision-recall",
+      "role": "primary",
+      "source": "web_search",
+      "notes": "Google ML Crash Course — worked TP/TN/FP/FN confusion-matrix example, all four metrics. Canonical; continuity with 8.4."
+    },
+    {
+      "type": "url",
+      "value": "https://learn.microsoft.com/en-us/dynamics365/finance/finance-insights/confusion-matrix",
+      "role": "supporting",
+      "source": "web_search",
+      "notes": "Microsoft Learn — confusion-matrix definitions + F1 = 2×(P×R)/(P+R). First-party."
+    },
+    {
+      "type": "url",
+      "value": "https://towardsdatascience.com/confusion-matrix-made-simple-accuracy-precision-recall-f1-score/",
+      "role": "supporting",
+      "source": "web_search",
+      "notes": "Step-by-step by-hand worked example from a confusion matrix."
+    }
+  ],
+  "web_search_query": "confusion matrix compute accuracy precision recall F1 by hand worked example"
+}

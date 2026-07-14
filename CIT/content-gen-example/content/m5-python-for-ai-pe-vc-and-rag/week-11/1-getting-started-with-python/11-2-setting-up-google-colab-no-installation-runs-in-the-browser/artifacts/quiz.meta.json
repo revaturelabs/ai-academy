@@ -1,0 +1,59 @@
+{
+  "topic_id": "11.2",
+  "question_count": 6,
+  "mcq_count": 6,
+  "sa_count": 0,
+  "correct_position_distribution": [2, 0, 3, 1, 0, 2],
+  "max_share": 0.333,
+  "mean_option_length_chars": 68.54,
+  "length_bias_check": "pass",
+  "$bias_defense_applied": true,
+  "$shuffle_seed": "11.2-cit-m5",
+  "objective_coverage": {
+    "LO1": "q1",
+    "LO2": "q2",
+    "LO3": "q3",
+    "LO4": "q4",
+    "LO5": "q5",
+    "LO6": "q6"
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "type": "mcq",
+      "objective_ref": "Identify the main parts of the Google Colab interface: the notebook, code cells, text cells, the toolbar, and the runtime status indicator.",
+      "correct_position": 2
+    },
+    {
+      "id": "q2",
+      "type": "mcq",
+      "objective_ref": "Open a new Colab notebook and add both a code cell and a text cell.",
+      "correct_position": 0
+    },
+    {
+      "id": "q3",
+      "type": "mcq",
+      "objective_ref": "Run a code cell using the run button (play) and the keyboard shortcut Shift+Enter, and describe what happens in the output area.",
+      "correct_position": 3
+    },
+    {
+      "id": "q4",
+      "type": "mcq",
+      "objective_ref": "Explain what a 'runtime' and a 'session' mean in Colab, including what is lost when a session resets.",
+      "correct_position": 1
+    },
+    {
+      "id": "q5",
+      "type": "mcq",
+      "objective_ref": "Save a notebook to Google Drive and download it as a .ipynb file.",
+      "correct_position": 0
+    },
+    {
+      "id": "q6",
+      "type": "mcq",
+      "objective_ref": "Use at least two keyboard shortcuts (Shift+Enter, Ctrl+M B) to work more efficiently in Colab.",
+      "correct_position": 2
+    }
+  ],
+  "generated_at": "2026-06-12T00:19:00Z"
+}

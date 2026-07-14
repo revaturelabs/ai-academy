@@ -1,0 +1,44 @@
+{
+  "artifact": "corpus",
+  "topic_id": "8.4",
+  "passed": true,
+  "resources_source": "web_search",
+  "citation_mode": "strict",
+  "checks": {
+    "required_sections": {
+      "passed": true,
+      "detail": "Sections 3 (Learning Objectives), 4 (Introduction), 5 (Core Concepts), 10 (Key Takeaways) all present and non-trivial. Core Concepts is the bulk of the corpus, well above the 100-word floor; others above 50 words. No placeholder strings in required sections."
+    },
+    "citation_density": {
+      "passed": true,
+      "detail": "STRICT mode. Primary resource [1] (apxml F1 chapter) cited repeatedly. Supporting [2] (Google ML Crash Course) and [3] (Wikipedia F-score) both cited. Section 5 key claims carry markers well above 60% (problem [1], definition [1][3], no-average [1][3], harmonic mean [3], formula [1][3], worked intuition [1], when-to-report [1][2]); Real-World (7) carries [1][2]. Only [1][2][3] used; resources.json holds exactly 3 resources — no fabricated/unresolvable markers."
+    },
+    "sequence_drift": {
+      "passed": true,
+      "forward_refs": [],
+      "detail": "Reuse of 8.3 concepts (precision, recall, threshold, trade-off, cost-of-error) is correct, not drift. Deferred concepts are name-and-deferred only: by-hand confusion-matrix computation -> 'that practice comes in 8.5' (line 98); accuracy -> 'another metric you will meet in 8.5' (line 135). No weighted/macro/micro F variants, ROC/AUC, or calibration appear. Nothing forward is taught at depth."
+    },
+    "length_sanity": {
+      "passed": true,
+      "detail": "Approx 1250-1350 body words. Below the skill's nominal standard range (3000-4400), but this is an established intuition-only short-corpus course where near-floor counts are accepted by prior critics per task directive; not hard-failed on length alone. Soft note only."
+    },
+    "topic_scope": {
+      "passed": true,
+      "scope_creep": [],
+      "detail": "Headline = F1 as one balanced number + the harmonic-mean intuition. Corpus stays on it: the problem two numbers create, what F1 is, why-not-plain-average, harmonic-mean intuition (pulled toward the lower number), formula stated in words (computation explicitly deferred to 8.5), a worked comparison, and when to report F1 vs separate precision/recall. No deferred or adjacent concept is taught/defined at depth."
+    },
+    "beginner_readability": {
+      "passed": true,
+      "findings": [],
+      "detail": "Analogy-first intro (spam-catcher candidates) before abstraction. F1, harmonic mean, arithmetic mean all defined in plain language on first use. Short active sentences, 'you' address, comparison tables, inline examples. No jargon dump, no hedging."
+    }
+  },
+  "soft_findings": [
+    "length_below_nominal_standard_range (accepted per short-corpus course norm)",
+    "accuracy mention (line 135) carries a brief why-F1-is-preferred clause; stays a one-line contrast, not a definition of accuracy — within mention-and-defer tolerance"
+  ],
+  "verdict": "PASS — corpus stays on the F1-as-one-balanced-number headline with clean harmonic-mean intuition; strict citations satisfied (primary [1] + supporting [2][3] all resolve, density >60% in Core Concepts/Real-World, no fabricated markers); 8.3 reuse is correct, all downstream concepts (by-hand computation, accuracy, F variants, ROC/AUC, calibration) are name-and-deferred not taught; length below nominal range but within the accepted short-corpus band.",
+  "forward_refs": [],
+  "scope_creep": [],
+  "at": "2026-06-22T07:05:00Z"
+}

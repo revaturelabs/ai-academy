@@ -1,0 +1,136 @@
+{
+  "critic": "reading-critic",
+  "topic_id": "7.11",
+  "title": "Interpreting AI output variation — what it tells you about reliability",
+  "run_at": "2026-06-23T00:00:00Z",
+  "passed": true,
+  "verdict": "PASS — all hard checks clear; 1 soft finding (bold+defining-clause on prior term 'ground truth' at line 66, below escalation threshold).",
+  "checks": {
+    "format_discipline": {
+      "passed": true,
+      "frontmatter_present": false,
+      "meta_sidecar_missing": false,
+      "section_template_violation": false,
+      "sections_found": ["Overview", "Key Concepts", "Worked Example", "In Practice", "Key Takeaways", "References"],
+      "sections_expected": ["Overview", "Key Concepts", "Worked Example", "In Practice", "Key Takeaways", "References"],
+      "notes": "First non-empty line is H1 title; sidecar present and parses; all six fixed sections present in correct order."
+    },
+    "length": {
+      "passed": true,
+      "word_count": 1047,
+      "target_word_range": [800, 1200],
+      "estimated_read_minutes": 5.24,
+      "target_minute_range": [4, 6],
+      "notes": "1047 words is within 800–1200 range; 5.24 min at 200 wpm is within 4–6 min range."
+    },
+    "citations": {
+      "passed": true,
+      "primary_resource_cited": true,
+      "primary_resource": "https://www.ibm.com/think/topics/llm-temperature",
+      "primary_citation_marker": "[1]",
+      "primary_citation_count": 8,
+      "supporting_citations": {
+        "[2]": "https://cybernews.com/ai-tools/what-is-llm-temperature/",
+        "[3]": "https://tetrate.io/learn/ai/llm-temperature-guide"
+      },
+      "orphan_markers": [],
+      "orphan_bibliography_entries": [],
+      "key_claims_with_markers_pct": "~90%",
+      "notes": "All three resources cited inline; bibliography entries match markers; no orphans; >60% of key claims carry markers."
+    },
+    "prerequisite_alignment": {
+      "passed": true,
+      "findings": [
+        {
+          "severity": "soft",
+          "code": "bold_definition_on_prior_term",
+          "description": "Line 66 uses the bold+defining-clause shape '**ground truth** — the confirmed correct answer used to evaluate model outputs' for a term introduced at topic 7.10. Per the known-pattern rule, deferred or prior concepts should use bare name only (or a plain parenthetical), not the bold+definition shape. The content itself is a valid one-sentence reminder appropriate for a capstone topic, but the formatting pattern should be: 'ground truth (the confirmed correct answer from topic 7.10)' or simply 'ground truth'.",
+          "line_range": "66"
+        }
+      ],
+      "notes": "Topics 7.4 and 7.5 referenced correctly as prior knowledge without re-teaching mechanics. Ground truth (7.10) has a soft formatting violation; no re-teaching of any prior concept's mechanism."
+    },
+    "forward_reference_discipline": {
+      "passed": true,
+      "in_scope_concepts_taught": [
+        "output variation as reliability signal",
+        "temperature-adjusted variation reading",
+        "four-quadrant reliability framework",
+        "deterministic task",
+        "open-ended task",
+        "variation-based reliability measurement",
+        "consistency vs correctness distinction"
+      ],
+      "out_of_scope_concepts_taught": [],
+      "notes": "All taught concepts are within the declared scope for 7.11. No advanced adjacent concepts (F1 score, ROC curves, calibration, etc.) introduced."
+    },
+    "faithfulness": {
+      "passed": true,
+      "assertions_sampled": 10,
+      "assertions_unsupported": 0,
+      "threshold": 2,
+      "sampled_assertions": [
+        { "assertion": "Output variation is the measurable spread across AI answers to the same prompt across multiple runs", "corpus_ref": "§5.1", "supported": true },
+        { "assertion": "When probability distribution has strong mass on one answer, repeated sampling almost always lands in same place = low variation", "corpus_ref": "§5.1", "supported": true },
+        { "assertion": "You cannot interpret variation without knowing the temperature setting", "corpus_ref": "§5.2", "supported": true },
+        { "assertion": "Low temperature + high variation = reliability warning; high temperature + high variation = expected", "corpus_ref": "§5.2", "supported": true },
+        { "assertion": "Temperature-adjusted variation reading definition", "corpus_ref": "§5.2", "supported": true },
+        { "assertion": "Four quadrants: Q1 = strongest confidence, Q2 = reliability warning, Q3 = surprisingly robust, Q4 = expected for open-ended", "corpus_ref": "§5.3", "supported": true },
+        { "assertion": "Deterministic tasks — one correct answer; examples: factual recall, yes/no classification, medical symptom checking", "corpus_ref": "§5.4", "supported": true },
+        { "assertion": "A model can be confidently wrong — same incorrect answer every time with zero variation", "corpus_ref": "§5.6", "supported": true },
+        { "assertion": "Worked example: 10 runs at T=0, Yes×6 No×4, correct=Yes, Q2 reliability warning, 60% accuracy", "corpus_ref": "§5.5", "supported": true },
+        { "assertion": "Ground truth checking is the only way to know whether consistent output is also correct", "corpus_ref": "§5.6", "supported": true }
+      ]
+    },
+    "beginner_readability": {
+      "passed": true,
+      "findings": [],
+      "undefined_terms": [],
+      "jargon_dump_instances": [],
+      "abstract_first_instances": [],
+      "academic_register_instances": 0,
+      "notes": "All non-everyday terms defined at first use (LLM, output variation, temperature-adjusted variation reading, ground truth, deterministic task, open-ended task). Opening with a concrete 10-runs scenario before abstraction. Sentence length well under 25 words average. No hedging phrases detected."
+    },
+    "formatting": {
+      "passed": true,
+      "findings": [],
+      "wall_of_text_instances": [],
+      "unlisted_sequence_instances": [],
+      "no_inline_examples": false,
+      "notes": "No paragraph exceeds ~4 sentences. Worked Example uses a numbered list. In Practice uses a bullet checklist and a table. Inline examples present in Key Concepts (temperature scenario) and in deterministic/open-ended task paragraphs. Definitions use bold-term / plain-meaning shape consistently."
+    },
+    "assessment_references": {
+      "passed": true,
+      "findings": [],
+      "notes": "Line 104 references 'the week 7 lab' as a learning activity description, not an assessment ID or grade weight. No A-code, due week, or percentage found."
+    },
+    "scope_creep": {
+      "passed": true,
+      "findings": [],
+      "notes": "All concepts taught are within the 7.11 scope boundary. Prior-week topics (accuracy, precision, recall, confusion matrix) are named and pointed to, not re-taught."
+    },
+    "diagram_embed": {
+      "passed": true,
+      "artifact_plan_diagram": true,
+      "embed_found": true,
+      "embed_line": 35,
+      "embed_text": "![Four-quadrant reliability framework](./diagram.png)",
+      "notes": "Diagram embed present at line 35 with descriptive alt text and a caption."
+    }
+  },
+  "soft_findings": [
+    {
+      "code": "bold_definition_on_prior_term",
+      "check": "prerequisite_alignment",
+      "severity": "soft",
+      "line_range": "66",
+      "description": "**ground truth** — definition shape used for a term owned by topic 7.10. Use bare name or plain parenthetical instead of bold+defining-clause for prior concepts.",
+      "suggested_fix": "Change '**ground truth** — the confirmed correct answer used to evaluate model outputs' to 'ground truth (the confirmed correct answer you met in topic 7.10)' or simply reference 'ground truth' without the defining clause."
+    }
+  ],
+  "hard_findings": [],
+  "soft_finding_count": 1,
+  "escalation_threshold_reached": false,
+  "escalation_note": "Soft finding count 1 < threshold 3; no single scope_creep finding; no escalation to hard fail.",
+  "gold_example_comparison": "No gold example found at .claude/references/gold-examples/reading/ for this topic; comparison skipped."
+}

@@ -1,0 +1,119 @@
+{
+  "passed": true,
+  "checks": {
+    "positional_bias": {
+      "passed": true,
+      "distribution": {
+        "0": 1,
+        "1": 1,
+        "2": 2,
+        "3": 1
+      },
+      "positions_per_question": [2, 0, 3, 1, 2],
+      "max_share": 0.40,
+      "meta_gift_desync": false,
+      "note": "max_share is exactly 0.40, not strictly greater than threshold; PASS."
+    },
+    "length_bias": {
+      "passed": true,
+      "longest_correct_rate": 0.0,
+      "baseline": 0.25,
+      "longest_correct_count": 0,
+      "per_question": [
+        {
+          "id": "q1",
+          "correct_chars": 61,
+          "mean_distractor_chars": 51.0,
+          "threshold_120pct": 61.2,
+          "longest_correct": false
+        },
+        {
+          "id": "q2",
+          "correct_chars": 51,
+          "mean_distractor_chars": 48.33,
+          "threshold_120pct": 58.0,
+          "longest_correct": false
+        },
+        {
+          "id": "q3",
+          "correct_chars": 66,
+          "mean_distractor_chars": 61.67,
+          "threshold_120pct": 74.0,
+          "longest_correct": false
+        },
+        {
+          "id": "q4",
+          "correct_chars": 61,
+          "mean_distractor_chars": 64.67,
+          "threshold_120pct": 77.6,
+          "longest_correct": false
+        },
+        {
+          "id": "q5",
+          "correct_chars": 73,
+          "mean_distractor_chars": 77.0,
+          "threshold_120pct": 92.4,
+          "longest_correct": false
+        }
+      ],
+      "note": "Independent measurement confirms builder report: longest_correct_count=0."
+    },
+    "distractor_plausibility": {
+      "passed": true,
+      "absurd_rate": 0.0,
+      "total_distractors": 15,
+      "absurd_count": 0,
+      "weakest_questions": [],
+      "score_summary": {
+        "score_1_absurd": 0,
+        "score_2": 1,
+        "score_3": 11,
+        "score_4": 3
+      },
+      "note": "All distractors represent plausible beginner misconceptions grounded in corpus concepts. One score-2 distractor (q3: 'Larger models always cost less because they share more weights') is slightly weak but not absurd."
+    },
+    "objective_coverage": {
+      "passed": true,
+      "uncovered_objectives": [],
+      "orphan_questions": [],
+      "coverage_map": [
+        {
+          "lo": "Define what a parameter (weight) is in a neural network, using a plain-language explanation that a non-technical person could follow.",
+          "matched_questions": ["q1"]
+        },
+        {
+          "lo": "Explain how parameters encode knowledge — describing what gets compressed into weights during training.",
+          "matched_questions": ["q2"]
+        },
+        {
+          "lo": "Describe why parameter count (scale) matters for capability, with reference to the concept of scaling laws.",
+          "matched_questions": ["q3"]
+        },
+        {
+          "lo": "Explain what quantisation is and why the same model can appear at different file sizes without changing its parameter count.",
+          "matched_questions": ["q4"]
+        },
+        {
+          "lo": "Apply an understanding of parameter count to practical model-selection decisions, such as trading capability for speed or cost.",
+          "matched_questions": ["q5"]
+        }
+      ]
+    },
+    "beginner_fairness_and_scope": {
+      "passed": true,
+      "jargon_in_stem": [],
+      "out_of_scope_questions": [],
+      "unfair_distractors": [],
+      "note": "All stems use plain language; all concepts tested are defined in corpus §5.1–§5.5 or stated prerequisites. q5 distractor mentioning fine-tuning does not require knowledge of fine-tuning to evaluate correctly."
+    }
+  },
+  "auto_correction_applied": {
+    "shuffle_round_2": false
+  },
+  "meta_checks": {
+    "bias_defense_applied": true,
+    "meta_json_valid": true
+  },
+  "verdict": "Pass — all five checks clean. Positional bias exactly at 0.40 limit (not exceeded). Length bias confirmed at 0/5 longest-correct. All 15 distractors plausible. All 5 LOs covered 1:1 with no orphan questions. Quiz is beginner-fair and on-scope for topic 3.5.",
+  "at": "2026-06-17T00:00:00Z"
+}

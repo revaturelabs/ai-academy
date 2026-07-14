@@ -1,0 +1,41 @@
+{
+  "critic": "reading-critic",
+  "topic_id": "6.8",
+  "cycle": 1,
+  "at": "2026-06-19T00:00:00Z",
+  "passed": true,
+  "checks": {
+    "format_discipline": {
+      "passed": true,
+      "notes": "No frontmatter present. First non-empty line is '# Why king minus man plus woman equals queen works' (H1). reading.meta.json exists and parses cleanly. Exactly 6 fixed sections present in correct order: Overview, Key Concepts, Worked Example, In Practice, Key Takeaways, References."
+    },
+    "length_budget": {
+      "passed": true,
+      "word_count": 1871,
+      "target_range": [1800, 2200],
+      "notes": "meta.json reports 1871 words. Manual spot-check across sections (Overview ~90w, Key Concepts ~700w across 5 subsections, Worked Example ~260w, In Practice ~145w, Key Takeaways ~190w, References ~50w) is consistent with reported count. Falls within [1800, 2200]."
+    },
+    "citation_discipline": {
+      "passed": true,
+      "primary_cited": true,
+      "notes": "[1] (Edinburgh) cited in Overview, Key Concepts (multiple times), Key Takeaways, and References. [2] (Plotly) cited in Key Concepts, In Practice, and Key Takeaways. [3] (data-from-the-trenches) cited in Key Concepts, In Practice, and Key Takeaways. All three sources appear in the References section with full URLs. Footnote-style inline citations used consistently."
+    },
+    "sequence_drift": {
+      "passed": true,
+      "forward_refs": [],
+      "notes": "No forward references detected. 'Cosine similarity' (6.9) appears in the corpus Implementation section but is absent from reading.md. All referenced prior concepts (vector, dot product, embedding, distributional hypothesis, Word2Vec, point_in_space, coordinate, axis) are from 6.1-6.7. All new concepts (gender_direction, vector_arithmetic, approximate_equality, nearest_neighbour_answer, embedding_offset) are introduced and defined within this reading."
+    },
+    "beginner_readability": {
+      "passed": true,
+      "findings": [
+        "Minor: 'analogy_direction' is listed as a new concept to introduce but is not explicitly named and bolded as a defined term in the reading. The concept is fully explained through worked examples and narrative, but the label itself is absent. No hard fail — the concept coverage is complete."
+      ],
+      "notes": "All other new terms (gender_direction, vector_arithmetic, approximate_equality, nearest_neighbour_answer, embedding_offset) are bolded and defined on first use. No paragraph introduces 3 or more new terms simultaneously. Paragraph lengths are consistently 2-4 sentences. No scope creep — content stays within 6.8 boundaries. Only 1 minor readability finding, below the hard-fail threshold of 3."
+    },
+    "faithfulness": {
+      "passed": true,
+      "notes": "All claims trace directly to corpus sections 5.1-5.5 and the Hands-On Exercise (§9). The 2D worked example coordinates (man:[1.0,0.5], woman:[1.0,2.5], king:[3.0,0.5], queen:[3.0,2.5]) match corpus §9 exactly. The three reasons for approximation (noisy 300-dim space, 'king' encoding chess contexts, no explicit rule programmed) match corpus §5.4 exactly. Real-world applications (analogy-based search, bias auditing, cross-lingual alignment) match corpus §7 exactly. No new claims introduced beyond corpus."
+    }
+  },
+  "verdict": "PASS — All 6 checks passed. Format is clean, word count 1871 is within [1800,2200], all three sources cited, no forward references, beginner readability is solid with only one minor labelling omission (analogy_direction term not explicitly bolded), and all content is faithful to the corpus."
+}

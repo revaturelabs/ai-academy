@@ -1,0 +1,47 @@
+{
+  "topic_id": "9.10",
+  "generated_at": "2026-06-13",
+  "format": "gift",
+  "question_count": 6,
+  "$bias_defense_applied": true,
+  "$shuffle_seed": "9.10-cit-m4-w9-acceptableerror",
+  "correct_position_distribution": [0, 2, 1, 3, 0, 1],
+  "questions": [
+    {
+      "id": "q1",
+      "type": "mcq",
+      "objective_ref": "Define acceptable error as a deliberate threshold decision — not zero errors, but a bounded tolerance for specific types of failure within a defined use case.",
+      "correct_position": 0
+    },
+    {
+      "id": "q2",
+      "type": "mcq",
+      "objective_ref": "Distinguish false positives (Type I errors) from false negatives (Type II errors) and explain why their costs typically differ.",
+      "correct_position": 2
+    },
+    {
+      "id": "q3",
+      "type": "mcq",
+      "objective_ref": "Explain why the same error rate can be acceptable in one context and unacceptable in another, using at least two contrasting examples.",
+      "correct_position": 1
+    },
+    {
+      "id": "q4",
+      "type": "mcq",
+      "objective_ref": "Apply a four-step process to define a failure threshold for a given AI use case.",
+      "correct_position": 3
+    },
+    {
+      "id": "q5",
+      "type": "mcq",
+      "objective_ref": "Describe the human baseline and explain why it is a useful but insufficient reference point for setting AI error thresholds.",
+      "correct_position": 0
+    },
+    {
+      "id": "q6",
+      "type": "mcq",
+      "objective_ref": "Recognise alert fatigue as the direct consequence of acceptable error thresholds set too strictly.",
+      "correct_position": 1
+    }
+  ]
+}

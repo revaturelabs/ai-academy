@@ -1,0 +1,34 @@
+{
+  "verdict": "pass",
+  "cycles": 1,
+  "findings": [
+    {
+      "code": "looks_good",
+      "where": "whole diagram",
+      "detail": "LR before/gate/after flow reads cleanly. Four provider-obligation nodes feed the conformity-assessment diamond; diamond visibly a pass/fail decision point; three ongoing-duty nodes flow out after launch. No overlaps, no truncation, subtitles legible at 1400px, color tiers correct (provider=auto purple, gate=hitl yellow, ongoing=done green)."
+    },
+    {
+      "code": "edge_label_collision",
+      "where": "gate --> ongoing edges",
+      "detail": "SOFT/non-blocking: the three 'pass — placed on market' edge labels are identical and repetitive, but none collide with a node or each other — each sits on its own edge. Reads as reinforcement of the gate->market transition rather than a defect. Not revised."
+    }
+  ],
+  "preflight": {
+    "mermaid_parses": true,
+    "node_count": 8,
+    "node_count_ok": true,
+    "labels_within_4_words": true,
+    "concept_fidelity": "all 8 nodes trace to corpus section 5.2 (risk management, technical documentation, data governance, testing/robustness, conformity assessment, record-keeping, human oversight, transparency to deployers)",
+    "scope_creep": "none — no 5.7 tier nodes, no Article numbers, no NIST/EO/India",
+    "gate_is_decision_shape": true
+  },
+  "stats": {
+    "nodes": 8,
+    "edges": 7,
+    "layout": "flowchart LR (path-to-market, before-subgraph -> gate diamond -> after-subgraph)",
+    "labels": ["Risk management", "Technical documentation", "Data governance", "Testing and robustness", "Conformity assessment", "Record-keeping", "Human oversight", "Transparency to deployers"],
+    "png_path": "artifacts/diagram.png",
+    "render_cmd": "mmdc -i artifacts/diagram.mmd -o artifacts/diagram.png -w 1400 -b transparent",
+    "png_dims": "1192x575"
+  }
+}

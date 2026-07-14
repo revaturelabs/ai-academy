@@ -1,0 +1,45 @@
+---
+title: "System prompt wins when instructions conflict"
+theme: base
+themeVariables:
+  primaryColor: "#a5d8ff"
+  primaryBorderColor: "#4a9eed"
+  lineColor: "#555"
+flowchart:
+  htmlLabels: true
+  curve: basis
+---
+flowchart LR
+
+    subgraph LEFT["<b>Static context — set once by developer</b>"]
+        direction TB
+        SysParam["<b>system parameter</b><br/><span style='font-size:11px;color:#6d28d9'>role · tone · constraints · output format</span>"]
+    end
+
+    subgraph RIGHT["<b>Live request — changes every call</b>"]
+        direction TB
+        MsgList["<b>messages list</b><br/><span style='font-size:11px;color:#6d28d9'>role: user — the specific question or task</span>"]
+    end
+
+    LLM["<b>Large Language Model</b><br/><span style='font-size:11px;color:#6d28d9'>receives both inputs, applies system context first</span>"]
+
+    Resp["<b>Model response</b><br/><span style='font-size:11px;color:#6d28d9'>shaped by system rules, answers user request</span>"]
+
+    PrecNote["<span style='font-size:11px;color:#6d28d9'><i>system prompt has higher authority —<br/>user cannot override system rules</i></span>"]
+
+    SysParam -- "higher authority<br/>(takes precedence)" --> LLM
+    MsgList --> LLM
+    LLM --> Resp
+    LLM -. "precedence rule" .-> PrecNote
+
+    classDef start fill:#a5d8ff,stroke:#4a9eed
+    classDef act fill:#a5d8ff,stroke:#4a9eed
+    classDef auto fill:#d0bfff,stroke:#8b5cf6
+    classDef done fill:#b2f2bb,stroke:#22c55e
+    classDef ghost fill:none,stroke:none,color:#6d28d9
+
+    class SysParam start
+    class MsgList act
+    class LLM auto
+    class Resp done
+    class PrecNote ghost

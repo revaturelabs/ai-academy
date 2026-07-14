@@ -1,0 +1,37 @@
+{
+  "verdict": "pass",
+  "cycle": 1,
+  "note": "PNG render requires mmdc in terminal: mmdc -i <mmd_path> -o <png_path> -w 1400 -b transparent. Visual inspection pending render. Source-level pre-flight passed on all checks; layout and palette are correct.",
+  "findings": [
+    {
+      "code": "looks_good",
+      "where": "full diagram",
+      "detail": "Four nodes in one straight LR pipeline: Sentence 1 — Context (blue/start) → Sentence 2 — Problem (purple/auto) → Sentence 3 — Impact (purple/auto) → Well-formed Problem Statement (green/done). Governing concept 'Writing a 3-Sentence Problem Statement' is in the config title field, not a node — satisfies title-discipline. All labels ≤ 4 words, plain English, trace directly to §5.3 corpus phrases ('Context', 'Problem', 'Impact', 'Well-formed Problem Statement'). Subtitles at 12px describe the one-job-per-slot pattern ('Who is affected?', 'What exactly goes wrong?', 'Why does this matter?'). No concept drift — no solution-design nodes, no spec/requirements/build. Color palette matches project spec exactly."
+    }
+  ],
+  "preflight": {
+    "mermaid_parses": true,
+    "node_count_check": "pass — 4 nodes (limit 3–8)",
+    "label_length_check": "pass — all labels ≤ 4 words (A: 'Sentence 1 — Context', B: 'Sentence 2 — Problem', C: 'Sentence 3 — Impact', D: 'Well-formed Problem Statement')",
+    "concept_fidelity_check": "pass — all labels map to §5.3 (Context, Problem, Impact, Well-formed statement)",
+    "title_discipline_check": "pass — governing concept in config title field",
+    "single_path_check": "pass — one straight chain A→B→C→D, no branches",
+    "label_plainness_check": "pass — no unexplained acronyms, all plain English",
+    "scope_discipline_check": "pass — no solution-design, spec, or requirements nodes; scoped to problem-statement format only",
+    "color_tier_check": "pass — start:#a5d8ff (A), auto:#d0bfff (B, C), done:#b2f2bb (D)"
+  },
+  "visual_inspection": "pending — mmdc not available in this agent session; run: mmdc -i \"content/m1-computational-thinking/week-1/5-applying-it-to-your-domain/1-12-choosing-your-domain-writing-a-3-sentence-problem-statement/artifacts/diagram.mmd\" -o \"content/m1-computational-thinking/week-1/5-applying-it-to-your-domain/1-12-choosing-your-domain-writing-a-3-sentence-problem-statement/artifacts/diagram.png\" -w 1400 -b transparent",
+  "stats": {
+    "nodes": 4,
+    "edges": 3,
+    "layout": "flowchart LR (single linear pipeline)",
+    "labels": [
+      "Sentence 1 — Context",
+      "Sentence 2 — Problem",
+      "Sentence 3 — Impact",
+      "Well-formed Problem Statement"
+    ],
+    "png_path": "content/m1-computational-thinking/week-1/5-applying-it-to-your-domain/1-12-choosing-your-domain-writing-a-3-sentence-problem-statement/artifacts/diagram.png",
+    "png_dims": "pending render"
+  }
+}

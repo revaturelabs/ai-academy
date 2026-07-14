@@ -1,0 +1,51 @@
+{
+  "type": "topic",
+  "id": "14.8",
+  "title": "When NOT to use agents — high-stakes or irreversible actions require human oversight",
+  "slug": "14-8-when-not-to-use-agents-high-stakes-or-irreversible-actions-r",
+  "position_in_module": 4,
+  "week_num": 14,
+  "session_name": "RAG, Vectors, Agents and Production AI",
+  "module": {
+    "position": 2,
+    "slug": "2-ai-agents",
+    "title": "AI Agents"
+  },
+  "course": {
+    "code": "M5",
+    "slug": "m5-python-for-ai-pe-vc-and-rag",
+    "title": "Python for AI, PE, VC and RAG"
+  },
+  "next_assessment": {
+    "id": "A5",
+    "due_week": 15,
+    "title": "Capstone Project and Portfolio",
+    "weight": "40%"
+  },
+  "paths": {
+    "corpus": "topic_corpus.md",
+    "resources": "topic.resources.json",
+    "progress": "topic.progress.json",
+    "artifacts_dir": "artifacts/",
+    "critic_reports_dir": "critic-reports/"
+  },
+  "artifact_plan": {
+    "diagram": true,
+    "diagram_intent": "HITL approval flow: agent proposes action → human reviews → approve/reject → execute or halt. Optionally show autonomy spectrum as a secondary panel (manual→HITL→human-on-loop→autonomous).",
+    "suggested_profile": "standard",
+    "confirmed_profile": "deep",
+    "reading_word_range": [1800, 2200],
+    "reading_minutes_range": [9, 11],
+    "quiz_questions_range": [5, 7],
+    "quiz_include_short_answer": true,
+    "profile_signals": [
+      "5 sub-concepts in Core Concepts each requiring definition",
+      "decision matrix extension (5th question)",
+      "3 real-world pattern examples",
+      "HITL approval loop is a branching/cycle flow — strong diagram signal",
+      "autonomy spectrum is a contrast/scale — additional diagram signal"
+    ]
+  },
+  "expected_delivery_minutes": 11,
+  "status": "scaffolded"
+}

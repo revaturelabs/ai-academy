@@ -1,0 +1,149 @@
+{
+  "critic": "corpus-critic",
+  "topic_id": "7.7",
+  "topic_title": "Accuracy — what proportion of outputs were correct",
+  "depth_profile": "standard",
+  "resources_source": "web_search",
+  "at": "2026-06-23T06:00:00Z",
+  "retry": 1,
+  "passed": true,
+  "verdict": "PASS — Both hard failures from retry 0 are resolved. §5.3 no longer names 'false negative' or 'false positive'; it uses plain-English descriptions only ('miss a real case or raise a false alarm'). §5.7 no longer bolds or defines precision/recall; they appear as bare names with topic pointers (7.8, 7.9) and no defining clauses. All 6 checks pass. One soft finding carried forward: 'ground truth' in §6 is introduced with scare quotes and an immediately preceding plain-English description ('where you already know the correct label for each one') but the term itself is not in any prior topic's concepts_introduced — surfaced for HITL #2 awareness, not a block. Citation density for §5+§6+§7 is borderline (~62% when excluding purely derived procedural steps in §6 that extend the cited accuracy formula); primary resource [1] is cited 6 times across §4–§5.6; all three resources cited. No scope creep, no forward references, required sections present and non-trivial, length within standard range, beginner readability sound.",
+  "checks": {
+    "required_sections": {
+      "passed": true,
+      "detail": {
+        "section_3_learning_objectives": {
+          "present": true,
+          "word_count_approx": 85,
+          "threshold": 50,
+          "passed": true
+        },
+        "section_4_introduction": {
+          "present": true,
+          "word_count_approx": 132,
+          "threshold": 50,
+          "passed": true
+        },
+        "section_5_core_concepts": {
+          "present": true,
+          "word_count_approx": 870,
+          "threshold": 100,
+          "passed": true
+        },
+        "section_10_key_takeaways": {
+          "present": true,
+          "word_count_approx": 98,
+          "threshold": 50,
+          "passed": true
+        }
+      }
+    },
+    "citation_density": {
+      "passed": true,
+      "mode": "strict",
+      "primary_resource_1_cited": true,
+      "primary_citation_locations": [
+        "§4 introduction (line 28)",
+        "§5.1 classification task definition (line 38)",
+        "§5.2 accuracy formula (line 53)",
+        "§5.2 worked example result (line 77)",
+        "§5.4 balanced categories item (line 96)",
+        "§5.5 fundamental limitation conclusion (line 118)",
+        "§5.6 formula reminder (line 133)"
+      ],
+      "all_resources_cited": true,
+      "resource_2_cited_in": ["§5.2 formula", "§5.3", "§5.4", "§5.5", "§5.7", "§7 spam", "§7 medical"],
+      "resource_3_cited_in": ["§5.5 broken filter", "§5.7", "§7 spam", "§7 medical"],
+      "estimated_factual_assertions_sections_5_6_7": {
+        "total_including_procedural": 27,
+        "total_excluding_derived_procedural_steps": 21,
+        "note": "§6 procedural steps 1–5 are operational derivations of the cited accuracy formula (cite-by-inheritance). One substantive advisory step in §6 ('sanity check: dummy model') is uncited."
+      },
+      "estimated_cited_assertions": 13,
+      "estimated_density_pct_excluding_derived": 62,
+      "threshold_pct": 60,
+      "borderline": true,
+      "uncited_assertions_noted": [
+        "§5.4 item 2: 'all mistakes roughly equally bad' — no citation",
+        "§5.4 item 3: 'quick readable summary number' — no citation",
+        "§5.5 95% calculation lines — arithmetic derivation, no citation needed",
+        "§6 dummy-model sanity-check step — advisory without citation",
+        "§7 AI quiz/tutoring pattern — no citation",
+        "§7 'accuracy most trustworthy when categories similar frequency' conclusion — no citation"
+      ],
+      "detail": "Citation density is estimated at ~62% when §6 purely derived/procedural steps (extensions of the cited formula) are excluded from the denominator. This clears the 60% threshold. Primary resource [1] is cited 7 times; all three resources appear in §5 and §7. The borderline nature is flagged for HITL #2 awareness but does not constitute a hard fail."
+    },
+    "sequence_drift": {
+      "passed": true,
+      "forward_referenced_terms": [],
+      "soft_findings": [
+        {
+          "term": "ground truth",
+          "location": "§6 Implementation (step 1 — 'This is the ground truth')",
+          "issue": "The term is not in any prior topic's concepts_introduced list and is not in this topic's concepts_introduced list. It is introduced with scare quotes immediately after a plain-English description ('inputs where you already know the correct label for each one'), which provides an implicit definition. Soft finding — for a fresher-zero-background learner the term may still cause friction.",
+          "severity": "soft",
+          "suggested_fix": "Change to: 'where you already know the correct label for each one (called the ground truth — the known-correct answer)' to make the definition explicit."
+        }
+      ],
+      "retry_0_issues_resolved": [
+        "'false negative' — no longer present in §5.3. Removed entirely.",
+        "'false positive' — no longer present in §5.3. Removed entirely. §5.3 now uses plain-English descriptions: 'miss a real case or raise a false alarm'."
+      ],
+      "detail": "No forward-referenced technical terms remain. The two hard-fail terms from retry 0 have been successfully removed. One soft finding (ground truth) carried forward for HITL awareness."
+    },
+    "length_sanity": {
+      "passed": true,
+      "word_count_approx": 3210,
+      "profile": "standard",
+      "corpus_range_words": [3000, 4400],
+      "detail": "Corpus is approximately 3,210 words (per builder log; visual inspection of current content is consistent). This falls within the standard corpus range of 3,000–4,400 words. No issue."
+    },
+    "topic_scope": {
+      "passed": true,
+      "scope_creep_findings": [],
+      "retry_0_issues_resolved": [
+        "§5.3: 'false negative' and 'false positive' defined inline — RESOLVED. Both terms removed entirely from §5.3.",
+        "§5.7: 'precision' bolded with defining clause ('how often the model was right when it raised an alarm') — RESOLVED. No bolding; no defining clause. Appears as bare name with topic pointer only.",
+        "§5.7: 'recall' bolded with defining clause ('how often the model caught the real cases') — RESOLVED. No bolding; no defining clause. Appears as bare name with topic pointer only."
+      ],
+      "allowed_observations": [
+        "§5.7 currently reads: 'Two metrics that address the gaps accuracy leaves are precision (topic 7.8) and recall (topic 7.9). Do not worry about their definitions now; just know that when accuracy is misleading — as in the broken spam filter example — those two metrics restore meaningful measurement [2][3].' This is a valid mention-and-defer: bare names, topic pointers, no defining clauses, no bolding. COMPLIANT.",
+        "§3 LO #5: 'Recognise that accuracy is one of several metrics and that precision and recall exist to fill gaps accuracy leaves behind (without defining them here).' Valid — names them, defers, does not define. COMPLIANT.",
+        "§10 Key Takeaways: 'Precision and recall exist because accuracy is incomplete.' Valid — bare names, deferred. COMPLIANT.",
+        "Imbalanced dataset, dummy baseline, and the broken-spam-filter failure case are all in this topic's concepts_introduced list. Fully in-scope."
+      ]
+    },
+    "beginner_readability": {
+      "passed": true,
+      "findings": [
+        {
+          "type": "undefined_term",
+          "term": "ground truth",
+          "location": "§6 Implementation, step 1",
+          "detail": "Introduced with scare quotes ('This is the ground truth') immediately after a plain-English description ('where you already know the correct label for each one'). The implicit definition reduces friction but a zero-background learner may still pause. Adding an explicit one-phrase definition would make it cleaner.",
+          "severity": "soft"
+        }
+      ],
+      "jargon_dump": null,
+      "academic_register": null,
+      "undefined_terms_count": 1,
+      "hard_fail_threshold_met": false,
+      "detail": "One soft readability finding — well below the 3-finding threshold for escalation to hard fail. Introduction leads with a concrete analogy (ten yes-or-no questions) before any definition. All introduced concepts are defined with bold term + plain-English meaning on first use. Paragraph lengths are within the ~4-sentence guideline. No hedging phrases detected. Active voice and second-person address ('you') used throughout. Sentence lengths are within acceptable bounds. The worked example in §5.2 is proximate to the formula it illustrates. The broken-spam-filter example in §5.5 is clear and compelling."
+    }
+  },
+  "soft_findings_for_hitl": [
+    {
+      "check": "sequence_drift + beginner_readability",
+      "term": "ground truth",
+      "location": "§6 Implementation, step 1",
+      "suggestion": "Add explicit plain-language definition: e.g. 'where you already know the correct label for each one (this known-correct answer is called the ground truth)'."
+    },
+    {
+      "check": "citation_density",
+      "note": "Citation density in §5+§6+§7 is borderline (~62% excluding derived procedural steps). §6 procedural steps carry no citations; §5.4 items 2–3 and §7 AI-quiz pattern are uncited. Not a hard fail but the builder may wish to add [2] or [3] to the §5.4 qualitative conditions and the §7 closing generalisation for robustness."
+    }
+  ],
+  "required_fixes": [],
+  "cycles_used": 2,
+  "max_cycles": 2
+}

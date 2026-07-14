@@ -1,0 +1,47 @@
+{
+  "topic_id": "13.13",
+  "generated_at": "2026-06-15T00:00:00Z",
+  "format": "gift",
+  "question_count": 6,
+  "$bias_defense_applied": true,
+  "$shuffle_seed": "13.13-sha256-xor-0",
+  "correct_position_distribution": [1, 3, 0, 2, 3, 1],
+  "questions": [
+    {
+      "id": "q1",
+      "type": "mcq",
+      "objective_ref": "Describe the standard folder layout used in a professional Python project and explain why each part exists.",
+      "correct_position": 1
+    },
+    {
+      "id": "q2",
+      "type": "mcq",
+      "objective_ref": "Explain the purpose of a README file and write one using the five-section template.",
+      "correct_position": 3
+    },
+    {
+      "id": "q3",
+      "type": "mcq",
+      "objective_ref": "Explain what a .gitignore file does and why it must contain API key files before any commit is made.",
+      "correct_position": 0
+    },
+    {
+      "id": "q4",
+      "type": "mcq",
+      "objective_ref": "Create a minimal but complete project folder structure for a Python script or Capstone project.",
+      "correct_position": 2
+    },
+    {
+      "id": "q5",
+      "type": "mcq",
+      "objective_ref": "Identify the most common folder-organisation mistakes and describe the correct alternatives.",
+      "correct_position": 3
+    },
+    {
+      "id": "q6",
+      "type": "mcq",
+      "objective_ref": "Connect folder organisation and README quality to professional presentation of a portfolio repository.",
+      "correct_position": 1
+    }
+  ]
+}

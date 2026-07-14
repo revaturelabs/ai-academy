@@ -1,0 +1,224 @@
+{
+  "critic": "reading-critic",
+  "topic_id": "1.12",
+  "artifact": "artifacts/reading.md",
+  "run_at": "2026-06-22T00:00:00Z",
+  "passed": true,
+  "profile": "atomic",
+  "target_word_range": [800, 1200],
+  "target_minute_range": [4, 6],
+  "checks": {
+    "0_format_discipline": {
+      "passed": true,
+      "findings": [],
+      "detail": {
+        "frontmatter_present": false,
+        "sidecar_present": true,
+        "sidecar_valid": true,
+        "sections_found": ["Overview", "Key Concepts", "Worked Example", "In Practice", "Key Takeaways", "References"],
+        "sections_expected": ["Overview", "Key Concepts", "Worked Example", "In Practice", "Key Takeaways", "References"],
+        "section_order_correct": true
+      }
+    },
+    "1_length": {
+      "passed": true,
+      "findings": [],
+      "detail": {
+        "word_count_reported": 890,
+        "word_count_in_range": true,
+        "estimated_minutes_reported": 5,
+        "estimated_minutes_computed": 4.45,
+        "minutes_in_range": true,
+        "note": "890 words / 200 wpm = 4.45 min; sidecar reports 5 min. Both within [4, 6]."
+      }
+    },
+    "2_citations": {
+      "passed": true,
+      "findings": [],
+      "detail": {
+        "primary_resources": [
+          {
+            "id": 1,
+            "url": "https://resources.nu.edu/c.php?g=1013602&p=7638573",
+            "role": "primary",
+            "cited_in_reading": true,
+            "inline_occurrences": ["line 5", "line 23", "line 44", "line 72", "line 92"]
+          }
+        ],
+        "supporting_resources": [
+          {
+            "id": 2,
+            "url": "https://www.betterup.com/blog/problem-statement",
+            "role": "supporting",
+            "cited_in_reading": true,
+            "inline_occurrences": ["line 19", "line 44", "line 72", "line 94"]
+          },
+          {
+            "id": 3,
+            "url": "https://www.notion.com/blog/problem-statements",
+            "role": "supporting",
+            "cited_in_reading": true,
+            "inline_occurrences": ["line 29", "line 68", "line 86", "line 92"]
+          }
+        ],
+        "orphan_markers": [],
+        "orphan_bibliography_entries": [],
+        "all_primary_cited": true
+      }
+    },
+    "3_no_forward_references": {
+      "passed": true,
+      "findings": [],
+      "detail": {
+        "note": "References to decomposition and abstraction (lines 93–94) are backward references to prior topics 1.5 and 1.6 — not forward references. Verified against corpus prerequisites section."
+      }
+    },
+    "4_faithfulness": {
+      "passed": true,
+      "findings": [],
+      "detail": {
+        "assertions_sampled": 10,
+        "unsupported_count": 0,
+        "unsupported_assertions": [],
+        "sample": [
+          {
+            "assertion": "A problem statement is a short, focused piece of writing — exactly three sentences — that pins down the problem before any solution thinking begins",
+            "reading_line": 5,
+            "corpus_source": "§5.2, §5.3",
+            "supported": true
+          },
+          {
+            "assertion": "A problem domain is the specific area of real-world activity your project addresses. It is not a technology or a tool — it is a slice of real life.",
+            "reading_line": 13,
+            "corpus_source": "§5.1",
+            "supported": true
+          },
+          {
+            "assertion": "Examples of domains: healthcare, student revision, local transport, food waste, personal finance",
+            "reading_line": 15,
+            "corpus_source": "§5.1 domain table",
+            "supported": true
+          },
+          {
+            "assertion": "A problem statement is a short written description of who is affected, what specifically goes wrong, and why it matters. It is not a solution proposal.",
+            "reading_line": 23,
+            "corpus_source": "§5.2",
+            "supported": true
+          },
+          {
+            "assertion": "Three rules: Specific not general, One problem not a list, No solution embedded",
+            "reading_lines": "25–29",
+            "corpus_source": "§5.4",
+            "supported": true
+          },
+          {
+            "assertion": "3-sentence table: Sentence 1 Context, Sentence 2 Specific problem, Sentence 3 Impact",
+            "reading_lines": "39–44",
+            "corpus_source": "§5.3",
+            "supported": true
+          },
+          {
+            "assertion": "Worked example — student revision domain (secondary school students / over-revise familiar / needs to track understanding)",
+            "reading_lines": "49–56",
+            "corpus_source": "§6 worked example",
+            "supported": true
+          },
+          {
+            "assertion": "Counter-example: 'Healthcare has a lot of problems. Technology could help make things better for everyone.'",
+            "reading_lines": "60–68",
+            "corpus_source": "§5.2 vague example",
+            "supported": true
+          },
+          {
+            "assertion": "Five-step checklist: Choose domain, Name who is affected, State what goes wrong, State consequence, Write and test",
+            "reading_lines": "74–78",
+            "corpus_source": "§6 steps 1–5",
+            "supported": true
+          },
+          {
+            "assertion": "Problem domain = real-world area; problem statement = three sentences covering context, specific problem, and impact",
+            "reading_line": 90,
+            "corpus_source": "§10 Key Takeaways",
+            "supported": true
+          }
+        ]
+      }
+    },
+    "5_beginner_readability": {
+      "passed": true,
+      "findings": [],
+      "detail": {
+        "undefined_terms": {
+          "passed": true,
+          "cold_uses": [],
+          "note": "All key terms ('problem statement', 'problem domain') are bolded and defined at first use. No acronyms present."
+        },
+        "jargon_dump": {
+          "passed": true,
+          "violations": [],
+          "note": "Key Concepts uses separate subsections to introduce each term; no paragraph introduces 3+ new terms at once."
+        },
+        "concrete_first": {
+          "passed": true,
+          "note": "Domain examples (list) precede abstract discussion. Three-slot concept introduced with table and concrete analogy before further explanation."
+        },
+        "plain_register": {
+          "passed": true,
+          "hedging_occurrences": 0,
+          "note": "No hedging language detected. Sentences are concise and address the learner as 'you'. Active voice throughout."
+        }
+      }
+    },
+    "6_formatting_scannability": {
+      "passed": true,
+      "findings": [],
+      "detail": {
+        "wall_of_text": {
+          "passed": true,
+          "violations": [],
+          "note": "All paragraphs are 4 sentences or fewer. No wall-of-text blocks detected."
+        },
+        "unlisted_sequence": {
+          "passed": true,
+          "note": "Five-step procedure in 'In Practice' rendered as a numbered list. Quality test checklist rendered as a bullet list."
+        },
+        "inline_examples": {
+          "passed": true,
+          "note": "Domain examples appear inline in the Key Concepts section. Worked example in Worked Example section. Counter-example immediately follows the positive example."
+        },
+        "bold_definitions": {
+          "passed": true,
+          "note": "'problem domain' (line 13), 'problem statement' (lines 5, 23), and rule items are all bolded with plain-English meanings."
+        }
+      }
+    },
+    "6b_no_assessment_references": {
+      "passed": true,
+      "findings": [],
+      "detail": {
+        "note": "No mentions of A1, Specification Portfolio, due Week 3, or grade weights in reading.md. The corpus contains these references but the reading correctly omits them as instructed in topic.manifest.json reading_notes."
+      }
+    },
+    "7_scope": {
+      "passed": true,
+      "findings": [],
+      "detail": {
+        "scope_creep_detected": false,
+        "note": "All content is within the topic headline 'Choosing your domain — writing a 3-sentence problem statement'. References to decomposition and abstraction (line 93) are mentions of prior topics (1.5, 1.6) as established prerequisites — not teaching or defining new out-of-scope concepts inline. No forward references to future topics. The parenthetical reminders '(breaking the problem into sub-tasks)' and '(focusing on what matters, ignoring what does not)' are brief recall cues for already-taught content, not new definitions introduced here.",
+        "borderline_reviewed": {
+          "line": 93,
+          "text": "apply decomposition (breaking the problem into sub-tasks) and abstraction (focusing on what matters, ignoring what does not)",
+          "ruling": "PASS — these are prior topics in the sequence, not deferred future concepts; parentheticals serve as recall cues"
+        }
+      }
+    }
+  },
+  "hard_fails": [],
+  "soft_findings": [],
+  "findings_count": 0,
+  "gold_example_check": {
+    "checked": false,
+    "note": "No gold example present for topic 1.12. Two gold examples exist in .claude/references/gold-examples/reading/ (topics 2.1 and 3.4) — different topics; not used as direct bar. Assessment against written standards in artifact-mix.json only."
+  },
+  "verdict": "PASS — all 8 checks passed with 0 findings; reading is within atomic word/time budget (890 words, ~4.5 min), all primary citations present, faithful to corpus, no assessment references, beginner-accessible with proper define-before-use and concrete-first structure, well-formatted with no walls of text, and stays within topic-headline scope."
+}

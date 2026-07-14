@@ -1,0 +1,76 @@
+{
+  "topic_id": "7.5",
+  "artifact": "corpus",
+  "critic": "corpus-critic",
+  "at": "2026-06-23T00:00:00Z",
+  "passed": true,
+  "depth_profile": "standard",
+  "estimated_word_count": 2050,
+  "checks": {
+    "required_sections": {
+      "passed": true,
+      "detail": {
+        "section_3_learning_objectives": { "present": true, "non_trivial": true, "word_count_approx": 100 },
+        "section_4_introduction": { "present": true, "non_trivial": true, "word_count_approx": 155 },
+        "section_5_core_concepts": { "present": true, "non_trivial": true, "word_count_approx": 870 },
+        "section_10_key_takeaways": { "present": true, "non_trivial": true, "word_count_approx": 130 }
+      }
+    },
+    "citation_density": {
+      "passed": true,
+      "resources_source": "web_search",
+      "primary_resource_cited": true,
+      "primary_resource_url": "https://www.ibm.com/think/topics/llm-temperature",
+      "primary_citation_marker": "[1]",
+      "primary_first_cited_in": "section_4_introduction",
+      "estimated_citation_rate_core_concepts": "~70%",
+      "threshold": "60%",
+      "detail": "IBM [1] is cited extensively throughout sections 4, 5, 6, 7. Supporting resources [2] (arxiv) and [3] (machinelearningplus) also cited. Approximately 14 of ~20 standalone factual assertions in Core Concepts carry citation markers, meeting the 60% threshold."
+    },
+    "sequence_drift": {
+      "passed": true,
+      "forward_references_found": [],
+      "detail": "All technical terms used are either: (a) introduced in this topic (temperature, sharp distribution, flat distribution, temperature 0, reliability vs variety trade-off), or (b) from prior topics 7.1-7.4 (probability, softmax, token, vocabulary, probability distribution over vocabulary, sampling, stochastic system, deterministic system, generation loop). 'API' is defined inline on first use. 'Raw scores' is contextually explained (see beginner_readability). No forward references to concepts outside the allowed prior set detected."
+    },
+    "length_sanity": {
+      "passed": true,
+      "estimated_word_count": 2050,
+      "profile_range": [1500, 6000],
+      "profile_range_source": "task_invocation_standard_profile",
+      "detail": "Estimated ~2050 words, within the 1500–6000 word range for standard profile as specified by the invoking agent."
+    },
+    "topic_scope": {
+      "passed": true,
+      "scope_creep_findings": [],
+      "detail": "Corpus stays within the temperature mechanism boundary. top-p, top-k, repetition penalty, and beam search are not named or taught anywhere in the corpus. The third resource (machinelearningplus.com) covers those topics but none leaked into the corpus. All content is within scope of 'temperature — how low/high values affect token selection'."
+    },
+    "beginner_readability": {
+      "passed": true,
+      "hard_fail_triggered": false,
+      "finding_count": 1,
+      "findings": [
+        {
+          "code": "undefined_terms",
+          "severity": "soft",
+          "terms": ["raw scores"],
+          "detail": "'raw scores' is introduced in section 5.2 ('the model computes one raw score for every token in the vocabulary') and section 6 without a formal plain-language first-use definition. The term is contextually implied but not explicitly defined (e.g., 'the model computes a number — called a raw score — for each token in the vocabulary, before any probabilities are calculated'). Soft finding only — readers can infer meaning from context.",
+          "locations": ["section_5_2", "section_6_implementation"]
+        }
+      ],
+      "other_checks": {
+        "terms_defined_on_first_use": "PASS — LLM, temperature, API all defined on first use; prior-topic terms (softmax, token, stochastic system, deterministic system) correctly reused without re-definition",
+        "jargon_dump": "PASS — no paragraph introduces 3+ new terms simultaneously",
+        "plain_register": "PASS — sentences are short (target under 20-25 words met), active voice, learner addressed as 'you', no hedging phrases detected",
+        "acronyms": "PASS — LLM spelled out in section 3; API spelled out in section 7"
+      }
+    }
+  },
+  "verdict": "PASS — all 6 checks passed; 1 soft readability finding ('raw scores' lacks a formal first-use definition in sections 5.2 and 6 — corpus builder should add a one-clause plain-language gloss on first appearance). No hard fails. No forward references. No scope creep. IBM primary resource cited. Citation density ~70%, above the 60% threshold.",
+  "recommended_action": "proceed_to_corpus_human_review",
+  "soft_findings_for_hitl": [
+    {
+      "code": "undefined_terms",
+      "message": "'raw scores' used in sections 5.2 and 6 without explicit plain-language definition on first use. Suggest adding: 'raw score — a number the model computes for each token before probabilities are calculated'. Low severity; does not block artifact generation."
+    }
+  ]
+}

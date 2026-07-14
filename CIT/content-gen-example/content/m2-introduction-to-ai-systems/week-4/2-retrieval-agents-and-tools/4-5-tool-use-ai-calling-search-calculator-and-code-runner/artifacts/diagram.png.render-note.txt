@@ -1,0 +1,6 @@
+PNG not rendered — mmdc is not available on this machine (confirmed from prior topic critic reports in this repo).
+
+To render:
+  mmdc -i "content/m2-introduction-to-ai-systems/week-4/2-retrieval-agents-and-tools/4-5-tool-use-ai-calling-search-calculator-and-code-runner/artifacts/diagram.mmd" -o "content/m2-introduction-to-ai-systems/week-4/2-retrieval-agents-and-tools/4-5-tool-use-ai-calling-search-calculator-and-code-runner/artifacts/diagram.png" -w 1400 -b transparent
+
+Once rendered, delete this file.

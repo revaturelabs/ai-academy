@@ -1,0 +1,73 @@
+{
+  "passed": true,
+  "checks": {
+    "format_discipline": {
+      "passed": true,
+      "frontmatter_present": false,
+      "meta_sidecar_missing": false,
+      "section_template_violation": false,
+      "sections_found": ["Overview", "Key Concepts", "Worked Example", "In Practice", "Key Takeaways", "References"],
+      "notes": "First non-empty line is '# Pseudocode — writing logic in plain English before writing code'. Sidecar reading.meta.json present and valid. All six sections present in correct order."
+    },
+    "length_budget": {
+      "passed": true,
+      "word_count": 1340,
+      "target_word_range": [1200, 1600],
+      "estimated_read_minutes": 7,
+      "target_minute_range": [6, 8],
+      "notes": "1340 words is within [1200, 1600]. 7 min at 200 wpm is within [6, 8]."
+    },
+    "citation_discipline": {
+      "passed": true,
+      "primary_cited": true,
+      "primary_resource": "[1] codecademy.com",
+      "primary_citation_count": 5,
+      "all_inline_markers": ["[1]", "[2]", "[3]"],
+      "bibliography_entries": ["[1] Codecademy", "[2] GeeksforGeeks", "[3] Built In"],
+      "orphan_markers": [],
+      "orphan_bibliography_entries": [],
+      "notes": "Primary [1] cited at lines 13, 30, 76, 93, 188. [2] cited at lines 15, 74, 82, 99. [3] cited at lines 82, 111, 160. All bibliography entries match inline markers."
+    },
+    "no_forward_references": {
+      "passed": true,
+      "unknown_terms_flagged": [],
+      "deferred_pointers_found": ["flowcharts (line 180) — one-sentence named-and-deferred pointer to next topic, acceptable"],
+      "notes": "All prior-topic vocabulary (computation, input/process/output, defined steps, decomposition, sub-tasks) confirmed in prior-topic allowlist. This topic's concepts (pseudocode, sequence, decision/conditional/branch, condition, repetition, building blocks of logic) all defined on first use. 'syntax' introduced inline with plain-language definition at line 15. 'flowcharts' named and deferred in one sentence at line 180 — not taught."
+    },
+    "faithfulness": {
+      "passed": true,
+      "assertions_sampled": 10,
+      "unsupported_assertions": 0,
+      "unsupported_threshold": 2,
+      "notes": "All 10 sampled assertions trace to corpus: pseudocode definition (corpus §5.1), tea-making example (corpus §5.1), three building blocks (corpus §5.3), temperature IF example (corpus §5.3), shopping-cart WHILE example (corpus §5.3), pseudocode-vs-Python comparison (corpus §5.5), no single official standard (corpus §5.4), highest-score worked example (corpus §6), professional use cases (corpus §7). The inline definition of 'syntax' as a term is a minor authorial addition within normal paraphrase range."
+    },
+    "beginner_readability": {
+      "passed": true,
+      "undefined_terms": [],
+      "jargon_dump": null,
+      "abstract_first": null,
+      "academic_register": null,
+      "notes": "All non-everyday terms defined on first use. 'syntax' defined inline at line 15. No paragraph introduces 3+ new terms simultaneously. Concrete examples (tea, sequence, IF/temperature, WHILE/shopping-cart) precede or accompany abstractions throughout. Sentences are short to medium length; no hedging language detected."
+    },
+    "formatting": {
+      "passed": true,
+      "wall_of_text": null,
+      "unlisted_sequence": null,
+      "no_inline_examples": null,
+      "bold_term_definitions_present": true,
+      "notes": "No paragraph exceeds 6 sentences. Three building blocks rendered as separate subsections with code blocks. 'Do and avoid' table properly formatted. Multiple inline examples appear before the Worked Example section (tea-making, sequence, IF/temperature, WHILE/shopping-cart, pseudocode-vs-Python table). Bold-term definitions used for all introduced concepts."
+    },
+    "assessment_references": {
+      "passed": true,
+      "assessment_reference_found": false,
+      "notes": "No assessment IDs, due-week references, or grade weights found in reading text."
+    },
+    "scope": {
+      "passed": true,
+      "scope_creep": null,
+      "notes": "Reading stays on the pseudocode headline. The 'flowcharts' mention at line 180 is a one-sentence named-and-deferred pointer, not instruction. No material beyond pseudocode definition, three building blocks, conventions, and practical use cases is taught."
+    }
+  },
+  "verdict": "All checks pass. Format, length (1340 words / 7 min), citations (primary [1] cited 5x), forward-reference discipline, faithfulness, beginner readability, formatting, assessment-reference hygiene, and scope are all clean. Reading is fit for HITL #3.",
+  "at": "2026-06-21T00:00:00Z"
+}

@@ -1,0 +1,36 @@
+{
+  "topic_id": "6.6",
+  "generated_at": "2026-06-19T00:00:00Z",
+  "format": "gift",
+  "question_count": 4,
+  "depth_profile": "atomic",
+  "$bias_defense_applied": true,
+  "$shuffle_seed": "topic-6.6-hash",
+  "correct_position_distribution": {"0": 1, "1": 1, "2": 1, "3": 1},
+  "questions": [
+    {
+      "id": "q1",
+      "type": "mcq",
+      "objective_ref": "Explain what the dot product is: multiply matching positions, then add up the results.",
+      "correct_position": 1
+    },
+    {
+      "id": "q2",
+      "type": "mcq",
+      "objective_ref": "Calculate the dot product of two short vectors step by step.",
+      "correct_position": 3
+    },
+    {
+      "id": "q3",
+      "type": "mcq",
+      "objective_ref": "Describe the geometric relationship: same direction = high positive, opposite = negative, perpendicular = zero.",
+      "correct_position": 0
+    },
+    {
+      "id": "q4",
+      "type": "mcq",
+      "objective_ref": "Interpret a high dot product as a signal that two items are similar; give a concrete AI recommendation example.",
+      "correct_position": 2
+    }
+  ]
+}

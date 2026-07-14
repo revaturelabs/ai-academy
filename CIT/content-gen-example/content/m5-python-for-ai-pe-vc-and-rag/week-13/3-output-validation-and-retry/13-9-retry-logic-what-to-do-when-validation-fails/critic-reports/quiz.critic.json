@@ -1,0 +1,134 @@
+{
+  "passed": true,
+  "attempt": 2,
+  "topic_id": "13.9",
+  "checks": {
+    "hard_prerequisites": {
+      "passed": true,
+      "meta_exists": true,
+      "bias_defense_applied": true
+    },
+    "positional_bias": {
+      "passed": true,
+      "distribution": { "pos0": 1, "pos1": 1, "pos2": 1, "pos3": 2 },
+      "positions_by_question": { "q1": 0, "q2": 3, "q3": 1, "q4": 2, "q5": 3 },
+      "meta_gift_desync": false,
+      "max_share": 0.40,
+      "threshold": 0.40,
+      "note": "max_share equals threshold exactly — boundary pass (rule is >0.40 to fail, so 0.40 is not a failure)."
+    },
+    "length_bias": {
+      "passed": true,
+      "longest_correct_rate": 0.20,
+      "baseline": 0.25,
+      "threshold": 0.40,
+      "per_question": {
+        "q1": {
+          "correct_len": 78,
+          "distractor_lengths": [62, 73, 70],
+          "distractor_mean": 68.33,
+          "ratio": 1.141,
+          "longest_correct": false
+        },
+        "q2": {
+          "correct_len": 74,
+          "distractor_lengths": [87, 107, 89],
+          "distractor_mean": 94.33,
+          "ratio": 0.785,
+          "longest_correct": false
+        },
+        "q3": {
+          "correct_len": 63,
+          "distractor_lengths": [72, 59, 74],
+          "distractor_mean": 68.33,
+          "ratio": 0.922,
+          "longest_correct": false
+        },
+        "q4": {
+          "correct_len": 89,
+          "distractor_lengths": [69, 64, 86],
+          "distractor_mean": 73.00,
+          "ratio": 1.219,
+          "longest_correct": true,
+          "note": "Ratio 1.219 marginally exceeds 1.20 per-question threshold — flagged as longest-correct. Overall rate is 1/5 = 0.20, well under the 0.40 hard-fail threshold."
+        },
+        "q5": {
+          "correct_len": 68,
+          "distractor_lengths": [85, 71, 89],
+          "distractor_mean": 81.67,
+          "ratio": 0.833,
+          "longest_correct": false
+        }
+      },
+      "longest_correct_questions": ["q4"],
+      "note": "Attempt-1 longest_correct_rate was 0.80. Revision brought it to 0.20 — a large improvement. q4 correct answer (89 chars) is 1.219x the distractor mean (73.0), just over the per-question 1.20 signal threshold, but the hard-fail gate is on the overall rate (0.20 <= 0.40). Pass."
+    },
+    "distractor_plausibility": {
+      "passed": true,
+      "absurd_rate": 0.00,
+      "total_distractors": 15,
+      "absurd_count": 0,
+      "weakest_questions": [],
+      "scores": {
+        "q1": { "D1": 3, "D2": 3, "D3": 3 },
+        "q2": { "D1": 3, "D2": 3, "D3": 3 },
+        "q3": { "D1": 3, "D2": 3, "D3": 3 },
+        "q4": { "D1": 3, "D2": 3, "D3": 3 },
+        "q5": { "D1": 3, "D2": 3, "D3": 3 }
+      },
+      "notes": [
+        "q2 D3 ('works eventually because the model self-corrects between calls') — strong replacement for the attempt-1 'fewer tokens' distractor; directly targets the common misconception that models have inter-call awareness.",
+        "q3 D1 ('number of valid responses during the session') — strong replacement for the attempt-1 'total tokens' distractor; plausible confusion between success-counter and attempt-counter."
+      ]
+    },
+    "objective_coverage": {
+      "passed": true,
+      "uncovered_objectives": [],
+      "orphan_questions": [],
+      "coverage_map": {
+        "LO1 — Explain what a retry loop does when an LLM response fails validation": ["q1"],
+        "LO2 — Describe the role of a corrective message in prompting the model to self-correct": ["q2"],
+        "LO3 — Use a retry counter to limit how many times a retry is attempted": ["q3"],
+        "LO4 — Identify when max retry limit is reached and explain why a fallback is returned": ["q4", "q6"],
+        "LO5 — Read and trace a short Python retry loop and predict what it will output": ["q5"]
+      }
+    },
+    "beginner_fairness_and_scope": {
+      "passed": true,
+      "jargon_in_stem": [],
+      "out_of_scope_questions": [],
+      "unfair_distractors": [],
+      "soft_findings": [
+        {
+          "question": "q3",
+          "distractor_position": "D3",
+          "finding": "feedback_mismatch",
+          "detail": "D3 text is 'The number of times the validation function returned False during the loop.' but its feedback reads 'No — token usage is a separate concern; the counter is a simple integer that counts call attempts.' The 'token usage' reference is a leftover from the attempt-1 distractor that was replaced. Soft finding only — does not affect any hard check. Recommend updating D3 feedback to 'No — the counter tracks call attempts, not the number of failed validations specifically; a failed validation increments the counter but the counter's scope is attempts, not validation outcomes.'"
+        }
+      ]
+    },
+    "gift_syntax": {
+      "passed": true,
+      "category_line_present": true,
+      "all_mcq_have_general_feedback": true,
+      "short_answer_multiple_accepted_values": true,
+      "code_block_in_stem_q5": true
+    }
+  },
+  "hard_fails": [],
+  "soft_findings": [
+    {
+      "check": "length_bias",
+      "detail": "q4 correct answer ratio is 1.219 (marginally over the per-question 1.20 signal mark). Not a hard fail at the overall-rate level (0.20). Monitor if q4 is revised again."
+    },
+    {
+      "check": "beginner_fairness_and_scope",
+      "detail": "q3 D3 feedback text references 'token usage' — a leftover from attempt-1 distractor that was replaced. Feedback prose is inconsistent with the new distractor text. Minor copy issue; does not affect student scoring."
+    }
+  ],
+  "auto_correction_applied": {
+    "shuffle_round_2": false
+  },
+  "verdict": "Pass — all checks clean on attempt 2. Positional bias: positions [0,3,1,2,3], max_share=0.40 (boundary pass). Length bias: rate 0.20 (down from 0.80 in attempt 1); q4 ratio 1.219 is the sole marginal flag but overall rate is well under threshold. Distractor plausibility: all 15 distractors score 3/4 (plausible misconceptions), absurd_rate=0.00. LO coverage: all 5 LOs covered, no orphans. Scope: confined to retry logic concepts taught in topic corpus. Two soft findings — q4 length margin and q3 D3 feedback prose mismatch (leftover from attempt-1 distractor) — neither gates approval.",
+  "at": "2026-06-14T00:00:00Z"
+}

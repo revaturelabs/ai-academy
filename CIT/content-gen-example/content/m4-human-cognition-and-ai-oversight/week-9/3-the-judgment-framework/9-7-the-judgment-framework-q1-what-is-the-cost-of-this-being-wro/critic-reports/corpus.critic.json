@@ -1,0 +1,130 @@
+{
+  "critic": "corpus-critic",
+  "topic_id": "9.7",
+  "topic_title": "The Judgment Framework — Q1: What is the cost of this being wrong?",
+  "cycle": 2,
+  "at": "2026-06-13T00:00:00Z",
+  "passed": true,
+  "verdict": "PASS — all 6 checks passed. Cycle 1 failures fully resolved: (1) LO5 no longer defines or asks learners to describe 'acceptable error' — it reads 'Name the other two Judgment Framework questions (covered in topics 9.8 and 9.9) and explain why Q1 must come first'; (2) Implementation Step 6 is now a bare mention-and-defer pointer 'Acceptable error thresholds are covered in topic 9.10.' with no defining clause; (3) 'precision (7.8)' in Pattern 3 now carries an inline definition 'meaning 94 in every 100 posts it removes actually violated the policy'. No scope_creep violations remain. Required sections present and non-trivial. Citation density strong (~92% of key claims in sections 5–7 carry markers; all 3 resources cited at least once). No forward references detected. Word count ~2100 words, within the 1500–6000 acceptable corpus range. No beginner readability failures. Corpus is ready to ground downstream artifacts.",
+  "checks": {
+    "required_sections": {
+      "passed": true,
+      "findings": [],
+      "detail": {
+        "learning_objectives": {
+          "present": true,
+          "word_count_estimate": 110,
+          "threshold": 50,
+          "passed": true
+        },
+        "introduction": {
+          "present": true,
+          "word_count_estimate": 130,
+          "threshold": 50,
+          "passed": true
+        },
+        "core_concepts": {
+          "present": true,
+          "word_count_estimate": 820,
+          "threshold": 100,
+          "passed": true
+        },
+        "key_takeaways": {
+          "present": true,
+          "word_count_estimate": 135,
+          "threshold": 50,
+          "passed": true
+        }
+      }
+    },
+    "citation_density": {
+      "passed": true,
+      "resources_source": "web_search",
+      "mode": "strict",
+      "findings": [],
+      "primary_resources_cited": {
+        "passed": true,
+        "detail": "[1] (aicompetence.org — primary) cited in sections 4, 5.1, 5.2, 5.3, 5.4, 5.5, 6, 7.1, 7.2, 10. Fully covered."
+      },
+      "supporting_resources_cited": {
+        "passed": true,
+        "detail": "[2] (arxiv) cited in sections 4, 5.1, 5.2, 5.3, 5.4, 5.5, 6, 7.2, 8, 10. [3] (corporatefinanceinstitute.com) cited in sections 5.2, 5.5, 7.3, 8, 10."
+      },
+      "key_claim_density_estimate": "~92% of standalone factual assertions in sections 5, 6, and 7 carry citation markers. Exceeds the 60% threshold.",
+      "fake_citations": false
+    },
+    "sequence_drift": {
+      "passed": true,
+      "findings": [],
+      "forward_referenced_terms": [],
+      "observations": [
+        "Term 'sensitivity rate' (section 7, Pattern 1) is absent from formal concepts_introduced for any prior topic (all topics 1.x–8.x have empty concepts_introduced arrays — data gap). However: (a) it derives from earlier curriculum weeks 7–8 (topic 7.9 Recall = sensitivity), not a forward reference; (b) an inline definition is provided ('meaning it correctly identifies 87 in every 100 true abnormalities'). Not flagged.",
+        "Terms 'false positive' and 'false negative' (section 7, Pattern 3) are similarly absent from formal concepts_introduced but both are inline-defined ('wrongly removing a post (false positive)'; 'wrongly leaving a post up (false negative)') and derive from prior weeks. Not flagged.",
+        "Q2 (topic 9.8), Q3 (topic 9.9), and 'Acceptable error thresholds' (topic 9.10) appear as bare names with explicit topic pointers and no definitions — correct mention-and-defer form.",
+        "data_gap_note: concepts_introduced arrays are empty for all topics 1.1–8.7. Forward-reference checking for weeks 1–8 vocabulary is degraded but no plausible forward references identified."
+      ]
+    },
+    "length_sanity": {
+      "passed": true,
+      "findings": [],
+      "word_count_estimate": 2100,
+      "range_applied": "1500–6000 (caller-specified acceptable range for any depth profile)",
+      "within_range": true,
+      "note": "Corpus is below the deep-profile reading artifact range (5000–6000 words) but that range applies to the reading artifact, not the corpus. The corpus at ~2100 words is within the 1500–6000 corpus acceptability window. Soft observation: depth profile appears to be standard/deep given the topic complexity and Implementation + Real-World Patterns sections; corpus could be expanded further if a deeper reading artifact is planned, but this does not fail the corpus check."
+    },
+    "topic_scope": {
+      "passed": true,
+      "finding_code": null,
+      "findings": [],
+      "out_of_scope_concepts": [],
+      "cycle_1_failures_resolved": [
+        {
+          "issue": "LO6 defined 'acceptable error' as a learner outcome",
+          "status": "resolved",
+          "evidence": "LO5 now reads: 'Name the other two Judgment Framework questions (covered in topics 9.8 and 9.9) and explain why Q1 must come first.' No definition of acceptable error. There is no LO6."
+        },
+        {
+          "issue": "Implementation Step 6 had em-dash defining clause: '— the formal definition of how much error is tolerable in a given use case —'",
+          "status": "resolved",
+          "evidence": "Step 6 now reads: 'Acceptable error thresholds are covered in topic 9.10.' Bare name plus topic pointer only. No defining clause."
+        }
+      ],
+      "observations": [
+        "Q2 and Q3 in section 5.1 are listed without bolding and with topic pointers (9.8, 9.9). Q1 is bolded as the focus of this topic — compliant.",
+        "'Precision (7.8)' in Pattern 3 references a prior-week concept (week 7) with an inline definition. This is a back-reference, not scope creep."
+      ]
+    },
+    "beginner_readability": {
+      "passed": true,
+      "hard_fail_triggered": false,
+      "finding_count": 0,
+      "escalation_threshold": 3,
+      "findings": [],
+      "cycle_1_soft_finding_resolved": {
+        "issue": "'precision rate' in Pattern 3 lacked inline definition",
+        "status": "resolved",
+        "evidence": "Pattern 3 now reads: 'a published precision (7.8) rate of 94% on flagged content, meaning 94 in every 100 posts it removes actually violated the policy.' Inline definition present."
+      },
+      "observations": [
+        "Judgment Framework, Severity, Probability, Detectability all bolded and defined in plain language on first use.",
+        "Three dimensions introduced under separate subsection headers — no paragraph introduces 3+ new terms simultaneously.",
+        "Plain, direct register. Active voice. Addressed to 'you'. No hedging phrases detected.",
+        "'sensitivity rate', 'false positive', 'false negative' all receive inline definitions at point of use."
+      ]
+    }
+  },
+  "hard_fails": [],
+  "soft_warnings": [],
+  "previous_cycle_summary": {
+    "cycle": 1,
+    "result": "FAIL",
+    "hard_fails_in_cycle_1": [
+      "scope_creep: LO6 defined 'acceptable error'",
+      "scope_creep: Implementation Step 6 em-dash defining clause for 'acceptable error thresholds'"
+    ],
+    "soft_warnings_in_cycle_1": [
+      "beginner_readability: 'precision rate' used without inline definition in Pattern 3"
+    ],
+    "all_resolved": true
+  }
+}

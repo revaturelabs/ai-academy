@@ -1,0 +1,30 @@
+{
+  "topic_id": "11.9",
+  "captured_at": "2026-06-13T00:08:00Z",
+  "captured_by": "bhuvaneshwarim@revature.com",
+  "resources_source": "web_search",
+  "web_search_query": "edge case testing Python beginners boundary input testing programming",
+  "resources": [
+    {
+      "type": "url",
+      "value": "https://edbennett.github.io/python-testing-ci/04-edges/index.html",
+      "role": "primary",
+      "source": "web_search",
+      "notes": "Carpentries-affiliated Python testing lesson — edge and corner cases, equivalence classes, boundary values. Beginner-accessible academic source."
+    },
+    {
+      "type": "url",
+      "value": "https://runestone.academy/ns/books/published/fopp/TestCases/Testingfunctions.html",
+      "role": "supporting",
+      "source": "web_search",
+      "notes": "Open textbook chapter from Foundations of Python Programming — writing test cases, boundary testing, equivalence classes."
+    },
+    {
+      "type": "url",
+      "value": "https://www.freecodecamp.org/news/a-beginners-guide-to-testing-implement-these-quick-checks-to-test-your-code-d50027ad5eed/",
+      "role": "supporting",
+      "source": "web_search",
+      "notes": "freeCodeCamp beginner guide — zero/null/empty inputs, why edge cases matter, practical Python examples."
+    }
+  ]
+}

@@ -1,0 +1,10 @@
+{
+  "topic_id": "13.10",
+  "title": "Why version control matters — never lose working code, track what changed and why",
+  "estimated_read_minutes": 7,
+  "word_count": 1312,
+  "generated_at": "2026-06-14T00:00:00Z",
+  "embeds_diagram": true,
+  "citations_used": [1, 2, 3],
+  "sections": ["Overview", "Key Concepts", "Worked Example", "In Practice", "Key Takeaways", "References"]
+}

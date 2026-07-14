@@ -1,0 +1,73 @@
+{
+  "critic": "quiz-critic",
+  "topic_id": "12.6",
+  "topic_title": "Reading from a file — open, read lines, close",
+  "cycle": 2,
+  "at": "2026-06-14T00:00:00Z",
+  "passed": true,
+  "verdict": "PASS cycle 2 — all checks clean. Length bias eliminated: distractors lengthened to match correct-answer weight; 0/6 questions flagged (0% < 40% threshold). Positional bias unchanged at 33% max share. All 6 LOs covered. Distractors plausible throughout.",
+  "cycle_1_failure": "length_bias — 5/6 questions (83%) had correct answers exceeding 120% of mean distractor length; auto-fixed by lengthening distractors",
+  "checks": {
+    "positional_bias": {
+      "passed": true,
+      "distribution": [1, 2, 0, 1, 3, 2],
+      "position_counts": {"0": 1, "1": 2, "2": 2, "3": 1},
+      "max_share": 0.333,
+      "threshold": 0.40,
+      "findings": []
+    },
+    "length_bias": {
+      "passed": true,
+      "longest_correct_rate": 0.0,
+      "baseline": 0.25,
+      "threshold": 0.40,
+      "per_question": [
+        {"q": "q1", "correct_chars": 53, "mean_distractor_chars": 67.3, "threshold": 80.8, "flagged": false},
+        {"q": "q2", "correct_chars": 62, "mean_distractor_chars": 66.7, "threshold": 80.0, "flagged": false},
+        {"q": "q3", "correct_chars": 63, "mean_distractor_chars": 80.7, "threshold": 96.8, "flagged": false},
+        {"q": "q4", "correct_chars": 90, "mean_distractor_chars": 85.0, "threshold": 102.0, "flagged": false},
+        {"q": "q5", "correct_chars": 90, "mean_distractor_chars": 83.7, "threshold": 100.4, "flagged": false},
+        {"q": "q6", "correct_chars": 75, "mean_distractor_chars": 70.3, "threshold": 84.4, "flagged": false}
+      ],
+      "findings": []
+    },
+    "distractor_plausibility": {
+      "passed": true,
+      "absurd_rate": 0.0,
+      "notes": [
+        "Q1 distractors: confuse open() with .read(), .readlines(), and a hypothetical byte-count return — all plausible misreadings of what open() does.",
+        "Q2 distractors: confuse .read() with split(), .readline(), and a count function — plausible for a beginner.",
+        "Q3 distractors: confuse .readlines() with .read(), .readline(), and a wishful auto-strip version — all documented misconceptions.",
+        "Q4 distractors: write-mode confusion, bookmark-reset misconception, execution-halt misconception — plausible beginner errors.",
+        "Q5 distractors: speed misconception, auto-strip misconception, auto-list misconception — all plausible wishful thinking about with blocks.",
+        "Q6 distractors: leading-only strip misconception, comma-split misconception, list-return misconception — all documented beginner errors."
+      ],
+      "findings": []
+    },
+    "objective_coverage": {
+      "passed": true,
+      "uncovered_objectives": [],
+      "coverage": [
+        "q1 → LO1: open() return value and file object concept",
+        "q2 → LO2: .read() return value",
+        "q3 → LO3: .readlines() vs .readline() and trailing \\n",
+        "q4 → LO4: .close() and resource cleanup",
+        "q5 → LO5: with block and automatic close",
+        "q6 → LO6: for line in f: iteration and .strip()"
+      ]
+    },
+    "beginner_fairness": {
+      "passed": true,
+      "findings": [],
+      "notes": [
+        "All stems in plain language. open(), .read(), .readlines(), .readline(), .strip(), .close(), with block — all are this topic's introduced concepts. No un-taught material required. PASS.",
+        "All distractors represent beginner misconceptions about this topic's concepts, not advanced-topic trivia. PASS."
+      ]
+    }
+  },
+  "summary": {
+    "hard_failures": [],
+    "soft_findings": [],
+    "auto_fixed_in_cycle_2": ["length_bias — distractors lengthened; correct-answer pedagogical content preserved"]
+  }
+}

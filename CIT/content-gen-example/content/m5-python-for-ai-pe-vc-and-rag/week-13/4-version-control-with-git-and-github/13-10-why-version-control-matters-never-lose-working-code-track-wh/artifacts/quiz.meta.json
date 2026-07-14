@@ -1,0 +1,47 @@
+{
+  "topic_id": "13.10",
+  "generated_at": "2026-06-14T14:00:00Z",
+  "format": "gift",
+  "question_count": 6,
+  "$bias_defense_applied": true,
+  "$shuffle_seed": "13.10-vcs-why",
+  "correct_position_distribution": [1, 2, 3, 0, 1, 2],
+  "questions": [
+    {
+      "id": "q1",
+      "type": "mcq",
+      "objective_ref": "Explain in plain language what a VCS is and the core problem it solves.",
+      "correct_position": 1
+    },
+    {
+      "id": "q2",
+      "type": "mcq",
+      "objective_ref": "Describe at least three concrete risks of managing code without a VCS.",
+      "correct_position": 2
+    },
+    {
+      "id": "q3",
+      "type": "mcq",
+      "objective_ref": "Compare the manual folder-copy approach to using a VCS and identify what each approach tracks (or fails to track).",
+      "correct_position": 3
+    },
+    {
+      "id": "q4",
+      "type": "mcq",
+      "objective_ref": "Explain why recording the reason for a change — not just the change itself — helps both solo developers and teams.",
+      "correct_position": 0
+    },
+    {
+      "id": "q5",
+      "type": "mcq",
+      "objective_ref": "Recognise the terms Git, GitHub, commit, branch, and merge as concepts you will learn in the next topics.",
+      "correct_position": 1
+    },
+    {
+      "id": "q6",
+      "type": "mcq",
+      "objective_ref": "Describe at least three concrete risks of managing code without a VCS (applied scenario — overwrite trap).",
+      "correct_position": 2
+    }
+  ]
+}

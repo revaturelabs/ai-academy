@@ -1,0 +1,46 @@
+$CATEGORY: CIT/M3/week-7/7-5-temperature-low-picks-the-most-likely-token-high-introduces
+
+::q1:: In the context of a Large Language Model, what is temperature?
+{
+~A measure of how much training data the model has processed, which affects how confidently it answers#No — temperature is not related to training data volume or the model's knowledge base.
+=A number that controls how spread out the probability distribution is before sampling#Correct — temperature reshapes the distribution over all possible tokens before one is chosen.
+~A rating that tells you whether the model's answer is correct or just a guess#No — temperature says nothing about correctness; it only controls the spread of choices.
+~A setting that limits which topics the model is allowed to respond about#No — temperature does not restrict topics; it adjusts how the model commits to its top token choices.
+#### Tests LO1 — what temperature is and what it controls (corpus §5.1).
+}
+
+::q2:: A student sets temperature to 0.2, then to 1.5, and runs the same prompt. Which statement correctly describes what happens to the probability distribution in each case?
+{
+~At 0.2 the distribution flattens so more tokens become competitive; at 1.5 it sharpens so the top token dominates#No — this is the reverse. Low temperature sharpens; high temperature flattens.
+~At both settings the distribution stays the same, because temperature only affects response speed, not probabilities#No — temperature directly reshapes the distribution by scaling raw scores before softmax runs.
+~At 0.2 the distribution flattens slightly; at 1.5 it also flattens, just more so, because both are above absolute zero#No — only high temperature flattens the distribution; low temperature sharpens it.
+=At 0.2 the distribution sharpens so the top token dominates; at 1.5 it flattens so many tokens become competitive#Correct — dividing by a small number amplifies score gaps (sharp); dividing by a large number compresses them (flat).
+#### Tests LO2 — effect of low versus high temperature on the probability distribution (corpus §5.2).
+}
+
+::q3:: Why does setting temperature to 0 make a Large Language Model behave like a deterministic system?
+{
+=It always picks the token with the highest probability, removing all randomness from the selection#Correct — at temperature 0 the model skips sampling entirely and commits to the top token every time, so the same prompt always produces the same response.
+~It freezes the model's weights so they cannot change between runs, locking in one fixed answer#No — model weights are not changed by temperature; temperature only affects token selection during generation.
+~It reduces the vocabulary to one token, so there is only ever one choice available#No — the full vocabulary is still available; temperature 0 just means the top-ranked token is always chosen.
+~It forces the model to search the internet for a single verified fact before responding#No — LLMs do not search the internet by default, and temperature has nothing to do with external retrieval.
+#### Tests LO4 — why temperature 0 produces deterministic behaviour (corpus §5.3).
+}
+
+::q4:: A developer is building a tool that answers factual yes/no questions about company policy — for example, "Is the London office open on Sundays?" Which temperature setting is most appropriate, and why?
+{
+~High temperature (above 1.0), because a wider distribution ensures the model considers all possible policies before answering#No — a wide distribution increases variety and the chance of picking unlikely tokens, which is not desirable for factual policy questions.
+~Medium temperature (around 0.7), because it balances accuracy and creativity and is always the safest choice#No — medium temperature still introduces variation; for consistent factual answers, low temperature is the right choice.
+=Low temperature (0 to 0.5), because consistency and accuracy matter more than variety for a structured factual task#Correct — low temperature sharpens the distribution so the model reliably picks its most likely (and usually most correct) response.
+~Temperature 1.0 exactly, because that is the default and defaults are always appropriate for business use#No — the right temperature depends on the task; the default is not automatically correct for factual precision tasks.
+#### Tests LO3 — predicting the appropriate temperature for a given task (corpus §5.4).
+}
+
+::q5:: Which pairing of real-world use case and temperature setting is correct?
+{
+~Customer service chatbot → high temperature; creative writing assistant → low temperature#No — this is reversed. Customer service needs consistency (low); creative writing benefits from variety (high).
+=Customer service chatbot → low temperature; creative writing assistant → high temperature#Correct — customer service needs repeatable, accurate responses (low temp); creative writing benefits from exploring varied, less obvious options (high temp).
+~Both use cases → high temperature, because users always prefer varied and surprising responses#No — customers asking about order status want consistent, accurate answers, not surprising variations.
+~Both use cases → low temperature, because reliability is always more important than creativity#No — creative writing assistants are specifically designed to produce varied suggestions; low temperature would make them repetitive and generic.
+#### Tests LO5 — real-world examples where low versus high temperature is preferable (corpus §7).
+}

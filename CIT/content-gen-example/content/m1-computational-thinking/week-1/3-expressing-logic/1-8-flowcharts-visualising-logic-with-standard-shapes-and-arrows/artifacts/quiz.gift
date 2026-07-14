@@ -1,0 +1,49 @@
+$CATEGORY: CIT/M1/week-1/1.8-flowcharts-visualising-logic-with-standard-shapes-and-arrows
+
+::q1:: Which of the following shapes is used to show that data is being received from a user or sent out as a result — for example, "Get the user's name" or "Print the total cost"? {
+~Oval (terminator)#No — the oval marks the start or end of the whole process, not where data crosses in or out.
+~Rectangle (process box)#No — the rectangle represents an action or calculation; it does not signal data crossing the system boundary.
+=Parallelogram (input/output)#Correct — the slanted parallelogram is the standard shape for input and output, signalling that data is entering or leaving the process.
+~Diamond (decision diamond)#No — the diamond represents a yes/no question, not the movement of data in or out.
+#### Tests recognition of the input/output parallelogram from the five standard shapes (corpus §5.2, Shape 4).
+}
+
+::q2:: A student is tracing a flowchart and reaches a shape with two arrows leaving it, one labelled YES and one labelled NO. What is the name of this shape and what does it represent? {
+=Decision diamond — a yes/no question that splits the flow into two paths#Correct — a diamond (rhombus) always represents a yes/no question; its two labelled exits are the YES and NO paths.
+~Process box — an action that can produce two different outcomes#No — a rectangle represents a single action; it has one outgoing arrow, not two labelled exits.
+~Terminator — the end of the process, which can exit in two ways#No — a terminator (oval) marks START or END; it never has two exits.
+~Flowline — a split arrow that shows two possible directions of travel#No — a flowline is the arrow itself, not the shape from which the arrows leave.
+#### Tests identification of the decision diamond and its two labelled exits (corpus §5.2, Shape 3).
+}
+
+::q3:: A flowchart describes this process\: START → "Get student score" → "Is score ≥ 50?" → YES\: "Print Pass" → END; NO\: "Print Fail" → END. A student enters a score of 42. Which path does the flowchart take? {
+~YES path — the flowchart prints Pass because 42 is close to 50#No — the condition is "≥ 50"; 42 does not satisfy that condition, so the YES path is not taken.
+~The flowchart stops at the diamond because 42 is not a valid input#No — 42 is a valid numeric input; the flowchart does not stop; it takes the NO path.
+~The flowchart repeats from START until the score reaches 50#No — there is no loop in this flowchart; there is no arrow pointing back to an earlier shape.
+=NO path — the flowchart prints Fail because 42 is less than 50#Correct — 42 < 50, so the condition "Is score ≥ 50?" is false; the NO arrow leads to "Print Fail".
+#### Tests the ability to read a flowchart and trace the correct path through a decision diamond (corpus §5.5).
+}
+
+::q4:: A developer writes a pseudocode block using IF/OTHERWISE and then draws a flowchart of the same process. A colleague says "the pseudocode is the real version and the flowchart is just a picture of it." Which statement best corrects this misconception? {
+~The flowchart is always more accurate because pictures cannot contain errors in logic#No — flowcharts can contain logical errors just as pseudocode can; neither is inherently more accurate.
+=Both represent the same underlying logic; the difference is the medium, not the meaning#Correct — pseudocode and flowcharts are interchangeable representations; the choice depends on the audience, not on which is more correct.
+~Pseudocode is only for programmers; flowcharts are only for non-technical audiences#No — both tools are used by technical and non-technical collaborators; the corpus states you will often use both on the same project.
+~A flowchart can only show sequence; pseudocode is needed to show decisions and loops#No — flowcharts show all three building blocks\: sequence, decision (diamond), and repetition (loop arrows).
+#### Tests understanding that pseudocode and flowcharts describe the same logic in different forms (corpus §5.4).
+}
+
+::q5:: What is the correct shape to use when you want to mark the very beginning of a flowchart? {
+~Rectangle (process box)#No — a rectangle represents a step or action inside the process, not the boundary where the process begins.
+~Diamond (decision diamond)#No — a diamond represents a yes/no question; it is never used to mark the start of a flowchart.
+=Oval (terminator)#Correct — the oval is the terminator shape; every flowchart starts with an oval labelled START and ends with an oval labelled END.
+~Parallelogram (input/output)#No — the parallelogram is used when data enters or leaves the process, not to mark the start or end.
+#### Tests recall of the terminator shape and its role as the START/END marker (corpus §5.2, Shape 1).
+}
+
+::q6:: A student is drawing a flowchart for this process\: "Ask the user for their age. If the age is 18 or above, print 'Registration approved'. If not, print 'You must be 18 or older'." After the START oval and before the decision diamond, which shape should appear and what label should it carry? {
+~A rectangle labelled "Is age ≥ 18?" because the first step checks the condition#No — a yes/no question belongs in a diamond, not a rectangle; also, receiving input from the user belongs in a parallelogram.
+~An oval labelled "Get user age" because the start and the first step can share a shape#No — the oval is reserved strictly for START and END; no action or input step may be combined into the terminator.
+~A diamond labelled "Get user age" because the input could be valid or invalid#No — the diamond is for yes/no questions only; "Get user age" is an input step, not a question.
+=A parallelogram labelled "Get user age" because data is entering the process from the user#Correct — receiving input from the user is exactly what the parallelogram (input/output shape) represents; it appears between START and the decision diamond.
+#### Tests the ability to choose the correct shape when drawing a flowchart for a real-world process (corpus §6, Worked Example).
+}

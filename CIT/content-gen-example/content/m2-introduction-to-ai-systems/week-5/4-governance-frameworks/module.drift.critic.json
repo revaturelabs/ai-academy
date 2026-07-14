@@ -1,0 +1,50 @@
+{
+  "module_slug": "4-governance-frameworks",
+  "module_title": "Governance Frameworks",
+  "course_code": "M2",
+  "week_num": 5,
+  "topics_walked": ["5.7", "5.8", "5.9", "5.10", "5.11", "5.12", "5.13"],
+  "topic_titles": {
+    "5.7": "EU AI Act — risk tiers (unacceptable / high / limited / minimal risk)",
+    "5.8": "EU AI Act — obligations for high-risk systems (documentation, testing, human oversight)",
+    "5.9": "EU AI Act — prohibited uses including social scoring and real-time biometric surveillance",
+    "5.10": "NIST AI Risk Management Framework — four functions: Govern, Map, Measure, Manage",
+    "5.11": "White House Executive Order on AI (2023) — key provisions",
+    "5.12": "India AI governance — MEITY advisory guidelines",
+    "5.13": "Knowing which governance framework applies to your system"
+  },
+  "passed": true,
+  "checks": {
+    "terminology": {
+      "passed": true,
+      "summary": "Framework names and softness vocabulary are used identically across all seven topics. 'EU AI Act' (with the expansion 'European Union Artificial Intelligence Act' on first use), 'NIST AI RMF / NIST AI Risk Management Framework', 'EO 14110' (always paired with its formal title on introduction), and 'MEITY advisories' are stable. The four-way classification vocabulary — 'binding law' (EU AI Act), 'voluntary guidance' (NIST), 'executive order'/'Presidential order' (EO 14110), 'advisory'/'soft guidance' (MEITY) — is consistent in 5.7, 5.10, 5.11, 5.12, and 5.13. 'Risk tiers' (unacceptable/high/limited/minimal), 'conformity assessment', 'provider/deployer', 'extraterritorial reach', 'dual-use foundation models', and 'due diligence' each have a single stable definition. The softness-scale framing NIST -> MEITY -> EO 14110 -> EU AI Act is identical in 5.12's section 5.5 recap table, 5.12's reading In-Practice table, and 5.13's prose/Key-Takeaways — same ordering, same per-framework descriptors, same column semantics (what it is / who issues / how binding / how fast it changes). 5.11's three-way table (EU AI Act / NIST / EO 14110) is a strict subset of 5.12's four-way table and uses identical cell wording for the shared rows.",
+      "findings": []
+    },
+    "prereq_ordering": {
+      "passed": true,
+      "summary": "Every framework is taught before it is synthesized. EU AI Act sub-arc 5.7 -> 5.8 (high-risk obligations, expands 5.7's tier) -> 5.9 (prohibited uses, the top tier of 5.7) is correctly ordered; 5.8 and 5.9 both reference 5.7 backward only. 5.10 (NIST) references 5.7 backward. 5.11 (EO 14110) correctly references NIST (5.10) for the 'same agency, new job' tie-in and EU AI Act (5.7), both earlier. 5.12 (MEITY) references 5.7/5.10/5.11, all earlier. 5.13 references all four frameworks (5.7, 5.10, 5.11, 5.12) and the 5.8 obligations, all earlier positions. No forward-only dependency found.",
+      "findings": []
+    },
+    "learning_arc": {
+      "passed": true,
+      "summary": "The module builds cleanly: individual frameworks (5.7-5.9 EU AI Act deep dive; 5.10 NIST; 5.11 EO 14110; 5.12 MEITY) then synthesis/decision (5.13 which framework applies). No gap and no abrupt jump — each new framework is introduced by explicit contrast to the ones already met (5.10 contrasts NIST-voluntary vs EU-binding; 5.11 sets EO between them; 5.12 places MEITY on the softness scale; 5.13 pulls all four into a decision procedure). The module narrative_seed's stated key takeaway ('knowing which framework applies is part of the engineering job') is delivered verbatim as 5.13's thesis. Audience level is uniformly absolute-beginner across all seven; no later topic uses a term cold that an earlier topic did not introduce.",
+      "findings": []
+    },
+    "duplication": {
+      "passed": true,
+      "summary": "The three comparison artifacts are complementary, not redundant. 5.11's diagram is a STATIC side-by-side comparison of three approaches (flowchart LR, invisible '~~~' links, no decision logic, four-axis cells). 5.13's diagram is a DECISION FLOWCHART (flowchart TD, START node branching on jurisdiction/use questions to all four frameworks, explicitly non-exclusive). 5.12's softness-scale TABLE is a four-way classification recap, a different cut (degree-of-bindingness ranking) from either diagram. 5.13 does NOT re-teach framework internals: it explicitly states 'does not re-teach the four frameworks' and instead teaches the decision procedure (two questions, extraterritorial reach, non-exclusivity, engineering-decision framing) plus a worked example; its only re-statement of EU tier internals is a four-bullet recap explicitly cited back to 5.7, not a re-teach. The EU AI Act sub-arc has no internal overlap: 5.7 = the four tiers, 5.8 = high-risk obligations only, 5.9 = the unacceptable/prohibited tier only — each topic owns one slice and defers the others by ID.",
+      "findings": []
+    },
+    "lab_alignment": {
+      "passed": true,
+      "summary": "Week-5 lab seed is a 500-word essay (one AI success + one AI failure; what went right/wrong, who was accountable, what should change) plus a 3-minute presentation. The module directly supports the 'who was accountable / what should change / which framework' dimension: 5.8 makes accountability concrete (provider vs deployer, human oversight, logging), 5.10 (Govern names who is accountable), and 5.13 supplies the exact decision procedure a student needs to name 'which framework applies' to their chosen case. Each EU topic and 5.10 carries a Hands-On Exercise that rehearses classifying a real system, feeding the essay. Next assessment correctly tagged A2 (AI Systems Essay, due week 6, 15%) on all topic manifests.",
+      "findings": []
+    }
+  },
+  "findings": [],
+  "advisory_notes": [
+    "Non-coherence state observation (out of drift scope, surfaces at HITL #4): topics 5.7-5.10 manifests show status 'corpus_drafted' while 5.11/5.12/5.13 show 'artifacts_complete'. The task states all are at topic_artifacts_approved; the manifest 'status' field for 5.7-5.10 lags behind their progress state. Not a coherence defect; flag for the orchestrator's state reconciliation, not for content rework."
+  ],
+  "verdict": "PASS — seven-topic governance module is coherent end to end: framework names and the NIST->MEITY->EO->EU AI Act softness scale are used identically across 5.7/5.10/5.11/5.12/5.13, prerequisites all point backward, the individual-frameworks -> synthesis arc has no gap, and the three comparison artifacts (5.11 static side-by-side, 5.12 softness-scale table, 5.13 decision flowchart) are complementary with no re-teach in 5.13.",
+  "at": "2026-06-22T17:05:00Z"
+}

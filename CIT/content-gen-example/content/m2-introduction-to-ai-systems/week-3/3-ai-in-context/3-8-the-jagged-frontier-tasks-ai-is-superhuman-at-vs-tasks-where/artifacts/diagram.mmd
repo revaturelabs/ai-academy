@@ -1,0 +1,38 @@
+---
+title: The Jagged Frontier — Where AI Peaks and Where It Falls
+config:
+  theme: base
+  themeVariables:
+    primaryColor: "#a5d8ff"
+    primaryBorderColor: "#4a9eed"
+    lineColor: "#555"
+  flowchart:
+    htmlLabels: true
+    curve: basis
+---
+graph LR
+  subgraph PEAKS["AI Peaks — Superhuman"]
+    direction TB
+    P1["<b>Pattern Recognition</b><br/><span style='font-size:11px;color:#6d28d9'>Scans millions of records,\nflags anomalies at scale</span>"]
+    P2["<b>Medical Image Diagnosis</b><br/><span style='font-size:11px;color:#6d28d9'>Matches specialist accuracy\non specific imaging tasks</span>"]
+    P3["<b>Text Generation &amp; Summarisation</b><br/><span style='font-size:11px;color:#6d28d9'>Fluent writing, translation,\nand summarisation at expert level</span>"]
+    P4["<b>Code Synthesis</b><br/><span style='font-size:11px;color:#6d28d9'>Writes working code\nfor well-defined problems</span>"]
+    P5["<b>Protein Structure Prediction</b><br/><span style='font-size:11px;color:#6d28d9'>Solved a 50-year biology\nchallenge (AlphaFold)</span>"]
+  end
+
+  subgraph VALLEYS["AI Valleys — Unreliable"]
+    direction TB
+    V1["<b>Spatial Reasoning</b><br/><span style='font-size:11px;color:#6d28d9'>Cannot mentally rotate shapes\nor judge physical fit</span>"]
+    V2["<b>Counting Objects</b><br/><span style='font-size:11px;color:#6d28d9'>Mis-counts items even in\nsimple sentences or images</span>"]
+    V3["<b>Multi-Step Logic</b><br/><span style='font-size:11px;color:#6d28d9'>Short-circuits reasoning chains;\njumps to plausible-sounding conclusions</span>"]
+    V4["<b>Reliable Arithmetic</b><br/><span style='font-size:11px;color:#6d28d9'>Not a calculator — errors grow\nwith problem complexity</span>"]
+    V5["<b>Calibration</b><br/><span style='font-size:11px;color:#6d28d9'>Expresses high confidence\neven when it is wrong</span>"]
+  end
+
+  PEAKS -->|"Jagged Frontier"| VALLEYS
+
+  classDef peak fill:#d4edda,stroke:#28a745,color:#155724
+  classDef valley fill:#fff3cd,stroke:#ffc107,color:#856404
+
+  class P1,P2,P3,P4,P5 peak
+  class V1,V2,V3,V4,V5 valley

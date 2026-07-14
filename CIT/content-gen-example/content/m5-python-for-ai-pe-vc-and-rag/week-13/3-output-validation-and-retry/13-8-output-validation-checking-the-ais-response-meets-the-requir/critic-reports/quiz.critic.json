@@ -1,0 +1,42 @@
+﻿{
+  "passed": true,
+  "checks": {
+    "positional_bias": {
+      "passed": true,
+      "distribution": [1, 2, 1, 1],
+      "max_share": 0.40,
+      "note": "Position 1 holds 2/5 = 0.40 - at threshold, not over it"
+    },
+    "length_bias": {
+      "passed": true,
+      "longest_correct_rate": 0.00,
+      "flagged_questions": [],
+      "note": "q4 and q5 correct IS longest but ratio <=1.20 (1.07, 1.15); not flagged"
+    },
+    "distractor_plausibility": {
+      "passed": true,
+      "absurd_rate": 0.00,
+      "note": "q1 d3 borderline but represents availability-vs-format misconception; acceptable"
+    },
+    "objective_coverage": {
+      "passed": true,
+      "uncovered_objectives": [],
+      "coverage_map": {
+        "LO1_define_validation": ["q1"],
+        "LO2_rubric_to_checklist": ["q2"],
+        "LO3_write_python_validator": ["q3"],
+        "LO4_interpret_result": ["q4"],
+        "LO5_recognise_mistakes": ["q5", "q6"]
+      }
+    },
+    "beginner_fairness": {
+      "passed": true,
+      "jargon_in_stem": false,
+      "out_of_scope_questions": [],
+      "unfair_distractors": []
+    }
+  },
+  "shuffled_at": "2026-06-14T00:00:00Z",
+  "verdict": "All 5 checks pass. Positional distribution [1,2,1,1] max_share=0.40 at threshold not over. Length bias 0.00 flagged rate. All 5 LOs covered. Distractors plausible for beginners. Scope clean.",
+  "at": "2026-06-14T12:40:00Z"
+}

@@ -1,0 +1,52 @@
+$CATEGORY: CIT/M5/week-13/13-6-output-format-control-getting-json-numbered-lists-or-fixed-s
+
+::q1:: A Python program calls a language model (LLM — Large Language Model) ten times with the same question. It receives a JSON block three times, a prose paragraph five times, and a mixed sentence-plus-JSON twice. What is the most accurate explanation for this inconsistency?
+{
+~The program made its API calls too quickly, causing the server to return different response types on each request#Response format is not affected by call timing; the source of inconsistency lies in the model's training and sampling behaviour.
+=Without a format instruction, the model samples from all writing styles in its training data, so each call independently produces a different output shape#Correct — the model learned many styles equally; without a format specification, every call samples independently, producing different structures.
+~The inconsistency is caused by token limits being reached on some calls, forcing the model to truncate its response before completing the JSON#Token limits would truncate a response mid-way; they do not cause the model to switch between prose and JSON as the output shape.
+~The model requires the developer to switch to a structured-output library before it can return JSON reliably, regardless of what the prompt says#Reliability comes from a clear format instruction in the prompt, not from switching libraries; the inconsistency here exists because no format instruction was given.
+#### Tests why LLMs produce inconsistent format by default (corpus §5.1). The core cause is varied training data plus probabilistic sampling — not API configuration or request timing.
+}
+
+::q2:: A developer wants to extract a product name and price from reviews and needs the model to return only a JSON object with two keys. Which prompt instruction most reliably achieves this?
+{
+~Just mentioning "JSON" somewhere in the prompt is sufficient — the model will infer the required keys and structure from the surrounding context#Naming the format alone is not enough; a reliable instruction also shows the exact keys and suppresses surrounding prose.
+~Return your answer as a clearly labelled, machine-readable format that lists the product name and the price as two separate, identifiable fields#"Clearly labelled, machine-readable" is not specific enough — it does not name JSON, show keys, or suppress surrounding text.
+~Include the format request at the very end of the prompt only, since instructions placed earlier get overshadowed by the question content#Format instructions can appear anywhere in a well-constructed prompt; placement at the end alone does not guarantee reliability.
+=Respond with only this JSON object\: {"name"\: "<product name>", "price"\: "<price with currency symbol>"}. No explanation before or after.#Correct — this instruction names the format, shows the exact keys, and adds a suppression instruction to prevent surrounding prose.
+#### Tests writing a format instruction with exact, testable language (corpus §5.2, §5.4). A reliable format instruction names the structure, specifies keys, and suppresses surrounding text.
+}
+
+::q3:: A student is using the template-echo strategy to get the model to classify a support ticket. The student provides a template with placeholders and instructs the model to fill it in and return only the filled template. Which scenario best describes when template echo is more reliable than an inline declaration for this task?
+{
+=When the output must feed code that reads fixed-position fields — an inline description leaves enough ambiguity to break the parser#Correct — template echo is most reliable when field positions must be exact and a plain-language description is too ambiguous for the parser.
+~When the format is a simple numbered list with three items, because showing the blank list helps the model count to three accurately#Inline declaration ("a numbered list, exactly three items") handles simple counts well; template echo is not specifically needed for basic list structures.
+~When the developer wants the model to choose its own field names based on the content of each individual ticket#Template echo is precisely for preserving a fixed set of field names; allowing the model to invent field names defeats its purpose.
+~When the response will be displayed to end users rather than parsed by code, because users prefer a template structure#The use case for template echo is machine-parseable fixed-position output; display preference is not the deciding factor.
+#### Tests application of the three format-specification strategies, specifically when to prefer template echo (corpus §5.3, §5.5). Template echo excels at preserving exact field names and structure for downstream parsing.
+}
+
+::q4:: A developer reviews the model's response to a format-specified prompt and notices the output is {"productName"\: "SuperBlend Pro", "price"\: "$29.99"} but the declared format contract specified the key "product_name" (with an underscore). What is this called and why does it happen?
+{
+~A hallucination — the model invented a field name that was not in the prompt because it did not read the instruction carefully#Hallucination refers to the model generating false factual content; renaming a key while keeping the correct value is a structural deviation, not an invented fact.
+~A parsing error — the developer's JSON parser changed the key name when it converted the response string to a Python dictionary#Parsers preserve key names exactly; they do not rename keys. The mismatch originated in the model's response, not in downstream parsing.
+=Format drift — the model treated the format instruction as a suggestion, so training patterns for key naming overrode the explicit instruction#Correct — format drift is when a response deviates from the declared format contract; it happens because models treat format instructions as suggestions and training patterns can override them.
+~A context overflow — the key name was written differently because the response exceeded the model's maximum output token limit#Token limits would truncate content at the end of a response; they do not cause a key name earlier in the response to be spelled differently.
+#### Tests identification of format drift by comparing a response against the format contract (corpus §5.6). Format drift is any deviation from the declared structure — including key-name differences.
+}
+
+::q5:: A developer writes a validator function that checks whether the model's response is valid JSON with the required keys. On the first call the response fails validation. According to the output validator pattern covered in this topic, what should the developer do next?
+{
+~Log the failure and immediately return None to the caller, because a format failure on the first call means the format instruction needs to be rewritten before retrying#Returning None immediately skips the retry step; the pattern requires exactly one retry before falling back, not an immediate failure.
+=Retry once with a corrective follow-up message that names the required format and keys, then return a safe fallback if the retry also fails#Correct — the output validator pattern is validate, retry once with a corrective message on failure, return a safe fallback if the retry also fails.
+~Call the model a second time using the same original prompt, because repeating the identical request often produces a different format on the next attempt#Retrying with the identical prompt gives the model no new information about what went wrong; the pattern specifies a corrective follow-up message that names the expected format.
+~Ask the user to copy and paste the model's raw response into a text editor and manually fix the JSON before the program continues#Requiring manual user intervention is not part of the automated validator pattern; the pattern is designed to handle format failures in code without human involvement.
+#### Tests the output validator pattern — check, retry once with corrective message, fallback (corpus §5.7). The retry uses a targeted correction, not the same prompt repeated.
+}
+
+::q6:: In one sentence, what does a suppression instruction add to a JSON format specification, and why is it important? {
+=It tells the model to output the JSON object only — with no preamble or surrounding text — so that json.loads() can parse the response directly without extra stripping
+=It instructs the model to return only the JSON and nothing else, preventing sentences like "Here is the result\:" or code-fence markers that would cause json.loads() to fail
+=A suppression instruction removes surrounding prose and code-fence markers from the response so the output can be passed straight to json.loads() without pre-processing
+}

@@ -1,0 +1,49 @@
+$CATEGORY: CIT/M4/week-9/9-4-anchoring-bias-over-relying-on-the-first-piece-of-informatio
+
+::9-4-q1:: Anchoring bias is best described as the tendency to ___. {
+~search for evidence that confirms what you already believe and ignore anything that contradicts your existing view#No — that is confirmation bias, which is driven by prior beliefs rather than by a first number or statement received.
+=give too much weight to the first piece of information received, so all later judgments are pulled toward it#Correct — the first information you encounter acts as a mental reference point that distorts every subsequent estimate.
+~process all incoming information automatically and intuitively, without pausing to evaluate it in any deliberate way#No — that describes System 1 thinking in general; anchoring bias is specifically about over-relying on an initial value.
+~keep adjusting an estimate up or down until it matches what a more experienced person recommends#No — anchoring bias is about stopping adjustment too soon, not about adjusting toward an external standard.
+#### Tests the plain-language definition of anchoring bias (corpus §4, §5.1, §10).
+}
+
+::9-4-q2:: Which two factors, working together, best explain why people stop adjusting too soon when moving away from an anchor? {
+~Lack of relevant knowledge about the topic, combined with low motivation to spend time reaching an accurate result#No — anchoring effects are observed even in motivated domain experts; the bias is structural, not a knowledge or effort gap.
+~A strong emotional attachment to the anchor, combined with social pressure not to deviate too far from an initial figure#No — the corpus identifies cognitive mechanisms, not emotional attachment or social pressure, as the causes of insufficient adjustment.
+~System 1 actively blocking any estimate that strays too far from the anchor, preventing System 2 from completing its work#No — System 1 sets the anchor as a baseline; it does not block estimates. The curtailment comes from System 2 fatigue.
+=System 2 adjustment stops when the estimate feels plausible enough, and the anchor has already activated memories that make that early stopping feel justified#Correct — effortful adjustment quits too soon, while anchor-triggered memory retrieval supplies false confidence that the estimate is close enough.
+#### Tests the two reinforcing reasons for insufficient adjustment (corpus §5.3).
+}
+
+::9-4-q3:: In the Tversky and Kahneman wheel-of-fortune experiment, participants who saw the wheel land on 65 gave much higher UN membership estimates than those who saw it land on 10. What does this result most directly show? {
+=Even a randomly generated number that has nothing to do with the question can anchor estimates and shift them significantly#Correct — the wheel result was unrelated to UN membership, yet it shifted average estimates by about 20 percentage points, proving anchors need not be meaningful.
+~Anchoring only occurs when the first number seen is a plausible answer to the question being asked#No — the wheel number was explicitly random and irrelevant to UN membership, yet the anchoring effect was still large and consistent.
+~Participants confused the wheel result with real UN data because the experiment did not clearly explain that the wheel was random#No — participants knew the wheel was a game element; the anchoring effect operated despite that knowledge, not because of a factual mix-up.
+~The adjustment heuristic works correctly when an anchor is clearly irrelevant, so estimates based on irrelevant anchors are unbiased#No — the experiment shows the opposite: a clearly irrelevant random anchor still produced biased, insufficient adjustment across participants.
+#### Tests recall of the Tversky and Kahneman wheel-of-fortune experiment (corpus §5.1, §7).
+}
+
+::9-4-q4:: A project manager asks an AI tool to estimate a software project budget. The AI outputs "$180,000." After reviewing the project scope — smaller than the AI's comparison cases — the manager revises the estimate to "$160,000." Independent research later shows the realistic range is $95,000–$110,000. Which statement best explains what happened? {
+~The manager applied the adjustment heuristic correctly but lacked the domain expertise needed to reach the evidence-based range#No — anchoring affects domain experts and novices alike; the issue is the structural pull of the first number, not a knowledge gap.
+~The manager was anchored by prior experience with large budgets and then found the AI's figure confirmed that existing belief#No — this would be confirmation bias driven by a prior belief; here the distortion came specifically from the AI's first numerical output.
+=The AI's figure acted as an anchor, and adjustment stopped when $160,000 felt reasonable, leaving the estimate far above the evidence-based range#Correct — the AI's number set the starting point, and insufficient adjustment left the final estimate anchored close to $180,000.
+~The manager over-adjusted downward from $180,000, which shows that people move too far from an anchor rather than staying too close#No — $160,000 is still well above $95,000–$110,000; this is under-adjustment toward the anchor, not over-adjustment away from it.
+#### Tests identification of anchoring bias in an AI-assisted work scenario (corpus §6, §8).
+}
+
+::9-4-q5:: A colleague says\: "Both anchoring bias and confirmation bias are cognitive biases, so they must work the same way." Which response best corrects this claim? {
+~They are the same bias; anchoring is simply the label applied when the confirming belief happens to be a specific number rather than a general opinion#No — anchoring and confirmation bias are distinct mechanisms documented in separate lines of research and triggered by different inputs.
+=They differ in what starts them\: confirmation bias needs a prior belief and biases evidence search, while anchoring bias needs only a first value and produces insufficient adjustment#Correct — the trigger (prior belief vs. first value) and the mechanism (selective search vs. anchor-and-adjust) are both different.
+~Anchoring bias also requires a prior belief to activate — the difference is that it distorts numerical judgments rather than narrative or qualitative conclusions#No — anchoring does not require any prior belief; even a random irrelevant number with no prior belief attached can function as an anchor.
+~Confirmation bias is a fast, automatic System 1 response, while anchoring bias is a slow System 2 calculation error that occurs during deliberate reasoning#No — both biases are driven largely by System 1; neither is primarily a failure of slow, deliberate calculation.
+#### Tests the ability to distinguish anchoring bias from confirmation bias by mechanism (corpus §5.6).
+}
+
+::9-4-q6:: You are about to ask an AI assistant to suggest a project timeline. Which action best applies the self-check for anchoring bias before looking at the AI's answer? {
+~Ask the AI to generate two different timelines and use their average as your working starting point#No — averaging two AI outputs still anchors you to AI-generated numbers; you have not formed an independent estimate before seeing the AI's output.
+~Read the AI's suggested timeline first, then apply extra downward adjustment to counteract the expected anchoring pull#No — viewing the AI's output sets the anchor immediately regardless of any intent to adjust; extra effort reduces but does not remove the bias.
+=Write down your own independent timeline estimate before looking at the AI's output, giving yourself a starting point the AI has not shaped#Correct — forming an independent estimate before exposure is a structural intervention that prevents the AI's output from becoming your baseline.
+~Remind yourself that you know about anchoring bias, because that self-awareness alone is enough to prevent the AI's number from influencing your final estimate#No — the corpus states that awareness reduces the effect slightly but does not eliminate it; behavioral strategies are required alongside awareness.
+#### Tests application of the anchoring bias self-check to an AI-assisted work scenario (corpus §6, §7, §8).
+}

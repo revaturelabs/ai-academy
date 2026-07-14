@@ -1,0 +1,10 @@
+{
+  "topic_id": "11.3",
+  "title": "Variables — naming and storing values",
+  "estimated_read_minutes": 7,
+  "word_count": 1341,
+  "generated_at": "2026-06-12T00:27:00Z",
+  "embeds_diagram": true,
+  "citations_used": [1, 2, 3, 4, 5],
+  "sections": ["Overview", "Key Concepts", "Worked Example", "In Practice", "Key Takeaways", "References"]
+}

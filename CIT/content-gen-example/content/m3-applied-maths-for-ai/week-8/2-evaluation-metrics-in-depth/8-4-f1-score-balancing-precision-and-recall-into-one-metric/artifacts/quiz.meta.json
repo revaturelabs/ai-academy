@@ -1,0 +1,62 @@
+{
+  "topic_id": "8.4",
+  "generated_at": "2026-06-22T08:00:00Z",
+  "format": "gift",
+  "question_count": 6,
+  "$bias_defense_applied": true,
+  "$shuffle_seed": "8.4",
+  "correct_position_distribution": [1, 3, 0, 2, 2, 3],
+  "positional_distribution_summary": {
+    "0": 1,
+    "1": 1,
+    "2": 2,
+    "3": 2,
+    "max_share": 0.333,
+    "all_four_positions_used": true
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "type": "mcq",
+      "objective_ref": "Explain the problem the F1 score solves: turning two separate numbers (precision and recall) into one.",
+      "correct_position": 1
+    },
+    {
+      "id": "q2",
+      "type": "mcq",
+      "objective_ref": "Describe what the F1 score is in plain words — a single balance score from 0 to 1.",
+      "correct_position": 3
+    },
+    {
+      "id": "q3",
+      "type": "mcq",
+      "objective_ref": "Explain why F1 uses a harmonic mean rather than a plain average, and what that buys you.",
+      "correct_position": 0
+    },
+    {
+      "id": "q4",
+      "type": "mcq",
+      "objective_ref": "Explain why F1 uses a harmonic mean rather than a plain average, and what that buys you (precision 1.0 / recall 0.0 trap).",
+      "correct_position": 2
+    },
+    {
+      "id": "q5",
+      "type": "mcq",
+      "objective_ref": "State why a high F1 requires both precision and recall to be decent — neither can hide behind the other.",
+      "correct_position": 2
+    },
+    {
+      "id": "q6",
+      "type": "mcq",
+      "objective_ref": "Decide when to report one F1 number and when to report precision and recall separately.",
+      "correct_position": 3
+    }
+  ],
+  "lo_coverage_map": {
+    "LO1 — problem F1 solves (two numbers into one)": ["q1"],
+    "LO2 — what F1 is (single balance score 0 to 1)": ["q2"],
+    "LO3 — why harmonic mean not plain average": ["q3", "q4"],
+    "LO4 — high F1 needs BOTH precision and recall": ["q5"],
+    "LO5 — when to report F1 vs precision/recall separately": ["q6"]
+  }
+}

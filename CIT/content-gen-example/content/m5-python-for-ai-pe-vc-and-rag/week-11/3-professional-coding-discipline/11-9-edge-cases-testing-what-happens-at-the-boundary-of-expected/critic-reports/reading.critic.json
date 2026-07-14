@@ -1,0 +1,139 @@
+{
+  "critic": "reading-critic",
+  "topic_id": "11.9",
+  "topic_title": "Edge cases — testing what happens at the boundary of expected input",
+  "evaluated_at": "2026-06-13T00:00:00Z",
+  "passed": true,
+  "verdict": "PASS with 2 soft findings (assessment_reference). All hard-fail checks pass. The reading is well-structured, within word-count budget, faithful to corpus, beginner-accessible, and correctly scoped. Two assessment references (A4, due week 13) appear in Overview (line 5) and Key Takeaways (line 167) — these are LMS metadata in learner prose and should be removed or softened at HITL #3, but do not constitute a hard fail. No scope_creep detected.",
+  "profile": "standard",
+  "target_word_range": [1200, 1600],
+  "target_minute_range": [6, 8],
+  "checks": {
+    "format_discipline": {
+      "passed": true,
+      "frontmatter_present": false,
+      "meta_sidecar_missing": false,
+      "section_template_violation": false,
+      "sections_found": ["Overview", "Key Concepts", "Worked Example", "In Practice", "Key Takeaways", "References"],
+      "sections_required": ["Overview", "Key Concepts", "Worked Example", "In Practice", "Key Takeaways", "References"],
+      "notes": "First non-empty line is the H1 title. Sidecar parses cleanly. Exactly 6 required sections in correct order."
+    },
+    "length": {
+      "passed": true,
+      "word_count_reported": 1390,
+      "word_count_in_range": true,
+      "estimated_minutes": 6.04,
+      "minutes_in_range": true,
+      "notes": "1390 words (target 1200–1600). 1390/230 = 6.04 min (target 6–8 min). Both in range."
+    },
+    "citations": {
+      "passed": true,
+      "primary_resources_cited": true,
+      "primary_resources": [
+        {
+          "marker": "[1]",
+          "url": "https://edbennett.github.io/python-testing-ci/04-edges/index.html",
+          "role": "primary",
+          "cited_inline": true,
+          "in_bibliography": true
+        }
+      ],
+      "supporting_resources_cited": [
+        {
+          "marker": "[2]",
+          "url": "https://runestone.academy/ns/books/published/fopp/TestCases/Testingfunctions.html",
+          "cited_inline": true,
+          "in_bibliography": true
+        },
+        {
+          "marker": "[3]",
+          "url": "https://www.freecodecamp.org/news/a-beginners-guide-to-testing-implement-these-quick-checks-to-test-your-code-d50027ad5eed/",
+          "cited_inline": true,
+          "in_bibliography": true
+        }
+      ],
+      "orphan_markers": [],
+      "orphan_bibliography_entries": [],
+      "notes": "All 3 resources cited inline and present in References section. No orphans."
+    },
+    "forward_references": {
+      "passed": true,
+      "violations": [],
+      "prior_topic_references": [
+        {"topic": "11.4", "term": "falsy", "line": 74, "note": "Prior topic — acceptable"},
+        {"topic": "11.7", "term": "spec-first discipline", "line": 100, "note": "Prior topic — acceptable"},
+        {"topic": "11.8", "term": "loud failure / silent failure", "lines": [70, 142], "note": "Prior topic — acceptable"}
+      ],
+      "notes": "All cross-topic references point to earlier topics in the sequence (11.4, 11.7, 11.8). No forward references found."
+    },
+    "faithfulness": {
+      "passed": true,
+      "assertions_sampled": 10,
+      "unsupported_assertions": 0,
+      "hard_fail_threshold": 2,
+      "sampled": [
+        {"assertion": "Edge case definition — input at or just beyond boundary", "corpus_section": "5.1", "supported": true},
+        {"assertion": "Off-by-one error definition", "corpus_section": "5.3", "supported": true},
+        {"assertion": "Three edge-case categories (empty, zero, min/max)", "corpus_section": "5.4", "supported": true},
+        {"assertion": "Test prediction 5-step process", "corpus_section": "5.5", "supported": true},
+        {"assertion": "Grade boundary equivalence class table", "corpus_section": "5.2", "supported": true},
+        {"assertion": "def grade(mark) code example with > vs >= bug", "corpus_section": "5.3", "supported": true},
+        {"assertion": "Python 0 is falsy", "corpus_section": "5.4", "supported": true},
+        {"assertion": "AI pipeline silent failure context", "corpus_section": "7", "supported": true},
+        {"assertion": "'most inconvenient input' professional habit", "corpus_section": "7", "supported": true},
+        {"assertion": "Worked example predictions and PASS/FAIL outcomes", "corpus_section": "6", "supported": true}
+      ],
+      "notes": "All 10 sampled assertions trace directly to corpus. No unsupported claims."
+    },
+    "beginner_readability": {
+      "passed": true,
+      "undefined_terms": [],
+      "jargon_dump": null,
+      "abstract_first": null,
+      "academic_register": null,
+      "notes": "All non-everyday terms defined at first use (edge case, equivalence class, boundary value, off-by-one error, test prediction). Terms from prior topics (falsy, loud failure, silent failure, spec-first) are referenced with topic attribution — acceptable. Concrete analogies precede abstractions throughout. No hedging phrases detected above threshold. Sentences are short and active-voice."
+    },
+    "formatting": {
+      "passed": true,
+      "wall_of_text": null,
+      "unlisted_sequence": null,
+      "no_inline_examples": null,
+      "definition_shape": true,
+      "notes": "No paragraphs exceed ~4–5 sentences. 5-step prediction process is a numbered list. Worked example uses numbered steps. Definitions use bold-term / plain-meaning shape throughout (edge case, equivalence class, boundary value, off-by-one error, test prediction). Inline examples accompany every new concept introduced in Key Concepts."
+    },
+    "assessment_reference": {
+      "passed": true,
+      "severity": "soft",
+      "occurrences": [
+        {
+          "line": 5,
+          "text": "exactly the skill required for the A4 portfolio (your first Python project, due week 13)",
+          "finding": "Names assessment ID A4 and due week 13 in learner prose"
+        },
+        {
+          "line": 167,
+          "text": "For the A4 portfolio (your first Python project, due week 13), each notebook must include at least three documented edge-case tests — with inputs, predictions, and outcomes.",
+          "finding": "Names assessment ID A4, due week 13, and a graded requirement count"
+        }
+      ],
+      "notes": "Two assessment_reference occurrences. Soft finding — surfaces at HITL #3 for author review. Does not escalate to hard fail (only 1 distinct soft finding type across checks 5–6, threshold is ≥3)."
+    },
+    "scope": {
+      "passed": true,
+      "scope_creep": null,
+      "notes": "Reading teaches edge cases at appropriate beginner depth. pytest and unittest are NOT mentioned in the reading (they appear only in the corpus's Real-World Patterns section which was correctly excluded). All content maps to the topic title. No advanced concepts taught inline."
+    },
+    "diagram_embedded": {
+      "passed": true,
+      "embed_found": true,
+      "embed_line": 20,
+      "embed_text": "![Edge case input zones and test prediction steps](./diagram.png)",
+      "caption_present": true,
+      "notes": "Diagram embedded in Key Concepts section with descriptive alt text and a caption explaining the boundary zones shown."
+    }
+  },
+  "soft_findings_count": 1,
+  "soft_findings_escalation_threshold": 3,
+  "escalated_to_hard_fail": false,
+  "gold_example_comparison": "No gold example found at .claude/references/gold-examples/reading/ — evaluation uses written standards from artifact-mix.json and SKILL.md."
+}

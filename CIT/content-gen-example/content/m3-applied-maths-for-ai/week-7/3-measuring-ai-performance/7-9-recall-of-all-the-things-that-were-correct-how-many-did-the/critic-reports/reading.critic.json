@@ -1,0 +1,65 @@
+{
+  "critic": "reading-critic",
+  "topic_id": "7.9",
+  "title": "Recall — of all the things that were correct, how many did the model find",
+  "run_at": "2026-06-23T00:00:00Z",
+  "verdict": "PASSED",
+  "passed": true,
+  "word_count_actual": 1307,
+  "word_count_target": "1200–1600",
+  "estimated_read_minutes_actual": 7,
+  "estimated_read_minutes_target": "6–8",
+  "checks": {
+    "format_discipline": {
+      "passed": true,
+      "findings": []
+    },
+    "length": {
+      "passed": true,
+      "findings": []
+    },
+    "citations": {
+      "passed": true,
+      "findings": []
+    },
+    "no_forward_references": {
+      "passed": true,
+      "findings": []
+    },
+    "faithfulness": {
+      "passed": true,
+      "assertions_sampled": 12,
+      "unsupported_count": 0,
+      "findings": []
+    },
+    "beginner_readability": {
+      "passed": true,
+      "findings": [],
+      "known_fix_ground_truth_defined_on_first_use": {
+        "verified": true,
+        "note": "Line 19: 'the actual correct label in the dataset, the ground truth, agreed' — ground truth defined inline at first appearance."
+      },
+      "known_pattern_recall_bold_defining_clause": {
+        "verified": true,
+        "note": "No instance of **recall** bolded followed by a defining clause found anywhere in the reading. Recurring team defect is absent."
+      }
+    },
+    "formatting": {
+      "passed": true,
+      "findings": []
+    },
+    "assessment_references": {
+      "passed": true,
+      "findings": []
+    },
+    "scope": {
+      "passed": true,
+      "findings": [],
+      "note": "Precision formula appears once in Worked Example (line 91) framed explicitly as 'For comparison' and directly mirrors corpus section 5.5. Prior topic 7.8 taught precision; this is comparison context, not scope creep."
+    }
+  },
+  "hard_fails": [],
+  "soft_findings": [],
+  "escalated_to_hard_fail": false,
+  "summary": "All 9 checks pass. No hard fails. No soft findings. Known fix (ground truth defined on first use) verified. Recurring team defect (recall bolded with defining clause) absent. Reading is faithful to corpus, scoped correctly to recall as standalone metric, beginner-readable, and within word-count and read-time targets."
+}

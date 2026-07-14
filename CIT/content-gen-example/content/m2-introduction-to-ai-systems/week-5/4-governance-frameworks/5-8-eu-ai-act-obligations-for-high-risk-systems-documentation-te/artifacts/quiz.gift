@@ -1,0 +1,49 @@
+$CATEGORY: CIT/M2/week-5/5.8-5-8-eu-ai-act-obligations-for-high-risk-systems-documentation-te
+
+::q1:: Under the EU AI Act (European Union Artificial Intelligence Act), what is true about high-risk AI systems? {
+~They are banned outright and may not be built, sold, or used anywhere in the European Union at all.#No — outright bans apply to the unacceptable tier; high-risk systems are allowed but tightly controlled.
+~They carry no real duties, as long as the maker says the system is accurate enough for people to use.#No — a maker's say-so is not enough; the obligations are required no matter what accuracy is claimed.
+=They are allowed, but only if their makers and users meet a fixed set of safety obligations.#Correct — the high-risk tier is permitted under strict conditions, and those conditions are these obligations.
+~They only need the buyer's approval, with no safety duties placed on the maker who built it.#No — the maker carries heavy duties; the buyer's approval alone does not satisfy the law.
+#### Tests that high-risk systems are allowed but tightly controlled, which is why obligations attach (corpus §2, §3, §5.1).
+}
+
+::q2:: Which set best names the main obligations the EU AI Act places on a high-risk AI system? {
+=Risk management, technical documentation, data governance, logging, human oversight, accuracy and robustness, and a conformity check.#Correct — this is the core list of obligations the EU AI Act attaches to high-risk systems.
+~A single signed promise from the company that built the system that it is safe, with no records kept behind it.#No — a bare promise is not enough; the duties include documentation, testing, oversight, and more.
+~Only a privacy notice plus a button that lets the users switch the whole system off whenever they like.#No — privacy notices and off-switches are not the list; the obligations are broader and safety-focused.
+~Only speed and cost targets, since the main concern of the law is that the system runs cheaply and quickly.#No — speed and cost are not obligations; the duties are about safety, fairness, and accountability.
+#### Tests recall of the main high-risk obligations named in plain language (corpus §5.2).
+}
+
+::q3:: How does the EU AI Act split duties between the provider and the deployer of a high-risk system? {
+~The deployer who uses the system carries nearly all of the heavy duties, since they are the ones who run it on real people.#No — the provider who builds the system carries most heavy duties; the deployer's role is lighter.
+~Both roles always do exactly the same work, sharing every single duty equally between the two of them.#No — the duties are split; the provider does the build-time safety work, the deployer the use-time duties.
+~Neither role has duties, because an outside regulator is solely responsible for whatever the system does.#No — duties fall on the provider and deployer; the regulator checks, it does not absorb their responsibility.
+=The provider who builds the system carries most duties; the deployer mainly uses it as instructed and keeps oversight.#Correct — the provider does the safety homework; the deployer uses it as instructed and keeps a human in the loop.
+#### Tests the plain-level distinction between provider duties and deployer duties (corpus §5.1, §10).
+}
+
+::q4:: What is a conformity assessment under the EU AI Act, and when does it happen? {
+~A check that is run only after the system is already out on the market and has served real customers for a while.#No — a conformity assessment must happen before the system reaches the market, not after launch.
+=An official check, before the system reaches the market, that it meets the required safety obligations.#Correct — like a car safety inspection, it is the pre-market gate; no pass, no market.
+~A check the buyer does at home, deciding for itself whether the system is safe enough to switch on.#No — it is an official pre-market check, not the buyer's own informal check after purchase.
+~A yearly tax filing proving the company can afford fines if the system later causes harm to people.#No — it is a safety check of the system, not a financial filing about paying fines.
+#### Tests what a conformity assessment is and why it must happen before the system reaches the market (corpus §5.2, §5.3).
+}
+
+::q5:: What does the human oversight obligation require for a high-risk AI system? {
+~The artificial intelligence watches over the staff and corrects the mistakes that the people make at work.#No — oversight means a human supervising the AI, not the AI supervising humans.
+~All human involvement is removed so the system can decide faster without anyone there to slow it down.#No — that is the opposite; oversight requires a human kept in the loop, able to intervene.
+=The system is built so a person can monitor it and step in or override its decisions when needed.#Correct — e.g. a doctor can review the AI's suggestion and reject it rather than letting the AI decide alone.
+~The system runs unattended and is only looked at once a year during a scheduled outside audit.#No — oversight means an ongoing ability to monitor and override, not a once-a-year glance.
+#### Tests the meaning of the human oversight obligation in concrete terms (corpus §5.2, §10).
+}
+
+::q6:: The EU AI Act follows a "before, then ongoing" pattern for high-risk duties. Which statement fits that pattern? {
+=Most duties are done before the system reaches the market, and some — like logging and oversight — keep running afterward.#Correct — the pattern is "before, then ongoing"; the conformity check is the gate, not the finish line.
+~Every duty ends the moment the system has passed its check and is then placed on the open market for sale to customers.#No — some duties, like logging and human oversight, keep running after the system is on the market.
+~Every duty starts only after a failure happens, so nothing at all must be done before the system actually launches.#No — most duties must be done before market entry; the law tries to catch harm early, not after a failure.
+~Documentation may be skipped entirely, as long as the system stays accurate after it has launched.#No — documentation is required regardless of accuracy; it is never optional.
+#### Tests the before-versus-ongoing ordering of the obligations (corpus §5.3, §8).
+}

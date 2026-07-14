@@ -1,0 +1,49 @@
+$CATEGORY: CIT/M3/week-7/7-1-probability-basics-likelihood-events-outcomes
+
+::q1:: A probability value of 0.7 means that an event is ____. Which statement correctly interprets this number using the 0-to-1 probability scale? {
+~The event is impossible and will never happen under any circumstances#No — probability 0 means impossible; 0.7 is well above zero, so the event can and does happen.
+=The event is likely — it has more than an even chance but is not guaranteed to happen#Correct — 0.7 sits between the even-chance point (0.5) and certain (1.0), placing it in the likely region of the scale.
+~The event has an even chance — it is just as likely to happen as not to happen#No — an even chance corresponds to 0.5, not 0.7; 0.7 is clearly above the midpoint of the scale.
+~The event is certain and will always happen without exception#No — probability 1 means certain; 0.7 leaves a 0.3 chance the event does not happen, so it is not guaranteed.
+#### Tests understanding of probability as a number between 0 and 1 and interpreting a given value on the likelihood scale (corpus §5.1).
+}
+
+::q2:: A teacher picks one student at random from a class of 30. You are asked to calculate the probability that the selected student sits in the front row, which has 5 seats. Which description correctly identifies the sample space and the event for this scenario? {
+~The sample space is the 5 front-row students; the event is picking any student in the class#No — the sample space is all possible outcomes of the action, which here is the full class of 30; the front row is the event, not the space.
+~The sample space is the front row only; the event is every student who is not at the front#No — the sample space must include every possible outcome of the pick, which is all 30 students; restricting it to 5 gives the wrong denominator.
+~The sample space is the 5 front-row students; the event is picking a front-row student#No — the sample space is all 30 students in the class; limiting it to 5 omits 25 possible outcomes and would produce incorrect probabilities.
+=The sample space is all 30 students; the event is the 5 students who sit in the front row#Correct — the sample space contains every possible outcome of the pick (all 30 students), and the event is the subset of those outcomes that count as "front row" (5 students).
+#### Tests the ability to identify the sample space and event in an everyday scenario (corpus §5.2, §5.3).
+}
+
+::q3:: A bag contains 10 marbles. One marble is red and the rest are blue. Someone picks one marble at random. Which row correctly matches each event to its place on the probability scale? {
+=Picking the red marble is unlikely; picking a blue marble is likely; picking a marble that is not in the bag is impossible#Correct — P(red) = 1/10 = 0.1 (unlikely), P(blue) = 9/10 = 0.9 (very likely), and picking something outside the sample space has probability 0 (impossible).
+~Picking the red marble is certain; picking a blue marble is unlikely; picking any marble is impossible#No — picking the red marble is not certain (only 1 in 10 chance); certain means probability 1, which would require red to be the only marble.
+~Picking the red marble is an even chance; picking a blue marble is certain; picking any marble is unlikely#No — an even chance means 0.5; P(red) = 0.1, which is far from even. Picking any marble from the bag is certain (probability 1), not unlikely.
+~Picking the red marble is likely; picking a blue marble is impossible; picking any marble is certain#No — P(red) = 0.1 is unlikely, not likely. Picking a blue marble is very likely (9/10), not impossible.
+#### Tests the ability to match probability values to the correct region of the 0-to-1 likelihood scale (corpus §5.1, §5.3).
+}
+
+::q4:: A bag holds 12 counters: 3 are green and the rest are yellow. You pick one counter at random. What is the probability of picking a green counter? {
+~3, because there are 3 green counters in the bag and you count favourable outcomes#No — the raw count (3) is not a probability; probability is a ratio: favourable outcomes divided by the total number of outcomes in the sample space.
+~1/3, because there are 3 green counters and the bag has 3 colours of counter#No — the formula divides by the total number of outcomes (12), not by the number of different colours; there are 12 equally likely outcomes, not 3.
+=3/12, which equals 1/4 or 0.25, because 3 out of 12 equally likely outcomes are green#Correct — P(green) = favourable outcomes ÷ total outcomes = 3 ÷ 12 = 0.25; every counter is equally likely to be picked.
+~9/12, because 9 counters are not green and you should count the outcomes that do not match the event#No — 9/12 is the probability of NOT picking green (the complement), not the probability of picking green; the favourable count is 3, not 9.
+#### Tests calculation of P(event) = favourable outcomes ÷ total outcomes for an equally-likely scenario (corpus §5.4).
+}
+
+::q5:: In a class raffle, 40 tickets are sold and one person holds 8 of them. You are told the probability that this person wins is 8/40 = 0.2. What is the probability that this person does NOT win, and which rule gives you that answer directly? {
+~0.2, using the sum rule — all probabilities in the sample space add up to 1#No — 0.2 is the probability of winning, not of not winning; the sum rule describes all outcomes summing to 1, but you need the complement rule to find the probability of a specific opposite event.
+=0.8, using the complement rule — P(not winning) = 1 minus P(winning) = 1 − 0.2#Correct — the complement rule states P(not event) = 1 − P(event); since P(winning) = 0.2, P(not winning) = 1 − 0.2 = 0.8.
+~0.8, using the equally-likely formula — 32 non-winning tickets divided by 40 total tickets#This calculation gives 0.8 by coincidence but uses the wrong rule; the question asks which rule applies directly, and that is the complement rule, not recounting outcomes.
+~0.5, because winning and not winning are two outcomes so each has an even chance#No — an even chance only applies when all outcomes are equally likely and there are exactly two; here 8 of 40 tickets win, so the two outcomes are not equally likely.
+#### Tests the complement rule P(not event) = 1 − P(event) and the ability to apply it to a simple scenario (corpus §5.6).
+}
+
+::q6:: When a Large Language Model (LLM) is generating text, what is happening at each step according to the probability concepts in this topic? {
+~The model searches a fixed list of approved sentences and picks the one that matches the input most closely#No — an LLM does not match against stored sentences; it works token by token using probabilities, not a lookup of complete sentences.
+~The model picks the next word completely at random, with no probabilities involved, because AI systems are non-deterministic#No — the corpus describes AI as assigning specific probabilities to each possible next token; random uniform selection with no probabilities is not how it works.
+=The model assigns a probability to each possible next token, forming a sample space, then selects one based on those probabilities#Correct — at every generation step the LLM calculates a probability for every token in its vocabulary; this is exactly a sample space of outcomes with assigned probabilities, as defined in this topic.
+~The model selects the next word with the lowest probability to ensure variety in its responses#No — choosing the lowest-probability token each time would produce rare, unlikely outputs; the model's selection is guided by higher-probability tokens, though exact selection strategy is a later topic.
+#### Tests recognition that AI systems assign a probability to every possible next token, connecting the topic's vocabulary (sample space, outcomes, probability) to AI behaviour (corpus §5.8).
+}

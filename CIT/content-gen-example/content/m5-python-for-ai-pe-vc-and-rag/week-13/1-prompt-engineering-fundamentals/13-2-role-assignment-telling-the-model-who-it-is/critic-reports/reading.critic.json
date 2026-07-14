@@ -1,0 +1,48 @@
+{
+  "topic_id": "13.2",
+  "passed": true,
+  "at": "2026-06-13T00:00:00Z",
+  "checks": {
+    "format_discipline": {
+      "passed": true,
+      "notes": "No frontmatter; H1 first non-empty line; reading.meta.json valid; six sections in correct order"
+    },
+    "length_budget": {
+      "passed": true,
+      "word_count": 1438,
+      "target_range": [1200, 1600],
+      "estimated_minutes": 7,
+      "minutes_range": [6, 8]
+    },
+    "citation_discipline": {
+      "passed": true,
+      "primary_cited": true,
+      "citations_used": [1, 2, 3],
+      "bibliography_present": true
+    },
+    "no_forward_references": {
+      "passed": true,
+      "notes": "Back-references to 13.1 and 12.10 only — both prior topics"
+    },
+    "beginner_readability": {
+      "passed": true,
+      "findings": [],
+      "notes": "LLM, register, SQL injection all defined on first use; no jargon dumps; plain register throughout"
+    },
+    "formatting": {
+      "passed": true,
+      "findings": [],
+      "notes": "Tables, bullets, numbered lists used appropriately; no walls of text; bold-term/plain-meaning definitions present"
+    },
+    "scope_discipline": {
+      "passed": true,
+      "scope_creep": false,
+      "findings": []
+    },
+    "corpus_faithfulness": {
+      "passed": true,
+      "notes": "All claims traceable to corpus sections 5.1–5.5, §6 worked example, §8 real-world patterns"
+    }
+  },
+  "verdict": "PASS — reading meets all format, length, citation, readability, and faithfulness requirements."
+}

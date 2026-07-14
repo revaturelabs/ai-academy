@@ -1,0 +1,46 @@
+{
+  "critic": "reading-critic",
+  "topic_id": "6.9",
+  "cycle": 1,
+  "at": "2026-06-19T00:00:00Z",
+  "passed": true,
+  "checks": {
+    "format_discipline": {
+      "passed": true,
+      "notes": "No YAML frontmatter; first non-empty line is '# Cosine similarity — measuring the angle between two meaning-vectors'. reading.meta.json exists, parses cleanly, and carries all required fields (word_count, estimated_read_minutes, citations_used, sections). Exactly 6 sections in correct order: Overview, Key Concepts, Worked Example, In Practice, Key Takeaways, References."
+    },
+    "length_budget": {
+      "passed": true,
+      "word_count": 1244,
+      "target_range": [1200, 1600],
+      "notes": "1244 words is within the [1200, 1600] target. Estimated read time at 200 wpm = 6.22 min, within the standard-profile 6–8 min window. meta.json reports 1244 words consistent with manual estimate."
+    },
+    "citation_discipline": {
+      "passed": true,
+      "primary_cited": true,
+      "notes": "[1] cited in Overview, Key Concepts, In Practice, Key Takeaways, References. [2] cited in Key Concepts (twice), Worked Example (twice), In Practice, Key Takeaways, References. [3] cited in Key Concepts (normalisation), Worked Example, In Practice, Key Takeaways, References. [4] cited in Key Concepts normalisation paragraph (Keras mention), References. [5] cited in Key Concepts (twice), In Practice (multiple), Key Takeaways, References. All 5 primary resources cited at least once. Bibliography entries match inline markers; no orphan markers or orphan bibliography entries."
+    },
+    "sequence_drift": {
+      "passed": true,
+      "forward_refs": [],
+      "notes": "All concepts used are either this topic's own (cosine_similarity, angle_between_vectors, theta, vector_magnitude, normalisation, cosine_formula, perpendicular_vectors) or from prior topics (vector, dot_product, magnitude_sensitivity, embedding, embedding_space, distance_as_similarity, analogy_direction/vector_arithmetic from 6.8, nearest_neighbour_answer). 'Semantic search', 'recommendations', and 'duplicate detection' are used as named application patterns consistent with In Practice scope, not taught as new concepts. 'cosine distance' appears once as a deferred concept (not bolded, not defined, no defining clause) — proper mention-and-defer form. No forward references found."
+    },
+    "beginner_readability": {
+      "passed": true,
+      "findings": [
+        {
+          "code": "dense_paragraph",
+          "severity": "soft",
+          "location": "Key Concepts — Normalisation and its practical payoff (line 87)",
+          "detail": "The opening sentence of this paragraph runs to ~55 words and introduces scikit-learn, Keras, and Pinecone with inline parenthetical definitions all at once. Each parenthetical is a brief label rather than a taught concept, so this does not technically constitute a jargon_dump (no 3+ new terms requiring re-use), but the sentence is harder to parse than the 20-word target. Recommend splitting into two sentences in revision."
+        }
+      ],
+      "notes": "Terms are defined on first use: 'magnitude sensitivity' (with corpus pointer), 'theta (θ)' (with plain-language gloss), 'cosine' (with explicit 'you do not need trigonometry' reassurance), 'normalisation' (defined twice — in Key Concepts and Key Takeaways). Concrete examples precede abstractions throughout. No hedging language detected. No assessment references (A2, 15%, due W6) appear in the learner-facing prose. One soft finding (dense_paragraph) logged; total soft findings = 1, below the hard-fail threshold of 3."
+    },
+    "faithfulness": {
+      "passed": true,
+      "notes": "10 assertions sampled across all sections and verified against topic_corpus.md: (1) dot product magnitude sensitivity problem — corpus §5.1; (2) dividing by magnitudes removes size sensitivity — corpus §5.3; (3) score range −1 to 1 — corpus §5.3; (4) worked example A=[3,1] B=[2,2], dot=8, |A|≈3.162, |B|≈2.828, cosine≈0.894 — corpus §5.3 exact match; (5) cat/kitten/car example with cosine 0.96 and 0.60 — corpus §6; (6) normalise once → subsequent comparisons become plain dot products — corpus §5.4; (7) king−man+woman nearest-word lookup uses cosine — corpus §7; (8) score 0 means unrelated not opposite — corpus §8; (9) many embeddings all-positive → practical range 0–1 — corpus §8; (10) cosine similarity is not a distance metric — corpus §8. All 10 assertions are supported. 0 unsupported assertions found."
+    }
+  },
+  "verdict": "PASS — all 6 checks passed; 1 soft readability finding (dense normalisation paragraph, line 87) logged but below escalation threshold."
+}

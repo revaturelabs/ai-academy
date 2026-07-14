@@ -1,0 +1,54 @@
+{
+  "topic_id": "3.10",
+  "generated_at": "2026-06-18T00:00:00Z",
+  "format": "gift",
+  "question_count": 5,
+  "$bias_defense_applied": true,
+  "$shuffle_seed": "194",
+  "correct_position_distribution": [2, 0, 3, 1, 2],
+  "shuffle_constraint_check": {
+    "max_share": 0.40,
+    "max_share_passes": true,
+    "all_positions_used": true,
+    "position_counts": { "0": 1, "1": 1, "2": 2, "3": 1 }
+  },
+  "length_bias_check": {
+    "q1": { "correct_chars": 92, "mean_distractor_chars": 89.7, "correct_pct_of_mean": 102.6, "passes": true },
+    "q2": { "correct_chars": 133, "mean_distractor_chars": 128.0, "correct_pct_of_mean": 103.9, "passes": true },
+    "q3": { "correct_chars": 122, "mean_distractor_chars": 127.3, "correct_pct_of_mean": 95.8, "passes": true },
+    "q4": { "correct_chars": 123, "mean_distractor_chars": 116.7, "correct_pct_of_mean": 105.4, "passes": true },
+    "q5": { "correct_chars": 149, "mean_distractor_chars": 147.0, "correct_pct_of_mean": 101.4, "passes": true }
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "type": "mcq",
+      "objective_ref": "Name the five AI output task types and explain why each one needs its own evaluation criteria.",
+      "correct_position": 2
+    },
+    {
+      "id": "q2",
+      "type": "mcq",
+      "objective_ref": "Apply at least three evaluation criteria to creative AI output without incorrectly using factual accuracy as the standard.",
+      "correct_position": 0
+    },
+    {
+      "id": "q3",
+      "type": "mcq",
+      "objective_ref": "Apply at least three evaluation criteria to factual AI output, including checking citations for hallucination.",
+      "correct_position": 3
+    },
+    {
+      "id": "q4",
+      "type": "mcq",
+      "objective_ref": "Apply at least three evaluation criteria to logical AI output by tracing each reasoning step.",
+      "correct_position": 1
+    },
+    {
+      "id": "q5",
+      "type": "mcq",
+      "objective_ref": "Apply the five-step general evaluation workflow to a real AI output and document the result in a structured format.",
+      "correct_position": 2
+    }
+  ]
+}

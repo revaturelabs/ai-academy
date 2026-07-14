@@ -1,0 +1,67 @@
+{
+  "critic": "corpus-critic",
+  "topic_id": "10.2",
+  "topic_title": "Case study: Automated medical triage — what failure mode was tolerated?",
+  "at": "2026-06-12T00:00:00Z",
+  "passed": true,
+  "depth_profile_used": "standard",
+  "word_count_estimated": 3870,
+  "checks": {
+    "required_sections": {
+      "passed": true,
+      "detail": {
+        "section_3_learning_objectives": { "present": true, "word_count_estimated": 100, "threshold": 100, "passed": true },
+        "section_4_introduction": { "present": true, "word_count_estimated": 280, "threshold": 100, "passed": true },
+        "section_5_core_concepts": { "present": true, "word_count_estimated": 1980, "threshold": 100, "passed": true },
+        "section_10_key_takeaways": { "present": true, "word_count_estimated": 220, "threshold": 50, "passed": true }
+      }
+    },
+    "citation_density": {
+      "passed": true,
+      "resources_source": "web_search",
+      "mode": "strict",
+      "primary_resources_cited": {
+        "[1]_jmir_2026": { "role": "primary", "cited_at_least_once": true, "citation_count_approx": 18 }
+      },
+      "supporting_resources_cited": {
+        "[2]_arxiv_2506": { "role": "supporting", "cited_at_least_once": true },
+        "[3]_arxiv_2603": { "role": "supporting", "cited_at_least_once": true }
+      },
+      "sections_567_claim_coverage_estimated_pct": 72,
+      "threshold_pct": 60,
+      "findings": [],
+      "fake_citations_detected": false
+    },
+    "sequence_drift": {
+      "passed": true,
+      "forward_references_detected": [],
+      "notes": "All terms used without definition are explicitly covered in prerequisites (9.5 automation bias, 9.7-9.9 Judgment Framework Q1/Q2/Q3, 9.11 high-stakes domains, 10.1 pipeline/override-as-theater/calibration/training-data). Newly introduced terms (failure mode, systematic under-scoring, sub-group performance audit, deterioration-contradiction alert, evaluation gap, override accountability, post-market surveillance analogy) are all defined on first use. Domain examples in section 7 (credit scoring, hiring algorithms) are illustrative analogies, not forward-taught concepts."
+    },
+    "length_sanity": {
+      "passed": true,
+      "word_count_estimated": 3870,
+      "profile": "standard",
+      "range_min": 3000,
+      "range_max": 4400,
+      "within_range": true,
+      "pct_outside_range": 0
+    },
+    "topic_scope": {
+      "passed": true,
+      "scope_creep_findings": [],
+      "notes": "Corpus stays tightly within headline scope: what the triage system is, the specific failure mode (systematic under-scoring), the four governance gaps and automation bias that allowed it to persist, Judgment Framework application to the case, and the earliest-detection controls. The post-market surveillance analogy in section 7 is one-sentence contextual background listed in concepts_introduced. Mention of credit scoring and hiring in section 7 is a single sentence making a generalizability point without teaching those cases."
+    },
+    "beginner_readability": {
+      "passed": true,
+      "hard_fail_threshold": 3,
+      "distinct_soft_findings_count": 0,
+      "findings": {
+        "undefined_terms": [],
+        "jargon_dump": [],
+        "academic_register": []
+      },
+      "notes": "All non-everyday terms defined on first use or explicitly back-referenced to prior topics with topic numbers. No paragraphs introduce 3+ new terms at once. No hedging language detected. Sentence register is direct and beginner-accessible throughout. Acronym 'AI' is curriculum-established from M2 with no new unexplained acronyms introduced."
+    }
+  },
+  "verdict": "PASS. All six checks pass. Required sections present and substantive (section 5 ~1980w, section 4 ~280w, section 10 ~220w). Citation density adequate: primary resource [1] cited ~18 times; all three resources cited; estimated 72% of factual claims in sections 5/6/7 carry [N] markers, exceeding the 60% strict threshold. No forward references: all vocabulary back-references to documented prerequisites (9.5, 9.7-9.9, 9.11, 10.1); newly introduced terms defined inline. Word count ~3870 is within standard profile range (3000-4400). No scope creep: corpus teaches exactly the case-study headline at the appropriate depth. Beginner readability is clean: zero undefined terms, zero jargon dumps, zero academic-register violations."
+}

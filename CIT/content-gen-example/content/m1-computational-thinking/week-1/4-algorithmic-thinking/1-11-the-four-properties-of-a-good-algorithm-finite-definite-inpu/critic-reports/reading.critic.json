@@ -1,0 +1,156 @@
+{
+  "critic": "reading-critic",
+  "topic_id": "1.11",
+  "title": "The four properties of a good algorithm — finite, definite, input, output",
+  "profile": "standard",
+  "evaluated_at": "2026-06-22T00:00:00Z",
+  "reading_path": "artifacts/reading.md",
+  "meta_path": "artifacts/reading.meta.json",
+  "passed": true,
+  "findings_count": 0,
+  "hard_fails": [],
+  "soft_findings": [],
+  "checks": {
+    "format_discipline": {
+      "passed": true,
+      "findings": [],
+      "detail": {
+        "frontmatter_present": false,
+        "first_line": "# The four properties of a good algorithm — finite, definite, input, output",
+        "meta_sidecar_missing": false,
+        "meta_fields_present": ["word_count", "estimated_read_minutes", "citations_used", "sections"],
+        "section_template_violation": false,
+        "sections_found_in_order": ["Overview", "Key Concepts", "Worked Example", "In Practice", "Key Takeaways", "References"]
+      }
+    },
+    "length": {
+      "passed": true,
+      "findings": [],
+      "detail": {
+        "word_count_reported": 1501,
+        "target_word_range": [1200, 1600],
+        "word_count_in_range": true,
+        "read_minutes_at_200wpm": 7.5,
+        "read_minutes_at_230wpm": 6.5,
+        "target_minute_range": [6, 8],
+        "minutes_in_range": true,
+        "note": "Word count updated from 1410 to 1501 after lab-activity block appended to In Practice. Still within [1200, 1600]; 7.5 min at 200 wpm and 6.5 min at 230 wpm both within [6, 8]."
+      }
+    },
+    "citation_discipline": {
+      "passed": true,
+      "findings": [],
+      "detail": {
+        "primary_resources": [
+          {
+            "ref": 1,
+            "url": "https://www.bouraspage.com/repository/algorithmic-thinking/properties-of-an-algorithm",
+            "role": "primary",
+            "cited": true,
+            "first_citation_line": 5
+          }
+        ],
+        "supporting_resources": [
+          {
+            "ref": 2,
+            "url": "https://study.com/academy/lesson/properties-of-algorithms.html",
+            "role": "supporting",
+            "cited": true
+          },
+          {
+            "ref": 3,
+            "url": "https://quescol.com/data-structure/algorithm-criteria-and-characteristics",
+            "role": "supporting",
+            "cited": true
+          }
+        ],
+        "orphan_markers": [],
+        "orphan_bibliography_entries": [],
+        "bibliography_matches_inline": true,
+        "all_primary_cited": true
+      }
+    },
+    "no_forward_references": {
+      "passed": true,
+      "findings": [],
+      "detail": {
+        "backward_refs_used": ["topic 1.9 (algorithmic thinking)", "topic 1.1 (input/process/output model)"],
+        "flagged_terms": [],
+        "note": "Both topic references point to earlier sequence entries. 'server' appears once (line 140) as an everyday word in a real-world failure example, not introduced as a technical concept. No forward references detected."
+      }
+    },
+    "faithfulness_to_corpus": {
+      "passed": true,
+      "findings": [],
+      "detail": {
+        "assertions_sampled": 10,
+        "assertions_supported": 10,
+        "assertions_unsupported": 0,
+        "sample": [
+          {"assertion": "a computer following them could loop forever, behave unpredictably, or produce no result", "corpus_location": "§4 Introduction", "supported": true},
+          {"assertion": "When you follow a recipe, you do not stir indefinitely; the recipe says 'stir for 2 minutes'", "corpus_location": "§5.1 Finiteness", "supported": true},
+          {"assertion": "An infinite loop — a situation where the algorithm never terminates", "corpus_location": "§5.1 Finiteness", "supported": true},
+          {"assertion": "Add some salt is not definite. Add half a teaspoon of salt is definite.", "corpus_location": "§5.2 Definiteness", "supported": true},
+          {"assertion": "The number of inputs can be zero or more. Zero inputs is a legitimate answer.", "corpus_location": "§5.3 Input", "supported": true},
+          {"assertion": "A sorting algorithm does not output a random number — it outputs the sorted version of the list it received", "corpus_location": "§5.4 Output", "supported": true},
+          {"assertion": "ATM cash dispensing, search engine, airport boarding examples", "corpus_location": "§7 Real-World Patterns", "supported": true},
+          {"assertion": "payment system that loops indefinitely when a server is slow is a finiteness failure; a form that accepts 'any name' is a definiteness failure", "corpus_location": "§7 Real-World Patterns", "supported": true},
+          {"assertion": "Common mistakes: using 'a bit', 'somehow', 'appropriately', 'as needed'", "corpus_location": "§8 Best Practices", "supported": true},
+          {"assertion": "Lab activity: write everyday process as steps, apply checklist, partner-swap for definiteness gaps", "corpus_location": "§9 Hands-On Exercise", "supported": true}
+        ]
+      }
+    },
+    "beginner_readability": {
+      "passed": true,
+      "findings": [],
+      "detail": {
+        "undefined_terms": [],
+        "undefined_terms_count": 0,
+        "threshold": 2,
+        "jargon_dumps": [],
+        "abstract_first_violations": [],
+        "academic_register_instances": [],
+        "hedging_count": 0,
+        "note": "All four properties introduced with bold-term + plain definition on first use: 'finiteness' (line 16), 'definiteness' (line 34), 'infinite loop' (line 20), 'termination' (line 20), 'well-defined algorithm' (line 82). Concrete analogies precede abstractions throughout. Short sentences, active voice, direct 'you' address consistent. No hedging language found."
+      }
+    },
+    "formatting": {
+      "passed": true,
+      "findings": [],
+      "detail": {
+        "wall_of_text_instances": [],
+        "unlisted_sequences": [],
+        "inline_examples_present": true,
+        "bold_term_definitions_used": true,
+        "note": "All sections use tables, numbered/bulleted lists, and short paragraphs. In Practice checklist (lines 129-133) rendered as numbered list. Lab activity (lines 151-153) rendered as numbered list. Definitions consistently follow bold-term / plain-meaning pattern."
+      }
+    },
+    "assessment_references": {
+      "passed": true,
+      "findings": [],
+      "detail": {
+        "assessment_ids_found": [],
+        "due_week_references": [],
+        "grade_weight_references": []
+      }
+    },
+    "scope": {
+      "passed": true,
+      "findings": [],
+      "detail": {
+        "scope_creep_instances": [],
+        "note": "Reading is entirely bounded by the four-property checklist. Real-world examples (ATM, search engine, airport) are applications of the four properties, not new concepts introduced. Lab activity is a direct checklist-application exercise. 'server' used informally once (line 140) in a failure-pattern example — not taught as a concept. No material beyond the topic headline detected."
+      }
+    }
+  },
+  "escalation_check": {
+    "scope_creep_found": false,
+    "checks_5_6_findings_count": 0,
+    "hard_fail_triggered": false
+  },
+  "gold_example_comparison": {
+    "gold_example_available": false,
+    "note": "No M1-week-1 reading gold example at .claude/references/gold-examples/reading/. Evaluated against written standards in artifact-mix.json. Reading meets all written standards."
+  },
+  "verdict": "PASS — all 8 checks clean (0 hard fails, 0 soft findings); 1501 words within [1200, 1600] standard-profile range, 7.5 min at 200 wpm within [6, 8]; all three resources cited with matching bibliography; no forward references; 10/10 sampled assertions trace to corpus including the new lab-activity block (corpus §9); beginner readability and formatting standards met throughout; no scope creep; no assessment references."
+}

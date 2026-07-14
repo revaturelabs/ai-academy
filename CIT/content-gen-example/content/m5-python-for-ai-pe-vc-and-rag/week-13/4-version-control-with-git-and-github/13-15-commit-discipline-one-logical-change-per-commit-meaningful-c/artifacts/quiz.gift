@@ -1,0 +1,49 @@
+$CATEGORY: CIT/M5/week-13/13-15-commit-discipline-one-logical-change-per-commit-meaningful-c
+
+::q1:: A classmate commits a bug fix, a README update, and a renamed function all in one snapshot. What is the main problem with this approach? {
+~The commit hash becomes longer and harder to reference#No — commit hashes are always the same fixed length regardless of how many files are included.
+~Git will reject any commit that touches more than one file#No — Git places no limit on how many files a single commit may contain.
+=The changes are tangled, making it hard to undo just one#Correct — mixing unrelated changes means reversing the commit would undo all of them, even the ones you want to keep.
+~The staging area can only hold one file at a time#No — the staging area can hold any number of files simultaneously before a commit is recorded.
+#### Tests LO1 — atomic commit definition and the problem with mixing changes (corpus §5.1).
+}
+
+::q2:: Which of the following is a correctly formatted commit message subject line? {
+=Fix crash when user submits an empty prompt#Correct — starts with an imperative verb, is under 50 characters, has no trailing period, and describes what changed.
+~fixed the crash that happened on empty prompts#No — uses past tense ("fixed") instead of the required imperative mood; the subject must read as a command.
+~I fixed the empty input crash in main.py#No — starts with "I" rather than an imperative verb, which breaks the convention for commit subject lines.
+~This commit fixes the empty prompt crash bug#No — "This commit" is redundant padding; a good subject leads with the verb and omits that phrase entirely.
+#### Tests LO2 — imperative-mood subject line convention (corpus §5.2).
+}
+
+::q3:: A developer writes the commit message "wip" before pushing their changes. Why is this a poor commit message? {
+~It uses lowercase instead of starting with a capital imperative verb#No — capitalisation is a minor style point; the deeper problem is that the message conveys no useful information at all.
+~It ends without a period, which violates message formatting rules#No — commit subject lines should NOT end with a period; omitting it is the correct behaviour, not a violation.
+~It exceeds the 50-character subject line limit for commit messages#No — "wip" is only three characters, which is well under the 50-character subject line limit.
+=It gives no information about what was changed or why#Correct — "wip" is a vague placeholder that tells no one — including future you — what was actually done in that snapshot.
+#### Tests LO3 — distinguishing good from poor commit messages using concrete criteria (corpus §5.2, §8).
+}
+
+::q4:: According to commit message conventions, what are the two character-count rules you must follow? {
+~Subject under 72 characters; body lines under 50 characters#No — these numbers are swapped; 72 is the body-wrap limit and 50 is the subject limit, not the other way around.
+=Subject under 50 characters; body lines wrapped at 72 characters#Correct — keep the subject under 50 chars so it scans easily, and wrap body lines at 72 chars for terminal readability.
+~Subject under 80 characters; body lines wrapped at 100 characters#No — these are common editor defaults, not the Git commit message conventions taught in this topic.
+~Subject under 50 characters; body lines wrapped at 80 characters#No — the body-wrap rule is 72 characters, not 80; 80 is a general coding convention that does not apply here.
+#### Tests LO4 — the 50-character subject and 72-character body-wrap rules (corpus §5.2).
+}
+
+::q5:: You have modified two files\: one with a bug fix and one with a new feature. How should you commit only the bug fix? {
+~Run `git add .` to stage everything, then split the commit after#No — `git add .` stages all modified files at once; there is no built-in command to split a commit after it is made.
+~Run `git commit -m` without staging anything to select files interactively#No — `git commit -m` records whatever is already staged; skipping staging does not trigger interactive file selection.
+=Run `git add <bugfix-file>` to stage only that file, then commit#Correct — naming the specific file in `git add` puts only that change on the staging area, keeping the commit atomic.
+~Run `git status` first, which stages the files you identify as needed#No — `git status` only shows the current state of files; it is read-only and does not stage anything.
+#### Tests LO5 — using `git add <filename>` selectively to stage a single logical change (corpus §6).
+}
+
+::q6:: Why does a project history made up of atomic commits with clear messages benefit future readers? {
+=Each commit tells one focused story, so readers can follow what changed and why#Correct — atomic commits with meaningful messages let anyone scroll back through history and understand the project without opening every diff.
+~Commits with short messages load faster when someone browses the history log#No — message length has no effect on how quickly Git retrieves or displays commit history in any tool.
+~Atomic commits prevent merge conflicts when feature branches are combined later#No — merge conflicts come from overlapping line edits between branches, not from the size or focus of individual commits.
+~Clear messages let Git automatically generate release notes for each version#No — Git does not auto-generate release notes from commit messages; that requires separate tooling outside Git itself.
+#### Tests LO6 — how good commit discipline makes project history readable (corpus §5.1, §7, §8).
+}

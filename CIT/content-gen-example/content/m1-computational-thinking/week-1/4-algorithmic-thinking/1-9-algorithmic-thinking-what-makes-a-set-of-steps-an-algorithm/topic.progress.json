@@ -1,0 +1,219 @@
+{
+  "topic_id": "1.9",
+  "stage": "topic_artifacts_approved",
+  "gates": {
+    "resources_captured": true,
+    "corpus_generated": true,
+    "corpus_critic_passed": true,
+    "corpus_human_approved": true,
+    "reading_generated": true,
+    "reading_critic_passed": true,
+    "quiz_generated": true,
+    "quiz_critic_passed": true,
+    "diagram_generated": true,
+    "diagram_critic_passed": true,
+    "module_drift_passed": true,
+    "course_drift_passed": true,
+    "topic_artifacts_human_approved": true,
+    "week_human_approved": true
+  },
+  "history": [
+    {
+      "at": "2026-06-22T05:52:28Z",
+      "op": "set",
+      "gate": "resources_captured",
+      "value": true
+    },
+    {
+      "at": "2026-06-22T05:52:28Z",
+      "op": "stage",
+      "to": "awaiting_corpus"
+    },
+    {
+      "at": "2026-06-22T05:52:29Z",
+      "op": "log",
+      "msg": "Captured 3 resources (source=web_search, primary: bouraspage.com)"
+    },
+    {
+      "at": "2026-06-22T06:00:11Z",
+      "op": "set",
+      "gate": "corpus_generated",
+      "value": true
+    },
+    {
+      "at": "2026-06-22T06:00:11Z",
+      "op": "stage",
+      "to": "awaiting_corpus_critic"
+    },
+    {
+      "at": "2026-06-22T06:00:11Z",
+      "op": "log",
+      "msg": "Corpus generated: 1648 words, standard profile, requires_diagram=true"
+    },
+    {
+      "at": "2026-06-22T06:02:47Z",
+      "op": "set",
+      "gate": "corpus_critic_passed",
+      "value": false
+    },
+    {
+      "at": "2026-06-22T06:02:47Z",
+      "op": "log",
+      "msg": "Critic failed: hard fail length — 1648w vs 3000-4400 standard range; soft: 2 uncited examples s7, 'escape condition' undefined s8"
+    },
+    {
+      "at": "2026-06-22T06:09:19Z",
+      "op": "set",
+      "gate": "corpus_critic_passed",
+      "value": true
+    },
+    {
+      "at": "2026-06-22T06:09:19Z",
+      "op": "stage",
+      "to": "awaiting_corpus_human_review"
+    },
+    {
+      "at": "2026-06-22T06:09:19Z",
+      "op": "log",
+      "msg": "Corpus critic passed cycle 2 — soft: word count estimate variance (critic ~2670w vs builder ~3250w, both above 2100w floor)"
+    },
+    {
+      "at": "2026-06-22T06:18:49Z",
+      "op": "set",
+      "gate": "corpus_human_approved",
+      "value": true
+    },
+    {
+      "at": "2026-06-22T06:18:50Z",
+      "op": "stage",
+      "to": "corpus_approved"
+    },
+    {
+      "at": "2026-06-22T06:18:50Z",
+      "op": "log",
+      "msg": "HITL#2 approved: all sections pass, profile=standard, diagram=true, expected_delivery=7min"
+    },
+    {
+      "at": "2026-06-22T06:31:44Z",
+      "op": "set",
+      "gate": "diagram_generated",
+      "value": true
+    },
+    {
+      "at": "2026-06-22T06:31:44Z",
+      "op": "log",
+      "msg": "Diagram built: 7 nodes, side-by-side LR panels, source critic passed cycle 1, PNG rendered 1400px"
+    },
+    {
+      "at": "2026-06-22T06:33:58Z",
+      "op": "set",
+      "gate": "diagram_critic_passed",
+      "value": true
+    },
+    {
+      "at": "2026-06-22T06:33:58Z",
+      "op": "log",
+      "msg": "Diagram critic passed visual inspection — 7 nodes, side-by-side panels, all checks clean"
+    },
+    {
+      "at": "2026-06-22T06:36:29Z",
+      "op": "set",
+      "gate": "reading_generated",
+      "value": true
+    },
+    {
+      "at": "2026-06-22T06:36:29Z",
+      "op": "log",
+      "msg": "Reading generated: 1373w, 7min, diagram embedded, all citations used"
+    },
+    {
+      "at": "2026-06-22T06:36:45Z",
+      "op": "set",
+      "gate": "quiz_generated",
+      "value": true
+    },
+    {
+      "at": "2026-06-22T06:36:45Z",
+      "op": "log",
+      "msg": "Quiz generated: 5 MCQ, bias_defense=true, positions [2,0,3,1,2], all LOs covered"
+    },
+    {
+      "at": "2026-06-22T06:38:59Z",
+      "op": "set",
+      "gate": "quiz_critic_passed",
+      "value": false
+    },
+    {
+      "at": "2026-06-22T06:38:59Z",
+      "op": "log",
+      "msg": "Quiz critic FAIL: length_bias rate=1.00 (all 5 correct answers longest, threshold=0.40). Other checks pass."
+    },
+    {
+      "at": "2026-06-22T06:39:18Z",
+      "op": "set",
+      "gate": "reading_critic_passed",
+      "value": true
+    },
+    {
+      "at": "2026-06-22T06:39:18Z",
+      "op": "log",
+      "msg": "Reading critic PASS: 1373w/7min, all 6 sections, primary cited 5x, clean scope/readability"
+    },
+    {
+      "at": "2026-06-22T06:43:54Z",
+      "op": "set",
+      "gate": "quiz_critic_passed",
+      "value": true
+    },
+    {
+      "at": "2026-06-22T06:43:54Z",
+      "op": "stage",
+      "to": "awaiting_topic_artifacts_review"
+    },
+    {
+      "at": "2026-06-22T06:43:54Z",
+      "op": "log",
+      "msg": "All artifact critics passed: reading 1373w/7min, quiz 5MCQ bias-clean, diagram 7-node side-by-side"
+    },
+    {
+      "at": "2026-06-22T06:44:51Z",
+      "op": "set",
+      "gate": "topic_artifacts_human_approved",
+      "value": true
+    },
+    {
+      "at": "2026-06-22T06:44:51Z",
+      "op": "stage",
+      "to": "topic_artifacts_approved"
+    },
+    {
+      "at": "2026-06-22T06:44:51Z",
+      "op": "log",
+      "msg": "HITL#3 approved: reading 1373w/7min, quiz 5MCQ, diagram 7-node. Week budget: 64/90 min"
+    },
+    {
+      "at": "2026-06-22T12:13:01Z",
+      "op": "set",
+      "gate": "module_drift_passed",
+      "value": true
+    },
+    {
+      "at": "2026-06-22T12:14:25Z",
+      "op": "set",
+      "gate": "week_human_approved",
+      "value": true
+    },
+    {
+      "at": "2026-06-23T08:12:31Z",
+      "op": "set",
+      "gate": "course_drift_passed",
+      "value": true
+    },
+    {
+      "at": "2026-06-23T11:14:17Z",
+      "op": "set",
+      "gate": "course_drift_passed",
+      "value": true
+    }
+  ]
+}

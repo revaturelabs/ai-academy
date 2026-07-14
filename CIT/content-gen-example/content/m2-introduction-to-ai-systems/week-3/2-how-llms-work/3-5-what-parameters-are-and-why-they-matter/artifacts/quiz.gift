@@ -1,0 +1,41 @@
+$CATEGORY: CIT/M2/week-3/3-5-what-parameters-are-and-why-they-matter
+
+::q1:: In a neural network, what is a parameter (also called a weight)?{
+~A stored sentence the model looks up when answering a question#No — parameters are not stored text; they are numbers on connections between neurons.
+~A rule written by a programmer to guide model decisions#No — parameters are not hand-written rules; they are numerical values learned automatically during training.
+=A single number on a connection that controls signal strength#Correct — each weight is one decimal number attached to a connection; it controls how strongly one neuron's signal influences the next.
+~A token the model generates during inference#No — tokens are pieces of text processed at inference time; parameters are the numbers baked into the model before any inference happens.
+#### Tests the core definition of a parameter/weight (corpus §5.1).
+}
+
+::q2:: After training on vast amounts of text, how does an LLM store the fact that Paris is the capital of France?{
+=Patterns spread across many weights working together#Correct — knowledge is distributed; no single weight holds a fact, but many weights collectively produce the right prediction.
+~A lookup table mapping questions to stored answers#No — LLMs do not use lookup tables; knowledge is encoded in the combined behaviour of billions of weights.
+~A list of facts copied from training documents#No — the model does not copy or store text; it compresses patterns into numerical weight values.
+~A database entry for each fact the model learned#No — there is no fact-by-fact database; information is spread across the weight matrices of every layer.
+#### Tests the distributed-representation principle of knowledge encoding (corpus §5.2).
+}
+
+::q3:: What do scaling laws tell us about adding more parameters to a language model?{
+~Larger models always cost less because they share more weights#No — larger models cost more to run; scaling laws describe capability gains, not cost savings.
+~Model quality improves linearly with training time alone#No — scaling laws describe the relationship between parameter count, training data, and quality — not training time in isolation.
+~Capability grows unpredictably and cannot be estimated before training#No — the key insight of scaling laws is precisely that capability gains are predictable before training.
+=Doubling parameters and training data yields reliably better models#Correct — scaling laws show a predictable relationship\: more parameters plus proportional data and compute produce reliably higher-quality models.
+#### Tests understanding of scaling laws and the predictability of capability gains (corpus §5.3).
+}
+
+::q4:: A 7-billion-parameter model is available in both a 16-bit and a 4-bit version. What does quantisation change?{
+~The number of parameters is reduced, shrinking the model's capacity#No — quantisation never changes the parameter count; the model still has 7 billion weights.
+=Each weight is stored with less precision, reducing file size#Correct — quantisation rounds each weight to fewer bits (e.g., 16-bit to 4-bit), cutting file size while keeping the parameter count identical.
+~The model is retrained on a smaller dataset to fit limited hardware#No — quantisation is a post-training compression step; it does not involve retraining on new data.
+~Unused weights are deleted until the model meets a size target#No — no weights are removed; all parameters are kept but stored more compactly.
+#### Tests the definition of quantisation and the distinction between precision and parameter count (corpus §5.4).
+}
+
+::q5:: A team is building a customer-service chatbot that answers simple, repetitive questions and must respond quickly at low cost. Applying parameter-count reasoning, which choice is most appropriate?{
+~Choose the largest available model, since more parameters always produce better results#No — for simple queries, a large model wastes compute and budget without adding meaningful quality.
+~Choose a mid-size model and fine-tune it regardless of cost#No — fine-tuning may help, but selecting a model size first based on task complexity and cost constraints is the right starting point.
+=Choose a smaller model — it is cheaper and fast enough for simple queries#Correct — smaller parameter counts mean lower cost and lower latency; for simple, repetitive queries the capacity of a large model is unnecessary.
+~Choose any model at 4-bit quantisation, since quantisation removes the size difference#No — quantisation reduces file size but does not make a small model as capable as a large one; the trade-off is still capability vs cost.
+#### Tests applying parameter-count understanding to capability-vs-cost-vs-latency trade-offs (corpus §5.5).
+}

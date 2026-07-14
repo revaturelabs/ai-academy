@@ -1,0 +1,164 @@
+{
+  "critic": "reading-critic",
+  "topic_id": "6.1",
+  "cycle": 2,
+  "run_at": "2026-06-19T00:00:00Z",
+  "passed": true,
+  "verdict": "PASS (re-validation after targeted forward-reference fix). The corrected cross-reference topic numbers are now verified against sequence.index.json and match the corrected corpus: embeddings/text-conversion -> 'topics 6.7 and 6.8' (6.7 Embeddings, 6.8 king-man+woman), meaning arc -> 'topics 6.5 through 6.9', arc start -> 'topic 6.5' (vector-as-point), In-Practice depth pointer -> 'topics 6.7 and 6.8'. No stale 6.4/6.5/6.6 pointers remain. Reading stays faithful to the corrected corpus (0 unsupported assertions). All other standard checks clear. One soft length observation carried forward (under the standard word band but consistent with manifest expected_delivery_minutes=5) — unchanged by this fix, not a blocker.",
+  "checks": {
+    "format_discipline": {
+      "passed": true,
+      "frontmatter_present": false,
+      "meta_sidecar_missing": false,
+      "meta_sidecar_fields_note": "Sidecar present and parses. Carries 'resources_cited' rather than the SKILL.md-named 'citations_used'/'sections'. Soft observation only; does not affect pass/fail.",
+      "section_template_violation": false,
+      "sections_found": ["Overview", "Key Concepts", "Worked Example", "In Practice", "Key Takeaways", "References"],
+      "sections_order_correct": true,
+      "notes": "First non-empty line is '# Why every AI system is built on numbers'. No YAML frontmatter. Exactly 6 fixed sections in correct order."
+    },
+    "length": {
+      "passed": true,
+      "soft": true,
+      "word_count": 820,
+      "depth_profile": "standard",
+      "standard_profile_word_range": "1200-1600",
+      "standard_profile_minute_range": "6-8",
+      "estimated_read_minutes_at_200wpm": 4,
+      "estimated_minutes_aloud_at_230wpm": 4,
+      "notes": "~820 words is below the standard profile band (1200-1600 words / 6-8 min). SOFT observation: the value is unchanged from cycle 1 and was not touched by the forward-reference fix. It is consistent with meta.reading_minutes=5 and manifest.expected_delivery_minutes=5 (the manifest carries a profile/minutes mismatch: 'standard' label but a 5-min budget). The as-budgeted ~5-min target is met. Flagged for HITL #3 awareness; not a re-validation blocker."
+    },
+    "citations": {
+      "passed": true,
+      "primary_resource_cited": true,
+      "primary_resource": "labelbox.com",
+      "primary_resource_citation_marker": "[1]",
+      "markers_used": ["[1]", "[2]", "[3]"],
+      "bibliography_entries": [
+        "[1] Labelbox — https://labelbox.com/blog/inside-the-matrix-a-look-into-the-math-behind-ai/",
+        "[2] Towards AI — https://towardsai.net/p/machine-learning/the-matrix-mathematics-behind-ai-how-llms-think-through-linear-algebra",
+        "[3] Techietory — https://techietory.com/ai/understanding-matrices-and-vectors-in-ai-applications/"
+      ],
+      "orphan_markers": [],
+      "orphan_bibliography_entries": [],
+      "notes": "All three markers map to resources in topic.resources.json; primary [1] cited multiple times. Bibliography fully accounts for all inline markers. No orphans."
+    },
+    "no_forward_references": {
+      "passed": true,
+      "forward_references_found": [],
+      "deferrals_noted": [
+        {
+          "text": "you will explore how that works in topics 6.7 and 6.8",
+          "line": 27,
+          "verified_against_index": {"6.7": "Embeddings — turning words into vectors that capture meaning", "6.8": "Why 'king − man + woman ≈ queen' works"},
+          "verdict": "CORRECT after fix. Named-and-deferred (bare names + pointer), not taught. Targets match the curriculum index."
+        },
+        {
+          "text": "You will explore exactly how this works in topics 6.5 through 6.9",
+          "line": 48,
+          "verified_against_index": {"6.5": "A vector as a point in space — music taste described as three numbers", "6.9": "Cosine similarity — measuring the angle between two meaning-vectors"},
+          "verdict": "CORRECT after fix. Arc spans 6.5–6.9 inclusive; both endpoints exist and are on-theme. Named-and-deferred, not taught."
+        },
+        {
+          "text": "the deeper explanation starts at topic 6.5",
+          "line": 90,
+          "verified_against_index": {"6.5": "A vector as a point in space — music taste described as three numbers"},
+          "verdict": "CORRECT after fix. Arc start at 6.5 matches the corrected corpus."
+        }
+      ],
+      "stale_pointer_scan": "No 6.4, 6.5/6.6 (old embeddings), or '6.4 through 6.9' strings remain in the reading. The three cycle-1 stale pointers are all resolved.",
+      "prohibited_terms_check": {
+        "vectors": false,
+        "matrices": false,
+        "embeddings": false,
+        "dot_product": false,
+        "cosine_similarity": false
+      },
+      "notes": "All forward-topic references are named-and-defer (not taught) and now point to the correct downstream topics. No prohibited terms appear."
+    },
+    "faithfulness": {
+      "passed": true,
+      "assertions_sampled": 11,
+      "unsupported_assertions": 0,
+      "fail_threshold": 2,
+      "sample": [
+        {"assertion": "Every AI system ever built…works entirely with numbers at its core", "corpus_section": "4. Introduction", "supported": true},
+        {"assertion": "binary — a way of writing any number using only two digits: 0 and 1", "corpus_section": "5.1", "supported": true},
+        {"assertion": "one photo equals 36,000,000 numbers", "corpus_section": "5.2 Images → numbers", "supported": true},
+        {"assertion": "One second of standard-quality audio contains roughly 44,100 numbers", "corpus_section": "5.2 Audio → numbers", "supported": true},
+        {"assertion": "the letter 'A' is conventionally stored as the number 65", "corpus_section": "5.2 Text → numbers", "supported": true},
+        {"assertion": "richer conversion for words and context covered in topics 6.7 and 6.8", "corpus_section": "5.2 Text → numbers (corpus line 62) + 7 (corpus line 111)", "supported": true},
+        {"assertion": "parameters, also known as weights; an LLM may have billions of parameters", "corpus_section": "5.4", "supported": true},
+        {"assertion": "the deeper meaning story spans topics 6.5 through 6.9", "corpus_section": "5.5 (corpus line 90)", "supported": true},
+        {"assertion": "Two different representations…wildly more or less accurate", "corpus_section": "7 / Why the Conversion Itself Matters", "supported": true},
+        {"assertion": "Spam filters convert email text into numbers and compare to past spam", "corpus_section": "7 Real-World Patterns", "supported": true},
+        {"assertion": "Do not confuse the representation with the thing itself", "corpus_section": "8 Best Practices", "supported": true}
+      ],
+      "notes": "All sampled assertions trace to the corrected corpus. The forward-ref numbers in the reading (6.7/6.8, 6.5–6.9, start 6.5) match the corpus exactly (corpus lines 62, 90, 111). No reading↔corpus drift."
+    },
+    "beginner_readability": {
+      "passed": true,
+      "undefined_terms": [],
+      "undefined_term_count": 0,
+      "fail_threshold": 2,
+      "jargon_dump": null,
+      "abstract_first": null,
+      "academic_register": null,
+      "define_before_use": {
+        "binary": {"defined_at_line": 13, "passed": true},
+        "pixels": {"defined_at_line": 25, "passed": true},
+        "parameters": {"defined_at_lines": "41–42", "passed": true},
+        "weight": {"defined_at_line": 42, "passed": true},
+        "LLM": {"defined_at_line": 44, "passed": true}
+      },
+      "notes": "All non-everyday terms defined on first use; LLM spelled out. Short sentences, active voice, no academic hedging. Concrete-first throughout."
+    },
+    "formatting": {
+      "passed": true,
+      "wall_of_text": null,
+      "unlisted_sequence": null,
+      "no_inline_examples": null,
+      "bold_term_plain_meaning_shape": true,
+      "notes": "No paragraph exceeds ~4 sentences. Worked Example uses a numbered 6-step list; data-type conversions and In-Practice products use bullet lists; In-Practice principles use a table. Inline examples accompany concept introductions. Bold-term/plain-meaning shape used for definitions."
+    },
+    "assessment_references": {
+      "passed": true,
+      "occurrences": [],
+      "notes": "No assessment IDs, due weeks, or grade weights anywhere in reading.md (cleaner than the 3-4 gold reading, which carries a flagged A1/due-W3/10% line)."
+    },
+    "scope": {
+      "passed": true,
+      "scope_creep": [],
+      "soft_observations": [
+        {
+          "observation": "In Practice (lines 67–68) uses plain-English 'most similar'/'closest' to describe matching; gestures at similarity (6.5/6.9 territory) without defining or teaching the mechanism. No prohibited terms; named-and-defer not violated.",
+          "severity": "soft",
+          "lines": "67–68"
+        }
+      ],
+      "notes": "Reading stays on the headline. Deferred downstream concepts (embeddings, vector-as-point, king-man arithmetic, cosine) appear only as bare mention-and-defer pointers with correct topic numbers — never bolded, never defined."
+    }
+  },
+  "escalation": {
+    "scope_creep_hard_fail": false,
+    "checks_5_6_distinct_findings": 0,
+    "escalated": false
+  },
+  "soft_findings_summary": [
+    "length: ~820 words below the standard band (1200-1600) but consistent with manifest expected_delivery_minutes=5; unchanged by this fix.",
+    "meta sidecar uses 'resources_cited' rather than SKILL-named 'citations_used'/'sections'; cosmetic.",
+    "In Practice gestures at number-similarity with plain-English language (lines 67–68); below scope-creep threshold."
+  ],
+  "hard_fail_reasons": [],
+  "total_soft_findings": 3,
+  "fix_revalidation": {
+    "scope": "Targeted forward-reference correction only.",
+    "embeddings_pointer": {"reading_says": "6.7 and 6.8", "index_6_7": "Embeddings — turning words into vectors that capture meaning", "index_6_8": "Why 'king − man + woman ≈ queen' works", "correct": true},
+    "vector_as_point": {"index_6_5": "A vector as a point in space — music taste described as three numbers", "correct": true},
+    "cosine": {"index_6_9": "Cosine similarity — measuring the angle between two meaning-vectors", "correct": true},
+    "meaning_arc": {"reading_says": "6.5 through 6.9", "arc_start": "6.5", "correct": true},
+    "stale_numbers_remaining": [],
+    "corpus_consistency": "Reading pointers match corrected corpus (lines 62, 90, 111).",
+    "verdict": "Fix is correct and complete; no regression introduced."
+  },
+  "gold_example_check": "Gold reading examples present (3-4-how-llms-work, 2-1-what-makes-a-good-specification). This reading meets that bar on sectioning, beginner tone, formatting density, and define-before-use; cleaner on assessment-reference discipline."
+}

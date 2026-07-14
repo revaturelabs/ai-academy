@@ -1,0 +1,65 @@
+$CATEGORY: CIT/M5/week-11/11-5-if-else-writing-decision-logic-in-code
+
+::q1:: In Python, what is the difference between `mark = 88` and `mark == 88`? {
+=`mark = 88` stores 88 in mark; `mark == 88` tests whether mark equals 88 and returns a bool.#Correct — `=` is assignment, `==` is equality comparison; using `=` inside a condition is a SyntaxError [1][2].
+~Both expressions store 88 in mark; `==` is simply a more precise form of `=`.#Incorrect — `==` does not assign a value; it tests equality and produces True or False.
+~`mark = 88` raises a SyntaxError; `mark == 88` is the correct way to assign a value.#Incorrect — `=` is the correct assignment operator; `==` inside a condition tests equality.
+~Both expressions test whether mark equals 88; `=` is the traditional form used in if statements.#Incorrect — `=` is always assignment; using it inside a condition is always a SyntaxError.
+#### Tests LO1: comparison operator == vs assignment operator =. See §5.1.
+}
+
+::q2:: Python uses which mechanism to define code blocks inside an if statement? {
+~Curly braces {} placed around the beginning and end of each block.#Incorrect — Python does not use curly braces; that style is used in languages like Java and JavaScript.
+~BEGIN and END keywords that mark the start and end of each block.#Incorrect — BEGIN/END keywords appear in Pascal-style languages, not Python.
+~A semicolon at the end of each line in the conditional body.#Incorrect — semicolons can separate statements on one line but do not define blocks in Python.
+=Indentation — 4 spaces, consistently applied to every line in the block.#Correct — Python defines code blocks by indentation, not symbols; inconsistent indentation causes an IndentationError [1][2].
+#### Tests LO2: Python indentation rule. See §5.2.
+}
+
+::q3:: The following code contains a deliberate mistake. What does it print for `average = 85`?
+```
+if average >= 60:
+    grade = 'D'
+elif average >= 80:
+    grade = 'B'
+else:
+    grade = 'F'
+print(grade)
+``` {
+~grade='B' — Python finds that 85 >= 80 and runs the B branch as the programmer intended.#Incorrect — Python evaluates top to bottom and stops at the first True condition; >= 60 is True for 85.
+~grade='F' — Python skips all conditional branches since 85 is above every threshold shown.#Incorrect — the else branch only runs when ALL prior conditions are False; here >= 60 is True.
+=grade='D' — the first True condition (>= 60) runs and all remaining elif/else branches are skipped.#Correct — because >= 60 appears before >= 80, every passing mark triggers the D branch. The fix is to put >= 80 first [2].
+~SyntaxError — a complete elif chain must include conditions for every possible letter grade.#Incorrect — elif chains can have any number of branches; missing a grade is a logic error, not a syntax error.
+#### Tests LO3: elif order matters — most restrictive condition first. See §5.3.
+}
+
+::q4:: Given `average = 72.0` and `attendance = 75`, what does `average >= 60 and attendance >= 80` evaluate to? {
+~True — both values are positive integers so both comparison conditions return True.#Incorrect — whether the values are positive has nothing to do with the thresholds; 75 is not >= 80.
+=False — attendance (75) is below the >= 80 threshold, making the `and` expression False.#Correct — `and` requires both conditions to be True; because 75 < 80, the whole expression is False [1][3].
+~None — boolean expressions return None unless their result is explicitly assigned to a variable.#Incorrect — comparison and boolean expressions always return True or False, never None.
+~TypeError — `and` cannot be used between two comparison expressions; it only works with bool variables.#Incorrect — `and` works with any boolean-producing expression, including the result of comparisons.
+#### Tests LO4: compound conditions with and. See §5.4.
+}
+
+::q5:: A student writes `mark = input("Enter mark: ")` then `total = mark + 5`. What happens when this runs? {
+~Python automatically converts mark to int before adding 5, so no error occurs.#Incorrect — Python never silently converts str to int; explicit conversion with int() is always required.
+~total is set to the string "mark5" — Python concatenates the variable name with 5.#Incorrect — Python evaluates the value stored in mark, not the name "mark"; str + int raises TypeError.
+~A NameError is raised — mark is not recognised as a numeric variable by Python.#Incorrect — NameError means a name was never defined; here mark is defined but holds a str, causing TypeError.
+=A TypeError is raised — input() always returns a str, and you cannot add a str and an int with +.#Correct — the fix is `mark = int(input("Enter mark: "))` to convert the string to int before arithmetic [1][2].
+#### Tests LO5: input() returns str, must convert before arithmetic. See §5.5.
+}
+
+::q6:: What does the following code print?
+```
+x = 10
+if x > 5:
+    print("big")
+else:
+    print("small")
+``` {
+=big#Correct — 10 > 5 evaluates to True, so the indented if-block runs and prints "big" [1][4].
+~small#Incorrect — x is 10, which is greater than 5, so the if-block (not the else-block) runs.
+~Both "big" and "small" on separate lines.#Incorrect — if/else always runs exactly one branch; both branches cannot run for the same evaluation.
+~Nothing — a condition must be written as `x > 5 == True` to produce any output.#Incorrect — `x > 5` already evaluates to True or False; appending `== True` is redundant and not required.
+#### Tests LO2 extended: predict if/else output. See §5.2.
+}

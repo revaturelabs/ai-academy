@@ -1,0 +1,30 @@
+{
+  "topic_id": "5.6",
+  "captured_at": "2026-06-22T07:06:09Z",
+  "captured_by": "namratas@revature.com",
+  "resources_source": "web_search",
+  "resources": [
+    {
+      "type": "url",
+      "value": "https://www.ibm.com/think/topics/prompt-injection",
+      "role": "primary",
+      "source": "web_search",
+      "notes": "IBM Think — authoritative first-party explainer: definition, how prompt injection works (system vs user input share one context window), impacts. Anchor concept."
+    },
+    {
+      "type": "url",
+      "value": "https://www.evidentlyai.com/llm-guide/prompt-injection-llm",
+      "role": "supporting",
+      "source": "web_search",
+      "notes": "LLM guide — concrete example attacks, defenses, and how to test for prompt injection. Applied view."
+    },
+    {
+      "type": "url",
+      "value": "https://en.wikipedia.org/wiki/Prompt_injection",
+      "role": "supporting",
+      "source": "web_search",
+      "notes": "Neutral overview — direct vs indirect injection, 'ignore previous instructions' origin. Background."
+    }
+  ],
+  "web_search_query": "prompt injection attacks LLM crafted inputs how they work"
+}

@@ -1,0 +1,55 @@
+$CATEGORY: CIT/M2/week-5/5.13-knowing-which-governance-framework-applies-to-your-system
+
+::5.13-Q1:: Why does this topic call "which governance framework applies to my system?" an engineering decision and not only an ethics discussion?
+{
+=Because the answer decides what documentation, testing, and human-oversight you must build into the design#Correct - the framework shapes files, tests, and oversight you architect in at design time.
+~Because engineers, and never ethicists, are the only people legally allowed to read the rules#No - the point is that engineers should be in the room, not that ethicists are barred.
+~Because picking a framework is something you safely do after the system has fully shipped#No - it is a design-time choice; deciding late means costly rebuilding.
+~Because every framework forbids writing any code until a government office approves it#No - frameworks shape what you build, they do not block all coding until approval.
+#### Tests why framework choice is a design-time engineering decision (corpus 5.5, Learning Objectives).
+}
+
+::5.13-Q2:: The topic says two simple questions do most of the work of finding which framework applies. What are those two questions, in the order you should ask them?
+{
+~How much will it cost, then how many engineers will be needed to maintain it#No - cost and staffing are not the two questions the topic uses.
+~Who wrote the first version, then which programming language was chosen for it#No - authorship and language do not decide which framework applies.
+=Where does the system operate (jurisdiction), then what does it do (how risky is it)#Correct - jurisdiction picks the frameworks; risk level sets how hard they bite.
+~What does it do (risk) first, then much later whether anyone will ever use it#No - the order is jurisdiction first, then risk, not risk first.
+#### Tests the two-question method and its order (corpus 5.1, 5.2, 5.3).
+}
+
+::5.13-Q3:: A team builds an AI system entirely outside the European Union (EU). Under the EU AI Act, when can that law still apply to them?
+{
+~Never, because a law made in the EU can only ever apply to companies located inside the EU#No - this misses the Act's extraterritorial reach described in the corpus.
+=When the system's output is used in the EU, because the Act has extraterritorial reach#Correct - the EU AI Act can apply even if you are based outside the EU when its output is used there.
+~Only if the team first signs an optional agreement asking the EU to regulate them#No - applicability follows the output, not a voluntary opt-in.
+~Only after the team opens a physical office somewhere inside an EU member country#No - a local office is not required; reaching EU users is enough.
+#### Tests the EU AI Act's extraterritorial reach (corpus 5.2, Learning Objectives).
+}
+
+::5.13-Q4:: A learner assumes that exactly one governance framework can apply to any given AI system. Why is that assumption wrong?
+{
+~Because a system is always governed by whichever framework was published most recently#No - recency does not decide it; several can apply regardless of publication date.
+~Because only the single strictest framework ever applies and the rest are cancelled out#No - frameworks do not cancel each other; more than one stays in force.
+~Because frameworks take turns, so only one is active in any single calendar year#No - they do not rotate by year; they can all apply at once.
+=Because frameworks are not mutually exclusive, so more than one can apply at the same time#Correct - a single system can fall under a law, an advisory, and a voluntary standard together.
+#### Tests that frameworks are not mutually exclusive (corpus 5.4, Learning Objectives).
+}
+
+::5.13-Q5:: Once you know a framework like the EU AI Act applies, what does the second question -- what does the system do? -- mainly tell you?
+{
+~It tells you the exact date by which a government office must approve the system#No - the second question is about risk level, not approval dates.
+~It tells you which programming language the law requires you to build the system in#No - frameworks do not dictate languages; the question is about risk.
+=How heavy the obligations are, by placing the system in the framework's risk tiers#Correct - risk level (for example high-risk hiring) sets how strong the obligations are.
+~Whether the framework is a binding law or instead a fully voluntary set of guidance#No - that is settled by jurisdiction and the framework itself, not by what the system does.
+#### Tests risk-tier classification as the second question (corpus 5.3, 5.1).
+}
+
+::5.13-Q6:: A startup based in India builds an AI hiring tool. It runs as an online service in India and is sold to employers in the EU, so its results are seen by EU users. Which frameworks can apply to this one system at the same time?
+{
+=India's MEITY advisories, the EU AI Act (through extraterritorial reach), and NIST AI RMF if adopted#Correct - all three can touch one product at once, matching the corpus worked example.
+~Only India's MEITY advisories, because the company is physically based in India#No - being based in India does not exempt it; EU users pull in the EU AI Act.
+~Only the EU AI Act, because a binding law always cancels every other framework#No - frameworks are not mutually exclusive; a binding law does not cancel the others.
+~None of them, because a hiring tool is too low-risk for any framework to cover it#No - hiring is high-risk under the EU AI Act, so frameworks clearly apply.
+#### Tests applying the two questions and non-exclusivity to a concrete example (corpus 5.4, Hands-On, Learning Objectives).
+}

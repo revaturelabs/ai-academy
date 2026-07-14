@@ -1,0 +1,18 @@
+{
+  "topic_id": "5.4",
+  "title": "The four pillars — fairness, transparency, accountability, harm prevention",
+  "estimated_read_minutes": 10,
+  "word_count": 1870,
+  "reading_minutes": 10,
+  "generated_at": "2026-06-22T00:00:00Z",
+  "embeds_diagram": true,
+  "diagram_embedded": true,
+  "diagram_path": "artifacts/diagram.png",
+  "citations_used": [1, 2, 3],
+  "citations": {
+    "1": "https://arxiv.org/pdf/2109.07906",
+    "2": "https://www.tandfonline.com/doi/full/10.1080/08839514.2025.2463722",
+    "3": "https://digital.nemko.com/regulations/ethics-and-guidelines-for-trustworthy-ai"
+  },
+  "sections": ["Overview", "Key Concepts", "Worked Example", "In Practice", "Key Takeaways", "References"]
+}

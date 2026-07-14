@@ -1,0 +1,20 @@
+{
+  "type": "module",
+  "position": 3,
+  "title": "Output Validation and Retry",
+  "slug": "3-output-validation-and-retry",
+  "course_code": "M5",
+  "course_slug": "m5-python-for-ai-pe-vc-and-rag",
+  "week_nums": [
+    13
+  ],
+  "session_name_by_week": {
+    "13": "Prompt Engineering and Version Control"
+  },
+  "narrative_seed_by_week": {
+    "13": "Prompt Engineering / System prompt vs user prompt — context-setting vs asking the question / Core techniques — role assignment, few-shot examples, chain-of-thought prompting / Constraints — telling AI what NOT to do matters as much as what to do / Output format control — JSON, numbered lists, fixed structure through prompt / The 5-role context framework — Authority, Exemplar, Constraint, Rubric, Metadata / Output validation and retry — if the AI response fails a format check, retry once before returning a fallback /  / Version Control / Why version control matters — never lose working code; track what changed and why / Git fundamentals — repository, commit, branch, merge / GitHub workflow — clone, add, commit, push / Committing your Capstone — folder structure, README, .gitignore for API keys / Good commit discipline — one logical change per commit, meaningful commit messages"
+  },
+  "lab_activity_seed_by_week": {
+    "13": "Apply the 5-role framework to your domain system’s system prompt / Write 3 prompt versions, measure accuracy on 10 domain-relevant test inputs each / Build a simple output validator — if format check fails, retry once; document what the validator caught /  / Create a GitHub repository for your Capstone. Commit with a proper README and .gitignore. Make at least 3 meaningful commits. / Journal Entry #8 — what made your best prompt better? what did the validator catch? / →  Assessment 4 due this week  (see Assessment Plan)"
+  }
+}

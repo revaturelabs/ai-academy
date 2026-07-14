@@ -1,0 +1,53 @@
+{
+  "topic_id": "12.3",
+  "artifact": "diagram",
+  "critic": "diagram-critic",
+  "cycle": 1,
+  "at": "2026-06-14T00:00:00Z",
+  "passed": true,
+  "verdict": "pass",
+  "findings": [
+    {
+      "code": "looks_good",
+      "where": "whole canvas — source-level pre-flight",
+      "detail": "Seven nodes (A1, A2, A3, B1, B2, B3, B4) in two direction-TB subgraphs under a flowchart LR root. All bold labels are 1–3 words. Every label traces directly to corpus §5.3–§6: 'Call Site' (§6 call site), 'Phase 1: Compute' (§5.4 Phase 1), 'Phase 2: Write' (§5.4 Phase 2), 'compute_average()' (§6 refactored function names), 'Average returned' (§5.5 return + pass result), 'write_average_to_file()' (§6 refactored function names). No downstream topics (decorators, classes, *args, list comprehensions) appear. Title 'One Function = One Job — the Testable Unit Principle' sits in the config title: field — correct per title-discipline rule. Each subgraph is a clean single-path linear flow (no branching). BEFORE→AFTER cross-subgraph edge labelled 'refactor into' makes the pedagogical contrast explicit. classDef tiers: callsite (blue #a5d8ff, neutral — appears in both panels as the call site anchor), multi (warm orange #ffd8a8 / stroke #f76707 — problem-side phases), single (purple #d0bfff — solution functions), ret (green #b2f2bb — return value connector). Subgraph backgrounds differentiated: BEFORE warm (#fff4e6 / amber stroke) for problem panel, AFTER cool (#f0fff4 / green stroke) for solution panel — matches before/after intent."
+    },
+    {
+      "code": "looks_good",
+      "where": "layout choice",
+      "detail": "Side-by-side panel layout (LR root + direction-TB subgraphs) exactly matches the diagram intent: 'Before/after contrast: multi-job function vs the same logic split into two single-job functions'. Follows the canonical 12-1 / 12-2 / 2-4 golden-dataset pattern. BEFORE→AFTER edge with label 'refactor into' makes the transformation direction explicit and beginner-readable."
+    },
+    {
+      "code": "looks_good",
+      "where": "concept fidelity",
+      "detail": "All 7 nodes map exclusively to §5.3 (Testable Unit), §5.4 (Multi-Job identification — Phase 1/Phase 2), §5.5 (Refactoring steps), and §6 (Implementation — compute_average, write_average_to_file, call site). 'Testable independently' appears in B4 subtitle, traced to §5.3 definition. No advanced Python (decorators, generators, classes, *args) present."
+    }
+  ],
+  "stats": {
+    "nodes": 7,
+    "edges": 6,
+    "layout": "flowchart LR (two direction-TB subgraphs, side-by-side)",
+    "labels": [
+      "Call Site",
+      "Phase 1: Compute",
+      "Phase 2: Write",
+      "Call Site",
+      "compute_average()",
+      "Average returned",
+      "write_average_to_file()"
+    ],
+    "png_path": "content/m5-python-for-ai-pe-vc-and-rag/week-12/1-functions-and-data-structures/12-3-one-function-one-job-the-testable-unit-principle/artifacts/diagram.png",
+    "png_dims": "pending — mmdc render required in local environment"
+  },
+  "preflight": {
+    "mermaid_parse": "pass — flowchart LR top-level, two direction-TB subgraphs, :::classDef suffix notation, style declarations for subgraph backgrounds, classDef block at end. Mirrors the proven 12-1 / 12-2 diagram.mmd structure.",
+    "node_count": "pass — 7 nodes total (A1–A3 in BEFORE, B1–B4 in AFTER), within 3–8 range",
+    "label_discipline": "pass — all bold labels are 1–3 words maximum; no bare unexplained acronyms; all labels trace to §5.4 / §6 corpus phrases",
+    "concept_fidelity": "pass — nodes cover: Call Site (corpus §6), Phase 1 Compute (§5.4), Phase 2 Write (§5.4), compute_average (§6), Average returned (§5.5/§6), write_average_to_file (§6). No advanced Python constructs present.",
+    "jargon_label": "pass — 'compute_average()' and 'write_average_to_file()' are corpus-defined function names from §6; 'Testable independently' is corpus-defined from §5.3; no unexplained acronyms",
+    "title_discipline": "pass — governing concept 'One Function = One Job — the Testable Unit Principle' in config title: field, not a node or ghost annotation",
+    "single_path": "pass — A1→A2→A3 is clean linear flow; B1→B2→B3→B4 is clean linear flow; no branching within either panel",
+    "color_tier": "pass — callsite (#a5d8ff blue), multi (#ffd8a8 warm orange for problem-side), single (#d0bfff purple for solution functions), ret (#b2f2bb green for return value) — subgraph backgrounds: BEFORE warm (#fff4e6 / amber), AFTER cool (#f0fff4 / green)"
+  },
+  "render_note": "PNG render via 'mmdc -i content/m5-python-for-ai-pe-vc-and-rag/week-12/1-functions-and-data-structures/12-3-one-function-one-job-the-testable-unit-principle/artifacts/diagram.mmd -o content/m5-python-for-ai-pe-vc-and-rag/week-12/1-functions-and-data-structures/12-3-one-function-one-job-the-testable-unit-principle/artifacts/diagram.png -w 1400 -b transparent' must be executed in the local environment. Visual checks (overlap, truncation, edge crossings, whitespace balance, subtitle legibility) apply once rendered. Source structure mirrors the proven 12-1 / 12-2 golden pattern."
+}

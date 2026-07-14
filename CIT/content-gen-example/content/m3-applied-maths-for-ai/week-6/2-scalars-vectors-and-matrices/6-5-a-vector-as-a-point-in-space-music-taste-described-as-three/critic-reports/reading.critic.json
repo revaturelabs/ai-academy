@@ -1,0 +1,104 @@
+{
+  "critic": "reading-critic",
+  "topic_id": "6.5",
+  "title": "A vector as a point in space — music taste described as three numbers",
+  "run_at": "2026-06-18T00:00:00Z",
+  "passed": true,
+  "verdict": "PASS — all checks clear. Reading is 793 words (within 600–900), reads cleanly in ~3.5 min, all three citations present with [1] machinelearningmastery cited multiple times, no forward references taught, full faithfulness to corpus across 10 sampled assertions, beginner-accessible with concrete-first structure, well-formatted with no walls of text, no assessment references, and no scope creep.",
+  "checks": {
+    "format_discipline": {
+      "passed": true,
+      "frontmatter_present": false,
+      "meta_sidecar_missing": false,
+      "section_template_violation": false,
+      "sections_found": ["Overview", "Key Concepts", "Worked Example", "In Practice", "Key Takeaways", "References"],
+      "diagram_in_key_concepts": true,
+      "notes": "First non-empty line is H1 title. Sidecar reading.meta.json present and valid. Exactly 6 required sections in correct order. Diagram embedded at line 39 inside Key Concepts."
+    },
+    "length": {
+      "passed": true,
+      "word_count": 793,
+      "word_range": [600, 900],
+      "estimated_read_minutes": 3.45,
+      "minute_range": [3, 5],
+      "notes": "793 words is within [600, 900]. 793/230 = 3.45 min is within [3, 5]."
+    },
+    "citations": {
+      "passed": true,
+      "primary_resource_cited": true,
+      "primary_resource": "[1] machinelearningmastery",
+      "primary_citation_count": 5,
+      "inline_markers_found": [1, 2, 3],
+      "bibliography_entries_found": [1, 2, 3],
+      "orphan_markers": [],
+      "orphan_bibliography": [],
+      "notes": "[1] cited at lines 5, 11, 70, 90, 111. [2] cited at lines 54, 66, 76, 94. [3] cited at lines 19, 50, 95, 115. All markers resolve; no orphans."
+    },
+    "forward_references": {
+      "passed": true,
+      "violations": [],
+      "deferred_terms_handled": [
+        {
+          "term": "cosine similarity",
+          "treatment": "named-and-deferred",
+          "line": 66,
+          "text": "Exact methods for measuring that distance, including tools like cosine similarity and distance metrics, are introduced in later topics."
+        }
+      ],
+      "notes": "dot_product, distance_formula, embeddings do not appear. cosine_similarity named but explicitly deferred, not taught. neighbourhood introduced and defined in corpus section 5.6 as in-scope vocabulary for 6.5; reading correctly includes it."
+    },
+    "faithfulness": {
+      "passed": true,
+      "assertions_sampled": 10,
+      "unsupported_assertions": 0,
+      "threshold": 2,
+      "samples": [
+        {"assertion": "every vector is also a location — a specific address in space", "corpus_location": "corpus line 39", "supported": true},
+        {"assertion": "A coordinate is a single number that tells you how far to travel along one specific, named direction from a fixed starting point", "corpus_location": "corpus line 51", "supported": true},
+        {"assertion": "2D vector [0.8, 0.6] plotted on Energy/Tempo axes step-by-step", "corpus_location": "corpus lines 74–86", "supported": true},
+        {"assertion": "Alice's taste vector [energy=0.8, tempo=0.6, mood=0.3]", "corpus_location": "corpus lines 96–98", "supported": true},
+        {"assertion": "Room table: Energy left-right, Tempo front-back, Mood up-down", "corpus_location": "corpus lines 101–106", "supported": true},
+        {"assertion": "Alice/Bob/Carol table with proximity analysis", "corpus_location": "corpus lines 122–136", "supported": true},
+        {"assertion": "No formula needed — conclusion from comparing point positions", "corpus_location": "corpus line 139", "supported": true},
+        {"assertion": "Real AI systems work with vectors of 100, 512, or even thousands of features", "corpus_location": "corpus line 110", "supported": true},
+        {"assertion": "Neighbourhood definition as set of points within small distance", "corpus_location": "corpus line 168", "supported": true},
+        {"assertion": "Replicated the core logic of a recommendation engine without writing a single line of code", "corpus_location": "corpus line 188", "supported": true}
+      ]
+    },
+    "beginner_readability": {
+      "passed": true,
+      "undefined_terms": [],
+      "undefined_terms_count": 0,
+      "jargon_dump": null,
+      "abstract_first": null,
+      "academic_register": null,
+      "notes": "All new terms bold-defined at first use. Concrete analogies (city grid, room) precede abstraction. No hedging language. Average sentence length well under 25 words."
+    },
+    "formatting": {
+      "passed": true,
+      "wall_of_text": null,
+      "unlisted_sequence": null,
+      "no_inline_examples": null,
+      "notes": "No paragraph exceeds 6 sentences. Worked Example uses numbered list. In Practice uses bullet list. Inline examples appear in Key Concepts (city grid analogy, Alice/Bob/Carol comparison table). Bold-term/plain-meaning shape used consistently for all defined terms."
+    },
+    "assessment_references": {
+      "passed": true,
+      "violations": [],
+      "notes": "No assessment IDs, due-week references, or grade weights appear anywhere in the reading."
+    },
+    "scope": {
+      "passed": true,
+      "scope_creep": [],
+      "notes": "All content (coordinate, axis, origin, coordinate_plane, point_in_space, distance_as_similarity, n_dimensional_space, taste_space, neighbourhood) is within topic scope. Cosine similarity and distance metrics correctly named-and-deferred at line 66. No teaching of dot_product, distance_formula, or embeddings."
+    }
+  },
+  "findings_summary": {
+    "hard_failures": [],
+    "soft_findings": [],
+    "total_findings": 0
+  },
+  "escalation": {
+    "hard_fail_triggered": false,
+    "reason": null
+  }
+}

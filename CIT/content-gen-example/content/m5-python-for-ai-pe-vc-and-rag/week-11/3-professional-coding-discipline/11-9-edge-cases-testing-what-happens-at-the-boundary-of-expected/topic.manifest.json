@@ -1,0 +1,46 @@
+{
+  "type": "topic",
+  "id": "11.9",
+  "title": "Edge cases — testing what happens at the boundary of expected input",
+  "slug": "11-9-edge-cases-testing-what-happens-at-the-boundary-of-expected",
+  "position_in_module": 3,
+  "week_num": 11,
+  "session_name": "Python Foundations I",
+  "module": {
+    "position": 3,
+    "slug": "3-professional-coding-discipline",
+    "title": "Professional Coding Discipline"
+  },
+  "course": {
+    "code": "M5",
+    "slug": "m5-python-for-ai-pe-vc-and-rag",
+    "title": "Python for AI, PE, VC and RAG"
+  },
+  "next_assessment": {
+    "id": "A4",
+    "due_week": 13,
+    "title": "Python and Prompt Engineering Portfolio",
+    "weight": "20%"
+  },
+  "paths": {
+    "corpus": "topic_corpus.md",
+    "resources": "topic.resources.json",
+    "progress": "topic.progress.json",
+    "artifacts_dir": "artifacts/",
+    "critic_reports_dir": "critic-reports/"
+  },
+  "artifact_plan": {
+    "diagram": true,
+    "diagram_intent": "Boundary input map showing the normal range (0–100) as a horizontal band with edge-case zones marked at the endpoints (0, 100) and grade-switch boundaries (70, 80, 90), contrasted against the middle normal zone",
+    "suggested_profile": "deep",
+    "confirmed_profile": "deep",
+    "reading_word_range": [1600, 2200],
+    "reading_min_minutes": 8,
+    "reading_max_minutes": 12,
+    "quiz_min_questions": 5,
+    "quiz_max_questions": 6,
+    "quiz_include_short_answer": false
+  },
+  "expected_delivery_minutes": 9,
+  "status": "corpus_drafted"
+}

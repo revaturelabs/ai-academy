@@ -1,0 +1,49 @@
+$CATEGORY: CIT/M5/week-13/13-11-git-fundamentals-repository-commit-branch-merge
+
+::q1:: When you run `git init` inside a folder, what does Git create to store the full history of your project? {
+~A file called `history.txt` that logs every change you make#No — Git does not use a plain text file for history; that would be easy to corrupt and hard to search.
+=A hidden folder called `.git` that acts as Git's internal database#Correct — `git init` creates the `.git` folder, which holds every saved snapshot of your project automatically.
+~A new subfolder called `backup` that copies your files on every save#No — Git does not create a `backup` folder; all version data lives inside the hidden `.git` folder.
+~A remote server connection that stores snapshots in the cloud#No — `git init` works entirely on your local machine; remote connections are a separate topic.
+#### Tests understanding of what a Git repository contains and what `git init` does (corpus §5.1).
+}
+
+::q2:: A developer saves a snapshot and writes the message `"stuff"` as the commit message. What is the main problem with this? {
+~The message is too short to be accepted by Git, so the commit will fail#No — Git does not enforce message length; even a single character is accepted without error.
+~The commit will not be saved because Git requires a message longer than five words#No — Git imposes no word-count rule on commit messages; any non-empty string is valid.
+~The commit creates an extra branch that must be deleted manually#No — a commit message has no effect on branches; branches are created with separate commands.
+=Future readers of the history will have no idea what changed or why, making the history useless#Correct — a vague message like "stuff" gives no information about the change, so the commit history loses its value as a project diary.
+#### Tests understanding of why a clear, specific commit message matters (corpus §5.2).
+}
+
+::q3:: A developer creates a `feature` branch from `main` and makes two commits on it. What has happened to the `main` branch? {
+=Nothing — `main` still points to the same commit it was at when the branch was created#Correct — a branch is isolated; commits made on `feature` do not move or change `main` in any way.
+~`main` automatically receives copies of every commit made on the `feature` branch#No — branches are independent; `main` only gains those commits if you explicitly merge the feature branch.
+~`main` is locked and cannot receive any new commits until the branch is deleted#No — you can commit to `main` at any time regardless of how many other branches exist.
+~`main` is deleted and replaced by the `feature` branch once the first commit is made#No — creating a branch never removes or replaces `main`; both branches coexist in the same repository.
+#### Tests understanding of branch isolation — that work on a branch does not affect `main` (corpus §5.3).
+}
+
+::q4:: Your `feature-login` branch is finished and tested. Which sequence of commands correctly merges it into `main`? {
+~`git merge feature-login` followed by `git checkout main`#No — you must be on `main` before running merge; this sequence runs merge while still on the feature branch.
+~`git branch -d feature-login` followed by `git merge main`#No — deleting the branch first removes the commits you want to merge; deletion comes after a successful merge, not before.
+=`git checkout main` followed by `git merge feature-login`#Correct — switch to `main` first, then merge the feature branch into it; this is the standard two-step merge workflow.
+~`git commit -m "merge"` followed by `git checkout feature-login`#No — a commit saves current file changes; it does not merge branches, and checking out the feature branch moves you away from `main`.
+#### Tests knowing when and how to merge a branch back into main (corpus §5.4).
+}
+
+::q5:: A developer starts on `main` at commit C, creates a branch called `experiment`, makes commits D and E on it, then merges `experiment` back into `main`. What does `main` contain after the merge? {
+~Only commits D and E — the original commits A, B, and C are removed when a merge happens#No — merging adds commits from the branch to the target; it never removes existing commits from the target.
+=The full history\: commits A, B, C (original main), D, E (from the branch), and a new merge commit#Correct — after a merge, the target branch contains its own prior history plus all commits from the merged branch, joined by a merge commit.
+~Commits A, B, C, and a copy of the branch — the originals D and E are deleted after merging#No — commits are permanent snapshots; merging incorporates them into `main`'s history without deleting or copying them.
+~Only commit C and the merge commit — intermediate commits are squashed automatically#No — a standard `git merge` preserves all individual commits; squashing is an optional, separate operation not covered here.
+#### Tests the ability to trace the create-branch → commit → merge sequence and understand the resulting history (corpus §5.3–5.4).
+}
+
+::q6:: A student says\: "A branch and a commit are the same thing — both save your work." Which correction is most accurate? {
+~A commit and a branch both store a copy of the repository on a remote server, so the student is essentially right#No — neither a commit nor a branch is a remote server copy; both exist inside the local repository, and they serve completely different roles.
+~A branch saves your work permanently as a snapshot; a commit is just a temporary pointer that disappears when you switch branches#No — it is the commit that saves a permanent snapshot; a branch is a movable label pointing to a commit, not the snapshot itself.
+~A repository and a branch are the same concept — a branch is simply a repository with a different name#No — a repository is the entire managed project folder containing all history; a branch is one line of development inside that repository.
+=A branch is an independent line of development inside the repository; a commit is a saved snapshot of your files at a specific moment — they serve different purposes#Correct — a commit freezes the state of your files at one point in time, while a branch is a separate path of commits you can work on without affecting other branches.
+#### Tests the ability to distinguish between a repository, a commit, and a branch in plain language (corpus §5.1–5.3, LO6).
+}

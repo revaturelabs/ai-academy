@@ -1,0 +1,98 @@
+{
+  "critic": "reading-critic",
+  "topic_id": "12.9",
+  "cycle": 1,
+  "at": "2026-06-15T00:00:00Z",
+  "passed": true,
+  "checks": {
+    "format_discipline": {
+      "passed": true,
+      "findings": [
+        "First non-empty line is '# What an API is — a door into another system; request and response' — correct H1, no YAML frontmatter.",
+        "Sidecar reading.meta.json present and valid (word_count, reading_minutes, citations_used, section_order all present).",
+        "Six fixed sections in correct order: Overview, Key Concepts, Worked Example, In Practice, Key Takeaways, References."
+      ]
+    },
+    "length_budget": {
+      "passed": true,
+      "word_count": 1441,
+      "reading_minutes_at_230wpm": 6.3,
+      "target_range": [1200, 1600]
+    },
+    "citation_discipline": {
+      "passed": true,
+      "primary_cited": true,
+      "findings": [
+        "Primary resource [1] blog.postman.com cited 7 times across Overview, Key Concepts (waiter analogy, status codes, JSON, why APIs exist), Key Takeaways implied — meets ≥1 requirement.",
+        "[2] getstream.io cited in client-server model (line 32), headers section (line 77), In Practice (line 186).",
+        "[3] dev.to cited in HTTP methods (line 74), response section (line 96), JSON section (line 144), In Practice (line 197).",
+        "All three bibliography entries in References match [1]/[2]/[3] inline markers. No orphan markers or entries."
+      ]
+    },
+    "forward_references": {
+      "passed": true,
+      "findings": [
+        "No json module usage, no import statements, no SDK calls, no content[0]['text'] key path.",
+        "Topic 12.10 referenced as a forward pointer only ('The exact fields the Anthropic API expects in this body are covered in topic 12.10.', 'Topic 12.10 covers how to do this for the Anthropic API.').",
+        "Topic 12.12 referenced as a forward pointer only for JSON extraction ('How to extract it is covered in topic 12.12.', 'Full JSON handling ... is covered in topic 12.12.').",
+        "No teaching beyond 12.9 scope — all downstream topics named-and-deferred only."
+      ]
+    },
+    "scope_discipline": {
+      "passed": true,
+      "findings": [
+        "Reading covers exactly the topic headline: API concept, client-server model, request components (endpoint/method/headers/body), response components (status code/headers/body), JSON as format (not parsing), why APIs exist.",
+        "JSON body and response examples are illustrative of what a request/response looks like — not teaching parsing. Parsing explicitly deferred to 12.12.",
+        "No json module, no Anthropic SDK constructor, no .messages.create() calls anywhere in the reading.",
+        "Authentication topic introduced only at the level of 'API key in headers' — setup details deferred to 12.10, consistent with scope."
+      ]
+    },
+    "beginner_readability": {
+      "passed": true,
+      "findings": [
+        "All acronyms defined on first use: API (Application Programming Interface, line 5 + §Key Concepts expanded word-by-word), LLM (Large Language Model, line 5), HTTP (HyperText Transfer Protocol, line 28), URL (Uniform Resource Locator, line 60), JSON (JavaScript Object Notation, line 80).",
+        "No paragraph introduces 3+ new terms simultaneously.",
+        "Concrete-first throughout: wall-socket analogy before abstract API definition; restaurant/waiter analogy before client-server abstraction; worked example grounds the full cycle in a single concrete scenario.",
+        "Sentence lengths average well under 25 words. No hedging phrases detected ('it is generally considered', 'many experts believe', etc.). Active voice throughout.",
+        "No assessment references (A4 due week 13 not mentioned anywhere in the reading)."
+      ]
+    },
+    "formatting": {
+      "passed": true,
+      "findings": [
+        "No paragraph exceeds 6 sentences — most are 2-4 sentences.",
+        "Sequences and multi-item lists rendered as numbered lists (6-step worked example, 3-step HTTP cycle) and bullet lists (In Practice do/avoid lists, Key Takeaways).",
+        "Tables used appropriately for client-server roles, waiter analogy, HTTP methods, and status codes — not prose run-ons.",
+        "Bold term / plain-meaning pattern used consistently throughout Key Concepts (e.g., '**Endpoint** is the address...', '**Headers** are metadata...').",
+        "Inline examples present in Key Concepts (endpoint URL example, status code table, JSON body snippet) — not confined to Worked Example section alone."
+      ]
+    },
+    "faithfulness": {
+      "passed": true,
+      "findings": [
+        "10 assertions sampled across all sections — all trace to corpus:",
+        "1. Request-response pattern description (Overview) → Corpus §4/§5.2.",
+        "2. API acronym word-by-word expansion (Key Concepts §What API means) → Corpus §5.1 exact.",
+        "3. Wall-socket/plug analogy for 'interface' → Corpus §5.1 exact.",
+        "4. Waiter-analogy table (You/waiter/kitchen/menu/order/meal) → Corpus §5.3 exact.",
+        "5. 'Hide the implementation behind a stable interface' → Corpus §5.3.",
+        "6. Six status code entries (200/400/401/404/429/500) with exact meanings → Corpus §5.5 exact.",
+        "7. JSON cosmetic differences (double quotes, true/false) → Corpus §5.6 exact.",
+        "8. Three reasons APIs exist (hidden implementation, stability, auth/access control) → Corpus §5.7 exact.",
+        "9. Endpoint https://api.anthropic.com/v1/messages → Corpus §5.4.",
+        "10. Response body JSON structure with content array → Corpus §5.5 exact."
+      ]
+    },
+    "diagram_embedded": {
+      "passed": true,
+      "findings": [
+        "artifact_plan.diagram=true. Reading line 51 contains ![API request-response cycle: Python code → API endpoint → Server → JSON response → back to client](diagram.png) embedded in the Key Concepts section, after the waiter analogy and before the request anatomy — appropriate placement."
+      ]
+    }
+  },
+  "summary": {
+    "hard_failures": [],
+    "soft_findings": []
+  },
+  "verdict": "PASS — all 8 checks pass. Format discipline: clean H1 opener, no frontmatter, sidecar valid, six fixed sections in correct order. Length: 1441 words / 6.3 minutes — within [1200, 1600] / [6, 8]. Citations: primary blog.postman.com [1] cited 7 times; [2] and [3] both used with matching bibliography; no orphan markers. Forward references: no json module, no SDK calls, no content[0] extraction — all downstream topics (12.10, 12.12) are clean named-and-deferred pointers only. Scope discipline: reading stays on API concept, request/response anatomy, and JSON as a format — no parsing, no SDK constructor, no authentication setup beyond 'API key goes in headers'. Beginner readability: all acronyms spelled out on first use, concrete-before-abstract (analogies lead), no jargon dumps, no assessment references. Formatting: tables, numbered lists, and bullet lists throughout — no walls of text. Faithfulness: all 10 sampled assertions confirmed in corpus. Diagram embedded in Key Concepts section as required by artifact_plan."
+}

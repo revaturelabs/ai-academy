@@ -1,0 +1,43 @@
+---
+title: Why prompt injection works — one shared context window
+config:
+  theme: base
+  themeVariables:
+    primaryColor: "#a5d8ff"
+    primaryBorderColor: "#4a9eed"
+    lineColor: "#555"
+  flowchart:
+    htmlLabels: true
+    curve: basis
+    nodeSpacing: 50
+    rankSpacing: 55
+---
+flowchart LR
+    sys["<b>TRUSTED</b><br/><span style='font-size:12px;color:#6d28d9'>system prompt (owner's rules)</span>"]
+    usr["<b>UNTRUSTED</b><br/><span style='font-size:12px;color:#6d28d9'>user input (anyone can type)</span>"]
+    direct["<b>Direct</b><br/><span style='font-size:12px;color:#6d28d9'>user types it</span>"]
+    indirect["<b>Indirect</b><br/><span style='font-size:12px;color:#6d28d9'>hidden in page / doc read later</span>"]
+    ctx["<b>Context window</b><br/><span style='font-size:12px;color:#6d28d9'>both stitched into one text block</span>"]
+    llm["<b>LLM (Large Language Model)</b><br/><span style='font-size:12px;color:#6d28d9'>can't tell rules from content</span>"]
+    out["<b>Hijacked output</b><br/><span style='font-size:12px;color:#6d28d9'>obeys attacker, not owner</span>"]
+
+    direct --> usr
+    indirect --> usr
+    sys --> ctx
+    usr --> ctx
+    ctx --> llm
+    llm --> out
+
+    sys:::start
+    usr:::auto
+    direct:::auto
+    indirect:::auto
+    ctx:::hitl
+    llm:::act
+    out:::done
+
+    classDef start fill:#a5d8ff,stroke:#4a9eed
+    classDef auto fill:#d0bfff,stroke:#8b5cf6
+    classDef hitl fill:#fff3bf,stroke:#f59e0b,stroke-width:3px
+    classDef act fill:#a5d8ff,stroke:#4a9eed
+    classDef done fill:#b2f2bb,stroke:#22c55e

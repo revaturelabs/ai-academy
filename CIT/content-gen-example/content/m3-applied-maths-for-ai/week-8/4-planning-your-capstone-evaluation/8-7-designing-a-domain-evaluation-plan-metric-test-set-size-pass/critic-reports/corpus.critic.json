@@ -1,0 +1,44 @@
+{
+  "artifact": "corpus",
+  "topic_id": "8.7",
+  "at": "2026-06-22T07:58:00Z",
+  "resources_source": "web_search",
+  "citation_mode": "strict",
+  "depth_profile": "deep",
+  "word_count_estimate": 1850,
+  "passed": true,
+  "checks": {
+    "required_sections": {
+      "passed": true,
+      "detail": "Sections 3 (Learning Objectives), 4 (Introduction), 5 (Core Concepts, ~900w with 5 sub-sections), 10 (Key Takeaways) all present and non-trivial. Applied-topic extras present: 6 (Implementation, 6 ordered steps), 7 (Real-World Patterns, 2 worked sketches), 9 (Hands-On Exercise). Section 5 well above the 100-word floor."
+    },
+    "citation_density": {
+      "passed": true,
+      "mode": "strict",
+      "detail": "resources_source=web_search. Primary [1] (nature.com) cited multiple times (lines 39,67,68,85,133,135,142,149,151). Supporting [2] (arxiv 2310) and [3] (arxiv 2412) both cited and on-role ([2] for eval-plan/test-set/held-out, [3] for threshold/in-advance). Every primary cited >=1x. Key factual assertions in sections 5/6/7 carry [N] markers well above the 60% bar. No fabricated markers: [1],[2],[3] all resolve to topic.resources.json entries."
+    },
+    "sequence_drift": {
+      "passed": true,
+      "forward_refs": [],
+      "detail": "Synthesis topic. Reuse of precision/recall/false positive/false negative (8.3), F1/harmonic mean (8.4), accuracy/confusion matrix (8.5), calibration/confidence (8.6), embeddings/cosine similarity (8.1/8.2) is expected and correct, not drift. New terms (evaluation plan, metric-to-cost matching, test set size, held-out/representative test set, pass/fail threshold, tying threshold to stakes) all belong to 8.7 concepts_introduced. Advanced terms (confidence intervals, Z-scores, K-fold cross-validation, train/validation/test split) appear ONLY as name-and-defer one-liners (lines 87, 104) with explicit 'later/more advanced' pointers — not taught."
+    },
+    "length_sanity": {
+      "passed": true,
+      "detail": "~1850 words against deep band 1800-2200. In range."
+    },
+    "topic_scope": {
+      "passed": true,
+      "scope_creep": [],
+      "detail": "Headline = design an eval plan via 3 decisions (metric choice / test-set size / pass-fail threshold). Synthesizing prior metrics to GUIDE the metric choice (table in 5.2) is on-headline. Rigorous statistics/CV methodology is NOT taught: confidence intervals, Z-scores, K-fold cross-validation, and train/validation/test split methodology are deferred in bare-name single sentences (lines 87, 104) — not bolded, no defining appositive — consistent with mention-and-defer form. No advanced material imported from the supporting arxiv sources."
+    },
+    "beginner_readability": {
+      "passed": true,
+      "findings": [],
+      "detail": "Plain register, short sentences, learner addressed as 'you'. Key terms defined on first use (evaluation plan 5.1, metric 5.2, test set + labeled 5.3, held-out 5.3, representative 5.3, pass/fail threshold 5.4). Lead-with-example pattern (5 tickets noise example, spam imbalance example). No jargon dumps. Hedging minimal. Tables used for the metric-choice and stakes-threshold contrasts per formatting standards."
+    }
+  },
+  "forward_refs": [],
+  "scope_creep": [],
+  "deferred_concepts": ["confidence intervals", "Z-scores", "K-fold cross-validation", "train/validation/test split methodology"],
+  "verdict": "PASS. Corpus 8.7 is a clean synthesis topic: it reuses 8.1-8.6 metrics to guide three plan decisions (metric / test-set size / threshold) without teaching new measures. STRICT citation mode satisfied — primary [1] and supporting [2][3] all cited, density >60%, no fabricated markers. No forward references; advanced statistics/CV methodology correctly name-and-deferred (lines 87, 104), not taught — no scope_creep. ~1850 words within deep band. Beginner-readable. Cleared to ground downstream artifacts."
+}

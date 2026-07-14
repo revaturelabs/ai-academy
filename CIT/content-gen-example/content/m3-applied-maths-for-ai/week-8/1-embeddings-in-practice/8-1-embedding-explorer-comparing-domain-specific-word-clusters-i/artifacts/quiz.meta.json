@@ -1,0 +1,25 @@
+{
+  "topic_id": "8.1",
+  "generated_at": "2026-06-22T06:10:00Z",
+  "format": "gift",
+  "question_count": 5,
+  "$bias_defense_applied": true,
+  "$shuffle_seed": "8.1",
+  "correct_position_distribution": [2, 0, 3, 1, 2],
+  "position_counts": { "0": 1, "1": 1, "2": 2, "3": 1 },
+  "max_position_share": 0.40,
+  "lo_coverage": {
+    "LO1_open_tool_recognize_dot": ["q1"],
+    "LO2_pick_focused_words": ["q2"],
+    "LO3_2d_projection_meaning": ["q3"],
+    "LO4_cluster_vs_outlier": ["q4"],
+    "LO5_compare_two_domains": ["q5"]
+  },
+  "questions": [
+    { "id": "q1", "type": "mcq", "objective_ref": "Open the TensorFlow Embedding Projector and recognize what each dot on the screen represents.", "correct_position": 2 },
+    { "id": "q2", "type": "mcq", "objective_ref": "Pick a focused set of 10 'domain-specific' words and explain why a focused set is easier to read than a random one.", "correct_position": 0 },
+    { "id": "q3", "type": "mcq", "objective_ref": "Switch the view to a flat 2D picture and describe, in plain words, what a '2D projection' is and is not.", "correct_position": 3 },
+    { "id": "q4", "type": "mcq", "objective_ref": "Identify a cluster (a tight group of dots) and an outlier (a lonely dot) by eye.", "correct_position": 1 },
+    { "id": "q5", "type": "mcq", "objective_ref": "Compare the word clusters of two different domains and say what their layout tells you about meaning.", "correct_position": 2 }
+  ]
+}

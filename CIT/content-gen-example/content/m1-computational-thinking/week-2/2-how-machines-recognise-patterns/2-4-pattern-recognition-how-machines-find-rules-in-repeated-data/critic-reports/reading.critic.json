@@ -1,0 +1,160 @@
+{
+  "critic": "reading-critic",
+  "topic_id": "2.4",
+  "topic_title": "Pattern recognition — how machines find rules in repeated data",
+  "at": "2026-06-17T00:00:00Z",
+  "cycle": 1,
+  "passed": true,
+  "reading_path": "artifacts/reading.md",
+  "meta_path": "artifacts/reading.meta.json",
+  "word_count_measured": 2190,
+  "estimated_read_minutes": 9.5,
+  "checks": {
+    "format_discipline": {
+      "passed": true,
+      "frontmatter_present": false,
+      "meta_sidecar_missing": false,
+      "section_template_violation": false,
+      "detail": "File opens with '# Pattern recognition — how machines find rules in repeated data' — no YAML block. reading.meta.json exists and parses with all required fields (topic_id, title, estimated_read_minutes, word_count, generated_at, embeds_diagram, citations_used, sections). Exactly six ## sections present in correct order: Overview, Key Concepts, Worked Example, In Practice, Key Takeaways, References."
+    },
+    "length": {
+      "passed": true,
+      "word_count": 2190,
+      "target_range": [1800, 2200],
+      "in_word_range": true,
+      "read_minutes": 9.5,
+      "target_minute_range": [9, 11],
+      "in_minute_range": true,
+      "detail": "2,190 words / 230 wpm = 9.5 min. Both word count and reading-time targets satisfied."
+    },
+    "citations": {
+      "passed": true,
+      "primary_resources_all_cited": true,
+      "resources": {
+        "[1]": {
+          "url": "https://sam-solutions.com/blog/pattern-recognition-in-ai/",
+          "cited": true,
+          "first_appearance": "Overview (line 5)",
+          "occurrences": 13
+        },
+        "[2]": {
+          "url": "https://viso.ai/deep-learning/pattern-recognition/",
+          "cited": true,
+          "first_appearance": "Key Concepts §2 (line ~41)",
+          "occurrences": 14
+        },
+        "[3]": {
+          "url": "https://saiwa.ai/blog/ai-for-pattern-recognition/",
+          "cited": true,
+          "first_appearance": "Key Concepts §1 (line ~11)",
+          "occurrences": 12
+        }
+      },
+      "orphan_markers": false,
+      "orphan_bibliography_entries": false,
+      "bibliography_matches_inline": true,
+      "citation_density": "3 citations per ~730 words — exceeds ≥1 per 400-word target"
+    },
+    "forward_references": {
+      "passed": true,
+      "hard_forward_references": [],
+      "soft_forward_references": [],
+      "detail": "'model drift' appears at Key Concepts §6 with explicit deferral: 'called model drift and is covered in a later module.' Correct mention-and-defer form. No other forward references detected."
+    },
+    "faithfulness": {
+      "passed": true,
+      "assertions_sampled": 10,
+      "unsupported_assertions": 0,
+      "hard_fail_threshold": 2,
+      "samples": [
+        { "assertion": "rule-based system — also called an expert system — is a program where a human expert writes every decision as an explicit IF/THEN instruction", "corpus_location": "§5.1", "supported": true },
+        { "assertion": "IF the email contains the word 'lottery' AND the sender is unknown → mark as spam", "corpus_location": "§5.1", "supported": true },
+        { "assertion": "label is the tag that tells the machine what an example actually is", "corpus_location": "§5.2", "supported": true },
+        { "assertion": "feature is one measurable property of an input that the machine can examine", "corpus_location": "§5.3", "supported": true },
+        { "assertion": "Classification — deciding which category a new input belongs to, based on the rules the machine learned during training", "corpus_location": "§5.4", "supported": true },
+        { "assertion": "'I am 87% confident this is spam'", "corpus_location": "§5.5", "supported": true },
+        { "assertion": "validation set is a separate batch of examples not used during training", "corpus_location": "§5.5 (spec example)", "supported": true },
+        { "assertion": "model drift and is covered in a later module", "corpus_location": "§5.6", "supported": true },
+        { "assertion": "five-step pipeline: collect examples → label → extract features → train → classify", "corpus_location": "§6", "supported": true },
+        { "assertion": "'Putting it together' specification example (85% precision, 1,000-email validation set, 75% fallback to human review)", "corpus_location": "§8 best-practices examples", "supported": true }
+      ]
+    },
+    "beginner_readability": {
+      "passed": true,
+      "escalated_to_hard_fail": false,
+      "distinct_findings_count": 0,
+      "hard_fail_threshold": 3,
+      "define_before_use": {
+        "passed": true,
+        "terms_checked": [
+          { "term": "rule-based system", "defined_at_first_use": true, "line_approx": 11 },
+          { "term": "expert system", "defined_as_synonym_inline": true, "line_approx": 11 },
+          { "term": "pattern-recognition system", "defined_at_first_use": true, "line_approx": 19 },
+          { "term": "deterministic", "defined_at_first_use": true, "line_approx": 35 },
+          { "term": "probabilistic", "defined_at_first_use": true, "line_approx": 37 },
+          { "term": "training", "defined_at_first_use": true, "line_approx": 41 },
+          { "term": "label", "defined_at_first_use": true, "line_approx": 47 },
+          { "term": "feature", "defined_at_first_use": true, "line_approx": 56 },
+          { "term": "feature extraction", "defined_at_first_use": true, "line_approx": 66 },
+          { "term": "classification", "defined_at_first_use": true, "line_approx": 72 },
+          { "term": "validation set", "defined_at_first_use": true, "line_approx": 98, "note": "Corpus soft finding resolved — parenthetical '(a separate batch of examples (in this case emails) not used during training)' added at first use." },
+          { "term": "model drift", "defined_and_deferred": true, "line_approx": 104 }
+        ],
+        "undefined_terms_cold": [],
+        "detail": "All non-everyday terms defined with bold + plain-English meaning at first appearance. The corpus soft finding for 'validation set' is resolved in the reading."
+      },
+      "jargon_dump": { "passed": true, "instances": [] },
+      "concrete_first": {
+        "passed": true,
+        "detail": "Every concept section opens with a concrete spam-filter or everyday example before naming the abstraction. Overview references the Week 1 cat-recognition example. Section 1 leads with the rule-based spam example before naming 'rule-based system'. Section 3 leads with 'a machine cannot look at a raw email' before defining 'feature'. Section 5 explains the 87%-confidence scenario before stating the probabilistic principle."
+      },
+      "plain_register": {
+        "passed": true,
+        "avg_sentence_length_approx": 19,
+        "hedging_phrases_count": 0,
+        "detail": "Short active sentences throughout. No hedging constructions found."
+      },
+      "assessment_reference": {
+        "passed": true,
+        "instances": [],
+        "detail": "No assessment IDs, due weeks, or grade weights appear in the reading. Corpus §4 mentioned A1 but this was not carried into the reading."
+      }
+    },
+    "formatting": {
+      "passed": true,
+      "wall_of_text": {
+        "passed": true,
+        "instances": [],
+        "detail": "No paragraph exceeds 4 sentences. Key Concepts uses H3 sub-sections, bullets, tables, and numbered steps throughout."
+      },
+      "unlisted_sequence": {
+        "passed": true,
+        "detail": "The five-step pipeline in Worked Example is rendered as a numbered list. The do/don't best practices are rendered as bullets. No sequence is buried in run-on prose."
+      },
+      "no_inline_examples": {
+        "passed": true,
+        "detail": "Inline examples appear in every Key Concepts sub-section at the point of concept introduction: spam-rule example (§1), spam-or-not-spam email labeling (§2), email/photo/transaction feature examples (§3), 50,000-email classification example (§4), 87%-confidence score (§5), changing-spam-tactics example (§6)."
+      },
+      "definitions_shape": {
+        "passed": true,
+        "detail": "All definitions use bold-term followed by plain-meaning: '**rule-based system** — also called an expert system — is a program where...'; '**label** is the tag that tells the machine...'; '**Classification** — deciding which category...'; '**validation set** is a separate batch of examples...' etc."
+      }
+    },
+    "scope": {
+      "passed": true,
+      "scope_creep": [],
+      "soft_findings": [],
+      "detail": "Reading stays on the headline. All six corpus core concepts covered. Model drift is one sentence with explicit deferral. No neural-network internals, no gradient descent, no backpropagation, no deep-learning specifics. 'precision' appears in spec-writing examples with sufficient everyday-English context; it is not taught as a technical metric concept. The training-deployment gap section (§6) is appropriately brief and does not introduce deployment infrastructure, MLOps, or monitoring concepts."
+    }
+  },
+  "gold_example_comparison": {
+    "gold_example_found": true,
+    "gold_path": ".claude/references/gold-examples/reading/2-1-what-makes-a-good-specification.reading.md",
+    "meets_gold_bar": true,
+    "detail": "Reading matches gold bar on: section shape (same six sections, same order), beginner tone (plain English, second-person 'you', no academic register), formatting density (tables for X-vs-Y, numbered list for procedure, bold-term definitions, bullets for best practices), depth (concrete example before every abstraction, explicit bridge from worked example to spec writing). The deep-profile length (2,190 words vs gold example ~700 words) reflects the confirmed depth profile difference — not a formatting divergence."
+  },
+  "hard_fails": [],
+  "soft_findings": [],
+  "verdict": "PASS — all checks clear on first cycle. No hard fails. No soft findings. The corpus soft finding for 'validation set' is resolved in the reading via parenthetical definition. The reading meets the gold-example bar on tone, formatting, and beginner scaffolding. Length (2,190 words / 9.5 min) is within the deep-profile target range. All three primary resources cited. No scope creep. No assessment references.",
+  "reading_critic_passed": true
+}

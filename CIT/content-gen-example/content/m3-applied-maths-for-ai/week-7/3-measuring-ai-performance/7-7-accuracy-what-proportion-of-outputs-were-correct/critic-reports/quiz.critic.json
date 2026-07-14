@@ -1,0 +1,176 @@
+{
+  "passed": true,
+  "checks": {
+    "hard_prerequisites": {
+      "passed": true,
+      "meta_sidecar_present": true,
+      "bias_defense_applied": true
+    },
+    "positional_bias": {
+      "passed": true,
+      "distribution": {"0": 2, "1": 1, "2": 2, "3": 1},
+      "max_share": 0.333,
+      "ceiling": 0.40,
+      "meta_gift_desync": false,
+      "note": "Derived positions from quiz.gift match sidecar exactly. All four positions used."
+    },
+    "length_bias": {
+      "passed": true,
+      "longest_correct_rate": 0.333,
+      "baseline": 0.25,
+      "ceiling": 0.40,
+      "per_question": [
+        {
+          "id": "7.7-q1",
+          "correct_chars": 80,
+          "distractor_mean_chars": 65.0,
+          "threshold_chars": 78.0,
+          "longest_correct": true,
+          "note": "Correct option (80 chars) exceeds 1.20 × distractor mean (78.0). Margin is small (+2 chars) but technically flags."
+        },
+        {
+          "id": "7.7-q2",
+          "correct_chars": 75,
+          "distractor_mean_chars": 80.7,
+          "threshold_chars": 96.8,
+          "longest_correct": false,
+          "note": "Correct option is shorter than distractor mean. No flag. However, three of four options open with '0.70' — see soft finding confusing_stem_overlap."
+        },
+        {
+          "id": "7.7-q3",
+          "correct_chars": 101,
+          "distractor_mean_chars": 83.0,
+          "threshold_chars": 99.6,
+          "longest_correct": true,
+          "note": "Correct option (101 chars) exceeds 1.20 × distractor mean (99.6). Margin is small (+1.4 chars) but technically flags."
+        },
+        {
+          "id": "7.7-q4",
+          "correct_chars": 84,
+          "distractor_mean_chars": 78.7,
+          "threshold_chars": 94.4,
+          "longest_correct": false
+        },
+        {
+          "id": "7.7-q5",
+          "correct_chars": 95,
+          "distractor_mean_chars": 92.0,
+          "threshold_chars": 110.4,
+          "longest_correct": false
+        },
+        {
+          "id": "7.7-q6",
+          "correct_chars": 112,
+          "distractor_mean_chars": 94.7,
+          "threshold_chars": 113.6,
+          "longest_correct": false,
+          "note": "Correct option (112 chars) is +17 chars above distractor mean but just under the 1.20 threshold (113.6). Does not flag, but the correct answer is visibly the longest option in this question."
+        }
+      ],
+      "flagged_questions": ["7.7-q1", "7.7-q3"],
+      "soft_note": "Q1 and Q3 each flag at borderline margins (2 chars and 1.4 chars above threshold respectively). Rate of 0.333 is under the 0.40 ceiling so no hard fail is triggered, but both questions should be tightened in a revision pass — trim the correct-answer text or expand the shorter distractors."
+    },
+    "distractor_plausibility": {
+      "passed": true,
+      "absurd_rate": 0.0,
+      "total_distractors": 18,
+      "absurd_count": 0,
+      "per_question_scores": [
+        {
+          "id": "7.7-q1",
+          "scores": [4, 3, 2],
+          "weakest": "The variety of different answer types the model produced across all inputs — score 2; vague, not a typical misconception a corpus reader would hold."
+        },
+        {
+          "id": "7.7-q2",
+          "scores": [4, 3, 3],
+          "note": "Third distractor ('0.70, because 14 correct divided by 6 incorrect, then inverted') is plausible but the multi-step 'then inverted' logic is contrived. Score 3."
+        },
+        {
+          "id": "7.7-q3",
+          "scores": [4, 4, 3],
+          "note": "Strong set overall. 'Test set too small' (score 3) is a real but tangential misconception."
+        },
+        {
+          "id": "7.7-q4",
+          "scores": [4, 4, 4],
+          "note": "Best distractor set in the quiz. Regression, generation, and ranking are all well-chosen foils."
+        },
+        {
+          "id": "7.7-q5",
+          "scores": [3, 4, 3],
+          "note": "Solid. 'Discard accuracy entirely' is a realistic overcorrection misconception."
+        },
+        {
+          "id": "7.7-q6",
+          "scores": [2, 2, 3],
+          "weakest": "D1 ('How many decimal places was the accuracy rounded to') and D2 ('Did the team use the same software library') are engineering/readability concerns that few learners would genuinely mistake for the primary validity question. Both score 2. Q6 is the weakest question on distractor quality, though none reach absurd (score 1)."
+        }
+      ],
+      "weakest_questions": ["7.7-q6", "7.7-q1"]
+    },
+    "objective_coverage": {
+      "passed": true,
+      "lo_mapping": [
+        {
+          "lo": "LO1 — Define accuracy in plain English as the proportion of predictions that were correct",
+          "covered_by": ["7.7-q1"]
+        },
+        {
+          "lo": "LO2 — Apply the accuracy formula (correct predictions ÷ total predictions) to a small labelled dataset",
+          "covered_by": ["7.7-q2"]
+        },
+        {
+          "lo": "LO3 — Explain why a high accuracy score does not always mean a model is useful",
+          "covered_by": ["7.7-q3", "7.7-q6"]
+        },
+        {
+          "lo": "LO4 — Identify classification tasks as the context where accuracy is meaningful",
+          "covered_by": ["7.7-q4"]
+        },
+        {
+          "lo": "LO5 — Recognise that precision and recall exist to fill gaps accuracy leaves behind",
+          "covered_by": ["7.7-q5"]
+        }
+      ],
+      "uncovered_objectives": [],
+      "orphan_questions": []
+    },
+    "beginner_fairness_and_scope": {
+      "passed": true,
+      "jargon_in_stem": false,
+      "out_of_scope_question": false,
+      "unfair_distractor": false,
+      "scope_note_q5": "Q5 correct answer names precision and recall. Corpus §5.7 and LO5 explicitly introduce these names without defining them — naming them in the answer is within scope. Answering Q5 correctly does not require knowing their definitions.",
+      "soft_findings": [
+        {
+          "code": "confusing_stem_overlap",
+          "severity": "soft",
+          "question": "7.7-q2",
+          "detail": "Three of four options (correct, D1, D3) open with '0.70'. A student who scans opening tokens before reading fully could be confused. The question is disambiguated on full reading, but consider rewording D3 to open with a different value or phrase to reduce surface confusion."
+        }
+      ]
+    },
+    "gift_format": {
+      "passed": true,
+      "category_line_present": true,
+      "all_questions_have_correct_marker": true,
+      "all_options_have_feedback": true,
+      "general_feedback_present_all_questions": true,
+      "metadata_artifacts_in_gift": false
+    }
+  },
+  "auto_correction_applied": {
+    "shuffle_round_2": false
+  },
+  "soft_findings_summary": [
+    "length_bias Q1: correct option 2 chars above 1.20-threshold — borderline, trim recommended",
+    "length_bias Q3: correct option 1.4 chars above 1.20-threshold — borderline, trim recommended",
+    "length_bias Q6: correct option is visually longest (+17 chars over mean) but just under threshold (112 vs 113.6) — monitor",
+    "distractor_plausibility Q6: two distractors score 2/4 (D1 rounding, D2 software library) — weak but not absurd",
+    "distractor_plausibility Q1: D3 ('variety of answer types') scores 2/4 — weakly connected to topic misconceptions",
+    "confusing_stem_overlap Q2: three options open with '0.70' — recommend rewording D3 opening"
+  ],
+  "verdict": "Pass — all five checks clear. Six soft findings recorded: borderline length-bias margins on Q1 and Q3 (both just over the 1.20x threshold, combined rate 0.333 under the 0.40 hard ceiling), visually-long correct option on Q6 (just under threshold), two weak distractors on Q6, one weak distractor on Q1, and a three-way '0.70' stem overlap on Q2. None trigger a hard fail. Recommend tightening Q1-correct, Q3-correct, and Q6 distractors before final delivery.",
+  "at": "2026-06-23T00:00:00Z"
+}

@@ -1,0 +1,133 @@
+{
+  "critic": "corpus-critic",
+  "topic_id": "6.2",
+  "title": "Scalars — a single number representing one property",
+  "position_in_sequence": 53,
+  "at": "2026-06-18T10:00:00Z",
+  "passed": true,
+  "verdict": "PASS — all 6 checks pass on the revised corpus. The two prior hard fails are resolved: (1) §5 'Scalars compared to what comes next' now contains exactly one name-and-defer sentence per downstream concept (vectors, matrices) with explicit 'covered later' topic pointers — no structural definitions, no example notation; (2) §7 'Real-World Patterns' no longer contains 'batch size', 'gradient step size', or 'inference' — these have been replaced with plain-language descriptions. One soft finding remains on beginner readability: 'weights' is used in §7 ('updates its weights') without an inline gloss; 'parameters' (the near-synonym) was introduced in topic 6.1, so this does not escalate. Only 1 distinct readability finding category fires; escalation threshold is ≥3. No other soft or hard findings.",
+  "checks": {
+    "required_sections": {
+      "passed": true,
+      "findings": [],
+      "detail": {
+        "section_3_learning_objectives": {
+          "passed": true,
+          "min_words": 50,
+          "estimated_words": 88,
+          "note": "5 bullet-point objectives, clear and specific."
+        },
+        "section_4_introduction": {
+          "passed": true,
+          "min_words": 50,
+          "estimated_words": 195,
+          "note": "Multi-paragraph intro grounding scalars in 6.1 context."
+        },
+        "section_5_core_concepts": {
+          "passed": true,
+          "min_words": 100,
+          "estimated_words": 585,
+          "note": "Four subsections: definition, dimensionless, data pipeline, learning rate/loss, name-and-defer."
+        },
+        "section_10_key_takeaways": {
+          "passed": true,
+          "min_words": 50,
+          "estimated_words": 98,
+          "note": "5 concise takeaways covering the headline concept."
+        }
+      }
+    },
+    "citation_density": {
+      "passed": true,
+      "resources_source": "web_search",
+      "findings": [],
+      "detail": {
+        "primary_cited": true,
+        "primary_resource": "https://machinelearningplus.com/linear-algebra/scalars/",
+        "primary_citation_count": 7,
+        "supporting_1_cited": true,
+        "supporting_1_resource": "https://www.quantstart.com/articles/scalars-vectors-matrices-and-tensors-linear-algebra-for-deep-learning-part-1/",
+        "supporting_1_citation_count": 5,
+        "supporting_2_cited": true,
+        "supporting_2_resource": "https://www.geeksforgeeks.org/machine-learning/difference-between-scalar-vector-matrix-and-tensor/",
+        "supporting_2_citation_count": 1,
+        "core_concepts_citation_coverage": "~78% of standalone factual assertions in §5–§7 carry citation markers (estimated 14 of 18 assertions)",
+        "fake_citations": false
+      }
+    },
+    "sequence_drift": {
+      "passed": true,
+      "findings": [
+        {
+          "term": "weights",
+          "location": "§7 Real-World Patterns, line 113",
+          "detail": "Used in 'when it updates its weights' without inline gloss. 'Parameters' (near-synonym) was introduced in topic 6.1's concepts_introduced, which mitigates this. Not a hard fail.",
+          "severity": "soft"
+        }
+      ],
+      "prior_hard_fails_resolved": [
+        {
+          "term": "vector (structural definition + example notation)",
+          "previous_location": "§5 'Scalars compared to what comes next'",
+          "resolution": "Replaced with a single name-and-defer sentence: 'when you group several scalars together into an ordered list, you get a vector — you'll explore what that enables and how it works there.' No example notation."
+        },
+        {
+          "term": "matrix (structural definition)",
+          "previous_location": "§5 'Scalars compared to what comes next'",
+          "resolution": "Replaced with a single name-and-defer sentence: 'when you arrange scalars into rows and columns to form a rectangular grid, you get a matrix — that structure and its uses are covered in topic 6.4.'"
+        },
+        {
+          "term": "batch size",
+          "previous_location": "§7 Real-World Patterns",
+          "resolution": "Replaced with 'the number of examples processed at once'."
+        },
+        {
+          "term": "gradient step size",
+          "previous_location": "§7 Real-World Patterns",
+          "resolution": "Replaced with 'how fast the model adjusts when it updates its weights'."
+        },
+        {
+          "term": "inference",
+          "previous_location": "§7 Real-World Patterns",
+          "resolution": "Replaced with 'when the model makes a prediction'."
+        }
+      ]
+    },
+    "length_sanity": {
+      "passed": true,
+      "profile": "atomic",
+      "range_words": [1500, 2400],
+      "estimated_words": 1510,
+      "findings": [],
+      "note": "Word count is at the low end of the atomic range. Not more than 30% outside the floor (floor 1500; 30% below = 1050). Passes. If the builder pads §8 Best Practices, that would add comfort margin."
+    },
+    "topic_scope": {
+      "passed": true,
+      "findings": [],
+      "detail": {
+        "headline": "Scalars — a single number representing one property",
+        "scope_check": "All subsections stay within scalar territory. Vectors and matrices are named and deferred via single-sentence pointers in §5 and brief references in §4 Introduction (motivational framing, not definitional teaching). No out-of-scope concept is defined or taught at depth.",
+        "prior_hard_fails_resolved": "Vector structural definition and matrix structural definition in §5 have been cut to name-and-defer one-liners."
+      }
+    },
+    "beginner_readability": {
+      "passed": true,
+      "escalated_to_hard_fail": false,
+      "findings": [
+        {
+          "type": "undefined_terms",
+          "terms": [
+            "weights (§7 line 113, 'updates its weights' — used without gloss; mitigated by 'parameters' being in 6.1 concepts_introduced)"
+          ],
+          "severity": "soft",
+          "note": "Only 1 distinct finding category fires. Escalation to hard fail requires ≥3 distinct finding categories. '32-bit or 64-bit floating-point values' in §5 now has an inline gloss ('stored with high precision, think of it as many decimal places') — resolved from prior report. 'epochs' in §7 has inline gloss ('number of training rounds (epochs)'). Surfaces at HITL #2/#3 for author awareness."
+        }
+      ]
+    }
+  },
+  "required_revisions": [],
+  "optional_improvements": [
+    "§7: add a one-phrase gloss for 'weights' (e.g., 'the adjustable numbers the model fine-tunes') so a zero-background learner has full context without needing to recall 6.1.",
+    "§5: word count is at the floor of the atomic range (~1510 words); consider expanding §8 Best Practices by 1–2 sentences for margin."
+  ]
+}

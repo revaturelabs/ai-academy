@@ -1,0 +1,71 @@
+{
+  "topic_id": "13.4",
+  "generated_at": "2026-06-14T00:00:00Z",
+  "format": "gift",
+  "depth_profile": "atomic",
+  "question_count": 7,
+  "mcq_count": 6,
+  "short_answer_count": 1,
+  "$bias_defense_applied": true,
+  "$shuffle_seed": "topic_id='13.4' hashed via sum(ord(c)*(i+1) for i,c in enumerate('13.4')) => deterministic position sequence [1,3,0,2,1,2]; constraint check: max_share=2/6=0.33 ≤ 0.40, all 4 positions used",
+  "correct_position_distribution": {
+    "pos_0": 1,
+    "pos_1": 2,
+    "pos_2": 2,
+    "pos_3": 1
+  },
+  "length_bias_fix_applied": true,
+  "objective_coverage": {
+    "LO1": "q1",
+    "LO2": "q2",
+    "LO3": "q3",
+    "LO4": "q4",
+    "LO5": "q5",
+    "LO6": "q6",
+    "recall": "q7"
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "type": "mcq",
+      "objective_ref": "Define CoT prompting and explain why step-by-step reasoning improves output quality on multi-step problems",
+      "correct_position": 1
+    },
+    {
+      "id": "q2",
+      "type": "mcq",
+      "objective_ref": "Distinguish zero-shot CoT from few-shot CoT and state when each is appropriate",
+      "correct_position": 3
+    },
+    {
+      "id": "q3",
+      "type": "mcq",
+      "objective_ref": "Write a zero-shot CoT prompt by adding a step-by-step reasoning instruction",
+      "correct_position": 0
+    },
+    {
+      "id": "q4",
+      "type": "mcq",
+      "objective_ref": "Write a few-shot CoT prompt that includes at least two input-reasoning-answer triples",
+      "correct_position": 2
+    },
+    {
+      "id": "q5",
+      "type": "mcq",
+      "objective_ref": "Identify tasks where CoT helps most vs where it adds overhead without benefit",
+      "correct_position": 1
+    },
+    {
+      "id": "q6",
+      "type": "mcq",
+      "objective_ref": "Apply CoT prompting in a Python client.messages.create() call using the Anthropic API",
+      "correct_position": 2
+    },
+    {
+      "id": "q7",
+      "type": "short_answer",
+      "objective_ref": "Recall the three parts of a CoT reasoning triple (input, reasoning chain, final answer)",
+      "correct_position": null
+    }
+  ]
+}

@@ -1,0 +1,47 @@
+{
+  "topic_id": "6.10",
+  "generated_at": "2026-06-19T00:00:00Z",
+  "format": "gift",
+  "question_count": 6,
+  "$bias_defense_applied": true,
+  "$shuffle_seed": "sha256(6.10)#salt0",
+  "correct_position_distribution": [2, 0, 3, 1, 2, 0],
+  "questions": [
+    {
+      "id": "q1",
+      "type": "mcq",
+      "objective_ref": "Describe what the TensorFlow Embedding Projector is and what it shows on screen.",
+      "correct_position": 2
+    },
+    {
+      "id": "q2",
+      "type": "mcq",
+      "objective_ref": "Explain why high-dimensional embeddings have to be squashed down to 2D or 3D before you can see them.",
+      "correct_position": 0
+    },
+    {
+      "id": "q3",
+      "type": "mcq",
+      "objective_ref": "Read a cluster of points on the Projector and say, in plain language, why those words sit together.",
+      "correct_position": 3
+    },
+    {
+      "id": "q4",
+      "type": "mcq",
+      "objective_ref": "Use the Projector's search-and-highlight feature to find the nearest neighbours of a chosen word.",
+      "correct_position": 1
+    },
+    {
+      "id": "q5",
+      "type": "mcq",
+      "objective_ref": "Rank a small set of word- or sentence-vectors by similarity by hand, then check your ranking against the tool.",
+      "correct_position": 2
+    },
+    {
+      "id": "q6",
+      "type": "mcq",
+      "objective_ref": "Read a cluster of points on the Projector and say, in plain language, why those words sit together.",
+      "correct_position": 0
+    }
+  ]
+}

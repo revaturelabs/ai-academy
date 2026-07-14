@@ -1,0 +1,56 @@
+{
+  "passed": true,
+  "checks": {
+    "positional_bias": {
+      "passed": true,
+      "distribution": [2, 2, 1, 1],
+      "max_share": 0.33
+    },
+    "length_bias": {
+      "passed": true,
+      "longest_correct_rate": 0.0,
+      "baseline": 0.25,
+      "per_question": [
+        { "id": "10-4-q1", "correct_len": 54, "mean_distractor_len": 51.3, "threshold": 61.6, "ratio": 1.05, "longest_correct": false },
+        { "id": "10-4-q2", "correct_len": 86, "mean_distractor_len": 80.0, "threshold": 96.0,  "ratio": 1.08, "longest_correct": false },
+        { "id": "10-4-q3", "correct_len": 90, "mean_distractor_len": 82.3, "threshold": 98.8,  "ratio": 1.09, "longest_correct": false },
+        { "id": "10-4-q4", "correct_len": 101, "mean_distractor_len": 86.0, "threshold": 103.2, "ratio": 1.17, "longest_correct": false },
+        { "id": "10-4-q5", "correct_len": 104, "mean_distractor_len": 94.0, "threshold": 112.8, "ratio": 1.11, "longest_correct": false },
+        { "id": "10-4-q6", "correct_len": 127, "mean_distractor_len": 128.7, "threshold": 154.4, "ratio": 0.99, "longest_correct": false }
+      ],
+      "note": "Distractors in q2, q5, q6 lengthened (user-authorized pass 3). All six MCQs now below 1.20 ratio. longest_correct_rate = 0/6 = 0.0."
+    },
+    "distractor_plausibility": {
+      "passed": true,
+      "absurd_rate": 0.0,
+      "total_distractors": 18,
+      "absurd_count": 0,
+      "weakest_questions": []
+    },
+    "objective_coverage": {
+      "passed": true,
+      "uncovered_objectives": [],
+      "orphan_questions": [],
+      "coverage_map": {
+        "LO1": ["10-4-q1"],
+        "LO2": ["10-4-q2"],
+        "LO3": ["10-4-q3"],
+        "LO4": ["10-4-q4"],
+        "LO5": ["10-4-q5", "10-4-q7"],
+        "LO6": ["10-4-q6"]
+      }
+    },
+    "beginner_fairness_scope": {
+      "passed": true,
+      "findings": []
+    }
+  },
+  "auto_correction_applied": {
+    "shuffle_round_2": false
+  },
+  "meta_gift_desync": false,
+  "pass_number": 3,
+  "pass_note": "User-authorized distractor lengthening applied to q2, q5, q6 prior to this run. All six MCQs clear the 1.20 ratio threshold. Positional distribution [2,2,1,1] confirmed against sidecar — no desync. All 6 LOs covered. No absurd distractors. No scope or jargon findings.",
+  "verdict": "pass",
+  "at": "2026-06-12T00:00:00Z"
+}

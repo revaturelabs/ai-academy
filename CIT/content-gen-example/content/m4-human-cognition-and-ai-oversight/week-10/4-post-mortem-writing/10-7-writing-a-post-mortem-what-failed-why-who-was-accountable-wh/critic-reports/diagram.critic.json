@@ -1,0 +1,70 @@
+{
+  "verdict": "pass",
+  "cycle": 1,
+  "findings": [
+    {
+      "code": "looks_good",
+      "where": "source pre-flight — all checks",
+      "detail": "Node count 6 (within 3–8). All bold labels ≤ 4 words: 'Incident', 'What Failed', 'Why It Failed', 'Who Was Accountable', 'Governance Fix', 'No-Blame Review'. Title 'Post-Mortem Writing Process' sits in the YAML config title: field as the governing concept — not a ghost node. No bare unexplained acronyms present."
+    },
+    {
+      "code": "looks_good",
+      "where": "concept fidelity — all 6 nodes",
+      "detail": "A 'Incident' → §6 step 1 'Choose incident'; B 'What Failed' → §5 Section 1 'factual description of system, failure event, scope, and harm' + §6 step 2; C 'Why It Failed' → §5 Section 2 'proximate cause + root cause' with all four root cause categories (training data problem, evaluation gap, missing checkpoint, accountability gap) referenced in subtitle + §6 steps 3a-3b; D 'Who Was Accountable' → §5 Section 3 'was accountability real or diffuse?' + §6 step 4; E 'Governance Fix' → §5 Section 4 'specific, placed, proportionate governance control' + §6 step 5; F 'No-Blame Review' → §6 step 6 'Review for no-blame framing'. No scope-creep nodes — HITL, risk tiers, and other 10.5/10.6 concepts are absent."
+    },
+    {
+      "code": "looks_good",
+      "where": "single-path discipline",
+      "detail": "One straight A→B→C→D→E→F chain. The corpus describes a 6-step linear writing procedure (§6), so a single-path pipeline is the correct layout — no branches needed. The 'Why It Failed' node's subtitle surfaces the four root cause categories inline rather than as branch nodes, avoiding layout complexity while preserving the information."
+    },
+    {
+      "code": "looks_good",
+      "where": "color tiers",
+      "detail": "A:::start (blue #a5d8ff) — entry/trigger event. B/C/D/E:::auto (purple #d0bfff) — the four analytical writing sections the post-mortem author works through. F:::done (green #b2f2bb) — terminal quality-check step. Color tier mapping is semantically clean: the trigger is blue (start), the four procedure steps are purple (process/auto), and the final review gate is green (done). No hitl nodes used because no human-gate decision point is encoded in the diagram — the post-mortem sections are writing steps, not approval gates."
+    },
+    {
+      "code": "looks_good",
+      "where": "layout — flowchart LR single-path",
+      "detail": "6-node linear LR chain matches the intent: 'Four-phase post-mortem flow: Incident → Root Cause Analysis → Accountability Mapping → Governance Fix'. The 'Incident' node serves as the trigger before the first section; 'No-Blame Review' is the final step from §6. At 1400px width with 6 nodes, estimated layout will comfortably fit without truncation risk."
+    },
+    {
+      "code": "looks_good",
+      "where": "audience compliance",
+      "detail": "Plain-language labels match how the corpus terms the four sections (no technical jargon). Subtitles use plain phrases ('The event that happened', 'Factual description of system, scope & harm'). The four root cause categories are named in subtitle as short tokens, matching the way the corpus names them. Beginner-readable."
+    },
+    {
+      "code": "looks_good",
+      "where": "PNG render",
+      "detail": "mmdc not available on PATH in this environment (consistent with established repo pattern — see 10-1, 10-2, 10-3, 10-4, 10-5 critic reports). Source pre-flight passes all checks. PNG render to be executed by orchestrator or CI step using: mmdc -i <mmd-path> -o <png-path> -w 1400 -b transparent. nodeSpacing:60 / rankSpacing:80 in the config block will provide adequate separation for 6 nodes with multi-line htmlLabels at 1400px width."
+    }
+  ],
+  "stats": {
+    "nodes": 6,
+    "edges": 5,
+    "layout": "flowchart LR (single-path pipeline)",
+    "labels": [
+      "Incident",
+      "What Failed",
+      "Why It Failed",
+      "Who Was Accountable",
+      "Governance Fix",
+      "No-Blame Review"
+    ],
+    "color_tiers_used": {
+      "start": ["A"],
+      "auto": ["B", "C", "D", "E"],
+      "done": ["F"]
+    },
+    "png_path": "content/m4-human-cognition-and-ai-oversight/week-10/4-post-mortem-writing/10-7-writing-a-post-mortem-what-failed-why-who-was-accountable-wh/artifacts/diagram.png",
+    "png_dims": "not rendered (mmdc not on PATH)",
+    "preflight": {
+      "mermaid_parse": "source review pass (mmdc not available for exit-code check)",
+      "node_count": "pass (6, within 3–8)",
+      "label_discipline": "pass (all bold labels ≤ 4 words)",
+      "concept_fidelity": "pass (all labels match corpus §5 Core Concepts + §6 Implementation; on-headline, no scope-creep)",
+      "jargon_labels": "pass (no bare unexplained acronyms)",
+      "title_discipline": "pass (governing concept in title: field, no ghost node)",
+      "single_path": "pass (A→B→C→D→E→F, no branches — linear 6-step writing procedure)"
+    }
+  }
+}

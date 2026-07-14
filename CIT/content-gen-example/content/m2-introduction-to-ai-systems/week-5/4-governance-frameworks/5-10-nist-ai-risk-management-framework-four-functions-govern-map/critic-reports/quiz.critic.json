@@ -1,0 +1,39 @@
+{
+  "passed": true,
+  "checks": {
+    "positional_bias": {
+      "passed": true,
+      "distribution": [2, 1, 2, 1],
+      "max_share": 0.333,
+      "meta_gift_match": true,
+      "note": "Re-derived correct positions from quiz.gift = [0,2,3,1,0,2]; matches sidecar. max_share 0.333 <= 0.40, all four positions used across 6 MCQs."
+    },
+    "length_bias": {
+      "passed": true,
+      "longest_correct_rate": 0.0,
+      "baseline": 0.25,
+      "note": "No MCQ has its correct option exceeding 1.20x the mean distractor length after option-length balancing on Q4."
+    },
+    "distractor_plausibility": {
+      "passed": true,
+      "absurd_rate": 0.0,
+      "weakest_questions": [],
+      "note": "All distractors are corpus-grounded beginner misconceptions (EU AI Act confusion, software-dev/security/model-build step lists, 'voluntary=volunteers', 'loop=yearly law', 'guarantees zero harm'). None score 1."
+    },
+    "objective_coverage": {
+      "passed": true,
+      "uncovered_objectives": [],
+      "orphan_questions": [],
+      "note": "LO1->Q1, LO2->Q2, LO3->Q3+Q4, LO4->Q5, LO5->Q6. All 5 corpus LOs covered; no orphan questions."
+    },
+    "beginner_fairness_scope": {
+      "passed": true,
+      "findings": [],
+      "note": "AI RMF and NIST spelled out; all stems plain-language and answerable from this topic alone. Every question stays within the four functions / voluntary framing; no out_of_scope_question."
+    }
+  },
+  "auto_correction_applied": { "shuffle_round_2": false },
+  "verdict": "Pass — all bias and coverage checks clean. Positional max_share 0.333, longest-correct rate 0.0, no absurd distractors, full LO coverage, on-headline.",
+  "cycles_used": 1,
+  "at": "2026-06-22T14:45:00Z"
+}

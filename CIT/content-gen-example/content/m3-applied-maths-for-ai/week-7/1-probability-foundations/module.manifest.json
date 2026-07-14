@@ -1,0 +1,20 @@
+{
+  "type": "module",
+  "position": 1,
+  "title": "Probability Foundations",
+  "slug": "1-probability-foundations",
+  "course_code": "M3",
+  "course_slug": "m3-applied-maths-for-ai",
+  "week_nums": [
+    7
+  ],
+  "session_name_by_week": {
+    "7": "Probability, Statistics and AI Confidence"
+  },
+  "narrative_seed_by_week": {
+    "7": "Probability basics — likelihood, events, conditional probability / Bayes’ theorem intuition — P(rain | dark clouds) without formula derivation / Why LLMs output a probability distribution, not a single fixed answer / Temperature — low picks the most likely token, high introduces variation / Mean, median, mode — consistency across AI runs / Accuracy, precision, recall — plain English definitions / Confusion matrix — why 95% accuracy can still mean frequent failure"
+  },
+  "lab_activity_seed_by_week": {
+    "7": "Run the same prompt 10× at temperature 0 and 10× at temperature 1 / Tally unique responses, measure variation, compute accuracy on a 5-question yes/no task / Write a 200-word interpretation — what does this tell you about trusting AI?"
+  }
+}

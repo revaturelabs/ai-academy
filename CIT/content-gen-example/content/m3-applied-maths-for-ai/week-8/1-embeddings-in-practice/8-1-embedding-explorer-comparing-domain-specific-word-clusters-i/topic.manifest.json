@@ -1,0 +1,58 @@
+{
+    "type":  "topic",
+    "id":  "8.1",
+    "title":  "Embedding explorer — comparing domain-specific word clusters in 2D",
+    "slug":  "8-1-embedding-explorer-comparing-domain-specific-word-clusters-i",
+    "position_in_module":  1,
+    "week_num":  8,
+    "session_name":  "Applied Maths Lab",
+    "module":  {
+                   "position":  1,
+                   "slug":  "1-embeddings-in-practice",
+                   "title":  "Embeddings in Practice"
+               },
+    "course":  {
+                   "code":  "M3",
+                   "slug":  "m3-applied-maths-for-ai",
+                   "title":  "Applied Maths for AI"
+               },
+    "next_assessment":  {
+                            "id":  "A3",
+                            "due_week":  10,
+                            "title":  "Maths and Cognition Lab Report",
+                            "weight":  "15%"
+                        },
+    "paths":  {
+                  "corpus":  "topic_corpus.md",
+                  "resources":  "topic.resources.json",
+                  "progress":  "topic.progress.json",
+                  "artifacts_dir":  "artifacts/",
+                  "critic_reports_dir":  "critic-reports/"
+              },
+    "artifact_plan":  {
+                          "confirmed_profile":  "standard",
+                          "suggested_profile":  "standard",
+                          "reading":  {
+                                          "target_word_range":  [
+                                                                    1200,
+                                                                    1600
+                                                                ],
+                                          "target_minutes":  [
+                                                                 6,
+                                                                 8
+                                                             ]
+                                      },
+                          "quiz":  {
+                                       "min_questions":  5,
+                                       "max_questions":  6,
+                                       "include_short_answer":  false
+                                   },
+                          "diagram":  true,
+                          "diagram_intent":  "Side-by-side contrast of two domain word-clusters on a 2D plane (e.g. cooking blob vs football blob) with one labelled outlier and one in-between word, plus the pick-words to read-clusters flow as a thin top strip — drives home cluster/outlier/gap reading.",
+                          "review_notes":  [
+
+                                           ]
+                      },
+    "expected_delivery_minutes":  10,
+    "status":  "module_passed"
+}

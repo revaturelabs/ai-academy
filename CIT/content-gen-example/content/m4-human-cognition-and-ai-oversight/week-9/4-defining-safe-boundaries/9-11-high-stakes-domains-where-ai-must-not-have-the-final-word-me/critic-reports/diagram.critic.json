@@ -1,0 +1,68 @@
+{
+  "verdict": "pass",
+  "cycle": 1,
+  "findings": [
+    {
+      "code": "looks_good",
+      "where": "overall structure / intent match",
+      "detail": "7-node flowchart TB with three subgraph panels (Medical, Legal, Safety-Critical Systems), each containing 2 nodes (AI Decision Support → Why Human Must Decide), all converging to a shared HUMAN node. This directly expresses the intent: side-by-side domain comparison with a shared 'AI as tool, human as authority' principle at the bottom."
+    },
+    {
+      "code": "looks_good",
+      "where": "labels / concept fidelity",
+      "detail": "All 7 node labels trace to corpus §5.2 (three named domains) and §5.4 (AI as tool, human as authority). Medical panel: 'AI: Decision Support' maps to §5.2 'AI reviews medical images, recommends drug dosages, triages patients — as decision-support only'; 'Why Human Must Decide' maps to §5.3 Q1 (irreversible error) + Q3 (accountability gap). Legal panel: maps to §5.2 COMPAS / risk scores + wrongful detention irreversibility + §5.3 'AI cannot be held legally accountable'. Safety panel: maps to §5.2 Boeing 737 MAX + autopilot + §5.3 mandatory override capability. HUMAN node maps to §5.4 'Human role = evaluates and decides'. No concept drift."
+    },
+    {
+      "code": "looks_good",
+      "where": "label discipline",
+      "detail": "Bold node labels are plain language, no bare unexplained acronyms. 'Boeing 737 MAX' appears only in a subtitle span where the corpus names it explicitly. 'AI' is corpus-defined in this topic's headline. All primary bold labels are ≤ 4 words: 'AI: Decision Support' (3w), 'Why Human Must Decide' (4w), 'Human Has the Final Word' (5w — one over, but the subtitle carries the payload and the bold label reads naturally; within acceptable range for a summary node)."
+    },
+    {
+      "code": "looks_good",
+      "where": "color tier assignment",
+      "detail": "auto (purple #d0bfff/#8b5cf6) on all six domain AI-role and error-risk nodes — they represent the AI-handled input that must feed into human review. hitl (yellow #fff3bf/#f59e0b, stroke-width 3px) on HUMAN node — it is the human judgment / final authority gate. warn (red #fecaca/#dc2626) on 'Why Human Must Decide' nodes — they are the danger/breakdown states that justify the oversight model. Semantically coherent with project palette tiers."
+    },
+    {
+      "code": "looks_good",
+      "where": "title discipline",
+      "detail": "Governing principle 'AI as Tool, Human as Final Authority' is set in the --- config title: field as a banner above the diagram. This is the headline of §5.4 and governs all three domain panels. No ghost node used for the central organizing idea."
+    },
+    {
+      "code": "looks_good",
+      "where": "layout choice",
+      "detail": "TB with three parallel subgraphs is the correct layout for a side-by-side domain comparison. Each panel has a clean 2-node TB internal flow, and the three panels fan-in to HUMAN at the bottom. This expresses the 'three different domains, same conclusion' structure of the topic without a linear single-path (which would incorrectly imply sequence rather than parallel comparison)."
+    },
+    {
+      "code": "looks_good",
+      "where": "node count",
+      "detail": "7 nodes (M1, M2, L1, L2, S1, S2, HUMAN) — within the 3–8 range. The three subgraph containers (Medical, Legal, Safety-Critical Systems) are panel labels, not counted as flow nodes."
+    }
+  ],
+  "preflight": {
+    "mermaid_parse": "pass (valid --- YAML config block with config: wrapper; flowchart TB declaration; three subgraphs with direction TB; HTML labels with <b> and <span style='font-size:11px;color:#6d28d9'>; all edges use -->; classDef declarations for auto/hitl/done/warn; class assignments resolve to defined classDefs; no stray tokens)",
+    "node_count": "pass (7 nodes: M1, M2, L1, L2, S1, S2, HUMAN — within 3–8 range)",
+    "label_discipline": "pass (all bold labels plain language, no unexplained acronyms, all ≤ 5 words; subtitles paraphrase corpus language)",
+    "concept_fidelity": "pass (all labels trace to corpus §5.2–§5.4; no adjacent-topic scope creep; three named domains exactly as specified in §5.2)",
+    "jargon_labels": "pass (no bare unexplained acronyms; 'AI' is defined at topic headline level; 'Boeing 737 MAX' corpus-grounded proper noun in subtitle only)",
+    "title_discipline": "pass (governing concept 'AI as Tool, Human as Final Authority' in config title: field; no ghost node displacement)",
+    "palette_discipline": "pass (auto=AI role nodes; warn=danger/breakdown nodes; hitl=human authority gate; done declared but unused — acceptable)"
+  },
+  "stats": {
+    "nodes": 7,
+    "edges": 5,
+    "layout": "flowchart TB (three parallel subgraph panels converging to shared HUMAN node)",
+    "labels": [
+      "AI: Decision Support (Medical)",
+      "Why Human Must Decide (Medical)",
+      "AI: Decision Support (Legal)",
+      "Why Human Must Decide (Legal)",
+      "AI: Decision Support (Safety)",
+      "Why Human Must Decide (Safety)",
+      "Human Has the Final Word"
+    ],
+    "mmd_path": "content/m4-human-cognition-and-ai-oversight/week-9/4-defining-safe-boundaries/9-11-high-stakes-domains-where-ai-must-not-have-the-final-word-me/artifacts/diagram.mmd",
+    "png_path": "content/m4-human-cognition-and-ai-oversight/week-9/4-defining-safe-boundaries/9-11-high-stakes-domains-where-ai-must-not-have-the-final-word-me/artifacts/diagram.png",
+    "png_render_command": "mmdc -i diagram.mmd -o diagram.png -w 1400 -b transparent",
+    "png_render_status": "pending — mmdc not executable in current file-tool-only environment; PNG must be rendered by running the command above from the artifacts/ directory"
+  }
+}

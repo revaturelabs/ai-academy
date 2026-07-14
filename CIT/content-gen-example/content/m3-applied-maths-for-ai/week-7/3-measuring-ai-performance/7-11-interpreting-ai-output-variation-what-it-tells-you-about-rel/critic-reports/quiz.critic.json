@@ -1,0 +1,192 @@
+{
+  "topic_id": "7.11",
+  "critic": "quiz-critic",
+  "passed": true,
+  "checks": {
+    "meta_prerequisites": {
+      "passed": true,
+      "bias_defense_applied": true,
+      "meta_parseable": true,
+      "meta_gift_desync": false,
+      "notes": "correct_position_distribution in sidecar [1,2,0,3,1] matches positions re-derived from quiz.gift exactly."
+    },
+    "question_count": {
+      "passed": true,
+      "total": 6,
+      "mcq_count": 5,
+      "short_answer_count": 1,
+      "profile": "atomic",
+      "required_range": "5–7",
+      "short_answer_required": true,
+      "notes": "6 questions, 5 MCQ + 1 short-answer. Within atomic range. Short-answer requirement met."
+    },
+    "gift_format_validity": {
+      "passed": true,
+      "notes": "All 5 MCQs have exactly one '=' and three '~' answer lines. q6 uses valid GIFT short-answer '////' delimiter syntax. No broken blocks. $CATEGORY header present."
+    },
+    "positional_bias": {
+      "passed": true,
+      "distribution": { "0": 1, "1": 2, "2": 1, "3": 1 },
+      "total_mcqs": 5,
+      "max_position": 1,
+      "max_count": 2,
+      "max_share": 0.40,
+      "threshold": 0.40,
+      "fail_condition": "max_share > 0.40",
+      "auto_correction_applied": false,
+      "notes": "max_share is exactly 0.40 (2/5), which does not exceed the > 0.40 threshold. All four positions used. No bias failure. Sidecar position_counts and max_share consistent with re-derived values."
+    },
+    "length_bias": {
+      "passed": true,
+      "method": "correct_len > mean(distractor_lens) * 1.20 per question",
+      "per_question": {
+        "q1": {
+          "correct_words": 19,
+          "distractor_words": [19, 16, 17],
+          "distractor_mean": 17.33,
+          "threshold_1_20": 20.8,
+          "longest_correct": false,
+          "passes": true
+        },
+        "q2": {
+          "correct_words": 19,
+          "distractor_words": [17, 17, 16],
+          "distractor_mean": 16.67,
+          "threshold_1_20": 20.0,
+          "longest_correct": false,
+          "passes": true
+        },
+        "q3": {
+          "correct_words": 24,
+          "distractor_words": [23, 23, 21],
+          "distractor_mean": 22.33,
+          "threshold_1_20": 26.8,
+          "longest_correct": true,
+          "passes": true,
+          "notes": "Correct is longest option (24 vs max distractor 23) but 24 does not exceed 22.33*1.20=26.8."
+        },
+        "q4": {
+          "correct_words": 23,
+          "distractor_words": [20, 19, 19],
+          "distractor_mean": 19.33,
+          "threshold_1_20": 23.2,
+          "longest_correct": true,
+          "passes": true,
+          "notes": "Correct is longest option (23 vs max distractor 20) but 23 does not exceed 19.33*1.20=23.2."
+        },
+        "q5": {
+          "correct_words": 21,
+          "distractor_words": [19, 18, 20],
+          "distractor_mean": 19.0,
+          "threshold_1_20": 22.8,
+          "longest_correct": false,
+          "passes": true
+        }
+      },
+      "longest_correct_count": 2,
+      "total_mcqs": 5,
+      "longest_correct_rate": 0.40,
+      "baseline": 0.25,
+      "fail_condition": "longest_correct_rate > 0.40",
+      "notes": "q3 and q4 each have the correct answer as the longest option by word count, giving longest_correct_rate=0.40. This does not exceed the >0.40 threshold. Anti-length-bias rule was applied: no question's correct option exceeds mean(distractors)*1.20. The prior-topic pattern (length bias failures in 7.9/7.10 cycle 1) has been successfully pre-empted. FLAG: q3 and q4 are at the edge — any further lengthening of correct answers would breach. Builder should note this for future revision cycles."
+    },
+    "distractor_plausibility": {
+      "passed": true,
+      "scoring_scale": "1=obviously absurd, 2=wrong but unrelated, 3=plausible misconception, 4=strong distractor",
+      "per_question": {
+        "q1": {
+          "distractors": [
+            { "text_summary": "software bug that needs fixing", "score": 3 },
+            { "text_summary": "picking answers at random with no underlying pattern", "score": 3 },
+            { "text_summary": "prompt is probably too long", "score": 3 }
+          ],
+          "min_score": 3
+        },
+        "q2": {
+          "distractors": [
+            { "text_summary": "normal and expected behaviour for all AI systems", "score": 3 },
+            { "text_summary": "temperature setting failed to work — tool broken", "score": 3 },
+            { "text_summary": "model is behaving well by considering multiple responses", "score": 4 }
+          ],
+          "min_score": 3
+        },
+        "q3": {
+          "distractors": [
+            { "text_summary": "Yes — any AI that can't repeat output twice is unreliable", "score": 4 },
+            { "text_summary": "Yes — AI must commit to single answer for judgement", "score": 3 },
+            { "text_summary": "No, but lower temperature to zero", "score": 4 }
+          ],
+          "min_score": 3
+        },
+        "q4": {
+          "distractors": [
+            { "text_summary": "Yes — repetition shows strong training-data evidence", "score": 4 },
+            { "text_summary": "Yes — low variation at low temperature confirms accuracy", "score": 4 },
+            { "text_summary": "No, but only if temperature was above zero", "score": 3 }
+          ],
+          "min_score": 3
+        },
+        "q5": {
+          "distractors": [
+            { "text_summary": "Recall — measures whether model caught all correct positives", "score": 3 },
+            { "text_summary": "Precision — tells you how trustworthy positive predictions are", "score": 4 },
+            { "text_summary": "Confusion matrix — shows where model succeeded and failed", "score": 4 }
+          ],
+          "min_score": 3
+        }
+      },
+      "total_distractors": 15,
+      "absurd_count": 0,
+      "absurd_rate": 0.00,
+      "threshold": 0.25,
+      "weakest_questions": [],
+      "notes": "No distractor scored below 3. All distractors are plausible beginner misconceptions rooted in this topic's content. No factually correct distractors found."
+    },
+    "objective_coverage": {
+      "passed": true,
+      "learning_objectives": [
+        "LO1: Explain what it means when an AI gives different answers to the same question across multiple runs",
+        "LO2: Identify whether high or low output variation is a reliability problem, given the type of task",
+        "LO3: Use the four-quadrant variation-temperature framework to interpret what a pattern of AI outputs tells you",
+        "LO4: Describe which measurement tools (accuracy, precision, recall) apply when quantifying reliability from variation data",
+        "LO5: Distinguish tasks where variation signals failure from tasks where variation is expected and acceptable",
+        "LO6: Explain why consistent AI output does not guarantee correct output, and why ground-truth checking is always required"
+      ],
+      "coverage_map": {
+        "LO1": ["q1", "q6"],
+        "LO2": ["q2"],
+        "LO3": ["q2", "q6"],
+        "LO4": ["q5"],
+        "LO5": ["q3"],
+        "LO6": ["q4"]
+      },
+      "uncovered_objectives": [],
+      "orphan_questions": [],
+      "notes": "All 6 LOs covered. q2 covers both LO2 and LO3 (four-quadrant framework applied to a reliability-warning scenario). q6 (short answer) reinforces LO1 and LO3. No orphan questions."
+    },
+    "beginner_fairness_and_scope": {
+      "passed": true,
+      "jargon_in_stem": false,
+      "out_of_scope_questions": [],
+      "unfair_distractors": [],
+      "notes": "All stems are plain-language. 'Temperature', 'probability mass', and 'ground truth' are defined in prerequisite topics 7.4, 7.5, and 7.10 (corpus §2 prerequisites). Every question tests content explicitly taught in this topic or directly referenced as assumed knowledge. No distractor requires un-taught knowledge."
+    }
+  },
+  "auto_correction_applied": {
+    "shuffle_round_2": false
+  },
+  "flags": [
+    {
+      "severity": "advisory",
+      "check": "length_bias",
+      "detail": "q3 and q4 both have the correct answer as the longest option (q3: 24 words vs 23/23/21; q4: 23 words vs 20/19/19). longest_correct_rate=0.40 sits exactly at the pass threshold. No auto-correction needed now, but any revision that lengthens correct answers or shortens distractors in these two questions will breach the >0.40 threshold and flip to a hard fail."
+    },
+    {
+      "severity": "advisory",
+      "check": "positional_bias",
+      "detail": "Position 1 is used by q1 and q5 (2/5 = 0.40 share), sitting exactly at the pass threshold. Consistent with the constraint check in the sidecar."
+    }
+  ],
+  "verdict": "Pass — all checks clean; positional bias and length bias both sit at the 0.40 threshold edge (not exceeded); all 6 LOs covered; no absurd distractors; GIFT syntax valid; atomic count met.",
+  "at": "2026-06-23T00:00:00Z"
+}

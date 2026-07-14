@@ -1,0 +1,68 @@
+{
+  "critic": "module-drift-critic",
+  "module": "2-ai-agents",
+  "week_num": 14,
+  "cycle": 2,
+  "at": "2026-06-16T00:00:00Z",
+  "passed": true,
+  "checks": {
+    "concept_sequence": {
+      "passed": true,
+      "violations": []
+    },
+    "coverage_gaps": {
+      "passed": true,
+      "gaps": []
+    },
+    "overlap_redundancy": {
+      "passed": true,
+      "instances": [
+        {
+          "topic_ids": ["14.5", "14.8"],
+          "location": "14.5 Section 8 Best Practices, bullet 4; 14.8 Section 5.3",
+          "description": "14.5 best practices includes 'Do not give agents irreversible actions without a human checkpoint', stating the conclusion of 14.8 one sentence before the concept is taught. The sentence does not reproduce HITL mechanics, the irreversibility taxonomy, or the autonomy spectrum, so it does not duplicate the teaching. Carried forward from cycle 1 as soft only.",
+          "severity": "soft"
+        },
+        {
+          "topic_ids": ["14.5", "14.6"],
+          "location": "14.5 Section 5.3 (safety limit / max cycle count); 14.6 Section 6 pseudocode block",
+          "description": "The maximum-loop-cycle-count safety limit is introduced and closed in 14.5 Section 5.3. Topic 14.6 Section 6 restates it in one line with an explicit back-reference ('same mechanism described for the generic planning loop in 14.5'). The back-reference mitigates the redundancy; no new teaching occurs. Carried forward from cycle 1 as soft only.",
+          "severity": "soft"
+        }
+      ]
+    },
+    "scope_creep": {
+      "passed": true,
+      "instances": [
+        {
+          "topic_id": "14.7",
+          "location": "Section 5.4 (Tier 3 — RAG) and Section 7 Real-World Patterns",
+          "description": "Topic 14.7 includes RAG as Tier 3 of the decision matrix. The corpus explicitly states 'this topic does not re-teach RAG internals' and limits treatment to the decision criterion. RAG module content (14.1–14.4) is not reproduced. Structurally necessary for the matrix to be complete. Info-level note; not a violation.",
+          "severity": "info"
+        },
+        {
+          "topic_id": "14.8",
+          "location": "Section 11 Next Steps",
+          "description": "Next Steps mentions 'Topic 14.9 covers production AI patterns' — a forward navigation reference into module 3 territory. No production-patterns content is taught in 14.8. Navigation-only; not a violation.",
+          "severity": "info"
+        }
+      ]
+    }
+  },
+  "hard_findings": [],
+  "soft_findings": [
+    {
+      "topic_id": "14.5",
+      "check": "overlap_redundancy",
+      "location": "Section 8 Best Practices, bullet 4",
+      "finding": "The best-practices bullet 'Do not give agents irreversible actions without a human checkpoint' states the core conclusion of 14.8 two topics early, without the supporting rationale (irreversibility taxonomy, autonomy spectrum, HITL approval flow). Low severity — no content is duplicated. Carried forward unchanged from cycle 1. Optional improvement: soften the bullet to a forward pointer, e.g. 'Irreversible and high-stakes actions need special handling — covered in 14.8.'"
+    },
+    {
+      "topic_id": "14.6",
+      "check": "overlap_redundancy",
+      "location": "Section 6 pseudocode block, item 3 in the stopping-conditions list",
+      "finding": "The maximum-cycle-count safety limit is restated in 14.6 without added depth. The 14.6 repetition includes a back-reference to 14.5 Section 5.3 which partially mitigates the redundancy. No action required unless quiz items inadvertently test this concept twice. Carried forward unchanged from cycle 1."
+    }
+  ],
+  "verdict": "PASS cycle 2 — The cycle-1 hard finding (14.5 Section 9 Part 2 forward reference to the decision matrix) is resolved. The revised Part 2 exercise uses only four-component anatomy vocabulary (LLM core, short-term memory, tools, planning loop) introduced within 14.5 itself; no decision-matrix or tier-selection language appears. All five checks pass. The two soft findings from cycle 1 (14.5 best-practices bullet pre-empting 14.8's HITL conclusion; 14.6 restating the max-cycle-count limit with a back-reference) are unchanged and do not block the pass. The module's learning arc — introduce anatomy (14.5) → specify the planning-loop pattern (14.6) → choose the right tier (14.7) → govern risky agent actions (14.8) — is coherent, fully covers the module narrative seed and lab activity, and contains no forward-reference violations, coverage gaps, unmitigated duplication, or scope creep."
+}

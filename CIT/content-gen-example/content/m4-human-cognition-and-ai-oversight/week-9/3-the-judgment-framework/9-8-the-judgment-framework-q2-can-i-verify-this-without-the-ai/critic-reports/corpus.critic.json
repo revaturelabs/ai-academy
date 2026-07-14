@@ -1,0 +1,92 @@
+{
+  "critic": "corpus-critic",
+  "topic_id": "9.8",
+  "topic_title": "The Judgment Framework — Q2: Can I verify this without the AI?",
+  "passed": true,
+  "at": "2026-06-13T00:00:00Z",
+  "depth_profile_used": "standard",
+  "estimated_word_count": 2875,
+  "checks": {
+    "required_sections": {
+      "passed": true,
+      "detail": {
+        "learning_objectives": { "present": true, "estimated_words": 115, "threshold": 50, "passed": true },
+        "introduction": { "present": true, "estimated_words": 175, "threshold": 50, "passed": true },
+        "core_concepts": { "present": true, "estimated_words": 990, "threshold": 100, "passed": true },
+        "key_takeaways_or_assessment_alignment": { "present": true, "section": "Assessment Alignment (section 10)", "estimated_words": 150, "threshold": 50, "passed": true }
+      }
+    },
+    "citation_density": {
+      "passed": true,
+      "resources_source": "web_search",
+      "primary_resource_cited": {
+        "resource_id": 1,
+        "url": "https://www.clio.com/resources/ai-for-lawyers/verify-legal-ai-output/",
+        "role": "primary",
+        "cited_at_least_once": true,
+        "citation_count": 9
+      },
+      "supporting_resources_cited": [
+        { "resource_id": 2, "url": "https://verifywise.ai/lexicon/ai-output-validation", "citation_count": 7 },
+        { "resource_id": 3, "url": "https://libguides.csun.edu/c.php?g=1377855&p=11076059", "citation_count": 6 }
+      ],
+      "claim_citation_coverage": {
+        "sections_checked": ["Core Concepts (5)", "Implementation (6)", "Real-World Patterns (7)"],
+        "estimated_coverage_pct": 85,
+        "threshold_pct": 60,
+        "passed": true
+      },
+      "fake_citations": false
+    },
+    "sequence_drift": {
+      "passed": true,
+      "forward_references": [],
+      "notes": [
+        "All technical terms used are either in 9.8 concepts_introduced or prior topics 9.1-9.7.",
+        "'accountable person' used as plain English (answerable/responsible), not teaching the Q3 accountability framework concept.",
+        "9.9 (Q3) and 9.10 (acceptable error thresholds) appear only as bare name + topic pointer in Section 9 forward pointer and Section 10 assessment alignment — properly deferred.",
+        "GDPR used as an illustrative real-world standard, not introduced as a curriculum concept.",
+        "'formulary' defined inline with plain-language parenthetical on first use."
+      ]
+    },
+    "length_sanity": {
+      "passed": true,
+      "estimated_word_count": 2875,
+      "depth_profile": "standard",
+      "profile_range_min": 3000,
+      "profile_range_max": 4400,
+      "within_profile_range": false,
+      "pct_below_profile_min": 4.2,
+      "within_30pct_tolerance": true,
+      "task_brief_range": "1500-6000",
+      "within_task_brief_range": true,
+      "soft_note": "Corpus is ~4% below the standard-profile 3000-word minimum. Within the 30% tolerance; not a hard fail. Builder may consider light expansion of Core Concepts or Real-World Patterns sections to reach the profile floor."
+    },
+    "topic_scope": {
+      "passed": true,
+      "scope_boundary": "Q2 only — Can I verify this without the AI?",
+      "scope_creep_findings": [],
+      "notes": [
+        "Q3 (accountability) appears only as a bare name with topic pointer in Section 9 (forward pointer) and Section 13 (Facilitator Notes). Not taught or defined.",
+        "9.10 (acceptable error thresholds) appears only as a bare name with topic pointer in Section 9 and Section 10. The phrase 'quantified acceptable error thresholds' names the concept and immediately defers it to topic 9.10 — not taught.",
+        "The Q1×Q2 interaction table (Section 5.7) is within scope — it shows how Q2 integrates with the already-taught Q1 (9.7), which is explicitly listed as a prerequisite."
+      ]
+    },
+    "beginner_readability": {
+      "passed": true,
+      "findings": [],
+      "undefined_terms": [],
+      "jargon_dumps": [],
+      "academic_register_issues": [],
+      "notes": [
+        "All non-everyday terms defined on first use: 'independent verification' (Section 5.1, bolded + plain definition), 'GDPR' (spelled out in full on first use), 'formulary' (defined inline with parenthetical).",
+        "No single paragraph introduces 3+ new terms simultaneously.",
+        "No hedging phrases detected ('it is generally considered', 'many experts believe', etc.).",
+        "Sentences are short and direct; active voice used throughout.",
+        "Learner addressed as 'you' consistently.",
+        "Concrete examples lead each concept before abstract statements."
+      ]
+    }
+  },
+  "verdict": "PASS. All six corpus-critic checks pass for topic 9.8. Required sections are present and non-trivial. Primary resource [1] (clio.com) is cited 9 times; supporting resources [2] and [3] carry citations throughout; claim-citation coverage in Core Concepts, Implementation, and Real-World Patterns is estimated at ~85%, well above the 60% threshold; no fake citations detected. No forward references: all technical vocabulary is drawn from 9.8's own concepts_introduced or prior topics 9.1–9.7; Q3 and 9.10 appear only as bare name + topic pointers. Estimated word count of ~2,875 is ~4% below the standard-profile floor of 3,000 but within the 30% tolerance band (not a hard fail); the builder may lightly expand to reach the profile floor. Scope is correctly bounded to Q2; Q3 accountability and acceptable error threshold material is never taught or defined, only named and deferred. All technical terms are defined on first use, no jargon dumps are present, and the register is plain and direct throughout."
+}

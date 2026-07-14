@@ -1,0 +1,23 @@
+{
+  "verdict": "pass",
+  "findings": [
+    {
+      "code": "looks_good",
+      "where": "overall",
+      "detail": "Source-level checks pass: 4 nodes (within 3-8 range), all labels are 3 words or fewer inside <b> tags, all concepts map directly to §5.7 corpus table, hitl classDef applied to HR (High cost/Cannot verify — critical stop cell), done classDef for both Low-cost cells, auto classDef for High-cost/Can-verify cell. Title set in frontmatter. No bare acronyms — Q2 axis info placed in subtitle spans. PNG visual check pending mmdc render."
+    }
+  ],
+  "stats": {
+    "nodes": 4,
+    "edges": 0,
+    "layout": "flowchart TB (2x2 grid via nested subgraphs with direction LR)",
+    "labels": [
+      "Act, verify later",
+      "Act with awareness",
+      "Verify before acting",
+      "Stop — escalate"
+    ],
+    "png_path": "content/m4-human-cognition-and-ai-oversight/week-9/3-the-judgment-framework/9-8-the-judgment-framework-q2-can-i-verify-this-without-the-ai/artifacts/diagram.png",
+    "png_dims": "pending render"
+  }
+}

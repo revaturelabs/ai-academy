@@ -1,0 +1,100 @@
+{
+  "critic": "corpus-critic",
+  "topic_id": "6.4",
+  "topic_title": "Matrices — grids of numbers and how AI uses them",
+  "at": "2026-06-18T10:00:00Z",
+  "cycle": 2,
+  "passed": true,
+  "verdict": "PASS — both hard findings from cycle 1 are resolved. (1) Section 9 optional paragraph (TensorFlow Embedding Projector / word representations / semantic clustering) has been removed; the hands-on exercise is now a self-contained matrix-building task within scope. (2) Section 5.5 weight-matrix sub-section trimmed to 2 sentences: names the weight matrix, states what it holds, defers matrix multiplication to a later topic — within the prescribed 1–2 sentence depth limit. No hard findings remain. Three soft findings carried forward (non-blocking, surface to HITL #2/#3): (a) sequence_drift soft — 'neural network', 'layer', 'neurons' in section 7 are not in available prior concepts 6.1–6.3; they function as contextual scaffolding in a real-world-patterns example and were soft in cycle 1; (b) scope_creep soft — line 96 colour-image mention explains the RGB three-grid structure ('one grid for red, one for green, one for blue') rather than bare-naming and deferring; trim to 'colour images are covered in a later topic' if the builder wants to be strict; (c) beginner_readability soft — 'neural network' and 'neuron' (2 terms) used without prior definition in this sequence; at the ≤2 threshold so stays soft, not escalated.",
+  "checks": {
+    "required_sections": {
+      "passed": true,
+      "findings": [],
+      "detail": "Section 3 (Learning Objectives, ~130w) present and above 50w minimum. Section 4 (Introduction, ~140w) present and above 50w minimum. Section 5 (Core Concepts, ~520w across sub-sections 5.1–5.6) present and above 100w minimum. Section 10 (Key Takeaways, ~90w) present and above 50w minimum. No placeholder strings in required sections."
+    },
+    "citation_density": {
+      "passed": true,
+      "resources_source": "web_search",
+      "primary_resources_cited": {
+        "[1] machinelearningmastery.com": true
+      },
+      "findings": [],
+      "detail": "Primary resource [1] cited in sections 4, 5.1, 5.2 (×2), 5.3, 5.4, 5.5, 7 (×2), 10 (×3) — well above ≥1 requirement. [2] geeksforgeeks.org cited in sections 5.1, 5.3, 5.4, 6, 7, 10. [3] labelbox.com cited in sections 5.5, 7 (×2). Sections 5, 6, 7 factual assertion citation coverage estimated >75%, above 60% threshold. No fake citations detected — all three citation indices [1], [2], [3] resolve to declared resources."
+    },
+    "sequence_drift": {
+      "passed": true,
+      "severity": "soft_only",
+      "forward_referenced_terms": [
+        {
+          "term": "neural network",
+          "location": "Section 5.5 (parenthetical), Section 7 (section header + structural example)",
+          "severity": "soft",
+          "detail": "Not in available prior concepts (6.1–6.3). Used as contextual scaffolding when illustrating weight matrices. Was soft in cycle 1; unchanged. Section 5.5 usage is parenthetical ('such as a neural network'); section 7 usage is in a Real-World Patterns example. Does not constitute teaching the concept."
+        },
+        {
+          "term": "layer (neural network layer)",
+          "location": "Section 7 ('every layer is connected to the next by a weight matrix')",
+          "severity": "soft",
+          "detail": "Not in available prior concepts. Removed from section 5.5 (fix verified); still present in section 7 as part of the neural-network real-world example. Was soft in cycle 1."
+        },
+        {
+          "term": "neurons",
+          "location": "Section 7 ('connecting to 128 neurons')",
+          "severity": "soft",
+          "detail": "Not in available prior concepts. Appears in a concrete size example for a weight matrix (784 × 128 matrix). Was soft in cycle 1; unchanged."
+        }
+      ],
+      "hard_forward_refs_resolved": [
+        "word representations / word embeddings (section 9 optional paragraph) — REMOVED in cycle 2"
+      ]
+    },
+    "length_sanity": {
+      "passed": true,
+      "depth_profile": "standard",
+      "allowed_range_words": [1500, 6000],
+      "estimated_word_count": 1570,
+      "findings": [],
+      "detail": "Estimated ~1570 words (progress log recorded 1580w; section 9 optional paragraph removed so slightly lower). Within the standard corpus range of 1500–6000 words used in cycle 1 for this topic. Word count is at the low end of the standard profile; not more than 30% outside the lower bound."
+    },
+    "topic_scope": {
+      "passed": true,
+      "severity": "soft_only",
+      "scope_creep_findings": [
+        {
+          "concept": "Colour image RGB three-grid structure",
+          "location": "Section 5.4, line ~96",
+          "severity": "soft",
+          "detail": "Text reads: 'Colour images add a third dimension — one grid for red, one for green, one for blue — but that idea is covered in a later topic.' The scope_discipline rule requires bare name + topic pointer only; this sentence explains the RGB structure (three grids, one per channel) rather than just naming and deferring. The defer pointer is present, which limits the impact. Suggested fix: replace with 'Colour images extend this idea further — that is covered in a later topic.' New finding in cycle 2 (was not present in prior corpus version)."
+        }
+      ],
+      "hard_scope_creep_resolved": [
+        "TensorFlow Embedding Projector / word representations / semantic clustering (section 9 optional paragraph) — REMOVED in cycle 2",
+        "Section 5.5 weight-matrix depth exceeding one-sentence limit — TRIMMED to 2 sentences in cycle 2"
+      ]
+    },
+    "beginner_readability": {
+      "passed": true,
+      "soft_findings": [
+        {
+          "finding_code": "undefined_terms",
+          "location": "Section 5.5, Section 7",
+          "terms": ["neural network", "neuron"],
+          "detail": "'Neural network' used parenthetically in section 5.5 and as a section header in section 7 without prior definition in this sequence (6.1–6.3 do not introduce it). 'Neuron' appears in section 7 ('128 neurons') without definition. Two terms — at the ≤2 threshold; stays soft, not escalated to hard. The previous cycle-1 jargon-density finding in section 5.5 is resolved: trimmed to 2 sentences with no stacked undefined terms."
+        }
+      ],
+      "hard_findings": [],
+      "detail": "Introduction and Core Concepts prose is plain, active voice, addresses learner as 'you'. All non-everyday terms (matrix, row, column, cell, weight matrix) are defined on first use with bold-term + plain-English format. No unexplained acronyms. No hedging phrases. No paragraph introduces 3+ new terms at once. Only 1 distinct soft finding — below the ≥3 threshold for hard escalation. Readability is strong overall."
+    }
+  },
+  "hard_findings_summary": [],
+  "soft_findings_summary": [
+    "sequence_drift (soft): 'neural network', 'layer', 'neurons' in section 7 — contextual scaffolding for weight matrices, not in prior concepts 6.1–6.3; carried from cycle 1",
+    "scope_creep (soft): colour image RGB explanation in section 5.4 (~line 96) explains three-grid structure rather than bare-naming and deferring — minor but violates scope_discipline form rule",
+    "beginner_readability (soft): 'neural network' and 'neuron' (2 terms) used without prior definition in sequence — at ≤2 threshold, non-escalated"
+  ],
+  "required_fixes": [],
+  "recommended_fixes": [
+    "Section 5.4 (~line 96): Replace 'Colour images add a third dimension — one grid for red, one for green, one for blue — but that idea is covered in a later topic.' with 'Colour images extend this idea — that is covered in a later topic.' to conform to the bare-name-and-defer form rule.",
+    "Section 7 neural network example: Consider adding a one-word gloss for 'neuron' (e.g. 'neuron — a processing unit') to satisfy the define-on-first-use mandate for beginner learners; or remove the '128 neurons' specificity and state '128 processing units' without the technical term."
+  ]
+}

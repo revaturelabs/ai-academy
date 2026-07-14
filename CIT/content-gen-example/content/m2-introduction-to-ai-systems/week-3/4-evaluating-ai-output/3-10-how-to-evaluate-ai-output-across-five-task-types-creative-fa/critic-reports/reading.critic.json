@@ -1,0 +1,85 @@
+{
+  "critic": "reading-critic",
+  "topic_id": "3.10",
+  "title": "How to Evaluate AI Output Across Five Task Types",
+  "run_at": "2026-06-18T00:00:00Z",
+  "passed": true,
+  "verdict": "PASS — all 8 check groups clear; no hard or soft failures.",
+  "checks": {
+    "format_discipline": {
+      "passed": true,
+      "frontmatter_present": false,
+      "meta_sidecar_missing": false,
+      "section_template_violation": false,
+      "sections_found": ["Overview", "Key Concepts", "Worked Example", "In Practice", "Key Takeaways", "References"],
+      "sections_order_correct": true,
+      "notes": "First non-empty line is H1 title; sidecar reading.meta.json present and valid; exactly 6 fixed sections in correct order."
+    },
+    "length": {
+      "passed": true,
+      "word_count_from_meta": 1498,
+      "target_word_range": [1200, 1600],
+      "word_count_in_range": true,
+      "estimated_minutes_at_200wpm": 7.49,
+      "estimated_minutes_at_230wpm": 6.51,
+      "target_minute_range": [6, 8],
+      "minutes_in_range": true,
+      "notes": "1498 words is within [1200, 1600]; 6.5–7.5 min read is within [6, 8] min."
+    },
+    "citations": {
+      "passed": true,
+      "primary_ref1_walturn_cited": true,
+      "ref2_encord_cited": true,
+      "ref3_mindtheproduct_cited": true,
+      "orphan_inline_markers": [],
+      "orphan_bibliography_entries": [],
+      "notes": "[1] cited at lines 13, 19, 27, 33, 44, 55, 62, 66, 77, 129, 134, 138. [2] and [3] each cited multiple times. Bibliography matches inline markers exactly."
+    },
+    "no_forward_references": {
+      "passed": true,
+      "forward_refs_found": [],
+      "back_refs_found": ["3.9 (attributional hallucination, overconfidence bias)", "3.8 (calibration)"],
+      "notes": "All cross-topic references point to prior topics (3.8, 3.9) already introduced in the week-3 sequence. No references to topics not yet taught."
+    },
+    "faithfulness": {
+      "passed": true,
+      "assertions_sampled": 10,
+      "unsupported_assertions": 0,
+      "unsupported_list": [],
+      "notes": "All 10 sampled assertions trace to corpus sections 4–8. Worked example attribution-hallucination scenario is consistent with corpus sec 5.4 and 3.9 prerequisites. No new claims introduced."
+    },
+    "beginner_readability": {
+      "passed": true,
+      "undefined_terms": [],
+      "jargon_dump": null,
+      "abstract_first": null,
+      "academic_register": null,
+      "assessment_reference": null,
+      "notes": "All non-everyday terms (Evaluation, evaluation rubric, task type, each task type) defined in bold at first appearance. No cold acronyms. No hedging phrases. Average sentence length well under 25 words. Concrete examples precede abstractions throughout (poem/history/bug analogy opens Overview). No assessment IDs, due dates, or grade weights appear in the reading artifact."
+    },
+    "formatting": {
+      "passed": true,
+      "wall_of_text": null,
+      "unlisted_sequence": null,
+      "no_inline_examples": null,
+      "bold_term_definitions_present": true,
+      "notes": "All paragraphs are 2–4 sentences. Five-step workflow in In Practice uses numbered list. Rubric tables used for all five task-type criteria. Bold-term definitions follow expected shape throughout Key Concepts. Quick-reference summary table provides scannability."
+    },
+    "scope": {
+      "passed": true,
+      "scope_creep": [],
+      "bleu_rouge_handling": "not_mentioned_in_reading",
+      "notes": "BLEU/ROUGE are deferred in the corpus and do not appear in the reading at all — correct. Nothing taught beyond the five-task-type rubric framework and the five-step evaluation workflow. Diagram reference at line 96 is consistent with artifact_plan.diagram=true in topic.manifest.json."
+    }
+  },
+  "escalation": {
+    "hard_fail": false,
+    "hard_fail_reason": null,
+    "soft_findings_count": 0,
+    "escalated_to_hard_fail": false
+  },
+  "gold_example_comparison": {
+    "gold_example_checked": false,
+    "notes": "No gold example found at .claude/references/gold-examples/reading/ — skipped comparison."
+  }
+}

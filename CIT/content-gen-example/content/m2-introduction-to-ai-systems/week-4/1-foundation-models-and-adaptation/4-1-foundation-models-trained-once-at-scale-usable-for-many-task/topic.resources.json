@@ -1,0 +1,30 @@
+{
+  "topic_id": "4.1",
+  "captured_at": "2026-06-16T00:00:00Z",
+  "captured_by": "namratas@revature.com",
+  "resources_source": "web_search",
+  "web_search_query": "foundation models trained once at scale usable many tasks LLM explainer",
+  "resources": [
+    {
+      "type": "url",
+      "value": "https://cloud.google.com/discover/what-are-foundation-models",
+      "role": "primary",
+      "source": "web_search",
+      "notes": "Google Cloud canonical explainer — scale, pre-training, adaptability (prompt engineering, fine-tuning, RAG)"
+    },
+    {
+      "type": "url",
+      "value": "https://humanloop.com/blog/foundation-models",
+      "role": "supporting",
+      "source": "web_search",
+      "notes": "Practitioner-focused explainer — what they are, how they differ from LLMs, key characteristics"
+    },
+    {
+      "type": "url",
+      "value": "https://en.wikipedia.org/wiki/Foundation_model",
+      "role": "supporting",
+      "source": "web_search",
+      "notes": "Wikipedia reference — broad overview, relationship to LLMs, history"
+    }
+  ]
+}

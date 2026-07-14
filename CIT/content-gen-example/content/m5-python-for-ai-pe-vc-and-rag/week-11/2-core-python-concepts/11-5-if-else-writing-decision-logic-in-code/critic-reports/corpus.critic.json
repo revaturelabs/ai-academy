@@ -1,0 +1,76 @@
+{
+  "critic": "corpus-critic",
+  "cycle": 1,
+  "topic_id": "11.5",
+  "topic_title": "If / else — writing decision logic in code",
+  "at": "2026-06-12T01:05:00Z",
+  "passed": true,
+  "checks": {
+    "required_sections": {
+      "passed": true,
+      "detail": "All four required sections present and above word minimums. §3 LOs ~90w. §4 Introduction ~150w. §5 Core Concepts ~900w. §10 Key Takeaways ~120w."
+    },
+    "citation_density": {
+      "passed": true,
+      "resources_source": "human",
+      "all_primary_cited": true,
+      "citation_map": {
+        "[1]": "docs.python.org/3/tutorial/controlflow.html — cited in §4, §5.1, §5.2 (×2), §5.3 (×2), §5.4, §5.5, §7, §10 (×3)",
+        "[2]": "realpython.com/python-conditional-statements/ — cited in §4, §5.1 (critical distinction), §5.2 (×2), §5.3 (×2), §5.5, §7, §8, §10 (×2)",
+        "[3]": "docs.python.org/3/library/stdtypes.html#comparisons — cited in §5.1 (×2), §5.4, §10 (×2)",
+        "[4]": "w3schools.com/python/python_conditions.asp — cited in §5.2, §5.3",
+        "[5]": "realpython.com/python-operators-expressions/ — cited in §5.1, §5.4, §7, §10"
+      },
+      "estimated_claim_citation_rate": 0.72,
+      "fake_citations": false,
+      "detail": "All 5 primary resources cited at least once. Estimated claim citation rate ~72% in §5, §6, §7, above the 60% threshold."
+    },
+    "sequence_drift": {
+      "passed": true,
+      "forward_references": [],
+      "soft_findings": [
+        {
+          "term": "ValueError, SyntaxError, IndentationError",
+          "location": "§5.5 (ValueError), §6 common errors (all three)",
+          "severity": "soft",
+          "detail": "Exception type names appear as labels for what Python raises — not teaching exception handling (try/except). Acceptable as naming-and-deferring. No runnable code demonstrates these as objects."
+        },
+        {
+          "term": "spec-first approach",
+          "location": "§7 — 'the spec-first approach introduced in 11.7'",
+          "severity": "soft",
+          "detail": "Named-and-deferred to 11.7. Not taught here. Proper forward pointer."
+        }
+      ],
+      "scan_result": "No comparison operators used as forward refs — all are introduced here. for loops named-and-deferred to 11.6. spec-first named-and-deferred to 11.7. All prior concepts (variables, types, print(), arithmetic, bool operators) correctly assumed as known."
+    },
+    "length_sanity": {
+      "passed": true,
+      "profile": "standard",
+      "range_words": "1500–4000",
+      "estimated_word_count": 2500,
+      "detail": "~2500 words estimated. Within the 1500–4000 standard-profile corpus range."
+    },
+    "topic_scope": {
+      "passed": true,
+      "scope_creep_findings": [],
+      "detail": "No scope creep. Comparison operators are the prerequisite building blocks for if/else — included on-headline. input() was explicitly deferred from 11.4 corpus to 11.5 and is needed to complete the grade-average lab — inclusion is deliberate and pre-planned. Exception type names (ValueError, SyntaxError, IndentationError) are labels for runtime responses, not a taught concept."
+    },
+    "beginner_readability": {
+      "passed": true,
+      "soft_findings": [
+        {
+          "type": "undefined_terms",
+          "terms": ["ValueError", "SyntaxError", "IndentationError"],
+          "location": "§5.5 and §6",
+          "detail": "Exception type names used without a plain-English gloss. However, each is immediately described ('Python raises X' + explanation of what triggers it), so context is sufficient for beginners. 3 soft findings — at the escalation threshold but they are the same category (exception naming), making them a single pattern, not 3 independent readability failures. Not escalating to hard fail."
+        }
+      ],
+      "no_jargon_dumps": true,
+      "plain_register": true,
+      "escalated_to_hard_fail": false,
+      "detail": "Terms defined on first use (comparison operator, elif, compound condition, input()). Table for comparison operators. One concept per subsection. Concrete code before explanation throughout."
+    }
+  },
+  "verdict": "PASS (cycle 1). All required checks green. ~2500 words within standard profile. All 5 primary resources cited. No forward refs in runnable code. Comparison operators, if/else/elif, compound conditions, and input() all on-headline (or pre-planned deferred inclusion). 2 soft findings (exception type names named-without-gloss; spec-first named-and-deferred to 11.7) — neither escalates to hard fail. Diagram signal: STRONG (branching structure, mirrors Week 1 flowcharts)."
+}

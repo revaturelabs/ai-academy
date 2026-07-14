@@ -1,0 +1,49 @@
+{
+  "type": "topic",
+  "id": "1.5",
+  "title": "Decomposition — breaking a big problem into smaller solvable parts",
+  "slug": "1-5-decomposition-breaking-a-big-problem-into-smaller-solvable-p",
+  "position_in_module": 1,
+  "week_num": 1,
+  "session_name": "How Machines Think",
+  "module": {
+    "position": 2,
+    "slug": "2-problem-solving-foundations",
+    "title": "Problem-Solving Foundations"
+  },
+  "course": {
+    "code": "M1",
+    "slug": "m1-computational-thinking",
+    "title": "Computational Thinking"
+  },
+  "next_assessment": {
+    "id": "A1",
+    "due_week": 3,
+    "title": "Specification Portfolio",
+    "weight": "10%"
+  },
+  "paths": {
+    "corpus": "topic_corpus.md",
+    "resources": "topic.resources.json",
+    "progress": "topic.progress.json",
+    "artifacts_dir": "artifacts/",
+    "critic_reports_dir": "critic-reports/"
+  },
+  "artifact_plan": {
+    "depth_profile": "standard",
+    "diagram": true,
+    "diagram_intent": "Task tree showing a single root problem branching into sub-tasks and then leaf tasks across two levels — illustrates the hierarchy of decomposition visually; a simple top-down tree in Mermaid",
+    "reading": {
+      "target_word_range": [1200, 1600],
+      "target_min_minutes": 6,
+      "target_max_minutes": 8
+    },
+    "quiz": {
+      "min_questions": 5,
+      "max_questions": 6,
+      "include_short_answer": false
+    }
+  },
+  "expected_delivery_minutes": 7,
+  "status": "corpus_drafted"
+}

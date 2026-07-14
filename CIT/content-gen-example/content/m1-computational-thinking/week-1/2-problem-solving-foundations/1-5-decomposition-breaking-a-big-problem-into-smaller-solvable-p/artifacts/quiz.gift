@@ -1,0 +1,49 @@
+$CATEGORY: CIT/M1/week-1/1-5-decomposition-breaking-a-big-problem-into-smaller-solvable-p
+
+::q1:: Which of the following best describes decomposition as a problem-solving strategy? {
+~Writing the final solution code for a program before planning or identifying any of the steps needed to solve the problem#No — writing code is a later step; decomposition happens before any code is written.
+~Drawing a flowchart that maps every decision point a program must make, showing the full logic in order#No — a flowchart shows decision logic; decomposition is about identifying and separating the parts of a problem.
+=Breaking a large, complex problem into smaller parts that are each focused and manageable#Yes — decomposition is exactly this: taking a big problem apart into pieces that can be understood and handled one at a time.
+~Storing data in a structured format so a computer can retrieve it quickly and efficiently when needed#No — data storage is unrelated to decomposition, which is a planning and problem-structuring strategy.
+#### Tests the plain-language definition of decomposition (corpus §5.1).
+}
+
+::q2:: A student is asked to "build a study timetable for exam season." She finds the task overwhelming because she does not know where to begin and keeps mixing up different subjects in her head. Which of the following best explains why breaking this task into parts would help? {
+=When a problem is split into smaller parts, each part is small enough to focus on, there is a clear place to start, and mistakes are easier to locate#Yes — decomposition reduces cognitive overload, reveals a starting point, and isolates errors.
+~Splitting the task into parts makes it take longer overall, but the extra time invested is worth it for the quality of the final result she produces#No — decomposition does not necessarily increase total time; it makes progress easier and errors easier to find.
+~Breaking the task into parts works only when all the parts can be completed independently, without any dependencies between them at all#No — decomposition is still useful when parts depend on each other; making dependencies visible is itself a benefit.
+~Decomposition only helps when the task involves writing a computer program, not when it is a human planning activity like making a timetable#No — decomposition is a general problem-solving strategy used by people in many fields, not only programming.
+#### Tests why large problems are difficult without decomposition and how breaking them down helps (corpus §5.2).
+}
+
+::q3:: In a task tree for "Organise a school fundraiser," which of the following correctly identifies the root, a sub-task, and a leaf? {
+~Root\: "Book the venue"; sub-task\: "Organise a school fundraiser"; leaf\: "Send thank-you emails"#No — the root must be the original overall problem, not one of its parts.
+~Root\: "Organise a school fundraiser"; sub-task\: "Send thank-you emails"; leaf\: "Plan activities"#No — "Send thank-you emails" is concrete and actionable, making it a leaf, not a sub-task above "Plan activities."
+~Root\: "Plan activities"; sub-task\: "Book the venue"; leaf\: "Organise a school fundraiser"#No — the root is the largest, original problem; it cannot appear at the bottom of the tree.
+=Root\: "Organise a school fundraiser"; sub-task\: "Plan activities"; leaf\: "Research suitable games"#Yes — the original problem is the root, "Plan activities" is a larger division below it, and "Research suitable games" is concrete enough to act on directly.
+#### Tests the ability to identify root, sub-task, and leaf in a task tree (corpus §5.3).
+}
+
+::q4:: A team has decomposed the task "Launch a community newsletter" into the following sub-tasks\: "Write articles," "Design layout," "Handle everything else," and "Print copies." Which feature makes this a poor decomposition? {
+~It has too many sub-tasks — four is more than a well-decomposed problem should have#No — four sub-tasks at one level is a reasonable number; the problem is not the count.
+=One sub-task is vague ("Handle everything else") and does not clearly describe what needs to be done#Yes — a good decomposition requires each sub-task to be clear enough to act on; "Handle everything else" is not specific and would not tell anyone what to do.
+~The sub-tasks cannot be worked on by separate people, making decomposition pointless here#No — the issue is not that the tasks cannot be distributed; the issue is that one task is not clearly defined.
+~There are too many levels of breakdown — the team should stop at the root and list only one action#No — decomposition naturally involves multiple levels; the problem here is vagueness, not depth.
+#### Tests the ability to distinguish a well-decomposed problem from a poorly decomposed one (corpus §5.4).
+}
+
+::q5:: Which three of the following scenarios are examples of decomposition being used to make a complex task manageable? (Choose the answer that lists the best set of three.) {
+=A surgeon divides an operation into stages (anaesthesia, incision, closure); a software team breaks a product into features then into developer tasks; and a chef decomposes "make a chocolate cake" into batter, baking, frosting, and assembly#Yes — all three are real-world uses of decomposition: medicine, software development, and recipe writing each break a complex task into focused, ordered parts.
+~A surgeon memorises all the steps of an operation at once; a software team writes code without breaking it into features first; and a chef improvises a cake recipe without measuring or separating the steps into distinct phases#No — none of these describes decomposition; they all skip the step of breaking the task into manageable parts before acting.
+~A surgeon writes a detailed report documenting the outcomes after an operation is complete; a software team runs final tests on completed code; and a chef photographs a finished cake for inclusion in the restaurant menu#No — these are final or review activities, not examples of breaking a complex task into smaller parts before or during the work itself.
+~A surgeon trains junior doctors in proper technique by demonstrating procedures step by step; a software team holds daily progress meetings to coordinate ongoing work; and a chef teaches a structured cooking class to enrolled students#No — training and communication activities are not examples of decomposition, which is specifically about breaking a problem into its component parts.
+#### Tests knowledge of real-world situations where decomposition makes complex tasks manageable (corpus §5.6 and §7).
+}
+
+::q6:: A student is asked to decompose the task "Set up a school podcast." Her first attempt produces sub-tasks that are still too large to act on. What should she do next, and why? {
+~Start writing the podcast scripts immediately, since spending more time on planning at this stage will only cause further delays and waste valuable production time#No — acting before the decomposition is complete means working without clear, defined steps, which leads to confusion and errors.
+~Abandon her first attempt entirely and choose a simpler, more manageable task that does not require any decomposition in order to get started#No — difficulty in the first attempt is normal; the solution is to refine the decomposition, not to give up or choose a different task.
+~Accept the first attempt as complete, since a well-done decomposition should be final and should never need to be revisited or revised once it has been written down#No — decomposition is explicitly iterative; expecting to get it right on the first try is a misconception the corpus directly addresses.
+=Break each oversized sub-task down further until every item is concrete and doable, then check again — decomposition is iterative and refinement is expected#Yes — when sub-tasks are still too large, the correct step is to apply decomposition again at that level; refining as you learn more is a normal and expected part of the process.
+#### Tests the ability to apply decomposition iteratively to a chosen problem and recognise that revision is part of the process (corpus §5.5).
+}

@@ -1,0 +1,61 @@
+{
+  "topic_id": "12.14",
+  "generated_at": "2026-06-15T00:00:00Z",
+  "format": "gift",
+  "question_count": 7,
+  "$bias_defense_applied": true,
+  "$shuffle_seed": "12.14-xor-0",
+  "correct_position_distribution": [1, 3, 0, 2, 3, 1],
+  "shuffle_constraint_check": {
+    "mcq_count": 6,
+    "position_counts": {"0": 1, "1": 2, "2": 1, "3": 2},
+    "max_share": 0.333,
+    "max_share_threshold": 0.40,
+    "all_positions_used": true,
+    "passed": true
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "type": "mcq",
+      "objective_ref": "LO1: Define latency in the context of an API call and explain what controls it.",
+      "correct_position": 1
+    },
+    {
+      "id": "q2",
+      "type": "mcq",
+      "objective_ref": "LO2: Calculate the approximate cost of a single API call given input and output token counts and per-token prices.",
+      "correct_position": 3
+    },
+    {
+      "id": "q3",
+      "type": "mcq",
+      "objective_ref": "LO4: Compare the Haiku, Sonnet, and Opus model tiers on speed, cost, and capability, and select the appropriate tier for a given task.",
+      "correct_position": 0
+    },
+    {
+      "id": "q4",
+      "type": "mcq",
+      "objective_ref": "LO5: Apply the three-question design checklist before writing an API call.",
+      "correct_position": 2
+    },
+    {
+      "id": "q5",
+      "type": "mcq",
+      "objective_ref": "LO6: Write a cost-and-latency note suitable for a lab submission (Assessment A4).",
+      "correct_position": 3
+    },
+    {
+      "id": "q6",
+      "type": "mcq",
+      "objective_ref": "LO3: Describe three dimensions of reliability — retries, error handling, and rate limits — and explain how they connect to topics already covered (12.13).",
+      "correct_position": 1
+    },
+    {
+      "id": "q7",
+      "type": "short_answer",
+      "objective_ref": "LO3: Describe three dimensions of reliability — retries, error handling, and rate limits — and explain how they connect to topics already covered (12.13). Reinforces corpus §10 on the three measurable properties of every API call.",
+      "correct_position": null
+    }
+  ]
+}

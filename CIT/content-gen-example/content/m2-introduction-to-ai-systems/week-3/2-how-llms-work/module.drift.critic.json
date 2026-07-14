@@ -1,0 +1,102 @@
+{
+  "module_slug": "2-how-llms-work",
+  "passed": true,
+  "checks": {
+    "narrative_coherence": {
+      "passed": true,
+      "notes": "3.4 (tokens, training, inference) establishes the foundational mechanics: text-to-token pipeline, next-token prediction, prefill/decode phases, context window. 3.5 (parameters) deepens one concept introduced briefly in 3.4 — 'parameters (also called weights)' — expanding it to scale, scaling laws, quantisation, and model-selection trade-offs. 3.6 (temperature/sampling) picks up the probabilistic output thread planted in 3.4 ('the degree of randomness is controlled by temperature — covered in topic 3.6') and resolves it fully with logits, probability distributions, and sampling strategies. Each topic opens with an explicit back-reference to the prior topic(s) that supplies its prerequisite concepts, confirming intentional chaining. The arc is: what the model sees → what the model learned → how the model picks its next word."
+    },
+    "concept_consistency": {
+      "passed": true,
+      "violations": []
+    },
+    "cross_module_drift": {
+      "passed": true,
+      "violations": []
+    },
+    "scope_coherence": {
+      "passed": true,
+      "notes": "The module title 'How LLMs Work' is fully covered by the three topics: tokens/training/inference (3.4), parameters/scale (3.5), temperature/sampling (3.6). The module narrative seed also lists 'AI in India today' and 'jagged frontier' but these are session-level narrative framing, not artifact topics within this three-topic module, and their absence from the topic artifacts is correct. The lab activity (Capability Probe / Journal Entry #2) is supported by hands-on exercises in all three topics — each exercise connects to the lab task from a different angle (probabilistic output, parameter-size comparison, temperature tuning)."
+    },
+    "terminology_consistency": {
+      "passed": true,
+      "per_topic_findings": [
+        {
+          "topic_id": "3.4",
+          "findings": []
+        },
+        {
+          "topic_id": "3.5",
+          "findings": [
+            {
+              "severity": "soft",
+              "note": "3.5 reading closes with 'One note on temperature: this is another model setting that affects output behaviour and will be covered in topic 3.6.' This forward-pointer is appropriate and correctly previews 3.6 without teaching the concept prematurely. Not a violation."
+            }
+          ]
+        },
+        {
+          "topic_id": "3.6",
+          "findings": [
+            {
+              "severity": "soft",
+              "note": "'logit' is introduced in 3.6 corpus §5.1 and reading without prior appearance in 3.4 or 3.5. However, it is defined inline on first use ('a logit is just a score — a large positive logit means this token fits well here') so it is not a cold term. Not a violation."
+            }
+          ]
+        }
+      ]
+    },
+    "prerequisites_respected": {
+      "passed": true,
+      "per_topic_findings": [
+        {
+          "topic_id": "3.4",
+          "prereqs_declared": ["3.1", "3.2"],
+          "finding": "Both prerequisites have earlier sequence positions. PASS."
+        },
+        {
+          "topic_id": "3.5",
+          "prereqs_declared": ["3.1", "3.2", "3.4"],
+          "finding": "All prerequisites have earlier sequence positions. PASS."
+        },
+        {
+          "topic_id": "3.6",
+          "prereqs_declared": ["3.2", "3.4"],
+          "finding": "Both prerequisites have earlier sequence positions. PASS. Note: 3.6 corpus §6 step 2 makes a soft parenthetical reference to 'parameters (weights from topic 3.5)' without listing 3.5 as a formal prerequisite. Because the reference is explanatory rather than load-bearing, this is a soft observation, not a prerequisite violation."
+        }
+      ]
+    },
+    "no_duplicated_core_concepts": {
+      "passed": true,
+      "jaccard_pairs": [
+        {
+          "pair": ["3.4", "3.5"],
+          "estimated_jaccard": 0.13,
+          "shared_nouns": ["parameter", "weight", "next-token prediction", "backpropagation"],
+          "note": "Overlap is intentional: 3.5 deepens a concept introduced briefly in 3.4. Below 0.6 threshold."
+        },
+        {
+          "pair": ["3.4", "3.6"],
+          "estimated_jaccard": 0.13,
+          "shared_nouns": ["token", "autoregressive decoding", "context window", "probability"],
+          "note": "Shared terms are prerequisite context for 3.6, not duplicated teaching. Below 0.6 threshold."
+        },
+        {
+          "pair": ["3.5", "3.6"],
+          "estimated_jaccard": 0.07,
+          "shared_nouns": ["parameter", "weight"],
+          "note": "3.6 references parameters only as background; its core concepts are orthogonal. Well below 0.6 threshold."
+        }
+      ]
+    },
+    "lab_activity_alignment": {
+      "passed": true,
+      "notes": "Module lab seed: Capability Probe (5 task types: creative, factual, logical, ethical, coding) + Journal Entry #2. 3.4 §9 exercises probabilistic output via repeated prompts — maps to the 'factual' and 'creative' task types and Journal Entry #2. 3.5 §9 exercises parameter-size comparison via two model tiers — maps to the 'logical/coding' task type. 3.6 §9 exercises temperature tuning on factual and creative prompts — directly maps to the Capability Probe's accuracy-vs-creativity dimension and Journal Entry #2. All three topics provide hands-on artifacts that collectively support the lab activity."
+    },
+    "audience_level_consistency": {
+      "passed": true,
+      "notes": "All three topics target an absolute-beginner audience and maintain consistent register. Every technical term introduced in each topic is defined on first use with a plain-language analogy before being used in context. 3.5 and 3.6 correctly use back-references ('from topic 3.4', 'as you learned in topic 3.4') rather than redefining concepts cold. No topic shows a register or depth spike relative to its neighbours — all three use the same pattern of analogy-first definition followed by structured tables and worked examples."
+    }
+  },
+  "verdict": "PASS. All five checks (plus audience-level) pass across topics 3.4, 3.5, and 3.6. The module delivers a coherent, progressive arc from token mechanics through parameter scale to sampling behaviour. Terminology is consistent and forward/back references are correctly placed. Two soft observations logged (3.5 forward-pointer to temperature; 3.6 soft reference to 3.5 parameters without formal prerequisite listing) — neither requires remediation.",
+  "at": "2026-06-18T00:00:00Z"
+}

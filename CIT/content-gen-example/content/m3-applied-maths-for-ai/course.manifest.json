@@ -1,0 +1,25 @@
+{
+  "type": "course",
+  "code": "M3",
+  "title": "Applied Maths for AI",
+  "slug": "m3-applied-maths-for-ai",
+  "weeks_range": "6–8",
+  "total_hours": "9 hrs",
+  "scope": "Vectors, embeddings, probability, statistics and Applied Maths Lab. Intuition only — no proofs, no NumPy.",
+  "source_label": "M3 – Applied Maths for AI",
+  "week_nums": [
+    6,
+    7,
+    8
+  ],
+  "assessments": [
+    {
+      "id": "A2",
+      "due_week": 6,
+      "title": "AI Systems Essay",
+      "mode": "Individual",
+      "weight": "15%",
+      "requirement": "Write a 500-word structured essay on one AI success case and one AI failure case. For the failure, identify the root cause at a technical level — data bias, model architecture, prompt design, or deployment error. Propose a concrete mitigation referencing the 2026 AI stack. Submit as PDF. Graded on: technical accuracy of root cause, quality of mitigation, argument structure."
+    }
+  ]
+}

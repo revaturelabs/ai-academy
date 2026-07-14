@@ -1,0 +1,50 @@
+{
+  "verdict": "pass",
+  "cycle": 1,
+  "findings": [
+    {
+      "code": "label_too_long",
+      "where": "node E (cycle 0, pre-revision)",
+      "detail": "Bold label 'Final Judgment Biased Toward Anchor' was 5 words. Revised to 'Judgment Biased Toward Anchor' (4 words) in cycle 1. Finding resolved before final write."
+    },
+    {
+      "code": "looks_good",
+      "where": "whole canvas",
+      "detail": "Clean 5-node LR pipeline: Anchor Received → System 1 Registers Anchor → Adjustment Heuristic Begins → Adjustment Stops Too Soon → Judgment Biased Toward Anchor. Single straight chain matches the linear flow intent exactly. All four anchoring-bias corpus stages represented with no scope-creep nodes. Color tier: blue entry → two purple auto-steps → yellow hitl gate (the critical insufficient-adjustment juncture) → green terminal. Expected render at 1400px: 5 horizontal nodes with comfortable spacing, 12px subtitles legible, no overlap or truncation risk."
+    },
+    {
+      "code": "looks_good",
+      "where": "concept-drift check",
+      "detail": "All five node labels trace directly to corpus §5 Core Concepts: 'Anchor Received' (§5 stage 1), 'System 1 Registers Anchor' (§5 stage 1 mechanism), 'Adjustment Heuristic Begins' (§5 stage 2), 'Adjustment Stops Too Soon' (§5 stage 3 — insufficient adjustment), 'Judgment Biased Toward Anchor' (§5 stage 4). No confirmation-bias, availability, or other adjacent-topic nodes present."
+    },
+    {
+      "code": "looks_good",
+      "where": "title discipline",
+      "detail": "Governing concept 'Anchoring Bias — Final Judgment Pulled Toward the Anchor' placed in --- config title: field. No ghost node displacement of the central organizing idea."
+    },
+    {
+      "code": "looks_good",
+      "where": "single-path discipline",
+      "detail": "Intent describes a linear 4-stage cognitive flow. Source emits exactly A --> B --> C --> D --> E with no branches. Compliant with single-path discipline."
+    }
+  ],
+  "preflight": {
+    "mermaid_parse": "pass (valid --- config block, flowchart LR declaration, bracket-notation nodes, chained arrows, all classDef names resolved)",
+    "node_count": "pass (5 nodes: A, B, C, D, E — within 3–8 range)",
+    "label_discipline": "pass (all bold labels ≤ 4 words after cycle-1 revision: 'Anchor Received' 2w, 'System 1 Registers Anchor' 4w, 'Adjustment Heuristic Begins' 3w, 'Adjustment Stops Too Soon' 4w, 'Judgment Biased Toward Anchor' 4w)",
+    "concept_fidelity": "pass (all labels trace to corpus §5 Core Concepts stages 1–4; no adjacent-topic drift)",
+    "jargon_labels": "pass (no bare unexplained acronyms; 'System 1/2' defined in corpus; 'Heuristic' appears in corpus as 'adjustment heuristic')",
+    "title_discipline": "pass (governing concept in config title: field; no ghost nodes used)",
+    "single_path_discipline": "pass (intent is a 4-stage linear cognitive flow; source emits one straight chain, no branches)"
+  },
+  "stats": {
+    "nodes": 5,
+    "edges": 4,
+    "layout": "flowchart LR (single straight pipeline)",
+    "labels": ["Anchor Received", "System 1 Registers Anchor", "Adjustment Heuristic Begins", "Adjustment Stops Too Soon", "Judgment Biased Toward Anchor"],
+    "mmd_path": "content/m4-human-cognition-and-ai-oversight/week-9/2-cognitive-biases-and-ai/9-4-anchoring-bias-over-relying-on-the-first-piece-of-informatio/artifacts/diagram.mmd",
+    "png_path": "content/m4-human-cognition-and-ai-oversight/week-9/2-cognitive-biases-and-ai/9-4-anchoring-bias-over-relying-on-the-first-piece-of-informatio/artifacts/diagram.png",
+    "png_render_command": "mmdc -i diagram.mmd -o diagram.png -w 1400 -b transparent",
+    "png_render_status": "pending — mmdc not executable in current file-tool-only environment; PNG must be rendered by running the command above from the artifacts/ directory"
+  }
+}

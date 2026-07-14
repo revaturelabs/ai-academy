@@ -1,0 +1,63 @@
+{
+  "passed": true,
+  "checks": {
+    "positional_bias": {
+      "passed": true,
+      "distribution": [1, 2, 2, 1],
+      "positions_by_question": { "q1": 1, "q2": 2, "q3": 0, "q4": 3, "q5": 1, "q6": 2 },
+      "max_share": 0.333,
+      "note": "pos0=1, pos1=2, pos2=2, pos3=1 across 6 questions. max_share 0.333 <= 0.40 threshold.",
+      "meta_gift_desync": false
+    },
+    "length_bias": {
+      "passed": true,
+      "longest_correct_rate": 0.333,
+      "baseline": 0.25,
+      "longest_correct_questions": ["q3", "q5"],
+      "detail": {
+        "q3": { "correct_len": 109, "mean_distractor_len": 90.33, "threshold_len": 108.4, "longest_correct": true },
+        "q5": { "correct_len": 105, "mean_distractor_len": 74.33, "threshold_len": 89.2, "longest_correct": true }
+      },
+      "note": "2/6 questions flagged longest-correct. Rate 0.333 <= 0.40 threshold. No auto-correction triggered."
+    },
+    "distractor_plausibility": {
+      "passed": true,
+      "absurd_rate": 0.0,
+      "total_distractors": 18,
+      "absurd_count": 0,
+      "weakest_questions": [
+        {
+          "question_id": "q3",
+          "distractor": "The model checks its own output against a spelling and grammar tool before responding",
+          "score": 2,
+          "note": "Low plausibility — grammar-check framing is not a common beginner misconception about RAG, though not absurd (score 2, above the score=1 fail threshold)."
+        }
+      ]
+    },
+    "objective_coverage": {
+      "passed": true,
+      "uncovered_objectives": [],
+      "orphan_questions": [],
+      "lo_question_map": {
+        "LO1 — Define RAG and what problem it solves": ["q1"],
+        "LO2 — Three-step RAG pipeline in sequence": ["q2"],
+        "LO3 — RAG reduces hallucination": ["q3"],
+        "LO4 — Distinguish RAG from fine-tuning": ["q4"],
+        "LO5 — Real-world examples": ["q5"],
+        "LO6 — Week-14 named components": ["q6"]
+      }
+    },
+    "beginner_fairness_and_scope": {
+      "passed": true,
+      "jargon_in_stem": [],
+      "out_of_scope_questions": [],
+      "unfair_distractors": [],
+      "note": "All stems use plain language; RAG acronym is expanded in q1 stem. All correct answers and distractors are grounded in corpus sections 5.1-5.5 and 7. q6 Week-14 components are explicitly named in corpus §5.5."
+    }
+  },
+  "auto_correction_applied": {
+    "shuffle_round_2": false
+  },
+  "verdict": "Pass — all five checks clean. Positional distribution 1/2/2/1 (max_share 0.33), length-bias rate 0.33, zero absurd distractors, all 6 LOs covered 1-for-1, no out-of-scope questions.",
+  "at": "2026-06-16T00:00:00Z"
+}

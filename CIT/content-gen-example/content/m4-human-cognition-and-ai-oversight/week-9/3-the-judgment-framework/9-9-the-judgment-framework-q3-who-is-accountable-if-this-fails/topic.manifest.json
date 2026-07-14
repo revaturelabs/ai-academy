@@ -1,0 +1,55 @@
+{
+  "type": "topic",
+  "id": "9.9",
+  "title": "The Judgment Framework — Q3: Who is accountable if this fails?",
+  "slug": "9-9-the-judgment-framework-q3-who-is-accountable-if-this-fails",
+  "position_in_module": 3,
+  "week_num": 9,
+  "session_name": "Human Judgment and AI Oversight",
+  "module": {
+    "position": 3,
+    "slug": "3-the-judgment-framework",
+    "title": "The Judgment Framework"
+  },
+  "course": {
+    "code": "M4",
+    "slug": "m4-human-cognition-and-ai-oversight",
+    "title": "Human Cognition and AI Oversight"
+  },
+  "next_assessment": {
+    "id": "A3",
+    "due_week": 10,
+    "title": "Maths and Cognition Lab Report",
+    "weight": "15%"
+  },
+  "paths": {
+    "corpus": "topic_corpus.md",
+    "resources": "topic.resources.json",
+    "progress": "topic.progress.json",
+    "artifacts_dir": "artifacts/",
+    "critic_reports_dir": "critic-reports/"
+  },
+  "artifact_plan": {
+    "depth_profile": "standard",
+    "depth_profile_confirmed_by": "hitl2",
+    "diagram": true,
+    "diagram_intent": "Vertical accountability chain (developer → deployer → operator → end user) with scope-of-responsibility annotation per level, plus a horizontal pre-decision / post-failure contrast strip below",
+    "reading": {
+      "target_word_range": [
+        1200,
+        1600
+      ],
+      "target_minutes_range": [
+        6,
+        8
+      ]
+    },
+    "quiz": {
+      "min_questions": 5,
+      "max_questions": 6,
+      "include_short_answer": false
+    }
+  },
+  "expected_delivery_minutes": 8,
+  "status": "scaffolded"
+}

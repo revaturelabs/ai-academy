@@ -1,0 +1,49 @@
+{
+  "topic_id": "13.3",
+  "passed": true,
+  "at": "2026-06-13T00:00:00Z",
+  "checks": {
+    "format_discipline": {
+      "passed": true,
+      "notes": "No frontmatter; H1 first non-empty line; reading.meta.json valid; six sections in correct order"
+    },
+    "length_budget": {
+      "passed": true,
+      "word_count": 1050,
+      "target_range": [800, 1200],
+      "estimated_minutes": 5,
+      "minutes_range": [4, 6]
+    },
+    "citation_discipline": {
+      "passed": true,
+      "primary_cited": true,
+      "citations_used": [1, 2, 3],
+      "bibliography_present": true,
+      "notes": "[1] cited in Overview, Key Concepts (multiple), In Practice, Takeaways. [2][3] cited throughout."
+    },
+    "no_forward_references": {
+      "passed": true,
+      "notes": "fine-tuning named-and-deferred in Overview; chain-of-thought named-and-deferred to 13.4 in In Practice. All new terms defined on first use: few-shot, in-context learning, context window, token."
+    },
+    "beginner_readability": {
+      "passed": true,
+      "findings": [],
+      "notes": "All terms defined on first use; employee analogy before definition; no jargon dumps; plain register"
+    },
+    "formatting": {
+      "passed": true,
+      "findings": [],
+      "notes": "Tables for zero/one/few-shot and good-vs-weak comparisons; numbered steps in Worked Example; bullets in In Practice; bold-term definitions throughout"
+    },
+    "scope_discipline": {
+      "passed": true,
+      "scope_creep": false,
+      "findings": []
+    },
+    "corpus_faithfulness": {
+      "passed": true,
+      "notes": "All claims traceable to corpus §5.1–5.7, §6 implementation, §7 patterns, §8 best practices"
+    }
+  },
+  "verdict": "PASS — reading meets all format, length, citation, readability, and faithfulness requirements on first cycle."
+}

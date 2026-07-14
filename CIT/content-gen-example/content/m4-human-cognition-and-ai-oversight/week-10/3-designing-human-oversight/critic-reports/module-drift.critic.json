@@ -1,0 +1,111 @@
+{
+  "module": "3-designing-human-oversight",
+  "week_num": 10,
+  "generated_at": "2026-06-13T00:00:00Z",
+  "verdict": "pass",
+  "topics_checked": ["10.5", "10.6"],
+  "checks": {
+    "terminology_consistency": {
+      "status": "pass",
+      "findings": [
+        {
+          "severity": "soft",
+          "topic": "10.6",
+          "finding": "The term 'override-as-theater' appears hyphenated in corpus prose (e.g. section 5.2, 5.3) while the canonical form introduced in 10.1 and used in 10.5 is 'override as theater' (unhyphenated). Not a conceptual synonym drift but a minor typographic inconsistency.",
+          "fix": "Standardise to 'override as theater' (no hyphens) throughout 10.6 to match the term as defined in 10.1 and carried forward in 10.5."
+        }
+      ]
+    },
+    "prerequisites_respected": {
+      "status": "pass",
+      "findings": [
+        {
+          "severity": "info",
+          "topic": "10.5",
+          "finding": "All nine prerequisites (9.7, 9.8, 9.9, 9.10, 9.11, 10.1, 10.2, 10.3, 10.4) have IDs that precede 10.5 in the sequence. No forward references detected.",
+          "fix": "No action required."
+        },
+        {
+          "severity": "info",
+          "topic": "10.6",
+          "finding": "All ten prerequisites (9.5, 9.7, 9.8, 9.9, 9.10, 9.11, 10.1, 10.3, 10.4, 10.5) have IDs that precede 10.6 in the sequence. No forward references detected.",
+          "fix": "No action required."
+        }
+      ]
+    },
+    "learning_arc": {
+      "status": "pass",
+      "findings": [
+        {
+          "severity": "soft",
+          "topic": "10.5 / 10.6",
+          "finding": "The module lab seed includes 'Case study debrief: write a 200-word post-mortem — what governance control would have prevented the failure?' Neither 10.5 nor 10.6 contains a hands-on post-mortem writing exercise; that exercise is covered by topic 10.7 (module 4). The module's stated learning arc (checkpoint design + domain application) is complete, but the post-mortem writing facet announced in the lab seed is not supported within this module.",
+          "fix": "Either note in both topics that the post-mortem exercise is in 10.7, or add a brief bridging sentence in 10.6's Section 11 (Next Steps) directing students to 10.7 for the post-mortem task."
+        },
+        {
+          "severity": "info",
+          "topic": "10.5 / 10.6",
+          "finding": "The union of Learning Objectives across both topics covers all facets named in the module title and narrative seed: HITL/HOTL/HOOTL modes (10.5 LO1–LO3), Judgment Framework applied to checkpoints (10.5 LO2, 10.6 LO2), checkpoint matrix design (10.5 LO5), component-level mapping (10.6 LO1–LO3), regulatory reference (10.6 LO4), and upgrade signals (10.6 LO5–LO6).",
+          "fix": "No action required."
+        }
+      ]
+    },
+    "no_duplicated_core_concepts": {
+      "status": "pass",
+      "findings": [
+        {
+          "severity": "soft",
+          "topic": "10.5 / 10.6",
+          "finding": "Both topics share the concepts HITL, HOTL, HOOTL, checkpoint, and the Judgment Framework. However, 10.5 introduces and defines these concepts while 10.6 explicitly builds on them at the component level and adds new sub-concepts (risk-tiered component mapping, mandatory vs optional checkpoint properties, signal-based upgrade test, acceptable error threshold, baseline/triggered oversight assignment). Estimated Jaccard on key concept nouns ≈ 0.32 — well below the 0.6 threshold. The overlap is constructive scaffolding, not duplication.",
+          "fix": "No action required. Consider a brief note in 10.6's Section 2 prerequisites summary explicitly flagging that 10.5 is the definitional source for HITL/HOTL/HOOTL to help students avoid re-reading both sections."
+        }
+      ]
+    },
+    "lab_activity_alignment": {
+      "status": "pass",
+      "findings": [
+        {
+          "severity": "info",
+          "topic": "10.5",
+          "finding": "Lab seed requirement 'Design the human-in-the-loop checkpoint for your Capstone' is directly supported by 10.5 Section 9 (Hands-On Exercise): students build a checkpoint matrix for one AI-assisted process from their Capstone project domain.",
+          "fix": "No action required."
+        },
+        {
+          "severity": "info",
+          "topic": "10.6",
+          "finding": "Lab seed requirement 'Apply the Judgment Framework to your domain system — answer all three questions per component' is directly supported by 10.6 Section 9 (Hands-On Exercise / Component Mapping Exercise): students list 4–6 components, apply Q1/Q2/Q3 to each, assign oversight modes, and state acceptable error thresholds.",
+          "fix": "No action required."
+        },
+        {
+          "severity": "soft",
+          "topic": "10.5 / 10.6",
+          "finding": "Lab seed requirement 'Case study debrief: write a 200-word post-mortem' is not backed by a hands-on exercise in either 10.5 or 10.6. The post-mortem skill is covered in module 4 (topic 10.7). The gap is minor because the post-mortem lab activity is logically downstream of the checkpoint design topics, but a student reading only module 3 would not find the post-mortem exercise scaffolded here.",
+          "fix": "Add a one-sentence pointer in 10.6 Section 9 or Section 11 directing students to the post-mortem exercise in 10.7 as the third lab activity for the week."
+        }
+      ]
+    },
+    "audience_level_consistency": {
+      "status": "pass",
+      "findings": [
+        {
+          "severity": "info",
+          "topic": "10.5",
+          "finding": "All terms used cold in 10.5 are properly listed in Section 2 (Prerequisites) with source topic references. The term 'HITL' is introduced and fully defined in Section 5 before any application in Sections 6–8. No unexplained jargon detected for a student who has completed topics 9.7–10.4.",
+          "fix": "No action required."
+        },
+        {
+          "severity": "soft",
+          "topic": "10.5",
+          "finding": "Section 5 (Confidence Routing) references '9.6' in brackets: '…particularly for groups underrepresented in its training data (see 9.6)'. While 9.6 is a valid prior topic, students who have not read 9.6 recently may not recognise why training data underrepresentation matters in this context. The in-text citation provides the reference but no brief explanation.",
+          "fix": "Add one sentence of inline context: e.g., 'groups underrepresented in its training data — meaning subgroups that appeared rarely during the model's learning phase (see 9.6)' to keep the paragraph self-sufficient for absolute beginners."
+        },
+        {
+          "severity": "info",
+          "topic": "10.6",
+          "finding": "The corpus introduces 'EU AI Act Article 14' as a regulatory reference with sufficient inline explanation (what it requires, how it maps to checkpoint properties). No unexplained acronyms or domain jargon used without definition. All terms from 10.5 reused in 10.6 are properly flagged as prerequisites in Section 2.",
+          "fix": "No action required."
+        }
+      ]
+    }
+  }
+}

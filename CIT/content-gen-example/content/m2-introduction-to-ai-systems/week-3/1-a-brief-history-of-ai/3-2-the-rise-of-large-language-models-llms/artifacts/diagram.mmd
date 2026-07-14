@@ -1,0 +1,33 @@
+---
+title: "From Deep Learning to Large Language Models"
+theme: base
+themeVariables:
+  primaryColor: "#a5d8ff"
+  primaryBorderColor: "#4a9eed"
+  lineColor: "#555"
+  fontSize: "15px"
+flowchart:
+  htmlLabels: true
+  curve: basis
+---
+flowchart LR
+    classDef start fill:#a5d8ff,stroke:#4a9eed,color:#1e3a5f
+    classDef auto  fill:#d0bfff,stroke:#8b5cf6,color:#2e1065
+    classDef done  fill:#b2f2bb,stroke:#22c55e,color:#14532d
+
+    DL["<b>Deep Learning</b><br/><span style='font-size:11px;color:#6d28d9'>AlexNet breakthrough · 2012</span>"]
+    WE["<b>Word Embeddings</b><br/><span style='font-size:11px;color:#6d28d9'>Word2Vec · 2013</span>"]
+    RNN["<b>Sequence Models</b><br/><span style='font-size:11px;color:#6d28d9'>RNNs / LSTMs · 2014–17</span>"]
+    TR["<b>Transformer Architecture</b><br/><span style='font-size:11px;color:#6d28d9'>Attention Is All You Need · 2017</span>"]
+    BG["<b>Pre-trained Language Models</b><br/><span style='font-size:11px;color:#6d28d9'>BERT &amp; GPT · 2018–19</span>"]
+    SC["<b>Scaling Era</b><br/><span style='font-size:11px;color:#6d28d9'>GPT-3 (175B) 2020 · GPT-4 2023</span>"]
+
+    DL -->|"words as vectors;<br/>meaning from context"| WE
+    WE -->|"read text in order;<br/>carry running memory"| RNN
+    RNN -->|"process all words at once;<br/>solves long-range memory"| TR
+    TR -->|"pre-train on massive text;<br/>fine-tune for tasks"| BG
+    BG -->|"bigger models,<br/>emergent capabilities"| SC
+
+    class DL start
+    class WE,RNN,TR,BG auto
+    class SC done

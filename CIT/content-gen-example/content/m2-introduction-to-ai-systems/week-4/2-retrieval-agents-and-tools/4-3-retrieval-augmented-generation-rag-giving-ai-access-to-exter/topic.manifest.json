@@ -1,0 +1,53 @@
+{
+  "type": "topic",
+  "id": "4.3",
+  "title": "Retrieval-Augmented Generation (RAG) — giving AI access to external knowledge at query time",
+  "slug": "4-3-retrieval-augmented-generation-rag-giving-ai-access-to-exter",
+  "position_in_module": 1,
+  "week_num": 4,
+  "session_name": "The 2026 AI Stack",
+  "module": {
+    "position": 2,
+    "slug": "2-retrieval-agents-and-tools",
+    "title": "Retrieval, Agents and Tools"
+  },
+  "course": {
+    "code": "M2",
+    "slug": "m2-introduction-to-ai-systems",
+    "title": "Introduction to AI Systems"
+  },
+  "next_assessment": {
+    "id": "A2",
+    "due_week": 6,
+    "title": "AI Systems Essay",
+    "weight": "15%"
+  },
+  "paths": {
+    "corpus": "topic_corpus.md",
+    "resources": "topic.resources.json",
+    "progress": "topic.progress.json",
+    "artifacts_dir": "artifacts/",
+    "critic_reports_dir": "critic-reports/"
+  },
+  "artifact_plan": {
+    "diagram": true,
+    "diagram_intent": "Three-step RAG pipeline flow: user query → retrieve (search knowledge source, return passages) → augment (combine question + passages into enriched prompt) → generate (model produces grounded answer) → response to user",
+    "depth_profile": "standard",
+    "depth_signals": [
+      "topic has a named three-step pipeline requiring sequential explanation (retrieve, augment, generate)",
+      "requires a RAG-vs-fine-tuning comparison plus motivation section — two major sub-arguments",
+      "five named Week-14 components require named-and-deferred treatment, adding explanatory overhead"
+    ],
+    "confirmed_profile": "standard",
+    "confirmed_by_hitl2": true,
+    "soft_findings_carry": [
+      "s5.2 line 71 — deferred terms in relational clause (similarity search over embeddings stored in vector database)",
+      "s5.1 line 59 — 'parameters' undefined on first use",
+      "s7 line 174 — 'LLM' should be replaced with 'foundation model' for curriculum consistency"
+    ],
+    "reading": { "target_word_range": [1200, 1600], "target_minutes_range": [6, 8] },
+    "quiz": { "min_questions": 5, "max_questions": 6, "include_short_answer": false }
+  },
+  "expected_delivery_minutes": 8,
+  "status": "corpus_drafted"
+}

@@ -1,0 +1,104 @@
+{
+  "critic": "quiz-critic",
+  "topic_id": "14.9",
+  "cycle": 2,
+  "at": "2026-06-16T00:00:00Z",
+  "passed": true,
+  "checks": {
+    "positional_bias": {
+      "passed": true,
+      "distribution": {"0": 1, "1": 2, "2": 1, "3": 1},
+      "max_share": 0.40,
+      "meta_gift_desync": false,
+      "notes": "Derived positions from .gift match sidecar exactly. max_share is exactly 0.40 — threshold is strictly >0.40, so this is a pass."
+    },
+    "length_bias": {
+      "passed": true,
+      "longest_correct_rate": 0.00,
+      "baseline": 0.25,
+      "per_question": [
+        {
+          "id": "q1",
+          "correct_len": 66,
+          "distractor_mean": 68.67,
+          "threshold": 82.4,
+          "longest_correct": false
+        },
+        {
+          "id": "q2",
+          "correct_len": 77,
+          "distractor_mean": 79.33,
+          "threshold": 95.2,
+          "longest_correct": false
+        },
+        {
+          "id": "q3",
+          "correct_len": 80,
+          "distractor_mean": 82.33,
+          "threshold": 98.8,
+          "longest_correct": false
+        },
+        {
+          "id": "q4",
+          "correct_len": 90,
+          "distractor_mean": 83.33,
+          "threshold": 100.0,
+          "longest_correct": false
+        },
+        {
+          "id": "q5",
+          "correct_len": 80,
+          "distractor_mean": 88.67,
+          "threshold": 106.4,
+          "longest_correct": false
+        }
+      ],
+      "notes": "0 of 5 MCQs have a correct answer exceeding 120% of the distractor mean. Cycle 1 failure (rate 0.80) fully resolved by the length-balance regeneration. Feedback stripped before measurement on all answer lines."
+    },
+    "distractor_plausibility": {
+      "passed": true,
+      "absurd_rate": 0.00,
+      "total_distractors": 15,
+      "absurd_count": 0,
+      "per_question_scores": {
+        "q1": [3, 3, 3],
+        "q2": [3, 3, 3],
+        "q3": [3, 3, 3],
+        "q4": [3, 2, 4],
+        "q5": [3, 4, 3]
+      },
+      "weakest_questions": [],
+      "notes": "All 15 distractors score 2 or above. q4-d2 (streaming for quota errors) is the weakest at 2 — wrong but the mechanism is clearly unrelated to quota exhaustion. No score-1 (absurd) distractors found."
+    },
+    "objective_coverage": {
+      "passed": true,
+      "uncovered_objectives": [],
+      "orphan_questions": [],
+      "coverage_map": {
+        "LO1_token_cost_model": ["q1"],
+        "LO2_ttft_streaming": ["q2"],
+        "LO3_cost_reduction_strategies": ["q3"],
+        "LO4_reliability_patterns": ["q4"],
+        "LO5_cost_latency_quality_triangle": ["q5"]
+      },
+      "notes": "All 5 LOs covered by at least one question. Soft: LO3 covers prompt caching trade-off only; model tier routing is not separately tested. Soft: LO4 covers rate-limit failure mode only; context window overflow and LLM downtime modes from the full LO description have no dedicated questions. These are soft — the LO text is satisfied at the concept level."
+    },
+    "beginner_scope": {
+      "passed": true,
+      "out_of_scope_questions": [],
+      "jargon_in_stem": [],
+      "unfair_distractors": [],
+      "notes": "All stems are self-contained and readable without prior knowledge beyond this topic. TTFT is spelled out in the scenario context of q2. Exponential backoff with jitter is the named answer, not a prerequisite in the stem. No hard out-of-scope findings."
+    }
+  },
+  "auto_correction_applied": {
+    "shuffle_round_2": false
+  },
+  "hard_findings": [],
+  "soft_findings": [
+    "LO3 coverage partial: model tier selection as a cost-reduction strategy has no dedicated question; only prompt caching trade-off is tested.",
+    "LO4 coverage partial: context window overflow and LLM service downtime failure modes have no dedicated questions; only the rate-limit + exponential-backoff pairing is tested.",
+    "q4-d2 (streaming as a quota fix) is the weakest distractor (score 2/4) — plausible but the mechanism mismatch is fairly obvious to a careful reader."
+  ],
+  "verdict": "PASS — all five checks clean. Length bias fully resolved in cycle 2 (longest_correct_rate 0.00, down from 0.80 in cycle 1). Positional bias clean (max_share 0.40). All distractors plausible (absurd_rate 0.00). All 5 LOs covered. Beginner scope maintained. Three soft findings noted but none rise to a hard fail."
+}

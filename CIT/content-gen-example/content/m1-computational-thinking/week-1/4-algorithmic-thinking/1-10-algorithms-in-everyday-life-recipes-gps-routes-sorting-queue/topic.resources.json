@@ -1,0 +1,30 @@
+{
+  "topic_id": "1.10",
+  "captured_at": "2026-06-22T07:10:00Z",
+  "captured_by": "namratas@revature.com",
+  "resources_source": "web_search",
+  "web_search_query": "algorithms in everyday life recipes GPS routes sorting queues examples",
+  "resources": [
+    {
+      "type": "url",
+      "value": "https://www.learning.com/blog/7-examples-of-algorithms-in-everyday-life-for-students/",
+      "role": "primary",
+      "source": "web_search",
+      "notes": "Student-facing education platform; covers recipes, GPS, sorting with clear worked examples"
+    },
+    {
+      "type": "url",
+      "value": "https://mimo.org/glossary/programming-concepts/algorithm",
+      "role": "supporting",
+      "source": "web_search",
+      "notes": "Canonical CS education glossary entry; clean definition + real-life examples"
+    },
+    {
+      "type": "url",
+      "value": "https://www.enjoyalgorithms.com/blog/introduction-to-algorithms/",
+      "role": "supporting",
+      "source": "web_search",
+      "notes": "CS education blog covering algorithm properties + everyday applications including GPS and sorting"
+    }
+  ]
+}

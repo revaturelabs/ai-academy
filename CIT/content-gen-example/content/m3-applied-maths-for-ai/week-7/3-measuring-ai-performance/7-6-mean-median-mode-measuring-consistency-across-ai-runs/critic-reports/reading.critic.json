@@ -1,0 +1,106 @@
+{
+  "critic": "reading-critic",
+  "topic_id": "7.6",
+  "artifact": "reading",
+  "run_at": "2026-06-23T00:00:00Z",
+  "passed": true,
+  "verdict": "PASS — all hard checks clear; 1 minor soft finding (abstract-first ordering in individual measure subsections, below escalation threshold); no scope creep, no forward refs, no assessment references, Khan Academy cited, length within target.",
+  "checks": {
+    "format": {
+      "passed": true,
+      "frontmatter_present": false,
+      "meta_sidecar_missing": false,
+      "section_template_violation": false,
+      "sections_found": ["Overview", "Key Concepts", "Worked Example", "In Practice", "Key Takeaways", "References"],
+      "sections_expected": ["Overview", "Key Concepts", "Worked Example", "In Practice", "Key Takeaways", "References"],
+      "notes": "No frontmatter; sidecar parses cleanly; all six sections present in correct order."
+    },
+    "length": {
+      "passed": true,
+      "word_count_reported": 1263,
+      "word_count_range": [1200, 1600],
+      "minutes_at_200wpm": 6.3,
+      "minutes_range": [6, 8],
+      "notes": "1263 words (200 wpm → 6.3 min). Both within target."
+    },
+    "citations": {
+      "passed": true,
+      "primary_resource_cited": true,
+      "primary_resource": "https://www.khanacademy.org/math/statistics-probability/summarizing-quantitative-data/mean-median-basics/a/mean-median-and-mode-review",
+      "primary_citation_marker": "[1]",
+      "primary_citation_occurrences": 7,
+      "bibliography_present": true,
+      "inline_markers": ["[1]", "[2]", "[3]"],
+      "bibliography_entries": ["[1]", "[2]", "[3]"],
+      "orphan_markers": [],
+      "orphan_bibliography_entries": [],
+      "notes": "Khan Academy [1] cited at lines 15, 22, 29, 44, 79 and more. All inline markers have bibliography entries; no orphans."
+    },
+    "forward_references": {
+      "passed": true,
+      "violations": [],
+      "notes": "All terms used ('stochastic', 'temperature', 'probability distribution', 'tokens', 'deterministic') are from the permitted prior-concept list (7.1–7.5). No concepts beyond 7.6 introduced."
+    },
+    "faithfulness": {
+      "passed": true,
+      "assertions_sampled": 10,
+      "unsupported_count": 0,
+      "threshold": 2,
+      "sampled_assertions": [
+        {"assertion": "Mean = sum divided by count; 10-score example (1,1,0,1,1,0,1,0,1,1) → mean 0.7", "supported": true, "corpus_section": "5.1"},
+        {"assertion": "Median sorted scores: two middle values (pos 5+6) both 1 → median 1", "supported": true, "corpus_section": "5.2"},
+        {"assertion": "Mode text example: Yes 6, No 3, Partially 1 → mode 'Yes'", "supported": true, "corpus_section": "5.3"},
+        {"assertion": "Worked example 4,5,4,4,5,4,3,4,4,5 → mean 4.2, median 4, mode 4", "supported": true, "corpus_section": "5.4"},
+        {"assertion": "Temperature table: low → strong mode/stable mean; high → weak mode/variable mean", "supported": true, "corpus_section": "5.5"},
+        {"assertion": "Strong mode at low temperature signals near-deterministic behaviour", "supported": true, "corpus_section": "5.5"},
+        {"assertion": "Mode works on text categories where mean/median do not apply", "supported": true, "corpus_section": "5.3"},
+        {"assertion": "Run at least 10 trials before drawing conclusions", "supported": true, "corpus_section": "8"},
+        {"assertion": "Reporting only the mean hides problems; all three measures should appear together", "supported": true, "corpus_section": "8"},
+        {"assertion": "Mean close to median + strong mode = signal of consistent AI system", "supported": true, "corpus_section": "5.4"}
+      ],
+      "notes": "All 10 sampled assertions trace directly to corpus sections."
+    },
+    "beginner_readability": {
+      "passed": true,
+      "findings": [
+        {
+          "code": "abstract_first",
+          "severity": "soft",
+          "detail": "Individual measure subsections (e.g. '### Mean — the overall average') present the formal definition before the example. The Key Concepts lead paragraph uses a lens analogy first, partially mitigating this. Isolated to three subsection headers; overall reading is concrete and well-paced.",
+          "line_range": "13–30"
+        }
+      ],
+      "undefined_terms": [],
+      "undefined_terms_count": 0,
+      "jargon_dump": false,
+      "abstract_first": true,
+      "academic_register": false,
+      "notes": "1 soft finding (abstract-first on subsection level). 'Stochastic' and 'deterministic' reused from prior topics (7.4) — no redefinition required. All other terms defined on first use with bold-term format."
+    },
+    "formatting": {
+      "passed": true,
+      "findings": [],
+      "wall_of_text": false,
+      "unlisted_sequence": false,
+      "no_inline_examples": false,
+      "notes": "Paragraphs consistently 2–4 sentences. Worked Example uses numbered steps. In Practice uses bullet lists. Tables used for comparisons. Inline examples appear alongside concept introductions in Key Concepts."
+    },
+    "assessment_reference": {
+      "passed": true,
+      "violations": [],
+      "notes": "No assessment IDs, due-week references, or grade weights appear in the reading. (Corpus had A3 references; these were correctly excluded from the reading.)"
+    },
+    "scope": {
+      "passed": true,
+      "scope_creep": false,
+      "findings": [],
+      "prohibited_terms_checked": ["variance", "standard deviation", "IQR", "red-teaming", "adversarial", "benchmark"],
+      "prohibited_terms_found": [],
+      "notes": "Reading stays entirely within mean/median/mode. No variance, std-dev, or IQR taught. 'Red-teaming', 'adversarial', and 'benchmark' (corpus soft findings) are absent from the reading."
+    }
+  },
+  "soft_findings_count": 1,
+  "hard_fail_escalation": false,
+  "escalation_note": "1 soft finding (abstract_first) is below the 3-finding escalation threshold and no scope_creep was found; no hard-fail escalation triggered.",
+  "gold_example_note": "No gold example found in .claude/references/gold-examples/reading/ — assessment made against written standards in artifact-mix.json and SKILL.md."
+}

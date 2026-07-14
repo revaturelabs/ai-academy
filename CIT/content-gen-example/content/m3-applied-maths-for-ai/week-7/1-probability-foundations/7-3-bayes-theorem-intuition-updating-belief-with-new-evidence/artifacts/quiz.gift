@@ -1,0 +1,41 @@
+$CATEGORY: CIT/M3/week-7/7-3-bayes-theorem-intuition-updating-belief-with-new-evidence
+
+::q1:: In plain language, what does Bayes' theorem do? {
+~It introduces a completely new mathematical concept with no connection to the conditional probability you studied in topic 7.2.#No — Bayes' theorem is conditional probability reorganised; it is derived directly from the P(A|B) formula you already know.
+=It updates an existing prior belief into a posterior belief when new evidence arrives, using the likelihood of that evidence.#Correct — the theorem's entire job is to move your belief from "before evidence" to "after evidence" in a mathematically principled way.
+~It computes the likelihood P(B|A) directly from the evidence, giving you the final probability answer you need.#No — the likelihood is an input to the calculation, not the output. The output is the posterior P(A|B), which also depends on the prior and P(B).
+~It replaces the prior completely once evidence is available, so only the new evidence determines the updated belief.#No — the prior is never discarded. Even a strong piece of evidence only shifts the belief proportionally; the prior always contributes to the posterior.
+#### Tests the core purpose of Bayes' theorem — updating prior to posterior (corpus §5.1, §5.3).
+}
+
+::q2:: Which statement correctly identifies what the likelihood P(B | A) represents in Bayes' theorem? {
+~P(B | A) is the posterior — the updated belief in claim A after observing evidence B.#No — the posterior is P(A | B), the left-hand side of Bayes' theorem. P(B | A) is an input, not the result you are computing.
+~P(B | A) is the prior — your initial estimate of how probable claim A is before seeing any evidence.#No — the prior is P(A), your starting belief in A before evidence. P(B | A) describes how probable the evidence B is if A were already true.
+~P(B | A) equals the posterior P(A | B) because the order inside the conditional notation does not change the answer.#No — P(A | B) and P(B | A) are generally different numbers. Confusing them is exactly the error Bayes' theorem is designed to help you avoid.
+=P(B | A) is the likelihood — how probable the evidence B is, assuming the claim A is actually true.#Correct — the likelihood asks "if A were the case, how often would I see evidence like B?" It is the bridge that connects prior to posterior.
+#### Tests identification of the likelihood's role among the three named inputs (corpus §5.2, §5.3).
+}
+
+::q3:: In the rain-and-clouds worked example, P(rain) = 0.3 and P(dark clouds | rain) = 0.9. After applying Bayes' theorem with P(dark clouds) = 0.41, which value is closest to the posterior P(rain | dark clouds)? {
+=Approximately 0.66 — the evidence of dark clouds raises the probability of rain from 30% to around 66%.#Correct — 0.9 × 0.3 / 0.41 ≈ 0.66. Dark clouds are a strong signal of rain, so the posterior jumps well above the prior.
+~Approximately 0.90 — the likelihood is the strongest number in the formula, so the posterior equals the likelihood.#No — the likelihood is an input, not the answer. The posterior is computed as likelihood × prior / P(evidence); using only the likelihood ignores the prior and P(B).
+~Approximately 0.30 — the prior does not change because one observation is not enough to shift a probability meaningfully.#No — one clear piece of evidence does shift the probability. The prior of 0.30 is your belief before looking outside; after seeing dark clouds, the calculation yields about 0.66.
+~Approximately 0.27 — you multiply the likelihood by the prior and that product is the posterior.#No — 0.27 is only the numerator (0.9 × 0.3). To get the posterior you must divide by P(dark clouds) = 0.41, giving 0.27 / 0.41 ≈ 0.66.
+#### Tests the ability to trace the rain-and-clouds worked example and read the correct posterior from the calculation (corpus §5.4).
+}
+
+::q4:: The corpus states that Bayes' theorem is "conditional probability reorganised." What does this mean? {
+~Bayes' theorem introduces a new type of probability that goes beyond conditional probability and replaces P(A|B) with a more precise formula.#No — Bayes' theorem does not introduce new mathematics. It rewrites the standard conditional probability formula P(A|B) = P(A and B)/P(B) using the substitution P(A and B) = P(B|A) × P(A).
+~Bayes' theorem only applies to special problem domains such as medicine and AI, whereas conditional probability is general.#No — both are completely general. Bayes' theorem is applicable anywhere you have a prior, a likelihood, and evidence — it is not domain-specific.
+=It uses the fact that P(A and B) = P(B|A) × P(A) to express P(A|B) in terms of the reverse conditional P(B|A) and the prior P(A).#Correct — the only algebra is substituting P(A and B) in the standard formula. The result is still a conditional probability, just written from the "other direction."
+~It simplifies conditional probability by removing the need to compute P(B), making the formula shorter and easier to apply.#No — P(B) remains in the denominator of Bayes' theorem and must be computed. Removing it would change the answer; the formula is reorganised, not simplified.
+#### Tests understanding that Bayes' theorem is derived from conditional probability via one algebraic substitution (corpus §5.3, §5.5).
+}
+
+::q5:: Which pair correctly gives one everyday example and one AI example of Bayesian updating in action? {
+~Everyday\: computing how many outcomes are in a sample space; AI\: counting the number of tokens in a sentence before running a model.#No — neither describes updating a belief with evidence. Counting outcomes and counting tokens are enumeration tasks, not belief-update reasoning.
+=Everyday\: a doctor updates the probability of a diagnosis after a test result comes back positive; AI\: an email spam filter raises its confidence that a message is unwanted after seeing specific words in the subject line.#Correct — both follow the Bayesian pattern: start with a prior belief, observe evidence, apply a likelihood, arrive at an updated posterior.
+~Everyday\: listing every possible weather outcome to build a complete sample space; AI\: multiplying two independent probabilities to find their joint probability.#No — building a sample space is a setup step, not Bayesian updating. Multiplying independent probabilities does not involve a prior or posterior either.
+~Everyday\: knowing the probability of dark clouds given rain; AI\: training a language model by adjusting weights on a large text corpus.#No — knowing P(dark clouds|rain) is a likelihood value, not an update process. Training a model on data is gradient-descent optimisation, not Bayesian belief updating in the sense covered here.
+#### Tests the ability to recognise Bayesian updating in real-world and AI contexts (corpus §5.6, §7).
+}

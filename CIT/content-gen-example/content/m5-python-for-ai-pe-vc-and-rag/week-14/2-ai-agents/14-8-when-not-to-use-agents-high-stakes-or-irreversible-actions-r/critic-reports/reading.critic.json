@@ -1,0 +1,40 @@
+{
+  "critic": "reading-critic",
+  "topic_id": "14.8",
+  "cycle": 1,
+  "at": "2026-06-16T00:00:00Z",
+  "passed": true,
+  "checks": {
+    "format_discipline": {
+      "passed": true,
+      "notes": "First non-empty line is exactly '# When NOT to use agents — high-stakes or irreversible actions require human oversight'. No YAML frontmatter. reading.meta.json exists and is valid JSON. Sections are exactly: Overview, Key Concepts, Worked Example, In Practice, Key Takeaways, References — in the correct order."
+    },
+    "length_budget": {
+      "passed": true,
+      "word_count": 2166,
+      "minutes": 11,
+      "target_range_words": [1800, 2200],
+      "target_range_min": [9, 11]
+    },
+    "citation_discipline": {
+      "passed": true,
+      "primary_resources_cited": ["[1]", "[2]", "[3]", "[4]", "[5]"],
+      "notes": "All five primary resources are cited in-text and appear in the References section. [1] Anthropic RSP cited across Overview, Key Concepts, Worked Example, In Practice, Key Takeaways. [2] EU AI Act cited in Key Concepts (cascading errors paragraph) and In Practice (radiology, email examples). [3] Lilian Weng cited in Key Concepts and Worked Example. [4] Anthropic Model Card cited in Key Concepts autonomy spectrum and references. [5] NIST AI RMF cited in Key Concepts (cascading errors) and In Practice (trading, radiology). All five entries appear in the References section with correct URLs."
+    },
+    "forward_references": {
+      "passed": true,
+      "violations": []
+    },
+    "beginner_readability": {
+      "passed": true,
+      "findings": []
+    },
+    "faithfulness": {
+      "passed": true,
+      "notes": "Every claim in the reading traces to a corresponding passage in topic_corpus.md. The 2 a.m. refund scenario is a faithful condensation of corpus section 4 and section 6. Irreversible and high-stakes action definitions and examples match corpus section 5.1. Three failure modes match corpus section 5.2. HITL four-step flow matches corpus section 5.3. Autonomy spectrum four positions and placement guidance match corpus section 5.4. Decision matrix Q5 extension matches corpus section 5.5. Three In Practice examples match corpus section 7. Key Takeaways match corpus section 10. No claims added beyond corpus. The reading correctly omits the Implementation, Best Practices, Hands-On Exercise, and Next Steps sections — appropriate condensation, no faithfulness violation."
+    }
+  },
+  "hard_findings": [],
+  "soft_findings": [],
+  "verdict": "PASS — all six checks pass with no hard or soft findings. The reading is correctly formatted (exact required H1 title, no frontmatter, 6 sections in order), within the 1800-2200 word / 9-11 minute budget (2166w, 11 min), cites all five primary resources in-text and in References, introduces no forward content from 14.9+, defines all five required concepts (irreversible action, high-stakes action, HITL, autonomy spectrum, approval gate) before use with no jargon dumps, and is fully faithful to the corpus with no claims beyond the source material. EU AI Act and NIST AI RMF are used as supporting citations only (one sentence each), not taught as regulatory content."
+}

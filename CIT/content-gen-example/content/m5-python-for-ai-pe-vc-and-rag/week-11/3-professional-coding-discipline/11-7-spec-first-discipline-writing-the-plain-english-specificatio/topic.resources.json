@@ -1,0 +1,43 @@
+{
+  "topic_id": "11.7",
+  "captured_at": "2026-06-13T04:30:00Z",
+  "captured_by": "bhuvaneshwarim@revature.com",
+  "resources_source": "human",
+  "resources": [
+    {
+      "type": "url",
+      "value": "https://martinfowler.com/articles/on-the-nature-of-software.html",
+      "role": "primary",
+      "source": "human",
+      "notes": "Fowler — the relationship between intent/specification and implementation"
+    },
+    {
+      "type": "url",
+      "value": "https://www.joelonsoftware.com/2000/10/02/painless-functional-specifications-part-1-why-bother/",
+      "role": "primary",
+      "source": "human",
+      "notes": "Joel on Software — why writing the spec before the code matters"
+    },
+    {
+      "type": "url",
+      "value": "https://www.promptingguide.ai/introduction/basics",
+      "role": "primary",
+      "source": "human",
+      "notes": "Prompting guide — clear intent/spec is prerequisite to effective prompting"
+    },
+    {
+      "type": "url",
+      "value": "https://realpython.com/python-comments-guide/",
+      "role": "primary",
+      "source": "human",
+      "notes": "Real Python — code comments as embedded specification; comment-before-code discipline"
+    },
+    {
+      "type": "url",
+      "value": "https://docs.anthropic.com/en/docs/build-with-claude/prompt-engineering/overview",
+      "role": "primary",
+      "source": "human",
+      "notes": "Anthropic prompt engineering overview — spec quality determines prompt quality"
+    }
+  ]
+}

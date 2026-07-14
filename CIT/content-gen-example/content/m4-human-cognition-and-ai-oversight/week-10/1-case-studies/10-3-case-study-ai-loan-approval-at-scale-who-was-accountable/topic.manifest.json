@@ -1,0 +1,41 @@
+{
+  "type": "topic",
+  "id": "10.3",
+  "title": "Case study: AI loan approval at scale — who was accountable?",
+  "slug": "10-3-case-study-ai-loan-approval-at-scale-who-was-accountable",
+  "position_in_module": 3,
+  "week_num": 10,
+  "session_name": "Cognition in Practice — Case Studies",
+  "module": {
+    "position": 1,
+    "slug": "1-case-studies",
+    "title": "Case Studies"
+  },
+  "course": {
+    "code": "M4",
+    "slug": "m4-human-cognition-and-ai-oversight",
+    "title": "Human Cognition and AI Oversight"
+  },
+  "next_assessment": {
+    "id": "A3",
+    "due_week": 10,
+    "title": "Maths and Cognition Lab Report",
+    "weight": "15%"
+  },
+  "paths": {
+    "corpus": "topic_corpus.md",
+    "resources": "topic.resources.json",
+    "progress": "topic.progress.json",
+    "artifacts_dir": "artifacts/",
+    "critic_reports_dir": "critic-reports/"
+  },
+  "artifact_plan": {
+    "diagram": true,
+    "diagram_intent": "Flowchart showing the AI loan approval pipeline with accountability owners labelled at each stage, gaps marked at organisational handoff points",
+    "profile": "standard",
+    "reading": { "target_min_minutes": 6, "target_max_minutes": 8, "target_word_range": [1200, 1600] },
+    "quiz": { "min_questions": 5, "max_questions": 6, "include_short_answer": false }
+  },
+  "expected_delivery_minutes": 8,
+  "status": "corpus_drafted"
+}

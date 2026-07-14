@@ -1,0 +1,41 @@
+$CATEGORY: CIT/M5/week-12/12-4-lists-storing-and-iterating-over-multiple-values
+
+::q1::[html]Which line of Python code correctly creates a list called <code>marks</code> that stores the three numbers 72, 88, and 65? {
+~marks = (72, 88, 65)#Not quite — parentheses create a tuple, not a list. Lists use square brackets.
+~marks = {72, 88, 65}#Not quite — curly braces create a set, not a list. Lists use square brackets.
+=marks = [72, 88, 65]#Correct — square brackets with comma-separated values create a list in Python.
+~marks = 72, 88, 65#Not quite — this creates a tuple without brackets, not a list.
+#### Tests list creation with square-bracket syntax (corpus §5.1).
+}
+
+::q2::[html]A program has the list <code>scores = [10, 20, 30, 40]</code>. Which expression reads the value <code>30</code> from this list? {
+~scores[3]#Not quite — index 3 holds the value 40, not 30. Remember Python counts from zero.
+=scores[2]#Correct — Python indexes start at zero, so index 2 is the third item, which is 30.
+~scores[1]#Not quite — index 1 holds the value 20, not 30.
+~scores(2)#Not quite — parentheses call a function; to access a list item you must use square brackets.
+#### Tests zero-based index access on a list (corpus §5.2).
+}
+
+::q3::[html]A program has <code>marks = [72, 88, 65, 90, 55]</code>. Which line changes the value at index 2 to 70? {
+=marks[2] = 70#Correct — assigning a new value to marks[2] replaces the item at that index position.
+~marks[3] = 70#Not quite — this changes the item at index 3 (which holds 90), not the item at index 2.
+~marks.update(2, 70)#Not quite — lists have no update() method; you modify an item by assigning directly to its index.
+~marks = marks + [70]#Not quite — this appends 70 to the end of the list and does not change any existing item.
+#### Tests modifying a specific list item by assigning to its index (corpus §5.3).
+}
+
+::q4::[html]A program has <code>scores = [83, 91, 74]</code>. Which <code>for</code> loop header correctly iterates over every item in the list, one at a time? {
+~for scores in score\:#Not quite — the list name and the loop variable are swapped here; Python would look for a variable called score that does not exist.
+=for score in scores\:#Correct — this loop runs once for each item in scores, placing the current item into the variable score each pass.
+~for score in scores()#Not quite — scores is a list, not a function; adding parentheses tries to call it as a function, which causes an error.
+~for score in range(scores)\:#Not quite — range() expects a number, not a list; to iterate directly over list items use for item in list.
+#### Tests the for-item-in-list iteration pattern (corpus §5.6).
+}
+
+::q5::[html]After running the code below, what does the final <code>print</code> show?<br><code>items = [5, 10]<br>items.append(15)<br>print(len(items))</code> {
+~2#Not quite — the list started with 2 items, but append() added one more before len() was called.
+~4#Not quite — only one item was appended; the list has 3 items total, not 4.
+=3#Correct — append() added 15 to the end, making the list [5, 10, 15], so len() returns 3.
+~The last index of items, which is 2#Not quite — len() returns the count of items (3), not the last index; the last valid index would be 2, but that is different from the count.
+#### Tests that append() adds to the end and len() returns the item count (corpus §5.4, §5.5).
+}

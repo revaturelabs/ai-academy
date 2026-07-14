@@ -1,0 +1,30 @@
+{
+  "topic_id": "1.3",
+  "captured_at": "2026-06-19T00:00:00Z",
+  "captured_by": "namratas@revature.com",
+  "resources_source": "web_search",
+  "web_search_query": "probabilistic systems same input different outputs computer science explainer",
+  "resources": [
+    {
+      "type": "url",
+      "value": "https://milvus.io/ai-quick-reference/how-does-probabilistic-reasoning-differ-from-deterministic-reasoning",
+      "role": "primary",
+      "source": "web_search",
+      "notes": "Canonical Q&A reference — core contrast between probabilistic and deterministic reasoning"
+    },
+    {
+      "type": "url",
+      "value": "https://www.alphanome.ai/post/probabilistic-vs-deterministic-models-in-ai-ml-a-detailed-explanation",
+      "role": "supporting",
+      "source": "web_search",
+      "notes": "Practitioner-level ML explainer with good depth on model behaviour"
+    },
+    {
+      "type": "url",
+      "value": "https://www.gaine.com/blog/probabilistic-and-deterministic-results-in-ai-systems",
+      "role": "supporting",
+      "source": "web_search",
+      "notes": "Business/applied angle — real-world framing of probabilistic vs deterministic AI outputs"
+    }
+  ]
+}

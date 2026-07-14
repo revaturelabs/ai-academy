@@ -1,0 +1,30 @@
+{
+  "topic_id": "7.8",
+  "captured_at": "2026-06-23T00:00:00Z",
+  "captured_by": "namratas@revature.com",
+  "resources_source": "web_search",
+  "web_search_query": "precision machine learning classification metric beginner explained",
+  "resources": [
+    {
+      "type": "url",
+      "value": "https://developers.google.com/machine-learning/crash-course/classification/accuracy-precision-recall",
+      "role": "primary",
+      "source": "web_search",
+      "notes": "Google ML Crash Course — canonical first-party, precision formula and beginner examples"
+    },
+    {
+      "type": "url",
+      "value": "https://www.evidentlyai.com/classification-metrics/accuracy-precision-recall",
+      "role": "supporting",
+      "source": "web_search",
+      "notes": "Practical comparison with worked examples; precision vs accuracy"
+    },
+    {
+      "type": "url",
+      "value": "https://builtin.com/data-science/precision-and-recall",
+      "role": "supporting",
+      "source": "web_search",
+      "notes": "Editorial explainer — solid precision section, beginner-clear"
+    }
+  ]
+}

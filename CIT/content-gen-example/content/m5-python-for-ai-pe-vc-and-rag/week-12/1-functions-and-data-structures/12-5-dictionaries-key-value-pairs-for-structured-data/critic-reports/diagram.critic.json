@@ -1,0 +1,43 @@
+{
+  "critic": "diagram-critic",
+  "topic_id": "12.5",
+  "topic_title": "Dictionaries — key-value pairs for structured data",
+  "cycle": 1,
+  "at": "2026-06-14T00:00:00Z",
+  "passed": true,
+  "verdict": "PASS — cycle 1. Side-by-side panel layout renders correctly. Left panel (blue) shows list with three indexed slots [0]=72 / [1]=88 / [2]=65; right panel (green) shows dictionary with three labelled key-value slots 'name'→Alice / 'score'→88 / 'grade'→B; gold 'vs' hub in centre. The index-vs-key contrast is immediately visible to a zero-background learner. No scope creep (no nested dicts, API patterns, or LLM nodes). All 7 nodes carry plain-language labels. Colour coding is consistent with project palette (blue=list, green=dict, gold=contrast marker). PNG rendered at 12 KB via mmdc — visually inspected and passes.",
+  "checks": {
+    "node_count": {
+      "passed": true,
+      "count": 7,
+      "range": [3, 8],
+      "nodes": ["L0: [0]=72", "L1: [1]=88", "L2: [2]=65", "VS: vs", "DK1: name→Alice", "DK2: score→88", "DK3: grade→B"]
+    },
+    "label_clarity": {
+      "passed": true,
+      "findings": [],
+      "notes": "All labels are plain English. No unexplained acronyms. Index notation [0]/[1]/[2] matches corpus §5.2 syntax. Key-value notation matches corpus §5.1 vocabulary."
+    },
+    "scope_discipline": {
+      "passed": true,
+      "findings": [],
+      "notes": "All nodes are within 12.5 concept space (list-index vs dict-key). No nested dict nodes, no API/LLM/RAG topology, no advanced operations beyond the headline."
+    },
+    "layout_intent": {
+      "passed": true,
+      "layout": "side-by-side panels (LR + TB subgraphs)",
+      "intent_match": "Side-by-side visual of a list (numbered slots) vs a dictionary (labelled key→value slots) — fully realised in the render."
+    },
+    "beginner_readability": {
+      "passed": true,
+      "findings": [],
+      "notes": "Contrast is visually immediate. A learner who has never seen a dictionary can tell at a glance: left = numbers, right = names. Colour coding reinforces the distinction."
+    },
+    "png_render": {
+      "passed": true,
+      "size_bytes": 12014,
+      "renderer": "mmdc",
+      "notes": "PNG rendered cleanly. No overlapping nodes, no truncated labels, no empty subgraph shells."
+    }
+  }
+}

@@ -1,0 +1,192 @@
+{
+  "critic": "corpus-critic",
+  "topic_id": "1.1",
+  "topic_title": "What is computation",
+  "depth_profile": "standard",
+  "at": "2026-06-19T12:00:00Z",
+  "passed": true,
+  "word_count_estimate": 3300,
+  "checks": {
+    "required_sections": {
+      "passed": true,
+      "detail": {
+        "section_3_learning_objectives": {
+          "present": true,
+          "word_count_approx": 73,
+          "threshold": 50,
+          "passed": true
+        },
+        "section_4_introduction": {
+          "present": true,
+          "word_count_approx": 130,
+          "threshold": 50,
+          "passed": true
+        },
+        "section_5_core_concepts": {
+          "present": true,
+          "word_count_approx": 1970,
+          "threshold": 100,
+          "passed": true,
+          "detail": "Five subsections (5.1–5.5) present with substantial elaboration: etymology + history, defined steps, computability, non-electronic examples, AI connection."
+        },
+        "section_10_key_takeaways": {
+          "present": true,
+          "word_count_approx": 115,
+          "threshold": 50,
+          "passed": true
+        }
+      }
+    },
+    "citation_density": {
+      "passed": true,
+      "hard_fail": false,
+      "resources_source": "web_search",
+      "mode": "strict",
+      "primary_resource_cited": {
+        "resource_index": 1,
+        "role": "primary",
+        "url": "https://thelearnnotes.com/blog/deterministic-and-probabilistic-systems-what-s-the-deal-",
+        "cited_at_least_once": true,
+        "citation_locations": [
+          "section 5.1: etymology and human-computers block [1]",
+          "section 5.1: systematic processing sentence [1]",
+          "section 5.1: I/P/O framework why-it-matters block [1]",
+          "section 5.1: history of human computers block [1]",
+          "section 5.1: scaling-up paragraph [1]",
+          "section 5.2: defined steps + recipe analogy [1] (multiple locations)",
+          "section 5.2: unambiguity in practice block [1]",
+          "section 5.3: computable definition [1]",
+          "section 5.3: table rows for all computable examples [1]",
+          "section 5.3: role of time paragraph [1]",
+          "section 5.4: all five device examples end with [1] or [1][2]",
+          "section 7: closing 'In every case' sentence [1]"
+        ]
+      },
+      "supporting_resources_cited": {
+        "resource_2_alphanome": {
+          "url": "https://www.alphanome.ai/post/probabilistic-vs-deterministic-models-in-ai-ml-a-detailed-explanation",
+          "cited_at_least_once": true,
+          "citation_locations": [
+            "section 5.3: AI/speech-recognition boundary note [2][3]",
+            "section 5.3: why the boundary matters paragraph [1][2]",
+            "section 5.4: vending machine [1][2]",
+            "section 5.4: closing sentence [1][2]",
+            "section 5.5: AI systems intro [2][3]",
+            "section 7: finance and healthcare examples [2][3]"
+          ]
+        },
+        "resource_3_gaine": {
+          "url": "https://www.gaine.com/blog/probabilistic-and-deterministic-results-in-ai-systems",
+          "cited_at_least_once": true,
+          "citation_locations": [
+            "section 5.3: AI/speech-recognition boundary note [2][3]",
+            "section 5.5: AI systems intro [2][3]",
+            "section 7: manufacturing [3]",
+            "section 7: finance [2][3]",
+            "section 7: healthcare [2][3]"
+          ]
+        }
+      },
+      "factual_assertion_coverage": {
+        "sections_checked": [5, 6, 7],
+        "methodology": "Paragraph-closing and inline [N] markers counted as covering the factual assertions in that block. Section 6 is instructional/exercise content with no standalone externally-sourced factual claims.",
+        "total_standalone_factual_assertions_estimated": 63,
+        "assertions_carrying_citation_marker_estimated": 55,
+        "coverage_pct": 87,
+        "required_pct": 60,
+        "passed": true
+      },
+      "fake_citations": [],
+      "uncited_assertions_residual": [
+        "Section 5.1 numbered list (lines 47–49): I/P/O definitions — follow directly from the cited definition block immediately above; no inline [N] on each bullet. Low severity.",
+        "Section 5.1 line 51: 'This input→process→output pattern is so fundamental' — transitional framing sentence, no [N]. Low severity.",
+        "Section 5.2 line 67: '...why languages like pseudocode and flowcharts exist' — reasoned inference, no [N]. Low severity.",
+        "Section 5.3 table lines for 'poem not computable' and 'weather not computable' — illustrative definitional examples, no [N]. Low severity.",
+        "Section 5.4 line 98: 'The word computer today almost always means an electronic device' — common knowledge framing, no [N]. Low severity."
+      ]
+    },
+    "sequence_drift": {
+      "passed": true,
+      "hard_fail": false,
+      "prior_topics": [],
+      "this_topic_concepts_introduced": [
+        "computation",
+        "input / process / output",
+        "computable",
+        "computational thinking",
+        "defined steps"
+      ],
+      "forward_references_found": [],
+      "compliant_mentions": [
+        "'deterministic' / 'probabilistic' (section 5.5 line 144): named with explicit topic pointers — 'you will explore deterministic systems and probabilistic systems in topics 1.2 and 1.3.' Mention-and-defer compliant (≤1 sentence + deferral).",
+        "'pseudocode' and 'flowcharts' (section 5.2 line 67): named with module-level deferral — 'you will cover those in later topics in this module.' Mention-and-defer compliant.",
+        "'AI (Artificial Intelligence)' (section 5.3 line 90): spelled out in parentheses on first use. Used as motivational application context, not taught as standalone concept. Compliant.",
+        "'feedback loop' (section 5.4 thermostat): labels the described observable behaviour in one sentence ('This loop — output affecting future input — is called a feedback loop'). Not taught at depth; no prior topic defines it. Illustrative-label compliant.",
+        "'algorithm': prior hard forward-reference confirmed removed — table row now reads 'A set of defined steps exists' (verified in current text). RESOLVED.",
+        "'trained model': prior hard forward-reference confirmed removed — manufacturing example now reads 'a set of rules that checks...' (verified in current text). RESOLVED.",
+        "'Excalidraw' (section 9): proper noun tool name, not a CS concept. Excluded from sequence-drift check."
+      ]
+    },
+    "length_sanity": {
+      "passed": true,
+      "hard_fail": false,
+      "word_count_estimate": 3300,
+      "profile": "standard",
+      "skill_canonical_range_lower": 3000,
+      "skill_canonical_range_upper": 4400,
+      "pct_from_lower_bound": 10,
+      "tolerance_threshold_pct": 30,
+      "tolerance_exceeded": false,
+      "detail": "Corpus is approximately 3300 words. The standard-profile range is 3000–4400 words. The corpus sits approximately 10% above the lower bound and 25% below the upper bound — well within the canonical range. Prior failure at ~1584 words has been resolved. The expansion covers: five fully elaborated subsections in section 5 (etymology, defined steps, computability table, five non-electronic device walk-throughs, AI connection), an Implementation thought-experiment in section 6, three rich domain patterns in section 7 (manufacturing, finance, healthcare), and a Best Practices section 8."
+    },
+    "topic_scope": {
+      "passed": true,
+      "hard_fail": false,
+      "findings": [],
+      "compliant_mentions": [
+        "Section 5.5 'Why this matters for AI': frames AI as an instance of computation (I/P/O). States learning about AI mechanism is deferred to a later module. Does not teach how AI learning or inference works. Motivational bridge only. Compliant.",
+        "'feedback loop' label (section 5.4 thermostat): one sentence, labels observable behaviour. No teaching of control-theory or feedback-control systems. Compliant.",
+        "'deterministic' / 'probabilistic' appearances (sections 5.4, 5.5, 7, 8): used as descriptive labels with explicit deferrals to topics 1.2/1.3. Not taught as standalone concepts. Compliant.",
+        "Section 7 real-world patterns (manufacturing, finance, healthcare): all three examples are structured to illustrate input→process→output at scale. They do not introduce concepts beyond the topic headline — they apply and reinforce it across domains. Compliant.",
+        "Prior hard scope_creep finding ('(or a trained model)' in manufacturing): confirmed removed from current text. RESOLVED.",
+        "Prior soft scope_creep finding ('applies learned patterns from thousands of previous scans' in healthcare): confirmed replaced with 'applies a set of rules built from many previous examples'. RESOLVED."
+      ]
+    },
+    "beginner_readability": {
+      "passed": true,
+      "hard_fail": false,
+      "finding_count": 2,
+      "findings": [
+        {
+          "code": "undefined_terms",
+          "severity": "soft",
+          "terms": ["deterministic"],
+          "detail": "'Deterministic' is used at section 5.4 ('The process is deterministic') before the explicit mention-and-defer in section 5.5. However, each use is immediately preceded by a plain-language description of the behaviour ('same elapsed-time input always produces the same phase output'), so a beginner can infer the meaning from context. Not a cold usage. Soft finding only."
+        },
+        {
+          "code": "undefined_terms",
+          "severity": "soft",
+          "terms": ["I/P/O"],
+          "detail": "'I/P/O' abbreviation first appears at section 5.1 ('The I/P/O model') two sentences after the full terms Input / Process / Output were defined in the numbered list immediately above. Low severity — the full expansion is present in the same paragraph. Soft finding only."
+        }
+      ],
+      "jargon_dumps": [],
+      "academic_register_issues": [],
+      "hedging_phrases_found": 0,
+      "escalation": "2 distinct findings — below the ≥3 threshold for hard-fail escalation. No escalation.",
+      "fixes_confirmed": [
+        {
+          "code": "undefined_terms",
+          "term": "algorithm",
+          "resolution": "Term removed from table row in section 5.3 (replaced with 'A set of defined steps exists'). Prior soft finding RESOLVED."
+        },
+        {
+          "code": "undefined_terms",
+          "term": "trained model",
+          "resolution": "Parenthetical removed from manufacturing example in section 7. Prior soft finding RESOLVED."
+        }
+      ]
+    }
+  },
+  "verdict": "PASS — All 6 checks pass. Word count approximately 3300 words, within the standard-profile canonical range of 3000–4400 words (prior hard-fail on length at ~1584 words is resolved). Check 1 (required sections): sections 3, 4, 5, 10 all present and non-trivial — PASS. Check 2 (citation density, strict mode): primary resource [1] cited in 12+ locations across sections 5–7; supporting resources [2] and [3] both cited; factual assertion coverage estimated at 87% against the 60% threshold; no fake citations — PASS. Check 3 (sequence drift): no forward references found; prior hard forward-references to 'algorithm' and 'trained model' confirmed removed; all borderline terms ('deterministic', 'pseudocode', 'flowcharts', 'feedback loop') are compliant mention-and-defer usage — PASS. Check 4 (length sanity): ~3300 words within [3000–4400] — PASS. Check 5 (topic scope): no scope_creep findings; prior hard and soft scope_creep findings confirmed resolved; section 5.5 and section 7 AI content used as motivational application context only, not teaching downstream concepts — PASS. Check 6 (beginner readability): 2 soft findings ('deterministic' used contextually before formal deferral, 'I/P/O' abbreviation introduced one paragraph after full expansion) — below the ≥3 escalation threshold, no hard fail — PASS. Corpus is ready to ground downstream reading and quiz artifacts."
+}

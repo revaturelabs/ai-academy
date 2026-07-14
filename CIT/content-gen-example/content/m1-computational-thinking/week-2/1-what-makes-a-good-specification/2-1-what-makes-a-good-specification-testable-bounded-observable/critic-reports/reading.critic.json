@@ -1,0 +1,83 @@
+{
+  "critic": "reading-critic",
+  "topic_id": "2.1",
+  "timestamp": "2026-06-16T00:00:00Z",
+  "passed": true,
+  "verdict": "All 17 checks pass. Reading is 1156 words (~5.8 min at 200 wpm), within the 1000–1400 w / 5–7 min target. All three primary resources cited inline and in the References bibliography with no orphan markers or entries. No forward references. All 10 sampled assertions trace to the corpus (0 unsupported). Beginner-readability is strong: 'specification' defined in the first sentence, every property introduced with a bold-term definition and a Good/Bad concrete example before any abstract rule, no jargon dump, no hedging phrases. Formatting: paragraphs stay ≤4 sentences, numbered list in Worked Example, bullet list in In Practice, inline Good/Bad pairs in Key Concepts. No assessment references (A1 / weight / due week not present — the gold example's offending line was correctly omitted). Scope is clean: only the four properties of a good specification are taught; the acceptance-criteria pattern in In Practice is a one-sentence real-world tie-in present verbatim in the corpus. Zero scope_creep findings. Zero checks-5/6 soft findings. Gold example (2-1-what-makes-a-good-specification.reading.md): the submitted reading matches the gold's structure, depth, tone, and beginner formatting density and meets that bar.",
+  "checks": {
+    "format": {
+      "frontmatter_present": false,
+      "meta_sidecar_missing": false,
+      "section_template_violation": false,
+      "sections_found": ["Overview", "Key Concepts", "Worked Example", "In Practice", "Key Takeaways", "References"],
+      "passed": true
+    },
+    "length": {
+      "word_count": 1156,
+      "estimated_read_minutes": 5.8,
+      "target_word_range": [1000, 1400],
+      "target_minute_range": [5, 7],
+      "within_word_range": true,
+      "within_minute_range": true,
+      "passed": true
+    },
+    "citations": {
+      "primary_resources_required": [
+        "https://mitsloanedtech.mit.edu/ai/basics/effective-prompts/",
+        "https://www.lakera.ai/blog/prompt-engineering-guide",
+        "https://www.pmi.org/blog/how-to-write-better-prompts-framework"
+      ],
+      "all_primary_cited": true,
+      "inline_markers": [1, 2, 3],
+      "bibliography_entries": [1, 2, 3],
+      "orphan_markers": [],
+      "orphan_bibliography": [],
+      "passed": true
+    },
+    "no_forward_references": {
+      "violations": [],
+      "passed": true
+    },
+    "faithfulness": {
+      "assertions_sampled": 10,
+      "unsupported_count": 0,
+      "unsupported_assertions": [],
+      "passed": true
+    },
+    "beginner_readability": {
+      "undefined_terms": [],
+      "undefined_terms_count": 0,
+      "jargon_dump": null,
+      "abstract_first": null,
+      "hedging_phrases": [],
+      "hedging_count": 0,
+      "findings": [],
+      "passed": true
+    },
+    "formatting": {
+      "wall_of_text": null,
+      "unlisted_sequence": null,
+      "no_inline_examples": null,
+      "bold_term_definitions_present": true,
+      "findings": [],
+      "passed": true
+    },
+    "assessment_reference": {
+      "violations": [],
+      "passed": true,
+      "note": "Gold example's A1 tie-in line correctly omitted"
+    },
+    "scope": {
+      "scope_creep": [],
+      "scope_creep_count": 0,
+      "passed": true
+    }
+  },
+  "gold_example_comparison": {
+    "gold_file": ".claude/references/gold-examples/reading/2-1-what-makes-a-good-specification.reading.md",
+    "verdict": "Meets gold bar. Matches gold sectioning, property order, Good/Bad pair pattern, beginner tone, paragraph length discipline, and bold-term definitions. Correctly omits the assessment reference present in the gold example (flagged defect per notes). Word count 1156 vs gold ~1200 — within acceptable range. Required URLs differ from gold (correct — resource set was fixed after gold was authored)."
+  },
+  "soft_findings_count": 0,
+  "hard_fail": false,
+  "escalation": "none"
+}

@@ -1,0 +1,67 @@
+{
+  "type": "topic",
+  "id": "12.7",
+  "title": "Writing to a file — open, write, close",
+  "slug": "12-7-writing-to-a-file-open-write-close",
+  "position_in_module": 2,
+  "week_num": 12,
+  "session_name": "Python Foundations II and Calling an LLM",
+  "module": {
+    "position": 2,
+    "slug": "2-working-with-files",
+    "title": "Working with Files"
+  },
+  "course": {
+    "code": "M5",
+    "slug": "m5-python-for-ai-pe-vc-and-rag",
+    "title": "Python for AI, PE, VC and RAG"
+  },
+  "next_assessment": {
+    "id": "A4",
+    "due_week": 13,
+    "title": "Python and Prompt Engineering Portfolio",
+    "weight": "20%"
+  },
+  "paths": {
+    "corpus": "topic_corpus.md",
+    "resources": "topic.resources.json",
+    "progress": "topic.progress.json",
+    "artifacts_dir": "artifacts/",
+    "critic_reports_dir": "critic-reports/"
+  },
+  "artifact_plan": {
+    "diagram": true,
+    "diagram_intent": "Side-by-side contrast: write mode ('w') erases file then writes from beginning; append mode ('a') adds to end. Both show open → write → auto-close lifecycle.",
+    "confirmed_profile": "standard",
+    "suggested_profile": "standard",
+    "profile_signals": ["write vs append branch creates natural contrast", "implementation section warranted for lab connection", ".writelines() adds a contrasting method", "newline gotcha needs demonstration", "7 core concept subsections fit standard depth"],
+    "reading": {
+      "target_word_range": [1200, 1600],
+      "target_minutes_range": [6, 8]
+    },
+    "quiz": {
+      "min_questions": 5,
+      "max_questions": 6,
+      "include_short_answer": false
+    },
+    "sections_approved": {
+      "2_prerequisites": true,
+      "3_learning_objectives": true,
+      "4_introduction": true,
+      "5_core_concepts": true,
+      "6_implementation": true,
+      "7_real_world_patterns": true,
+      "8_best_practices": true,
+      "9_hands_on_exercise": true,
+      "10_key_takeaways": true
+    },
+    "soft_findings_carry_forward": [
+      "§5.5 list comprehension — reading builder replace with plain for-loop appending \\n to new list",
+      "§6 Implementation — reading builder use parallel lists (names/scores) instead of list-of-tuples; no tuple syntax",
+      "§6.2 repr() debug step — reading builder remove entirely",
+      "§6.3 docstring — reading builder keep with one-line explanation or drop"
+    ]
+  },
+  "expected_delivery_minutes": 7,
+  "status": "scaffolded"
+}

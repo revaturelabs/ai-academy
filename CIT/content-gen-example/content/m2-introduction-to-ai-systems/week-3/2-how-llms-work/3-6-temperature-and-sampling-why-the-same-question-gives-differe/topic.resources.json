@@ -1,0 +1,30 @@
+{
+  "topic_id": "3.6",
+  "captured_at": "2026-06-17T00:00:00Z",
+  "captured_by": "bhuvaneshwarim@revature.com",
+  "resources_source": "web_search",
+  "web_search_query": "LLM temperature sampling explained beginner why same question different answers 2024",
+  "resources": [
+    {
+      "type": "url",
+      "value": "https://www.hopsworks.ai/dictionary/llm-temperature",
+      "role": "primary",
+      "source": "web_search",
+      "notes": "Clear authoritative definition — what temperature is, how it controls randomness in token selection"
+    },
+    {
+      "type": "url",
+      "value": "https://medium.com/thinking-sand/the-definitive-guide-to-llm-temperatures-abab311260a6",
+      "role": "supporting",
+      "source": "web_search",
+      "notes": "Comprehensive explainer — low/high temperature comparison, sampling mechanics, practical guidelines"
+    },
+    {
+      "type": "url",
+      "value": "https://www.vellum.ai/llm-parameters/temperature",
+      "role": "supporting",
+      "source": "web_search",
+      "notes": "Practical guide with use cases, top-p sampling, and when to use different settings"
+    }
+  ]
+}

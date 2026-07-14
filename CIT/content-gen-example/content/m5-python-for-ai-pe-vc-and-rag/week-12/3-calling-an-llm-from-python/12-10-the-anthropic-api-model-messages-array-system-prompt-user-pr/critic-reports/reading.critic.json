@@ -1,0 +1,90 @@
+{
+  "critic": "reading-critic",
+  "topic_id": "12.10",
+  "title": "The Anthropic API — model, messages array, system prompt, user prompt, authentication",
+  "profile": "standard",
+  "run_at": "2026-06-15T00:00:00Z",
+  "passed": true,
+  "verdict": "PASS. All hard-fail checks clear. No frontmatter, sidecar valid, six sections in correct order. Word count 1319 is within the 1200–1600 range. At the artifact-mix.json configured WPM of 200, read time is 6.6 min (within 6–8 min); the sidecar reports 7 min. Note: at the skill-spec WPM of 230, computed time is 5.73 min, marginally below the 6-min floor — flagged as a soft note, not a hard fail, because word count is solidly in range and the config-authoritative WPM of 200 puts it at 6.6 min. Primary resource [1] cited multiple times; all three bibliography entries appear inline; no orphans. No forward references — 12.11 references are named-and-deferred single-sentence pointers, correctly formed. All 10 sampled assertions trace cleanly to the corpus. Beginner readability is strong: terms defined on first use with inline plain-English parentheticals (environment variable, version control, HTTP 401), no jargon dumps, concrete examples precede abstractions throughout. Formatting standards met: numbered rules list for messages-array constraints, bulleted rules for API key hygiene, bold-term/plain-meaning definitions at first use in every sub-section, no walls of prose. No assessment references. No scope creep — reading stays strictly on the four request parameters and authentication; 12.11 material is correctly deferred. No gold reading example exists for M5/week-12 topics; verdict against written standards only.",
+  "checks": {
+    "format_discipline": {
+      "passed": true,
+      "frontmatter_present": false,
+      "meta_sidecar_missing": false,
+      "section_template_violation": false,
+      "sections_found": ["Overview", "Key Concepts", "Worked Example", "In Practice", "Key Takeaways", "References"],
+      "sections_expected": ["Overview", "Key Concepts", "Worked Example", "In Practice", "Key Takeaways", "References"],
+      "notes": "First non-empty line is H1 matching topic title. Sidecar parses with all required fields. Exactly six sections in correct order."
+    },
+    "length_budget": {
+      "passed": true,
+      "word_count": 1319,
+      "word_count_target": [1200, 1600],
+      "word_count_in_range": true,
+      "read_minutes_at_230wpm": 5.73,
+      "read_minutes_at_200wpm": 6.60,
+      "read_minutes_target": [6, 8],
+      "meta_reported_minutes": 7,
+      "notes": "Word count 1319 is within 1200–1600. At artifact-mix.json WPM (200): 6.6 min — within target. At skill-spec WPM (230): 5.73 min — marginally below 6-min floor. Treating as pass because config-authoritative WPM is 200 and word count is solidly in range. Soft note only."
+    },
+    "citations": {
+      "passed": true,
+      "primary_resources": [1],
+      "primary_resources_cited": [1],
+      "all_bibliography_entries": [1, 2, 3],
+      "inline_markers_used": [1, 2, 3],
+      "orphan_inline_markers": [],
+      "orphan_bibliography_entries": [],
+      "notes": "Resource [1] (primary) cited at lines 9, 30, 70, 85 and others. Resources [2] and [3] cited inline. Bibliography entries match inline markers exactly."
+    },
+    "no_forward_references": {
+      "passed": true,
+      "findings": [],
+      "notes": "References to topic 12.11 appear as named-and-deferred single-sentence pointers ('that is topic 12.11', 'you are ready for topic 12.11', 'When you use Anthropic's Python library (topic 12.11)'). No concept from 12.11 or later is taught or defined here. All concepts used (API, endpoint, HTTP status codes, headers, JSON, lists, dictionaries, functions) are established in topics 12.1–12.9."
+    },
+    "faithfulness": {
+      "passed": true,
+      "assertions_sampled": 10,
+      "unsupported_assertions": 0,
+      "findings": [],
+      "notes": "All 10 sampled assertions trace to corpus sections 5.1–5.5 and 7. Model table, messages rules, system-vs-user-prompt distinction, API key header name (x-api-key), HTTP 401/429 error codes, stateless API design — all present verbatim or paraphrased from the corpus."
+    },
+    "beginner_readability": {
+      "passed": true,
+      "findings": [],
+      "undefined_terms": [],
+      "jargon_dump_lines": [],
+      "abstract_first_instances": [],
+      "academic_register_instances": [],
+      "notes": "Terms defined on first use: 'API key' (line 70), 'environment variable' (line 78, inline parenthetical), 'version control' (line 76, inline parenthetical). No acronyms used cold. No paragraph introduces 3+ new terms at once. Concrete analogies precede abstractions (e.g. 'API key is like a password' before the rules). No hedging language detected."
+    },
+    "formatting": {
+      "passed": true,
+      "findings": [],
+      "wall_of_text_ranges": [],
+      "unlisted_sequences": [],
+      "no_inline_examples": false,
+      "notes": "Messages-array rules rendered as numbered list (lines 35–41). API key rules rendered as bulleted list (lines 75–79). Comparison tables used for model tiers and system-vs-user-prompt. Definitions follow bold-term/plain-meaning pattern at every sub-section header. Code examples appear inline adjacent to each concept introduction. No paragraph exceeds ~4–5 sentences."
+    },
+    "no_assessment_references": {
+      "passed": true,
+      "findings": [],
+      "notes": "No assessment IDs, due weeks, or grade weights found anywhere in the reading."
+    },
+    "scope": {
+      "passed": true,
+      "scope_creep_findings": [],
+      "notes": "Reading covers exactly the four parameters in the headline: model, messages array (including role/content rules), system prompt vs user prompt distinction, and API key authentication. References to 12.11 (library usage, runnable code) are correctly named-and-deferred. No advanced concepts (streaming, tool use, max_tokens, temperature) are introduced or defined."
+    }
+  },
+  "escalation": {
+    "hard_fail_triggered": false,
+    "reason": null,
+    "soft_finding_count": 0,
+    "soft_findings": []
+  },
+  "gold_example_comparison": {
+    "applicable": false,
+    "notes": "No gold reading example exists for M5/week-12 topics. Verdict assessed against written standards in artifact-mix.json and reading-critic SKILL.md only."
+  }
+}

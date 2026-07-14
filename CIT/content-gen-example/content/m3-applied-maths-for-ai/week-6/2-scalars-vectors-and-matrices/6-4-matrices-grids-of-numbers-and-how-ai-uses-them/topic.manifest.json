@@ -1,0 +1,49 @@
+{
+    "type":  "topic",
+    "id":  "6.4",
+    "title":  "Matrices — grids of numbers and how AI uses them",
+    "slug":  "6-4-matrices-grids-of-numbers-and-how-ai-uses-them",
+    "position_in_module":  3,
+    "week_num":  6,
+    "session_name":  "Numbers, Vectors and Meaning",
+    "module":  {
+                   "position":  2,
+                   "slug":  "2-scalars-vectors-and-matrices",
+                   "title":  "Scalars, Vectors and Matrices"
+               },
+    "course":  {
+                   "code":  "M3",
+                   "slug":  "m3-applied-maths-for-ai",
+                   "title":  "Applied Maths for AI"
+               },
+    "next_assessment":  {
+                            "id":  "A2",
+                            "due_week":  6,
+                            "title":  "AI Systems Essay",
+                            "weight":  "15%"
+                        },
+    "paths":  {
+                  "corpus":  "topic_corpus.md",
+                  "resources":  "topic.resources.json",
+                  "progress":  "topic.progress.json",
+                  "artifacts_dir":  "artifacts/",
+                  "critic_reports_dir":  "critic-reports/"
+              },
+    "artifact_plan":  {
+                          "diagram":  true,
+                          "diagram_intent":  "A labelled rows-x-columns grid showing row numbers, column numbers, and individual cells; one row highlighted as a feature vector; annotated with \u0027rows = data samples, columns = features\u0027",
+                          "depth_profile":  "standard",
+                          "depth_signals":  "5 sub-concepts in Core Concepts; Real-World Patterns + Implementation sections warranted; visual grid structure is a strong diagram signal.",
+                          "reading_word_range":  [
+                                                     600,
+                                                     900
+                                                 ],
+                          "quiz_question_range":  [
+                                                      4,
+                                                      5
+                                                  ],
+                          "human_approved_at_hitl2":  true
+                      },
+    "expected_delivery_minutes":  7,
+    "status":  "corpus_drafted"
+}

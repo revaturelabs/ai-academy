@@ -1,0 +1,49 @@
+$CATEGORY: CIT/M1/week-1/1-7-pseudocode-writing-logic-in-plain-english-before-writing-cod
+
+::q1:: Which of the following best describes what pseudocode is? {
+~A set of strict rules that a specific programming language enforces before it will run your instructions, such as requiring exact punctuation and keywords.#No — pseudocode has no language-enforced rules; that is precisely what makes it different from real code.
+=A structured, plain-English description of a process's logic that any person can read, written before translating to a real programming language.#Correct — pseudocode is human-readable, structured, and language-independent; it captures logic without language-specific syntax.
+~A diagram that shows how data flows between different parts of a program, using shapes like arrows, boxes, and decision diamonds.#No — a data-flow diagram is a different planning tool; pseudocode is written text, not a visual diagram.
+~A compressed version of real Python or JavaScript code that runs faster than the original by removing comments and whitespace.#No — pseudocode cannot be run by a computer at all; it is a planning tool for humans, not a code-compression format.
+#### Tests the core definition of pseudocode and why it exists (corpus §5.1).
+}
+
+::q2:: A beginner wants to write pseudocode for making a cup of tea. Which of the following is the best pseudocode for that task? {
+~def make_tea()\: boil(water); cup.add(teabag); cup.pour(water, temp=100); time.sleep(180)#No — this is actual Python code with language-specific syntax, not pseudocode.
+~Make tea by doing the necessary steps in the right way until the tea is ready.#No — this is too vague; pseudocode must be precise and ordered, not a summary sentence.
+~A flowchart with oval start and end nodes, rectangular process boxes, and diamond decision nodes.#No — that describes a diagram, not pseudocode; pseudocode is written text, not a visual chart.
+=START / Boil water / Place teabag in cup / Pour boiling water into cup / Wait 3 minutes / Remove teabag / END#Correct — this is structured, ordered plain English; it follows a clear sequence with no programming-language syntax.
+#### Tests the ability to write basic, real-world pseudocode using plain English and correct structure (corpus §5.1, §6).
+}
+
+::q3:: A piece of pseudocode repeats a block of steps until no items remain in a list, then prints a result. Which TWO building blocks does it use? {
+=Repetition and sequence#Correct — the loop is repetition (WHILE); the steps inside the loop, and the final PRINT, run one after another — that is sequence.
+~Sequence and abstraction#No — abstraction is a broader thinking strategy from topic 1.3, not one of the three pseudocode building blocks.
+~Decision and compilation#No — compilation is a real-code step (turning code into machine instructions), not a pseudocode building block.
+~Sequence and decomposition#No — decomposition is a problem-solving strategy from topic 1.5, not a pseudocode building block; look at what the loop does.
+#### Tests identification of the three core pseudocode building blocks — specifically repetition and sequence (corpus §5.3).
+}
+
+::q4:: Read this pseudocode and choose what a person following it manually would do last. / START / GET student_score / IF student_score >= 50 / PRINT "Pass" / OTHERWISE / PRINT "Fail" / END IF / END {
+~Get the student's score from the user, because that is the first step listed.#No — getting the score is the first action, not the last; trace the steps in order to find the final one.
+~Check whether the score is greater than or equal to 50, because that is the decision step.#No — the check happens in the middle; after the check, a print statement still follows.
+=Print either "Pass" or "Fail" depending on whether the score is 50 or above.#Correct — the final action of the pseudocode is always the PRINT inside the IF or OTHERWISE branch, before END.
+~Start the process by reading the START keyword at the top of the block.#No — START marks where execution begins, not the last action; follow the steps through to END.
+#### Tests the ability to translate pseudocode into the equivalent manual steps in correct order (corpus §6).
+}
+
+::q5:: What is the most important difference between pseudocode and real programming code such as Python? {
+=Pseudocode is written in plain, language-independent English and cannot be run by a computer, while real code follows strict language rules and can be executed directly.#Correct — the key distinction is that pseudocode is human-readable and language-independent; real code is machine-executable and bound to one language's exact syntax.
+~Pseudocode can only describe simple tasks with fewer than ten steps and a single decision, while real code can handle far more complex programs with many branches and loops.#No — pseudocode can describe any level of complexity; the number of steps or decisions is not what distinguishes it from real code.
+~Real code is written in plain English sentences, while pseudocode uses mathematical symbols and formal notation that only specialists can read.#No — this is the reverse of reality; pseudocode uses plain English, while real code uses language-specific syntax that requires knowing the language.
+~Pseudocode uses indentation to show which steps belong together inside a block, while real code like Python never uses indentation to indicate structure.#No — Python also uses indentation as a required part of its syntax; indentation is a shared convention, not a feature unique to pseudocode.
+#### Tests recognition of the difference between pseudocode and actual programming code (corpus §5.1, §5.5).
+}
+
+::q6:: A student asks why they should bother writing pseudocode before coding. Which answer gives two valid reasons from the corpus? {
+~It guarantees the final program will have no bugs once you start coding, and it allows the computer to pre-check your logic automatically before any real code is run.#No — pseudocode cannot be run by a computer, and it does not guarantee bug-free code; it helps humans think more clearly, but machines cannot process it.
+~It is required by most programming languages as a first step before they will accept your source file for compilation, and it speeds up the computer's execution time at runtime.#No — no programming language requires pseudocode input as a prerequisite, and pseudocode has no effect whatsoever on how fast a program runs.
+~It makes it easier to copy relevant code from the internet because you already know exactly what logic to search for, and it lets you avoid learning any real programming language entirely.#No — pseudocode is a planning tool that leads toward writing real code, not a search aid or a substitute for learning a language.
+=It separates solving the logic from dealing with language syntax, so you tackle one problem at a time; and it lets you catch a missing step or flaw early, before you have written hundreds of lines of real code.#Correct — these match two explicit reasons in the corpus: (1) separating logic from syntax, and (2) finding mistakes cheaply before committing to code.
+#### Tests the ability to describe at least two reasons why writing pseudocode before coding improves thinking and planning (corpus §5.2, §8).
+}

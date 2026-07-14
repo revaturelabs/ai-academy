@@ -1,0 +1,173 @@
+{
+  "critic": "corpus-critic",
+  "topic_id": "14.5",
+  "topic_title": "Agent anatomy — LLM plus memory, tools, and a planning loop",
+  "pass": 2,
+  "at": "2026-06-15T00:00:00Z",
+  "passed": true,
+  "verdict": "PASS (second pass) — scope_creep resolved. Both ReAct mentions are now bare name+pointer only: no bold, no defining clause, no appositive. All 6 checks clear. One soft readability finding surfaced for HITL #2 awareness; does not escalate to hard fail (1 finding, threshold is 3).",
+  "checks": {
+    "required_sections": {
+      "passed": true,
+      "detail": {
+        "section_3_learning_objectives": {
+          "present": true,
+          "word_count_estimate": 87,
+          "threshold": 50,
+          "passed": true,
+          "note": "6 objectives covering all four agent components"
+        },
+        "section_4_introduction": {
+          "present": true,
+          "word_count_estimate": 182,
+          "threshold": 50,
+          "passed": true,
+          "note": "Concrete flight-booking analogy precedes abstract definition"
+        },
+        "section_5_core_concepts": {
+          "present": true,
+          "word_count_estimate": 1980,
+          "threshold": 100,
+          "passed": true,
+          "note": "5 sub-sections: 5.1 What is an AI Agent, 5.2 Four Components, 5.3 Planning Loop in Depth, 5.4 Walkthrough, 5.5 System Interaction"
+        },
+        "section_10_key_takeaways": {
+          "present": true,
+          "word_count_estimate": 145,
+          "threshold": 50,
+          "passed": true,
+          "note": "6 bullets covering all four components plus use-simplest-approach guidance"
+        }
+      }
+    },
+    "citation_density": {
+      "passed": true,
+      "resources_source": "web_search",
+      "mode": "STRICT",
+      "primary_resources_cited": {
+        "resource_1": {
+          "url": "https://blog.dailydoseofds.com/p/the-anatomy-of-an-agent-harness",
+          "role": "primary",
+          "marker": "[1]",
+          "cited": true,
+          "sections_cited_in": ["4", "5.1", "5.2", "5.3", "5.4", "5.5", "6", "7.1", "7.2", "8"],
+          "passed": true
+        }
+      },
+      "supporting_resources_cited": {
+        "resource_2": {
+          "url": "https://www.leanware.co/insights/llm-agent-architecture-guide",
+          "marker": "[2]",
+          "cited": true
+        },
+        "resource_3": {
+          "url": "https://langcopilot.com/posts/2025-09-17-llm-agents-explained-visual-guide-ai",
+          "marker": "[3]",
+          "cited": true
+        }
+      },
+      "factual_claim_density_sections_5_6_7": {
+        "estimate_pct": 80,
+        "threshold_pct": 60,
+        "passed": true,
+        "note": "Citation markers [1][2][3] present at end of virtually every substantive factual claim across sections 5, 6, and 7. Uncited statements in section 7.4 are course-logistics (lab demo instructions), not technology claims."
+      },
+      "fake_citations": {
+        "found": false,
+        "note": "All three markers [1][2][3] resolve to declared URLs in topic.resources.json"
+      }
+    },
+    "sequence_drift": {
+      "passed": true,
+      "forward_referenced_terms": [],
+      "notes": [
+        "'ReAct pattern' is listed in this topic's own concepts_introduced per sequence.index.json entry for 14.5 — NOT a forward-reference violation for check 3. Evaluated under check 5 (scope_creep).",
+        "'chained calls / fixed chain of calls' used in section 5.5 and section 10 with explicit 'covered in topic 14.7' pointer — one-sentence deferral only, not taught at depth.",
+        "'context window' introduced in 14.3 concepts_introduced — legitimate carry-over reuse.",
+        "'parametric memory' appears only in section 2 Prerequisites as a carry-over from 14.3 — not taught cold.",
+        "'vector database' cross-referenced back to topic 14.1 inline ('of the kind you studied in 14.1') — backward reference, not forward.",
+        "'GPT-style' used as informal descriptor for the LLM core in section 5.2 — not a new technical concept requiring definition."
+      ]
+    },
+    "length_sanity": {
+      "passed": true,
+      "profile": "standard",
+      "word_count_estimate": 3630,
+      "range_min": 3000,
+      "range_max": 4400,
+      "within_range": true,
+      "note": "Estimated ~3,630 words (sections 2–11, excluding YAML frontmatter). Comfortably within standard profile range 3,000–4,400. Not within 30% of either bound."
+    },
+    "topic_scope": {
+      "passed": true,
+      "scope_creep_findings": [],
+      "react_mention_audit": {
+        "mention_count": 2,
+        "mentions": [
+          {
+            "location": "Section 5.3, final paragraph before the walkthrough section",
+            "exact_text": "The planning loop often follows the ReAct pattern (covered in topic 14.6).",
+            "bold": false,
+            "defining_clause_present": false,
+            "appositive_present": false,
+            "compliant": true,
+            "note": "Bare name + topic pointer only. Previous violation (bold + '— a cycle of reasoning, acting, and observing' appositive) has been removed."
+          },
+          {
+            "location": "Section 10 (Key Takeaways), fifth bullet",
+            "exact_text": "ReAct pattern (covered in topic 14.6) is introduced in the next topic.",
+            "bold": false,
+            "defining_clause_present": false,
+            "appositive_present": false,
+            "compliant": true,
+            "note": "Bare name + topic pointer only. Previous violation (bold + 'is a named, widely-used version of this loop' defining clause) has been removed."
+          }
+        ],
+        "scope_creep_resolved": true
+      },
+      "other_scope_scan": {
+        "observe_think_act_update_cycle": "In-scope — this is the planning loop itself, the headline concept.",
+        "chained_calls": "Forward-pointer only in sections 5.5 and 10 with explicit 14.7 reference — not taught at depth.",
+        "decision_matrix": "Mentioned in section 9 exercise as a decision to make; 14.7 referenced for the framework — bare pointer, not taught.",
+        "multi_agent_systems": "Does not appear in corpus body."
+      }
+    },
+    "beginner_readability": {
+      "passed": true,
+      "hard_fail": false,
+      "soft_findings_count": 1,
+      "escalation_threshold": 3,
+      "findings": [
+        {
+          "code": "jargon_preview_borderline",
+          "severity": "soft",
+          "location": "Section 4 (Introduction), third paragraph (line 39)",
+          "exact_text_excerpt": "Those pieces are: memory (so the agent can remember things across steps), tools (so the agent can take actions in the world), and a planning loop (so the agent can figure out what to do next...)",
+          "detail": "The introductory paragraph introduces three new terms in a single sentence as a preview list with brief inline glosses. Each is fully defined individually in section 5.2. This is a recognised preview-then-define pattern; the inline glosses are minimal (one-clause each). Borderline jargon_dump rather than a clear violation. Surfaced for author awareness at HITL #2 only — not a hard fail.",
+          "author_option": "Optional: split into three short sentences or use a numbered list to avoid any appearance of term-stacking."
+        }
+      ],
+      "undefined_terms": [],
+      "academic_register_violations": [],
+      "jargon_dumps": [],
+      "notes": [
+        "All primary terms defined on first use with bold + plain-English meaning: AI agent (sections 4 and 5.1), LLM core (section 5.2), short-term memory (section 5.2), long-term memory (section 5.2), tools (section 5.2), planning loop (section 5.2). PASS.",
+        "context window defined inline at section 5.2: 'the maximum amount of text the model can process at once'. PASS.",
+        "LLM full form carried over from earlier M5 topics per Prerequisites section. API likewise. PASS.",
+        "Concrete analogies used throughout: 'desk' for short-term memory, 'filing cabinet' for long-term memory, 'brain / hands / legs / filing cabinet' for components, 'small team' for the agent system. PASS.",
+        "No hedging phrases ('it is generally considered', 'many believe') found in corpus. PASS.",
+        "Average sentence length well under 25 words across sampled sections. Active voice. PASS.",
+        "1 soft finding only — below the ≥3 threshold for escalation to hard fail."
+      ]
+    }
+  },
+  "summary": {
+    "hard_fail_count": 0,
+    "soft_finding_count": 1,
+    "previous_hard_fail_resolved": "scope_creep on ReAct pattern (pass 1 violation cleared in pass 2)",
+    "scope_creep_status": "RESOLVED",
+    "react_mention_audit": "CLEAN — 2 mentions, both bare name+pointer, no bold, no defining clause",
+    "corpus_ready_for_hitl2": true,
+    "recommendation": "Corpus passes all 6 checks. Ready for HITL #2 (corpus human review). The single soft readability finding (borderline preview list in section 4 intro) is surfaced for author awareness but requires no corrective action before advancing."
+  }
+}

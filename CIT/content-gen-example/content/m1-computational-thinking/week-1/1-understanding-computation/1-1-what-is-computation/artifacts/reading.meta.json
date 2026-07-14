@@ -1,0 +1,11 @@
+{
+  "topic_id": "1.1",
+  "title": "What is computation",
+  "word_count": 1340,
+  "reading_minutes": 7,
+  "depth_profile": "standard",
+  "generated_at": "2026-06-19T00:00:00Z",
+  "resources_cited": [1, 2, 3],
+  "embeds_diagram": true,
+  "sections": ["Overview", "Key Concepts", "Worked Example", "In Practice", "Key Takeaways", "References"]
+}

@@ -1,0 +1,49 @@
+$CATEGORY: CIT/M3/week-6/6-9-cosine-similarity-measuring-the-angle-between-two-meaning-ve
+
+::q1:: Cosine similarity and the raw dot product both compare two vectors, but they differ in one key way. What is that difference? {
+~The raw dot product divides by both of the vector lengths, while cosine similarity skips that division step.#No — it is the other way round. The dot product is the raw sum of products; cosine similarity adds the division step.
+~Cosine similarity multiplies the two vector magnitudes and adds that result on top of the raw dot product.#No — the magnitudes appear in the denominator as a divisor, not added to the numerator.
+=Cosine similarity divides the dot product by the product of both vector lengths.#Correct — that single division step is what separates cosine similarity from the raw dot product.
+~Cosine similarity sums up the matching vector positions directly without ever multiplying them first.#No — both measures multiply matching positions and sum; cosine similarity then divides by the magnitudes.
+#### Tests LO1 — distinguishing cosine similarity from the raw dot product (corpus §5.1, §5.3).
+}
+
+::q2:: A short news article and a long report both discuss the same topic. Their word-embedding vectors point in nearly the same direction, but the long report's vector has much larger numbers. How does cosine similarity handle this difference in size? {
+=It divides by both vectors' lengths, so size drops out and only direction is compared.#Correct — normalising by magnitude means a long vector and a short vector with the same direction will score 1.
+~It adds an extra penalty equal to the difference between the two vector lengths before reporting any score.#No — there is no penalty term; the formula only divides, it does not subtract anything for length differences.
+~It keeps the larger vector's numbers as they are and scales the smaller vector up so the two finally match.#No — neither vector is rescaled before comparison; the division step handles magnitude without altering the original vectors.
+~It takes the average of the two magnitudes and then uses that single average as the denominator instead.#No — the denominator is the product (multiplication) of the two individual magnitudes, not their average.
+#### Tests LO2 — why cosine similarity ignores magnitude and why that matters for word vectors (corpus §5.1, §5.4).
+}
+
+::q3:: When computing cosine similarity for two vectors A and B step by step, what is the correct order of operations? {
+~Compute |A| and |B|, multiply the two lengths together, and then subtract the dot product from that.#No — the dot product goes in the numerator and is divided by the magnitude product, not subtracted from it.
+~Multiply |A| by |B|, add that magnitude product onto the dot product A · B, and then divide the total by 2.#No — the magnitude product is a divisor below the dot product, not something added to it.
+~Average each pair of matching positions together, and then divide that average by the sum |A| + |B|.#No — the formula multiplies matching positions (dot product), then divides by the product — not average — of the two magnitudes.
+=Compute A · B, compute |A| and |B|, then divide A · B by (|A| × |B|).#Correct — dot product first, magnitudes second, division third; that is the exact formula cos(θ) = (A · B) / (|A| × |B|).
+#### Tests LO3 — walking through the cosine similarity formula step by step (corpus §5.3).
+}
+
+::q4:: A cosine similarity score between two word vectors comes out at approximately 0.02. What does this score most likely mean? {
+~The two words are near-antonyms, meaning that they carry almost exactly opposite meanings.#No — near-antonyms produce scores close to −1, not close to 0.
+=The two words are largely unrelated — their vectors point in nearly perpendicular directions.#Correct — a score near 0 means the vectors are roughly perpendicular (90°), indicating little or no directional relationship.
+~The two words are very similar, meaning that their vectors point in nearly the same direction.#No — high similarity corresponds to scores close to 1, not close to 0.
+~The formula could not run at all because one of the two vectors turned out to have zero length.#No — a score near 0 is a valid result indicating unrelated directions; a zero-length vector would cause a division error, not a score of 0.02.
+#### Tests LO4 — interpreting a cosine similarity score near 0 as unrelated, not opposite (corpus §5.2, §8).
+}
+
+::q5:: Cosine similarity is described as the standard tool in embedding-based systems. Which of the following best describes where it is applied? {
+~It is mainly used to count how many individual words two different documents happen to share in common.#No — word-count overlap is keyword matching, not cosine similarity; cosine similarity operates on embedding vectors, not raw word lists.
+~It converts a raw dot product into a percentage figure simply by multiplying the result by 100.#No — cosine similarity is a ratio bounded by −1 to 1; it is not a percentage conversion of the dot product.
+=It measures how similar two embeddings are for nearest-word lookup, search, and recommendation.#Correct — cosine similarity is the core comparison step in all three of those embedding-based applications.
+~It adjusts the word embeddings themselves so that all of the vectors end up pointing one same way.#No — cosine similarity measures direction; it does not alter or retrain the vectors themselves.
+#### Tests LO5 — identifying where cosine similarity is used in embedding-based systems (corpus §7).
+}
+
+::q6:: Two word vectors represent "happy" and "joyful". A beginner claims that cosine similarity will score the longer of the two vectors higher, just as the raw dot product would. Is the beginner correct? {
+=No — it divides by both magnitudes, so a longer vector does not score higher.#Correct — the normalisation step is precisely what removes the length advantage that the raw dot product has.
+~Yes — cosine similarity keeps the raw dot product unchanged, so a larger vector will always produce a bigger final score.#No — cosine similarity divides the dot product by the product of both lengths; the raw dot product is not kept unchanged.
+~Yes — the longer vector has more components, so the denominator shrinks down and as a result the overall score goes up.#No — a longer vector increases the denominator (|A| × |B|) at least as much as the numerator; the division balances them out.
+~No — cosine similarity only works on two vectors of exactly identical length, so both of them must be resized first.#No — cosine similarity works on vectors of any magnitude; the formula itself handles length differences through division.
+#### Tests LO1 applied — recognising that cosine similarity removes magnitude sensitivity, correcting a common beginner misconception (corpus §5.1, §5.4).
+}

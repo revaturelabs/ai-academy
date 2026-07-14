@@ -1,0 +1,34 @@
+{
+  "topic_id": "5.12",
+  "artifact": "topic_corpus.md",
+  "passed": true,
+  "checks": {
+    "required_sections": {
+      "passed": true,
+      "detail": "Sections 3 (Learning Objectives, 5 objectives), 4 (Introduction, ~180w), 5 (Core Concepts, ~900w >> 100w floor), 10 (Key Takeaways, 5 bullets) all present and non-trivial. No placeholder strings in required sections."
+    },
+    "citation_density": {
+      "passed": true,
+      "detail": "resources_source=web_search (strict). Primary resource [1] (MEITY first-party advisory) cited repeatedly. Supporting [2] (Lakshmisri, Mar-1/Mar-15) and [3] (ELP, global context) both cited. All [1][2][3] markers resolve to declared resources — no fabricated citations. >=60% of Core Concepts factual assertions carry markers."
+    },
+    "sequence_drift": {
+      "passed": true,
+      "detail": "All taught concepts (MEITY, government advisory/soft-law vs statute, intermediary/online platform, labeling unreliable/AI-generated output, platform due diligence, directionally aligned with global frameworks) are in 5.12 concepts_introduced. Cross-refs to 5.4/5.7/5.10/5.11 are prior topics. No forward reference to 5.13 — the side-by-side comparison table presents the four frameworks but does not teach the 'which framework applies / selection' synthesis owned by 5.13."
+    },
+    "length_sanity": {
+      "passed": true,
+      "detail": "~1450 words. depth_profile=atomic; lean corpus expected for atomic. Within the loose outer band (1500-6000) and consistent with the ~1200-1500w atomic expectation. Not wildly off — no flag."
+    },
+    "scope_creep": {
+      "passed": true,
+      "detail": "Off-headline items correctly named-and-deferred: IT Rules (2021) given bare name with explicit 'you do not need their detail' / 'named here only so you know they exist' (5.1, 5.6); future technology legislation / Digital India Act-type measures named in 5.6 as 'not covered in this topic'; no AIGG / 'Whole of Government' architecture present at all. On-headline material (advisory-vs-law contrast, Mar-1/Mar-15 evolving example, alignment-with-global-frameworks) is what is taught. No advanced off-headline concept taught."
+    },
+    "beginner_readability": {
+      "passed": true,
+      "findings": [],
+      "detail": "MEITY spelled out (Ministry of Electronics and Information Technology) on first use in 4 and 5.1; 'advisory' defined as government guidance not statute; 'intermediary' defined as online platforms that host/carry others' content; 'deepfake' and 'due diligence' defined inline. No jargon-dump paragraphs; plain register, short sentences, no hedging excess. 0 findings."
+    }
+  },
+  "verdict": "PASS — all six checks clear. Required sections present; strict web_search citation density met with no fabricated markers; no forward ref to 5.13 (comparison table stops short of the selection synthesis); atomic-appropriate length; IT Rules 2021 / future legislation named-and-deferred only, AIGG absent; key terms defined on first use.",
+  "at": "2026-06-22T15:48:00Z"
+}

@@ -1,0 +1,56 @@
+{
+  "passed": true,
+  "checks": {
+    "positional_bias": {
+      "passed": true,
+      "distribution": {"0": 1, "1": 2, "2": 2, "3": 1},
+      "max_share": 0.33,
+      "note": "GIFT-derived positions [1,2,0,3,1,2] match sidecar correct_position_distribution exactly. Max share 2/6 = 33% — below 40% threshold."
+    },
+    "length_bias": {
+      "passed": true,
+      "longest_correct_rate": 0.0,
+      "baseline": 0.25,
+      "per_question": [
+        {"id": "q1", "correct_len": 41, "distractor_mean": 41.0,  "threshold": 49.2, "longest_correct": false},
+        {"id": "q2", "correct_len": 16, "distractor_mean": 14.3,  "threshold": 17.2, "longest_correct": false},
+        {"id": "q3", "correct_len": 21, "distractor_mean": 24.7,  "threshold": 29.6, "longest_correct": false},
+        {"id": "q4", "correct_len": 18, "distractor_mean": 21.3,  "threshold": 25.6, "longest_correct": false},
+        {"id": "q5", "correct_len": 57, "distractor_mean": 52.3,  "threshold": 62.8, "longest_correct": false},
+        {"id": "q6", "correct_len": 32, "distractor_mean": 30.3,  "threshold": 36.4, "longest_correct": false}
+      ]
+    },
+    "distractor_plausibility": {
+      "passed": true,
+      "absurd_rate": 0.0,
+      "total_distractors": 18,
+      "absurd_count": 0,
+      "weakest_questions": [],
+      "scoring_notes": "All 18 distractors scored 3–4. q1: list-brackets/tuple/set-without-colons confusions (3,3,4). q2: index-vs-key/dot-attribute/bracket-vs-parens (4,3,4). q3: wrong-.update()-signature/dot-notation/append-on-dict (4,3,4). q4: .has()-from-Java/.contains()-from-Java/equality-vs-membership (4,4,3). q5: invented-.pairs()/values()-misapplied/parallel-for-attempt (3,4,4). q6: tuple-key-bracket/invented-.fetch()/or-idiom-misapplied (3,3,4)."
+    },
+    "objective_coverage": {
+      "passed": true,
+      "uncovered_objectives": [],
+      "orphan_questions": [],
+      "coverage_map": {
+        "LO1 — Create a dictionary with curly-brace syntax": ["q1"],
+        "LO2 — Access a value by key; key vs index": ["q2"],
+        "LO3 — Add new key-value pair and modify existing key": ["q3"],
+        "LO4 — Check key existence with the in keyword": ["q4"],
+        "LO5 — Iterate with for, .values(), .items()": ["q5"],
+        "LO6 — Safe retrieval with .get()": ["q6"]
+      }
+    },
+    "beginner_scope": {
+      "passed": true,
+      "findings": [],
+      "notes": "All stems use plain language with HTML code tags for inline code. No acronyms in stems. No question requires un-taught knowledge — q6 distractor uses Python `or` (Week 11 prior concept, valid). q5 longest distractor (parallel-for-attempt) is a plausible beginner syntactic guess, not advanced knowledge. No out_of_scope_question or jargon_in_stem findings. All distractors are beginner misconceptions rooted in this topic or prior-topic carry-over confusion."
+    }
+  },
+  "auto_correction_applied": {
+    "shuffle_round_2": false
+  },
+  "flags": {},
+  "verdict": "Pass — all five checks clean. 6 MCQ, all 6 LOs covered. Positional distribution {0:1,1:2,2:2,3:1} max share 33%. Longest-correct rate 0%. Absurd distractor rate 0%. No scope or fairness findings. Quiz is ready for HITL #3.",
+  "at": "2026-06-14T00:00:00Z"
+}

@@ -1,0 +1,30 @@
+{
+  "topic_id": "10.2",
+  "title": "Case study: Automated medical triage — what failure mode was tolerated?",
+  "artifact_type": "reading",
+  "profile": "standard",
+  "word_count": 1556,
+  "estimated_minutes": 7,
+  "target_word_range": [1200, 1600],
+  "target_minutes_range": [6, 8],
+  "diagram_embedded": true,
+  "diagram_path": "./diagram.png",
+  "sections": [
+    "Overview",
+    "Key Concepts",
+    "Worked Example",
+    "In Practice",
+    "Key Takeaways",
+    "References"
+  ],
+  "citations": ["[1]", "[2]", "[3]"],
+  "primary_citation_used": true,
+  "prior_topic_concepts_used": [
+    "automation bias (9.5)",
+    "Judgment Framework Q1/Q2/Q3 (9.7–9.9)",
+    "pipeline",
+    "override as theater"
+  ],
+  "learning_objectives_covered": [1, 2, 3, 4, 5, 6],
+  "generated_date": "2026-06-12"
+}

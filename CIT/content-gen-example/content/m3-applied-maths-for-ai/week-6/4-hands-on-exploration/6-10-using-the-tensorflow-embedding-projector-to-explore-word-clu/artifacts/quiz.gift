@@ -1,0 +1,49 @@
+$CATEGORY: CIT/M3/week-6/6-10-using-the-tensorflow-embedding-projector-to-explore-word-clu
+
+::q1:: What does the TensorFlow Embedding Projector show you on screen? {
+~A live training screen that updates the word vectors as the model keeps learning from text#No — the Projector only displays finished embeddings; it does not train or update them.
+~A spreadsheet of raw embedding numbers that you scroll through row by row to compare words#No — it shows a visual dot cloud you can rotate, not a table of raw numbers.
+=A cloud of dots in space, where each dot is one word placed by its embedding vector#Correct — the Projector draws each item (a word) as a dot positioned from its embedding vector.
+~A coding window where you type commands to build an embedding from your own text files#No — the lab is browser-only with no coding; you look and search, you do not write code.
+#### Tests what the Embedding Projector is and what it displays (corpus §5.1).
+}
+
+::q2:: Why must high-dimensional embeddings be squashed down to two or three dimensions first? {
+=A flat screen and human eyes cannot show the many separate directions a long vector has#Correct — a 200-number vector has 200 directions; a screen is flat, so the points must be squashed to fit.
+~Squashing the vectors first makes the embedding far more accurate than it was before#No — squashing loses information; it is for viewing only and does not improve the embedding.
+~Shorter vectors are required so the browser can finish training the model much faster#No — the Projector does not train; squashing is about fitting points on a flat screen, not speed.
+~Two or three numbers are all that any word embedding ever actually contains in practice#No — real embeddings often hold 100, 300, or more numbers; squashing only changes the view.
+#### Tests why high-dimensional vectors must be squashed to 2D or 3D to be seen (corpus §5.2).
+}
+
+::q3:: You see a tight clump of dots on the Projector. What does that clump most likely mean? {
+~The tool has read the words and printed a label naming what that whole group is about#No — the tool does not label clusters; your own eye spots what the grouped words share.
+~Those words were typed into the search box by you earlier and the tool grouped them#No — clusters come from the embeddings, not from what you searched; the dots load grouped already.
+~Those dots are an error from the squashing step and should be ignored when reading#No — a clump is the meaningful signal; closeness-as-similarity is the whole point of the view.
+=Those words have similar embeddings, so they tend to mean or get used in related ways#Correct — closeness means similar embeddings, which means the words are related in meaning or usage.
+#### Tests reading a cluster as words with similar embeddings (corpus §5.3).
+}
+
+::q4:: You type a word into the Projector's search box. What does the search-and-highlight feature do? {
+~It removes every other dot from the view so that only the word you typed is left#No — search highlights the word and its neighbours; it does not delete the rest of the cloud.
+=It highlights that word and lights up its nearest neighbours, the words most similar to it#Correct — search highlights the word and its nearest neighbours, listing the closest words by similarity.
+~It retrains the word's vector using the new word so its position becomes more correct#No — search does not train or change vectors; it only finds and highlights existing neighbours.
+~It renames the nearest dots so they all share the exact same word you typed in#No — neighbours keep their own words; search just highlights the closest ones, it does not rename.
+#### Tests the search-and-highlight nearest-neighbour feature (corpus §5.4).
+}
+
+::q5:: You rank five vectors by similarity by hand, then check the Projector. Which is the best reading of any small differences? {
+~Any difference at all proves your by-hand ranking was simply done wrong from the start#No — the tool's squashed view distorts fine distances, so small differences are expected, not your error.
+~On-screen distance is an exact measurement, so the tool must always be the right answer#No — on-screen distance is approximate; it is a flattened shadow, not an exact measurement.
+=Small gaps can differ because the squashed view is an approximate shadow of the real space#Correct — squashing distorts fine distances, so trust the big clusters over tiny on-screen gaps.
+~PCA and t-SNE give different clusters, which proves the whole tool cannot be trusted at all#No — clusters mostly survive the switch; differing exact shapes are expected, not a sign of failure.
+#### Tests by-hand ranking versus the tool and why small differences occur (corpus §5.2, §9).
+}
+
+::q6:: You switch the squashing method from PCA to t-SNE and the dots rearrange. What should you conclude? {
+=This is expected; the clusters usually survive while their exact shape and spacing change#Correct — switching the squashing button rearranges dots but the clumps mostly stay clumped.
+~The tool is broken, because a correct tool would show the very same picture both ways#No — rearranging is normal; each method is one shadow of the space, so the views differ by design.
+~Your earlier reading of the clusters was wrong and must now be thrown away completely#No — clusters that survive both views are the trustworthy signal; you keep, not discard, them.
+~The embedding itself changed when you pressed the button, so the words now mean new things#No — the embedding is unchanged; only the squashing view changed, not the underlying vectors.
+#### Tests that switching PCA/t-SNE rearranges dots while clusters survive (corpus §5.2, §8).
+}

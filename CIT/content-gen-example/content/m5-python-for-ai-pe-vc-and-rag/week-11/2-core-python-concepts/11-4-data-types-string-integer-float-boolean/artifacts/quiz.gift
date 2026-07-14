@@ -1,0 +1,54 @@
+$CATEGORY: CIT/M5/week-11/11-4-data-types-string-integer-float-boolean
+
+::q1:: Which output appears when you run the following code?
+```
+name = "Alice"
+grade = 92
+print("Name:", name, "Grade:", grade)
+``` {
+=Name: Alice Grade: 92#Correct — print() separates comma-separated arguments with a space by default [5].
+~NameAliceGrade92#Incorrect — print() inserts a space between each argument automatically.
+~'Name:' name 'Grade:' grade#Incorrect — print() displays the values without quotes around string literals.
+~Name Alice Grade 92#Incorrect — print() preserves the colon characters that are part of the string arguments.
+#### Tests LO1: print() with multiple arguments. See §5.1.
+}
+
+::q2:: What does `print("Python"[0])` display? {
+~p#Incorrect — Python is case-sensitive; the character at index 0 is the uppercase letter 'P'.
+=P#Correct — String indexing is zero-based; index 0 is the first character [1][4].
+~6#Incorrect — len("Python") is 6, but [0] accesses the first character, not the length.
+~Python#Incorrect — [0] returns a single character, not the entire string.
+#### Tests LO2: string zero-based indexing. See §5.2.
+}
+
+::q3:: What is the result of `17 // 5` in Python? {
+~3.4#Incorrect — 3.4 is the result of regular division (17 / 5), not floor division.
+~2#Incorrect — 2 is the result of modulo (17 % 5), which gives the remainder, not the quotient.
+=3#Correct — Floor division (//) divides and discards the remainder, giving the whole number 3 [2][3].
+~17.0#Incorrect — 17.0 would result from converting 17 to a float, not from floor division.
+#### Tests LO3: floor division operator. See §5.3.
+}
+
+::q4:: A student runs `print(0.1 + 0.2)` expecting to see `0.3`. Which statement best explains the actual output? {
+~Python rounds all float results to 2 decimal places automatically during arithmetic.#Incorrect — Python does not automatically round floats; the full binary result is returned.
+~The result is exactly `0.3` because Python rounds floating-point results internally.#Incorrect — Python does not silently correct the result; the small binary error is visible in the output.
+~A TypeError is raised because `0.1` and `0.2` have incompatible internal formats.#Incorrect — both are valid float values and can be added without error.
+=The output is `0.30000000000000004` — this is standard floating-point behaviour, not a Python bug.#Correct — Binary storage of 0.1 introduces a tiny rounding error; adding two approximations accumulates the error [2][3].
+#### Tests LO4: float precision and binary representation. See §5.4.
+}
+
+::q5:: Given `submitted = True` and `late = False`, what does `submitted and not late` evaluate to? {
+=True#Correct — `not late` flips False to True; True and True evaluates to True [1][3].
+~False#Incorrect — `not late` is `not False` which equals True; True and True is True, not False.
+~None#Incorrect — Python boolean expressions return True or False, never None.
+~A TypeError, because `not` cannot be used with a variable.#Incorrect — `not` works on any boolean value or variable; there is no TypeError here.
+#### Tests LO5: boolean operators and, not. See §5.5.
+}
+
+::q6:: Which line correctly builds the string `"Average: 83.7"` from the variable `average = 83.7`? {
+~"Average: " + average#Incorrect — this raises a TypeError; you cannot concatenate a str and a float with + directly.
+~str + average#Incorrect — str is the type name, not a conversion call; this would raise a TypeError.
+="Average: " + str(average)#Correct — str() converts the float 83.7 to the string "83.7" before the concatenation runs [3][4].
+~"Average: " + float(average)#Incorrect — float(average) returns the float unchanged; it does not convert it to a string.
+#### Tests LO6: explicit type conversion with str(). See §5.6.
+}

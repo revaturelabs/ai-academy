@@ -1,0 +1,46 @@
+$CATEGORY: CIT/M3/week-6/6.4-matrices-grids-of-numbers-and-how-ai-uses-them
+
+::q1:: A matrix is best described as which of the following?
+{
+=A rectangular grid of scalars arranged in rows and columns#Correct — a matrix is exactly this\: an organised grid of individual numbers (scalars) laid out in rows and columns.
+~An ordered list of scalars stored in a single row#No — that describes a vector, not a matrix. A matrix stacks many such rows on top of each other.
+~A single number that represents one property of a data sample#No — that describes a scalar. A matrix contains many scalars arranged in a grid.
+~A set of instructions that tells a neural network how to learn#No — instructions are algorithms, not data structures. A matrix is a grid of numbers, not a procedure.
+#### Tests the core definition of a matrix (corpus §5.1).
+}
+
+::q2:: A dataset contains 200 customer records. Each record has 6 features: age, city score, purchase count, session length, rating, and tenure. The dataset is stored as a matrix. Which answer correctly states its size AND describes what one row represents?
+{
+~The matrix is 6 × 200; each row holds one feature measured across all 200 customers#No — size is always rows × columns, so customers (samples) come first. One row is one customer's data, not one feature's data.
+=The matrix is 200 × 6; each row holds one customer's complete feature values — making it a feature vector#Correct — rows × columns gives 200 × 6; each row is one data sample (one feature vector) whose 6 values fill the 6 columns.
+~The matrix is 200 × 6; each row holds one feature shared across all customers in the dataset#No — shared-across-all describes a column, not a row. Each row is one customer's full set of feature values.
+~The matrix is 1200 × 1, because size equals total cells arranged as a single column#No — total cell count is not the size notation; size is always stated as separate row and column counts (200 × 6 here).
+#### Tests rows × columns notation (LO2) and identifying a row as a feature vector / data sample (LO3) (corpus §5.2, §5.3).
+}
+
+::q3:: A student encounters four terms while reading about matrix algebra — matrix multiplication, transpose, determinant, and eigenvalues. Which statement correctly describes all four?
+{
+~They are all operations a beginner must master before learning what a matrix is#No — these are advanced operations that build on basic matrix understanding, not prerequisites for it.
+~They describe different ways to state the size of a matrix using rows and columns#No — size notation (rows × columns) is a separate concept; these four are operations performed on matrices after the structure is understood.
+=They are real matrix operations that will be covered in later topics, not in this one#Correct — all four are genuine and important, but each is deferred to a later topic; here, recognising their names is enough.
+~They are the four types of data a matrix cell can hold, such as scalars or labels#No — matrix cells always hold scalars; these terms name operations on matrices, not types of cell contents.
+#### Tests LO6: naming four advanced matrix operations and confirming they are deferred to later topics (corpus §5.6).
+}
+
+::q4:: A grayscale image is 28 pixels wide and 28 pixels tall. How does an AI system store this image, and what does each cell in the structure contain?
+{
+~As a list of 784 pixel labels arranged in alphabetical order, with each cell holding a colour name#No — colour names are text, not numbers. AI stores pixel data as numbers (scalars), not labels.
+~As a single scalar equal to the average brightness across all pixels in the image#No — averaging loses all spatial information. Each pixel keeps its own brightness value in its own cell.
+~As a vector of 784 scalars in a single row, because vectors store pixel data most efficiently#No — a vector is one-dimensional. An image preserves its two-dimensional grid structure as a matrix.
+=As a 28 × 28 matrix where each cell holds one scalar representing that pixel's brightness#Correct — the image maps directly to a matrix of the same dimensions; each cell stores one pixel's brightness value.
+#### Tests the image-as-pixel-grid concept and matrix representation of images (corpus §5.4).
+}
+
+::q5:: A trained neural network stores its learned knowledge in a structure called a weight matrix. What does each cell in a weight matrix hold?
+{
+=One scalar value that influences the network's output for a particular connection#Correct — each cell is a single weight scalar; together, all the weight scalars encode what the network has learned.
+~One complete data sample from the training dataset used to train the network#No — training data is separate from the network's weights. A weight matrix stores learned parameters, not input data.
+~One label or category name that the network uses to classify new inputs#No — labels are text outputs, not the learned parameters inside the network. Weight cells are scalars, not category names.
+~One feature column describing a property that was measured during data collection#No — feature columns belong to the data matrix, not the weight matrix. Weight matrices store learned scalars, not raw input features.
+#### Tests recognition of the term "weight matrix" and its contents (corpus §5.5).
+}

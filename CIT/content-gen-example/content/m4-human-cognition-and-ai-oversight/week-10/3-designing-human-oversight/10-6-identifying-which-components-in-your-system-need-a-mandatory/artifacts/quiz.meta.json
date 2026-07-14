@@ -1,0 +1,47 @@
+{
+  "topic_id": "10.6",
+  "generated_at": "2026-06-13T00:00:00Z",
+  "format": "gift",
+  "question_count": 6,
+  "$bias_defense_applied": true,
+  "$shuffle_seed": "a3f2c1e0",
+  "correct_position_distribution": [0, 2, 0, 3, 2, 3],
+  "questions": [
+    {
+      "id": "10.6-Q1",
+      "type": "mcq",
+      "objective_ref": "Explain what it means to identify a 'component' in an AI system and why different components carry different risk levels.",
+      "correct_position": 0
+    },
+    {
+      "id": "10.6-Q2",
+      "type": "mcq",
+      "objective_ref": "Apply all three Judgment Framework questions to an individual system component and reach a justified oversight assignment (HITL, HOTL, or HOOTL).",
+      "correct_position": 2
+    },
+    {
+      "id": "10.6-Q3",
+      "type": "mcq",
+      "objective_ref": "Define risk-tiered component mapping and produce a simple component map for a described AI system.",
+      "correct_position": 0
+    },
+    {
+      "id": "10.6-Q4",
+      "type": "mcq",
+      "objective_ref": "Use the EU AI Act Article 14 requirements as a reference to confirm whether a component's oversight design meets a regulatory minimum.",
+      "correct_position": 3
+    },
+    {
+      "id": "10.6-Q5",
+      "type": "mcq",
+      "objective_ref": "Identify at least two signals that indicate a component's oversight assignment needs to be upgraded from HOTL or HOOTL to HITL.",
+      "correct_position": 2
+    },
+    {
+      "id": "10.6-Q6",
+      "type": "mcq",
+      "objective_ref": "Explain why the same AI component can require different oversight levels in different contexts, and name the context variables that cause the shift.",
+      "correct_position": 3
+    }
+  ]
+}

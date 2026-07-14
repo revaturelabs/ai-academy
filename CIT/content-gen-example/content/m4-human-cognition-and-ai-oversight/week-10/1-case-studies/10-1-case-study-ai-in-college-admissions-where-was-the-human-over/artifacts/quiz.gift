@@ -1,0 +1,49 @@
+$CATEGORY: CIT/M4/week-10/10-1-case-study-ai-in-college-admissions-where-was-the-human-over
+
+::q1:: In documented AI-assisted college admissions cases, what did the AI tool do and where was the human check absent? {
+~The AI replaced the completeness check, and humans skipped verifying whether all required application documents had been submitted.#No — completeness checking is low-risk; the documented failure was at personal qualities scoring.
+=The AI scored personal qualities, and reviewers stopped re-reading personal statements before accepting those scores.#Correct — AI scored qualities; human re-reading eroded, removing the functioning override.
+~The AI issued the final offer decision, removing humans from every step of the selection process for efficiency.#No — humans remained in the pipeline; the gap was at the scoring step, not total absence of humans.
+~The AI sorted applications by submission deadline, and reviewers failed to verify whether the resulting order was accurate.#No — sorting by deadline is low-risk; the documented override failure was at personal qualities scoring, not sorting.
+#### Tests LO1 — what the AI was asked to do and where the human check was absent (corpus §5.1, §5.3).
+}
+
+::q2:: A university uses an AI tool to score personal statements on qualities like resilience and motivation. Applications scoring below 60 are moved to a rejection pool automatically. A human reviewer is available but rarely looks at the scored statements before they feed into the final ranking step. Which point in the pipeline is the missing human override point? {
+~The completeness check at step 2, because the AI should not be deciding whether all required documents are present.#No — completeness checking is narrow and low-risk; the missing override is at the personal qualities scoring step.
+~The academic eligibility check at step 3, because interpreting grades across different school systems requires human cultural knowledge.#No — the case study evidence specifically identifies personal qualities scoring as the missing override point, not academic eligibility.
+~The final ranking and offer step at step 5, because no human ever reviews the ranked list before offers are sent out.#No — the gap is at step 4 (personal qualities scoring), upstream of ranking; the score passes forward unchecked.
+=The personal qualities scoring step, where the AI's score feeds into ranking without a human first reading the original statement.#Correct — corpus §5.2–5.3 identifies step 4 as the missing override point; the score was never independently verified.
+#### Tests LO2 — identifying the specific pipeline step where a human override was required but not functioning (corpus §5.2, §5.3).
+}
+
+::q3:: Apply the Judgment Framework's three questions (Q1, Q2, Q3) to the act of accepting an AI personal qualities score without re-reading the application. Which answer correctly states what all three questions reveal? {
+=Q1 shows a wrong score causes high harm; Q2 shows independent verification was possible but removed; Q3 shows accountability was diffused.#Correct — corpus §5.5 applies all three questions exactly this way.
+~Q1 shows the cost is low because the AI is just one input among many; Q2 shows that re-reading is impossible in a high-volume admissions system; Q3 shows the vendor is accountable for wrong scores.#No — Q1 shows high individual cost; Q2 shows verification was possible though structurally removed; Q3 shows diffused institutional accountability, not vendor.
+~Q1 shows cost is acceptable when the AI is right most of the time; Q2 says a slow verification step may reasonably be skipped to meet deadlines; Q3 says the reviewer personally owns the outcome of each case.#No — average accuracy does not lower individual cost; Q2 requires a structural fix, not skipping; Q3 shows diffused, not individual reviewer, accountability.
+~Q1 shows a numeric score is inherently more objective than a human reader's judgment; Q2 says slow verification can be deferred until after ranking; Q3 says accountability belongs to whoever approved the tool for deployment.#No — precision is not the same as accuracy (§8); Q2 requires independent verification; Q3 identifies diffused accountability, not approval-based.
+#### Tests LO3 — applying the Judgment Framework (Q1–Q3) to the admissions case (corpus §5.5).
+}
+
+::q4:: Human reviewers at one institution reduced the time they spent checking each AI-scored personal statement from several minutes to under 90 seconds within two years of deployment, even though no policy told them to do so. Which concept best explains this behaviour and how it contributed to the missing override point? {
+~Training data bias — the AI learned from unrepresentative historical data, causing reviewers to distrust its scores and skip the review to avoid confusion.#No — training data bias describes a flaw in the AI's learning, not the human tendency to over-trust confident-looking output.
+~Holistic review collapse — the institution formally replaced its holistic review policy with a single-score policy, removing the review requirement by official mandate.#No — the corpus describes gradual drift, not a formal policy replacement; automation bias explains why individual reviewers cut their checking time.
+=Automation bias — the AI's confident numeric output made re-reading feel unnecessary, so reviewers gradually deferred to the score and eroded the override point.#Correct — corpus §5.3–5.4 defines automation bias and documents this exact pattern of review time dropping.
+~Workload policy — management formally cut per-application review time to increase throughput, directly instructing reviewers to spend less time on each case.#No — corpus §5.4 describes workload pressure as an indirect incentive, not a direct management instruction; automation bias is the immediate cause.
+#### Tests LO4 — how automation bias caused the override point to erode (corpus §5.3, §5.4 Cause 1).
+}
+
+::q5:: Which two governance controls does the corpus identify as documented practices that would have caught the admissions failure before harm occurred? {
+~Replacing human reviewers with a second AI model to cross-check scores, and requiring the vendor to certify the tool's accuracy before it was deployed.#No — the corpus calls for human oversight, not AI-on-AI review; vendor certification does not substitute for institutional process design.
+=A written pre-deployment policy naming a minimum review sample rate; plus a structured override log recording the reviewer, AI score, and outcome, monitored regularly.#Correct — corpus §8 lists both controls: a written policy with a defined sample rate, and a monitored override log with named reviewer and outcome.
+~Lowering the AI's confidence threshold to surface more borderline applications, and training reviewers to use the AI's explanation feature to double-check its reasoning.#No — threshold adjustment is tool configuration, not governance; explanation features are not listed as a verification mechanism; Q2 requires AI-independent verification.
+~Removing the AI from the pipeline until it achieves 99% accuracy on held-out data, and asking applicants to submit a second personal statement for human-only assessment.#No — the corpus sets no accuracy threshold as a deployment condition; a second statement changes the application process rather than fixing the governance structure.
+#### Tests LO5 — naming at least two governance controls that would have caught the failure (corpus §8, §7.3).
+}
+
+::q6:: A post-mortem review of an AI admissions system finds that 92% of applications below the rejection threshold were rejected without any human re-reading of the personal statement, and the override rate was 0% for the entire first year. The review team asks\: "Is this a functioning override point?" Which answer best identifies the governance gap and explains the finding? {
+~Yes — a 0% override rate shows the AI performed perfectly all year, so no human re-reading was needed and the process worked as designed.#No — corpus §5.8 warns a near-zero override rate is a warning signal of automation bias, not evidence of perfect AI accuracy.
+~Yes — reviewers were available for borderline cases, which satisfies the requirement for a human override point; the 0% rate simply reflects reviewer confidence in the tool.#No — being available but never used is override-as-theater; availability without genuine review does not constitute a functioning override point (corpus §8).
+~No — the gap is that the vendor never provided an audit trail, so once the vendor supplies usage logs the override point will be restored.#No — the gap is the institution's failure to require and monitor human review; vendor logs do not replace a written policy mandating a minimum review sample.
+=No — the 0% rate and 90-second reviews signal override-as-theater\: a step on paper only. The gap is no written policy, no minimum sample, and no monitored override log.#Correct — corpus §5.8 and §8 define override-as-theater and name exactly these missing controls as the governance gap.
+#### Tests LO6 — applied post-mortem: identifying the governance gap in a described AI-assisted decision (corpus §5.8, §8).
+}

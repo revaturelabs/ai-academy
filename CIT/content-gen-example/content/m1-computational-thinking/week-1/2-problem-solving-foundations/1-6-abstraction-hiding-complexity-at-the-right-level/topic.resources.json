@@ -1,0 +1,30 @@
+{
+  "topic_id": "1.6",
+  "captured_at": "2026-06-20T00:00:00Z",
+  "captured_by": "namratas@revature.com",
+  "resources_source": "web_search",
+  "web_search_query": "abstraction hiding complexity computational thinking computer science education",
+  "resources": [
+    {
+      "type": "url",
+      "value": "https://www.learning.com/blog/abstraction-in-computational-thinking/",
+      "role": "primary",
+      "source": "web_search",
+      "notes": "CT-focused explainer on abstraction as complexity management; beginner-appropriate"
+    },
+    {
+      "type": "url",
+      "value": "https://files.eric.ed.gov/fulltext/EJ1329311.pdf",
+      "role": "supporting",
+      "source": "web_search",
+      "notes": "Peer-reviewed academic survey; abstraction as threshold concept in CS education"
+    },
+    {
+      "type": "url",
+      "value": "https://teachinglondoncomputing.org/resources/developing-computational-thinking/abstraction/",
+      "role": "supporting",
+      "source": "web_search",
+      "notes": "CAS London authoritative CT resource; practical definition and classroom activities"
+    }
+  ]
+}

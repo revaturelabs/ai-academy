@@ -1,0 +1,28 @@
+%%  12.6 — File-reading lifecycle: open → read → close
+%%  Layout: top-down flowchart with branch at close step
+%%  Intent: show the 3-step lifecycle and with-block as the auto-close preferred path
+
+flowchart TD
+    OPEN["open('file.txt', 'r')\nreturns a file object"]
+    READ["read the content\n.read()  •  .readlines()  •  for line in f:"]
+    CHOOSE{"close how?"}
+    MANUAL["f.close()\nmanual — easy to forget"]
+    AUTO["with block\nclosed automatically at end"]
+    DONE(["file closed ✓\nresources freed"])
+
+    OPEN --> READ
+    READ --> CHOOSE
+    CHOOSE -- "manual pattern" --> MANUAL
+    CHOOSE -- "preferred ★" --> AUTO
+    MANUAL --> DONE
+    AUTO --> DONE
+
+    classDef step fill:#dbeafe,stroke:#3b82f6,color:#1e3a8a
+    classDef decision fill:#fef9c3,stroke:#f59e0b,color:#78350f
+    classDef preferred fill:#dcfce7,stroke:#16a34a,color:#14532d
+    classDef terminal fill:#e0e7ff,stroke:#6366f1,color:#312e81
+
+    class OPEN,READ,MANUAL step
+    class CHOOSE decision
+    class AUTO preferred
+    class DONE terminal

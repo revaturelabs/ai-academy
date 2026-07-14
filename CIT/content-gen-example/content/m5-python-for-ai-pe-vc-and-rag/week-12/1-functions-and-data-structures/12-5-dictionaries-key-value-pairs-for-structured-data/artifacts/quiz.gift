@@ -1,0 +1,49 @@
+$CATEGORY: CIT/M5/week-12/12-5-dictionaries-key-value-pairs-for-structured-data
+
+::q1:: Which of the following correctly creates a Python dictionary that stores a student's name and score? {
+~<code>student = ["name": "Alice", "score": 88]</code>#Wrong — square brackets create a list, not a dictionary. Lists store values by position, not by label.
+=<code>student = \{"name": "Alice", "score": 88\}</code>#Correct — curly braces with key: value pairs separated by commas create a dictionary.
+~<code>student = ("name": "Alice", "score": 88)</code>#Wrong — parentheses create a tuple. Tuples do not use key: value syntax.
+~<code>student = \{"name", "Alice", "score", 88\}</code>#Wrong — commas but no colons: Python reads this as a set of four values, not a dictionary.
+#### Tests LO1 — creating a dictionary with curly-brace syntax (corpus §5.1)
+}
+
+::q2:: A dictionary called <code>product</code> has a key <code>"price"</code> with value <code>799.99</code>. Which line correctly reads the price? {
+~<code>product[0]</code>#Wrong — 0 is a position index that works on lists. Dictionaries are accessed by key name, not by position.
+~<code>product.price</code>#Wrong — dot notation accesses object attributes and methods, not dictionary values.
+=<code>product["price"]</code>#Correct — square brackets with the key name look up the value stored under that label.
+~<code>product.get["price"]</code>#Wrong — .get() is a method and must be called with parentheses, not square brackets: <code>product.get("price")</code>.
+#### Tests LO2 — accessing a value by key; key vs index distinction (corpus §5.2)
+}
+
+::q3:: A dictionary <code>student = \{"name": "Alice", "score": 88\}</code> already exists. Which statement updates the score to 95? {
+=<code>student["score"] = 95</code>#Correct — assigning to an existing key overwrites its value. The same syntax also adds a new key when one does not yet exist.
+~<code>student.update("score", 95)</code>#Wrong — .update() takes a dictionary argument, not a bare key and value: <code>student.update(\{"score": 95\})</code>.
+~<code>student.score = 95</code>#Wrong — dot notation accesses object attributes, not key-value pairs in a dictionary.
+~<code>student.append("score", 95)</code>#Wrong — .append() belongs to lists. Dictionaries do not have an .append() method.
+#### Tests LO3 — adding and modifying key-value pairs (corpus §5.3)
+}
+
+::q4:: Which expression checks whether the key <code>"grade"</code> exists in a dictionary called <code>student</code>? {
+~<code>student.has("grade")</code>#Wrong — Python dictionaries do not have a .has() method. Use the <code>in</code> keyword instead.
+~<code>"grade" == student</code>#Wrong — == checks whether two values are equal, not whether a key is inside a dictionary.
+~<code>student.contains("grade")</code>#Wrong — Python dictionaries do not have a .contains() method. Use <code>"grade" in student</code>.
+=<code>"grade" in student</code>#Correct — the <code>in</code> keyword tests whether the string is one of the dictionary's keys, returning True or False.
+#### Tests LO4 — checking key existence with the in keyword (corpus §5.4)
+}
+
+::q5:: Which code correctly prints every key-value pair in a dictionary called <code>config</code> using Python's recommended pattern? {
+~<code>for item in config.pairs(): print(item)</code>#Wrong — Python dictionaries do not have a .pairs() method. Use .items() to get key-value pairs.
+=<code>for key, value in config.items(): print(key, "→", value)</code>#Correct — .items() yields each key-value pair as two variables, making it easy to print both at once.
+~<code>for key in config: print(key, config.values())</code>#Wrong — config.values() returns all values, not just the value for the current key. Use config[key] or .items() instead.
+~<code>for key in config.keys(), value in config.values(): print(key, value)</code>#Wrong — Python does not support two <code>in</code> clauses in one for statement. Use <code>for key, value in config.items()</code>.
+#### Tests LO5 — iterating with for, .values(), and .items() (corpus §5.6)
+}
+
+::q6:: A dictionary <code>record</code> may or may not have a key <code>"status"</code>. Which line reads the value safely and returns <code>"unknown"</code> if the key is missing? {
+~<code>record["status", "unknown"]</code>#Wrong — passing two values inside square brackets attempts a tuple key lookup, which raises a KeyError. Use .get() for safe access.
+~<code>record.fetch("status", "unknown")</code>#Wrong — Python dictionaries do not have a .fetch() method. Use .get() to look up a key with a default.
+=<code>record.get("status", "unknown")</code>#Correct — .get() returns the stored value if the key exists, or the second argument ("unknown") if it does not — no crash.
+~<code>record["status"] or "unknown"</code>#Wrong — if "status" is not in record, this raises a KeyError before the or can run. Use .get() instead.
+#### Tests LO6 — safe retrieval with .get() (corpus §5.5)
+}

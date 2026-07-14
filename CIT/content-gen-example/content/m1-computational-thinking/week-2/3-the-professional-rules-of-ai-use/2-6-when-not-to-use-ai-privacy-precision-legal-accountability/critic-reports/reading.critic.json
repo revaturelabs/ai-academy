@@ -1,0 +1,66 @@
+{
+  "topic_id": "2.6",
+  "critic": "reading-critic",
+  "cycle": 1,
+  "at": "2026-06-17T00:00:00Z",
+  "passed": true,
+  "checks": {
+    "format_discipline": {
+      "passed": true,
+      "detail": "No frontmatter — file opens directly with '# When NOT to use AI — privacy, precision, legal accountability'. Sidecar reading.meta.json present and valid with word_count, estimated_read_minutes, citations_used, sections fields. Exactly six fixed ##-level sections in correct order: Overview, Key Concepts, Worked Example, In Practice, Key Takeaways, References."
+    },
+    "length": {
+      "passed": true,
+      "target_word_range": [1800, 2200],
+      "target_minute_range": [9, 11],
+      "estimated_word_count": 2160,
+      "estimated_read_minutes_at_230wpm": 9.4,
+      "detail": "~2160 words, within the 1800–2200 deep-profile target. At 230 wpm, 9.4 minutes — within the 9–11 minute target range."
+    },
+    "citations": {
+      "passed": true,
+      "primary_resource_cited": {
+        "passed": true,
+        "detail": "[1] Thomson Reuters (primary) cited in Key Concepts (Privacy, three-question check), Worked Example, In Practice (legal practice section), Key Takeaways. [2] ABA cited in Key Concepts (Privacy, three-question check), Worked Example, In Practice, Key Takeaways. [3] NCBI/PMC cited in Key Concepts (Precision, three-question check), Worked Example, In Practice (healthcare section), Key Takeaways. All three resources cited at least once."
+      },
+      "bibliography_matches_inline": {
+        "passed": true,
+        "detail": "References section lists exactly [1], [2], [3] matching all inline markers. No orphan markers; no orphan bibliography entries."
+      }
+    },
+    "forward_references": {
+      "passed": true,
+      "forward_references_found": [],
+      "detail": "'Hallucination' introduced with a plain-language definition and tagged 'a term you will encounter more in later topics' — compliant named-and-deferred, not taught. GDPR spelled out '(General Data Protection Regulation)' with explicit 'You will study these regulations in later topics' defer pointer. HIPAA spelled out on first use. No forward concept is taught beyond a one-sentence pointer."
+    },
+    "faithfulness": {
+      "passed": true,
+      "assertions_sampled": 10,
+      "unsupported_assertions": 0,
+      "detail": "All 10 sampled assertions trace directly to the corpus: data-fate bullet sequence (§5.1), consumer vs. professional tool distinction (§5.1), precision table entries (§5.2), AI confident-wrong characterisation (§5.2), legal accountability definition (§5.3), AI-is-software statement (§5.3), fabricated-citation scenario (§5.3), ABA guidance statement (§7), duty-of-confidentiality extension (§7), financial data as sensitive data (§7). No new assertions added beyond the corpus."
+    },
+    "beginner_readability": {
+      "passed": true,
+      "findings": [],
+      "detail": "All non-everyday terms defined on first use: 'Sensitive data' bold-defined with examples; 'HIPAA' spelled out; 'GDPR' spelled out with defer pointer; 'probabilistic output' correctly treated as prior concept (introduced topic 2.4); 'hallucination' defined inline; 'bar association' defined parenthetically in Worked Example; 'costs order' defined parenthetically in Worked Example. No cold jargon drops. No paragraph introduces 3+ brand-new terms simultaneously. Concepts introduced concrete-first in all three key-concept sections. Plain register maintained throughout — no hedging phrases detected, sentences direct and short."
+    },
+    "formatting": {
+      "passed": true,
+      "findings": [],
+      "detail": "No paragraph exceeds 6 sentences. Bullet lists used for: data-fate outcomes (3 items), sensitive data examples (4 items), profession accountability examples (3 items), healthcare In Practice points, legal In Practice points. Numbered list used for three-question check. Tables used for high-precision-required task types and In Practice quick-reference. Inline examples present in every key concept section (rule-of-thumb phrases, brainstorm-vs-dosage contrast). Bold definitions applied to all new terms on first use."
+    },
+    "no_assessment_references": {
+      "passed": true,
+      "detail": "No assessment IDs, due weeks, or grade weights appear anywhere in the reading. No mention of A1, W3, or 10%."
+    },
+    "scope": {
+      "passed": true,
+      "scope_creep_findings": [],
+      "detail": "Reading stays entirely within the three named dimensions: privacy, precision, and legal accountability. 'Hallucination' is introduced as a supporting concept for the precision dimension with a plain definition and a named-and-deferred pointer — not taught as a standalone concept. GDPR is named-and-deferred in one sentence. No material teaches beyond the topic headline boundary."
+    }
+  },
+  "hard_fails": [],
+  "soft_findings": [],
+  "gold_example_comparison": "The reading matches the sectioning, beginner tone, formatting density, and concrete-first explanation pattern of both gold reading examples (2-1 and 3-4). Bold definitions, inline examples, bullet/numbered lists, and tables are used consistently. Diagram embedded inline in Key Concepts at the point where the three-question check concept is introduced — consistent with the 3-4 gold example's diagram placement pattern.",
+  "verdict": "PASS — all checks clean on cycle 1. Format discipline: no frontmatter, sidecar valid, six fixed sections in order. Length: ~2160 words / 9.4 minutes, within deep-profile targets (1800–2200 words, 9–11 minutes). Citations: all three resources cited at least once, bibliography matches inline markers, no orphan entries. No forward references: hallucination and GDPR both named-and-deferred with explicit pointers. Faithfulness: 10/10 sampled assertions trace to corpus, zero unsupported assertions. Beginner readability: all terms defined on first use, no jargon dumps, concrete-first, plain register. Formatting: no prose walls, all procedures/sequences as lists, inline examples present, bold definitions applied. No assessment references. No scope creep. Reading is approved."
+}

@@ -1,0 +1,50 @@
+{
+  "topic_id": "9.11",
+  "artifact": "quiz",
+  "critic_run_at": "2026-06-13",
+  "passed": true,
+  "verdict": "PASS — all bias checks clear on cycle 2. Length-bias fix successful: correct answers now within 7–15% of mean answer length (well below 20% threshold). Positional distribution even. All 5 LOs covered. Short-answer q6 tests applied meaningful/nominal oversight distinction.",
+  "checks": {
+    "positional_bias": {
+      "passed": true,
+      "distribution": [2, 1, 1, 1],
+      "distribution_by_position": {"0": 2, "1": 1, "2": 1, "3": 1},
+      "total_mcqs": 5,
+      "max_share": 0.40,
+      "threshold": 0.40,
+      "notes": "Max share exactly 40% at position 0 — at the threshold but NOT exceeding it. PASS."
+    },
+    "length_bias": {
+      "passed": true,
+      "longest_correct_rate": 0.0,
+      "baseline": 0.25,
+      "fail_threshold": 0.40,
+      "per_question": [
+        {"id": "q1", "correct_len": 101, "mean": 99.75, "delta_over_mean_pct": 1.3, "is_longest": true, "exceeds_20pct": false, "flagged": false},
+        {"id": "q2", "correct_len": 137, "mean": 130.75, "delta_over_mean_pct": 4.8, "is_longest": false, "exceeds_20pct": false, "flagged": false},
+        {"id": "q3", "correct_len": 141, "mean": 122.25, "delta_over_mean_pct": 15.4, "is_longest": true, "exceeds_20pct": false, "flagged": false},
+        {"id": "q4", "correct_len": 140, "mean": 131.5, "delta_over_mean_pct": 6.5, "is_longest": false, "exceeds_20pct": false, "flagged": false},
+        {"id": "q5", "correct_len": 137, "mean": 128.0, "delta_over_mean_pct": 7.0, "is_longest": true, "exceeds_20pct": false, "flagged": false}
+      ],
+      "notes": "Cycle 2 fix: corpus section refs moved to feedback only; distractors lengthened to match correct answer footprint. 0/5 MCQs flagged."
+    },
+    "distractor_plausibility": {
+      "passed": true,
+      "absurd_rate": 0.0,
+      "notes": "All distractors capture plausible beginner misconceptions: confusing complexity with severity (q1), technical vs cognitive concerns (q2), nominal vs meaningful oversight (q3/q4), pilot overconfidence vs training gap (q5)."
+    },
+    "objective_coverage": {
+      "passed": true,
+      "uncovered_objectives": [],
+      "notes": "LO1→q1, LO2→q2, LO3→q3, LO4→q4, LO5→q5. q6 short-answer tests applied understanding of meaningful vs nominal oversight (LO2+LO3 applied)."
+    },
+    "beginner_fairness": {
+      "passed": true,
+      "jargon_in_stem": {"passed": true, "issues": []},
+      "out_of_scope_questions": {"passed": true, "issues": []},
+      "unfair_distractors": {"passed": true, "issues": []},
+      "notes": "MCAS, EU AI Act, COMPAS all spelled out in stems or referenced in context. All questions within 9.11 scope. Distractors are beginner-accessible misconceptions."
+    }
+  },
+  "cycle": 2
+}

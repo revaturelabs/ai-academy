@@ -1,0 +1,154 @@
+{
+  "critic": "corpus-critic",
+  "topic_id": "4.5",
+  "corpus_path": "content/m2-introduction-to-ai-systems/week-4/2-retrieval-agents-and-tools/4-5-tool-use-ai-calling-search-calculator-and-code-runner/topic_corpus.md",
+  "resources_source": "web_search",
+  "depth_profile": "standard",
+  "at": "2026-06-17T00:00:00Z",
+  "passed": true,
+  "verdict": "PASS — all six checks clear; one soft finding (undefined term 'sandboxed environment') surfaces for HITL awareness but does not reach the 3-finding escalation threshold for a hard fail.",
+  "word_count_estimate": 2280,
+  "checks": {
+    "required_sections": {
+      "passed": true,
+      "detail": {
+        "section_3_learning_objectives": {
+          "present": true,
+          "estimated_words": 105,
+          "min_required": 50,
+          "result": "PASS"
+        },
+        "section_4_introduction": {
+          "present": true,
+          "estimated_words": 165,
+          "min_required": 50,
+          "result": "PASS"
+        },
+        "section_5_core_concepts": {
+          "present": true,
+          "estimated_words": 1090,
+          "min_required": 100,
+          "result": "PASS"
+        },
+        "section_10_key_takeaways": {
+          "present": true,
+          "estimated_words": 130,
+          "min_required": 50,
+          "result": "PASS"
+        }
+      }
+    },
+    "citation_density": {
+      "passed": true,
+      "mode": "strict",
+      "primary_resource_cited": {
+        "resource_index": 1,
+        "url": "https://www.ibm.com/think/topics/tool-calling",
+        "role": "primary",
+        "cited_at_least_once": true,
+        "citation_occurrences_estimated": 14,
+        "result": "PASS"
+      },
+      "sections_checked": ["5", "6", "7"],
+      "total_standalone_factual_assertions_estimated": 32,
+      "assertions_with_citation_marker_estimated": 21,
+      "coverage_pct_estimated": 66,
+      "threshold_pct": 60,
+      "result": "PASS",
+      "notes": "All three resources ([1] IBM, [2] Martin Fowler, [3] The Register) appear in §5, §6, and §7. Primary [1] cited in §4 introduction and throughout §5–§7. No fabricated citations detected — all [1], [2], [3] markers resolve to declared resources."
+    },
+    "sequence_drift": {
+      "passed": true,
+      "result": "PASS with soft finding",
+      "forward_referenced_terms": [],
+      "soft_findings": [
+        {
+          "term": "sandboxed environment",
+          "location": "§5.3 — code runner definition, line 90",
+          "issue": "Term used in a defining clause ('runs it in a sandboxed environment') without a plain-language gloss. 'Sandboxed' is a computing security concept not introduced in any prior topic (4.1–4.4) and not listed in this topic's concepts_introduced. Used descriptively in one phrase only; the sandbox concept itself is not taught. Soft flag: add a brief parenthetical e.g. '(an isolated, safe environment)' on first use.",
+          "severity": "soft"
+        },
+        {
+          "term": "plugins",
+          "location": "§5.2 — 'ChatGPT's plugins'",
+          "issue": "Product name used as an example label without definition. For absolute beginners 'plugin' may be unfamiliar. Used in a list of examples alongside Google Gemini and Anthropic's Claude; context makes the meaning inferable. Very minor.",
+          "severity": "soft"
+        }
+      ]
+    },
+    "length_sanity": {
+      "passed": true,
+      "depth_profile": "standard",
+      "corpus_word_range": [1500, 6000],
+      "estimated_word_count": 2280,
+      "within_range": true,
+      "result": "PASS",
+      "notes": "Standard corpus range 1500–6000 words. Estimated ~2,280 words. Within range. Corpus is appropriately longer than the reading artifact it will ground."
+    },
+    "topic_scope": {
+      "passed": true,
+      "headline": "Tool use — AI calling search, calculator, and code runner",
+      "result": "PASS",
+      "scope_creep_findings": [],
+      "soft_findings": [
+        {
+          "term": "sandboxed environment",
+          "location": "§5.3 — code runner definition",
+          "issue": "The phrase 'runs it in a sandboxed environment' introduces the computing concept of sandboxing descriptively without teaching it. This is borderline: it describes the code runner's operating environment without explaining what sandboxing means or why it matters. Not a hard scope_creep violation since the sandbox concept is not defined at depth; however, the undefined term creates a beginner readability gap (see beginner_readability check).",
+          "severity": "soft"
+        }
+      ],
+      "named_and_deferred_correctly": [
+        {
+          "concept": "exact format of the tool request / frameworks that manage multi-tool conversations",
+          "location": "§5.5 final paragraph",
+          "handling": "Explicitly named and deferred with 'advanced topics you will encounter later'. Correct mention-and-defer form."
+        },
+        {
+          "concept": "RAG (Retrieval-Augmented Generation)",
+          "location": "§7 — search-augmented chatbots paragraph",
+          "handling": "Referred back to 4.3 with '(Retrieval-Augmented Generation, covered in topic 4.3)'. Correct back-reference to prior topic; not re-taught here."
+        }
+      ]
+    },
+    "beginner_readability": {
+      "passed": true,
+      "result": "PASS — 1 soft finding; escalation threshold (≥3 distinct findings) not reached",
+      "findings_count": 1,
+      "escalation_threshold": 3,
+      "escalated_to_hard_fail": false,
+      "findings": {
+        "undefined_terms": {
+          "severity": "soft",
+          "terms": ["sandboxed environment"],
+          "detail": "'Sandboxed environment' appears in the code runner definition (§5.3) without a plain-language gloss. An absolute beginner will not know what 'sandboxed' means. Recommended fix: add parenthetical '(an isolated, safe environment that cannot affect the rest of the computer)'."
+        },
+        "jargon_dump": {
+          "severity": "none",
+          "detail": "No paragraph introduces 3+ brand-new terms simultaneously. §5.2 Step 2 introduces 'structured request' and 'routing software' in the same step but each is explained individually in consecutive sentences. Below threshold."
+        },
+        "academic_register": {
+          "severity": "none",
+          "detail": "No hedging phrases ('it is generally considered', 'many experts believe') detected. Sentences are predominantly short, active, and learner-addressed. Register is plain and confident throughout."
+        }
+      },
+      "positive_observations": [
+        "Every other new term is defined on first use with a plain-language gloss (search tool, calculator tool, code runner, structured request, routing software layer, tool-use cycle, tool availability scope).",
+        "Concrete everyday analogies lead each concept (sleeping friend analogy in §4, librarian form analogy in §5.5).",
+        "Tables used appropriately for comparisons (§5.1 gaps table, §5.4 before-and-after table).",
+        "LLM spelled out as 'LLM (Large Language Model)' on first use in §4.",
+        "Sentence lengths are consistently short; active voice and second-person address used throughout."
+      ]
+    }
+  },
+  "soft_findings_summary": [
+    {
+      "finding_code": "undefined_terms",
+      "check": "beginner_readability",
+      "term": "sandboxed environment",
+      "location": "§5.3 — code runner definition",
+      "recommended_fix": "Add parenthetical gloss on first use: 'runs it in a sandboxed environment (an isolated, safe area that cannot affect the rest of the computer)'."
+    }
+  ],
+  "hard_failures": []
+}

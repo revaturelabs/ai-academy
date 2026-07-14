@@ -1,0 +1,30 @@
+{
+  "topic_id": "8.4",
+  "captured_at": "2026-06-22T06:59:33Z",
+  "captured_by": "namratas@revature.com",
+  "resources_source": "web_search",
+  "resources": [
+    {
+      "type": "url",
+      "value": "https://apxml.com/courses/basics-model-evaluation-metrics/chapter-2-metrics-for-classification/f1-score-metric",
+      "role": "primary",
+      "source": "web_search",
+      "notes": "Same model-eval course chapter family used for 8.3 — continuity; F1 as combined precision/recall."
+    },
+    {
+      "type": "url",
+      "value": "https://developers.google.com/machine-learning/crash-course/classification/accuracy-precision-recall",
+      "role": "supporting",
+      "source": "web_search",
+      "notes": "Google ML Crash Course — canonical first-party, beginner framing of precision/recall/F1."
+    },
+    {
+      "type": "url",
+      "value": "https://en.wikipedia.org/wiki/F-score",
+      "role": "supporting",
+      "source": "web_search",
+      "notes": "Reference: harmonic-mean definition, score range 0-1."
+    }
+  ],
+  "web_search_query": "F1 score balancing precision and recall harmonic mean explained"
+}

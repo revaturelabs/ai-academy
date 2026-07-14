@@ -1,0 +1,43 @@
+{
+  "topic_id": "14.7",
+  "captured_at": "2026-06-15T00:00:00Z",
+  "captured_by": "bhuvaneshwarim@revature.com",
+  "resources_source": "human",
+  "resources": [
+    {
+      "type": "url",
+      "value": "https://python.langchain.com/docs/modules/agents/",
+      "role": "primary",
+      "source": "human",
+      "notes": ""
+    },
+    {
+      "type": "url",
+      "value": "https://docs.anthropic.com/en/docs/build-with-claude/tool-use",
+      "role": "primary",
+      "source": "human",
+      "notes": ""
+    },
+    {
+      "type": "citation",
+      "value": "Chip Huyen — AI Engineering (O'Reilly)",
+      "role": "primary",
+      "source": "human",
+      "notes": ""
+    },
+    {
+      "type": "url",
+      "value": "https://cloud.google.com/discover/what-are-ai-agents",
+      "role": "primary",
+      "source": "human",
+      "notes": ""
+    },
+    {
+      "type": "url",
+      "value": "https://lilianweng.github.io/posts/2023-06-23-agent/",
+      "role": "primary",
+      "source": "human",
+      "notes": ""
+    }
+  ]
+}

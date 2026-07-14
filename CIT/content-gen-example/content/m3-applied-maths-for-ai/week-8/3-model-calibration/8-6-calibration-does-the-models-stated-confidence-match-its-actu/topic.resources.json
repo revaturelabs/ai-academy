@@ -1,0 +1,30 @@
+{
+  "topic_id": "8.6",
+  "captured_at": "2026-06-22T07:36:23Z",
+  "captured_by": "namratas@revature.com",
+  "resources_source": "web_search",
+  "resources": [
+    {
+      "type": "url",
+      "value": "https://arxiv.org/pdf/2501.19047",
+      "role": "primary",
+      "source": "web_search",
+      "notes": "Understanding Model Calibration — gentle introduction + visual exploration of calibration and ECE. Beginner-appropriate anchor."
+    },
+    {
+      "type": "url",
+      "value": "https://github.com/hollance/reliability-diagrams",
+      "role": "supporting",
+      "source": "web_search",
+      "notes": "Reliability diagrams — first-party reference for the predicted-confidence vs actual-accuracy plot."
+    },
+    {
+      "type": "url",
+      "value": "https://mbrenndoerfer.com/writing/calibration-machine-learning-confidence-accuracy-ece",
+      "role": "supporting",
+      "source": "web_search",
+      "notes": "Calibration in ML: Confidence, Accuracy & ECE — explanatory walkthrough of over/under-confidence."
+    }
+  ],
+  "web_search_query": "model calibration confidence vs actual accuracy reliability diagram explained"
+}

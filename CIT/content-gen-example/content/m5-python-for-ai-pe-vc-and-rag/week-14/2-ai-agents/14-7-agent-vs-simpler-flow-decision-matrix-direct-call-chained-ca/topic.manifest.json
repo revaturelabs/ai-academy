@@ -1,0 +1,50 @@
+{
+  "type": "topic",
+  "id": "14.7",
+  "title": "Agent vs simpler flow — decision matrix: direct call → chained calls → RAG → agent",
+  "slug": "14-7-agent-vs-simpler-flow-decision-matrix-direct-call-chained-ca",
+  "position_in_module": 3,
+  "week_num": 14,
+  "session_name": "RAG, Vectors, Agents and Production AI",
+  "module": {
+    "position": 2,
+    "slug": "2-ai-agents",
+    "title": "AI Agents"
+  },
+  "course": {
+    "code": "M5",
+    "slug": "m5-python-for-ai-pe-vc-and-rag",
+    "title": "Python for AI, PE, VC and RAG"
+  },
+  "next_assessment": {
+    "id": "A5",
+    "due_week": 15,
+    "title": "Capstone Project and Portfolio",
+    "weight": "40%"
+  },
+  "paths": {
+    "corpus": "topic_corpus.md",
+    "resources": "topic.resources.json",
+    "progress": "topic.progress.json",
+    "artifacts_dir": "artifacts/",
+    "critic_reports_dir": "critic-reports/"
+  },
+  "artifact_plan": {
+    "diagram": true,
+    "diagram_intent": "Four-branch decision flowchart: start → Q1 (training data?) → yes: direct call / no → Q2 (fixed LLM steps?) → yes: chained calls / no → Q3 (external data?) → yes: RAG / no → Q4 (multi-tool dynamic?) → yes: agent",
+    "suggested_profile": "standard",
+    "confirmed_profile": "standard",
+    "reading_word_range": [1200, 1600],
+    "reading_minutes_range": [6, 8],
+    "quiz_questions_range": [5, 6],
+    "quiz_include_short_answer": false,
+    "profile_signals": [
+      "Core Concepts has 4 tiers + decision matrix table",
+      "Implementation section warranted (checklist procedure)",
+      "Real-World Patterns section warranted",
+      "decision matrix is a branching/decision concept — strong diagram signal"
+    ]
+  },
+  "expected_delivery_minutes": 7,
+  "status": "scaffolded"
+}

@@ -1,0 +1,138 @@
+{
+  "critic": "reading-critic",
+  "topic_id": "1.4",
+  "title": "Why AI gives different answers to the same question",
+  "run_at": "2026-06-20T00:00:00Z",
+  "passed": true,
+  "verdict": "All 9 checks pass — reading is within word-count budget, correctly structured, citations complete, scope clean, beginner-readable, diagram embedded.",
+  "checks": {
+    "format_discipline": {
+      "passed": true,
+      "findings": [],
+      "detail": {
+        "frontmatter_present": false,
+        "first_line": "# Why AI gives different answers to the same question",
+        "meta_sidecar_missing": false,
+        "section_template_violation": false,
+        "sections_found": ["Overview", "Key Concepts", "Worked Example", "In Practice", "Key Takeaways", "References"],
+        "sections_expected": ["Overview", "Key Concepts", "Worked Example", "In Practice", "Key Takeaways", "References"]
+      }
+    },
+    "length": {
+      "passed": true,
+      "findings": [],
+      "detail": {
+        "word_count_meta": 1549,
+        "target_word_range": [1200, 1600],
+        "word_count_in_range": true,
+        "read_minutes_at_200wpm": 7.7,
+        "target_minute_range": [6, 8],
+        "read_minutes_in_range": true,
+        "note": "artifact-mix.json canonical reading_wpm = 200 used (not the 230 in dispatch text)"
+      }
+    },
+    "citations": {
+      "passed": true,
+      "findings": [],
+      "detail": {
+        "primary_resource_id": 1,
+        "primary_cited": true,
+        "inline_markers_found": [1, 2, 3],
+        "bibliography_entries_found": [1, 2, 3],
+        "orphan_markers": [],
+        "orphan_bibliography": []
+      }
+    },
+    "no_forward_references": {
+      "passed": true,
+      "findings": [],
+      "detail": {
+        "prior_vocab_used_without_redefinition": ["probabilistic system", "deterministic system", "sampling", "temperature", "probability", "input/process/output"],
+        "this_topic_vocab_defined_at_first_use": ["LLM (Large Language Model)", "token", "token sampling", "probability distribution"],
+        "forward_references_detected": []
+      }
+    },
+    "faithfulness": {
+      "passed": true,
+      "findings": [],
+      "detail": {
+        "assertions_sampled": 10,
+        "assertions_supported": 10,
+        "unsupported_assertions": [],
+        "threshold": 2,
+        "sample": [
+          "AI language tools are probabilistic systems — traced to corpus §4",
+          "Token definition — traced to corpus §5.1",
+          "Token sampling definition — traced to corpus §5.1",
+          "Probability distribution table (mat/floor/chair/roof) — exact match corpus §5.2",
+          "Temperature does not change what answers are possible — exact match corpus §5.3",
+          "Six-step sampling chain — exact match corpus §5.4",
+          "Customer service low temperature example — traced to corpus §7",
+          "AI tutoring moderate temperature variation — traced to corpus §7",
+          "Run same prompt 2-3 times best practice — traced to corpus §8",
+          "Narrow prompt to reduce variation — traced to corpus §8"
+        ]
+      }
+    },
+    "beginner_readability": {
+      "passed": true,
+      "findings": [],
+      "detail": {
+        "undefined_terms": [],
+        "jargon_dumps": [],
+        "abstract_first_violations": [],
+        "academic_register_instances": [],
+        "notes": "All non-everyday terms (LLM, token, token sampling, probability distribution) defined with plain-language meaning at first appearance. Acronyms spelled out. Concrete analogies (text message autocomplete, cat-on-mat table, bag-of-cards mental image) precede abstractions throughout."
+      }
+    },
+    "formatting": {
+      "passed": true,
+      "findings": [],
+      "detail": {
+        "walls_of_text": [],
+        "unlisted_sequences": [],
+        "no_inline_examples": false,
+        "bold_term_definitions_present": true,
+        "tables_used_for_comparisons": true,
+        "notes": "Six-step sampling chain rendered as numbered list (lines 48-53). Temperature comparison rendered as table. Probability distribution rendered as table. All paragraphs within ~4-sentence target. Bold-term definitions used for LLM, token, token sampling, probability distribution."
+      }
+    },
+    "assessment_references": {
+      "passed": true,
+      "findings": [],
+      "detail": {
+        "assessment_ids_found": [],
+        "due_week_references": [],
+        "grade_weight_language": []
+      }
+    },
+    "scope": {
+      "passed": true,
+      "findings": [],
+      "detail": {
+        "scope_creep_items": [],
+        "prohibited_concepts_checked": ["transformer internals", "attention mechanism", "training data", "backpropagation", "neural network architecture", "embeddings", "fine-tuning", "RLHF", "softmax", "logits", "encoder/decoder"],
+        "all_prohibited_absent": true,
+        "notes": "Reading stays tightly within topic headline. Temperature is prior vocab from 1.3, used without re-teaching. No LLM architecture or training mechanics introduced."
+      }
+    },
+    "diagram_embed": {
+      "passed": true,
+      "findings": [],
+      "detail": {
+        "artifact_plan_diagram": true,
+        "diagram_referenced_in_reading": true,
+        "embed_line": "![Token-by-token sampling chain with low vs high temperature contrast](./diagram.png)",
+        "caption_present": true,
+        "caption_text": "The token sampling chain: input shapes the probability distribution, the model samples one token, that token is added to the response, and the cycle repeats — with a side panel contrasting how low and high temperature change which tokens get chosen."
+      }
+    }
+  },
+  "hard_fails": [],
+  "soft_findings": [],
+  "escalation_triggered": false,
+  "gold_example_comparison": {
+    "matched_example": null,
+    "note": "No reading gold example exists for topic 1.4 or a close structural match. Checked against written standards in artifact-mix.json and SKILL.md. Reading meets or exceeds the bar set by the 2-1 gold example (2-1-what-makes-a-good-specification.reading.md) in sectioning, beginner tone, formatting density, inline examples, and bold-term definitions."
+  }
+}

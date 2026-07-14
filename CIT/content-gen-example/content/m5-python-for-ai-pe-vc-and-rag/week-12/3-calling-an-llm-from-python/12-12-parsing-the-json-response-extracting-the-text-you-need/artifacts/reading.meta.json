@@ -1,0 +1,10 @@
+{
+  "topic_id": "12.12",
+  "title": "Parsing the JSON response — extracting the text you need",
+  "estimated_read_minutes": 5,
+  "word_count": 942,
+  "generated_at": "2026-06-15T00:00:00Z",
+  "embeds_diagram": false,
+  "citations_used": [1, 2],
+  "sections": ["Overview", "Key Concepts", "Worked Example", "In Practice", "Key Takeaways", "References"]
+}

@@ -1,0 +1,49 @@
+$CATEGORY: CIT/M2/week-5/5.6-5-6-prompt-injection-how-attackers-manipulate-ai-through-crafted
+
+::q1:: Which statement best describes what a prompt injection attack is? {
+=An attacker crafts an input so the AI follows the attacker's hidden instruction instead of its owner's#Correct - the attacker slips a command into ordinary input and the AI obeys it.
+~An attacker breaks into the server running the AI and steals its stored password to take control#No - prompt injection involves no break-in; the attacker just types the right words.
+~An attacker sends so many requests that the AI crashes and stops responding to anyone at all#No - that is an overload, not injection, which hijacks what the AI does.
+~An attacker rewrites the AI's own source code so it permanently learns brand-new behaviour#No - nothing in the AI's code is changed; only the input text is crafted.
+#### Tests the core definition of prompt injection (corpus 5.1).
+}
+
+::q2:: Why is an AI usually unable to tell its trusted instructions apart from untrusted user input? {
+~The AI checks who is an administrator and simply trusts everything that an admin user types#No - the issue is not user roles; no channel reliably marks text as trusted.
+~The AI deliberately chooses to ignore its instructions so it can be more helpful to every user#No - the model does not choose to ignore orders; it cannot reliably tell them apart.
+=The trusted instructions and the user's input are joined into one block of text it reads together#Correct - both share one context window, so instructions and content look like the same text.
+~The AI forgets all of its instructions after a few seconds and then has to guess at them again#No - the instructions are not lost by a timer; they share one stream with user input.
+#### Tests the root cause - trusted and untrusted text share one context window (corpus 5.2).
+}
+
+::q3:: The classic "ignore previous instructions" attack works mainly because the attacker does what? {
+~Guesses the AI's secret password and then logs in as the owner to quietly change the rules#No - no password or login is involved; the attack is just crafted text in the input.
+=Supplies text that sounds like a fresh, confident command so the AI obeys it over its real orders#Correct - no code is broken; the attacker gives a more compelling-sounding instruction.
+~Floods the AI with the very same question over and over until it gives up and answers freely#No - repetition is not the trick; one well-phrased command is enough on its own.
+~Edits the system prompt file stored on the AI's computer in order to remove the safety rules#No - the attacker never touches the stored system prompt; they only type input text.
+#### Tests the classic "ignore previous instructions" attack pattern (corpus 5.3).
+}
+
+::q4:: What is the difference between direct prompt injection and indirect prompt injection? {
+~Direct means the user types the request fast; indirect means the user types it slowly over time#No - typing speed is irrelevant; the difference is where the instruction comes from.
+~Direct uses pictures as the input to the AI; indirect uses only plain written text as the input#No - both can be plain text; the split is who plants the instruction and where.
+~Direct injection works on free AI tools; indirect injection only works on the paid versions#No - cost or tier is irrelevant; the split is the source of the malicious instruction.
+=Direct is typed straight into the AI by the user; indirect hides instructions in content read later#Correct - in indirect injection a web page or document carries the planted instruction.
+#### Tests the direct vs indirect prompt injection distinction (corpus 5.4).
+}
+
+::q5:: Which option pairs a real impact of a successful prompt injection with a beginner-level defence? {
+=Impact\: the AI leaks private data it should hide; defence\: limit what the AI is allowed to do#Correct - reducing the AI's powers reduces what a successful injection can cost.
+~Impact\: the AI starts running much faster; defence\: set a strong password on the user's account#No - a faster AI is not a harm, and a password does not stop crafted-input attacks.
+~Impact\: the AI uses up far more memory; defence\: fully restart the AI once every single day#No - memory use is not the harm here, and a restart does nothing against injection.
+~Impact\: the AI changes its own colour theme; defence\: install antivirus software on the server#No - these are unrelated to injection, which causes leaked data or unintended actions.
+#### Tests real-world impacts and beginner-level defences of injection (corpus 5.5, 8).
+}
+
+::q6:: How does a prompt injection differ from a jailbreak? {
+~They are exactly the same single attack, just with two different names used for the same thing#No - they are related but distinct; one targets instructions, the other safety rules.
+~Injection needs admin access, while a jailbreak can be carried out by any ordinary normal user#No - neither needs admin access; both are crafted text, not privilege attacks.
+~Injection only affects images, while a jailbreak only affects the written text replies it gives#No - both concern instructions in text; the split is about what each attack targets.
+=Injection hijacks the AI's instructions, while a jailbreak bends the AI past its safety rules#Correct - they overlap, but the targets differ: instructions versus safety rules.
+#### Tests the prompt-injection-vs-jailbreak distinction (corpus 5.6).
+}

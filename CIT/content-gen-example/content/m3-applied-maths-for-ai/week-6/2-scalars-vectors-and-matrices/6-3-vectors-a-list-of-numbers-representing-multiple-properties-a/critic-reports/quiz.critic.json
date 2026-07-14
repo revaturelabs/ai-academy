@@ -1,0 +1,116 @@
+{
+  "topic_id": "6.3",
+  "passed": true,
+  "checks": {
+    "positional_bias": {
+      "passed": true,
+      "distribution": [1, 1, 2, 1],
+      "position_map": { "0": 1, "1": 1, "2": 2, "3": 1 },
+      "max_share": 0.40,
+      "total_mcq": 5,
+      "meta_gift_desync": false,
+      "derived_positions": [0, 1, 2, 3, 2],
+      "sidecar_positions": [0, 1, 2, 3, 2],
+      "note": "0.40 is not strictly greater than 0.40; threshold is > 0.40, so this passes."
+    },
+    "length_bias": {
+      "passed": true,
+      "longest_correct_rate": 0.20,
+      "baseline": 0.25,
+      "threshold": 0.40,
+      "longest_correct_count": 1,
+      "total_mcq": 5,
+      "detail": {
+        "q1": { "correct_len": 74, "distractor_mean": 70.67, "ratio": 1.047, "longest_correct": false },
+        "q2": { "correct_len": 102, "distractor_mean": 93.33, "ratio": 1.093, "longest_correct": false },
+        "q3": { "correct_len": 114, "distractor_mean": 90.33, "ratio": 1.262, "longest_correct": true },
+        "q4": { "correct_len": 120, "distractor_mean": 100.67, "ratio": 1.192, "longest_correct": false },
+        "q5": { "correct_len": 92,  "distractor_mean": 83.33,  "ratio": 1.104, "longest_correct": false }
+      },
+      "note": "Only Q3 exceeds the 1.20 ratio (1.262). Rate 1/5 = 0.20 is well within the 0.40 ceiling. Previous fail at 0.80 resolved by shortening Q1 and Q2 correct answers and lengthening Q3 D2, Q4 D1 and D3."
+    },
+    "distractor_plausibility": {
+      "passed": true,
+      "absurd_rate": 0.00,
+      "total_distractors": 15,
+      "absurd_count": 0,
+      "weakest_questions": [
+        {
+          "id": "q3",
+          "distractor": "The values in the vector are converted to negative numbers and the algorithm rejects them as invalid",
+          "score": 2,
+          "note": "Borderline 2/3 — not anchored to a common beginner misconception about position-swapping, but not absurd."
+        }
+      ],
+      "scores_summary": {
+        "1_absurd": 0,
+        "2_wrong_unrelated": 1,
+        "3_plausible_misconception": 10,
+        "4_strong_distractor": 4
+      },
+      "scores": {
+        "q1": [4, 4, 3],
+        "q2": [3, 3, 3],
+        "q3": [3, 2, 3],
+        "q4": [4, 3, 3],
+        "q5": [4, 3, 4]
+      }
+    },
+    "objective_coverage": {
+      "passed": true,
+      "uncovered_objectives": [],
+      "orphan_questions": [],
+      "coverage_map": {
+        "LO1_define_vector": ["q1"],
+        "LO2_explain_grouping": ["q2"],
+        "LO3_construct_feature_vector": ["q5"],
+        "LO4_describe_ai_feature_vectors": ["q4"],
+        "LO5_identify_dimension_consistent_positions": ["q3"]
+      },
+      "coverage_detail": [
+        {
+          "lo": "LO1 — Define a vector as an ordered list of scalars, where each position captures a different property of the same thing.",
+          "covered_by": ["q1"],
+          "similarity": 1.0
+        },
+        {
+          "lo": "LO2 — Explain why grouping multiple properties into one vector is more useful than keeping them as separate, unrelated numbers.",
+          "covered_by": ["q2"],
+          "similarity": 0.98
+        },
+        {
+          "lo": "LO3 — Construct a simple feature vector for a familiar object by deciding which properties to include and assigning a number to each.",
+          "covered_by": ["q5"],
+          "similarity": 0.92
+        },
+        {
+          "lo": "LO4 — Describe how AI systems use feature vectors to represent real-world things so that patterns can be found through arithmetic.",
+          "covered_by": ["q4"],
+          "similarity": 0.99
+        },
+        {
+          "lo": "LO5 — Identify the number of elements in a vector (its dimension) and explain why the same position must always mean the same property across all vectors being compared.",
+          "covered_by": ["q3"],
+          "similarity": 0.82
+        }
+      ],
+      "note": "LO3 previously uncovered. Now addressed by replacement Q5 — student constructs [160, 5, 65] for a cup of coffee given fixed slots (caffeine_mg, sugar_g, temperature_c)."
+    },
+    "beginner_fairness_and_scope": {
+      "passed": true,
+      "jargon_in_stem": [],
+      "out_of_scope_questions": [],
+      "unfair_distractors": [],
+      "note": "All questions testable from 6.3 corpus alone. Matrix appears only as name-and-defer in Q1-D2, consistent with corpus §8 and §5.1. Q5 uses real units (mg, g, °C) — within scope; corpus §6 demonstrates the same pattern with a coffee example. No dot product, cosine similarity, embeddings, or neural network concepts present."
+    }
+  },
+  "auto_correction_applied": {
+    "shuffle_round_2": false
+  },
+  "previous_fail_resolved": {
+    "length_bias": "Previous rate 0.80 → now 0.20. Q1 correct answer shortened (16→13 words); Q2 correct answer shortened (19→14 words); Q3-D2 lengthened to 17 words; Q4-D1 and Q4-D3 each lengthened to 17 words.",
+    "lo3_uncovered": "Q5 replaced with LO3 construction question — student reads off [160, 5, 65] from fixed slots for a cup of coffee. Previous Q5 was LO1/LO4 duplicate."
+  },
+  "verdict": "Pass — all checks clean. Positional bias 0.40 (at threshold, not over). Length bias 0.20 (down from 0.80). Distractor plausibility absurd_rate 0.00. All 5 LOs covered including LO3 (previously uncovered).",
+  "at": "2026-06-18T00:00:00Z"
+}

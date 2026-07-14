@@ -1,0 +1,88 @@
+{
+  "verdict": "pass",
+  "cycle": 1,
+  "findings": [
+    {
+      "code": "looks_good",
+      "where": "source pre-flight — parse check",
+      "detail": "YAML frontmatter valid: title, theme, themeVariables, config.flowchart all present. flowchart TD declaration valid. All nodes use correct Mermaid syntax: ([...]) for rounded entry, {...} for diamonds, [...] for rectangles. All :::classDef suffixes (start, question, hitl, hotl, hootl, fix) match declared classDef names. Edge syntax --> and -. 'label' .-> both valid. No unclosed brackets or syntax errors."
+    },
+    {
+      "code": "looks_good",
+      "where": "node count",
+      "detail": "8 nodes: COMP, Q1, Q2, Q3, FIX, HITL, HOTL, HOOTL. Within the required 3–8 range."
+    },
+    {
+      "code": "looks_good",
+      "where": "label discipline",
+      "detail": "All bold labels are ≤ 4 words: 'System Component' (2), 'Q1: Cost if wrong?' (4), 'Q2: Can human verify?' (4), 'Q3: Named accountable role?' (3), 'Fix the Structure First' (4), 'Human-in-the-Loop (HITL)' (3 tokens), 'Human-on-the-Loop (HOTL)' (3 tokens), 'Human-out-of-the-Loop (HOOTL)' (3 tokens). All pass."
+    },
+    {
+      "code": "looks_good",
+      "where": "concept fidelity",
+      "detail": "Every node maps to a named corpus phrase: COMP → §5.1 'distinct step in an AI system's processing chain'; Q1 → §5.3 'cost if this component's output is wrong (severity + reversibility)'; Q2 → §5.3 'can a human verify this component's output without re-running the AI'; Q3 → §5.3 'who is accountable if this component's output causes harm'; FIX → §5.3 'structural fix before a checkpoint can be effective'; HITL → §5.5 'blocking, logged, empowered, monitored'; HOTL / HOOTL → established from 10.5 (within allowed prior concepts). Upgrade-signal edge labels cite §5.4 all three signals: override rate near zero, confidence narrows, new context variable. No scope-creep nodes."
+    },
+    {
+      "code": "looks_good",
+      "where": "acronym rule",
+      "detail": "HITL spelled out as 'Human-in-the-Loop (HITL)', HOTL as 'Human-on-the-Loop (HOTL)', HOOTL as 'Human-out-of-the-Loop (HOOTL)' in each node label. No bare unexplained acronyms."
+    },
+    {
+      "code": "looks_good",
+      "where": "title discipline",
+      "detail": "'Risk-Tiered Component Mapping' is the governing concept from §5.2 ('risk-tiered component mapping: the process of assigning each component in a system an oversight level based on its individual risk profile'). Placed in the YAML config title: field as a banner — not a ghost node, not a dangling annotation. Correct discipline."
+    },
+    {
+      "code": "looks_good",
+      "where": "logic flow vs corpus",
+      "detail": "Decision paths match corpus §5.3 logic: (1) Q1 High/irreversible → Q2 → Q3 → HITL is the mandatory checkpoint path. (2) Q1 Medium → HOTL is the monitored-audit path. (3) Q1 Low/reversible → HOOTL is the automated path. (4) Q2 No → FIX → HITL: corpus §5.3 'structural fix before checkpoint can be effective.' (5) Q3 No → FIX → HITL: corpus §5.3 'component must not run without a mandatory checkpoint.' Upgrade chain HOOTL → HOTL → HITL is two-step (no skip-level), matching §5.4 'from HOOTL to HOTL, from HOTL to HITL.'"
+    },
+    {
+      "code": "looks_good",
+      "where": "color tiers",
+      "detail": "COMP:::start (blue #a5d8ff), Q1/Q2/Q3:::question (yellow #fff3bf), HITL:::hitl (yellow #fff3bf stroke-width:3px — heavier border distinguishes mandatory checkpoint), HOTL:::hotl (purple #d0bfff), HOOTL:::hootl (green #b2f2bb), FIX:::fix (red-tint #ffd8d8). No color tier violations."
+    },
+    {
+      "code": "looks_good",
+      "where": "layout direction",
+      "detail": "flowchart TD (top-down) matches intent: 'decision-flow diagram with Q1/Q2/Q3 evaluation tree.' Vertical decision trees read naturally top-down. nodeSpacing:45 / rankSpacing:60 provides adequate separation for 8 nodes with htmlLabels at 1400px width."
+    },
+    {
+      "code": "looks_good",
+      "where": "PNG render",
+      "detail": "mmdc not available on PATH in this environment (consistent with prior runs in this project — see 10-1, 10-4, 10-5 diagram.critic.json). Source pre-flight passes all checks. PNG should be rendered by orchestrator or CI step using: mmdc -i <mmd-path> -o <png-path> -w 1400 -b transparent. At 1400px width, nodeSpacing:45 / rankSpacing:60 provides sufficient separation for the 8-node TD layout with htmlLabels and the three-branch Q1 diamond."
+    },
+    {
+      "code": "subtitle_illegible",
+      "where": "all nodes (12px subtitle spans)",
+      "detail": "Soft note only: 12px italic subtitles are at the recommended floor for beginner-audience legibility. Non-blocking — consistent with passing precedent in 10-5 diagram.critic.json. No revision required."
+    }
+  ],
+  "stats": {
+    "nodes": 8,
+    "edges": 11,
+    "layout": "flowchart TD",
+    "labels": [
+      "System Component",
+      "Q1: Cost if wrong?",
+      "Q2: Can human verify?",
+      "Q3: Named accountable role?",
+      "Fix the Structure First",
+      "Human-in-the-Loop (HITL)",
+      "Human-on-the-Loop (HOTL)",
+      "Human-out-of-the-Loop (HOOTL)"
+    ],
+    "subgraphs": [],
+    "png_path": "content/m4-human-cognition-and-ai-oversight/week-10/3-designing-human-oversight/10-6-identifying-which-components-in-your-system-need-a-mandatory/artifacts/diagram.png",
+    "png_dims": "not rendered (mmdc not on PATH)",
+    "preflight": {
+      "mermaid_parse": "source review pass (mmdc not available for exit-code check)",
+      "node_count": "pass (8, within 3–8)",
+      "label_discipline": "pass (all bold labels ≤ 4 words)",
+      "concept_fidelity": "pass (all labels match corpus §5.1–§5.5 Core Concepts + §5.4 upgrade signals; no scope-creep)",
+      "jargon_labels": "pass (HITL, HOTL, HOOTL all spelled out in full within each node label)",
+      "title_discipline": "pass (governing concept 'Risk-Tiered Component Mapping' in title: field, no ghost node)",
+      "single_path": "n/a (intent explicitly calls for decision-flow branching — Q1/Q2/Q3 diamonds with three-branch Q1)"
+    }
+  }
+}

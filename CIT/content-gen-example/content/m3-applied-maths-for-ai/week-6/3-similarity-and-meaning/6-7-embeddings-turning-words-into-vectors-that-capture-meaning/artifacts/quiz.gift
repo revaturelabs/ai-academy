@@ -1,0 +1,41 @@
+$CATEGORY: CIT/M3/week-6/6-7-embeddings-turning-words-into-vectors-that-capture-meaning
+
+::q1:: An AI model is a mathematical function that works entirely with numbers. What must happen to a word like "cat" before such a model can process it? {
+~Nothing special — each letter already carries a numeric code, so the model can read words as they arrive.#No — raw character codes give the model no information about word meaning or how words relate to each other.
+~It must be collapsed into a single digit so the model can treat the whole word as one compact number.#No — squashing a word to one digit destroys all meaning; that is not how text is prepared for AI models.
+=It must be converted into a vector of numbers, because the model cannot operate on plain text at all.#Correct — every word must become a numerical vector before a mathematical model can process it (corpus §5.1).
+~It must be translated into a programming language like Python so the model can interpret its structure.#No — converting to source code is not the required step; the conversion needed is into a numerical vector.
+#### Tests LO-1: why plain text cannot be fed directly into an AI model (corpus §5.1).
+}
+
+::q2:: A vocabulary contains 10,000 words. Using one-hot encoding, what is the dot product of the vector for "cat" and the vector for "kitten"? {
+~10,000 — both vectors share the same vocabulary-sized length, so that shared value appears in the result.#No — vector length is used in certain norms, not in the dot product between two specific one-hot vectors.
+~1 — both words are genuine English words, so they share one matching feature position in the encoding.#No — each word places its single 1 in a different slot, so no position contributes a 1×1 pair to the total.
+~0.5 — closely related words produce a partial similarity score, because one-hot encoding is designed to track relatedness.#No — one-hot encoding has no mechanism for partial similarity; it cannot encode word relatedness at all.
+=0 — each word places its single 1 in a different slot, so every multiplication gives zero and the total is zero.#Correct — different one-hot vectors are perpendicular; their dot product is always exactly zero regardless of meaning.
+#### Tests LO-2: why one-hot encoding fails to capture meaning (corpus §5.1).
+}
+
+::q3:: In a trained word embedding space, where would you expect to find the vector for "kitten" relative to the vector for "cat"? {
+=Close to "cat," because both words appear in similar contexts, so training nudges their vectors to nearby positions.#Correct — the distributional hypothesis means words with similar surrounding words get vectors that land near each other.
+~Far from "cat," because the model detects similarity through letter patterns and the two words are spelled differently.#No — embeddings are learned from word co-occurrence patterns in text, not from spelling or character sequences.
+~At the exact same position as "cat," because they belong to the same category and share the same overall meaning.#No — related words land close together but remain distinct; each word keeps its own unique vector after training.
+~At a random position, because vectors start randomly and the training process never fully stabilises their positions.#No — training adjusts vectors repeatedly toward positions that reflect meaning; the final layout is not random.
+#### Tests LO-3: how embeddings place related words close together in vector space (corpus §5.4).
+}
+
+::q4:: Which of the following correctly describes how word embeddings are used in a real AI system? {
+~Spreadsheet formula engine — embeddings compress stored numerical cell values so the engine can total large columns more quickly.#No — spreadsheet engines work directly with numerical cell data; semantic embeddings play no role in that process.
+=Google Search — query and page content both become vectors, so pages with similar meaning rank highly even when exact wording differs.#Correct — Google's neural embeddings match meaning rather than exact keywords, enabling semantic search (corpus §7).
+~GPS navigation app — embeddings encode geographic road coordinates so the routing algorithm can efficiently find the shortest path.#No — GPS routing is based on physical distance calculations on a map, not on word or semantic embedding vectors.
+~Calculator app — embeddings represent the digits 0 to 9 so the interface can reliably identify numbers the user has typed.#No — a calculator identifies typed digits through straightforward character matching, not through word embeddings.
+#### Tests LO-4: identifying real-world AI systems that rely on word embeddings (corpus §7).
+}
+
+::q5:: A learner plots five words in a 2D embedding space. "Cat," "kitten," and "dog" form a tight cluster; "car" and "skyscraper" sit far away. What does this neighbourhood structure reveal? {
+~Nothing useful — a 2D scatter plot is always a random projection, so cluster positions visible in it carry no real meaning.#No — 2D projection simplifies the full space, but the clusters it reveals reflect genuine relationships learned during training.
+=Animal words cluster together because they share similar contexts in training text; "car" and "skyscraper" appear in different contexts, so they landed far away.#Correct — proximity in the embedding space directly reflects shared co-occurrence context during training (corpus §5.4, §9).
+~The cluster shows that short common words land close together, because the model groups words by character length and frequency.#No — embedding proximity is determined by contextual co-occurrence in sentences, not by word length or usage frequency.
+~The pattern proves conclusively that animal words are always nearest neighbours in every word embedding model ever trained.#No — neighbour relationships depend on the specific training corpus; a different dataset can produce different neighbourhood structures.
+#### Tests LO-5: interpreting a small embedding space by reading off neighbours and what that implies about meaning (corpus §9).
+}

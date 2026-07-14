@@ -1,0 +1,49 @@
+$CATEGORY: CIT/M3/week-8/8.6-calibration-does-the-models-stated-confidence-match-its-actu
+
+::q1:: In plain words, what does it mean for a model to be well-calibrated? {
+~It gets the right answer on almost every prediction it is asked to make.#No — that describes high accuracy; calibration is about whether the confidence numbers match how often it is right.
+=When it says it is X% sure, it turns out correct about X% of the time.#Correct — a well-calibrated model's stated confidence matches its actual accuracy across many predictions.
+~It always reports a very high confidence number on the predictions it makes.#No — high confidence is not calibration; the confidence must match the real success rate, whatever its level.
+~It never changes its confidence number once it has made a prediction.#No — calibration is about whether confidence matches reality, not about whether the number stays fixed.
+#### Tests the plain-words meaning of well-calibrated (corpus §3, §5.2).
+}
+
+::q2:: A model makes a prediction and reports a confidence of 0.95. What is that number telling you? {
+~How often the model is right across every prediction it has ever made.#No — that is overall accuracy; this number is about this single prediction, not the whole history.
+~How difficult the model found this particular question compared with others.#No — confidence is the model's stated belief it is correct here, not a difficulty rating.
+=How sure the model is that this one prediction is correct.#Correct — confidence is the model's own bet that this particular prediction is right, here 95%.
+~How many other predictions the model grouped into the same bucket.#No — bucketing is something you do later to check calibration; the number itself is the model's belief about this prediction.
+#### Tests how a confidence number attaches to a single prediction (corpus §3, §5.1).
+}
+
+::q3:: On a reliability diagram, a model's point sits clearly below the diagonal line. What does that tell you about the model? {
+=It is overconfident — it stated high confidence but was right less often than it claimed.#Correct — below the diagonal means stated confidence is higher than observed accuracy, which is overconfidence.
+~It is underconfident — it was right more often than its confidence numbers claimed.#No — that is a point above the diagonal; below the line means the opposite.
+~It is perfectly calibrated, because any point on the chart counts as a match.#No — only points on the diagonal are well-calibrated; off the diagonal signals a mismatch.
+~It is very accurate, since a low point means most predictions were correct.#No — the vertical position is observed accuracy versus stated confidence, not a measure of being accurate overall.
+#### Tests reading a reliability diagram for over- versus under-confidence (corpus §3, §5.4).
+}
+
+::q4:: A model scores very high on accuracy. Can you conclude it is also well-calibrated? {
+~Yes — a high accuracy score always means the confidence numbers are trustworthy.#No — accuracy and calibration are different questions; one does not guarantee the other.
+~Yes — being right often is exactly the same thing as being well-calibrated.#No — being right often is accuracy; calibration asks whether the stated confidence matches that rate.
+~No — high accuracy actually proves the model must be underconfident.#No — high accuracy proves nothing about calibration in either direction; they are separate properties.
+=No — a model can be accurate yet overconfident, so high accuracy does not guarantee calibration.#Correct — accuracy and calibration answer different questions; an accurate model can still be badly calibrated.
+#### Tests the distinction between being accurate and being calibrated (corpus §3, §5.2).
+}
+
+::q5:: Why is a model's confidence score only trustworthy for making decisions when the model is calibrated? {
+=Because only then does a number like 0.90 really mean correct about 9 times out of 10.#Correct — calibration is what makes the confidence number match the real success rate, so a decision rule built on it holds.
+~Because a calibrated model always reports higher confidence than an uncalibrated one.#No — calibration is about matching reality, not about producing higher numbers.
+~Because calibration makes the model faster at returning each of its predictions.#No — calibration concerns whether confidence matches accuracy, not the speed of the model.
+~Because a calibrated model stops making any incorrect predictions at all.#No — a calibrated model can still be wrong; its confidence just honestly reflects how often.
+#### Tests why a confidence score needs calibration to be trustworthy for decisions (corpus §3, §5.5).
+}
+
+::q6:: Your teammate looks at one prediction the model made at 0.80 confidence, sees it was wrong, and says "that proves the model is badly calibrated." Why is this reasoning mistaken? {
+~Because a single wrong prediction actually proves the model is underconfident instead.#No — one prediction tells you nothing about calibration in any direction; you cannot read over- or under-confidence from it.
+~Because 0.80 confidence is too low to ever judge whether the model is calibrated.#No — calibration can be checked at any confidence level; the problem is judging it from one prediction, not the level.
+~Because calibration only applies to predictions made at exactly 0.70 confidence.#No — calibration applies at every confidence level, not one special value.
+=Because calibration is a property of groups of predictions, not of any single one.#Correct — you check calibration by gathering many predictions at a confidence level and comparing the fraction correct; one prediction cannot show it.
+#### Tests that calibration is judged over groups, not from a single prediction (corpus §3, §5.2, §5.3).
+}

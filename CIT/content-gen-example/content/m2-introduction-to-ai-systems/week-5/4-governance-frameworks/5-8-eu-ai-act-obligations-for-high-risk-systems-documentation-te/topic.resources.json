@@ -1,0 +1,30 @@
+{
+  "topic_id": "5.8",
+  "captured_at": "2026-06-22T08:03:27Z",
+  "captured_by": "namratas@revature.com",
+  "resources_source": "web_search",
+  "resources": [
+    {
+      "type": "url",
+      "value": "https://artificialintelligenceact.eu/high-level-summary/",
+      "role": "primary",
+      "source": "web_search",
+      "notes": "Structured, beginner-readable high-level summary of the EU AI Act — covers high-risk obligations at the right depth for this topic. Anchor."
+    },
+    {
+      "type": "url",
+      "value": "https://artificialintelligenceact.eu/article/16/",
+      "role": "supporting",
+      "source": "web_search",
+      "notes": "Article 16 — Obligations of Providers of High-Risk AI Systems: documentation, testing, risk management, conformity assessment. Core obligations list."
+    },
+    {
+      "type": "url",
+      "value": "https://ai-act-service-desk.ec.europa.eu/en/ai-act/article-14",
+      "role": "supporting",
+      "source": "web_search",
+      "notes": "Official European Commission AI Act Service Desk — Article 14 human oversight obligation. Authoritative."
+    }
+  ],
+  "web_search_query": "EU AI Act high-risk systems obligations documentation testing human oversight conformity assessment (official EU domains)"
+}

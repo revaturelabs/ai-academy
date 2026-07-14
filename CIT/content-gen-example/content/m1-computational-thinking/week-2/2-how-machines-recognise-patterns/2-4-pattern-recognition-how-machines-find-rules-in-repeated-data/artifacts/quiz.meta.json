@@ -1,0 +1,47 @@
+{
+  "topic_id": "2.4",
+  "generated_at": "2026-06-17T00:00:00Z",
+  "format": "gift",
+  "question_count": 6,
+  "$bias_defense_applied": true,
+  "$shuffle_seed": "2.4-seed-148",
+  "correct_position_distribution": [1, 3, 0, 2, 1],
+  "questions": [
+    {
+      "id": "q1",
+      "type": "mcq",
+      "objective_ref": "Explain the difference between a rule-based system and a pattern-recognition system in plain terms.",
+      "correct_position": 1
+    },
+    {
+      "id": "q2",
+      "type": "mcq",
+      "objective_ref": "Describe how a machine learns rules from repeated examples (training on labeled data).",
+      "correct_position": 3
+    },
+    {
+      "id": "q3",
+      "type": "mcq",
+      "objective_ref": "Define the terms feature, label, and classification as used in pattern recognition.",
+      "correct_position": 0
+    },
+    {
+      "id": "q4",
+      "type": "mcq",
+      "objective_ref": "Explain why a machine trained on data gives probabilistic (not certain) outputs. | Identify whether a given specification is appropriately bounded for an AI system whose output is a probability.",
+      "correct_position": 2
+    },
+    {
+      "id": "q5",
+      "type": "mcq",
+      "objective_ref": "Describe at least two consequences of probabilistic outputs for writing specifications.",
+      "correct_position": 1
+    },
+    {
+      "id": "q6",
+      "type": "short_answer",
+      "objective_ref": "Define the terms feature, label, and classification as used in pattern recognition.",
+      "correct_position": null
+    }
+  ]
+}

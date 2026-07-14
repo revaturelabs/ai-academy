@@ -1,0 +1,51 @@
+{
+  "type": "topic",
+  "id": "9.6",
+  "title": "How human biases get encoded into AI training data",
+  "slug": "9-6-how-human-biases-get-encoded-into-ai-training-data",
+  "position_in_module": 4,
+  "week_num": 9,
+  "session_name": "Human Judgment and AI Oversight",
+  "module": {
+    "position": 2,
+    "slug": "2-cognitive-biases-and-ai",
+    "title": "Cognitive Biases and AI"
+  },
+  "course": {
+    "code": "M4",
+    "slug": "m4-human-cognition-and-ai-oversight",
+    "title": "Human Cognition and AI Oversight"
+  },
+  "next_assessment": {
+    "id": "A3",
+    "due_week": 10,
+    "title": "Maths and Cognition Lab Report",
+    "weight": "15%"
+  },
+  "paths": {
+    "corpus": "topic_corpus.md",
+    "resources": "topic.resources.json",
+    "progress": "topic.progress.json",
+    "artifacts_dir": "artifacts/",
+    "critic_reports_dir": "critic-reports/"
+  },
+  "artifact_plan": {
+    "depth_profile": "standard",
+    "diagram": true,
+    "diagram_intent": "Cycle diagram: human decisions → training data (labelling/historical/selection bias entry points) → AI model → deployed AI decisions → real-world outcomes → new training data (feedback loop), with cognitive bias annotated at human decisions node",
+    "reading": {
+      "target_word_range": [1200, 1600],
+      "target_min_minutes": 6,
+      "target_max_minutes": 8
+    },
+    "quiz": {
+      "min_questions": 5,
+      "max_questions": 6,
+      "include_short_answer": false
+    },
+    "depth_signals": "4 named sub-concepts (labelling, historical, selection, feedback loop), multi-sector examples, no cross-refs — standard band.",
+    "human_approved_at": "2026-06-12T00:00:00Z"
+  },
+  "expected_delivery_minutes": null,
+  "status": "scaffolded"
+}

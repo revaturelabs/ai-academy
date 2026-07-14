@@ -1,0 +1,44 @@
+{
+  "type": "topic",
+  "id": "7.8",
+  "title": "Precision — of the things the model flagged, how many were actually correct",
+  "slug": "7-8-precision-of-the-things-the-model-flagged-how-many-were-actu",
+  "position_in_module": 3,
+  "week_num": 7,
+  "session_name": "Probability, Statistics and AI Confidence",
+  "module": {
+    "position": 3,
+    "slug": "3-measuring-ai-performance",
+    "title": "Measuring AI Performance"
+  },
+  "course": {
+    "code": "M3",
+    "slug": "m3-applied-maths-for-ai",
+    "title": "Applied Maths for AI"
+  },
+  "next_assessment": {
+    "id": "A3",
+    "due_week": 10,
+    "title": "Maths and Cognition Lab Report",
+    "weight": "15%"
+  },
+  "paths": {
+    "corpus": "topic_corpus.md",
+    "resources": "topic.resources.json",
+    "progress": "topic.progress.json",
+    "artifacts_dir": "artifacts/",
+    "critic_reports_dir": "critic-reports/"
+  },
+  "artifact_plan": {
+    "diagram": false,
+    "diagram_intent": null,
+    "depth_profile": "standard",
+    "depth_signals": ["two required sub-concepts (TP, FP) before formula", "multiple worked examples needed", "real-world pattern section substantive"],
+    "reading": { "target_word_range": [1200, 1600], "target_min_minutes": 6, "target_max_minutes": 8 },
+    "quiz": { "min_questions": 5, "max_questions": 6, "include_short_answer": false },
+    "sections_approved": [2, 3, 4, 5, 6, 7, 8, 9, 10],
+    "hitl2_confirmed_at": "2026-06-23"
+  },
+  "expected_delivery_minutes": 7,
+  "status": "corpus_drafted"
+}

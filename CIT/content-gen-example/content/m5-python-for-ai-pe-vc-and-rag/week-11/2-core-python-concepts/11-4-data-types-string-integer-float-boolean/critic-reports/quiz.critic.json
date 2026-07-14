@@ -1,0 +1,55 @@
+{
+  "critic": "quiz-critic",
+  "cycle": 1,
+  "topic_id": "11.4",
+  "topic_title": "Data types — string, integer, float, boolean",
+  "at": "2026-06-12T00:50:00Z",
+  "passed": true,
+  "checks": {
+    "positional_bias": {
+      "passed": true,
+      "distribution": [2, 1, 2, 1],
+      "positions": {"0": 2, "1": 1, "2": 2, "3": 1},
+      "max_share": 0.333,
+      "threshold": 0.40,
+      "detail": "Correct answer at position 0 twice, position 2 twice, positions 1 and 3 once each. Max share 0.333 — below the 0.40 threshold."
+    },
+    "length_bias": {
+      "passed": true,
+      "per_question": [
+        {"id": "q1", "correct_len": 21, "mean_len": 21.0, "ratio": 1.00},
+        {"id": "q2", "correct_len": 1, "mean_len": 2.25, "ratio": 0.44},
+        {"id": "q3", "correct_len": 1, "mean_len": 2.25, "ratio": 0.44},
+        {"id": "q4", "correct_len": 99, "mean_len": 86.25, "ratio": 1.15},
+        {"id": "q5", "correct_len": 4, "mean_len": 17.5, "ratio": 0.23},
+        {"id": "q6", "correct_len": 26, "mean_len": 22.0, "ratio": 1.18}
+      ],
+      "longest_correct_rate": 0.0,
+      "detail": "No question has the correct answer as the longest option. All ratios below 1.20 threshold. Q4 (1.15) and Q6 (1.18) are closest but both within range."
+    },
+    "distractor_plausibility": {
+      "passed": true,
+      "absurd_rate": 0.0,
+      "detail": "All distractors capture plausible beginner misconceptions: Q1 (spacing/quote/colon confusion), Q2 (case/length/whole-string confusion), Q3 (regular division vs floor div vs modulo), Q4 (auto-rounding, silent correction, TypeError), Q5 (logical error, None, TypeError), Q6 (missing str(), type name vs function, float() vs str())."
+    },
+    "objective_coverage": {
+      "passed": true,
+      "uncovered_objectives": [],
+      "coverage_map": {
+        "LO1 — print() with multiple arguments": "q1",
+        "LO2 — string indexing s[0]": "q2",
+        "LO3 — integer arithmetic floor division": "q3",
+        "LO4 — float precision 0.1+0.2": "q4",
+        "LO5 — boolean and/or/not": "q5",
+        "LO6 — explicit type conversion str()": "q6"
+      },
+      "detail": "All 6 Learning Objectives tested. One question per LO."
+    },
+    "scope": {
+      "passed": true,
+      "out_of_scope_questions": [],
+      "detail": "No comparison operators tested (not in scope until 11.5). No if/else, no lists, no user input. All distractors are beginner misconceptions about this topic's concepts only."
+    }
+  },
+  "verdict": "PASS (cycle 1). All checks green. 6 MCQ, max_share=0.333, no length bias, all 6 LOs covered, no out-of-scope questions. Distractors are plausible beginner misconceptions throughout."
+}

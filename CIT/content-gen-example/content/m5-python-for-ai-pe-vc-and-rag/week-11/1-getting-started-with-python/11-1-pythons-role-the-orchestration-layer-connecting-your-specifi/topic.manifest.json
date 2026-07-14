@@ -1,0 +1,45 @@
+{
+  "type": "topic",
+  "id": "11.1",
+  "title": "Python's role — the orchestration layer connecting your specification to an AI system",
+  "slug": "11-1-pythons-role-the-orchestration-layer-connecting-your-specifi",
+  "position_in_module": 1,
+  "week_num": 11,
+  "session_name": "Python Foundations I",
+  "module": {
+    "position": 1,
+    "slug": "1-getting-started-with-python",
+    "title": "Getting Started with Python"
+  },
+  "course": {
+    "code": "M5",
+    "slug": "m5-python-for-ai-pe-vc-and-rag",
+    "title": "Python for AI, PE, VC and RAG"
+  },
+  "next_assessment": {
+    "id": "A4",
+    "due_week": 13,
+    "title": "Python and Prompt Engineering Portfolio",
+    "weight": "20%"
+  },
+  "paths": {
+    "corpus": "topic_corpus.md",
+    "resources": "topic.resources.json",
+    "progress": "topic.progress.json",
+    "artifacts_dir": "artifacts/",
+    "critic_reports_dir": "critic-reports/"
+  },
+  "artifact_plan": {
+    "diagram": true,
+    "diagram_intent": "Four-layer pipeline: Human intent → Plain-English specification → Python code → AI API call → Output. Python is the orchestration layer — the connector that spans all four layers.",
+    "depth_profile": "deep",
+    "reading_word_range": [1600, 2200],
+    "reading_min_minutes": 8,
+    "reading_max_minutes": 12,
+    "quiz_min_questions": 5,
+    "quiz_max_questions": 6,
+    "quiz_include_short_answer": false
+  },
+  "expected_delivery_minutes": 10,
+  "status": "corpus_drafted"
+}

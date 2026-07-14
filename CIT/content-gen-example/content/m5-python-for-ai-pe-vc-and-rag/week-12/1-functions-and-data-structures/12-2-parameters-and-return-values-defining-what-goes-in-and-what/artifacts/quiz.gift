@@ -1,0 +1,49 @@
+$CATEGORY: CIT/M5/week-12/12-2-parameters-and-return-values
+
+::q1::[html] In the code below, which word is the <b>parameter</b> and which is the <b>argument</b>?<br><pre>def greet(name):\n    print("Hello,", name)\n\ngreet("Alice")</pre> {
+~<code>greet</code> is the parameter; <code>"Alice"</code> is the argument#No — <code>greet</code> is the function name, not a parameter.
+~<code>"Alice"</code> is the parameter; <code>name</code> is the argument#No — it is the other way around: the placeholder in the definition is the parameter.
+=<code>name</code> is the parameter; <code>"Alice"</code> is the argument#Correct — <code>name</code> is the slot in the definition; <code>"Alice"</code> is the actual value passed at the call.
+~Both <code>name</code> and <code>"Alice"</code> are parameters because they appear inside parentheses#No — only the placeholder in the <code>def</code> line is a parameter; the value at the call site is the argument.
+#### Tests LO1 — distinguishing parameter (placeholder in definition) from argument (actual value at call).
+}
+
+::q2::[html] A student writes the function below and calls it twice. What output do the two calls produce?<br><pre>def describe_student(name, mark):\n    print(name, "scored", mark)\n\ndescribe_student("Alice", 87)\ndescribe_student(92, "Bob")</pre> {
+=Alice scored 87 <br> 92 scored Bob#Correct — Python assigns arguments to parameters by position, so the second call puts 92 into <code>name</code> and "Bob" into <code>mark</code>.
+~Alice scored 87 <br> Bob scored 92#No — the second call passes the arguments in the wrong order; Python uses position, not the value type, to assign them.
+~Alice scored 87 <br> an error because the argument types are wrong#No — Python does not check types when assigning positional arguments; it will happily assign 92 to <code>name</code>.
+~Alice scored 87 <br> Bob scored 87#No — each call uses its own arguments; the second call's arguments are 92 and "Bob".
+#### Tests LO2 — writing and reading a function with positional parameters; order matters.
+}
+
+::q3::[html] What does the <code>return</code> keyword do when Python reaches it inside a function? {
+~It prints the value on screen and then the function continues running#No — <code>return</code> does not print anything; it exits the function immediately.
+~It saves the value into a global variable so the caller can look it up#No — <code>return</code> sends the value directly back to the call site; it does not create any variable automatically.
+~It pauses the function and waits for the user to press Enter before continuing#No — <code>return</code> exits the function immediately; there is no pause.
+=It exits the function immediately and sends the value back to the caller#Correct — <code>return</code> stops execution of the function and hands the value back to whoever called it.
+#### Tests LO3 — the two simultaneous effects of the return keyword: exits function and delivers a value.
+}
+
+::q4::[html] A student calls <code>compute_average(marks)</code> but does not assign the result to anything. What happens to the computed average? {
+~Python stores it in a built-in variable called <code>last_result</code> for later use#No — Python has no such built-in; unassigned return values are simply discarded.
+=The computed average is lost immediately because it was not captured in a variable#Correct — if you do not assign a return value, Python discards it; you must write <code>avg = compute_average(marks)</code> to keep it.
+~Python raises a <code>ValueError</code> because every return value must be stored#No — Python does not enforce this; it silently discards uncaptured return values.
+~The average is printed automatically because <code>return</code> also acts like <code>print</code>#No — <code>return</code> sends the value to the caller; it does not display anything on screen.
+#### Tests LO4 — assigning and using the return value; what happens when you forget to capture it.
+}
+
+::q5::[html] A student writes this function and then runs the code below it. What does <code>print(result)</code> display?<br><pre>def show_greeting(name):\n    print("Hello,", name)\n\nresult = show_greeting("Alice")\nprint(result)</pre> {
+~<code>Hello, Alice</code> printed twice — once by the function and once by <code>print(result)</code>#No — <code>result</code> holds <code>None</code>, not the string "Hello, Alice", so the second print shows <code>None</code>.
+~A <code>TypeError</code> because a function without <code>return</code> cannot be called this way#No — Python does not raise an error; it simply returns <code>None</code> automatically.
+=<code>None</code> — because the function has no <code>return</code> statement, Python returns <code>None</code> implicitly#Correct — any function without a <code>return</code> (or with a bare <code>return</code>) automatically gives back <code>None</code>.
+~An empty string <code>""</code> — because the function produced no text to return#No — Python returns the special value <code>None</code>, not an empty string, when there is no <code>return</code> statement.
+#### Tests LO5 — implicit None when a function has no return statement; common beginner surprise.
+}
+
+::q6::[html] A teammate says: "I used <code>print</code> inside my function instead of <code>return</code>, so I can just capture the result the same way." Which statement best explains why this is wrong? {
+=<code>print</code> displays a value on screen but returns <code>None</code>; only <code>return</code> sends a usable value back to the caller#Correct — capturing the result of a <code>print</code>-only function gives you <code>None</code>, not the displayed value.
+~<code>print</code> and <code>return</code> do exactly the same job inside a function; either can be captured#No — they are fundamentally different: <code>print</code> is for display, <code>return</code> is for handing values back.
+~<code>print</code> is faster than <code>return</code>, so it should be used only for large values#No — performance is irrelevant here; the distinction is about visibility versus usability.
+~<code>return</code> is only needed when the function has more than one parameter#No — the number of parameters has nothing to do with whether <code>return</code> is needed.
+#### Tests LO6 — print makes a value visible; return makes it usable; capturing result of print-only function yields None.
+}

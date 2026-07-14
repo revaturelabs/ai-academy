@@ -1,0 +1,52 @@
+{
+  "topic_id": "13.3",
+  "passed": true,
+  "at": "2026-06-13T00:00:00Z",
+  "cycle": 1,
+  "checks": {
+    "positional_bias": {
+      "passed": true,
+      "distribution": [1, 1, 2, 1],
+      "max_share": 0.40,
+      "notes": "5 MCQs; positions [2,0,3,1,2]; pos 2 appears 2/5=40% — exactly at ceiling, passes (≤0.40). All 4 positions used."
+    },
+    "length_bias": {
+      "passed": true,
+      "flagged_questions": [],
+      "longest_correct_rate": 0.0,
+      "baseline": 0.25,
+      "threshold": 0.40,
+      "detail": {
+        "Q1": { "correct_len": 90, "max_len": 102, "correct_is_longest": false },
+        "Q2": { "correct_len": 124, "threshold_len": 132.9, "correct_is_longest": true, "over_by": -8.9 },
+        "Q3": { "correct_len": 93, "max_len": 93, "correct_is_longest": false, "notes": "tied with one distractor" },
+        "Q4": { "correct_len": 126, "threshold_len": 128.4, "correct_is_longest": true, "over_by": -2.4 },
+        "Q5": { "correct_len": 110, "max_len": 115, "correct_is_longest": false }
+      },
+      "notes": "0/5 questions flagged. Rate 0% < 40% threshold."
+    },
+    "distractor_plausibility": {
+      "passed": true,
+      "absurd_rate": 0.0,
+      "notes": "All 20 distractors are plausible beginner misconceptions: fine-tuning confusion (Q1), context window over-application (Q2), placement rule misapplication (Q3/Q5), parameter update misconception (Q4)"
+    },
+    "objective_coverage": {
+      "passed": true,
+      "uncovered_objectives": [],
+      "coverage": {
+        "LO1_define_fewshot": ["13.3-Q1", "13.3-Q6"],
+        "LO2_identify_good_example": ["13.3-Q2"],
+        "LO3_write_fewshot_prompt": ["13.3-Q3"],
+        "LO4_explain_incontext_learning": ["13.3-Q4"],
+        "LO5_apply_placement_rule": ["13.3-Q5"],
+        "LO6_describe_two_mistakes": ["13.3-Q7"]
+      }
+    },
+    "scope_discipline": {
+      "passed": true,
+      "out_of_scope_questions": [],
+      "notes": "All 7 questions on-headline for few-shot prompting; no un-taught knowledge required"
+    }
+  },
+  "verdict": "PASS — all checks clear on first cycle. Positional max_share exactly at 0.40 ceiling (passes). Length bias 0% rate. All 6 LOs covered across 5 MCQ + 2 SA."
+}

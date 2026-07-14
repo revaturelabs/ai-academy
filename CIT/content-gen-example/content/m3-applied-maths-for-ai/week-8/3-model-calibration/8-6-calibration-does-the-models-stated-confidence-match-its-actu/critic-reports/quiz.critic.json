@@ -1,0 +1,54 @@
+{
+  "passed": true,
+  "checks": {
+    "positional_bias": {
+      "passed": true,
+      "distribution": [2, 1, 1, 2],
+      "max_share": 0.333,
+      "all_four_positions_used": true,
+      "meta_gift_desync": false
+    },
+    "length_bias": {
+      "passed": true,
+      "longest_correct_rate": 0.0,
+      "baseline": 0.25
+    },
+    "distractor_plausibility": {
+      "passed": true,
+      "absurd_rate": 0.0,
+      "weakest_questions": [],
+      "misconceptions_covered": [
+        "calibration-vs-accuracy confusion (q1, q4)",
+        "single-prediction calibration (q2, q6)",
+        "reliability-diagram read backwards (q3)",
+        "high-accuracy implies good-calibration (q4)",
+        "always-high-confidence equals calibration (q1, q5)"
+      ]
+    },
+    "objective_coverage": {
+      "passed": true,
+      "uncovered_objectives": [],
+      "orphan_questions": [],
+      "lo_map": {
+        "LO1_well_calibrated_plain_words": ["q1"],
+        "LO2_confidence_attaches_to_a_prediction": ["q2"],
+        "LO3_read_reliability_diagram_over_under": ["q3"],
+        "LO4_accuracy_vs_calibration_distinction": ["q4", "q6"],
+        "LO5_confidence_needs_calibration_to_be_trustworthy": ["q5"]
+      }
+    },
+    "scope_discipline": {
+      "passed": true,
+      "question_count": 6,
+      "short_answer_count": 0,
+      "one_correct_per_question": true,
+      "valid_gift": true,
+      "stem_level_hash": false,
+      "out_of_scope_questions": [],
+      "notes": "No ECE arithmetic, no temperature-scaling/fix methods, no multi-class. q6 single-prediction misconception is in-scope (corpus §5.2-5.3)."
+    }
+  },
+  "auto_correction_applied": { "shuffle_round_2": false },
+  "verdict": "Pass — positional distribution [2,1,1,2] max share 0.333, all four positions used, no length bias, all distractors plausible calibration misconceptions, all 5 LOs covered, STANDARD scope clean.",
+  "at": "2026-06-22T07:50:00Z"
+}

@@ -1,0 +1,54 @@
+{
+  "artifact": "reading",
+  "topic_id": "5.8",
+  "passed": true,
+  "checks": {
+    "format_discipline": {
+      "passed": true,
+      "notes": "First non-empty line is the '# EU AI Act — obligations...' H1; no leading YAML frontmatter. Sidecar reading.meta.json present, parses, carries word_count/estimated_read_minutes/citations_used/sections. Exactly six '##' headings present in required order: Overview, Key Concepts, Worked Example, In Practice, Key Takeaways, References. No added/renamed/dropped sections."
+    },
+    "length_budget": {
+      "passed": true,
+      "word_count": 1320,
+      "target_word_range": [1200, 1600],
+      "read_minutes_200wpm": 7,
+      "read_minutes_230wpm": 5.7,
+      "target_minute_range": [6, 8],
+      "notes": "Word count 1320 sits solidly within [1200,1600]. At the canonical 200 wpm (artifact-mix.json) read time is 7 min, inside [6,8]. At the skill's 230-wpm read-aloud figure it is 5.7 min, marginally under the 6 floor — noted, not failed, since word count and canonical-wpm minutes both pass and the gap is rounding-band."
+    },
+    "citations": {
+      "passed": true,
+      "notes": "Primary resource [1] (artificialintelligenceact.eu/high-level-summary) cited multiple times (Overview, Key Concepts, takeaways). Supporting [2] (article/16) and [3] (article-14) both cited. No orphan markers, no orphan bibliography entries, no fabricated [N]. References section resolves all three to the resources in topic.resources.json."
+    },
+    "faithfulness": {
+      "passed": true,
+      "notes": "Reading is a faithful condense of topic_corpus.md. Sampled assertions — car analogy, provider/deployer split + table, the obligation list (risk management, technical documentation, data governance, record-keeping/logging, transparency to deployers, human oversight, accuracy/robustness/cybersecurity), conformity-assessment-as-gate, before-then-ongoing pattern, mapping to the four pillars, red-teaming-as-robustness — all trace to corpus sections 4/5.1/5.2/5.3/5.4. Zero unsupported assertions. Diagram embedded inline in Key Concepts (line 29) with caption, matching diagram.mmd path-to-market flow."
+    },
+    "forward_reference": {
+      "passed": true,
+      "notes": "CRITICAL check clean. Risk TIERS (5.7) are REFERENCED, not re-taught — line 5 cites '5.7 ... four risk tiers' and 'high-risk systems are allowed but tightly controlled' as recall, no re-teach of the four-tier taxonomy. Deferred frameworks at line 52 — prohibited uses (5.9), NIST AI RMF, US Executive Order on AI, India MEITY — appear as BARE-name pointers in a single mention-and-defer sentence: none bolded, none in '**term** — definition' shape, none defined or taught. Four pillars (5.4) are prior-taught, so connecting them (lines 50, 69, 79) is permitted. Red-teaming (5.5), data bias (5.3), prompt-injection context (5.6) all reference earlier topics. No forward references."
+    },
+    "beginner_readability": {
+      "passed": true,
+      "notes": "EU AI Act spelled out on first use (line 5: 'European Union Artificial Intelligence Act'). conformity assessment defined first use (line 32, car-inspection analogy). provider vs deployer defined (lines 15-16 with examples). robustness defined first use (line 44). data governance defined (line 40). logs defined (line 41). Concrete-first: car analogy opens Key Concepts before the abstraction. No jargon dump — obligations introduced one bullet at a time. No hedging phrases. Sentences short, active, addresses learner as 'you'. Meets the artifact-mix audience baseline and the gold-example bar (2-1, 3-4)."
+    },
+    "formatting": {
+      "passed": true,
+      "notes": "Provider/deployer rendered as comparison table (lines 20-23). Obligation set rendered as bullet list with inline *Example:* per item (lines 38-44). Worked Example rendered as numbered list (lines 58-61). Definitions use bold-term / plain-meaning shape. Inline examples sit beside each concept, not deferred. No paragraph exceeds ~4 sentences. No assessment IDs / due weeks / grade weights in learner prose."
+    },
+    "scope": {
+      "passed": true,
+      "notes": "On the headline — high-risk OBLIGATIONS only (documentation, testing, human oversight, and the rest). No Article numbers or dates in learner prose (Article numbers live only in the References URLs/titles, which is metadata, not taught). Conformity assessment is in-scope (carried from 5.7, applied here as the gate). No teaching beyond the topic title; deferred material is named-and-deferred in one sentence."
+    }
+  },
+  "soft_findings": [
+    {
+      "code": "missing_diagram_png",
+      "severity": "advisory",
+      "location": "artifacts/reading.md line 29",
+      "detail": "Reading embeds ![...](./diagram.png) but artifacts/ currently holds diagram.mmd only — no rendered diagram.png. This is the diagram builder/critic loop's responsibility (PNG render), not a reading-critic hard fail, but the embed will show broken until the PNG is rendered. Flag for the diagram gate / HITL #3."
+    }
+  ],
+  "verdict": "PASS. Format discipline clean: clean H1, no frontmatter, valid sidecar, exactly the six required sections in order. Length 1320w inside [1200,1600] (7 min at canonical 200wpm). All three resources cited, primary [1] cited, References resolves, no fabricated markers. Faithful condense of corpus with diagram embedded inline in Key Concepts. CRITICAL forward-reference check clean — 5.7 risk tiers referenced not re-taught; 5.9 prohibited uses, NIST AI RMF, US Executive Order, India MEITY are bare named-and-deferred pointers (no bold, no defining clause, no teaching); 5.4 four pillars (prior-taught) legitimately connected. Beginner readability and formatting meet the artifact-mix baseline and the gold-example bar (acronyms spelled out, conformity assessment / provider vs deployer / robustness / data governance defined at first use, obligations in a table + bullets, paragraphs <=4 sentences). On-headline scope, no Article numbers or dates in prose. One advisory soft finding: ./diagram.png not yet rendered in artifacts/ (diagram-gate responsibility, not a reading fail).",
+  "at": "2026-06-22T08:31:00Z"
+}

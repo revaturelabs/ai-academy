@@ -1,0 +1,59 @@
+{
+  "topic_id": "6.1",
+  "generated_at": "2026-06-18T00:00:00Z",
+  "format": "gift",
+  "question_count": 5,
+  "depth_profile": "standard",
+  "$bias_defense_applied": true,
+  "$shuffle_seed": "hash(6.1)-length-fix-v2",
+  "correct_position_distribution": [2, 0, 1, 3, 2],
+  "max_share": 0.40,
+  "bias_check_passed": true,
+  "length_bias_check": {
+    "q1": { "correct_chars": 88, "mean_distractor_chars": 77.0, "ratio": 1.14, "passed": true },
+    "q2": { "correct_chars": 89, "mean_distractor_chars": 88.7, "ratio": 1.00, "passed": true },
+    "q3": { "correct_chars": 75, "mean_distractor_chars": 81.0, "ratio": 0.93, "passed": true },
+    "q4": { "correct_chars": 103, "mean_distractor_chars": 97.0, "ratio": 1.06, "passed": true },
+    "q5": { "correct_chars": 96, "mean_distractor_chars": 91.3, "ratio": 1.05, "passed": true }
+  },
+  "length_bias_rate": 0.0,
+  "objectives_covered": [
+    "Explain, in plain language, why computers can only process numbers — not raw text, images, or sound.",
+    "Describe what it means for real-world information to be converted into numbers.",
+    "Give at least two everyday examples of data (text, image, audio) and explain how each becomes a set of numbers before an AI can use it.",
+    "Identify why a shared number-based language makes it possible for a single AI system to handle many different types of information.",
+    "Recognise that mathematical operations on those numbers are what give AI its ability to find patterns, make predictions, and generate outputs."
+  ],
+  "questions": [
+    {
+      "id": "q1",
+      "type": "mcq",
+      "objective_ref": "Explain, in plain language, why computers can only process numbers — not raw text, images, or sound.",
+      "correct_position": 2
+    },
+    {
+      "id": "q2",
+      "type": "mcq",
+      "objective_ref": "Describe what it means for real-world information to be converted into numbers.",
+      "correct_position": 0
+    },
+    {
+      "id": "q3",
+      "type": "mcq",
+      "objective_ref": "Give at least two everyday examples of data (text, image, audio) and explain how each becomes a set of numbers before an AI can use it.",
+      "correct_position": 1
+    },
+    {
+      "id": "q4",
+      "type": "mcq",
+      "objective_ref": "Identify why a shared number-based language makes it possible for a single AI system to handle many different types of information.",
+      "correct_position": 3
+    },
+    {
+      "id": "q5",
+      "type": "mcq",
+      "objective_ref": "Recognise that mathematical operations on those numbers are what give AI its ability to find patterns, make predictions, and generate outputs.",
+      "correct_position": 2
+    }
+  ]
+}

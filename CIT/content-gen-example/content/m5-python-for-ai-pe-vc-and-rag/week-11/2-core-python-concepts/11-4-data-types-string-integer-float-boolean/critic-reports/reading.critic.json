@@ -1,0 +1,67 @@
+{
+  "critic": "reading-critic",
+  "cycle": 1,
+  "topic_id": "11.4",
+  "topic_title": "Data types — string, integer, float, boolean",
+  "at": "2026-06-12T00:50:00Z",
+  "passed": true,
+  "checks": {
+    "format_discipline": {
+      "passed": true,
+      "no_frontmatter": true,
+      "first_line": "# Data types — string, integer, float, boolean",
+      "sections_present": ["Overview", "Key Concepts", "Worked Example", "In Practice", "Key Takeaways", "References"],
+      "sections_in_order": true,
+      "sidecar_exists": true,
+      "detail": "No frontmatter. Six fixed sections present and in correct order. reading.meta.json exists and parses."
+    },
+    "length_budget": {
+      "passed": true,
+      "word_count": 1330,
+      "reading_minutes": 7,
+      "target_word_range": [1200, 1600],
+      "target_minute_range": [6, 8],
+      "detail": "1330 words, 7 min — within target range."
+    },
+    "citation_discipline": {
+      "passed": true,
+      "all_primary_cited": true,
+      "citation_map": {
+        "[1]": "stdtypes — cited in Key Concepts (strings, int, bool, conversion), Key Takeaways",
+        "[2]": "tutorial — cited in Key Concepts (float, int), Worked Example, Key Takeaways",
+        "[3]": "realpython data types — cited in Overview, Key Concepts, In Practice, Key Takeaways",
+        "[4]": "realpython strings — cited in Key Concepts (strings, conversion), In Practice, Key Takeaways",
+        "[5]": "print() docs — cited in Key Concepts (print), Key Takeaways"
+      },
+      "detail": "All 5 primary resources cited at least once. Footnote-style inline markers with bibliography in References."
+    },
+    "sequence_drift": {
+      "passed": true,
+      "forward_references": [],
+      "detail": "No comparison operators (==, !=, >=, <=, <, >) in runnable code. No if/else, no user input(), no lists — all correctly deferred to 11.5+. All concepts are either from 11.1–11.3 (variable, assignment, types, type()) or this topic's corpus."
+    },
+    "beginner_readability": {
+      "passed": true,
+      "soft_findings": [],
+      "undefined_terms": [],
+      "formatting": {
+        "no_walls_of_text": true,
+        "uses_lists_and_tables": true,
+        "inline_examples": true,
+        "bold_term_definitions": true
+      },
+      "detail": "Terms defined on first use. Concrete code examples before abstraction. Tables for arithmetic operators and type conversion. No jargon dumps. Paragraphs ≤4 sentences throughout."
+    },
+    "scope": {
+      "passed": true,
+      "scope_creep_findings": [],
+      "detail": "Nothing taught beyond the topic headline. float precision, bool operators, type conversion all on-headline. Comparisons (11.5), if/else (11.5), user input (11.5) named-and-deferred only."
+    },
+    "corpus_faithfulness": {
+      "passed": true,
+      "new_claims": [],
+      "detail": "All claims traceable to corpus sections. Reading is a condensed curated pass — no new content introduced."
+    }
+  },
+  "verdict": "PASS (cycle 1). All checks green. 1330 words, 7 min, standard profile. All 5 primary resources cited. No forward references in active code. Beginner readability strong. No scope creep."
+}

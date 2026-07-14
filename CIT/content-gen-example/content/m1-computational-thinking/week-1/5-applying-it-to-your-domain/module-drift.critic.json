@@ -1,0 +1,64 @@
+{
+  "schema_version": 1,
+  "critic": "drift-critic",
+  "module": {
+    "slug": "5-applying-it-to-your-domain",
+    "title": "Applying It to Your Domain",
+    "course_code": "M1",
+    "week_num": 1,
+    "topic_count": 1,
+    "topics": ["1.12"]
+  },
+  "run_at": "2026-06-22T00:00:00Z",
+  "passed": false,
+  "findings_count": 2,
+  "hard_fails": [],
+  "soft_findings": [
+    {
+      "id": "SF-01",
+      "check": "learning_arc",
+      "severity": "soft",
+      "topic": "1.12",
+      "title": "Lab activity facets 4+5 have no corpus coverage in this module",
+      "detail": "The module's lab_activity_seed_by_week[\"1\"] includes two activities with no supporting corpus content in this module: (a) 'Decompose the problem into a task tree using Excalidraw' and (b) 'AI Decision Journal — Entry #1: what does solving this problem currently require of a human?'. Topic 1.12 corpus covers domain selection and problem-statement writing only. Decomposing the chosen domain problem into a task tree — the natural application of 1.5 to the learner's own domain — is referenced in the lab seed but never scaffolded in any corpus section. The module outcome ('Applying It to Your Domain') implies applying all CT tools introduced in week 1, but only problem-statement writing is taught here; decomposition-to-task-tree application is absent.",
+      "recommendation": "Add a short Section 6b (or extend Section 6) to the corpus covering the step from problem statement to initial task-tree decomposition, explicitly bridging topic 1.5 to the learner's chosen domain. Alternatively, confirm at HITL #4 that these lab activities are intended to be facilitated using topic 1.5 artifacts alone, and update the module manifest's lab_activity_seed to reflect that split."
+    },
+    {
+      "id": "SF-02",
+      "check": "lab_activity_alignment",
+      "severity": "soft",
+      "topic": "1.12",
+      "title": "Section 9 (Hands-On Exercise) dropped from artifact plan, partially orphaning lab activity 3",
+      "detail": "artifact_plan.sections_dropped = [9]. Section 9 is the Hands-On Exercise — the three-question peer-review test that directly operationalises lab activity 3 ('Write a 3-sentence problem statement'). With Section 9 excluded from the reading artifact, the only hands-on support for lab activity 3 is the diagram (3-sentence linear structure) and the problem statement template in the corpus (Section 5.3). The diagram does not carry procedural guidance. Learners reading only the reading artifact will have no procedural exercise to perform before the lab session.",
+      "recommendation": "Either re-include Section 9 in the reading artifact (it is brief and directly supports the lab deliverable), or confirm that the peer-review exercise is intended to be delivered live in the lab and document that decision in the artifact_plan reading_notes."
+    }
+  ],
+  "checks": {
+    "terminology_consistency": {
+      "result": "pass",
+      "note": "Single-topic module. No cross-topic synonym drift possible."
+    },
+    "prerequisites_respected": {
+      "result": "pass",
+      "note": "Declared prerequisites [1.5, 1.6] both have earlier sequence positions (pos 5 and 6) than topic 1.12 (pos 12). Corpus backward-references in sections 2 and 5.4 are consistent with declared prerequisites. No forward-reference violations found."
+    },
+    "learning_arc": {
+      "result": "soft_fail",
+      "note": "Topic 1.12 covers domain selection and 3-sentence problem statement writing, which maps to the first half of the module outcome. The second half — applying decomposition/task-tree thinking to the learner's chosen domain — is present in the lab_activity_seed but absent from any corpus section. See SF-01."
+    },
+    "no_duplicated_core_concepts": {
+      "result": "pass",
+      "note": "Single-topic module. No cross-topic Jaccard similarity check applicable."
+    },
+    "lab_activity_alignment": {
+      "result": "soft_fail",
+      "note": "Lab activity 3 (write a 3-sentence problem statement) is supported by the corpus but its procedural exercise (Section 9) is excluded from the artifact plan. Lab activities 4 and 5 (decompose to task tree; AI Decision Journal) have no corpus coverage in this module. See SF-01 and SF-02."
+    },
+    "audience_level_consistency": {
+      "result": "pass",
+      "note": "Corpus is consistently pitched at the absolute-beginner level throughout. All terms are defined on first use. No cold jargon, no register spikes. Corpus references to Assessment A1 / Specification Portfolio are correctly flagged in artifact_plan.reading_notes for stripping from the reading artifact — this is an appropriate pipeline instruction, not a corpus defect.",
+      "minor_observation": "Two inline references to 'Specification Portfolio (Assessment A1, due Week 3)' appear in corpus sections 4 and 10. These are LMS-metadata details that the reading builder is already instructed to strip. No action needed at the corpus level."
+    }
+  },
+  "verdict": "Soft-fail on two counts: lab activity facets for decomposition/task-tree and AI Decision Journal have no corpus coverage, and the Hands-On Exercise (Section 9) is excluded from the artifact plan, leaving lab activity 3 procedurally unsupported in the reading artifact."
+}

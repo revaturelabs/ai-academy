@@ -1,0 +1,54 @@
+$CATEGORY: CIT/M5/week-13/13.14-gitignore-keeping-api-keys-and-secrets-out-of-public-reposit
+
+::q1:: A developer pushes a Python script containing a hardcoded API key to a public GitHub repository. What is the most likely immediate consequence? {
+~The repository is flagged and automatically set to private by GitHub.#No — GitHub does not change visibility automatically; the key is exposed as soon as the push completes.
+=Automated bots scan the commit, find the key, and run charges on the developer's account.#Correct — scanners purpose-built to find API keys in new commits act within minutes of a push to a public repo.
+~The API provider sends the developer a warning email before any charges occur.#No — providers do not send advance warnings; charges may already be accumulating before the developer notices.
+~Nothing happens unless a person deliberately searches the repository for the key.#No — automated scanners, not humans, perform this scanning continuously and at high speed across all public repos.
+#### Tests what happens when an API key is committed to a public repository (corpus §5.2–5.3).
+}
+
+::q2:: Which two-part pattern do professional developers use to keep secrets out of version control in Python projects? {
+~Store secrets in a `secrets.py` file and add `secrets.py` to `.gitignore`.#No — putting secrets in a `.py` file risks them being imported or printed accidentally; the standard approach uses `.env`.
+~Encrypt the secret inside the Python script so that reading the code does not reveal it.#No — encrypted values in source code are still committed to history and are difficult to rotate if they leak.
+~Use a private GitHub repository so only authorized teammates can see the key.#No — a private repo reduces but does not eliminate risk; the key lives in history and travels with any clone or fork.
+=Store the secret in a `.env` file and list `.env` in `.gitignore` so Git never tracks it.#Correct — the `.env` file holds the real secret and `.gitignore` prevents it from ever entering the commit history.
+#### Tests the .env + .gitignore prevention pattern (corpus §5.4).
+}
+
+::q3:: Which line added to a `.gitignore` file will prevent Git from tracking a file named `.env`? {
+=.env#Correct — listing `.env` on its own line in `.gitignore` tells Git to ignore that exact filename.
+~env.txt#No — this matches a file named `env.txt`, not `.env`; the leading dot makes it a different filename.
+~.gitkeep#No — `.gitkeep` is an unrelated convention for tracking empty folders; it does not affect `.env`.
+~# .env#No — a line beginning with `#` is treated as a comment in `.gitignore` and is ignored by Git.
+#### Tests writing correct .gitignore entries to block .env (corpus §5.4).
+}
+
+::q4:: A Python script needs to read an API key stored in a `.env` file. After calling `load_dotenv()`, which line correctly retrieves the key without hardcoding its value? {
+~`api_key = "OPENAI_API_KEY"` (assigns the name as a literal string)#No — this assigns the variable name as a string literal, not the actual secret value loaded from the environment.
+~`api_key = open(".env").read()` (reads the raw file contents)#No — this reads the entire raw text of `.env` as one string rather than the parsed value of a single variable.
+=`api_key = os.getenv("OPENAI_API_KEY")` (reads from the environment)#Correct — `os.getenv()` looks up the named variable from the environment that `load_dotenv()` populated from `.env`.
+~`api_key = os.environ[".env"]` (looks up the filename as a key)#No — `.env` is the filename, not a variable name; this line would raise a KeyError because no variable is named `.env`.
+#### Tests using os.getenv() to load a secret at runtime (corpus §5.6).
+}
+
+::q5:: A developer creates `.env` with a secret, runs `git add .`, and only then adds `.env` to `.gitignore`. What happens? {
+~Git detects the `.gitignore` change and automatically removes `.env` from the staged area.#No — `.gitignore` only prevents untracked files from being tracked; it cannot un-stage a file already in the index.
+~The `.env` file is ignored on the very next `git add`, so the current staged version is still safe.#No — `.env` was staged before the `.gitignore` rule existed, so it is already tracked and will enter the next commit.
+~Git refuses the commit and prompts the developer to fix `.gitignore` before proceeding.#No — Git does not cross-check staged files against `.gitignore`; it only uses `.gitignore` for new untracked files.
+=The `.env` file is already tracked; the `.gitignore` rule has no effect and the file will be committed.#Correct — to stop tracking it the developer must run `git rm --cached .env` before committing.
+#### Tests the critical ordering rule: .gitignore must include .env before the first git add (corpus §5.5).
+}
+
+::q6:: A developer realizes they accidentally pushed a file containing an API key to a public repository 10 minutes ago. What is the correct first action? {
+~Delete the file from the repository on GitHub to prevent anyone else from seeing the key.#No — deleting the file in a new commit leaves it in commit history; anyone can still retrieve it with `git log`.
+=Log in to the API provider's dashboard, generate a new key, and revoke the old one right away.#Correct — rotating the key makes the leaked value worthless immediately, even if it still exists in commit history.
+~Run `git rebase` locally to erase the commit that contained the key from history.#No — rebasing only changes local history; the commit has already been pushed and is visible on GitHub.
+~Set the GitHub repository to private so no one else can access the exposed commit.#No — making the repo private does not protect against those who already cloned or scanned the key before the change.
+#### Tests key rotation as the immediate first response to an accidental secret leak (corpus §5.3, §8).
+}
+
+::q7:: What is the name of the file that a team commits to Git to show teammates which environment variables a project needs, without including any real secret values? (Write the exact filename.) {
+=.env.example
+=env.example
+}

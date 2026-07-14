@@ -1,0 +1,81 @@
+{
+  "critic": "corpus-critic",
+  "topic_id": "1.2",
+  "topic_title": "Deterministic systems — same input always gives the same output",
+  "depth_profile": "standard",
+  "cycle": 5,
+  "at": "2026-06-19T00:05:00Z",
+  "passed": true,
+  "word_count": 2680,
+  "checks": {
+    "required_sections": {
+      "passed": true,
+      "detail": "Sections 3 (~80w, ≥50w OK), 4 (~110w, ≥50w OK), 5 (all subsections combined >>100w OK), 10 (~120w, ≥50w OK). All present and non-trivial. No placeholder strings in required sections."
+    },
+    "citation_density": {
+      "passed": true,
+      "detail": "resources_source=web_search → strict mode. Primary resource [1] (Wikipedia — Deterministic System) cited extensively throughout §4, §5.1–§5.7, §6, §7, §8, §10. Supporting resources [2] and [3] cited across sections. Citation coverage in §5, §6, §7 well above the 60% factual-assertion threshold. All [1], [2], [3] markers resolve to declared resources in topic.resources.json — no fabricated citations."
+    },
+    "sequence_drift": {
+      "passed": true,
+      "forward_referenced_terms": [],
+      "detail": "All forward-referenced technical terms use bare-name + covered-later pointer form with no defining clause: 'Algorithms are covered in detail later in this module.' (§5.4); 'Encryption is covered in later modules [2].' (§5.4); 'Cryptographic systems (covered in later modules) depend on determinism to function correctly [2].' (§7 — bold stripped this cycle, now plain text); 'deterministic hashing (covered in later modules)' (§7); 'non-deterministic system — covered in topic 1.3' (§5.5). No term defined or taught before its sequence position. PASS."
+    },
+    "length_sanity": {
+      "passed": true,
+      "soft_warn": true,
+      "word_count": 2680,
+      "expected_range": [3000, 4400],
+      "pct_below_minimum": 10.7,
+      "hard_fail_floor": 2100,
+      "detail": "Estimated ~2680w is below the standard-profile minimum of 3000w (~11% short). Hard-fail threshold is >30% outside range (floor 2100w); 2680w is well above that floor. Soft warning only — does not constitute a hard fail. Surface at HITL #2 for author awareness."
+    },
+    "topic_scope": {
+      "passed": true,
+      "scope_creep_findings": [],
+      "detail": "Cycle-5 fix confirmed applied: §7 Real-World Patterns — 'Cryptographic systems' bold markers stripped. Text now reads: '- Cryptographic systems (covered in later modules) depend on determinism to function correctly [2].' — bare name with covered-later pointer, no defining clause, no bold. Satisfies scope_discipline mention-and-defer rule. All other deferred concepts (algorithm, encryption, deterministic hashing, non-deterministic system) retain correct bare-name one-sentence defer form from previous cycles. No scope_creep violations detected."
+    },
+    "beginner_readability": {
+      "passed": true,
+      "findings": [],
+      "detail": "Introduction and Core Concepts lead with concrete analogies (calculator, AI chatbot, navigation app) before formal definitions. All in-scope terms defined on first use with bold-term + plain-language pattern: 'deterministic system' §5.1, 'predictability' §5.2, 'reproducibility' §5.2, 'hidden inputs' §5.6. No unexplained acronyms. No jargon dumps (no paragraph introduces 3+ new terms at once). Short sentences, active voice, reader addressed as 'you' throughout. No hedging language. Zero soft findings."
+    }
+  },
+  "targeted_fixes_verified": {
+    "fix_cryptographic_systems_bold_stripped_cycle5": {
+      "verified": true,
+      "previous_text": "- **Cryptographic systems** (covered in later modules) depend on determinism to function correctly [2].",
+      "current_text": "- Cryptographic systems (covered in later modules) depend on determinism to function correctly [2].",
+      "note": "Bold markers removed. Bare-name + covered-later pointer form. scope_discipline compliant. Cycle-4 hard failure resolved."
+    },
+    "fix_vcs_appositive_removed_s7": {
+      "verified": true,
+      "current_text": "tools that track changes to files use deterministic hashing (covered in later modules) to detect whether anything has changed [1][3].",
+      "note": "Cycle-3 fix retained. No defining appositive."
+    },
+    "fix_encryption_bold_removed_s54": {
+      "verified": true,
+      "current_text": "Encryption is covered in later modules [2].",
+      "note": "Cycle-3 fix retained. Plain text, one-sentence deferral."
+    },
+    "fix_algorithm_appositive_s54": {
+      "verified": true,
+      "current_text": "Algorithms are covered in detail later in this module.",
+      "note": "Cycle-2 fix retained. No appositive."
+    },
+    "fix_nondeterministic_one_sentence_s55": {
+      "verified": true,
+      "current_text": "The opposite of a deterministic system is a non-deterministic system — covered in topic 1.3.",
+      "note": "Cycle-1 fix retained. One sentence, no extension."
+    }
+  },
+  "remaining_failures": [],
+  "soft_findings": [
+    {
+      "id": "SF-1",
+      "check": "length_sanity",
+      "detail": "Estimated word count ~2680, ~11% below standard minimum 3000w. Within 30% hard-fail tolerance. Surface at HITL #2 for author awareness — builder may expand in-scope §5 or §7 content to reach ≥3000w."
+    }
+  ],
+  "verdict": "PASS — cycle 5. All 6 checks clear. The cycle-4 hard failure (bold formatting on deferred mention 'Cryptographic systems' in §7) has been resolved: bold stripped, term now appears as bare name with covered-later pointer in compliance with scope_discipline. Required sections present and non-trivial. Citation density meets strict web_search standard (primary [1] cited throughout; no fake citations). No forward-referenced terms or scope_creep violations remain. Beginner readability good throughout. One soft finding (non-blocking): estimated word count ~2680w is ~11% below the 3000w standard-profile floor but well above the 30%-tolerance hard-fail threshold of 2100w — surface at HITL #2."
+}

@@ -1,0 +1,55 @@
+$CATEGORY: CIT/M2/week-5/5-3-data-bias-how-biased-training-data-produces-biased-model-out
+
+::5.3-Q1:: A company trains an AI model to screen job applications. The model is trained on ten years of the company's own past hiring decisions. Those past decisions reflected a workplace where one group was hired less often than equally qualified candidates from another group. What term best describes the flaw in this training dataset?
+{
+~Representation bias — the groups affected by the hiring pattern were absent from the dataset, leaving the model with no examples to learn from#Representation bias means groups are underrepresented or absent; the affected group was present in this data — its decisions just reflected discrimination.
+~Measurement bias — the labels applied to each application were recorded differently depending on who reviewed the file#Measurement bias is about inconsistent or inaccurate ways of measuring and labeling data, not about the past decisions that generated the data.
+=Historical bias — the dataset reflects past hiring decisions that were themselves unfair, so the model learns to repeat that unfairness#Correct — historical bias enters training data through past discriminatory decisions; the model has no way to see that those decisions were unfair.
+~GIGO — the model was simply given too much data, which caused it to over-fit to the old hiring pattern and ignore new candidates#GIGO is a principle explaining why flawed data produces flawed models; over-fitting is a separate technical problem unrelated to the Amazon hiring failure.
+#### Tests identification of historical bias as the type produced by discriminatory past decisions (corpus §5.2 Historical bias). The Amazon hiring case is the canonical example discussed in this topic.
+}
+
+::5.3-Q2:: What does the phrase "garbage in, garbage out" (GIGO) mean when applied to a machine learning model?
+{
+=Flaws in the training data flow through into the model's outputs because the model treats whatever is in its training data as ground truth#Correct — the model learns from data and cannot check fairness; if the data is biased, the model's outputs will be biased in the same way.
+~Bad user prompts produce bad answers, but the model's training remains unaffected and unbiased regardless of the inputs it receives#This describes prompt quality, not GIGO; the principle is about training data flaws flowing into model outputs, not about individual user queries.
+~If too little data is collected the model becomes unreliable, but gathering more data — even biased data — will reliably fix the problem#Data quantity is not what GIGO addresses; adding more biased data does not remove the bias, because the systematic flaw is in the data's quality.
+~Hardware failures during training corrupt the model's weights, which is why engineers need redundant compute infrastructure in place#Hardware failure has nothing to do with GIGO; the principle concerns how data quality determines model output quality during normal training.
+#### Tests understanding of GIGO and how it explains why biased training data produces biased model output (corpus §5.1). The model treats whatever the data teaches — fair or not — as ground truth.
+}
+
+::5.3-Q3:: An AI system that scores loan applications was trained on historical data from a period when certain groups were denied credit at higher rates for reasons unrelated to repayment ability. The system now consistently scores applicants from those groups lower. Why can this bias not simply be "patched out" of the deployed model?
+{
+~The training data no longer exists after training finishes, so the only option is retraining — and retraining on the same data would reproduce the exact same bias#While retraining on the same data would reproduce the bias, data not existing is not the reason the bias cannot be patched; the root cause is how bias is encoded.
+~The model only applies the biased pattern to new applicants, leaving scores for previous applicants unaffected and fully correctable#The model's scoring behavior is consistent regardless of when an applicant is processed; scores for earlier applicants are a separate matter from the learned pattern.
+~The model stores an explicit penalty multiplier for each demographic group in a single parameter that engineers have not yet identified#Models do not store demographic penalties as discrete, editable rules; this treats bias as an isolated variable rather than a distributed learned property.
+=Bias is spread across all of the model's learned internal weights and cannot be removed by changing any one parameter#Correct — after training, the bias is distributed throughout millions of numerical weights; there is no single location that encodes it in an editable form.
+#### Tests understanding of why GIGO makes bias structural rather than a fixable bug (corpus §5.3). Bias is embedded across all of the model's weights — not stored in a single place that can be corrected.
+}
+
+::5.3-Q4:: A hiring manager receives a ranked list of job applicants produced by an AI screening tool. Applicants from one group consistently receive lower scores. The manager trusts the rankings because "the algorithm is objective." Which concept from this topic does the manager's reasoning illustrate?
+{
+~Measurement bias — the 0–100 score format is an inaccurate measure that treats all candidates as if their backgrounds were equivalent#Measurement bias concerns how data is collected and labeled, not how a decision-maker interprets a model's output scores after deployment.
+=The objectivity illusion — output from a machine is assumed to be neutral, even when the model learned from human decisions that were not#Correct — the model inherited human bias through training, but its numeric output format makes it look more authoritative and impartial than the original human judgments.
+~GIGO — the manager is supplying poor-quality applicant data as input and then accepting the flawed output as accurate#GIGO describes how training data flaws flow into model outputs; it does not describe how a user trusts scores after the model is already deployed.
+~Representation bias — the demographic group receiving lower scores had too few examples in the training data for the model to learn from#The scenario does not indicate the group was absent from training data; the relevant concept is the unwarranted assumption that machine output is neutral and fair.
+#### Tests recognition of the objectivity illusion — the dangerous assumption that machine-generated output is inherently neutral (corpus §5.4). Numeric output format makes bias harder to challenge than equivalent human judgment.
+}
+
+::5.3-Q5:: According to this topic's corpus, in which of the following real-world settings has data bias produced documented harm?
+{
+~Weather forecasting and traffic routing — predictive models trained on historical seasonal patterns perform less accurately in newly developed areas#Weather forecasting and traffic routing are not discussed in the corpus as documented data bias harm domains; they are outside the scope of this topic.
+~Search engine ranking and email spam filtering — models trained on older message data flag messages from newer senders at higher incorrect rates#Search ranking and spam filtering are not named in the corpus as domains with documented data bias harm; this topic does not cover these examples.
+=Healthcare and hiring — diagnostic AI trained on non-diverse patient data performs worse for some groups, and CV screening tools have replicated past hiring discrimination#Correct — both healthcare and hiring are explicitly named in the corpus with specific examples, including diagnostic tools and the Amazon case.
+~Online gaming and personal navigation — route-planning models trained on peak-hour data give inaccurate guidance to drivers traveling at off-peak times#Online gaming and navigation are not mentioned in the corpus as data bias harm cases; these examples are plausible-sounding but outside this topic's scope.
+#### Tests ability to identify real-world domains where data bias has produced documented harm (corpus §5.5). Healthcare and hiring are both covered with specific cases and citations in this topic.
+}
+
+::5.3-Q6:: This topic names several approaches for addressing data bias but explains that their technical details will be covered in later coursework. Which of the following is one of the approaches explicitly named in the corpus?
+{
+=Disaggregated evaluation — measuring model performance separately for different demographic groups so that poor performance on any one group becomes visible#Correct — disaggregated evaluation is explicitly named in the corpus; it reveals hidden disparities that overall accuracy statistics can completely conceal.
+~Correcting the model's output scores after deployment so that results are equalized across all demographic groups before reaching decision-makers#This describes a post-hoc adjustment approach that is not among the mitigation methods named in the corpus for this topic.
+~Deleting all demographic information from training records so the model cannot learn group-based patterns in the first place#Removing demographic fields is a common intuition but is not one of the approaches the corpus explicitly names; it is also discussed as an incomplete fix in later topics.
+~Retraining the model every month on fresh data so that old discriminatory patterns are regularly replaced by more recent, less biased examples#Periodic retraining is not one of the named mitigation approaches in the corpus; frequent retraining does not by itself address data bias if the new data carries the same flaws.
+#### Tests recall of the named mitigation approaches and the corpus stance that addressing bias requires deliberate effort (corpus §5.6). Disaggregated evaluation is explicitly listed alongside diverse data collection, debiasing techniques, fairness constraints, and algorithmic audits.
+}

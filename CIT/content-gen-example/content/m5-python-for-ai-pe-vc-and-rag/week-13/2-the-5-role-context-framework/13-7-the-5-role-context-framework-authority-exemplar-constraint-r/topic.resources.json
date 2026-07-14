@@ -1,0 +1,30 @@
+{
+  "topic_id": "13.7",
+  "captured_at": "2026-06-14T00:00:00Z",
+  "captured_by": "namratas@revature.com",
+  "resources_source": "web_search",
+  "web_search_query": "5-role context framework prompt engineering authority exemplar constraint rubric metadata",
+  "resources": [
+    {
+      "type": "url",
+      "value": "https://arxiv.org/abs/2604.04258",
+      "role": "primary",
+      "source": "web_search",
+      "notes": "Peer-reviewed paper defining the 5-role context package (Authority, Exemplar, Constraint, Rubric, Metadata) with priority ranking."
+    },
+    {
+      "type": "url",
+      "value": "https://www.parloa.com/knowledge-hub/prompt-engineering-frameworks/",
+      "role": "supporting",
+      "source": "web_search",
+      "notes": "Survey of prompt engineering frameworks including structured context techniques."
+    },
+    {
+      "type": "url",
+      "value": "https://medium.com/@iborn2code/context-engineered-ai-prompt-framework-for-ai-agents-e3e3e07b9259",
+      "role": "applied",
+      "source": "web_search",
+      "notes": "Applied example of context-engineered prompt framework for AI agents."
+    }
+  ]
+}

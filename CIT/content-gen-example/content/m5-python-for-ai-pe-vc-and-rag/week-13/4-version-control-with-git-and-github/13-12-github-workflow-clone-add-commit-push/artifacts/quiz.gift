@@ -1,0 +1,49 @@
+$CATEGORY: CIT/M5/week-13/13-12-github-workflow-clone-add-commit-push
+
+::q1:: Which statement best explains the difference between a local repository and a remote repository on GitHub? {
+~A local repository is a backup created automatically by GitHub when something goes wrong.#No — GitHub does not create the local repository; you create it yourself by cloning or initialising Git on your machine.
+~A remote repository lives on your computer, while a local repository lives on GitHub's servers.#No — this reverses the definitions: "local" means on your own machine, "remote" means on the server.
+=A local repository is on your computer for daily work; the remote is the GitHub-hosted copy others can access.#Correct — local is on your machine for editing; remote is the shared copy on GitHub (corpus §5.1).
+~Both repositories are always perfectly in sync without any extra commands.#No — the two copies only sync when you explicitly run push or pull; they can differ between syncs.
+#### Tests the local vs. remote distinction introduced in corpus §5.1.
+}
+
+::q2:: You want to download a GitHub repository so you can work on it on your laptop. Which command should you run? {
+=git clone <URL>#Correct — git clone copies the remote repository to your machine and sets up the connection to origin automatically (corpus §5.2).
+~git pull origin main#No — git pull downloads new commits into an existing local repository; it cannot create a fresh local copy from scratch.
+~git push origin main#No — git push sends your local commits to GitHub; it does not download anything to your computer.
+~git add .#No — git add stages local file changes for a commit; it has no connection to downloading from GitHub.
+#### Tests the purpose and usage of git clone (corpus §5.2).
+}
+
+::q3:: You have edited two files — `README.md` and `analysis.py`. You want both in the next commit. What must you do before running `git commit`? {
+~Run `git push origin main` to send the changes to GitHub first.#No — push uploads already-committed snapshots; you must stage and commit locally before pushing.
+~Run `git commit -m "message"` immediately — Git stages all edited files automatically.#No — Git does not stage changes automatically; you must explicitly use git add.
+~Run `git clone` again to refresh your local copy.#No — you clone only once per machine; cloning again would create a new unrelated copy.
+=Run `git add README.md` and `git add analysis.py` to stage both files for the commit.#Correct — git add places changed files in the staging area so they are included in the next commit (corpus §5.3).
+#### Tests the purpose and usage of git add (corpus §5.3).
+}
+
+::q4:: After running `git add` on your changed files, what does `git commit -m "Add project README"` do? {
+~It uploads your staged files directly to GitHub so your instructor can see them.#No — git commit saves a snapshot only locally; changes do not reach GitHub until you run git push.
+=It saves staged changes as a local snapshot with your commit message and a unique commit hash.#Correct — git commit records a local snapshot with metadata; it does not touch the remote at all (corpus §5.4).
+~It sends a notification to teammates that you have finished a piece of work.#No — git commit is a local operation with no network activity and no notification system.
+~It empties the staging area and discards the staged changes without saving them.#No — git commit saves the staged changes as a snapshot; the staging area clears because changes are now recorded, not lost.
+#### Tests the purpose and effect of git commit (corpus §5.4).
+}
+
+::q5:: You have committed your changes locally. What is the correct command to make those commits visible on GitHub? {
+=git push origin main#Correct — git push sends your local commits to the remote named origin on the main branch, making them visible on GitHub (corpus §5.5).
+~git add origin main#No — git add stages local file changes; it is not a network command and does not interact with GitHub.
+~git commit -m "push"#No — git commit records a local snapshot; writing the word "push" in the message does not send anything to GitHub.
+~git clone origin main#No — git clone downloads a remote repository to your machine; it does not upload your local commits.
+#### Tests the purpose and usage of git push (corpus §5.5).
+}
+
+::q6:: A student edits `analysis.py`, then runs four commands in some order. Which order correctly traces the file change from the editor all the way to GitHub? {
+~Edit file → git push → git add → git commit#No — you cannot push before committing, and you cannot commit before staging; this order would fail.
+~Edit file → git commit → git add → git push#No — you must stage with git add before git commit can include the changes.
+~Edit file → git clone → git add → git commit#No — git clone is a one-time setup command; it is not part of the repeating edit-stage-commit-push cycle.
+=Edit file → git add → git commit → git push#Correct — the correct order is: edit, stage with git add, snapshot with git commit, then upload with git push (corpus §5.6).
+#### Tests the end-to-end order of the workflow — edit, add, commit, push (corpus §5.6).
+}

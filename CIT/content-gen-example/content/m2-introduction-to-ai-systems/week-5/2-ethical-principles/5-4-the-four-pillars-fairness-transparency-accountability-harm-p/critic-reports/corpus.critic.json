@@ -1,0 +1,39 @@
+{
+  "passed": true,
+  "checks": {
+    "required_sections": {
+      "passed": true,
+      "notes": "Sections 3 (Learning Objectives), 4 (Introduction), 5 (Core Concepts, six subsections), 10 (Key Takeaways) all present and non-trivial. Section 5 >> 100 words; sections 3/4/10 each > 50 words. No placeholder strings in required sections."
+    },
+    "citation_density": {
+      "passed": true,
+      "mode": "strict",
+      "primary_cited": true,
+      "notes": "resources_source=web_search -> strict mode. Primary resource [1] (arxiv 2109.07906) cited on 20+ lines across sections 5-8. Supporting [2]/[3] also cited extensively. Only markers [1] [2] [3] appear, all resolve to listed resources -> no fabricated citations. Factual-assertion citation rate in sections 5/6/7 well above the 60% threshold."
+    },
+    "sequence_drift": {
+      "passed": true,
+      "forward_refs": [],
+      "notes": "red-teaming (line 135) remains a named-and-deferred one-liner pointing to 5.5; deep-learning cross-ref (line 81) points to 5.1; XAI spelled out 'Explainable AI (XAI)'. All technical noun phrases resolve to 5.4 concepts_introduced (fairness in AI, proxy discrimination, transparency in AI, explainability, discoverability, black box problem, XAI, accountability in AI, accountability gap, harm prevention, risk assessment, categories of AI harm) or prior topics 5.1/5.2/5.3 (historical/representation/data bias, deep learning, deepfake, hallucination)."
+    },
+    "length_sanity": {
+      "passed": true,
+      "word_count": 2050,
+      "profile": "deep",
+      "target_range": [1800, 2200],
+      "notes": "~2050 words, within deep profile range [1800,2200]."
+    },
+    "scope_creep": {
+      "passed": true,
+      "off_topic": [],
+      "notes": "TRY-2 scope_creep defect RESOLVED in section 5.6 (Where these pillars come from). Line 161 'The EU Ethics Guidelines for Trustworthy AI — covered later in the course [3].' is now a bare name + pointer, unbolded, no defining appositive. Line 162 'The NIST AI Risk Management Framework (AI RMF) — covered later in the course [3].' is a bare name + pointer, unbolded (the parenthetical is only the acronym expansion of the framework's own name, not a defining clause). Line 163 'The UNESCO Recommendation on the Ethics of AI.' is a bare name with the defining appositive stripped. All three satisfy the mention-and-defer form. XAI (line 83) remains a single-sentence named-and-deferred mention. Black box problem is in-scope (5.4 concepts_introduced, grounds the transparency pillar). No concept taught beyond the four-pillars headline."
+    },
+    "beginner_readability": {
+      "passed": true,
+      "findings": [],
+      "notes": "Every pillar and technical term (proxy discrimination, black box problem, accountability gap, risk assessment, explainability, discoverability, XAI) defined plainly on first use, analogy-first. No jargon-dump paragraph. Plain register, short sentences, negligible hedging. Zero distinct findings -> no escalation."
+    }
+  },
+  "verdict": "PASS (try 3). All 6 of 6 checks pass. The sole TRY-2 defect — scope_creep in section 5.6 — is resolved: 'EU Ethics Guidelines for Trustworthy AI' (line 161) and 'NIST AI Risk Management Framework (AI RMF)' (line 162) are now unbolded bare names with 'covered later' pointers, and the UNESCO entry (line 163) is a bare name with its defining appositive stripped. Mention-and-defer form satisfied. Forward-referenced terms: none. Out-of-scope concepts: none. Corpus is cleared to ground downstream artifacts.",
+  "at": "2026-06-22T19:14:00Z"
+}

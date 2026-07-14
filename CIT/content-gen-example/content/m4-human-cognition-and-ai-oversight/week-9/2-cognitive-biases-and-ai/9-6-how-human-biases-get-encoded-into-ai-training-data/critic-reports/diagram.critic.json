@@ -1,0 +1,57 @@
+{
+  "verdict": "pass",
+  "cycle": 1,
+  "findings": [
+    {
+      "code": "looks_good",
+      "where": "whole canvas",
+      "detail": "Clean 6-node flowchart LR cycle diagram. Forward chain Human Decisions -> Training Data -> AI Model -> AI Decisions -> Real-World Outcomes -> New Training Data reads left-to-right as intended. Back-edge New Training Data -->|amplifies bias in| Training Data closes the feedback loop exactly as the intent specifies. No node overlap expected at 1400px with 6 nodes in LR layout. Curve: basis setting ensures the back-edge arcs cleanly above the main chain rather than cutting through it."
+    },
+    {
+      "code": "looks_good",
+      "where": "labels / concept fidelity",
+      "detail": "All six bold node labels trace directly to corpus §5 Core Concepts: 'Human Decisions' (§5.2–5.4 data collection/labelling/curation + §5.7 cognitive bias layer), 'Training Data' (§5.1 encoding definition), 'AI Model' (§5.5 feedback loop step 1), 'AI Decisions' (§5.5 — loans, rankings, recommendations), 'Real-World Outcomes' (§5.5 — who gets loans/jobs/care), 'New Training Data' (§5.5 feedback loop step 4). All bold labels ≤ 4 words. Subtitle terms (labelling/historical/selection bias, confirmation bias, automation bias) are all defined in corpus §5.2–5.5 and §5.7. No forward-topic drift (Judgment Framework 9.7–9.9 absent). No bare unexplained acronyms."
+    },
+    {
+      "code": "looks_good",
+      "where": "cycle structure / intent match",
+      "detail": "Intent specifies: 'Cycle diagram: human decisions → training data → AI model → deployed AI decisions → real-world outcomes → new training data (feedback loop closing the cycle), with cognitive bias annotated at the human decisions node.' All six required stops present. Cognitive bias annotation at HD node ('confirmation bias · automation bias') matches §5.7 exactly. Bias entry-point subtitle at TD node ('labelling · historical · selection bias') maps the three encoding mechanisms from §5.2–5.4. Back-edge label 'amplifies bias in' matches corpus language from §5.5 ('where a small initial bias can grow')."
+    },
+    {
+      "code": "looks_good",
+      "where": "color tier assignment",
+      "detail": "HD (Human Decisions, human judgment gate) correctly uses hitl yellow (#fff3bf/#f59e0b). TD and NT (data nodes, neither automated nor human HITL) use act blue (#a5d8ff/#4a9eed). AM and AD (AI automated processing nodes) use auto purple (#d0bfff/#8b5cf6). RO (terminal outcome node) uses done green (#b2f2bb/#22c55e). Semantically coherent: human gate yellow, machine steps purple, data nodes blue, outcome terminal green. No color-tier violations."
+    },
+    {
+      "code": "looks_good",
+      "where": "title discipline",
+      "detail": "Governing concept 'How Human Biases Encode into AI' sits in the --- config title: field, rendering as a banner above the diagram. No ghost node used to carry the central organizing idea. The unused 'feedback' classDef definition is harmless (Mermaid ignores unused classDefs)."
+    }
+  ],
+  "preflight": {
+    "mermaid_parse": "pass (valid --- YAML config block; flowchart LR declaration; all nodes in bracket notation with HTML labels; all edges use -->|\"label\"| syntax; back-edge NT-->TD valid cycle in flowchart; classDef and class assignments resolve; no stray tokens)",
+    "node_count": "pass (6 nodes: HD, TD, AM, AD, RO, NT — within 3–8 range)",
+    "label_discipline": "pass (all bold labels ≤ 4 words: 'Human Decisions' 2w, 'Training Data' 2w, 'AI Model' 2w, 'AI Decisions' 2w, 'Real-World Outcomes' 3w, 'New Training Data' 3w)",
+    "concept_fidelity": "pass (all labels trace to corpus §5 Core Concepts; subtitle terms trace to §5.2–5.7; no adjacent-topic scope creep)",
+    "jargon_labels": "pass (no bare unexplained acronyms; 'AI' only appears paired with 'Model' or 'Decisions'; all other labels plain English)",
+    "title_discipline": "pass (governing concept in config title: field; no ghost node displacement)",
+    "cycle_discipline": "pass (intent explicitly calls for a cycle; back-edge NT→TD is the intentional feedback-loop close, not a branching violation; forward chain is single-path linear)"
+  },
+  "stats": {
+    "nodes": 6,
+    "edges": 6,
+    "layout": "flowchart LR",
+    "labels": [
+      "Human Decisions",
+      "Training Data",
+      "AI Model",
+      "AI Decisions",
+      "Real-World Outcomes",
+      "New Training Data"
+    ],
+    "mmd_path": "content/m4-human-cognition-and-ai-oversight/week-9/2-cognitive-biases-and-ai/9-6-how-human-biases-get-encoded-into-ai-training-data/artifacts/diagram.mmd",
+    "png_path": "content/m4-human-cognition-and-ai-oversight/week-9/2-cognitive-biases-and-ai/9-6-how-human-biases-get-encoded-into-ai-training-data/artifacts/diagram.png",
+    "png_render_command": "mmdc -i diagram.mmd -o diagram.png -w 1400 -b transparent",
+    "png_render_status": "pending — mmdc not executable in current file-tool-only environment; PNG must be rendered by running the command above from the artifacts/ directory"
+  }
+}

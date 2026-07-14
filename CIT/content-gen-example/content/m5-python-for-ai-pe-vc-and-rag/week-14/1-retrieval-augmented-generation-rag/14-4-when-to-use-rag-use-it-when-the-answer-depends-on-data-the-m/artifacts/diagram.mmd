@@ -1,0 +1,17 @@
+%%{init: {"theme": "base", "themeVariables": {"primaryColor": "#a5d8ff", "primaryBorderColor": "#4a9eed", "lineColor": "#555"}, "flowchart": {"htmlLabels": true, "curve": "basis", "rankSpacing": 65, "nodeSpacing": 45}}}%%
+flowchart TD
+    Q{{"<b>Answer in unseen data?</b>"}}:::hitl
+
+    Q -->|YES — use RAG| RAG["<b>Use RAG</b><br/><span style='font-size:12px;color:#6d28d9'>retrieve then generate</span>"]:::done
+    Q -->|NO — skip RAG| SKIP["<b>Skip RAG</b><br/><span style='font-size:12px;color:#6d28d9'>direct LLM call</span>"]:::done
+
+    RAG --> S1["<b>Freshness signal</b><br/><span style='font-size:12px;color:#6d28d9'>post-cutoff data</span>"]:::auto
+    RAG --> S2["<b>Private data signal</b><br/><span style='font-size:12px;color:#6d28d9'>not in training</span>"]:::auto
+    RAG --> S3["<b>Precision signal</b><br/><span style='font-size:12px;color:#6d28d9'>exact facts needed</span>"]:::auto
+    RAG --> S4["<b>Cost-benefit trade-off</b><br/><span style='font-size:12px;color:#6d28d9'>accuracy vs overhead</span>"]:::auto
+
+    SKIP --> FT["<b>Fine-tuning</b><br/><span style='font-size:12px;color:#6d28d9'>facts vs skills — different problems</span>"]:::auto
+
+    classDef hitl fill:#fff3bf,stroke:#f59e0b,stroke-width:3px
+    classDef auto fill:#d0bfff,stroke:#8b5cf6
+    classDef done fill:#b2f2bb,stroke:#22c55e

@@ -1,0 +1,49 @@
+$CATEGORY: CIT/M4/week-9/9-1-system-1-thinking-fast-instinctive-automatic
+
+::q1:: Which set of words correctly describes the three defining characteristics of System 1 thinking? {
+~Slow, deliberate, and high-effort processing#No — these three properties describe System 2, not System 1.
+~Fast, conscious, and high-effort processing#No — System 1 is fast, but it is unconscious and low-effort, not conscious or high-effort.
+=Fast, automatic, and low-effort processing#Correct — Kahneman identified speed, automaticity, and low mental effort as the three hallmarks of System 1.
+~Automatic, precise, and rule-based processing#No — System 1 is automatic, but it is approximate rather than precise, and it uses pattern matching rather than explicit rules.
+#### Tests the three defining characteristics of System 1 (corpus §5.1).
+}
+
+::q2:: A person slams on the brakes before consciously deciding to act when a child steps into the road. Which label best fits this response? {
+=An example of System 1 thinking in action#Correct — the response is instant, effortless, and unintentional, which are the hallmarks of System 1's automatic processing.
+~Calculating the tip on a restaurant bill mentally#No — mental arithmetic, even informal, involves deliberate step-by-step effort rather than automatic reflex.
+~Carefully listing pros and cons before accepting a job#No — weighing up options deliberately is the opposite of fast, automatic System 1 processing.
+~Choosing each word deliberately when drafting an email#No — deliberate word selection requires conscious effort, placing it in the System 2 category.
+#### Tests the ability to recognise everyday examples of System 1 thinking (corpus §5.3).
+}
+
+::q3:: How does System 1 thinking differ from System 2 thinking at a high level? {
+~System 1 handles complex reasoning; System 2 handles simple reflexes#No — this is the reverse of the actual relationship; System 1 handles automatic responses and System 2 handles effortful reasoning.
+~System 1 and System 2 run identical tasks but at different speeds#No — the two modes handle qualitatively different kinds of processing, not the same tasks at different speeds.
+~System 1 is a physical brain region; System 2 is its counterpart region#No — neither System 1 nor System 2 is a physical brain structure; both are descriptions of processing modes.
+=System 1 is fast and automatic; System 2 is slower and more deliberate#Correct — System 1 runs quickly without conscious effort, while System 2 requires slower, intentional reasoning.
+#### Tests the high-level distinction between System 1 and System 2 (corpus §5.4).
+}
+
+::q4:: What is a cognitive heuristic? {
+~A statistical formula used to calculate exact probability values#No — a heuristic is an informal mental shortcut, not a mathematical formula; it trades precision for speed.
+=A mental shortcut for reaching a quick, good-enough answer#Correct — heuristics are rules of thumb the brain uses to avoid full analysis when a fast, approximate answer is sufficient.
+~A deliberate step-by-step checklist that experts follow to avoid errors#No — checklists are conscious, effortful tools, which is the opposite of the automatic, implicit nature of heuristics.
+~A logical fallacy that arises when memory stores incorrect information#No — a heuristic is a useful shortcut strategy, not an error in memory storage; it can produce mistakes but is not itself a fallacy.
+#### Tests understanding of cognitive heuristics and their purpose (corpus §5.2).
+}
+
+::q5:: Why can System 1's speed sometimes lead to errors? {
+=It commits quickly and skips details, missing errors in novel situations#Correct — System 1 fills gaps using past patterns and does not check everything, so unfamiliar or high-stakes situations can slip through unchecked.
+~It is too slow to process complex information, so it times out#No — slowness is the opposite of System 1's defining feature; it is the very speed that creates the risk, not any lack of it.
+~It always overrides System 2, making deliberate thought impossible#No — System 1 does not permanently block System 2; people can and do engage deliberate thinking when they choose to.
+~It only processes familiar patterns and stops completely with new inputs#No — System 1 does not stop with new inputs; it still generates an answer using heuristics, which is precisely where errors arise.
+#### Tests understanding of why System 1's speed-accuracy trade-off can produce errors (corpus §5.5).
+}
+
+::q6:: How is System 1 thinking relevant when a person evaluates AI-generated output? {
+~AI outputs are unaffected by System 1 because machines generate them#No — System 1 operates in the human reader, not in the AI; how the output is produced is irrelevant to how the reader processes it.
+~System 1 automatically detects factual errors, protecting users from AI mistakes#No — System 1 detects fluency and pattern familiarity, not factual accuracy; it is more likely to miss errors than catch them.
+=Fluent, confident-sounding AI output can trigger System 1 approval even when wrong#Correct — System 1 equates fluency with correctness, so a well-written but inaccurate AI response can pass unchallenged.
+~Reading any AI output always activates System 2 instead of System 1#No — there is nothing special about AI-generated text that forces System 2 engagement; skimming triggers System 1 regardless of the source.
+#### Tests the connection between System 1 thinking and uncritical acceptance of AI output (corpus §5.5, §7).
+}

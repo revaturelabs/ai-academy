@@ -1,0 +1,50 @@
+{
+  "type": "topic",
+  "id": "2.7",
+  "title": "Writing specifications across five domains — health, transport, education, food, scheduling",
+  "slug": "2-7-writing-specifications-across-five-domains-health-transport",
+  "position_in_module": 1,
+  "week_num": 2,
+  "session_name": "Specifying for AI",
+  "module": {
+    "position": 4,
+    "slug": "4-writing-and-testing-specifications",
+    "title": "Writing and Testing Specifications"
+  },
+  "course": {
+    "code": "M1",
+    "slug": "m1-computational-thinking",
+    "title": "Computational Thinking"
+  },
+  "next_assessment": {
+    "id": "A1",
+    "due_week": 3,
+    "title": "Specification Portfolio",
+    "weight": "10%"
+  },
+  "paths": {
+    "corpus": "topic_corpus.md",
+    "resources": "topic.resources.json",
+    "progress": "topic.progress.json",
+    "artifacts_dir": "artifacts/",
+    "critic_reports_dir": "critic-reports/"
+  },
+  "artifact_plan": {
+    "profile": "deep",
+    "suggested_profile": "standard",
+    "diagram": false,
+    "reading": {
+      "target_word_range": [1800, 2200],
+      "target_min_minutes": 9,
+      "target_max_minutes": 11
+    },
+    "quiz": {
+      "min_questions": 5,
+      "max_questions": 7,
+      "include_short_answer": true
+    },
+    "confirmed_at": "2026-06-17"
+  },
+  "expected_delivery_minutes": 10,
+  "status": "scaffolded"
+}

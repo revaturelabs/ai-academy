@@ -1,0 +1,42 @@
+{
+  "critic": "diagram-critic",
+  "cycle": 1,
+  "topic_id": "11.7",
+  "at": "2026-06-12T00:00:00Z",
+  "passed": true,
+  "source_preflight": {
+    "mermaid_parses": true,
+    "node_count": 4,
+    "node_count_in_range": true,
+    "label_discipline": true,
+    "concept_fidelity": true,
+    "label_plainness": true,
+    "notes": "4 nodes, all ≤4 words in bold labels, all map to §5.3 core concepts. No scope-creep labels."
+  },
+  "visual_checks": {
+    "nodes_overlap": false,
+    "label_truncated": false,
+    "crossings_illegible": false,
+    "layout_wrong_for_intent": false,
+    "missing_side_panel_pattern": false,
+    "side_panels_hollow": false,
+    "whitespace_imbalance": false,
+    "subtitle_illegible": false,
+    "color_tier_violation": false,
+    "edge_label_collision": false
+  },
+  "stats": {
+    "node_count": 4,
+    "edge_count": 3,
+    "layout": "LR",
+    "png_path": "artifacts/diagram.png",
+    "color_assignment": {
+      "A_Specify": "start (#a5d8ff)",
+      "B_Prompt_AI": "auto (#d0bfff)",
+      "C_Explain": "hitl (#fff3bf)",
+      "D_Test": "hitl (#fff3bf)"
+    }
+  },
+  "findings": [],
+  "verdict": "PASS (cycle 1). 4-node LR pipeline. Specify (blue) → Prompt AI (purple) → Explain (yellow) → Test (yellow). No overlaps, no truncation, no color violations, no crossings. Layout matches intent (horizontal linear pipeline). Title legible."
+}

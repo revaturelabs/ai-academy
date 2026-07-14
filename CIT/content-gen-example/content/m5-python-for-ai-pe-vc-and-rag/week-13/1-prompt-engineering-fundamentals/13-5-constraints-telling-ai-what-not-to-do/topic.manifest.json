@@ -1,0 +1,43 @@
+{
+  "type": "topic",
+  "id": "13.5",
+  "title": "Constraints — telling AI what NOT to do",
+  "slug": "13-5-constraints-telling-ai-what-not-to-do",
+  "position_in_module": 5,
+  "week_num": 13,
+  "session_name": "Prompt Engineering and Version Control",
+  "module": {
+    "position": 1,
+    "slug": "1-prompt-engineering-fundamentals",
+    "title": "Prompt Engineering Fundamentals"
+  },
+  "course": {
+    "code": "M5",
+    "slug": "m5-python-for-ai-pe-vc-and-rag",
+    "title": "Python for AI, PE, VC and RAG"
+  },
+  "next_assessment": {
+    "id": "A4",
+    "due_week": 13,
+    "title": "Python and Prompt Engineering Portfolio",
+    "weight": "20%"
+  },
+  "paths": {
+    "corpus": "topic_corpus.md",
+    "resources": "topic.resources.json",
+    "progress": "topic.progress.json",
+    "artifacts_dir": "artifacts/",
+    "critic_reports_dir": "critic-reports/"
+  },
+  "artifact_plan": {
+    "depth_profile": "atomic",
+    "depth_profile_confirmed_by": "hitl2",
+    "depth_signals": "budget-constrained from standard; 10 topics remaining at ~5.9 min/topic",
+    "reading": { "target_word_range": [800, 1200], "target_min_minutes": 4, "target_max_minutes": 6 },
+    "quiz": { "min_questions": 5, "max_questions": 7, "include_short_answer": true },
+    "diagram": true,
+    "diagram_intent": "Two-column contrast showing positive instruction vs constraint, with four constraint types (format, tone, content exclusion, scope limit) as guardrail layers, annotated by system-prompt vs user-prompt placement"
+  },
+  "expected_delivery_minutes": 7,
+  "status": "scaffolded"
+}

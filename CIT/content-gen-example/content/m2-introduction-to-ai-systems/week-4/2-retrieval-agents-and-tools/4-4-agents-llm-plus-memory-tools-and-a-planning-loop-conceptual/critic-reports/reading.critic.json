@@ -1,0 +1,98 @@
+{
+  "passed": true,
+  "checks": {
+    "format_discipline": {
+      "passed": true,
+      "frontmatter_present": false,
+      "meta_sidecar_present": true,
+      "meta_sidecar_valid": true,
+      "section_template_violation": null,
+      "sections_found": ["Overview", "Key Concepts", "Worked Example", "In Practice", "Key Takeaways", "References"],
+      "sections_order_correct": true
+    },
+    "length": {
+      "passed": true,
+      "word_count": 2086,
+      "word_count_in_range": true,
+      "word_range": "1800–2200",
+      "estimated_read_minutes": 9.07,
+      "read_minutes_in_range": true,
+      "minute_range": "9–11",
+      "note": "Cycle-1 failed: 1953 words / 8.49 min. Revision added ~133 words at 4 natural points. Cycle-2: 2086 words / 9.07 min — within both bands."
+    },
+    "citations": {
+      "passed": true,
+      "primary_resource_cited": true,
+      "primary_resource_id": 1,
+      "citation_numbers_used": [1, 2, 3],
+      "fabricated_citations": false,
+      "orphan_inline_markers": false,
+      "orphan_bibliography_entries": false,
+      "bibliography_entries_present": [1, 2, 3]
+    },
+    "diagram_embedded": {
+      "passed": true,
+      "alt_text": "Agent architecture — observe, think, act loop",
+      "path": "./diagram.png",
+      "location": "Key Concepts section",
+      "note": "![...] present inside Key Concepts as required."
+    },
+    "no_forward_references": {
+      "passed": true,
+      "findings": [],
+      "note": "Multi-agent systems mentioned once with explicit Week 14 deferral — one sentence pointer, not taught. No other out-of-scope references."
+    },
+    "scope_discipline": {
+      "passed": true,
+      "scope_creep": [],
+      "note": "Stays within conceptual introduction boundary. No framework names (LangChain, AutoGen). No multi-agent design taught. New revision paragraphs consistent with corpus scope."
+    },
+    "faithfulness": {
+      "passed": true,
+      "assertions_sampled": 10,
+      "unsupported_assertions": 0,
+      "threshold": 2,
+      "sampled_assertions": [
+        {"assertion": "AI agent puts a foundation model at the centre of an active multi-step process", "corpus_section": "4 Introduction + 5.2", "supported": true},
+        {"assertion": "Three properties separate an agent from a plain LLM: actions / loop / memory", "corpus_section": "5.1", "supported": true},
+        {"assertion": "New paragraph: agents vs LLMs — goal-level description of difference", "corpus_section": "5.1", "supported": true},
+        {"assertion": "Short-term memory lives in context window; long-term memory in external storage", "corpus_section": "5.2.2", "supported": true},
+        {"assertion": "RAG is one specific way of pulling long-term memory into the context window", "corpus_section": "5.2.2", "supported": true},
+        {"assertion": "Tool examples: web search, code executor, calendar, file reader/writer, API call", "corpus_section": "5.2.3", "supported": true},
+        {"assertion": "Observe-think-act three phases as described", "corpus_section": "5.2.4", "supported": true},
+        {"assertion": "New paragraph: loop simplicity insight — complexity from iteration, not single-step elaboration", "corpus_section": "5.2.4", "supported": true},
+        {"assertion": "Design principle: goals not scripts; new goal-vs-script contrast example", "corpus_section": "8 Best Practices", "supported": true},
+        {"assertion": "Agentic workflow: goal specified by user, agent sequences its own actions", "corpus_section": "5.3", "supported": true}
+      ]
+    },
+    "beginner_readability": {
+      "passed": true,
+      "undefined_terms": [],
+      "undefined_term_count": 0,
+      "threshold": 2,
+      "notes": [
+        "LLM spelled out on first use.",
+        "API spelled out on first use and Key Takeaways.",
+        "Context window defined inline on first use.",
+        "Concrete analogies precede abstractions throughout.",
+        "New revision paragraphs maintain same plain-language register.",
+        "Average sentence length under 25 words."
+      ]
+    },
+    "formatting_scannability": {
+      "passed": true,
+      "notes": [
+        "No paragraph exceeds 6 sentences after revision.",
+        "Numbered lists used for three-property list, observe-think-act phases, and worked example cycles.",
+        "Bullet list for tools and design principles.",
+        "Bold-term / plain-meaning shape used consistently in new paragraphs."
+      ]
+    },
+    "assessment_references": {
+      "passed": true,
+      "findings": []
+    }
+  },
+  "verdict": "PASSED (cycle 2). Cycle-1 failed on read-time (8.49 min < 9-min floor). Revision: +133 words at 4 natural points (overview rationale; agent/LLM contrast paragraph; loop-insight sentence; goal-vs-script example). All other checks unchanged from cycle 1 (all passed). New count: 2086 words / 9.07 min.",
+  "at": "2026-06-17T00:00:00Z"
+}

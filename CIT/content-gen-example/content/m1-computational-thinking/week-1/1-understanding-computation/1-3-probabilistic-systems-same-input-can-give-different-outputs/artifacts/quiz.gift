@@ -1,0 +1,49 @@
+$CATEGORY: CIT/M1/week-1/1.3-probabilistic-systems-same-input-can-give-different-outputs
+
+::q1:: Which statement best defines a probabilistic system? {
+~A system that always produces the same output for the same input, making it easy to verify.#No — that describes a deterministic system, not a probabilistic one.
+=A system where the same input can produce different outputs on different runs.#Correct — in a probabilistic system the input shapes a range of possible outputs rather than fixing a single one.
+~A system that produces completely random outputs with no connection to what was entered.#No — the input still shapes which outputs are possible and likely; probabilistic is not the same as arbitrary.
+~A system that is broken whenever two runs of the same input give different results.#No — output variation in a probabilistic system is a designed feature, not a malfunction.
+#### Tests the core definition of a probabilistic system (corpus §5.1).
+}
+
+::q2:: You type the same creative prompt into an AI writing assistant on Monday and again on Tuesday and receive two different stories. What is the most accurate explanation? {
+~The system made an error on one of the runs, returning a wrong answer instead of the single correct response.#No — producing different outputs from the same input is normal and intended behaviour for a probabilistic system.
+~The input was not truly identical because the day of the week is a hidden input that silently changed between Monday and Tuesday.#No — the variation is caused by deliberate randomness built into the process, not by a hidden input such as the day.
+~The internet connection altered the input between the two runs without the user noticing, changing what the system received.#No — network conditions are not the designed source of variation; the process itself includes an intentional random step.
+=The system intentionally includes a source of randomness, so different outputs from the same input are expected and correct.#Correct — a probabilistic system is designed to vary its output; the variation is a feature, not a bug.
+#### Tests why same-input variation is not an error in probabilistic systems (corpus §5.1, §5.3).
+}
+
+::q3:: A spam filter classifies borderline emails differently on consecutive scans of the same message. A weather model run twice on the same data returns slightly different rainfall probabilities. A music app given the same playlist produces a different shuffle order each time. What do all three examples have in common? {
+=They are all probabilistic systems — each uses a designed source of randomness that allows the output to vary even when the input is identical.#Correct — all three systems intentionally include randomness, making them probabilistic rather than deterministic.
+~They all contain software bugs that cause unpredictable output and should be reported to the developer for correction.#No — output variation in these systems is intentional design chosen by the developer, not accidental defects to be fixed.
+~They are all deterministic systems that simply have hidden inputs the user has not yet discovered or accounted for.#No — the variation in probabilistic systems comes from deliberate randomness in the process, not from undiscovered inputs.
+~They are all AI systems — only artificial intelligence software is capable of producing variable outputs from a fixed input.#No — dice rolls, shuffled playlists, and weather simulations also show probabilistic behaviour completely outside AI.
+#### Tests the ability to identify real-world examples of probabilistic systems (corpus §5.1, §7).
+}
+
+::q4:: Using the input / process / output model, what is the key structural difference between a deterministic system and a probabilistic system? {
+~Deterministic systems accept inputs from the user; probabilistic systems skip inputs entirely and generate outputs from nothing.#No — both system types receive inputs; the difference is in how the process converts those inputs to outputs, not whether inputs exist.
+~Deterministic systems are implemented digitally on computers; probabilistic systems only exist in physical or biological processes.#No — both types can be implemented digitally or physically; the distinction is about process structure, not the medium used.
+=In a deterministic system the input fixes one specific output; in a probabilistic system the input shapes a range of possible outputs and a sampling step picks one from that range.#Correct — the presence of a sampling step that selects among weighted possibilities is what distinguishes a probabilistic process from a deterministic one.
+~Probabilistic systems run faster than deterministic ones because they skip checking every possible output before committing to a decision.#No — execution speed is unrelated to whether a system is deterministic or probabilistic; that distinction is about output variation, not performance.
+#### Tests direct contrast of deterministic vs probabilistic using the input/process/output model (corpus §5.4).
+}
+
+::q5:: What role do probability and uncertainty play in probabilistic systems? {
+~Probability appearing in a system's output is a sign that the designers made errors; a well-built system avoids uncertainty by computing a single definite answer.#No — uncertainty is the reason probabilistic systems exist; it honestly represents genuinely ambiguous situations rather than hiding a design flaw.
+~Uncertainty means the system cannot produce useful output until all missing information is supplied by the user or another source.#No — probabilistic systems are specifically designed to work usefully even when full information is unavailable, using probability to represent likelihoods.
+~Randomness is a form of chaos that engineers reluctantly tolerate but always try to eliminate before a system goes into production.#No — randomness is a deliberate design tool in probabilistic systems, chosen intentionally to handle creative or uncertain tasks.
+=Probability expresses how likely each possible output is, and uncertainty is the reason the system uses a range of possibilities rather than a single fixed answer.#Correct — uncertainty is real in many problems, and probability is the tool probabilistic systems use to represent and work with that uncertainty honestly.
+#### Tests understanding of probability, randomness, and uncertainty in probabilistic systems (corpus §5.2, §5.3).
+}
+
+::q6:: A hospital software team must build a tool to help doctors identify likely conditions from a patient's symptoms. Which approach is more appropriate, and why? {
+~A deterministic approach, because medical decisions must never vary and a fixed lookup table guarantees the same answer every time symptoms are entered.#No — the same symptoms can have multiple possible causes; forcing a single fixed answer creates false certainty rather than showing the ranked likelihoods a doctor needs.
+=A probabilistic approach, because the same symptoms can indicate different conditions and a ranked list of likelihoods is more honest and useful than a single forced answer.#Correct — when genuine uncertainty exists, a probabilistic system that surfaces likelihoods is more appropriate than a deterministic one that pretends a unique answer exists.
+~A deterministic approach, because probabilistic systems are only suitable for low-stakes entertainment uses like music shuffling, not for serious professional domains.#No — probabilistic systems are appropriate for any domain involving uncertainty or ambiguity, including high-stakes fields like medicine and finance.
+~A probabilistic approach, because deterministic systems become unreliable and produce errors whenever they are given natural-language text as input.#No — deterministic systems handle text without issue; the reason to choose probabilistic here is the genuine diagnostic uncertainty, not any technical limitation.
+#### Tests recognition of situations where a probabilistic approach is more appropriate (corpus §5.6, §7).
+}

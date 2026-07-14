@@ -1,0 +1,201 @@
+{
+  "topic_id": "7.6",
+  "stage": "topic_artifacts_approved",
+  "gates": {
+    "resources_captured": true,
+    "corpus_generated": true,
+    "corpus_critic_passed": true,
+    "corpus_human_approved": true,
+    "reading_generated": true,
+    "reading_critic_passed": true,
+    "quiz_generated": true,
+    "quiz_critic_passed": true,
+    "diagram_generated": null,
+    "diagram_critic_passed": null,
+    "module_drift_passed": true,
+    "course_drift_passed": true,
+    "topic_artifacts_human_approved": true,
+    "week_human_approved": true
+  },
+  "history": [
+    {
+      "at": "2026-06-23T03:20:21Z",
+      "op": "set",
+      "gate": "resources_captured",
+      "value": true
+    },
+    {
+      "at": "2026-06-23T03:20:21Z",
+      "op": "stage",
+      "to": "awaiting_corpus"
+    },
+    {
+      "at": "2026-06-23T03:20:21Z",
+      "op": "log",
+      "msg": "Captured 3 resources (source=web_search, primary: khanacademy.org)"
+    },
+    {
+      "at": "2026-06-23T03:23:34Z",
+      "op": "set",
+      "gate": "corpus_generated",
+      "value": true
+    },
+    {
+      "at": "2026-06-23T03:23:34Z",
+      "op": "stage",
+      "to": "awaiting_corpus_critic"
+    },
+    {
+      "at": "2026-06-23T03:23:34Z",
+      "op": "log",
+      "msg": "Corpus generated (depth=standard, diagram=false)"
+    },
+    {
+      "at": "2026-06-23T03:29:30Z",
+      "op": "set",
+      "gate": "corpus_critic_passed",
+      "value": true
+    },
+    {
+      "at": "2026-06-23T03:29:30Z",
+      "op": "stage",
+      "to": "awaiting_corpus_human_review"
+    },
+    {
+      "at": "2026-06-23T03:29:30Z",
+      "op": "log",
+      "msg": "Corpus critic passed retry-1: citation density 76%, 3 soft findings (word count, undefined terms in s7, term-cluster in s4)"
+    },
+    {
+      "at": "2026-06-23T03:33:13Z",
+      "op": "set",
+      "gate": "corpus_human_approved",
+      "value": true
+    },
+    {
+      "at": "2026-06-23T03:33:13Z",
+      "op": "stage",
+      "to": "corpus_approved"
+    },
+    {
+      "at": "2026-06-23T03:33:13Z",
+      "op": "log",
+      "msg": "HITL#2 approved: all sections kept, depth=standard, diagram=false, edm=7"
+    },
+    {
+      "at": "2026-06-23T03:35:28Z",
+      "op": "set",
+      "gate": "reading_generated",
+      "value": true
+    },
+    {
+      "at": "2026-06-23T03:35:28Z",
+      "op": "stage",
+      "to": "awaiting_reading_critic"
+    },
+    {
+      "at": "2026-06-23T03:35:28Z",
+      "op": "log",
+      "msg": "Reading generated: 1263 words, 7 min, no diagram"
+    },
+    {
+      "at": "2026-06-23T03:35:53Z",
+      "op": "set",
+      "gate": "quiz_generated",
+      "value": true
+    },
+    {
+      "at": "2026-06-23T03:35:53Z",
+      "op": "stage",
+      "to": "awaiting_quiz_critic"
+    },
+    {
+      "at": "2026-06-23T03:35:53Z",
+      "op": "log",
+      "msg": "Quiz generated: 6 MCQs, all LOs covered, bias_defense_applied=true, max_share=33.3%"
+    },
+    {
+      "at": "2026-06-23T03:37:59Z",
+      "op": "set",
+      "gate": "quiz_critic_passed",
+      "value": false
+    },
+    {
+      "at": "2026-06-23T03:37:59Z",
+      "op": "log",
+      "msg": "Quiz critic FAIL: length bias rate=1.00 (all 6 Qs); correct answers carry explanatory prose vs distractors. Auto-retry 1/2."
+    },
+    {
+      "at": "2026-06-23T03:38:29Z",
+      "op": "set",
+      "gate": "reading_critic_passed",
+      "value": true
+    },
+    {
+      "at": "2026-06-23T03:38:29Z",
+      "op": "log",
+      "msg": "Reading critic passed: 1263w/6.3min, Khan Academy cited 7x, no scope creep"
+    },
+    {
+      "at": "2026-06-23T03:41:22Z",
+      "op": "set",
+      "gate": "quiz_critic_passed",
+      "value": true
+    },
+    {
+      "at": "2026-06-23T03:41:22Z",
+      "op": "stage",
+      "to": "awaiting_topic_artifacts_review"
+    },
+    {
+      "at": "2026-06-23T03:41:23Z",
+      "op": "log",
+      "msg": "Quiz critic passed retry-1 — length bias fixed (trimmed all 6 stems)"
+    },
+    {
+      "at": "2026-06-23T03:42:53Z",
+      "op": "set",
+      "gate": "topic_artifacts_human_approved",
+      "value": true
+    },
+    {
+      "at": "2026-06-23T03:42:53Z",
+      "op": "stage",
+      "to": "topic_artifacts_approved"
+    },
+    {
+      "at": "2026-06-23T03:42:53Z",
+      "op": "log",
+      "msg": "HITL#3 approved: reading(1263w/7min) + quiz(6MCQ) — all critics passed"
+    },
+    {
+      "at": "2026-06-23T07:33:15Z",
+      "op": "set",
+      "gate": "module_drift_passed",
+      "value": true
+    },
+    {
+      "at": "2026-06-23T07:33:43Z",
+      "op": "set",
+      "gate": "week_human_approved",
+      "value": true
+    },
+    {
+      "at": "2026-06-23T07:33:52Z",
+      "op": "set",
+      "gate": "module_drift_passed",
+      "value": true
+    },
+    {
+      "at": "2026-06-23T00:00:00Z",
+      "op": "set",
+      "gate": "course_drift_passed",
+      "value": true
+    },
+    {
+      "at": "2026-06-23T00:00:00Z",
+      "op": "log",
+      "msg": "course-drift-critic cycle 2 PASS — M3 W6/W7/W8 all checks pass; W6 warn -23.3%, W7 ok -13.3%, W8 warn -23.3%; no hard fails"
+    }
+  ]
+}

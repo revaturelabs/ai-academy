@@ -1,0 +1,70 @@
+{
+  "critic": "corpus-critic",
+  "topic_id": "13.2",
+  "topic_title": "Role assignment — telling the model who it is",
+  "cycle": 2,
+  "passed": true,
+  "at": "2026-06-13T09:00:00Z",
+  "depth_profile": "standard",
+  "word_count_estimated": 2780,
+  "checks": {
+    "required_sections": {
+      "passed": true,
+      "detail": "Section 3 (Learning Objectives, ~95w, 5 objectives): present and non-trivial (above 50w threshold). Section 4 (Introduction, ~140w): present and non-trivial (above 50w threshold). Section 5 (Core Concepts, 5 subsections, ~950w): present and non-trivial (above 100w threshold). Section 10 (Key Takeaways, ~140w, 6 bullets): present and non-trivial (above 50w threshold). All required sections pass."
+    },
+    "citation_density": {
+      "passed": true,
+      "resources_source": "web_search",
+      "primary_resources_cited": [
+        "[1] learnprompting.org — cited in sections 4, 5.1, 5.2, 5.3, 5.4, 5.5, 6, 7, 8, 10 (cited ~20 times throughout)"
+      ],
+      "supporting_resources_cited": [
+        "[2] prompthub.us — cited in sections 5.1, 5.2, 5.4, 5.5, 6, 7, 8, 10",
+        "[3] arxiv.org/2311.10054 — cited in sections 5.2, 5.5, 8"
+      ],
+      "fake_citations": [],
+      "section_5_6_7_density": "Well above 60% of standalone factual assertions carry a citation marker; [1][2] appear on virtually every substantive paragraph in sections 5, 6, 7.",
+      "detail": "All 3 resources (1 primary, 2 supporting) cited at least once. No [N] markers resolve to resources outside the 3 listed in topic.resources.json. No fabricated citations detected. Citation density requirement satisfied."
+    },
+    "sequence_drift": {
+      "passed": true,
+      "forward_referenced_terms": [],
+      "detail": "Technical noun phrases used in the corpus are all grounded: role assignment, role statement, persona, specificity, calibration tool, tone register, vocabulary level are in this topic's concepts_introduced. system prompt, user prompt, persistent context, authority are from 13.1. LLM, Anthropic API, client.messages.create(), system parameter are from 12.10/12.11. 'Socratic approach' appears once as a named label with its meaning supplied inline ('guiding rather than telling') — not taught as a concept, used as a descriptor. 'SQL injection' appears once as an illustrative example name in Pattern 3, not defined or taught. 'recursion' appears only as the text of a sample user question, not as a concept taught here. No forward references to 13.3+ material (few-shot, chain-of-thought, zero-shot) detected."
+    },
+    "length_sanity": {
+      "passed": true,
+      "word_count_estimated": 2780,
+      "required_range": [3000, 4400],
+      "floor_with_30pct_tolerance": 2100,
+      "pct_below_lower_bound": 7.3,
+      "note": "soft — below target range but within 30% tolerance window",
+      "detail": "Estimated word count ~2780 (up from ~2025 in cycle 1, a ~755-word expansion). The hard-fail floor for standard profile is 2100 (30% below the 3000 lower bound). At 2780, the corpus is 7.3% below the 3000 target — within the 30% tolerance window. Not a hard fail. The expansion addressed Core Concepts (5 subsections with worked examples and comparison tables), Implementation (3 worked examples including a vague-vs-specific before/after), and Real-World Patterns (4 patterns with worked examples). Soft note: the corpus is still below the 3000–4400 target range; HITL #2 reviewer may elect to request further expansion, but this does not block corpus approval."
+    },
+    "topic_scope": {
+      "passed": true,
+      "out_of_scope_concepts": [],
+      "detail": "Corpus scope is tightly bounded by the headline: role assignment, role statements, specificity dimensions, placement in system prompt, when role assignment helps vs does not. Section 8 anti-patterns (inflated title, role contradiction) are directly on-topic. Exercise (Section 9) references Assessment 4 for student context only — does not teach Assessment 4 content. No teaching of few-shot prompting, chain-of-thought, zero-shot, or any concept outside the topic title boundary. No scope creep."
+    },
+    "beginner_readability": {
+      "passed": true,
+      "hard_fail": false,
+      "findings": [
+        {
+          "type": "soft_note",
+          "severity": "soft",
+          "terms": ["SQL injection"],
+          "detail": "'SQL injection' is named once in Section 7, Pattern 3 as an example finding the model surfaces ('raises a security flag (SQL injection risk from unvalidated input)'). It is not defined or taught; it is used as an illustrative example name. A complete beginner may not know the term. This is a single soft note — well below the 3-finding threshold for escalation to hard fail. Recommend: acceptable as-is, or reviewer may add a 2-3 word gloss at HITL #2."
+        }
+      ],
+      "cycle_1_fixes_verified": {
+        "register": "FIXED — defined on first use at Section 5.1: 'the level of formality and technical detail in language, for example academic versus conversational'. Re-defined at Section 5.4 as 'the degree of formality and assumed familiarity'. Explicitly surfaced in Key Takeaways (Section 10).",
+        "pedagogical": "FIXED — word does not appear anywhere in the revised corpus. Removed entirely."
+      },
+      "jargon_dump": false,
+      "academic_register": false,
+      "distinct_finding_count": 1,
+      "detail": "LLM defined on first use (Section 5.2: 'Large Language Model — a type of AI that predicts text by learning patterns from enormous amounts of written language'). 'register' defined on first use (Section 5.1). 'pedagogical' removed. No paragraph introduces 3+ unexplained new terms simultaneously. Sentence length is generally under 25 words; no hedging phrases ('it is generally considered', 'many believe') detected. One soft note for 'SQL injection' named without gloss. Distinct finding count = 1, below escalation threshold of 3. Check passes."
+    }
+  },
+  "verdict": "PASS — All 6 checks pass (cycle 2). Check 1 (required sections): all 4 required sections present and non-trivial. Check 2 (citation density): primary resource [1] cited throughout; [2] and [3] supporting resources cited appropriately; no fake citations; density in sections 5/6/7 exceeds 60%. Check 3 (sequence drift): no forward references detected; all terms grounded in this topic's concepts_introduced or prior-topic concepts. Check 4 (length sanity): estimated ~2780 words, 7.3% below the 3000 standard-profile lower bound — within the 30% tolerance window, not a hard fail; soft note for reviewer. Check 5 (scope): no scope creep; corpus stays on headline throughout. Check 6 (beginner readability): cycle-1 defects ('register' undefined, 'pedagogical' used cold) both resolved; 1 residual soft note ('SQL injection' named without gloss) — below escalation threshold. Corpus approved to proceed to artifact fan-out."
+}

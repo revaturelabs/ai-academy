@@ -1,0 +1,49 @@
+{
+  "passed": true,
+  "checks": {
+    "format_discipline": {
+      "passed": true,
+      "notes": "No frontmatter — first non-empty line is the H1 title. reading.meta.json exists and parses with all required fields (word_count, estimated_read_minutes, citations_used, sections). Exactly 6 ## sections in correct order: Overview, Key Concepts, Worked Example, In Practice, Key Takeaways, References."
+    },
+    "length_budget": {
+      "passed": true,
+      "word_count": 1421,
+      "reading_minutes": 7,
+      "target_range": [1200, 1600],
+      "notes": "1421 words is within [1200, 1600]. 1421/230 = 6.2 min by formula; meta reports 7 min — both within [6, 8]."
+    },
+    "citation_discipline": {
+      "passed": true,
+      "primary_cited": true,
+      "all_cited": true,
+      "notes": "[1] (primary, Mollick/Insight Partners) cited 15+ times across all sections. [2] (Ikangai) cited in Key Concepts, Worked Example, and In Practice. [3] (Mollick/One Useful Thing) cited in In Practice and Key Takeaways. All inline markers match the three bibliography entries; no orphan markers or entries."
+    },
+    "forward_references": {
+      "passed": true,
+      "violations": [],
+      "notes": "One backward reference at line 44 ('As you learned in topic 3.5') is a legitimate back-pointer to a prior topic. No forward references to future topics found."
+    },
+    "beginner_readability": {
+      "passed": true,
+      "findings": [],
+      "notes": "All non-everyday terms defined on first use: 'jagged frontier' (line 11), 'capability cliff' (line 15), 'benchmarks' (line 23, inline definition), 'spatial reasoning' (line 32, inline definition), 'reasoning task' (line 35, inline definition), 'calibration' (line 36, inline definition). No paragraph introduces 3+ undefined terms simultaneously. Concrete-first throughout: Overview opens with the bar-exam/strawberry paradox before naming the concept. Register is plain; no academic hedging phrases counted above the threshold."
+    },
+    "formatting": {
+      "passed": true,
+      "findings": [],
+      "notes": "No paragraph exceeds 6 sentences; most are 2–4. Sequences and multi-item sets rendered as bullet or numbered lists (Key Concepts sub-bullets for peaks and valleys; 5-step numbered list in In Practice; do/don't bullets). Bold-term definitions used consistently for all introduced terms. Inline examples appear in Overview and Key Concepts independently of the Worked Example section."
+    },
+    "scope": {
+      "passed": true,
+      "findings": [],
+      "notes": "Reading stays on the jagged frontier headline: definition, peaks, valleys, causes, a worked example, and a probing method. AlphaFold and AlphaGo (present in corpus) are correctly omitted from the reading — no scope creep introduced. Chain-of-thought prompting, referenced in the corpus as a future topic, does not appear in the reading. No scope_creep violations found."
+    },
+    "faithfulness": {
+      "passed": true,
+      "findings": [],
+      "notes": "10 assertions sampled across all sections; all trace to corpus sections 5.1–5.5 or 6–8. Specific verifications: Mollick/Wharton attribution (corpus §4), capability cliff definition (corpus §5.1), medical imaging performance (corpus §5.2), spatial reasoning definition (corpus §5.3), interpolation/extrapolation framing (corpus §5.4), emergent capability unevenness including '7 billion / 70 billion' example (corpus §5.4), hallucination as structural token-prediction mechanism (corpus §5.4), o3/Gemini 2.5 closing valleys (corpus §5.5). No assertions found in the reading that lack corpus support."
+    }
+  },
+  "verdict": "PASS. All 8 checks pass with no violations. The reading is well-formed (no frontmatter, correct 6-section template, sidecar present), within the 1200–1600 word target at 1421 words, cites all three resources correctly with no orphans, contains no forward references, defines every non-everyday term on first use, maintains beginner-appropriate concrete-first prose, uses lists and bold-term definitions throughout, stays strictly on the jagged frontier headline without scope creep, and every sampled assertion is traceable to the corpus.",
+  "at": "2026-06-17T00:00:00Z"
+}

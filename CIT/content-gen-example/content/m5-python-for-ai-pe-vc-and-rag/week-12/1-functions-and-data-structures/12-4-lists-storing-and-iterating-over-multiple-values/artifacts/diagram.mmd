@@ -1,0 +1,41 @@
+---
+title: "Python List — Structure and For-Loop Traversal"
+config:
+  theme: base
+  themeVariables:
+    primaryColor: "#a5d8ff"
+    primaryBorderColor: "#4a9eed"
+    lineColor: "#555"
+  flowchart:
+    htmlLabels: true
+    curve: basis
+    nodeSpacing: 45
+    rankSpacing: 60
+---
+flowchart LR
+  subgraph STRUCT["LIST STRUCTURE"]
+    direction TB
+    S1["<b>List Variable</b><br/><span style='font-size:11px;color:#6d28d9'>marks = [72, 88, 65, 90, 55]</span>"]:::start
+    S2["<b>Items by Index</b><br/><span style='font-size:11px;color:#6d28d9'>[0]=72  [1]=88  [2]=65  [3]=90  [4]=55</span>"]:::act
+    S3["<b>append() and len()</b><br/><span style='font-size:11px;color:#6d28d9'>add items to end • count items</span>"]:::act
+    S1 --> S2 --> S3
+  end
+
+  subgraph LOOP["FOR-LOOP TRAVERSAL"]
+    direction TB
+    L1["<b>Start Iteration</b><br/><span style='font-size:11px;color:#6d28d9'>for mark in marks:</span>"]:::auto
+    L2["<b>Current Item</b><br/><span style='font-size:11px;color:#6d28d9'>mark holds one value per pass</span>"]:::auto
+    L3["<b>Process Item</b><br/><span style='font-size:11px;color:#6d28d9'>use or accumulate the value</span>"]:::auto
+    L4["<b>All Items Visited</b><br/><span style='font-size:11px;color:#6d28d9'>loop ends automatically</span>"]:::done
+    L1 --> L2 --> L3 --> L4
+  end
+
+  STRUCT -->|"iterate over"| LOOP
+
+  style STRUCT fill:#f0f4ff,stroke:#4a9eed,color:#1a1a1a
+  style LOOP fill:#f4fff0,stroke:#22c55e,color:#1a1a1a
+
+  classDef start fill:#a5d8ff,stroke:#4a9eed,color:#1a1a1a
+  classDef act fill:#a5d8ff,stroke:#4a9eed,color:#1a1a1a
+  classDef auto fill:#d0bfff,stroke:#8b5cf6,color:#1a1a1a
+  classDef done fill:#b2f2bb,stroke:#22c55e,color:#1a1a1a

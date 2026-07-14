@@ -1,0 +1,107 @@
+{
+  "critic": "corpus-critic",
+  "topic_id": "1.9",
+  "topic_title": "Algorithmic thinking — what makes a set of steps an algorithm",
+  "depth_profile": "standard",
+  "cycle": 2,
+  "at": "2026-06-22T00:00:00Z",
+  "passed": true,
+  "checks": {
+    "required_sections": {
+      "passed": true,
+      "findings": [],
+      "detail": {
+        "section_3_learning_objectives": {
+          "present": true,
+          "word_count_estimate": 80,
+          "threshold": 50,
+          "passed": true
+        },
+        "section_4_introduction": {
+          "present": true,
+          "word_count_estimate": 200,
+          "threshold": 50,
+          "passed": true
+        },
+        "section_5_core_concepts": {
+          "present": true,
+          "word_count_estimate": 1170,
+          "threshold": 100,
+          "passed": true,
+          "note": "Six substantive subsections (5.1 algorithm definition + coffee table contrast, 5.2 instructions-vs-algorithm with oven/GPS examples + three-failure taxonomy + three algorithmic properties, 5.3 algorithmic thinking as mindset, 5.4 why vagueness breaks computation + edge-case paragraph, 5.5 what algorithmic does NOT mean, 5.6 pass/fail worked contrast)."
+        },
+        "section_10_key_takeaways": {
+          "present": true,
+          "word_count_estimate": 110,
+          "threshold": 50,
+          "passed": true
+        }
+      }
+    },
+    "citation_density": {
+      "passed": true,
+      "resources_source": "web_search",
+      "findings": [],
+      "primary_resource_cited": true,
+      "primary_resource": "[1] https://www.bouraspage.com/repository/algorithmic-thinking/properties-of-an-algorithm",
+      "estimated_citation_coverage_pct": 80,
+      "threshold_pct": 60,
+      "detail": "Primary [1] cited in §4, §5.1, §5.2 (twice), §5.3, §5.6 (twice), §6 (twice), §7 (assembly-instructions bullet). Supporting [2] cited in §5.3, §5.4 (twice), §5.5, §7 (medical-protocols bullet). Supporting [3] cited in §5.2, §5.4 (twice), §6 (twice), §7 (navigation-apps and sorting bullets). Cycle-1 soft finding resolved: §7 assembly-instructions paragraph now cites [1]; GPS/navigation paragraph cites [3]. No uncited standalone factual assertions found in §5–§7."
+    },
+    "sequence_drift": {
+      "passed": true,
+      "findings": [],
+      "forward_referenced_concepts": [],
+      "detail": "Cycle-1 soft finding resolved: 'escape condition' removed from §8 Best Practices — replaced with plain-language equivalent 'a step that says when to stop' (line 239) and 'without a clear stopping point' (line 239), both consistent with language in §5.2. All concepts used in the corpus are either (a) introduced in this topic (algorithm, algorithmic thinking, unambiguous steps, incomplete instructions, precision in instructions) or (b) carried forward from prior topics: defined steps / computation / input-process-output (1.1), determinism / reproducibility (1.2), pseudocode / sequence / decision / condition / repetition / building blocks of logic (1.7), flowchart / flowlines / decision diamond (1.8). 'Edge case' (§5.4) is defined inline ('An edge case is a situation that sits at the boundary of what the instructions cover — an unusual input, an unexpected value, a scenario the writer did not think about') before use — not a bare forward reference. 'Non-deterministic' (§5.4) is a plain-language negation of determinism (1.2) used in explanatory prose, not introduced as a new technical concept. Deferred downstream concepts handled correctly: 'a clear stopping point' and 'a result' each deferred to topic 1.11 with explicit pointer ('Topic 1.11 will cover this formally'); 'routing algorithms' deferred to topic 1.10 with explicit pointer ('Topic 1.10 will look at routing algorithms in more detail'). No deferred concept is bolded or given a defining clause."
+    },
+    "length_sanity": {
+      "passed": true,
+      "severity": "soft",
+      "word_count_estimate": 2670,
+      "builder_reported_word_count": 3250,
+      "profile": "standard",
+      "profile_range_min": 3000,
+      "profile_range_max": 4400,
+      "hard_fail_floor": 2100,
+      "findings": [
+        {
+          "code": "length_below_range_soft",
+          "severity": "soft",
+          "message": "Critic's line-by-line estimate is ~2670 words; builder reports ~3250 words. Both figures agree the corpus is at or above the 30%-tolerance hard-fail floor of 2100 words (70% of 3000), so no hard fail is triggered. At 2670w the corpus is ~11% below the standard-profile minimum of 3000 words — within the 30% tolerance band. The post-expansion corpus is substantively richer than cycle 1 (1648w): §5.2 now carries a two-example failure taxonomy, §5.4 includes the edge-case paragraph and three-outcome trace, §6 has a full second worked example (library-book overdue), and §7 has four real-world patterns with paragraph-length treatment each. If the builder's count of ~3250w is accurate the corpus is inside range and this soft finding is moot. Recommend the builder confirm final word count before reading artifact generation."
+        }
+      ],
+      "note": "Hard-fail threshold is 'more than 30% outside the range' per SKILL. At critic-estimated 2670w: (3000-2670)/3000 = 11% below minimum — within tolerance. No hard fail."
+    },
+    "topic_scope": {
+      "passed": true,
+      "findings": [],
+      "detail": "Headline boundary ('Algorithmic thinking — what makes a set of steps an algorithm') is respected throughout. §5.2 mentions 'a clear stopping point' and 'a result' as algorithmic properties but immediately defers formal treatment to topic 1.11 — single sentence each, no defining clause. §7 navigation-apps bullet names 'routing algorithms' and defers to topic 1.10 — single sentence, no teaching of routing logic. §7 sorting-and-searching bullet describes three algorithmic properties (comparison rule, stopping condition, result) in the context of a real-world pattern illustration — this is applied illustration of the headline concept, not a premature teaching of sort algorithms. No bolded deferred concepts. No section teaches a more-advanced or adjacent concept at depth beyond the headline scope."
+    },
+    "beginner_readability": {
+      "passed": true,
+      "findings": [],
+      "undefined_terms": [],
+      "jargon_dumps": [],
+      "academic_register_violations": [],
+      "distinct_soft_finding_count": 0,
+      "escalated_to_hard_fail": false,
+      "detail": "Cycle-1 soft finding resolved: 'escape condition' removed from §8; replaced with plain-language 'a step that says when to stop' and 'a clear stopping point'. All headline concepts defined on first use: 'algorithm' defined in §5.1 with bold term + plain-language meaning before formal phrasing; 'algorithmic thinking' defined in §5.3 with bold term + conversational definition; 'unambiguous steps' and 'incomplete instructions' introduced through example contrast (§5.2 coffee table, oven/GPS examples) before naming. No unexplained acronyms (GPS used as a consumer product label, not a technical acronym requiring expansion in this context). No paragraph introduces 3+ brand-new terms simultaneously. Register is plain and direct: learner addressed as 'you' throughout; active voice; no hedging phrases detected ('it is generally considered', 'many experts believe', etc. absent). Sentence lengths are well under the 25-word guidance. Concrete examples lead abstract definitions throughout (coffee table in §5.1, oven/GPS in §5.2, 'Do the right thing' trace in §5.4, pass/fail contrast in §5.6, library-book worked example in §6)."
+    }
+  },
+  "cycle_1_findings_resolved": [
+    {
+      "finding": "length_hard_fail",
+      "cycle_1_word_count": 1648,
+      "resolution": "Corpus expanded; cycle-2 estimate ~2670-3250 words — above 30%-tolerance hard-fail floor of 2100 words."
+    },
+    {
+      "finding": "uncited_examples_section_7",
+      "resolution": "Assembly-instructions paragraph now cites [1]; GPS/navigation paragraph now cites [3]."
+    },
+    {
+      "finding": "escape_condition_jargon",
+      "resolution": "'escape condition' removed from §8 Best Practices; replaced with plain-language 'a step that says when to stop'."
+    }
+  ],
+  "verdict": "PASS (cycle 2). All hard checks pass. Three cycle-1 findings resolved: (1) length hard-fail cleared — corpus expanded well above the 30%-tolerance hard-fail floor (2100w); (2) uncited examples in §7 fixed — assembly-instructions paragraph cites [1], navigation-apps paragraph cites [3]; (3) 'escape condition' jargon removed from §8 — replaced with plain-language equivalent. One soft finding remains: critic's line-by-line word-count estimate (~2670w) is marginally below the 3000w standard-profile minimum, though within the 30% tolerance band (hard-fail floor = 2100w). Builder's self-reported count (~3250w) would place the corpus squarely in-range. Recommend builder confirm final word count; no rebuild required unless count is confirmed below 2100w. Corpus is ready to ground reading, quiz, and diagram artifact generation."
+}

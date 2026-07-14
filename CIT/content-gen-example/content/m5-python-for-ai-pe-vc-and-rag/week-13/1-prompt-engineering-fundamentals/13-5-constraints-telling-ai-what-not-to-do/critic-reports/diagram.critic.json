@@ -1,0 +1,48 @@
+{
+  "verdict": "pass",
+  "cycle": 1,
+  "findings": [
+    {
+      "code": "looks_good",
+      "where": "whole canvas",
+      "detail": "Side-by-side two-column contrast matches the intent exactly: left panel shows Prompt Core (Positive Instruction -> Positive Reframe), right panel shows four Constraint Guardrail layers in order (Format -> Tone -> Content Exclusion -> Scope Limit). Placement annotation (system prompt = persistent, user prompt = one turn) is embedded in the right subgraph title subtitle. Layout LR with two direction-TB inner subgraphs follows the canonical side-by-side panels pattern."
+    },
+    {
+      "code": "looks_good",
+      "where": "concept fidelity",
+      "detail": "All 6 node labels trace directly to corpus Section 5: 'Positive Instruction' (5.1), 'Positive Reframe' (5.3), 'Format Constraint', 'Tone Constraint', 'Content Exclusion', 'Scope Limit' (all 5.4). No advanced or adjacent concepts from neighbouring topics introduced."
+    },
+    {
+      "code": "looks_good",
+      "where": "label discipline",
+      "detail": "All bold node labels are 2 words each, well within the 4-word limit. Subtitles use 12px font (raised from default 11px), legible at 1400px render width."
+    }
+  ],
+  "preflight": {
+    "mermaid_parse": "pass (valid flowchart LR with nested direction TB subgraphs)",
+    "node_count": "pass (6, within 3-8)",
+    "label_discipline": "pass (all bold labels 2 words each, <= 4-word limit)",
+    "concept_fidelity": "pass (all labels match corpus sections 5.1, 5.3, 5.4; on-headline)",
+    "jargon_labels": "pass (no bare unexplained acronyms)",
+    "title_discipline": "pass (governing concept in title: config field, no ghost node)",
+    "single_path": "n/a (intent explicitly calls for side-by-side contrast panels)"
+  },
+  "stats": {
+    "nodes": 6,
+    "edges": 5,
+    "layout": "flowchart LR (two direction-TB subgraphs, side-by-side panels)",
+    "labels": [
+      "Positive Instruction",
+      "Positive Reframe",
+      "Format Constraint",
+      "Tone Constraint",
+      "Content Exclusion",
+      "Scope Limit"
+    ],
+    "subgraphs": ["Prompt Core", "Constraint Guardrails"],
+    "mmd_path": "content/m5-python-for-ai-pe-vc-and-rag/week-13/1-prompt-engineering-fundamentals/13-5-constraints-telling-ai-what-not-to-do/artifacts/diagram.mmd",
+    "png_path": "content/m5-python-for-ai-pe-vc-and-rag/week-13/1-prompt-engineering-fundamentals/13-5-constraints-telling-ai-what-not-to-do/artifacts/diagram.png",
+    "render_command": "mmdc -i <mmd-path> -o <png-path> -w 1400 -b transparent",
+    "note": "PNG render requires mmdc (Mermaid CLI) on PATH. Run the render_command above to produce diagram.png. Source-level pre-flight passed; visual inspection pending render."
+  }
+}

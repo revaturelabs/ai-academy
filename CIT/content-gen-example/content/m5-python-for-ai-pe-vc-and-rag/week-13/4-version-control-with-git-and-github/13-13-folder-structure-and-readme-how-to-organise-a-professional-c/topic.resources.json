@@ -1,0 +1,30 @@
+{
+  "topic_id": "13.13",
+  "captured_at": "2026-06-15T00:00:00Z",
+  "captured_by": "namratas@revature.com",
+  "resources_source": "web_search",
+  "resources": [
+    {
+      "type": "url",
+      "value": "https://docs.python-guide.org/writing/structure/",
+      "role": "primary",
+      "source": "web_search",
+      "notes": "Hitchhiker's Guide canonical: project layout conventions, module/package structure, README best practices"
+    },
+    {
+      "type": "url",
+      "value": "https://realpython.com/ref/best-practices/project-layout/",
+      "role": "supporting",
+      "source": "web_search",
+      "notes": "Real Python reference on project layout best practices"
+    },
+    {
+      "type": "url",
+      "value": "https://denisecase.github.io/pro-analytics-02/reference/python/project-structure/",
+      "role": "supporting",
+      "source": "web_search",
+      "notes": "Professional Python Guide — academic/professional project structure reference"
+    }
+  ],
+  "web_search_query": "Python project folder structure README professional codebase organisation"
+}

@@ -1,0 +1,30 @@
+{
+  "topic_id": "5.12",
+  "captured_at": "2026-06-22T14:24:57Z",
+  "captured_by": "namratas@revature.com",
+  "resources_source": "web_search",
+  "resources": [
+    {
+      "type": "url",
+      "value": "https://www.meity.gov.in/static/uploads/2024/02/9f6e99572739a3024c9cdaec53a0a0ef.pdf",
+      "role": "primary",
+      "source": "web_search",
+      "notes": "First-party MEITY AI advisory text (2024) — actual guidance, labeling + due-diligence wording."
+    },
+    {
+      "type": "url",
+      "value": "https://www.lakshmisri.com/insights/articles/meity-advisory/",
+      "role": "supporting",
+      "source": "web_search",
+      "notes": "Law-firm analysis: Mar-1 vs Mar-15 revision (prior-permission dropped), labeling of unreliable models — the 'evolving/advisory not law' angle."
+    },
+    {
+      "type": "url",
+      "value": "https://elplaw.in/leadership/navigating-ai-regulation-in-india-unpacking-the-meity-advisory-on-ai-in-a-global-context/",
+      "role": "supporting",
+      "source": "web_search",
+      "notes": "India's approach framed against EU/US frameworks — supports 'directionally aligned with global frameworks'."
+    }
+  ],
+  "web_search_query": "MEITY India AI advisory guidelines 2024 due diligence labeling governance"
+}

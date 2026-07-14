@@ -1,0 +1,51 @@
+{
+  "type": "topic",
+  "id": "2.6",
+  "title": "When NOT to use AI — privacy, precision, legal accountability",
+  "slug": "2-6-when-not-to-use-ai-privacy-precision-legal-accountability",
+  "position_in_module": 2,
+  "week_num": 2,
+  "session_name": "Specifying for AI",
+  "module": {
+    "position": 3,
+    "slug": "3-the-professional-rules-of-ai-use",
+    "title": "The Professional Rules of AI Use"
+  },
+  "course": {
+    "code": "M1",
+    "slug": "m1-computational-thinking",
+    "title": "Computational Thinking"
+  },
+  "next_assessment": {
+    "id": "A1",
+    "due_week": 3,
+    "title": "Specification Portfolio",
+    "weight": "10%"
+  },
+  "paths": {
+    "corpus": "topic_corpus.md",
+    "resources": "topic.resources.json",
+    "progress": "topic.progress.json",
+    "artifacts_dir": "artifacts/",
+    "critic_reports_dir": "critic-reports/"
+  },
+  "artifact_plan": {
+    "profile": "deep",
+    "suggested_profile": "standard",
+    "diagram": true,
+    "diagram_intent": "Three-branch decision tree: task input splits into three sequential gate checks (Privacy? → Precision? → Legal accountability?); each gate YES = constraint/stop, NO = continue; final NO = AI use appropriate",
+    "reading": {
+      "target_word_range": [1800, 2200],
+      "target_min_minutes": 9,
+      "target_max_minutes": 11
+    },
+    "quiz": {
+      "min_questions": 5,
+      "max_questions": 7,
+      "include_short_answer": true
+    },
+    "confirmed_at": "2026-06-17"
+  },
+  "expected_delivery_minutes": 10,
+  "status": "scaffolded"
+}

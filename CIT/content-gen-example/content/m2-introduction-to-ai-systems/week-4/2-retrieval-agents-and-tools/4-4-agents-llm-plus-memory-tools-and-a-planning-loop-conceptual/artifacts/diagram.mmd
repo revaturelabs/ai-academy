@@ -1,0 +1,42 @@
+---
+title: "Agent Architecture — observe, think, act, repeat"
+theme: base
+themeVariables:
+  primaryColor: "#a5d8ff"
+  primaryBorderColor: "#4a9eed"
+  lineColor: "#555"
+config:
+  flowchart:
+    htmlLabels: true
+    curve: basis
+    rankSpacing: 55
+    nodeSpacing: 40
+---
+flowchart TD
+    USER["<b>User Task</b><br/><span style='font-size:12px;color:#6d28d9'>A goal or question given to the agent</span>"]
+    OBS["<b>Observe</b><br/><span style='font-size:12px;color:#6d28d9'>Read task, memory, and last result</span>"]
+    THINK["<b>Think</b><br/><span style='font-size:12px;color:#6d28d9'>LLM core reasons — what action is next?</span>"]
+    ACT["<b>Act</b><br/><span style='font-size:12px;color:#6d28d9'>Invoke a tool or write to memory</span>"]
+    MEM["<b>Memory</b><br/><span style='font-size:12px;color:#6d28d9'>Short-term: context window<br/>Long-term: external storage</span>"]
+    TOOLS["<b>Tools</b><br/><span style='font-size:12px;color:#6d28d9'>Web search · file reader · code executor</span>"]
+    DONE["<b>Result Delivered</b><br/><span style='font-size:12px;color:#6d28d9'>Task complete — agent responds to user</span>"]
+
+    USER --> OBS
+    OBS --> THINK
+    THINK --> ACT
+    ACT -->|"loop: task not done"| OBS
+    ACT -->|"exit: task done"| DONE
+    MEM <-->|"read / write"| THINK
+    TOOLS -->|"result returned"| ACT
+
+    classDef start fill:#a5d8ff,stroke:#4a9eed,stroke-width:2px,color:#1e3a5f
+    classDef auto fill:#d0bfff,stroke:#8b5cf6,stroke-width:2px,color:#2e1065
+    classDef act fill:#a5d8ff,stroke:#4a9eed,stroke-width:2px,color:#1e3a5f
+    classDef done fill:#b2f2bb,stroke:#22c55e,stroke-width:2px,color:#14532d
+    classDef side fill:#fff3bf,stroke:#f59e0b,stroke-width:2px,color:#78350f
+
+    class USER start
+    class OBS,THINK auto
+    class ACT act
+    class DONE done
+    class MEM,TOOLS side

@@ -1,0 +1,68 @@
+{
+  "verdict": "pass",
+  "cycle": 1,
+  "findings": [
+    {
+      "code": "looks_good",
+      "where": "source pre-flight — all checks",
+      "detail": "Node count 8 (within 3–8). All bold labels ≤ 4 words. All labels trace directly to corpus Core Concepts (HITL, HOTL, HOOTL, checkpoint, escalation trigger) and Implementation section (Q1/Q2/Q3 questions, fix-gap paths). Title 'Judgment Framework: Which Oversight Mode?' sits in config title: field as governing concept — not a ghost node. No bare unexplained acronyms: all three (HITL, HOTL, HOOTL) are spelled out in full within the node label on first use."
+    },
+    {
+      "code": "looks_good",
+      "where": "concept fidelity",
+      "detail": "Every node maps to a named corpus phrase: START → 'AI Decision Point' (checkpoint concept, §5); Q1 → 'What is the cost of this being wrong?' (§6 question 1); Q2 → 'Can I verify this without the AI?' (§6 question 2); Q3 → 'Who is accountable?' (§6 question 3); FIX → 'Fix verification gap first / Fix accountability chain first' (§6 decision table); HITL → 'Human-in-the-Loop' (§5); HOTL → 'Human-on-the-Loop' (§5); HOOTL → 'Human-out-of-the-Loop' (§5). No scope-creep nodes."
+    },
+    {
+      "code": "looks_good",
+      "where": "escalation arcs",
+      "detail": "Dashed arrows HOTL -.-> HITL and HOOTL -.-> HITL both labeled 'Escalation trigger fires' correctly model the corpus escalation-trigger concept (§5: condition that automatically elevates from lower to higher oversight mode). Direction is correct: lower mode → HITL (higher mode)."
+    },
+    {
+      "code": "looks_good",
+      "where": "color tiers",
+      "detail": "START:::start (blue #a5d8ff), Q1/Q2/Q3:::question (yellow #fff3bf), HITL:::hitl (yellow #fff3bf stroke-width:3), HOTL:::hotl (purple #d0bfff), HOOTL:::hootl (green #b2f2bb), FIX:::fix (red-tint #ffd8d8). HITL correctly uses the hitl classDef (heavier border), not auto. No color tier violations."
+    },
+    {
+      "code": "looks_good",
+      "where": "layout direction",
+      "detail": "flowchart TD (top-down) matches intent: 'decision-flow diagram with branch nodes' — vertical decision trees read naturally top-down in this domain. Layout direction correct for intent."
+    },
+    {
+      "code": "looks_good",
+      "where": "PNG render",
+      "detail": "mmdc not available on PATH in this environment (consistent with prior runs in this project — see 10-1 and 10-4 diagram.critic.json). Source pre-flight passes all checks. PNG should be rendered by orchestrator or CI step using: mmdc -i <mmd-path> -o <png-path> -w 1400 -b transparent. At 1400px width, nodeSpacing:40 / rankSpacing:55 should provide sufficient separation for the 8-node TD layout with htmlLabels. Subtitle font raised to 12px (above the 11px floor) for beginner-audience legibility."
+    },
+    {
+      "code": "subtitle_illegible",
+      "where": "all nodes (12px subtitle spans)",
+      "detail": "Soft note only: 12px italic subtitles are at the recommended floor. Non-blocking — consistent with passing precedent in 10-1 diagram.critic.json. No revision required."
+    }
+  ],
+  "stats": {
+    "nodes": 8,
+    "edges": 11,
+    "layout": "flowchart TD",
+    "labels": [
+      "AI Decision Point",
+      "Q1: Error cost?",
+      "Q2: Human can verify?",
+      "Q3: Named accountable role?",
+      "Fix the Gap First",
+      "Human-in-the-Loop (HITL)",
+      "Human-on-the-Loop (HOTL)",
+      "Human-out-of-the-Loop (HOOTL)"
+    ],
+    "subgraphs": [],
+    "png_path": "content/m4-human-cognition-and-ai-oversight/week-10/3-designing-human-oversight/10-5-designing-human-in-the-loop-checkpoints-when-to-require-sign/artifacts/diagram.png",
+    "png_dims": "not rendered (mmdc not on PATH)",
+    "preflight": {
+      "mermaid_parse": "source review pass (mmdc not available for exit-code check)",
+      "node_count": "pass (8, within 3–8)",
+      "label_discipline": "pass (all bold labels ≤ 4 words)",
+      "concept_fidelity": "pass (all labels match corpus §5 Core Concepts + §6 Implementation; on-headline)",
+      "jargon_labels": "pass (HITL, HOTL, HOOTL all spelled out in full within each node label)",
+      "title_discipline": "pass (governing concept in title: field, no ghost node)",
+      "single_path": "n/a (intent explicitly calls for decision-flow branching — Q1/Q2/Q3 diamonds)"
+    }
+  }
+}

@@ -1,0 +1,118 @@
+{
+  "critic": "reading-critic",
+  "topic_id": "12.7",
+  "topic_title": "Writing to a file — open, write, close",
+  "cycle": 1,
+  "at": "2026-06-14T00:00:00Z",
+  "passed": true,
+  "verdict": "PASS — all checks clean. Format discipline met (no frontmatter, six sections in order). Word count 1350 within [1200,1600] target. All three citations used at least once with no fabricated entries. No forward references detected. Beginner readability is strong: all new terms defined on first use with bold-term pattern, procedures use numbered steps, paragraphs short. No scope creep. All corpus-traced assertions verified. All 4 corpus-critic soft findings resolved: list comprehension replaced with plain for-loop (lines 84–91), tuple syntax replaced with parallel lists throughout Worked Example (lines 127–190), repr() removed and replaced with print(line, end='') (lines 154–162), docstring replaced with plain comment (line 171).",
+  "checks": {
+    "format_discipline": {
+      "passed": true,
+      "findings": [],
+      "detail": {
+        "no_frontmatter": true,
+        "first_line_is_h1": true,
+        "meta_sidecar_present": true,
+        "meta_sidecar_parses": true,
+        "sections_in_order": ["Overview", "Key Concepts", "Worked Example", "In Practice", "Key Takeaways", "References"],
+        "section_template_violation": false
+      }
+    },
+    "length_budget": {
+      "passed": true,
+      "word_count": 1350,
+      "estimated_minutes": 7,
+      "target_range": [1200, 1600],
+      "target_minutes_range": [6, 8],
+      "findings": []
+    },
+    "citation_discipline": {
+      "passed": true,
+      "primary_cited": true,
+      "citations_found": {
+        "[1]": true,
+        "[2]": true,
+        "[3]": true
+      },
+      "orphan_markers": false,
+      "orphan_bibliography_entries": false,
+      "fabricated_citations": false,
+      "findings": []
+    },
+    "forward_references": {
+      "passed": true,
+      "findings": [],
+      "notes": [
+        "str() — referenced to Week 11, which is a prior week. PASS.",
+        "with block, file object, open() — referenced to Topic 12.6. PASS.",
+        "for loop, list — referenced to Topic 12.4. PASS.",
+        "def, functions — referenced to Topics 12.1–12.3. PASS.",
+        "No future-topic concepts taught."
+      ]
+    },
+    "beginner_readability": {
+      "passed": true,
+      "findings": [],
+      "detail": {
+        "undefined_terms": false,
+        "jargon_dump": false,
+        "abstract_first": false,
+        "academic_register": false,
+        "notes": "All new terms (write mode, append mode, .write(), .writelines(), buffer/flush) defined at first use with bold-term pattern. Concepts introduced with examples/analogies before abstraction. Plain active register throughout. Average sentence length well under 25 words."
+      }
+    },
+    "formatting": {
+      "passed": true,
+      "findings": [],
+      "detail": {
+        "wall_of_text": false,
+        "unlisted_sequence": false,
+        "no_inline_examples": false,
+        "bold_term_definitions": true,
+        "notes": "Procedures use numbered steps. All paragraphs ≤4 sentences. Inline code examples present in every Key Concepts subsection. Definitions use bold-term / plain-meaning shape consistently."
+      }
+    },
+    "assessment_references": {
+      "passed": true,
+      "findings": [],
+      "notes": "No assessment IDs, due weeks, or grade weights appear in the reading."
+    },
+    "scope": {
+      "passed": true,
+      "findings": [],
+      "notes": "Content bounded to write mode, append mode, .write(), .writelines(), with block, str() conversion — all on-headline. import datetime mentioned only in In Practice section with explicit deferral ('full datetime API is a later topic'). No scope creep detected."
+    },
+    "faithfulness": {
+      "passed": true,
+      "sampled_assertions": [
+        { "assertion": "Write mode erases existing content before writing", "corpus_support": "§5.1 — 'Python erases all existing content immediately'", "supported": true },
+        { "assertion": "Append mode does not erase; jumps to end", "corpus_support": "§5.2 — 'Python opens it without erasing anything. The internal bookmark jumps straight to the very end'", "supported": true },
+        { "assertion": ".write() does not add automatic newline", "corpus_support": "§5.3 rule 2 — 'No automatic newline is added'", "supported": true },
+        { "assertion": ".writelines() does not add newlines between items", "corpus_support": "§5.5 — '.writelines() does not add \\n between items'", "supported": true },
+        { "assertion": "with block guarantees close and flush even on error", "corpus_support": "§5.6 — 'Guaranteed close. If something goes wrong...Python still closes the file'", "supported": true },
+        { "assertion": "Passing integer to .write() raises TypeError", "corpus_support": "§5.7 — 'f.write(score) # TypeError: write() argument must be str, not int'", "supported": true },
+        { "assertion": "Opening in write mode inside a loop re-erases on every iteration", "corpus_support": "§8 Best Practices #2 — 'opens in write mode on every iteration, erasing previous output'", "supported": true },
+        { "assertion": "str() converts any value to string representation", "corpus_support": "§5.7 — 'str() is the function that converts any value to its string representation'", "supported": true }
+      ],
+      "unsupported_assertions": 0,
+      "findings": []
+    },
+    "soft_findings_resolved": {
+      "list_comprehension": true,
+      "tuple_syntax": true,
+      "repr_removed": true,
+      "docstring_handled": true,
+      "detail": {
+        "list_comprehension": "Corpus §5.5 had [s + '\\n' for s in raw]. Reading lines 84–91 replace this with a plain for-loop using lines.append(s + '\\n'). RESOLVED.",
+        "tuple_syntax": "Corpus §6 used students = [(\"Alice\", 88), ...] and for name, score in students. Reading Worked Example uses parallel lists names/scores with for i in range(len(names)) indexing throughout. RESOLVED.",
+        "repr_removed": "Corpus §6.2 had print(repr(line)). Reading Step 2 (lines 154–162) replaces with print(line, end='') — no repr() call present. RESOLVED.",
+        "docstring_handled": "Corpus §6.3 had triple-quoted docstrings. Reading Step 3 (line 171) uses a plain # comment: '# This function saves names and scores to the given file'. RESOLVED."
+      }
+    }
+  },
+  "summary": {
+    "hard_failures": [],
+    "soft_findings": []
+  }
+}

@@ -1,0 +1,82 @@
+{
+  "artifact": "reading",
+  "topic_id": "5.7",
+  "passed": true,
+  "checks": {
+    "format_discipline": {
+      "passed": true,
+      "frontmatter_present": false,
+      "meta_sidecar_present": true,
+      "section_template_violation": false,
+      "sections_found": ["Overview", "Key Concepts", "Worked Example", "In Practice", "Key Takeaways", "References"],
+      "note": "Opens at H1 (line 1), no leading YAML. Sidecar parses with word_count, estimated_read_minutes, citations_used, sections. Exactly the six required ## sections in order."
+    },
+    "length_budget": {
+      "passed": true,
+      "word_count": 1332,
+      "target_word_range": [1200, 1600],
+      "read_minutes_at_230wpm": 5.8,
+      "read_minutes_at_config_wpm_200": 6.7,
+      "target_minute_range": [6, 8],
+      "note": "Word count solidly mid-range. Minutes at config WPM 200 = 6.7 (in range); skill's words/230 yields 5.8 (0.2 under the 6 floor) — borderline cosmetic, not a fail given word count is in range and the project's canonical WPM is 200."
+    },
+    "citations": {
+      "passed": true,
+      "primary_resources": ["[1] digital-strategy.ec.europa.eu"],
+      "primary_all_cited": true,
+      "markers_used": [1, 2, 3],
+      "fabricated_markers": false,
+      "orphan_markers": false,
+      "orphan_bibliography": false,
+      "references_resolves": true,
+      "note": "Only resource [1] is role=primary and it is cited repeatedly. [2][3] are supporting and also resolve. All three References entries match inline markers; no orphans, no fabricated [N]."
+    },
+    "faithfulness": {
+      "passed": true,
+      "unsupported_assertions": 0,
+      "diagram_embedded_inline": true,
+      "diagram_location": "Key Concepts (line 19, ![...](./diagram.png) with caption)",
+      "note": "Sampled assertions (first-broad-AI-law, risk-based sorting, four-tier pyramid, banned/high/limited/minimal responses, conformity-assessment-as-pre-launch-check, biometric definition, four-pillar mapping, harm-not-tech heuristic) all trace to corpus sections 4-5.7. Reading is a faithful condense; no new claims introduced."
+    },
+    "forward_reference": {
+      "passed": true,
+      "deferred_frameworks_bare_only": true,
+      "findings": [],
+      "note": "CRITICAL check clean. In Practice (line 74) names NIST AI Risk Management Framework, US White House Executive Order on AI, India MEITY advisory guidelines as BARE names in a single 'covered in upcoming topics / not part of this one' pointer — none bolded, none in a '**term** — definition' shape, no defining appositive (proper-noun substrings like 'Risk Management Framework' are part of the names, not taught definitions). Deeper EU AI Act material is also bare-deferred: full prohibited list (line 33 'its own later topic') and detailed high-risk obligations (line 44 'covered in upcoming topics') — pointer only, not taught. Four pillars (5.4) is prior-taught, so the connecting passages (lines 46, 52, 82) are legitimate, not forward refs."
+    },
+    "beginner_readability": {
+      "passed": true,
+      "undefined_terms": [],
+      "jargon_dump": false,
+      "abstract_first": false,
+      "academic_register": false,
+      "note": "EU AI Act spelled out on first use (line 5). regulation defined (line 11), biometric defined first use (line 33), conformity assessment defined (line 42), transparency framed (line 46), deepfake defined (line 46). Concrete-first throughout (chess-app vs hiring before the abstraction; pyramid analogy). Short sentences, active voice, 'you' address, no hedging."
+    },
+    "formatting": {
+      "passed": true,
+      "wall_of_text": false,
+      "unlisted_sequence": false,
+      "no_inline_examples": false,
+      "table_for_four_tiers": true,
+      "note": "Four tiers rendered as a table (lines 24-29). High-risk obligations as a bulleted list (lines 39-42); Worked Example and In Practice as numbered/bulleted lists. All paragraphs <=4 sentences. Inline examples sit beside each concept (chess app, hiring system, chatbot, deepfake) rather than deferred only to Worked Example. Definitions use bold-term / plain-meaning shape."
+    },
+    "assessment_reference": {
+      "passed": true,
+      "note": "No assessment IDs, due weeks, or grade weights anywhere in learner prose (A2/W6/15% absent)."
+    },
+    "scope": {
+      "passed": true,
+      "scope_creep": false,
+      "findings": [],
+      "note": "On the headline: teaches the four-tier risk structure only. No article numbers, no penalty/fine figures, no enforcement-body detail. Deeper EU AI Act slices (full prohibited list, detailed high-risk obligations) are named-and-deferred, not taught."
+    }
+  },
+  "gold_example": {
+    "present": true,
+    "dir": ".claude/references/gold-examples/reading/",
+    "examples": ["2-1-what-makes-a-good-specification.reading.md", "3-4-how-llms-work-tokens-training-and-inference.reading.md"],
+    "note": "Reading matches the gold bar: clean H1 open, fixed six-section template, beginner define-before-use density, table for the comparison, bold-term definitions, inline examples, and bare named-and-deferred pointers for downstream material."
+  },
+  "verdict": "PASS. Reading 5.7 clears all checks. No frontmatter; exactly the six required sections in order; sidecar valid. Word count 1332 mid-range [1200,1600] (read-minutes 6.7 at config WPM 200, in [6,8]). Primary [1] cited; [1][2][3] all resolve, no orphans, no fabricated markers. Faithful condense of corpus with the four-tier pyramid diagram embedded inline in Key Concepts. CRITICAL forward-reference check clean: NIST AI RMF, US Executive Order, India MEITY, the full prohibited list, and detailed high-risk obligations all appear as bare named-and-deferred pointers — none bolded, defined, or taught; the four pillars (5.4) is prior-taught so connecting to it is fine. Beginner-readable: EU AI Act spelled out, regulation/biometric/conformity-assessment/deepfake defined at first use, four tiers in a table, paragraphs <=4 sentences, no hedging. On-headline scope: risk-tier structure only, no article numbers or penalties. Only cosmetic note: words/230 gives 5.8 min vs the 6.0 minute floor, immaterial given word count is in range and project WPM is 200.",
+  "at": "2026-06-22T09:14:30Z"
+}

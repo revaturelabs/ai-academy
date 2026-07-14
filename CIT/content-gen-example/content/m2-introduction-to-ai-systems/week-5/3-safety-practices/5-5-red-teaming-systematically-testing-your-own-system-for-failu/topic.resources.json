@@ -1,0 +1,30 @@
+{
+  "topic_id": "5.5",
+  "captured_at": "2026-06-22T06:40:06Z",
+  "captured_by": "namratas@revature.com",
+  "resources_source": "web_search",
+  "resources": [
+    {
+      "type": "url",
+      "value": "https://www.paloaltonetworks.com/cyberpedia/what-is-ai-red-teaming",
+      "role": "primary",
+      "source": "web_search",
+      "notes": "First-party security vendor explainer — definition of AI red-teaming + why/how to implement; anchor concept."
+    },
+    {
+      "type": "url",
+      "value": "https://www.promptfoo.dev/docs/red-team/",
+      "role": "supporting",
+      "source": "web_search",
+      "notes": "Open-source LLM red-teaming docs — applied view of how teams actually run adversarial tests."
+    },
+    {
+      "type": "url",
+      "value": "https://mindgard.ai/blog/what-is-ai-red-teaming",
+      "role": "supporting",
+      "source": "web_search",
+      "notes": "2026 overview — testing timeline (before deploy / after updates / ongoing) + NIST AI 600-1 context."
+    }
+  ],
+  "web_search_query": "red-teaming AI systems testing for failures before deployment"
+}

@@ -1,0 +1,187 @@
+{
+  "topic_id": "12.1",
+  "artifact": "corpus",
+  "critic": "corpus-critic",
+  "at": "2026-06-13T00:00:00Z",
+  "passed": true,
+  "depth_profile_used": "standard",
+  "word_count_estimate": 2700,
+  "checks": {
+    "required_sections": {
+      "passed": true,
+      "details": {
+        "section_3_learning_objectives": {
+          "present": true,
+          "word_count_estimate": 95,
+          "threshold": 50,
+          "passed": true
+        },
+        "section_4_introduction": {
+          "present": true,
+          "word_count_estimate": 168,
+          "threshold": 50,
+          "passed": true
+        },
+        "section_5_core_concepts": {
+          "present": true,
+          "word_count_estimate": 1075,
+          "threshold": 100,
+          "passed": true
+        },
+        "section_10_key_takeaways": {
+          "present": true,
+          "word_count_estimate": 110,
+          "threshold": 50,
+          "passed": true
+        }
+      }
+    },
+    "citation_density": {
+      "passed": true,
+      "resources_source": "web_search",
+      "mode": "strict",
+      "primary_resources_cited": [
+        {
+          "resource_index": 1,
+          "url": "https://realpython.com/defining-your-own-python-function/",
+          "role": "primary",
+          "citation_count_in_corpus": 10,
+          "cited_at_least_once": true
+        }
+      ],
+      "supporting_resources_cited": [
+        {
+          "resource_index": 2,
+          "url": "https://www.w3schools.com/python/python_functions.asp",
+          "citation_count_in_corpus": 6
+        },
+        {
+          "resource_index": 3,
+          "url": "https://docs.python.org/3/tutorial/index.html",
+          "citation_count_in_corpus": 4
+        }
+      ],
+      "density_in_sections_5_6_7": {
+        "estimated_standalone_assertions": 14,
+        "cited_assertions": 11,
+        "density_pct": 79,
+        "threshold_pct": 60,
+        "passed": true
+      },
+      "fake_citations_detected": false,
+      "findings": []
+    },
+    "sequence_drift": {
+      "passed": true,
+      "mode": "checked_against_concepts_introduced_and_prior_topics",
+      "note": "All 11.x topics have empty concepts_introduced arrays in sequence.index.json; the corpus correctly identifies 11.3-11.6 as prerequisites in section 2 and uses those concepts without re-defining them. Downstream concepts (parameters, return values — 12.2; one function one job — 12.3; lists — 12.4; dictionaries — 12.5) are either not present or properly deferred.",
+      "terms_reviewed": [
+        "Python function", "def keyword", "function call", "code reuse",
+        "function naming", "indentation", "definition vs call",
+        "NameError", "PEP 8", "camelCase", "class names",
+        "variables", "data types", "if/else", "for loops", "print()"
+      ],
+      "forward_referenced_terms": [],
+      "deferred_correctly": [
+        {
+          "term": "parameters / return values",
+          "location": "section 4 Introduction",
+          "treatment": "Named and deferred in one sentence: 'intentionally left for Topic 12.2' — compliant"
+        }
+      ],
+      "borderline_noted": [
+        {
+          "term": "class names",
+          "location": "section 5.5 naming table",
+          "treatment": "Appears in one table row ('Starts with capital — reserved by convention for class names') as a naming rationale, not as a taught concept — not a forward reference violation",
+          "severity": "none"
+        }
+      ],
+      "findings": []
+    },
+    "length_sanity": {
+      "passed": true,
+      "profile": "standard",
+      "word_count_estimate": 2700,
+      "context_range": [1500, 3000],
+      "skill_range": [3000, 4400],
+      "note": "Word count of ~2700 falls within the context-provided standard range (1500–3000). Under SKILL.md's stricter standard range (3000–4400), the count is below minimum (3000) but within the 30% tolerance floor (2100). No hard fail triggered. Soft advisory: corpus is on the lean side for a 7-subsection Core Concepts topic; consider expanding Implementation or Real-World Patterns at the reading artifact stage.",
+      "within_30pct_tolerance": true,
+      "findings": [
+        {
+          "code": "length_advisory",
+          "severity": "soft",
+          "message": "Corpus word count (~2700) is below the SKILL.md standard corpus floor (3000) but above the 30% tolerance floor (2100). Passes on tolerance; builder may enrich Implementation or Real-World Patterns."
+        }
+      ]
+    },
+    "topic_scope": {
+      "passed": true,
+      "headline": "Functions — named, reusable blocks of logic",
+      "scope_boundary_concepts": [
+        "Python function", "def keyword", "function call",
+        "code reuse", "function naming", "indentation", "definition vs call"
+      ],
+      "downstream_concepts_checked": [
+        "parameters (12.2)", "return values (12.2)",
+        "one function one job (12.3)", "lists (12.4)", "dictionaries (12.5)"
+      ],
+      "scope_creep_found": false,
+      "findings": [],
+      "note": "PEP 8 naming conventions are in scope because 'function naming' is an explicit concept_introduced for 12.1. Parameters and return values are deferred correctly in one sentence (section 4). No downstream concept is taught."
+    },
+    "beginner_readability": {
+      "passed": true,
+      "escalated_to_hard_fail": false,
+      "distinct_findings_count": 1,
+      "terms_defined_on_first_use": {
+        "passed": true,
+        "undefined_terms": [
+          {
+            "term": "camelCase",
+            "location": "section 5.5 naming table (row: doStuff() — camelCase style — not Python convention)",
+            "severity": "soft",
+            "note": "Used as a label in a 'avoid' example without definition. The learner can infer meaning from context ('not Python convention') but the term itself is unexplained."
+          }
+        ]
+      },
+      "jargon_dumps": {
+        "found": false,
+        "findings": []
+      },
+      "plain_register": {
+        "passed": true,
+        "hedging_phrases_count": 0,
+        "average_sentence_length_estimate": "under 20 words",
+        "active_voice": true,
+        "learner_addressed_as_you": true,
+        "findings": []
+      },
+      "findings": [
+        {
+          "code": "undefined_terms",
+          "severity": "soft",
+          "terms": ["camelCase"],
+          "message": "camelCase appears in the naming table (section 5.5) without a definition. Soft finding only — context makes the meaning inferable. Suggest adding '(words run together with capital letters)' in parentheses."
+        }
+      ]
+    }
+  },
+  "hard_failures": [],
+  "soft_findings": [
+    {
+      "code": "length_advisory",
+      "check": "length_sanity",
+      "severity": "soft",
+      "message": "Corpus word count (~2700) is below the SKILL.md standard floor (3000) but within 30% tolerance. Passes; builder may expand."
+    },
+    {
+      "code": "undefined_terms",
+      "check": "beginner_readability",
+      "severity": "soft",
+      "terms": ["camelCase"],
+      "message": "camelCase used in section 5.5 naming table without inline definition. One instance only — below 2-term soft-fail threshold."
+    }
+  ],
+  "verdict": "PASS — all 6 checks passed. 2 soft findings (non-blocking): (1) corpus word count ~2700 is below the SKILL.md standard floor (3000) but within the 30% tolerance band; (2) 'camelCase' appears in section 5.5 naming table without a definition. Primary resource realpython.com [1] is cited ≥10 times; citation density in sections 5–7 is ~79%, well above the 60% threshold. No forward references, no scope creep, no jargon dumps. Corpus is ready to ground downstream artifacts."
+}

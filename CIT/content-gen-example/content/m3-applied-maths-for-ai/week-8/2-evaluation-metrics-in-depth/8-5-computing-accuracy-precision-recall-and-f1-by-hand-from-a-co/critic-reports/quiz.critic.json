@@ -1,0 +1,42 @@
+{
+  "passed": true,
+  "checks": {
+    "positional_bias": {
+      "passed": true,
+      "distribution": [1, 1, 2, 1],
+      "per_question_positions": [2, 0, 3, 1, 2],
+      "mcq_count": 5,
+      "max_share": 0.40,
+      "note": "max_share = 2/5 = 0.40 exactly (two MCQs correct at position C). Bar is share > 0.40; 0.40 is within bar (<=0.40), so PASS. With only 5 MCQs the distribution is necessarily coarse; all four positions are used. Re-derived positions from .gift match sidecar correct_position_distribution [2,0,3,1,2] — no meta_gift_desync."
+    },
+    "length_bias": {
+      "passed": true,
+      "longest_correct_rate": 0.0,
+      "baseline": 0.25,
+      "note": "Correct option not systematically longest; each MCQ uses matched 'value + brief reason' shape across all options (q3 correct option is shorter than several distractors)."
+    },
+    "distractor_plausibility": {
+      "passed": true,
+      "absurd_rate": 0.0,
+      "weakest_questions": [],
+      "note": "Distractors encode genuine confusion-matrix misconceptions: FP/FN swap, precision-row-vs-column, TN confusion, wrong denominator/total, miss-rate vs recall, failed sanity sum (q5 TN=5 -> total 11)."
+    },
+    "objective_coverage": {
+      "passed": true,
+      "uncovered_objectives": [],
+      "orphan_questions": [],
+      "note": "All 5 corpus section-3 LOs tested: name 4 cells (q1); accuracy + formula (q2); compute by hand (q3 precision, q4 recall, q6 precision short-answer); build matrix by tally + sanity sum (q5); why accuracy misleads on rare class (q7)."
+    },
+    "short_answer_validity": {
+      "passed": true,
+      "note": "q6 and q7 use only '=' lines (valid GIFT short-answer). q6 accepted answers (0.67 / 0.67 plus or minus 0.01 / 2/3 / full decimal) match precision = 8/(8+4) = 0.67. q7 accepts 'recall' plus full reasoning (recall = TP/(TP+FN) = 0 exposes the failure; accuracy hid it because true negatives dominate a rare-positive total)."
+    },
+    "beginner_fairness_scope": {
+      "passed": true,
+      "note": "Binary 2x2 only — no multi-class, ROC/AUC, calibration (deferred to 8.6), or macro/micro/weighted averaging. Beginner stems, clean numbers, exactly one '=' per MCQ, valid GIFT, no stem-level '#'."
+    }
+  },
+  "auto_correction_applied": { "shuffle_round_2": false },
+  "verdict": "Pass — DEEP-profile quiz (5 MCQ + 2 short-answer) clean on positional bias (max_share 0.40, within bar), length bias, distractor plausibility, full LO coverage, and binary-2x2 scope.",
+  "at": "2026-06-22T07:35:00Z"
+}

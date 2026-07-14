@@ -1,0 +1,153 @@
+{
+  "passed": true,
+  "cycle": 3,
+  "checks": {
+    "positional_bias": {
+      "passed": true,
+      "distribution": [2, 0, 3, 1, 0, 2],
+      "position_counts": { "0": 2, "1": 1, "2": 2, "3": 1 },
+      "max_share": 0.333,
+      "threshold": 0.40,
+      "meta_gift_desync": false,
+      "note": "Re-derived 0-based correct positions from .gift: q1=2, q2=0, q3=3, q4=1, q5=0, q6=2. Exact match with sidecar correct_position_distribution [2,0,3,1,0,2]. All four positions used. Max share 2/6=0.333 below 0.40 threshold."
+    },
+    "length_bias": {
+      "passed": true,
+      "longest_correct_rate": 0.0,
+      "sidecar_reported_rate": 0.0,
+      "baseline": 0.25,
+      "threshold": 0.40,
+      "per_question": [
+        {
+          "id": "q1",
+          "correct_len": 100,
+          "distractor_lens": [92, 91, 103],
+          "mean_distractor_len": 95.3,
+          "threshold_len": 114.4,
+          "longest_correct": false
+        },
+        {
+          "id": "q2",
+          "correct_len": 127,
+          "distractor_lens": [120, 117, 124],
+          "mean_distractor_len": 120.3,
+          "threshold_len": 144.4,
+          "longest_correct": false,
+          "note": "Correct is longest by 3 chars over nearest distractor, but 127 < 144.4 threshold — not flagged."
+        },
+        {
+          "id": "q3",
+          "correct_len": 176,
+          "distractor_lens": [164, 145, 150],
+          "mean_distractor_len": 153.0,
+          "threshold_len": 183.6,
+          "longest_correct": false,
+          "note": "Correct longest absolute but 176 < 183.6 (mean×1.20). Not flagged."
+        },
+        {
+          "id": "q4",
+          "correct_len": 160,
+          "distractor_lens": [125, 151, 137],
+          "mean_distractor_len": 137.7,
+          "threshold_len": 165.2,
+          "longest_correct": false
+        },
+        {
+          "id": "q5",
+          "correct_len": 247,
+          "distractor_lens": [256, 224, 210],
+          "mean_distractor_len": 230.0,
+          "threshold_len": 276.0,
+          "longest_correct": false,
+          "note": "D1 (256 chars) is longest — correct (247) is not. Mean×1.20=276, correct well below."
+        },
+        {
+          "id": "q6",
+          "correct_len": 22,
+          "distractor_lens": [20, 26, 27],
+          "mean_distractor_len": 24.3,
+          "threshold_len": 29.2,
+          "longest_correct": false
+        }
+      ],
+      "longest_correct_questions": [],
+      "note": "All six questions clear the 1.20x mean-distractor threshold. No question has correct as longest at the flagging level. Longest_correct_rate=0.0."
+    },
+    "distractor_plausibility": {
+      "passed": true,
+      "absurd_rate": 0.0,
+      "total_distractors": 18,
+      "absurd_count": 0,
+      "threshold": 0.25,
+      "per_question": [
+        {
+          "id": "q1",
+          "scores": [4, 4, 3],
+          "notes": "D1 (deliberately programmed): strong misconception targeting intent vs structural encoding. D2 (reflects society accurately): strong, targets the 'AI is neutral mirror' misconception. D3 (AI invented its own bias): plausible but slightly weaker; not absurd."
+        },
+        {
+          "id": "q2",
+          "scores": [4, 3, 4],
+          "notes": "D1 (historical bias): strong — plausible misapplication of taught concept. D2 (selection bias): plausible mechanism-confusion. D3 (feedback loop): strong — plausible but AI not yet deployed; distinguishable by careful reading."
+        },
+        {
+          "id": "q3",
+          "scores": [4, 4, 3],
+          "notes": "New question. D1 (labelling bias — inconsistent clinical thresholds): strong — plausible confusion between unequal care access and annotation inconsistency. D2 (selection bias — absent from dataset): strong — directly targets the 'missing data' misconception vs 'present but misleading' reality. D3 (feedback loop — retraining cycle): plausible; a learner who jumps to amplification without noting this is a first-deployment case might select it."
+        },
+        {
+          "id": "q4",
+          "scores": [4, 3, 3],
+          "notes": "Unchanged from cycle 2. D1 (labelling bias): strong. D2 (feedback loop): plausible timing confusion. D3 (historical bias / photo scarcity): plausible reasoning, addressable by recalling sourcing details in corpus §5.4."
+        },
+        {
+          "id": "q5",
+          "scores": [4, 3, 4],
+          "notes": "New question. D1 (anchoring+historical, replay framing): strong — correctly flags historical bias as a real concept and automation bias (partially) but wrong pairing; the 'no amplification' clause in D1 directly tests LO5 understanding (loop vs replay). D2 (automation-reviewers+selection-loop): plausible — both terms real but actors and mechanism wrong; weaker on mechanism but not absurd. D3 (confirmation-engineers+anchoring-reviewers): strong — correct bias types but actors deliberately swapped; tests careful matching of bias to actor."
+        },
+        {
+          "id": "q6",
+          "scores": [4, 3, 3],
+          "notes": "Unchanged from cycle 2. D1 (Seven-Step Trace): strong — named in corpus §6, plausible confusion. D2 (Calibrated Trust Model): plausible adjacent concept. D3 (Encoding Audit Protocol): sounds plausible to a beginner, not a curriculum term."
+        }
+      ],
+      "weakest_questions": []
+    },
+    "objective_coverage": {
+      "passed": true,
+      "corpus_los": [
+        "LO1: Explain what it means for a bias to be 'encoded' into an AI system's training data.",
+        "LO2: Describe the four main encoding mechanisms: labelling bias, historical bias, selection bias, and feedback loop amplification.",
+        "LO3: Give at least one concrete real-world example for each encoding mechanism.",
+        "LO4: Explain how confirmation bias (9.3) and automation bias (9.5) in human practitioners reinforce the encoding problem.",
+        "LO5: Identify the difference between a bias that enters once and a feedback loop that makes bias grow over time.",
+        "LO6: Name the Judgment Framework as a structured approach covered in Topics 9.7–9.9."
+      ],
+      "coverage_map": {
+        "LO1": ["q1"],
+        "LO2": ["q2"],
+        "LO3": ["q3", "q4"],
+        "LO4": ["q5"],
+        "LO5": ["q5"],
+        "LO6": ["q6"]
+      },
+      "uncovered_objectives": [],
+      "notes": "All 6 LOs covered. q3 (healthcare proxy case) and q4 (facial recognition case) both carry LO3 objective_refs — mechanism name absent from stems in both, requiring example-to-mechanism recall. q5 carries LO4+LO5 jointly: the stem describes a retraining loop and asks why it gets WORSE (LO5), while requiring identification of both cognitive biases (LO4). LO2 coverage is via q2 (labelling mechanism); historical bias (LO2b) and selection bias (LO2c) are exercised implicitly through q3 and q4's correct answers naming the mechanisms, though their objective_refs are tagged LO3 per the rebuild directive."
+    },
+    "beginner_fairness_and_scope": {
+      "passed": true,
+      "jargon_in_stem": [],
+      "out_of_scope_questions": [],
+      "unfair_distractors": [],
+      "note": "All stems plain language. q5 stem mentions 'confirmation bias' and 'automation bias' with Week 9 topic numbers in the question — both are stated prerequisites in corpus §2, so no un-taught knowledge required to parse the stem. q3 stem uses 'proxy measure' which is defined in corpus §7 (used in the healthcare pattern example). q6 tests a fact explicitly stated in corpus §8. No out-of-scope knowledge required for any question."
+    }
+  },
+  "auto_correction_applied": {
+    "shuffle_round_2": false,
+    "length_bias_correction": false,
+    "inline_fix_cycle3": "q5 stem extended to test LO5 (feedback loop amplification vs single-pass distinction) alongside LO4; q3 replaced with healthcare proxy case (LO3 example-recall, historical bias answer, mechanism absent from stem); q4 objective_ref retagged to LO3 (facial recognition case unchanged)."
+  },
+  "carry_over": false,
+  "verdict": "PASS — all 5 checks pass in cycle 3. Positional bias max_share=0.333, length bias longest_correct_rate=0.0, distractor absurd_rate=0.0, all 6 LOs now covered (LO3 by q3+q4 example-recall, LO4+LO5 by q5 combo), beginner scope clean. Carry-over LO3+LO4 gaps from cycle 2 resolved.",
+  "at": "2026-06-13T00:00:00Z"
+}

@@ -1,0 +1,69 @@
+{
+  "topic_id": "2.1",
+  "critic": "corpus-critic",
+  "at": "2026-06-16T00:00:00Z",
+  "passed": true,
+  "verdict": "PASS. All four required sections (3, 4, 5, 10) are present and non-trivial. All three primary resources are cited at least once; citation density in sections 5, 6, 7 is well above 60%. No hard forward-reference violations detected — ML terms (machine learning, supervised learning, unsupervised learning, reinforcement learning) appear only as subject-matter inside bounded-specification examples and are not introduced or defined as new concepts. Word count (~2,255 words) fits the 'deep' profile (1800–2200) inferred from topic structure signals (5 named sub-concepts, Implementation, Real-World Patterns, Best Practices sections present). Scope stays on the four-property headline throughout. One soft readability finding: 'acceptance criteria' used in section 7 without a plain-language gloss; 'anomaly' used in section 7 without definition. These are soft findings only — fewer than 3 distinct check-6 findings, so no escalation to hard fail.",
+  "checks": {
+    "required_sections": {
+      "passed": true,
+      "detail": {
+        "section_3_learning_objectives": { "present": true, "word_count_ge_50": true },
+        "section_4_introduction": { "present": true, "word_count_ge_50": true },
+        "section_5_core_concepts": { "present": true, "word_count_ge_100": true },
+        "section_10_key_takeaways": { "present": true, "word_count_ge_50": true }
+      }
+    },
+    "citation_density": {
+      "passed": true,
+      "resources_source": "web_search",
+      "mode": "strict",
+      "primary_resources_required": [
+        "https://mitsloanedtech.mit.edu/ai/basics/effective-prompts/",
+        "https://www.lakera.ai/blog/prompt-engineering-guide",
+        "https://www.pmi.org/blog/how-to-write-better-prompts-framework"
+      ],
+      "all_primary_cited": true,
+      "citation_coverage_sections_5_6_7": "well above 60%",
+      "fake_citations_detected": false,
+      "detail": "Resource [1] cited in sections 4, 5.1, 5.2, 5.4, 5.6, 6, 7, 8. Resource [2] cited in sections 4, 5.2, 5.3, 5.5, 5.6, 7, 8. Resource [3] cited in sections 4, 5.3, 5.4, 5.5, 5.6, 6, 7, 8."
+    },
+    "sequence_drift": {
+      "passed": true,
+      "forward_references": [],
+      "notes": "ML terms (machine learning, supervised learning, unsupervised learning, reinforcement learning) appear solely as subject-matter within bounded-specification examples (section 5.3). They are not introduced, defined, or taught. Per skill rules, naming a downstream concept in context without defining it is not a hard forward-reference violation. 'Probabilistic' in section 5.2 is immediately glossed inline and cross-references the Week 1 topic 1.4 concept (AI gives different answers)."
+    },
+    "length_sanity": {
+      "passed": true,
+      "inferred_profile": "deep",
+      "profile_basis": "manifest has no suggested_profile set; topic signals (5 named sub-concepts 5.1-5.6, Implementation section, Real-World Patterns section, Best Practices section) all match deep_signals in artifact-mix.json; estimated word count aligns with deep range",
+      "estimated_word_count": 2255,
+      "profile_word_range": [1800, 2200],
+      "pct_outside_range": 2.5,
+      "threshold_pct": 30
+    },
+    "topic_scope": {
+      "passed": true,
+      "scope_creep_findings": [],
+      "notes": "Corpus stays within the four-property headline throughout all sections. Real-world applications in section 7 (software acceptance criteria, data analysis specs, workplace delegation) illustrate the four properties in context and do not teach adjacent or advanced topics."
+    },
+    "beginner_readability": {
+      "passed": true,
+      "hard_fail_triggered": false,
+      "finding_count": 1,
+      "findings": [
+        {
+          "type": "undefined_terms",
+          "severity": "soft",
+          "terms": ["acceptance criteria", "anomaly"],
+          "location": "section 7 (Real-World Patterns)",
+          "detail": "'acceptance criteria' appears without a plain-language gloss; 'anomaly' used without definition. Both are minor — context partially self-explains them, and neither is a load-bearing concept for this topic."
+        }
+      ],
+      "jargon_dump": false,
+      "academic_register": false,
+      "notes": "Only 1 distinct check-6 finding type (undefined_terms). Fewer than 3 distinct findings — no escalation to hard fail. Sentence length is consistently short and active. No hedging phrases detected. Learner-facing address ('you') used throughout."
+    }
+  },
+  "failures": []
+}

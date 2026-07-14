@@ -1,0 +1,53 @@
+{
+  "topic_id": "5.6",
+  "artifact": "corpus",
+  "try": 2,
+  "passed": true,
+  "checks": {
+    "required_sections": {
+      "passed": true,
+      "detail": "Re-checked after the section-renumbering fix. The surviving sections now hold canonical template numbers: Best Practices='## 8.', Hands-On Exercise='## 9.', Key Takeaways='## 10.', Next Steps='## 11.'. Required section 10 (Key Takeaways) is present at its canonical number with non-trivial content (six summary bullets, well over 50 words). Sections 3 (Learning Objectives), 4 (Introduction), and 5 (Core Concepts — six sub-sections, well over 100 words) all present and non-trivial. Optional sections 6 (Implementation) and 7 (Real-World Patterns) correctly omitted for the standard profile; the gap in numbering between 5 and 8 reflects those skipped optionals, not a renumber. Try-1 structural defect resolved.",
+      "evidence": {
+        "found_numbers": ["1","2","3","4","5","8","9","10","11"],
+        "skipped_optional_numbers": ["6","7"],
+        "required_numbers_present": ["3","4","5","10"],
+        "canonical_tail": {
+          "Best Practices": "## 8.",
+          "Hands-On Exercise": "## 9.",
+          "Key Takeaways": "## 10.",
+          "Next Steps": "## 11."
+        }
+      }
+    },
+    "citation_density": {
+      "passed": true,
+      "mode": "strict",
+      "resources_source": "web_search",
+      "detail": "Primary (ibm.com) cited as [1] throughout (intro, every Core Concepts sub-section, Best Practices, Key Takeaways). Supporting evidentlyai [2] and wikipedia [3] both resolve and are cited. Section 5 standalone factual assertions carry markers well above the 60% bar. No [4]+ markers — zero fabricated citations; all of [1][2][3] map to the three declared resources. Unchanged from try 1 (no content edited)."
+    },
+    "sequence_drift": {
+      "passed": true,
+      "detail": "All technical noun phrases resolve to 5.6's own concepts_introduced (prompt injection, system prompt vs user input, shared context window, direct vs indirect prompt injection, ignore-previous-instructions attack, injection impacts) or to EARLIER topics: LLM (cross_ref / 3.2,3.4), probabilistic systems (1.3), jailbreak + data leakage (5.5), harm prevention / four pillars (5.4), red team (5.5). No forward references. Governance terms (EU AI Act / NIST — 5.7+) absent. Unchanged from try 1.",
+      "forward_referenced_terms": []
+    },
+    "length_sanity": {
+      "passed": true,
+      "profile": "standard",
+      "operative_band": [1200, 1600],
+      "word_count_approx": 1300,
+      "detail": "Suggested profile standard; per artifact-mix.json standard reading band and manifest reading.target_word_range, operative band is 1200-1600. Corpus prose ~1300 words — in range, well within the 30% tolerance. Renumber fix changed no prose, so count is unchanged from try 1."
+    },
+    "scope_creep": {
+      "passed": true,
+      "detail": "This IS the home topic for prompt injection (5.5 deferred it here). Definition, why-it-works (shared context window), ignore-previous-instructions example, direct vs indirect, impacts, beginner defenses are all on-headline. No governance frameworks taught. Jailbreak (5.5) handled as a plain disambiguation table, not re-taught. No exploit-engineering or model-internals depth imported — held at beginner level. Unchanged from try 1.",
+      "off_scope_concepts": []
+    },
+    "beginner_readability": {
+      "passed": true,
+      "findings": [],
+      "detail": "LLM spelled out 'Large Language Model (LLM)' on first use (Introduction). System prompt, user input, context window, injection all defined in plain language on first use. No jargon-dump paragraph (3+ cold terms). Short sentences, active voice, 'you' address, no hedging. Zero distinct readability findings. Unchanged from try 1."
+    }
+  },
+  "verdict": "PASS — TRY 2. The try-1 required_sections defect is resolved: the section-renumbering fix put the tail back on canonical numbers — Best Practices='## 8.', Hands-On Exercise='## 9.', Key Takeaways='## 10.', Next Steps='## 11.'. Required section 10 (Key Takeaways) is now present at its canonical number with non-trivial content. Optional sections 6 (Implementation) and 7 (Real-World Patterns) remain correctly omitted for the standard profile. No prose was changed, so the other five checks carry forward unchanged: citation_density (strict, ibm.com primary cited, no fabricated markers), sequence_drift (no forward refs, governance held out), length_sanity (~1300w in 1200-1600), scope_creep (on-headline home topic, jailbreak disambiguated not re-taught), beginner_readability (LLM spelled out, terms defined on first use, no findings). All six checks pass. No remaining defects.",
+  "at": "2026-06-22T07:31:00Z"
+}

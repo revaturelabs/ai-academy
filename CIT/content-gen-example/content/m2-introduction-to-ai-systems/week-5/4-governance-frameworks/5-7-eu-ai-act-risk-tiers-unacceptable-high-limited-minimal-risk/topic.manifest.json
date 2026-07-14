@@ -1,0 +1,59 @@
+{
+  "type": "topic",
+  "id": "5.7",
+  "title": "EU AI Act — risk tiers (unacceptable / high / limited / minimal risk)",
+  "slug": "5-7-eu-ai-act-risk-tiers-unacceptable-high-limited-minimal-risk",
+  "position_in_module": 1,
+  "week_num": 5,
+  "session_name": "AI Ethics, Safety and Governance",
+  "module": {
+    "position": 4,
+    "slug": "4-governance-frameworks",
+    "title": "Governance Frameworks"
+  },
+  "course": {
+    "code": "M2",
+    "slug": "m2-introduction-to-ai-systems",
+    "title": "Introduction to AI Systems"
+  },
+  "next_assessment": {
+    "id": "A2",
+    "due_week": 6,
+    "title": "AI Systems Essay",
+    "weight": "15%"
+  },
+  "paths": {
+    "corpus": "topic_corpus.md",
+    "resources": "topic.resources.json",
+    "progress": "topic.progress.json",
+    "artifacts_dir": "artifacts/",
+    "critic_reports_dir": "critic-reports/"
+  },
+  "artifact_plan": {
+    "diagram": true,
+    "diagram_intent": "Four-tier risk pyramid: apex 'Unacceptable (banned)', then 'High (heavily regulated)', then 'Limited (transparency)', wide base 'Minimal (no mandatory rules)'. Each tier labeled with risk level + the law's response + one example; width conveys population (few banned, most minimal).",
+    "suggested_profile": "standard",
+    "suggested_profile_signals": "framework with four named tiers; Core Concepts 4 tier sub-concepts + pillar linkage; no Implementation/algorithm; maps to one coherent structure (risk pyramid); mid-length explanatory topic.",
+    "confirmed_profile": "standard",
+    "confirmed_at_hitl2": true,
+    "reading": {
+      "target_word_range": [
+        1200,
+        1600
+      ],
+      "target_minutes": [
+        6,
+        8
+      ]
+    },
+    "quiz": {
+      "min_questions": 5,
+      "max_questions": 6,
+      "include_short_answer": false
+    }
+  },
+  "depth_profile": "standard",
+  "depth_signals": "Standard — 4 risk-tier sub-concepts + four-pillar linkage, single hierarchy structure (risk pyramid), no algorithm; reading ~1200-1600w; diagram = 4-tier pyramid.",
+  "expected_delivery_minutes": 7,
+  "status": "module_passed"
+}

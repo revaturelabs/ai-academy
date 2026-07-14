@@ -1,0 +1,54 @@
+{
+  "topic_id": "5.6",
+  "generated_at": "2026-06-22T07:20:00Z",
+  "format": "gift",
+  "profile": "standard",
+  "question_count": 6,
+  "include_short_answer": false,
+  "$bias_defense_applied": true,
+  "$shuffle_seed": "sha256(topic_id=5.6)->4e2c2d1f; salt=0",
+  "correct_position_distribution": [0, 2, 1, 3, 0, 3],
+  "correct_position_counts": { "0": 2, "1": 1, "2": 1, "3": 2 },
+  "max_position_share": 0.333,
+  "max_share_constraint": "<= 0.40 satisfied; all 4 positions used (>=6 MCQs requirement met)",
+  "option_length_balance": "Within-question option lengths held within ~+/-20% of the per-question mean; the correct (=) option is NOT systematically the longest. Longest-option-is-correct count = 1 of 6 (q1), below chance, so no exploitable length-bias signal.",
+  "longest_option_correct_count": 1,
+  "questions": [
+    {
+      "id": "q1",
+      "type": "mcq",
+      "objective_ref": "Explain in plain language what prompt injection is and why it is possible.",
+      "correct_position": 0
+    },
+    {
+      "id": "q2",
+      "type": "mcq",
+      "objective_ref": "Describe why the AI cannot reliably tell its trusted instructions apart from untrusted user input (system prompt + user input share one context window).",
+      "correct_position": 2
+    },
+    {
+      "id": "q3",
+      "type": "mcq",
+      "objective_ref": "Recognise the classic 'ignore previous instructions' attack and walk through what it does.",
+      "correct_position": 1
+    },
+    {
+      "id": "q4",
+      "type": "mcq",
+      "objective_ref": "Tell the difference between direct prompt injection and indirect prompt injection.",
+      "correct_position": 3
+    },
+    {
+      "id": "q5",
+      "type": "mcq",
+      "objective_ref": "List the real-world impacts of a successful injection and name a few beginner-level defenses.",
+      "correct_position": 0
+    },
+    {
+      "id": "q6",
+      "type": "mcq",
+      "objective_ref": "State how prompt injection differs from a jailbreak (from 5.5).",
+      "correct_position": 3
+    }
+  ]
+}

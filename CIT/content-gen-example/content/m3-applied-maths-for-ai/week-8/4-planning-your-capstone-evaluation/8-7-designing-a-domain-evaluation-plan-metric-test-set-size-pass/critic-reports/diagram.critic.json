@@ -1,0 +1,18 @@
+{
+  "verdict": "pass",
+  "findings": [
+    {
+      "code": "looks_good",
+      "where": "whole flow",
+      "detail": "Reads cleanly start-to-verdict: name costly mistake -> choose metric -> size test set -> set threshold -> compare -> branch to Ship (green) or Rework (amber). Title banner carries the governing 'decided in advance' idea. No overlaps, no truncation; all labels and edge labels legible at 1400px. Metric names confined to the metric node's subtitle, not exploded into separate nodes. No out-of-scope nodes (no ECE/Z-score/K-fold/data-split)."
+    }
+  ],
+  "stats": {
+    "nodes": 7,
+    "edges": 6,
+    "layout": "flowchart LR (linear pipeline with terminal pass/fail branch)",
+    "labels": ["Name the costly mistake", "Choose the metric", "Size the test set", "Set pass/fail threshold", "Score vs threshold?", "Ship", "Rework"],
+    "png_path": "artifacts/diagram.png",
+    "png_dims": "1400x~235"
+  }
+}

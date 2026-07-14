@@ -1,0 +1,20 @@
+{
+  "type": "module",
+  "position": 2,
+  "title": "AI Agents",
+  "slug": "2-ai-agents",
+  "course_code": "M5",
+  "course_slug": "m5-python-for-ai-pe-vc-and-rag",
+  "week_nums": [
+    14
+  ],
+  "session_name_by_week": {
+    "14": "RAG, Vectors, Agents and Production AI"
+  },
+  "narrative_seed_by_week": {
+    "14": "Vector databases — store embeddings, enable similarity search at scale / Retrieval pipeline — query → embed → similarity search → top-k → inject into prompt / Why RAG reduces hallucination — AI answers from retrieved evidence, not from memory / When to use RAG — use it when the answer depends on data the model was not trained on / Agent anatomy — LLM + memory + tools + planning loop; the ReAct pattern / Agent vs simpler flow — decision matrix: direct call → chained calls → agent; use the simplest that works / When NOT to use agents — high-stakes or irreversible actions require human-in-the-loop / Production AI patterns — cost, latency, reliability trade-offs when RAG and agents are in the loop / Note: RAG build and agent implementation are Semester 2 skills — Semester 2 Week 14 goes deeper with implementation"
+  },
+  "lab_activity_seed_by_week": {
+    "14": "Live demo 1 — RAG over a domain FAQ: with vs without retrieval, accuracy compared live / Live demo 2 — agent completing a multi-step task in real time / For your domain system: does it need RAG or an agent? Write a one-paragraph architectural decision with justification using the decision matrix / Journal Entry #9 — what was surprising about how RAG or agents worked in the demos?"
+  }
+}

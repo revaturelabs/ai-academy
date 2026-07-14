@@ -1,0 +1,41 @@
+---
+title: "One Function = One Job — the Testable Unit Principle"
+config:
+  theme: base
+  themeVariables:
+    primaryColor: "#a5d8ff"
+    primaryBorderColor: "#4a9eed"
+    lineColor: "#555"
+  flowchart:
+    htmlLabels: true
+    curve: basis
+    nodeSpacing: 50
+    rankSpacing: 45
+---
+flowchart LR
+  subgraph BEFORE["BEFORE — Multi-Job Function"]
+    direction TB
+    A1["<b>Call Site</b><br/><span style='font-size:11px;color:#6d28d9'>calls process_marks()</span>"]:::callsite
+    A2["<b>Phase 1: Compute</b><br/><span style='font-size:11px;color:#6d28d9'>loop totals marks, finds average</span>"]:::multi
+    A3["<b>Phase 2: Write</b><br/><span style='font-size:11px;color:#6d28d9'>opens file, saves result</span>"]:::multi
+    A1 --> A2 --> A3
+  end
+
+  subgraph AFTER["AFTER — Single-Job Functions"]
+    direction TB
+    B1["<b>Call Site</b><br/><span style='font-size:11px;color:#6d28d9'>calls each function once</span>"]:::callsite
+    B2["<b>compute_average()</b><br/><span style='font-size:11px;color:#6d28d9'>one job: compute only</span>"]:::single
+    B3["<b>Average returned</b><br/><span style='font-size:11px;color:#6d28d9'>result passed to next function</span>"]:::ret
+    B4["<b>write_average_to_file()</b><br/><span style='font-size:11px;color:#6d28d9'>one job: write only — testable independently</span>"]:::single
+    B1 --> B2 --> B3 --> B4
+  end
+
+  BEFORE -->|"refactor into"| AFTER
+
+  style BEFORE fill:#fff4e6,stroke:#f59e0b,color:#1a1a1a
+  style AFTER fill:#f0fff4,stroke:#22c55e,color:#1a1a1a
+
+  classDef callsite fill:#a5d8ff,stroke:#4a9eed,color:#1a1a1a
+  classDef multi fill:#ffd8a8,stroke:#f76707,color:#1a1a1a
+  classDef single fill:#d0bfff,stroke:#8b5cf6,color:#1a1a1a
+  classDef ret fill:#b2f2bb,stroke:#22c55e,color:#1a1a1a

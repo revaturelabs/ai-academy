@@ -1,0 +1,10 @@
+{
+  "topic_id": "4.1",
+  "title": "Foundation models — trained once at scale, usable for many tasks",
+  "estimated_read_minutes": 7,
+  "word_count": 1390,
+  "generated_at": "2026-06-16T00:00:00Z",
+  "embeds_diagram": true,
+  "citations_used": [1, 2, 3],
+  "sections": ["Overview", "Key Concepts", "Worked Example", "In Practice", "Key Takeaways", "References"]
+}

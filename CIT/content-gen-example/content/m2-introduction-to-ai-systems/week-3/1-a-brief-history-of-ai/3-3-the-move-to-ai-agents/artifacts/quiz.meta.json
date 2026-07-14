@@ -1,0 +1,41 @@
+{
+  "topic_id": "3.3",
+  "generated_at": "2026-06-17T00:00:00Z",
+  "format": "gift",
+  "question_count": 5,
+  "$bias_defense_applied": true,
+  "$shuffle_seed": "148",
+  "correct_position_distribution": [2, 0, 3, 1, 2],
+  "questions": [
+    {
+      "id": "q1",
+      "type": "mcq",
+      "objective_ref": "Define what an AI agent is and explain how it differs from a standalone LLM responding to a single prompt.",
+      "correct_position": 2
+    },
+    {
+      "id": "q2",
+      "type": "mcq",
+      "objective_ref": "Identify the five core components of an agent loop — goal, planning, tool use, memory, and feedback — and describe the role of each.",
+      "correct_position": 0
+    },
+    {
+      "id": "q3",
+      "type": "mcq",
+      "objective_ref": "Explain why adding planning and tool use to an LLM transforms it from a 'question-answerer' into an autonomous actor.",
+      "correct_position": 3
+    },
+    {
+      "id": "q4",
+      "type": "mcq",
+      "objective_ref": "Describe at least two real-world scenarios where an agent architecture is more useful than a single-prompt LLM call.",
+      "correct_position": 1
+    },
+    {
+      "id": "q5",
+      "type": "mcq",
+      "objective_ref": "Recognize the current limitations of AI agents — where they tend to fail and why human oversight remains important.",
+      "correct_position": 2
+    }
+  ]
+}

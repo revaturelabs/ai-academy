@@ -1,0 +1,49 @@
+$CATEGORY: CIT/M1/week-1/1-11-the-four-properties-of-a-good-algorithm-finite-definite-inpu
+
+::1-11-q1:: Which statement best describes the finiteness property of an algorithm? {
+~An algorithm is finite if it completes in a very short time on modern hardware.#Speed is not the same as termination — a fast algorithm can still loop forever.
+=An algorithm is finite if every execution path through it eventually stops.#Correct — finiteness guarantees termination regardless of which path is taken.
+~An algorithm is finite if it uses only a small, fixed number of steps to complete.#The number of steps can be large; what matters is that there is a definite stopping point.
+~An algorithm is finite if it processes only a small or limited amount of input data.#The size of the input has nothing to do with whether the algorithm terminates.
+#### Tests the definition of finiteness — an algorithm must always stop (corpus §5.1).
+}
+
+::1-11-q2:: A recipe step says "add some salt." A computer scientist says this step is not a good algorithm step. Which property does it violate? {
+=Definiteness, because the instruction has more than one valid interpretation.#Correct — "some" is vague; different people would add different amounts, violating definiteness.
+~Finiteness, because the step could take a very long time to carry out.#How long a step takes is irrelevant to finiteness — finiteness is about the algorithm terminating.
+~Input, because the recipe does not list salt as an ingredient.#The issue here is the precision of the step itself, not whether the ingredient was declared.
+~Output, because adding salt does not produce a measurable result.#Output is about the algorithm's final result, not the outcome of a single intermediate step.
+#### Tests the definiteness property using the "add some salt" example (corpus §5.2).
+}
+
+::1-11-q3:: A coin-flip simulation algorithm generates a random result and requires no external data to do so. With respect to the input property, this algorithm is: {
+~Invalid, because every algorithm must receive at least one piece of data.#The input property allows zero or more inputs — zero is a perfectly valid number.
+~Incomplete, because it cannot work without knowing the desired outcome.#The algorithm generates a random outcome; knowing it in advance would defeat the purpose.
+~Questionable, because only mathematical algorithms may have zero inputs.#There is no such restriction — any algorithm may declare zero inputs if it needs none.
+=Valid, because the input property allows an algorithm to declare zero inputs.#Correct — zero inputs is explicitly allowed; the algorithm simply declares that it needs none.
+#### Tests the input property — zero inputs is a legitimate declaration (corpus §5.3).
+}
+
+::1-11-q4:: A sorting algorithm receives a list of names and produces that list rearranged in alphabetical order. Which property is demonstrated by the alphabetical list it returns? {
+~Finiteness, because the algorithm stopped after completing all of its steps and returned a result.#Stopping is finiteness; what the algorithm produces when it stops relates to the output property.
+=Output, because the algorithm produces a defined result that is directly derived from its input.#Correct — the sorted list is the required output, and it is directly derived from the input list.
+~Definiteness, because every step in the sorting process was stated clearly and precisely.#Definiteness is about the clarity of each step, not about what the algorithm produces at the end.
+~Input, because the list of names provided was the data the algorithm required to start work.#The list of names is the input; the alphabetical list returned is the output.
+#### Tests the output property — at least one result with a defined relationship to the input (corpus §5.4).
+}
+
+::1-11-q5:: An instruction set says "keep searching until you find a good answer." A classmate argues this is still an algorithm because the goal is clear. What is the strongest counter-argument? {
+~The goal is not written in a formal programming language, so it cannot be an algorithm.#Algorithms do not need to be in code — pseudocode and plain language are both valid.
+~The instructions fail output because they do not specify what format the answer should take.#The output format is a detail; the more fundamental problem is that the process may never stop at all.
+=The instructions fail finiteness because "good answer" gives no measurable stopping condition.#Correct — without a concrete stopping condition the process may never terminate, violating finiteness.
+~The instructions fail input because they do not clearly state where or what to search through.#The missing stopping condition is the critical flaw here — an undefined search space is a secondary concern.
+#### Tests why a missing stopping condition violates finiteness and makes instructions unreliable (corpus §5.1, §5.5).
+}
+
+::1-11-q6:: You apply the four-property checklist to these steps\: "Take a list of prices. Find the cheapest item. Display that item's name and price." The steps pass all four properties. Which option best explains why the output property is satisfied? {
+~The output property is satisfied because the steps are written in plain, clear language.#Clear language relates to definiteness, not to whether a result is produced at the end.
+~The output property is satisfied because the steps always terminate after a fixed number of actions.#Terminating is required for finiteness; the output property is about what is produced, not when.
+=The output property is satisfied because the algorithm produces a defined result — the item's name and price.#Correct — at least one result is produced and it has a clear relationship to the input list.
+~The output property is satisfied because the algorithm receives a list as its starting data.#Receiving a list satisfies the input property; the output property concerns what the algorithm returns.
+#### Tests applying the four-property checklist with focus on the output property (corpus §5.4, §6).
+}

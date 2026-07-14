@@ -1,0 +1,43 @@
+{
+  "critic": "diagram-critic",
+  "cycle": 1,
+  "topic_id": "11.5",
+  "topic_title": "If / else — writing decision logic in code",
+  "at": "2026-06-12T01:15:00Z",
+  "passed": true,
+  "checks": {
+    "source_preflight": {
+      "passed": true,
+      "mermaid_parses": true,
+      "node_count": 6,
+      "node_range_ok": true,
+      "label_discipline": true,
+      "concept_fidelity": true,
+      "detail": "6 nodes (average_rounded, >=90?, grade='A', >=80?, grade='B', elif/else continuation). All labels ≤4 words or concise multi-word. Every node maps to corpus §5.1–§5.3 concepts."
+    },
+    "visual_inspection": {
+      "passed": true,
+      "findings": [],
+      "stats": {
+        "node_count": 6,
+        "edge_count": 7,
+        "layout": "TB flowchart (decision tree)",
+        "png_path": "artifacts/diagram.png",
+        "png_size_bytes": 28047,
+        "width_px": 484
+      },
+      "checks": {
+        "nodes_overlap": false,
+        "label_truncated": false,
+        "crossings_illegible": false,
+        "layout_wrong_for_intent": false,
+        "whitespace_imbalance": false,
+        "subtitle_illegible": false,
+        "color_tier_violation": false,
+        "edge_label_collision": false
+      },
+      "detail": "TB layout correct for if/elif decision tree. Input node blue (#a5d8ff), decision diamonds yellow (#fff3bf), grade results green (#b2f2bb), continuation node purple (#d0bfff). True/False edge labels positioned clearly. Title 'if / elif / else — Grade Assignment' readable at top."
+    }
+  },
+  "verdict": "PASS (cycle 1). 6-node TB flowchart cleanly illustrates if/elif/else branching pattern. Color tiers correct. No visual defects detected."
+}

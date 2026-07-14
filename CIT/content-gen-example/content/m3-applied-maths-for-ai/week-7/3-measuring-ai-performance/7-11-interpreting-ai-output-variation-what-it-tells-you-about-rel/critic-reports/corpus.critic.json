@@ -1,0 +1,92 @@
+{
+  "critic": "corpus-critic",
+  "topic_id": "7.11",
+  "topic_title": "Interpreting AI output variation — what it tells you about reliability",
+  "at": "2026-06-23T08:00:00Z",
+  "cycle": 2,
+  "passed": true,
+  "depth_profile": "atomic",
+  "word_count_estimate": 2009,
+  "checks": {
+    "required_sections": {
+      "passed": true,
+      "hard_fail": false,
+      "details": {
+        "section_3_learning_objectives": {
+          "present": true,
+          "word_count": 114,
+          "required_minimum": 100,
+          "passed": true,
+          "note": "Section 3 now contains 6 learning objectives. Preamble sentence (13 words) plus six bullet objectives: 17 + 17 + 16 + 17 + 14 + 20 = 101 words in bullets, total 114 words. The sixth objective ('Explain why consistent AI output does not guarantee correct output, and why ground-truth checking is always required for deterministic tasks') directly maps to the consistency vs correctness distinction taught in section 5.6. Threshold cleared."
+        },
+        "section_4_introduction": {
+          "present": true,
+          "word_count": 145,
+          "required_minimum": 50,
+          "passed": true
+        },
+        "section_5_core_concepts": {
+          "present": true,
+          "word_count": 950,
+          "required_minimum": 100,
+          "passed": true
+        },
+        "section_10_key_takeaways": {
+          "present": true,
+          "word_count": 120,
+          "required_minimum": 50,
+          "passed": true
+        }
+      }
+    },
+    "citation_density": {
+      "passed": true,
+      "hard_fail": false,
+      "resources_source": "web_search",
+      "primary_resources_cited": [
+        {
+          "index": 1,
+          "url": "https://www.ibm.com/think/topics/llm-temperature",
+          "role": "primary",
+          "cited_at_least_once": true,
+          "citation_count": "multiple (sections 4, 5.1, 5.2, 5.3, 5.5, 5.6, 6, 7)"
+        }
+      ],
+      "core_concepts_claim_citation_coverage": "high — all six Core Concepts subsections (5.1–5.6) carry at least one citation marker; estimated coverage well above 60%",
+      "fabricated_markers": false,
+      "details": "All three resources ([1] IBM, [2] Cybernews, [3] Tetrate) are cited. Primary [1] is cited throughout. No citation markers reference non-existent resources. Strict web_search mode satisfied."
+    },
+    "sequence_drift": {
+      "passed": true,
+      "hard_fail": false,
+      "forward_references": [],
+      "details": "All technical terms are either (a) newly introduced by this topic — output variation, temperature-adjusted variation reading, four-quadrant reliability framework, deterministic task, open-ended task, variation-based reliability measurement, consistency vs correctness distinction — or (b) from the established prior-topic concept pool (probability distribution, token, temperature [7.5], accuracy [7.7], precision [7.8], recall [7.9], ground truth [7.10], confusion matrix [7.10], mean/median/mode [7.6]). The new sixth learning objective uses 'consistent AI output,' 'correct output,' 'ground-truth checking,' and 'deterministic tasks,' all of which map to concepts introduced in this topic or prior topics. No forward references detected."
+    },
+    "length_sanity": {
+      "passed": true,
+      "hard_fail": false,
+      "depth_profile": "atomic",
+      "target_range_words": "1500–2400",
+      "estimated_word_count": 2009,
+      "in_range": true,
+      "details": "Cycle 1 estimated ~1985 words. Section 3 gained approximately 24 words (one new objective). Revised estimate ~2009 words. Within the atomic profile target of 1500–2400 words. Not within 30% of boundary violation."
+    },
+    "topic_scope": {
+      "passed": true,
+      "hard_fail": false,
+      "scope_creep_findings": [],
+      "details": "All material — including the new sixth learning objective — is within the headline scope: interpreting AI output variation as a reliability signal. The six objectives map directly onto sections 5.1 (output variation as signal), 5.2 (temperature-adjusted reading), 5.3 (four-quadrant framework), 5.5 (measurement workflow), 5.4 (task type), and 5.6 (consistency vs correctness) respectively. No off-topic concepts taught at depth. Accuracy, precision, and recall from prior topics are applied (not re-taught) in section 5.5."
+    },
+    "beginner_readability": {
+      "passed": true,
+      "hard_fail": false,
+      "findings": [],
+      "undefined_terms": [],
+      "jargon_dumps": [],
+      "academic_register_issues": [],
+      "details": "No changes to Introduction or Core Concepts prose in cycle 2. All newly introduced terms are defined on first use with plain-language definitions. 'LLMs (Large Language Models)' is spelled out in the Introduction. No paragraph introduces 3+ new terms simultaneously. Sentences are direct and concrete; no hedging phrases or academic register issues. Zero distinct soft findings."
+    }
+  },
+  "verdict": "PASS — all 6 checks pass. Section 3 (Learning Objectives) now counts 114 words across 6 objectives, clearing the 100-word minimum that caused the cycle-1 hard failure. The new sixth objective ('Explain why consistent AI output does not guarantee correct output, and why ground-truth checking is always required for deterministic tasks') is on-scope, maps to section 5.6, and introduces no forward references or scope creep. Citation density remains strong (primary [1] cited throughout, all core-concept subsections covered, no fabricated markers). Total word count ~2009 is within the atomic 1500–2400 range. Sequence drift clean. Beginner readability clean.",
+  "required_fixes": []
+}

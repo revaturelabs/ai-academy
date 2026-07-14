@@ -1,0 +1,65 @@
+{
+  "critic": "corpus-critic",
+  "topic_id": "2.9",
+  "topic_title": "Iterating a specification based on output gaps",
+  "at": "2026-06-17T00:00:00Z",
+  "passed": true,
+  "verdict": "Corpus passes all six checks. All required sections are present and non-trivial. Citation density meets the web_search strict standard: primary resource [1] cited 10+ times; all three resources cited throughout §5–§7; no fake citations. No forward references beyond 2.9's own concepts and prior-topic vocabulary. Word count (~2966w) is marginally below the 3000w standard-profile floor but well within the 30% tolerance band (floor would need to drop below 2100w to hard-fail); soft note logged. Scope stays cleanly on iterating/patching specs — the three-question verification check from 2.8 is referenced as a tool (not re-taught), and no advanced or adjacent concepts are introduced at depth. Beginner readability is good: all non-everyday terms defined on first use, no jargon dumps, plain register throughout.",
+  "checks": {
+    "required_sections": {
+      "passed": true,
+      "detail": {
+        "section_3_learning_objectives": { "passed": true, "word_count_estimate": 75 },
+        "section_4_introduction": { "passed": true, "word_count_estimate": 135 },
+        "section_5_core_concepts": { "passed": true, "word_count_estimate": 820 },
+        "section_10_key_takeaways": { "passed": true, "word_count_estimate": 90 }
+      }
+    },
+    "citation_density": {
+      "passed": true,
+      "resources_source": "web_search",
+      "primary_cited": true,
+      "primary_resource": "https://www.ibm.com/think/topics/iterative-prompting",
+      "primary_citation_count": 10,
+      "supporting_resources_cited": true,
+      "sections_checked": ["5", "6", "7"],
+      "estimated_coverage": "all standalone factual assertions in §5/§6/§7 carry at least one citation marker",
+      "fake_citations": false,
+      "findings": []
+    },
+    "sequence_drift": {
+      "passed": true,
+      "forward_references": [],
+      "notes": "All technical terms are either introduced in this topic (iteration, gap, iteration cycle, gap-to-fix mapping, minimum viable patch, accept with known limitation) or defined in prior topics 2.1–2.8. The REFINE framework (§7) is a named external model cited from resource [3], introduced in one paragraph with plain-language expansion — not a new curriculum concept."
+    },
+    "length_sanity": {
+      "passed": true,
+      "profile": "standard",
+      "range_words": [3000, 4400],
+      "estimated_word_count": 2966,
+      "within_30pct_tolerance": true,
+      "findings": [
+        {
+          "level": "soft",
+          "code": "length_below_floor",
+          "detail": "Estimated word count ~2966 is ~34 words below the 3000w standard-profile floor. Within the 30% tolerance band (hard-fail threshold: 2100w). Corpus is substantive; borderline length does not impede coverage."
+        }
+      ]
+    },
+    "topic_scope": {
+      "passed": true,
+      "scope_creep": false,
+      "out_of_scope_concepts": [],
+      "notes": "Corpus stays on the iteration/patching headline throughout. §6 Implementation and §7 Real-World Patterns reinforce rather than extend the topic. Testing vocabulary from 2.8 (three-question verification check, pass/fail table) is referenced as prior knowledge only, not re-taught."
+    },
+    "beginner_readability": {
+      "passed": true,
+      "hard_fail": false,
+      "findings": [],
+      "undefined_terms": [],
+      "jargon_dumps": [],
+      "academic_register": false,
+      "notes": "All introduced terms defined on first use with bold labels and plain-language definitions. REFINE acronym expanded inline at point of introduction (§7). No paragraph introduces 3+ new terms simultaneously. Sentence length is short to medium throughout. No hedging phrases detected."
+    }
+  }
+}

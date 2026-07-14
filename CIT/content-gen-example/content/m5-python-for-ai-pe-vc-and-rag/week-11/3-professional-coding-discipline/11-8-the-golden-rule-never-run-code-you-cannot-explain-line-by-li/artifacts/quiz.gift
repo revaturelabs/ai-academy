@@ -1,0 +1,49 @@
+$CATEGORY: CIT/M5/week-11/11-8-the-golden-rule-never-run-code-you-cannot-explain-line-by-li
+
+::q1::[html]What problem does the golden rule — "never run code you cannot explain line by line" — exist to prevent? {
+~It stops beginners from writing code that contains syntax errors before they test it in the notebook, which makes debugging far harder to do.#Syntax errors produce loud error messages; the golden rule targets a different problem entirely.
+=It prevents you from trusting output that is quietly wrong because you never understood the code that produced it.#Correct — the rule guards against silent failure, where code runs but produces subtly wrong output with no error message.
+~It ensures that AI tools only generate code that matches the Python documentation exactly, so that version mismatches and deprecated functions do not cause problems.#AI tools are not checked against documentation at generation time; the rule is a human reading habit, not an AI constraint.
+~It prevents you from running code more than once, which could cause variables to hold unexpected values from a previous cell that is still loaded in memory.#Running code multiple times is a normal notebook practice; the rule is about understanding before the first run.
+#### Tests LO1 — why the golden rule exists and what problem it prevents (corpus §4, §5.2).
+}
+
+::q2::[html]A student receives AI-generated code, skips reading it, runs it, and sees output with no error message. What risk has the student taken on? {
+~The code will fail on the next run because AI-generated code is only valid for a single execution and must be regenerated from the AI tool each time it is needed.#AI-generated code does not expire after one run; this is not a real property of Python or AI tools.
+~The student has violated the terms of service of the AI tool by running unreviewed code in a notebook without first confirming the output matches the original prompt.#No terms-of-service clause governs whether you read code before running it; this is not the risk described in the corpus.
+~The student may have lost marks for not following the spec-first workflow from the previous topic, since that workflow requires the student to read all code before execution.#The spec-first workflow is a separate discipline; the immediate risk here is about code correctness, not workflow compliance.
+=The output could be subtly wrong — a silent failure — and the student has no way to tell because they never understood the code.#Correct — skipping the reading step removes the only check against silent failure; the student must trust output they cannot verify.
+#### Tests LO2 — risks of running AI-generated code without reading it (corpus §5.2, §5.6).
+}
+
+::q3::[html]A student reads this line from AI-generated code\: `total = total + len(name)`. Which explanation best demonstrates the explain-every-line habit? {
+=This line takes the current value of `total`, adds the number of characters in `name` to it, and stores the new sum back in `total` — building a running character count inside the loop.#Correct — this explains what the line creates, what the input is, and why it is here, satisfying the four-question test.
+~This line calls the `len` function and assigns the updated result back to `total`, which is standard Python for counting things, so it is doing exactly what it should without needing any deeper explanation.#This restates the syntax without explaining what `total` accumulates, where the input came from, or why this line belongs here.
+~This line is part of a loop and uses `len`, which returns the length of a string, so it probably counts the letters in each name — and that level of understanding is enough to move on with confidence.#"Probably" signals guessing rather than understanding; the explain-every-line habit requires certainty, not approximation.
+~This line modifies `total` using the `len` built-in function, which is a well-known aggregation pattern in Python loops, so a beginner can trust it is correct without tracing every value manually.#Naming the pattern without linking it to the spec or the purpose of `total` in this program is not a complete line explanation.
+#### Tests LO3 — applying the explain-every-line habit to a concrete code line (corpus §5.1, §5.4).
+}
+
+::q4::[html]Which two observations are signs that a piece of code contains logic you cannot yet account for? {
+~The code is longer than ten lines and uses a loop, which means there is a greater chance of a hidden bug even if each individual line looks straightforward on its own.#Length and use of loops are not themselves signs of unexplained logic; a long loop can be fully understood line by line.
+~The variable names in the code are different from the ones you used in your spec, which signals the AI has gone off-track and may have implemented logic that does not match your original intention.#Different variable names alone are not a sign of misunderstood logic; names can differ while the logic is still fully traceable to the spec.
+=You cannot trace where a value on the right side of an assignment came from, or you cannot answer why a line appears at that position rather than earlier or later in the program.#Correct — inability to trace an input source or justify a line's position are two of the four-question test failure signals described in the corpus.
+~The code produces a number as output instead of a string, which means the return type is unexpected and therefore the underlying logic is probably incorrect for the task you described.#The type of output is not itself a sign of unexplained logic; this depends entirely on what the spec required.
+#### Tests LO4 — identifying signs that code contains logic you cannot account for (corpus §5.5).
+}
+
+::q5::[html]After running a code cell in Google Colab, a student sees output and no red error message. The student says "it worked." What is wrong with that conclusion? {
+~Nothing is wrong — if Python produced output without an error, the code is functioning as intended by definition, because Python's own error system is designed to catch every kind of mistake.#This is the exact misconception the corpus addresses; no error message means technical execution succeeded, not logical correctness.
+=Running without errors is a technical fact about execution, but it says nothing about whether the output is logically correct or matches the spec.#Correct — "ran without errors" and "I understand what the code does" are two different statements; only the second protects against silent failure.
+~The student should have seen a green confirmation message from Colab before trusting the output, because Colab signals that the code ran correctly by displaying a visual indicator next to the cell.#Colab does not issue green confirmation messages for correct logic; this is not how the tool works.
+~The conclusion is fine as long as the student wrote the spec first, because writing a detailed spec guarantees that the AI will produce code that correctly satisfies every requirement in the brief.#Writing a spec improves the prompt, but it does not guarantee the generated code is logically correct; reading is still required.
+#### Tests LO5 — distinguishing "ran without errors" from "I understand what the code does" (corpus §5.4).
+}
+
+::q6::[html]The A4 portfolio brief requires "independently working code." In the context of the golden rule, what does "independently" mean for a student who used AI to generate their code? {
+~It means the student must delete all AI-generated code and replace it with code they wrote entirely by hand before submission.#The corpus explicitly states that using AI tools is expected and legitimate; independently does not mean typed from scratch.
+~It means the student must show the AI tool's conversation history as proof that the code was generated in one session.#Conversation history is not the A4 requirement; the assessment is about the student's understanding, not the generation process.
+~It means the student must run the code on a different device from the one where it was generated, to confirm it is portable.#Portability across devices is not the meaning of "independently working code" in the A4 brief.
+=It means the student can explain, defend, and modify every line — ownership through understanding, not through having typed the code themselves.#Correct — the corpus defines independently working code as code you can explain, defend, and modify; applying the golden rule throughout builds exactly this ownership.
+#### Tests LO6 — connecting the golden rule to A4 independent code ownership (corpus §5.7).
+}

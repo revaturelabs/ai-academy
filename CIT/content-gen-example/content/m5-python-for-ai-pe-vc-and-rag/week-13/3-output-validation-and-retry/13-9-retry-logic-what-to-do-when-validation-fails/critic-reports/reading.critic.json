@@ -1,0 +1,125 @@
+{
+  "critic": "reading-critic",
+  "topic_id": "13.9",
+  "artifact": "artifacts/reading.md",
+  "meta": "artifacts/reading.meta.json",
+  "run_at": "2026-06-14T00:00:00Z",
+  "passed": true,
+  "verdict": "PASS — all hard checks clear; one soft finding on word-count metadata accuracy.",
+  "hard_fails": [],
+  "soft_findings": [
+    {
+      "id": "word_count_meta_discrepancy",
+      "severity": "soft",
+      "check": "length",
+      "detail": "reading.meta.json declares word_count=1060 (within [800,1200] range). The prompt-briefing estimate of ~1253 words, if accurate, is 4.4% over the 1200-word ceiling — still within the soft zone (hard-fail threshold is >1500w / >25% over). Either figure keeps reading_minutes at 6 (at the ceiling of [4,6], not over). No hard fail triggered. Recommend regenerating the meta sidecar word_count from the final reading text to ensure the declared figure is accurate."
+    }
+  ],
+  "checks": {
+    "format_discipline": {
+      "passed": true,
+      "frontmatter_present": false,
+      "meta_sidecar_present": true,
+      "meta_sidecar_valid": true,
+      "section_template": {
+        "passed": true,
+        "sections_found": ["Overview", "Key Concepts", "Worked Example", "In Practice", "Key Takeaways", "References"],
+        "expected": ["Overview", "Key Concepts", "Worked Example", "In Practice", "Key Takeaways", "References"],
+        "diff": []
+      },
+      "h1_title_present": true
+    },
+    "length": {
+      "passed": true,
+      "declared_word_count": 1060,
+      "estimated_word_count_from_briefing": 1253,
+      "target_word_range": [800, 1200],
+      "declared_reading_minutes": 6,
+      "target_minute_range": [4, 6],
+      "note": "Declared meta figure (1060w) is within range. Briefing estimate (1253w) is 4.4% over ceiling — soft only. reading_minutes=6 is at the ceiling but not over."
+    },
+    "citations": {
+      "passed": true,
+      "primary_cited": true,
+      "primary_source": "[1] APXML",
+      "citations_found": ["[1]", "[2]", "[3]"],
+      "orphan_markers": [],
+      "orphan_bibliography_entries": [],
+      "bibliography_entries": [
+        "1. APXML. Retry Mechanisms for LLM Applications.",
+        "2. Mirascope. LLM Validation with Retries.",
+        "3. Python Instructor. Retry Patterns for Structured LLM Output."
+      ]
+    },
+    "no_forward_references": {
+      "passed": true,
+      "findings": [],
+      "note": "Line 113 defers advanced techniques (exponential backoff, structured output libraries) with a one-sentence named-and-deferred pointer — compliant per SKILL.md scope rule."
+    },
+    "faithfulness": {
+      "passed": true,
+      "assertions_sampled": 10,
+      "unsupported_count": 0,
+      "threshold": 2,
+      "sampled_assertions": [
+        {"assertion": "A retry loop is code that runs a validation check and if check fails calls the LLM again", "corpus_section": "5. Core Concepts — The retry loop", "supported": true},
+        {"assertion": "Form-submission analogy for retry loop", "corpus_section": "5. Core Concepts — The retry loop", "supported": true},
+        {"assertion": "Corrective message example with JSON key answer and confidence", "corpus_section": "5. Core Concepts — The corrective message", "supported": true},
+        {"assertion": "Retry counter is a simple integer variable starting at zero", "corpus_section": "5. Core Concepts — The retry counter", "supported": true},
+        {"assertion": "Common default is 2 or 3 retries for beginner projects", "corpus_section": "5. Core Concepts — Max retries", "supported": true},
+        {"assertion": "Fallback dict: {error: max retries exceeded, result: None}", "corpus_section": "6. Implementation", "supported": true},
+        {"assertion": "call_with_retry Python function code", "corpus_section": "6. Implementation", "supported": true},
+        {"assertion": "Three In Practice scenarios: JSON chatbot, text classifier, data extractor", "corpus_section": "7. Real-World Patterns", "supported": true},
+        {"assertion": "Do/Do not best practices list", "corpus_section": "8. Best Practices", "supported": true},
+        {"assertion": "Key Takeaways bullets including full pattern mnemonic", "corpus_section": "10. Key Takeaways", "supported": true}
+      ]
+    },
+    "beginner_readability": {
+      "passed": true,
+      "undefined_terms": [],
+      "undefined_terms_count": 0,
+      "undefined_terms_threshold": 2,
+      "jargon_dump": false,
+      "abstract_first": false,
+      "academic_register": false,
+      "term_definitions_found": [
+        {"term": "LLM (Large Language Model)", "line": 5, "defined": true},
+        {"term": "retry loop", "line": 5, "defined": true},
+        {"term": "corrective message", "line": 23, "defined": true},
+        {"term": "retry counter", "line": 31, "defined": true},
+        {"term": "max retries", "line": 37, "defined": true},
+        {"term": "fallback response", "line": 43, "defined": true}
+      ]
+    },
+    "formatting": {
+      "passed": true,
+      "wall_of_text": false,
+      "unlisted_sequence": false,
+      "no_inline_examples": false,
+      "bold_term_shape_used": true,
+      "notes": "All five key concepts use bold-term/plain-meaning shape. In Practice and Key Takeaways use bullet lists. Procedures use numbered steps in Worked Example. Corrective message and fallback shown as inline examples in Key Concepts."
+    },
+    "no_assessment_references": {
+      "passed": true,
+      "assessment_references_found": [],
+      "note": "Corpus section 4 contains 'Assessment A4 (Python and Prompt Engineering Portfolio, due this week)' but the reading artifact does NOT reproduce this language. Clean strip confirmed."
+    },
+    "scope": {
+      "passed": true,
+      "scope_creep_found": false,
+      "findings": [],
+      "note": "Reading stays tightly on retry loop pattern. Advanced techniques (exponential backoff, structured output libraries) mentioned as a one-sentence future pointer only — not taught. No scope creep."
+    },
+    "diagram_embed": {
+      "passed": true,
+      "embed_found": true,
+      "location": "Key Concepts section, line 9",
+      "syntax": "![Retry loop flowchart](artifacts/diagram.png)"
+    }
+  },
+  "gold_example_comparison": {
+    "gold_examples_available": ["2-1-what-makes-a-good-specification.reading.md", "3-4-how-llms-work-tokens-training-and-inference.reading.md"],
+    "assessment": "Reading meets gold-example bar: H1 title present, clean six-section template, bold-term definitions, inline code examples, analogy before abstraction (form-submission for retry loop), no frontmatter, no assessment prose, citations tightly linked. Structure and register align with both gold examples on file."
+  },
+  "summary": "10 checks run. 0 hard fails. 1 soft finding (word_count_meta_discrepancy — declared meta figure 1060 may not reflect final text; briefing estimate 1253 is soft-only at 4.4% over ceiling). Reading is structurally clean, beginner-readable, faithful to corpus, correctly strips assessment language, and embeds the diagram in Key Concepts. PASS — eligible for HITL #3."
+}

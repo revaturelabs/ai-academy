@@ -1,0 +1,38 @@
+---
+title: Branch and Merge Workflow
+theme: base
+themeVariables:
+  primaryColor: "#a5d8ff"
+  primaryBorderColor: "#4a9eed"
+  lineColor: "#555"
+flowchart:
+  htmlLabels: true
+  curve: basis
+---
+flowchart LR
+    subgraph MAIN["main branch"]
+        direction LR
+        A["<b>Commit A</b><br/><span style='font-size:12px;color:#6d28d9'>initial save</span>"]
+        B["<b>Commit B</b><br/><span style='font-size:12px;color:#6d28d9'>second save</span>"]
+        C["<b>Commit C</b><br/><span style='font-size:12px;color:#6d28d9'>branch point</span>"]
+        F["<b>Commit F</b><br/><span style='font-size:12px;color:#6d28d9'>merge commit</span>"]
+        A --> B --> C --> F
+    end
+
+    subgraph FEAT["feature branch — isolated work"]
+        direction LR
+        D["<b>Commit D</b><br/><span style='font-size:12px;color:#6d28d9'>feature work</span>"]
+        E["<b>Commit E</b><br/><span style='font-size:12px;color:#6d28d9'>feature done</span>"]
+        D --> E
+    end
+
+    C -->|"git checkout -b feature"| D
+    E -->|"git merge feature"| F
+
+    classDef act fill:#a5d8ff,stroke:#4a9eed,color:#000
+    classDef auto fill:#d0bfff,stroke:#8b5cf6,color:#000
+    classDef done fill:#b2f2bb,stroke:#22c55e,color:#000
+
+    class A,B,C act
+    class D,E auto
+    class F done

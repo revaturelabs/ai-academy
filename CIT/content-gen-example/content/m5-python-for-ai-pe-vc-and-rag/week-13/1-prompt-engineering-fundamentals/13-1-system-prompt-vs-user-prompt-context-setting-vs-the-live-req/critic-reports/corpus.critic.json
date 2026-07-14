@@ -1,0 +1,67 @@
+{
+  "critic": "corpus-critic",
+  "topic_id": "13.1",
+  "passed": true,
+  "at": "2026-06-13T00:00:00Z",
+  "depth_profile": "standard",
+  "estimated_word_count": 2320,
+  "checks": {
+    "required_sections": {
+      "passed": true,
+      "detail": "All required sections present and non-trivial. Section 3 (Learning Objectives): 6 objectives, ~120 words — passes ≥50w. Section 4 (Introduction): ~200 words — passes ≥50w. Section 5 (Core Concepts): 5 subsections with ~700 words total — passes ≥100w. Section 10 (Key Takeaways): 6 bullets, ~155 words — passes ≥50w."
+    },
+    "citation_density": {
+      "passed": true,
+      "resources_source": "web_search",
+      "primary_resources_cited": ["[1] tetrate.io — cited in sections 5.1, 5.3, 5.4, 5.5, 7, 8, 10"],
+      "supporting_resources_cited": ["[2] hamel.dev — cited in sections 5.1, 5.2, 5.4, 5.5, 6, 7, 8, 10", "[3] prompthub.us — cited in sections 5.2, 5.4, 7, 8, 10"],
+      "sections_5_6_7_density": "Estimated >60% of standalone factual assertions in sections 5, 6, 7 carry a [N] citation marker. Primary resource [1] cited ≥1 time. No fabricated citations detected.",
+      "detail": "Strict mode (web_search source) satisfied. All primary resources cited at least once."
+    },
+    "sequence_drift": {
+      "passed": true,
+      "concepts_introduced_this_topic": ["system prompt", "user prompt", "static context", "authority", "precedence", "static vs dynamic split", "persistent context"],
+      "prior_concepts_introduced": "All prior topics (1.1–12.14) have empty concepts_introduced arrays in sequence.index.json. Cross-refs Python and Anthropic API established via prerequisites 12.10 and 12.11.",
+      "forward_references_found": [],
+      "named_and_deferred": [
+        "role assignment — named in section 4 intro as building on this topic's foundation, not defined or taught",
+        "few-shot examples — named in section 4 intro as building on this topic's foundation, not defined or taught",
+        "output constraints — named in section 4 intro, not defined or taught",
+        "prompt injection — named in section 5.3 with explicit 'more advanced topic you will revisit later' pointer",
+        "resolution strategies — named in section 6 step 4 with 'coming in later topics' pointer"
+      ],
+      "detail": "All deferred concepts appear as bare names in ≤1 sentence with a 'covered later' pointer. No forward concept is defined or taught in this corpus."
+    },
+    "length_sanity": {
+      "passed": true,
+      "hard_failed": false,
+      "estimated_word_count": 2320,
+      "profile": "standard",
+      "profile_range": [3000, 4400],
+      "hard_fail_threshold": 2100,
+      "finding": "length_below_minimum",
+      "detail": "Estimated ~2,320 words against standard profile minimum of 3,000. Shortfall is ~22.7% below minimum, which is within the 30% buffer zone (hard-fail threshold = 2,100 words). Does not hard-fail. Soft finding: corpus is lighter than standard depth warrants — builder should consider expanding Core Concepts or Real-World Patterns to reach ~3,000 words before artifact generation."
+    },
+    "topic_scope": {
+      "passed": true,
+      "scope_creep_items": [],
+      "detail": "Headline scope: system prompt vs user prompt (context-setting vs live request). All content in Core Concepts, Implementation, and Real-World Patterns stays within this boundary. Pattern 3 (enforcing output format via system prompt) is in-scope as it demonstrates a direct application of the system prompt's role. 'Prompt injection' mentioned once with explicit future-topic deferral. 'Role assignment' named-and-deferred in intro. No concept is taught beyond the headline boundary."
+    },
+    "beginner_readability": {
+      "passed": true,
+      "hard_failed": false,
+      "findings": [
+        {
+          "code": "undefined_terms",
+          "severity": "soft",
+          "terms": ["GDPR"],
+          "detail": "GDPR appears unexplained in one example user-prompt quote in section 5.4: 'What are the reporting requirements for small businesses under GDPR?' It is inside a quoted string (illustrative example), not instructional prose. This is the only unexplained acronym — below the ≥2 soft-fail threshold."
+        }
+      ],
+      "jargon_dump": false,
+      "academic_register": false,
+      "detail": "LLM spelled out on first use in section 3 ('LLM (Large Language Model)'). API is treated as prior knowledge via prerequisites 12.10/12.11. All new terms (system prompt, user prompt, authority, precedence, static context, guardrails) are defined with a bold term + plain-language meaning on first use. No paragraph introduces 3+ undefined terms simultaneously. Sentences are short and active. No hedging phrases detected. One soft finding (GDPR in an example string) — does not escalate to hard fail (<3 distinct readability findings)."
+    }
+  },
+  "verdict": "PASS — all 6 checks passed. One soft finding: word count (~2,320 words) is below the standard profile minimum of 3,000 words but above the 30%-outside hard-fail threshold of 2,100 words; builder should expand before artifact generation. One minor soft readability finding: GDPR unexplained in an illustrative example string (section 5.4). No forward references, no scope creep, citation density satisfactory, required sections complete."
+}

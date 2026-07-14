@@ -1,0 +1,49 @@
+$CATEGORY: CIT/M5/week-13/13.10-13-10-why-version-control-matters-never-lose-working-code-track-wh
+
+::q1:: A version control system (VCS) is best described as a tool that... {
+~automatically finds and fixes bugs in your code by comparing older and newer file versions#No — a VCS records changes passively; it does not inspect code for bugs or fix them.
+=records every change to your project files — what changed, when, who changed it, and why — so you can return to any earlier version#Correct — this is the complete definition of a VCS (corpus §5.1).
+~backs up your files to a remote server on a fixed schedule, such as once every 24 hours#No — a VCS is not a scheduled backup service; you control when checkpoints are saved.
+~prevents two developers from editing the same file at the same time by locking it#No — a VCS allows concurrent edits; it merges changes rather than locking files.
+#### Tests the core definition of a VCS (corpus §5.1).
+}
+
+::q2:: Which of the following is a genuine risk of managing your code without a version control system? {
+~Your code will run more slowly because there is no version index available to speed up execution#No — a VCS has no effect on how fast your code runs; execution speed is unrelated.
+~Other developers will be able to read your code without your permission due to missing access controls#No — file visibility is an access-control concern, not a consequence of lacking a VCS.
+=You might save over a working version of your script and have no way to recover it#Correct — the overwrite trap is a well-documented failure mode of manual versioning (corpus §5.2).
+~You will not be able to run your scripts on more than one computer without reinstalling them#No — running scripts on multiple machines is a portability concern unrelated to version control.
+#### Tests knowledge of the overwrite trap — one of six manual-versioning failure modes (corpus §5.2).
+}
+
+::q3:: Compared to the manual folder-copy approach (for example, saving folders named `project_FINAL_v2`), a version control system... {
+~stores only the most recent version of each file in order to keep disk usage as small as possible#No — a VCS stores the full history of every version, not just the latest file.
+~requires an active internet connection every time you want to save a local checkpoint#No — a local VCS works completely offline; internet is only needed for remote sharing.
+~automatically pushes every change to your teammates the moment you save the file#No — distributing changes requires an explicit push action; nothing is sent automatically on save.
+=records not just what changed but also who made the change and why, as part of every checkpoint#Correct — this is the key advantage over folder copies, which store no authorship or reason (corpus §5.2 and §5.3).
+#### Tests the comparison between manual versioning and a VCS, focusing on what each approach tracks (corpus §5.2 and §5.3).
+}
+
+::q4:: A developer saves a checkpoint with the message "fixed crash when input is empty". Why is this message more useful than simply saving the changed file? {
+=It tells future readers — including yourself — why the change was made, so the decision can be understood without guessing#Correct — the message records the reason, turning a bare snapshot into a meaningful entry in the change log (corpus §5.1 and §5.5).
+~It makes the checkpoint smaller because the VCS uses the message text to compress the stored file data#No — checkpoint messages have no effect on how the VCS stores or compresses file data.
+~It stops the checkpoint from being overwritten if two developers happen to save at exactly the same moment#No — conflict prevention in a VCS works through branching and merging, not through commit messages.
+~It automatically triggers a push to the remote server at the moment the message is submitted#No — a commit message does not initiate a remote push; that is a separate, explicit action.
+#### Tests understanding of the change log and why the 'why' is the key addition over a simple backup (corpus §5.1 and §5.5).
+}
+
+::q5:: Based on this topic, which statement about Git and GitHub is correct? {
+~GitHub is a version control system you install on your own computer; Git is the cloud service that stores your repositories online#No — the roles are reversed\: Git is the local VCS tool and GitHub is the cloud hosting service.
+=Git is the world's most widely used version control system; GitHub is a website that hosts Git repositories online#Correct — Git is the tool, GitHub is the hosting platform; both are introduced here for the next topics (corpus §5.6).
+~Git is a programming language used to write version history; GitHub compiles and runs that language for you#No — Git is a VCS tool, not a programming language, and GitHub does not compile anything.
+~Git and GitHub are two separate, competing version control systems and you pick one based on your project size#No — Git and GitHub are complementary tools, not competing alternatives for the same job.
+#### Tests recognition of Git and GitHub as named terms introduced for the next topics (corpus §5.6).
+}
+
+::q6:: A student edits a Python script, saves it, and later finds a bug introduced by those edits. She opens her folder and sees only one file — `script.py`. Which failure mode from the manual-versioning approach does this illustrate? {
+~Merge chaos — combining her edits with another developer's changes caused an unexpected conflict and introduced the bug#No — merge chaos requires multiple people editing separate copies; she worked entirely alone.
+~Disk clutter — saving too many versions of the script used up her storage space and caused the bug to appear#No — disk clutter is about having too many copies, not too few; here there is only one file.
+=The overwrite trap — editing and saving the file destroyed the previous working version with no recovery option#Correct — she has one file and no history, so the earlier working state is permanently gone (corpus §5.2).
+~Distributed failure — working without a network connection prevented her changes from being backed up remotely#No — the distributed aspect of version control is about remote syncing, unrelated to this single-file scenario.
+#### Applied scenario testing recognition of the overwrite trap in a realistic solo-developer situation (corpus §5.2).
+}

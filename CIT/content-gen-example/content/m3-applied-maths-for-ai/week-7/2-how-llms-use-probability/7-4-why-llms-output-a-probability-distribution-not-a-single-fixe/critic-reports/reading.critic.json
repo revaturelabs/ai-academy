@@ -1,0 +1,64 @@
+{
+  "critic": "reading-critic",
+  "topic_id": "7.4",
+  "artifact": "artifacts/reading.md",
+  "run_at": "2026-06-22T00:00:00Z",
+  "passed": true,
+  "verdict": "PASS — all 9 checks passed. Reading is well-formed, within length budget, fully cited, scope-clean, and beginner-usable.",
+  "checks": {
+    "format_discipline": {
+      "passed": true,
+      "findings": [],
+      "detail": "No frontmatter. First line is the H1 title. All six required sections present in correct order: Overview, Key Concepts, Worked Example, In Practice, Key Takeaways, References. Sidecar has all required fields: word_count (1395), estimated_read_minutes (7), citations_used ([1,2,3]), sections."
+    },
+    "length": {
+      "passed": true,
+      "findings": [],
+      "word_count": 1395,
+      "estimated_minutes": 6.07,
+      "target_word_range": [1200, 1600],
+      "target_minute_range": [6, 8],
+      "detail": "1395 words is within 1200–1600 target. 1395/230 = 6.07 min is within 6–8 min target."
+    },
+    "citations": {
+      "passed": true,
+      "findings": [],
+      "detail": "Primary resource [1] cited multiple times throughout. All three inline markers [1], [2], [3] have matching bibliography entries in the References section. No orphan inline markers; no orphan bibliography entries."
+    },
+    "no_forward_references": {
+      "passed": true,
+      "findings": [],
+      "detail": "Temperature is named-and-deferred exactly once in Key Takeaways: 'How much randomness is injected is controlled by a setting you will explore in the next topic.' No definition given. Neural network architecture is not taught — raw scores are introduced as a concept but their internal derivation is not explained. Transformer internals absent. Topics 7.1–7.3 and week 1–6 vocabulary referenced appropriately."
+    },
+    "faithfulness": {
+      "passed": true,
+      "findings": [],
+      "assertions_sampled": 10,
+      "assertions_unsupported": 0,
+      "detail": "10 assertions sampled and verified against corpus: token definition, vocabulary size range (50k–100k), probability distribution bullet-list definition, 'The sky is blue' example table, softmax description, sampling definition, stochastic/deterministic comparison table, generation loop three-step structure, cascade effect description, A 100-token response means the loop ran 100 times. All 10 traced directly to corpus sections 5.1–5.5."
+    },
+    "beginner_readability": {
+      "passed": true,
+      "findings": [],
+      "detail": "All key terms defined on first use with bold-term / plain-meaning pattern: token (line 13), vocabulary (line 19), probability distribution (line 22), softmax (line 50), sampling (line 71), stochastic and deterministic (line 77). No paragraph introduces 3+ new terms without definition. Concepts introduced with concrete examples (sky/weather analogy) before abstraction. No hedging phrases detected. Sentence lengths are within plain-register norms."
+    },
+    "formatting": {
+      "passed": true,
+      "findings": [],
+      "detail": "No paragraph exceeds 6 sentences. The generation loop procedure is rendered as a numbered list (lines 56–98). The full procedure summary in Worked Example is a numbered 7-step list (lines 118–127). Inline examples present in Key Concepts ('The sky is' table) beyond the Worked Example section alone. Bold definitions used throughout for all key terms."
+    },
+    "assessment_reference": {
+      "passed": true,
+      "findings": [],
+      "detail": "No mentions of A3, due dates, grade weights, or assessment IDs found in reading.md."
+    },
+    "scope": {
+      "passed": true,
+      "findings": [],
+      "detail": "Content is tightly scoped to the headline: tokens, vocabulary, probability distribution, softmax, sampling, stochastic vs deterministic, and the generation loop. Temperature named-and-deferred in one sentence with no definition. Neural network architecture and transformer internals not taught. No scope creep detected."
+    }
+  },
+  "hard_fail_triggers": [],
+  "soft_findings_count": 0,
+  "escalated_to_hard_fail": false
+}

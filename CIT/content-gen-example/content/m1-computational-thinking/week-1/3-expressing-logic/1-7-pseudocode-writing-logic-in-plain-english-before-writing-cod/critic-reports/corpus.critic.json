@@ -1,0 +1,49 @@
+{
+  "passed": true,
+  "checks": {
+    "required_sections": {
+      "passed": true,
+      "notes": "All four required sections present and non-trivial. Section 3 (Learning Objectives) ~80 words ≥50. Section 4 (Introduction) ~165 words ≥50. Section 5 (Core Concepts) ~870 words ≥100. Section 10 (Key Takeaways) ~95 words ≥50."
+    },
+    "citation_density": {
+      "passed": true,
+      "primary_cited": true,
+      "claim_citation_rate": 0.85,
+      "notes": "resources_source=web_search → strict mode. Primary resource [1] (codecademy.com) cited in sections 4, 5.1, 5.2, 5.3, 5.4, 5.5, 6, 7, 8, 9. Supporting resources [2] (geeksforgeeks.org) and [3] (builtin.com) also cited throughout. Estimated ≥85% of standalone factual assertions in sections 5, 6, 7 carry a citation marker — well above the 60% threshold."
+    },
+    "sequence_drift": {
+      "passed": true,
+      "forward_refs": ["syntax (used without definition at lines 80, 267, 322 — not in prior concepts_introduced nor this topic's concepts_introduced; soft concern only as context makes meaning inferrable)"],
+      "notes": "No hard forward references to later-topic concepts (flowcharts, algorithms, etc.) found. 'syntax' is a CS term used without explicit definition but in sufficiently clear context (the surrounding text describes it as language-specific punctuation/rules in section 4). 'function' used illustratively in section 5.2 and 5.5 in a comparison context, not as a defined concept. No term from a future topic (1.8+) is taught here. Verdict: pass with soft note on 'syntax'."
+    },
+    "length_sanity": {
+      "passed": true,
+      "word_count": 2630,
+      "profile": "standard",
+      "notes": "Estimated ~2630 words (prose + inline code). Hard range 1500–6000: pass. Standard profile target 3000–4400: corpus is below target (~370 words below floor) but within the 30% outside-range threshold (floor × 0.70 = 2100; 2630 > 2100). Length passes the hard check. Reading artifact will target 1200–1600 words (standard profile)."
+    },
+    "scope_creep": {
+      "passed": true,
+      "findings": [],
+      "notes": "No flowchart content (topic 1.8) appears despite the primary resource covering flowcharts. No algorithm content (topic 1.9) appears. Python code shown in section 5.5 is used as a contrast/comparison only to illustrate the pseudocode/real-code distinction — it is not teaching Python. Section 7 mentions 'data pipelines' in one sentence with an explicit 'You will encounter this in later modules' deferral — acceptable mention-and-defer form. No scope_creep findings."
+    },
+    "beginner_readability": {
+      "passed": true,
+      "findings": [
+        {
+          "code": "undefined_terms",
+          "terms": ["syntax"],
+          "detail": "'syntax' appears at line 80 ('Get lost in the language's syntax'), line 267 ('remember exact language syntax'), and line 322 ('Pseudocode separates logic from syntax') without an explicit plain-language definition. Section 4 implicitly describes syntax as 'specific words, specific punctuation, and specific formatting' but never uses the word 'syntax' to label that description. Absolute beginners may not recognise the term on first encounter."
+        },
+        {
+          "code": "undefined_terms",
+          "terms": ["function"],
+          "detail": "'function' appears at line 75 (in an illustrative machine-execution example) and line 190 ('Python uses a specific function (`input()`)'). Used illustratively in a comparison context, not as a defined concept, but may be unfamiliar to zero-background learners."
+        }
+      ],
+      "notes": "2 soft findings (both undefined_terms) — below the ≥3 distinct findings threshold for hard fail escalation. No jargon dumps (each building block introduced one per subsection). Register is plain, confident, and direct — no hedging phrases detected. Average sentence length is well under 25 words throughout. Escalation to hard fail not triggered."
+    }
+  },
+  "verdict": "PASS. All six checks pass. Corpus is well-structured, clearly written, and scoped correctly to pseudocode. Primary resource cited; citation density high. Three building blocks (sequence, decision, repetition) are introduced cleanly with examples. No forward references to flowcharts (1.8) or algorithms (1.9). Two soft readability findings: 'syntax' and 'function' used without explicit plain-language definitions — recommend the reading-builder define 'syntax' on first use. Word count (~2630) is below the standard profile target floor of 3000 but within the 30% outside-range tolerance; reading artifact should target the full 1200–1600 word range.",
+  "at": "2026-06-21T17:10:00Z"
+}

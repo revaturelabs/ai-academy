@@ -1,0 +1,60 @@
+{
+  "topic_id": "9.10",
+  "artifact": "quiz",
+  "critic_run_at": "2026-06-13",
+  "verdict": "pass",
+  "passed": true,
+  "checks": {
+    "positional_bias": {
+      "passed": true,
+      "distribution": [2, 2, 1, 1],
+      "distribution_by_position": {"0": 2, "1": 2, "2": 1, "3": 1},
+      "total_mcqs": 6,
+      "max_share": 0.333,
+      "threshold": 0.40,
+      "notes": "Max share 33.3% across positions 0 and 1 — well under 40% fail threshold."
+    },
+    "length_bias": {
+      "passed": true,
+      "longest_correct_rate": 0.0,
+      "baseline": 0.25,
+      "fail_threshold": 0.40,
+      "per_question": [
+        {"id": "q1", "correct_len": 152, "mean": 157.5, "is_longest": false, "exceeds_20pct": false},
+        {"id": "q2", "correct_len": 203, "mean": 212.0, "is_longest": false, "exceeds_20pct": false},
+        {"id": "q3", "correct_len": 252, "mean": 217.5, "is_longest": false, "exceeds_20pct": false},
+        {"id": "q4", "correct_len": 198, "mean": 204.0, "is_longest": false, "exceeds_20pct": false},
+        {"id": "q5", "correct_len": 237, "mean": 203.2, "is_longest": true, "exceeds_20pct": false},
+        {"id": "q6", "correct_len": 228, "mean": 215.5, "is_longest": false, "exceeds_20pct": false}
+      ],
+      "notes": "q5 correct is longest (237) but delta 33.8 < 20% of mean (40.6). No question flagged."
+    },
+    "distractor_plausibility": {
+      "passed": true,
+      "absurd_rate": 0.0,
+      "total_distractors": 18,
+      "absurd_count": 0,
+      "notes": "All distractors represent genuine beginner misconceptions: combined-accuracy confusion, FP/FN direction errors, wrong step ordering, human-baseline misapplication, alert-fatigue inversion."
+    },
+    "objective_coverage": {
+      "passed": true,
+      "uncovered_objectives": [],
+      "coverage": [
+        {"objective": "Define acceptable error as a deliberate threshold decision", "tested_by": ["q1"]},
+        {"objective": "Distinguish FP/FN and explain asymmetric costs", "tested_by": ["q2"]},
+        {"objective": "Same error rate acceptable in one context, unacceptable in another", "tested_by": ["q3"]},
+        {"objective": "Apply four-step threshold-setting process", "tested_by": ["q4"]},
+        {"objective": "Describe human baseline — useful but insufficient reference point", "tested_by": ["q5"]},
+        {"objective": "Alert fatigue as consequence of too-strict thresholds (corpus §6.2)", "tested_by": ["q6"], "note": "Not a numbered corpus LO but tested with explicit corpus §6.2 citation in sidecar rationale"}
+      ]
+    },
+    "beginner_fairness": {
+      "passed": true,
+      "jargon_in_stem": {"passed": true, "issues": []},
+      "out_of_scope_questions": {"passed": true, "issues": []},
+      "unfair_distractors": {"passed": true, "issues": []},
+      "notes": "Stems use plain language throughout. FP/FN spelled out as 'false positive'/'false negative' in stems. All content within topic scope."
+    }
+  },
+  "cycle": 1
+}

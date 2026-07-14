@@ -1,0 +1,187 @@
+{
+  "topic_id": "5.10",
+  "stage": "topic_artifacts_approved",
+  "gates": {
+    "resources_captured": true,
+    "corpus_generated": true,
+    "corpus_critic_passed": true,
+    "corpus_human_approved": true,
+    "reading_generated": true,
+    "reading_critic_passed": true,
+    "quiz_generated": true,
+    "quiz_critic_passed": true,
+    "diagram_generated": true,
+    "diagram_critic_passed": true,
+    "module_drift_passed": true,
+    "course_drift_passed": true,
+    "topic_artifacts_human_approved": true,
+    "week_human_approved": true
+  },
+  "history": [
+    {
+      "at": "2026-06-22T14:04:45Z",
+      "op": "set",
+      "gate": "resources_captured",
+      "value": true
+    },
+    {
+      "at": "2026-06-22T14:04:45Z",
+      "op": "stage",
+      "to": "awaiting_corpus"
+    },
+    {
+      "at": "2026-06-22T14:04:45Z",
+      "op": "log",
+      "msg": "Captured 3 resources (source=web_search), primary: NIST AI 100-1 PDF"
+    },
+    {
+      "at": "2026-06-22T14:07:47Z",
+      "op": "set",
+      "gate": "corpus_generated",
+      "value": true
+    },
+    {
+      "at": "2026-06-22T14:07:47Z",
+      "op": "stage",
+      "to": "awaiting_corpus_critic"
+    },
+    {
+      "at": "2026-06-22T14:07:47Z",
+      "op": "log",
+      "msg": "corpus drafted 1490w 8 sections 38 cites; artifact_plan.diagram set true (RMF cycle) per builder rec"
+    },
+    {
+      "at": "2026-06-22T14:09:22Z",
+      "op": "set",
+      "gate": "corpus_critic_passed",
+      "value": true
+    },
+    {
+      "at": "2026-06-22T14:09:22Z",
+      "op": "stage",
+      "to": "awaiting_corpus_human_review"
+    },
+    {
+      "at": "2026-06-22T14:09:22Z",
+      "op": "log",
+      "msg": "corpus critic PASS; soft: ~3% over std ceiling (non-blocking)"
+    },
+    {
+      "at": "2026-06-22T14:11:14Z",
+      "op": "set",
+      "gate": "corpus_human_approved",
+      "value": true
+    },
+    {
+      "at": "2026-06-22T14:11:14Z",
+      "op": "stage",
+      "to": "corpus_approved"
+    },
+    {
+      "at": "2026-06-22T14:11:14Z",
+      "op": "log",
+      "msg": "HITL#2: all sections approved, depth=standard (accepted recommendation), diagram=true"
+    },
+    {
+      "at": "2026-06-22T14:13:31Z",
+      "op": "set",
+      "gate": "diagram_generated",
+      "value": true
+    },
+    {
+      "at": "2026-06-22T14:13:31Z",
+      "op": "set",
+      "gate": "diagram_critic_passed",
+      "value": true
+    },
+    {
+      "at": "2026-06-22T14:13:31Z",
+      "op": "stage",
+      "to": "awaiting_diagram_critic"
+    },
+    {
+      "at": "2026-06-22T14:13:32Z",
+      "op": "log",
+      "msg": "diagram PASS (2 cycles, 4-node RMF cycle, loop-back edge)"
+    },
+    {
+      "at": "2026-06-22T14:16:58Z",
+      "op": "set",
+      "gate": "quiz_generated",
+      "value": true
+    },
+    {
+      "at": "2026-06-22T14:16:58Z",
+      "op": "set",
+      "gate": "quiz_critic_passed",
+      "value": true
+    },
+    {
+      "at": "2026-06-22T14:16:59Z",
+      "op": "log",
+      "msg": "quiz PASS (cycle1) 6 MCQ max_share 0.333 LO 5/5"
+    },
+    {
+      "at": "2026-06-22T14:17:16Z",
+      "op": "set",
+      "gate": "reading_generated",
+      "value": true
+    },
+    {
+      "at": "2026-06-22T14:17:16Z",
+      "op": "set",
+      "gate": "reading_critic_passed",
+      "value": true
+    },
+    {
+      "at": "2026-06-22T14:17:17Z",
+      "op": "stage",
+      "to": "awaiting_topic_artifacts_review"
+    },
+    {
+      "at": "2026-06-22T14:17:17Z",
+      "op": "log",
+      "msg": "reading PASS (cycle1) 1395w diagram embedded; all critics pass -> HITL#3"
+    },
+    {
+      "at": "2026-06-22T14:18:56Z",
+      "op": "set",
+      "gate": "topic_artifacts_human_approved",
+      "value": true
+    },
+    {
+      "at": "2026-06-22T14:18:56Z",
+      "op": "stage",
+      "to": "topic_artifacts_approved"
+    },
+    {
+      "at": "2026-06-22T14:18:56Z",
+      "op": "log",
+      "msg": "HITL#3 approved: reading+quiz+diagram all critic-PASS, no carry-over"
+    },
+    {
+      "at": "2026-06-22T15:14:56Z",
+      "op": "set",
+      "gate": "module_drift_passed",
+      "value": true
+    },
+    {
+      "at": "2026-06-22T15:17:56Z",
+      "op": "set",
+      "gate": "week_human_approved",
+      "value": true
+    },
+    {
+      "at": "2026-06-23T10:39:02Z",
+      "op": "set",
+      "gate": "course_drift_passed",
+      "value": true
+    },
+    {
+      "at": "2026-06-23T11:29:09Z",
+      "op": "set",
+      "gate": "course_drift_passed",
+      "value": true
+    }
+  ]
+}

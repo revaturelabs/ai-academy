@@ -1,0 +1,88 @@
+{
+  "critic": "corpus-critic",
+  "topic_id": "1.12",
+  "topic_title": "Choosing your domain — writing a 3-sentence problem statement",
+  "at": "2026-06-22T00:00:00Z",
+  "passed": true,
+  "depth_profile": "atomic",
+  "word_count_estimate": 1780,
+  "checks": {
+    "required_sections": {
+      "passed": true,
+      "findings": [],
+      "detail": {
+        "section_3_learning_objectives": { "present": true, "word_count_approx": 72, "min_required": 50, "passed": true },
+        "section_4_introduction": { "present": true, "word_count_approx": 145, "min_required": 50, "passed": true },
+        "section_5_core_concepts": { "present": true, "word_count_approx": 620, "min_required": 100, "passed": true },
+        "section_10_key_takeaways": { "present": true, "word_count_approx": 95, "min_required": 50, "passed": true }
+      }
+    },
+    "citation_density": {
+      "passed": true,
+      "resources_source": "web_search",
+      "findings": [],
+      "detail": {
+        "primary_resource_cited": true,
+        "primary_resource": "[1] resources.nu.edu — cited in §4, §5.1, §5.2, §5.3 (×2), §5.4, §6, §7, §9",
+        "supporting_resource_2_cited": true,
+        "supporting_resource_3_cited": true,
+        "section_5_citation_coverage": "high — all major factual assertions in §5 carry [1], [2], or [3] markers",
+        "section_6_citation_coverage": "adequate — worked example at end carries [1][2]",
+        "section_7_citation_coverage": "high — all standalone factual assertions carry markers",
+        "fake_citations_detected": false
+      }
+    },
+    "sequence_drift": {
+      "passed": true,
+      "findings": [],
+      "detail": {
+        "allowed_prior_concepts_used": [
+          "computational thinking",
+          "decomposition",
+          "abstraction",
+          "pseudocode",
+          "flowchart",
+          "algorithm"
+        ],
+        "new_concepts_introduced": [
+          "problem domain",
+          "problem statement",
+          "3-sentence format",
+          "context (problem statement component)",
+          "impact (problem statement component)"
+        ],
+        "forward_references_found": [],
+        "notes": "Section 7 names 'Full specification writing' in one sentence with an explicit 'covered later in the course' pointer — valid named-and-deferred, not a forward-reference violation. No requirements engineering, user stories, or project planning concepts are introduced or defined."
+      }
+    },
+    "length_sanity": {
+      "passed": true,
+      "findings": [],
+      "depth_profile": "atomic",
+      "word_count_estimate": 1780,
+      "range_min": 1500,
+      "range_max": 2400,
+      "within_range": true
+    },
+    "topic_scope": {
+      "passed": true,
+      "findings": [],
+      "detail": {
+        "headline_scope": "Choosing your domain + writing a 3-sentence problem statement",
+        "scope_creep_items": [],
+        "notes": "All content stays within the headline boundary. Section 5.4 ('What Makes a Problem Statement Good?') tests quality of the statement being written — directly in scope. No specification writing, requirements engineering, user stories, or full project planning is taught. The single mention of 'Full specification writing' in §7 is a one-sentence named-and-deferred pointer."
+      }
+    },
+    "beginner_readability": {
+      "passed": true,
+      "findings": [],
+      "detail": {
+        "undefined_terms": [],
+        "jargon_dumps": [],
+        "academic_register_issues": [],
+        "notes": "'problem domain' defined on first use in §5.1; 'problem statement' defined on first use in §5.2; '3-sentence format' defined in §5.3. No acronyms used without spell-out. No paragraph stacks 3+ new terms. Sentences are short, direct, and active. No hedging language detected. 'Specification Portfolio' appears only as a forward assessment reference, not as a defined technical concept."
+      }
+    }
+  },
+  "verdict": "PASS — all 6 checks pass. Corpus is within atomic word-count range (~1780 words). Primary resource [1] is cited throughout. Sections 3, 4, 5, and 10 meet minimum word thresholds. No forward references or sequence drift detected; specification writing is correctly named-and-deferred. No scope creep: the corpus stays strictly within 'choosing a domain + writing a 3-sentence problem statement'. Beginner readability is strong with all new terms defined on first use and no jargon dumps."
+}

@@ -1,0 +1,94 @@
+{
+  "critic": "corpus-critic",
+  "topic_id": "9.4",
+  "topic_title": "Anchoring bias — over-relying on the first piece of information received",
+  "at": "2026-06-12T00:00:00Z",
+  "passed": true,
+  "depth_profile": "standard",
+  "word_count_estimate": 2250,
+  "word_count_range_applied": "1500–6000 (standard, per task spec)",
+  "checks": {
+    "required_sections": {
+      "passed": true,
+      "findings": [],
+      "detail": {
+        "section_3_learning_objectives": { "present": true, "word_count_gte_50": true },
+        "section_4_introduction":        { "present": true, "word_count_gte_50": true },
+        "section_5_core_concepts":       { "present": true, "word_count_gte_100": true },
+        "section_10_key_takeaways_vocab":{ "present": true, "word_count_gte_50": true }
+      }
+    },
+    "citation_density": {
+      "passed": true,
+      "resources_source": "web_search",
+      "mode": "strict",
+      "primary_resource_cited": true,
+      "primary_resource_citation_count": 4,
+      "citation_coverage_sections_5_7": "~60% (borderline pass — 9 of ~15 standalone factual assertions carry [N] markers across sections 5 and 7; section 6 is a worked scenario with no empirical claims)",
+      "fake_citations_detected": false,
+      "findings": [
+        {
+          "code": "citation_density_marginal",
+          "severity": "soft",
+          "detail": "Section 5 alone is ~50% cited (6 of ~12 claims). Combined with section 7 (3/3 cited) the overall rate reaches ~60%. Borderline pass; recommend adding [3] to the universality claims at lines 90-91 and a citation to the System 1 / anchoring primacy claim (line 99) in a future revision."
+        }
+      ]
+    },
+    "sequence_drift": {
+      "passed": true,
+      "allowed_prior_concepts": [
+        "System 1 thinking", "cognitive heuristics", "automatic processing", "fast thinking", "pattern matching",
+        "System 2 thinking", "working memory", "cognitive load", "cognitive fatigue", "serial processing",
+        "deliberate processing", "cognitive capacity",
+        "confirmation bias", "selective search", "biased interpretation", "selective memory",
+        "motivated reasoning", "cognitive economy", "Wason 2-4-6 task"
+      ],
+      "this_topic_concepts": [
+        "anchoring bias", "anchor", "adjustment heuristic", "insufficient adjustment",
+        "primacy effect", "first-pass anchor"
+      ],
+      "forward_references_found": [],
+      "deferred_mentions_accepted": [
+        {
+          "term": "Judgment Framework",
+          "lines": [95, 187],
+          "form": "named-and-deferred with 'you will cover it later' pointer — compliant one-sentence mention"
+        }
+      ],
+      "findings": []
+    },
+    "length_sanity": {
+      "passed": true,
+      "word_count_estimate": 2250,
+      "range_min": 1500,
+      "range_max": 6000,
+      "within_range": true,
+      "findings": []
+    },
+    "topic_scope": {
+      "passed": true,
+      "headline": "Anchoring bias — over-relying on the first piece of information received",
+      "scope_creep_items": [],
+      "notes": "No adjacent concept is taught beyond the headline. Confirmation bias appears only in section 5.6 as a backward-reference comparison table (introduced at 9.3) — not taught here. Automation bias is not mentioned. The Judgment Framework is named and deferred twice, never defined or taught. Primacy effect is a listed concept_introduced for 9.4 and is defined appropriately.",
+      "findings": []
+    },
+    "beginner_readability": {
+      "passed": true,
+      "undefined_terms": [],
+      "jargon_dump_paragraphs": [],
+      "academic_register_instances": [
+        {
+          "phrase": "Research suggests",
+          "line": 80,
+          "note": "Single instance — below the 3-instance threshold; not a hard fail"
+        }
+      ],
+      "overall_readability_finding_count": 0,
+      "findings": []
+    }
+  },
+  "verdict": "PASSED — all six checks pass; one soft finding noted on citation density (borderline 60% coverage in section 5 alone, passes when section 7 is included) and one marginal hedging phrase ('Research suggests', line 80, single instance). No hard failures. Corpus is fit to ground downstream artifacts.",
+  "soft_findings_count": 1,
+  "hard_failures_count": 0,
+  "recommended_action": "proceed"
+}

@@ -1,0 +1,45 @@
+{
+  "type": "topic",
+  "id": "7.6",
+  "title": "Mean, median, mode — measuring consistency across AI runs",
+  "slug": "7-6-mean-median-mode-measuring-consistency-across-ai-runs",
+  "position_in_module": 1,
+  "week_num": 7,
+  "session_name": "Probability, Statistics and AI Confidence",
+  "module": {
+    "position": 3,
+    "slug": "3-measuring-ai-performance",
+    "title": "Measuring AI Performance"
+  },
+  "course": {
+    "code": "M3",
+    "slug": "m3-applied-maths-for-ai",
+    "title": "Applied Maths for AI"
+  },
+  "next_assessment": {
+    "id": "A3",
+    "due_week": 10,
+    "title": "Maths and Cognition Lab Report",
+    "weight": "15%"
+  },
+  "paths": {
+    "corpus": "topic_corpus.md",
+    "resources": "topic.resources.json",
+    "progress": "topic.progress.json",
+    "artifacts_dir": "artifacts/",
+    "critic_reports_dir": "critic-reports/"
+  },
+  "artifact_plan": {
+    "diagram": false,
+    "depth_profile": "standard",
+    "depth_signals": "Three distinct sub-concepts (mean, median, mode) each needing definition, example, and AI-specific application — more than atomic but no pipeline warranting deep.",
+    "reading_word_range": [1200, 1600],
+    "reading_minutes_range": [6, 8],
+    "quiz_questions_range": [5, 6],
+    "quiz_include_short_answer": false,
+    "hitl2_confirmed_at": "2026-06-23T00:00:00Z",
+    "hitl2_sections_kept": [2, 3, 4, 5, 6, 7, 8, 9, 10, 11]
+  },
+  "expected_delivery_minutes": 7,
+  "status": "corpus_drafted"
+}

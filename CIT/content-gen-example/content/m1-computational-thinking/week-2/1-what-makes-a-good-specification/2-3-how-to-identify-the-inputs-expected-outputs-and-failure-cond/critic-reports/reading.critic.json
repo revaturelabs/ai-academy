@@ -1,0 +1,82 @@
+{
+  "critic": "reading-critic",
+  "topic_id": "2.3",
+  "run_at": "2026-06-16T00:00:00Z",
+  "passed": true,
+  "verdict": "All checks pass. The reading meets the word-count and reading-time targets (1172 words, ~5.1 min at 230 wpm / ~5.9 min at 200 wpm, both within the 5–7 min target). All three primary resources are cited inline and in the References section with no orphan markers or bibliography entries. No forward references; backward references to topic 2.1 are compliant. All ten sampled assertions trace faithfully to the corpus. Beginner readability is strong: non-everyday terms ('hallucination', 'observable') are defined in plain language on first use; no jargon dumps; concrete examples accompany each concept. Formatting is compliant: paragraphs stay within ~4 sentences, multi-item sets are rendered as tables and bullets, inline examples appear in every conceptual section, and bold-term definitions follow the prescribed shape. No assessment references (A1 / due dates / weights) appear. Scope is clean: only inputs, expected outputs, and failure conditions are taught; the other three spec components are named and deferred without definition. Compared to the 2-1 gold example (same module, standard-depth conceptual topic), this reading matches the required sectioning, depth, beginner tone, and formatting density, and correctly omits the assessment-reference defect flagged in that gold example.",
+  "checks": {
+    "format_discipline": {
+      "passed": true,
+      "frontmatter_present": false,
+      "meta_sidecar_missing": false,
+      "section_template_violation": false,
+      "sections_found": ["Overview", "Key Concepts", "Worked Example", "In Practice", "Key Takeaways", "References"],
+      "notes": "First non-empty line is the H1 title. Sidecar present and valid. Exactly the required six sections in correct order."
+    },
+    "length": {
+      "passed": true,
+      "word_count": 1172,
+      "target_word_range": [1000, 1400],
+      "estimated_read_minutes_at_230wpm": 5.1,
+      "estimated_read_minutes_at_200wpm": 5.9,
+      "target_minute_range": [5, 7],
+      "notes": "Word count and both wpm estimates fall within the 5–7 min target range."
+    },
+    "citations": {
+      "passed": true,
+      "primary_resources_required": [
+        "https://medium.com/@wanimohit1/specification-driven-development-how-ai-is-transforming-software-engineering-c01510ea03e3",
+        "https://launchdarkly.com/blog/prompt-engineering-best-practices/",
+        "https://galileo.ai/blog/agent-failure-modes-guide"
+      ],
+      "all_primary_cited": true,
+      "orphan_inline_markers": [],
+      "orphan_bibliography_entries": [],
+      "notes": "All three primary resources cited inline at least once; bibliography lists all three with matching URLs."
+    },
+    "no_forward_references": {
+      "passed": true,
+      "forward_references_found": [],
+      "notes": "References to 'topic 2.1' are backward. Companion topics deferred by name only with no defining clauses."
+    },
+    "faithfulness": {
+      "passed": true,
+      "assertions_sampled": 10,
+      "unsupported_assertions": 0,
+      "notes": "All sampled assertions (six-component table, input types table, three output dimensions, hallucination definition, failure condition categories and examples, worked example, anti-patterns table, key takeaways) trace directly to corpus sections 5.1–5.9 and 7–10."
+    },
+    "beginner_readability": {
+      "passed": true,
+      "undefined_terms": [],
+      "jargon_dump": null,
+      "abstract_first": false,
+      "academic_register": false,
+      "notes": "Non-everyday terms defined on first use ('hallucination' line 74, 'observable' line 48). No paragraph with 3+ simultaneous new terms. Concrete examples accompany abstractions. No hedging phrases found."
+    },
+    "formatting": {
+      "passed": true,
+      "wall_of_text": null,
+      "unlisted_sequence": null,
+      "no_inline_examples": false,
+      "bold_term_definitions": true,
+      "notes": "All paragraphs within ~4 sentences. Procedures and multi-item sets rendered as tables and bulleted lists. Inline examples present in every concept-introducing section. Bold-term definitions applied consistently."
+    },
+    "assessment_reference": {
+      "passed": true,
+      "occurrences": [],
+      "notes": "No assessment IDs, due weeks, or grade weights appear in the reading."
+    },
+    "scope": {
+      "passed": true,
+      "scope_creep": [],
+      "notes": "Reading teaches only inputs, expected outputs, and failure conditions. The other three specification components (task description, format and constraints, success criteria) are named and deferred to companion topics without any defining clause or teaching material."
+    }
+  },
+  "gold_example_comparison": {
+    "gold_file": ".claude/references/gold-examples/reading/2-1-what-makes-a-good-specification.reading.md",
+    "meets_gold_bar": true,
+    "notes": "Matches the 2-1 gold bar: plain-language definitions on first use, backward-recap of prior concepts, concrete-before-abstract structure, paragraphs ≤4 sentences, bold-term definitions, scope discipline. Word count (1172) is within the 'not markedly denser or wider' guidance (~1200 cited in notes). Correctly omits the assessment-reference defect flagged in the gold example."
+  },
+  "soft_findings": [],
+  "hard_fail_escalation": false
+}

@@ -1,0 +1,48 @@
+{
+  "passed": true,
+  "checks": {
+    "positional_bias": {
+      "passed": true,
+      "distribution": [1, 1, 2, 1],
+      "derived_correct_positions": [2, 0, 3, 1, 2],
+      "max_share": 0.40,
+      "threshold": 0.40,
+      "meta_gift_desync": false,
+      "note": "Re-derived from = markers in .gift; matches sidecar correct_position_distribution [2,0,3,1,2]. max_share 0.40 is at threshold, not above it."
+    },
+    "length_bias": {
+      "passed": true,
+      "longest_correct_rate": 0.40,
+      "baseline": 0.25,
+      "threshold": 0.40,
+      "longest_correct_questions": ["q3", "q5"],
+      "note": "2 of 5 correct answers exceed 1.20x distractor mean (q3, q5). Rate 0.40 is at threshold, not above it. q5 is marginal (93 vs 91.6)."
+    },
+    "distractor_plausibility": {
+      "passed": true,
+      "absurd_rate": 0.0,
+      "weakest_questions": [],
+      "note": "All 15 distractors are on-topic Projector/embedding misconceptions (sentence-vs-word, view buttons, frequency list, 3D rotation, cluster-vs-outlier, tool-failure). None scored 1."
+    },
+    "objective_coverage": {
+      "passed": true,
+      "uncovered_objectives": [],
+      "orphan_questions": [],
+      "note": "All 5 corpus §3 LOs covered 1:1 — q1>LO1 open/recognize-dot, q2>LO2 focused-words, q3>LO3 2D-projection, q4>LO4 cluster-vs-outlier, q5>LO5 compare-two-domains."
+    },
+    "scope": {
+      "passed": true,
+      "out_of_scope_questions": [],
+      "note": "No item requires cosine similarity or PCA/t-SNE/UMAP internals. Projection treated as approximation only; all items on-headline for this topic."
+    },
+    "gift_hygiene": {
+      "passed": true,
+      "stem_hash_leak": false,
+      "metadata_header_leak": false,
+      "note": "Parseable GIFT; each block one = plus three ~, feedback after #, #### general feedback. Clean stems, $CATEGORY-only header. 5 MCQ / 0 short-answer conforms to STANDARD profile."
+    }
+  },
+  "auto_correction_applied": { "shuffle_round_2": false },
+  "verdict": "Pass — positional bias 0.40 (at threshold), length bias 0.40 (at threshold), distractors all plausible, all 5 LOs covered, in-scope, clean GIFT. STANDARD profile (5 MCQ, no short-answer) satisfied.",
+  "at": "2026-06-22T06:20:00Z"
+}

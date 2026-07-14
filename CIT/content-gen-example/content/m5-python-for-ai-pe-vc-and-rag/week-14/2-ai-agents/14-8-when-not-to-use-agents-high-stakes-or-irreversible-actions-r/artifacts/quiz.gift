@@ -1,0 +1,44 @@
+$CATEGORY: CIT/M5/week-14/14-8-when-not-to-use-agents-high-stakes-or-irreversible-actions-r
+
+::q1:: Which of the following best defines an "irreversible" action in the context of an AI agent? {
+=It cannot be undone by the system itself once executed.#Correct. Irreversibility means the change persists in the world — the system has no built-in rollback for that action. (corpus §5.1)
+~It costs more than a threshold amount to execute.#Not the definition of irreversibility. Cost is a separate concern. Irreversibility is about whether the change can be automatically undone. (corpus §5.1)
+~It requires calling more than one external tool.#The number of tools called has nothing to do with whether an action is reversible. (corpus §5.1)
+~It produces output that is uncertain or probabilistic.#Probabilistic output is related to hallucination, not irreversibility. A deterministic action can still be irreversible. (corpus §5.1)
+#### An irreversible action is one the system itself cannot undo — sending an email, initiating a bank transfer, deleting records. The word "irreversible" is relative to what the system can do automatically; a human might escalate and recover, but the agent cannot. (corpus §5.1)
+}
+
+::q2:: In a human-in-the-loop (HITL) approval flow, what must happen immediately after the agent proposes an action? {
+~The agent automatically retries with adjusted parameters.#Retrying is part of a regenerate-and-revise pattern for critic loops, not the HITL flow. After proposing, the agent must pause — not retry. (corpus §5.3)
+=A human reviews the proposal and decides to approve or reject.#Correct. Step 2 in the four-step HITL flow: the system surfaces the proposal; the human decides. The agent cannot continue until the human responds. (corpus §5.3)
+~The system logs the action and continues with the next step.#Logging is important but it is not what happens next in the HITL flow. Logging without waiting for a decision is not HITL — the process must actually pause. (corpus §5.3)
+~The agent waits a fixed safety delay, then executes.#A time delay is not a human checkpoint. If the agent proceeds after a timer, no human has actually reviewed the action. (corpus §5.3)
+#### Step 1: agent proposes. Step 2: human reviews. Step 3: human approves or rejects. Step 4: agent executes (if approved) or stops (if rejected). The process cannot continue without the human's explicit decision. (corpus §5.3)
+}
+
+::q3:: Which failure mode best explains why an AI agent can cause irreversible harm before a human has a chance to notice? {
+~Agents reuse the same tool call for every action, making them predictable but slow.#Agents do not reuse a single tool call — they select tools dynamically. And speed is a risk factor, not the reason described here. (corpus §5.2)
+~Agents depend on internet connectivity, which introduces unpredictable delays.#Network latency is an infrastructure concern, not the failure mode that allows agents to act harmfully before humans notice. (corpus §5.2)
+=Agents make confident decisions at machine speed with no natural pause built in.#Correct. Unlike human workflows that have built-in hand-off pauses, an agent's planning loop chains steps as fast as possible — including the irreversible step — before any human can intervene. (corpus §5.2)
+~Agents can only process text and cannot interpret structured data correctly.#This is a mischaracterisation of agent capabilities and is not the failure mode that makes speed dangerous. (corpus §5.2)
+#### Three failure modes interact: (1) confident mistakes at machine speed — the LLM produces a fluent plan even when wrong; (2) no natural pause — the loop is designed for efficiency, not caution; (3) cascading errors — one wrong early decision feeds every subsequent step. (corpus §5.2)
+}
+
+::q4:: A company is building an agent that initiates irreversible bank transfers. Which autonomy-spectrum zone does topic 14.8 recommend for current LLM-based agents handling this action? {
+~Fully autonomous — modern LLMs are accurate enough to handle financial actions without oversight.#Full autonomy is only appropriate when actions are easily reversible and the cost of mistakes is low. Irreversible financial transfers do not meet this bar. (corpus §5.4)
+~Fully manual — agents should never initiate financial actions, even with human oversight.#The topic does not recommend removing agents from financial workflows entirely. It recommends adding a human checkpoint, not eliminating the agent. (corpus §5.4)
+~Human-on-the-loop only — a compliance officer monitoring dashboards is sufficient for all financial transfers.#Human-on-the-loop is appropriate when volume makes per-action approval impractical. For each irreversible transfer, HITL (per-action approval) is the stronger recommendation. (corpus §5.4)
+=Human-in-the-loop — a human must approve each transfer before it executes.#Correct. HITL is the recommended zone for irreversible, high-stakes actions with current LLM-based agents. The agent proposes; the human approves; then the transfer executes. (corpus §5.4)
+#### The autonomy spectrum: fully manual → HITL → human-on-the-loop → fully autonomous. For high-stakes irreversible work today, HITL and human-on-the-loop are the recommended zones. Fully autonomous is appropriate only when actions are easily reversible, mistakes are low-cost, and error rates are demonstrated to be very low. (corpus §5.4)
+}
+
+::q5:: An agent has three tools: a database query tool, a report-generation tool, and an email-send tool. According to the extended five-question decision matrix, which tool requires a human checkpoint? {
+~The database query tool, because it accesses data from an external system.#Read-only tools — searching, querying, retrieving — do not need checkpoints. Accessing data is not the same as changing state in the world. (corpus §5.5)
+~The report-generation tool, because its output influences human decisions.#Generating a report is a read + transform operation; it does not create an external side effect in a system the agent does not control. (corpus §5.5)
+=The email-send tool, because sending an email is irreversible.#Correct. Email-send creates an external side effect the agent cannot undo: emails are delivered and cannot be recalled. This passes the irreversibility test, so a checkpoint is required. (corpus §5.5)
+~All three tools, because any agent action can produce unexpected outputs.#Applying checkpoints to every action — including read-only lookups — dilutes their value and causes reviewer fatigue. Checkpoints target irreversible or high-stakes actions specifically. (corpus §5.5)
+#### The rule: read-only tools (query, search, retrieve, calculate) need no checkpoint. Write/send/delete/pay/submit tools must pass the two-question test: irreversible? high-stakes? Any tool that creates an external side effect in a system the agent does not fully control is a checkpoint candidate. (corpus §5.5)
+}
+
+::q6:: Name two of the three failure modes from this topic that make AI agents particularly dangerous for irreversible or high-stakes actions. For each, write one sentence explaining why it is dangerous. {}
+#### Model answer: Any two of — (1) Confident mistakes at machine speed: the LLM produces a fluent, well-structured plan and acts on it even when the underlying reasoning is wrong, completing the full action chain before any human notices. (2) No natural pause: the agent's planning loop chains steps as efficiently as possible — unlike human workflows, there is no built-in hand-off point where a second set of eyes reviews the action. (3) Cascading errors: because each step uses the previous step's output as input, a single wrong early decision propagates through the whole loop, producing multiple irreversible side effects that are hard to untangle. (corpus §5.2)

@@ -1,0 +1,48 @@
+{
+  "topic_id": "14.5",
+  "profile": "standard",
+  "question_count": 6,
+  "include_short_answer": false,
+  "$bias_defense_applied": true,
+  "$shuffle_seed": "sha256('14.5') mod 2^32 = deterministic per-question shuffle; correct-answer position assigned as [2,0,3,1,2,1] to achieve uniform spread; post-shuffle max_share = 2/6 = 0.33 <= 0.40 and all four positions used — constraint check passed",
+  "correct_position_distribution": {"pos_0": 1, "pos_1": 2, "pos_2": 2, "pos_3": 1},
+  "questions": [
+    {
+      "id": "q1",
+      "type": "mcq",
+      "objective_ref": "LO1 — Name the four components of an AI agent and describe in plain language what each one does.",
+      "correct_position": 2
+    },
+    {
+      "id": "q2",
+      "type": "mcq",
+      "objective_ref": "LO2 — Explain why an LLM on its own is not an agent, and what the other three components add.",
+      "correct_position": 0
+    },
+    {
+      "id": "q3",
+      "type": "mcq",
+      "objective_ref": "LO3 — Describe what an agent's planning loop does and why it is necessary for multi-step tasks.",
+      "correct_position": 3
+    },
+    {
+      "id": "q4",
+      "type": "mcq",
+      "objective_ref": "LO4 — Distinguish between short-term memory and long-term memory in the context of an agent.",
+      "correct_position": 1
+    },
+    {
+      "id": "q5",
+      "type": "mcq",
+      "objective_ref": "LO5 — Explain what a tool is in the agent context and give two concrete examples.",
+      "correct_position": 2
+    },
+    {
+      "id": "q6",
+      "type": "mcq",
+      "objective_ref": "LO6 — Identify the kinds of tasks where an agent is the right choice, versus tasks where a simpler approach is better.",
+      "correct_position": 1
+    }
+  ],
+  "generated_at": "2026-06-15T00:00:00Z"
+}

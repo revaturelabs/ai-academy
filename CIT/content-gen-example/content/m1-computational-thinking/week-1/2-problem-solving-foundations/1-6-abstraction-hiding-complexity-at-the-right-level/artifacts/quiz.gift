@@ -1,0 +1,55 @@
+$CATEGORY: CIT/M1/week-1/1.6-abstraction-hiding-complexity-at-the-right-level
+
+::1.6-Q1:: A friend asks you to explain what abstraction means in plain language. Which answer best captures the idea?
+{
+~Breaking a big problem into smaller pieces so that each piece is easier to tackle on its own#No — that describes decomposition, which is about splitting a problem apart, not about deciding what detail to hide.
+~Storing all the details of a system in one place so that anyone can look them up whenever they need them#No — keeping all details accessible is the opposite of abstraction; abstraction deliberately hides detail that is not needed.
+=Showing only the details that matter for a particular purpose and hiding everything else that does not#Correct — abstraction is the act of hiding unnecessary detail so you can focus on what is relevant for the task at hand.
+~Replacing complicated steps with a single automated process that handles everything without human input#No — automation is a different idea; abstraction is about choosing what to reveal, not about removing human control.
+#### Tests the core definition of abstraction — hiding detail to focus on what matters for the task (corpus §5.1).
+}
+
+::1.6-Q2:: A large organisation has hundreds of departments, thousands of employees, and millions of daily decisions. Why does abstraction make this organisation manageable?
+{
+=Each person only needs the information relevant to their own role; complexity is hidden from those who do not need it#Correct — abstraction creates layers so each person sees a clean, simple surface and never has to hold the entire organisation in mind at once.
+~The organisation trains specialists who memorise all rules and procedures across every department, so no important detail is ever hidden or lost from anyone who might need it#No — requiring every person to hold all details is the opposite of abstraction; it describes information overload, not a strategy for managing complexity.
+~Abstraction removes the less critical departments entirely, reducing the organisation to its most essential functions and cutting the total number of decisions that must be made#No — abstraction does not delete parts of a system; it hides detail from those who do not need it while keeping it available to those who do.
+~Managers produce detailed reports on every process so that senior leaders can always access the full picture of the organisation whenever a significant decision must be made#No — generating comprehensive reports that expose all information to everyone contradicts abstraction; abstraction is about selectively hiding the right detail from the right people.
+#### Tests why hiding complexity is valuable — layered abstraction lets each role work with only the detail it needs (corpus §5.2).
+}
+
+::1.6-Q3:: A city planner asks for an explanation of how traffic lights work. An engineer responds with a full description of the semiconductor physics and circuit timing used inside each light. What is wrong with this response?
+{
+~The response is too brief and should include more detail about traffic regulations and the city planning rules that govern where lights are placed#No — the problem is the opposite: the response already goes too deep for this audience, not too shallow; more content would worsen the mismatch.
+~The response contains incorrect information, since traffic lights do not use semiconductor physics or electronic timing to operate#No — the information may be accurate; the problem is not factual correctness but whether this depth of detail serves the city planner's need.
+~The response is written for a specialist and should be fully rewritten in plain language, replacing all engineering terms with everyday words#No — the fix is not to strip out all technical language but to match the level of detail to what the city planner needs for traffic-flow decisions.
+=The response gives detail suited to an electronics engineer, not to someone who needs to understand traffic-flow decisions#Correct — the right level of abstraction depends on who is asking and why; the city planner needs traffic-flow logic, not circuit-level physics.
+#### Tests identifying the right level of detail for a given audience — too much detail is as wrong as too little (corpus §5.3).
+}
+
+::1.6-Q4:: Which of the following is the best example of abstraction that you encounter in everyday life, outside computing?
+{
+~A programmer writes a function that accepts a number and returns double that value, hiding the arithmetic steps from other parts of the code#No — this is a computing example involving program code and functions; the question asks specifically for a real-world example outside computing.
+=A road map that shows major routes and landmarks but does not show every building, tree, or drain on the way#Correct — a map hides irrelevant detail (buildings, vegetation) and exposes only what a traveller needs; this is abstraction outside computing.
+~A database that stores millions of customer records and retrieves any single record in under a second by searching a pre-built index of stored fields#No — fast retrieval from an indexed database is a technical computing system; it is not an everyday real-world example of abstraction outside computing.
+~A search engine that ranks pages by relevance and filters out any results that do not contain the keywords the user typed into the search box#No — a search engine is a computing system built on ranking and filtering algorithms; the question asks for a non-computing everyday example.
+#### Tests the ability to give a real-world non-computing example of abstraction — maps abstract geography to useful navigation detail (corpus §7.1).
+}
+
+::1.6-Q5:: A student says, "Decomposition and abstraction both help with complicated problems, so they must be doing the same thing." Which response best corrects this misunderstanding?
+{
+~They are the same thing — both break a problem into smaller parts, with abstraction being a more advanced form of decomposition#No — they are distinct techniques; decomposition splits a problem into parts, while abstraction manages the detail within each part.
+~They do the same job but at different scales — decomposition works on large systems and abstraction on small systems only#No — both can apply at any scale; the difference is not size but purpose — structure versus detail management.
+=Decomposition identifies the parts of a problem; abstraction then hides unnecessary detail within each part to keep it manageable#Correct — the two tools work together but answer different questions: decomposition asks "what are the parts?" and abstraction asks "what detail matters here?"
+~Abstraction comes first — it simplifies the whole problem into one idea, and decomposition then breaks that idea apart#No — this reverses the relationship; decomposition first reveals the parts, and abstraction then manages complexity within each part.
+#### Tests understanding of how abstraction and decomposition differ and work together (corpus §5.4).
+}
+
+::1.6-Q6:: A travel booking website promises "one-click booking." When a user clicks, the site asks for their passport number, seat preference, meal choice, emergency contact, and frequent-flyer number across five separate screens. What problem does this illustrate?
+{
+=The abstraction is leaky — it promised to hide complexity but forced all of the hidden detail back onto the user anyway#Correct — a leaky abstraction is one where the promised simplicity breaks down and the user must supply details they were told they would not need.
+~The abstraction is too aggressive — it hid so much essential information that the user cannot complete the booking without seeking extra help from support staff#No — the abstraction hid nothing in practice; every piece of detail was still demanded from the user, so too little was hidden, not too much.
+~This is good abstraction — the site shows exactly the detail the user needs at each step in order to complete the booking accurately and successfully#No — good abstraction hides detail the user does not need to provide; here the user must supply extensive information they were implicitly promised would not be required.
+~The site is using decomposition rather than abstraction — it broke the booking into five separate steps rather than hiding any underlying complexity from the user#No — breaking a task into steps can reflect decomposition, but the core failure here is that the promised simplicity collapsed and hidden detail leaked back through, which is a leaky abstraction.
+#### Tests the distinction between a good abstraction and a leaky one — a leaky abstraction forces hidden detail back on the user (corpus §5.6).
+}

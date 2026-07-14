@@ -1,0 +1,30 @@
+{
+  "topic_id": "5.9",
+  "captured_at": "2026-06-22T08:19:51Z",
+  "captured_by": "namratas@revature.com",
+  "resources_source": "web_search",
+  "resources": [
+    {
+      "type": "url",
+      "value": "https://ai-act-service-desk.ec.europa.eu/en/ai-act/faq/what-systems-are-prohibited-under-article-5-ai-act-eg-social-scoring-emotion-recognition",
+      "role": "primary",
+      "source": "web_search",
+      "notes": "Official European Commission AI Act Service Desk FAQ — what systems are prohibited under Article 5 (social scoring, emotion recognition, etc.). Beginner-readable, authoritative. Anchor."
+    },
+    {
+      "type": "url",
+      "value": "https://artificialintelligenceact.eu/article/5/",
+      "role": "supporting",
+      "source": "web_search",
+      "notes": "Article 5 — Prohibited AI Practices: the canonical list of banned uses (social scoring, real-time remote biometric ID, manipulation, etc.)."
+    },
+    {
+      "type": "url",
+      "value": "https://digital-strategy.ec.europa.eu/en/library/commission-publishes-guidelines-prohibited-artificial-intelligence-ai-practices-defined-ai-act",
+      "role": "supporting",
+      "source": "web_search",
+      "notes": "European Commission Guidelines on prohibited AI practices — authoritative official elaboration of the bans + the narrow biometric exceptions."
+    }
+  ],
+  "web_search_query": "EU AI Act prohibited practices social scoring real-time biometric identification banned (official EU domains)"
+}

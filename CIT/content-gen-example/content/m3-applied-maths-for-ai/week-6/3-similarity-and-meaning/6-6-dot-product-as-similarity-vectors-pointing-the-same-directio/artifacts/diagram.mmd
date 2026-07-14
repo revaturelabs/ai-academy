@@ -1,0 +1,43 @@
+---
+title: "Direction decides the dot-product score"
+theme: base
+themeVariables:
+  primaryColor: "#a5d8ff"
+  primaryBorderColor: "#4a9eed"
+  lineColor: "#555"
+config:
+  flowchart:
+    htmlLabels: true
+    curve: basis
+    nodeSpacing: 50
+    rankSpacing: 60
+---
+flowchart LR
+  subgraph P1["Same direction"]
+    direction TB
+    V1["<b>A → and B →</b><br/><span style='font-size:12px;color:#6d28d9'>both arrows point the same way</span>"]
+    S1["<b>Score: High Positive</b><br/><span style='font-size:12px;color:#6d28d9'>very similar</span>"]
+    V1 --> S1
+  end
+
+  subgraph P2["Opposite directions"]
+    direction TB
+    V2["<b>A → and C ←</b><br/><span style='font-size:12px;color:#6d28d9'>arrows point against each other</span>"]
+    S2["<b>Score: Negative</b><br/><span style='font-size:12px;color:#6d28d9'>very dissimilar</span>"]
+    V2 --> S2
+  end
+
+  subgraph P3["Perpendicular (90°)"]
+    direction TB
+    V3["<b>A → and D ↑</b><br/><span style='font-size:12px;color:#6d28d9'>arrows point at right angles</span>"]
+    S3["<b>Score: Zero</b><br/><span style='font-size:12px;color:#6d28d9'>no relationship</span>"]
+    V3 --> S3
+  end
+
+  P1 ~~~ P2 ~~~ P3
+
+  classDef start fill:#a5d8ff,stroke:#4a9eed
+  classDef done fill:#b2f2bb,stroke:#22c55e
+
+  class V1,V2,V3 start
+  class S1,S2,S3 done

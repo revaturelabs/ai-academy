@@ -1,0 +1,138 @@
+{
+  "critic": "corpus-critic",
+  "topic_id": "4.1",
+  "topic_title": "Foundation models — trained once at scale, usable for many tasks",
+  "cycle": 2,
+  "at": "2026-06-16T06:00:00Z",
+  "passed": true,
+  "verdict": "PASS (cycle 2) — all hard checks clear. Citation density in section 7 (Real-World Patterns) rose from ~38% (cycle 1 fail) to ~80% after fixes to Claude, DALL-E/Stable Diffusion/Midjourney, Whisper, Krutrim entries; section 5 Core Concepts remains ~80%. Required sections present and non-trivial; no sequence/forward-reference drift; word count ~2000w within 1500–4400 standard range; no scope creep found. Four soft findings carry forward to HITL #2/#3: (1) 'open-weights' at line 133 still lacks an inline gloss (revision instruction not applied), (2) 'corpus' at line 130 still undefined for beginners, (3) section 5.3 lines 81–82 generalisation paragraph still uncited (section-level density passes at ~80%), (4) GPT-4o multimodal entry (line 139) and India government/research entry (line 144) remain uncited (section 7 overall density still 80%, above 60% threshold). Beginner readability soft-finding count remains at 2 — below the ≥3 escalation threshold.",
+  "checks": {
+    "required_sections": {
+      "passed": true,
+      "detail": {
+        "section_3_learning_objectives": { "present": true, "word_count_estimate": 135, "threshold": 50, "passed": true },
+        "section_4_introduction": { "present": true, "word_count_estimate": 185, "threshold": 50, "passed": true },
+        "section_5_core_concepts": { "present": true, "word_count_estimate": 830, "threshold": 100, "passed": true },
+        "section_10_key_takeaways": { "present": true, "word_count_estimate": 110, "threshold": 50, "passed": true }
+      }
+    },
+    "citation_density": {
+      "passed": true,
+      "resources_source": "web_search",
+      "mode": "strict",
+      "primary_resources_cited": {
+        "[1] https://cloud.google.com/discover/what-are-foundation-models": { "cited": true, "citation_count": 14 }
+      },
+      "supporting_resources_cited": {
+        "[2] https://humanloop.com/blog/foundation-models": { "cited": true },
+        "[3] https://en.wikipedia.org/wiki/Foundation_model": { "cited": true }
+      },
+      "fake_citations": false,
+      "density_by_section": {
+        "section_5_core_concepts": {
+          "estimated_factual_assertions": 11,
+          "cited_assertions": 9,
+          "density": "~82%",
+          "passed": true,
+          "uncited_claims": [
+            "Section 5.3 lines 81–82: 'Because the patterns that a model learns from enormous, diverse data are not narrow rules. They are deep representations of meaning, structure, and relationships… It develops an understanding of how arguments are structured…' — still no citation marker. Revision instruction from cycle 1 not applied. Soft finding only — section-level density remains ~82%."
+          ]
+        },
+        "section_6_implementation": {
+          "note": "Not applicable — placeholder section with no factual assertions.",
+          "passed": true
+        },
+        "section_7_real_world_patterns": {
+          "estimated_factual_assertions": 10,
+          "cited_assertions": 8,
+          "density": "~80%",
+          "passed": true,
+          "fixes_applied_vs_cycle_1": [
+            "Line 133: Claude entry now carries [3] — fixed.",
+            "Line 133: Llama entry now carries [3] — fixed.",
+            "Line 137: DALL-E/Stable Diffusion/Midjourney entry now carries [3] — fixed.",
+            "Line 138: Whisper entry now carries [3] — fixed.",
+            "Line 143: Krutrim entry now carries [3] — fixed."
+          ],
+          "remaining_uncited_claims": [
+            "Line 139: 'GPT-4o — handles text, images, and audio within a single model.' — no citation marker. Soft finding only.",
+            "Line 144: 'Government and research institutions are actively exploring foundation models adapted for vernacular languages and agriculture…' — no citation marker. Soft finding only."
+          ]
+        }
+      },
+      "overall_result": "All hard-check sections (5, 7) above 60% threshold. Primary resource cited throughout. No fake citations."
+    },
+    "sequence_drift": {
+      "passed": true,
+      "prior_concepts_available": [
+        "LLM", "Large Language Model", "token", "training", "inference", "parameters",
+        "temperature", "sampling", "hallucination", "evaluation",
+        "deterministic system", "probabilistic system", "decomposition", "abstraction",
+        "pseudocode", "flowcharts", "algorithm", "specification", "pattern recognition"
+      ],
+      "topic_concepts_introduced": [
+        "foundation model",
+        "multimodal model",
+        "trained once at scale",
+        "generalisation from broad training",
+        "adaptation",
+        "narrow AI vs foundation model"
+      ],
+      "forward_references_found": [],
+      "notes": [
+        "fine-tuning (lines 113, 153): named-and-deferred with explicit 'covered in topic 4.2' pointer — accepted.",
+        "RAG / Retrieval-Augmented Generation (lines 114, 166): named-and-deferred with 'covered in topic 4.3' pointer — accepted.",
+        "open-weights (line 133): not a future-topic concept; not a sequence-drift violation. Flagged as readability soft finding only.",
+        "knowledge cutoff (line 158): immediately explained inline — accepted."
+      ]
+    },
+    "length_sanity": {
+      "passed": true,
+      "depth_profile": "standard",
+      "range_applied": "1500–4400 words",
+      "estimated_word_count": 2000,
+      "within_range": true,
+      "note": "~2000 words (body text, excluding frontmatter). Within the task-specified 1500–4400 standard range. If the SKILL.md strict 3000–4400 range were applied, this corpus would fall below the lower bound; flagged for author awareness but not treated as a hard fail per the task-level specification."
+    },
+    "topic_scope": {
+      "passed": true,
+      "headline": "Foundation models — trained once at scale, usable for many tasks",
+      "out_of_scope_teaching_found": false,
+      "findings": [
+        "Section 5.4 names prompting, fine-tuning, and RAG as adaptation categories, each with one definitional sentence and an explicit 'covered later' pointer. Meets the allowed named-and-deferred pattern.",
+        "Best Practices (line 153) references fine-tuning in a comparative sentence to illustrate training data scope; no mechanics taught. Accepted.",
+        "Hands-On Exercise (line 166) previews the week-4 RAG lab as a forward pointer only; no RAG mechanics explained. Accepted."
+      ]
+    },
+    "beginner_readability": {
+      "passed": true,
+      "escalated_to_hard_fail": false,
+      "distinct_findings_count": 2,
+      "findings": [
+        {
+          "type": "undefined_terms",
+          "severity": "soft",
+          "detail": "'open-weights' (line 133) still used without a plain-language inline gloss. Cycle 1 revision instruction (add gloss e.g. 'open-weights — meaning the model's internal settings are publicly released so anyone can download and run it') was not applied.",
+          "carry_over_from_cycle": 1
+        },
+        {
+          "type": "undefined_terms",
+          "severity": "soft",
+          "detail": "'corpus' (line 130) used in 'a vast corpus of text and code' without a definition. Borderline — arguably general academic vocabulary, but could confuse a true beginner.",
+          "carry_over_from_cycle": 1
+        }
+      ],
+      "jargon_dump": false,
+      "academic_register": false,
+      "note": "2 distinct soft findings — below the threshold of 3 required to escalate to hard fail. Surfaces to HITL #2/#3 for author awareness."
+    }
+  },
+  "hard_fail_checks": [],
+  "soft_findings": [
+    "citation_density.section_5_core_concepts: lines 81–82 generalisation paragraph uncited",
+    "citation_density.section_7_real_world_patterns: line 139 GPT-4o multimodal entry uncited",
+    "citation_density.section_7_real_world_patterns: line 144 India government/research entry uncited",
+    "beginner_readability.undefined_terms: open-weights (line 133) — inline gloss not added",
+    "beginner_readability.undefined_terms: corpus (line 130)"
+  ]
+}

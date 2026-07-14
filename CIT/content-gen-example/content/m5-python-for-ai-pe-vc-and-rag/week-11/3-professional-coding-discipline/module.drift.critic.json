@@ -1,0 +1,104 @@
+{
+  "critic": "drift-critic",
+  "module": "3-professional-coding-discipline",
+  "course_code": "M5",
+  "week_num": 11,
+  "run_at": "2026-06-13T00:00:00Z",
+  "verdict": "PASS",
+  "one_line_verdict": "Grade-scale contradiction in 11.8 §9 resolved (B=80–89, C=70–79, F<70 now consistent with 11.7 and 11.9); remaining D-grade simplification is a soft advisory only; all five checks pass.",
+  "topics_evaluated": ["11.7", "11.8", "11.9"],
+  "checks": {
+    "terminology_consistency": {
+      "result": "PASS",
+      "findings": [
+        {
+          "topic": "11.8",
+          "severity": "soft",
+          "location": "corpus §9 (Hands-On Exercise) and 11.9 corpus throughout",
+          "description": "The D grade (D≥60 in 11.7's full constraint table) is absent from both 11.8 §9 and 11.9. The simplified A/B/C/F scale used in these topics is consistent with the module manifest lab_activity_seed ('A/B/C/F') and the 11.9 §6 Step 1 spec ('F for below 70'). The thresholds themselves (A=90+, B=80–89, C=70–79, F<70) are now identical across 11.8 §9 and 11.9. Neither topic explicitly acknowledges the simplification relative to 11.7's five-grade scale, which could mildly confuse a student who reads 11.7 carefully. This is not a contradiction — it is an undocumented scope reduction — and does not block the module.",
+          "affected_term": "D grade / grade scale completeness",
+          "recommendation": "Optional: add a one-sentence note in 11.8 §9 or 11.9 §6 stating 'For this lab the simplified A/B/C/F scale is used (no D grade); this matches the module activity design.' This is advisory only."
+        },
+        {
+          "topic": "11.7",
+          "note": "Grade scale in §5.1 constraint table (A≥90, B≥80, C≥70, D≥60, F<60) and in §6 implementation spec (A if average >= 90, B if >= 80, C if >= 70, D if >= 60, F if average < 60) is internally consistent. Forward references to 11.8 and 11.9 are correctly labelled as 'next topics'."
+        },
+        {
+          "topic": "11.8",
+          "note": "§9 exercise now specifies A = 90+, B = 80–89, C = 70–79, F = below 70. This is consistent with 11.9 §6 Step 1 ('A for 90 and above, B for 80–89, C for 70–79, F for below 70') and with 11.9 §5.2 equivalence class table (grade-switch boundaries at 70, 80, 90). Hard contradiction from prior run is resolved."
+        },
+        {
+          "topic": "11.9",
+          "note": "Grade boundaries (70, 80, 90) used throughout are consistent with 11.8 §9 post-fix. 'Loud failure' and 'silent failure' from 11.8 are used with correct attribution and no re-definition. 'Falsy' attributed to 11.4 — in scope."
+        }
+      ]
+    },
+    "prerequisites_respected": {
+      "result": "PASS",
+      "findings": [
+        {
+          "topic": "11.7",
+          "note": "Prerequisites listed are 11.3–11.6 (earlier in sequence). Cross-reference to 11.8 and 11.9 is forward-labelled correctly as 'next topics' — not assumed known."
+        },
+        {
+          "topic": "11.8",
+          "note": "Explicitly lists 11.7 as prerequisite. References to spec-first workflow are correctly attributed to 11.7 throughout."
+        },
+        {
+          "topic": "11.9",
+          "note": "Explicitly lists 11.6, 11.7, 11.8 as prerequisites. Uses 'loud failure' and 'silent failure' (introduced in 11.8) with correct attribution and no re-definition. Uses 'falsy' with an attribution to 11.4 — acceptable; term was in scope."
+        }
+      ]
+    },
+    "learning_arc": {
+      "result": "PASS",
+      "findings": [
+        {
+          "note": "Arc is coherent and tightly sequenced: 11.7 introduces spec-writing and the four-step workflow (naming steps 3 and 4 as deferred); 11.8 delivers step 3 (explain every line) and reinforces the spec-first foundation; 11.9 delivers step 4 (test edge cases) and closes the arc with a worked test cycle. The module's stated outcome — spec-first discipline plus the golden rule — is fully covered. No facets of the narrative_seed are uncovered."
+        }
+      ]
+    },
+    "no_duplicated_core_concepts": {
+      "result": "PASS",
+      "findings": [
+        {
+          "pair": "11.7 / 11.8",
+          "note": "Overlap is intentional and properly scoped: 11.8 reuses the grade-average example and references the four-step workflow from 11.7, but introduces new core concepts (silent failure, loud failure, four-question test, AI ownership transfer). Jaccard on distinct section-5 noun sets is estimated at ~0.15 — well below the 0.6 threshold."
+        },
+        {
+          "pair": "11.8 / 11.9",
+          "note": "11.9 reuses 'loud failure' and 'silent failure' from 11.8 (correctly attributed, not re-defined). New concepts in 11.9 (edge case, equivalence class, boundary value, off-by-one error, test prediction, empty input, zero, min/max) are distinct. Estimated Jaccard ~0.10."
+        },
+        {
+          "pair": "11.7 / 11.9",
+          "note": "Minimal conceptual overlap. 11.9 references spec (from 11.7) as a prerequisite tool, not as a concept to re-teach. Estimated Jaccard ~0.05."
+        }
+      ]
+    },
+    "lab_activity_alignment": {
+      "result": "PASS",
+      "findings": [
+        {
+          "note": "The lab_activity_seed ('Script: student name + 3 marks → prints average and grade (A/B/C/F) / Step 1: write the spec. Step 2: ask Claude to implement. Step 3: explain every line. Step 4: test 3 edge cases / Journal Entry #6') is directly supported across all three topics: 11.7 §6 implements Step 1 and Step 2 with the exact grade-average script; 11.8 §6 implements Step 3 with a concrete procedure; 11.9 §6 implements Step 4 with three worked edge-case tests on the same script. Coverage is complete."
+        }
+      ]
+    },
+    "audience_level_consistency": {
+      "result": "PASS",
+      "findings": [
+        {
+          "note": "All three topics maintain an absolute-beginner register throughout. No term is introduced cold: 'accumulator pattern' in 11.8 is attributed to 11.6; 'falsy' in 11.9 is attributed to 11.4; 'equivalence class' and 'boundary value' are both defined inline on first use in 11.9. 11.9 mentions 'regression check' and 'pytest/unittest' in §7 (real-world patterns) but explicitly defers both with 'a formal testing concept you will cover later' and 'You will not use those frameworks in this course' — this is within the one-sentence deferral rule for scope-adjacent concepts. Depth profile is consistent across all three topics (standard, 1285–1391 words, 7 min each)."
+        }
+      ]
+    }
+  },
+  "summary": {
+    "hard_failures": 0,
+    "soft_findings": 1,
+    "topics_with_findings": ["11.8"],
+    "topics_clean": ["11.7", "11.9"],
+    "blocking": false,
+    "blocker_description": null,
+    "advisory": "11.8 §9 (and 11.9 throughout) silently drop the D grade that 11.7 defines in its full five-grade constraint table. The simplified A/B/C/F scale is consistent with the module manifest lab_activity_seed and the 11.8/11.9 thresholds are now in agreement with each other. No hard contradiction remains. An optional one-sentence acknowledgement of the simplification in 11.8 §9 or 11.9 §6 would close the gap entirely."
+  }
+}

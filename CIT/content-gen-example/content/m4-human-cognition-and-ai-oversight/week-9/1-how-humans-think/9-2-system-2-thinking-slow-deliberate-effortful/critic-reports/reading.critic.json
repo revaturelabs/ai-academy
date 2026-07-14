@@ -1,0 +1,51 @@
+{
+  "topic_id": "9.2",
+  "passed": true,
+  "checks": {
+    "format_discipline": {
+      "passed": true,
+      "notes": "First non-empty line is '# System 2 Thinking — Slow, Deliberate, Effortful' with no YAML frontmatter. reading.meta.json exists and parses with all required fields (word_count, reading_minutes, depth_profile, citations, sections). Exactly 6 fixed sections present in correct order: Overview, Key Concepts, Worked Example, In Practice, Key Takeaways, References."
+    },
+    "length_budget": {
+      "passed": true,
+      "word_count": 1445,
+      "minutes_estimate": 7.2,
+      "notes": "1445 words is within the target range of 1200–1600. At 200 wpm: 1445 / 200 = 7.225 minutes, within the 6–8 minute target band. Meta sidecar reports word_count 1445 and reading_minutes 8 (rounded up), consistent with corpus depth profile 'standard'."
+    },
+    "citation_discipline": {
+      "passed": true,
+      "primary_cited": true,
+      "notes": "resources_source is 'web_search' — strict mode applies. Primary resource [1] (thedecisionlab.com) is cited at lines 9, 13, 21, 23, 27, 29, 52, 56, 60, 64, 71, 73, 79, 82, 108, 116, 120, 126, 129, 130, 131, 132, 136. Supporting resources [2] and [3] also appear throughout. All three inline markers resolve to corresponding bibliography entries in the References section. No orphan inline markers and no orphan bibliography entries found."
+    },
+    "forward_references": {
+      "passed": true,
+      "violations": [],
+      "notes": "All concepts used are either from the permitted 9.1 vocabulary (System 1, Kahneman dual-process framework, cognitive heuristics) or this topic's own corpus vocabulary (System 2, working memory, cognitive load, cognitive fatigue, serial processing, deliberate processing, cognitive capacity, ego depletion). Future concepts 'confirmation bias', 'anchoring', and 'Judgment Framework' appear exactly once in a single name-and-defer sentence (line 122) without bold formatting or defining clauses — compliant with scope_discipline rules."
+    },
+    "readability": {
+      "passed": true,
+      "findings": [
+        "SOFT: Line 83 contains mild hedging — 'The research picture around ego depletion is still being refined' — acceptable as a single instance (threshold is ≥3 hedging instances). No other hedging phrases found.",
+        "SOFT: A few sentences exceed 25 words (e.g. line 35 working memory definition, line 79 cognitive fatigue definition), but these are isolated and the rest of the reading uses short, direct sentences. Below the threshold for academic_register failure."
+      ],
+      "notes": "Terms are defined on first use with plain-language meanings before formal phrasing (System 2 line 21, working memory lines 33–35, cognitive load line 41, cognitive fatigue line 79, serial processing line 29, ego depletion line 83). No paragraph introduces 3+ new terms simultaneously. Concrete analogies precede abstractions throughout (spotlight analogy, whiteboard analogy, Priya scenario). Active voice and second-person address ('you') used consistently. Two soft findings, both below the ≥3 hard-fail threshold."
+    },
+    "formatting": {
+      "passed": true,
+      "findings": [],
+      "notes": "No prose walls detected — all paragraphs are ≤4 sentences. The 4 activation conditions (lines 53–60), worked example steps (lines 94–101), and Key Takeaways (lines 126–132) are all rendered as numbered or bulleted lists. Bold-term definitions used for all key vocabulary (System 2, working memory, cognitive load, cognitive fatigue, serial processing, ego depletion). Inline examples present in Key Concepts (whiteboard analogy, phone-number vs dense-argument table, code-snippet example) and not deferred solely to Worked Example. A comparison table for cognitive load appears at line 43. Zero distinct formatting findings."
+    },
+    "scope_discipline": {
+      "passed": true,
+      "offscope_concepts": [],
+      "notes": "Topic boundary is 'System 2 thinking — slow, deliberate, effortful'. All content stays within that boundary. Future-topic concepts (confirmation bias, anchoring, Judgment Framework) appear only in the final paragraph of 'In Practice' (line 122) as bare names in one deferral sentence pointing to specific topic numbers — no bold, no defining clause, no teaching. Automation bias is not mentioned. Ego depletion is covered in the corpus (section 5.5) and handled correctly. No scope_creep violations."
+    },
+    "corpus_faithfulness": {
+      "passed": true,
+      "new_claims": [],
+      "notes": "Ten assertions sampled across the reading all trace directly to the corpus: System 2 definition (corpus 5.1), Kahneman 'lazy controller' quote (corpus 5.1), working memory whiteboard analogy and 4–7 chunk limit (corpus 5.2), cognitive load table concept (corpus 5.2), four activation conditions (corpus 5.3), System 2 check/override relay analogy (corpus 5.4), cognitive fatigue definition (corpus 5.5), ego depletion nuance (corpus 5.5), finite serial capacity (corpus 5.5), and Priya worked example (corpus section 6). The reading condenses and restructures corpus material without introducing new claims or unsupported assertions."
+    }
+  },
+  "verdict": "Reading for topic 9.2 passes all hard-fail checks — correct format and section order, 1445 words within the 1200–1600 standard-profile target, primary source cited, no forward references or scope creep, formatting is scannable and beginner-appropriate, and all sampled assertions are faithful to the corpus.",
+  "at": "2026-06-12T00:00:00Z"
+}

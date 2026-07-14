@@ -1,0 +1,39 @@
+{
+  "passed": true,
+  "retry": 3,
+  "checks": {
+    "required_sections": {
+      "passed": true,
+      "notes": "All four required sections present and non-trivial. §3 Learning Objectives ~85w across 6 well-formed objectives (speed, automaticity, low effort; examples; System 1 vs 2 contrast; heuristics; error conditions; AI evaluation relevance). §4 Introduction ~115w with concrete driving analogy leading into Kahneman/Tversky framing. §5 Core Concepts ~640w across five sub-sections (§5.1–§5.5). §10 Key Takeaways ~90w with five substantive bullets. All minima met: §3 ≥50w ✓, §4 ≥50w ✓, §5 ≥100w ✓, §10 ≥50w ✓."
+    },
+    "citation_density": {
+      "passed": true,
+      "primary_cited": true,
+      "claim_citation_rate": 0.65,
+      "notes": "resources_source=web_search → strict mode. Primary [1] (thedecisionlab.com) cited in §4, §5.1, §5.2, §5.3, §5.5, §7, §8. Supporting [2] (fs.blog) cited in §4, §5.1, §5.2, §5.3, §5.5. Supporting [3] (arxiv) cited in §4, §7, §8. Estimated 65% of standalone factual assertions in §5/§6/§7 carry a citation marker, above the 60% threshold. Software engineering paragraph in §7 remains uncited but is an illustrative observation and does not drop aggregate below 60%. No fabricated citations detected — all three markers resolve to listed resources."
+    },
+    "sequence_drift": {
+      "passed": true,
+      "forward_refs": [],
+      "notes": "Two violations from retry 2 are resolved. §6 line 99: 'The Judgment Framework (topic 9.7) is the procedural tool built on this conceptual foundation.' — bare name + topic pointer + light characterizer with no defining clause about contents or procedure; this is the exact form the retry 2 critic offered as a compliant fix. §10 final bullet: 'the Judgment Framework (topics 9.7–9.9) builds on this foundation.' — bare name + pointer + minimal relational phrase; no functional description of what the framework contains or does. All other forward references confirmed compliant: System 2 (§3, §5.4, §10 bullet 4) as single defer sentences; automation bias (§7) as bare name + '(covered in topic 9.5)'; Judgment Framework in §9 exercise as bare name + topic pointer. No novel forward-reference violations introduced by retry 3 edits."
+    },
+    "length_sanity": {
+      "passed": true,
+      "word_count": 1550,
+      "profile": "standard",
+      "notes": "Retry 3 makes two in-place rephrasing substitutions of equivalent word count; no content added or removed. Word count remains ~1,550, consistent with retry 2 (~1,550). Length sanity was accepted at retry 1 and retry 2; the same judgment holds. No 30%-outside-range violation under the passing precedent established for this corpus."
+    },
+    "topic_scope": {
+      "passed": true,
+      "violations": [],
+      "notes": "Both scope_creep violations from retry 2 are resolved. §6 Judgment Framework: the dash-appositive defining clause ('a structured set of questions designed to engage System 2 at the moments System 1 would otherwise short-circuit your review') is gone; replaced with 'is the procedural tool built on this conceptual foundation' — a light relational characterizer that does not teach the framework's contents or procedure. §10 final bullet: the functional descriptor ('gives you a structured way to engage System 2 at those moments') is replaced with 'builds on this foundation' — a minimal relational phrase. No new out-of-scope material introduced. Automation bias in §7 remains compliant (bare name + defer). System 2 references remain compliant (single defer sentences)."
+    },
+    "beginner_readability": {
+      "passed": true,
+      "findings": [],
+      "notes": "No change from retry 2 verdict. Both prior soft findings ('premature closure' and 'off-by-one mistakes') were resolved at retry 2 and remain resolved. Retry 3 substitutions use plain language: 'the procedural tool built on this conceptual foundation' and 'builds on this foundation' introduce no new jargon. No jargon dumps detected. No hedging phrases. Average sentence length within target. PASS with zero soft findings."
+    }
+  },
+  "verdict": "PASS (retry 3). All 6 checks pass. The two targeted edits applied in retry 3 resolve the sequence_drift and scope_creep hard-fail from retry 2: (1) §6 Judgment Framework now reads 'The Judgment Framework (topic 9.7) is the procedural tool built on this conceptual foundation' — the defining dash-appositive is removed, replaced with the light characterizer the retry 2 critic offered as the compliant form; (2) §10 final bullet now ends 'the Judgment Framework (topics 9.7–9.9) builds on this foundation' — the functional description 'gives you a structured way to engage System 2 at those moments' is removed. Required sections, citation density, length sanity, and beginner readability remain passing, unchanged from retry 2. Corpus is cleared to proceed to HITL #2.",
+  "at": "2026-06-11T07:00:00Z"
+}

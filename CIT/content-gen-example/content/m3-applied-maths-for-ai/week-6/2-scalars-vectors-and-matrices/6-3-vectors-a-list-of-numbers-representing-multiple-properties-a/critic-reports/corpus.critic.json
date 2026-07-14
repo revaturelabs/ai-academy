@@ -1,0 +1,80 @@
+{
+  "critic": "corpus-critic",
+  "topic_id": "6.3",
+  "topic_title": "Vectors — a list of numbers representing multiple properties at once",
+  "at": "2026-06-18T00:00:00Z",
+  "passed": true,
+  "verdict": "PASS. All 6 checks pass. Corpus is fit to ground downstream artifacts.",
+  "checks": {
+    "required_sections": {
+      "passed": true,
+      "details": {
+        "section_3_learning_objectives": { "present": true, "word_count_gte_50": true, "note": "5 numbered objectives, well above 50-word floor." },
+        "section_4_introduction": { "present": true, "word_count_gte_50": true, "note": "4 paragraphs, ~210 words." },
+        "section_5_core_concepts": { "present": true, "word_count_gte_100": true, "note": "8 subsections, ~1200 words." },
+        "section_10_key_takeaways": { "present": true, "word_count_gte_50": true, "note": "5 substantive bullets, ~115 words." }
+      }
+    },
+    "citation_density": {
+      "passed": true,
+      "resources_source": "web_search",
+      "primary_cited": true,
+      "primary_url": "https://machinelearningplus.com/linear-algebra/vectors/",
+      "primary_citation_marker": "[1]",
+      "primary_cited_sections": ["§4", "§5.1", "§5.2", "§5.3", "§5.4", "§5.6", "§5.8", "§6", "§7"],
+      "estimated_factual_assertion_citation_rate_sections_5_6_7": "~90%",
+      "soft_findings": [
+        {
+          "type": "minor_uncited_claim",
+          "location": "§5.3 line 77",
+          "text": "A word represented in a large AI language model might use a 768-dimensional vector — 768 separate numbers, each capturing a different nuance of that word's meaning.",
+          "note": "Specific dimension figure (768) lacks an inline citation marker. Surrounding sentences in the paragraph are cited [1][3]. Does not drop below the 60% threshold. Soft note only."
+        }
+      ]
+    },
+    "sequence_drift": {
+      "passed": true,
+      "available_prior_concepts": [
+        "binary representation", "data-to-number conversion", "pixels as numbers",
+        "parameters", "number as universal data language", "pattern-finding through arithmetic",
+        "scalar", "magnitude", "loss value", "learning rate", "hyperparameter",
+        "pixel brightness as scalar"
+      ],
+      "concepts_introduced_here": [
+        "vector", "dimension", "feature", "feature vector",
+        "consistent position-to-property mapping", "ordered list of scalars"
+      ],
+      "forward_references_found": [],
+      "name_and_defer_usages": [
+        { "term": "matrix / matrices", "location": "§5.8 and §8 Best Practices", "deferred_to": "6.4", "compliant": true },
+        { "term": "dot product / similarity calculation", "location": "§5.6", "deferred_to": "6.6", "compliant": true },
+        { "term": "neural networks", "location": "§5.8 one sentence", "deferred_to": "later topics", "compliant": true },
+        { "term": "feature engineering", "location": "§5.7 one sentence", "deferred_to": "later curriculum", "compliant": true },
+        { "term": "high-dimensional word vectors / embeddings", "location": "§7 Real-World Patterns", "deferred_to": "later module", "compliant": true }
+      ]
+    },
+    "length_sanity": {
+      "passed": true,
+      "depth_profile": "standard",
+      "allowed_range_words": "1500–3500",
+      "estimated_word_count": 2700,
+      "within_range": true,
+      "note": "~2700 words is solidly within the standard profile range."
+    },
+    "topic_scope": {
+      "passed": true,
+      "headline": "Vectors — a list of numbers representing multiple properties at once",
+      "scope_creep_violations": [],
+      "note": "All references to downstream concepts (dot product, matrix, embeddings, feature engineering) are contained to single name-and-defer sentences with explicit 'covered later' pointers. The 768-dimensional LLM vector example in §5.3 is used to illustrate dimension (an in-scope concept) and does not teach embedding mechanics. No concept is explained/defined at depth beyond the headline scope."
+    },
+    "beginner_readability": {
+      "passed": true,
+      "hard_fail_threshold_met": false,
+      "findings": [],
+      "undefined_terms": [],
+      "jargon_dumps": [],
+      "academic_register_violations": [],
+      "note": "All non-everyday terms (vector, scalar, dimension, feature, feature vector, feature engineering) are defined on first use or explicitly referenced to a prior topic. No paragraph introduces 3+ brand-new terms simultaneously. Register is conversational throughout; average sentence length well under 25 words; no hedging phrases detected."
+    }
+  }
+}

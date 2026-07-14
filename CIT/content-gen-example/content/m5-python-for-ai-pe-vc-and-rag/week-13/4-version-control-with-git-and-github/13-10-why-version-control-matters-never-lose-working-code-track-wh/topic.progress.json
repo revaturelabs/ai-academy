@@ -1,0 +1,202 @@
+{
+  "topic_id": "13.10",
+  "stage": "module_passed",
+  "gates": {
+    "resources_captured": true,
+    "corpus_generated": true,
+    "corpus_critic_passed": true,
+    "corpus_human_approved": true,
+    "reading_generated": true,
+    "reading_critic_passed": true,
+    "quiz_generated": true,
+    "quiz_critic_passed": true,
+    "diagram_generated": true,
+    "diagram_critic_passed": true,
+    "module_drift_passed": true,
+    "course_drift_passed": true,
+    "topic_artifacts_human_approved": true,
+    "week_human_approved": true
+  },
+  "history": [
+    {
+      "at": "2026-06-14T13:03:54Z",
+      "op": "set",
+      "gate": "resources_captured",
+      "value": true
+    },
+    {
+      "at": "2026-06-14T13:03:54Z",
+      "op": "stage",
+      "to": "awaiting_corpus"
+    },
+    {
+      "at": "2026-06-14T13:03:54Z",
+      "op": "log",
+      "msg": "Captured 3 resources (source=web_search, primary: git-scm.com/book/en/v2/Getting-Started-About-Version-Control)"
+    },
+    {
+      "at": "2026-06-14T13:07:57Z",
+      "op": "set",
+      "gate": "corpus_generated",
+      "value": true
+    },
+    {
+      "at": "2026-06-14T13:07:57Z",
+      "op": "stage",
+      "to": "awaiting_corpus_critic"
+    },
+    {
+      "at": "2026-06-14T13:07:57Z",
+      "op": "log",
+      "msg": "Corpus generated (1652 words, atomic profile, diagram=true, §6 skipped — motivation-only topic)"
+    },
+    {
+      "at": "2026-06-14T13:10:32Z",
+      "op": "set",
+      "gate": "corpus_critic_passed",
+      "value": false
+    },
+    {
+      "at": "2026-06-14T13:10:32Z",
+      "op": "log",
+      "msg": "Corpus critic failed attempt 1: §5.7 bolded+defined deferred terms (Commit/Branch/Merge/Repo), §5.6 Git/GitHub bolded. Fixed inline — stripped bold+definitions."
+    },
+    {
+      "at": "2026-06-14T13:12:07Z",
+      "op": "set",
+      "gate": "corpus_critic_passed",
+      "value": true
+    },
+    {
+      "at": "2026-06-14T13:12:07Z",
+      "op": "stage",
+      "to": "awaiting_corpus_human_review"
+    },
+    {
+      "at": "2026-06-14T13:12:07Z",
+      "op": "log",
+      "msg": "Corpus critic passed attempt 2 — §5.7 and §5.6 deferred-term fixes applied. All 6 checks green."
+    },
+    {
+      "at": "2026-06-14T13:14:14Z",
+      "op": "set",
+      "gate": "corpus_human_approved",
+      "value": true
+    },
+    {
+      "at": "2026-06-14T13:14:14Z",
+      "op": "stage",
+      "to": "corpus_approved"
+    },
+    {
+      "at": "2026-06-14T13:14:15Z",
+      "op": "log",
+      "msg": "HITL#2 approved — standard profile (budget override from atomic), diagram=true. Week running total: 63/90 min."
+    },
+    {
+      "at": "2026-06-14T13:24:33Z",
+      "op": "set",
+      "gate": "diagram_generated",
+      "value": true
+    },
+    {
+      "at": "2026-06-14T13:24:33Z",
+      "op": "set",
+      "gate": "diagram_critic_passed",
+      "value": true
+    },
+    {
+      "at": "2026-06-14T13:29:30Z",
+      "op": "set",
+      "gate": "reading_generated",
+      "value": true
+    },
+    {
+      "at": "2026-06-14T13:29:30Z",
+      "op": "stage",
+      "to": "awaiting_reading_critic"
+    },
+    {
+      "at": "2026-06-14T13:35:46Z",
+      "op": "set",
+      "gate": "reading_critic_passed",
+      "value": true
+    },
+    {
+      "at": "2026-06-14T13:35:46Z",
+      "op": "stage",
+      "to": "reading_approved"
+    },
+    {
+      "at": "2026-06-14T13:38:57Z",
+      "op": "set",
+      "gate": "quiz_generated",
+      "value": true
+    },
+    {
+      "at": "2026-06-14T13:38:57Z",
+      "op": "stage",
+      "to": "awaiting_quiz_critic"
+    },
+    {
+      "at": "2026-06-14T13:40:50Z",
+      "op": "set",
+      "gate": "quiz_critic_passed",
+      "value": true
+    },
+    {
+      "at": "2026-06-14T13:40:50Z",
+      "op": "stage",
+      "to": "quiz_approved"
+    },
+    {
+      "at": "2026-06-14T13:40:59Z",
+      "op": "stage",
+      "to": "awaiting_topic_artifacts_review"
+    },
+    {
+      "at": "2026-06-14T13:43:01Z",
+      "op": "set",
+      "gate": "topic_artifacts_human_approved",
+      "value": true
+    },
+    {
+      "at": "2026-06-14T13:43:02Z",
+      "op": "stage",
+      "to": "topic_artifacts_approved"
+    },
+    {
+      "at": "2026-06-14T13:43:02Z",
+      "op": "log",
+      "msg": "HITL#3 approved — all critics pass, soft Q1 length bias accepted. Week budget 71/90 min."
+    },
+    {
+      "at": "2026-06-15T00:00:00Z",
+      "op": "set",
+      "gate": "module_drift_passed",
+      "value": true
+    },
+    {
+      "at": "2026-06-15T00:00:00Z",
+      "op": "stage",
+      "to": "module_passed"
+    },
+    {
+      "at": "2026-06-15T00:00:00Z",
+      "op": "log",
+      "msg": "module-drift critic PASS — verdict: PASS, 0 hard failures, 3 soft findings (cross-ref label in §5.7, API key overlap 13.13/13.14, git rm --cached explanation). Report: critic-reports/module-drift.critic.json"
+    },
+    {
+      "at": "2026-06-15T06:37:49Z",
+      "op": "set",
+      "gate": "week_human_approved",
+      "value": true
+    },
+    {
+      "at": "2026-06-23T17:39:30Z",
+      "op": "set",
+      "gate": "course_drift_passed",
+      "value": true
+    }
+  ]
+}

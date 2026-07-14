@@ -1,0 +1,49 @@
+$CATEGORY: CIT/M3/week-7/7-6-mean-median-mode-measuring-consistency-across-ai-runs
+
+::q1:: An AI is tested ten times and scores these results\: 3, 5, 4, 4, 4. What is the mean score? {
+~The middle value after sorting, which is 4#No — finding the middle value after sorting gives the median, not the mean.
+=The sum divided by the count\: (3+5+4+4+4) ÷ 5 = 4#Correct — the mean is the sum of all values divided by the count of values.
+~The value that appears most often, which is 4#No — the value that appears most often is the mode, not the mean.
+~The difference between the highest and lowest score, which is 2#No — subtracting the lowest from the highest gives the range, not the mean.
+#### Tests LO1 — definition and calculation of the mean (corpus §5.1).
+}
+
+::q2:: An AI is tested nine times and scores\: 2, 5, 3, 4, 4, 5, 4, 1, 4. What is the median? {
+~3.6, found by adding all scores and dividing by nine#No — that calculation gives the mean, not the median.
+~5, because it is the highest score that appears more than once#No — the median is about position after sorting, not about how often a value appears.
+~4.5, found by averaging the two middle values#No — this data set has an odd number of values, so the median is a single middle value, not an average of two.
+=4, the middle value after sorting all nine scores#Correct — sorted order is 1,2,3,4,4,4,4,5,5 and the fifth value (middle of nine) is 4.
+#### Tests LO1 — definition and calculation of the median (corpus §5.2).
+}
+
+::q3:: A team runs the same classification prompt fifty times and records each response as a text label such as "Spam," "Not spam," or "Unsure." They want to know what the AI says most often. Which measure directly answers this question? {
+=Mode, because it counts occurrences and works on text labels#Correct — mode counts occurrences and applies to categories as well as numbers.
+~Mean, because averaging the responses gives the most common outcome#No — you cannot compute a numerical average of text labels like "Spam" or "Not spam."
+~Median, because the middle response after sorting tells you the typical answer#No — sorting text labels has no meaningful numerical middle, and median does not identify the most frequent response.
+~Range, because it shows the spread between the best and worst responses#No — range measures spread between extremes and does not identify the most frequent value.
+#### Tests LO2 — what mode tells you about AI outputs, including its unique applicability to text (corpus §5.3).
+}
+
+::q4:: A developer wants to know what score an AI typically achieves while ignoring the effect of a few unusually poor runs. Which measure should they use? {
+~Mean, because it captures every data point in a single number#No — the mean is pulled toward outliers, so a few very poor runs will drag it down and misrepresent typical performance.
+~Mode, because the most frequent score reflects what the AI normally achieves#No — mode identifies the most common single value but can miss important information about the overall distribution of scores.
+=Median, because the middle value is not pulled by outliers#Correct — the median is resistant to extreme low values, so it represents what the AI does in the typical case.
+~Temperature, because adjusting it removes the poor runs from the data set#No — temperature is a model setting, not a summary statistic, and does not remove data points from a recorded result set.
+#### Tests LO3 — choosing the right measure for a given consistency question (corpus §5.2 and §5.6).
+}
+
+::q5:: An AI is run ten times at temperature 0 and then ten times at temperature 1. How does temperature affect the mode of the responses? {
+~Temperature has no effect on the mode; only the mean changes between settings#No — temperature directly controls how varied the outputs are, which changes how often any single response repeats.
+=Temperature 0 produces a strong mode; temperature 1 produces a weak or absent mode#Correct — near-deterministic sampling at temperature 0 causes repetition, while high-temperature sampling spreads outputs across more options.
+~At temperature 0 the mode is absent and at temperature 1 a single response becomes dominant#No — this has the relationship backwards; low temperature concentrates outputs, high temperature spreads them.
+~Temperature 1 always produces the same mode as temperature 0 but with a lower mean#No — temperature 1 typically weakens or eliminates a strong mode rather than preserving it.
+#### Tests LO4 — how temperature affects mean, median, and mode (corpus §5.5).
+}
+
+::q6:: After running an AI evaluation, a student reports only the mean accuracy of 88% and concludes the AI is consistent. What is wrong with this conclusion? {
+~Nothing — a mean of 88% is high enough that consistency is guaranteed#No — a high mean can be produced by very uneven results and does not by itself confirm consistency.
+~The student should have used the mode instead, because mode is always more reliable than mean#No — no single measure is universally more reliable; each answers a different question.
+~The mean of 88% is probably a calculation error; the median should always be calculated first#No — there is no rule requiring the median to be computed before the mean, and the issue is about interpretation, not calculation order.
+=A high mean alone does not confirm consistency; the median and mode are also needed#Correct — using all three measures together reveals whether the high mean reflects consistent performance or a few exceptional runs masking many poor ones.
+#### Tests LO5 — identifying when a single measure is misleading and the value of using all three together (corpus §5.6 and §8).
+}

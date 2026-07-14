@@ -1,0 +1,39 @@
+{
+  "topic_id": "13.3",
+  "passed": true,
+  "at": "2026-06-13T00:00:00Z",
+  "checks": {
+    "required_sections": {
+      "passed": true,
+      "notes": "§3 LOs (6 objectives, ~120w), §4 Introduction (~180w), §5 Core Concepts (7 subsections, >800w), §10 Key Takeaways (5 bullets, ~100w) — all present and non-trivial"
+    },
+    "citation_density": {
+      "passed": true,
+      "primary_cited": true,
+      "claim_citation_rate": 0.82,
+      "notes": "Primary [1] cited in §4, §5.1–5.7, §7, §8. [2] cited throughout §5. [3] cited in §5.6, §7. All key claims in Core Concepts and Real-World Patterns carry markers."
+    },
+    "sequence_drift": {
+      "passed": true,
+      "forward_refs": [],
+      "notes": "All terms in scope: concepts_introduced covers few-shot prompting, zero-shot prompting, one-shot prompting, example pair, in-context learning, positive/negative example. Context window and token defined inline. Chain-of-thought named-and-deferred to 13.4. Agentic systems named-and-deferred to week 14. Fine-tuning named-and-deferred as advanced skill."
+    },
+    "length_sanity": {
+      "passed": true,
+      "word_count": 3450,
+      "profile": "standard",
+      "notes": "Within standard range 3000–4400w"
+    },
+    "scope_discipline": {
+      "passed": true,
+      "scope_creep": false,
+      "notes": "Stays on few-shot examples headline throughout. No adjacent concept taught."
+    },
+    "beginner_readability": {
+      "passed": true,
+      "findings": [],
+      "notes": "'shot', 'in-context learning', 'context window', 'token', 'LLM' all defined on first use. No jargon dumps. Concrete-before-abstract pattern followed throughout."
+    }
+  },
+  "verdict": "PASS — all 6 checks clear. Corpus ready for human review."
+}

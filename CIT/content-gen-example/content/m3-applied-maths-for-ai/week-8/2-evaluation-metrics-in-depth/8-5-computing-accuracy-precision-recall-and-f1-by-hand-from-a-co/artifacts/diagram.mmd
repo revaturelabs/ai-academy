@@ -1,0 +1,31 @@
+---
+config:
+  theme: base
+  flowchart:
+    htmlLabels: true
+title: "The confusion matrix — a 2x2 scoreboard (green diagonal = correct, red off-diagonal = errors)"
+---
+flowchart TB
+  grid["<table border='2' cellpadding='10' cellspacing='0'>
+    <tr>
+      <td></td>
+      <td colspan='2' align='center'><b><font color='#6d28d9'>PREDICTED (what the model said) →</font></b></td>
+    </tr>
+    <tr>
+      <td align='right'><b><font color='#6d28d9'>ACTUAL<br/>(the truth)<br/>↓</font></b></td>
+      <td bgcolor='#a5d8ff' align='center'><b><font color='#0b3d66'>Model said<br/>Positive</font></b></td>
+      <td bgcolor='#a5d8ff' align='center'><b><font color='#0b3d66'>Model said<br/>Negative</font></b></td>
+    </tr>
+    <tr>
+      <td bgcolor='#a5d8ff' align='center'><b><font color='#0b3d66'>Actually<br/>Positive</font></b></td>
+      <td bgcolor='#b2f2bb' align='center'><font color='#14532d'><b>TP</b><br/>correct catch</font></td>
+      <td bgcolor='#ffc9c9' align='center'><font color='#7a0c0c'><b>FN</b><br/>miss</font></td>
+    </tr>
+    <tr>
+      <td bgcolor='#a5d8ff' align='center'><b><font color='#0b3d66'>Actually<br/>Negative</font></b></td>
+      <td bgcolor='#ffc9c9' align='center'><font color='#7a0c0c'><b>FP</b><br/>false alarm</font></td>
+      <td bgcolor='#b2f2bb' align='center'><font color='#14532d'><b>TN</b><br/>correct pass</font></td>
+    </tr>
+  </table>"]:::frame
+
+  classDef frame fill:none,stroke:none;

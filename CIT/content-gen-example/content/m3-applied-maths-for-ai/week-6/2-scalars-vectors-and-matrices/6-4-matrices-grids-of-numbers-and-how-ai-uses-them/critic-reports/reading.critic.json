@@ -1,0 +1,97 @@
+{
+  "critic": "reading-critic",
+  "topic_id": "6.4",
+  "title": "Matrices — grids of numbers and how AI uses them",
+  "cycle": 2,
+  "run_at": "2026-06-19T00:00:00Z",
+  "passed": true,
+  "verdict": "PASS (re-validation after targeted image-path fix). The embedded diagram reference is now `![Matrix structure diagram](./diagram.png)` at reading.md line 31 — correct relative to reading.md's location inside artifacts/, so it resolves to the sibling artifacts/diagram.png and matches sibling-topic convention (previously the broken `artifacts/diagram.png` resolved to artifacts/artifacts/diagram.png). Per harness instruction, the missing physical PNG (mmdc unavailable) is a known environment limitation and is NOT scored against the reading — only the path string was verified. Only that one path string changed; no prose changed, so length/citations/faithfulness/readability/scope are unchanged from the cycle-1 PASS and re-confirmed clean. All 7 standard checks pass.",
+  "revalidation_focus": {
+    "trigger": "module-drift found broken embedded-image path in reading.md (artifacts/diagram.png) resolving wrong from inside artifacts/",
+    "image_reference_path_now": "./diagram.png",
+    "image_reference_line": 31,
+    "expected": "./diagram.png",
+    "path_correct": true,
+    "png_render_scored": false,
+    "png_render_note": "diagram.png physical render is out of scope for this reading verdict (mmdc unavailable, known env limitation); path-string correctness is the only image check applied."
+  },
+  "checks": {
+    "format_discipline": {
+      "passed": true,
+      "frontmatter_present": false,
+      "meta_sidecar_missing": false,
+      "section_template_violation": false,
+      "diagram_embedded_in_key_concepts": true,
+      "notes": "First line is H1 title, no YAML block. Sidecar parses with word_count, estimated_read_minutes, citations_used, sections. Exactly 6 sections in correct order: Overview, Key Concepts, Worked Example, In Practice, Key Takeaways, References. Diagram embedded in Key Concepts at line 31, now via ./diagram.png."
+    },
+    "length": {
+      "passed": true,
+      "word_count": 713,
+      "estimated_read_minutes_sidecar": 4,
+      "estimated_read_minutes_computed": 3.1,
+      "notes": "Unchanged by the path fix. 713 words / ~3.1 min within budget. No prose changed in cycle 2."
+    },
+    "citations": {
+      "passed": true,
+      "primary_resource_cited": true,
+      "primary_citation_marker": "[1]",
+      "inline_markers_used": [1, 2, 3],
+      "bibliography_entries": [1, 2, 3],
+      "orphan_markers": [],
+      "orphan_bibliography_entries": [],
+      "notes": "[1] (machinelearningmastery.com, the only primary) cited multiple times. All 3 inline markers match bibliography entries 1:1. No orphans either direction. Unchanged from cycle 1."
+    },
+    "no_forward_references": {
+      "passed": true,
+      "introduced_this_topic": ["matrix", "row", "column", "cell", "weight_matrix"],
+      "must_be_name_and_defer": ["matrix_multiplication", "transpose", "determinant", "eigenvalues"],
+      "violations": [],
+      "notes": "Only backward refs (6.1, 6.2, 6.3 — all earlier in sequence and listed prerequisites). Advanced operations named-and-deferred as bare names with 'later topic' pointers; no mechanics taught, no IDs. Unchanged from cycle 1."
+    },
+    "faithfulness": {
+      "passed": true,
+      "assertions_sampled": 10,
+      "unsupported_assertions": 0,
+      "fail_threshold": 2,
+      "notes": "Re-confirmed across 10 sampled assertions (matrix definition, row/column/cell, rows×columns, 1000×4 houses, 28×28 0-255 image, weight matrix, MNIST 70,000, recommendation matrix, 784×128 = 100,352 scalars, 5×3 student grid) — all trace to corpus. Prose unchanged."
+    },
+    "beginner_readability": {
+      "passed": true,
+      "undefined_terms": [],
+      "jargon_dump": false,
+      "abstract_first": false,
+      "academic_register": false,
+      "findings": [],
+      "notes": "School-register analogy precedes formal definition (concrete-first). Bold-term/plain-meaning definitions. No undefined cold terms, no hedging, short active sentences. Unchanged from cycle 1."
+    },
+    "formatting": {
+      "passed": true,
+      "wall_of_text": false,
+      "unlisted_sequence": false,
+      "no_inline_examples": false,
+      "bold_term_pattern_used": true,
+      "findings": [],
+      "notes": "Paragraphs 2-4 sentences. Bullet lists for definitions and takeaways, numbered steps in Worked Example, tables for size examples, inline examples at concept introduction. Unchanged from cycle 1."
+    },
+    "assessment_references": {
+      "passed": true,
+      "findings": [],
+      "notes": "No assessment IDs, due weeks, or grade weights in learner prose."
+    },
+    "scope": {
+      "passed": true,
+      "scope_creep": false,
+      "findings": [],
+      "notes": "Holds the headline: matrix structure, rows×columns notation, row-as-feature-vector, images as pixel grids, one-sentence weight-matrix mention. Advanced ops named only. No premature depth. Unchanged from cycle 1."
+    }
+  },
+  "soft_findings_count": 0,
+  "hard_fail_escalation": {
+    "triggered": false,
+    "reason": "No scope_creep; checks 5-6 produced 0 distinct findings (threshold 3)."
+  },
+  "gold_example_comparison": {
+    "gold_example_found": false,
+    "notes": "No gold example at .claude/references/gold-examples/reading/ — evaluated against written standards in artifact-mix.json and the reading-critic skill."
+  }
+}

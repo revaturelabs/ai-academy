@@ -1,0 +1,21 @@
+{
+  "type": "module",
+  "position": 3,
+  "title": "Designing Human Oversight",
+  "slug": "3-designing-human-oversight",
+  "course_code": "M4",
+  "course_slug": "m4-human-cognition-and-ai-oversight",
+  "week_nums": [
+    10
+  ],
+  "session_name_by_week": {
+    "10": "Cognition in Practice \u00e2\u20ac\u201d Case Studies"
+  },
+  "narrative_seed_by_week": {
+    "10": "Case study 1 \u00e2\u20ac\u201d AI in college admissions: where was the human override point missed? / Case study 2 \u00e2\u20ac\u201d Automated medical triage: what failure mode was tolerated that should not have been? / Case study 3 \u00e2\u20ac\u201d AI loan approval at scale: who was accountable and why the answer matters / Automation complacency \u00e2\u20ac\u201d the paradox of highly accurate systems making humans less vigilant / Designing human-in-the-loop checkpoints: when to require sign-off vs allow autonomous action / Connecting oversight to your domain: which components need a mandatory human checkpoint?"
+  },
+  "lab_activity_seed_by_week": {
+    "10": "Apply the Judgment Framework to your domain system \u00e2\u20ac\u201d answer all three questions per component / Design the human-in-the-loop checkpoint for your Capstone / Case study debrief: write a 200-word post-mortem \u00e2\u20ac\u201d what governance control would have prevented the failure? / Journal Entry #5 (continued) / \u00e2\u2020\u2019  Assessment 3 due this week  (see Assessment Plan)"
+  },
+  "status": "module_passed"
+}

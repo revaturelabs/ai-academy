@@ -1,0 +1,64 @@
+{
+  "type": "topic",
+  "id": "12.8",
+  "title": "try / except — handling errors gracefully without crashing",
+  "slug": "12-8-try-except-handling-errors-gracefully-without-crashing",
+  "position_in_module": 3,
+  "week_num": 12,
+  "session_name": "Python Foundations II and Calling an LLM",
+  "module": {
+    "position": 2,
+    "slug": "2-working-with-files",
+    "title": "Working with Files"
+  },
+  "course": {
+    "code": "M5",
+    "slug": "m5-python-for-ai-pe-vc-and-rag",
+    "title": "Python for AI, PE, VC and RAG"
+  },
+  "next_assessment": {
+    "id": "A4",
+    "due_week": 13,
+    "title": "Python and Prompt Engineering Portfolio",
+    "weight": "20%"
+  },
+  "paths": {
+    "corpus": "topic_corpus.md",
+    "resources": "topic.resources.json",
+    "progress": "topic.progress.json",
+    "artifacts_dir": "artifacts/",
+    "critic_reports_dir": "critic-reports/"
+  },
+  "artifact_plan": {
+    "diagram": true,
+    "diagram_intent": "Flowchart: try block → exception raised? → yes: except block → else skipped; no: else block (optional) → both paths continue after try/except structure",
+    "suggested_profile": "standard",
+    "confirmed_profile": "atomic",
+    "profile_signals": ["budget override: 41 min remaining for 7 topics; standard would leave 5.67 avg", "atomic keeps 6-min avg for 12.9-12.14"],
+    "sections_approved": {
+      "2_prerequisites": true,
+      "3_learning_objectives": true,
+      "4_introduction": true,
+      "5_core_concepts": true,
+      "6_implementation": true,
+      "7_real_world_patterns": true,
+      "8_best_practices": true,
+      "9_hands_on_exercise": true,
+      "10_key_takeaways": true
+    },
+    "soft_findings_carry_forward": [
+      "§8 finally — reading builder trim to 1 sentence max (named-and-deferred only)"
+    ],
+    "reading": {
+      "target_word_range": [800, 1000],
+      "target_minutes_range": [4, 5]
+    },
+    "quiz": {
+      "min_questions": 4,
+      "max_questions": 5,
+      "include_short_answer": false
+    }
+  },
+  "expected_delivery_minutes": 4,
+  "status": "scaffolded"
+}

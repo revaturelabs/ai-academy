@@ -1,0 +1,22 @@
+flowchart TB
+    S1["<b>Step 1: Identify error types</b><br/>Name false positive and false negative<br/>for this use case in plain language"]:::auto
+    S2["<b>Step 2: Cost each error type</b><br/>False positive vs false negative<br/>Which failure is more harmful?"]:::auto
+    SPAM["<b>Spam filter example</b><br/>FP = blocked email = costly<br/>FN = spam delivered = tolerable<br/>Set low false-positive threshold"]:::done
+    MED["<b>Medical screening example</b><br/>FN = missed diagnosis = fatal<br/>FP = extra exam = tolerable<br/>Set low false-negative threshold"]:::hitl
+    S3["<b>Step 3: Set the threshold ceiling</b><br/>Below the cost-exceeds-benefit point<br/>Build in margin for production drift"]:::auto
+    S4{"<b>Step 4: Human baseline check</b><br/>Is AI error on the high-cost type<br/>below the human practitioner rate?"}:::hitl
+    PASS["<b>Threshold set</b><br/>System safe to operate autonomously"]:::done
+    REVISE["<b>Revise or escalate</b><br/>AI not ready for autonomous use<br/>in this context"]:::hitl
+
+    S1 --> S2
+    S2 -.->|"FP-heavy use case"| SPAM
+    S2 -.->|"FN-heavy use case"| MED
+    SPAM -.-> S3
+    MED -.-> S3
+    S3 --> S4
+    S4 -->|"Yes — proceed"| PASS
+    S4 -->|"No — exceeds human baseline"| REVISE
+
+    classDef auto fill:#d0bfff,stroke:#8b5cf6,color:#3b0764
+    classDef hitl fill:#fff3bf,stroke:#f59e0b,stroke-width:3px,color:#78350f
+    classDef done fill:#b2f2bb,stroke:#22c55e,color:#14532d

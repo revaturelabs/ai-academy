@@ -1,0 +1,55 @@
+$CATEGORY: CIT/M2/week-4/4-7-how-to-compare-two-ai-tools-designing-a-measurable-evaluatio
+
+::q1:: Which statement best explains what an evaluation rubric is? {
+~A personal record of ratings gathered after trying both tools and comparing first impressions only#No — impressions are subjective; a rubric replaces personal opinion with a structured, evidence-based scoring guide.
+~A vendor-supplied scorecard that lists the advertised features and pricing tiers of each AI product#No — a rubric is designed by the evaluator, not the vendor, and focuses on observed performance rather than advertised claims.
+=A structured scoring guide that lists criteria, describes performance levels, and assigns descriptors to each score#Correct — those three components (criteria, levels, descriptors) are exactly what make a rubric consistent and defensible.
+~A technical benchmark that requires programming skills to run a standardised battery of automated tests#No — rubrics are designed for any evaluator; no programming background is needed to apply the scoring guide.
+#### Tests the definition of an evaluation rubric and why it produces more reliable comparisons than personal opinion (corpus §5.1).
+}
+
+::q2:: Which of the following lists four criteria that commonly appear in AI tool evaluation rubrics, as described in this topic? {
+=Functionality, accuracy and reliability, privacy and data handling, and accessibility and ease of use#Correct — all four are among the five core criteria described in section 5.3; ethics and bias is the fifth.
+~Processing speed, storage capacity, user interface colour scheme, and operating system compatibility#No — these are general software specifications, not the practitioner evaluation criteria described for AI tools in this topic.
+~Brand recognition, social media popularity, number of integrations, and size of the developer community#No — these describe market presence, not the measurable performance qualities the topic's rubric framework addresses.
+~Monthly subscription cost, server uptime percentage, API rate limits, and number of supported file formats#No — cost and technical specs may be noted, but they are not among the five core criteria the topic identifies for AI tool rubrics.
+#### Tests the ability to name at least four of the five common AI evaluation criteria and understand what each one measures (corpus §5.3).
+}
+
+::q3:: A colleague writes "Tool A performs adequately on most tasks" in their rubric's Accuracy criterion. Why is this not a usable rubric descriptor? {
+~It focuses on the wrong criterion; adequacy should be recorded under the Functionality column instead#No — the criterion placement is not the issue; the problem is that "adequately" gives no observable standard.
+~It is written in plain language; rubric descriptors must use technical or statistical terminology to be valid#No — plain language is preferred; the corpus explicitly says to avoid vague words, not to add jargon.
+~It does not include a numeric weight; every descriptor must state the percentage it contributes to the total#No — weights are assigned to criteria, not to individual descriptors; descriptors describe what each score level looks like.
+=It uses a vague word that gives scorers no observable behaviour to match, so two people would reach different scores#Correct — the corpus rule is that descriptors must describe observable behaviour; vague words like "adequately" produce inconsistent scoring.
+#### Tests the distinction between vague qualitative judgement and measurable descriptor-anchored criteria (corpus §5.4).
+}
+
+::q4:: You are designing a rubric to compare two AI chatbots that will process real student login data. Which sequence of steps best follows the rubric-design process described in this topic? {
+~Run both tools on several prompts first, then choose criteria that reflect the strongest performance you observed#No — criteria and descriptors must be written before testing; choosing them after seeing results introduces unconscious bias toward whichever tool did better.
+~Assign 100% weight to the Accuracy criterion because correct output is always the single most important factor#No — weights should reflect the actual context; when student data is involved, Privacy and Data Handling deserves significant weight, not zero.
+~Ask students to rate both tools informally and average their ratings to produce an objective comparison score#No — averaging informal ratings reproduces the personal-impression problem; a rubric replaces that approach with scored, observable criteria.
+=Choose five criteria, set weights that reflect student-data risk, write descriptors, then run the same prompts on both tools#Correct — this is the step-by-step sequence the topic describes\: criteria first, weights before scoring, identical test protocol on both tools.
+#### Tests the ability to design a five-criteria rubric following the correct procedure (corpus §5.3, §5.5, §6).
+}
+
+::q5:: After scoring two tools, you notice Tool A earns 3.85 / 4.00 overall but scores 1 / 4 on Privacy and Data Handling. Tool B earns 3.10 / 4.00 overall with no score below 2. Which conclusion is most defensible? {
+=Tool A's Privacy score is a critical failure; the corpus warns it cannot be offset by higher scores elsewhere, so Tool B is the safer choice#Correct — the best-practice rule states that a critically low Privacy score is not rescued by high scores on other criteria (corpus §8).
+~Tool A should be selected because its weighted total of 3.85 is higher and reflects overall stronger performance#No — the corpus explicitly states that a critically low score on Privacy is not rescued by high totals on other criteria.
+~The rubric is unreliable when two tools produce very different overall scores; the criteria should be reconsidered#No — different total scores are the expected and useful outcome of applying a rubric; they do not indicate a rubric design problem.
+~You should reduce the Privacy weight slightly so that Tool A's recalculated total better reflects its other strengths#No — the corpus rule is that weights must be set before scoring; adjusting them afterward to favour a preferred tool is not evaluation.
+#### Tests applying a rubric to two tools and producing a defensible, evidence-based conclusion (corpus §5.5, §8).
+}
+
+::q6:: One team writes their rubric descriptors before running any tool tests. A second team writes descriptors after completing all tests on both tools. Which team produces the more credible rubric, and why? {
+~The second team, because descriptors grounded in real observations from both tools are more accurate and specific#No — descriptors written after testing are unconsciously shaped by what the scorer already saw, which biases the scoring standard.
+=The first team, because pre-test descriptors set a scoring standard that cannot be shaped by a preference for either tool#Correct — the corpus best-practice rule states that descriptors must be written before testing so the standard is independent of the results.
+~Both teams produce equally credible rubrics, since the descriptors will describe the same observable behaviours either way#No — post-test descriptors tend to favour whichever tool performed better; the two approaches do not produce the same result.
+~Neither team's rubric is credible without independent validation by the tool vendors before any scoring begins#No — vendor validation is not part of the rubric process; credibility comes from pre-test, observable, clearly distinguishable descriptors.
+#### Tests understanding of when to write rubric descriptors and why the timing affects the credibility of the comparison (corpus §8).
+}
+
+::q7:: An evaluation rubric has three essential parts\: criteria, performance levels, and ____. Without this third part, two different people scoring the same tool on the same criterion may reach different scores. {
+=descriptors
+=scoring descriptors
+=performance descriptors
+}

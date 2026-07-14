@@ -1,0 +1,42 @@
+{
+  "passed": true,
+  "pass_number": 2,
+  "checks": {
+    "required_sections": {
+      "passed": true,
+      "notes": "All four required sections present and non-trivial. Section 3 (Learning Objectives): 6 objectives, ~90 words — above 50-word floor. Section 4 (Introduction): ~230 words — above 50-word floor. Section 5 (Core Concepts): four sub-sections (5.1–5.4) spanning approximately 1,400 words — well above 100-word floor. Section 10 (Key Takeaways): 5 bullets, ~150 words — above 50-word floor."
+    },
+    "citation_density": {
+      "passed": true,
+      "primary_cited": true,
+      "claim_citation_rate": 0.88,
+      "notes": "resources_source=web_search — strict mode applied. Primary resource [1] (langcopilot.com) cited at first factual claim (line 36) and throughout all major sections. Supporting resources [2] and [3] appear throughout. Standalone factual assertions in sections 5, 6, 7 carry citation markers at approximately 88% rate. Analogy/explanatory bridge sentences ('Think of the LLM core as the brain...') correctly omit citations. No fabricated citations detected — all [1], [2], [3] markers resolve to the three resources in topic.resources.json. Strict-mode requirements satisfied."
+    },
+    "sequence_drift": {
+      "passed": true,
+      "forward_refs": [],
+      "notes": "Revision confirmed: 'parameters' (the pass-1 hard fail on line 83) has been replaced with 'internal configuration' — a plain-English phrase requiring no prior definition. 'context window' is defined inline on first use ('the block of text the model can see at any given moment') and treated as an in-topic supporting definition for short-term memory — acceptable. All other technical nouns in the corpus are either (a) in this topic's concepts_introduced list, (b) in the prior-topic concepts list (foundation model, RAG, retrieve-augment-generate pipeline, hallucination, fine-tuning, prompt augmentation), or (c) plain-English everyday words. No forward references detected."
+    },
+    "length_sanity": {
+      "passed": true,
+      "word_count": 2890,
+      "profile": "standard",
+      "acceptable_range": "1500–6000",
+      "notes": "Estimated word count ~2,890. Task-specified standard corpus range is 1,500–6,000 words. Corpus falls within range. No hard-fail condition. Marginal note: corpus sits at the lower end relative to the internal target of ~3,000–4,400 words for a multi-component standard topic, but this does not constitute a failure under the 30% tolerance rule (floor at ~2,100 words). Flagged for author awareness only."
+    },
+    "topic_scope": {
+      "passed": true,
+      "findings": [],
+      "notes": "Revision confirmed: 'multi-agent systems' (the pass-1 scope_creep hard fail on line 167) is no longer bolded and no longer carries a defining clause or appositive. Revised form reads: 'multiple agents can work in concert — you will explore multi-agent systems in Week 14.' This is a bare mention with a deferral pointer — the permitted mention-and-defer form per scope_discipline rules. No other material teaches beyond the topic headline. Section 5.4 ('How agents relate to RAG, fine-tuning, and foundation models') ties prior concepts to this topic without introducing new out-of-scope concepts. All tool examples in 5.2.3 are illustrative only, not taught at depth. Scope is clean."
+    },
+    "beginner_readability": {
+      "passed": true,
+      "findings": [
+        "undefined_terms (soft): 'API' is used without spelling out 'Application Programming Interface' at first use (line 97, section 5.2.3, inside the tool list: 'An API call — the agent can communicate with an external software service...'). For a fresher audience, the acronym should be expanded on first use. Recommended fix: 'An API (Application Programming Interface) call — ...'. This is a soft finding only."
+      ],
+      "notes": "Only 1 distinct soft finding (undefined acronym: API). Threshold for hard-fail escalation is 3 distinct findings — not reached. No jargon dumps detected: the four core components (LLM core, memory, tools, planning loop) are listed together in the 5.2 overview paragraph but each is immediately defined in its own dedicated sub-section — structural summary-then-detail pattern, not a jargon dump. Register is plain and beginner-appropriate throughout. Sentences are generally short, active voice, learner addressed as 'you'. No hedging phrases detected. Prior pass-1 soft finding (undefined 'parameters') is resolved by the revision. Readability passes."
+    }
+  },
+  "verdict": "PASSED. Both pass-1 hard failures are resolved: (1) 'parameters' replaced with 'internal configuration' — no sequence drift; (2) 'multi-agent systems' bare mention with Week 14 pointer, no bold, no appositive — no scope creep. All six checks pass. One residual soft finding: 'API' acronym not expanded on first use (section 5.2.3, line 97) — recommend spelling out as 'API (Application Programming Interface)' before HITL #2, but this does not block corpus approval.",
+  "at": "2026-06-17T00:00:00Z"
+}

@@ -1,0 +1,97 @@
+{
+  "critic": "corpus-critic",
+  "topic_id": "3.7",
+  "topic_title": "AI in India today — healthcare, agriculture, vernacular translation",
+  "depth_profile": "standard",
+  "resources_source": "web_search",
+  "passed": true,
+  "at": "2026-06-17T00:00:00Z",
+  "checks": {
+    "required_sections": {
+      "passed": true,
+      "detail": {
+        "section_3_learning_objectives": { "present": true, "word_count_estimate": 90, "threshold": 50, "passed": true },
+        "section_4_introduction":        { "present": true, "word_count_estimate": 160, "threshold": 50, "passed": true },
+        "section_5_core_concepts":       { "present": true, "word_count_estimate": 1100, "threshold": 100, "passed": true },
+        "section_10_key_takeaways":      { "present": true, "word_count_estimate": 150, "threshold": 50, "passed": true }
+      }
+    },
+    "citation_density": {
+      "passed": true,
+      "mode": "strict",
+      "primary_resources_cited": {
+        "[1] weforum.org": { "cited_at_least_once": true, "sections": ["5.1", "5.4", "7"] },
+        "[2] indiaai.gov.in": { "cited_at_least_once": true, "sections": ["5.2", "6", "7"] },
+        "[3] netzeroindia.org": { "cited_at_least_once": true, "sections": ["5.3", "7", "8", "10"] }
+      },
+      "sections_5_6_7_coverage": {
+        "estimate_factual_assertions": 22,
+        "estimate_cited_assertions": 15,
+        "coverage_pct": 68,
+        "threshold_pct": 60,
+        "passed": true
+      },
+      "fake_citations_detected": false,
+      "findings": []
+    },
+    "sequence_drift": {
+      "passed": true,
+      "forward_references_found": [],
+      "notes": [
+        "All cited prior concepts (supervised learning, LLM, hallucination, tokenisation) reference earlier topics explicitly by section number (3.1, 3.2, 3.4) — no re-teaching beyond application context.",
+        "NLP acronym introduced in §5.3 as part of 'vernacular NLP' — a 3.7 concepts_introduced term; defined inline on first use.",
+        "Computer vision, telemedicine, IndiaAI Mission, Kisan e-Mitra, BharatGen, digital divide, vernacular NLP, multilingual AI all appear in 3.7 concepts_introduced — valid."
+      ]
+    },
+    "length_sanity": {
+      "passed": true,
+      "estimated_word_count": 2430,
+      "profile": "standard",
+      "target_range": [1500, 3000],
+      "within_range": true
+    },
+    "topic_scope": {
+      "passed": true,
+      "scope_creep_items": [],
+      "notes": [
+        "§5.2 includes one application-level reminder of 'supervised learning' tied directly to satellite crop monitoring — does not re-teach the concept, references §3.1 explicitly. Acceptable.",
+        "§5.3 mentions tokenisation in one parenthetical clause referencing §3.4 — not taught here, mention-and-defer pattern compliant.",
+        "All material stays within: AI in India / healthcare / agriculture / vernacular translation headline. No advanced deployment architecture, ML theory, or adjacent CS concepts taught at depth."
+      ]
+    },
+    "beginner_readability": {
+      "passed": true,
+      "hard_escalated": false,
+      "findings_count": 1,
+      "findings": [
+        {
+          "code": "undefined_terms",
+          "severity": "soft",
+          "terms": [
+            {
+              "term": "agricultural extension officer",
+              "first_used": "§4 Introduction",
+              "defined": false,
+              "note": "Used in the opening scenario and later in §5.2 and §6, but never given a plain-language definition. Context implies 'a government agricultural advisor', but beginners may not infer this."
+            },
+            {
+              "term": "block (administrative unit)",
+              "first_used": "§6 Implementation, Step 5",
+              "defined": false,
+              "note": "Phrase 'Extension officers in the relevant block' uses an Indian administrative sub-district term without explanation."
+            }
+          ]
+        }
+      ],
+      "jargon_dump": { "detected": false },
+      "academic_register": { "detected": false },
+      "acronyms_undefined": [],
+      "notes": [
+        "All major technical terms defined inline on first use: computer vision (§5.1), telemedicine (§5.1), diabetic retinopathy (§5.1), spectral signatures (§5.2), NLP (§5.3), digital divide (§5.4).",
+        "1 soft finding (undefined_terms with 2 terms) — below the 3-finding escalation threshold; corpus NOT hard-failed on readability.",
+        "Sentences are generally concise and active. No classic hedging phrases detected. Concrete analogies lead each subsection before abstract definitions."
+      ]
+    }
+  },
+  "verdict": "PASS — all 6 checks passed; 1 soft readability finding (undefined_terms: 'agricultural extension officer' and 'block (administrative unit)') surfaced for HITL #2 review but does not block corpus approval. Citation density ~68% across §§5–7 (above 60% threshold). No forward references. No scope creep. Word count ~2430 within 1500–3000 standard range."
+}

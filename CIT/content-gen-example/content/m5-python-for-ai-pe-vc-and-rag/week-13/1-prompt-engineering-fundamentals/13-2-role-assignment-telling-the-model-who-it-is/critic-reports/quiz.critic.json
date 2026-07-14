@@ -1,0 +1,51 @@
+{
+  "topic_id": "13.2",
+  "passed": true,
+  "at": "2026-06-13T00:00:00Z",
+  "cycle": 2,
+  "checks": {
+    "positional_bias": {
+      "passed": true,
+      "distribution": [2, 1, 1, 2],
+      "max_share": 0.33,
+      "notes": "Positions: q1→1, q2→3, q3→0, q4→2, q5→0, q6→3. All 4 positions used; max 2/6 = 33% < 40%"
+    },
+    "length_bias": {
+      "passed": true,
+      "longest_correct_rate": 0.0,
+      "baseline": 0.25,
+      "threshold": 0.40,
+      "detail": {
+        "q1": { "correct_len": 65, "max_len": 76, "correct_is_longest": false },
+        "q2": { "correct_len": 79, "mean_len": 69.5, "threshold_len": 83.4, "correct_is_longest": true, "over_by": -4.4 },
+        "q3": { "correct_len": 40, "max_len": 51, "correct_is_longest": false },
+        "q4": { "correct_len": 78, "max_len": 78, "correct_is_longest": false, "notes": "tied with 2 distractors" },
+        "q5": { "correct_len": 89, "mean_len": 86.5, "threshold_len": 103.8, "correct_is_longest": true, "pct_above_mean": 0.029 },
+        "q6": { "correct_len": 79, "max_len": 80, "correct_is_longest": false }
+      },
+      "notes": "0/6 questions flagged (correct answer longest by >20% of mean). Rate 0% < 40% threshold."
+    },
+    "distractor_plausibility": {
+      "passed": true,
+      "absurd_rate": 0.0,
+      "notes": "All 24 distractors capture plausible beginner misconceptions; none absurd"
+    },
+    "objective_coverage": {
+      "passed": true,
+      "uncovered_objectives": [],
+      "coverage": {
+        "LO1_define_role_assignment": ["q1"],
+        "LO2_write_role_insert_system_param": ["q2"],
+        "LO3_explain_tone_vocab_changes": ["q3"],
+        "LO4_distinguish_when_role_helps": ["q4", "q6"],
+        "LO5_identify_two_mistakes": ["q5"]
+      }
+    },
+    "scope_discipline": {
+      "passed": true,
+      "out_of_scope_questions": [],
+      "notes": "All stems plain language; all questions on-headline for role assignment; no un-taught knowledge required"
+    }
+  },
+  "verdict": "PASS — all checks clear on cycle 2. Length bias resolved by equalized option lengths. Positional distribution 33% max share. All 5 LOs covered."
+}

@@ -1,0 +1,51 @@
+$CATEGORY: CIT/M2/week-4/4-4-agents-llm-plus-memory-tools-and-a-planning-loop-conceptual
+
+::q1:: Which of the following best describes what makes an AI agent different from a standalone Large Language Model (LLM)? {
+~A standalone LLM can call external tools to retrieve live data, whereas an agent only generates text from its training knowledge.#No — it is the agent that gains tool-calling capability; a standalone LLM cannot reach outside its context window on its own.
+=An agent combines an LLM with memory, tools, and a planning loop so it can take actions and complete multi-step tasks.#Correct — the three additions (memory, tools, planning loop) are exactly what turn a passive text generator into an active agent.
+~An agent is a smaller, faster version of an LLM that runs more efficiently on limited hardware devices.#No — the agent structure is about capability and architecture, not model size or hardware efficiency.
+~An agent replaces the LLM core with a rule-based decision engine to make its behaviour more predictable.#No — an agent keeps the LLM as its reasoning core; it adds components around it rather than replacing it.
+#### Tests the definition of an AI agent and how it differs from a standalone LLM (corpus §5.1).
+}
+
+::q2:: A learner is studying AI agents. She lists four things: an LLM core, memory, tools, and a planning loop. Which statement about this list is correct? {
+~Three of the four are correct; the "planning loop" is not a standard agent component — agents use a decision tree instead.#No — the planning loop (observe-think-act cycle) is one of the four standard components; a decision tree is not part of the definition.
+~Memory is optional in an agent; the other three components are always required for the system to qualify as an agent.#No — memory is one of the four core components; without memory each step restarts from scratch and the agent cannot maintain progress.
+~Tools and the LLM core are the only components that distinguish an agent from a plain LLM; memory and the loop are inherited from the LLM automatically.#No — a standalone LLM does not inherently provide persistent memory or a multi-step planning loop; those must be added by the agent architecture.
+=All four are the fundamental components of every AI agent, regardless of its specific design or application.#Correct — the corpus states that every AI agent, regardless of specific design, consists of these four fundamental components.
+#### Tests identification of the four core agent components (corpus §5.2).
+}
+
+::q3:: An AI agent is working on the task "find a good pizza restaurant near the office and check if it is open tonight." Arrange the first three phases it would run through in the correct order. {
+=Observe the user's task → Think about what information is needed → Act by invoking a web search or map tool.#Correct — the cycle always starts with observing the current state (the user's request), then reasoning about next steps, then taking an action.
+~Act by invoking a web search immediately → Observe the results → Think about whether the task is complete.#No — the cycle must begin with the observe phase (reading the task); acting without first observing the task would skip the reasoning step entirely.
+~Think about the task in advance → Act by pre-loading all possible tools → Observe whether any result was useful.#No — the agent does not pre-load all tools speculatively; the think phase selects the appropriate tool for the current step after observing the situation.
+~Observe past sessions in long-term memory → Act by checking the calendar → Think about the user's dining preferences.#No — for a new task the agent starts by observing the current request, not by first loading long-term memory from previous unrelated sessions.
+#### Tests the observe-think-act cycle and its correct sequence for a concrete task (corpus §5.2.4).
+}
+
+::q4:: A user interacts with an AI agent over several weeks. One week, the agent remembers a preference the user stated three sessions ago. Another week, it tracks all the steps of a single research task while that task is running. Which memory type matches each situation? {
+~Both are short-term memory, because the agent keeps its full history in its context window at all times.#No — a context window is temporary and limited in size; it cannot persist across separate sessions spanning multiple weeks.
+~Both are long-term memory, because any information the agent retains beyond a single prompt must be written to external storage.#No — within a running task the agent uses its context window (short-term memory) to track steps; only cross-session persistence requires external storage.
+=Remembering a preference across sessions is long-term memory; tracking steps within a task is short-term memory.#Correct — long-term memory persists in external storage across sessions, while short-term memory holds the current task's context in the active context window.
+~Remembering a preference across sessions is short-term memory; tracking steps within a task is long-term memory.#No — this is reversed; short-term memory is temporary and session-bound, while long-term memory persists across sessions.
+#### Tests the distinction between short-term and long-term memory, with a concrete example of each (corpus §5.2.2).
+}
+
+::q5:: Which of the following best explains what a tool enables an agent to do that a standalone LLM cannot do on its own? {
+~A tool gives the LLM a larger context window, allowing it to read longer documents than it could process unaided.#No — context window size is a property of the model architecture, not something a tool extends; tools provide external action capability.
+=A tool lets the agent take actions with real-world effects — such as searching the web or calling an API — that pure text generation cannot accomplish.#Correct — tools turn the agent's reasoning into actual actions; a standalone LLM can only generate text from already-known information and cannot reach external services.
+~A tool replaces the LLM core's reasoning step so the agent can respond faster without generating token-by-token.#No — the LLM core remains the reasoning engine; tools execute specific actions the LLM decides to invoke, they do not replace the reasoning step.
+~A tool allows the agent to retrain its own weights in real time so it can learn from each new task it encounters.#No — tools are external capabilities for actions like searching or querying a database; weight retraining is a completely separate, offline process.
+#### Tests what tools enable versus what an LLM alone can do, including a concrete tool example (corpus §5.2.3).
+}
+
+::q6:: A company's customer service system receives a complaint, looks up the customer's account, checks the return policy, applies a refund, and sends a confirmation email — all without a human directing each step. A product manager calls this an "agentic workflow." Which of the following best explains why that label is correct? {
+~It is agentic because the system uses multiple AI models working in parallel, which is the definition of an agentic workflow.#No — using multiple models is a multi-agent pattern, not the defining feature of an agentic workflow; the key feature is goal-directed, multi-step autonomous action.
+~It is agentic because the task was completed faster than a human could do it, which is the primary criterion for an agentic system.#No — speed is not the defining criterion; an agentic workflow is defined by the agent sequencing its own actions toward a goal through a planning loop.
+~It is agentic because the system was pre-programmed with every step in advance, removing the need for human decision-making.#No — a pre-programmed script is not an agentic workflow; agentic workflows let the agent determine its own sequence of steps at runtime.
+=It is agentic because the AI system was given a goal and autonomously sequenced its own tool calls and reasoning steps to reach that goal.#Correct — an agentic workflow is defined by goal-level task specification and the agent planning its own action sequence through the observe-think-act loop, exactly as described.
+#### Tests recognition of what an agentic workflow is, with a real-world example (corpus §5.3, §7 Real-World Patterns).
+}
+
+::q7:: In your own words, describe the observe-think-act cycle that drives an AI agent. Your answer should name each of the three phases, explain what happens in each phase, and describe what causes the cycle to stop. {}

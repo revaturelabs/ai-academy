@@ -1,0 +1,46 @@
+{
+  "topic_id": "14.3",
+  "artifact": "quiz",
+  "format": "gift",
+  "question_count": 5,
+  "$bias_defense_applied": true,
+  "bias_defense_applied": true,
+  "$shuffle_seed": "14.3-hash152-cycle2",
+  "correct_answer_positions": [2, 0, 3, 1, 2],
+  "correct_position_distribution": [2, 0, 3, 1, 2],
+  "max_share": 0.40,
+  "lo_coverage": ["LO1", "LO2", "LO3", "LO4", "LO5"],
+  "questions": [
+    {
+      "id": "q1",
+      "type": "mcq",
+      "objective_ref": "Define hallucination and explain why it occurs in language models.",
+      "correct_position": 2
+    },
+    {
+      "id": "q2",
+      "type": "mcq",
+      "objective_ref": "Distinguish parametric memory from retrieved evidence.",
+      "correct_position": 0
+    },
+    {
+      "id": "q3",
+      "type": "mcq",
+      "objective_ref": "Explain the mechanism by which RAG reduces hallucination (retrieval, prompt, grounding).",
+      "correct_position": 3
+    },
+    {
+      "id": "q4",
+      "type": "mcq",
+      "objective_ref": "Identify conditions where hallucination risk remains even with RAG (retrieval failure, corpus quality, instruction-following).",
+      "correct_position": 1
+    },
+    {
+      "id": "q5",
+      "type": "mcq",
+      "objective_ref": "Evaluate whether a response is evidence-grounded or memory-dependent.",
+      "correct_position": 2
+    }
+  ],
+  "generated_at": "2026-06-15T00:00:00Z"
+}

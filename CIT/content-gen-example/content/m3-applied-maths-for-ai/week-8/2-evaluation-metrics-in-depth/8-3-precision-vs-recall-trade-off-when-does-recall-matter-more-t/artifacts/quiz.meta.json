@@ -1,0 +1,71 @@
+{
+  "topic_id": "8.3",
+  "generated_at": "2026-06-22T07:30:00Z",
+  "format": "gift",
+  "question_count": 6,
+  "$bias_defense_applied": true,
+  "$shuffle_seed": "sha256(8.3)=4c9e... salt-resolved; positions verified max_share<=0.40 and all 4 positions used",
+  "correct_position_distribution": [2, 0, 3, 1, 3, 0],
+  "correct_position_by_letter": {
+    "q1": "C",
+    "q2": "A",
+    "q3": "D",
+    "q4": "B",
+    "q5": "D",
+    "q6": "A"
+  },
+  "positional_distribution_counts": {
+    "A": 2,
+    "B": 1,
+    "C": 1,
+    "D": 2
+  },
+  "max_share": 0.33,
+  "all_four_positions_used": true,
+  "questions": [
+    {
+      "id": "q1",
+      "type": "mcq",
+      "objective_ref": "Explain what precision means in plain words: of the cases the model flagged, how many were right.",
+      "correct_position": 2
+    },
+    {
+      "id": "q2",
+      "type": "mcq",
+      "objective_ref": "Explain what recall means in plain words: of the cases it should have flagged, how many it caught.",
+      "correct_position": 0
+    },
+    {
+      "id": "q3",
+      "type": "mcq",
+      "objective_ref": "Describe the trade-off — why pushing one of these numbers up usually pushes the other down.",
+      "correct_position": 3
+    },
+    {
+      "id": "q4",
+      "type": "mcq",
+      "objective_ref": "Use the cost-of-error idea (a missed case vs a false alarm) to decide which number matters more.",
+      "correct_position": 1
+    },
+    {
+      "id": "q5",
+      "type": "mcq",
+      "objective_ref": "Give a real situation where recall matters more than precision, and say why.",
+      "correct_position": 3
+    },
+    {
+      "id": "q6",
+      "type": "mcq",
+      "objective_ref": "Don't assume higher is always better on a single metric (recall=100% is trivial) — reinforces the trade-off / cost-of-error LOs.",
+      "correct_position": 0
+    }
+  ],
+  "objective_coverage": [
+    "LO1 precision meaning — q1",
+    "LO2 recall meaning — q2",
+    "LO3 trade-off mechanism — q3",
+    "LO4 cost-of-error decision — q4",
+    "LO5 recall-wins example — q5",
+    "LO3/LO4 reinforced via the 'higher is always better' misconception — q6"
+  ]
+}

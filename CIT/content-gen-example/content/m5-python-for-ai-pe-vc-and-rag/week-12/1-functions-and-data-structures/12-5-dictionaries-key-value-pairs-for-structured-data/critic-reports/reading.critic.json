@@ -1,0 +1,38 @@
+{
+  "passed": true,
+  "checks": {
+    "format_discipline": {
+      "passed": true,
+      "notes": "First non-empty line is '# Dictionaries — Key-Value Pairs for Structured Data' with no frontmatter. reading.meta.json exists and parses cleanly with all required fields (word_count, estimated_read_minutes, citations_used, sections). Exactly 6 fixed sections present in correct order: Overview, Key Concepts, Worked Example, In Practice, Key Takeaways, References."
+    },
+    "length_budget": {
+      "passed": true,
+      "word_count": 1311,
+      "reading_minutes_200wpm": 7,
+      "reading_minutes_230wpm": 6,
+      "notes": "1311 words within target [1200, 1600]. At 200 wpm = 6.55 min (7 min ceiling); at 230 wpm = 5.7 min (~6 min). Both estimates within [6, 8] min target."
+    },
+    "citation_discipline": {
+      "passed": true,
+      "primary_cited": true,
+      "notes": "Primary resource [1] (realpython.com) cited at Overview line 8, Key Concepts throughout (×6 occurrences), Worked Example, In Practice, Key Takeaways. [2] W3Schools cited in Key Concepts Add/Modify, Worked Example, In Practice Config. [3] Python docs cited in Key Concepts Checking/iterating, In Practice API response. All inline markers [1][2][3] resolve to bibliography entries. No orphan markers; no orphan bibliography entries. No fabricated citations."
+    },
+    "forward_refs": {
+      "passed": true,
+      "violations": [],
+      "notes": "API: spelled out as 'API (Application Programming Interface)' on first use with a 'later in Week 12' defer pointer — no teaching beyond the name. None: linked back to Topic 12.2 implicit return — prior concept. KeyError: in 12.5 concepts_introduced — valid. range(len()): referenced back to Topic 12.4 — prior concept. IndexError: not used in the reading at all (corpus soft finding resolved). No nested dicts, no LLM/RAG topology, no advanced Python patterns introduced."
+    },
+    "readability_formatting_scope": {
+      "passed": true,
+      "findings": [],
+      "scope_creep": false,
+      "notes": "All new terms bold-defined on first use: Dictionary, Key, Value, Key-value pair, KeyError, None. API acronym expansion included on first use — corpus soft finding resolved. Paragraphs ≤4 sentences throughout. Bullet list used for 4-term vocabulary block in Key Concepts. Code blocks appear inline at each concept introduction. Diagram embedded correctly in Key Concepts with an explanatory italic caption. In Practice: API named-and-deferred with expansion; no nested dicts; no advanced iteration patterns. Zero readability, formatting, or scope findings."
+    },
+    "corpus_faithfulness": {
+      "passed": true,
+      "notes": "10 assertions sampled across all five content sections. Overview faithfully condenses corpus §4. Key Concepts condenses §5.1–5.7 with no new claims — the 4-term vocabulary block matches §5.1 exactly; .get() default/None matches §5.5; three iteration patterns match §5.6. Worked Example student record matches corpus §6 step-by-step (create → add → update → .get() → .items() loop); list-to-dict pattern matches corpus §6 second subsection verbatim. In Practice config dict matches corpus §7 Pattern 2; API response dict matches Pattern 3. Key Takeaways condenses corpus §10 covering all 6 LOs. No new unsupported claims detected."
+    }
+  },
+  "verdict": "PASS. All 5 checks clean. Zero findings. The reading is well-structured, within word budget (1311 words / ~6–7 min), cites all three resources throughout, introduces no forward references, resolves both corpus soft findings (API spelled out; IndexError not used), embeds the diagram correctly in Key Concepts, and faithfully condenses the corpus. The reading is ready for /generate-quiz and then HITL #3.",
+  "at": "2026-06-14T00:00:00Z"
+}

@@ -1,0 +1,49 @@
+$CATEGORY: CIT/M3/week-8/8.4-f1-score-balancing-precision-and-recall-into-one-metric
+
+::q1:: A team has measured a model's precision and recall, but keeps arguing about which of two models is better because each model wins on one of the two numbers. What problem does the F1 score solve for them? {
+~It measures how fast a model can flag each case, so the quicker of the two models is chosen.#No — F1 says nothing about speed; it summarizes precision and recall into one balance score.
+=It folds precision and recall into a single score, so two models can be ranked at a glance.#Correct — F1 turns two numbers into one summary, removing the apples-to-oranges comparison.
+~It removes any need to ever look at precision or recall again once a model is deployed.#No — F1 is a convenience summary, not a replacement; report the two when one error matters more.
+~It raises the model's recall, so that fewer truly real cases get missed by it in future.#No — F1 is a reporting score; it does not change the model or push recall up.
+#### Tests the problem F1 solves: collapsing two separate numbers into one comparable score (corpus §5).
+}
+
+::q2:: A report lists a spam classifier's F1 score as 0.88. In plain terms, what does that single number describe? {
+~The share of all the emails that the model happened to sort into the correct folder overall.#No — that describes overall correctness, not F1; F1 summarizes precision and recall together.
+~The number of spam emails that the model managed to catch out of every hundred that it saw.#No — that is closer to a raw count of catches; F1 is a 0-to-1 balance of two rates.
+~The speed, rated from 0 to 1, at which the model attaches a label to each incoming email.#No — F1 has nothing to do with speed; it is a balance score for precision and recall.
+=How well the model balances precision and recall at the same time, on a scale from 0 to 1.#Correct — F1 is one number from 0 to 1 summarizing the balance of precision and recall.
+#### Tests the plain meaning of F1 as a single 0-to-1 balance score (corpus §5).
+}
+
+::q3:: Why does the F1 score use a harmonic mean instead of just taking the plain average of precision and recall? {
+=The harmonic mean leans toward the lower score, so a weak number cannot hide behind a strong one.#Correct — the harmonic mean is dragged toward the smaller value, rewarding balance and punishing imbalance.
+~The harmonic mean is far easier to work out by hand than adding two numbers and then halving them.#No — it is not simpler arithmetic; the point is that it leans toward the lower of the two scores.
+~The plain average always returns a smaller result, which would make every single model look worse.#No — a plain average is not systematically smaller; the issue is that it lets a strong score mask a weak one.
+~The harmonic mean treats recall as more important than precision in every situation it is used in.#No — F1 weights precision and recall equally; the harmonic mean simply favors balance, not one metric.
+#### Tests why F1 uses the harmonic mean: it leans toward the lower score and rewards balance (corpus §5).
+}
+
+::q4:: A model flags exactly one thing, gets it right, and misses everything else — giving precision 1.0 and recall 0.0. What scores does this useless model get? {
+~Both the plain average and F1 land on 0.5, since each one just blends the two scores evenly.#No — only the plain average gives 0.5; F1 is dragged to 0 by the recall of 0.0.
+~Both the plain average and F1 land on 0, because one score being zero zeroes out any blend of them.#No — a plain average of 1.0 and 0.0 is 0.5, not 0; only F1 drops to 0 here.
+=A plain average gives a misleading 0.5, but F1 gives 0, correctly calling the model useless.#Correct — the plain average hides the zero recall as 0.5, while F1's harmonic mean is pulled to 0.
+~F1 gives 0.5 while the plain average gives 0, since F1 is the more forgiving of the two scores.#No — this reverses them; the plain average gives the lenient 0.5 and F1 gives the strict 0.
+#### Tests the precision-1.0 / recall-0.0 trap: plain average says 0.5, F1 says 0 (corpus §5).
+}
+
+::q5:: A classmate claims a model can earn a high F1 score by being excellent at precision even though its recall is poor. Why is this claim wrong? {
+~Precision never affects F1 at all, so being excellent at it changes nothing at all about the result.#No — precision does affect F1; the point is that recall must also be decent for the score to be high.
+~A high precision actually lowers the F1 score, so the model would score worse than a balanced one.#No — high precision does not lower F1; the issue is that low recall drags the score down.
+=A high F1 needs both precision and recall to be decent; one strong score cannot rescue a weak one.#Correct — F1 only climbs when both are good, so a poor recall keeps the score low however high precision is.
+~F1 ignores recall entirely whenever precision is high, so the claim could in fact sometimes be true.#No — F1 never ignores recall; low recall always pulls the score down, so the claim cannot hold.
+#### Tests that a high F1 demands both metrics be decent — neither hides behind the other (corpus §5).
+}
+
+::q6:: A cancer-screening model is being evaluated, where missing a real case is far worse than raising a false alarm. Should the team report a single F1 score or report precision and recall separately? {
+~Report a single F1 score, since one tidy number is always the clearest way to judge any model.#No — a single number is convenient, but here a miss costs more, so F1 would hide what they care about.
+~Report a single F1 score, since F1 automatically weights misses more heavily on screening tasks.#No — F1 weights precision and recall equally; it does not give misses extra weight in any task.
+~Report precision and recall apart, since F1 cannot be calculated when two errors differ in cost.#No — F1 can always be calculated; the reason to split them is that it hides the costlier error.
+=Report precision and recall separately, since F1 treats both errors as equal and hides the misses.#Correct — when one error type matters more, a single balanced F1 can mask it, so report the two separately.
+#### Tests when to report F1 vs precision and recall separately — split them when one error type matters more (corpus §5).
+}

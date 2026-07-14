@@ -1,0 +1,41 @@
+$CATEGORY: CIT/M3/week-7/7.4-why-llms-output-a-probability-distribution-not-a-single-fixed-answer
+
+::q1:: At every step of generating a response, an LLM assigns a number to every token in its vocabulary. What is the complete set of those numbers called? {
+~A single score per token showing only which one token is most likely to come next#No — one score identifying the top token is not a distribution; a distribution covers every possible outcome.
+=A list where every vocabulary token gets a probability, and all probabilities sum to 1#Correct — this matches section 5.2\: every token has a probability, and the full set sums to exactly 1.
+~A ranked shortlist of only the top five most likely tokens, ignoring all the rest#No — the distribution covers the entire vocabulary, not a shortlist of five.
+~A lookup table that maps each input word to a fixed response stored from training#No — a lookup table returns a stored answer; an LLM computes a fresh distribution from context each time.
+#### Tests whether the learner can explain what a probability distribution over a vocabulary is (corpus §5.2).
+}
+
+::q2:: An LLM works on tokens rather than whole words. Which statement best explains why? {
+~Tokens are simpler for screens to display than full words or whole phrases are#No — display format has nothing to do with why the model processes tokens internally.
+~Tokens let the model skip rare words entirely by only storing the most common ones#No — tokens cover rare words too, by splitting them into smaller parts rather than omitting them.
+~Tokens allow the model to treat punctuation and spaces as invisible separators#No — punctuation and spaces are themselves tokens; the model does not treat them as invisible.
+=A vocabulary of ~50,000–100,000 tokens covers all text by combining word parts well#Correct — section 5.1 explains that combining parts is far more manageable than listing every possible whole word.
+#### Tests whether the learner can describe what a token is and why LLMs use tokens rather than whole words (corpus §5.1).
+}
+
+::q3:: Which sequence correctly describes the three stages the LLM goes through each time it adds one token to its response? {
+=Read all tokens in context, compute a fresh vocabulary distribution, then sample one token#Correct — section 5.5 names these three steps in this exact order\: read context, compute distribution, sample.
+~Receive the prompt, always pick the single highest-scoring token, append it with no randomness#No — always taking the top token would make the system deterministic, which contradicts section 5.4.
+~Match the prompt to a stored response in a table, then display it one word at a time#No — LLMs do not store or retrieve responses; they compute a fresh distribution at every single step.
+~Convert tokens to raw scores, show the scores to the user, then wait for their choice#No — the user never sees raw scores; the model samples automatically without any user intervention.
+#### Tests whether the learner can trace the three-stage generation loop (corpus §5.5).
+}
+
+::q4:: A student says: "If I type the same maths question into a calculator and into an LLM, both systems will always give me the same answer." Which part of this claim is wrong? {
+~The claim is fully correct — both a calculator and an LLM always give the same output#No — this ignores the stochastic nature of LLMs described in the introduction and section 5.4.
+~The claim is wrong about the calculator — calculators can vary their answer sometimes#No — calculators are the textbook example of a deterministic system; 2 + 2 always returns 4.
+=The claim is wrong about the LLM — it samples from a distribution, so outputs can vary#Correct — section 5.4 defines LLMs as stochastic\: the same prompt can yield a different output each run.
+~The claim is wrong about both — neither calculators nor LLMs give consistent outputs#No — calculators are deterministic; only LLMs are stochastic because of the sampling step.
+#### Tests whether the learner can distinguish deterministic from stochastic systems and classify LLMs correctly (corpus §5.4).
+}
+
+::q5:: You send the prompt "Describe the colour blue in one sentence" to an LLM five times and get five slightly different sentences. Which explanation best accounts for this? {
+~The LLM queries five separate external databases and gets five different definitions#No — LLMs do not query external databases; they generate from learned patterns in their weights.
+=Each run samples fresh from the distribution, so a different early token cascades forward#Correct — section 5.5 explains the cascade effect\: one different token early changes all subsequent context.
+~The LLM deliberately paraphrases each answer to avoid sending the user identical text#No — variation is a mathematical consequence of sampling, not an intentional paraphrasing design choice.
+~The LLM loses its memory after each response and must guess from scratch on the next run#No — each run starts fresh from the same prompt; variation comes from sampling, not from memory loss.
+#### Tests whether the learner can give an LLM-specific example of why the same prompt produces different outputs (corpus §§5.4–5.5).
+}

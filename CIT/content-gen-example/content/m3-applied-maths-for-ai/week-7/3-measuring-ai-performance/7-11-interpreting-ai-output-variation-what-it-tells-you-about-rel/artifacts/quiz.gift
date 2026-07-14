@@ -1,0 +1,52 @@
+$CATEGORY: CIT/M3/week-7/7.11-interpreting-ai-output-variation-what-it-tells-you-about-rel
+
+::q1:: You run the same prompt ten times and get six different answers. What does that level of output variation most directly tell you about the AI?
+{
+~The AI has a software bug that needs fixing before you can trust it on any task at all.#No — variation is not caused by a bug; it reflects the model's probability distribution across possible answers.
+=The model's probability mass is spread across several possible answers, so each run can land on a different one.#Correct — high variation means the distribution is not concentrated on one answer; the model is sampling from a spread-out range of options.
+~The model is picking answers at random with no underlying pattern or knowledge guiding its output choices.#No — the model still uses its learned knowledge; variation reflects uncertainty in the distribution, not the absence of learning.
+~The prompt is probably too long, which causes the model to lose track of the question during generation.#No — prompt length is not what drives output variation; variation comes from the probability distribution the model samples from.
+#### Tests LO1: understanding output variation as a window into the model's probability distribution (corpus §5.1).
+}
+
+::q2:: You run a prompt ten times with the temperature set very low, and you still get noticeably different answers each time. What is the most accurate interpretation of this pattern?
+{
+~This is normal and expected behaviour, because all AI systems produce some variation no matter the setting.#No — at low temperature the distribution is forced to be narrow, so persistent high variation at this setting is not expected or normal.
+~The temperature setting failed to work, which suggests the AI tool itself is broken or incorrectly configured.#No — a working low-temperature setting does narrow the distribution; the variation is coming from the model's own spread probability mass, not a malfunction.
+=This is a reliability warning, because the model's internal probability mass is genuinely spread even with temperature set low.#Correct — low temperature should produce narrow, consistent outputs; if outputs still vary, the model itself does not have a confident answer, which signals unreliability for factual tasks.
+~The model is behaving well, because giving varied answers shows it is considering multiple possible responses.#No — at low temperature you are not asking for variety; persistent variation at this setting means the model lacks a confident answer, which is a warning sign for deterministic tasks.
+#### Tests LO2 and LO3: the four-quadrant framework — high variation at low temperature = reliability warning (corpus §5.2, §5.3).
+}
+
+::q3:: You are using an AI tool to brainstorm product taglines and you get a different result every time you run the same prompt. Should you treat this as a reliability problem?
+{
+=No, because tagline writing is an open-ended task where many answers are valid and variation gives you a richer set of creative options.#Correct — open-ended tasks have no single correct answer, so getting different results each run is a feature rather than a flaw; it broadens your creative choices.
+~Yes, because any AI tool that cannot produce the same output twice is unreliable and should not be trusted for real work.#No — consistency is only required for deterministic tasks with one correct answer; for creative tasks like tagline writing, variation is expected and desirable.
+~Yes, because you can only judge which tagline is best if the AI commits to a single answer and repeats it consistently.#No — taglines are judged by human preference, not by repetition; variation here means more creative options to evaluate, which is exactly what you want.
+~No, but you should lower the temperature to zero so the model stops producing different results each time you run it.#No — setting temperature to zero on a creative task cuts off the variety that makes brainstorming useful; variation is the goal, not a problem to eliminate.
+#### Tests LO5: distinguishing tasks where variation signals failure from tasks where variation is expected (corpus §5.4).
+}
+
+::q4:: A medical AI screening tool gives the same answer to the same question ten times in a row. Does that prove the answer is correct?
+{
+~Yes, because repeating an answer ten times shows the model has strong evidence from its training data supporting that result.#No — consistency reflects internal probability mass concentration, not truth; the model may have learned an incorrect association very strongly from flawed training data.
+~Yes, because low variation at low temperature is the strongest reliability signal available, and that signal also confirms accuracy.#No — the four-quadrant framework tells us low variation at low temperature signals confidence, not correctness; a confidently wrong model still fails every ground-truth check.
+~No, but only if the temperature was set above zero, since high-temperature outputs can be wrong despite being consistent.#No — a model can be consistently wrong at any temperature; the temperature setting does not determine whether the repeated answer is accurate or not.
+=No, because consistent output only means the model is confident, not correct, and the answer must still be verified against ground truth.#Correct — a model can be confidently wrong; consistency tells you the probability distribution is concentrated, but only accuracy against a known correct answer confirms the output is right.
+#### Tests LO6: consistency does not equal correctness; ground-truth checking is always required (corpus §5.6).
+}
+
+::q5:: You have run a yes/no medical question ten times and recorded each output. You want to know how many of those ten runs gave the correct answer. Which measurement tool should you use?
+{
+~Recall, because recall measures whether the model caught all the correct positive cases across the full set of runs.#No — recall measures how many actual positives the model identified correctly; to find the overall count of correct runs out of ten, accuracy is the right tool.
+=Accuracy, because accuracy counts how many of the ten runs matched the known correct answer, which is precisely what you want.#Correct — accuracy is the proportion of runs that matched the ground truth; it directly answers "how many of my ten runs were right?"
+~Precision, because precision tells you how trustworthy the model's positive-class predictions are across the entire set of runs.#No — precision is useful when you want to know how reliable the "yes" predictions specifically are, not the overall tally of correct runs.
+~The confusion matrix, because it shows exactly where the model succeeded and failed across every output category in the runs.#No — the confusion matrix gives a detailed categorical breakdown, but when you need the count of correct runs out of ten, accuracy is the direct and appropriate measure.
+#### Tests LO4: selecting the right measurement tool — accuracy quantifies how many runs matched the ground truth (corpus §5.5).
+}
+
+::q6:: Explain in your own words why you must know the temperature setting before deciding whether AI output variation is a reliability problem. {
+////
+A strong answer covers three points: (1) temperature controls how wide or narrow the model's probability distribution is — low temperature forces narrow, concentrated outputs, while high temperature deliberately spreads them wide; (2) the same level of variation means different things at different temperatures — high variation at low temperature is a warning signal because the model itself is uncertain, whereas high variation at high temperature is expected because you asked for variety; (3) without knowing the temperature you cannot tell whether the variation came from the model's own uncertainty or from the way the task was set up. Accept any paraphrase that captures the idea that temperature and variation are linked and that the same spread of outputs carries a different meaning depending on the temperature that produced it.
+////
+}

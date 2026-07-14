@@ -1,0 +1,52 @@
+$CATEGORY: CIT/M2/week-4/4.6-multimodal-ai-working-with-text-image-audio-and-video-in-one
+
+::q1:: A multimodal AI system is best described as one that ___. {
+=receives and processes content across more than one modality — text, images, audio, or video — in one model#Correct — a multimodal model handles two or more input types in one unified system.
+~converts spoken words into written text, so a single language model can process all speech as text#No — that describes speech recognition, which is just one step inside an audio pipeline, not a multimodal system.
+~uses several separate specialist models, each handling one input type, and combines their outputs at the end#No — chaining separate unimodal models is a pipeline, not a multimodal model; the key difference is the shared internal reasoning.
+~processes only text and images, because audio and video data are considered too large to fit in a single model#No — multimodal systems can and do include audio and video, though video is computationally expensive.
+#### Tests the core definition of multimodal AI (corpus §4 and §5.1).
+}
+
+::q2:: When a multimodal model receives both a typed question and an uploaded photo, how does it make these two very different inputs comparable before reasoning about them? {
+~it converts the photo into a written text description first, then feeds everything as plain text into the language model#No — that would be a two-stage unimodal pipeline; a true multimodal model does not reduce one modality to another.
+=it uses modality encoders to map each input into a shared numerical space, then reasons across both at once#Correct — the shared representation space is the common internal language that allows text and image to be reasoned about together.
+~it processes the text question first using only the language model, then looks at the photo separately in a second pass#No — that describes separate processing, not joint reasoning across modalities.
+~it asks the user to type out a description of the photo in their own words before any processing begins#No — the model handles the image directly; no manual description from the user is needed.
+#### Tests the shared-representation mechanism (corpus §5.2 and §5.7).
+}
+
+::q3:: A hospital uses an AI tool that reads only typed doctor notes and cannot process the scan images attached to the notes. This tool is best described as ___. {
+~a multimodal model that has not been calibrated on medical images yet, so it falls back to text only#No — calibration is unrelated to whether a model handles one or multiple modalities.
+~a foundation model, because it was pre-trained on a very large dataset of medical text records#No — foundation model describes the scale of pre-training, not whether the model is unimodal or multimodal.
+=a unimodal model, because it handles only text and cannot process the image scans at all#Correct — unimodal means one modality; this system handles text only and misses all information encoded in the scans.
+~a retrieval-augmented system, because it pulls relevant notes from a database to answer each question#No — RAG describes how external data is fetched at query time, not whether the system is unimodal or multimodal.
+#### Tests the distinction between unimodal and multimodal using a concrete scenario (corpus §5.1 and §5.8).
+}
+
+::q4:: Which of the following correctly names all four main modalities in multimodal AI and gives a matching real example for each? {
+~text (a voice message), image (a typed report), audio (a road-sign photo), video (a podcast)#No — the examples are mismatched; a voice message is audio, a typed report is text, and a podcast is audio not video.
+~text (a news article), image (a music track), audio (a product photo), video (a classroom recording)#No — a music track is audio, not image; a product photo is image, not audio — two modalities are swapped.
+~text (a typed question), image (a surveillance clip), audio (a podcast), video (a medical scan)#No — a surveillance clip is video, not image; a medical scan is image, not video — two examples are in the wrong row.
+=text (a customer email), image (a medical scan), audio (a voice message), video (a surveillance clip)#Correct — each example matches its modality as described in the corpus modality table.
+#### Tests knowledge of the four modalities and a real example of each (corpus §5.1).
+}
+
+::q5:: A logistics company wants to use multimodal AI to process supplier invoices. Each invoice is a scanned page that mixes printed text, tables, and embedded charts. Which statement best explains why a multimodal model is a better fit than a text-only model for this task? {
+~a text-only model cannot handle documents longer than one page, so the company needs a multimodal model to split the invoice into sections#No — page length is unrelated to whether a model is unimodal or multimodal.
+~multimodal models are always faster and cheaper to run than text-only models, which makes them a better operational choice#No — multimodal models are generally more resource-intensive, not less; cost is not the reason to choose them here.
+=a text-only model misses all data encoded in the tables and charts; a multimodal model reads the entire page — text and visuals — as one#Correct — this matches Pattern 2 in the corpus: document intelligence systems need multimodal capability to capture everything on a mixed-content page.
+~multimodal models can read handwritten text on the invoice, which is the main advantage over a text-only system#No — the core issue is visual data in tables and charts, not handwriting; both model types may or may not handle handwriting.
+#### Tests real-world application of multimodal AI and the limitation of unimodal approaches (corpus §7 Pattern 2).
+}
+
+::q6:: Name one key limitation of multimodal AI systems that organisations should keep in mind when evaluating whether to deploy them. {
+=hallucination across modalities
+=hallucination
+=modality gaps
+=uneven performance across modalities
+=data and compute cost
+=compute cost
+=privacy and consent
+=privacy concerns
+}

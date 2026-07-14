@@ -1,0 +1,69 @@
+{
+  "topic_id": "11.1",
+  "generated_at": "2026-06-12T00:08:00Z",
+  "revised_at": "2026-06-12T00:10:00Z",
+  "format": "gift",
+  "profile": "standard",
+  "question_count": 6,
+  "include_short_answer": false,
+  "$bias_defense_applied": true,
+  "$shuffle_seed": "topic_id='11.1' hash=0xB1A1; salt=0 — shuffle assigns correct-answer positions [1,0,2,3,1,0]; constraint check: max_share=2/6=0.333 <=0.40, all 4 positions used — PASS",
+  "correct_position_distribution": {
+    "0": 2,
+    "1": 2,
+    "2": 1,
+    "3": 1
+  },
+  "correct_positions_by_question": [1, 0, 2, 3, 1, 0],
+  "max_share": 0.333,
+  "constraint_check": "PASS — max_share 0.333 <= 0.40; all 4 positions used",
+  "mean_option_length_chars": 121,
+  "longest_option_correct_count": 4,
+  "length_bias_revision": "cycle-2 rebalance — Q1 D1 expanded from 63 to ~127 chars; Q3 D1/D2/D3 expanded, C trimmed from 140 to ~120; Q4 D1/D2/D3 expanded, C trimmed from 218 to ~136; Q5 D3 expanded from 107 to ~131; Q6 D3 expanded from 105 to ~120. All correct-to-distractor-mean ratios now <1.20.",
+  "objective_map": {
+    "q1": "LO1 — Explain in plain language what role Python plays in connecting a human specification to an AI system.",
+    "q2": "LO2 — Describe the four-layer model: human intent → specification → Python code → AI API call → output.",
+    "q3": "LO3 — Distinguish between Python as an orchestration layer and Python as a syntax-learning exercise.",
+    "q4": "LO5 — Explain why the AI ecosystem converged on Python as its standard orchestration language.",
+    "q5": "LO4/LO5 — Connect Python's interpreted nature and REPL to the fast-feedback orchestration workflow; supports LO1.",
+    "q6": "LO6 — Recognise that a programmer's primary job is to understand and direct code, not to memorise syntax."
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "type": "mcq",
+      "objective_ref": "LO1 — Explain in plain language what role Python plays in connecting a human specification to an AI system.",
+      "correct_position": 1
+    },
+    {
+      "id": "q2",
+      "type": "mcq",
+      "objective_ref": "LO2 — Describe the four-layer model: human intent → specification → Python code → AI API call → output.",
+      "correct_position": 0
+    },
+    {
+      "id": "q3",
+      "type": "mcq",
+      "objective_ref": "LO3 — Distinguish between Python as an orchestration layer and Python as a syntax-learning exercise.",
+      "correct_position": 2
+    },
+    {
+      "id": "q4",
+      "type": "mcq",
+      "objective_ref": "LO5 — Explain why the AI ecosystem converged on Python as its standard orchestration language.",
+      "correct_position": 3
+    },
+    {
+      "id": "q5",
+      "type": "mcq",
+      "objective_ref": "LO4/LO5 — Connect Python's interpreted nature and REPL to the fast-feedback workflow; supports LO1.",
+      "correct_position": 1
+    },
+    {
+      "id": "q6",
+      "type": "mcq",
+      "objective_ref": "LO6 — Recognise that a programmer's primary job is to understand and direct code, not to memorise syntax.",
+      "correct_position": 0
+    }
+  ]
+}

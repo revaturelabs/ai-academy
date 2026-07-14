@@ -1,0 +1,30 @@
+{
+  "topic_id": "1.5",
+  "captured_at": "2026-06-20T00:00:00Z",
+  "captured_by": "namratas@revature.com",
+  "resources_source": "web_search",
+  "web_search_query": "decomposition computational thinking breaking problem smaller parts beginner",
+  "resources": [
+    {
+      "type": "url",
+      "value": "https://openstax.org/books/introduction-computer-science/pages/2-1-computational-thinking",
+      "role": "primary",
+      "source": "web_search",
+      "notes": "Free open textbook (OpenStax), canonical first-party source. Covers decomposition within the full computational thinking framework."
+    },
+    {
+      "type": "url",
+      "value": "https://www.geeksforgeeks.org/computer-science-fundamentals/what-is-decomposition-computational-thinking/",
+      "role": "supporting",
+      "source": "web_search",
+      "notes": "Beginner-accessible CS reference, directly on topic."
+    },
+    {
+      "type": "url",
+      "value": "https://www.learning.com/blog/decomposition-in-computational-thinking/",
+      "role": "supporting",
+      "source": "web_search",
+      "notes": "Educational platform explainer with beginner framing and practical examples."
+    }
+  ]
+}

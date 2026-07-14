@@ -1,0 +1,43 @@
+---
+title: Evaluation Rubric Framework
+config:
+  theme: base
+  themeVariables:
+    primaryColor: "#a5d8ff"
+    primaryBorderColor: "#4a9eed"
+    lineColor: "#555"
+  flowchart:
+    htmlLabels: true
+    curve: basis
+    nodeSpacing: 40
+    rankSpacing: 50
+---
+flowchart LR
+  subgraph MAIN["<b>Rubric Process</b>"]
+    direction TB
+    A["<b>Define Criteria</b><br/><span style='font-size:12px;color:#6d28d9'>5 criteria, weights sum to 100%</span>"]
+    B["<b>Write Descriptors</b><br/><span style='font-size:12px;color:#6d28d9'>Score levels 1–4 per criterion</span>"]
+    C["<b>Run Test Protocol</b><br/><span style='font-size:12px;color:#6d28d9'>Same tasks on both tools</span>"]
+    D["<b>Score Each Tool</b><br/><span style='font-size:12px;color:#6d28d9'>Score × weight per criterion</span>"]
+    E["<b>Compare Totals</b><br/><span style='font-size:12px;color:#6d28d9'>Weighted totals reveal best fit</span>"]
+    A --> B --> C --> D --> E
+  end
+
+  subgraph SIDE["<b>Two-Tool Contrast</b>"]
+    direction TB
+    TA["<b>Tool A</b><br/><span style='font-size:12px;color:#6d28d9'>Weighted total: 3.05</span>"]
+    TB2["<b>Tool B</b><br/><span style='font-size:12px;color:#6d28d9'>Weighted total: 2.70</span>"]
+  end
+
+  D --> TA
+  D --> TB2
+
+  classDef start fill:#a5d8ff,stroke:#4a9eed
+  classDef auto fill:#d0bfff,stroke:#8b5cf6
+  classDef done fill:#b2f2bb,stroke:#22c55e
+  classDef act fill:#a5d8ff,stroke:#4a9eed
+
+  class A start
+  class B,C,D auto
+  class E done
+  class TA,TB2 act

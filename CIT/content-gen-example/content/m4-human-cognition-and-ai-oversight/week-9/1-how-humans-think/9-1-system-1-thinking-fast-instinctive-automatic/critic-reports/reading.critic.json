@@ -1,0 +1,100 @@
+{
+  "critic": "reading-critic",
+  "topic_id": "9.1",
+  "run_at": "2026-06-11T00:00:00Z",
+  "retry": 2,
+  "passed": true,
+  "verdict": "PASS — all checks clear on retry 2. Both targeted edits confirmed applied: (1) diagram caption at line 38 now reads 'System 1 and System 2 — the two modes of thinking Kahneman described. System 2 is covered in topic 9.2.' — the defining appositive '(slow, deliberate)' removed, no scope_creep; (2) Key Takeaways line 112 now reads 'builds the foundation for the cognitive bias topics that follow in this module.' — assessment reference 'A3 Maths and Cognition Lab Report' removed. Format discipline clean (no frontmatter, six sections in order, sidecar valid). Length 1387 words / 6.94 min within standard-profile budget (1200–1600 / 6–8 min). Citation discipline clean (primary [1] cited throughout, bibliography matches markers, no orphans). No forward references (System 2, automation bias, Judgment Framework all mention-and-deferred correctly). Faithfulness: 1 unsupported scenario (Python .sort() Worked Example) out of 10 sampled, below the >2 threshold; principle grounded in corpus. Beginner readability: all terms defined before use, concrete-first throughout, no hedging, no jargon dumps. Formatting: no walls of text, numbered list for Worked Example steps, bullet lists for examples and takeaways, bold-term + plain-meaning shapes used. No assessment references remain. No scope_creep findings. Escalation not triggered. No gold example found at .claude/references/gold-examples/reading/; standards applied from artifact-mix.json and SKILL.md.",
+  "checks": {
+    "format_discipline": {
+      "passed": true,
+      "frontmatter_present": false,
+      "h1_matches_title": true,
+      "meta_sidecar_missing": false,
+      "section_template_violation": false,
+      "sections_found": ["Overview", "Key Concepts", "Worked Example", "In Practice", "Key Takeaways", "References"],
+      "sections_expected": ["Overview", "Key Concepts", "Worked Example", "In Practice", "Key Takeaways", "References"],
+      "notes": "No frontmatter. H1 exactly matches topic title. Sidecar parses with all required fields (word_count, estimated_read_minutes, citations_used, sections). Six sections present in correct order."
+    },
+    "length_budget": {
+      "passed": true,
+      "word_count_reported": 1387,
+      "word_count_range": [1200, 1600],
+      "estimated_minutes": 6.94,
+      "minutes_range": [6, 8],
+      "profile": "standard",
+      "notes": "1387 words / 200 wpm = 6.94 min. Within standard-profile budget of 1200–1600 words / 6–8 min."
+    },
+    "citation_discipline": {
+      "passed": true,
+      "primary_resource_cited": true,
+      "primary_resource_id": "[1]",
+      "primary_citation_count": 10,
+      "inline_markers": ["[1]", "[2]", "[3]"],
+      "bibliography_entries": ["[1]", "[2]", "[3]"],
+      "orphan_markers": [],
+      "orphan_bibliography_entries": [],
+      "notes": "All three resources cited inline. [1] (primary, The Decision Lab) cited at least 10 times. Bibliography matches inline markers exactly. No orphans in either direction."
+    },
+    "no_forward_references": {
+      "passed": true,
+      "findings": [],
+      "notes": "System 2 named and deferred to topic 9.2 at line 35 ('you will study System 2 in topic 9.2') and in diagram caption ('System 2 is covered in topic 9.2') — bare name plus topic pointer only, no defining clause. Automation bias named and deferred to topic 9.5 at line 96 with a single-sentence pointer, not bolded, not defined. Judgment Framework not referenced in the reading artifact."
+    },
+    "faithfulness": {
+      "passed": true,
+      "assertions_sampled": 10,
+      "unsupported_assertions": 1,
+      "unsupported_threshold": 2,
+      "unsupported_details": [
+        {
+          "assertion": "Python .sort(reverse=True) developer scenario in Worked Example (lines 68–86)",
+          "finding": "This specific code scenario does not appear in the corpus. The corpus has no Worked Example section containing Python code. The principle it illustrates — System 1 matches surface-level features, misses semantic errors — is grounded in corpus §5.5 and §8, but the concrete scenario was introduced by the reading builder.",
+          "lines": "68–86"
+        }
+      ],
+      "notes": "1 unsupported scenario is below the >2 hard-fail threshold. The underlying lesson of the invented scenario is faithfully grounded in corpus concepts. All other 9 sampled assertions trace directly to corpus sections."
+    },
+    "beginner_readability": {
+      "passed": true,
+      "undefined_terms": [],
+      "undefined_terms_count": 0,
+      "undefined_terms_threshold": 2,
+      "jargon_dump": false,
+      "abstract_first": false,
+      "academic_register": false,
+      "hedging_instances": 0,
+      "hedging_threshold": 3,
+      "notes": "System 1 defined at first appearance in Overview. Cognitive heuristics defined at line 31 with pronunciation guide. Automatic processing defined at line 42. All non-everyday terms defined before use. Concrete analogies (autopilot, STOP sign, restaurant) precede abstract definitions throughout. Sentences well under 25-word average. Active voice and 'you' address used. Zero hedging phrases found. No paragraph introduces 3+ brand-new terms at once."
+    },
+    "formatting": {
+      "passed": true,
+      "wall_of_text": false,
+      "unlisted_sequence": false,
+      "no_inline_examples": false,
+      "bold_term_shapes_used": true,
+      "notes": "Overview is 4 sentences; all other prose paragraphs within the 6-sentence limit. Worked Example step-through rendered as a numbered list (5 steps, lines 80–84). Bullet lists used for automatic-processing examples (lines 45–50) and Key Takeaways. Bold-term + plain-meaning shape used for System 1 thinking, pattern matching, cognitive heuristics, and automatic processing. Inline examples present in Key Concepts, Why Speed Has a Cost, and In Practice sections — not only in the Worked Example section."
+    },
+    "assessment_reference": {
+      "passed": true,
+      "severity": "soft",
+      "finding_code": "assessment_reference",
+      "occurrences": [],
+      "notes": "Edit confirmed at line 112. Previous text 'A3 Maths and Cognition Lab Report' removed. Current text reads: 'Understanding how System 1 operates builds the foundation for the cognitive bias topics that follow in this module.' No assessment IDs, due weeks, or grade weights remain in the reading."
+    },
+    "scope": {
+      "passed": true,
+      "severity": "n/a",
+      "finding_code": null,
+      "occurrences": [],
+      "notes": "Edit confirmed at line 38. Diagram caption defining appositive '(slow, deliberate)' removed. Current caption: 'System 1 and System 2 — the two modes of thinking Kahneman described. System 2 is covered in topic 9.2.' — bare name plus topic pointer, compliant with mention-and-defer rule. Automation bias at line 96 uses bare name plus single-sentence pointer to topic 9.5, not bolded, not defined. No other out-of-scope concepts taught. No scope_creep findings."
+    }
+  },
+  "soft_findings_count": 0,
+  "hard_findings_count": 0,
+  "escalation_triggered": false,
+  "escalation_reason": null,
+  "fix_summary": [],
+  "gold_example_checked": false,
+  "gold_example_note": "No gold example found at .claude/references/gold-examples/reading/. Standards applied from artifact-mix.json and SKILL.md written rules."
+}

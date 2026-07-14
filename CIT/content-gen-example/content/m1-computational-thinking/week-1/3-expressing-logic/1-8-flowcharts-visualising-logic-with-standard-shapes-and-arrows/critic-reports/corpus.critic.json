@@ -1,0 +1,71 @@
+{
+  "topic_id": "1.8",
+  "artifact": "corpus",
+  "passed": true,
+  "verdict": "PASS — all hard checks clear. 'algorithm' is defined inline on first use in §4; WHILE/FOR EACH keywords removed from §5.4 table. Soft findings: word count (~2855w) is ~4.8% below standard corpus floor of 3000w (within 30% hard-fail tolerance); one soft readability note (rhombus used as parenthetical synonym without definition — negligible for this audience).",
+  "at": "2026-06-21T00:00:00Z",
+  "checks": {
+    "required_sections": {
+      "passed": true,
+      "detail": {
+        "section_3_learning_objectives": { "present": true, "word_count_est": 85, "min_required": 50, "passed": true },
+        "section_4_introduction":        { "present": true, "word_count_est": 190, "min_required": 50, "passed": true },
+        "section_5_core_concepts":       { "present": true, "word_count_est": 1210, "min_required": 100, "passed": true },
+        "section_10_key_takeaways":      { "present": true, "word_count_est": 130, "min_required": 50, "passed": true }
+      }
+    },
+    "citation_density": {
+      "passed": true,
+      "resources_source": "web_search",
+      "mode": "strict",
+      "primary_resource_cited": true,
+      "primary_resource": "https://www.visual-paradigm.com/tutorials/flowchart-tutorial/",
+      "primary_citation_marker": "[1]",
+      "sections_checked": [5, 6, 7],
+      "estimated_factual_assertions_with_marker_pct": 65,
+      "threshold_pct": 60,
+      "fake_citations_detected": false,
+      "detail": "Citation markers [1], [2], [3] appear consistently throughout sections 5–7. Primary resource [1] (visual-paradigm.com) cited in §4, §5.1, §5.2 (Shapes 1–4), §5.6, §6, §7, §8, and §9. Supporting resources [2] and [3] cited across sections 5–7. No unresolvable citation markers found. Estimated ~65% of standalone factual assertions in §§5–7 carry citation markers, exceeding the 60% threshold."
+    },
+    "sequence_drift": {
+      "passed": true,
+      "forward_referenced_terms": [],
+      "hard_fail_terms": [],
+      "soft_flag_terms": [],
+      "detail": "'algorithm' — previously a hard-fail forward reference — is now defined inline on first use in §4: 'an algorithm — a set of step-by-step instructions for completing a task.' All subsequent uses in §§5.1, 5.2, 5.5, and 7 are valid back-references to that definition. The WHILE/FOR EACH keyword issue is resolved: §5.4 mapping table now uses only 'Repetition' (no pseudocode-keyword specifics). All other technical terms (flowchart, terminator, process box, decision diamond, input/output parallelogram, flowline, loop) are introduced in this topic's concepts_introduced. Terms carried forward from prior topics (sequence, decision, condition, repetition, IF/OTHERWISE, pseudocode, input/process/output, abstraction) appear within their defined scope. No forward references detected."
+    },
+    "length_sanity": {
+      "passed": true,
+      "depth_profile": "standard",
+      "word_count_est": 2855,
+      "range_min": 3000,
+      "range_max": 4400,
+      "pct_below_min": 4.8,
+      "hard_fail_threshold_pct": 30,
+      "finding": "soft",
+      "detail": "Estimated ~2855 words is ~145 words (4.8%) below the standard corpus floor of 3000 words. This is well within the 30% hard-fail tolerance. Soft finding only: the corpus could benefit from modest expansion in §5.6 (loops) and the §6 worked example to reach standard depth."
+    },
+    "topic_scope": {
+      "passed": true,
+      "scope_boundary": "flowcharts — standard shapes and arrows",
+      "scope_creep_findings": [],
+      "detail": "No BPMN, swim lanes, UML activity diagrams, or data flow diagrams introduced. 'More complex process diagrams' and 'search and sort algorithms' are each named in a single sentence with an explicit 'later in the course' pointer — compliant mention-and-defer. 'infinite loop' appears only in the §8 Avoid table as a one-line caution label, not taught or defined at depth. §7 real-world patterns (troubleshooting guides, customer service scripts, software design reviews, business process documentation) stays within basic flowcharting use cases. No scope_creep findings."
+    },
+    "beginner_readability": {
+      "passed": true,
+      "finding_count": 1,
+      "escalated_to_hard_fail": false,
+      "findings": [
+        {
+          "code": "undefined_terms",
+          "terms": ["rhombus"],
+          "detail": "Used as a parenthetical synonym in Shape 3's definition ('a diamond (rhombus) shape'). Not a computing term — purely geometric — and the primary label 'diamond' is clear to any beginner. Negligible impact; no action required.",
+          "severity": "soft"
+        }
+      ],
+      "jargon_dump": null,
+      "academic_register": null,
+      "detail": "Prose is direct and beginner-friendly throughout. 'algorithm' is now defined on first use in §4 before any technical deployment. Each of the five shapes has its own subsection with a bold definition, plain-language explanation, and inline example. No paragraph introduces 3+ new terms simultaneously. No hedging phrases detected. Sentence lengths are consistently under 25 words. Active voice and second-person address ('you') maintained throughout."
+    }
+  }
+}

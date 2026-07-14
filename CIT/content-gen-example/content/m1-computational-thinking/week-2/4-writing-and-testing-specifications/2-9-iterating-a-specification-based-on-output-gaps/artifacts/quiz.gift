@@ -1,0 +1,56 @@
+$CATEGORY: CIT/M1/week-2/2.9-iterating-a-specification-based-on-output-gaps
+
+::q1:: A student tests her specification and one question in the three-question check returns a partial pass. She makes one focused change to the part that failed, then tests again. What is the correct name for this process? {
+~Rewriting the specification from scratch because a partial pass means the whole spec needs replacing#Not quite — a partial pass means one specific part needs a fix, not that the entire spec has failed.
+=Iterating\: making one targeted change to the failing part based on what the test showed#Correct — iterating is a focused, grounded change to the specific part that failed, followed by a retest.
+~Running the same specification again without any changes to see if the output improves next time#No — running the same spec again without changing anything will produce the same gap.
+~Asking a classmate to rewrite the failing section and then testing the new version instead#No — iterating is driven by what the test result showed, not by a guess or rewrite from someone else.
+#### Tests the definition of iterating a specification (corpus §5.1).
+}
+
+::q2:: A specification says "Summarise this article." The AI returns a correct summary — but it is eight sentences long. The student wanted three sentences and set no limit. Which gap type is this, and which spec part should she fix? {
+~Task drift — she should rewrite the task statement to name a shorter summarising approach#No — the AI did the right task (summarising); the problem is that no limit was set, not that the task was wrong.
+~Format drift — she should add a format instruction specifying paragraph style and sentence limit#No — format drift describes wrong shape or structure such as a paragraph instead of a list; here the shape is fine but the amount of content is unconstrained.
+~Task drift — she should add a constraint that forbids the AI from writing more than three sentences#No — adding a constraint is the right fix, but this is not task drift; the AI understood the task and simply was not told to stop at three.
+=Constraint overflow — she should add a constraint limiting the output to three sentences#Correct — the output included more content than the spec controlled for; the fix is to add the missing constraint.
+#### Tests gap-type identification and the matching fix for constraint overflow (corpus §5.2).
+}
+
+::q3:: You test a specification. Q1 (Did output match expected?) \: Pass. Q2 (Did AI respect all constraints?) \: Pass. Q3 (Is the output in the right format?) \: Fail — a paragraph was returned instead of a numbered list. What is the correct next step? {
+=Name the gap as format drift, then add or tighten the format instruction only#Correct — the output had the right content but the wrong shape, so you name format drift and fix only the format instruction.
+~Name the gap as task drift, then rewrite the task statement to mention a numbered list format#No — task drift means the AI solved the wrong task; here the content is correct and only the format failed. Rewriting the task statement is the wrong fix.
+~Rewrite the full specification because two checks passed and one failed, so the spec needs a reset#No — the minimum viable patch principle says to leave passing parts untouched and change only what caused the failure.
+~Accept the result as a full pass because two out of three verification questions returned a pass#No — a full pass requires all three questions to pass; a format failure still needs a targeted fix before you can stop.
+#### Tests the four-step iteration cycle and format-drift identification (corpus §5.4 and §5.2).
+}
+
+::q4:: A spec passes Q1 and Q3 but fails Q2 because the AI included extra examples that were not wanted. The student plans to (a) add a constraint forbidding the extras, (b) also rewrite the task statement, and (c) add a new format rule as a precaution. What is the main problem with this plan? {
+~She should not retest after patching — the iteration cycle only allows one test run per specification#No — retesting after each patch is the required fourth step; you cannot know if a fix worked without retesting.
+~She has named the wrong gap type — this is task drift, not constraint overflow, so her fix targets the wrong part#No — the output included unwanted content, which matches constraint overflow; her gap diagnosis is correct.
+=She is changing three parts of the spec at once, so she cannot tell which change fixed the problem#Correct — the minimum viable patch says to change only the one part that caused the failure; changing several at once breaks your ability to trace what worked.
+~She is correct to fix all three parts together because it is more efficient to patch everything in one cycle#No — patching everything at once feels faster but prevents tracing what worked and risks breaking parts that were already passing.
+#### Tests the minimum viable patch principle and what goes wrong when it is violated (corpus §5.3).
+}
+
+::q5:: A student has run three iteration cycles. Each cycle improved the spec, but it still has not reached a full pass. The remaining gap involves a domain detail the AI consistently misses and that she cannot control in a spec. What should she do? {
+~Keep iterating until the spec reaches a full pass, because stopping early means the spec is incomplete#No — after two or three cycles with no meaningful improvement, continuing to iterate produces diminishing returns and can introduce new problems.
+=Accept the spec, write one sentence documenting the remaining limitation clearly, and stop#Correct — when further cycles produce no meaningful improvement and the gap is outside your control, document it and move on.
+~Delete the specification and start from scratch, because three failing cycles means the approach is wrong#No — three cycles is a practical guideline, not a failure signal; restarting throws away the real improvements already made.
+~Accept the result without any documentation so the portfolio only shows clean full passes#No — a known limitation must be written down clearly; hiding it defeats the purpose of honest, documented iteration.
+#### Tests the two stopping conditions and the correct response to diminishing returns (corpus §5.5).
+}
+
+::q6:: A specification reads\: "Describe the process." The AI returns a description of a completely different process than the student intended because "the process" was ambiguous. Which gap type is this, and what is the correct fix? {
+~Format drift — she should add a format instruction that specifies paragraph or numbered-list style#No — format drift is about wrong shape or structure; here the AI described the wrong subject entirely, which is not a formatting issue.
+~Constraint overflow — she should add a constraint forbidding the AI from discussing other processes#No — constraint overflow applies when extra unwanted content is added alongside correct content; here the output did the wrong job entirely.
+~Constraint overflow — she should add a constraint that names the specific process she wants described#No — naming which process to describe changes the meaning of the task statement, not a constraint; this is still a task-drift fix even if it is called a constraint.
+=Task drift — she should rewrite the task statement to name the specific process she intends#Correct — "Describe the process" is ambiguous; the fix is to remove the ambiguity in the task statement, for example\: "Describe only the four-step order-fulfilment process defined above."
+#### Tests task-drift identification and the task-statement fix (corpus §5.2).
+}
+
+::q7:: The four steps of the iteration cycle in order are\: test, ________, patch the right part, retest. Fill in the missing step (three words or fewer). {
+=name the gap
+=name the gap type
+=identify the gap
+=identify the gap type
+}

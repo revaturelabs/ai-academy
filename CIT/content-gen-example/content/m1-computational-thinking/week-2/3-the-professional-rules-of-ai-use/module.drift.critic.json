@@ -1,0 +1,89 @@
+{
+  "critic": "drift-critic",
+  "module": "3-the-professional-rules-of-ai-use",
+  "module_title": "The Professional Rules of AI Use",
+  "course_code": "M1",
+  "week_num": 2,
+  "run_at": "2026-06-17T00:00:00Z",
+  "topics_evaluated": ["2.5", "2.6"],
+  "passed": true,
+  "summary": "All five checks pass. Three soft findings are logged (none block approval): (a) MINOR — 2.6 corpus §2 Prerequisites list omits topic 2.4 despite 2.4 being cited in the learning objectives, §5.2 body text, and correctly registered in sequence.index.json; (b) OBSERVATION — 'hallucination' is introduced for the first time in 2.6 §5.2 with an inline definition; it is not listed in 2.5's concepts_introduced in the sequence index; (c) OBSERVATION — HIPAA is defined with pronunciation in 2.6 §5.1 while GDPR is named but left without an equivalent definition, a minor parity gap for a globally diverse cohort. The previously recorded MAJOR lab-alignment finding (prior run) was based on a misquote: 2.6 §9 does not forward-reference the five-spec set from topic 2.7; it contains three self-contained scenarios with no dependency on later work. That finding is retracted.",
+  "checks": {
+    "terminology_consistency": {
+      "passed": true,
+      "findings": [
+        {
+          "severity": "observation",
+          "topic": "2.6",
+          "term": "hallucination",
+          "detail": "'Hallucination' is introduced for the first time in 2.6 §5.2 with an inline definition ('a term you will encounter more in later topics — where an AI produces a plausible-sounding but factually incorrect output without signalling any uncertainty'). The term does not appear in 2.5 and is not listed in 2.5's concepts_introduced in sequence.index.json. The inline definition prevents an absolute-beginner reader from being left cold. Recommend adding 'hallucination' to 2.6's concepts_introduced list in sequence.index.json to ensure downstream topics can cite it as a known term."
+        }
+      ]
+    },
+    "prerequisites_respected": {
+      "passed": true,
+      "findings": [
+        {
+          "severity": "minor",
+          "topic": "2.6",
+          "detail": "2.6 sequence.index.json correctly lists prerequisites [2.1, 2.3, 2.4, 2.5] — all have earlier positions in the sequence. The learning objectives explicitly cite 2.4 ('Describe what \"probabilistic output\" means (introduced in topic 2.4)') and §5.2 body text opens 'You learned in topic 2.4 that AI produces probabilistic output'. However, the corpus §2 Prerequisites section lists only 2.1, 2.3, and 2.5 — 2.4 is omitted from the prose enumeration. This is an internal documentation inconsistency: the prerequisite dependency is real and machine-registered correctly; the corpus prose section does not enumerate it. Recommend adding '2.4 — Pattern recognition: probabilistic output' to corpus §2 to make the prose consistent with the index."
+        }
+      ]
+    },
+    "learning_arc": {
+      "passed": true,
+      "findings": []
+    },
+    "no_duplicated_core_concepts": {
+      "passed": true,
+      "jaccard_pairs_checked": [
+        {
+          "topics": ["2.5", "2.6"],
+          "estimated_jaccard": 0.08,
+          "detail": "Substantive concept nouns are fully distinct. 2.5 core concepts: 70/30 rule, specify role, verify role, verification loop, implementation vs oversight split. 2.6 core concepts: sensitive data, privacy risk, exact precision requirement, legal accountability, three-question check. Shared structural vocabulary (AI, human, specification, verification, output, task) is connective and not indicative of concept duplication. 2.6's back-references to 'verification loop' (§5.2–5.3) and 'probabilistic output' (§5.2) are explicit cross-topic citations, not re-introduction of those concepts as new material. No redundancy flag."
+        }
+      ]
+    },
+    "lab_activity_alignment": {
+      "passed": true,
+      "findings": [
+        {
+          "severity": "observation",
+          "topic": "module",
+          "detail": "Module lab_activity_seed_by_week[2]: 'Write 5 task specifications — one each for health, transport, education, food, scheduling / Test each spec live with Claude — did you get exactly what you asked for? / Peer review — iterate based on feedback'. The five-domain specification writing task is the subject of topic 2.7 (module 4, 'Writing and Testing Specifications'), which follows this module in delivery order. Module 3's two topics scaffold the skills needed for that lab: 2.5 §9 produces one specification with a full verification pass (transport/delayed-bus scenario), and 2.6 §9 applies the three-question check to two self-contained scenarios without any forward dependency on 2.7. The lab arc is intentionally distributed across modules 3 and 4. No alignment gap exists within module 3's scope. NOTE: a prior critic run logged a MAJOR finding claiming 2.6 §9 forward-references the five-spec set. That quote does not appear in the actual corpus; 2.6 §9 reads 'Choose any two of the following scenarios — or substitute a task from your own work or study:' followed by three standalone scenarios. The prior MAJOR finding is retracted."
+        }
+      ]
+    },
+    "audience_level_consistency": {
+      "passed": true,
+      "findings": [
+        {
+          "severity": "observation",
+          "topic": "2.6",
+          "detail": "2.6 §5.1 names HIPAA with pronunciation ('pronounced HIP-ah') and a one-sentence definition (US law, health information). GDPR is named and characterised only as 'equivalent regulations exist in other jurisdictions — for example, GDPR (General Data Protection Regulation) in Europe' without an equivalent definition of scope or pronunciation guidance. For a globally diverse absolute-beginner cohort, a brief parallel treatment of GDPR (e.g., 'GDPR governs personal data handling for individuals in the EU') would reduce confusion. Both are flagged as 'you will study these in later topics', which mitigates the gap. No depth spike between 2.5 and 2.6: both are confirmed at the deep profile and the increased density in 2.6 (more sub-concepts) is appropriate given the topic's broader three-dimension framework."
+        }
+      ]
+    }
+  },
+  "topics_with_findings": [
+    {
+      "topic_id": "2.5",
+      "title": "The 70/30 rule — AI implements, you specify and verify",
+      "findings_count": 0,
+      "severity_breakdown": { "major": 0, "minor": 0, "observation": 0 },
+      "findings_summary": []
+    },
+    {
+      "topic_id": "2.6",
+      "title": "When NOT to use AI — privacy, precision, legal accountability",
+      "findings_count": 3,
+      "severity_breakdown": { "major": 0, "minor": 1, "observation": 2 },
+      "findings_summary": [
+        "MINOR — prerequisites_respected: corpus §2 omits 2.4 from its prerequisites list despite 2.4 being cited in the LOs and §5.2 body text and correctly registered in sequence.index.json.",
+        "OBSERVATION — terminology_consistency: 'hallucination' introduced cold with inline definition; not listed in 2.5 concepts_introduced or 2.6 concepts_introduced in sequence.index.json.",
+        "OBSERVATION — audience_level_consistency: GDPR named without definition while HIPAA is defined with pronunciation; minor parity gap for non-US cohort."
+      ]
+    }
+  ],
+  "gate_recommendation": "PASS — no major findings. One minor documentation inconsistency (2.6 corpus §2 missing 2.4 prerequisite) and two observation-level polish items. Module 3 does not block HITL #4. Findings are informational and can be addressed as a corpus patch without re-running artifact generation."
+}

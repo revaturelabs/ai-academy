@@ -1,0 +1,60 @@
+{
+  "verdict": "pass",
+  "findings": [
+    {
+      "code": "looks_good",
+      "where": "pipeline structure",
+      "detail": "Six nodes form a clean left-to-right linear pipeline: User Message → LLM Decides → Routing Software → External Tool Runs → LLM Gets Result → Final Answer. This maps exactly to the four-step cycle in §5.2 (Step 1 Decide, Step 2 Request, Step 3 Execute, Step 4 Return) with entry and exit bookends. No branching — single-path discipline holds."
+    },
+    {
+      "code": "looks_good",
+      "where": "three tool types — subtitle placement",
+      "detail": "All three core tool types (search, calculator, code runner) are surfaced in the 12px subtitle of the EXECUTE node: 'Step 3 — Search · Calculator · Code Runner'. This avoids exceeding the 8-node ceiling while still satisfying the requirement to show all three types. The middle-dot separator reads cleanly as a set of alternatives, not a sequence."
+    },
+    {
+      "code": "looks_good",
+      "where": "labels / concept fidelity",
+      "detail": "All six bold labels (User Message, LLM Decides, Routing Software, External Tool Runs, LLM Gets Result, Final Answer) trace directly to corpus Core Concepts §5.2 and §5.5. 'LLM' is corpus-defined in Prerequisites and used throughout — not a bare unexplained acronym. No out-of-headline-scope nodes (no multi-agent, no RAG internals, no prompt engineering). All labels ≤ 4 words."
+    },
+    {
+      "code": "looks_good",
+      "where": "color tiers",
+      "detail": "USER_IN uses 'start' blue (#a5d8ff). DECIDE, ROUTER, RETURN use 'auto' purple (#d0bfff) — correct for automated LLM reasoning and software-layer steps. EXECUTE uses 'act' blue (#a5d8ff) — correct as the action-execution node where the external call happens. USER_OUT uses 'done' green (#b2f2bb). No hitl (yellow) nodes — none are needed for this topic (no human-in-the-loop steps in the tool-use cycle). No color tier violations."
+    },
+    {
+      "code": "looks_good",
+      "where": "title discipline",
+      "detail": "Governing concept 'Four-Step Tool-Use Cycle' is in the --- config title: field, not a ghost node or dangling annotation. Pass."
+    },
+    {
+      "code": "looks_good",
+      "where": "handshake / routing layer",
+      "detail": "The ROUTER node ('Routing Software') with subtitle 'LLM never calls tools directly' makes §5.5's key structural insight visible. The edge label 'structured request' on DECIDE→ROUTER also signals the §5.2 Step 2 Request mechanism, not just an anonymous arrow."
+    }
+  ],
+  "stats": {
+    "nodes": 6,
+    "edges": 5,
+    "layout": "flowchart LR",
+    "labels": [
+      "User Message",
+      "LLM Decides",
+      "Routing Software",
+      "External Tool Runs",
+      "LLM Gets Result",
+      "Final Answer"
+    ],
+    "png_path": "content/m2-introduction-to-ai-systems/week-4/2-retrieval-agents-and-tools/4-5-tool-use-ai-calling-search-calculator-and-code-runner/artifacts/diagram.png",
+    "png_dims": "skipped — mmdc not available in this shell context",
+    "preflight": {
+      "mermaid_parse": "pass (config block correctly structured with title, theme, themeVariables, config.flowchart; flowchart LR with valid node/edge/classDef/class syntax)",
+      "node_count": "pass (6 nodes, within 3-8)",
+      "label_discipline": "pass (all bold labels <= 4 words: 'User Message', 'LLM Decides', 'Routing Software', 'External Tool Runs', 'LLM Gets Result', 'Final Answer')",
+      "concept_fidelity": "pass (all 6 labels trace to §5.2 four-step cycle + §5.5 handshake; no out-of-scope nodes)",
+      "jargon_label": "pass ('LLM' is corpus-defined in Prerequisites; used as established shorthand throughout §5.x)",
+      "title_discipline": "pass (governing concept in title: config field, not a dangling ghost node)",
+      "single_path": "pass (pure linear chain USER_IN→DECIDE→ROUTER→EXECUTE→RETURN→USER_OUT; one outgoing edge per node; no side spurs)"
+    },
+    "render_note": "PNG requires mmdc on PATH. Run: mmdc -i <mmd_path> -o <png_path> -w 1400 -b transparent"
+  }
+}

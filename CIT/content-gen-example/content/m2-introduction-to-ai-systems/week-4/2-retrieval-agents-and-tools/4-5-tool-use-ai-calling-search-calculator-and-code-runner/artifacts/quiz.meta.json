@@ -1,0 +1,61 @@
+{
+  "topic_id": "4.5",
+  "generated_at": "2026-06-17T00:00:00Z",
+  "format": "gift",
+  "question_count": 7,
+  "$bias_defense_applied": true,
+  "$shuffle_seed": "seed=45; redraw applied (salt=1) to satisfy max_share<=0.40; q6 LO6 MCQ added in critic cycle 2 at pos=0 (already in distribution).",
+  "correct_position_distribution": [0, 1, 2, 3, 2, 0],
+  "mcq_count": 6,
+  "short_answer_count": 1,
+  "shuffle_constraint_check": {
+    "max_share": 0.3333,
+    "max_share_limit": 0.40,
+    "all_positions_used": true,
+    "passed": true
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "type": "mcq",
+      "objective_ref": "LO1 — Explain what it means for an AI to 'call a tool' and why an LLM alone cannot perform that action.",
+      "correct_position": 0
+    },
+    {
+      "id": "q2",
+      "type": "mcq",
+      "objective_ref": "LO2 — Describe the four-step tool-use cycle (request → route → execute → return) without prompting.",
+      "correct_position": 1
+    },
+    {
+      "id": "q3",
+      "type": "mcq",
+      "objective_ref": "LO3 — Give a concrete example of each of the three core tool types: search, calculator, and code runner.",
+      "correct_position": 2
+    },
+    {
+      "id": "q4",
+      "type": "mcq",
+      "objective_ref": "LO4 — Distinguish what each tool type fixes — information freshness, mathematical accuracy, and code execution — compared with an LLM working alone.",
+      "correct_position": 3
+    },
+    {
+      "id": "q5",
+      "type": "mcq",
+      "objective_ref": "LO5 — Identify one real-world AI product feature that relies on tool use.",
+      "correct_position": 2
+    },
+    {
+      "id": "q6",
+      "type": "mcq",
+      "objective_ref": "LO6 — Recognise that tool use is what turns a standalone language model into a genuinely capable AI assistant.",
+      "correct_position": 0
+    },
+    {
+      "id": "q7",
+      "type": "short_answer",
+      "objective_ref": "LO2 — Describe the four-step tool-use cycle (request → route → execute → return) without prompting.",
+      "correct_position": null
+    }
+  ]
+}

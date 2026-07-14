@@ -1,0 +1,25 @@
+{
+  "type": "course",
+  "code": "M2",
+  "title": "Introduction to AI Systems",
+  "slug": "m2-introduction-to-ai-systems",
+  "weeks_range": "3–5",
+  "total_hours": "9 hrs",
+  "scope": "History, LLMs, the 2026 AI stack, ethics and safety including EU AI Act, NIST RMF, White House EO. No coding.",
+  "source_label": "M2 – Introduction to AI Systems",
+  "week_nums": [
+    3,
+    4,
+    5
+  ],
+  "assessments": [
+    {
+      "id": "A1",
+      "due_week": 3,
+      "title": "Specification Portfolio",
+      "mode": "Individual",
+      "weight": "10%",
+      "requirement": "Submit 5 task specifications (health, transport, education, food, scheduling) using formal spec language. Each spec must include: input parameters, expected output format, boundary conditions, and at least one negative test case. Attach one Excalidraw flowchart with decision branches and loop constructs clearly labelled. Graded on: technical precision, testability, and completeness of boundary handling."
+    }
+  ]
+}

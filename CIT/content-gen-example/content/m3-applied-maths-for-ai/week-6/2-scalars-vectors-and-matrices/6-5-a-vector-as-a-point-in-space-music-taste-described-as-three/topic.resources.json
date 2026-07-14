@@ -1,0 +1,30 @@
+{
+  "topic_id": "6.5",
+  "captured_at": "2026-06-18T00:00:00Z",
+  "captured_by": "bhuvaneshwarim@revature.com",
+  "resources_source": "web_search",
+  "web_search_query": "vector as point in space geometric intuition machine learning beginner",
+  "resources": [
+    {
+      "type": "url",
+      "value": "https://machinelearningmastery.com/gentle-introduction-vectors-machine-learning/",
+      "role": "primary",
+      "source": "web_search",
+      "notes": "Canonical ML series — geometric intuition for vectors, point-in-space framing, beginner-friendly"
+    },
+    {
+      "type": "url",
+      "value": "https://www.algolia.com/blog/ai/what-are-vectors-and-how-do-they-apply-to-machine-learning",
+      "role": "supporting",
+      "source": "web_search",
+      "notes": "AI-product framing — connects abstract vector geometry to practical ML use cases"
+    },
+    {
+      "type": "url",
+      "value": "https://www.datasciencebase.com/fundamentals/linear-algebra/geometric-interpretation-of-vector-spaces/",
+      "role": "supporting",
+      "source": "web_search",
+      "notes": "Geometric interpretation focus — point-in-space intuition, matches topic angle directly"
+    }
+  ]
+}

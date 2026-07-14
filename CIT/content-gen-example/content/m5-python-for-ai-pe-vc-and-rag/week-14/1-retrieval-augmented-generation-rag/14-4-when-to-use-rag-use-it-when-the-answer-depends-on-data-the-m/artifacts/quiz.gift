@@ -1,0 +1,41 @@
+$CATEGORY: CIT/M5/week-14/14.4-when-to-use-rag
+
+::q1:: A team is deciding whether to add RAG (Retrieval-Augmented Generation) to their AI assistant. According to the core decision rule, when should they use RAG? {
+~When the AI assistant needs to respond in a friendlier, more conversational tone for users.#No — changing the model's tone is a style requirement; that calls for fine-tuning, not RAG.
+=When the answer to a user's question lives in data the model was never trained on.#Correct — RAG is designed exactly for this\: grounding answers in documents the model has not seen.
+~When the AI assistant is running too slowly and needs to cut down its response time.#No — adding RAG actually increases latency by adding a retrieval step before every answer.
+~When the model needs to learn new reasoning patterns specific to a technical domain.#No — teaching new reasoning patterns is a job for fine-tuning, which updates the model's weights.
+#### Tests the core RAG decision rule from section 5.1\: use RAG when the answer lives in data the model was not trained on.
+}
+
+::q2:: Which group of four signals correctly indicates that RAG (Retrieval-Augmented Generation) is the right tool for a given task? {
+~Speed, accuracy, scalability, and cost reduction for all AI queries.#No — speed and scalability are infrastructure concerns, not signals that identify an RAG use case.
+~Public knowledge, beginner questions, general reasoning, and language generation tasks.#No — these all describe tasks the model handles well from training alone, where RAG adds no benefit.
+~Private data, model size, prompt length, and number of users in the system.#No — model size, prompt length, and user count are technical parameters, not RAG decision signals.
+=Freshness, private data, precision, and a favourable cost-benefit ratio.#Correct — these four signals from section 5.2 each identify a reason why the answer is in data the model has not seen.
+#### Tests Learning Objective 2\: identifying the four signals that point toward RAG (corpus section 5.2).
+}
+
+::q3:: A company wants to teach its AI assistant to always write in short sentences, use the brand's specific vocabulary, and adopt a casual, upbeat tone. Which approach should they choose, and why? {
+=Fine-tuning, because changing how a model writes is a style and behaviour problem — not a facts-access problem.#Correct — fine-tuning updates model weights to change behaviour; RAG only adds documents at query time and cannot teach new style.
+~RAG (Retrieval-Augmented Generation), because retrieving brand guidelines at query time will change the model's writing style.#No — RAG places documents in the prompt but does not change the model's learned writing patterns or style.
+~RAG (Retrieval-Augmented Generation), because brand tone is private data that was not in the model's training corpus.#No — even though brand guidelines are private, the need here is to change behaviour, not to access specific facts.
+~Fine-tuning, because it is always cheaper and faster than building a RAG pipeline and vector database.#No — fine-tuning requires a full training run, which is typically expensive; cost alone is not the deciding reason here.
+#### Tests Learning Objective 3\: distinguishing RAG from fine-tuning and understanding which problem each solves (corpus section 5.4).
+}
+
+::q4:: A hospital wants an AI assistant to answer staff questions about drug dosages and treatment protocols, which are updated by medical authorities every few months. Which recommendation is best, and why? {
+~Fine-tuning on the latest protocols, because the model will learn exact dosages directly into its weights.#No — fine-tuned models have their own training cutoff; when protocols update, the model confidently gives outdated answers until retrained.
+~No AI assistant at all, because medical data is too sensitive for any automated retrieval system.#No — sensitivity is a security and governance concern handled separately; it does not rule out RAG as a technical approach.
+=RAG (Retrieval-Augmented Generation), because the data is private, changes frequently, and requires precise facts.#Correct — all three signals (private data, freshness, precision) fire here; RAG lets the hospital update the document store without retraining the model.
+~The base model alone, because drug dosages are stable scientific facts available in its training data.#No — exact dosages and updated protocols may have changed since training; parametric memory is unreliable for precise, frequently updated clinical details.
+#### Tests Learning Objective 4\: applying the decision framework to a scenario (corpus sections 5.2 and 5.5).
+}
+
+::q5:: A developer is building an AI tool that helps users write professional emails — for example, drafting a polite reply to a client complaint. Should this tool use RAG (Retrieval-Augmented Generation)? {
+~Yes, because email writing is a precision task that requires retrieving exact phrasing from a document store.#No — drafting an email is a generative language task; the model uses its writing ability, not specific stored facts.
+=No, because drafting text is a generative task where the model's language capability is sufficient without retrieval.#Correct — generative tasks like drafting or rephrasing do not benefit from RAG; adding it increases cost without improving the output.
+~Yes, because professional email tone is private knowledge that the model was not trained on.#No — professional email conventions are widely represented in training data; this is not a private or post-cutoff data problem.
+~No, because RAG only works for questions about scientific or medical topics, not everyday writing tasks.#No — RAG works across many domains, but the reason to skip it here is that the task does not depend on unseen documents.
+#### Tests Learning Objective 5\: recognising when RAG adds unnecessary complexity (corpus section 5.3).
+}

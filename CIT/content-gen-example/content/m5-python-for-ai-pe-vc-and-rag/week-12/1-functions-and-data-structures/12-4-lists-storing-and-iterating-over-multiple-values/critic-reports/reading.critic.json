@@ -1,0 +1,43 @@
+{
+  "passed": true,
+  "checks": {
+    "format_discipline": {
+      "passed": true,
+      "notes": "First non-empty line is '# Lists — storing and iterating over multiple values' with no frontmatter. reading.meta.json exists and parses cleanly with all required fields (word_count, estimated_read_minutes, citations_used, sections). Exactly 6 fixed sections present in correct order: Overview, Key Concepts, Worked Example, In Practice, Key Takeaways, References."
+    },
+    "length_budget": {
+      "passed": true,
+      "word_count": 1389,
+      "reading_minutes": 7,
+      "notes": "1389 words at 200 wpm = 6.95 min (~7 min). Within target 1200–1600 words and 6–8 min. Meta sidecar reports the same values."
+    },
+    "citation_discipline": {
+      "passed": true,
+      "primary_cited": true,
+      "notes": "Primary resource [1] (swcarpentry.github.io) cited at lines 5, 21, 31, 54, 69, 79, 86, 95, 139, 154, 220, 233. Inline markers [1], [2], [3] all resolve to entries in the References section. No orphan markers; no orphan bibliography entries. No fabricated citations."
+    },
+    "forward_refs": {
+      "passed": true,
+      "violations": [],
+      "notes": "All technical terms used are within the valid concept space for 12.4 and its predecessors. API and LLM appear as named-and-deferred references with acronym expansions (audience mandate requires spelling out acronyms on first use). Neither is taught or defined beyond the bare name + expansion + forward pointer ('you will use/call one later in Week 12'). CSV appears once as a named lab preview, not taught. No concepts from beyond the valid concept space are introduced or explained."
+    },
+    "readability_formatting_scope": {
+      "passed": true,
+      "findings": [
+        {
+          "code": "undefined_terms",
+          "severity": "soft",
+          "detail": "'dot notation' is used at line 63 ('Called with dot notation: my_list.append(value)') without a plain-English definition. A zero-background learner may not know what the dot means syntactically. The corpus defines 'Method' with a dot-notation explanation (corpus section 5.5) but the reading omits that grounding sentence. Recommend adding: 'The dot means: run this operation on this particular list.'"
+        }
+      ],
+      "scope_creep": false,
+      "scope_notes": "No list comprehensions, nested lists, slicing, sorting, or dictionaries appear. CSV file reading is a single mention-and-defer in the lab-pattern context, not taught. find_lowest is named in passing alongside find_highest and compute_average as lab function names — not defined or taught here. LLM is named-and-deferred per scope_discipline rules. Only 1 readability/formatting finding total — below the ≥3 hard-fail threshold. No scope_creep."
+    },
+    "corpus_faithfulness": {
+      "passed": true,
+      "notes": "10 assertions sampled across Overview, Key Concepts, Worked Example, and In Practice sections. All 10 trace directly to corpus sections 4, 5.1, 5.2, 5.4, 5.5, 5.6, 5.7, 6, and 7. The Worked Example find_highest function (reading lines 144–151) matches corpus lines 268–278 verbatim. The LLM prompts pattern (reading lines 208–216) matches corpus lines 362–373. The reading is a well-condensed pass over corpus content with no new unsupported claims detected."
+    }
+  },
+  "verdict": "PASS. All 5 checks pass. The reading is well-structured, within word budget (1389 words / ~7 min), cites the primary resource throughout, introduces no forward references, and faithfully condenses the corpus. One soft finding: 'dot notation' is used at line 63 without a brief plain-English gloss — a minor readability gap for a zero-background learner. This single finding does not trigger the ≥3-finding hard-fail threshold and no scope_creep was found. The reading is ready for HITL #3 review.",
+  "at": "2026-06-14T00:00:00Z"
+}

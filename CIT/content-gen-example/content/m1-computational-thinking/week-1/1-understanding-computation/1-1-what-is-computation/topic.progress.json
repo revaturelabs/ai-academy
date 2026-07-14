@@ -1,0 +1,219 @@
+{
+  "topic_id": "1.1",
+  "stage": "topic_artifacts_approved",
+  "gates": {
+    "resources_captured": true,
+    "corpus_generated": true,
+    "corpus_critic_passed": true,
+    "corpus_human_approved": true,
+    "reading_generated": true,
+    "reading_critic_passed": true,
+    "quiz_generated": true,
+    "quiz_critic_passed": true,
+    "diagram_generated": true,
+    "diagram_critic_passed": true,
+    "module_drift_passed": true,
+    "course_drift_passed": true,
+    "topic_artifacts_human_approved": true,
+    "week_human_approved": true
+  },
+  "history": [
+    {
+      "at": "2026-06-19T07:06:40Z",
+      "op": "set",
+      "gate": "resources_captured",
+      "value": true
+    },
+    {
+      "at": "2026-06-19T07:06:40Z",
+      "op": "stage",
+      "to": "awaiting_corpus"
+    },
+    {
+      "at": "2026-06-19T07:06:40Z",
+      "op": "log",
+      "msg": "Captured 3 resources (source=web_search)"
+    },
+    {
+      "at": "2026-06-19T07:10:48Z",
+      "op": "set",
+      "gate": "corpus_generated",
+      "value": true
+    },
+    {
+      "at": "2026-06-19T07:10:48Z",
+      "op": "stage",
+      "to": "awaiting_corpus_critic"
+    },
+    {
+      "at": "2026-06-19T07:13:44Z",
+      "op": "set",
+      "gate": "corpus_critic_passed",
+      "value": false
+    },
+    {
+      "at": "2026-06-19T07:13:44Z",
+      "op": "log",
+      "msg": "Critic failed: citation density 24% (need 60%), thin corpus ~1540 words, section 5.5 scope note"
+    },
+    {
+      "at": "2026-06-19T07:31:18Z",
+      "op": "log",
+      "msg": "Auto-revise limit hit. Paused at corpus length check: 1584 words vs skill-canonical 3000-word floor. User chose to inspect before proceeding."
+    },
+    {
+      "at": "2026-06-19T12:00:00Z",
+      "op": "set",
+      "gate": "corpus_critic_passed",
+      "value": true
+    },
+    {
+      "at": "2026-06-19T12:00:00Z",
+      "op": "stage",
+      "to": "awaiting_corpus_human_review"
+    },
+    {
+      "at": "2026-06-19T09:59:08Z",
+      "op": "set",
+      "gate": "corpus_human_approved",
+      "value": true
+    },
+    {
+      "at": "2026-06-19T09:59:08Z",
+      "op": "stage",
+      "to": "corpus_approved"
+    },
+    {
+      "at": "2026-06-19T00:00:00Z",
+      "op": "set",
+      "gate": "diagram_generated",
+      "value": true
+    },
+    {
+      "at": "2026-06-19T00:00:00Z",
+      "op": "set",
+      "gate": "diagram_critic_passed",
+      "value": true
+    },
+    {
+      "at": "2026-06-19T00:00:00Z",
+      "op": "stage",
+      "to": "awaiting_reading_critic"
+    },
+    {
+      "at": "2026-06-19T00:00:00Z",
+      "op": "log",
+      "msg": "diagram-builder: 6 nodes, 4 edges, flowchart LR, 2 parallel subgraphs. Source-level critic pass (cycle 1). PNG render pending mmdc in terminal."
+    },
+    {
+      "at": "2026-06-19T10:06:12Z",
+      "op": "stage",
+      "to": "corpus_approved"
+    },
+    {
+      "at": "2026-06-19T00:00:00Z",
+      "op": "set",
+      "gate": "reading_generated",
+      "value": true
+    },
+    {
+      "at": "2026-06-19T00:00:00Z",
+      "op": "stage",
+      "to": "awaiting_reading_critic"
+    },
+    {
+      "at": "2026-06-19T00:00:00Z",
+      "op": "set",
+      "gate": "quiz_generated",
+      "value": true
+    },
+    {
+      "at": "2026-06-19T00:00:00Z",
+      "op": "stage",
+      "to": "awaiting_quiz_critic"
+    },
+    {
+      "at": "2026-06-19T00:00:00Z",
+      "op": "set",
+      "gate": "reading_critic_passed",
+      "value": false
+    },
+    {
+      "at": "2026-06-19T00:00:00Z",
+      "op": "log",
+      "msg": "Reading critic failed: scope_creep hard fail — 'deterministic' and 'probabilistic' bolded and defined inline in Section 5 (line 74); must be bare names only per mention-and-defer rule"
+    },
+    {
+      "at": "2026-06-19T00:00:00Z",
+      "op": "set",
+      "gate": "reading_critic_passed",
+      "value": true
+    },
+    {
+      "at": "2026-06-19T00:00:00Z",
+      "op": "log",
+      "msg": "Reading critic cycle 2 passed: scope_creep fix confirmed — 'deterministic' and 'probabilistic' now bare names with topic pointer only (line 74). All 12 checks pass."
+    },
+    {
+      "at": "2026-06-19T00:00:00Z",
+      "op": "set",
+      "gate": "quiz_critic_passed",
+      "value": true
+    },
+    {
+      "at": "2026-06-19T00:00:00Z",
+      "op": "stage",
+      "to": "quiz_approved"
+    },
+    {
+      "at": "2026-06-19T00:00:00Z",
+      "op": "log",
+      "msg": "Quiz critic passed: all 5 checks clean. positional_bias max_share=0.40 (boundary pass), length_bias rate=0.40 (boundary pass), absurd_rate=0.00, all 5 LOs covered, all questions on-scope."
+    },
+    {
+      "at": "2026-06-19T10:18:19Z",
+      "op": "stage",
+      "to": "awaiting_topic_artifacts_review"
+    },
+    {
+      "at": "2026-06-19T10:19:08Z",
+      "op": "set",
+      "gate": "topic_artifacts_human_approved",
+      "value": true
+    },
+    {
+      "at": "2026-06-19T10:19:08Z",
+      "op": "stage",
+      "to": "topic_artifacts_approved"
+    },
+    {
+      "at": "2026-06-19T10:19:08Z",
+      "op": "log",
+      "msg": "HITL#3 approved by namratas@revature.com — reading 1340w/7min, quiz 5MCQ all LOs covered, diagram PNG clean. No carry-over failures."
+    },
+    {
+      "at": "2026-06-22T11:08:20Z",
+      "op": "set",
+      "gate": "module_drift_passed",
+      "value": true
+    },
+    {
+      "at": "2026-06-22T12:14:24Z",
+      "op": "set",
+      "gate": "week_human_approved",
+      "value": true
+    },
+    {
+      "at": "2026-06-23T08:12:30Z",
+      "op": "set",
+      "gate": "course_drift_passed",
+      "value": true
+    },
+    {
+      "at": "2026-06-23T11:14:15Z",
+      "op": "set",
+      "gate": "course_drift_passed",
+      "value": true
+    }
+  ]
+}

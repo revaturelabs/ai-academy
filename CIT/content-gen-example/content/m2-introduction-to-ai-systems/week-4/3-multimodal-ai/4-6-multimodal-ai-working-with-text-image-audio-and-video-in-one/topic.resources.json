@@ -1,0 +1,30 @@
+{
+  "topic_id": "4.6",
+  "captured_at": "2026-06-17T00:00:00Z",
+  "captured_by": "namratas@revature.com",
+  "resources_source": "web_search",
+  "resources": [
+    {
+      "type": "url",
+      "value": "https://www.mckinsey.com/featured-insights/mckinsey-explainers/what-is-multimodal-ai",
+      "role": "primary",
+      "source": "web_search",
+      "notes": "Canonical explainer — accessible definition, use-cases, market context"
+    },
+    {
+      "type": "url",
+      "value": "https://arxiv.org/pdf/2506.04788",
+      "role": "supporting",
+      "source": "web_search",
+      "notes": "Academic survey of LLM-centric multimodal fusion strategies (2025)"
+    },
+    {
+      "type": "url",
+      "value": "https://aijourn.com/multimodal-models-when-text-image-audio-and-video-come-together/",
+      "role": "supporting",
+      "source": "web_search",
+      "notes": "Editorial overview of how modalities combine in one model"
+    }
+  ],
+  "web_search_query": "multimodal AI text image audio video one system explained 2024"
+}

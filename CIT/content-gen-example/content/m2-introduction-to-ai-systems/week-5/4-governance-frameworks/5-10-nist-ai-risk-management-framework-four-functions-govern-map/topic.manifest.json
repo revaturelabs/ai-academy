@@ -1,0 +1,48 @@
+{
+  "type": "topic",
+  "id": "5.10",
+  "title": "NIST AI Risk Management Framework — four functions: Govern, Map, Measure, Manage",
+  "slug": "5-10-nist-ai-risk-management-framework-four-functions-govern-map",
+  "position_in_module": 4,
+  "week_num": 5,
+  "session_name": "AI Ethics, Safety and Governance",
+  "module": {
+    "position": 4,
+    "slug": "4-governance-frameworks",
+    "title": "Governance Frameworks"
+  },
+  "course": {
+    "code": "M2",
+    "slug": "m2-introduction-to-ai-systems",
+    "title": "Introduction to AI Systems"
+  },
+  "next_assessment": {
+    "id": "A2",
+    "due_week": 6,
+    "title": "AI Systems Essay",
+    "weight": "15%"
+  },
+  "paths": {
+    "corpus": "topic_corpus.md",
+    "resources": "topic.resources.json",
+    "progress": "topic.progress.json",
+    "artifacts_dir": "artifacts/",
+    "critic_reports_dir": "critic-reports/"
+  },
+  "artifact_plan": {
+    "diagram": true,
+    "diagram_intent": "Cycle diagram: Govern at the center as the cross-cutting function; Map -> Measure -> Manage as a repeating loop around it, showing the RMF is a continuous loop, not a one-time checklist",
+    "suggested_depth_profile": "standard",
+    "confirmed_depth_profile": "standard",
+    "reading_word_range": [
+      1200,
+      1600
+    ],
+    "quiz_size_range": [
+      5,
+      6
+    ]
+  },
+  "expected_delivery_minutes": 7,
+  "status": "module_passed"
+}

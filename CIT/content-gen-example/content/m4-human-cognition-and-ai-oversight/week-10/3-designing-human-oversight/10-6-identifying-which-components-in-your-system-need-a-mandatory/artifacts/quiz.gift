@@ -1,0 +1,55 @@
+$CATEGORY: CIT/M4/week-10/10.6-identifying-which-components-in-your-system-need-a-mandatory-human-checkpoint
+
+::10.6-Q1:: A developer describes one step in an AI loan system\: "Takes the applicant's uploaded payslip and extracts the annual income figure." A second developer says\: "That is not a component — it is just a sub-task of the main model." Which statement best explains why the first developer is correct?
+{
+=It is a component because it takes a defined input, applies a specific operation, and produces an output that feeds the next step.#Correct — a component is a distinct step that can fail independently and has traceable input-operation-output structure.
+~It qualifies as a component only if a senior engineer signed off on its design document before the system was deployed.#No — component status depends on structure (distinct input, operation, output) and independent failure potential, not on approval status or governance documentation.
+~It qualifies as a component only if it runs on separate hardware or uses a separate AI model from the rest of the pipeline.#No — components are defined by their functional boundary (independent failure potential, distinct I/O), not by their physical or model separation within the system.
+~It is a component only when it processes data that directly affects a person, such as financial or medical information.#No — the definition of a component does not depend on the data type or the stakes involved. Any distinct processing step with defined input and output qualifies.
+#### Tests the corpus definition of "component" as a distinct step with defined input, operation, and output that can fail independently (corpus §5.1).
+}
+
+::10.6-Q2:: An AI urgency scorer assigns a priority level to hospital patients. If it gives a "Routine" label to a patient who actually needs immediate care, the patient may not be seen for hours. The error cannot be corrected once the patient is placed in the waiting queue. Applying Q1 of the Judgment Framework to this component, what is the correct conclusion?
+{
+~Q1 places this at low risk because priority labels are administrative records and do not directly perform a medical procedure on the patient.#No — Q1 asks about the cost of being wrong, including downstream harm. An incorrect label that delays emergency care is a high-severity, high-cost outcome regardless of whether the label is classified as administrative.
+~Q1 places this at medium risk because the patient is still in the building and staff could notice the error and intervene before harm occurs.#No — Q1 evaluates whether the error is reversible before harm occurs. Harm from delayed emergency care can begin immediately once the routing decision is made, so proximity of staff does not guarantee timely correction.
+=This component is a mandatory checkpoint candidate because the error severity is high and the error is irreversible once the patient is placed in the queue.#Correct — Q1 flags a component when severity is high or reversibility is low. Here both conditions are true.
+~Q1 places this at low risk because the hospital already has broader safety protocols that would catch any errors the AI makes.#No — Q1 evaluates severity and reversibility for this specific component's output, not the organisation's broader safety net. Surrounding systems do not change the component-level analysis.
+#### Tests application of Q1 (severity and reversibility) to determine whether a component is a mandatory checkpoint candidate (corpus §5.3).
+}
+
+::10.6-Q3:: A team proposes this oversight rule for an AI medical triage system\: "All AI outputs must be reviewed by a human before any action is taken." What is the most serious problem with this approach?
+{
+=It makes human review impossible to resource at scale, causing reviewers to approve outputs superficially rather than check them genuinely.#Correct — blanket system-level policies produce automation complacency in reviewers. Risk-tiered mapping concentrates oversight where it adds the most value.
+~It fails because the EU AI Act requires that at least one component in every high-risk AI system must operate without any human review at all.#No — the EU AI Act does not require any component to run without oversight. It requires that oversight mechanisms be appropriate to each component's individual risk level, not absent anywhere.
+~It is too weak because all components of a medical system are equally high-risk, so a blanket policy still leaves the highest-risk components under-reviewed.#No — components carry different risk levels even within a high-risk system. A blanket review policy does not leave the highest-risk ones under-reviewed; it wastes resources on lower-risk ones and degrades reviewer attention overall.
+~It works for systems that process fewer than 500 decisions per day but fails only at very high daily volumes.#No — the problem is structural, not volume-dependent. Blanket review misallocates human attention by treating all components as equivalent regardless of how many decisions the system makes.
+#### Tests understanding of risk-tiered component mapping versus system-level blanket oversight policies (corpus §5.2, §8).
+}
+
+::10.6-Q4:: The EU AI Act Article 14 requires that people overseeing high-risk AI systems must be able to "decide not to use the system's output." Which mandatory checkpoint property does this requirement most directly correspond to?
+{
+~Logging — because the decision to discard an output must be recorded with the reviewer's identity and the timestamp of the review.#Plausible, but the Act's phrase targets the authority to reject the output, not the requirement to record that rejection. Logging is a separate structural property about audit trails.
+~Monitoring — because the organisation must track how often reviewers choose not to use outputs and review those rates on a regular schedule.#Plausible, but monitoring is about tracking rates over time. The phrase "decide not to use the output" addresses the reviewer's authority in the moment of review, not the ongoing measurement of that authority's use.
+~Blocking — because the system must be architecturally incapable of proceeding past this step without explicit human sign-off.#Plausible, but blocking describes whether the system can proceed without human action. The phrase "decide not to use" targets the reviewer's authority to reject, which is a distinct property about empowerment.
+=Empowerment — because the reviewer must have genuine authority to override or discard the output, without needing manager approval or facing penalties for doing so.#Correct — "decide not to use the output" maps to the empowerment property. A checkpoint where overriding is penalised or requires escalation does not meet this Article 14 standard.
+#### Tests the mapping between EU AI Act Article 14 language and the four mandatory checkpoint properties (corpus §5.5, §7.1).
+}
+
+::10.6-Q5:: A team monitors a fraud-detection component that previously sent 12% of its outputs to human review. Over three months, with no change to the underlying data or the AI model, the human review rate drops to 1.5%. No errors have been flagged in this period. What should the team conclude?
+{
+~The component has improved on its own — a lower review rate with no flagged errors confirms the AI is now more accurate than before.#No — the model has not changed, so accuracy cannot have improved on its own. A falling review rate with no model change is a known checkpoint failure signal, not evidence of accuracy improvement.
+~The acceptable error threshold for this component should be lowered to match the improved performance that the data appears to show.#No — lowering the error threshold makes the standard easier to meet. The correct response to this signal pattern is an audit to determine whether the checkpoint is still functioning, not a relaxation of the required standard.
+=This near-zero override rate is a signal the checkpoint may have become override-as-theater and should be audited before drawing conclusions about the component's safety.#Correct — a stable near-zero override rate with no model change is one of the three defined upgrade signals. It requires investigation, not a declaration of success.
+~The reviewers should be replaced, since the data shows they are failing to identify errors the component continues to make at its historical rate.#No — this pattern is a structural signal about the checkpoint design, not evidence that specific reviewers are underperforming. Replacing reviewers does not address the underlying issue.
+#### Tests identification of the near-zero override rate as an upgrade signal for a component's oversight assignment (corpus §5.4, Signal 1).
+}
+
+::10.6-Q6:: An income verification component is assigned HOTL oversight for employed applicants submitting standard payslips. A policy change means it will now also process self-employed applicants whose evidence includes invoices, tax returns, and bank statements in multiple currencies. Should the oversight assignment change?
+{
+~No — oversight assignments are based on the AI model's capabilities. The model has not changed, so the assignment remains valid for all applicant types.#No — the Judgment Framework questions depend on the context of each case, not only on the model's design. A harder input type changes the answer to Q2 even when the model is unchanged.
+~No — HOTL is always appropriate for income verification because a human reviewer can sample-audit any financial document regardless of its format or origin.#No — Q2 asks whether a human can realistically verify the output within the time available. Complex non-standard documentation across multiple currencies can make that verification impractical, changing the Q2 answer.
+~Yes — but only because regulations require a full system re-audit whenever the applicant population changes, regardless of whether the risk profile shifts.#No — a regulation mandating a full re-audit on any population change is not the basis described in the corpus. The reason to change the assignment is the shift in Q1 and Q2 answers for the new input type, not an automatic re-audit rule.
+=Yes — the new input type makes Q2 verification much harder and may raise Q1 error rates, so this context requires a higher oversight level than the baseline HOTL assignment.#Correct — oversight assignments are context-sensitive. When a context variable shifts the answers to Q1 or Q2, the triggered assignment must be higher than the baseline.
+#### Tests the principle that context variables can shift the Judgment Framework answers and require a different oversight level for the same component (corpus §5.4 Signal 3, §7.3).
+}

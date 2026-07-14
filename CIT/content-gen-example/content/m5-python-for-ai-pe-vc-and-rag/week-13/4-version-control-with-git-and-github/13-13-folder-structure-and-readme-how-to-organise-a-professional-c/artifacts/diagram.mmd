@@ -1,0 +1,40 @@
+---
+title: Standard Python Project Layout
+theme: base
+themeVariables:
+  primaryColor: "#a5d8ff"
+  primaryBorderColor: "#4a9eed"
+  lineColor: "#555"
+flowchart:
+  htmlLabels: true
+  curve: basis
+---
+flowchart TB
+    root["<b>my_project/</b><br/><span style='font-size:12px;color:#6d28d9'>Root folder — name matches your GitHub repo</span>"]
+
+    readme["<b>README.md</b><br/><span style='font-size:12px;color:#6d28d9'>Front page: what the project is, how to run it</span>"]
+
+    gitignore["<b>.gitignore</b><br/><span style='font-size:12px;color:#6d28d9'>Tells Git which files to skip (e.g. .env / API keys)</span>"]
+
+    reqs["<b>requirements.txt</b><br/><span style='font-size:12px;color:#6d28d9'>Python package list — one command installs all</span>"]
+
+    src["<b>src/</b><br/><span style='font-size:12px;color:#6d28d9'>All Python source code lives here</span>"]
+
+    data["<b>data/</b><br/><span style='font-size:12px;color:#6d28d9'>CSV and JSON input / output files</span>"]
+
+    tests["<b>tests/</b><br/><span style='font-size:12px;color:#6d28d9'>Scripts that verify your code works correctly</span>"]
+
+    root --> readme
+    root --> gitignore
+    root --> reqs
+    root --> src
+    root --> data
+    root --> tests
+
+    classDef start fill:#a5d8ff,stroke:#4a9eed
+    classDef auto fill:#d0bfff,stroke:#8b5cf6
+    classDef done fill:#b2f2bb,stroke:#22c55e
+
+    class root start
+    class readme,gitignore,reqs auto
+    class src,data,tests done

@@ -1,0 +1,48 @@
+{
+  "topic_id": "1.6",
+  "generated_at": "2026-06-21T00:00:00Z",
+  "format": "gift",
+  "question_count": 6,
+  "$bias_defense_applied": true,
+  "$shuffle_seed": "a4c6b919",
+  "correct_position_distribution": [2, 0, 3, 1, 2, 0],
+  "bias_defense_notes": "Correct answers placed at positions 2,0,3,1,2,0 (0-based). Position 0: 2/6=33%, position 1: 1/6=17%, position 2: 2/6=33%, position 3: 1/6=17%. Max share 33% <= 40% threshold. All 4 positions used. Positional bias constraint check passed. Length balance: Q2 options 21/28/26/27w (mean 25.5, ±20% range 20.4–30.6, all pass); Q3 options 24/18/22/18w (mean 20.5, ±20% range 16.4–24.6, all pass); Q4 options 24/21/25/26w (mean 24.0, ±20% range 19.2–28.8, all pass); Q6 options 21/25/25/25w (mean 24.0, ±20% range 19.2–28.8, all pass). Correct answer is NOT the longest option in any question. Length bias resolved.",
+  "questions": [
+    {
+      "id": "1.6-Q1",
+      "type": "mcq",
+      "objective_ref": "Define abstraction in plain language as the act of hiding unnecessary detail to focus on what matters.",
+      "correct_position": 2
+    },
+    {
+      "id": "1.6-Q2",
+      "type": "mcq",
+      "objective_ref": "Explain why hiding complexity is useful when solving problems or describing systems.",
+      "correct_position": 0
+    },
+    {
+      "id": "1.6-Q3",
+      "type": "mcq",
+      "objective_ref": "Identify the right level of detail for a given task or audience, and justify your choice.",
+      "correct_position": 3
+    },
+    {
+      "id": "1.6-Q4",
+      "type": "mcq",
+      "objective_ref": "Give at least two real-world examples of abstraction that you encounter outside computing.",
+      "correct_position": 1
+    },
+    {
+      "id": "1.6-Q5",
+      "type": "mcq",
+      "objective_ref": "Describe how abstraction relates to decomposition as part of the computational thinking toolkit.",
+      "correct_position": 2
+    },
+    {
+      "id": "1.6-Q6",
+      "type": "mcq",
+      "objective_ref": "Distinguish between a good abstraction (hides what is irrelevant) and a leaky one (forces the user to know things they should not need to know).",
+      "correct_position": 0
+    }
+  ]
+}

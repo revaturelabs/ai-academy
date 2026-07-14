@@ -1,0 +1,37 @@
+{
+  "topic_id": "5.10",
+  "artifact": "corpus",
+  "try": 1,
+  "passed": true,
+  "checks": {
+    "required_sections": {
+      "passed": true,
+      "detail": "Required sections 3 (Learning Objectives ~90w), 4 (Introduction ~180w), 5 (Core Concepts ~1100w across 5.1-5.9 sub-sections), 10 (Key Takeaways ~120w) all present and non-trivial. Section 5 far over the 100w floor; sections 3/4/10 over the 50w floor. Optional sections 6/7 skipped by builder (allowed). Tail numbering CANONICAL: Best Practices=## 8, Hands-On Exercise=## 9, Key Takeaways=## 10, Next Steps=## 11. Key Takeaways correctly at ## 10 (the mis-numbering that tripped sibling 5.6 is NOT present here)."
+    },
+    "citation_density": {
+      "passed": true,
+      "mode": "strict",
+      "detail": "resources_source=web_search -> strict. All three resources cited and resolve: [1]=primary NIST AI 100-1 (cited throughout intro + 5.1-5.9 + takeaways), [2]=airc core section (cited on each of the four-function sub-sections), [3]=NIST program landing (cited on the voluntary/widely-adopted framing). Primary [1] cited at least once (heavily). No marker above [3] -> no fabricated [N]. Core Concepts (5) standalone factual assertions carry [N] well above the 60% bar."
+    },
+    "sequence_drift": {
+      "passed": true,
+      "detail": "5.10 is delivery position 4 in module 4-governance-frameworks (confirmed in sequence.index.json). All cross-references point BACKWARD: 5.1 (failure cases), 5.2 (hallucination), 5.3 (data bias), 5.4 (four pillars), 5.5 (red-teaming), 5.7 (EU AI Act risk tiers), 5.9 — all genuinely earlier positions. No reference to 5.11 / 5.12 / 5.13 anywhere in the corpus -> forward-reference discipline clean. All technical noun phrases resolve to this topic's home concepts (AI RMF, four functions Govern/Map/Measure/Manage, framework, voluntary, risk, continuous loop) or to prior-topic concepts. No unknown / forward-referenced terms."
+    },
+    "length_sanity": {
+      "passed": true,
+      "note": "slightly_over",
+      "detail": "depth_profile=standard (manifest suggested_depth_profile + artifact_plan). Standard reading target band 1200-1600w (artifact-mix.json profiles.standard; same band the passing sibling 5.7 corpus critic was calibrated against). Corpus body ~1650w -> ~3% over the 1600 ceiling, deep inside the 30% tolerance. Surfaced as a soft note for HITL, not a hard fail."
+    },
+    "scope_creep": {
+      "passed": true,
+      "detail": "This IS the home topic for the NIST AI RMF and its four functions; teaching Govern/Map/Measure/Manage fully, plus the voluntary-vs-binding contrast and the continuous-loop framing, is on-headline and correct. No advanced/adjacent NIST material leaked in (no RMF Playbook subcategory detail, no AI 600-1 GenAI profile, no trustworthiness-characteristics deep-dive). Back-references (red-teaming 5.5, data bias 5.3, EU AI Act 5.7, pillars 5.4) appear as named cross-links to already-taught concepts, not re-taught at depth. No scope creep."
+    },
+    "beginner_readability": {
+      "passed": true,
+      "findings": [],
+      "detail": "Audience = fresher-zero-background. Non-everyday terms defined plainly on first use: 'binding law', 'framework', 'voluntary', 'risk', 'function' each get a short plain-English meaning before use. Acronyms spelled out: NIST = National Institute of Standards and Technology; AI RMF introduced with full name. Analogy-led explanations ('Govern is the soil the other three grow in', 'Map = drawing the map before the journey'). Comparison rendered as a table (EU AI Act vs NIST AI RMF). Short active sentences, no jargon-dump paragraph (3+ new terms at once), no hedging phrases. Zero findings -> no escalation."
+    }
+  },
+  "verdict": "PASS. All six checks pass. 5.10 is the home topic for the NIST AI RMF and correctly teaches the four functions (Govern, Map, Measure, Manage) plus the voluntary-vs-binding contrast and continuous-loop framing, on-headline at standard depth. Forward-reference discipline CLEAN: no mention of 5.11 / 5.12 / 5.13 (verified later positions in sequence.index.json); all cross-references (5.1-5.5, 5.7, 5.9) are genuine back-references to earlier topics. Strict citation density satisfied with all three web_search resources cited and no fabricated [N]. No scope creep, beginner-readable, canonical tail numbering (Key Takeaways at ## 10). One soft note only: corpus body ~1650w is ~3% over the 1600 standard ceiling - acceptable deviation, surfaced for HITL, not blocking.",
+  "at": "2026-06-22T14:25:00Z"
+}

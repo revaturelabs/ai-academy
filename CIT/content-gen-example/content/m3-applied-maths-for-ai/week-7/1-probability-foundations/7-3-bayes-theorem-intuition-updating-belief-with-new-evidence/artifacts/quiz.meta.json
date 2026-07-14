@@ -1,0 +1,42 @@
+{
+  "topic_id": "7.3",
+  "generated_at": "2026-06-22T00:00:00Z",
+  "format": "gift",
+  "question_count": 5,
+  "$bias_defense_applied": true,
+  "$shuffle_seed": "7.3-hash152",
+  "correct_position_distribution": [1, 3, 0, 2, 1],
+  "bias_defense_notes": "Positions shuffled so no single position exceeds 40% of questions. max_share=0.40 (position 1 appears twice in 5 questions). All four positions (0,1,2,3) are represented. Constraint check passed.",
+  "questions": [
+    {
+      "id": "q1",
+      "type": "mcq",
+      "objective_ref": "Describe in plain language what Bayes' theorem does — it updates an existing belief when new evidence arrives.",
+      "correct_position": 1
+    },
+    {
+      "id": "q2",
+      "type": "mcq",
+      "objective_ref": "Explain the meaning of the three named pieces in Bayes' theorem: prior, likelihood, and posterior.",
+      "correct_position": 3
+    },
+    {
+      "id": "q3",
+      "type": "mcq",
+      "objective_ref": "Use the worked rain-and-clouds example to trace how a prior belief becomes a posterior belief after evidence is applied.",
+      "correct_position": 0
+    },
+    {
+      "id": "q4",
+      "type": "mcq",
+      "objective_ref": "Explain why Bayes' theorem is just conditional probability reorganised — P(A|B) expressed in terms of P(B|A).",
+      "correct_position": 2
+    },
+    {
+      "id": "q5",
+      "type": "mcq",
+      "objective_ref": "Give one everyday example and one AI-relevant example of Bayesian updating in action.",
+      "correct_position": 1
+    }
+  ]
+}

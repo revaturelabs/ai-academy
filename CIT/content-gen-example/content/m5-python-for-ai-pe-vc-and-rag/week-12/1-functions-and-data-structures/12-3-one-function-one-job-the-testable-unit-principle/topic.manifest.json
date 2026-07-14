@@ -1,0 +1,49 @@
+{
+  "type": "topic",
+  "id": "12.3",
+  "title": "One function = one job — the testable unit principle",
+  "slug": "12-3-one-function-one-job-the-testable-unit-principle",
+  "position_in_module": 3,
+  "week_num": 12,
+  "session_name": "Python Foundations II and Calling an LLM",
+  "module": {
+    "position": 1,
+    "slug": "1-functions-and-data-structures",
+    "title": "Functions and Data Structures"
+  },
+  "course": {
+    "code": "M5",
+    "slug": "m5-python-for-ai-pe-vc-and-rag",
+    "title": "Python for AI, PE, VC and RAG"
+  },
+  "next_assessment": {
+    "id": "A4",
+    "due_week": 13,
+    "title": "Python and Prompt Engineering Portfolio",
+    "weight": "20%"
+  },
+  "paths": {
+    "corpus": "topic_corpus.md",
+    "resources": "topic.resources.json",
+    "progress": "topic.progress.json",
+    "artifacts_dir": "artifacts/",
+    "critic_reports_dir": "critic-reports/"
+  },
+  "artifact_plan": {
+    "depth_profile": "standard",
+    "depth_profile_confirmed_by": "hitl2",
+    "diagram": true,
+    "diagram_intent": "Before/after contrast: multi-job function (two phases in one block) vs the same logic split into two single-job functions with a call-site connector",
+    "reading": {
+      "target_word_range": [1200, 1600],
+      "target_minutes_range": [6, 8]
+    },
+    "quiz": {
+      "min_questions": 5,
+      "max_questions": 6,
+      "include_short_answer": false
+    }
+  },
+  "expected_delivery_minutes": 7,
+  "status": "scaffolded"
+}

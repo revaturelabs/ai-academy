@@ -1,0 +1,41 @@
+$CATEGORY: CIT/M2/week-3/3-8-the-jagged-frontier-tasks-ai-is-superhuman-at-vs-tasks-where
+
+::q1:: A student learns that an AI can pass a bar exam but fails to count the letter "r" in the word "strawberry." Which statement best describes what this illustrates about AI capability? {
+~AI capability rises and falls smoothly — it is simply at an earlier stage of development and will improve evenly over time.#No — the jagged frontier is defined by its unpredictable zigzag pattern, not a smooth developmental slope.
+=AI can be superhuman on one task and fail at a simpler-seeming task — the boundary zigzags unpredictably, not in a neat gradient from easy to hard.#Correct — this is the core insight of the jagged frontier: peaks and valleys occur without a clean easy-to-hard order.
+~AI is uniformly strong at language tasks and uniformly weak at numerical tasks — the division follows subject-matter lines.#No — the frontier cuts across subject categories; some language tasks are valleys and some numerical tasks are peaks.
+~AI performance is essentially random — there is no pattern to which tasks go well and which go poorly.#No — the frontier has identifiable causes (training data density, output structure) even if the shape is hard to predict at a glance.
+#### Tests whether the learner can define the jagged frontier and distinguish it from a smooth capability gradient (LO1, corpus §5.1).
+}
+
+::q2:: AI systems have matched specialist-level accuracy at reading medical images such as chest X-rays and retinal scans on specific trained tasks. What is the main reason AI performs at this level on those tasks? {
+~Medical specialists wrote explicit rules listing every possible pattern, and the AI memorises those rules directly without needing examples from real patients at all.#No — medical AI learns from large labelled datasets, not hand-coded rules written by specialists.
+~Medical images contain far less ambiguity than everyday text, making it inherently easier for any software to read them correctly regardless of training.#No — medical images are complex; high performance comes from training on millions of labelled examples, not inherent simplicity of the images.
+~The AI completed the same professional licensing examinations as human radiologists and received a passing score from the relevant medical authority.#No — AI does not sit licensing exams; its diagnostic performance comes from pattern matching on training data, not credentialing.
+=The task has dense training data and a well-defined output — the model learned from many thousands of labelled examples with ground-truth diagnoses to match against.#Correct — this is the common thread at AI peaks: dense training data and a clear output space the model can learn to predict reliably.
+#### Tests whether the learner can explain why AI excels at specific high-performance tasks (LO2, corpus §5.2).
+}
+
+::q3:: An LLM is asked\: "If I rotate this L-shaped piece 90 degrees clockwise, does it fit in the rectangular slot?" It answers confidently but gets it wrong. What is the underlying reason for this failure? {
+=LLMs process text tokens, not geometric representations — they work from verbal descriptions without any internal spatial model, so spatial reasoning is structurally outside what they can reliably do.#Correct — this is the mechanism: the model has no spatial representation, only statistical patterns in language about spatial things.
+~Spatial reasoning questions are vanishingly rare on the internet, so there is simply not enough training data for any AI system to learn them at any scale.#No — spatial descriptions appear frequently in training text; the issue is that the model has no underlying spatial model, not that examples are absent.
+~The model is operating outside its token limit and cannot hold a long enough description in memory to reason about a three-dimensional object.#No — a short spatial question is well within token limits; the failure is structural, not a memory overflow.
+~Spatial tasks will become reliable once models grow larger — this is a known gap that scale alone will eventually close.#No — scale has not solved spatial reasoning; the structural absence of a spatial representation is not fixed by adding more parameters.
+#### Tests whether the learner can name a specific AI valley and explain the underlying reason (LO3, corpus §5.3).
+}
+
+::q4:: A user notices that an AI assistant always sounds certain when it gives an answer — it never says "I'm not sure." They decide to trust its answers without checking because it seems so confident. What does poor calibration mean for why this is risky? {
+~A well-calibrated model always adds a disclaimer or uncertainty phrase at the end of any answer it is not fully sure about, so a model that never does this must actually be correct.#No — LLMs do not have a reliable internal uncertainty signal; the absence of a disclaimer does not mean the answer is right.
+~Calibration failure means the model picks answers at random when it has no relevant training data, so every confident-sounding answer on an unfamiliar topic is essentially a coin flip.#No — the model is not random; it always generates the statistically most likely next token, which is plausible-sounding but not necessarily correct or flagged as uncertain.
+=The model expresses high confidence even when wrong — a confident answer is not proof of a correct answer, making it impossible to use expressed confidence as a reliable signal of accuracy.#Correct — poor calibration is exactly this mismatch: expressed certainty is not correlated with actual correctness, which makes confident hallucinations hard to detect.
+~High confidence in the model's response means the answer has been cross-checked against a reliable external database, so confident answers can safely be used without further review.#No — LLMs do not cross-check against external databases during generation; confidence reflects statistical likelihood, not verified accuracy.
+#### Tests whether the learner understands calibration and why poor calibration is a safety risk (LO4, corpus §5.3 and §8).
+}
+
+::q5:: You want to find out whether a particular AI system is reliable at a type of task you have never tried before. Which action is the most appropriate first check? {
+~Ask the AI to rate its own confidence in the answer on a scale of one to ten, and use that self-reported score to decide whether to trust the output.#No — the AI's self-reported confidence is itself a product of poor calibration; a high self-rating does not mean the answer is correct.
+=Independently verify the answer using a source other than the AI — evaluate whether it is actually correct, not whether it sounds confident or detailed.#Correct — independent verification of correctness is the right probe; sounding confident is not evidence of reliability, as poor calibration shows.
+~Run the same question three times in a row and accept whichever answer appears most frequently across the three responses.#No — if the model is wrong, it will produce the same wrong answer consistently; frequency does not equal correctness.
+~Check whether the AI's answer is long and detailed — length and detail indicate the model is drawing on strong knowledge rather than guessing.#No — length is not a reliability signal; verbose confident-sounding output is a known hallucination pattern on questions outside the model's reliable zone.
+#### Tests whether the learner can apply a probing method and distinguish correctness-checking from confidence-checking (LO5, corpus §6).
+}

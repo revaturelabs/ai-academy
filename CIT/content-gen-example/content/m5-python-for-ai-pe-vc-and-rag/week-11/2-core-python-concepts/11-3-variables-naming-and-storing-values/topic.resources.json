@@ -1,0 +1,43 @@
+{
+  "topic_id": "11.3",
+  "captured_at": "2026-06-12T00:22:00Z",
+  "captured_by": "bhuvaneshwarim@revature.com",
+  "resources_source": "human",
+  "resources": [
+    {
+      "type": "url",
+      "value": "https://docs.python.org/3/tutorial/introduction.html",
+      "role": "primary",
+      "source": "human",
+      "notes": "Python official tutorial — numbers, strings, and first steps with the interpreter"
+    },
+    {
+      "type": "url",
+      "value": "https://docs.python.org/3/library/stdtypes.html",
+      "role": "primary",
+      "source": "human",
+      "notes": "Python built-in types reference — int, float, str, bool and their operations"
+    },
+    {
+      "type": "url",
+      "value": "https://realpython.com/python-variables/",
+      "role": "primary",
+      "source": "human",
+      "notes": "Real Python — variables in Python: assignment, naming rules, type checking"
+    },
+    {
+      "type": "url",
+      "value": "https://realpython.com/python-data-types/",
+      "role": "primary",
+      "source": "human",
+      "notes": "Real Python — basic data types: int, float, str, bool with examples"
+    },
+    {
+      "type": "url",
+      "value": "https://www.w3schools.com/python/python_variables.asp",
+      "role": "primary",
+      "source": "human",
+      "notes": "W3Schools — Python variables: beginner-friendly intro to variable assignment and naming"
+    }
+  ]
+}

@@ -1,0 +1,46 @@
+{
+  "passed": true,
+  "cycle": 2,
+  "checks": {
+    "format_discipline": {
+      "passed": true,
+      "notes": "No frontmatter; first non-empty line is the H1 title. reading.meta.json exists and parses as valid JSON. All six required sections present in correct order: Overview, Key Concepts, Worked Example, In Practice, Key Takeaways, References. Minor: meta.json uses 'reading_minutes' (not 'estimated_read_minutes'), 'resources_cited' (not 'citations_used'), and lacks a 'sections' key — does not block pass."
+    },
+    "length_budget": {
+      "passed": true,
+      "word_count": 1250,
+      "reading_minutes": 6,
+      "notes": "Meta reports word_count=1250. 1250/200 wpm = 6.25 min. Both within target range 1200-1600 words and 6-8 min @ 200 wpm."
+    },
+    "citation_discipline": {
+      "passed": true,
+      "primary_cited": true,
+      "notes": "Primary [1] (atlan.com) cited at lines 11, 22, 71, 97, 105, 118, 138, 148, 152. [2] (superannotate) cited at lines 73, 75, 81, 99, 129, 136, 154. [3] (arXiv) cited at lines 81, 89, 156. Bibliography entries [1]-[3] present in References section. No orphan inline markers; no orphan bibliography entries."
+    },
+    "forward_references": {
+      "passed": true,
+      "findings": [],
+      "notes": "Line 140: RAG, grounding, and RLHF all appear as bare names followed immediately by a deferral sentence ('These are named here only so you know that solutions exist; they are covered in later topics.'). No defining clauses or appositives attached to any deferred concept. Cycle 2 fix confirmed: 'grounding' parenthetical '(anchoring AI output to verified sources)' has been removed."
+    },
+    "readability_formatting_scope": {
+      "passed": true,
+      "findings": [
+        {
+          "type": "embedded_diagram_code",
+          "severity": "soft",
+          "lines": "26-65",
+          "detail": "Full Mermaid source code block embedded directly in reading.md. In environments that do not render Mermaid, this surfaces as ~40 lines of raw technical syntax — not appropriate for a zero-background beginner audience. Diagram source belongs in artifacts/diagram.mmd only; the reading should reference a rendered image or omit the raw code block."
+        }
+      ],
+      "scope_creep": false,
+      "notes": "1 soft finding — below the 3-finding hard-fail threshold. No scope_creep. LLM spelled out on first use (line 5). All introduced terms (next-token prediction, calibration, intrinsic hallucination, extrinsic hallucination) defined with bold-term dash-definition pattern on first use. No jargon dumps. Concrete examples precede or accompany abstractions. No academic-register hedging. No assessment references (A2/due W6 not mentioned in learner prose). Paragraphs are 2-4 sentences. Step-by-step sequences rendered as numbered lists. Table used for intrinsic/extrinsic taxonomy. Bullets used for domain-risk list."
+    },
+    "corpus_faithfulness": {
+      "passed": true,
+      "findings": [],
+      "notes": "12 assertions sampled and verified against corpus: next-token prediction definition (corpus §5.2), no truth-check step (corpus §5.2), no built-in uncertainty signal (corpus §5.3), calibration definition (corpus §5.3), miscalibration claim (corpus §5.3), intrinsic hallucination definition (corpus §5.4), extrinsic hallucination definition (corpus §5.4), 2023 lawyer fake citations case (corpus §4 intro + §7), hallucinated drug dosages harm (corpus §5.7), Output A/B confidence comparison (corpus §5.6), suspicious-precision pattern (corpus §5.6), 'web contains far more confident assertions' (corpus §5.5). All trace to corpus. Zero unsupported assertions."
+    }
+  },
+  "verdict": "pass",
+  "at": "2026-06-17T00:00:00Z"
+}

@@ -1,0 +1,62 @@
+{
+  "module_slug": "1-ai-failures-and-why-they-happen",
+  "course_code": "M2",
+  "week_num": 5,
+  "topics_examined": ["5.1", "5.2", "5.3"],
+  "passed": true,
+  "checks": {
+    "terminology": {
+      "status": "pass",
+      "notes": "Core concepts named consistently across topics. 'training data bias' (5.1) is deliberately deepened into 'data bias' with named sub-types (historical/representation/measurement) in 5.3, and 5.3 explicitly back-references the term as introduced in 5.1 — this is intentional scaffolding, not synonym drift. 'algorithmic bias' (5.1) vs 'data bias' (5.3) are distinguished correctly (5.1 frames algorithmic bias as the output-side failure; 5.3 frames data bias as the input-side cause). GIGO/'garbage in, garbage out' introduced in 5.1, reused and formally abbreviated in 5.3 consistently. 'hallucination', 'next-token prediction', 'LLM', 'token', 'calibration', 'intrinsic/extrinsic hallucination', 'objectivity illusion', 'disaggregated metrics' all used with stable meaning. 'confident/confidence' as the shared harm-amplifier motif is carried coherently from 5.2 into 5.3.",
+      "per_topic_findings": []
+    },
+    "prereq_ordering": {
+      "status": "pass",
+      "notes": "Intra-module order is sound. 5.1 (cases) -> 5.2 (hallucination mechanism) -> 5.3 (data-bias mechanism). 5.2 prereqs reference 3.9 and 5.1 (both earlier). 5.3 prereqs reference 5.1 and 5.2 (both earlier). No topic relies on a concept defined only in a later topic. Forward references (to 5.4 pillars/accountability, 5.7 governance, EU AI Act) are correctly framed as orientation-only and not relied upon.",
+      "per_topic_findings": [
+        {
+          "topic": "5.1",
+          "severity": "info",
+          "finding": "Prerequisites cite '3.9 — Hallucination' and section 5.6 says 'topic 5.2 covers hallucination mechanisms; 5.3 covers data bias'. These are forward/external references used only as orientation, not as relied-upon prerequisites. Consistent with the module arc. No action required."
+        }
+      ]
+    },
+    "learning_arc": {
+      "status": "pass",
+      "notes": "The three topics build a coherent failures -> hallucination -> data-bias arc with no gap or abrupt jump. 5.1 establishes WHAT fails and the analytical 5-question frame; 5.2 explains the mechanism behind one failure class (confident falsehood); 5.3 explains the mechanism behind the other dominant failure class (biased output). The union of learning objectives covers the module title 'AI Failures and Why They Happen': documented cases + harm + accountability (5.1), the why-falsehoods mechanism (5.2), the why-bias mechanism (5.3). Module-level outcome facets are all covered.",
+      "per_topic_findings": []
+    },
+    "duplication": {
+      "status": "pass",
+      "notes": "No topic re-teaches another's core content. The Amazon hiring case appears in all three but in escalating, non-redundant roles: 5.1 introduces it as a documented case; 5.2 does not re-teach it; 5.3 re-uses it deliberately as a worked mechanism walkthrough of historical bias and explicitly frames it as 'the Amazon hiring case from topic 5.1, stepped through as a mechanism.' Estimated Jaccard overlap of distinct Core-Concept noun sets between any pair is well under the 0.6 flag threshold (5.1 cross-domain cases; 5.2 token-prediction internals; 5.3 bias taxonomy). The confidence/objectivity-illusion link in 5.3 sec 5.4 references 5.2 rather than restating it.",
+      "per_topic_findings": []
+    },
+    "lab_alignment": {
+      "status": "pass",
+      "notes": "Week-5 lab seed (500-word essay: one AI success + one AI failure; what went right/wrong, who was accountable, what should change; 3-min presentation) is well supported. 5.1 Hands-On supplies the exact 5-question analytical frame (what did it do / who was harmed / why / who is accountable / what should change) and tells students they will use the case in 'your 500-word lab essay and your 3-minute presentation.' 5.2 Hands-On builds the verification habit for the essay. 5.3 Hands-On explicitly feeds 'your AI Systems Essay (A2, due week 6).' Accountability — the seed's hardest requirement — is carried as a through-line in all three (5.1 sec 5.5/Best Practices, 5.3 'the algorithm decided is not a defense'). Minor gap: the lab seed requires an AI SUCCESS case; all three topics focus on failures (5.1 notes diagnostic AI 'can be genuinely useful' and 5.3 shows a fairer-data path, but no topic develops a success case). This is acceptable for an 'AI Failures' module — the success half is expected to come from elsewhere in the week's modules.",
+      "per_topic_findings": [
+        {
+          "topic": "module",
+          "severity": "info",
+          "finding": "Lab seed asks for one AI success + one failure. This module supplies rich failure material and the analytical scaffold, but no developed success case. Confirm the success half is sourced from another week-5 module or the review wrapper. Not a defect of this module."
+        }
+      ]
+    },
+    "audience_consistency": {
+      "status": "pass",
+      "notes": "All three target absolute-beginner level with consistent register and depth (all 'standard' profile, 1200-1600 word readings). No later topic uses a concept cold: 5.2 defines LLM/token/training/inference inline as a safety net before using them; 5.3 re-grounds GIGO and bias terms. No register/depth spike relative to neighbors.",
+      "per_topic_findings": []
+    }
+  },
+  "findings": [
+    {
+      "topic": "5.2",
+      "severity": "minor",
+      "category": "artifact_convention_consistency",
+      "finding": "5.2 artifacts/reading.md fences its diagram with ```mmd (line 26) instead of ```mermaid. GitHub / Azure DevOps / VS Code preview render fenced mermaid only for the ```mermaid info-string, so this block will display as raw code, not a rendered diagram. The sibling 5.1 reading.md correctly uses ```mermaid (line 26). This is a cross-topic convention inconsistency that defeats the diagram on the rendered page. Recommend changing the 5.2 fence to ```mermaid.",
+      "file": "content/m2-introduction-to-ai-systems/week-5/1-ai-failures-and-why-they-happen/5-2-hallucination-why-ai-states-falsehoods-confidently/artifacts/reading.md"
+    }
+  ],
+  "verdict": "PASS — terminology, prereq ordering, learning arc, duplication, lab alignment, and audience level are all coherent across 5.1/5.2/5.3; one minor non-blocking artifact-convention fix (5.2 reading uses a ```mmd fence instead of ```mermaid, so its diagram will not render).",
+  "at": "2026-06-22T00:00:00Z"
+}

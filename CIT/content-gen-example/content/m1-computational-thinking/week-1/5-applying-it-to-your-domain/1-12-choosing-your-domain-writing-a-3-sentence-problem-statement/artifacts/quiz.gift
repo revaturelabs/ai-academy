@@ -1,0 +1,65 @@
+$CATEGORY: CIT/M1/week-1/1.12-choosing-your-domain-writing-a-3-sentence-problem-statement
+
+::1.12-Q1:: A classmate says their project is "about technology." A tutor says that is not a problem domain — it is a category of tools, not a real-world area where a problem lives. Which of the following is the best example of a genuine problem domain?
+{
+~A programming language chosen to build the solution#A programming language is a development tool, not a real-world area where a human problem lives.
+~The specific sorting algorithm used to organise data in the project#An algorithm is a computational method; the domain is the real-world context the project is meant to address.
+=Elderly patients who forget to take daily medication at home#Correct — this names a real-world area of activity with specific people and a real difficulty, not a technology or method.
+~The type of database selected to store information for the project#A database is a technical design choice, not the real-life context in which the problem occurs.
+#### Tests the definition of a problem domain (corpus §5.1). A domain is the slice of real-world activity a project addresses — not the technologies or methods used inside the solution.
+}
+
+::1.12-Q2:: A student asks why they should write a problem statement before starting to build anything. Which reason best explains its value?
+{
+=Writing it first forces you to commit to a specific problem before any solution work begins, cutting the risk of building the wrong thing#Correct — clarity about the problem prevents the common failure of jumping straight to building before fully understanding what needs to be solved.
+~A problem statement is mainly a formality that courses require, with little practical effect on the outcome of a project#This is a misconception; professional software teams write problem statements precisely because skipping them leads to wasted development work.
+~It lets you describe the technology and tools you plan to use so others can see your technical approach#A problem statement does not mention technology or solutions — it describes what is broken and who is affected by it.
+~It is most useful at the end of a project to summarise what was built and explain why the approach worked#A problem statement is written at the very start, not the end; writing it after the solution defeats its entire purpose.
+#### Tests understanding of why a problem statement is a useful first step (corpus §4, §5.2). Its value is forcing clarity about the problem before any solution work begins.
+}
+
+::1.12-Q3:: A well-formed 3-sentence problem statement gives each sentence exactly one job. Which option correctly labels all three jobs in order?
+{
+~Solution overview, supporting evidence, evaluation criteria#These are elements of a solution proposal, not the three parts of a problem statement.
+~Background reading, technology choice, cost and timeline estimate#These are project-planning fields unrelated to the 3-sentence problem statement format.
+~Topic name, tool selection, and steps for building a fix#These are development planning items, not the three sentence jobs the format defines.
+=Context (who is affected), specific problem (what goes wrong), impact (why it matters)#Correct — Sentence 1 sets context, Sentence 2 names the precise problem, Sentence 3 states the real-world consequence.
+#### Tests identification of the three components of the 3-sentence format (corpus §5.3). Each sentence carries exactly one piece of information: context, problem, impact.
+}
+
+::1.12-Q4:: Read these two statements and decide which is well-formed.
+
+Statement A\: "There are many issues with public transport and it causes a lot of problems for people who need to get around."
+
+Statement B\: "Commuters who cycle to work in the city have no safe, covered place to leave their bikes near the main train station. As a result, many leave their bikes in the rain, which leads to theft and weather damage. Solving this would require secure, weatherproof cycle storage close to the station entrance."
+{
+~Statement A is well-formed because it covers a wide range of transport issues in one concise sentence#Statement A names no specific group, no specific problem, and no specific consequence — it fails every quality test.
+=Statement B is well-formed because it names a specific group, a specific problem, and a clear real-world consequence#Correct — Statement B is focused, concrete, and solution-free in its first two sentences, with a bounded third sentence.
+~Both are equally valid since the right level of detail depends on what the tutor has asked for#The two statements are not equivalent — Statement A fails all three quality tests while Statement B passes them.
+~Neither is well-formed because a good problem statement must propose a concrete technical solution at the end#A problem statement must not propose a solution; Statement B correctly gestures at needs, not at a specific fix.
+#### Tests the ability to distinguish a focused problem statement from a vague one (corpus §5.2, §5.4). A well-formed statement is specific, concrete, and free of solution language.
+}
+
+::1.12-Q5:: A student submits this as their problem statement\: "We need to build a mobile app that uses reminders to help elderly people remember their medication." Which rule does this most clearly break?
+{
+~The group "elderly people" is too broad and should be narrowed to a specific age range or location#The group is actually reasonably specific; the real problem is a more fundamental failure the corpus explicitly warns about.
+~It describes impact without providing enough detail about the consequence of the problem going unsolved#The statement does not describe impact at all; the failure is a different and more fundamental kind of error.
+=It embeds a solution ("build a mobile app that uses reminders") instead of describing what is broken#Correct — the statement skips the problem entirely and jumps straight to a solution, which the corpus names as the most common mistake.
+~It is too short — a well-formed problem statement always needs more than one sentence to count as valid#Length is not the issue here; the sentence fails because it describes a solution rather than a problem.
+#### Tests identification of the solution-embedded violation (corpus §5.4, §8). A problem statement must describe what is broken, not how to fix it.
+}
+
+::1.12-Q6:: In the 3-sentence format, each sentence is given exactly one ____. {
+=job
+=purpose
+=role
+}
+
+::1.12-Q7:: You are writing a problem statement about food waste in small restaurants. Sentence 1 is done: "Small restaurant owners often throw away large amounts of unsold food at closing time." Which of the following is a correctly-formed Sentence 2 (the specific problem)?
+{
+~Owners lose money and contribute to environmental harm, which affects both their business and the wider community.#This is impact language — it describes the consequence of the problem, which belongs in Sentence 3, not Sentence 2.
+=Owners cannot accurately predict daily customer numbers, so they over-order ingredients to avoid running short.#Correct — this names the specific thing that goes wrong for the affected group, with no solution language.
+~Restaurant owners should adopt demand-tracking tools to predict orders more accurately and reduce daily waste.#This proposes a solution rather than describing what goes wrong — solution language does not belong in a problem statement.
+~Food waste is a broad global challenge that affects many industries, households, and the environment worldwide.#This is a generalisation that does not name the specific problem for the group in Sentence 1.
+#### Tests LO4 — applying the 3-sentence format to select a correctly-formed Sentence 2 (corpus §5.3, §6).
+}

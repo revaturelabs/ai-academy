@@ -1,0 +1,48 @@
+---
+title: "What makes steps an algorithm?"
+config:
+  theme: base
+  themeVariables:
+    primaryColor: "#a5d8ff"
+    primaryBorderColor: "#4a9eed"
+    lineColor: "#555"
+  flowchart:
+    htmlLabels: true
+    curve: basis
+---
+flowchart LR
+    subgraph VAGUE["Vague Instructions"]
+        direction TB
+        v1["<b>Look at score</b>"]
+        v2{"<b>Decide if passed?</b>"}
+        v3["<b>???</b><br/><span style='font-size:12px;color:#c0392b'>no rule given</span>"]
+        v1 --> v2
+        v2 --> v3
+    end
+
+    subgraph ALGO["Algorithm"]
+        direction TB
+        a1{"<b>Score 50 or above?</b>"}
+        a2["<b>Write Pass</b>"]
+        a3["<b>Write Fail</b>"]
+        a4(["<b>Stop</b>"])
+        a1 -->|"Yes"| a2
+        a1 -->|"No"| a3
+        a2 --> a4
+        a3 --> a4
+    end
+
+    VAGUE ~~~ ALGO
+
+    classDef start fill:#a5d8ff,stroke:#4a9eed
+    classDef vague fill:#ffd8d8,stroke:#c0392b
+    classDef auto fill:#d0bfff,stroke:#8b5cf6
+    classDef act fill:#a5d8ff,stroke:#4a9eed
+    classDef done fill:#b2f2bb,stroke:#22c55e
+    classDef dead fill:#ffd8d8,stroke:#c0392b,stroke-dasharray:5 5
+
+    class v1,v2 vague
+    class v3 dead
+    class a1 auto
+    class a2,a3 act
+    class a4 done

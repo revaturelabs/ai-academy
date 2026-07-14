@@ -1,0 +1,42 @@
+{
+  "type": "topic",
+  "id": "6.8",
+  "title": "Why 'king − man + woman ≈ queen' works",
+  "slug": "6-8-why-king-man-woman-queen-works",
+  "position_in_module": 3,
+  "week_num": 6,
+  "session_name": "Numbers, Vectors and Meaning",
+  "module": {
+    "position": 3,
+    "slug": "3-similarity-and-meaning",
+    "title": "Similarity and Meaning"
+  },
+  "course": {
+    "code": "M3",
+    "slug": "m3-applied-maths-for-ai",
+    "title": "Applied Maths for AI"
+  },
+  "next_assessment": {
+    "id": "A2",
+    "due_week": 6,
+    "title": "AI Systems Essay",
+    "weight": "15%"
+  },
+  "paths": {
+    "corpus": "topic_corpus.md",
+    "resources": "topic.resources.json",
+    "progress": "topic.progress.json",
+    "artifacts_dir": "artifacts/",
+    "critic_reports_dir": "critic-reports/"
+  },
+  "artifact_plan": {
+    "diagram": true,
+    "diagram_intent": "2D scatter showing king/queen/man/woman as points with direction arrows: man→woman and king→queen as parallel arrows (gender direction), plus a dashed arrow showing the three-step vector arithmetic path king − man + woman landing near queen",
+    "depth_profile": "deep",
+    "depth_signals": ["4 sub-concepts across §5.1–§5.5", "Implementation section warranted with 5 ordered steps", "Real-World Patterns section warranted with 3 distinct application domains"],
+    "reading_word_range": [1800, 2200],
+    "quiz_question_range": [5, 7]
+  },
+  "expected_delivery_minutes": 10,
+  "status": "scaffolded"
+}

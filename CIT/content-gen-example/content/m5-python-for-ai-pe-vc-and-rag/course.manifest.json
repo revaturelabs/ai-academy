@@ -1,0 +1,26 @@
+{
+  "type": "course",
+  "code": "M5",
+  "title": "Python for AI, PE, VC and RAG",
+  "slug": "m5-python-for-ai-pe-vc-and-rag",
+  "weeks_range": "11–14",
+  "total_hours": "12 hrs",
+  "scope": "Wk11: Python I. Wk12: Python II + LLM API. Wk13: Prompt Engineering + Version Control. Wk14: RAG, Vectors, Agents — concept + demo, no build.",
+  "source_label": "M5 – Python for AI, PE, VC and RAG",
+  "week_nums": [
+    11,
+    12,
+    13,
+    14
+  ],
+  "assessments": [
+    {
+      "id": "A4",
+      "due_week": 13,
+      "title": "Python and Prompt Engineering Portfolio",
+      "mode": "Individual",
+      "weight": "20%",
+      "requirement": "Portfolio of lab notebooks (Weeks 11–13). Each must include: the original plain-English spec, independently written working code, edge-case tests (minimum 3 per notebook), and a reflection. Week 13: prompt engineering portfolio with 3 iteration versions, accuracy comparison table, output validator that retries on format failure, and GitHub repo with README and 3 meaningful commits. Graded on: spec quality, code correctness, edge-case coverage, error handling, VC discipline."
+    }
+  ]
+}

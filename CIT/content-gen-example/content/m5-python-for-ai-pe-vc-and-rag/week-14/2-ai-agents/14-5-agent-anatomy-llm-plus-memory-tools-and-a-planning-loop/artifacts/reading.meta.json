@@ -1,0 +1,20 @@
+{
+  "topic_id": "14.5",
+  "title": "Agent anatomy — LLM plus memory, tools, and a planning loop",
+  "profile": "standard",
+  "word_count": 1302,
+  "reading_minutes": 7,
+  "diagram_embedded": true,
+  "resources_cited": ["[1]", "[2]", "[3]"],
+  "generated_at": "2026-06-15T00:00:00Z",
+  "embeds_diagram": true,
+  "citations_used": [1, 2, 3],
+  "sections": [
+    "Overview",
+    "Key Concepts",
+    "Worked Example",
+    "In Practice",
+    "Key Takeaways",
+    "References"
+  ]
+}

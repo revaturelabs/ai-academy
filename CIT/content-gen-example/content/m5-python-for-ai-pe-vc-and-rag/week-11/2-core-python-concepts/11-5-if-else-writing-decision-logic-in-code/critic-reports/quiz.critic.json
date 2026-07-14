@@ -1,0 +1,56 @@
+{
+  "critic": "quiz-critic",
+  "cycle": 1,
+  "topic_id": "11.5",
+  "topic_title": "If / else — writing decision logic in code",
+  "at": "2026-06-12T01:35:00Z",
+  "passed": true,
+  "checks": {
+    "positional_bias": {
+      "passed": true,
+      "distribution": [2, 1, 1, 2],
+      "positions": [0, 3, 2, 1, 3, 0],
+      "max_share": 0.333,
+      "threshold": 0.40,
+      "detail": "pos0=2/6=0.333, pos1=1/6=0.167, pos2=1/6=0.167, pos3=2/6=0.333. Max share 0.333 < 0.40 ✓."
+    },
+    "length_bias": {
+      "passed": true,
+      "per_question": [
+        { "id": "q1", "correct_len": 89, "mean_len": 82, "ratio": 1.085, "flagged": false },
+        { "id": "q2", "correct_len": 45, "mean_len": 57, "ratio": 0.789, "flagged": false },
+        { "id": "q3", "correct_len": 100, "mean_len": 93, "ratio": 1.075, "flagged": false },
+        { "id": "q4", "correct_len": 89, "mean_len": 93, "ratio": 0.957, "flagged": false },
+        { "id": "q5", "correct_len": 91, "mean_len": 82, "ratio": 1.110, "flagged": false },
+        { "id": "q6", "correct_len": 3, "mean_len": 31, "ratio": 0.097, "flagged": false }
+      ],
+      "longest_correct_rate": 0.0,
+      "baseline": 0.25,
+      "detail": "No question has correct answer as longest by more than 20% of mean. Length bias absent."
+    },
+    "distractor_plausibility": {
+      "passed": true,
+      "absurd_rate": 0.0,
+      "detail": "All distractors capture plausible beginner misconceptions: Q1 (= vs == confusion), Q2 (brace/keyword syntax from other languages), Q3 (wrong assumption about top-to-bottom skipping), Q4 (both-conditions logic error), Q5 (implicit type conversion assumption), Q6 (both-branch-runs misconception). No absurd distractors."
+    },
+    "objective_coverage": {
+      "passed": true,
+      "uncovered_objectives": [],
+      "coverage_map": {
+        "LO1 — comparison operators == vs =": ["q1"],
+        "LO2 — Python indentation rule": ["q2", "q6"],
+        "LO3 — elif order: most restrictive first": ["q3"],
+        "LO4 — compound conditions with and": ["q4"],
+        "LO5 — input() returns str, convert before arithmetic": ["q5"]
+      },
+      "detail": "All 5 learning objectives covered. LO2 tested by 2 questions (indentation rule + predict-output). No question tests out-of-scope material."
+    },
+    "beginner_fairness": {
+      "passed": true,
+      "findings": [],
+      "detail": "All stems in plain language. No unexplained jargon. Every question tests only 11.5 scope. Distractors are beginner misconceptions, not advanced-topic trivia."
+    }
+  },
+  "shuffled_at": "2026-06-12T01:30:00Z",
+  "verdict": "PASS (cycle 1). 6-MCQ quiz is clean: positional bias max_share=0.333, no length bias, all distractors plausible, all 5 LOs covered. Bias defense applied — positions [0,3,2,1,3,0]."
+}

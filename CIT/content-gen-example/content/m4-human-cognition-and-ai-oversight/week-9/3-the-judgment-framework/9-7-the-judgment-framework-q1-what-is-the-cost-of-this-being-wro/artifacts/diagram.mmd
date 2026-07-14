@@ -1,0 +1,38 @@
+---
+title: "Q1 — What is the Cost of This Being Wrong?"
+config:
+  theme: base
+  themeVariables:
+    primaryColor: "#a5d8ff"
+    primaryBorderColor: "#4a9eed"
+    lineColor: "#555"
+  flowchart:
+    htmlLabels: true
+    curve: basis
+    nodeSpacing: 50
+    rankSpacing: 55
+---
+flowchart TB
+    SEV["<b>Assess Severity</b><br/><span style='font-size:12px;color:#6d28d9'>How bad if the error occurs?</span>"]
+    PROB["<b>Assess Probability</b><br/><span style='font-size:12px;color:#6d28d9'>How likely is this output wrong?</span>"]
+    DET["<b>Assess Detectability</b><br/><span style='font-size:12px;color:#6d28d9'>Would you catch it before harm?</span>"]
+    COST["<b>Combined Cost Signal</b><br/><span style='font-size:12px;color:#6d28d9'>Severity × Probability × (1 / Detectability)</span>"]
+    VERDICT{"<b>Cost Verdict</b>"}
+    VERIFY["<b>Verify Before Acting</b><br/><span style='font-size:12px;color:#6d28d9'>Apply deliberate scrutiny</span>"]
+    PROCEED["<b>Proceed with Care</b><br/><span style='font-size:12px;color:#6d28d9'>Move faster, stay alert</span>"]
+
+    SEV --> COST
+    PROB --> COST
+    DET --> COST
+    COST --> VERDICT
+    VERDICT -->|"High cost"| VERIFY
+    VERDICT -->|"Low cost"| PROCEED
+
+    classDef auto fill:#d0bfff,stroke:#8b5cf6
+    classDef start fill:#a5d8ff,stroke:#4a9eed
+    classDef done fill:#b2f2bb,stroke:#22c55e
+    classDef decision fill:#fff3bf,stroke:#f59e0b,stroke-width:3px
+
+    class SEV,PROB,DET,COST auto
+    class VERDICT decision
+    class VERIFY,PROCEED done

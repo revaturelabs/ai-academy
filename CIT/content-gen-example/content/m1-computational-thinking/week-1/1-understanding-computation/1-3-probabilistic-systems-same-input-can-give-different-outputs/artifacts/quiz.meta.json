@@ -1,0 +1,48 @@
+{
+  "topic_id": "1.3",
+  "generated_at": "2026-06-19T12:00:00Z",
+  "format": "gift",
+  "question_count": 6,
+  "$bias_defense_applied": true,
+  "$shuffle_seed": "e0c7f2a1",
+  "correct_position_distribution": [1, 3, 0, 2, 3, 1],
+  "bias_defense_notes": "Correct-answer positions distributed across all four slots (A=1x, B=2x, C=1x, D=2x). max_share = 2/6 = 0.333 <= 0.40. All 4 positions used. Both post-shuffle constraints satisfied. Rebuilt to fix length_bias: distractors expanded to match correct-answer word count within ~10-15% across q2-q6.",
+  "questions": [
+    {
+      "id": "q1",
+      "type": "mcq",
+      "objective_ref": "Define what a probabilistic system is in plain, everyday terms.",
+      "correct_position": 1
+    },
+    {
+      "id": "q2",
+      "type": "mcq",
+      "objective_ref": "Explain why the same input can produce different outputs in a probabilistic system without that being an error.",
+      "correct_position": 3
+    },
+    {
+      "id": "q3",
+      "type": "mcq",
+      "objective_ref": "Give at least three real-world examples of probabilistic systems and describe what varies in each.",
+      "correct_position": 0
+    },
+    {
+      "id": "q4",
+      "type": "mcq",
+      "objective_ref": "Contrast probabilistic and deterministic systems using the input / process / output model from Topic 1.1.",
+      "correct_position": 2
+    },
+    {
+      "id": "q5",
+      "type": "mcq",
+      "objective_ref": "Explain what probability, randomness, and uncertainty mean in the context of computational systems — at a beginner level.",
+      "correct_position": 3
+    },
+    {
+      "id": "q6",
+      "type": "mcq",
+      "objective_ref": "Recognise everyday situations in which a probabilistic approach is more appropriate than a deterministic one.",
+      "correct_position": 1
+    }
+  ]
+}

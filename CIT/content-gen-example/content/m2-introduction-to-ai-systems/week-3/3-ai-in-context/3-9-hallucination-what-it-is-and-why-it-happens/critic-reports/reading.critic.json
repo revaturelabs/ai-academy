@@ -1,0 +1,83 @@
+{
+  "topic_id": "3.9",
+  "artifact": "reading",
+  "critic": "reading-critic",
+  "run_at": "2026-06-17T00:00:00Z",
+  "passed": true,
+  "verdict": "All checks pass. The reading is well-structured, within word-count and time targets, properly cites all three resources, stays within scope, and meets beginner-readability standards.",
+  "checks": {
+    "format_discipline": {
+      "passed": true,
+      "frontmatter_present": false,
+      "meta_sidecar_missing": false,
+      "section_template_violation": false,
+      "sections_found": [
+        "Overview",
+        "Key Concepts",
+        "Worked Example",
+        "In Practice",
+        "Key Takeaways",
+        "References"
+      ],
+      "notes": "No frontmatter. Sidecar reading.meta.json present and valid. Exactly six sections in correct order."
+    },
+    "length": {
+      "passed": true,
+      "word_count_reported": 1389,
+      "target_word_range": [1200, 1600],
+      "estimated_read_minutes_reported": 7,
+      "estimated_read_minutes_calculated": 6.04,
+      "target_minute_range": [6, 8],
+      "notes": "1389 words is within 1200–1600 target. 1389 / 230 wpm = 6.0 min, within 6–8 min range."
+    },
+    "citations": {
+      "passed": true,
+      "primary_cited": true,
+      "all_resources_cited": true,
+      "orphan_inline_markers": [],
+      "orphan_bibliography_entries": [],
+      "notes": "[1] (arxiv.org, primary) cited at lines 27, 31, 116, 121, 129. [2] cited at lines 11, 48, 54, 58, 64, 114, 115, 122, 123, 124, 131. [3] cited at lines 11, 117, 122, 125, 133. References section lists all three, no orphans."
+    },
+    "no_forward_references": {
+      "passed": true,
+      "violations": [],
+      "notes": "All terms used freely (LLM, token, autoregressive decoding) are established in prior topics 3.2 and 3.4 per corpus prerequisites. New terms for this topic (factual hallucination, attributional hallucination, faithful-but-wrong hallucination, RLHF, overconfidence bias, grounding, provenance) are all defined on first use. RAG is named and deferred explicitly. Topic 3.8 (calibration) is a prior topic, so the table reference to it is not a forward reference."
+    },
+    "faithfulness": {
+      "passed": true,
+      "assertions_sampled": 12,
+      "unsupported_assertions": 0,
+      "notes": "All 12 sampled assertions traced to corpus sections 5.1–5.5 and section 6. The worked example (Sweller/Kalyuga psychology citation) is a legitimate illustrative scenario rather than a factual assertion; it is not sourced from the corpus but it makes no independent factual claims about the real world."
+    },
+    "beginner_readability": {
+      "passed": true,
+      "undefined_terms": [],
+      "jargon_dump": null,
+      "abstract_first": null,
+      "academic_register": null,
+      "notes": "All non-everyday terms defined at first use. No paragraph introduces 3+ new terms simultaneously. Concepts introduced with concrete examples/analogies before abstraction (Paris/France analogy, worked example precedes abstraction). No hedging phrases found. Average sentence length is well under 25 words."
+    },
+    "formatting": {
+      "passed": true,
+      "wall_of_text": null,
+      "unlisted_sequence": null,
+      "no_inline_examples": null,
+      "bold_term_definitions": true,
+      "notes": "No paragraph exceeds 6 sentences; most are 3–4 sentences. Five-step process rendered as numbered list. Do/Don't rendered as bullet lists. Tables used for structured comparisons. Bold-term definitions present throughout (Training data, RLHF, overconfidence bias, Grounding, RAG, Provenance)."
+    },
+    "assessment_reference": {
+      "passed": true,
+      "violations": [],
+      "notes": "No mention of assessment IDs, due weeks, or grade weights in the reading."
+    },
+    "scope": {
+      "passed": true,
+      "scope_creep": [],
+      "notes": "Reading covers definition, three hallucination types, structural mechanism (token prediction / plausibility vs truth), training data gaps, RLHF overconfidence bias, and mitigation strategies. RAG is named and deferred in one sentence with explicit 'covered in a later topic' pointer. Fine-tuning and prompt injection are not introduced. Content does not exceed the topic headline."
+    }
+  },
+  "hard_fail": false,
+  "soft_findings_count": 0,
+  "escalation_triggered": false,
+  "gold_example_comparison": "No gold example file found at .claude/references/gold-examples/reading/ for this topic; comparison not applicable."
+}

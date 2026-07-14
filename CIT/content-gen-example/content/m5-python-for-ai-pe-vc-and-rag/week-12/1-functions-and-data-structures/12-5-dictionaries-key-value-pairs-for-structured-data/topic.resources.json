@@ -1,0 +1,30 @@
+{
+  "topic_id": "12.5",
+  "captured_at": "2026-06-14T00:00:00Z",
+  "captured_by": "vishnu.vardhan@revature.com",
+  "resources_source": "web_search",
+  "web_search_query": "Python dictionaries beginner tutorial key-value pairs structured data",
+  "resources": [
+    {
+      "type": "url",
+      "value": "https://realpython.com/python-dicts/",
+      "role": "primary",
+      "source": "web_search",
+      "notes": "Real Python comprehensive beginner-friendly deep dive into Python dictionaries"
+    },
+    {
+      "type": "url",
+      "value": "https://www.w3schools.com/python/python_dictionaries.asp",
+      "role": "supporting",
+      "source": "web_search",
+      "notes": "Classic beginner reference — dictionary creation, access, and methods"
+    },
+    {
+      "type": "url",
+      "value": "https://docs.python.org/3/tutorial/datastructures.html",
+      "role": "supporting",
+      "source": "web_search",
+      "notes": "Official Python documentation — authoritative dict reference"
+    }
+  ]
+}

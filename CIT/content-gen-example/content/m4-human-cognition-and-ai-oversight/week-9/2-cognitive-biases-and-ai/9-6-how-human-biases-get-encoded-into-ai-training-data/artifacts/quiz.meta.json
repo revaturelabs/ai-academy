@@ -1,0 +1,57 @@
+{
+  "topic_id": "9.6",
+  "generated_at": "2026-06-12T00:00:00Z",
+  "revised_at": "2026-06-13T00:00:00Z",
+  "revision_reason": "Cycle 3 (HITL #3 request-changes): replaced q3 with LO3 healthcare proxy case (historical bias answer, mechanism name absent from stem); retagged q4 objective_ref to LO3 (facial recognition example-recall); replaced q5 with LO4 question covering both confirmation bias (data-review stage) and automation bias (retraining stage). Keeps total at 6 MCQ.",
+  "format": "gift",
+  "question_count": 6,
+  "$bias_defense_applied": true,
+  "$shuffle_seed": "9d157-topic-9.6-r3",
+  "correct_position_distribution": [2, 0, 3, 1, 0, 2],
+  "longest_correct_rate": 0.0,
+  "questions": [
+    {
+      "id": "q1",
+      "type": "mcq",
+      "objective_ref": "Explain what it means for a bias to be 'encoded' into an AI system's training data.",
+      "correct_position": 2
+    },
+    {
+      "id": "q2",
+      "type": "mcq",
+      "objective_ref": "Describe labelling bias — when human annotators attach incorrect or prejudiced tags to training data.",
+      "correct_position": 0
+    },
+    {
+      "id": "q3",
+      "type": "mcq",
+      "objective_ref": "Give at least one concrete real-world example for each encoding mechanism — here, the healthcare spending proxy case illustrating historical bias (mechanism name absent from stem).",
+      "correct_position": 3
+    },
+    {
+      "id": "q4",
+      "type": "mcq",
+      "objective_ref": "Give at least one concrete real-world example for each encoding mechanism — here, the facial recognition case illustrating selection/representation bias (mechanism name absent from stem).",
+      "correct_position": 1
+    },
+    {
+      "id": "q5",
+      "type": "mcq",
+      "objective_ref": "Explain how confirmation bias (9.3) and automation bias (9.5) reinforce the encoding problem, and identify why a feedback loop amplifies bias over successive retrains rather than a one-time entry (LO4 + LO5).",
+      "correct_position": 0
+    },
+    {
+      "id": "q6",
+      "type": "mcq",
+      "objective_ref": "Name the Judgment Framework as a structured approach covered in Topics 9.7-9.9.",
+      "correct_position": 2
+    }
+  ],
+  "bias_defense_notes": {
+    "positions_used": [0, 1, 2, 3],
+    "position_counts": {"0": 2, "1": 1, "2": 2, "3": 1},
+    "max_share": 0.333,
+    "max_share_threshold": 0.40,
+    "constraint_passed": true
+  }
+}

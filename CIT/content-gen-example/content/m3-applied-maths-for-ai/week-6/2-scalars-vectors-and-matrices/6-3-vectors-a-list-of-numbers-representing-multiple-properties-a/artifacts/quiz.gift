@@ -1,0 +1,41 @@
+$CATEGORY: CIT/M3/week-6/6.3-vectors-a-list-of-numbers-representing-multiple-properties-at-once
+
+::q1:: A vector is best described as which of the following?{
+=An ordered list of numbers where each position maps to one specific property#Correct — a vector bundles multiple scalar values, with each position permanently naming one fixed property.
+~A single number that captures one measurable property of an item#No — a single number capturing one property is a scalar, not a vector.
+~A grid of numbers arranged in rows and columns for comparing many items#No — a grid of numbers arranged in rows and columns is a matrix, which comes in topic 6.4.
+~A label that names the category an item belongs to, such as "song" or "image"#No — a label names a category; a vector is a list of numerical measurements, not a category name.
+#### Tests the core definition of a vector as an ordered list of scalars (corpus §5.1).
+}
+
+::q2:: You are describing songs using three separate scalars — energy, tempo, and mood — stored as independent variables. Why would an AI algorithm prefer you to bundle them into a single vector instead?{
+~The algorithm can only read whole numbers, so bundling converts the values to integers automatically#No — bundling into a vector does not change the number type; the values remain the same decimals.
+=Passing one object keeps all properties together and avoids mismatched values across separate variables#Correct — a single vector object carries all properties together, preventing the synchronisation errors that arise from managing separate variables.
+~Bundling removes duplicate values so the dataset uses less storage space on disk#No — bundling changes the structure, not the number of values; it does not remove duplicates.
+~A vector automatically sorts the properties from largest to smallest before the algorithm reads them#No — a vector preserves the fixed order you defined; it does not sort values.
+#### Tests why grouping properties into one vector is more useful than keeping separate scalars (corpus §5.6).
+}
+
+::q3:: A data engineer builds song vectors where position 1 = energy, position 2 = tempo. For one song she accidentally records them as [tempo, energy] instead of [energy, tempo]. What problem does this cause?{
+~The vector gains an extra dimension, so it cannot be stored alongside the other song vectors#No — swapping two values does not change the number of positions; the dimension stays the same.
+~The values in the vector are converted to negative numbers and the algorithm rejects them as invalid#No — swapping positions does not change the sign or validity of the values themselves.
+=Arithmetic comparing that song to others will pair energy values against tempo values, producing meaningless results#Correct — consistent position-to-property mapping is required; when one vector breaks the pattern, any calculation across vectors compares incompatible properties.
+~The vector becomes a scalar because only one property is now correctly recorded#No — the vector still contains two numbers; a scalar is a single number, not a mis-ordered pair.
+#### Tests why consistent position order matters across all vectors in a dataset (corpus §5.4).
+}
+
+::q4:: A streaming platform stores each user as a list of numbers capturing their age group, genres watched, average session length, and device type — then uses those lists to find users with similar tastes. What is the correct term for these lists?{
+~Scalars, because each user is described by a single combined rating number that summarises all four measurements#No — a scalar is one number; a list of four separate measurements per user is a vector, not a scalar.
+~Matrices, because the platform is comparing many users at the same time in a table#No — an individual user's description is a vector; the full table of all users together would be a matrix.
+~Dimension counts, because the key insight here is knowing how many different properties are measured per user#No — "dimension count" describes how many elements are in a vector, not the vectors themselves.
+=Feature vectors, because each list bundles several measured properties of one real-world item into a fixed-order package#Correct — in AI, a vector of measured properties representing one real-world item is called a feature vector.
+#### Tests the AI-specific term "feature vector" and how it appears in recommendation systems (corpus §5.5).
+}
+
+::q5:: A student builds a feature vector for a cup of coffee — position 1 = caffeine_mg, position 2 = sugar_g, position 3 = temperature_c. A flat white has 160 mg caffeine, 5 g sugar, and 65°C. Which answer correctly forms that vector?{
+~[65, 5, 160] — arranged from lowest to highest for a neater display#No — a feature vector preserves the defined position order, not the numeric size of values; reordering breaks the position-to-property mapping.
+~["flat white", 5, 65] — name included in slot 1 to identify the drink for the algorithm#No — feature vectors hold only numbers; item labels are stored separately, not inside a vector slot.
+=[160, 5, 65] — three scalars placed in the defined slot order: caffeine, sugar, temperature#Correct — a feature vector places each measured value into its pre-agreed slot; position 1 must always hold caffeine, position 2 sugar, position 3 temperature.
+~A single score of 230 — caffeine and sugar added to temperature, combining them into one value#No — combining all properties into one number produces a scalar and loses the individual measurements that make a feature vector useful.
+#### Tests LO3: constructing a feature vector by assigning each measured value to its pre-defined position slot (corpus §5.2, §5.4).
+}

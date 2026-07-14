@@ -1,0 +1,49 @@
+﻿$CATEGORY: CIT/M5/week-14/14-2-the-rag-retrieval-pipeline-query-embed-similarity-search-top
+
+::q1:: Which of the following best describes Retrieval-Augmented Generation (RAG)? {
+=A system design pattern that retrieves relevant documents and injects them into the LLM prompt before the model generates a response.#Correct. RAG augments the prompt with retrieved context so the model answers from documents, not training memory alone (§5.1).
+~A method for retraining a language model on new private documents so it learns to answer questions about them.#Incorrect. RAG does not retrain the model — it changes what goes into the prompt at query time, not the model itself (§5.1).
+~A technique that allows the language model to browse the internet in real time while it is generating a response.#Incorrect. The LLM never directly accesses the vector database or the internet — it only sees the assembled prompt (§6).
+~A type of language model trained on a larger, more recent dataset, which gives it a later knowledge cutoff date.#Incorrect. RAG bypasses the knowledge cutoff by retrieving documents at query time — it is a pipeline pattern, not a model property (§4).
+#### Tests LO1 — one-sentence RAG definition and the problem it solves (§4, §5.1).
+}
+
+::q2:: In the five-step RAG retrieval pipeline, what is the correct order of steps? {
+~Embed query → Receive query → Similarity search → Inject into prompt → Top-k retrieval → Generate.#Incorrect. The query must be received before it can be embedded, and top-k retrieval precedes prompt injection (§5.2).
+~Receive query → Similarity search → Embed query → Top-k retrieval → Inject into prompt → Generate.#Incorrect. Embedding must happen before similarity search — the vector database compares the query vector to stored vectors (§5.2).
+=Receive query → Embed query → Similarity search → Top-k retrieval → Inject into prompt → Generate.#Correct. This is the correct order: receive query, embed it into a vector, search the vector database, retrieve top-k chunks, assemble the prompt, and generate (§5.2).
+~Receive query → Embed query → Top-k retrieval → Similarity search → Inject into prompt → Generate.#Incorrect. Similarity search must happen before top-k retrieval — the search is how the database determines which chunks to return (§5.2).
+#### Tests LO2 — trace each step of the RAG retrieval pipeline in order (§5.2).
+}
+
+::q3:: A developer uses embedding model A to index the knowledge base, but accidentally uses embedding model B to embed user queries at query time. What is the result? {
+~The system slows down significantly because it must convert between two embedding formats.#Incorrect. There is no format conversion — both models produce valid numeric vectors. The problem is that the vectors are in incompatible mathematical spaces (§8.1).
+=Similarity scores become meaningless and the wrong documents are returned with high confidence — silently.#Correct. Query and stored vectors must be in the same mathematical space to produce meaningful similarity scores. A different model destroys this alignment with no error message (§8.1).
+~Query performance improves because model B may be more capable than model A.#Incorrect. Embedding model capability is irrelevant here — the query and index vectors must be in the same space to produce meaningful similarity scores (§8.1).
+~The retrieval step is skipped and the LLM answers from training memory alone.#Incorrect. The retrieval step still runs, but returns unrelated documents confidently — the system does not detect or skip retrieval on a model mismatch (§8.1).
+#### Tests LO5 — identify failure modes (§8.1 — mismatched embedding model).
+}
+
+::q4:: In a RAG prompt, why must the template include a "say I don't know" fallback instruction? {
+=Without it, the LLM fills the gap with a hallucinated answer when no relevant context was retrieved.#Correct. If the knowledge base has no relevant answer and the fallback is absent, the LLM produces a plausible-sounding response from training memory — exactly the failure RAG was meant to prevent (§5.3).
+~Without it, the LLM stops and refuses to generate any response when the retrieved context is unhelpful.#Incorrect. The LLM does not default to silence — it generates a response regardless. The fallback instruction shapes what that response says when context is absent (§5.3).
+~Without it, the vector database returns all documents instead of limiting to the top-k count.#Incorrect. The fallback instruction is part of the prompt template and has no effect on the vector database's top-k limit (§5.4).
+~Without it, the similarity search cannot identify which stored chunks are most relevant to the query.#Incorrect. The similarity search and top-k retrieval happen before the prompt is assembled — the fallback instruction cannot affect them (§5.2).
+#### Tests LO4 — describe what the LLM receives and how prompt instructions prevent hallucination (§5.3).
+}
+
+::q5:: What does "prompt injection" mean specifically in the RAG context? {
+~A security attack where a malicious user inserts harmful instructions into the LLM prompt.#Incorrect. While "prompt injection" is a security term in other contexts, in RAG it refers to the system's normal operation of adding retrieved context to the prompt — not an attack (§5.2, LO3).
+~Adding the user's question to the vector database so it can be retrieved by future queries.#Incorrect. The user query is embedded and used for search — it is not stored in the knowledge base as a new document (§5.5).
+~Replacing the LLM's training weights with newly retrieved documents at each query.#Incorrect. RAG does not modify the LLM's training or weights — it changes only what goes into the prompt at query time (§5.1).
+=Inserting the retrieved document chunks into the LLM prompt alongside the original user query.#Correct. In the RAG context, "prompt injection" means the application inserts (injects) the retrieved document texts into the prompt template so the LLM can read them before generating a response (§5.2, Step 5).
+#### Tests LO3 — explain "prompt injection" in the RAG context (§5.2 Step 5).
+}
+
+::q6:: A RAG system built for a company HR knowledge base returns a confident but wrong answer to "How much annual leave do I get?" Which explanation is most likely? {
+~The LLM's training data is too small and outdated to produce accurate answers about specific HR policies.#Incorrect. In a RAG system, the LLM's training size is not the primary concern — the retrieval step determines whether the model receives the right context (§6).
+~The vector database returned too many results, overwhelming the LLM with context it could not process correctly.#Incorrect. A high top-k can reduce quality, but a confident wrong answer more commonly traces to absent or irrelevant context, not an abundance of relevant context (§6).
+~The correct HR policy was retrieved and placed in the prompt, but the LLM chose to ignore the retrieved context.#Incorrect. If the correct policy was retrieved and present in the prompt, the LLM would almost always use it — a confident wrong answer usually means the wrong or no document was retrieved (§6).
+=The knowledge base had no relevant answer, so the LLM responded from training memory and produced a confident but ungrounded answer.#Correct. When no relevant chunk exists, ANN search returns the least-wrong chunks. Without a fallback instruction, the LLM fills the gap with training knowledge — confident but ungrounded (§6, §5.3, §8.5).
+#### Tests LO5 — identify failure modes at each pipeline stage (§6 failure-point checklist, §8.5).
+}

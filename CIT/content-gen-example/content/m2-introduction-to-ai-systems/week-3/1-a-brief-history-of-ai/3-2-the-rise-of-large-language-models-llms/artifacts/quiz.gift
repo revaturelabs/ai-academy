@@ -1,0 +1,41 @@
+$CATEGORY: CIT/M2/week-3/3-2-the-rise-of-large-language-models-llms
+
+::q1:: Which of the following best describes a Large Language Model (LLM)? {
+~A lookup table that stores millions of pre-written sentences and retrieves the closest match#No — an LLM is not a lookup table. It generates new text by applying patterns learned during training, not by retrieving stored sentences.
+~A set of hand-written grammar rules that a computer uses to construct grammatically correct sentences#No — that describes a rule-based system from early AI. LLMs learn patterns from data rather than following rules written by humans.
+=A neural-network model trained on vast text that can generate, translate, summarise, and answer questions#Correct — an LLM is a deep-learning model (large parameters, text in/out) trained on massive data. It generates new text from learned patterns, not pre-stored sentences.
+~A search engine that finds and quotes relevant paragraphs from the documents it has indexed#No — a search engine retrieves existing documents. An LLM generates new text based on patterns learned from training data.
+#### Tests the plain-language definition of an LLM (corpus §5.1).
+}
+
+::q2:: Which sequence correctly describes the order in which key milestones led to today's Large Language Models? {
+=Word embeddings (2013) → RNNs / LSTMs (2014–2017) → Transformer (2017) → BERT and GPT (2018–2019)#Correct — this matches the step-by-step milestone timeline in the corpus exactly.
+~The Transformer (2017) → word embeddings (2013) → sequence models (2014–2017) → BERT and GPT (2018–2019)#No — the Transformer came after word embeddings and sequence models, not before. Word embeddings and sequence models were prerequisites, not follow-ons.
+~Recurrent Neural Networks (2014–2017) → word embeddings (2013) → BERT and GPT (2018–2019) → Transformer (2017)#No — word embeddings arrived before RNNs became prominent, and the Transformer preceded BERT and GPT rather than following them.
+~BERT and GPT (2018–2019) → Transformer (2017) → word embeddings (2013) → Recurrent Neural Networks (2014–2017)#No — this reverses the timeline entirely. BERT and GPT were built on the Transformer, which in turn relied on earlier work with word embeddings and sequence models.
+#### Tests knowledge of the milestone sequence from early neural-network language work to the first large Transformer models (corpus §5.2).
+}
+
+::q3:: A key reason why Large Language Models (LLMs) are considered a major shift from earlier AI systems is that they are general-purpose. What does this mean in practice? {
+~They are faster than earlier AI systems because they run on more powerful hardware#No — speed is not what makes LLMs a conceptual shift. Earlier systems also benefited from faster hardware. The key difference is what a single model can do.
+~They are easier to build because they use smaller datasets than older statistical models#No — LLMs require far larger datasets and more compute than earlier models, not smaller.
+~They produce output that is always factually correct, unlike earlier rule-based systems that could make logical errors#No — LLMs hallucinate and can produce fluent but incorrect text. Factual accuracy is a known weakness, not a strength over earlier systems.
+=One pre-trained model can be fine-tuned for many tasks — writing, translation, question answering — unlike earlier single-task AI systems#Correct — LLMs mark a shift from one-task AI (a chess engine plays chess, a spam filter detects spam) to a single general-purpose model adaptable across many tasks through fine-tuning.
+#### Tests understanding of how LLMs differ from earlier AI paradigms in terms of generality versus task-specificity (corpus §5.4).
+}
+
+::q4:: A student uses an LLM to check a medical fact and copies its confident, well-written answer directly into an assignment without verifying it. Which LLM limitation makes this risky? {
+~Training data cut-off — the model may not know about events that happened after its training data was collected#This is a real limitation, but it applies specifically to recent events, not to the general risk of copying any fluent answer uncritically.
+=Hallucination — the model generates fluent text that sounds correct but may be factually wrong or invented#Correct — hallucination means a fluent, confident-sounding answer can still be false. The corpus explicitly warns against confusing fluency with correctness.
+~Arithmetic errors — the model may miscalculate numbers embedded in a medical fact#Arithmetic weakness is real, but it is specific to calculations. Hallucination is the broader risk that applies to any factual claim, not only numerical ones.
+~Inconsistency — the model might give different answers if asked the same question twice#Inconsistency is a real limitation, but the specific risk in this scenario — copying a confident answer that may be false — is best described as hallucination.
+#### Tests identification of LLM limitations, specifically hallucination as the risk behind uncritical use of fluent output (corpus §5.3).
+}
+
+::q5:: BERT and GPT are both described as landmark Large Language Models (LLMs). What is the main difference between them? {
+~BERT was built by OpenAI and GPT was built by Google; they are otherwise equivalent in design and purpose#No — this reverses the organisations. BERT was released by Google and GPT by OpenAI. Their designs and primary strengths also differ.
+~Both models were designed primarily for generating long passages of text; BERT simply handles more languages than GPT#No — BERT was optimised for understanding text (reading and classifying), not for generating it. Text generation is GPT's primary strength.
+=BERT understands text bidirectionally (for search and question answering); GPT predicts next words to generate text#Correct — BERT reads in both directions to classify and understand meaning; GPT generates fluent continuations. Both are Transformer-based but serve different primary purposes.
+~GPT was released before BERT; BERT then improved on GPT's approach by reading text in both directions#No — GPT-1 and BERT were both released in 2018, and neither is simply an improvement of the other. They have different architectures suited to different tasks.
+#### Tests recognition of BERT and GPT as landmark models, their releasing organisations, approximate release dates, and their differing primary strengths (corpus §5.2).
+}

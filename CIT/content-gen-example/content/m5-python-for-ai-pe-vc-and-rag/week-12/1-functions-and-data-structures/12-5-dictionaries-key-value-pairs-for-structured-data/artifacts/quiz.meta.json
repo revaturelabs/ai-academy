@@ -1,0 +1,47 @@
+{
+  "topic_id": "12.5",
+  "generated_at": "2026-06-14T00:00:00Z",
+  "format": "gift",
+  "question_count": 6,
+  "$bias_defense_applied": true,
+  "$shuffle_seed": "hash('12.5') = 125; per-question salts 125–130 applied to answer-line order",
+  "correct_position_distribution": [1, 2, 0, 3, 1, 2],
+  "questions": [
+    {
+      "id": "q1",
+      "type": "mcq",
+      "objective_ref": "Create a Python dictionary using curly-brace syntax and store key-value pairs inside it.",
+      "correct_position": 1
+    },
+    {
+      "id": "q2",
+      "type": "mcq",
+      "objective_ref": "Access a value by its key, and explain why a key is different from an index.",
+      "correct_position": 2
+    },
+    {
+      "id": "q3",
+      "type": "mcq",
+      "objective_ref": "Add a new key-value pair to a dictionary and modify the value of an existing key.",
+      "correct_position": 0
+    },
+    {
+      "id": "q4",
+      "type": "mcq",
+      "objective_ref": "Check whether a key exists in a dictionary using the in keyword.",
+      "correct_position": 3
+    },
+    {
+      "id": "q5",
+      "type": "mcq",
+      "objective_ref": "Iterate over a dictionary's keys, values, and key-value pairs using for, .values(), and .items().",
+      "correct_position": 1
+    },
+    {
+      "id": "q6",
+      "type": "mcq",
+      "objective_ref": "Retrieve a value safely using .get() so the program does not crash on a missing key.",
+      "correct_position": 2
+    }
+  ]
+}

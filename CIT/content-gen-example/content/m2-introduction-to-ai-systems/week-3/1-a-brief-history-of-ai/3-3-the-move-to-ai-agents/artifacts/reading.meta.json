@@ -1,0 +1,33 @@
+{
+  "topic_id": "3.3",
+  "title": "The Move to AI Agents",
+  "depth_profile": "standard",
+  "estimated_read_minutes": 7,
+  "word_count": 1372,
+  "generated_at": "2026-06-17T00:00:00Z",
+  "embeds_diagram": true,
+  "diagram_embed_type": "mmd_reference",
+  "citations_used": [1, 2, 3],
+  "primary_resource_cited": true,
+  "sections": [
+    "Overview",
+    "Key Concepts",
+    "Worked Example",
+    "In Practice",
+    "Key Takeaways",
+    "References"
+  ],
+  "self_check": {
+    "in_word_range": true,
+    "every_primary_cited": true,
+    "no_new_assertions": true,
+    "diagram_inline": true,
+    "no_frontmatter": true,
+    "six_fixed_sections": true,
+    "sidecar_meta_written": true,
+    "beginner_terms_defined": true,
+    "no_scope_creep_beyond_headline": true,
+    "formatting_chunked": true,
+    "api_expanded_on_first_use": true
+  }
+}

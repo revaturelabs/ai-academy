@@ -1,0 +1,35 @@
+{
+  "verdict": "pass",
+  "findings": [
+    {
+      "code": "looks_good",
+      "where": "all panels",
+      "detail": "Source-level pre-flight: 7 nodes (within 3-8), all bold labels <= 4 words, title governs whole diagram via config block ('Cosine Similarity — Direction, Not Size'), 2-panel LR layout with direction TB subgraphs matches intent (angle cases + formula pipeline). All node labels trace to corpus §5.2 and §5.3 concepts: angle cases (0°/90°/180°) with cos values map to §5.2; dot product, magnitudes, divide/normalise, and score range map to §5.3. No jargon, no concept drift, no forward references (no vector databases, BERT, transformers). Color tiers correct: ANGLES panel uses start (blue), FORMULA steps use auto (purple), terminal score node uses done (green). PNG render requires mmdc CLI — not available in this session; visual inspection bypassed per established project pattern."
+    }
+  ],
+  "stats": {
+    "nodes": 7,
+    "edges": 5,
+    "layout": "flowchart LR (2 × direction TB subgraphs)",
+    "labels": [
+      "Same direction (0°)",
+      "Perpendicular (90°)",
+      "Opposite direction (180°)",
+      "Dot product A · B",
+      "Magnitudes |A| and |B|",
+      "Divide: A·B ÷ (|A| × |B|)",
+      "Score: −1 to 1"
+    ],
+    "png_path": "content/m3-applied-maths-for-ai/week-6/3-similarity-and-meaning/6-9-cosine-similarity-measuring-the-angle-between-two-meaning-ve/artifacts/diagram.png",
+    "png_dims": "not rendered — mmdc unavailable",
+    "preflight": {
+      "mermaid_parse": "pass (source-level check; mmdc unavailable for exec)",
+      "node_count": "pass (7 nodes, within 3-8)",
+      "label_discipline": "pass (all bold labels <= 4 words)",
+      "concept_fidelity": "pass (all labels trace to corpus §5.2 angle cases and §5.3 formula steps; dot product cross-ref to 6.6 is explicitly sanctioned by artifact intent)",
+      "jargon_label": "pass (no bare unexplained acronyms; all terms defined in corpus)",
+      "title_discipline": "pass (governing concept in title: field; no ghost node used for central organizing idea)",
+      "single_path": "pass (ANGLES panel: linear 3-step angle sequence; FORMULA panel: convergent flow F1+F2->F3->F4 is intentional — two inputs merge for formula, matching corpus §5.3 semantics)"
+    }
+  }
+}

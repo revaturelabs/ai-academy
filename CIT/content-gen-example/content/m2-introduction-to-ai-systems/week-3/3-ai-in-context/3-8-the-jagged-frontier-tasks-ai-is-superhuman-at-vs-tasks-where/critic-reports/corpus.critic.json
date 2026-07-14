@@ -1,0 +1,111 @@
+{
+  "critic": "corpus-critic",
+  "topic_id": "3.8",
+  "topic_title": "The jagged frontier — tasks AI is superhuman at vs tasks where it is unreliable",
+  "attempt": 2,
+  "depth_profile": "standard",
+  "word_count": 2571,
+  "resources_source": "web_search",
+  "passed": true,
+  "at": "2026-06-17T00:00:00Z",
+  "checks": {
+    "required_sections": {
+      "passed": true,
+      "findings": [],
+      "detail": {
+        "section_3_learning_objectives": { "present": true, "word_count_approx": 105, "threshold": 50, "passed": true },
+        "section_4_introduction":        { "present": true, "word_count_approx": 210, "threshold": 50, "passed": true },
+        "section_5_core_concepts":       { "present": true, "word_count_approx": 1420, "threshold": 100, "passed": true },
+        "section_10_key_takeaways":      { "present": true, "word_count_approx": 122, "threshold": 50, "passed": true }
+      }
+    },
+    "citation_density": {
+      "passed": true,
+      "findings": [],
+      "detail": {
+        "primary_resources_cited": {
+          "[1] insightpartners.com/ideas/generative-ai-ethan-mollick/": true,
+          "[2] ikangai.com/jagged-agi-superhuman-ai-flaws/": true,
+          "[3] oneusefulthing.org/p/on-jagged-agi-o3-gemini-25-and-everything": true
+        },
+        "factual_assertions_sampled_sections_5_6_7": {
+          "total_standalone_assertions": 27,
+          "assertions_with_citation": 20,
+          "citation_rate_pct": 74,
+          "threshold_pct": 60,
+          "passed": true
+        },
+        "notable_uncited_claims": [
+          "Pattern recognition in large datasets intro paragraph (§5.2) — no citation marker",
+          "AlphaGo narrow-AI mention (§5.2) — no citation (context-only sentence, acceptable)",
+          "'strawberry' counting failure example (§5.3) — no citation marker",
+          "Multi-step logical deduction 'short-circuit' behaviour (§5.3) — no citation marker",
+          "Physical world sense paragraph (§5.3) — no citation marker",
+          "Training data distribution paragraph (§5.4) — no citation marker",
+          "Emergent capabilities paragraph (§5.4) — references topic 3.5 rhetorically but no [N] citation"
+        ]
+      }
+    },
+    "sequence_drift": {
+      "passed": true,
+      "severity": null,
+      "findings": [],
+      "detail": {
+        "fix_verified": {
+          "term": "chain-of-thought prompting",
+          "location": "§5.5 — 'The Frontier Is Moving', first paragraph",
+          "new_text": "Chain-of-thought prompting (covered in a later topic) has moved some multi-step logical tasks from unreliable to workable [3].",
+          "defining_clause_present": false,
+          "covered_later_pointer_present": true,
+          "verdict": "Complies with mention-and-defer rule — bare name plus pointer only, no appositive or defining clause. Forward reference resolved."
+        }
+      }
+    },
+    "length_sanity": {
+      "passed": true,
+      "findings": [],
+      "detail": {
+        "word_count": 2571,
+        "profile": "standard",
+        "corpus_range_min": 3000,
+        "corpus_range_max": 4400,
+        "deviation_pct": -14,
+        "tolerance_threshold_pct": 30,
+        "within_tolerance": true,
+        "note": "Word count is 14% below the standard corpus floor of 3000. This is within the 30% tolerance band and does not trigger a hard fail. The corpus is substantive and all required sections are present and non-trivial."
+      }
+    },
+    "topic_scope": {
+      "passed": true,
+      "severity": null,
+      "findings": [],
+      "detail": {
+        "fix_verified": {
+          "concept": "chain-of-thought prompting",
+          "location": "§5.5 — first paragraph",
+          "defining_appositive_removed": true,
+          "mention_and_defer_form_correct": true,
+          "verdict": "The defining appositive ('where the model is prompted or trained to work through a problem step by step before giving a final answer') has been removed. The term now appears only as a bare name with a 'covered in a later topic' pointer. Scope_creep finding resolved."
+        }
+      }
+    },
+    "beginner_readability": {
+      "passed": true,
+      "severity": null,
+      "findings": [],
+      "finding_count": 0,
+      "escalation_threshold": 3,
+      "escalated_to_hard_fail": false,
+      "detail": {
+        "fix_verified": {
+          "terms": ["interpolating", "extrapolating"],
+          "location": "§5.4 — 'Interpolation vs extrapolation' sub-section",
+          "interpolating_gloss": "filling in between examples it has seen, like estimating a point between two known data points",
+          "extrapolating_gloss": "reasoning beyond what the training data covered",
+          "verdict": "Both terms now have plain-English glosses on first use. Undefined_terms finding resolved."
+        }
+      }
+    }
+  },
+  "verdict": "PASS — Both hard failures from attempt 1 are resolved: (1) sequence_drift: 'chain-of-thought prompting' in §5.5 is now a bare name with 'covered in a later topic' pointer and no defining clause; (2) scope_creep: the defining appositive has been removed, complying with mention-and-defer form. The soft finding is also resolved: 'interpolating' and 'extrapolating' in §5.4 now each have a plain-English gloss on first use. All 6 checks pass: required sections present and substantive, citations adequate (74% factual assertions cited, all 3 resources referenced), word count 2571 is 14% below the standard corpus floor (3000) but within the 30% tolerance band, no forward references, no scope creep, beginner readability 0 findings."
+}

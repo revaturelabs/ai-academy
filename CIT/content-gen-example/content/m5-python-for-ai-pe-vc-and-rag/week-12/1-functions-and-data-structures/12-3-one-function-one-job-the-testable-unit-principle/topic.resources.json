@@ -1,0 +1,30 @@
+{
+  "topic_id": "12.3",
+  "captured_at": "2026-06-14T00:00:00Z",
+  "captured_by": "vishnu.vardhan@revature.com",
+  "resources_source": "web_search",
+  "web_search_query": "single responsibility principle one function one job Python testable unit beginner",
+  "resources": [
+    {
+      "type": "url",
+      "value": "https://realpython.com/solid-principles-python/",
+      "role": "primary",
+      "source": "web_search",
+      "notes": "Canonical Real Python guide — SRP section covers one-responsibility-per-function with Python examples"
+    },
+    {
+      "type": "url",
+      "value": "https://www.pythontutorial.net/python-oop/python-single-responsibility-principle/",
+      "role": "supporting",
+      "source": "web_search",
+      "notes": "Beginner-friendly walkthrough of SRP at the function/class level"
+    },
+    {
+      "type": "url",
+      "value": "https://sobolevn.me/2019/03/enforcing-srp",
+      "role": "supporting",
+      "source": "web_search",
+      "notes": "Practical enforcement patterns — naming heuristics, refactor examples"
+    }
+  ]
+}

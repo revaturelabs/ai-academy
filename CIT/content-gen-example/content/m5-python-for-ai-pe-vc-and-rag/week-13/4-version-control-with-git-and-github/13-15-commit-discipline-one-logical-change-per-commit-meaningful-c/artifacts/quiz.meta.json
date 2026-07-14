@@ -1,0 +1,56 @@
+{
+  "topic_id": "13.15",
+  "generated_at": "2026-06-15T00:00:00Z",
+  "format": "gift",
+  "profile": "standard",
+  "question_count": 6,
+  "$bias_defense_applied": true,
+  "$shuffle_seed": "c2-length-fixed",
+  "correct_position_distribution": {"0": 1, "1": 1, "2": 2, "3": 2},
+  "length_bias_check": {
+    "q1": {"correct_chars": 57, "distractor_mean_chars": 55, "ratio": 1.04},
+    "q2": {"correct_chars": 46, "distractor_mean_chars": 45, "ratio": 1.02},
+    "q3": {"correct_chars": 51, "distractor_mean_chars": 57, "ratio": 0.89},
+    "q4": {"correct_chars": 65, "distractor_mean_chars": 63, "ratio": 1.03},
+    "q5": {"correct_chars": 63, "distractor_mean_chars": 63, "ratio": 1.00},
+    "q6": {"correct_chars": 77, "distractor_mean_chars": 72, "ratio": 1.07}
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "type": "mcq",
+      "objective_ref": "LO1 — Define what an atomic commit is and explain why mixing changes into one commit is a problem.",
+      "correct_position": 2
+    },
+    {
+      "id": "q2",
+      "type": "mcq",
+      "objective_ref": "LO2 — Write a commit message that follows the imperative-mood subject + body convention.",
+      "correct_position": 0
+    },
+    {
+      "id": "q3",
+      "type": "mcq",
+      "objective_ref": "LO3 — Distinguish a good commit message from a poor one using concrete criteria.",
+      "correct_position": 3
+    },
+    {
+      "id": "q4",
+      "type": "mcq",
+      "objective_ref": "LO4 — Apply the 50-character subject and 72-character body-wrap rules when writing messages.",
+      "correct_position": 1
+    },
+    {
+      "id": "q5",
+      "type": "mcq",
+      "objective_ref": "LO5 — Stage and commit a single logical change using `git add <filename>` selectively.",
+      "correct_position": 2
+    },
+    {
+      "id": "q6",
+      "type": "mcq",
+      "objective_ref": "LO6 — Explain how good commit discipline makes project history readable to others.",
+      "correct_position": 3
+    }
+  ]
+}

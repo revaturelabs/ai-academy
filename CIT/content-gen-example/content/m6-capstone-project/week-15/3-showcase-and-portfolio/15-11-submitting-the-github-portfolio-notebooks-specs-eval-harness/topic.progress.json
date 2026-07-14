@@ -1,0 +1,19 @@
+{
+  "topic_id": "15.11",
+  "stage": "awaiting_resources",
+  "gates": {
+    "resources_captured": false,
+    "corpus_generated": false,
+    "corpus_critic_passed": false,
+    "corpus_human_approved": false,
+    "reading_generated": false,
+    "reading_critic_passed": false,
+    "quiz_generated": false,
+    "quiz_critic_passed": false,
+    "diagram_generated": null,
+    "diagram_critic_passed": null,
+    "module_drift_passed": false,
+    "course_drift_passed": false
+  },
+  "history": []
+}

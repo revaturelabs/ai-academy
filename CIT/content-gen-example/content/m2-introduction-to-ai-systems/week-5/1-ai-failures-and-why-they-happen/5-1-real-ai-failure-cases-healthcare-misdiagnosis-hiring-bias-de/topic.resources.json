@@ -1,0 +1,30 @@
+{
+  "topic_id": "5.1",
+  "captured_at": "2026-06-17T00:00:00Z",
+  "captured_by": "vishnu.vardhan@revature.com",
+  "resources_source": "web_search",
+  "web_search_query": "real AI failure cases healthcare misdiagnosis hiring bias deepfake harm examples",
+  "resources": [
+    {
+      "type": "url",
+      "value": "https://aistandardofcare.com/resources/ai-misdiagnosis-case-tracker/",
+      "role": "primary",
+      "source": "web_search",
+      "notes": "Ongoing tracker of diagnostic AI failures, lawsuits, and litigation — healthcare misdiagnosis anchor"
+    },
+    {
+      "type": "url",
+      "value": "https://www.technologyreview.com/2018/10/10/139858/amazon-ditched-ai-recruitment-software-because-it-was-biased-against-women/",
+      "role": "supporting",
+      "source": "web_search",
+      "notes": "MIT Tech Review — canonical Amazon hiring algorithm gender bias case (2018)"
+    },
+    {
+      "type": "url",
+      "value": "https://www.dhs.gov/sites/default/files/publications/increasing_threats_of_deepfake_identities_0.pdf",
+      "role": "supporting",
+      "source": "web_search",
+      "notes": "DHS report — documented deepfake identity harm, government primary source"
+    }
+  ]
+}

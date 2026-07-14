@@ -1,0 +1,105 @@
+{
+  "module": "2-cognitive-biases-and-ai",
+  "week_num": 9,
+  "critic_run_at": "2026-06-13",
+  "passed": true,
+  "checks": {
+    "terminology_consistency": {
+      "passed": true,
+      "findings": [
+        {
+          "severity": "soft",
+          "topic": "9.3",
+          "finding": "Topic 9.3 refers to 'System 1 processing' (section 5, paragraph on 'Why confirmation bias is so automatic') while topics 9.4 and 9.5 consistently use 'System 1 thinking' — the canonical term introduced in topic 9.1. Same concept, different label suffix. Minor synonym drift; does not affect comprehension but is inconsistent with the module's own vocabulary convention.",
+          "recommendation": "Align 9.3 to use 'System 1 thinking' where the corpus currently says 'System 1 processing'."
+        }
+      ]
+    },
+    "prerequisites_respected": {
+      "passed": true,
+      "findings": []
+    },
+    "learning_arc": {
+      "passed": true,
+      "findings": [
+        {
+          "severity": "info",
+          "finding": "The module's lab_activity_seed references the Judgment Framework and error-threshold definition — deliverables that live in modules 3 and 4 of the same week. This module (2) provides the cognitive-science grounding for those lab tasks but does not deliver the lab artifacts itself. This is correct by curriculum design, not a gap within this module, but is noted for HITL #4 rollup awareness."
+        }
+      ]
+    },
+    "no_duplicated_concepts": {
+      "passed": true,
+      "findings": [
+        {
+          "severity": "info",
+          "pair": "9.5 and 9.6",
+          "finding": "Topic 9.6 intentionally re-applies terms from 9.5 (automation bias, commission error) in its Section 5.7 to show how individual cognitive biases drive structural encoding problems. This is pedagogically correct cross-referencing, not concept duplication. Jaccard similarity of core Section-5 noun sets is approximately 0.12, well below the 0.6 flag threshold."
+        }
+      ]
+    },
+    "lab_activity_alignment": {
+      "passed": true,
+      "findings": [
+        {
+          "severity": "soft",
+          "finding": "The module lab_activity_seed ('Apply the Judgment Framework', 'Define acceptable error thresholds', 'Journal Entry #5') is served by modules 3 and 4 of week 9, not by this module's topics. Each topic in this module (9.3–9.6) contains a Hands-On/Reflection Prompt that is domain-applicable and feeds the week-level lab, but the primary lab deliverables are out of scope for module 2 by design. No hands-on artifact in this module directly demonstrates the Judgment Framework application.",
+          "recommendation": "No change required in module 2 content. At HITL #4 rollup, confirm that module 3 (9.7–9.9) delivers the Judgment Framework application activity that the lab_activity_seed calls for."
+        }
+      ]
+    },
+    "audience_consistency": {
+      "passed": true,
+      "findings": [
+        {
+          "severity": "soft",
+          "topic": "9.6",
+          "finding": "'Proxy variable' is introduced and immediately defined inline in Section 7 of the 9.6 corpus ('proxy variables — indirect stand-in features, like zip code and credit history length, that correlate with a protected characteristic without naming it directly') but is absent from the Section 10 Key Vocabulary table. For absolute beginners, this term is substantive enough to warrant vocabulary-table inclusion.",
+          "recommendation": "Add 'proxy variable' to the Key Vocabulary table in the 9.6 corpus and any generated reading artifact."
+        },
+        {
+          "severity": "info",
+          "finding": "All four topics explicitly declare that no programming or engineering background is required (9.5 and 9.6 state this verbatim in Section 2). All topics tag depth_profile as 'standard'. No topic spikes in register or depth relative to its neighbors. Consistent absolute-beginner targeting maintained across the module."
+        }
+      ]
+    }
+  },
+  "topics_checked": [
+    {
+      "id": "9.3",
+      "title": "Confirmation bias — seeking information that confirms existing beliefs",
+      "position_in_module": 1,
+      "corpus_present": true,
+      "reading_present": false,
+      "status": "corpus_drafted"
+    },
+    {
+      "id": "9.4",
+      "title": "Anchoring bias — over-relying on the first piece of information received",
+      "position_in_module": 2,
+      "corpus_present": true,
+      "reading_present": false,
+      "status": "scaffolded"
+    },
+    {
+      "id": "9.5",
+      "title": "Automation bias — trusting automated systems over human judgment",
+      "position_in_module": 3,
+      "corpus_present": true,
+      "reading_present": true,
+      "reading_critic_passed": true,
+      "status": "scaffolded"
+    },
+    {
+      "id": "9.6",
+      "title": "How human biases get encoded into AI training data",
+      "position_in_module": 4,
+      "corpus_present": true,
+      "reading_present": false,
+      "status": "scaffolded"
+    }
+  ],
+  "soft_findings_count": 3,
+  "hard_failures_count": 0,
+  "verdict": "PASS — all six drift checks passed; three soft findings (terminology synonym in 9.3, missing vocabulary-table entry in 9.6, lab deliverables by design in downstream modules) — none block topic approval"
+}

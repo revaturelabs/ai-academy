@@ -1,0 +1,9 @@
+{
+  "topic_id": "7.1",
+  "generated_at": "2026-06-22T00:00:00Z",
+  "word_count": 1490,
+  "estimated_minutes": 8,
+  "depth_profile": "standard",
+  "citations": ["[1] seeing-theory.brown.edu", "[2] math.libretexts.org", "[3] mathsisfun.com"],
+  "open_critic_findings_resolved": ["soft scope_creep: probability distribution bare defer in Key Concepts/In Practice"]
+}

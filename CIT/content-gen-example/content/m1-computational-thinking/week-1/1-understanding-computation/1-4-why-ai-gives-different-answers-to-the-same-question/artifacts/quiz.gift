@@ -1,0 +1,49 @@
+$CATEGORY: CIT/M1/week-1/1-4-why-ai-gives-different-answers-to-the-same-question
+
+::q1:: You ask an AI (Artificial Intelligence) assistant the same question twice on the same day and receive two different answers. Both answers are reasonable. What is the best explanation for why this happens? {
+~The AI made an error on one of the two runs and produced a wrong answer by mistake, which is why the two responses came out differently#Not quite — both answers can be reasonable; variation is not the same as an error in a probabilistic system.
+~The AI remembered your first answer and deliberately changed it the second time so that you would not receive the same response twice#No — the AI does not store your previous answers and choose to vary them on purpose; each run is independent.
+=The AI builds its answer by sampling from a probability distribution, so the specific tokens chosen can differ between runs even when the input is identical#Correct — token sampling from a probability distribution means the same input can produce different outputs, just as Topic 1.3 described for probabilistic systems.
+~The AI selects from a different set of pre-written stored answers each time you start a new conversation or session#No — the AI does not retrieve stored answers; it generates a response from scratch each time using token sampling.
+#### Tests LO 1\: explaining in plain language why AI gives different answers. See corpus §5.4 for the full causal chain.
+}
+
+::q2:: Which step in an LLM's (Large Language Model's) process is directly responsible for introducing variation into the output? {
+=Token sampling — the step where the model picks the next word-sized piece of text from a probability distribution#Correct — token sampling is the mechanism that introduces probabilistic variation; each pick can differ between runs.
+~Tokenisation — the step where the input question is split into small pieces for the model to read#No — tokenisation processes the input; it does not introduce variation into the output.
+~Training — the step where the model learned from large amounts of text before you used it#No — training happens once before deployment and shapes what the model knows, but is not the source of per-run variation.
+~Formatting — the step where the model arranges its completed answer into sentences and paragraphs#No — formatting is part of producing the final text, not the mechanism that generates variation between runs.
+#### Tests LO 2\: identifying the role of token sampling in producing varied AI outputs. See corpus §5.1.
+}
+
+::q3:: An LLM (Large Language Model) is completing the phrase "The cat sat on the ___." Its probability distribution shows\: mat 55%, floor 20%, chair 12%, roof 8%. What does this distribution tell you? {
+~All four words are equally likely to be chosen by the model, because the AI selects the next token completely at random with no pattern or weighting applied#No — the distribution shows that different tokens have different likelihoods; it is not uniform random.
+~The AI will always choose "mat" because it has the highest probability, since any system that assigns probabilities must always pick the most likely option every time#No — a high probability does not guarantee selection; the system is probabilistic, so lower-probability tokens can still be chosen.
+~The distribution represents the AI guessing blindly without any connection to the words you typed before it, because AI cannot truly understand the context of a sentence#No — the distribution is shaped directly by the input; it is not blind guessing.
+=The distribution is a map of how likely each possible next token is, based on everything typed so far — higher numbers mean more likely, but any token on the list can still be chosen#Correct — a probability distribution assigns a likelihood to each possible outcome; higher probability means more likely, not certain.
+#### Tests LO 3\: describing a probability distribution in everyday terms and connecting it to token selection. See corpus §5.2.
+}
+
+::q4:: An AI tool's temperature is turned down to a very low setting (close to 0). How does this change the way the AI produces its output? {
+~The AI becomes less intelligent and gives shorter, simpler answers because low temperature limits its knowledge#No — temperature does not change what the AI knows; it changes how freely it samples from the probability distribution.
+=The AI almost always picks the highest-probability token at each step, making its output more consistent and predictable#Correct — low temperature pushes sampling strongly toward the most-likely token, producing more consistent output across repeated runs.
+~The AI gives deliberately cautious, hedged answers to avoid being wrong, because low temperature means playing it safe#No — temperature controls sampling spread, not the AI's confidence or caution; low temperature means more predictable, not more cautious.
+~The AI produces more accurate answers because low temperature forces it to search harder for the correct response#No — temperature adjusts how likely each token is to be selected, not the accuracy of the answers produced.
+#### Tests LO 4\: explaining how temperature controls the amount of variation in AI output. See corpus §5.3.
+}
+
+::q5:: A marketing team wants to use an AI tool to brainstorm ten different tagline ideas for a new product. A legal team wants to use the same AI tool to summarise a contract clause the same way every time it is queried. Which statement best describes how AI output variation applies to these two cases? {
+=Variation is a feature for the marketing team because varied outputs provide a wider range of ideas; it is a drawback for the legal team because inconsistent summaries of the same clause create confusion#Correct — creative and exploratory tasks benefit from variation, while tasks requiring consistency and reproducibility are harmed by it.
+~Variation is a drawback for both the marketing team and the legal team, because in professional settings neither team can rely on an AI tool that produces a different answer on every run#No — for creative tasks like brainstorming, variation is exactly what makes the tool useful; it is not a drawback in that context.
+~Variation is a feature for both the marketing team and the legal team, because in every professional context it is better to receive a range of different answers than to receive the same one repeatedly#No — for fact-based or compliance tasks, consistent and reproducible answers are more valuable than variety.
+~Variation does not apply to either the marketing team or the legal team, because all professional-grade AI tools used in workplace settings are automatically configured to give consistent answers#No — variation is a fundamental property of how LLMs work and applies in all settings unless temperature is deliberately lowered.
+#### Tests LO 5\: distinguishing situations where AI output variation is a feature from situations where it is a drawback. See corpus §5.5.
+}
+
+::q6:: A colleague is using an AI writing tool set to high temperature. Another colleague is using the same tool set to low temperature. Both ask the tool the same open-ended question three times. Whose responses will be more varied across the three runs? {
+~The low-temperature user will see more varied responses, because a lower temperature setting allows the AI more freedom to explore a wider range of possible answers across the probability distribution#No — low temperature restricts sampling to the most-likely tokens, producing more consistent output, not more varied.
+~Both users will see equally varied responses, because the temperature setting only controls the overall length and style of the output and has no effect on which specific words or tokens are chosen#No — temperature directly controls sampling spread across the probability distribution, which determines how much the chosen tokens vary between runs.
+=The high-temperature user will see more varied responses, because high temperature causes the AI to sample more freely from the probability distribution, giving lower-probability tokens a greater chance of being selected#Correct — high temperature spreads sampling more evenly across the distribution, so less-likely tokens are chosen more often, producing more varied output.
+~Neither user will see any variation, because the question asked is identical each time, and when the input to any AI system is fixed, the output produced must also be fixed and identical#No — an LLM is a probabilistic system; the same input does not guarantee the same output, regardless of temperature setting.
+#### Tests LO 6\: predicting whether output will be more predictable or more varied based on the temperature setting in use. See corpus §5.3.
+}

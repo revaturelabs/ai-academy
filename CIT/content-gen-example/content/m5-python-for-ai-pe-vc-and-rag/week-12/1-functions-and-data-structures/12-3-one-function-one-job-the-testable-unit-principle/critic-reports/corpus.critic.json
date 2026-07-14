@@ -1,0 +1,65 @@
+{
+  "passed": true,
+  "checks": {
+    "required_sections": {
+      "passed": true,
+      "notes": "All four required sections present and non-trivial. §3 Learning Objectives: 5 numbered objectives, ~100 words. §4 Introduction: ~220 words with concrete analogy before abstract definition. §5 Core Concepts: 5 sub-sections totalling well over 100 words with definitions, tables, and code examples. §10 Key Takeaways: 5 substantive bullets covering all introduced concepts."
+    },
+    "citation_density": {
+      "passed": true,
+      "primary_cited": true,
+      "claim_citation_rate": 0.88,
+      "notes": "Primary resource [1] (realpython.com/solid-principles-python) cited on first factual claim in §4 and consistently throughout §5, §6, §7, §8. Supporting resources [2] and [3] also cited. Estimated 88% of standalone factual assertions in §5/§6/§7 carry at least one [N] marker — well above the 60% strict-mode floor. No fake citations detected: all [1], [2], [3] markers resolve to resources declared in topic.resources.json."
+    },
+    "sequence_drift": {
+      "passed": true,
+      "forward_refs": [],
+      "soft_findings": [
+        {
+          "term": "file I/O syntax (open, file.write, file.close)",
+          "location": "§5.4 code example, §6 Implementation (extensively), §7 Real-World Patterns, §8 Best Practices",
+          "assessment": "Named-and-deferred in spirit — corpus does not define or explain these calls, only uses them as motivating context for the multi-job smell. However, the corpus never explicitly names and defers file I/O with a 'you will learn this later' pointer as required by scope_discipline. Classified as soft finding, not hard fail: the concept being taught (multi-job vs single-job) is valid; file I/O is the domain substrate, not the lesson."
+        },
+        {
+          "term": "global variables",
+          "location": "§8 Best Practices ('Shared global variables that both functions read and write are a sign of tangled concerns [1].')",
+          "assessment": "Used once as an anti-pattern indicator. Not in prior concepts_introduced; not defined here; no deferral pointer. Soft finding: it appears as a named smell signal in one sentence, but a zero-background learner has no anchor for the term. Should be removed or replaced with a concrete example already in scope."
+        }
+      ],
+      "notes": "No hard forward references found. All core terms (def, parameter, return value, None, for loop, if/else, boolean, True/False) are in prior topics. 'pytest' named and deferred correctly with a 'you will encounter in later study' pointer and no definition or example. Two soft findings raised (see soft_findings): file I/O syntax used without explicit deferral pointer; 'global variables' used cold. Neither rises to a hard fail."
+    },
+    "length_sanity": {
+      "passed": true,
+      "word_count": 3150,
+      "profile": "standard",
+      "range": [3000, 4400],
+      "notes": "Estimated ~3150 words of prose + code comments. Within the standard profile range of 3000–4400. Well above the 30%-below-floor fail threshold (2100 words). Count includes inline code comment text but excludes pure code lines."
+    },
+    "scope": {
+      "passed": true,
+      "scope_creep": [],
+      "soft_findings": [
+        {
+          "concept": "global variables",
+          "location": "§8 Best Practices",
+          "assessment": "Mentioned once as a sign of tangled concerns. Not taught (no definition, no example). Mention-and-defer form is technically acceptable but lacks a 'covered later' pointer. Consistent with the soft finding in sequence_drift."
+        }
+      ],
+      "notes": "Topic stays on headline. 'pytest' is correctly named-and-deferred (one sentence, no bold, no definition, explicit future pointer). Manual testing via call-and-compare is on-scope for this topic level. No class-level SRP, decorators, or advanced refactoring patterns found. File I/O syntax used as motivating substrate, not taught. One soft finding: 'global variables' in §8 — mentioned as anti-pattern signal without deferral pointer, but not taught."
+    },
+    "beginner_readability": {
+      "passed": true,
+      "findings": [
+        {
+          "type": "undefined_term",
+          "term": "global variables",
+          "location": "§8 Best Practices",
+          "detail": "Used once without definition or deferral pointer. A zero-background learner has no prior anchor for this term."
+        }
+      ],
+      "notes": "1 soft finding — below the 3-finding hard-fail threshold. All key terms defined on first use: 'Single Responsibility Principle (SRP)' spelled out §4; 'smell'/'code smell' defined inline §5.2; 'testable unit' defined §5.3; 'refactoring' defined §5.5. No jargon dumps: no paragraph introduces 3+ new terms simultaneously. Plain register maintained throughout: active voice, second-person address ('you'), sentences under 25 words on average. No academic hedging phrases detected."
+    }
+  },
+  "verdict": "PASS — all 6 checks pass; 2 soft findings (file I/O syntax used without explicit deferral pointer in §5.4/§6/§7/§8; 'global variables' used cold in §8) surfaced for author review at HITL #2 but do not block progression.",
+  "at": "2026-06-14T00:00:00Z"
+}

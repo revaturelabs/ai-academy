@@ -1,0 +1,62 @@
+{
+  "type": "topic",
+  "id": "12.9",
+  "title": "What an API is — a door into another system; request and response",
+  "slug": "12-9-what-an-api-is-a-door-into-another-system-request-and-respon",
+  "position_in_module": 1,
+  "week_num": 12,
+  "session_name": "Python Foundations II and Calling an LLM",
+  "module": {
+    "position": 3,
+    "slug": "3-calling-an-llm-from-python",
+    "title": "Calling an LLM from Python"
+  },
+  "course": {
+    "code": "M5",
+    "slug": "m5-python-for-ai-pe-vc-and-rag",
+    "title": "Python for AI, PE, VC and RAG"
+  },
+  "next_assessment": {
+    "id": "A4",
+    "due_week": 13,
+    "title": "Python and Prompt Engineering Portfolio",
+    "weight": "20%"
+  },
+  "paths": {
+    "corpus": "topic_corpus.md",
+    "resources": "topic.resources.json",
+    "progress": "topic.progress.json",
+    "artifacts_dir": "artifacts/",
+    "critic_reports_dir": "critic-reports/"
+  },
+  "artifact_plan": {
+    "diagram": true,
+    "diagram_intent": "Client-server request-response cycle: Your Python code (client) → API endpoint → Server → Response back to client. Three-step left-to-right flow.",
+    "suggested_profile": "standard",
+    "confirmed_profile": "standard",
+    "profile_signals": ["6 LOs spanning API definition, request components, response components, LLM-via-API model", "conceptual topic but table-heavy — standard depth needed for the tables to breathe", "foundation for 12.10–12.14"],
+    "sections_approved": {
+      "2_prerequisites": true,
+      "3_learning_objectives": true,
+      "4_introduction": true,
+      "5_core_concepts": true,
+      "6_implementation": true,
+      "7_real_world_patterns": true,
+      "8_best_practices": true,
+      "9_hands_on_exercise": true,
+      "10_key_takeaways": true
+    },
+    "soft_findings_carry_forward": [],
+    "reading": {
+      "target_word_range": [1200, 1600],
+      "target_minutes_range": [6, 8]
+    },
+    "quiz": {
+      "min_questions": 5,
+      "max_questions": 6,
+      "include_short_answer": false
+    }
+  },
+  "expected_delivery_minutes": 8,
+  "status": "scaffolded"
+}

@@ -1,0 +1,91 @@
+{
+  "critic": "reading-critic",
+  "topic_id": "1.10",
+  "title": "Algorithms in Everyday Life — Recipes, GPS Routes, Sorting Queues",
+  "run_at": "2026-06-22T00:00:00Z",
+  "passed": true,
+  "verdict": "PASS — all checks passed. Reading is 1392 words / 7 min (within standard 1200–1600 w / 6–8 min). All three citations used; primary [1] (learning.com) cited ≥10 times; no orphan markers or bibliography entries. No forward references beyond topics 1.1–1.10. Diagram embed present (./diagram.mmd). 10 sampled assertions all trace to corpus; 0 unsupported claims. Beginner readability: concrete-first throughout (egg recipe → GPS steps → homework papers), terms defined on first use (route-finding, sorting algorithm), no jargon dumps, no hedging. Formatting: procedures rendered as numbered lists, definitions in bold-term/plain-meaning shape, no paragraph exceeds ~5 sentences. No assessment references. Scope clean: stays within recipes/GPS/sorting domains; no Big-O, no named algorithms, no code, no CS theory taught. No gold example present in .claude/references/gold-examples/reading/ for M1 topics — checked against written standards only.",
+  "profile": "standard",
+  "target_word_range": [1200, 1600],
+  "target_minute_range": [6, 8],
+  "checks": {
+    "format_discipline": {
+      "passed": true,
+      "frontmatter_present": false,
+      "meta_sidecar_missing": false,
+      "section_template_violation": false,
+      "sections_found": ["Overview", "Key Concepts", "Worked Example", "In Practice", "Key Takeaways", "References"],
+      "sections_expected": ["Overview", "Key Concepts", "Worked Example", "In Practice", "Key Takeaways", "References"],
+      "notes": "First non-empty line is the H1 title. Sidecar reading.meta.json present and valid. Exactly the six required sections in correct order."
+    },
+    "length": {
+      "passed": true,
+      "word_count": 1392,
+      "estimated_minutes": 7,
+      "within_word_range": true,
+      "within_minute_range": true,
+      "notes": "1392 words is within [1200, 1600]. 7 min is within [6, 8]."
+    },
+    "citations": {
+      "passed": true,
+      "resources_source": "web_search",
+      "primary_cited": true,
+      "primary_resource": "[1] learning.com",
+      "citations_used": ["[1]", "[2]", "[3]"],
+      "citations_in_bibliography": ["[1]", "[2]", "[3]"],
+      "orphan_markers": [],
+      "orphan_bibliography_entries": [],
+      "notes": "Primary [1] cited ≥10 times. All inline markers match bibliography. No orphan markers or entries."
+    },
+    "no_forward_references": {
+      "passed": true,
+      "forward_refs_found": [],
+      "notes": "Reading references topics 1.1 (input/process/output), 1.7 (sequence/decision/repetition), 1.9 (algorithm definition) — all prior. No concepts from 1.11+ appear. No mention of topic 1.2 by name in reading (only in corpus, not ported across)."
+    },
+    "faithfulness": {
+      "passed": true,
+      "assertions_sampled": 10,
+      "unsupported_count": 0,
+      "unsupported_assertions": [],
+      "notes": "All 10 sampled assertions trace verbatim or paraphrased to corpus sections 5.1–5.3, 6, 7, 8."
+    },
+    "diagram_embedded": {
+      "passed": true,
+      "embed_line": 11,
+      "embed_path": "./diagram.mmd",
+      "notes": "Diagram embed present in Key Concepts section immediately after the overview paragraph."
+    },
+    "beginner_readability": {
+      "passed": true,
+      "undefined_terms": [],
+      "undefined_terms_count": 0,
+      "jargon_dump": null,
+      "abstract_first": null,
+      "academic_register": null,
+      "findings": [],
+      "notes": "route-finding defined at first use (line 52, bold-term/plain-meaning). sorting algorithm defined at first use (line 81). algorithm not re-defined per spec (owned by 1.9). Concrete examples precede abstractions throughout. Sentence lengths mostly under 20 words. Zero hedging phrases detected."
+    },
+    "formatting": {
+      "passed": true,
+      "wall_of_text": null,
+      "unlisted_sequence": null,
+      "no_inline_examples": null,
+      "findings": [],
+      "notes": "All procedures rendered as numbered lists (egg recipe, GPS steps, sorting pass, cinema kiosk rewrite). Definitions use bold-term/plain-meaning shape. Inline examples appear in Key Concepts alongside concept introductions. No paragraph exceeds ~5 sentences."
+    },
+    "assessment_references": {
+      "passed": true,
+      "occurrences": [],
+      "notes": "No assessment IDs, due weeks, or grade weights found."
+    },
+    "scope": {
+      "passed": true,
+      "scope_creep": [],
+      "notes": "Content stays within recipes, GPS routes, and sorting queues as per topic title. No Big-O, no named sorting algorithms (bubble sort etc.), no graph algorithm names (Dijkstra), no code. In Practice email-routing mention is a one-sentence real-world extension within the GPS-routing concept, not a new algorithm taught."
+    }
+  },
+  "hard_fail_triggered": false,
+  "soft_findings_count": 0,
+  "escalation_note": "No scope_creep found; checks 5–6 produced 0 distinct findings — hard-fail escalation threshold not reached.",
+  "gold_example_comparison": "No gold example file present in .claude/references/gold-examples/reading/ for M1 week-1 topics. Verdict based on written standards in artifact-mix.json and SKILL.md only."
+}

@@ -1,0 +1,43 @@
+{
+  "topic_id": "14.10",
+  "captured_at": "2026-06-16T00:00:00Z",
+  "captured_by": "bhuvaneshwarim@revature.com",
+  "resources_source": "human",
+  "resources": [
+    {
+      "type": "url",
+      "value": "https://adr.github.io",
+      "role": "primary",
+      "source": "human",
+      "notes": "Canonical ADR (Architecture Decision Records) format site — Michael Nygard's lightweight ADR template"
+    },
+    {
+      "type": "url",
+      "value": "https://docs.aws.amazon.com/prescriptive-guidance/latest/architectural-decision-records/welcome.html",
+      "role": "primary",
+      "source": "human",
+      "notes": "AWS structured ADR template used in production cloud systems"
+    },
+    {
+      "type": "citation",
+      "value": "Chip Huyen — AI Engineering (O'Reilly)",
+      "role": "primary",
+      "source": "human",
+      "notes": "System design decision records for AI systems"
+    },
+    {
+      "type": "url",
+      "value": "https://cognitect.com/blog/2011/11/15/documenting-architecture-decisions",
+      "role": "primary",
+      "source": "human",
+      "notes": "Michael Nygard's original ADR blog post — source document for the ADR format"
+    },
+    {
+      "type": "url",
+      "value": "https://martinfowler.com/articles/scaling-architecture-conversationally.html",
+      "role": "primary",
+      "source": "human",
+      "notes": "Martin Fowler on architectural decision-making — applied context"
+    }
+  ]
+}

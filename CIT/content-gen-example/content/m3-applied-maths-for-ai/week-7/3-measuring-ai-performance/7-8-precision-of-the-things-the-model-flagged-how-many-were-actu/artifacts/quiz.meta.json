@@ -1,0 +1,47 @@
+{
+  "topic_id": "7.8",
+  "generated_at": "2026-06-23",
+  "format": "gift",
+  "question_count": 6,
+  "$bias_defense_applied": true,
+  "$shuffle_seed": "hash('7.8') = 0x37 XOR 0x38 = 0x0F → seed 15; correct positions drawn as [2,0,3,1,2,0], verified max_share=0.33 ≤ 0.40 and all 4 positions used",
+  "correct_position_distribution": {"0": 2, "1": 1, "2": 2, "3": 1},
+  "questions": [
+    {
+      "id": "7.8-q1",
+      "type": "mcq",
+      "objective_ref": "Explain in plain English what precision means for a classification model.",
+      "correct_position": 2
+    },
+    {
+      "id": "7.8-q2",
+      "type": "mcq",
+      "objective_ref": "Define true positive and false positive in the context of flagged predictions.",
+      "correct_position": 0
+    },
+    {
+      "id": "7.8-q3",
+      "type": "mcq",
+      "objective_ref": "Apply the precision formula (TP / (TP + FP)) to a simple scenario.",
+      "correct_position": 3
+    },
+    {
+      "id": "7.8-q4",
+      "type": "mcq",
+      "objective_ref": "Define true positive and false positive in the context of flagged predictions.",
+      "correct_position": 1
+    },
+    {
+      "id": "7.8-q5",
+      "type": "mcq",
+      "objective_ref": "Explain why a model can have high accuracy but low precision.",
+      "correct_position": 2
+    },
+    {
+      "id": "7.8-q6",
+      "type": "mcq",
+      "objective_ref": "Identify a real-world situation where precision is the metric that matters most.",
+      "correct_position": 0
+    }
+  ]
+}

@@ -1,0 +1,40 @@
+{
+  "topic_id": "8.2",
+  "artifact": "corpus",
+  "passed": true,
+  "checks": {
+    "required_sections": {
+      "passed": true,
+      "detail": "Sections 3 (Learning Objectives), 4 (Introduction), 5 (Core Concepts), 10 (Key Takeaways) all present and non-trivial. Section 5 well over 100 words (~700w, five sub-concepts: word->sentence vectors, pre-computed vectors, cosine-as-angle, reading the score, same-words-vs-meaning); sections 3/4/10 all exceed 50 words. No placeholder strings in any required section (the only placeholder, '_System-derived...', sits in optional section 11)."
+    },
+    "citation_density": {
+      "passed": true,
+      "resources_source": "web_search",
+      "mode": "strict",
+      "detail": "Every primary resource cited >=1x: [1] (milvus, primary) cited at lines 35,41,57,59,61,62,66,75; [2] (fastdatascience, supporting) at 44,82,100,103,104; [3] (tigerdata, supporting) at 62,66,100,102,104. All three resources resolve to real entries in topic.resources.json. No fabricated markers (only [1][2][3] used; exactly 3 resources exist). Key claims in Core Concepts, Implementation, and Real-World Patterns carry citation markers well above the 60% strict threshold."
+    },
+    "sequence_drift": {
+      "passed": true,
+      "forward_referenced_terms": [],
+      "detail": "All technical noun phrases trace to 8.2 concepts_introduced (sentence embedding, cosine similarity score 0-1 scale, similarity by angle/direction not length, pre-computed vectors, same meaning vs same words, similarity ranking) or to prior topics: arrow/vector-as-point (6.5), dot product as similarity (6.6), embeddings (6.7), cosine similarity / angle between meaning-vectors (6.9), clusters/outliers/nearest-neighbors/Projector (8.1). No 8.3+ forward references: precision, recall, F1, confusion matrix do not appear anywhere in the corpus."
+    },
+    "length_sanity": {
+      "passed": true,
+      "soft": true,
+      "profile": "standard",
+      "detail": "Self-reported body ~1235w. Config standard band is 1200-1600; task standard floor is 1500. 1235 sits below the 1500 floor but inside 30% tolerance (and above the config 1200 floor), so this is a SOFT finding (below_standard_floor) not a hard fail. Surfaces at HITL #2/#3: consider whether the Core Concepts / Real-World Patterns sections could be enriched toward ~1500w."
+    },
+    "topic_scope": {
+      "passed": true,
+      "scope_creep": [],
+      "detail": "Headline = scoring similarity of sentence PAIRS via cosine similarity, intuition only. The dot-product-over-magnitudes formula appears exactly once (line 62) as a single named mention explicitly de-emphasized ('You do not need to compute that by hand - the lab tool does it') - within the allowed one-named-mention rule, with NO derivation, NO NumPy, NO hand-computation. The -1..1 / 0..1 scale is taught as reading intuition, not math. No Euclidean distance beyond the one-line direction-not-length contrast. No RAG, vector DBs, or precision/recall taught. Course no-math rule satisfied."
+    },
+    "beginner_readability": {
+      "passed": true,
+      "findings": [],
+      "detail": "Non-everyday terms defined on first use in plain language before formal phrasing: embedding (line 41), sentence embedding (43), pre-computed vectors (52), cosine similarity / angle-between-arrows (57-59). Concrete everyday lead-ins precede abstractions (text-a-friend opener, cat/feline example, password-reset example). No paragraph stacks 3+ brand-new terms (no jargon_dump). Sentences short and active, no hedging phrases (no academic_register). Zero distinct soft findings - well below the >=3 escalation threshold."
+    }
+  },
+  "verdict": "PASS. Corpus 8.2 grounds downstream artifacts: all required sections present, strict web_search citation density met (all 3 resources resolve and are cited, primary [1] heavily, no fabricated markers), no forward references (no precision/recall/F1/8.3+ leakage), scope held to cosine-similarity intuition with the no-math course rule respected (single named dot-product/magnitude mention, no derivation/NumPy/hand-computation), beginner-readable with terms defined on first use. Forward-referenced terms: none. Out-of-scope concepts: none. One SOFT note only: body ~1235w is below the 1500 standard floor but within tolerance - optionally enrich toward 1500w; does not block.",
+  "at": "2026-06-22T06:30:00Z"
+}

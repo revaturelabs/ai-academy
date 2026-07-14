@@ -1,0 +1,89 @@
+{
+  "topic_id": "1.8",
+  "artifact": "reading",
+  "critic": "reading-critic",
+  "run_at": "2026-06-21T00:00:00Z",
+  "passed": true,
+  "verdict": "Reading passes all checks: correct length (1389w / 7 min), six required sections in order, no frontmatter, all citations present with no orphans, fully faithful to corpus, no forward references, beginner-ready prose with concrete-first examples, clean formatting, no assessment references, no scope creep, and diagram.png embedded.",
+  "checks": {
+    "format_discipline": {
+      "passed": true,
+      "frontmatter_present": false,
+      "meta_sidecar_missing": false,
+      "section_template_violation": false,
+      "sections_found": ["Overview", "Key Concepts", "Worked Example", "In Practice", "Key Takeaways", "References"],
+      "sections_expected": ["Overview", "Key Concepts", "Worked Example", "In Practice", "Key Takeaways", "References"],
+      "notes": "First non-empty line is the H1 title. Meta sidecar present and valid. All six required sections present in correct order."
+    },
+    "length": {
+      "passed": true,
+      "word_count": 1389,
+      "estimated_read_minutes": 7,
+      "target_word_range": [1200, 1600],
+      "target_minute_range": [6, 8],
+      "notes": "1389 words is within 1200–1600 range; 7 min is within 6–8 min range."
+    },
+    "citations": {
+      "passed": true,
+      "citations_expected": [1, 2, 3],
+      "citations_used": [1, 2, 3],
+      "orphan_markers": [],
+      "orphan_bibliography_entries": [],
+      "notes": "All three primary resources cited inline and listed in References. No orphans detected."
+    },
+    "forward_references": {
+      "passed": true,
+      "violations": [],
+      "notes": "All concepts used are from 1.1–1.7 (pseudocode, sequence, decision, condition, repetition, IF/OTHERWISE). This topic's own concepts (flowchart, terminator, process box, decision diamond, input/output parallelogram, flowline, loop) are defined at first use. No concepts from beyond topic 1.8 scope are taught."
+    },
+    "faithfulness": {
+      "passed": true,
+      "assertions_sampled": 8,
+      "unsupported_assertions": 0,
+      "sampled": [
+        {"assertion": "Flowchart definition — diagram representing a process as steps drawn as shapes connected by directed arrows", "corpus_location": "§5.1", "verdict": "supported"},
+        {"assertion": "Every flowchart has exactly two terminators: START and END", "corpus_location": "§5.2 Shape 1", "verdict": "supported"},
+        {"assertion": "Decision diamond has one incoming arrow and two outgoing arrows labelled YES and NO", "corpus_location": "§5.2 Shape 3", "verdict": "supported"},
+        {"assertion": "Input/output parallelogram signals data crossing the system boundary", "corpus_location": "§5.2 Shape 4", "verdict": "supported"},
+        {"assertion": "Shopping cart loop example with 'Are there more items?' diamond", "corpus_location": "§5.6", "verdict": "supported"},
+        {"assertion": "Five-step tracing procedure starting with START oval", "corpus_location": "§5.5", "verdict": "supported"},
+        {"assertion": "Flowchart communicates process logic to a mixed audience faster than text or code", "corpus_location": "§7 closing sentence", "verdict": "supported"},
+        {"assertion": "Pseudocode and flowcharts are interchangeable — choice depends on audience", "corpus_location": "§5.4", "verdict": "supported"}
+      ],
+      "notes": "All 8 sampled assertions are directly traceable to corpus §5 or §7."
+    },
+    "beginner_readability": {
+      "passed": true,
+      "undefined_terms": [],
+      "jargon_dump": null,
+      "abstract_first": false,
+      "academic_register": false,
+      "notes": "Every shape term is bolded and defined at first use. Concrete examples precede abstractions throughout (e.g., 'Set total to 0', student score traces, shopping cart loop). No hedging language detected. Average sentence length well under 25 words."
+    },
+    "formatting": {
+      "passed": true,
+      "wall_of_text": null,
+      "unlisted_sequence": null,
+      "no_inline_examples": false,
+      "bold_definitions_used": true,
+      "notes": "No paragraph exceeds 6 sentences. Procedures rendered as numbered lists (tracing steps, loop structure, worked example). Inline examples appear in Key Concepts section independently of Worked Example. Bold-term / plain-meaning pattern used for all five shape definitions."
+    },
+    "assessment_references": {
+      "passed": true,
+      "violations": [],
+      "notes": "No assessment IDs, due weeks, or grade weights appear in the reading."
+    },
+    "scope": {
+      "passed": true,
+      "scope_creep": [],
+      "notes": "Reading covers exactly the five standard shapes, tracing, loops, and the pseudocode-to-flowchart mapping. Corpus §7 sentence about 'search and sort algorithms in textbooks' was correctly excluded from the reading. No BPMN, swim lanes, UML, or advanced algorithm types mentioned."
+    },
+    "diagram_embed": {
+      "passed": true,
+      "embed_found": true,
+      "embed_line": 76,
+      "embed_reference": "./diagram.png",
+      "notes": "diagram.png is referenced via a standard Markdown image embed with descriptive alt text on line 76."
+    }
+  }
+}

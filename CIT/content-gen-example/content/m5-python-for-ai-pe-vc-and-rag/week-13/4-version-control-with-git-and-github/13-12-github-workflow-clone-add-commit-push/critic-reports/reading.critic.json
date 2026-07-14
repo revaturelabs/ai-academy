@@ -1,0 +1,108 @@
+{
+  "topic_id": "13.12",
+  "artifact": "reading",
+  "critic_version": "1.0",
+  "run_at": "2026-06-15T00:00:00Z",
+  "passed": true,
+  "verdict": "Reading passes all hard checks; one soft finding (assessment_reference at line 179) does not escalate.",
+  "checks": {
+    "format_discipline": {
+      "passed": true,
+      "frontmatter_present": false,
+      "meta_sidecar_missing": false,
+      "section_template_violation": false,
+      "sections_found": ["Overview", "Key Concepts", "Worked Example", "In Practice", "Key Takeaways", "References"],
+      "sections_expected": ["Overview", "Key Concepts", "Worked Example", "In Practice", "Key Takeaways", "References"],
+      "notes": "First non-empty line is correct H1. Meta sidecar parses with all required fields. Six fixed sections present in correct order."
+    },
+    "length": {
+      "passed": true,
+      "reported_word_count": 1307,
+      "target_word_range": [1200, 1600],
+      "within_range": true,
+      "estimated_read_minutes_at_230wpm": 5.7,
+      "meta_estimated_read_minutes": 7,
+      "target_minute_range": [6, 8],
+      "notes": "Word count 1307 is within 1200–1600. At 200 wpm = 6.5 min (within 6–8). Meta reports 7 min. PASS."
+    },
+    "citations": {
+      "passed": true,
+      "primary_resource_cited": true,
+      "primary_resource_url": "https://uidaholib.github.io/get-git/3workflow.html",
+      "primary_resource_marker": "[1]",
+      "inline_markers_used": [1, 2, 3],
+      "bibliography_entries": [1, 2, 3],
+      "orphan_markers": [],
+      "orphan_bibliography_entries": [],
+      "notes": "Resource [1] (uidaholib.github.io) cited multiple times. All three resources appear in both inline citations and References bibliography. No orphans."
+    },
+    "forward_references": {
+      "passed": true,
+      "violations": [],
+      "deferred_mentions_ok": [
+        { "term": "git pull", "line": 181, "treatment": "named-and-deferred pointer to future topic" },
+        { "term": ".gitignore", "line": 176, "treatment": "named-and-deferred pointer to topic 13.14" }
+      ],
+      "notes": "No forward-reference violations. git pull and .gitignore are properly deferred with one-sentence named pointers, not taught."
+    },
+    "faithfulness": {
+      "passed": true,
+      "assertions_sampled": 10,
+      "unsupported_assertions": 0,
+      "threshold": 2,
+      "sampled_assertions": [
+        { "text": "Think of it like editing a shared document — download a copy, mark changes, save a named version, upload back", "supported": true, "corpus_location": "Section 4 Introduction" },
+        { "text": "Local repository — the repository that lives on your computer", "supported": true, "corpus_location": "Section 5.1" },
+        { "text": "Remote repository — a copy of the same repository hosted on a server", "supported": true, "corpus_location": "Section 5.1" },
+        { "text": "origin — nickname Git assigned to the remote when you cloned", "supported": true, "corpus_location": "Section 5.2" },
+        { "text": "git add moves changed files into the staging area, also called the index", "supported": true, "corpus_location": "Section 5.3" },
+        { "text": "you might have edited five files but only want to commit three", "supported": true, "corpus_location": "Section 5.3" },
+        { "text": "generates a commit hash (also called a SHA) — a unique ID like a3f9b21c", "supported": true, "corpus_location": "Section 5.4" },
+        { "text": "After committing, the staging area is empty and working directory is clean", "supported": true, "corpus_location": "Section 5.4" },
+        { "text": "Git may ask for your GitHub username and a personal access token (PAT)", "supported": true, "corpus_location": "Section 6 Step 6" },
+        { "text": "Commit large binary files (video, audio, trained model weights) — they bloat the repository", "supported": true, "corpus_location": "Section 8 Best Practices" }
+      ],
+      "notes": "All 10 sampled assertions trace to the corpus. No unsupported claims found."
+    },
+    "beginner_readability": {
+      "passed": true,
+      "undefined_terms": [],
+      "jargon_dump": null,
+      "abstract_first": null,
+      "academic_register": null,
+      "notes": "All non-everyday terms (local repository, remote repository, GitHub, git clone, origin, staging area, index, git add, commit hash, SHA, git commit, git push, PAT) are defined inline on first use. No jargon dumps (no paragraph introduces 3+ brand-new terms). Analogy-first approach used throughout. No hedging language detected. PAT introduced with definition at line 152."
+    },
+    "formatting": {
+      "passed": true,
+      "wall_of_text": null,
+      "unlisted_sequence": null,
+      "no_inline_examples": null,
+      "notes": "No paragraph exceeds 6 sentences. All multi-step procedures use numbered or bullet lists. Code examples appear inline within concept sections, not only in Worked Example. Bold-term/plain-meaning shape used for term definitions."
+    },
+    "assessment_reference": {
+      "severity": "soft",
+      "finding": "assessment_reference",
+      "line": 179,
+      "text": "Assessment A4 note: Your Python and Prompt Engineering Portfolio requires a GitHub repository with a README, a .gitignore, and at least three meaningful commits.",
+      "notes": "Assessment ID (A4) named in learner-facing prose. SKILL 6b flags this as soft finding. Does not escalate — only 1 finding from checks 5–6 combined, threshold for hard fail is >=3 or any scope_creep."
+    },
+    "scope": {
+      "passed": true,
+      "scope_creep": null,
+      "notes": "Reading covers only clone, add, commit, push and the local/remote boundary. git pull and .gitignore are named-and-deferred, not taught. No pull requests, branching strategy, merge conflicts, or rebasing introduced."
+    }
+  },
+  "soft_findings": [
+    {
+      "check": "assessment_reference",
+      "line": 179,
+      "detail": "Assessment A4 explicitly named in learner prose in In Practice section. LMS metadata should not appear in reading artifact."
+    }
+  ],
+  "hard_failures": [],
+  "escalation": {
+    "escalated": false,
+    "reason": "Soft findings count = 1, below threshold of 3. No scope_creep present."
+  },
+  "recommendation": "PASS — approve for HITL #3. One soft finding (assessment_reference at line 179) should be noted for author review but does not block approval."
+}

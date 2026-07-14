@@ -1,0 +1,38 @@
+{
+  "passed": true,
+  "checks": {
+    "gift_format": {
+      "passed": true
+    },
+    "question_count": {
+      "passed": true,
+      "found": 6
+    },
+    "lo_coverage": {
+      "passed": true,
+      "missing_los": []
+    },
+    "positional_bias": {
+      "passed": true,
+      "distribution": [1, 2, 1, 2],
+      "max_share": 0.333
+    },
+    "bias_defense_applied": {
+      "passed": true
+    },
+    "length_bias": {
+      "passed": true,
+      "violations": []
+    },
+    "no_out_of_scope": {
+      "passed": true,
+      "violations": []
+    },
+    "absurd_distractors": {
+      "passed": true,
+      "findings": []
+    }
+  },
+  "verdict": "PASS — all 8 checks passed. 6 MCQs present, one per LO (LO1-LO6), GIFT structure well-formed, category header correct, positional distribution clean (max_share 0.333), bias_defense_applied true, no length-bias violations (max ratio ~1.09 on q2), all questions in scope for topic 14.1, all distractors represent plausible misconceptions.",
+  "at": "2026-06-13T00:35:00Z"
+}

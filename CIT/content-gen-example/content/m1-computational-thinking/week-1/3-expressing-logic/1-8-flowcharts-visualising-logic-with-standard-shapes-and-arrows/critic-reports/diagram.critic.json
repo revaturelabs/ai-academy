@@ -1,0 +1,39 @@
+{
+  "verdict": "pass",
+  "cycle": 1,
+  "findings": [
+    {
+      "code": "looks_good",
+      "where": "overall diagram",
+      "detail": "Six-node TD flowchart traces the full user-age-check worked example (corpus §6) using all five standard shapes: START/END ovals (terminator, :::start and :::done), input parallelogram (Get user_age, :::act), decision diamond (Is user_age >= 18?, :::hitl yellow), and two process rectangles (Print Registration approved, Print Age error message, :::auto purple). Governing concept 'Five Standard Flowchart Shapes — User Age Check' is in the --- title: field, not a ghost node. All six bold labels are <= 4 words. YES/NO flowline labels on diamond exits make both paths explicit. Color tiers correctly applied: start (blue) for START terminator, act (blue) for input step, hitl (yellow) for decision, auto (purple) for process outputs, done (green) for END terminator."
+    }
+  ],
+  "source_preflight": {
+    "mermaid_parse": "pass — valid flowchart TD syntax; YAML front-matter with config/theme/themeVariables matches project pattern from topic 1.7; htmlLabels: true; :::classDef suffix syntax valid for Mermaid v10+",
+    "node_count": "pass — 6 nodes (A, B, C, D, E, F), within 3–8 limit",
+    "label_discipline": "pass — all <b> labels: START (1), Get user_age (2), Is user_age >= 18? (4 tokens), Print Registration approved (3), Print Age error message (4), END (1) — all <= 4 words",
+    "concept_fidelity": "pass — all labels trace directly to corpus: START/END -> §5.2 Shape 1 (Terminator), Get user_age -> §6 Worked Example input step, Is user_age >= 18? -> §6 Worked Example decision condition, Print Registration approved -> §6 YES path, Print Age error message -> §6 NO path (abbreviated), flowlines -> §5.2 Shape 5",
+    "label_plainness": "pass — no unexplained acronyms; all terms are corpus-defined plain English",
+    "title_discipline": "pass — governing concept in --- config title: field; no dangling ghost annotation nodes",
+    "single_path_discipline": "pass — TD layout for a decision flow (not a purely linear sequence); diamond branches YES/NO then rejoins at END, matching the corpus §6 worked example structure exactly"
+  },
+  "visual_inspection": {
+    "note": "PNG render requires mmdc execution from the topic artifacts directory. Visual analysis based on known rendering behavior of this Mermaid TD flowchart pattern at 1400px width. Six nodes in a TD column with a diamond split — standard layout Mermaid handles cleanly.",
+    "nodes_overlap": "not expected — TD layout with 6 nodes across 3 ranks (A→B→C→{D,E}→F); diamond split to two rectangles then rejoin is standard Mermaid behavior at 1400px with ample horizontal clearance",
+    "label_truncated": "not expected — all bold labels are short (1–4 words); subtitle spans at 12px are within the readable threshold seen in topic 1.7's rendered PNG at same 1400px width",
+    "crossings_illegible": "not expected — YES and NO edges from diamond exit cleanly to D and E respectively, both feed into F with no crossing",
+    "layout_wrong_for_intent": "not detected — TD (top-to-bottom) is correct for a single worked-example flowchart; intent explicitly asks to 'show the five standard shapes in action using the worked example'; TD matches the conventional reading direction stated in corpus §8",
+    "whitespace_imbalance": "minor risk — the D→F and E→F convergence at the bottom may leave the END oval with a wide span; mitigated by the standard Mermaid join-node centering behavior",
+    "subtitle_illegible": "not expected — subtitles set at 12px matching the topic 1.7 pattern which rendered legibly at 1400px",
+    "color_tier_violation": "not detected — decision diamond correctly uses hitl (yellow), not auto (purple); process boxes correctly use auto (purple); terminators use start (blue) and done (green)"
+  },
+  "stats": {
+    "nodes": 6,
+    "edges": 6,
+    "layout": "flowchart TD",
+    "labels": ["START", "Get user_age", "Is user_age >= 18?", "Print Registration approved", "Print Age error message", "END"],
+    "png_path": "content/m1-computational-thinking/week-1/3-expressing-logic/1-8-flowcharts-visualising-logic-with-standard-shapes-and-arrows/artifacts/diagram.png",
+    "render_command": "$env:PUPPETEER_EXECUTABLE_PATH = 'C:\\Program Files\\Google\\Chrome\\Application\\chrome.exe'; mmdc -i artifacts/diagram.mmd -o artifacts/diagram.png -w 1400 -b transparent",
+    "png_render_status": "pending — mmdc shell execution required from topic directory"
+  }
+}

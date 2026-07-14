@@ -1,0 +1,40 @@
+{
+  "passed": true,
+  "topic_id": "13.11",
+  "critic": "corpus-critic",
+  "checks": {
+    "required_sections": {
+      "passed": true,
+      "notes": "All four required sections present with sufficient substance. §3 Learning Objectives: ~100 words (6 clear, measurable objectives). §4 Introduction: ~130 words (analogy-led, contextualises all four concepts). §5 Core Concepts: well over 100 words across four subsections (5.1–5.4) each with definitions, tables, and code diagrams. §10 Key Takeaways: ~110 words (5 bullets, one per headline concept plus the standard cycle). No placeholder strings found."
+    },
+    "citation_density": {
+      "passed": true,
+      "primary_cited": true,
+      "claim_citation_rate": 0.72,
+      "notes": "resources_source=web_search → STRICT mode applied. Primary resource [1] (git-scm.com official book) is cited 15+ times across §5.1–5.4, §6, §7, and §8. Supporting resources [2] and [3] are also cited in §5.2, §5.3, §5.4, §6, and §7. Estimated 72% of standalone factual assertions in §5, §6, and §7 carry at least one [N] marker — above the 60% threshold. Uncited sub-claims are largely definitional rephrasings or analogies rather than novel factual assertions. No fabricated citations detected (all [N] markers resolve to declared resources)."
+    },
+    "sequence_drift": {
+      "passed": true,
+      "forward_refs": [],
+      "notes": "All technical terms used in the corpus map to either this topic's concepts_introduced [repository, working directory, commit, snapshot, commit message, commit history, HEAD, branch, main branch, merge, merge commit] or prior topic 13.10's concepts [version control system, version history, manual versioning, change log, distributed version control]. The term 'hash' is introduced inline with a plain-language definition at first use (§5.2) and is not a forward reference to a later topic. 'merge conflict' is named and properly deferred in a single sentence with a 'separate skill / covered later' pointer (§5.4). 'GitHub' appears in §6 with an explicit defer callout ('not covered here — you will cover that in the next topic') and again in §7 as a bare proper-noun tool name without teaching or defining it — acceptable by the mention-and-defer rule, though the §7 use lacks a local defer pointer (minor, not a hard fail). No forward references to topics 13.12+ were found."
+    },
+    "length_sanity": {
+      "passed": true,
+      "word_count": 2430,
+      "profile": "standard",
+      "notes": "SOFT FLAG. Estimated word count ~2,430 words (prose + table text + code labels; excludes raw code-block syntax). Standard profile target range is 3,000–4,400 words. The corpus falls 570 words short of the 3,000 floor. However, the hard-fail threshold is 30% below the range floor (3,000 × 0.70 = 2,100 words), and 2,430 > 2,100, so this does not constitute a hard fail. The corpus covers all four headline concepts with examples, tables, an implementation walkthrough, real-world patterns, best practices, and a hands-on exercise — content is complete and coherent. Recommend the corpus-builder consider adding 500–600 words of additional depth to §5.3 (branch creation mechanics) or §7 (real-world patterns) if the HITL #2 reviewer confirms standard profile."
+    },
+    "scope_discipline": {
+      "passed": true,
+      "violations": [],
+      "notes": "Corpus stays within the four headline concepts throughout. GitHub is deferred in §6 with an explicit callout and used only as a bare proper-noun in §7. 'merge conflict' is named-and-deferred in one sentence (§5.4) — compliant. The staging concept behind 'git add' is shown mechanically as a command step within the 'commit' workflow without being formally named or defined as a separate concept — acceptable within commit scope. 'git status' and 'git log' commands appear in §6 as utility companions to the main workflow, each with a single-line explanation — within scope of demonstrating the four headline concepts. No teaching of remote repositories, push/pull/clone, pull requests, rebasing, or .gitignore was found."
+    },
+    "beginner_readability": {
+      "passed": true,
+      "findings": [],
+      "notes": "Strong beginner readability throughout. Every non-everyday term is defined in plain language at first use (repository §5.1, working directory §5.1, commit §5.2, HEAD §5.2 inline, hash §5.2 inline, branch §5.3, main branch §5.3, merge §5.4, merge commit §5.4). No jargon dumps detected — §5.1 introduces repository + working directory + .git folder but spreads them across paragraphs and a summary table with individual definitions, not a single dense paragraph. §5.2's 'a commit carries three things' list introduces three items but each is immediately named and defined in the list body — not a dump. Register is consistently plain and active ('you work in...', 'when you run...', 'think of a commit the way you think of pressing Save'). No hedging phrases detected. The novel-manuscript analogy in §4 is exemplary for the audience baseline. Average sentence length is well under 25 words. The corpus meets the artifact-mix readability target: a motivated adult with zero technical background can read a section once and explain it back."
+    }
+  },
+  "verdict": "PASS. All six checks pass. The corpus correctly grounds all four headline concepts (repository, commit, branch, merge) for a zero-background audience, cites the primary resource throughout, stays within topic scope, and is written at appropriate beginner register. One soft flag: estimated word count (~2,430) is below the standard-profile 3,000-word floor but above the hard-fail threshold of 2,100 words — the HITL #2 reviewer may wish to request a depth expansion of 500–600 words in §5.3 or §7 before artifact fan-out. No forward references, no scope creep, no undefined terms, no citation gaps.",
+  "at": "2026-06-14T00:00:00Z"
+}

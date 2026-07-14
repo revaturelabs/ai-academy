@@ -1,0 +1,54 @@
+{
+  "type": "topic",
+  "id": "4.6",
+  "title": "Multimodal AI — working with text, image, audio, and video in one system",
+  "slug": "4-6-multimodal-ai-working-with-text-image-audio-and-video-in-one",
+  "position_in_module": 1,
+  "week_num": 4,
+  "session_name": "The 2026 AI Stack",
+  "module": {
+    "position": 3,
+    "slug": "3-multimodal-ai",
+    "title": "Multimodal AI"
+  },
+  "course": {
+    "code": "M2",
+    "slug": "m2-introduction-to-ai-systems",
+    "title": "Introduction to AI Systems"
+  },
+  "next_assessment": {
+    "id": "A2",
+    "due_week": 6,
+    "title": "AI Systems Essay",
+    "weight": "15%"
+  },
+  "paths": {
+    "corpus": "topic_corpus.md",
+    "resources": "topic.resources.json",
+    "progress": "topic.progress.json",
+    "artifacts_dir": "artifacts/",
+    "critic_reports_dir": "critic-reports/"
+  },
+  "artifact_plan": {
+    "diagram": true,
+    "diagram_intent": "Modality fan-in diagram: four input lanes (text, image, audio, video) each passing through its own encoder, converging into the shared representation space, feeding the LLM reasoning core, and producing output",
+    "depth_profile": "deep",
+    "depth_signals": [
+      "title spans four distinct modalities — strong multi-technology signal",
+      "Core Concepts has 9 sub-sections covering 4 modalities plus fusion mechanism plus step-by-step flow plus comparison table plus limitations",
+      "Implementation section warranted (6-step conceptual flow) plus Real-World Patterns section with 3 named patterns"
+    ],
+    "confirmed_profile": "deep",
+    "confirmed_by_hitl2": true,
+    "soft_findings_carry": [
+      "s5.6 — 'video understanding' used as sub-heading but missing bold-term-plus-plain-definition",
+      "s5.5/s5.6 — uncited claims: meeting-summariser scenario, speech-recognition-distinction, '1,800 frames' quantitative claim",
+      "s5.9 — modality-gap, compute-cost, privacy sub-claims uncited",
+      "length ~2400w, 20% below deep-profile 3000w floor — builder should expand §5.9 and §6"
+    ],
+    "reading": { "target_word_range": [1800, 2200], "target_minutes_range": [9, 11] },
+    "quiz": { "min_questions": 5, "max_questions": 7, "include_short_answer": true }
+  },
+  "expected_delivery_minutes": 10,
+  "status": "corpus_drafted"
+}

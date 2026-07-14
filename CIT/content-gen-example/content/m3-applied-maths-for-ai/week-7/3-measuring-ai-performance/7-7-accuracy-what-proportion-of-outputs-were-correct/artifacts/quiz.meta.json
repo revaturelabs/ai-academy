@@ -1,0 +1,47 @@
+{
+  "topic_id": "7.7",
+  "generated_at": "2026-06-23",
+  "format": "gift",
+  "question_count": 6,
+  "$bias_defense_applied": true,
+  "$shuffle_seed": "topic_id='7.7', hash=hash('7.7')%1000=477, positions assigned to spread = across 0,1,2,3 with max_share=2/6=0.33 (<0.40); all 4 positions used; constraint check passed",
+  "correct_position_distribution": {"0": 2, "1": 1, "2": 2, "3": 1},
+  "questions": [
+    {
+      "id": "7.7-q1",
+      "type": "mcq",
+      "objective_ref": "Define accuracy in plain English as the proportion of predictions that were correct",
+      "correct_position": 2
+    },
+    {
+      "id": "7.7-q2",
+      "type": "mcq",
+      "objective_ref": "Apply the accuracy formula (correct predictions ÷ total predictions) to a small labelled dataset",
+      "correct_position": 0
+    },
+    {
+      "id": "7.7-q3",
+      "type": "mcq",
+      "objective_ref": "Explain why a high accuracy score does not always mean a model is useful",
+      "correct_position": 3
+    },
+    {
+      "id": "7.7-q4",
+      "type": "mcq",
+      "objective_ref": "Identify the types of AI tasks (classification tasks) where accuracy is a meaningful metric",
+      "correct_position": 1
+    },
+    {
+      "id": "7.7-q5",
+      "type": "mcq",
+      "objective_ref": "Recognise that accuracy is one of several metrics and that precision and recall exist to fill gaps accuracy leaves behind",
+      "correct_position": 2
+    },
+    {
+      "id": "7.7-q6",
+      "type": "mcq",
+      "objective_ref": "Explain why a high accuracy score does not always mean a model is useful (dummy-baseline application)",
+      "correct_position": 0
+    }
+  ]
+}

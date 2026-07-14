@@ -1,0 +1,130 @@
+{
+  "critic": "corpus-critic",
+  "topic_id": "12.5",
+  "topic_title": "Dictionaries — key-value pairs for structured data",
+  "cycle": 2,
+  "at": "2026-06-14T00:00:00Z",
+  "passed": true,
+  "verdict": "PASS — all 3 cycle-1 hard failures resolved: (1) nested-dict code removed from §7; flat response dict used; bare name-and-defer sentence is correctly un-bolded and has a 'covered in a later topic' pointer; (2) LLM appositive defining clause stripped — now 'LLM (Large Language Model)' with a 'you will call one later in Week 12' defer pointer, no defining clause; (3) 'immutable' and 'TypeError' added to topic's concepts_introduced and both are now defined inline at first use in §8. Python 3.7+ insertion-order wording removed from §8; the remaining sentence is a plain best-practice note. Soft findings (non-blocking): (a) 'API' acronym never spelled out on first use — violates audience mandate; first occurrence is §4 'Anthropic API'; recommend inserting 'API (Application Programming Interface)' at first use or at §5.5 where the concept is discussed; (b) 'IndexError' appears in the §5.2 comparison table without a definition or defer pointer — minor undefined-term for the fresher audience. Two soft findings, below the ≥3 hard-fail threshold. All other checks pass: required sections present and non-trivial, primary citation [1] cited throughout and all three citations resolve to real resources (no fabricated citations), §5/§6/§7 citation density well above 60%, word count ~3,100–3,300 within standard 3000–4400 range.",
+  "profile": "standard",
+  "estimated_word_count": 3200,
+  "checks": {
+    "required_sections": {
+      "passed": true,
+      "findings": [],
+      "detail": {
+        "section_3_learning_objectives": {
+          "present": true,
+          "word_count_approx": 92,
+          "threshold": 50,
+          "passed": true
+        },
+        "section_4_introduction": {
+          "present": true,
+          "word_count_approx": 155,
+          "threshold": 50,
+          "passed": true
+        },
+        "section_5_core_concepts": {
+          "present": true,
+          "word_count_approx": 1060,
+          "threshold": 100,
+          "passed": true
+        },
+        "section_10_key_takeaways": {
+          "present": true,
+          "word_count_approx": 115,
+          "threshold": 50,
+          "passed": true
+        }
+      }
+    },
+    "citation_density": {
+      "passed": true,
+      "resources_source": "web_search",
+      "mode": "strict",
+      "primary_resource_cited": {
+        "[1]": true,
+        "[2]": true,
+        "[3]": true
+      },
+      "fake_citations": false,
+      "sections_checked": ["5", "6", "7"],
+      "estimated_citation_coverage_pct": 83,
+      "threshold_pct": 60,
+      "findings": []
+    },
+    "sequence_drift": {
+      "passed": true,
+      "findings": [],
+      "notes": [
+        "immutable — now in 12.5 concepts_introduced; defined inline in §8 ('a value that cannot be changed after it is created'). PASS.",
+        "TypeError — now in 12.5 concepts_introduced; defined inline in §8 ('an error Python raises when you use a value in the wrong way'). PASS.",
+        "None — referenced in §5.5 as the default return of .get() when key is absent; linked back to 12.2 implicit None. 12.2 concepts_introduced includes 'implicit None', so None was encountered by the learner in that topic. Acceptable.",
+        "IndexError — appears in §5.2 comparison table (list raises IndexError vs dict raises KeyError). Not in any prior concepts_introduced. Flagged as undefined_terms soft finding in beginner_readability rather than sequence_drift hard failure because it is used purely as a comparison label in a table cell, not taught or defined here.",
+        "LLM — spelled out as 'LLM (Large Language Model)' with a bare defer pointer 'you will call one later in Week 12'. Acronym expansion satisfies audience mandate; no defining clause present. PASS.",
+        "Nested dictionaries — bare name plus '(covered in a later topic)' defer, one sentence, not bolded. PASS per scope_discipline."
+      ]
+    },
+    "length_sanity": {
+      "passed": true,
+      "profile": "standard",
+      "target_range": [3000, 4400],
+      "estimated_word_count": 3200,
+      "findings": []
+    },
+    "topic_scope": {
+      "passed": true,
+      "findings": [],
+      "resolved_from_cycle_1": [
+        {
+          "was": "scope_creep: nested dictionary actively taught via code + bolded in §7",
+          "now": "Flat single-level response dict used in §7 Pattern 3 code. Single sentence 'Nested dictionaries (covered in a later topic) allow values to themselves be dictionaries, enabling richer response structures.' — un-bolded, one sentence, has defer pointer. RESOLVED."
+        },
+        {
+          "was": "scope_creep: LLM defined with appositive clause in §7",
+          "now": "Written as 'an LLM (Large Language Model) — you will call one later in Week 12'. Acronym spelled out; em-dash introduces a bare defer pointer, not a defining clause. No explanatory appositive. RESOLVED."
+        },
+        {
+          "was": "scope_creep: immutable / TypeError taught in §8 without being in concept space",
+          "now": "Both added to 12.5 concepts_introduced. Both defined inline with plain-language definitions at first use. In scope. RESOLVED."
+        },
+        {
+          "was": "scope_creep (minor): Python 3.7+ insertion-order explicit version statement in §8",
+          "now": "Version-specific wording removed. Remaining sentence: 'In Python, dictionaries remember the order you added items, but code that relies on a specific key order is fragile.' — plain behavior note without version anchoring. RESOLVED."
+        }
+      ]
+    },
+    "beginner_readability": {
+      "passed": true,
+      "escalated_to_hard_fail": false,
+      "finding_count": 2,
+      "findings": [
+        {
+          "code": "undefined_terms",
+          "terms": ["API"],
+          "location": "§4 Introduction (first use: 'Anthropic API'); also §5.5, §6 Implementation, §7 Real-World Patterns",
+          "detail": "The acronym 'API' is used throughout the corpus but is never spelled out on first use. The audience mandate explicitly requires spelling out every acronym on first use (e.g., 'API (Application Programming Interface)'). Recommend inserting the spell-out at the first occurrence in §4: 'Anthropic API (Application Programming Interface)' or equivalent."
+        },
+        {
+          "code": "undefined_terms",
+          "terms": ["IndexError"],
+          "location": "§5.2 Core Concepts — comparison table (list vs dictionary error types)",
+          "detail": "'IndexError' appears in the §5.2 table as the error a list raises for an out-of-range position, contrasted with dict's 'KeyError'. IndexError is not in any prior or current topic's concepts_introduced and has no definition or defer pointer here. For the fresher-zero-background learner, this is an unexplained term. Recommend either dropping the IndexError cell (use a generic label like 'position error') or adding a one-line defer: '(IndexError — you will see this in a later topic)'."
+        }
+      ],
+      "note": "2 soft findings — below the ≥3 hard-fail threshold. Surfaces to HITL #2/#3 for human triage. No jargon dumps detected. Register is plain, active, 'you'-addressed throughout. No hedging phrases observed."
+    }
+  },
+  "summary": {
+    "hard_failures": [],
+    "soft_findings": [
+      "beginner_readability: undefined_terms — 'API' acronym never spelled out (first use §4); recommend inserting 'API (Application Programming Interface)' at first occurrence",
+      "beginner_readability: undefined_terms — 'IndexError' used in §5.2 comparison table without definition or defer pointer"
+    ],
+    "recommended_fixes": [
+      "§4 Introduction (and/or §5.5) — Spell out 'API' on first use: e.g., 'API (Application Programming Interface)'. All subsequent uses can remain 'API'.",
+      "§5.2 Core Concepts comparison table — Either replace 'IndexError' cell text with a plain label ('position not found error') or append a one-line defer: '(IndexError — covered in a later topic)'."
+    ]
+  }
+}

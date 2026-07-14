@@ -1,0 +1,28 @@
+---
+title: "Same input → same output: the test for determinism"
+config:
+  theme: base
+  themeVariables:
+    primaryColor: "#a5d8ff"
+    primaryBorderColor: "#4a9eed"
+    lineColor: "#555"
+  flowchart:
+    htmlLabels: true
+    curve: basis
+    nodeSpacing: 60
+    rankSpacing: 50
+---
+flowchart TB
+  subgraph RUN1["Run 1"]
+    direction LR
+    A1["<b>Same Input</b><br/><span style='font-size:11px;color:#1e40af'>e.g. 17 × 6</span>"]:::start --> P1["<b>Fixed Process</b><br/><span style='font-size:11px;color:#6d28d9'>defined steps</span>"]:::auto --> O1["<b>Same Output</b><br/><span style='font-size:11px;color:#166534'>102</span>"]:::done
+  end
+
+  subgraph RUN2["Run 2 — identical input, identical output"]
+    direction LR
+    A2["<b>Same Input</b><br/><span style='font-size:11px;color:#1e40af'>e.g. 17 × 6</span>"]:::start --> P2["<b>Fixed Process</b><br/><span style='font-size:11px;color:#6d28d9'>defined steps</span>"]:::auto --> O2["<b>Same Output</b><br/><span style='font-size:11px;color:#166534'>102</span>"]:::done
+  end
+
+  classDef start fill:#a5d8ff,stroke:#4a9eed,color:#000
+  classDef auto  fill:#d0bfff,stroke:#8b5cf6,color:#000
+  classDef done  fill:#b2f2bb,stroke:#22c55e,color:#000

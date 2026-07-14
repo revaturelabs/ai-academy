@@ -1,0 +1,54 @@
+{
+  "passed": true,
+  "cycle": 1,
+  "checks": {
+    "format_discipline": {
+      "passed": true,
+      "notes": "No frontmatter. H1 title. 6 fixed sections in order. reading.meta.json exists."
+    },
+    "length_budget": {
+      "passed": true,
+      "word_count": 1473,
+      "reading_minutes": 8,
+      "target_word_range": [
+        1200,
+        1600
+      ],
+      "target_minute_range": [
+        6,
+        8
+      ],
+      "notes": "1473w in [1200,1600]. 8 min in [6,8]."
+    },
+    "citation_discipline": {
+      "passed": true,
+      "primary_cited": [
+        "R1",
+        "R2",
+        "R3",
+        "R4",
+        "R5"
+      ],
+      "notes": "All 5 primary cited multiple times. Bibliography present."
+    },
+    "no_forward_references": {
+      "passed": true,
+      "violations": [],
+      "notes": "All new terms defined in this topic. 14.1/14.2 vocab used freely. Similarity score thresholding correctly back-referenced to 14.1. No 14.4+ refs."
+    },
+    "beginner_readability_formatting_scope": {
+      "passed": true,
+      "readability_findings": [],
+      "formatting_findings": [],
+      "scope_findings": [],
+      "notes": "All 7 new terms defined inline. Comparison table excellent. Numbered mechanism steps. Bullet remaining risks. Refund-policy example concrete. Paragraphs <=4 sentences. Scope tight. 0 scope_creep."
+    },
+    "faithfulness": {
+      "passed": true,
+      "notes": "Table from corpus §5.2. Remaining risks from §5.5. Graceful degradation from §5.6. No new claims."
+    }
+  },
+  "soft_findings": [],
+  "verdict": "PASS (cycle 1) — all 6 checks green. 1473w/8min standard range. All 5 cited. Comparison table + numbered mechanism standout formatting. Scope tight. 0 scope_creep.",
+  "at": "2026-06-15T07:28:06Z"
+}

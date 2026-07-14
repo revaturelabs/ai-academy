@@ -1,0 +1,46 @@
+{
+  "topic_id": "5.11",
+  "artifact": "diagram",
+  "cycles": 2,
+  "passed": true,
+  "source_checks": {
+    "mermaid_parses": true,
+    "panel_count": 3,
+    "panel_count_in_range_3_8": true,
+    "label_discipline": "Panel bodies are axis lists (comparison-matrix form per the side-by-side panels pattern), not flow-node labels; panel titles are <=4 words. No bare unexplained acronyms — 'EO 14110' is paired with 'a US Presidential order' per corpus; 'NIST' paired with 'a US agency'.",
+    "concept_fidelity": "All content traces to corpus section 5.7 comparison table — three frameworks (EU AI Act / NIST AI RMF / EO 14110) and four axes (issuer, who-must-obey, reversibility, reach).",
+    "scope_discipline": "No scope-creep nodes. No Defense Production Act, no National Security Memorandum, no 5.12/5.13 content."
+  },
+  "visual_checks": {
+    "layout_matches_intent": true,
+    "layout_note": "Three panels rendered side by side (LR), each listing the same four axes in the same order — scannable left-to-right across frameworks. Matches the 'side-by-side comparison' intent.",
+    "nodes_overlap": false,
+    "label_truncated": false,
+    "subtitle_legible": true,
+    "color_tier_consistent": true,
+    "color_note": "EU AI Act = start/blue, NIST RMF = auto/purple, EO 14110 = hitl/yellow — three distinct tiers, all text legible."
+  },
+  "cycle_log": [
+    {
+      "cycle": 1,
+      "verdict": "fail",
+      "findings": [
+        {"code": "layout_wrong_for_intent", "detail": "Three panels stacked vertically instead of side-by-side as the intent requires."},
+        {"code": "subtitle_illegible", "detail": "Subgraph-title second line ('a binding law' etc.) clipped by the first node's top edge in every panel."}
+      ]
+    },
+    {
+      "cycle": 2,
+      "verdict": "pass",
+      "fix": "Collapsed each framework into a single panel node containing its four axes as a bold-term + plain-meaning list; arranged the three panels side-by-side with invisible (~~~) links under flowchart LR. Headers moved into the panel body so nothing is clipped. Re-rendered and visually re-inspected: three legible side-by-side panels, no overlap, no truncation."
+    }
+  ],
+  "verdict": "PASS — three side-by-side comparison panels (EU AI Act / NIST AI RMF / EO 14110) across four axes; layout matches intent, all labels legible, no scope-creep.",
+  "stats": {
+    "panels": 3,
+    "axes_per_panel": 4,
+    "layout": "flowchart LR (side-by-side panels)",
+    "png_path": "artifacts/diagram.png"
+  },
+  "at": "2026-06-22T14:38:44Z"
+}

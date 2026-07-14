@@ -1,0 +1,45 @@
+{
+  "type": "topic",
+  "id": "7.3",
+  "title": "Bayes' theorem intuition — updating belief with new evidence",
+  "slug": "7-3-bayes-theorem-intuition-updating-belief-with-new-evidence",
+  "position_in_module": 3,
+  "week_num": 7,
+  "session_name": "Probability, Statistics and AI Confidence",
+  "module": {
+    "position": 1,
+    "slug": "1-probability-foundations",
+    "title": "Probability Foundations"
+  },
+  "course": {
+    "code": "M3",
+    "slug": "m3-applied-maths-for-ai",
+    "title": "Applied Maths for AI"
+  },
+  "next_assessment": {
+    "id": "A3",
+    "due_week": 10,
+    "title": "Maths and Cognition Lab Report",
+    "weight": "15%"
+  },
+  "paths": {
+    "corpus": "topic_corpus.md",
+    "resources": "topic.resources.json",
+    "progress": "topic.progress.json",
+    "artifacts_dir": "artifacts/",
+    "critic_reports_dir": "critic-reports/"
+  },
+  "artifact_plan": {
+    "depth_profile": "standard",
+    "depth_profile_confirmed": true,
+    "depth_signals": "Two to three sub-concepts (prior/likelihood/posterior), one worked example end-to-end, real-world patterns warranted, no multi-technology pipeline.",
+    "diagram": true,
+    "diagram_intent": "Before-and-after belief update: prior box → evidence arrow → posterior box, with prior/likelihood/P(B) labels on the flow.",
+    "reading_word_range": [1200, 1600],
+    "reading_minutes_range": [6, 8],
+    "quiz_mcq_range": [5, 6],
+    "quiz_short_answer": false
+  },
+  "expected_delivery_minutes": 7,
+  "status": "corpus_drafted"
+}

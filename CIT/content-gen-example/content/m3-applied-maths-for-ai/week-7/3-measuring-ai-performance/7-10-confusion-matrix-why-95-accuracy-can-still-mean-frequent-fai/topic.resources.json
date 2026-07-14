@@ -1,0 +1,16 @@
+{
+  "topic_id": "7.10",
+  "captured_at": "2026-06-23T00:00:00Z",
+  "captured_by": "namratas@revature.com",
+  "resources_source": "web_search",
+  "web_search_query": "confusion matrix machine learning accuracy failure explained beginners",
+  "resources": [
+    {
+      "type": "url",
+      "value": "https://www.datacamp.com/tutorial/what-is-a-confusion-matrix-in-machine-learning",
+      "role": "primary",
+      "source": "web_search",
+      "notes": "DataCamp — What is a Confusion Matrix? Beginner tutorial covering all four cells, accuracy limitations"
+    }
+  ]
+}

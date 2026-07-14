@@ -1,0 +1,43 @@
+{
+  "type": "topic",
+  "id": "13.4",
+  "title": "Chain-of-thought prompting — asking the model to reason step by step",
+  "slug": "13-4-chain-of-thought-prompting-asking-the-model-to-reason-step-b",
+  "position_in_module": 4,
+  "week_num": 13,
+  "session_name": "Prompt Engineering and Version Control",
+  "module": {
+    "position": 1,
+    "slug": "1-prompt-engineering-fundamentals",
+    "title": "Prompt Engineering Fundamentals"
+  },
+  "course": {
+    "code": "M5",
+    "slug": "m5-python-for-ai-pe-vc-and-rag",
+    "title": "Python for AI, PE, VC and RAG"
+  },
+  "next_assessment": {
+    "id": "A4",
+    "due_week": 13,
+    "title": "Python and Prompt Engineering Portfolio",
+    "weight": "20%"
+  },
+  "paths": {
+    "corpus": "topic_corpus.md",
+    "resources": "topic.resources.json",
+    "progress": "topic.progress.json",
+    "artifacts_dir": "artifacts/",
+    "critic_reports_dir": "critic-reports/"
+  },
+  "artifact_plan": {
+    "depth_profile": "atomic",
+    "diagram": false,
+    "reading_word_range": [800, 1200],
+    "reading_minutes_range": [4, 6],
+    "quiz_min_questions": 5,
+    "quiz_max_questions": 7,
+    "quiz_include_short_answer": true
+  },
+  "expected_delivery_minutes": 6,
+  "status": "corpus_drafted"
+}

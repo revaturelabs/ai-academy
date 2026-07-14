@@ -1,0 +1,49 @@
+$CATEGORY: CIT/M4/week-9/9-9-the-judgment-framework-q3-who-is-accountable-if-this-fails
+
+::q1:: According to the Judgment Framework, which of the following best describes what "accountability" means in the context of an AI-assisted decision?
+~Being legally obligated to pay compensation if the AI-assisted decision causes harm to a third party.#No — this describes legal liability, not accountability. A person can be accountable without being legally liable.
+=Being the named person expected to answer for an outcome — regardless of whether the outcome was their fault.#Correct — accountability is about answerability: the named person who can be asked what happened, why they allowed it, and what they are doing about it (corpus §5.1).
+~Being judged as morally at fault for a decision that produced a harmful or incorrect result.#No — this describes moral blame. A person can be accountable without having done anything wrong.
+~Being responsible only if you actively built or programmed the AI system that produced the output.#No — accountability applies at every level of the chain: developer, deployer, operator, and end user all carry accountability within their own scope.
+#### Tests the distinction between accountability, liability, and blame (corpus §5.1).
+}
+
+::q2:: A retail bank deploys a third-party AI model to process loan applications. A junior analyst runs the tool daily. A customer is incorrectly declined. At which level of the accountability chain does the bank itself sit?
+~The developer level — because the bank is the entity that profits from the AI model's decisions.#No — the developer level is reserved for the company or team that built and trained the AI model itself. Profiting from a tool does not make you its developer.
+~The operator level — because the bank's employees are the people who run the specific loan approval task each day.#No — the operator level describes individuals who run specific tasks. The bank as an organisation sits at the deployer level; its employees are the operators.
+~The end-user level — because loan applicants are the people ultimately harmed when the AI declines them incorrectly, making them the primary stakeholders who bear accountability for the outcome.#No — end users are the people who receive AI-assisted outputs and act on them. Loan applicants are the end users; the bank is the deployer.
+=The deployer level — the bank chose to integrate the AI model into a real-world lending workflow and is accountable for the appropriateness of that deployment.#Correct — deployers are organisations that put AI models into real-world contexts. They are accountable for choosing the right tool, setting limits on AI autonomy, training staff, and disclosing AI involvement (corpus §5.2).
+#### Tests identification of the four accountability-chain levels (corpus §5.2).
+}
+
+::q3:: The Judgment Framework says accountability must be named before acting, not assigned after failure. Why does this distinction matter?
+=Pre-decision naming is a safety check that forces the right person to review and authorise the action; post-failure assignment produces blame allocation that rarely leads to learning or improvement.#Correct — organisations with clear pre-decision accountability identify errors faster and remediate more effectively, because the accountable person is already engaged (corpus §5.3).
+~It does not matter when accountability is named, as long as it is formally documented within 24 hours of the decision being made.#No — the Judgment Framework is explicit that accountability must be established before acting. Post-hoc documentation is blame allocation, not accountability.
+~Naming accountability before acting primarily serves a legal purpose — it protects the operator from personal liability if the AI output turns out to be wrong.#No — pre-decision accountability is a quality and safety practice, not a legal shield. It is about ensuring the right human reviews and authorises the action.
+~Post-failure accountability assignment is standard in regulated industries because it uses full information about what went wrong, making it more accurate than pre-decision naming.#No — post-failure assignment is how blame allocation happens. Pre-decision naming is what regulated, high-stakes industries require precisely to prevent failures from occurring.
+#### Tests the pre-decision vs post-failure accountability distinction (corpus §5.3).
+}
+
+::q4:: A manager has the authority to approve client communications and has been briefed that an AI produced a report. However, she will leave the organisation before any client complaint about the report could be investigated. Does she meet all three criteria for a valid accountable person?
+~Yes — she meets all three criteria: she has authority, knowledge of AI involvement, and is currently identifiable.#No — nameability is not just about being known today. The accountable person must be reachable and questionable if problems emerge later, including after they leave.
+~No — she fails the knowledge criterion, because a valid accountable person must personally verify the AI output rather than simply being briefed about its content by a colleague or manager.#No — knowledge means awareness that AI was involved and understanding of key risks. Personal verification is a separate practice (Q2). Being briefed satisfies the knowledge criterion.
+=No — she fails the nameability criterion. Once she has left, she cannot easily be identified and questioned if a problem emerges, making her accountability hollow in practice.#Correct — the three criteria are authority, knowledge, and nameability. Nameability means the accountable person must be identifiable and reachable after the fact — including weeks or months later (corpus §5.4).
+~No — she fails the authority criterion, because accountability cannot rest with a temporary employee for consequential decisions.#No — temporary or permanent employment status does not determine the authority criterion. Authority is about having the actual power to say yes or no to the action, which she does have.
+#### Tests the three criteria for a valid accountable person, specifically nameability (corpus §5.4).
+}
+
+::q5:: You are applying Q3 before acting on an AI-generated recommendation. You cannot find anyone in your organisation with both the authority to approve the action and knowledge that AI was involved. What should you do?
+~Proceed with the action and document that no accountable person was available — the documentation creates a formal record that transfers responsibility to whoever later reviews or approves the record.#No — documentation does not transfer accountability; it only records that you proceeded without one. The Judgment Framework requires you to pause, not document and continue.
+=Escalate — pause the action and find someone with the required authority and knowledge before proceeding. Acting without a named accountable person is exactly what Q3 is designed to prevent.#Correct — escalation means stopping the action, identifying who has authority and knowledge, briefing them explicitly, and getting approval before proceeding (corpus §5.5).
+~Proceed with the action, since the Judgment Framework only requires Q3 when a valid accountable person is easy to find.#No — Q3 applies in every case, especially when a valid accountable person is hard to find. Difficulty finding one is the signal that the action needs to pause.
+~Name yourself as the accountable person even if you lack formal authority, so the process can continue without delay.#No — accountability without authority is accountability in name only. Naming yourself does not give you the actual power to approve the decision, so Q3 is not satisfied.
+#### Tests the correct response when no valid accountable person exists — escalation (corpus §5.5).
+}
+
+::q6:: After an automated AI pipeline incorrectly declines thousands of loan applications overnight with no human reviewing individual decisions, a spokesperson says: "No human made these decisions — the algorithm ran automatically, so no individual can be held responsible." Why is this claim wrong?
+~The claim is correct — in fully automated systems, accountability shifts to the AI developer because they designed the system that made the decisions.#No — the developer is accountable for what the model produces by design, but not for the deployment decision. The deployer accepted accountability when they chose to run the pipeline autonomously.
+~The claim is correct — accountability requires a human to have been in the loop at the moment of each specific automated decision, and since no such human was involved when each application was declined overnight, no individual can reasonably bear accountability for any single outcome.#No — this is the misconception the Judgment Framework directly refutes. Automation compresses accountability into the deployment decision; it does not eliminate it.
+~The claim is partially correct — no individual is accountable, but the organisation automatically bears full legal liability as a corporate entity.#No — the Judgment Framework is about accountability (answerability), not legal liability. And the claim that no individual is accountable is false: the person who authorised deployment is accountable.
+=The claim is wrong — every automated system was authorised by a human at the point of deployment. The person or team who approved the pipeline to run autonomously is accountable for the outputs it produces.#Correct — in automated systems, accountability attaches to the deployment decision (design-time or deployment-time accountability). Automation does not eliminate human accountability; it moves it to the authorisation step (corpus §5.6, §8 Misconception 3).
+#### Tests recognition of the "no one if automated" misconception and the design-time accountability principle (corpus §5.6, §8).
+}

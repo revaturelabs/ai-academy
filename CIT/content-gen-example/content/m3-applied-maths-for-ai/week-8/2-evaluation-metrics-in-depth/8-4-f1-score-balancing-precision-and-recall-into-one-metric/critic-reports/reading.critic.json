@@ -1,0 +1,49 @@
+{
+  "artifact": "reading",
+  "topic_id": "8.4",
+  "passed": true,
+  "at": "2026-06-22T07:15:00Z",
+  "checks": {
+    "format_discipline": {
+      "passed": true,
+      "note": "No frontmatter; first non-empty line is the # H1. Sidecar reading.meta.json present and parses with word_count, estimated_read_minutes, citations_used, sections. Exactly six ## sections in canonical order: Overview, Key Concepts, Worked Example, In Practice, Key Takeaways, References."
+    },
+    "length": {
+      "passed": true,
+      "word_count": 1290,
+      "target_word_range": [1200, 1600],
+      "note": "Within STANDARD range. Near-floor by design for an intuition-only course; per instruction not hard-failed on near-floor count alone. read-aloud ~5.6 min (words/230); meta estimate 7 min at 200 wpm."
+    },
+    "citations": {
+      "passed": true,
+      "note": "Markers [1][2][3] all used inline; bibliography lists [1][2][3] matching exactly. All primary resources cited at least once. No orphan markers or orphan entries; no fabricated markers."
+    },
+    "no_forward_refs": {
+      "passed": true,
+      "note": "By-hand F1 compute deferred to 8.5 as a bare name-and-pointer (line 70). Accuracy named-and-deferred to 8.5 as a bare pointer (line 95). No ROC, calibration, or F-beta variants taught. F-score/F1 alternate-name mention is naming only, not teaching variants. 8.3 precision/recall reused as permitted. No confusion-matrix construction taught."
+    },
+    "faithfulness": {
+      "passed": true,
+      "unsupported_count": 0,
+      "note": "Sampled assertions (Model A/B values, plain-avg 0.5 on 1.0/0.0, harmonic-mean-toward-lower, F1 formula, worked table 0.64/0.65, leaderboard/check-in/imbalanced use cases, when-to-use table, cancer-screening recall-first caution) all trace to corpus. 'Team carrying a load / weakest member' is an explanatory analogy, not a new factual claim."
+    },
+    "beginner_readability": {
+      "passed": true,
+      "note": "Terms defined at first use (F1, harmonic mean, arithmetic mean); precision/recall reused from 8.3 as allowed. Concrete-first (spam-catcher example precedes the abstraction). No hedging. Sentences within plain register."
+    },
+    "formatting": {
+      "passed": true,
+      "note": "Chunked prose, paragraphs at or under 4 sentences. A/B comparison table (worked example) and when-to-use F1-vs-separate table both retained. Bold-term/plain-meaning definitions. Inline examples present beyond the Worked Example section."
+    },
+    "scope": {
+      "passed": true,
+      "note": "Stays on the headline (combining precision and recall into one F1 via the harmonic mean). Formula stated but by-hand computation explicitly deferred. No scope_creep."
+    },
+    "diagram_embedded": {
+      "passed": true,
+      "note": "Inline embed at line 51 ![...](./diagram.png) with descriptive caption. embeds_diagram=true in meta. PNG presence confirmed by orchestrator (long-path read artifact only); not raising png-absent."
+    }
+  },
+  "findings": [],
+  "verdict": "PASS — reading 8.4 meets all reading-critic checks: 1290 words (in STANDARD range, near-floor by design), six canonical sections, faithful citations [1][2][3], 8.5 by-hand-compute and accuracy named-and-deferred only, on-headline scope (harmonic mean is the core mechanism), beginner tone with both tables retained, and the diagram embedded inline."
+}

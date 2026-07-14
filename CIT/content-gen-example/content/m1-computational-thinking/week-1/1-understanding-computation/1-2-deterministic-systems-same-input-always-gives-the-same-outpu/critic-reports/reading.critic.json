@@ -1,0 +1,119 @@
+{
+  "critic": "reading-critic",
+  "topic_id": "1.2",
+  "topic_title": "Deterministic systems — same input always gives the same output",
+  "run_at": "2026-06-19T00:00:00Z",
+  "passed": true,
+  "word_count": 1391,
+  "estimated_read_minutes": 7.0,
+  "verdict": "PASS — all 10 checks green. Reading meets the gold bar set by 2-1-what-makes-a-good-specification.reading.md: matching six-section structure, identical beginner tone, equivalent formatting density (table, bold-term definitions, numbered Worked Example steps). Word count 1391 is within the standard-profile window [1200–1600]. Primary source [1] cited throughout. No frontmatter, no assessment references, no scope creep, no forward teaching. Diagram embedded correctly inside Key Concepts. All 10 sampled faithfulness assertions trace cleanly to corpus.",
+  "checks": {
+    "format_discipline": {
+      "passed": true,
+      "frontmatter_present": false,
+      "meta_sidecar_present": true,
+      "sections_correct": true,
+      "sections_found": ["Overview", "Key Concepts", "Worked Example", "In Practice", "Key Takeaways", "References"],
+      "sections_required": ["Overview", "Key Concepts", "Worked Example", "In Practice", "Key Takeaways", "References"],
+      "notes": "H1 is the first non-empty line. All six required sections present in the correct order. No extra or renamed headings."
+    },
+    "length": {
+      "passed": true,
+      "word_count": 1391,
+      "word_range": [1200, 1600],
+      "estimated_read_minutes": 7.0,
+      "minute_range": [6, 8],
+      "notes": "1391 words at 200 wpm = 6.96 min, within the 6–8 min standard-profile window."
+    },
+    "citations": {
+      "passed": true,
+      "primary_resource_cited": true,
+      "primary_resource_id": "[1]",
+      "primary_resource_url": "https://en.wikipedia.org/wiki/Deterministic_system",
+      "citations_used": [1, 2, 3],
+      "bibliography_entries": 3,
+      "orphan_inline_markers": [],
+      "orphan_bibliography_entries": [],
+      "coverage_estimate": "high — the majority of factual claims carry inline citations across all sections",
+      "notes": "[1] cited on reading.md lines 5, 11, 17, 24, 25, 26, 28, 35, 43, 52, 54, 60, 62, 71, 93, 101, 102, 103, 107, 109, 113, 114, 115, 116; [2] and [3] also used appropriately. No orphan markers."
+    },
+    "no_assessment_references": {
+      "passed": true,
+      "findings": [],
+      "notes": "No assessment IDs, due weeks, grade weights, or portfolio references found anywhere in the reading."
+    },
+    "diagram_in_key_concepts": {
+      "passed": true,
+      "diagram_found": true,
+      "location": "Key Concepts section, under subsection 'The diagram below shows the core idea' (reading.md lines 64–67)",
+      "embed_syntax": "![...](./diagram.png)",
+      "notes": "Diagram is embedded inline within ## Key Concepts, satisfying the requirement. Caption is present."
+    },
+    "scope": {
+      "passed": true,
+      "scope_creep_findings": [],
+      "forward_reference_violations": [],
+      "mention_and_defer_usage": [
+        {
+          "term": "non-deterministic",
+          "line_range": "71",
+          "form": "bare name + topic pointer ('covered in topic 1.3')",
+          "bolded": false,
+          "defining_clause": false,
+          "compliant": true
+        },
+        {
+          "term": "Non-deterministic systems",
+          "line_range": "117",
+          "form": "bare name + pointer ('covered in topic 1.3')",
+          "bolded": false,
+          "defining_clause": false,
+          "compliant": true
+        }
+      ],
+      "notes": "All out-of-scope concepts (non-deterministic, probabilistic, algorithm) appear only as bare names with a single deferred pointer. No teaching or definition of those terms. Scope is cleanly bounded to the topic headline."
+    },
+    "beginner_readability": {
+      "passed": true,
+      "undefined_terms": [],
+      "jargon_dump_findings": [],
+      "abstract_first_findings": [],
+      "academic_register_findings": [],
+      "notes": "All introduced terms (deterministic system, predictability, reproducibility, hidden inputs) are bolded and plain-language defined at first appearance. Concepts are introduced concrete-first throughout (table of examples precedes formal properties; navigation app example precedes hidden inputs list). Sentences are short and active. Zero hedging phrases found."
+    },
+    "formatting": {
+      "passed": true,
+      "wall_of_text_findings": [],
+      "unlisted_sequence_findings": [],
+      "inline_examples_present": true,
+      "definition_shape_compliant": true,
+      "notes": "All paragraphs are within the ~4–6 sentence limit. The Worked Example is a numbered sequence (Step 1 / Step 2 / Step 3). Inline examples are present in Key Concepts (4-row table, navigation app). Bold-term / plain-meaning definition shape used for all introduced terms."
+    },
+    "faithfulness": {
+      "passed": true,
+      "assertions_sampled": 10,
+      "unsupported_assertions": 0,
+      "threshold": 2,
+      "samples": [
+        {"assertion": "computation = input, defined process, output", "corpus_section": "§2/5.1", "supported": true},
+        {"assertion": "A deterministic system's output is completely fixed by its input", "corpus_section": "§5.1", "supported": true},
+        {"assertion": "Four-row examples table (calculator, sort, traffic light, currency converter)", "corpus_section": "§5.1 table", "supported": true},
+        {"assertion": "Predictability = reason about output before running", "corpus_section": "§5.2", "supported": true},
+        {"assertion": "Reproducibility = same output on different machines, times, places", "corpus_section": "§5.2", "supported": true},
+        {"assertion": "Banking/sorting/build-tools reliability bullets", "corpus_section": "§5.2 + §7", "supported": true},
+        {"assertion": "Navigation app: time of day is a hidden input changing the route", "corpus_section": "§5.3", "supported": true},
+        {"assertion": "Hidden inputs = timestamps, config, counters", "corpus_section": "§5.6", "supported": true},
+        {"assertion": "Vending machine worked example (£1.20, B3, £0.10 returned)", "corpus_section": "§6 implementation", "supported": true},
+        {"assertion": "In Practice bullets: financial, database, build tools", "corpus_section": "§7", "supported": true}
+      ]
+    }
+  },
+  "gold_bar_assessment": {
+    "gold_example": "2-1-what-makes-a-good-specification.reading.md",
+    "meets_gold_bar": true,
+    "notes": "Structure matches: H1 title, six sections in order, subsections within Key Concepts, numbered steps in Worked Example. Beginner tone is equivalent — direct, second-person, no assumed knowledge. Formatting density is equivalent: bold-term definitions, table in Key Concepts, numbered worked steps, bullet lists with bold lead phrases in Key Takeaways. The reading is a credible peer of the gold example."
+  },
+  "hard_fail_triggered": false,
+  "soft_findings_count": 0,
+  "escalation_rule_triggered": false
+}

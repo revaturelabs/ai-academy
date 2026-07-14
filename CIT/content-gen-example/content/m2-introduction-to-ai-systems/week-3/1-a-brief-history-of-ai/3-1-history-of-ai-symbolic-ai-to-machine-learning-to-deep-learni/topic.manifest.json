@@ -1,0 +1,41 @@
+{
+  "type": "topic",
+  "id": "3.1",
+  "title": "History of AI — symbolic AI to machine learning to deep learning",
+  "slug": "3-1-history-of-ai-symbolic-ai-to-machine-learning-to-deep-learni",
+  "position_in_module": 1,
+  "week_num": 3,
+  "session_name": "What AI Is — and Isn't",
+  "module": {
+    "position": 1,
+    "slug": "1-a-brief-history-of-ai",
+    "title": "A Brief History of AI"
+  },
+  "course": {
+    "code": "M2",
+    "slug": "m2-introduction-to-ai-systems",
+    "title": "Introduction to AI Systems"
+  },
+  "next_assessment": {
+    "id": "A1",
+    "due_week": 3,
+    "title": "Specification Portfolio",
+    "weight": "10%"
+  },
+  "paths": {
+    "corpus": "topic_corpus.md",
+    "resources": "topic.resources.json",
+    "progress": "topic.progress.json",
+    "artifacts_dir": "artifacts/",
+    "critic_reports_dir": "critic-reports/"
+  },
+  "artifact_plan": {
+    "diagram": true,
+    "diagram_intent": "Horizontal timeline showing the three AI eras (Symbolic AI → Machine Learning → Deep Learning) with approximate date ranges, the key bottleneck each era hit, and the milestone event that opened the next era.",
+    "depth_profile": "standard",
+    "reading": { "target_min_minutes": 6, "target_max_minutes": 8, "target_word_range": [1200, 1600] },
+    "quiz": { "min_questions": 5, "max_questions": 6, "include_short_answer": false }
+  },
+  "expected_delivery_minutes": 8,
+  "status": "scaffolded"
+}

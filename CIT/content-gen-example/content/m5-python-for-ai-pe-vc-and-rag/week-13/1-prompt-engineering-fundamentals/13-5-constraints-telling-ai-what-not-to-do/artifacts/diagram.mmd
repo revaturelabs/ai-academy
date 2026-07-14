@@ -1,0 +1,41 @@
+---
+title: Constraints as Guardrails Around the Prompt Core
+theme: base
+themeVariables:
+  primaryColor: "#a5d8ff"
+  primaryBorderColor: "#4a9eed"
+  lineColor: "#555"
+flowchart:
+  htmlLabels: true
+  curve: basis
+---
+flowchart LR
+    subgraph LEFT["<b>Prompt Core</b>"]
+        direction TB
+        INST["<b>Positive Instruction</b><br/><span style='font-size:12px;color:#6d28d9'>what to do — role + task</span>"]
+        REFRAME["<b>Positive Reframe</b><br/><span style='font-size:12px;color:#6d28d9'>'do Y' not 'don't X'</span>"]
+        INST --> REFRAME
+    end
+
+    subgraph RIGHT["Constraint Guardrails (system prompt)"]
+        direction TB
+        FMT["<b>Format Constraint</b><br/><span style='font-size:12px;color:#6d28d9'>shape of output: length, structure</span>"]
+        TONE["<b>Tone Constraint</b><br/><span style='font-size:12px;color:#6d28d9'>register and emotional character</span>"]
+        EXCL["<b>Content Exclusion</b><br/><span style='font-size:12px;color:#6d28d9'>forbid specific subjects or facts</span>"]
+        SCOPE["<b>Scope Limit</b><br/><span style='font-size:12px;color:#6d28d9'>permitted topic zone only</span>"]
+        FMT --> TONE --> EXCL --> SCOPE
+    end
+
+    LEFT --> RIGHT
+
+    classDef start fill:#a5d8ff,stroke:#4a9eed
+    classDef auto fill:#d0bfff,stroke:#8b5cf6
+    classDef hitl fill:#fff3bf,stroke:#f59e0b,stroke-width:3
+    classDef done fill:#b2f2bb,stroke:#22c55e
+
+    class INST start
+    class REFRAME start
+    class FMT auto
+    class TONE auto
+    class EXCL auto
+    class SCOPE done

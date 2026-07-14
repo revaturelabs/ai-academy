@@ -1,0 +1,42 @@
+{
+  "critic": "diagram-critic",
+  "topic_id": "12.8",
+  "topic_title": "try / except — handling errors gracefully without crashing",
+  "cycle": 1,
+  "at": "2026-06-15T00:00:00Z",
+  "passed": true,
+  "verdict": "PASS — intent fully covered. 5-node TD flowchart (within atomic 5–7 range). Decision diamond 'exception raised?' with yes/no labeled edges produces clear error-path (except, red) vs success-path (else, green) branching. Both paths converge at 'program continues' (purple). Title rendered as header. Project palette applied correctly. All labels plain-language, scope clean to 12.8 concepts only.",
+  "checks": {
+    "node_count": {
+      "passed": true,
+      "count": 5,
+      "range": "5–7 (atomic)",
+      "note": "TRY, RAISED (diamond), EXCEPT, ELSE, CONT — exactly on intent, minimal and clear."
+    },
+    "label_clarity": {
+      "passed": true,
+      "findings": [],
+      "note": "All labels beginner-readable: 'try block / code that might fail', 'exception raised?', 'except block / handle the error', 'else block / optional — only runs on success', 'program continues / after try/except'. No undefined acronyms."
+    },
+    "intent_coverage": {
+      "passed": true,
+      "intent": "Flowchart: try block → exception raised? → yes: except block → else skipped; no: else block (optional) → both paths continue after try/except structure",
+      "findings": [],
+      "note": "Yes branch → EXCEPT, no branch → ELSE, both → CONT. Intent mapped 1:1."
+    },
+    "scope_discipline": {
+      "passed": true,
+      "findings": [],
+      "note": "No advanced nodes (finally, raise, custom exceptions, logging). Exactly the 5 concepts taught in 12.8."
+    },
+    "render_quality": {
+      "passed": true,
+      "png_bytes": 29027,
+      "findings": []
+    }
+  },
+  "summary": {
+    "hard_failures": [],
+    "soft_findings": []
+  }
+}

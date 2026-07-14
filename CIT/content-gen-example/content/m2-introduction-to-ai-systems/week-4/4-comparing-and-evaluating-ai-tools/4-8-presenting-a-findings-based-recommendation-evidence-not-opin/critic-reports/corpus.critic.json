@@ -1,0 +1,75 @@
+{
+  "topic_id": "4.8",
+  "artifact": "corpus",
+  "passed": true,
+  "at": "2026-06-17T00:00:00Z",
+  "depth_profile": "standard",
+  "word_count_estimate": 2750,
+  "word_count_range": [1500, 4400],
+  "checks": {
+    "required_sections": {
+      "passed": true,
+      "findings": [],
+      "detail": {
+        "section_3_learning_objectives": { "present": true, "word_count_estimate": 100, "threshold": 50, "pass": true },
+        "section_4_introduction":        { "present": true, "word_count_estimate": 230, "threshold": 50, "pass": true },
+        "section_5_core_concepts":       { "present": true, "word_count_estimate": 1100, "threshold": 100, "pass": true },
+        "section_10_key_takeaways":      { "present": true, "word_count_estimate": 230, "threshold": 50, "pass": true }
+      }
+    },
+    "citation_density": {
+      "passed": true,
+      "resources_source": "web_search",
+      "primary_resources_cited": [
+        {
+          "index": 1,
+          "url": "https://www.readwritethink.org/professional-development/strategy-guides/developing-evidence-based-arguments",
+          "cited_at_least_once": true,
+          "sections_cited_in": ["4", "5.1", "5.2", "5.3", "5.4", "5.6", "7"]
+        }
+      ],
+      "sections_checked": ["5", "6", "7"],
+      "density_assessment": "Sections 5 and 7 carry dense citation coverage across standalone factual assertions. Section 6 (Implementation) contains only procedural/instructional directives ('check your rubric table is complete', 'build a findings summary table') — these are not standalone factual assertions about the world and are not subject to the 60% citation density rule. All supporting facts in section 6 are derivations of already-cited material in section 5. Citation density for standalone factual assertions across sections 5, 6, 7 is estimated at ≥75%.",
+      "findings": []
+    },
+    "sequence_drift": {
+      "passed": true,
+      "forward_references": [],
+      "findings": [],
+      "notes": "All technical terms used in the corpus are either (a) introduced in this topic's concepts_introduced list, or (b) from prior topics 4.7 (evaluation rubric, criteria, performance levels, descriptors, weighting, test protocol) and earlier. The concept 'citation move' appears in the topic's concepts_introduced but is never defined or used in the corpus — this is an omission finding, not a forward reference. No true forward references detected."
+    },
+    "length_sanity": {
+      "passed": true,
+      "word_count_estimate": 2750,
+      "range_min": 1500,
+      "range_max": 4400,
+      "within_range": true,
+      "findings": []
+    },
+    "topic_scope": {
+      "passed": true,
+      "scope_boundary": "Presenting a findings-based recommendation — evidence, not opinion",
+      "out_of_scope_concepts": [],
+      "findings": [],
+      "notes": "All content in sections 5–9 stays within the headline scope: structuring and writing an evidence-based recommendation from rubric data. No adjacent or advanced concepts are taught beyond the headline. Real-World Patterns (section 7) applies the same three-part structure to professional contexts without introducing new concepts."
+    },
+    "beginner_readability": {
+      "passed": true,
+      "hard_fail_threshold": 3,
+      "soft_findings_count": 1,
+      "findings": [
+        {
+          "code": "missing_concept",
+          "severity": "soft",
+          "detail": "'citation move' is listed in this topic's concepts_introduced (per sequence.index.json) but is never defined, introduced, or used anywhere in the corpus. The downstream reading and quiz builders will have no grounding for this concept. The corpus-builder should either define 'citation move' in section 5 or remove it from concepts_introduced.",
+          "location": "concepts_introduced vs corpus body"
+        }
+      ],
+      "undefined_terms": [],
+      "jargon_dumps": [],
+      "academic_register_violations": [],
+      "notes": "Introduction and Core Concepts are written in plain, confident language addressing the learner as 'you'. All new terms (evidence-based recommendation, findings summary, evidence anchor, recommendation statement, trade-off, evaluation limitations) are defined on first use with concrete examples before formal phrasing. Tables and numbered lists are used appropriately. Sentence lengths are generally short. No hedging language detected. One soft finding for the omitted 'citation move' concept."
+    }
+  },
+  "verdict": "PASS — all 6 checks pass; 1 soft finding: 'citation move' is listed in concepts_introduced but never defined or used in the corpus — corpus-builder should add a definition or remove the concept from the manifest."
+}

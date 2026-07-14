@@ -1,0 +1,57 @@
+{
+  "type": "topic",
+  "id": "7.1",
+  "title": "Probability basics — likelihood, events, outcomes",
+  "slug": "7-1-probability-basics-likelihood-events-outcomes",
+  "position_in_module": 1,
+  "week_num": 7,
+  "session_name": "Probability, Statistics and AI Confidence",
+  "module": {
+    "position": 1,
+    "slug": "1-probability-foundations",
+    "title": "Probability Foundations"
+  },
+  "course": {
+    "code": "M3",
+    "slug": "m3-applied-maths-for-ai",
+    "title": "Applied Maths for AI"
+  },
+  "next_assessment": {
+    "id": "A3",
+    "due_week": 10,
+    "title": "Maths and Cognition Lab Report",
+    "weight": "15%"
+  },
+  "paths": {
+    "corpus": "topic_corpus.md",
+    "resources": "topic.resources.json",
+    "progress": "topic.progress.json",
+    "artifacts_dir": "artifacts/",
+    "critic_reports_dir": "critic-reports/"
+  },
+  "artifact_plan": {
+    "diagram": false,
+    "diagram_intent": null,
+    "depth_profile": "standard",
+    "depth_profile_confirmed_by_human": true,
+    "profile_signals": [
+      "title names three related but distinct concepts (likelihood, events, outcomes) requiring separate sub-sections",
+      "Core Concepts has 8 sub-sections covering probability scale, sample space, events, formula, sum rule, complement, intuition table, AI bridge",
+      "Real-World Patterns and Implementation sections both warranted and substantive"
+    ],
+    "reading": {
+      "target_word_range": [1200, 1600],
+      "target_minutes_range": [6, 8]
+    },
+    "quiz": {
+      "min_questions": 5,
+      "max_questions": 6,
+      "include_short_answer": false
+    },
+    "soft_findings_to_surface_at_hitl3": [
+      "scope_creep (soft): section 7 'probability distribution' carries partial defining clause — not trimmed per author choice"
+    ]
+  },
+  "expected_delivery_minutes": 8,
+  "status": "scaffolded"
+}

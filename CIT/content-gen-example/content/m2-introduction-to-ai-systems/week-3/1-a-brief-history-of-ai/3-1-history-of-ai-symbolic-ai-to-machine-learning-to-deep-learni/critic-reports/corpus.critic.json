@@ -1,0 +1,189 @@
+{
+  "critic": "corpus-critic",
+  "topic_id": "3.1",
+  "at": "2026-06-17T00:00:00Z",
+  "passed": true,
+  "checks": {
+    "required_sections": {
+      "passed": true,
+      "detail": {
+        "section_3_learning_objectives": {
+          "present": true,
+          "word_count_approx": 110,
+          "threshold": 50,
+          "passed": true
+        },
+        "section_4_introduction": {
+          "present": true,
+          "word_count_approx": 150,
+          "threshold": 50,
+          "passed": true
+        },
+        "section_5_core_concepts": {
+          "present": true,
+          "word_count_approx": 1150,
+          "threshold": 100,
+          "passed": true
+        },
+        "section_10_key_takeaways": {
+          "present": true,
+          "word_count_approx": 200,
+          "threshold": 50,
+          "passed": true
+        }
+      }
+    },
+    "citation_density": {
+      "passed": true,
+      "resources_source": "web_search",
+      "mode": "strict",
+      "primary_resources_cited": {
+        "resource_1_ieee": {
+          "role": "primary",
+          "url": "https://ieeexplore.ieee.org/document/11202920",
+          "cited": true,
+          "citation_marker": "[1]",
+          "passed": true,
+          "note": "[1] cited at lines 37, 60, 82, 104, 116, 135, 141, 147, 153, 159, 212, 222, 227, 229, 233, 235, 236, 237, 240, 250, 254 — cited extensively."
+        }
+      },
+      "section_coverage": {
+        "section_5_core_concepts": {
+          "key_assertions_sampled": 20,
+          "cited_assertions": 15,
+          "coverage_pct": 75,
+          "threshold_pct": 60,
+          "passed": true,
+          "note": "Minor uncited areas: Section 5.4 comparison table (synthesised summary) and one agriculture bullet in Section 5.5. These are minor portions of the section mass."
+        },
+        "section_6_implementation": {
+          "key_assertions_sampled": 18,
+          "cited_assertions": 16,
+          "coverage_pct": 89,
+          "threshold_pct": 60,
+          "passed": true,
+          "note": "Fix verified: Section 6 now carries an [1][2][3] header citation at line 212 and per-step inline markers throughout all three procedure blocks (symbolic AI build: [3]; ML build: [1][2] header plus steps with [1] at line 227, [1] at line 229, [2] at line 230; deep learning build: [1][2][3] header plus [2] at line 233, [1] at line 235, [1][3] at line 236, [1] at line 237, [2] at line 238). Closing summary line carries [1][2]. Prior failure (0% coverage) is resolved."
+        },
+        "section_7_real_world_patterns": {
+          "key_assertions_sampled": 8,
+          "cited_assertions": 6,
+          "coverage_pct": 75,
+          "threshold_pct": 60,
+          "passed": true
+        }
+      }
+    },
+    "sequence_drift": {
+      "passed": true,
+      "prior_vocabulary": [
+        "computation",
+        "deterministic system",
+        "probabilistic system",
+        "algorithm",
+        "abstraction",
+        "decomposition",
+        "pseudocode",
+        "flowchart",
+        "specification",
+        "pattern recognition"
+      ],
+      "concepts_introduced_this_topic": [
+        "symbolic AI",
+        "expert system",
+        "AI Winter",
+        "machine learning",
+        "training data",
+        "deep learning",
+        "artificial neural network"
+      ],
+      "forward_references_found": [],
+      "soft_notes": [
+        {
+          "terms": ["parameters", "generalisation", "over-fitting", "feature", "feature engineering", "layer"],
+          "status": "introduced_and_defined_here_not_in_sequence_index_concepts_introduced",
+          "severity": "soft",
+          "note": "These supporting sub-concepts are defined within this corpus as necessary context for explaining the ML and deep learning eras. They do not appear in concepts_introduced for 3.1 in sequence.index.json. This is a manifest gap, not a corpus error. The sequence index for 3.1 should be updated to include these terms if the team intends them to be introduced here. No sequencing harm — no topic before 3.1 defines them, and they are not the headline of any single later topic."
+        },
+        {
+          "terms": ["support vector machines (SVMs)", "decision trees"],
+          "status": "named_with_inline_gloss",
+          "severity": "soft",
+          "note": "SVMs are spelled out and given a parenthetical gloss '(mathematical methods that find the best boundary separating two categories of data)' at line 116. Decision trees are named alongside SVMs as a historical example. These are used as milestone examples within the ML era, not taught as standalone concepts. Acceptable under the parenthetical-gloss allowance."
+        },
+        {
+          "terms": ["ImageNet"],
+          "status": "named_with_inline_gloss",
+          "severity": "soft",
+          "note": "ImageNet is glossed inline at line 147 as 'a large dataset of labelled photographs used to benchmark image-recognition systems.' The dual identity (dataset and competition name) is not fully elaborated, but the gloss is sufficient for the beginner context of a historical milestone. Soft note only."
+        },
+        {
+          "terms": ["matrix arithmetic"],
+          "status": "named_with_parenthetical_gloss",
+          "severity": "soft",
+          "note": "Glossed at line 152 as '(calculations that process large grids of numbers simultaneously)' — acceptable as a parenthetical gloss for a passing mention in the context of why GPUs mattered. Added in the fix pass as an acceptable gloss. No forward reference violation."
+        }
+      ],
+      "prior_failures_resolved": {
+        "LLM_forward_reference": {
+          "resolved": true,
+          "evidence": "Line 171: 'These developments led to large language models (LLMs) — introduced in topic 3.2.' Bare name + expansion + topic pointer. No defining clause. Vocabulary table row (line 182): '**Large Language Models (LLMs)** | Introduced in topic 3.2' — deferral confirmed. LLM is not defined in the corpus."
+        },
+        "Transformer_forward_reference": {
+          "resolved": true,
+          "evidence": "Milestone table row (line 167): '2017 | Transformer architecture introduced (see topic 3.4) | Enabled new capabilities in language processing.' The 'why it mattered' column entry 'Enabled new capabilities in language processing' is a high-level consequence note, not a defining clause or architectural explanation. This is within the one-sentence mention-and-defer allowance. No definition of what a Transformer is appears anywhere in the corpus."
+        }
+      }
+    },
+    "length_sanity": {
+      "passed": true,
+      "depth_profile": "standard",
+      "word_count_approx": 3200,
+      "range_from_skill": {
+        "min": 3000,
+        "max": 4400
+      },
+      "within_range": true,
+      "detail": "Estimated word count ~3,200 words (all prose, table cells, and list content; excludes YAML frontmatter and bare section headers). Falls within the standard profile corpus range of 3,000–4,400 words. At the lower portion of the range but above the 3,000-word floor."
+    },
+    "topic_scope": {
+      "passed": true,
+      "findings": [
+        {
+          "code": "scope_creep",
+          "severity": "soft",
+          "location": "Section 5.3, vocabulary table, line 182",
+          "detail": "'**Large Language Models (LLMs)**' is rendered in bold in the vocabulary table row, followed by 'Introduced in topic 3.2'. Per scope_discipline rules, a deferred concept must appear as a bare name plus topic pointer — bolding a deferred concept is disallowed even when accompanied by a deferral note, because bold signals teaching/definition. All other deferred concepts in the corpus (Transformer architecture in the milestone table, BERT/GPT-1 in the milestone table, ChatGPT in the milestone table) appear correctly as bare unbolded names. This is a single isolated soft finding.",
+          "fix": "In the Section 5.3 vocabulary table, change '**Large Language Models (LLMs)**' to 'Large Language Models (LLMs)' — remove the bold markdown. The deferral note 'Introduced in topic 3.2' can remain."
+        }
+      ],
+      "prior_failures_resolved": {
+        "LLM_scope_creep": {
+          "resolved": true,
+          "evidence": "LLM is no longer defined with a defining clause in the vocabulary table. The table entry reads 'Introduced in topic 3.2' — a deferral, not a definition. Prose at line 171 provides a bare-name sentence with topic pointer. Neither the vocabulary table nor the prose teaches what an LLM is."
+        },
+        "Transformer_scope_creep": {
+          "resolved": true,
+          "evidence": "The milestone table row for 2017 reads 'Transformer architecture introduced (see topic 3.4) | Enabled new capabilities in language processing.' The 'why it mattered' entry is a consequence note, not an architectural definition. The Transformer is not described, explained, or taught anywhere in the corpus."
+        },
+        "BERT_GPT_new_paradigm_framing": {
+          "resolved": true,
+          "evidence": "Milestone table row (line 168) reads 'GPT-1, BERT released — see topics 3.2+ | Milestone names only; covered in later topics.' No 'new paradigm' framing. Bare names with explicit deferral note."
+        }
+      }
+    },
+    "beginner_readability": {
+      "passed": true,
+      "findings_count": 0,
+      "escalated_to_hard_fail": false,
+      "findings": [],
+      "detail": "All non-everyday terms are defined at first use with plain-language meanings before or alongside formal phrasing. 'Symbolic AI' (line 45), 'expert system' (line 51), 'AI Winter' (line 65), 'machine learning' (lines 82–83), 'training data' (line 108), 'deep learning' (line 133), 'artificial neural network' (line 135), 'GPU' (line 152 — 'chips originally designed for video games'), 'SVMs' (line 116 — parenthetical gloss), and 'matrix arithmetic' (line 152 — parenthetical gloss added in fix pass) are all explained at first appearance. No single paragraph introduces 3 or more new terms simultaneously — the Section 5.2 'Important sub-ideas' block presents each new concept as a separate bolded sub-entry with its own explanatory sentence. No hedging phrases ('it is generally considered', 'many believe', 'many experts') detected. Register is confident and direct. Sentence length is appropriate; no sentence requires re-reading to be parsed. Zero hard-fail triggers; zero soft findings."
+    }
+  },
+  "hard_failures": [],
+  "soft_findings": [
+    "topic_scope: 'Large Language Models (LLMs)' is bolded in the Section 5.3 vocabulary table (line 182). Per scope_discipline, deferred concepts must appear as bare (unbolded) names plus a topic pointer. Fix: remove bold markdown from that single table cell.",
+    "sequence_drift (manifest gap): Terms 'parameters', 'generalisation', 'over-fitting', 'feature', 'feature engineering', 'layer' are introduced and defined in this corpus but are not listed in sequence.index.json concepts_introduced for topic 3.1. The sequence index should be updated to include these supporting concepts if the team intends them to be formally introduced here.",
+    "sequence_drift (soft): 'ImageNet' dual identity (dataset and competition) not fully elaborated — adequate for a historical milestone gloss but a learner may conflate the two roles."
+  ],
+  "verdict": "PASS. All three prior hard failures are resolved. (1) citation_density — Section 6 (Implementation) now carries [1][2][3] header citations and per-step inline markers across all three build-procedure blocks, achieving ~89% citation coverage against the 60% threshold. (2) sequence_drift — LLMs and Transformer architecture are name-and-defer only: LLM appears as a bare-name sentence deferring to topic 3.2; the Transformer milestone table row carries a '(see topic 3.4)' pointer with no defining clause. Neither concept is taught or defined in this corpus. (3) scope_creep — LLM has no defining clause in the vocabulary table (entry reads 'Introduced in topic 3.2'); Transformer has no architectural description; BERT/GPT-1 milestone row carries 'Milestone names only; covered in later topics' with no 'new paradigm' framing. One soft finding remains: 'Large Language Models (LLMs)' is bolded in the vocabulary table (line 182), violating the bare-name-only rule for deferred concepts — fix by removing the bold markdown from that single cell. Two additional soft notes are raised for the sequence index manifest gap (supporting sub-concepts not listed in concepts_introduced) and ImageNet's dual role. None of these soft findings gate the corpus. The corpus is approved to ground downstream artifacts."
+}

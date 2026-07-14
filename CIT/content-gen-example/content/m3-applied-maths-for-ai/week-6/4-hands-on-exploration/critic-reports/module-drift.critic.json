@@ -1,0 +1,35 @@
+{
+  "module_slug": "4-hands-on-exploration",
+  "week_num": 6,
+  "passed": true,
+  "checks": {
+    "terminology": {
+      "passed": true,
+      "note": "vector, embedding, cluster, nearest neighbour, cosine similarity, dimension all used consistently with 6.3-6.9. 'Embedding' matches 6.7 (words->vectors, related meanings->similar vectors). 'Cosine similarity' matches 6.9 (angle between meaning-vectors, length-independent), correctly cited as the similarity score in the search panel. 'Nearest neighbour' matches 6.5 (neighbourhood / closest point) and 6.8 (nearest_neighbour_answer). 'Cluster' is newly named here as the topic's own concept (cluster of word-vectors) and is grounded as 'clump of nearby dots = similar embeddings', consistent with 6.5 distance-as-similarity. No synonym drift.",
+      "findings": []
+    },
+    "prereq_ordering": {
+      "passed": true,
+      "note": "manifest prerequisites [6.3, 6.5, 6.6, 6.7, 6.8, 6.9] all precede 6.10 in sequence; matches the corpus Prerequisites section exactly. No forward references. PCA and t-SNE are name-and-deferred ('named buttons that do the squashing', internals 'covered later'), explicitly NOT taught, and are tagged 'PCA/t-SNE (deferred)' in cross_refs rather than listed as prerequisites. Correct handling.",
+      "findings": []
+    },
+    "arc_completeness": {
+      "passed": true,
+      "note": "Lands the week's arc. Explicitly synthesises the 6.1-6.9 build ('meaning can be written as numbers') and delivers the payoff: turning the abstract 'word as a point in space' (6.5) into something visible/rotatable. Learning Objectives cover the tool, the squashing rationale, reading clusters, search/nearest-neighbour, and rank-by-hand-then-verify. No uncovered facet for a single-topic capstone.",
+      "findings": []
+    },
+    "no_duplication": {
+      "passed": true,
+      "note": "Single-topic module, so no intra-module pair to compare. Prior concepts (vector, embedding, dot product, cosine similarity, nearest neighbour) are reused-and-cited, not re-taught: each carries a back-reference (6.3/6.5/6.6/6.7/6.8/6.9) and the corpus states 'those terms... will not be re-defined - only used.' Only genuinely new material (Projector, squashing-to-view, cluster reading, search UI) is taught.",
+      "findings": []
+    },
+    "lab_alignment": {
+      "passed": true,
+      "note": "Matches lab_activity_seed for week 6 on every clause: TensorFlow Embedding Projector (corpus 5.1, Implementation, reading In Practice); watch word clusters form in 2D/3D; rank 5 pre-computed sentence vectors by hand then verify in the browser (Hands-On Exercise steps 1-4); no coding (stated in Introduction, 5.5 scope boundary, Key Takeaways); Journal Entry #3 (explicitly named); Assessment 2 due this week (noted in exercise; manifest next_assessment A2 due_week 6).",
+      "findings": []
+    }
+  },
+  "findings": [],
+  "verdict": "PASS",
+  "at": "2026-06-19T00:00:00Z"
+}

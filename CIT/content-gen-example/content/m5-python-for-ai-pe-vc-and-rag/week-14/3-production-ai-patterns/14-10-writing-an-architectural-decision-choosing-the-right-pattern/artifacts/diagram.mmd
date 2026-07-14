@@ -1,0 +1,27 @@
+flowchart TD
+    Q1["Un-trained data?"]
+    Q2["Multi-step reasoning or tool use?"]
+    Q3["Irreversible action needed?"]
+    TIER["Chosen Tier\nDirect Call · RAG · Agent"]
+    A1["Title\none noun phrase naming the decision"]
+    A2["Status\nAccepted / Proposed / Deprecated"]
+    A3["Context\ndomain problem + decision-matrix mapping"]
+    A4["Decision\ntier + one primary reason, past tense"]
+    A5["Consequences\nwhat gets better · what gets harder · reliability pattern"]
+
+    Q1 --> TIER
+    Q2 --> TIER
+    Q3 --> TIER
+    TIER --> A1
+    A1 --> A2
+    A2 --> A3
+    A3 --> A4
+    A4 --> A5
+
+    classDef input fill:#457B9D,stroke:#1D3557,color:#fff
+    classDef act fill:#2D6A4F,stroke:#1B4332,color:#fff
+    classDef sys fill:#1D3557,stroke:#0D1B2A,color:#fff
+
+    class Q1,Q2,Q3 input
+    class TIER act
+    class A1,A2,A3,A4,A5 sys

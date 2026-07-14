@@ -1,0 +1,74 @@
+{
+  "critic": "corpus-critic",
+  "topic_id": "2.5",
+  "topic_title": "The 70/30 rule — AI implements, you specify and verify",
+  "at": "2026-06-17T00:00:00Z",
+  "passed": true,
+  "verdict": "PASS — all six checks pass. One marginal length warning noted (corpus estimated ~2100 words, at the 30%-below-standard-floor boundary of 2100; not a hard fail). No hard failures. Corpus is well-structured, tightly scoped, fully cited, and beginner-accessible.",
+  "checks": {
+    "required_sections": {
+      "passed": true,
+      "detail": {
+        "section_3_learning_objectives": { "present": true, "word_count_estimate": 90, "threshold": 50, "passed": true },
+        "section_4_introduction": { "present": true, "word_count_estimate": 137, "threshold": 50, "passed": true },
+        "section_5_core_concepts": { "present": true, "word_count_estimate": 930, "threshold": 100, "passed": true },
+        "section_10_key_takeaways": { "present": true, "word_count_estimate": 115, "threshold": 50, "passed": true }
+      }
+    },
+    "citation_density": {
+      "passed": true,
+      "resources_source": "web_search",
+      "resources_cited": {
+        "[1] https://www.generative.inc/what-is-the-30-rule-in-ai": true,
+        "[2] https://www.altahq.com/post/mastering-the-30-rule-for-ai-a-comprehensive-guide-to-human-ai-collaboration-in-2026": true,
+        "[3] https://intersog.co.il/blog/what-is-the-30-rule-in-ai/": true
+      },
+      "all_primary_resources_cited": true,
+      "citation_density_sections_5_6_7": {
+        "key_claims_sampled": 20,
+        "claims_with_citation": 17,
+        "density_pct": 85,
+        "threshold_pct": 60,
+        "passed": true
+      },
+      "fake_citations_detected": false,
+      "detail": "All 3 resources (1 primary, 2 supporting) cited at least once. Citation markers appear on virtually every substantive factual claim in Core Concepts, Implementation, and Real-World Patterns. Density well above 60% threshold."
+    },
+    "sequence_drift": {
+      "passed": true,
+      "forward_references": [],
+      "detail": "All technical terms used are either introduced by this topic or covered in prior topics 1.1–2.4. References to 'probabilistic systems' (1.3), 'testable/bounded/observable/actionable' (2.1), 'six-component checklist / failure conditions' (2.3) are correct back-references. 'AI diagnostic assistant', 'data journalism', and 'software testing' in section 7 are illustrative real-world examples, not new technical concepts being defined or taught. No forward-referenced terms detected."
+    },
+    "length_sanity": {
+      "passed": true,
+      "suggested_profile": "standard",
+      "standard_range_words": [3000, 4400],
+      "hard_floor_words": 2100,
+      "estimated_word_count": 2107,
+      "finding": "marginal_length",
+      "finding_severity": "warning",
+      "detail": "Estimated word count of ~2107 words is at the exact 30%-below-standard boundary (hard floor = 2100). The corpus is below the standard profile target range of 3000–4400 words. This is a borderline marginal warning, not a hard fail, because the estimate is within the 30% buffer margin. The builder should consider expanding Core Concepts (section 5) and/or adding worked examples to bring the corpus closer to the 3000-word standard-profile target before artifact generation."
+    },
+    "topic_scope": {
+      "passed": true,
+      "scope_creep_findings": [],
+      "detail": "The corpus stays tightly within the topic headline. All five subsections of Core Concepts (5.1–5.5), Implementation (section 6), Real-World Patterns (section 7), and Best Practices (section 8) directly address the 70/30 rule and its two human roles (specify, verify). Section 9 references Assessment A1 as context only — no new content taught. No adjacent or more-advanced concepts (e.g., prompt engineering, AI governance, hallucination mechanics) are defined or taught at depth."
+    },
+    "beginner_readability": {
+      "passed": true,
+      "findings": [],
+      "undefined_terms": [],
+      "jargon_dump_paragraphs": [],
+      "academic_register_violations": 0,
+      "detail": "All non-everyday terms ('70/30 rule', 'implementation', 'verification', 'specification') are defined on first use with plain-English meanings. The corpus introduces one concept per section. 'Probabilistic' is re-used from topic 1.3 and correctly flagged as prior learning ('you learned this in Topic 1.3') rather than re-defined — acceptable under curriculum rules. No paragraph introduces 3+ new terms simultaneously. No hedging phrases detected. Sentences are short, active-voice, and address the learner as 'you'. Fewer than 3 distinct readability findings — no escalation to hard fail."
+    }
+  },
+  "summary_findings": [
+    {
+      "code": "marginal_length",
+      "severity": "warning",
+      "section": "corpus overall",
+      "detail": "Estimated ~2107 words is at the lower boundary of the 30%-buffer hard floor for the standard profile (target 3000–4400 words). Recommend expanding before artifact generation to ensure the reading artifact can meet its own standard-profile word count."
+    }
+  ]
+}

@@ -1,0 +1,52 @@
+{
+  "critic": "corpus-critic",
+  "topic_id": "6.7",
+  "cycle": 2,
+  "at": "2026-06-19T00:00:00Z",
+  "passed": true,
+  "checks": {
+    "required_sections": {
+      "passed": true,
+      "notes": "§3 Learning Objectives (5 objectives, ~75w): PASS — exceeds 50w minimum. §4 Introduction (4 paragraphs, ~160w): PASS. §5 Core Concepts (6 subsections, ~750w total): PASS — exceeds 100w minimum. §10 Key Takeaways (5 bullets, ~120w): PASS. All required sections present and non-trivial."
+    },
+    "citation_density": {
+      "passed": true,
+      "primary_cited": true,
+      "claim_citation_rate": 0.87,
+      "notes": "resources_source is 'web_search' — strict mode applies. Primary resource [1] (lena-voita.github.io) is cited in §4, §5.1, §5.2, §5.3, §5.4, §5.5, §5.6, §6 (all 7 steps), §7, §8, and §10 — cited at least 15 times. Supporting resources [2] and [3] are cited throughout §5–§8. §5 factual assertions: one-hot encoding mechanics [1][2][3], embedding definition [1], low-dimensional note [1], distributional hypothesis and Word2Vec [1], training procedure steps [1][2], embedding space properties [1][2], hyperparameter note [3], TensorFlow Projector [2]. §6 implementation steps all carry [1] or [1][2] markers. §7 real-world patterns carry [2][3]. Estimated 87% citation rate on standalone factual assertions in §5/§6/§7, well above the 60% threshold."
+    },
+    "sequence_drift": {
+      "passed": true,
+      "forward_refs": [],
+      "notes": "All core technical terms either originate in prior topics or are in this topic's own concepts_introduced. Prior-topic terms used correctly: vector (6.3), point-in-space (6.5), dot product (6.6), scalar/hyperparameter/learning_rate/loss (6.2), matrix/weight_matrix (6.4). Terms introduced here: one-hot encoding, embedding, dense vector, distributional hypothesis, Word2Vec, learned representation, embedding space, pre-trained embedding. 'GloVe' and 'FastText' appear as named examples in §6 and §8 with no definition or teaching — they are listed alongside Word2Vec as alternatives, consistent with 6.7 cross_refs. 'Context-sensitive embeddings' in §8 Best Practices is explicitly deferred ('a topic for a later module'). 'Vector arithmetic' in §5.4 is used as a name-and-defer label pointing to 6.8 — not taught here. No hard forward references detected."
+    },
+    "length_sanity": {
+      "passed": true,
+      "word_count": 2050,
+      "profile": "atomic",
+      "range": [1500, 2400],
+      "notes": "2050 words falls within the atomic profile range of 1500–2400 words. No issue."
+    },
+    "topic_scope": {
+      "passed": true,
+      "findings": [],
+      "notes": "Cycle 1 scope_creep failure has been correctly resolved. The revised §5.4 now reads: 'Word embeddings can encode analogy relationships — for example, \"king is to man as queen is to woman\" — through vector arithmetic. These analogy relationships, called vector arithmetic, are named here and explored fully in 6.8 [1].' This is a two-sentence block: the first names the king/queen analogy as an illustration (no mechanism explained), the second provides the name-and-defer pointer to 6.8. The direction-offset mechanism ('the direction that separates king from man is approximately the same direction that separates queen from woman') has been fully removed. §4 Introduction also correctly uses the name-and-defer pattern. §5.6 table row 'Can do arithmetic on meaning: Yes (explored in 6.8)' is a single parenthetical pointer with no explanation of the arithmetic — permitted. Cosine similarity (6.9 headline concept) is not mentioned anywhere in the corpus. No scope_creep detected."
+    },
+    "beginner_readability": {
+      "passed": true,
+      "findings": [
+        {
+          "type": "undefined_terms",
+          "terms": ["GloVe", "FastText"],
+          "locations": [
+            "§6 Implementation — Step 7 / Using a pre-trained embedding",
+            "§8 Best Practices — first bullet"
+          ],
+          "description": "GloVe and FastText are listed alongside Word2Vec as examples of pre-trained embeddings without a gloss. Both appear in 6.7's cross_refs (not concepts_introduced), so they are intentionally not taught here. A parenthetical such as '(GloVe and FastText are alternative pre-trained algorithms with the same idea)' would help first-time readers, but this remains a soft finding. Carried over from cycle 1 — no change, no escalation."
+        }
+      ],
+      "notes": "Two undefined terms (GloVe, FastText) at or just below the 'more than ~2' soft-fail escalation trigger — not escalated. All other terms defined on first use: one-hot encoding (§5.1, full procedure), embedding (§5.2, decomposed into dense/low-dimensional/geometry sub-properties each immediately defined), distributional hypothesis (§5.3, named and explained in plain language), Word2Vec (§5.3, named with publication context), hyperparameter (§5.5, back-referenced to 6.2). No jargon dumps detected — §5.2 introduces three sub-properties but provides immediate bullet definitions for each. Sentence register is appropriate for a zero-background audience. Fewer than 3 distinct findings; not escalated to hard fail."
+    }
+  },
+  "verdict": "PASS — all 6 checks pass on cycle 2. The cycle 1 scope_creep failure in §5.4 has been correctly resolved: the two sentences teaching the geometric direction-offset mechanism have been replaced with a single name-and-defer pointer ('These analogy relationships, called vector arithmetic, are named here and explored fully in 6.8'). §5.6 table and §4 Introduction also confirm name-and-defer discipline throughout. Remaining soft finding: GloVe and FastText appear without gloss in §6/§8 (carried over from cycle 1, below escalation threshold). All other checks unchanged from cycle 1: required sections present and non-trivial, primary resource [1] cited at ~87% claim coverage across §5/§6/§7, no sequence drift or forward references, word count 2050 within atomic 1500–2400 range."
+}

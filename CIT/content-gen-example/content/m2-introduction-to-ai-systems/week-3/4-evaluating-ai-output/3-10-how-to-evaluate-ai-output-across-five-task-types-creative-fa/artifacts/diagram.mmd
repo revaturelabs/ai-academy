@@ -1,0 +1,58 @@
+---
+title: "Evaluating AI Output — Five Task Types"
+theme: base
+themeVariables:
+  primaryColor: "#a5d8ff"
+  primaryBorderColor: "#4a9eed"
+  lineColor: "#555"
+flowchart:
+  htmlLabels: true
+  curve: basis
+---
+flowchart LR
+  subgraph CREATIVE["Creative"]
+    CR1["<b>Originality</b>"]
+    CR2["<b>Coherence</b>"]
+    CR3["<b>Prompt Adherence</b>"]
+    CR4["<b>Stylistic Consistency</b>"]
+  end
+
+  subgraph FACTUAL["Factual"]
+    FA1["<b>Accuracy</b>"]
+    FA2["<b>Citation Integrity</b>"]
+    FA3["<b>Completeness</b>"]
+    FA4["<b>Source Provenance</b>"]
+  end
+
+  subgraph LOGICAL["Logical"]
+    LO1["<b>Step Validity</b>"]
+    LO2["<b>Premise Soundness</b>"]
+    LO3["<b>Conclusion Support</b>"]
+    LO4["<b>Internal Consistency</b>"]
+  end
+
+  subgraph ETHICAL["Ethical"]
+    ET1["<b>Balance of Perspectives</b>"]
+    ET2["<b>Absence of Stereotypes</b>"]
+    ET3["<b>Harm Avoidance</b>"]
+    ET4["<b>Fairness</b>"]
+  end
+
+  subgraph CODING["Coding"]
+    CO1["<b>Runs Without Error</b>"]
+    CO2["<b>Edge Case Handling</b>"]
+    CO3["<b>Readability</b>"]
+    CO4["<b>Correctness</b>"]
+  end
+
+  classDef creative fill:#7ED321,stroke:#4A7C10,color:#000
+  classDef factual fill:#4A90E2,stroke:#2C5F8A,color:#fff
+  classDef logical fill:#F5A623,stroke:#C47A1A,color:#000
+  classDef ethical fill:#BD10E0,stroke:#7B0092,color:#fff
+  classDef coding fill:#D0021B,stroke:#8B0000,color:#fff
+
+  class CR1,CR2,CR3,CR4 creative
+  class FA1,FA2,FA3,FA4 factual
+  class LO1,LO2,LO3,LO4 logical
+  class ET1,ET2,ET3,ET4 ethical
+  class CO1,CO2,CO3,CO4 coding

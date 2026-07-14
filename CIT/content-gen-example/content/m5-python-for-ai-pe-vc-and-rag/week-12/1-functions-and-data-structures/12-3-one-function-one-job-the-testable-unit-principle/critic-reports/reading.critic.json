@@ -1,0 +1,79 @@
+{
+  "topic_id": "12.3",
+  "artifact": "reading",
+  "verdict": "pass",
+  "hard_fail_reasons": [],
+  "findings": [
+    {
+      "code": "meta_field_name_deviation",
+      "severity": "soft",
+      "detail": "reading.meta.json uses 'reading_minutes' instead of the SKILL-specified 'estimated_read_minutes', and is missing the 'citations_used' array field. The file exists and parses; information is present but under non-canonical keys. No hard fail triggered."
+    }
+  ],
+  "checks": {
+    "format_discipline": {
+      "passed": true,
+      "no_frontmatter": true,
+      "h1_first_line": true,
+      "meta_sidecar_present": true,
+      "meta_sidecar_parses": true,
+      "sections_correct": true,
+      "sections_found": ["Overview", "Key Concepts", "Worked Example", "In Practice", "Key Takeaways", "References"],
+      "notes": "All six required sections present in correct order. No frontmatter. H1 is first non-empty line."
+    },
+    "length": {
+      "passed": true,
+      "word_count": 1389,
+      "reading_time_min": 6.945,
+      "target_word_range": [1200, 1600],
+      "target_minutes_range": [6, 8],
+      "notes": "1389 words at 200 wpm = 6.945 min. Within [1200, 1600] words and [6, 8] min."
+    },
+    "citations": {
+      "passed": true,
+      "primary_resource_cited": true,
+      "primary_resource": "https://realpython.com/solid-principles-python/",
+      "inline_markers_found": ["[1]", "[2]", "[3]"],
+      "bibliography_entries_found": 3,
+      "orphan_markers": [],
+      "orphan_bibliography_entries": [],
+      "notes": "[1] realpython.com cited multiple times throughout. All three resources in bibliography match inline markers."
+    },
+    "no_forward_references": {
+      "passed": true,
+      "notes": "pytest named once as a deferred future tool (mention-and-defer pattern, not taught). No forward-referenced data structures, language features, or concepts beyond the allowed prior-topic set and this topic's own scope."
+    },
+    "faithfulness": {
+      "passed": true,
+      "assertions_sampled": 8,
+      "unsupported_assertions": 0,
+      "notes": "All 8 sampled assertions trace directly to topic_corpus.md sections 5.1-5.5 and 6-7. No claims introduced beyond corpus content."
+    },
+    "beginner_readability": {
+      "passed": true,
+      "findings": [],
+      "notes": "All key terms (one job, code smell, testable unit, refactoring, and-heuristic) defined at first use with bold-term / plain-meaning format. Concrete analogies lead abstractions throughout. No jargon dumps. No hedging language. Active voice, addresses learner as 'you'."
+    },
+    "formatting": {
+      "passed": true,
+      "findings": [],
+      "notes": "Paragraphs consistently under 4 sentences. Ordered steps rendered as numbered list. Inline examples in every concept subsection. Tables used for comparisons. Bold definitions applied consistently."
+    },
+    "assessment_references": {
+      "passed": true,
+      "notes": "No assessment IDs, due-week mentions, or grade weights appear in the reading."
+    },
+    "scope": {
+      "passed": true,
+      "scope_creep_found": false,
+      "notes": "Reading teaches exactly: one-job principle, 'and' naming heuristic, code smell, testable unit, refactoring. pytest is named-and-deferred in one sentence only, not bolded or defined. No scope creep."
+    }
+  },
+  "gold_example_comparison": {
+    "example_available": false,
+    "notes": "No gold example exists for topic 12.3. Checked against 2-1 and 3-4 gold examples for tone/format bar — this reading meets that bar: identical section structure, same concrete-first style, comparable formatting density."
+  },
+  "word_count": 1389,
+  "reading_time_min": 6.945,
+  "summary": "Reading passes all checks — correct format, 1389 words within budget, primary resource cited, all terms defined at first use, no forward references, no scope creep, full faithfulness to corpus."
+}

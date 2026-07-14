@@ -1,0 +1,257 @@
+{
+  "critic": "reading-critic",
+  "topic_id": "1.1",
+  "topic_title": "What is computation",
+  "depth_profile": "standard",
+  "cycle": 2,
+  "at": "2026-06-19T00:00:00Z",
+  "passed": true,
+  "word_count": 1340,
+  "estimated_read_minutes": 6.7,
+  "target_word_range": [1200, 1600],
+  "target_minute_range": [6, 8],
+  "checks": {
+    "format_discipline": {
+      "passed": true,
+      "frontmatter_present": false,
+      "first_line": "# What is computation",
+      "meta_sidecar_present": true,
+      "meta_sidecar_valid": true,
+      "section_template_violation": false,
+      "sections_found": ["Overview", "Key Concepts", "Worked Example", "In Practice", "Key Takeaways", "References"],
+      "sections_expected": ["Overview", "Key Concepts", "Worked Example", "In Practice", "Key Takeaways", "References"],
+      "detail": "No frontmatter. First non-empty line is the H1 title. Sidecar reading.meta.json present and parseable with word_count, reading_minutes, resources_cited, sections, depth_profile. All six required sections present in correct order."
+    },
+    "length": {
+      "passed": true,
+      "word_count": 1340,
+      "target_word_range": [1200, 1600],
+      "read_minutes_computed": 6.7,
+      "target_minute_range": [6, 8],
+      "detail": "1340 words is within [1200, 1600]. 1340 / 200 wpm = 6.7 min, within [6, 8]. Both bounds satisfied."
+    },
+    "citations": {
+      "passed": true,
+      "primary_resource_cited": {
+        "index": 1,
+        "role": "primary",
+        "url": "https://thelearnnotes.com/blog/deterministic-and-probabilistic-systems-what-s-the-deal-",
+        "cited_at_least_once": true,
+        "citation_locations": [
+          "Key Concepts §1 line 11: I/P/O structure [1]",
+          "Key Concepts §1 line 22: I/P/O design-questions [1]",
+          "Key Concepts §2 line 26: defined/unambiguous steps [1]",
+          "Key Concepts §2 line 33: precision requirement [1]",
+          "Key Concepts §3 line 37: computable definition [1]",
+          "Key Concepts §3 table rows: all computable tasks [1]",
+          "Key Concepts §4 line 51: non-electronic computing [1]",
+          "Key Concepts §4 line 68: computational thinking definition [1]",
+          "In Practice line 116: do not confuse computer with computation [1]",
+          "Key Concepts §5 line 74: deferral sentence [1][2]"
+        ]
+      },
+      "supporting_resources_cited": {
+        "resource_2": {
+          "url": "https://www.alphanome.ai/post/probabilistic-vs-deterministic-models-in-ai-ml-a-detailed-explanation",
+          "cited_at_least_once": true,
+          "citation_locations": [
+            "Key Concepts §3 line 47: AI boundary note [2][3]",
+            "Key Concepts §5 line 72: AI computation intro [2][3]",
+            "Key Concepts §5 line 74: deterministic/probabilistic deferral [1][2]",
+            "Worked Example line 80: card transaction 200ms [2][3]",
+            "Worked Example line 101: closing [2][3]",
+            "In Practice lines 107-109: domain examples [2][3]"
+          ]
+        },
+        "resource_3": {
+          "url": "https://www.gaine.com/blog/probabilistic-and-deterministic-results-in-ai-systems",
+          "cited_at_least_once": true,
+          "citation_locations": [
+            "Key Concepts §3 line 47: AI boundary note [2][3]",
+            "Key Concepts §5 line 72: AI computation intro [2][3]",
+            "Worked Example line 80: card transaction [2][3]",
+            "In Practice lines 107-109: domain examples [2][3]"
+          ]
+        }
+      },
+      "orphan_markers": [],
+      "orphan_bibliography_entries": [],
+      "detail": "All three resources cited. Primary [1] cited in 10+ locations. Bibliography entries match inline markers [1][2][3]. No orphans on either side."
+    },
+    "no_assessment_references": {
+      "passed": true,
+      "findings": [],
+      "detail": "No assessment IDs, due-week references, or grade weights found in the reading."
+    },
+    "diagram_embedded": {
+      "passed": true,
+      "location": "Key Concepts section, line 19",
+      "embed_line": "![The input → process → output structure, shown in two everyday examples.](./diagram.png)",
+      "detail": "Diagram PNG embedded within the Key Concepts section as required. Alt text and caption present."
+    },
+    "no_forward_references": {
+      "passed": true,
+      "forward_references_found": [],
+      "compliant_pointers": [
+        {
+          "text": "You will explore that shift in later topics.",
+          "line": 47,
+          "assessment": "Single-sentence deferral for AI/machine-recognition advance. No teaching of downstream concept. Compliant."
+        },
+        {
+          "text": "Whether a system is deterministic or probabilistic is covered in topics 1.2 and 1.3 — for now, the core structure is identical",
+          "line": 74,
+          "assessment": "Bare names + explicit topic pointer. No bold markers, no defining clause, no appositive. Compliant mention-and-defer. Cycle 2 fix confirmed."
+        },
+        {
+          "text": "you will explore how they differ from simpler systems in topics 1.2 and 1.3",
+          "line": 124,
+          "assessment": "Single-sentence motivational pointer in Key Takeaways. No teaching. Compliant."
+        }
+      ],
+      "detail": "No forward references. All three pointers to future topics use the compliant bare-name + topic-pointer form."
+    },
+    "faithfulness_to_corpus": {
+      "passed": true,
+      "assertions_sampled": 10,
+      "unsupported_count": 0,
+      "unsupported_threshold": 2,
+      "sampled_assertions": [
+        {
+          "reading_text": "Computation is any process that takes information in, applies a defined set of steps to it, and produces a result.",
+          "corpus_location": "§5.1 definition block",
+          "supported": true
+        },
+        {
+          "reading_text": "Input — the raw information going in. Process — the defined steps. Output — the result.",
+          "corpus_location": "§5.1 numbered list lines 47-49",
+          "supported": true
+        },
+        {
+          "reading_text": "the steps are specific and unambiguous — precise instructions that leave no room for guessing",
+          "corpus_location": "§5.2 line 61",
+          "supported": true
+        },
+        {
+          "reading_text": "Vague: 'Add a pinch of salt.' Defined: 'Add exactly 2 grams of salt.'",
+          "corpus_location": "§5.2 lines 63-65",
+          "supported": true
+        },
+        {
+          "reading_text": "Computable means: there exists a finite set of defined steps that always produces the correct result in a finite amount of time",
+          "corpus_location": "§5.3 line 75",
+          "supported": true
+        },
+        {
+          "reading_text": "recognising speech, identifying objects in photos — are now solved by modern AI (Artificial Intelligence) systems [2][3]",
+          "corpus_location": "§5.3 line 90",
+          "supported": true
+        },
+        {
+          "reading_text": "Traffic light on a timer: Input: time elapsed... Process: if time ≥ green_duration, switch to amber...",
+          "corpus_location": "§5.4 lines 102-106",
+          "supported": true
+        },
+        {
+          "reading_text": "Vending machine: check whether inserted value ≥ item price AND item is in stock",
+          "corpus_location": "§5.4 lines 109-112",
+          "supported": true
+        },
+        {
+          "reading_text": "a bank card transaction check... typically finishing in under 200 milliseconds [2][3]",
+          "corpus_location": "§7 Real-World Patterns, finance block line 175",
+          "supported": true
+        },
+        {
+          "reading_text": "Modern AI systems... take inputs (your words, an image, your click history), apply sequences of defined steps, and produce outputs [2][3]",
+          "corpus_location": "§5.5 line 140",
+          "supported": true
+        }
+      ],
+      "detail": "All 10 sampled assertions trace to the corpus. 0 unsupported assertions (threshold >2). PASS."
+    },
+    "beginner_readability": {
+      "passed": true,
+      "findings": [],
+      "undefined_terms": {
+        "cold_usage_count": 0,
+        "detail": "All non-everyday terms defined before or at first use: 'computation' defined in Overview; 'I/P/O' — full form 'Input / Process / Output model' given at line 17 before abbreviation used; 'AI (Artificial Intelligence)' spelled out line 47; 'Computable' defined in bold-term / plain-meaning shape line 37; 'computational thinking' defined inline line 68. No cold usage."
+      },
+      "jargon_dumps": {
+        "found": false,
+        "detail": "No paragraph introduces 3+ brand-new terms simultaneously."
+      },
+      "concrete_first": {
+        "passed": true,
+        "detail": "GPS/traffic light/vending machine examples lead the Overview before the abstract definition. Recipe analogy precedes 'defined steps' abstraction. I/P/O numbered list precedes the 'I/P/O model' label. Concrete-first pattern consistent throughout."
+      },
+      "academic_register": {
+        "passed": true,
+        "hedging_count": 0,
+        "average_sentence_length_estimate": "under 20 words",
+        "detail": "No hedging phrases found. Active voice, second-person 'you' form throughout. Sentence length well under 25-word target."
+      },
+      "detail": "All four beginner-readability sub-checks pass. Zero findings. No escalation."
+    },
+    "formatting_scannability": {
+      "passed": true,
+      "findings": [],
+      "wall_of_text": {
+        "found": false,
+        "detail": "Longest paragraphs are 3-4 sentences. No paragraph exceeds 6 sentences. Key Concepts uses five numbered sub-sections to break content into scannable chunks."
+      },
+      "unlisted_sequences": {
+        "found": false,
+        "detail": "Worked Example steps rendered as numbered H3 blocks. I/P/O definition rendered as numbered list. In Practice habits rendered as bullets. Key Takeaways as bullets. All sequences properly listed."
+      },
+      "inline_examples": {
+        "found": true,
+        "detail": "Inline examples appear in every Key Concepts sub-section: calculator for I/P/O, recipe for defined steps, computability table, traffic light/vending machine/cashier for non-electronic computation, AI paragraph for foundational concept. Not deferred to Worked Example alone."
+      },
+      "bold_term_shape": {
+        "compliant": true,
+        "detail": "Defined terms use bold-term / plain-meaning shape: '**Input** — the raw information going in', '**Computable** means: ...', '**computational thinking**: approaching a problem...'. Consistent with formatting_standards."
+      },
+      "detail": "All four formatting sub-checks pass. Zero findings."
+    },
+    "scope_discipline": {
+      "passed": true,
+      "findings": [],
+      "cycle_2_fix_verified": {
+        "prior_finding_code": "scope_creep",
+        "prior_finding_location": "line 74",
+        "prior_finding_description": "Bold markers on 'deterministic' and 'probabilistic' with inline parenthetical definitions — violated mention-and-defer form.",
+        "current_line_74_text": "Whether a system is deterministic or probabilistic is covered in topics 1.2 and 1.3 — for now, the core structure is identical [1][2].",
+        "fix_confirmed": true,
+        "detail": "Bold markers removed. Parenthetical defining clauses removed. Terms appear as bare names ('deterministic or probabilistic') with an explicit topic pointer ('covered in topics 1.2 and 1.3'). Satisfies scope_discipline mention-and-defer form: bare name + topic pointer, no bolding, no defining clause, no appositive."
+      },
+      "other_scope_checks": [
+        {
+          "term": "computational thinking",
+          "line": 68,
+          "assessment": "Defined inline in Key Concepts §4. This term is within scope: corpus §5.4 lines 134-136 introduces and defines it as the culminating concept of the non-electronic-computing section. Reading faithfully mirrors corpus treatment. Not scope_creep."
+        },
+        {
+          "term": "AI (Artificial Intelligence)",
+          "line": 47,
+          "assessment": "Spelled out on first use. Used as motivational application context (AI is computation too) consistent with corpus §5.5. Not taught as a standalone downstream concept. Compliant."
+        }
+      ],
+      "detail": "No scope_creep findings. Cycle 2 fix confirmed. All deferred concepts use bare-name + topic-pointer form required by scope_discipline."
+    },
+    "gold_example_comparison": {
+      "checked": true,
+      "meets_gold_standard": true,
+      "detail": "Gold example (2-1-what-makes-a-good-specification.reading.md) used as bar. The 1.1 reading matches its structure (six sections, same order), beginner tone, formatting density (bold-term definitions, numbered lists, inline examples), and depth. The 1.1 reading does NOT contain an assessment reference (unlike the gold example's flagged defect). Meets or exceeds the gold standard on all dimensions."
+    }
+  },
+  "cycle_2_summary": {
+    "prior_failure_code": "scope_creep",
+    "prior_failure_location": "line 74",
+    "prior_failure_description": "Bold markers on 'deterministic' and 'probabilistic' with inline parenthetical definitions",
+    "fix_verified": true,
+    "new_findings": [],
+    "detail": "Cycle 2 fix confirmed. No new findings introduced by the fix. All checks pass."
+  },
+  "verdict": "PASS — All checks pass on cycle 2. The cycle 1 scope_creep hard-fail (bold 'deterministic' / 'probabilistic' with parenthetical definitions at line 74) is confirmed fixed: terms now appear as bare names with explicit topic pointer ('covered in topics 1.2 and 1.3'), satisfying the mention-and-defer form. Format discipline: no frontmatter, six sections in correct order, sidecar valid — PASS. Length: 1340 words within [1200, 1600]; 6.7 min within [6, 8] — PASS. Citations: primary [1] cited 10+ times; all three resources cited; no orphans — PASS. No assessment references — PASS. Diagram embedded in Key Concepts — PASS. Forward references: zero hard references; three compliant bare-name pointers — PASS. Faithfulness: all 10 sampled assertions trace to corpus; 0 unsupported — PASS. Beginner readability: zero findings, all four sub-checks pass — PASS. Formatting: zero findings, all four sub-checks pass — PASS. Scope: cycle 2 fix confirmed, zero scope_creep findings — PASS. Reading artifact is ready for quiz pairing and HITL #3."
+}

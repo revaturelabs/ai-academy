@@ -1,0 +1,44 @@
+{
+  "critic": "reading-critic",
+  "topic_id": "6.6",
+  "cycle": 1,
+  "at": "2026-06-19T00:00:00Z",
+  "passed": true,
+  "checks": {
+    "format_discipline": {
+      "passed": true,
+      "notes": "No frontmatter — first non-empty line is '# Dot product as similarity — vectors pointing the same direction score high'. reading.meta.json exists and parses with all required fields (word_count, estimated_read_minutes, citations_used, sections). Exactly six fixed sections present in correct order: Overview, Key Concepts, Worked Example, In Practice, Key Takeaways, References. Minor: meta.json reports estimated_read_minutes=8 but 607 words / 230 wpm = ~2.6 minutes; meta sidecar has an inflated read-time estimate. Not a format hard-fail (field exists and parses), but should be corrected."
+    },
+    "length_budget": {
+      "passed": true,
+      "word_count": 607,
+      "target_range": [400, 650],
+      "reading_minutes": 2.6,
+      "notes": "Word count 607 is within [400, 650]. Reading time at 230 wpm is approximately 2.6 minutes. meta.json's estimated_read_minutes of 8 is inconsistent with this (appears to have been set incorrectly); the actual reading.md content is within budget."
+    },
+    "citation_discipline": {
+      "passed": true,
+      "notes": "Primary resource [1] (apxml.com) is cited in Overview, Key Concepts secs 1/2/3, Worked Example, In Practice, and Key Takeaways — well above the minimum one citation. Supporting resources [2] (learndatasci.com) and [3] (jamesmccaffreyblog.com) also cited inline and listed in bibliography. No orphan inline markers; no orphan bibliography entries. All three bibliography entries in References match the three inline markers used."
+    },
+    "no_forward_references": {
+      "passed": true,
+      "findings": [],
+      "notes": "Four forward mentions found — cosine similarity (topic 6.9) at lines 41, 78, 86 and embeddings (topic 6.7) at line 73 — all are explicit name-and-defer pointers ('you will see in topic 6.9', 'you will explore that in topic 6.7', 'see topic 6.9'). Neither concept is taught. All prior concepts (vectors, scalars, feature vectors, position order, point-in-space) are from topics 6.1–6.5 and this topic's corpus. No forward teaching found."
+    },
+    "beginner_readability": {
+      "passed": true,
+      "findings": [],
+      "notes": "All non-everyday terms defined on first use: 'dot product' defined in Overview as 'a calculation that takes two vectors and produces a single number (a scalar)'; 'scalar' defined inline; 'similarity score' defined in Key Concepts. No term used cold without a plain-language definition. No jargon dumps (no paragraph introduces 3+ brand-new terms at once). Concrete-first throughout — the abstract definition always follows a concrete framing. Average sentence length well under 25 words. No academic hedging phrases found. No assessment references (A2/15% not mentioned). Bold-term / plain-meaning shape used consistently for definitions."
+    },
+    "scope_discipline": {
+      "passed": true,
+      "findings": [],
+      "notes": "Reading stays on the topic headline (dot product as similarity). Cosine similarity and embeddings appear only as one-sentence named-and-deferred pointers. Image similarity is a one-sentence application example, not taught. No scope creep detected."
+    },
+    "faithfulness": {
+      "passed": true,
+      "notes": "Ten assertions sampled across Overview, Key Concepts, Worked Example, In Practice, and Key Takeaways. All ten are directly supported by the corpus: dot product definition (corpus sec 5.1), direction-score relationship (corpus sec 5.3), vote metaphor (corpus sec 5.5), music example with values 0.92 and -0.92 (corpus sec 5.2), position-order importance (corpus sec 5.4), recommendation/Spotify/Netflix/YouTube (corpus sec 7), search/embedding mention (corpus sec 7), magnitude sensitivity (corpus sec 5.6). Zero unsupported assertions found."
+    }
+  },
+  "verdict": "PASS — all seven checks pass. The reading is within word budget (607 / [400–650]), cites the primary resource multiple times, uses only name-and-defer for forward topics (6.7, 6.9), defines every term on first use, stays on the topic headline with no scope creep, and every sampled assertion traces to the corpus. One non-blocking note: reading.meta.json has estimated_read_minutes=8 which should be corrected to ~3 (607 words / 230 wpm ≈ 2.6 minutes)."
+}

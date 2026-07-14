@@ -1,0 +1,47 @@
+{
+  "passed": true,
+  "checks": {
+    "positional_bias": {
+      "passed": true,
+      "distribution": [1, 2, 1, 1],
+      "max_share": 0.40,
+      "note": "pos0=1 (20%), pos1=2 (40%), pos2=1 (20%), pos3=1 (20%). max_share=0.40 does not exceed the >0.40 threshold. Matches sidecar; no desync."
+    },
+    "length_bias": {
+      "passed": true,
+      "longest_correct_rate": 0.40,
+      "baseline": 0.25,
+      "flagged_questions": ["Q1", "Q2"],
+      "note": "Q1 correct (148 chars) > mean-distractor (89.7) * 1.20 (107.6). Q2 correct (116) > mean-distractor (85.7) * 1.20 (102.8). Q3/Q4/Q5 clear. Rate=2/5=0.40, does not exceed >0.40 threshold."
+    },
+    "distractor_plausibility": {
+      "passed": true,
+      "absurd_rate": 0.0,
+      "total_distractors": 15,
+      "absurd_count": 0,
+      "weakest_questions": []
+    },
+    "objective_coverage": {
+      "passed": true,
+      "uncovered_objectives": [],
+      "orphan_questions": [],
+      "coverage_map": {
+        "LO1 — Explain what it means for a function to have one job, and why that matters for testing.": ["12.3-Q1"],
+        "LO2 — Identify a function that is doing more than one job by reading its body and its name.": ["12.3-Q2"],
+        "LO3 — Use the 'and' naming heuristic to detect multi-job functions before writing or reviewing code.": ["12.3-Q3"],
+        "LO4 — Refactor a multi-job function into two or more single-job functions that can each be tested independently.": ["12.3-Q4"],
+        "LO5 — Write a short, spec-first manual test for a single-job function using what you already know.": ["12.3-Q5"]
+      }
+    },
+    "scope_discipline": {
+      "passed": true,
+      "findings": [],
+      "note": "All 5 questions test material taught exclusively in topic 12.3. No jargon-in-stem issues. Deferred concept (pytest) does not appear in any question. All distractors reflect plausible beginner misconceptions about this topic only."
+    }
+  },
+  "auto_correction_applied": {
+    "shuffle_round_2": false
+  },
+  "verdict": "Pass — all five checks clean; positional and length bias both land exactly at 0.40 (within threshold), full LO coverage, no absurd distractors, no out-of-scope questions.",
+  "at": "2026-06-14T00:00:00Z"
+}

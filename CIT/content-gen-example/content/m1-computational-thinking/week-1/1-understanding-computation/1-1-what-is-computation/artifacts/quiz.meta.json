@@ -1,0 +1,42 @@
+{
+  "topic_id": "1.1",
+  "generated_at": "2026-06-19T00:00:00Z",
+  "format": "gift",
+  "question_count": 5,
+  "$bias_defense_applied": true,
+  "$shuffle_seed": "1.1-xor-0",
+  "correct_position_distribution": [1, 3, 0, 2, 1],
+  "bias_defense_notes": "Correct-answer positions shuffled across all 5 questions. Distribution: pos0=1, pos1=2, pos2=1, pos3=1. Max share = 2/5 = 0.40 (at boundary, satisfies max_share <= 0.40). All 4 positions used at least once.",
+  "questions": [
+    {
+      "id": "1.1-Q1",
+      "type": "mcq",
+      "objective_ref": "Describe what computation means in plain, everyday terms; Give at least two real-world examples of computation happening outside a computer.",
+      "correct_position": 1
+    },
+    {
+      "id": "1.1-Q2",
+      "type": "mcq",
+      "objective_ref": "Identify the three basic parts of any computation: input, process, and output.",
+      "correct_position": 3
+    },
+    {
+      "id": "1.1-Q3",
+      "type": "mcq",
+      "objective_ref": "Explain the idea that a computer follows a set of instructions to produce a result.",
+      "correct_position": 0
+    },
+    {
+      "id": "1.1-Q4",
+      "type": "mcq",
+      "objective_ref": "Distinguish between a task a computer can compute and one it currently cannot.",
+      "correct_position": 2
+    },
+    {
+      "id": "1.1-Q5",
+      "type": "mcq",
+      "objective_ref": "Identify the three basic parts of any computation: input, process, and output.",
+      "correct_position": 1
+    }
+  ]
+}

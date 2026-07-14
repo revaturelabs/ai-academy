@@ -1,0 +1,82 @@
+{
+  "critic": "corpus-critic",
+  "topic_id": "13.8",
+  "at": "2026-06-14T00:00:00Z",
+  "passed": true,
+  "verdict": "PASSED with two soft findings. (1) scope_creep: Pydantic receives a defining clause ('Libraries like Pydantic can automate schema checks') rather than a bare name + topic pointer as required by scope_discipline mention-and-defer rules — the clause should be dropped, leaving only the bare name. (2) citation_gap: Section 5d ('Where does the checklist come from?') contains several standalone methodological assertions with no citation markers despite strict mode being active. All hard-gate checks pass: required sections present and non-trivial, primary resource [1] cited ≥1 time, no hard forward references, word count within 1500–6000 standard-profile range (~2000 words estimated), retry logic correctly named-and-deferred to 13.9, beginner readability good throughout.",
+  "checks": {
+    "required_sections": {
+      "passed": true,
+      "findings": [],
+      "detail": {
+        "learning_objectives_section3": { "present": true, "word_count_approx": 80, "threshold": 50, "passed": true },
+        "introduction_section4": { "present": true, "word_count_approx": 190, "threshold": 50, "passed": true },
+        "core_concepts_section5": { "present": true, "word_count_approx": 700, "threshold": 100, "passed": true },
+        "key_takeaways_section10": { "present": true, "word_count_approx": 100, "threshold": 50, "passed": true }
+      }
+    },
+    "citation_density": {
+      "passed": true,
+      "resources_source": "web_search",
+      "mode": "strict",
+      "primary_cited_at_least_once": true,
+      "findings": [
+        {
+          "code": "citation_gap",
+          "severity": "soft",
+          "location": "Section 5d",
+          "detail": "Section 5d ('Where does the checklist come from?') contains ~4 standalone factual/methodological assertions with no [N] citation markers. In strict mode, ≥60% of factual assertions in Core Concepts must carry markers. Section 5 overall passes the 60% threshold due to heavy citation coverage in 5a–5c, but 5d is a gap the builder should patch."
+        }
+      ]
+    },
+    "sequence_drift": {
+      "passed": true,
+      "findings": [
+        {
+          "code": "mention_and_defer_form_violation",
+          "severity": "soft",
+          "term": "Pydantic",
+          "location": "Section 5c, paragraph beginning 'A schema check is the name...'",
+          "detail": "Pydantic is a deferred concept (not this topic's own concept, not taught in prior topics). The mention-and-defer rule requires a bare name plus a topic pointer with no defining clause. The corpus writes 'Libraries like Pydantic can automate schema checks' — the clause 'can automate schema checks' constitutes a defining clause. Per scope_discipline rules, bolding or defining a deferred concept is treated as teaching it. Fix: reduce to 'Libraries like Pydantic handle this automatically — you will encounter them in later topics.' or similar bare-name form without a functional definition."
+        }
+      ],
+      "forward_references_hard": []
+    },
+    "length_sanity": {
+      "passed": true,
+      "depth_profile": "standard",
+      "word_count_approx": 2000,
+      "range_min": 1500,
+      "range_max": 6000,
+      "findings": []
+    },
+    "topic_scope": {
+      "passed": true,
+      "findings": [
+        {
+          "code": "scope_creep",
+          "severity": "soft",
+          "concept": "Pydantic functional definition",
+          "location": "Section 5c",
+          "detail": "Same instance as sequence_drift finding above. The defining clause 'can automate schema checks' teaches what Pydantic does, which is beyond the topic boundary (output validation with plain Python). Not a hard fail because it is a single sentence and Pydantic is not expanded further. However, the defining clause must be removed to comply with mention-and-defer form."
+        }
+      ],
+      "out_of_scope_hard": []
+    },
+    "beginner_readability": {
+      "passed": true,
+      "findings": [],
+      "detail": {
+        "terms_defined_on_first_use": true,
+        "undefined_terms": [],
+        "jargon_dump_paragraphs": [],
+        "register": "plain, active voice, second-person throughout, short sentences — passes",
+        "hedging_phrases_count": 0,
+        "acronyms_unexplained": []
+      }
+    }
+  },
+  "soft_findings_count": 2,
+  "hard_fail_count": 0,
+  "recommended_action": "Corpus may proceed to HITL #2. Builder should apply two targeted edits before reading/quiz generation: (1) strip the defining clause from the Pydantic mention in Section 5c; (2) add at least one [1] or [3] citation to the methodological claims in Section 5d."
+}

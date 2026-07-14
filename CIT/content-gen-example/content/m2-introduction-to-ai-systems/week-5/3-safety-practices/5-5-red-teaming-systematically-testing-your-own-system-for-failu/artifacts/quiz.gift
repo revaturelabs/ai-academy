@@ -1,0 +1,49 @@
+$CATEGORY: CIT/M2/week-5/5.5-5-5-red-teaming-systematically-testing-your-own-system-for-failu
+
+::q1:: In plain terms, what does "red-teaming" an artificial intelligence (AI) system mean? {
+=Deliberately attacking your own AI system to find its weaknesses before real users or attackers do.#Correct — you play the bad guy against your own product so you find the broken locks first.
+~Carefully checking that the AI system works correctly when it is used the normal, intended way.#No — that is ordinary testing; red-teaming instead tries to make the system fail on purpose.
+~Building a backup copy of the AI system so a second team can run it if the first one breaks.#No — red-teaming is about attacking the system to expose flaws, not keeping a spare running copy.
+~Asking real customers to report any problems they notice once the AI system is already live.#No — that gathers feedback after release; red-teaming happens as a deliberate test, not as user reports.
+#### Tests the core definition of red-teaming as deliberate, adversarial self-attack (corpus §4, §5.1).
+}
+
+::q2:: Why does a team red-team its AI system before deployment instead of waiting until after launch? {
+~Testing after launch is impossible because a deployed system can no longer be changed or patched.#No — deployed systems can be patched, but by then any weakness is already a live risk to real people.
+~Regulators forbid any testing once a system is live, so all checks must be finished beforehand.#No — testing can continue after launch; the real reason is cost of harm, not a ban on later testing.
+=A failure caught in testing only costs a fix, while a failure caught after launch causes real harm.#Correct — finding it yourself is cheap and private; a live failure hurts real users and trust.
+~Systems run faster before deployment, so adversarial inputs are processed more quickly in testing.#No — speed is not the point; the point is catching failures before any real user can hit them.
+#### Tests why adversarial testing happens before deployment rather than after (corpus §5.2).
+}
+
+::q3:: Who typically does red-teaming, and how often does it happen across a system's life? {
+~Only outside government inspectors do it, and only one time as a final sign-off just before launch.#No — it is not inspector-only or one-time; internal staff, specialists, and tools all take part repeatedly.
+=Internal engineers, dedicated specialists, and automated tools — before deployment, after updates, and ongoing.#Correct — it is a mix of people and tools, repeated at three points across the system's life.
+~Only the original builders do it, and only after the system has been running live for a full year.#No — fresh adversarial eyes are valued, and testing starts before launch, not a year after going live.
+~Only automated tools do it, running a single batch of attacks on the morning of the release date.#No — humans and tools both contribute, and testing repeats over time rather than once on release day.
+#### Tests who performs red-teaming and the three-point timeline (corpus §5.3, §5.4).
+}
+
+::q4:: Which list contains attack-and-failure categories that a red team deliberately probes for? {
+~Slow response times, high server costs, confusing menus, and a hard-to-read user interface design.#No — those are performance and usability issues, not the adversarial failure categories a red team hunts.
+~Spelling mistakes, broken web links, missing help pages, and slow customer-support reply times.#No — these are quality-of-service gaps, not the safety failures (jailbreaks, leakage, poisoning) red teams probe.
+~Low battery life, weak wifi signal, small font sizes, and screens that are hard to see outdoors.#No — these are hardware and display problems, unrelated to the adversarial attacks a red team tests for.
+=Jailbreaks, harmful outputs, data leakage, data poisoning, and triggering hallucination or bias.#Correct — these are the known adversarial failure categories a red team works through against the system.
+#### Tests the main categories of attacks and failures a red team probes (corpus §5.5).
+}
+
+::q5:: How does red-teaming connect to the harm-prevention pillar and to the failures from topics 5.1–5.3? {
+=It is the proactive testing harm prevention asks for, hunting the same failures 5.1–5.3 showed before launch.#Correct — red-teaming is how you actively look for harm, catching 5.1–5.3 failures in a lab, not the news.
+~It replaces the harm-prevention pillar entirely, so a team that red-teams can ignore the four pillars.#No — red-teaming serves the harm-prevention pillar; it does not cancel or replace the pillars.
+~It only applies to brand-new dangers, so the misdiagnosis and bias cases from 5.1–5.3 are out of scope.#No — red teams deliberately re-trigger those exact 5.1–5.3 failures rather than ignoring them.
+~It is unrelated to the pillars; harm prevention is policy paperwork while red-teaming is just engineering.#No — harm prevention is the goal and red-teaming is the hands-on testing that goal requires.
+#### Tests the tie to the harm-prevention pillar and the 5.1–5.3 failures (corpus §4, §5.5, §10).
+}
+
+::q6:: A team red-teams an AI chatbot, finds and patches a weakness, and then ships the new version. What does the red-team loop say they should do next? {
+~Stop testing, because the patched weakness proves the system is now safe and finished for good.#No — one fix is never the end; the loop repeats because the system and the attacks keep changing.
+~Wait for users to report new problems, since hands-on testing is no longer needed after a patch.#No — red-teaming is proactive and ongoing, not something you hand off to user reports after a fix.
+~Delete the old attacks so they cannot be reused, then assume future versions will stay safe.#No — old attacks are re-run as regression tests, not deleted; reusing them confirms nothing broke.
+=Re-test with the same attacks to confirm the fix worked and broke nothing, then keep the loop going.#Correct — re-testing (regression) verifies the patch and the test→find→fix→re-test loop continues ongoing.
+#### Tests the repeating test→find→fix→re-test loop and ongoing timeline (corpus §5.4, §6, §8).
+}

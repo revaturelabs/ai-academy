@@ -1,0 +1,68 @@
+{
+  "critic": "corpus-critic",
+  "topic_id": "11.9",
+  "topic_title": "Edge cases — testing what happens at the boundary of expected input",
+  "cycle": 3,
+  "at": "2026-06-13T00:00:00Z",
+  "passed": true,
+  "checks": {
+    "required_sections": {
+      "passed": true,
+      "detail": "Sections 3 (Learning Objectives, 5 bullet points, ~70 words), 4 (Introduction, 3 paragraphs, ~170 words), 5 (Core Concepts, 5 subsections, ~1100 words), and 10 (Key Takeaways, 5 bullet points, ~100 words) are all present and non-trivial. All meet the minimum word-count thresholds (§5 >=100 words; §3/§4/§10 >=50 words). No placeholder strings in required sections."
+    },
+    "citation_density": {
+      "passed": true,
+      "resources_source": "web_search",
+      "primary_resource_cited": true,
+      "claim_citation_rate_estimate": 0.88,
+      "detail": "Strict mode (resources_source=web_search). Primary resource [1] (edbennett.github.io Carpentries Python testing lesson) cited in §4 and extensively throughout §§5, 6, 7, 8, 10. Supporting resources [2] (runestone.academy) and [3] (freecodecamp.org) each cited in multiple sections. Estimated citation coverage in §§5, 6, 7 is approximately 88% of standalone factual assertions — well above the 60% threshold. All citation markers [1], [2], [3] resolve to named resources in topic.resources.json. No fabricated or unresolvable markers found."
+    },
+    "sequence_drift": {
+      "passed": true,
+      "forward_references": [],
+      "detail": "All technical terms are either: (a) introduced in this corpus (edge case, boundary value, equivalence class, off-by-one error, test prediction, minimum/maximum valid input, empty input), (b) established in prior topics 11.1–11.8 (falsy from 11.4; if/else and comparison operators from 11.5; list, for loop, accumulator pattern from 11.6; specification, spec-first discipline from 11.7; silent failure, loud failure from 11.8), or (c) named-and-deferred in ≤1 sentence with an explicit covered-later pointer (pytest, unittest in §7: 'a topic for later in your learning'; regression check in §7: 'a formal testing concept you will cover later'). No undeferred forward references detected."
+    },
+    "length_sanity": {
+      "passed": true,
+      "suggested_profile": "standard",
+      "range": [3000, 4400],
+      "estimated_word_count": 2900,
+      "detail": "Estimated word count ~2,900 words after cycle-2 scope_creep removals (confirmation-bias paragraph ~100w removed from a ~3,000w corpus). This is approximately 100 words (3.3%) below the standard-profile floor of 3,000. The hard-fail threshold is 'more than 30% outside the range' (floor = 2,100w); ~2,900w does not trigger this. Soft note: corpus is at the low end of the standard range. Author may optionally add ~100w of body content to reach the floor, but this is not blocking passage."
+    },
+    "topic_scope": {
+      "passed": true,
+      "findings": [
+        {
+          "code": "fix_verified",
+          "concept": "regression check",
+          "section": "7 (Real-World Patterns)",
+          "detail": "FIXED from cycle 2. Bold formatting removed; the defining appositive clause has been replaced with a plain-text named-and-deferred mention: 'Professionals call this a regression check (a formal testing concept you will cover later)'. This is ≤1 sentence with an explicit deferral pointer — allowed per scope_discipline rules. No scope_creep violation."
+        },
+        {
+          "code": "fix_verified",
+          "concept": "confirmation bias",
+          "section": "5.5 (Predicting expected output before running code)",
+          "detail": "FIXED from cycle 2. The ~100-word paragraph teaching confirmation bias as a cognitive-psychology concept has been fully removed. The term 'confirmation bias' does not appear anywhere in the corpus. Section 5.5 now focuses solely on the test-prediction technique, which is within scope."
+        },
+        {
+          "code": "no_new_violations",
+          "detail": "No new scope_creep findings. pytest/unittest (§7) are named-and-deferred in one sentence. equivalence class is directly relevant to understanding edge-case boundaries and defined at appropriate beginner depth."
+        }
+      ]
+    },
+    "beginner_readability": {
+      "passed": true,
+      "findings": [
+        {
+          "code": "undefined_terms",
+          "severity": "soft",
+          "terms": ["A4"],
+          "detail": "Soft finding carried from cycle 2 (not resolved but also not escalated): 'A4 portfolio assessment (due week 13)' in §4 uses 'A4' without a plain-language gloss of the label itself. The phrase 'portfolio assessment' is descriptive, and the due-week parenthetical provides context. This single soft finding is well below the 3-finding hard-escalation threshold."
+        }
+      ],
+      "hard_fail_threshold_reached": false,
+      "detail": "1 soft finding total (down from 2 in cycle 2; the confirmation-bias undefined-term finding was resolved by scope_creep fix). Threshold for hard escalation is 3 distinct findings. No jargon dumps. Sentence length consistently under 25 words. Register is plain and analogy-driven. No hedging phrases. Soft pass."
+    }
+  },
+  "verdict": "PASS. Both cycle-2 hard-fail scope_creep items are confirmed fixed: (1) 'regression check' bold and defining clause removed — now a plain-text named-and-deferred one-liner with explicit covered-later pointer (§7); (2) confirmation-bias paragraph fully removed — term does not appear in corpus. All 6 checks pass. Soft note on length: estimated ~2,900w is ~100w (3.3%) below the standard-profile floor of 3,000w after the paragraph removal, but the hard-fail threshold (>30% outside range) is not triggered. Citation density ~88%, well above the 60% strict-mode threshold. No forward-reference violations. Beginner readability soft-passes with 1 minor soft finding (A4 label), below the 3-finding hard-escalation threshold. Corpus is approved to proceed to artifact fan-out (reading, quiz, diagram)."
+}

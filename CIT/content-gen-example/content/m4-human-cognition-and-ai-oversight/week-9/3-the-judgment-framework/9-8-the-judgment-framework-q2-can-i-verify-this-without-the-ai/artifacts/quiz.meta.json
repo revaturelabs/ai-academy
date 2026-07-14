@@ -1,0 +1,47 @@
+{
+  "topic_id": "9.8",
+  "generated_at": "2026-06-13",
+  "format": "gift",
+  "question_count": 6,
+  "$bias_defense_applied": true,
+  "$shuffle_seed": "9.8-cit-m4-w9-q2verify",
+  "correct_position_distribution": [2, 0, 3, 1, 3, 1],
+  "questions": [
+    {
+      "id": "q1",
+      "type": "mcq",
+      "objective_ref": "Explain in plain language what independent verification means and why it requires a source that is separate from the AI.",
+      "correct_position": 2
+    },
+    {
+      "id": "q2",
+      "type": "mcq",
+      "objective_ref": "Distinguish between verification (checking an AI claim against another source) and production (generating the same output yourself from scratch).",
+      "correct_position": 0
+    },
+    {
+      "id": "q3",
+      "type": "mcq",
+      "objective_ref": "Identify at least three methods of verification — cross-referencing a source, applying domain expertise, checking against a known standard, and asking a second person.",
+      "correct_position": 3
+    },
+    {
+      "id": "q4",
+      "type": "mcq",
+      "objective_ref": "Describe what to do when you cannot verify an AI output but Q1 has already told you the cost of being wrong is high.",
+      "correct_position": 1
+    },
+    {
+      "id": "q5",
+      "type": "mcq",
+      "objective_ref": "Apply the Q2 question to a real scenario and record a reasoned answer that feeds directly into A3.",
+      "correct_position": 3
+    },
+    {
+      "id": "q6",
+      "type": "mcq",
+      "objective_ref": "Recognise situations where verification is straightforward, situations where it is difficult, and situations where it is genuinely impossible.",
+      "correct_position": 1
+    }
+  ]
+}

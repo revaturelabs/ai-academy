@@ -1,0 +1,38 @@
+{
+  "topic_id": "8.1",
+  "critic": "corpus-critic",
+  "passed": true,
+  "checks": {
+    "required_sections": {
+      "passed": true,
+      "detail": "Sections 3 (Learning Objectives, 5 bullets), 4 (Introduction, ~210w), 5 (Core Concepts, ~700w incl. table), 10 (Key Takeaways, 5 bullets) all present and substantive. Section 5 clears the 100-word floor; 3/4/10 clear the 50-word floor. No placeholder strings in required sections."
+    },
+    "citation_density": {
+      "passed": true,
+      "detail": "resources_source=web_search -> strict path. Sole primary resource [1] (projector.tensorflow.org) cited repeatedly (lines 33, 48, 62, 90, 92). Markers [1]/[2]/[3] all resolve to the 3-entry resources array (no fabricated markers). >=60% of factual assertions in Core Concepts (lines 48,52,59,60,62), Implementation (87,90,91,92), Real-World Patterns (99,103) carry markers."
+    },
+    "sequence_drift": {
+      "passed": true,
+      "forward_referenced_terms": [],
+      "detail": "Concepts (domain-specific words, 2D projection, cluster, outlier, comparing word clusters, nearest neighbors) all in 8.1 concepts_introduced. embedding/vector/point-in-space/Embedding Projector inferred from prior titles 6.5, 6.7, 6.10. PCA/t-SNE/UMAP appear as named-and-deferred labels, not forward-taught. No hard forward references."
+    },
+    "length_sanity": {
+      "passed": true,
+      "findings": ["below_band: body ~1290w sits below the 1500w standard floor (~14% under, within the 30% hard-fail tolerance) -- flag for HITL, soft only"],
+      "detail": "Self-reported body ~1290w against the 1500-6000w standard band. Below the floor but within the >30%-outside hard-fail threshold, so flagged as a soft finding rather than a hard fail. Corpus is tight but complete for the headline; builder may expand Real-World Patterns / Comparing-two-domains if a richer ground is wanted."
+    },
+    "topic_scope": {
+      "passed": true,
+      "out_of_scope_concepts": [],
+      "findings": ["bolded_deferred_label: PCA/t-SNE/UMAP are bolded (line 62) where scope_discipline prefers bare-name deferral -- soft style note, not teaching"],
+      "detail": "Headline scope (Embedding Projector, visualize/compare domain clusters in 2D) held. Cosine similarity (8.2) does not appear at all. PCA/t-SNE/UMAP are NAMED with an explicit defer ('you do not need the math behind them', 'a more advanced topic you can explore later') -- the math is not taught or defined at depth. Bolding of those UI button labels is a soft style deviation from bare-name deferral, not a scope_creep hard fail since no advanced concept is taught."
+    },
+    "beginner_readability": {
+      "passed": true,
+      "findings": [],
+      "detail": "Zero distinct findings (no escalation). All non-everyday terms defined on first use (embedding, domain, projection w/ shadow analogy, 2D/3D, cluster, outlier, nearest neighbors). No jargon-dump paragraph (one idea at a time). Plain register: short active-voice sentences under ~25w avg, direct 'you' address, no hedging phrases. PCA/t-SNE/UMAP intentionally left undefined under the defer pointer (by design, not a cold-use defect)."
+    }
+  },
+  "verdict": "PASS. All 6 hard checks clear. Required sections 3/4/5/10 present and substantive; strict web_search citation path satisfied (primary [1] cited, all markers resolve, no fabrications); no forward references (PCA/t-SNE/UMAP named-and-deferred); scope held -- cosine similarity absent, PCA/t-SNE/UMAP math deferred not taught. Two soft findings for HITL rollup: (1) length_sanity below_band -- body ~1290w under the 1500w standard floor but within 30% tolerance; (2) topic_scope bolded_deferred_label -- PCA/t-SNE/UMAP bolded where bare-name deferral is preferred. Neither gates the corpus; it can ground downstream artifacts.",
+  "at": "2026-06-22T05:55:00Z"
+}

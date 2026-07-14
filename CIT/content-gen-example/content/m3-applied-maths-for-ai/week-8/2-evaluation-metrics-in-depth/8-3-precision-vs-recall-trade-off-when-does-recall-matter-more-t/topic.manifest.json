@@ -1,0 +1,53 @@
+{
+    "type":  "topic",
+    "id":  "8.3",
+    "title":  "Precision vs recall trade-off — when does recall matter more than precision?",
+    "slug":  "8-3-precision-vs-recall-trade-off-when-does-recall-matter-more-t",
+    "position_in_module":  1,
+    "week_num":  8,
+    "session_name":  "Applied Maths Lab",
+    "module":  {
+                   "position":  2,
+                   "slug":  "2-evaluation-metrics-in-depth",
+                   "title":  "Evaluation Metrics in Depth"
+               },
+    "course":  {
+                   "code":  "M3",
+                   "slug":  "m3-applied-maths-for-ai",
+                   "title":  "Applied Maths for AI"
+               },
+    "next_assessment":  {
+                            "id":  "A3",
+                            "due_week":  10,
+                            "title":  "Maths and Cognition Lab Report",
+                            "weight":  "15%"
+                        },
+    "paths":  {
+                  "corpus":  "topic_corpus.md",
+                  "resources":  "topic.resources.json",
+                  "progress":  "topic.progress.json",
+                  "artifacts_dir":  "artifacts/",
+                  "critic_reports_dir":  "critic-reports/"
+              },
+    "artifact_plan":  {
+                          "confirmed_profile":  "standard",
+                          "reading_word_range":  [
+                                                     1200,
+                                                     1600
+                                                 ],
+                          "reading_minutes_range":  [
+                                                        6,
+                                                        8
+                                                    ],
+                          "quiz_questions_range":  [
+                                                       5,
+                                                       6
+                                                   ],
+                          "quiz_include_short_answer":  false,
+                          "diagram":  true,
+                          "diagram_intent":  "Side-by-side contrast of the two error types and the threshold dial: lowering the threshold raises recall (fewer misses, more false alarms), raising it raises precision (fewer false alarms, more misses) — a trade-off/contrast visual."
+                      },
+    "expected_delivery_minutes":  10,
+    "prerequisites":  ["7.8", "7.9"],
+    "status":  "module_passed"
+}

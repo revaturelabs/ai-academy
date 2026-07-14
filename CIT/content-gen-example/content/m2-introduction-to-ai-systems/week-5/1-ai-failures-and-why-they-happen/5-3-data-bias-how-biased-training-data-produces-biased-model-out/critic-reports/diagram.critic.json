@@ -1,0 +1,42 @@
+{
+  "topic_id": "5.3",
+  "critic": "diagram-critic",
+  "cycle": 1,
+  "verdict": "pass",
+  "mmdc_available": false,
+  "png_rendered": false,
+  "png_note": "mmdc not available in this environment; source-level pre-flight completed in full. PNG render is best-effort — visual checks deferred to human review at HITL #3.",
+  "findings": [
+    {
+      "code": "looks_good",
+      "where": "overall",
+      "detail": "7 nodes across two direction:TB subgraphs in a flowchart LR root. Side-by-side contrast layout exactly matches the diagram intent. All node labels are 2–3 words, all trace to corpus Core Concepts phrases. Title 'GIGO — Biased Data Produces Biased Output' sits in the --- config block, not as a ghost node. Color tiers are correct: start (blue) for data-entry nodes, auto (purple) for processing/output nodes, done (green) for the positive terminal. No jargon-only bare labels (GIGO only appears in a subtitle span where it was corpus-defined). Linear chains inside each subgraph with no branching."
+    }
+  ],
+  "source_preflight": {
+    "node_count_check": "pass",
+    "label_discipline_check": "pass",
+    "concept_fidelity_check": "pass",
+    "jargon_label_check": "pass",
+    "title_discipline_check": "pass",
+    "single_path_discipline_check": "pass",
+    "layout_intent_match_check": "pass"
+  },
+  "stats": {
+    "nodes": 7,
+    "edges": 6,
+    "layout": "flowchart LR (two direction:TB subgraphs — side-by-side panels)",
+    "labels": [
+      "Biased Training Data",
+      "Model Training",
+      "Biased Model",
+      "Confident Output",
+      "Diverse Representative Data",
+      "Model Training",
+      "Fairer Model Output"
+    ],
+    "png_path": "content/m2-introduction-to-ai-systems/week-5/1-ai-failures-and-why-they-happen/5-3-data-bias-how-biased-training-data-produces-biased-model-out/artifacts/diagram.png",
+    "png_dims": null
+  },
+  "generated_at": "2026-06-17T00:00:00Z"
+}

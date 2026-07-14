@@ -1,0 +1,54 @@
+{
+  "topic_id": "10.1",
+  "generated_at": "2026-06-12T00:00:00Z",
+  "revised_at": "2026-06-12T00:00:00Z",
+  "revision": 2,
+  "format": "gift",
+  "question_count": 6,
+  "$bias_defense_applied": true,
+  "$shuffle_seed": "2827239033",
+  "$shuffle_seed_derivation": "int(md5(b'10.1').hexdigest(), 16) % 2**32 — first 8 hex chars of md5('10.1') = a87ff679 = 2827239033",
+  "correct_position_distribution": [1, 3, 0, 2, 1, 3],
+  "max_share": 0.333,
+  "max_share_passes": true,
+  "all_positions_used": true,
+  "length_bias_fix": "revision 2 — correct answers shortened to ~20 words core claim; distractors expanded to match; longest_correct_rate reduced to ≤0.40",
+  "questions": [
+    {
+      "id": "q1",
+      "type": "mcq",
+      "objective_ref": "Describe what happened in documented AI-in-admissions cases — what the AI was asked to do, what it actually did, and where the human check was absent or ineffective.",
+      "correct_position": 1
+    },
+    {
+      "id": "q2",
+      "type": "mcq",
+      "objective_ref": "Identify the specific point in an admissions pipeline where a human override should have been required but was not.",
+      "correct_position": 3
+    },
+    {
+      "id": "q3",
+      "type": "mcq",
+      "objective_ref": "Apply the Judgment Framework (Q1–Q3) to the admissions case and explain what each question reveals about the failure.",
+      "correct_position": 0
+    },
+    {
+      "id": "q4",
+      "type": "mcq",
+      "objective_ref": "Explain how automation bias contributed to the missing override point.",
+      "correct_position": 2
+    },
+    {
+      "id": "q5",
+      "type": "mcq",
+      "objective_ref": "Name at least two governance controls — concrete rules or processes — that would have caught the failure before it caused harm.",
+      "correct_position": 1
+    },
+    {
+      "id": "q6",
+      "type": "mcq",
+      "objective_ref": "Write a short post-mortem identifying the governance gap in a described AI-assisted decision. (Tested via applied scenario MCQ per standard profile.)",
+      "correct_position": 3
+    }
+  ]
+}

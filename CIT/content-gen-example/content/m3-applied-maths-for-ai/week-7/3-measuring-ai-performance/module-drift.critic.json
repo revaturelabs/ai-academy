@@ -1,0 +1,112 @@
+{
+  "module": "3-measuring-ai-performance",
+  "week": 7,
+  "course": "M3",
+  "generated_at": "2026-06-23T00:00:00Z",
+  "passed": true,
+  "checks": {
+    "terminology_consistency": {
+      "passed": true,
+      "findings": [
+        {
+          "severity": "soft",
+          "topic": "7.11",
+          "location": "topic_corpus.md §5.5",
+          "description": "7.11 states 'ground truth (the confirmed correct answer used to evaluate model outputs, introduced in topic 7.10)'. However, 'ground truth' is used without formal definition as early as 7.7 (corpus §6: 'this is the ground truth') and 7.8 (corpus §5.2–5.3: TP/FP definitions reference ground truth). Topic 7.10 provides the most formal definition, but 7.11 should say 'first formalised in 7.10' rather than 'introduced in topic 7.10' to avoid implying 7.7 and 7.8 used an undeclared term.",
+          "recommendation": "Change the parenthetical in 7.11 corpus §5.5 to: '(the confirmed correct answer used to evaluate model outputs — first formalised in 7.10)'."
+        }
+      ]
+    },
+    "prerequisites_respected": {
+      "passed": true,
+      "findings": [
+        {
+          "severity": "informational",
+          "topic": "7.7",
+          "location": "topic_corpus.md §5.7, reading.md Key Takeaways, quiz q5",
+          "description": "7.7 names 'precision (topic 7.8)' and 'recall (topic 7.9)' as forward-references without defining them. This is an explicit design choice: LO5 states 'Recognise that precision and recall exist to fill gaps accuracy leaves behind (without defining them here)'. Not a violation — the forward name-drop is policy-sanctioned and consistently framed as deferred.",
+          "recommendation": "No action required."
+        },
+        {
+          "severity": "informational",
+          "topic": "7.8",
+          "location": "topic_corpus.md §5.5, reading.md Key Concepts",
+          "description": "7.8 mentions 'recall, covered in topic 7.9' as a forward name-drop without definition, mirroring the same controlled pattern established in 7.7. Not a violation.",
+          "recommendation": "No action required."
+        }
+      ]
+    },
+    "learning_arc": {
+      "passed": true,
+      "findings": [],
+      "notes": "Module narrative seed is fully covered: 7.6 (mean/median/mode), 7.7 (accuracy), 7.8 (precision), 7.9 (recall), 7.10 (confusion matrix / accuracy paradox), 7.11 (interpretation synthesis). The logical chain 7.6 → 7.7 → 7.8 → 7.9 → 7.10 (synthesis) → 7.11 (capstone) is intact. Each topic's prerequisites correctly list only earlier-position topics."
+    },
+    "no_duplicated_core_concepts": {
+      "passed": true,
+      "findings": [
+        {
+          "severity": "soft",
+          "topics": ["7.8", "7.9", "7.10"],
+          "location": "corpus §5.1–5.3 of each topic",
+          "description": "True Positive (TP) and False Positive (FP) are defined in full paragraphs in 7.8 §5.2–5.3, then re-stated (acknowledged as known) in 7.9 §5.2, then re-defined in full paragraphs again in 7.10 §5.1. False Negative (FN) is defined in 7.9 §5.2 and re-defined in full in 7.10 §5.1. The Jaccard similarity of the noun sets in the TP/FP/FN sub-sections across 7.8, 7.9, and 7.10 exceeds 0.6 on those three terms. The re-definition in 7.10 is structurally motivated (the confusion matrix requires all four outcomes in one place), but the repetition is substantial. 7.10 corpus §5.1 explicitly acknowledges 'You already know three of the four prediction outcomes from topics 7.8 and 7.9', which mitigates the duplication, but the full paragraph re-statements go beyond a brief reminder.",
+          "recommendation": "In 7.10 corpus and reading, reduce TP, FP, FN to one-sentence reminders (e.g. 'TP — model predicted positive and item is truly positive, as defined in 7.8') and spend the saved space deepening the TN and confusion-matrix layout explanation, which is the genuinely new content."
+        },
+        {
+          "severity": "soft",
+          "topics": ["7.6", "7.7"],
+          "location": "7.6 corpus §5.1",
+          "description": "7.6 §5.1 states 'The mean score is 0.7, which you can also read as 70%. That is the AI's accuracy rate across ten runs.' This implicitly pre-empts 7.7's formal introduction of the accuracy formula (correct predictions ÷ total predictions), because mean of 1/0 scores is numerically identical to accuracy. The foreshadowing is mild and pedagogically functional (connects mean to a concept learners will meet), but it slightly weakens 7.7's role as the canonical accuracy introducer.",
+          "recommendation": "In 7.6 §5.1, change 'That is the AI's accuracy rate across ten runs' to 'We will define accuracy precisely in the next topic — for now, notice that the mean of correct/incorrect scores gives you a useful percentage.' This preserves the connection while keeping the formal definition in 7.7."
+        }
+      ]
+    },
+    "lab_activity_alignment": {
+      "passed": true,
+      "findings": [],
+      "notes": "Lab seed ('Run same prompt 10× at temp 0 and 10× at temp 1; tally unique responses; compute accuracy on 5-question yes/no task; write 200-word interpretation') is scaffolded across all six topics: 7.6 §9 (mean/median/mode of run scores), 7.7 §9 (accuracy per temperature), 7.8 §9 (precision from same data), 7.9 §9 (recall from same data, with back-reference to 7.8 exercise), 7.10 §9 (full confusion matrix from the yes/no task), 7.11 §6 and §9 (complete interpretation workflow with explicit 200-word report reference). Full chain coverage confirmed."
+    },
+    "capstone_check_7_11": {
+      "passed": true,
+      "findings": [],
+      "notes": "7.11 successfully synthesises the module without re-teaching prior concepts. The three precision/recall/accuracy/confusion-matrix formulas are referenced by name only, not re-derived. 7.11 introduces three genuinely new synthesising constructs: temperature-adjusted variation reading, the four-quadrant reliability framework, and the consistency-vs-correctness distinction. The capstone risk (re-teaching rather than synthesising) is not present. The ground-truth attribution error (logged under terminology_consistency) is the only finding touching 7.11."
+    },
+    "audience_level_consistency": {
+      "passed": true,
+      "findings": [],
+      "notes": "All six topics maintain an absolute-beginner register throughout. No topic introduces unexplained jargon cold. Concepts build linearly with plain-English definitions preceding formulas. 7.11 is the most synthesis-heavy topic but uses the four-quadrant table to keep the complexity navigable at the same level as its predecessors."
+    }
+  },
+  "findings": [
+    {
+      "id": "F1",
+      "check": "terminology_consistency",
+      "severity": "soft",
+      "topic": "7.11",
+      "artifact": "topic_corpus.md",
+      "location": "§5.5",
+      "summary": "Ground truth mis-attributed as 'introduced in topic 7.10'; the term appears without formal definition in 7.7 and 7.8 before 7.10 formalises it.",
+      "action": "Change '...ground truth (the confirmed correct answer used to evaluate model outputs, introduced in topic 7.10)' to '...ground truth (the confirmed correct answer used to evaluate model outputs — first formalised in topic 7.10)'."
+    },
+    {
+      "id": "F2",
+      "check": "no_duplicated_core_concepts",
+      "severity": "soft",
+      "topics": ["7.8", "7.9", "7.10"],
+      "artifact": "topic_corpus.md (all three), reading.md (all three)",
+      "location": "7.8 §5.2–5.3, 7.9 §5.2, 7.10 §5.1",
+      "summary": "TP, FP, and FN receive full paragraph re-definitions in 7.10 despite being fully defined in 7.8/7.9. The acknowledgement 'You already know these from 7.8 and 7.9' is present but the definitions are repeated at length rather than abbreviated.",
+      "action": "Reduce 7.10 corpus and reading TP/FP/FN entries to one-sentence reminders; expand TN and confusion-matrix-layout explanation with the recovered space."
+    },
+    {
+      "id": "F3",
+      "check": "no_duplicated_core_concepts",
+      "severity": "soft",
+      "topics": ["7.6", "7.7"],
+      "artifact": "topic_corpus.md",
+      "location": "7.6 §5.1",
+      "summary": "7.6 §5.1 labels the mean of correct/incorrect run scores as 'the AI's accuracy rate', implicitly pre-empting 7.7's formal accuracy introduction.",
+      "action": "Reword 7.6 §5.1 to note this connection without pre-defining accuracy: defer the canonical definition to 7.7."
+    }
+  ],
+  "verdict": "Module passes — narrative arc intact, no hard terminology conflicts, lab fully scaffolded; three soft findings (ground-truth misattribution in 7.11, TP/FP/FN re-definition depth in 7.10, accuracy pre-emption in 7.6) recommended for revision before final publish."
+}

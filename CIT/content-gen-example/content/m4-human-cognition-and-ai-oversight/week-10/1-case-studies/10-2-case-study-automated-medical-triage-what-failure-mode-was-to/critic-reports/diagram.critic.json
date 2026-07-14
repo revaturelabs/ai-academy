@@ -1,0 +1,29 @@
+{
+  "verdict": "pass",
+  "findings": [
+    {
+      "code": "looks_good",
+      "where": "overall",
+      "detail": "Side-by-side panels render cleanly in LR layout with TB subgraphs. Both panels have equal height and balanced whitespace. All color tiers correct: start=blue, auto=purple, hitl=yellow thick-border, act=blue, done=green, ghost=no-border purple text. Subtitles legible at 12px. No overlapping nodes, no label truncation, no cross-edge collisions."
+    }
+  ],
+  "stats": {
+    "nodes": 10,
+    "edges": 8,
+    "layout": "flowchart LR (two TB subgraphs)",
+    "labels": [
+      "Patient Data",
+      "AI Priority Score",
+      "Override as Theater",
+      "Queue Assignment",
+      "Harm Accumulates",
+      "Patient Data",
+      "AI Priority Score",
+      "Genuine Override",
+      "Deterioration Alert",
+      "Sub-group Audit"
+    ],
+    "png_path": "content/m4-human-cognition-and-ai-oversight/week-10/1-case-studies/10-2-case-study-automated-medical-triage-what-failure-mode-was-to/artifacts/diagram.png",
+    "png_dims": "1400px wide"
+  }
+}

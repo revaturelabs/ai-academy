@@ -1,0 +1,217 @@
+{
+  "topic_id": "13.11",
+  "stage": "module_passed",
+  "gates": {
+    "resources_captured": true,
+    "corpus_generated": true,
+    "corpus_critic_passed": true,
+    "corpus_human_approved": true,
+    "reading_generated": true,
+    "reading_critic_passed": true,
+    "quiz_generated": true,
+    "quiz_critic_passed": true,
+    "diagram_generated": true,
+    "diagram_critic_passed": true,
+    "module_drift_passed": true,
+    "course_drift_passed": true,
+    "topic_artifacts_human_approved": true,
+    "week_human_approved": true
+  },
+  "history": [
+    {
+      "at": "2026-06-14T13:45:32Z",
+      "op": "set",
+      "gate": "resources_captured",
+      "value": true
+    },
+    {
+      "at": "2026-06-14T13:45:32Z",
+      "op": "stage",
+      "to": "awaiting_corpus"
+    },
+    {
+      "at": "2026-06-14T13:45:32Z",
+      "op": "log",
+      "msg": "Captured 3 resources (source=web_search, primary: git-scm.com/book/en/v2/Git-Branching-Basic-Branching-and-Merging)"
+    },
+    {
+      "at": "2026-06-14T13:57:41Z",
+      "op": "set",
+      "gate": "corpus_generated",
+      "value": true
+    },
+    {
+      "at": "2026-06-14T13:57:41Z",
+      "op": "stage",
+      "to": "awaiting_corpus_critic"
+    },
+    {
+      "at": "2026-06-14T13:57:41Z",
+      "op": "log",
+      "msg": "Corpus generated (~2900w, standard profile, diagram=true, branch/merge flow intent)"
+    },
+    {
+      "at": "2026-06-14T14:00:25Z",
+      "op": "set",
+      "gate": "corpus_critic_passed",
+      "value": true
+    },
+    {
+      "at": "2026-06-14T14:00:25Z",
+      "op": "stage",
+      "to": "awaiting_corpus_human_review"
+    },
+    {
+      "at": "2026-06-14T14:00:25Z",
+      "op": "log",
+      "msg": "Corpus critic passed — all 6 checks green. Soft: word count ~2430 below 3000-floor (not hard-fail). Reviewer may request §5.3/§7 expansion at HITL#2."
+    },
+    {
+      "at": "2026-06-14T14:06:58Z",
+      "op": "set",
+      "gate": "corpus_human_approved",
+      "value": true
+    },
+    {
+      "at": "2026-06-14T14:06:58Z",
+      "op": "stage",
+      "to": "corpus_approved"
+    },
+    {
+      "at": "2026-06-14T14:06:58Z",
+      "op": "log",
+      "msg": "HITL#2 approved — standard profile (budget override from atomic recommendation), diagram=true. All 9 sections approved. Week running total: 78/90 min."
+    },
+    {
+      "at": "2026-06-14T14:12:23Z",
+      "op": "set",
+      "gate": "diagram_generated",
+      "value": true
+    },
+    {
+      "at": "2026-06-14T14:12:23Z",
+      "op": "set",
+      "gate": "diagram_critic_passed",
+      "value": true
+    },
+    {
+      "at": "2026-06-14T14:12:23Z",
+      "op": "log",
+      "msg": "Diagram generated: flowchart LR two-panel (main/feature), 6 nodes, cycle 1 pass (source + visual). PNG rendered with PUPPETEER_EXECUTABLE_PATH workaround (v149 vs expected v148)."
+    },
+    {
+      "at": "2026-06-14T14:15:04Z",
+      "op": "set",
+      "gate": "reading_generated",
+      "value": true
+    },
+    {
+      "at": "2026-06-14T14:15:04Z",
+      "op": "stage",
+      "to": "awaiting_reading_critic"
+    },
+    {
+      "at": "2026-06-14T14:15:04Z",
+      "op": "set",
+      "gate": "quiz_generated",
+      "value": true
+    },
+    {
+      "at": "2026-06-14T14:15:04Z",
+      "op": "log",
+      "msg": "Reading generated: 1312w/7min standard, diagram embedded, all 3 resources cited. Quiz generated: 5q, positions [1,3,0,2,1], bias_defense=true."
+    },
+    {
+      "at": "2026-06-14T14:17:58Z",
+      "op": "set",
+      "gate": "reading_critic_passed",
+      "value": true
+    },
+    {
+      "at": "2026-06-14T14:17:58Z",
+      "op": "stage",
+      "to": "reading_approved"
+    },
+    {
+      "at": "2026-06-14T14:17:58Z",
+      "op": "log",
+      "msg": "Reading critic passed cycle 1 — soft diagram path fixed (../artifacts/ → relative). All hard checks green."
+    },
+    {
+      "at": "2026-06-14T14:18:03Z",
+      "op": "set",
+      "gate": "quiz_critic_passed",
+      "value": false
+    },
+    {
+      "at": "2026-06-14T14:18:03Z",
+      "op": "log",
+      "msg": "Quiz critic failed cycle 1: LO6 (distinguish repo/commit/branch) uncovered. Regenerating with 6th question."
+    },
+    {
+      "at": "2026-06-14T14:21:58Z",
+      "op": "set",
+      "gate": "quiz_critic_passed",
+      "value": true
+    },
+    {
+      "at": "2026-06-14T14:21:58Z",
+      "op": "stage",
+      "to": "quiz_approved"
+    },
+    {
+      "at": "2026-06-14T14:21:58Z",
+      "op": "log",
+      "msg": "Quiz critic passed cycle 2 — 6q, all LOs covered, positions [1,3,0,2,1,3] max_share 0.33."
+    },
+    {
+      "at": "2026-06-14T14:22:03Z",
+      "op": "stage",
+      "to": "awaiting_topic_artifacts_review"
+    },
+    {
+      "at": "2026-06-14T14:25:21Z",
+      "op": "set",
+      "gate": "topic_artifacts_human_approved",
+      "value": true
+    },
+    {
+      "at": "2026-06-14T14:25:21Z",
+      "op": "stage",
+      "to": "topic_artifacts_approved"
+    },
+    {
+      "at": "2026-06-14T14:25:22Z",
+      "op": "log",
+      "msg": "HITL#3 approved — all critics pass, no carry-over failures. Soft: diagram path fix applied. Week budget 78/90 min."
+    },
+    {
+      "at": "2026-06-15T00:00:00Z",
+      "op": "set",
+      "gate": "module_drift_passed",
+      "value": true
+    },
+    {
+      "at": "2026-06-15T00:00:00Z",
+      "op": "stage",
+      "to": "module_passed"
+    },
+    {
+      "at": "2026-06-15T00:00:00Z",
+      "op": "log",
+      "msg": "module-drift critic PASS — verdict: PASS, 0 hard failures, 3 soft findings. Report: critic-reports/module-drift.critic.json"
+    },
+    {
+      "at": "2026-06-15T06:37:49Z",
+      "op": "set",
+      "gate": "week_human_approved",
+      "value": true
+    },
+    {
+      "at": "2026-06-23T17:39:30Z",
+      "op": "set",
+      "gate": "course_drift_passed",
+      "value": true
+    }
+  ]
+}

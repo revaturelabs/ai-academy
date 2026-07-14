@@ -1,0 +1,49 @@
+{
+    "type":  "topic",
+    "id":  "6.3",
+    "title":  "Vectors — a list of numbers representing multiple properties at once",
+    "slug":  "6-3-vectors-a-list-of-numbers-representing-multiple-properties-a",
+    "position_in_module":  2,
+    "week_num":  6,
+    "session_name":  "Numbers, Vectors and Meaning",
+    "module":  {
+                   "position":  2,
+                   "slug":  "2-scalars-vectors-and-matrices",
+                   "title":  "Scalars, Vectors and Matrices"
+               },
+    "course":  {
+                   "code":  "M3",
+                   "slug":  "m3-applied-maths-for-ai",
+                   "title":  "Applied Maths for AI"
+               },
+    "next_assessment":  {
+                            "id":  "A2",
+                            "due_week":  6,
+                            "title":  "AI Systems Essay",
+                            "weight":  "15%"
+                        },
+    "paths":  {
+                  "corpus":  "topic_corpus.md",
+                  "resources":  "topic.resources.json",
+                  "progress":  "topic.progress.json",
+                  "artifacts_dir":  "artifacts/",
+                  "critic_reports_dir":  "critic-reports/"
+              },
+    "artifact_plan":  {
+                          "diagram":  true,
+                          "diagram_intent":  "A labelled vector slot diagram: one horizontal row of three numbered boxes (position 1, 2, 3) each labelled with a property name (energy, tempo, mood) and a value (0.8, 0.6, 0.3), showing that position always maps to the same property.",
+                          "depth_profile":  "standard",
+                          "depth_signals":  "One core concept with multiple sub-facets warranting 3000+ word treatment, but no multi-technology pipeline and no implementation algorithm.",
+                          "reading_word_range":  [
+                                                     600,
+                                                     900
+                                                 ],
+                          "quiz_question_range":  [
+                                                      4,
+                                                      5
+                                                  ],
+                          "human_approved_at_hitl2":  true
+                      },
+    "expected_delivery_minutes":  8,
+    "status":  "corpus_drafted"
+}

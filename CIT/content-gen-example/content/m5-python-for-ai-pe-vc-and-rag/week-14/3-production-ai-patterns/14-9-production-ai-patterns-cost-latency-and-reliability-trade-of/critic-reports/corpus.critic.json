@@ -1,0 +1,51 @@
+{
+  "critic": "corpus-critic",
+  "topic_id": "14.9",
+  "at": "2026-06-16T00:00:00Z",
+  "passed": true,
+  "checks": {
+    "required_sections": {
+      "passed": true,
+      "findings": [
+        "§3 Learning Objectives: present, 5 numbered objectives, well above 50w.",
+        "§4 Introduction: present, ~95 words, above 50w.",
+        "§5 Core Concepts: present with all 5 required sub-sections (5.1 token cost, 5.2 latency, 5.3 cost reduction, 5.4 reliability, 5.5 triangle), each well above 100w.",
+        "§10 Key Takeaways: present, 5 bullet points, well above 50w."
+      ]
+    },
+    "citation_density": {
+      "passed": true,
+      "primary_cited": true,
+      "notes": "[1] Chip Huyen cited in §4, §5.1, §5.2, §5.3, §5.4, §5.5, §6, §7, §8. [2] Anthropic docs cited in §5.1, §5.2, §5.3, §5.4, §6, §7, §8. [3] OpenAI production best practices cited throughout §4–§8. [4] Google Cloud MLOps cited in §5.1, §5.4, §6, §7, §8. All 4 primary resources cited. Citation density in §5, §6, §7 comfortably exceeds 60%."
+    },
+    "sequence_drift": {
+      "passed": true,
+      "forward_refs": [],
+      "notes": "'context window' was introduced in 14.3 and used freely. All new concepts introduced in 14.9 (token cost model, input/output tokens, TTFT, streaming, prompt caching, model tier selection, cost-latency-quality triangle, exponential backoff, context window management, circuit breaker, rate limits) are properly defined on first use. 'LLM routing' is used as a synonym for model tier selection (a 14.9-introduced concept). 'Jitter' and 'thundering-herd' appear in §8 within an explanation of exponential backoff; both receive inline definitions and neither is a forward reference to 14.10. §11 defers to 14.10 by name only, which is explicitly acceptable."
+    },
+    "length_sanity": {
+      "passed": true,
+      "word_count": 2650,
+      "range": [2500, 4500],
+      "notes": "Estimated word count ~2650 across all sections (excludes YAML front matter). Within the 2500–4500 standard corpus target."
+    },
+    "topic_scope": {
+      "passed": true,
+      "scope_creep_instances": [],
+      "notes": "All content is tightly scoped to cost, latency, and reliability of production AI systems. §6 explicitly disclaims implementation depth ('Implementation is a Semester 2 skill'). Observability is limited to production logging concerns (token counts, latency, error rates). No ML training cost, no hardware infrastructure details, no LLM architecture internals found."
+    },
+    "beginner_readability": {
+      "passed": true,
+      "findings": [
+        "All six required terms defined on first use: 'token' (§5.1), 'TTFT' (§5.2), 'context window' (§5.4), 'exponential backoff' (§5.4), 'circuit breaker' (§5.4), 'prompt caching' (§5.3).",
+        "No jargon dumps detected — new terms introduced one at a time with immediate plain-language explanation.",
+        "Register is plain and tutorial-style throughout. Minor: 'thundering-herd' in §8 is an industry idiom but receives a brief inline definition ('all clients retry on the same schedule'), keeping it accessible."
+      ]
+    }
+  },
+  "hard_findings": [],
+  "soft_findings": [
+    "Word count estimate (~2650) is close to the lower bound of 2500 — if the actual count is marginally below, this would trigger a length-sanity flag. A precise count is recommended before final sign-off."
+  ],
+  "verdict": "PASS — all 6 checks passed. Corpus is well-structured, fully cited across all 4 primary sources, introduces all 14.9 concepts with clear definitions, stays within scope, and is written at an accessible register throughout. One soft note: word count is near the lower bound; a precise count is advisable."
+}

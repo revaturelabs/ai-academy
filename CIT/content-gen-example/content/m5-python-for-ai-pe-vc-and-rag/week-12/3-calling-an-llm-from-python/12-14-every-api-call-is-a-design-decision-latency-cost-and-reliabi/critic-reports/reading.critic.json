@@ -1,0 +1,128 @@
+{
+  "critic": "reading-critic",
+  "topic_id": "12.14",
+  "topic_title": "Every API call is a design decision — latency, cost, and reliability considered upfront",
+  "at": "2026-06-15T00:00:00Z",
+  "passed": true,
+  "checks": {
+    "format_discipline": {
+      "passed": true,
+      "frontmatter_present": false,
+      "h1_title_present": true,
+      "h1_text": "Every API Call Is a Design Decision — Latency, Cost, and Reliability Considered Upfront",
+      "meta_sidecar_present": true,
+      "meta_sidecar_valid": true,
+      "meta_fields": {
+        "word_count": 980,
+        "estimated_read_minutes": 5,
+        "citations_used": [1, 2],
+        "sections": ["Overview", "Key Concepts", "Worked Example", "In Practice", "Key Takeaways", "References"]
+      },
+      "section_template_violation": false,
+      "sections_found": ["Overview", "Key Concepts", "Worked Example", "In Practice", "Key Takeaways", "References"],
+      "sections_expected": ["Overview", "Key Concepts", "Worked Example", "In Practice", "Key Takeaways", "References"],
+      "detail": "No frontmatter block. First non-empty line is the # H1. reading.meta.json parses cleanly. Exactly 6 required ## sections present in correct order."
+    },
+    "length_budget": {
+      "passed": true,
+      "word_count": 980,
+      "target_word_range": [800, 1200],
+      "in_range": true,
+      "read_aloud_minutes_at_230wpm": 4.26,
+      "target_minute_range": [4, 6],
+      "in_minute_range": true,
+      "detail": "980 words is within 800–1200 target. 980/230 = 4.26 min read-aloud time, within 4–6 min target."
+    },
+    "citation_discipline": {
+      "passed": true,
+      "primary_resources": [
+        {
+          "url": "https://artificialanalysis.ai/providers/anthropic",
+          "role": "primary",
+          "citation_marker": "[1]",
+          "cited_in_reading": true,
+          "citation_count": 12
+        }
+      ],
+      "supporting_resources": [
+        {
+          "url": "https://www.finout.io/blog/anthropic-api-pricing",
+          "role": "supporting",
+          "citation_marker": "[2]",
+          "cited_in_reading": true,
+          "citation_count": 7
+        }
+      ],
+      "orphan_inline_markers": [],
+      "orphan_bibliography_entries": [],
+      "bibliography_matches_inline": true,
+      "detail": "Both resources cited throughout. [1] Artificial Analysis maps to artificialanalysis.ai (primary) — cited in Key Concepts, Worked Example, In Practice, Key Takeaways. [2] Finout maps to finout.io (supporting) — cited in Key Concepts cost table, In Practice, Key Takeaways. No orphan markers or orphan bibliography entries."
+    },
+    "forward_references": {
+      "passed": true,
+      "forward_refs_found": [],
+      "detail": "message.usage attributed to topic 12.11. try/except, retry logic, time.sleep() attributed to topic 12.13. Latency, cost formula, model selection, three-question checklist are core topic-14 content. Batch API and prompt caching (corpus mention-and-defer items) are absent from the reading — correctly omitted. No references to 13.x or 14.x material."
+    },
+    "faithfulness": {
+      "passed": true,
+      "assertions_sampled": 10,
+      "unsupported_assertions": 0,
+      "threshold": 2,
+      "sample_results": [
+        {"assertion": "Haiku returns in under one second; Opus can take fifteen seconds or more", "in_corpus": true, "corpus_location": "§5.1"},
+        {"assertion": "One token is roughly four characters of English", "in_corpus": true, "corpus_location": "§5.2"},
+        {"assertion": "$2.50/day on Haiku vs $150/day on Opus — sixty times the bill", "in_corpus": true, "corpus_location": "§5.2"},
+        {"assertion": "Rate limits are per-account caps on requests and tokens per minute", "in_corpus": true, "corpus_location": "§5.3"},
+        {"assertion": "Haiku ~$0.25/$1.25, Sonnet ~$3/$15, Opus ~$15/$75 per million tokens", "in_corpus": true, "corpus_location": "§5.2 table"},
+        {"assertion": "Start on Haiku, step up to Sonnet if quality fails, reserve Opus for proven Sonnet insufficiency", "in_corpus": true, "corpus_location": "§5.4"},
+        {"assertion": "Three-question checklist (need call? how many? which tier?)", "in_corpus": true, "corpus_location": "§5.5"},
+        {"assertion": "call_and_measure function uses time.time() for latency and message.usage for token counts", "in_corpus": true, "corpus_location": "§5.1, §6"},
+        {"assertion": "In Practice bullets: test cheapest first, count calls, set max_tokens deliberately, model in a variable, log usage", "in_corpus": true, "corpus_location": "§8"},
+        {"assertion": "Defaulting to Opus 'just to be safe' is the most common beginner mistake", "in_corpus": true, "corpus_location": "§5.4"}
+      ],
+      "detail": "All 10 sampled assertions trace directly to the corpus. Zero fabricated claims detected."
+    },
+    "beginner_readability": {
+      "passed": true,
+      "hard_fail_triggered": false,
+      "findings": [],
+      "undefined_terms_cold": [],
+      "jargon_dump": false,
+      "abstract_first": false,
+      "academic_register": false,
+      "detail": "Latency, tokens, rate limits, queue time all defined on first use with plain-language meanings inline. No unexplained acronyms (RPM/TPM are not used; plain-language phrasing is substituted). No paragraph introduces 3+ new terms simultaneously. Concepts lead with concrete examples or analogies (latency measured in seconds, cost shown as dollar amounts, model tiers introduced with specific use-case bullets). Sentences are short and active-voice throughout. Zero hedging phrases detected. Total soft findings: 0 — well below the ≥3 escalation threshold."
+    },
+    "formatting": {
+      "passed": true,
+      "hard_fail_triggered": false,
+      "findings": [],
+      "wall_of_text": false,
+      "unlisted_sequence": false,
+      "no_inline_examples": false,
+      "bold_term_plain_meaning_used": true,
+      "detail": "No paragraph exceeds 4 sentences. Worked Example step-by-step is a numbered list (5 items). In Practice section is a bulleted list. The three design questions are a numbered list. Model tier comparisons use bold-term/plain-meaning shape. Pricing data is in a table. Inline examples appear in Key Concepts alongside concept introductions — cost formula is shown with the pricing table immediately; latency is shown with seconds figures immediately. Formatting standards from artifact-mix.json are met."
+    },
+    "assessment_references": {
+      "passed": true,
+      "assessment_ids_found": [],
+      "due_week_references": [],
+      "grade_weight_references": [],
+      "detail": "No assessment ID (A4), due-week number, or grade weight appears in the reading artifact. The cost-and-latency note is framed as a 'standard professional deliverable' without LMS metadata."
+    },
+    "scope": {
+      "passed": true,
+      "scope_creep_findings": [],
+      "detail": "All content is within the headline: latency, cost (token pricing, model tiers), reliability (framed as a design question, mechanics deferred to 12.13), model selection, the three design questions, and a worked measuring example. Batch API and prompt caching from the corpus's mention-and-defer are absent from the reading. No prompt engineering, RAG, or agent concepts appear. Scope is clean."
+    }
+  },
+  "gold_example_comparison": {
+    "gold_examples_checked": [
+      ".claude/references/gold-examples/reading/2-1-what-makes-a-good-specification.reading.md",
+      ".claude/references/gold-examples/reading/3-4-how-llms-work-tokens-training-and-inference.reading.md"
+    ],
+    "assessment": "Reading meets the gold standard. Structure mirrors the 6-section template used in gold examples. Tone is consistently plain and second-person. Formatting density (bold definitions, inline tables, numbered worked example steps) matches the gold examples. Beginner entry level is consistent with 3-4-how-llms-work (the closest comparator in domain complexity)."
+  },
+  "findings": [],
+  "summary": "PASS — all 8 checks passed with zero findings. Format is clean (no frontmatter, correct H1, valid sidecar, 6 sections in order). Word count 980 is within 800–1200 target; read-aloud time 4.26 min is within 4–6 min target. Both resources (primary [1] artificialanalysis.ai, supporting [2] finout.io) are cited throughout with no orphan markers or entries. No forward references — 12.11 and 12.13 concepts are correctly attributed; batch API/prompt caching correctly omitted. Faithfulness: 10 of 10 sampled assertions trace to the corpus, zero fabricated claims. Beginner readability: all terms defined on first use, no jargon dumps, concrete-first throughout, zero hedging. Formatting: no walls of text, procedures as numbered lists, bold-term/plain-meaning definitions, inline examples in every conceptual section. No assessment references. No scope creep. Reading is ready for HITL #3.",
+  "verdict": "PASS"
+}

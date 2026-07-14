@@ -1,0 +1,223 @@
+{
+  "topic_id": "4.4",
+  "stage": "module_passed",
+  "gates": {
+    "resources_captured": true,
+    "corpus_generated": true,
+    "corpus_critic_passed": true,
+    "corpus_human_approved": true,
+    "reading_generated": true,
+    "reading_critic_passed": true,
+    "quiz_generated": true,
+    "quiz_critic_passed": true,
+    "diagram_generated": true,
+    "diagram_critic_passed": true,
+    "module_drift_passed": true,
+    "course_drift_passed": true,
+    "topic_artifacts_human_approved": true,
+    "week_human_approved": true
+  },
+  "history": [
+    {
+      "at": "2026-06-16T17:21:41Z",
+      "op": "set",
+      "gate": "resources_captured",
+      "value": true
+    },
+    {
+      "at": "2026-06-16T17:21:42Z",
+      "op": "stage",
+      "to": "awaiting_corpus"
+    },
+    {
+      "at": "2026-06-16T17:21:42Z",
+      "op": "log",
+      "msg": "Captured 3 resources (source=web_search, primary: langcopilot.com/llm-agents-explained)"
+    },
+    {
+      "at": "2026-06-17T05:45:09Z",
+      "op": "set",
+      "gate": "corpus_generated",
+      "value": true
+    },
+    {
+      "at": "2026-06-17T05:45:09Z",
+      "op": "stage",
+      "to": "awaiting_corpus_critic"
+    },
+    {
+      "at": "2026-06-17T05:45:09Z",
+      "op": "log",
+      "msg": "Corpus generated (3340 words, standard depth, diagram=true)"
+    },
+    {
+      "at": "2026-06-17T05:47:42Z",
+      "op": "set",
+      "gate": "corpus_critic_passed",
+      "value": false
+    },
+    {
+      "at": "2026-06-17T05:47:42Z",
+      "op": "log",
+      "msg": "Corpus critic cycle 1 failed: (1) forward-ref 'parameters' undefined; (2) 'multi-agent systems' bolded+defined in s5 — scope creep"
+    },
+    {
+      "at": "2026-06-17T05:52:56Z",
+      "op": "set",
+      "gate": "corpus_critic_passed",
+      "value": true
+    },
+    {
+      "at": "2026-06-17T05:52:57Z",
+      "op": "stage",
+      "to": "awaiting_corpus_human_review"
+    },
+    {
+      "at": "2026-06-17T05:52:57Z",
+      "op": "log",
+      "msg": "Corpus critic passed cycle 2. Soft finding: API acronym not expanded first use (non-blocking)."
+    },
+    {
+      "at": "2026-06-17T05:58:10Z",
+      "op": "set",
+      "gate": "corpus_human_approved",
+      "value": true
+    },
+    {
+      "at": "2026-06-17T05:58:10Z",
+      "op": "stage",
+      "to": "corpus_approved"
+    },
+    {
+      "at": "2026-06-17T05:58:10Z",
+      "op": "log",
+      "msg": "HITL#2 complete: all sections approved, depth=deep (budget-driven upgrade), diagram=true, est 10 min"
+    },
+    {
+      "at": "2026-06-17T06:02:21Z",
+      "op": "set",
+      "gate": "diagram_generated",
+      "value": true
+    },
+    {
+      "at": "2026-06-17T06:02:21Z",
+      "op": "set",
+      "gate": "diagram_critic_passed",
+      "value": true
+    },
+    {
+      "at": "2026-06-17T06:02:22Z",
+      "op": "log",
+      "msg": "Diagram generated: 7 nodes, flowchart TD, critic passed 1 cycle. PNG rendered."
+    },
+    {
+      "at": "2026-06-17T06:04:55Z",
+      "op": "set",
+      "gate": "reading_generated",
+      "value": true
+    },
+    {
+      "at": "2026-06-17T06:04:55Z",
+      "op": "stage",
+      "to": "awaiting_reading_critic"
+    },
+    {
+      "at": "2026-06-17T06:04:56Z",
+      "op": "log",
+      "msg": "Reading generated: 1953 words, 10 min, deep, diagram embedded, all 3 resources cited"
+    },
+    {
+      "at": "2026-06-17T06:07:11Z",
+      "op": "set",
+      "gate": "quiz_generated",
+      "value": true
+    },
+    {
+      "at": "2026-06-17T06:07:11Z",
+      "op": "stage",
+      "to": "awaiting_quiz_critic"
+    },
+    {
+      "at": "2026-06-17T06:07:11Z",
+      "op": "log",
+      "msg": "Quiz generated: 6 MCQ + 1 short-answer, bias_defense=true, positions=[1,3,0,2,1,3], all 6 LOs covered"
+    },
+    {
+      "at": "2026-06-17T10:03:53Z",
+      "op": "set",
+      "gate": "quiz_critic_passed",
+      "value": true
+    },
+    {
+      "at": "2026-06-17T10:03:57Z",
+      "op": "stage",
+      "to": "quiz_approved"
+    },
+    {
+      "at": "2026-06-17T10:04:03Z",
+      "op": "log",
+      "msg": "Quiz critic passed (cycle 2, auto-reshuffle): q4 GIFT/sidecar desync corrected, pos-3 bias fixed. Final distribution [1,3,0,2,1,3] max_share=33.3%. All 6 LOs covered."
+    },
+    {
+      "at": "2026-06-17T10:06:58Z",
+      "op": "set",
+      "gate": "reading_critic_passed",
+      "value": true
+    },
+    {
+      "at": "2026-06-17T10:06:59Z",
+      "op": "stage",
+      "to": "awaiting_topic_artifacts_review"
+    },
+    {
+      "at": "2026-06-17T10:06:59Z",
+      "op": "log",
+      "msg": "Reading critic passed cycle 2: revised to 2086 words/9.07 min (was 8.49 min). Quiz critic passed after auto-reshuffle of q4. Diagram critic already passed. All critics passed — advancing to HITL#3."
+    },
+    {
+      "at": "2026-06-17T10:13:31Z",
+      "op": "set",
+      "gate": "topic_artifacts_human_approved",
+      "value": true
+    },
+    {
+      "at": "2026-06-17T10:13:31Z",
+      "op": "stage",
+      "to": "topic_artifacts_approved"
+    },
+    {
+      "at": "2026-06-17T10:13:31Z",
+      "op": "log",
+      "msg": "HITL#3 approved. Reading 2086w/9.07min, quiz 7q bias-defense pass, diagram pass. No carry-over failures."
+    },
+    {
+      "at": "2026-06-17T17:23:22Z",
+      "op": "set",
+      "gate": "module_drift_passed",
+      "value": true
+    },
+    {
+      "at": "2026-06-17T17:23:22Z",
+      "op": "stage",
+      "to": "module_passed"
+    },
+    {
+      "at": "2026-06-17T17:26:02Z",
+      "op": "set",
+      "gate": "week_human_approved",
+      "value": true
+    },
+    {
+      "at": "2026-06-23T10:39:00Z",
+      "op": "set",
+      "gate": "course_drift_passed",
+      "value": true
+    },
+    {
+      "at": "2026-06-23T11:29:08Z",
+      "op": "set",
+      "gate": "course_drift_passed",
+      "value": true
+    }
+  ]
+}

@@ -1,0 +1,49 @@
+{
+  "topic_id": "3.4",
+  "generated_at": "2026-06-17T00:00:00Z",
+  "format": "gift",
+  "question_count": 5,
+  "$bias_defense_applied": true,
+  "$shuffle_seed": "3.4-cit-m2-llm-tokens-training-inference",
+  "correct_position_distribution": [2, 0, 3, 1, 2],
+  "position_share": {
+    "0": 1,
+    "1": 1,
+    "2": 2,
+    "3": 1
+  },
+  "max_position_share": 0.40,
+  "constraint_max_share_le_40pct": true,
+  "questions": [
+    {
+      "id": "q1",
+      "type": "mcq",
+      "objective_ref": "Define what a token is and explain how text is split into tokens using subword tokenisation.",
+      "correct_position": 2
+    },
+    {
+      "id": "q2",
+      "type": "mcq",
+      "objective_ref": "Describe the next-token prediction objective and explain how a model learns by adjusting its parameters on large amounts of text.",
+      "correct_position": 0
+    },
+    {
+      "id": "q3",
+      "type": "mcq",
+      "objective_ref": "Explain how an LLM generates text one token at a time during inference, distinguishing the prefill phase from the decode phase.",
+      "correct_position": 3
+    },
+    {
+      "id": "q4",
+      "type": "mcq",
+      "objective_ref": "Describe the role of the attention mechanism in allowing the model to relate tokens across the context window.",
+      "correct_position": 1
+    },
+    {
+      "id": "q5",
+      "type": "mcq",
+      "objective_ref": "Identify practical implications of tokenisation and context windows when interacting with an LLM.",
+      "correct_position": 2
+    }
+  ]
+}

@@ -1,0 +1,182 @@
+{
+  "topic_id": "5.3",
+  "stage": "topic_artifacts_approved",
+  "gates": {
+    "resources_captured": true,
+    "corpus_generated": true,
+    "corpus_critic_passed": true,
+    "corpus_human_approved": true,
+    "reading_generated": true,
+    "reading_critic_passed": true,
+    "quiz_generated": true,
+    "quiz_critic_passed": true,
+    "diagram_generated": true,
+    "diagram_critic_passed": true,
+    "module_drift_passed": true,
+    "course_drift_passed": true,
+    "topic_artifacts_human_approved": true,
+    "week_human_approved": true
+  },
+  "history": [
+    {
+      "at": "2026-06-17T17:13:35Z",
+      "op": "set",
+      "gate": "resources_captured",
+      "value": true
+    },
+    {
+      "at": "2026-06-17T17:13:35Z",
+      "op": "stage",
+      "to": "awaiting_corpus"
+    },
+    {
+      "at": "2026-06-17T17:13:35Z",
+      "op": "log",
+      "msg": "Captured 3 resources (source=web_search, primary: ibm.com/think/topics/data-bias)"
+    },
+    {
+      "at": "2026-06-17T17:19:14Z",
+      "op": "set",
+      "gate": "corpus_generated",
+      "value": true
+    },
+    {
+      "at": "2026-06-17T17:19:14Z",
+      "op": "stage",
+      "to": "awaiting_corpus_critic"
+    },
+    {
+      "at": "2026-06-17T00:00:00Z",
+      "op": "set",
+      "gate": "corpus_critic_passed",
+      "value": true
+    },
+    {
+      "at": "2026-06-17T00:00:00Z",
+      "op": "stage",
+      "to": "awaiting_corpus_human_review"
+    },
+    {
+      "at": "2026-06-17T00:00:00Z",
+      "op": "log",
+      "msg": "corpus-critic PASS — 3 soft findings surfaced for HITL #2: section_6_uncited, below_standard_lower_bound, scope_creep (soft, §5.6 mitigation em-dash clauses). No hard fails."
+    },
+    {
+      "at": "2026-06-17T17:50:04Z",
+      "op": "set",
+      "gate": "corpus_human_approved",
+      "value": true
+    },
+    {
+      "at": "2026-06-17T17:50:04Z",
+      "op": "stage",
+      "to": "corpus_approved"
+    },
+    {
+      "at": "2026-06-17T00:00:00Z",
+      "op": "set",
+      "gate": "diagram_generated",
+      "value": true
+    },
+    {
+      "at": "2026-06-17T00:00:00Z",
+      "op": "set",
+      "gate": "diagram_critic_passed",
+      "value": true
+    },
+    {
+      "at": "2026-06-17T00:00:00Z",
+      "op": "stage",
+      "to": "awaiting_diagram_critic"
+    },
+    {
+      "at": "2026-06-17T00:00:00Z",
+      "op": "log",
+      "msg": "diagram-builder cycle 1: PASS. 7 nodes, flowchart LR side-by-side panels (biased path vs diverse path). All source-level pre-flight checks passed. mmdc not available — PNG render deferred to HITL #3 human review. diagram_critic_passed=true."
+    },
+    {
+      "at": "2026-06-17T00:00:00Z",
+      "op": "set",
+      "gate": "reading_generated",
+      "value": true
+    },
+    {
+      "at": "2026-06-17T00:00:00Z",
+      "op": "set",
+      "gate": "reading_critic_passed",
+      "value": true
+    },
+    {
+      "at": "2026-06-17T00:00:00Z",
+      "op": "stage",
+      "to": "awaiting_quiz_critic"
+    },
+    {
+      "at": "2026-06-17T00:00:00Z",
+      "op": "log",
+      "msg": "reading-builder cycle 1: PASS. 1345 words, 7 min, standard profile. All 10 critic checks passed. No hard fails, no soft findings. Diagram embedded inline. All 3 citations used."
+    },
+    {
+      "at": "2026-06-17T00:00:00Z",
+      "op": "set",
+      "gate": "quiz_generated",
+      "value": true
+    },
+    {
+      "at": "2026-06-17T00:00:00Z",
+      "op": "set",
+      "gate": "quiz_critic_passed",
+      "value": true
+    },
+    {
+      "at": "2026-06-17T00:00:00Z",
+      "op": "stage",
+      "to": "quiz_approved"
+    },
+    {
+      "at": "2026-06-17T00:00:00Z",
+      "op": "log",
+      "msg": "quiz-builder cycle 1: PASS. 6 MCQ, standard profile. positional bias max_share=0.333, length bias 0/6 longest-correct, 0/18 absurd distractors, all 6 LOs covered. No hard fails, no soft findings."
+    },
+    {
+      "at": "2026-06-17T18:04:48Z",
+      "op": "stage",
+      "to": "awaiting_topic_artifacts_review"
+    },
+    {
+      "at": "2026-06-17T18:17:28Z",
+      "op": "set",
+      "gate": "topic_artifacts_human_approved",
+      "value": true
+    },
+    {
+      "at": "2026-06-17T18:17:28Z",
+      "op": "stage",
+      "to": "topic_artifacts_approved"
+    },
+    {
+      "at": "2026-06-22T15:14:55Z",
+      "op": "set",
+      "gate": "module_drift_passed",
+      "value": true
+    },
+    {
+      "at": "2026-06-22T15:17:55Z",
+      "op": "set",
+      "gate": "week_human_approved",
+      "value": true
+    },
+    {
+      "at": "2026-06-23T10:39:01Z",
+      "op": "set",
+      "gate": "course_drift_passed",
+      "value": true
+    },
+    {
+      "at": "2026-06-23T11:29:09Z",
+      "op": "set",
+      "gate": "course_drift_passed",
+      "value": true
+    }
+  ]
+}

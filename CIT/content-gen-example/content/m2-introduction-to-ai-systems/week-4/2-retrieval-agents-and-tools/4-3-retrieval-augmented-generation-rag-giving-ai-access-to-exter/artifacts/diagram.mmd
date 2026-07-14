@@ -1,0 +1,29 @@
+---
+title: "RAG — Retrieve, Augment, Generate"
+config:
+  theme: base
+  themeVariables:
+    primaryColor: "#a5d8ff"
+    primaryBorderColor: "#4a9eed"
+    lineColor: "#555"
+    edgeLabelBackground: "#ffffff"
+  flowchart:
+    htmlLabels: true
+    curve: basis
+    nodeSpacing: 55
+    rankSpacing: 70
+---
+flowchart LR
+    Q["<b>User Question</b><br/><span style='font-size:12px;color:#6d28d9'>student or user asks</span>"]:::start
+    KS["<b>Knowledge Source</b><br/><span style='font-size:12px;color:#6d28d9'>Step 1 · Retrieve</span>"]:::act
+    RP["<b>Retrieved Passages</b><br/><span style='font-size:12px;color:#6d28d9'>relevant text returned</span>"]:::auto
+    EP["<b>Enriched Prompt</b><br/><span style='font-size:12px;color:#6d28d9'>Step 2 · Augment</span>"]:::auto
+    AM["<b>AI Model</b><br/><span style='font-size:12px;color:#6d28d9'>Step 3 · Generate</span>"]:::auto
+    GA["<b>Grounded Answer</b><br/><span style='font-size:12px;color:#6d28d9'>response to user</span>"]:::done
+
+    Q --> KS --> RP --> EP --> AM --> GA
+
+    classDef start fill:#a5d8ff,stroke:#4a9eed,color:#1e293b
+    classDef act fill:#a5d8ff,stroke:#4a9eed,color:#1e293b
+    classDef auto fill:#d0bfff,stroke:#8b5cf6,color:#1e293b
+    classDef done fill:#b2f2bb,stroke:#22c55e,color:#1e293b

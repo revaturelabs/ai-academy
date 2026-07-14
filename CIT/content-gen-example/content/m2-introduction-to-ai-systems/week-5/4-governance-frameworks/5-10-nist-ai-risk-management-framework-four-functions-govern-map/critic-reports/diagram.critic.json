@@ -1,0 +1,19 @@
+{
+  "verdict": "pass",
+  "findings": [
+    {
+      "code": "looks_good",
+      "where": "whole diagram",
+      "detail": "Map -> Measure -> Manage reads as a clear directed cycle; the bold thick Manage ==> Map return edge ('loop back as systems and risks change') makes the continuous-loop point unmistakable. Govern sits at top-center in the highlighted hitl-yellow tier with three dotted cross-cutting edges to all three loop functions, conveying 'holds the whole loop together'. No overlaps, truncation, or illegible crossings; all labels and subtitles legible at 1400px. Resolved the cycle-1 issue of three redundant 'holds the loop together' labels crowding the loop-back edge."
+    }
+  ],
+  "stats": {
+    "nodes": 4,
+    "edges": 6,
+    "layout": "flowchart TB (center-and-loop / cycle)",
+    "labels": ["Govern", "Map", "Measure", "Manage"],
+    "png_path": "artifacts/diagram.png",
+    "png_dims": "approx 700x900 (rendered at -w 1400)"
+  },
+  "cycles_used": 2
+}

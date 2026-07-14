@@ -1,0 +1,12 @@
+{
+  "topic_id": "4.5",
+  "title": "Tool use — AI calling search, calculator, and code runner",
+  "estimated_read_minutes": 10,
+  "word_count": 2087,
+  "generated_at": "2026-06-17T00:00:00Z",
+  "revised_at": "2026-06-17T00:00:00Z",
+  "revision_note": "Reading critic cycle 1 failed: 1960 words / 8.52 min below 9-min floor. Added ~127 words at 3 natural points (Overview rationale sentence; tools-in-agents bridge paragraph; third design principle). New: 2087 words / 9.07 min.",
+  "embeds_diagram": true,
+  "citations_used": [1, 2, 3],
+  "sections": ["Overview", "Key Concepts", "Worked Example", "In Practice", "Key Takeaways", "References"]
+}

@@ -1,0 +1,57 @@
+{
+  "topic_id": "2.7",
+  "generated_at": "2026-06-17T00:00:00Z",
+  "format": "gift",
+  "question_count": 6,
+  "$bias_defense_applied": true,
+  "$shuffle_seed": "2b3e0f7a",
+  "correct_position_distribution": [1, 3, 0, 2, 1],
+  "positional_bias_check": {
+    "distribution_by_position": { "0": 1, "1": 2, "2": 1, "3": 1 },
+    "max_share": 0.40,
+    "passed": true
+  },
+  "length_bias_check": {
+    "longest_correct_count": 0,
+    "longest_correct_rate": 0.00,
+    "passed": true
+  },
+  "questions": [
+    {
+      "id": "2.7-Q1",
+      "type": "mcq",
+      "objective_ref": "Recognise the shared four-part structure that appears across all five domains.",
+      "correct_position": 1
+    },
+    {
+      "id": "2.7-Q2",
+      "type": "mcq",
+      "objective_ref": "Identify what 'bounded' and 'observable' mean differently in each domain.",
+      "correct_position": 3
+    },
+    {
+      "id": "2.7-Q3",
+      "type": "mcq",
+      "objective_ref": "Write a good specification and a weak specification for the same task, and explain the specific gap the weak version leaves.",
+      "correct_position": 0
+    },
+    {
+      "id": "2.7-Q4",
+      "type": "mcq",
+      "objective_ref": "Apply the specification template (task statement + context + constraints + expected output format) to a task in any of the five domains.",
+      "correct_position": 2
+    },
+    {
+      "id": "2.7-Q5",
+      "type": "mcq",
+      "objective_ref": "Connect each domain example to the Specification Portfolio assessment (A1) you will submit in Week 3.",
+      "correct_position": 1
+    },
+    {
+      "id": "2.7-Q6",
+      "type": "short_answer",
+      "objective_ref": "Recognise the shared four-part structure that appears across all five domains.",
+      "correct_position": null
+    }
+  ]
+}

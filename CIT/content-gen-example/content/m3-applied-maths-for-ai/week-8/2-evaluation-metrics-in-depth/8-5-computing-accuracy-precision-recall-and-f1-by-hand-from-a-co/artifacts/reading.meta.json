@@ -1,0 +1,10 @@
+{
+  "topic_id": "8.5",
+  "title": "Computing accuracy, precision, recall, and F1 by hand from a confusion matrix",
+  "estimated_read_minutes": 8,
+  "word_count": 1520,
+  "generated_at": "2026-06-22T07:25:00Z",
+  "embeds_diagram": true,
+  "citations_used": [1, 2, 3],
+  "sections": ["Overview", "Key Concepts", "Worked Example", "In Practice", "Key Takeaways", "References"]
+}

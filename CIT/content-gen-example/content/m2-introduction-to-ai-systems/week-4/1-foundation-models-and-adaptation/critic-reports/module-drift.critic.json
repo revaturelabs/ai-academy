@@ -1,0 +1,124 @@
+{
+  "critic": "drift-critic",
+  "module": "1-foundation-models-and-adaptation",
+  "course_code": "M2",
+  "week_num": 4,
+  "generated_at": "2026-06-17T00:00:00Z",
+  "run": 2,
+  "topics_evaluated": ["4.1", "4.2"],
+  "passed": true,
+  "verdict": "All five checks pass; the previously blocking hard finding (4.2 §9 missing) is resolved — the new Hands-On Exercise anchors the evaluation-rubric and evidence-based-presentation lab components within this module.",
+  "checks": {
+    "terminology_consistency": {
+      "passed": true,
+      "findings": [
+        {
+          "severity": "soft",
+          "topic": "4.2",
+          "detail": "The terms 'pre-training', 'original training', and 'large-scale training' are used as synonyms in 4.2. The §5.2 contrast table makes the equivalence explicit ('Pre-training (original training)'), and §5.1 now includes a one-line inline gloss ('The word pre-trained simply means already trained'). Acceptable for beginners; the table resolves any residual ambiguity. Carry-over soft finding from run 1 — no action required, surfaced for HITL #4 awareness."
+        }
+      ]
+    },
+    "prerequisites_respected": {
+      "passed": true,
+      "findings": []
+    },
+    "learning_arc": {
+      "passed": true,
+      "findings": [
+        {
+          "severity": "soft",
+          "topic": "module",
+          "detail": "The module title 'Foundation Models and Adaptation' implies plural adaptation methods. Only fine-tuning is developed to full LO depth within this two-topic module; prompting and RAG are forward-referenced to topics 4.3+. This is a deliberate curricular scoping decision — 4.1 LO 5 frames adaptation as a category and explicitly defers mechanics. Carry-over soft finding from run 1; surfaced for HITL #4 awareness only."
+        }
+      ]
+    },
+    "no_duplicated_core_concepts": {
+      "passed": true,
+      "jaccard_pairs": [
+        {
+          "topics": ["4.1", "4.2"],
+          "shared_nouns": ["parameters", "fine-tuning"],
+          "jaccard": 0.07,
+          "threshold": 0.6,
+          "note": "'fine-tuning' appears in 4.1 §5.4 as a one-line named reference to an upcoming topic, not as a developed Core Concept. 'parameters' is a shared foundational carry-over term from topic 3.5. Neither constitutes substantive duplication."
+        }
+      ],
+      "findings": []
+    },
+    "lab_activity_alignment": {
+      "passed": true,
+      "lab_activity_seed": "Live demo — same question with and without RAG, accuracy compared / Each student independently designs a 5-criteria evaluation rubric to compare two AI tools / Present findings — defend with evidence, not opinion",
+      "findings": [
+        {
+          "severity": "soft",
+          "topic": "4.1",
+          "detail": "4.1 §9 correctly defers the RAG live-demo component to after topics 4.2 and 4.3, and provides an alternate 'usable for many tasks' exploration activity as a meaningful interim exercise. Deferral is well-explained. No action required."
+        },
+        {
+          "severity": "soft",
+          "topic": "4.2",
+          "detail": "4.2 §9 (new in this corpus revision) anchors the evaluation-rubric component of the lab_activity_seed via a 'Compare zero-shot and fine-tuned outputs using a simple rubric' exercise. The exercise invokes rubric-criteria design, zero-shot vs. fine-tuned prediction, and an evidence-based trade-off reflection — directly matching all three strands of the lab seed. Forward reference to topic 4.7 for the full rubric framework is within-week and does not constitute a prerequisite violation. Hard finding from run 1 resolved."
+        }
+      ]
+    },
+    "audience_level_consistency": {
+      "passed": true,
+      "findings": [
+        {
+          "severity": "soft",
+          "topic": "module",
+          "detail": "Both topics sustain a consistent absolute-beginner register. Every specialist term is defined at first use. No concept is assumed cold across topic boundaries — 4.2 explicitly lists 4.1 terms it will reuse without re-defining, and then does not introduce any such term cold. Depth profile is flat across the two-topic arc; no upward spike detected."
+        }
+      ]
+    }
+  },
+  "summary": {
+    "hard_findings": 0,
+    "soft_findings": 4,
+    "blocking": false,
+    "blocking_reason": null
+  },
+  "topics_with_findings": [
+    {
+      "topic_id": "4.1",
+      "findings": [
+        {
+          "check": "lab_activity_alignment",
+          "severity": "soft",
+          "summary": "RAG demo deferral in §9 is correct and well-explained; no action required."
+        }
+      ]
+    },
+    {
+      "topic_id": "4.2",
+      "findings": [
+        {
+          "check": "terminology_consistency",
+          "severity": "soft",
+          "summary": "pre-training / original training / large-scale training used as synonyms; §5.2 table and §5.1 inline gloss together provide adequate resolution for beginners."
+        },
+        {
+          "check": "lab_activity_alignment",
+          "severity": "soft",
+          "summary": "§9 Hands-On Exercise now present and directly anchors the evaluation-rubric and evidence-based-presentation lab components. Previously blocking hard finding resolved."
+        }
+      ]
+    },
+    {
+      "topic_id": "module",
+      "findings": [
+        {
+          "check": "learning_arc",
+          "severity": "soft",
+          "summary": "Module title implies plural adaptation methods; only fine-tuning is developed to full LO depth — deliberate curricular scoping, not a drift defect."
+        },
+        {
+          "check": "audience_level_consistency",
+          "severity": "soft",
+          "summary": "Both topics sustain consistent absolute-beginner register; no upward drift across the arc."
+        }
+      ]
+    }
+  ]
+}

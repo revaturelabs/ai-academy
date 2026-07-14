@@ -1,0 +1,65 @@
+{
+  "type": "topic",
+  "id": "12.6",
+  "title": "Reading from a file — open, read lines, close",
+  "slug": "12-6-reading-from-a-file-open-read-lines-close",
+  "position_in_module": 1,
+  "week_num": 12,
+  "session_name": "Python Foundations II and Calling an LLM",
+  "module": {
+    "position": 2,
+    "slug": "2-working-with-files",
+    "title": "Working with Files"
+  },
+  "course": {
+    "code": "M5",
+    "slug": "m5-python-for-ai-pe-vc-and-rag",
+    "title": "Python for AI, PE, VC and RAG"
+  },
+  "next_assessment": {
+    "id": "A4",
+    "due_week": 13,
+    "title": "Python and Prompt Engineering Portfolio",
+    "weight": "20%"
+  },
+  "paths": {
+    "corpus": "topic_corpus.md",
+    "resources": "topic.resources.json",
+    "progress": "topic.progress.json",
+    "artifacts_dir": "artifacts/",
+    "critic_reports_dir": "critic-reports/"
+  },
+  "artifact_plan": {
+    "diagram": true,
+    "diagram_intent": "Flowchart of the file-reading lifecycle: open() → read content → close, with the with block shown as the auto-close alternative path vs manual .close()",
+    "confirmed_profile": "standard",
+    "suggested_profile": "standard",
+    "profile_signals": ["3-step lifecycle with branching path (with vs manual close)", "Implementation section warranted", "Real-World Patterns warranted", "multiple reading methods to contrast"],
+    "reading": {
+      "target_word_range": [1200, 1600],
+      "target_minutes_range": [6, 8]
+    },
+    "quiz": {
+      "min_questions": 5,
+      "max_questions": 6,
+      "include_short_answer": false
+    },
+    "sections_approved": {
+      "2_prerequisites": true,
+      "3_learning_objectives": true,
+      "4_introduction": true,
+      "5_core_concepts": true,
+      "6_implementation": true,
+      "7_real_world_patterns": true,
+      "8_best_practices": true,
+      "9_hands_on_exercise": true,
+      "10_key_takeaways": true
+    },
+    "soft_findings_carry_forward": [
+      "sum() used in §7 Pattern 1 without prior concepts_introduced entry — approved as-is; reading builder to add inline definition or use accumulator",
+      "%%writefile in §9 is Jupyter cell magic — approved as-is; reading builder to add clarifying note or use Python open() approach in exercise"
+    ]
+  },
+  "expected_delivery_minutes": 7,
+  "status": "scaffolded"
+}

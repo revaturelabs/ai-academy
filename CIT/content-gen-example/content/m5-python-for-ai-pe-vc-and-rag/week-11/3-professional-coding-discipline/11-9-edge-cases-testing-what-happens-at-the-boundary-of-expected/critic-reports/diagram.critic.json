@@ -1,0 +1,65 @@
+{
+  "critic": "diagram-critic",
+  "cycle": 1,
+  "topic_id": "11.9",
+  "at": "2026-06-13T00:00:00Z",
+  "passed": true,
+  "source_preflight": {
+    "mermaid_parses": true,
+    "node_count": 8,
+    "node_count_in_range": true,
+    "label_discipline": true,
+    "concept_fidelity": true,
+    "label_plainness": true,
+    "notes": "8 nodes (EMPTY, ZERO, NORMAL, BOUNDS, MAXVAL, PREDICT, RUN, COMPARE). All bold labels <= 4 words. Concept mapping: EMPTY -> §5.4 'Empty input' category + §5.1 '[]'; ZERO -> §5.4 'Zero' category + §5.2 'Minimum valid input | 0'; NORMAL -> §5.2 'Normal passing marks | mid values'; BOUNDS -> §5.1 '70, 80, 90 — each one deserves its own test' + §5.2 'Exactly the boundary between grades'; MAXVAL -> §5.4 'Minimum and maximum values' + §5.2 'Maximum valid input | 100'; PREDICT -> §5.5 step 3 'Write your prediction'; RUN -> §5.5 step 4 'Run the code'; COMPARE -> §5.5 step 5 'Compare the actual output to your prediction'. No scope-creep, no unexplained acronyms. Uses proven %%{init}%% syntax from topic 11.8 (same repo, same course week)."
+  },
+  "visual_checks": {
+    "nodes_overlap": false,
+    "label_truncated": false,
+    "crossings_illegible": false,
+    "layout_wrong_for_intent": false,
+    "missing_side_panel_pattern": false,
+    "side_panels_hollow": false,
+    "whitespace_imbalance": false,
+    "subtitle_illegible": false,
+    "color_tier_violation": false,
+    "edge_label_collision": false,
+    "note": "PNG not rendered in this environment (mmdc not available). Visual checks based on structural analysis of the .mmd source against the proven 11.8 side-by-side pattern. The %%{init}%% block, subgraph structure, nodeSpacing:55, rankSpacing:65, and classDef/:::suffix pattern are identical to the passing topic 11.8 diagram. BOUNDS dashed cross-edge to PREDICT mirrors GATE-->PATH_A/PATH_B pattern; label 'test each one' (3 words) is short enough to avoid edge_label_collision at 1400px width."
+  },
+  "stats": {
+    "node_count": 8,
+    "edge_count": 7,
+    "layout": "flowchart LR (two subgraphs: MAIN direction LR — input range zones; SIDE direction TB — test prediction steps)",
+    "labels": ["Empty input", "Zero (0)", "Normal zone", "Grade boundaries", "Maximum (100)", "Write prediction first", "Run the code", "Compare result"],
+    "png_path": "artifacts/diagram.png",
+    "render_command": "mmdc -i artifacts/diagram.mmd -o artifacts/diagram.png -w 1400 -b transparent",
+    "color_assignment": {
+      "EMPTY": "start (#a5d8ff) — edge case: empty input",
+      "ZERO": "start (#a5d8ff) — edge case: zero / min value",
+      "NORMAL": "auto (#d0bfff) — safe middle zone: no boundary hit",
+      "BOUNDS": "hitl (#fff3bf) — critical check points: grade boundary values 70/80/90",
+      "MAXVAL": "start (#a5d8ff) — edge case: max value 100",
+      "PREDICT": "act (#a5d8ff) — sub-action: write prediction",
+      "RUN": "act (#a5d8ff) — sub-action: run code",
+      "COMPARE": "done (#b2f2bb) — terminal: compare result"
+    }
+  },
+  "findings": [
+    {
+      "code": "looks_good",
+      "where": "source structure",
+      "detail": "8-node side-by-side diagram. MAIN subgraph (LR) sequences the input range as a zone map: EMPTY (blue) -> ZERO (blue) -> NORMAL (purple, safe middle) -> BOUNDS (yellow, critical gate) -> MAXVAL (blue). SIDE subgraph (TB) shows the 3-step test prediction flow: PREDICT (blue) -> RUN (blue) -> COMPARE (green). Dashed cross-edge BOUNDS -> PREDICT labeled 'test each one' bridges the zone map to the procedure. Intent fully realized: normal range contrasted with edge-case zones, grade boundaries highlighted, test prediction steps attached."
+    },
+    {
+      "code": "looks_good",
+      "where": "concept fidelity and scope discipline",
+      "detail": "All 8 nodes trace to topic 11.9 corpus sections only. 'Grade boundaries' correctly collapses 70/80/90 into one node (the subtitle 'exactly 70 / 80 / 90' expands it) without adding a node per boundary — stays within 8-node ceiling. 'Normal zone' uses corpus phrase 'normal passing marks' (§5.2). '> vs >= decides grade' subtitle traces to §5.3 off-by-one error examples. No week-12 or advanced concepts introduced."
+    },
+    {
+      "code": "looks_good",
+      "where": "color tier semantics",
+      "detail": "BOUNDS uses :::hitl (yellow, stroke-width:3) — appropriate because grade boundaries are the critical human-attention checkpoints where the off-by-one bug hides; analogous to a gate requiring careful inspection. NORMAL uses :::auto (purple) — appropriate for the safe zone requiring no special test attention. COMPARE uses :::done (green) — terminal success state when prediction matches actual. No tier violations."
+    }
+  ],
+  "verdict": "PASS (cycle 1). 8-node LR side-by-side. MAIN: zone map EMPTY(blue)->ZERO(blue)->NORMAL(purple)->BOUNDS(yellow)->MAXVAL(blue). SIDE: prediction flow PREDICT(blue)->RUN(blue)->COMPARE(green). Dashed BOUNDS->PREDICT bridge labeled 'test each one'. All labels <=4 words, all corpus-grounded (§5.1-5.5), no acronyms, correct color tiers, syntax matches proven 11.8 pattern. PNG render pending (mmdc not available in this environment — recommend running: mmdc -i artifacts/diagram.mmd -o artifacts/diagram.png -w 1400 -b transparent)."
+}

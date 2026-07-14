@@ -1,0 +1,53 @@
+{
+  "module_slug": "4-evaluating-ai-output",
+  "passed": true,
+  "checks": {
+    "narrative_coherence": {
+      "passed": true,
+      "notes": "Topic 3.10 flows logically: problem statement (fluency is not quality, wrong rubric = bad decisions) → concept definitions (evaluation, rubric, task type) → five rubrics (creative → factual → logical → ethical → coding) in a fixed order → quick-reference summary → worked example (factual hallucination scenario) → five-step workflow → failure patterns → best practices → key takeaways. The corpus sections 4–10 and the reading sections Overview → Key Concepts → Worked Example → In Practice → Key Takeaways mirror the same arc. No section assumes knowledge introduced later; each layer builds on the prior one."
+    },
+    "concept_consistency": {
+      "passed": true,
+      "violations": []
+    },
+    "cross_module_drift": {
+      "passed": true,
+      "violations": []
+    },
+    "scope_coherence": {
+      "passed": true,
+      "notes": "Module title 'Evaluating AI Output' is fully instantiated by topic 3.10. The lab activity seed (Capability Probe across five task types) is directly supported by both the five-rubric framework and the hands-on exercise in corpus section 9. BLEU/ROUGE metrics are explicitly deferred as out-of-scope in the corpus — correct scope discipline. No facet of the module outcome is left uncovered; no content goes beyond the evaluation act itself."
+    }
+  },
+  "concept_consistency_detail": {
+    "terms_checked": [
+      "evaluation rubric",
+      "task type",
+      "five task types (creative, factual, logical, ethical, coding)",
+      "attributional hallucination",
+      "five-step evaluation workflow",
+      "calibration (topic 3.8 back-reference)",
+      "overconfidence bias (topic 3.9 back-reference)"
+    ],
+    "synonym_drift_found": false,
+    "notes": "All key terms are introduced once in bold at first appearance and reused with identical labels throughout both corpus and reading. The five task types appear in the same fixed order (creative, factual, logical, ethical, coding) in every enumeration: corpus sections 5.3–5.7, quick-reference table 5.8, reading rubric tables, reading quick-reference summary, Key Takeaways. No synonym variants detected."
+  },
+  "cross_module_drift_detail": {
+    "topics_inspected": ["3.10"],
+    "drift_candidates_reviewed": [
+      "LLM architecture / token mechanics — not present; correctly placed in earlier modules",
+      "Prompting techniques — not present; correctly deferred",
+      "Automated ML metrics (BLEU/ROUGE) — explicitly out-of-scoped in corpus sec 5.1",
+      "Ethical governance frameworks — not present; correctly deferred to later modules"
+    ],
+    "notes": "Topic 3.10 content is tightly bounded to human evaluation of AI outputs by task type. Cross-topic back-references (3.8 calibration, 3.9 hallucination types) are prerequisite citations, not content drift — the concepts are used as already-known context, not re-taught."
+  },
+  "lab_alignment": {
+    "passed": true,
+    "lab_activity_seed": "Capability Probe — test Claude across 5 task types: creative, factual, logical, ethical, coding / Document what worked, what failed, where it hallucinated",
+    "supporting_artifact": "topic 3.10 reading.md + corpus section 9 (Hands-On Exercise)",
+    "notes": "The five-rubric framework and the five-step evaluation workflow directly operationalise the Capability Probe lab. Corpus section 9 asks students to prompt an AI on ethical + factual tasks, apply rubric criteria with Pass/Partial/Fail ratings, and document decisions — exactly the lab activity. Step 5 of the workflow explicitly connects documentation to Assessment A1."
+  },
+  "verdict": "PASS — all four module-drift checks clear. Narrative arc is internally coherent (intro to rubrics to workflow to practice). All seven key terms are used consistently with no synonym drift. No content belongs in a different module. The single topic fully instantiates the 'Evaluating AI Output' module scope and directly supports the Capability Probe lab activity.",
+  "at": "2026-06-18T00:00:00Z"
+}

@@ -1,0 +1,55 @@
+$CATEGORY: CIT/M2/week-5/5.10-nist-ai-risk-management-framework-four-functions-govern-map
+
+::5.10-Q1:: The NIST AI Risk Management Framework (AI RMF) is best described as which of the following?
+{
+=Voluntary guidance published by NIST, a US government agency, for handling AI risk#Correct - the AI RMF is guidance from NIST that organizations choose to follow.
+~A binding law passed by the European Union that penalizes risky AI systems#No - that describes the EU AI Act from 5.7, not the NIST AI RMF.
+~A piece of software that NIST sells to companies to remove AI bias for them#No - the AI RMF is written guidance, not a product or tool that fixes risk for you.
+~A private industry club whose paying members agree to keep their AI secret#No - the AI RMF is open public guidance, not a private membership group.
+#### Tests what the AI RMF is and who publishes it (corpus 4, 5.1).
+}
+
+::5.10-Q2:: In the AI RMF, what does it mean that the framework is "voluntary"?
+{
+~A regulator will fine any organization that fails to follow every step of it#No - that is how a binding law works, not voluntary guidance like the AI RMF.
+~Only volunteers, not paid employees, are allowed to apply the framework at work#No - voluntary refers to choosing to adopt it, not to who does the work.
+=No law forces you to use it; an organization follows it by choice, not under penalty#Correct - voluntary means there is no legal requirement and no penalty for not using it.
+~It is optional only for small companies but legally required for large ones#No - it carries no legal force for any organization, regardless of size.
+#### Tests the meaning of voluntary versus binding law (corpus 5.1).
+}
+
+::5.10-Q3:: Which list correctly names the four functions of the NIST AI RMF?
+{
+~Plan, Build, Test, Deploy#No - those are software-development steps, not the AI RMF functions.
+~Detect, Protect, Respond, Recover#No - those resemble a security playbook, not the four AI RMF functions.
+~Collect, Clean, Train, Predict#No - those describe building a model, not the AI RMF functions.
+=Govern, Map, Measure, Manage#Correct - these are the four functions that form the spine of the framework.
+#### Tests recall of the four function names (corpus 5.3, 5.8).
+}
+
+::5.10-Q4:: An organization is deciding who is responsible when its AI causes harm and writing down rules for how AI may be used. Which AI RMF function does this best match?
+{
+~Measure, which assesses how big each risk really is using tests, numbers, and tracking#No - Measure is about assessing risks with evidence, not setting rules and responsibilities.
+=Govern, which sets the culture, rules, and responsibilities that hold the rest together#Correct - Govern is about people, policies, and accountability across the framework.
+~Map, which understands the context and spots where the system could end up causing harm#No - Map is about understanding context and risks, not naming who is accountable.
+~Manage, which acts on the risks by fixing models and adding human oversight#No - Manage is about taking action on risks, not setting the rules in the first place.
+#### Tests matching an activity to the Govern function (corpus 5.4).
+}
+
+::5.10-Q5:: Why does the AI RMF treat its four functions as a continuous loop rather than a one-time checklist?
+{
+=AI systems and their risks keep changing, so the organization must keep cycling through the steps#Correct - new users, data, and misuses mean risk work is never finished after one pass.
+~A law requires organizations to repeat the four functions exactly once every single year#No - the AI RMF is voluntary, and the loop is about change, not a yearly legal rule.
+~The four functions can only ever be run in a random order that changes each time#No - the functions follow Map then Measure then Manage; the loop is about repeating, not randomness.
+~Running the functions once permanently removes every risk, so repeating is just for show#No - one pass cannot remove future risks; that is exactly the mistake the loop prevents.
+#### Tests the continuous-loop framing (corpus 5.8).
+}
+
+::5.10-Q6:: Many companies and government agencies adopt the AI RMF even though no law forces them to. What is the best reason given for this?
+{
+~Following it lets an organization completely avoid the EU AI Act and all other laws#No - voluntary guidance does not replace or cancel any binding law such as the EU AI Act.
+~NIST pays organizations a yearly cash reward for every framework they choose to adopt#No - there is no payment; organizations adopt it because it is useful and expected.
+=It is genuinely useful, and customers, partners, and buyers increasingly expect it#Correct - the framework gives trusted, common language for AI risk that others expect to see.
+~It legally guarantees that an AI system will never produce a biased or harmful result#No - no framework can guarantee zero harm; it helps manage risk, not eliminate it.
+#### Tests why organizations adopt voluntary guidance (corpus 5.1, Best Practices).
+}

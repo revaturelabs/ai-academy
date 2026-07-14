@@ -1,0 +1,127 @@
+{
+  "critic": "reading-critic",
+  "topic_id": "7.8",
+  "artifact": "artifacts/reading.md",
+  "run_at": "2026-06-23",
+  "passed": true,
+  "verdict": "PASS with 1 soft finding. The reading is structurally sound, beginner-appropriate, faithful to the corpus, properly scoped, and meets all hard-fail checks. The only finding is length_below_floor: 1080 words against a 1200-word floor (10% under), which is within the 30% tolerance band and therefore a soft finding only. All hard-fail checks clear. No scope_creep. Checks 5-6 together produce 0 distinct findings, so no escalation. The reading meets the standard-depth bar set by the 2-1 gold example (concise defines-before-use, concrete-first pattern, bold-term definitions, no assessment references).",
+  "checks": {
+    "format_discipline": {
+      "passed": true,
+      "frontmatter_present": false,
+      "meta_sidecar_missing": false,
+      "section_template_violation": null,
+      "sections_found": [
+        "Overview",
+        "Key Concepts",
+        "Worked Example",
+        "In Practice",
+        "Key Takeaways",
+        "References"
+      ],
+      "sections_expected": [
+        "Overview",
+        "Key Concepts",
+        "Worked Example",
+        "In Practice",
+        "Key Takeaways",
+        "References"
+      ],
+      "notes": "All six fixed sections present in correct order. H1 opens the file. No frontmatter."
+    },
+    "length": {
+      "passed": true,
+      "hard_fail": false,
+      "finding_code": "length_below_floor",
+      "severity": "soft",
+      "word_count_actual": 1080,
+      "word_count_target_min": 1200,
+      "word_count_target_max": 1600,
+      "minutes_actual": 5.4,
+      "minutes_target_min": 6,
+      "minutes_target_max": 8,
+      "tolerance_check": "1080 / 1200 = 90% — 10% below floor; 30% tolerance band floor is 840 words; actual is above tolerance floor",
+      "notes": "Soft finding only. The reading is 120 words short of the 1200-word standard-profile floor (10% deficit). All key sub-concepts (TP, FP, formula, scope limitation, accuracy comparison, worked example, four real-world patterns, two rules of thumb) are present and covered; the gap reflects compact delivery rather than missing substance. A builder revision adding ~120 words of elaboration to the worked example or In Practice section would bring this to floor."
+    },
+    "citations": {
+      "passed": true,
+      "primary_cited": true,
+      "primary_resource": "[1] Google ML Crash Course",
+      "citations_found": [1, 2, 3],
+      "inline_markers": [1, 2, 3],
+      "bibliography_entries": [1, 2, 3],
+      "orphan_markers": [],
+      "orphan_bibliography": [],
+      "notes": "All three resources cited inline and in bibliography. Primary [1] cited at lines 5, 11, 22, 28, 38, 47, 55, 70. No orphans."
+    },
+    "no_forward_references": {
+      "passed": true,
+      "violations": [],
+      "deferred_mentions": [
+        {
+          "term": "recall",
+          "line_approx": 58,
+          "form": "bare name + topic pointer: 'another metric — recall — which is covered in topic 7.9'",
+          "compliant": true
+        },
+        {
+          "term": "recall",
+          "line_approx": 107,
+          "form": "bare name + topic pointer: 'that includes recall (topic 7.9)'",
+          "compliant": true
+        }
+      ],
+      "notes": "Both recall mentions are bare-name + deferred-pointer form. No bolding, no defining clause. Scope-discipline compliant."
+    },
+    "faithfulness": {
+      "passed": true,
+      "assertions_sampled": 8,
+      "unsupported_count": 0,
+      "unsupported_assertions": [],
+      "notes": "All 8 sampled assertions (overview framing, TP definition + example, FP definition + example, precision formula, scope-limitation of precision, accuracy-vs-precision comparison, worked example numbers 32/40=0.80, In Practice patterns) trace directly to corpus sections 4, 5.2, 5.3, 5.4, 5.5, 5.6, 6, and 7 respectively."
+    },
+    "beginner_readability": {
+      "passed": true,
+      "undefined_terms": [],
+      "jargon_dump": null,
+      "abstract_first": null,
+      "academic_register": null,
+      "notes": "All non-everyday terms defined at first use with bold + plain-language meaning. 'true positive' bolded and defined line 22 with immediate blockquote example. 'false positive' bolded and defined line 28 with immediate blockquote example. 'flag' defined as plain synonym line 11. Concrete examples (spam filter, medical screener) lead every concept introduction. No hedging language detected. Sentences are generally short and direct. Learner addressed as 'you' throughout."
+    },
+    "formatting": {
+      "passed": true,
+      "wall_of_text": null,
+      "unlisted_sequence": null,
+      "no_inline_examples": null,
+      "notes": "All paragraphs are at or under 4 sentences. Worked example uses numbered bold steps. Strength/limitation rendered as a bullet pair. Table used to illustrate precision formula numerically (lines 42-46). Two rules of thumb rendered as bullets. TP and FP definitions each get an immediately adjacent blockquote example inline — not deferred. Bold-term / plain-meaning shape used throughout Key Concepts."
+    },
+    "assessment_references": {
+      "passed": true,
+      "finding_code": null,
+      "violations": [],
+      "notes": "No assessment IDs, due weeks, or grade weights appear anywhere in the reading."
+    },
+    "scope": {
+      "passed": true,
+      "scope_creep": [],
+      "notes": "Topic boundary ('precision — of the things the model flagged, how many were actually correct') is respected throughout. 'Recall' is mentioned twice as a bare deferred name with a topic-7.9 pointer; it is never taught or defined. No adjacent concepts (F1 score, ROC curve, confusion matrix beyond TP/FP) appear. Negative prediction used as a contrast term only, not taught as a metric."
+    }
+  },
+  "soft_findings": [
+    {
+      "code": "length_below_floor",
+      "severity": "soft",
+      "detail": "1080 words vs 1200-word floor (standard profile). 10% under. Within 30% tolerance. Suggested fix: add ~120 words to the worked example interpretation or expand one In Practice pattern with a second concrete number."
+    }
+  ],
+  "hard_findings": [],
+  "escalation_check": {
+    "scope_creep_found": false,
+    "checks_5_6_distinct_findings": 0,
+    "escalated_to_hard_fail": false
+  },
+  "gold_example_comparison": {
+    "applicable_example": "2-1-what-makes-a-good-specification.reading.md (standard-depth conceptual topic)",
+    "verdict": "Meets the gold bar. Defines terms at first use, concrete-before-abstract on every concept, paragraphs under 4 sentences, lists carry enumerated content, no assessment references, stays on headline. Word count is slightly lower than the gold example (~1200w) but structure and tone are aligned."
+  }
+}

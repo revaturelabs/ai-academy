@@ -1,0 +1,43 @@
+{
+  "topic_id": "11.1",
+  "captured_at": "2026-06-12T00:00:00Z",
+  "captured_by": "bhuvaneshwarim@revature.com",
+  "resources_source": "human",
+  "resources": [
+    {
+      "type": "url",
+      "value": "https://docs.python.org/3/tutorial/",
+      "role": "primary",
+      "source": "human",
+      "notes": ""
+    },
+    {
+      "type": "url",
+      "value": "https://colab.research.google.com/",
+      "role": "primary",
+      "source": "human",
+      "notes": ""
+    },
+    {
+      "type": "url",
+      "value": "https://realpython.com/python-variables/",
+      "role": "primary",
+      "source": "human",
+      "notes": ""
+    },
+    {
+      "type": "url",
+      "value": "https://automatetheboringstuff.com/",
+      "role": "primary",
+      "source": "human",
+      "notes": "Free book — practical Python with real automation tasks"
+    },
+    {
+      "type": "url",
+      "value": "https://cs50.harvard.edu/python/",
+      "role": "primary",
+      "source": "human",
+      "notes": ""
+    }
+  ]
+}

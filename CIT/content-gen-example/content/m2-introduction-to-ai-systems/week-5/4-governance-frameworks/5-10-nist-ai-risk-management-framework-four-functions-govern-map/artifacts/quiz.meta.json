@@ -1,0 +1,53 @@
+{
+  "topic_id": "5.10",
+  "generated_at": "2026-06-22T14:40:00Z",
+  "format": "gift",
+  "question_count": 6,
+  "$bias_defense_applied": true,
+  "$shuffle_seed": "sha256(topic_id=5.10)",
+  "shuffle_constraint_check": {
+    "max_share": 0.333,
+    "max_share_limit": 0.40,
+    "all_four_positions_used": true,
+    "passed": true
+  },
+  "correct_position_distribution": [0, 2, 3, 1, 0, 2],
+  "questions": [
+    {
+      "id": "5.10-Q1",
+      "type": "mcq",
+      "objective_ref": "Explain what the NIST AI Risk Management Framework (AI RMF) is, and who publishes it, in one or two plain sentences.",
+      "correct_position": 0
+    },
+    {
+      "id": "5.10-Q2",
+      "type": "mcq",
+      "objective_ref": "Explain what \"voluntary\" means here, and contrast it with the EU AI Act being binding law (from 5.7).",
+      "correct_position": 2
+    },
+    {
+      "id": "5.10-Q3",
+      "type": "mcq",
+      "objective_ref": "Name the four functions - Govern, Map, Measure, Manage - and say in plain words what each one does.",
+      "correct_position": 3
+    },
+    {
+      "id": "5.10-Q4",
+      "type": "mcq",
+      "objective_ref": "Name the four functions - Govern, Map, Measure, Manage - and say in plain words what each one does.",
+      "correct_position": 1
+    },
+    {
+      "id": "5.10-Q5",
+      "type": "mcq",
+      "objective_ref": "Describe how the four functions work together as an ongoing loop rather than a one-time checklist.",
+      "correct_position": 0
+    },
+    {
+      "id": "5.10-Q6",
+      "type": "mcq",
+      "objective_ref": "Recognize why so many companies and government agencies adopt a voluntary framework even when no law forces them to.",
+      "correct_position": 2
+    }
+  ]
+}

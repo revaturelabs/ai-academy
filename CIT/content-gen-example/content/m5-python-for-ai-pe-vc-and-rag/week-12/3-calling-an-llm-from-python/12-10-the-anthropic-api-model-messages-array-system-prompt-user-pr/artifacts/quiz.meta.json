@@ -1,0 +1,49 @@
+{
+  "topic_id": "12.10",
+  "generated_at": "2026-06-15T00:00:00Z",
+  "format": "gift",
+  "question_count": 6,
+  "$bias_defense_applied": true,
+  "$shuffle_seed": "hash('12.10')=242",
+  "correct_position_distribution": {"0": 2, "1": 2, "2": 1, "3": 1},
+  "max_share": 0.333,
+  "bias_constraint_passed": true,
+  "questions": [
+    {
+      "id": "q1",
+      "type": "mcq",
+      "objective_ref": "Identify the five parts of an Anthropic API call: the model name, the messages array, the system prompt, the user prompt, and the API key.",
+      "correct_position": 2
+    },
+    {
+      "id": "q2",
+      "type": "mcq",
+      "objective_ref": "Describe what the messages array is, and explain why each item in that array must have a role field and a content field.",
+      "correct_position": 0
+    },
+    {
+      "id": "q3",
+      "type": "mcq",
+      "objective_ref": "Explain the difference between a system prompt and a user prompt, and state when you would use each.",
+      "correct_position": 1
+    },
+    {
+      "id": "q4",
+      "type": "mcq",
+      "objective_ref": "Describe what the model parameter controls and give an example of a valid model name.",
+      "correct_position": 3
+    },
+    {
+      "id": "q5",
+      "type": "mcq",
+      "objective_ref": "Explain what an API key is, why it must be kept secret, and how it is used to authenticate a request.",
+      "correct_position": 0
+    },
+    {
+      "id": "q6",
+      "type": "mcq",
+      "objective_ref": "Read a skeleton request structure and correctly label each field.",
+      "correct_position": 1
+    }
+  ]
+}

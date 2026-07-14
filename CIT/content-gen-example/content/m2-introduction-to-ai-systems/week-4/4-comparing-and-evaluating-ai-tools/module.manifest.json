@@ -1,0 +1,20 @@
+{
+  "type": "module",
+  "position": 4,
+  "title": "Comparing and Evaluating AI Tools",
+  "slug": "4-comparing-and-evaluating-ai-tools",
+  "course_code": "M2",
+  "course_slug": "m2-introduction-to-ai-systems",
+  "week_nums": [
+    4
+  ],
+  "session_name_by_week": {
+    "4": "The 2026 AI Stack"
+  },
+  "narrative_seed_by_week": {
+    "4": "Foundation models — trained once at scale, usable for many tasks / Fine-tuning — adapting a model on smaller domain-specific data / RAG — giving AI access to external knowledge at query time (introduced here; full session in Week 14) / Agents — LLM + memory + tools + planning loop (introduced conceptually; agent design in Week 14; full build in Year 2) / Tool use — AI calling search, calculator, code runner / Multimodal AI — text, image, audio, video in one system"
+  },
+  "lab_activity_seed_by_week": {
+    "4": "Live demo — same question with and without RAG, accuracy compared / Each student independently designs a 5-criteria evaluation rubric to compare two AI tools / Present findings — defend with evidence, not opinion"
+  }
+}

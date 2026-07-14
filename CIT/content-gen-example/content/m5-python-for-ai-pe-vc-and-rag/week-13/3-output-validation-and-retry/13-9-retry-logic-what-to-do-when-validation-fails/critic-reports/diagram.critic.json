@@ -1,0 +1,38 @@
+{
+  "verdict": "pass",
+  "cycle": 1,
+  "mermaid_parse": "pass (source-level — mmdc not invoked as shell; syntax validated by inspection)",
+  "findings": [
+    {
+      "code": "looks_good",
+      "where": "overall",
+      "detail": "8 nodes, 8 edges. All labels <=4 words. All five in-scope concepts (retry loop, corrective message, retry counter, max retries, fallback response) represented in node labels or subtitles. flowchart TD chosen correctly for a branching+loop intent. classDef palette matches project spec: start=blue, auto=purple, done=green, fallback=orange. Loop-back edge G-->A modelled correctly. No concept drift detected — no out-of-scope concepts (no exponential backoff, tenacity, async). Decision diamonds C and G use clean labels without span subtitles to avoid html-in-diamond render issues. Font sizes raised to 12px on subtitles for legibility. nodeSpacing=40 and rankSpacing=50 set for breathing room."
+    }
+  ],
+  "source_checks": {
+    "node_count": 8,
+    "node_count_check": "pass (3-8 range)",
+    "label_discipline": "pass — all node labels <=4 bold tokens",
+    "concept_fidelity": "pass — A:retry loop, B:retry loop, C:retry loop, D:happy path return, E:corrective message, F:retry counter, G:max retries, H:fallback response",
+    "label_plainness": "pass — LLM established Week 13; no bare unexplained acronyms",
+    "title_discipline": "pass — governing concept 'Retry Loop' in config title: field, not a ghost node",
+    "single_path_discipline": "n/a — intent is explicitly a branching+loop flowchart, branching is correct"
+  },
+  "stats": {
+    "nodes": 8,
+    "edges": 8,
+    "layout": "flowchart TD",
+    "labels": [
+      "Call LLM with prompt",
+      "Run validation check",
+      "Response is valid?",
+      "Return response",
+      "Compose corrective message",
+      "Increment retry counter",
+      "Max retries reached?",
+      "Return fallback response"
+    ],
+    "png_path": "artifacts/diagram.png",
+    "png_dims": "not rendered — mmdc unavailable as shell tool; render command: mmdc -i artifacts/diagram.mmd -o artifacts/diagram.png -w 1400 -b transparent"
+  }
+}

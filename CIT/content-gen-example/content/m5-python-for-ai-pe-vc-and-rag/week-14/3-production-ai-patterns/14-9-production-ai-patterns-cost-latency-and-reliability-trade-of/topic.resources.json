@@ -1,0 +1,36 @@
+{
+  "topic_id": "14.9",
+  "captured_at": "2026-06-16T00:00:00Z",
+  "captured_by": "bhuvaneshwarim@revature.com",
+  "resources_source": "human",
+  "resources": [
+    {
+      "type": "citation",
+      "value": "Chip Huyen — AI Engineering (O'Reilly)",
+      "role": "primary",
+      "source": "human",
+      "notes": "Production AI systems, cost/latency trade-offs"
+    },
+    {
+      "type": "url",
+      "value": "https://docs.anthropic.com/en/docs/build-with-claude",
+      "role": "primary",
+      "source": "human",
+      "notes": "Model selection, context window costs, streaming"
+    },
+    {
+      "type": "url",
+      "value": "https://platform.openai.com/docs/guides/production-best-practices",
+      "role": "primary",
+      "source": "human",
+      "notes": "Production reliability, caching, rate limits"
+    },
+    {
+      "type": "url",
+      "value": "https://cloud.google.com/architecture/mlops-continuous-delivery-and-automation-pipelines-in-machine-learning",
+      "role": "primary",
+      "source": "human",
+      "notes": "MLOps patterns, reliability, monitoring"
+    }
+  ]
+}

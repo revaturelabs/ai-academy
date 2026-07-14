@@ -1,0 +1,83 @@
+{
+  "critic": "reading-critic",
+  "topic_id": "12.13",
+  "title": "Handling API errors — what to do when the call fails",
+  "evaluated_at": "2026-06-15T00:00:00Z",
+  "passed": true,
+  "verdict": "PASS — all checks green; no hard or soft findings.",
+  "gold_example_applicable": false,
+  "gold_example_note": "No gold reading exists for topic 12.13 or its module; checked .claude/references/gold-examples/reading/ — only 2-1 and 3-4 examples present, neither applicable. Evaluated against written standards in artifact-mix.json and SKILL.md.",
+  "checks": {
+    "format": {
+      "passed": true,
+      "frontmatter_present": false,
+      "meta_sidecar_missing": false,
+      "section_template_violation": false,
+      "sections_found": ["Overview", "Key Concepts", "Worked Example", "In Practice", "Key Takeaways", "References"],
+      "sections_expected": ["Overview", "Key Concepts", "Worked Example", "In Practice", "Key Takeaways", "References"],
+      "notes": "First non-empty line is the H1 title. Sidecar parses correctly with all required fields. Six required sections present in correct order."
+    },
+    "length": {
+      "passed": true,
+      "word_count_sidecar": 1160,
+      "word_count_range": [800, 1200],
+      "word_count_in_range": true,
+      "estimated_read_minutes_sidecar": 6,
+      "computed_read_minutes": 5.8,
+      "minute_range": [4, 6],
+      "minutes_in_range": true,
+      "notes": "1160 words sits comfortably inside the atomic profile 800–1200w target. 1160/200 = 5.8 min rounds to 6 min, within 4–6 min target."
+    },
+    "citations": {
+      "passed": true,
+      "primary_resources_cited": [1, 2],
+      "inline_markers_found": [1, 2],
+      "bibliography_entries": [1, 2],
+      "orphan_markers": [],
+      "orphan_bibliography": [],
+      "notes": "Both primary resources [1] and [2] cited multiple times throughout. Bibliography entries match. No orphans."
+    },
+    "no_forward_references": {
+      "passed": true,
+      "forward_refs_found": [],
+      "notes": "No reference to topic 12.14 or any future topic found in the reading."
+    },
+    "faithfulness": {
+      "passed": true,
+      "assertions_sampled": 10,
+      "unsupported_count": 0,
+      "unsupported_assertions": [],
+      "notes": "All 10 sampled assertions traced to corpus sections: network/auth/rate-limit/bad-request failure descriptions (corpus 5.1), exception hierarchy tree (corpus 5.2), most-specific-first ordering rule (corpus 5.2–5.3), retry loop with time.sleep and max_retries=3 (corpus 5.4), re-raise semantics (corpus 5.4). Minor structural simplification: reading omits BaseException from hierarchy tree but retains all teachable classes — not a faithfulness defect."
+    },
+    "beginner_readability": {
+      "passed": true,
+      "undefined_terms": [],
+      "jargon_dump": null,
+      "abstract_first": null,
+      "academic_register": null,
+      "findings": [],
+      "notes": "Exception is defined by forward-reference to topic 12.8 (acceptable — explicitly named). HTTP status codes introduced with parenthetical plain-English labels (401 Unauthorized, 429 Too Many Requests, 400 Bad Request). No paragraph stacks 3+ new terms. Failure categories lead with concrete descriptions before technical names. No hedging phrases detected. Sentence lengths within target."
+    },
+    "formatting": {
+      "passed": true,
+      "wall_of_text": null,
+      "unlisted_sequence": null,
+      "no_inline_examples": null,
+      "findings": [],
+      "notes": "No paragraph exceeds 6 sentences. Numbered walkthrough lists used for all procedural sequences (Worked Example step-by-step, retry loop explanation). Bold-term definitions applied for all four failure categories and exception classes. At least one inline code example per concept introduction outside the Worked Example section."
+    },
+    "assessment_reference": {
+      "passed": true,
+      "occurrences": [],
+      "notes": "No assessment IDs, due weeks, or grade weights found in learner-facing prose."
+    },
+    "scope": {
+      "passed": true,
+      "scope_creep": [],
+      "notes": "All content stays within 'Handling API errors — what to do when the call fails'. The raise-vs-return-None discussion is framed as a direct consequence of the error-handling decision (not a separate design-patterns topic) and is corpus-supported (corpus section 6). Mention of 'daily API quota' in In Practice is a brief practical consequence, not teaching quota/cost management. No forward-looking advanced concepts taught."
+    }
+  },
+  "soft_findings_count": 0,
+  "hard_fail": false,
+  "escalation": "none — 0 scope_creep findings, 0 soft findings from checks 5–6"
+}

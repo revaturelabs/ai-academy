@@ -1,0 +1,49 @@
+{
+    "type":  "topic",
+    "id":  "6.2",
+    "title":  "Scalars — a single number representing one property",
+    "slug":  "6-2-scalars-a-single-number-representing-one-property",
+    "position_in_module":  1,
+    "week_num":  6,
+    "session_name":  "Numbers, Vectors and Meaning",
+    "module":  {
+                   "position":  2,
+                   "slug":  "2-scalars-vectors-and-matrices",
+                   "title":  "Scalars, Vectors and Matrices"
+               },
+    "course":  {
+                   "code":  "M3",
+                   "slug":  "m3-applied-maths-for-ai",
+                   "title":  "Applied Maths for AI"
+               },
+    "next_assessment":  {
+                            "id":  "A2",
+                            "due_week":  6,
+                            "title":  "AI Systems Essay",
+                            "weight":  "15%"
+                        },
+    "paths":  {
+                  "corpus":  "topic_corpus.md",
+                  "resources":  "topic.resources.json",
+                  "progress":  "topic.progress.json",
+                  "artifacts_dir":  "artifacts/",
+                  "critic_reports_dir":  "critic-reports/"
+              },
+    "artifact_plan":  {
+                          "diagram":  false,
+                          "diagram_intent":  null,
+                          "depth_profile":  "standard",
+                          "depth_signals":  "Corpus intrinsic: atomic. Human override to standard at HITL #2 for budget pacing.",
+                          "reading_word_range":  [
+                                                     600,
+                                                     900
+                                                 ],
+                          "quiz_question_range":  [
+                                                      4,
+                                                      5
+                                                  ],
+                          "human_approved_at_hitl2":  true
+                      },
+    "expected_delivery_minutes":  6,
+    "status":  "corpus_drafted"
+}

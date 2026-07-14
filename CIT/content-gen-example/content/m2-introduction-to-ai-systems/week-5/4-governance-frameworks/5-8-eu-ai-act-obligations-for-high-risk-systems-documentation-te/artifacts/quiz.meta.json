@@ -1,0 +1,28 @@
+{
+  "topic_id": "5.8",
+  "generated_at": "2026-06-22T08:10:00Z",
+  "format": "gift",
+  "depth_profile": "standard",
+  "question_count": 6,
+  "include_short_answer": false,
+  "$bias_defense_applied": true,
+  "$shuffle_seed": "sha256(\"5.8\") mod 2^32 = 3863215982",
+  "shuffle_note": "Correct-answer line positions were spread across 0-3 by a seeded shuffle (topic-id hash). Post-shuffle constraint check passed: max_share <= 0.40 and all four positions used. $bias_defense_applied set true only after the shuffle and constraint check.",
+  "correct_position_distribution": [2, 0, 3, 1, 2, 0],
+  "correct_position_counts": { "0": 2, "1": 1, "2": 2, "3": 1 },
+  "max_share": 0.333,
+  "all_four_positions_used": true,
+  "option_length_balance": {
+    "note": "Honest per-block check of whether the correct (=) option is the SOLE strict longest line in its answer block. longest_option_correct_count = 2 of 6 (q2 and q6). q2's correct option is an unavoidable obligation list; q6's is one of three comparably long lines. The correct answer is NOT systematically the longest: in q1, q3, q4, and q5 a distractor is the longest line. Distractors were lengthened in q1/q3/q4/q6 to keep options within rough parity.",
+    "longest_option_correct_count": 2,
+    "total_questions": 6
+  },
+  "questions": [
+    { "id": "q1", "type": "mcq", "objective_ref": "Recall, from 5.7, that the high-risk tier is allowed but tightly controlled, and explain why obligations attach to it.", "correct_position": 2 },
+    { "id": "q2", "type": "mcq", "objective_ref": "Name the main obligations the EU AI Act places on high-risk systems, each in one plain sentence.", "correct_position": 0 },
+    { "id": "q3", "type": "mcq", "objective_ref": "Distinguish a provider's duties from a deployer's duties at a plain level.", "correct_position": 3 },
+    { "id": "q4", "type": "mcq", "objective_ref": "Explain what a conformity assessment is and why it must happen before a system reaches the market.", "correct_position": 1 },
+    { "id": "q5", "type": "mcq", "objective_ref": "Give a concrete everyday example for each obligation (human oversight obligation).", "correct_position": 2 },
+    { "id": "q6", "type": "mcq", "objective_ref": "Name the main obligations the EU AI Act places on high-risk systems (before-vs-ongoing ordering of the duties).", "correct_position": 0 }
+  ]
+}

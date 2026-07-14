@@ -1,0 +1,49 @@
+{
+  "type": "topic",
+  "id": "3.8",
+  "title": "The jagged frontier — tasks AI is superhuman at vs tasks where it is unreliable",
+  "slug": "3-8-the-jagged-frontier-tasks-ai-is-superhuman-at-vs-tasks-where",
+  "position_in_module": 2,
+  "week_num": 3,
+  "session_name": "What AI Is — and Isn't",
+  "module": {
+    "position": 3,
+    "slug": "3-ai-in-context",
+    "title": "AI in Context"
+  },
+  "course": {
+    "code": "M2",
+    "slug": "m2-introduction-to-ai-systems",
+    "title": "Introduction to AI Systems"
+  },
+  "next_assessment": {
+    "id": "A1",
+    "due_week": 3,
+    "title": "Specification Portfolio",
+    "weight": "10%"
+  },
+  "paths": {
+    "corpus": "topic_corpus.md",
+    "resources": "topic.resources.json",
+    "progress": "topic.progress.json",
+    "artifacts_dir": "artifacts/",
+    "critic_reports_dir": "critic-reports/"
+  },
+  "artifact_plan": {
+    "diagram": true,
+    "diagram_intent": "Side-by-side contrast showing tasks where AI is superhuman vs tasks where it is unreliable — the jagged frontier",
+    "depth_profile": "standard",
+    "reading": {
+      "target_word_range": [1200, 1600],
+      "target_min_minutes": 6,
+      "target_max_minutes": 8
+    },
+    "quiz": {
+      "min_questions": 5,
+      "max_questions": 6,
+      "include_short_answer": false
+    }
+  },
+  "expected_delivery_minutes": 8,
+  "status": "scaffolded"
+}

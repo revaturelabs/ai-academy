@@ -1,0 +1,131 @@
+{
+  "critic": "corpus-critic",
+  "topic_id": "1.5",
+  "topic_title": "Decomposition — breaking a big problem into smaller solvable parts",
+  "cycle": 2,
+  "passed": true,
+  "verdict": "PASS — All checks clear. Implementation section (cycle-1 hard fail) now carries [N] markers on every process step and every worked-example stage; citation density exceeds the 60% threshold across all three assessed sections. One residual soft finding (undefined 'user stories' in section 7) does not reach the hard-fail threshold.",
+  "at": "2026-06-20T00:10:00Z",
+  "checks": {
+    "required_sections": {
+      "passed": true,
+      "detail": {
+        "section_3_learning_objectives": {
+          "present": true,
+          "word_count_ok": true,
+          "note": "6 learning objectives, well above 50w minimum"
+        },
+        "section_4_introduction": {
+          "present": true,
+          "word_count_ok": true,
+          "note": "4 paragraphs, well above 50w minimum"
+        },
+        "section_5_core_concepts": {
+          "present": true,
+          "word_count_ok": true,
+          "note": "6 sub-sections (5.1–5.6), each individually above 100w minimum"
+        },
+        "section_10_key_takeaways": {
+          "present": true,
+          "word_count_ok": true,
+          "note": "5 substantive bullets, each above 50w minimum"
+        }
+      }
+    },
+    "citation_density": {
+      "passed": true,
+      "hard_fail": false,
+      "resources_source": "web_search",
+      "mode": "strict",
+      "primary_cited": true,
+      "primary_resource": "[1] OpenStax — cited at introduction (lines 30, 32, 34) and repeatedly throughout Core Concepts, Implementation, Real-World Patterns, Best Practices, and Key Takeaways",
+      "section_findings": {
+        "section_5_core_concepts": {
+          "assessed": true,
+          "passed": true,
+          "note": "All sub-sections (5.1–5.6) carry [1], [2], and/or [3] markers on factual assertions. Density adequate. Unchanged from cycle 1."
+        },
+        "section_6_implementation": {
+          "assessed": true,
+          "passed": true,
+          "cycle_1_result": "HARD FAIL — zero markers",
+          "cycle_2_result": "PASS — citations added",
+          "markers_found": [
+            "Opening sentence: [1][2]",
+            "Step 1: [1]",
+            "Step 2: [1][2]",
+            "Step 3: [1]",
+            "Step 4: [2]",
+            "Step 5: [2]",
+            "Step 6: [1][3]",
+            "Worked example problem statement: [2]",
+            "Worked example step 4 (completeness check): [1]",
+            "Worked example step 5 (overlap check): [2]",
+            "Worked example step 6 (order): [1]",
+            "Closing sentence: [1][2]"
+          ],
+          "note": "Every step in the 6-step repeatable process and every stage of the worked library-website example carries at least one [N] marker. Citation density in this section substantially exceeds the 60% threshold. Hard fail resolved."
+        },
+        "section_7_real_world_patterns": {
+          "assessed": true,
+          "passed": true,
+          "note": "All five patterns carry citation markers: software dev [1][2], recipe [3], medical [2][3], emergency response [2], AI system design [1][3]. Density adequate. Unchanged from cycle 1."
+        }
+      },
+      "fabricated_citations_check": "pass — [1], [2], [3] all resolve to entries in topic.resources.json (OpenStax, GeeksForGeeks, Learning.com). No unresolvable markers found."
+    },
+    "sequence_drift": {
+      "passed": true,
+      "forward_references": [],
+      "named_and_deferred_correctly": [
+        "abstraction — line 34, bare name in list, 'those are forward pointers only; this topic stays on decomposition'",
+        "pattern recognition — line 34, bare name in list, same deferral pointer",
+        "algorithm design — line 34, bare name in list, same deferral pointer",
+        "pseudocode — line 143, bare name, 'a later topic' pointer"
+      ],
+      "note": "No forward-referenced concept is defined or taught. All adjacent downstream concepts appear only as bare names with explicit deferral pointers. Unchanged from cycle 1."
+    },
+    "length_sanity": {
+      "passed": true,
+      "profile": "standard",
+      "word_count_estimate": 2950,
+      "standard_corpus_range": "3000–4400w (skill) / 30%-tolerance lower bound ~2100w",
+      "deviation_from_lower_bound": "50w (1.7%) below 3000w lower bound — within 30% tolerance; not a fail",
+      "note": "Corpus is ~2950w. Inline [N] markers added in cycle 2 do not materially change word count. 1.7% below standard lower bound is within the 30% tolerance band. No change from cycle-1 assessment."
+    },
+    "topic_scope": {
+      "passed": true,
+      "scope_creep_findings": [],
+      "note": "Corpus teaches decomposition and its task-tree vocabulary (root, sub-task, leaf, level, iterative refinement) only. No adjacent concept (abstraction, pattern recognition, algorithms, pseudocode, flowchart, recursion, divide-and-conquer) is explained or defined at depth. All appear as bare names with deferral pointers where mentioned. Unchanged from cycle 1."
+    },
+    "beginner_readability": {
+      "passed": true,
+      "hard_fail_threshold_reached": false,
+      "findings": [
+        {
+          "type": "undefined_terms",
+          "severity": "soft",
+          "detail": "'user stories' used in Real-World Patterns (section 7, software development sub-section) without a plain-language gloss. Carried forward from cycle 1 — not addressed in this revision. Suggested fix: add a one-phrase gloss inline, e.g. 'user stories — short descriptions of what a user wants to accomplish'."
+        }
+      ],
+      "terms_defined_on_first_use": "pass — decomposition (5.1 definition box), task tree (5.3), root/sub-task/leaf/level (5.3 table), iterative (5.5 inline definition) all defined at first appearance",
+      "jargon_dumps": "none — no paragraph introduces 3+ new terms simultaneously",
+      "plain_register": "pass — short sentences, active voice, learner addressed as 'you' throughout; no hedging phrases detected",
+      "soft_finding_count": 1,
+      "hard_fail_threshold": 3
+    }
+  },
+  "hard_fail_summary": [],
+  "soft_findings": [
+    {
+      "check": "beginner_readability",
+      "type": "undefined_terms",
+      "detail": "'user stories' used without gloss in section 7 (Real-World Patterns — software development). Carried forward from cycle 1. Surfaces at HITL #2/#3 for author awareness; does not block corpus advancement."
+    }
+  ],
+  "cycle_delta": {
+    "cycle_1_failures": ["citation_density (Section 6 — Implementation, zero markers)"],
+    "cycle_2_resolutions": ["citation_density — Implementation section now fully cited; hard fail resolved"],
+    "unresolved_soft": ["beginner_readability: 'user stories' undefined in section 7"]
+  }
+}

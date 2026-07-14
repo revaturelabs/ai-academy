@@ -1,0 +1,46 @@
+{
+  "passed": true,
+  "checks": {
+    "required_sections": {
+      "passed": true,
+      "notes": "All four required sections present and non-trivial. §3 Learning Objectives: 6 concrete, measurable objectives, well above 50w. §4 Introduction: 4-paragraph narrative with a motivating example, well above 50w. §5 Core Concepts: 6 subsections (5.1–5.6) totalling well above 100w — each subsection has substantive explanatory content. §10 Key Takeaways: 5 bullets covering every major concept, well above 50w."
+    },
+    "citation_density": {
+      "passed": true,
+      "primary_cited": true,
+      "claim_citation_rate": 0.78,
+      "notes": "resources_source=web_search, strict mode. All 4 primary resources cited at least once: R1=[1] in §5.1, §5.2, §5.3, §5.6, §7, §8; R2=[2] in §5.3, §5.6, §7, §8; R3=[3] in §5.1, §5.4, §6, §8; R4=[4] in §5.5. In §5 nearly every standalone factual claim carries a citation marker — estimated 78% citation rate across §5, §6, §7 combined. §6 (conceptual walkthrough) is lighter: most claims are procedural descriptions with one anchor citation [3] for the model-consistency rule; §7's use-case block has a collective opener citation [1][2] covering the section. Overall rate comfortably above the 60% threshold."
+    },
+    "sequence_drift": {
+      "passed": true,
+      "forward_refs": [],
+      "notes": "No problematic forward references detected. All prior concepts (Python variables/types/loops/if-else, LLM API calling via weeks 12–13) are correctly referenced as established background. References to topic 14.2 (RAG pipeline), topic 14.7 (decision-matrix), and topic 14.10 (architectural decisions) are each a named-and-deferred one-liner — compliant with the one-sentence pointer rule. 'Semester 2 implementation work' for chunking is similarly deferred. 'sentence-transformers' library is named as an example tool, not taught — no sequencing violation."
+    },
+    "length_sanity": {
+      "passed": true,
+      "word_count": 2908,
+      "profile": "standard",
+      "notes": "Estimated word count ~2908. Standard profile target is 3000–4400 words. Count falls in the 2700–2999 soft-note band (within 10% of the floor) — this is a soft note, not a hard fail. The corpus is substantive and thorough; the slight shortfall reflects a concise §9 (Hands-On Exercise) and brief §11. No hard-fail threshold (<2700 or >6000) is breached. Recommendation: the builder may add 100–150 words to §5.4 or §6 to bring the count solidly within range on revision."
+    },
+    "scope_creep": {
+      "passed": true,
+      "violations": [],
+      "notes": "Headline scope: 'Vector databases — storing embeddings and enabling similarity search at scale.' §6 is framed as a 'conceptual walkthrough — no build required' and covers the 6-step usage workflow — this is within scope of understanding what a vector database does and how it is used, not building one from scratch. §7 use-case patterns are appropriate illustrative examples for the headline. The RAG reference in §6 Step 6 is a single deferred pointer ('In a RAG application (topic 14.2)'). Chunking in §8 is named and explicitly deferred to Semester 2. No section teaches building a RAG pipeline, implementing an agent, or implementing a vector database from scratch."
+    },
+    "beginner_readability": {
+      "passed": true,
+      "findings": [
+        {
+          "type": "undefined_term",
+          "term": "sentence-transformers",
+          "location": "§6 Step 1",
+          "severity": "soft",
+          "note": "Library name 'sentence-transformers' is used as an example option without a brief plain-language gloss (e.g., 'a free, open-source Python library of embedding models'). Low severity — it is bracketed alongside named commercial alternatives and the sentence does not rely on the reader understanding it."
+        }
+      ],
+      "notes": "All key acronyms and terms are defined on first use: 'embedding' defined §5.1, 'vector' defined §5.1, 'ANN (approximate nearest neighbour)' defined §5.4, 'HNSW — Hierarchical Navigable Small World' defined §5.5, 'k-NN' glossed inline §5.4, 'cosine similarity' explained in the distance-metrics table §5.3, 'top-k' explained §5.3. No paragraph introduces 3+ undefined new terms simultaneously. Plain register throughout; strong use of analogy (filing cabinet in §5.2, geographical navigation system in §5.5, city navigation analogy). Average sentence length is appropriate. One soft finding (sentence-transformers). Total soft findings: 1 — well below the 3-finding hard-fail threshold."
+    }
+  },
+  "verdict": "PASS. All 6 checks passed. Required sections are present and substantive; all 4 primary resources are cited and overall citation density in §5–§7 is approximately 78%, above the 60% threshold; no forward-reference violations; word count is ~2908 (soft note: 92 words below the 3000-word standard floor — recommend a minor expansion pass targeting §5.4 or §6 to bring count solidly within the 3000–4400 range, but this does not block progression); no scope-creep violations — the conceptual walkthrough in §6 is properly framed as usage context, not build instructions; beginner readability is strong with 1 minor soft finding (sentence-transformers library not glossed) which is well below the 3-finding hard-fail threshold. Corpus is ready to ground downstream artifacts.",
+  "at": "2026-06-13T00:15:00Z"
+}

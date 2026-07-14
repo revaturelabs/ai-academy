@@ -1,0 +1,216 @@
+{
+  "topic_id": "13.13",
+  "stage": "module_passed",
+  "gates": {
+    "resources_captured": true,
+    "corpus_generated": true,
+    "corpus_critic_passed": true,
+    "corpus_human_approved": true,
+    "reading_generated": true,
+    "reading_critic_passed": true,
+    "quiz_generated": true,
+    "quiz_critic_passed": true,
+    "diagram_generated": true,
+    "diagram_critic_passed": true,
+    "module_drift_passed": true,
+    "course_drift_passed": true,
+    "topic_artifacts_human_approved": true,
+    "week_human_approved": true
+  },
+  "history": [
+    {
+      "at": "2026-06-15T02:00:42Z",
+      "op": "set",
+      "gate": "resources_captured",
+      "value": true
+    },
+    {
+      "at": "2026-06-15T02:00:42Z",
+      "op": "stage",
+      "to": "awaiting_corpus"
+    },
+    {
+      "at": "2026-06-15T02:00:42Z",
+      "op": "log",
+      "msg": "Captured 3 resources (source=web_search, primary: docs.python-guide.org)"
+    },
+    {
+      "at": "2026-06-15T02:10:23Z",
+      "op": "set",
+      "gate": "corpus_generated",
+      "value": true
+    },
+    {
+      "at": "2026-06-15T02:10:23Z",
+      "op": "stage",
+      "to": "awaiting_corpus_critic"
+    },
+    {
+      "at": "2026-06-15T02:10:23Z",
+      "op": "log",
+      "msg": "Corpus drafted: deep profile, diagram=true (annotated folder tree)"
+    },
+    {
+      "at": "2026-06-15T00:00:00Z",
+      "op": "set",
+      "gate": "corpus_critic_passed",
+      "value": true
+    },
+    {
+      "at": "2026-06-15T00:00:00Z",
+      "op": "stage",
+      "to": "awaiting_corpus_human_review"
+    },
+    {
+      "at": "2026-06-15T00:00:00Z",
+      "op": "log",
+      "msg": "corpus-critic passed: all 6 checks passed (required_sections, citation_density, sequence_drift, length_sanity, scope_creep, beginner_readability). ~5300 words, citation rate ~72%, no forward refs, no scope violations."
+    },
+    {
+      "at": "2026-06-15T02:18:19Z",
+      "op": "set",
+      "gate": "corpus_human_approved",
+      "value": true
+    },
+    {
+      "at": "2026-06-15T02:18:19Z",
+      "op": "stage",
+      "to": "corpus_approved"
+    },
+    {
+      "at": "2026-06-15T02:18:19Z",
+      "op": "log",
+      "msg": "Corpus approved. Profile: standard (budget override from deep, author choice). Diagram: true."
+    },
+    {
+      "at": "2026-06-15T06:00:00Z",
+      "op": "set",
+      "gate": "diagram_generated",
+      "value": true
+    },
+    {
+      "at": "2026-06-15T06:00:00Z",
+      "op": "log",
+      "msg": "Diagram generated: flowchart TB hub-and-spoke, 7 nodes, Standard Python Project Layout title. Render: mmdc -i diagram.mmd -o diagram.png -w 1400 -b transparent"
+    },
+    {
+      "at": "2026-06-15T06:00:00Z",
+      "op": "set",
+      "gate": "diagram_critic_passed",
+      "value": true
+    },
+    {
+      "at": "2026-06-15T06:00:00Z",
+      "op": "log",
+      "msg": "diagram-critic passed (cycle 1): all source-level pre-flight checks pass, layout correct for folder tree intent. Findings: looks_good."
+    },
+    {
+      "at": "2026-06-15T00:00:00Z",
+      "op": "set",
+      "gate": "reading_generated",
+      "value": true
+    },
+    {
+      "at": "2026-06-15T00:00:00Z",
+      "op": "log",
+      "msg": "Reading generated: standard profile, 1320 words, ~6.6 min, diagram embedded inline (mermaid fenced block), all 3 resources cited."
+    },
+    {
+      "at": "2026-06-15T00:00:00Z",
+      "op": "set",
+      "gate": "reading_critic_passed",
+      "value": true
+    },
+    {
+      "at": "2026-06-15T00:00:00Z",
+      "op": "stage",
+      "to": "awaiting_quiz_critic"
+    },
+    {
+      "at": "2026-06-15T00:00:00Z",
+      "op": "log",
+      "msg": "reading-critic passed (cycle 1): all checks pass — format, sections, length (1320w / 6.6min), citations (all 3 resources), faithfulness (0 unsupported assertions), beginner readability, formatting, no assessment references, no scope creep, diagram inline."
+    },
+    {
+      "at": "2026-06-15T00:00:00Z",
+      "op": "set",
+      "gate": "quiz_generated",
+      "value": true
+    },
+    {
+      "at": "2026-06-15T00:00:00Z",
+      "op": "log",
+      "msg": "Quiz generated: 6 MCQ, standard profile, bias_defense_applied=true, correct positions [1,3,0,2,3,1], max_share=0.333, all 6 LOs covered."
+    },
+    {
+      "at": "2026-06-15T00:00:00Z",
+      "op": "set",
+      "gate": "quiz_critic_passed",
+      "value": true
+    },
+    {
+      "at": "2026-06-15T00:00:00Z",
+      "op": "stage",
+      "to": "quiz_approved"
+    },
+    {
+      "at": "2026-06-15T00:00:00Z",
+      "op": "log",
+      "msg": "quiz-critic passed (cycle 1): positional bias max_share=0.333, length bias rate=0.0, distractor absurd rate=0.0, all 6 LOs covered, no scope creep, no jargon in stems."
+    },
+    {
+      "at": "2026-06-15T02:25:18Z",
+      "op": "stage",
+      "to": "awaiting_topic_artifacts_review"
+    },
+    {
+      "at": "2026-06-15T02:25:19Z",
+      "op": "log",
+      "msg": "All artifacts generated and critics passed: diagram(c1), reading(c1,1320w), quiz(c1,6q). Advancing to HITL#3."
+    },
+    {
+      "at": "2026-06-15T02:26:25Z",
+      "op": "set",
+      "gate": "topic_artifacts_human_approved",
+      "value": true
+    },
+    {
+      "at": "2026-06-15T02:26:26Z",
+      "op": "stage",
+      "to": "topic_artifacts_approved"
+    },
+    {
+      "at": "2026-06-15T02:26:26Z",
+      "op": "log",
+      "msg": "HITL#3 approved. No failures. reading=1320w/7min, quiz=6q, diagram=TB-folder-tree. All critics c1 pass."
+    },
+    {
+      "at": "2026-06-15T00:00:00Z",
+      "op": "set",
+      "gate": "module_drift_passed",
+      "value": true
+    },
+    {
+      "at": "2026-06-15T00:00:00Z",
+      "op": "stage",
+      "to": "module_passed"
+    },
+    {
+      "at": "2026-06-15T00:00:00Z",
+      "op": "log",
+      "msg": "module-drift critic PASS — verdict: PASS, 0 hard failures, 3 soft findings. Report: critic-reports/module-drift.critic.json"
+    },
+    {
+      "at": "2026-06-15T06:37:49Z",
+      "op": "set",
+      "gate": "week_human_approved",
+      "value": true
+    },
+    {
+      "at": "2026-06-23T17:39:30Z",
+      "op": "set",
+      "gate": "course_drift_passed",
+      "value": true
+    }
+  ]
+}

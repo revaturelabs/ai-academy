@@ -1,0 +1,74 @@
+{
+  "critic": "corpus-critic",
+  "topic_id": "7.1",
+  "topic_title": "Probability basics — likelihood, events, outcomes",
+  "at": "2026-06-22T08:00:00Z",
+  "pass_number": 2,
+  "passed": true,
+  "depth_profile_used": "standard",
+  "word_count_estimate": 2900,
+  "checks": {
+    "required_sections": {
+      "passed": true,
+      "detail": {
+        "section_3_learning_objectives": "present — 6 bullet objectives, well above 50-word minimum",
+        "section_4_introduction": "present — 3 paragraphs, well above 50-word minimum",
+        "section_5_core_concepts": "present — 8 sub-sections (5.1–5.8), far above 100-word minimum",
+        "section_10_key_takeaways": "present — 7 bullet points, well above 50-word minimum"
+      }
+    },
+    "citation_density": {
+      "passed": true,
+      "resources_source": "web_search",
+      "detail": {
+        "primary_cited": true,
+        "primary_resource": "https://seeing-theory.brown.edu/basic-probability/index.html ([1])",
+        "primary_citation_count": 7,
+        "section_5_coverage": "all 8 Core Concept sub-sections carry at least one [N] citation marker — full coverage above 60% threshold",
+        "section_6_coverage": "[3] present at end of Implementation section",
+        "section_7_coverage": "all 5 Real-World Patterns each carry a citation: [3][2][3][1][2] — full coverage above 60% threshold",
+        "estimated_density": "well above 60% threshold across sections 5, 6, and 7"
+      }
+    },
+    "sequence_drift": {
+      "passed": true,
+      "forward_references": [],
+      "detail": "Pass 1 hard defect resolved. The conditional probability notation P(spam | features) — which was the P(A|B) forward reference to topic 7.2 — has been removed from the spam/email Real-World Pattern. The revised pattern uses plain English throughout ('count-based likelihood score', 'favourable count divided by total count'). No P(A|B) notation appears anywhere in the corpus. All concepts used are either introduced by this topic (probability, outcome, sample space, event, complement, equally-likely outcomes) or grounded in prior topics (probabilistic systems from 1.3, AI variability from 1.4, token/LLM from 3.4). The Introduction's forward-list sentence ('conditional probability, Bayes' theorem intuition, temperature, mean, median, precision, recall') names future topics in a single sentence as a 'built on top of' pointer — no definitions attached, compliant."
+    },
+    "length_sanity": {
+      "passed": true,
+      "estimated_word_count": 2900,
+      "profile": "standard",
+      "allowed_range_corpus": "1500–6000",
+      "detail": "Corpus word count (~2900) falls comfortably within the 1500–6000 range specified for standard depth."
+    },
+    "topic_scope": {
+      "passed": true,
+      "hard_findings": [],
+      "soft_findings": [
+        {
+          "finding_code": "scope_creep",
+          "severity": "soft",
+          "concept": "probability distribution — partial defining relative clause",
+          "location": "Section 7 (Real-World Patterns) — AI content generation pattern",
+          "detail": "The sentence reads: 'You will meet probability distributions, which describe how those probabilities are spread across the full sample space, in topic 7.4.' The relative clause 'which describe how those probabilities are spread across the full sample space' is an appositive that partially defines the term. Per scope_discipline rules, a deferred concept must appear as a bare name plus a covered-later pointer only — no defining clause. The mention-and-defer pointer ('in topic 7.4') is correct; the relative clause should be removed. Recommended fix: 'You will meet probability distributions in topic 7.4.' This is a soft finding: one partial definition in a single sentence with a correct defer pointer does not constitute full teaching of the concept.",
+          "recommended_fix": "Trim to: 'You will meet probability distributions in topic 7.4. How the model uses those probabilities to make the final word choice is covered in later topics this week [1].'"
+        }
+      ],
+      "scope_check_a": "No P(A|B) or conditional probability notation found anywhere in corpus — PASS",
+      "scope_check_b": "'probability distribution' appears once in Section 7 with a 'covered later' pointer to topic 7.4; however, a partial defining clause is present (soft finding above)",
+      "scope_check_c": "No teaching of 7.2–7.11 concepts detected — PASS"
+    },
+    "beginner_readability": {
+      "passed": true,
+      "findings": [],
+      "detail": {
+        "terms_defined_on_first_use": "All non-everyday terms defined on first use: 'LLM (Large Language Model)' spelled out at first appearance in the Introduction; 'probability' bold-defined in 5.1; 'outcome' bold-defined in 5.2; 'sample space' bold-defined in 5.2; 'event' bold-defined in 5.3; 'complement' bold-defined in 5.6. 'Token' is treated as a prior concept from 3.4 (referenced in Prerequisites) — acceptable.",
+        "jargon_dumps": "No paragraph introduces 3+ brand-new terms simultaneously. Each sub-section introduces one concept at a time.",
+        "plain_register": "Active voice throughout, learner addressed as 'you', concrete everyday examples precede or accompany definitions (weather, coin, die, cards, days of week). Sentence lengths generally under 25 words. No hedging phrases ('it is generally considered', 'many believe') detected.",
+        "readability_target": "A motivated adult with zero technical background can read each section once and explain it back — the bold-term plus plain-definition format, worked examples, and intuition tables support this target."
+      }
+    }
+  },
+  "verdict": "PASS — all hard checks pass. The pass-1 hard defect (P(A|B) conditional probability notation in the spam email Real-World Pattern) has been removed; that pattern now uses plain English throughout. Sequence drift and scope_creep hard findings are clear. One soft scope_creep finding remains: 'probability distribution' in the AI content generation pattern (Section 7) still carries a partial defining relative clause ('which describe how those probabilities are spread across the full sample space'); scope_discipline requires a bare name plus defer pointer only — recommended trim to 'You will meet probability distributions in topic 7.4.' This soft finding surfaces to HITL #2/#3 and does not block pass. Citation density, required sections, length sanity, and beginner readability all pass cleanly."
+}

@@ -1,0 +1,20 @@
+{
+  "verdict": "pass",
+  "findings": [
+    {
+      "code": "looks_good",
+      "where": "whole diagram",
+      "detail": "Clean single-row cycle: Plan -> Attack -> Find -> Fix -> Re-test, with a bottom return arrow labeled 'repeat' looping Re-test back to Attack. The loop-back reads unambiguously as a cycle. No overlaps, no truncation; node and 12px subtitle text all legible at 1400px. Color tiers correct (Plan=start blue, Attack/Find/Fix=auto purple, Re-test=done green). The 3-point timeline (before deployment / after updates / ongoing) sits in the title banner as surrounding context, not as a node — title discipline honored. No scope-creep nodes (no jailbreak / prompt-injection / governance nodes)."
+    }
+  ],
+  "stats": {
+    "nodes": 5,
+    "edges": 5,
+    "layout": "flowchart LR (cycle with back-edge)",
+    "labels": ["Plan", "Attack", "Find", "Fix", "Re-test"],
+    "concepts_mapped": ["plan", "attack", "find", "fix", "re-test (regression test)"],
+    "png_path": "artifacts/diagram.png",
+    "png_dims": "1400xauto",
+    "critic_cycles": 1
+  }
+}

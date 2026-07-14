@@ -1,0 +1,33 @@
+---
+title: "Post-Mortem Writing Process"
+config:
+  theme: base
+  themeVariables:
+    primaryColor: "#a5d8ff"
+    primaryBorderColor: "#4a9eed"
+    lineColor: "#555"
+  flowchart:
+    htmlLabels: true
+    curve: basis
+    nodeSpacing: 60
+    rankSpacing: 80
+---
+flowchart LR
+    A["<b>Incident</b><br/><span style='font-size:11px;color:#6d28d9'>The event that happened</span>"]
+    B["<b>What Failed</b><br/><span style='font-size:11px;color:#6d28d9'>Factual description of<br/>system, scope &amp; harm</span>"]
+    C["<b>Why It Failed</b><br/><span style='font-size:11px;color:#6d28d9'>Proximate cause + root cause<br/>(data · eval · checkpoint · accountability)</span>"]
+    D["<b>Who Was Accountable</b><br/><span style='font-size:11px;color:#6d28d9'>Role or structure — was<br/>authority real or diffuse?</span>"]
+    E["<b>Governance Fix</b><br/><span style='font-size:11px;color:#6d28d9'>Specific, placed,<br/>proportionate control</span>"]
+    F["<b>No-Blame Review</b><br/><span style='font-size:11px;color:#6d28d9'>Check framing targets<br/>roles, not individuals</span>"]
+
+    A --> B --> C --> D --> E --> F
+
+    classDef start fill:#a5d8ff,stroke:#4a9eed,color:#1e3a5f
+    classDef auto fill:#d0bfff,stroke:#8b5cf6,color:#2e1065
+    classDef act fill:#a5d8ff,stroke:#4a9eed,color:#1e3a5f
+    classDef done fill:#b2f2bb,stroke:#22c55e,color:#14532d
+    classDef hitl fill:#fff3bf,stroke:#f59e0b,stroke-width:3px,color:#78350f
+
+    class A start
+    class B,C,D,E auto
+    class F done

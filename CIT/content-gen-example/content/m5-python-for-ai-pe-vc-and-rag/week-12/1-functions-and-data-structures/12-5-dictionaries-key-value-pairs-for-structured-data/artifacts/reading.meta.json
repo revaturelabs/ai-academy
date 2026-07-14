@@ -1,0 +1,22 @@
+{
+  "topic_id": "12.5",
+  "generated_at": "2026-06-14T00:00:00Z",
+  "word_count": 1311,
+  "estimated_read_minutes": 7,
+  "citations_used": ["[1]", "[2]", "[3]"],
+  "primary_cited": true,
+  "diagram_embedded": true,
+  "diagram_path": "artifacts/diagram.png",
+  "soft_findings_resolved": [
+    "API spelled out as 'API (Application Programming Interface)' on first use in In Practice section",
+    "IndexError avoided in reading — table not reproduced; KeyError named directly in Access section with .get() as the safe path; no IndexError term introduced"
+  ],
+  "sections": [
+    "Overview",
+    "Key Concepts",
+    "Worked Example",
+    "In Practice",
+    "Key Takeaways",
+    "References"
+  ]
+}

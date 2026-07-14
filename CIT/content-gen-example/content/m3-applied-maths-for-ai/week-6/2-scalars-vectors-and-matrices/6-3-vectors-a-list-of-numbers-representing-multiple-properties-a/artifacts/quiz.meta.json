@@ -1,0 +1,41 @@
+{
+  "topic_id": "6.3",
+  "generated_at": "2026-06-18T00:00:00Z",
+  "format": "gift",
+  "question_count": 5,
+  "$bias_defense_applied": true,
+  "$shuffle_seed": "a3f2c1d8e5b94076f0e12a3c5d7b8e90",
+  "correct_position_distribution": [0, 1, 2, 3, 2],
+  "questions": [
+    {
+      "id": "q1",
+      "type": "mcq",
+      "objective_ref": "Define a vector as an ordered list of scalars, where each position captures a different property of the same thing.",
+      "correct_position": 0
+    },
+    {
+      "id": "q2",
+      "type": "mcq",
+      "objective_ref": "Explain why grouping multiple properties into one vector is more useful than keeping them as separate, unrelated numbers.",
+      "correct_position": 1
+    },
+    {
+      "id": "q3",
+      "type": "mcq",
+      "objective_ref": "Explain why the same position must always mean the same property across all vectors being compared.",
+      "correct_position": 2
+    },
+    {
+      "id": "q4",
+      "type": "mcq",
+      "objective_ref": "Describe how AI systems use feature vectors to represent real-world things so that patterns can be found through arithmetic.",
+      "correct_position": 3
+    },
+    {
+      "id": "q5",
+      "type": "mcq",
+      "objective_ref": "Construct a simple feature vector for a familiar object by deciding which properties to include and assigning a number to each pre-defined position slot.",
+      "correct_position": 2
+    }
+  ]
+}

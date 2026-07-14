@@ -1,0 +1,74 @@
+{
+  "topic_id": "4.4",
+  "generated_at": "2026-06-17T00:00:00Z",
+  "format": "gift",
+  "question_count": 7,
+  "mcq_count": 6,
+  "short_answer_count": 1,
+  "$bias_defense_applied": true,
+  "$shuffle_seed": "4a2e2e36",
+  "correct_position_distribution": [1, 3, 0, 3, 1, 3],
+  "shuffle_constraint_check": {
+    "max_share": 0.5,
+    "max_share_threshold": 0.40,
+    "all_positions_used": false,
+    "note": "Initial seed produced positions [1,3,0,3,1,3] — position 2 unused and pos-3 share 3/6=50% exceeds threshold. Redraw with salt XOR 0x1.",
+    "redrawn_seed": "4a2e2e37",
+    "redrawn_correct_position_distribution": [1, 3, 0, 2, 1, 3],
+    "redrawn_max_share": 0.3333,
+    "redrawn_all_positions_used": true,
+    "constraint_passed": true
+  },
+  "correct_position_distribution_final": [1, 3, 0, 2, 1, 3],
+  "questions": [
+    {
+      "id": "q1",
+      "type": "mcq",
+      "objective_ref": "LO1 — Define an AI agent in plain language and explain how it differs from a standalone LLM.",
+      "correct_position": 1,
+      "stem_summary": "What makes an AI agent different from a standalone LLM?"
+    },
+    {
+      "id": "q2",
+      "type": "mcq",
+      "objective_ref": "LO2 — Identify and describe the four core components: LLM core, memory, tools, and the planning loop.",
+      "correct_position": 3,
+      "stem_summary": "Which statement about the four-component list is correct?"
+    },
+    {
+      "id": "q3",
+      "type": "mcq",
+      "objective_ref": "LO3 — Explain the observe-think-act cycle and trace how a simple task moves through it step by step.",
+      "correct_position": 0,
+      "stem_summary": "Arrange the first three phases of the observe-think-act cycle for a concrete task."
+    },
+    {
+      "id": "q4",
+      "type": "mcq",
+      "objective_ref": "LO4 — Distinguish short-term memory from long-term memory; give an example of each.",
+      "correct_position": 2,
+      "stem_summary": "Which memory type matches cross-session preference recall vs. within-task step tracking?"
+    },
+    {
+      "id": "q5",
+      "type": "mcq",
+      "objective_ref": "LO5 — Give two examples of tools an agent might use and explain what a tool enables that an LLM alone cannot do.",
+      "correct_position": 1,
+      "stem_summary": "What does a tool enable an agent to do that a standalone LLM cannot?"
+    },
+    {
+      "id": "q6",
+      "type": "mcq",
+      "objective_ref": "LO6 — Recognise what an agentic workflow is; identify two real-world systems that rely on one.",
+      "correct_position": 3,
+      "stem_summary": "Why is an autonomous multi-step customer service system correctly called an agentic workflow?"
+    },
+    {
+      "id": "q7",
+      "type": "short_answer",
+      "objective_ref": "LO3 — Explain the observe-think-act cycle and trace how a simple task moves through it step by step.",
+      "correct_position": null,
+      "stem_summary": "Describe the observe-think-act cycle: name each phase, explain it, and describe the stopping condition."
+    }
+  ]
+}

@@ -1,0 +1,339 @@
+{
+  "schema_version": 1,
+  "critic": "course-drift-critic",
+  "cycle": 4,
+  "generated_at": "2026-06-23T00:00:00Z",
+  "course": {
+    "code": "M2",
+    "title": "Introduction to AI Systems",
+    "slug": "m2-introduction-to-ai-systems",
+    "weeks": [3, 4, 5],
+    "scope": "History, LLMs, the 2026 AI stack, ethics and safety including EU AI Act, NIST RMF, White House EO. No coding.",
+    "total_topics": 31
+  },
+  "passed": true,
+  "verdict": "PASS — all five checks pass. Weeks 3 and 4 remain at 74 min (-17.8%), outside the ±15% soft-warn band but inside the ±25% hard-fail band; these are soft warns only and do not block the pass gate. Week 5 at 94 min (+4.4%), within the ok band. Three cycle-3 action items resolved in cycle 4: ACT-R1 (5.2 Worked Example replaced with clinical domain case — DUP-01 Jaccard drops below 0.45), ACT-R3 (4.7 bridge sentence added — TERM-03 resolved), ACT-R2 (3.3 forward pointer to 4.4 confirmed present in Key Takeaways). ACT-R4 (budget rebalance) and ACT-R5 (5.11 EO revocation language) remain open as soft/info items. No hard failures. course_drift_passed = true.",
+  "cycle_changes_from_prior": [
+    {
+      "id": "FIX-C4-01",
+      "action_item_resolved": "ACT-R1",
+      "topic": "5.2",
+      "description": "5.2 reading.md Worked Example replaced. Prior: 2023 U.S. lawyer legal-citations case (same primary example as 3.9 corpus §7). Current: LLM-based clinical information tool evaluation — researchers found fabricated medical journal citation (journal name, publication year, author list, paraphrased conclusion) for a nonexistent study on autoimmune treatment guidelines. Domain shift: legal → medical. Jaccard re-score: estimated 0.38 (down from 0.51 in cycle 3), below the 0.45 target and well below the 0.55 hard-flag threshold. DUP-01 severity downgraded from soft-warn to resolved."
+    },
+    {
+      "id": "FIX-C4-02",
+      "action_item_resolved": "ACT-R2",
+      "topic": "3.3",
+      "description": "3.3 reading.md Key Takeaways forward pointer confirmed present. Final bullet reads: 'This topic introduced the agent loop in action — the five components as they run. Topic 4.4 builds on this foundation with the architectural view: how goal, LLM core, memory, tools, and planning layer are structured inside a production agent system.' Forward pointer to 4.4 is present and correctly distinguishes procedural (3.3) from architectural (4.4) framing. DUP-02 residual overlap further reduced; soft-warn retained for Jaccard ~0.52 on core concepts vocabulary (both topics cover the agent loop by design) but differentiation is now explicit."
+    },
+    {
+      "id": "FIX-C4-03",
+      "action_item_resolved": "ACT-R3",
+      "topic": "4.7",
+      "description": "4.7 reading.md bridge sentence confirmed present. Located at the opening of the Key Concepts section: 'In topic 3.10 you applied a rubric to judge the quality of AI outputs across five task types — creative, factual, logical, ethical, and coding. This topic applies the same scoring logic at a larger scale: judging the AI tool that produces those outputs.' This sentence distinguishes output-quality evaluation (3.10) from tool-comparison evaluation (4.7). TERM-03 resolved."
+    }
+  ],
+  "prerequisite_gate": {
+    "all_module_drift_passed": true,
+    "checked_topics": 31,
+    "topics_with_module_drift_passed_false": []
+  },
+  "checks": {
+    "check_1_cross_week_terminology": {
+      "passed": true,
+      "status": "ok",
+      "findings": [
+        {
+          "id": "TERM-01",
+          "severity": "resolved",
+          "term": "hallucination — sub-type taxonomy",
+          "resolution_cycle": 2,
+          "cycle_4_status": "resolved (unchanged)",
+          "resolution_location": "5.2 artifacts/reading.md",
+          "resolution_text": "Taxonomy bridge present at 5.2 reading.md line 93 (Key Concepts > Two types of hallucination): 'Taxonomy note: Topic 3.9 introduced a three-type system — factual, attributional, and faithful-but-wrong. Both frameworks describe the same failures: intrinsic hallucinations map to attributional errors (the model contradicts a provided source); extrinsic hallucinations cover factual invention and faithful-but-wrong cases (the model produces plausible but unsupported content). Which taxonomy you encounter depends on the source — both are in active use.' No active conflict."
+        },
+        {
+          "id": "TERM-02",
+          "severity": "resolved",
+          "term": "AI agent — component count",
+          "resolution_cycle": 2,
+          "cycle_4_status": "resolved (unchanged)",
+          "resolution_location": "4.4 artifacts/reading.md",
+          "resolution_text": "Framing bridge present: 3.3 five-component procedural view and 4.4 four-component architectural view reconciled with a mapping note in 4.4 reading artifact."
+        },
+        {
+          "id": "TERM-03",
+          "severity": "resolved",
+          "term": "evaluation rubric",
+          "resolution_cycle": 4,
+          "cycle_4_status": "resolved",
+          "resolution_location": "4.7 artifacts/reading.md",
+          "resolution_text": "Bridge sentence added at opening of Key Concepts section: 'In topic 3.10 you applied a rubric to judge the quality of AI outputs across five task types — creative, factual, logical, ethical, and coding. This topic applies the same scoring logic at a larger scale: judging the AI tool that produces those outputs.' Distinction between output-quality rubric (3.10) and tool-comparison rubric (4.7) is now explicit. TERM-03 resolved in cycle 4."
+        }
+      ]
+    },
+    "check_2_prerequisite_ordering": {
+      "passed": true,
+      "status": "ok",
+      "violations": [],
+      "note": "All 31 M2 topics checked. No forward-reference violations. Every topic's prerequisites reference topics with strictly earlier delivery-order positions (earlier week_num, or earlier module_position within the same week). Topics with numeric prerequisites (e.g. 4.1 has [3.2, 3.4, 3.5] as numeric not string — type inconsistency in sequence.index.json but values resolve to earlier positions and are not actionable at this critic level). Unchanged from cycle 3."
+    },
+    "check_3_weekly_time_budget": {
+      "passed": true,
+      "status": "warn",
+      "note": "Check 3 passes. Weeks 3 and 4 are soft-warn (outside ±15% band, inside ±25% hard-fail band). Week 5 is ok. No week crosses the ±25% hard-fail threshold. Soft warns do not block the pass gate per standing instruction.",
+      "target_minutes": 90,
+      "soft_warn_pct": 15,
+      "hard_fail_pct": 25,
+      "soft_warn_lower": 76.5,
+      "soft_warn_upper": 103.5,
+      "hard_fail_lower": 67.5,
+      "hard_fail_upper": 112.5,
+      "per_week": [
+        {
+          "week_num": 3,
+          "status": "warn",
+          "topics": [
+            {"id": "3.1",  "expected_delivery_minutes": 8},
+            {"id": "3.2",  "expected_delivery_minutes": 8},
+            {"id": "3.3",  "expected_delivery_minutes": 7},
+            {"id": "3.4",  "expected_delivery_minutes": 7},
+            {"id": "3.5",  "expected_delivery_minutes": 7},
+            {"id": "3.6",  "expected_delivery_minutes": 7},
+            {"id": "3.7",  "expected_delivery_minutes": 7},
+            {"id": "3.8",  "expected_delivery_minutes": 8},
+            {"id": "3.9",  "expected_delivery_minutes": 7},
+            {"id": "3.10", "expected_delivery_minutes": 8}
+          ],
+          "total_minutes": 74,
+          "deviation_pct": -17.8,
+          "note": "74 min is -17.8% below target. Outside ±15% soft-warn band (floor 76.5); inside ±25% hard-fail band (floor 67.5). Status: warn. Unchanged from cycle 3. No content fix applied to week-3 minutes. To reach ok band: retroactive HITL override to upgrade 3.4 standard→deep (+3 min → 77 min, at floor). All profiles are HITL-confirmed; rebalancing requires explicit override.",
+          "fix_candidates": [
+            "3.4 (14 concepts, deep-profile signals: embedding table, BPE, attention, prefill/decode, context window) — upgrade standard→deep adds ~3 min → projected 77 min (at soft-warn floor). Requires retroactive HITL override.",
+            "3.10 (7 concepts, evaluating AI output) — upgrade standard→deep adds ~2-3 min. Secondary candidate."
+          ]
+        },
+        {
+          "week_num": 4,
+          "status": "warn",
+          "topics": [
+            {"id": "4.1", "expected_delivery_minutes": 9},
+            {"id": "4.2", "expected_delivery_minutes": 7},
+            {"id": "4.3", "expected_delivery_minutes": 8},
+            {"id": "4.4", "expected_delivery_minutes": 10},
+            {"id": "4.5", "expected_delivery_minutes": 10},
+            {"id": "4.6", "expected_delivery_minutes": 10},
+            {"id": "4.7", "expected_delivery_minutes": 10},
+            {"id": "4.8", "expected_delivery_minutes": 10}
+          ],
+          "total_minutes": 74,
+          "deviation_pct": -17.8,
+          "note": "74 min is -17.8% below target. Outside ±15% soft-warn band (floor 76.5); inside ±25% hard-fail band (floor 67.5). Status: warn. Unchanged from cycle 3. No content fix applied to week-4 minutes. All HITL #2 profile decisions confirmed. Rebalancing requires retroactive HITL override.",
+          "fix_candidates": [
+            "4.2 (fine-tuning, 9 concepts, standard 7 min) — upgrade standard→deep adds ~3 min → projected 77 min (at floor). Requires retroactive HITL override.",
+            "4.3 (RAG, 6 concepts, standard 8 min) — marginal candidate."
+          ]
+        },
+        {
+          "week_num": 5,
+          "status": "ok",
+          "topics": [
+            {"id": "5.1",  "expected_delivery_minutes": 8},
+            {"id": "5.2",  "expected_delivery_minutes": 7},
+            {"id": "5.3",  "expected_delivery_minutes": 7},
+            {"id": "5.4",  "expected_delivery_minutes": 10},
+            {"id": "5.5",  "expected_delivery_minutes": 7},
+            {"id": "5.6",  "expected_delivery_minutes": 7},
+            {"id": "5.7",  "expected_delivery_minutes": 7},
+            {"id": "5.8",  "expected_delivery_minutes": 7},
+            {"id": "5.9",  "expected_delivery_minutes": 7},
+            {"id": "5.10", "expected_delivery_minutes": 7},
+            {"id": "5.11", "expected_delivery_minutes": 8},
+            {"id": "5.12", "expected_delivery_minutes": 5},
+            {"id": "5.13", "expected_delivery_minutes": 7}
+          ],
+          "total_minutes": 94,
+          "deviation_pct": 4.4,
+          "note": "94 min is +4.4% above target. Within ±15% soft-warn band (76.5–103.5). Status: ok. Confirmed at 94 min (corrected from cycle-3 value of 96 min; fresh re-read of all 13 topic.manifest.json files in cycle 3 corrected this). Unchanged in cycle 4 — no minute values altered by the 5.2 Worked Example swap. No action required."
+        }
+      ]
+    },
+    "check_4_no_duplicated_material": {
+      "passed": true,
+      "status": "ok",
+      "method": "Jaccard similarity on Core Concepts section vocabulary (tokenised terms, stop-words removed) of learner-facing reading artifacts",
+      "threshold_flag": 0.55,
+      "high_similarity_pairs": [
+        {
+          "id": "DUP-01",
+          "severity": "resolved",
+          "topic_a": "3.9",
+          "topic_a_title": "Hallucination — what it is and why it happens",
+          "topic_b": "5.2",
+          "topic_b_title": "Hallucination — why AI states falsehoods confidently",
+          "estimated_jaccard_cycle_3": 0.51,
+          "estimated_jaccard_cycle_4": 0.38,
+          "status": "resolved — below 0.45 target and well below 0.55 hard-flag threshold",
+          "resolution": "5.2 reading.md Worked Example replaced in cycle 4. Prior example: 2023 U.S. lawyer legal-citations case (Mata v. Avianca) — also the primary case in 3.9 corpus §7. New example: LLM-based clinical information tool that returned a fabricated medical journal citation for a nonexistent autoimmune treatment study. Domain shift from legal to medical eliminates the primary worked-example term overlap. Remaining Jaccard (~0.38) reflects by-design structural overlap: both topics cover next-token prediction and hallucination as their shared subject, which is intentional (5.2 is the week-5 deepening of the 3.9 week-3 introduction). Taxonomy bridge in 5.2 reading.md explicitly maps the 3.9 three-type taxonomy to the 5.2 two-type taxonomy."
+        },
+        {
+          "id": "DUP-02",
+          "severity": "soft",
+          "topic_a": "3.3",
+          "topic_a_title": "The move to AI agents",
+          "topic_b": "4.4",
+          "topic_b_title": "Agents — LLM plus memory, tools, and a planning loop (conceptual introduction)",
+          "estimated_jaccard": 0.52,
+          "status": "below hard threshold (0.55); soft warn retained. Forward pointer added in cycle 4 reduces conceptual ambiguity but does not reduce Jaccard on core vocabulary (both topics legitimately cover the agent loop).",
+          "residual_overlap": "Both topics teach the agent loop with memory and tool use. Differentiation is now explicit: 3.3 Key Takeaways final bullet reads 'This topic introduced the agent loop in action — the five components as they run. Topic 4.4 builds on this foundation with the architectural view.' 3.3 is the historical/procedural framing; 4.4 is the architectural depth framing. Jaccard ~0.52 is by-design structural overlap for a topic pair where 4.4 is intentionally a deeper revisit of 3.3.",
+          "note": "Soft warn retained for tracking. Not a hard failure. No action required to pass."
+        }
+      ]
+    },
+    "check_5_learning_arc_completeness": {
+      "passed": true,
+      "status": "ok",
+      "uncovered_scope_facets": [],
+      "scope_coverage": [
+        {
+          "facet": "History of AI (symbolic AI → ML → deep learning → LLMs → agents)",
+          "covered": true,
+          "covering_topics": ["3.1", "3.2", "3.3"]
+        },
+        {
+          "facet": "LLMs — what they are, tokens, training, inference, temperature/sampling",
+          "covered": true,
+          "covering_topics": ["3.2", "3.4", "3.5", "3.6"]
+        },
+        {
+          "facet": "AI in context — India deployments, jagged frontier, hallucination, evaluation",
+          "covered": true,
+          "covering_topics": ["3.7", "3.8", "3.9", "3.10"]
+        },
+        {
+          "facet": "2026 AI stack — foundation models, fine-tuning, RAG, agents, tool use, multimodal",
+          "covered": true,
+          "covering_topics": ["4.1", "4.2", "4.3", "4.4", "4.5", "4.6"]
+        },
+        {
+          "facet": "AI tool comparison and evidence-based recommendation",
+          "covered": true,
+          "covering_topics": ["4.7", "4.8"]
+        },
+        {
+          "facet": "Ethics and safety — real failures, data bias, four pillars, red-teaming, prompt injection",
+          "covered": true,
+          "covering_topics": ["5.1", "5.2", "5.3", "5.4", "5.5", "5.6"]
+        },
+        {
+          "facet": "EU AI Act — risk tiers, high-risk obligations, prohibited uses (Article 5)",
+          "covered": true,
+          "covering_topics": ["5.7", "5.8", "5.9"]
+        },
+        {
+          "facet": "NIST AI Risk Management Framework (Govern, Map, Measure, Manage)",
+          "covered": true,
+          "covering_topics": ["5.10"]
+        },
+        {
+          "facet": "White House Executive Order on AI (EO 14110, 2023)",
+          "covered": true,
+          "covering_topics": ["5.11"],
+          "note": "ACT-R5 open: confirm 5.11 reading artifact explicitly states EO 14110 was revoked January 2025. concepts_introduced includes 'revocability of executive action' — reading artifact must deliver on that with current-status clarity for the 2026 cohort. Scope facet is covered; the open item is a content-accuracy verification, not an arc gap."
+        },
+        {
+          "facet": "India AI governance (MEITY advisory, global framework alignment)",
+          "covered": true,
+          "covering_topics": ["5.12"]
+        },
+        {
+          "facet": "Knowing which governance framework applies",
+          "covered": true,
+          "covering_topics": ["5.13"]
+        },
+        {
+          "facet": "No coding constraint",
+          "covered": true,
+          "covering_topics": ["all"],
+          "note": "Verified. No reading artifact teaches code syntax. 3.4 corpus Implementation section includes illustrative code snippets as author reference material only — the learner-facing reading artifact is the governed artifact, not the corpus."
+        }
+      ]
+    }
+  },
+  "week_status_summary": [
+    {
+      "week_num": 3,
+      "overall_status": "warn",
+      "issues": [
+        "Check 3: 74 min total (-17.8%); outside ±15% soft-warn band; inside ±25% hard-fail band. Soft warn only — does not block pass gate."
+      ],
+      "notes": [
+        "DUP-01 resolved: 3.9 hallucination worked example no longer overlaps with 5.2 reading artifact Worked Example (5.2 now uses clinical domain).",
+        "DUP-02 soft: 3.3/4.4 agent content Jaccard ~0.52; forward pointer added to 3.3 Key Takeaways differentiating procedural (3.3) from architectural (4.4) framing."
+      ]
+    },
+    {
+      "week_num": 4,
+      "overall_status": "warn",
+      "issues": [
+        "Check 3: 74 min total (-17.8%); outside ±15% soft-warn band; inside ±25% hard-fail band. Soft warn only — does not block pass gate."
+      ],
+      "notes": [
+        "TERM-03 resolved: 4.7 bridge sentence added at opening of Key Concepts section, distinguishing output-quality rubric (3.10) from tool-comparison rubric (4.7).",
+        "DUP-02 soft: 4.4 agent content Jaccard ~0.52 with 3.3 — by design, both topics legitimately cover the agent loop."
+      ]
+    },
+    {
+      "week_num": 5,
+      "overall_status": "ok",
+      "issues": [],
+      "notes": [
+        "94 min total (+4.4%), within soft-warn band.",
+        "DUP-01 resolved: 5.2 reading artifact Worked Example replaced with clinical domain case. Jaccard 3.9/5.2 drops to ~0.38.",
+        "ACT-R5 open (info only): confirm 5.11 reading artifact explicitly states EO 14110 revoked January 2025."
+      ]
+    }
+  ],
+  "remaining_action_items": [
+    {
+      "priority": 1,
+      "id": "ACT-R4",
+      "type": "budget_rebalance",
+      "topic": "3.4",
+      "severity": "soft",
+      "description": "Week 3 at 74 min (-17.8%). To reach ok band: retroactive HITL override to upgrade 3.4 standard→deep (+3 min → 77 min, at floor 76.5). Justification: 14 concepts introduced, strong deep-profile signals (embedding table, BPE, attention mechanism, prefill/decode phases, context window). If override not accepted, weeks 3 and 4 remain warn for the life of the course — acceptable, not a hard blocker.",
+      "carry_over_from": "cycle 2",
+      "cycle_4_status": "unchanged — no budget fix was applied in cycle 4"
+    },
+    {
+      "priority": 2,
+      "id": "ACT-R5",
+      "type": "content_verify",
+      "topic": "5.11",
+      "severity": "info",
+      "description": "Confirm 5.11 reading artifact explicitly states EO 14110 was issued October 2023 and subsequently revoked January 2025. The concepts_introduced field lists 'revocability of executive action' — reading artifact must deliver on that with current-status clarity for the 2026 cohort.",
+      "carry_over_from": "cycle 2",
+      "cycle_4_status": "unchanged — no 5.11 reading artifact fix was applied in cycle 4"
+    }
+  ],
+  "resolved_action_items": [
+    {
+      "id": "ACT-R1",
+      "resolved_in_cycle": 4,
+      "topic": "5.2",
+      "description": "5.2 reading.md Worked Example replaced with clinical AI evaluation case. DUP-01 Jaccard drops from 0.51 to ~0.38."
+    },
+    {
+      "id": "ACT-R2",
+      "resolved_in_cycle": 4,
+      "topic": "3.3",
+      "description": "3.3 reading.md Key Takeaways forward pointer to 4.4 confirmed present."
+    },
+    {
+      "id": "ACT-R3",
+      "resolved_in_cycle": 4,
+      "topic": "4.7",
+      "description": "4.7 reading.md bridge sentence confirmed present at opening of Key Concepts section. TERM-03 resolved."
+    }
+  ]
+}

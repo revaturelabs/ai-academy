@@ -1,0 +1,47 @@
+{
+  "passed": true,
+  "topic_id": "11.8",
+  "profile": "standard",
+  "checks": {
+    "required_sections": {
+      "passed": true,
+      "notes": "Sections 3 (Learning Objectives, 6 bullets ~85 words), 4 (Introduction, 4 paragraphs ~250 words), 5 (Core Concepts, 7 subsections ~1800 words), and 10 (Key Takeaways, 5 bullets ~135 words) all present and non-trivial. All exceed the minimum word thresholds (≥100 for section 5; ≥50 for sections 3, 4, 10). Sections 6 (Implementation), 7 (Real-World Patterns), 8 (Best Practices), 9 (Hands-On Exercise), and 11 (Next Steps) also present."
+    },
+    "citation_density": {
+      "passed": true,
+      "primary_cited": true,
+      "claim_citation_rate": 0.79,
+      "notes": "resources_source=web_search → strict mode applied. Primary resource [1] (addyo.substack.com / Addy Osmani) cited in §5.3, §5.5, §7, and §8 — primary citation requirement satisfied. Sections 5, 6, 7 assessed for standalone factual assertion coverage: ~11 of ~14 assertions carry a citation marker (~79%), exceeding the 60% threshold. [2] cited in §5.2, §5.6, §7. [3] cited in §6 and §8. [4] cited in §5.6, §7, §8. All four resources resolved to actual citations; no fabricated markers found."
+    },
+    "sequence_drift": {
+      "passed": true,
+      "forward_refs": [],
+      "notes": "All technical concepts used in the corpus are either (a) introduced by this topic (11.8): golden rule, explain line by line, silent failure, loud failure, four-question test, code ownership, plausible-looking wrong code; or (b) introduced by prior topics 11.1–11.7: four-layer model (11.1), spec-first discipline/workflow (11.7), accumulator pattern (11.6), variable/assignment/list/for-loop basics (11.3–11.6). 'Edge cases' appears in §5.6 as a named error category with a brief example ('when a list is empty, or a mark is 0'), and is explicitly deferred to 11.9 in §5.7 ('covered in 11.9'). Per task instructions this is the allowed named-and-deferred form and is not flagged as a forward ref. Tool names (GitHub Copilot, ChatGPT, Google Colab) and organisation names (8th Light, IEEE Spectrum) are not technical concepts requiring prior introduction. No forward references detected."
+    },
+    "length_sanity": {
+      "passed": true,
+      "word_count": 3520,
+      "profile": "standard",
+      "range": [3000, 4400],
+      "notes": "Estimated word count ~3520 words (sections 2–11 inclusive, excluding YAML front-matter). Standard profile corpus range is 3000–4400 words. Count sits in the lower-middle of the band, comfortably within range. Not more than 30% outside the range in either direction."
+    },
+    "scope_creep": {
+      "passed": true,
+      "findings": [
+        {
+          "severity": "soft",
+          "concept": "edge case (brief example in §5.6 error-category bullet)",
+          "section": "5.6",
+          "detail": "The bullet 'Missing edge case handling' includes a parenthetical example ('for example, when a list is empty, or a mark is 0'). This adds a brief concrete illustration to an error-category item, which is borderline but defensible: the corpus is teaching 'categories of silent failure AI can introduce' (in-scope), not teaching edge-case testing methodology (deferred). The concept is explicitly name-and-deferred to 11.9 in §5.7. Does not rise to a hard scope_creep fail. Monitor: if the reading artifact expands this into a definition block, flag at reading-critic stage."
+        }
+      ]
+    },
+    "beginner_readability": {
+      "passed": true,
+      "findings": [],
+      "notes": "All non-everyday terms defined on first use: 'silent failure' (§5.2), 'loud failure' (§5.2), 'golden rule' (§4), 'four-question test' (§5.5). 'Accumulator pattern' reused from 11.6 with an inline back-reference — correct per audience baseline. No jargon dumps detected (no single prose paragraph introduces 3+ brand-new terms simultaneously; the §5.6 error-category list uses a bulleted format, not a prose paragraph). Register is plain and direct throughout: active voice, second-person address ('you'), everyday analogies (submitted essay, classmate explanation). No hedging phrases found. Essay analogy in §4 is concrete and leads the abstract definition — matches the 'concrete-first' mandate. Sentence length targets appear met. Fewer than 3 distinct soft findings — hard-fail threshold not triggered."
+    }
+  },
+  "verdict": "PASS. All six checks pass for topic 11.8 corpus (standard profile, ~3520 words). Required sections present and substantive. Citation density ~79% in sections 5–7, primary source [1] cited multiple times — strict web_search mode satisfied. No forward references: all terms are either introduced here or in prior topics 11.1–11.7; edge-case references are properly name-and-deferred to 11.9. Word count (~3520) sits within the standard-corpus range (3000–4400). No hard scope_creep violations: the §5.6 edge-case example bullet is a soft finding only, framed as an error category rather than a teaching of edge-case methodology. Beginner readability is strong: key terms defined on first use, no jargon dumps, plain active-voice register, concrete-first analogies throughout. Corpus is cleared to ground downstream artifacts (reading, quiz, diagram).",
+  "at": "2026-06-13T00:01:00Z"
+}

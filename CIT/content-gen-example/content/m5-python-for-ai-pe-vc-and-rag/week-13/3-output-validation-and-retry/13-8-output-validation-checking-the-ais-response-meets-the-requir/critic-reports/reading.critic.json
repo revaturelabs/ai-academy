@@ -1,0 +1,100 @@
+{
+  "critic": "reading-critic",
+  "topic_id": "13.8",
+  "title": "Output validation — checking the AI's response meets the required format",
+  "profile": "atomic",
+  "run_at": "2026-06-14T00:00:00Z",
+  "passed": true,
+  "verdict": "PASSED — all hard checks clear; one soft finding (retry/13.9 named-and-deferred three times instead of once, but never taught).",
+  "checks": {
+    "format_discipline": {
+      "passed": true,
+      "frontmatter_present": false,
+      "meta_sidecar_missing": false,
+      "section_template_violation": false,
+      "sections_found": ["Overview", "Key Concepts", "Worked Example", "In Practice", "Key Takeaways", "References"],
+      "sections_expected": ["Overview", "Key Concepts", "Worked Example", "In Practice", "Key Takeaways", "References"],
+      "notes": "First non-empty line is H1 title. Meta sidecar present and valid. Six sections in correct order."
+    },
+    "length": {
+      "passed": true,
+      "word_count_reported": 951,
+      "word_count_range": [800, 1200],
+      "estimated_read_minutes_reported": 5,
+      "estimated_read_minutes_computed": 4.76,
+      "minute_range": [4, 6],
+      "notes": "951 words within [800,1200]. 951/200=4.76 min rounds to 5, within [4,6]."
+    },
+    "citations": {
+      "passed": true,
+      "primary_cited": true,
+      "primary_resource": "[1] machinelearningmastery.com",
+      "primary_inline_occurrences": 7,
+      "all_inline_markers": [1, 2, 3],
+      "all_bibliography_entries": [1, 2, 3],
+      "orphan_markers": [],
+      "orphan_bibliography_entries": [],
+      "notes": "[1] cited 7 times inline. All three bibliography entries matched by inline markers."
+    },
+    "forward_references": {
+      "passed": true,
+      "findings": [
+        {
+          "severity": "soft",
+          "code": "excessive_defer_pointers",
+          "detail": "topic 13.9 (retry) is named-and-deferred three times: line 147 (code comment), line 152 (Step 4 prose), line 176 (Key Takeaways). Scope rule permits named-and-deferred 'at most once'. None of the three occurrences teach retry — all are bare pointers. Soft finding only.",
+          "lines": [147, 152, 176]
+        }
+      ],
+      "notes": "No forward reference teaches future material. Three defer pointers to 13.9 exceed the 'once' convention but do not constitute scope_creep."
+    },
+    "faithfulness": {
+      "passed": true,
+      "assertions_sampled": 10,
+      "assertions_unsupported": 0,
+      "threshold": 2,
+      "sample_findings": [],
+      "notes": "All 10 sampled assertions trace directly to corpus sections 4, 5a, 5b, 5c, 5d, 7, 8. No fabricated claims detected."
+    },
+    "beginner_readability": {
+      "passed": true,
+      "undefined_terms": [],
+      "jargon_dump": null,
+      "abstract_first": null,
+      "academic_register": null,
+      "notes": "All non-everyday terms defined on first use with bold-term/plain-meaning shape. Analogies precede abstractions (form-filling analogy in Overview, ordering-form analogy in Key Concepts). No hedging language found. Sentences are short and active."
+    },
+    "formatting": {
+      "passed": true,
+      "wall_of_text": null,
+      "unlisted_sequence": null,
+      "no_inline_examples": null,
+      "notes": "No paragraph exceeds 4 sentences. Worked Example uses numbered steps. Code snippets appear inline next to each concept in Key Concepts. All term definitions use bold-term pattern."
+    },
+    "assessment_references": {
+      "passed": true,
+      "occurrences": [],
+      "notes": "No assessment IDs, due weeks, or grade weights appear in the reading. Corpus §4 contained an A4 reference but it was correctly excluded from the reading."
+    },
+    "scope": {
+      "passed": true,
+      "scope_creep_findings": [],
+      "notes": "Reading stays within output-validation-only boundary. Pydantic (mentioned in corpus) correctly omitted. Retry (13.9) only named-and-deferred, never taught. No material beyond the topic title is explained."
+    }
+  },
+  "soft_findings_summary": [
+    {
+      "code": "excessive_defer_pointers",
+      "severity": "soft",
+      "detail": "13.9 (retry) named-and-deferred 3 times (lines 147, 152, 176); convention is at most once. Not a quality blocker — no retry logic is taught."
+    }
+  ],
+  "escalation": {
+    "triggered": false,
+    "reason": "No scope_creep found. Checks 5-6 produce 0 distinct hard findings. Soft findings total: 1, below the ≥3 escalation threshold."
+  },
+  "gold_example_check": {
+    "gold_example_present": false,
+    "notes": "No gold example found in .claude/references/gold-examples/reading/. Standards applied from artifact-mix.json and SKILL.md."
+  }
+}

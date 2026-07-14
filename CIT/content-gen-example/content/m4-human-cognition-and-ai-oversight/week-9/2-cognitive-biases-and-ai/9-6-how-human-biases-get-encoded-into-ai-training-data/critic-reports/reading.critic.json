@@ -1,0 +1,80 @@
+{
+  "topic_id": "9.6",
+  "artifact": "reading",
+  "critic_version": "1.0",
+  "run_at": "2026-06-12T00:00:00Z",
+  "passed": true,
+  "verdict": "All 8 checks pass. Reading is well-scoped, faithfully derived from corpus, beginner-accessible with consistent bold-term definitions and concrete-first structure, within length budget (1530w / 7 min), primary citation present, no frontmatter, correct six-section template, no assessment references, Judgment Framework correctly deferred.",
+  "checks": {
+    "format": {
+      "passed": true,
+      "frontmatter_present": false,
+      "h1_first_line": true,
+      "meta_sidecar_missing": false,
+      "section_template_violation": null,
+      "sections_found": ["Overview", "Key Concepts", "Worked Example", "In Practice", "Key Takeaways", "References"],
+      "notes": "All six required sections present in correct order. No YAML frontmatter. Sidecar reading.meta.json parses cleanly."
+    },
+    "length": {
+      "passed": true,
+      "word_count": 1530,
+      "target_word_range": [1200, 1600],
+      "estimated_read_minutes": 7,
+      "target_minute_range": [6, 8],
+      "notes": "1530 words within [1200, 1600]; 7 min within [6, 8]."
+    },
+    "citations": {
+      "passed": true,
+      "primary_resource_cited": true,
+      "primary_resource_url": "https://www.ibm.com/think/topics/ai-bias",
+      "citations_used": [1, 2, 3],
+      "orphan_markers": [],
+      "orphan_bibliography_entries": [],
+      "notes": "[1] IBM AI Bias used inline throughout. [2] IBM Data Bias. [3] Navigli et al. arXiv 2023. Bibliography matches all inline markers."
+    },
+    "no_forward_references": {
+      "passed": true,
+      "findings": [],
+      "notes": "References to 9.3 and 9.5 are valid back-references established in corpus prerequisites. Reference to Topics 9.7-9.9 for the Judgment Framework is a single named-and-deferred sentence with no teaching of forward content — compliant with scope rule."
+    },
+    "faithfulness": {
+      "passed": true,
+      "assertions_sampled": 10,
+      "unsupported_count": 0,
+      "findings": [],
+      "notes": "All 10 sampled assertions trace directly to corpus sections 5.1-5.7. Camera analogy, sentiment labelling example, loan/zip-code example, facial recognition example, predictive policing example, and cognitive bias layer commentary all have verbatim or close paraphrase matches in corpus."
+    },
+    "beginner_readability": {
+      "passed": true,
+      "undefined_terms": [],
+      "jargon_dump": null,
+      "abstract_first": null,
+      "academic_register": null,
+      "notes": "Encoding, Training data, Labelling bias, Historical bias, Selection bias, Representation bias, Feedback loop amplification all defined on first use with bold-term format. Confirmation bias and Automation bias back-referenced to 9.3 and 9.5 respectively. Concrete examples precede or accompany abstractions throughout. No hedging language detected. Sentence length appropriate for beginner audience."
+    },
+    "formatting": {
+      "passed": true,
+      "wall_of_text": null,
+      "unlisted_sequence": null,
+      "no_inline_examples": null,
+      "bold_term_definitions": true,
+      "notes": "Feedback loop steps rendered as numbered list (lines 40-45). In Practice section uses a table. Key Takeaways use bullet list. All Key Concepts sections open with a bold-term definition. No paragraphs exceed 6 sentences. Inline examples present in Overview, Key Concepts (each sub-section), and In Practice."
+    },
+    "assessment_references": {
+      "passed": true,
+      "findings": [],
+      "notes": "No assessment IDs, due weeks, or grade weights appear anywhere in the reading."
+    },
+    "scope": {
+      "passed": true,
+      "scope_creep": null,
+      "judgment_framework_handling": "bare name + defer only — one sentence at In Practice close: 'A structured approach...is introduced in Topics 9.7-9.9.'",
+      "aggregation_bias_handling": "Term appears briefly in Worked Example checklist and In Practice table as a named check item, not taught as a standalone concept — appropriate minimal surface without teaching beyond headline.",
+      "notes": "Reading stays within the headline 'How human biases get encoded into AI training data'. Four encoding mechanisms (labelling, historical, selection, feedback loop) are the named sub-concepts from the artifact plan. Judgment Framework correctly deferred."
+    }
+  },
+  "hard_fail_escalation": {
+    "triggered": false,
+    "reason": null
+  }
+}

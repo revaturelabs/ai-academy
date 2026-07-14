@@ -1,0 +1,40 @@
+---
+title: "GIGO — Biased Data Produces Biased Output"
+theme: base
+themeVariables:
+  primaryColor: "#a5d8ff"
+  primaryBorderColor: "#4a9eed"
+  lineColor: "#555"
+flowchart:
+  htmlLabels: true
+  curve: basis
+---
+flowchart LR
+
+  subgraph BIASED["Biased Data Path"]
+    direction TB
+    B1["<b>Biased Training Data</b><br/><span style='font-size:12px;color:#6d28d9'>historical · representation · measurement bias</span>"]
+    B2["<b>Model Training</b><br/><span style='font-size:12px;color:#6d28d9'>GIGO: learns skewed patterns</span>"]
+    B3["<b>Biased Model</b><br/><span style='font-size:12px;color:#6d28d9'>bias baked into learned parameters</span>"]
+    B4["<b>Confident Output</b><br/><span style='font-size:12px;color:#6d28d9'>no bias signal visible in response</span>"]
+    B1 --> B2 --> B3 --> B4
+  end
+
+  subgraph DIVERSE["Diverse Data Path"]
+    direction TB
+    D1["<b>Diverse Representative Data</b><br/><span style='font-size:12px;color:#6d28d9'>balanced groups · accurate labels</span>"]
+    D2["<b>Model Training</b><br/><span style='font-size:12px;color:#6d28d9'>learns fair patterns</span>"]
+    D3["<b>Fairer Model Output</b><br/><span style='font-size:12px;color:#6d28d9'>disaggregated metrics confirm equity</span>"]
+    D1 --> D2 --> D3
+  end
+
+  classDef start fill:#a5d8ff,stroke:#4a9eed
+  classDef auto fill:#d0bfff,stroke:#8b5cf6
+  classDef done fill:#b2f2bb,stroke:#22c55e
+
+  class B1 start
+  class B2,B3 auto
+  class B4 auto
+  class D1 start
+  class D2 auto
+  class D3 done

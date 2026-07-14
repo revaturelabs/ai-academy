@@ -1,0 +1,48 @@
+{
+  "type": "topic",
+  "id": "1.10",
+  "title": "Algorithms in everyday life — recipes, GPS routes, sorting queues",
+  "slug": "1-10-algorithms-in-everyday-life-recipes-gps-routes-sorting-queue",
+  "position_in_module": 2,
+  "week_num": 1,
+  "session_name": "How Machines Think",
+  "module": {
+    "position": 4,
+    "slug": "4-algorithmic-thinking",
+    "title": "Algorithmic Thinking"
+  },
+  "course": {
+    "code": "M1",
+    "slug": "m1-computational-thinking",
+    "title": "Computational Thinking"
+  },
+  "next_assessment": {
+    "id": "A1",
+    "due_week": 3,
+    "title": "Specification Portfolio",
+    "weight": "10%"
+  },
+  "paths": {
+    "corpus": "topic_corpus.md",
+    "resources": "topic.resources.json",
+    "progress": "topic.progress.json",
+    "artifacts_dir": "artifacts/",
+    "critic_reports_dir": "critic-reports/"
+  },
+  "artifact_plan": {
+    "profile": "standard",
+    "diagram": true,
+    "diagram_intent": "Flowchart showing the three algorithm domains side-by-side as parallel input→process→output flows: recipe (ingredients → cook steps → dish), GPS (start+destination → route-finding loop → turn-by-turn), sorting (unsorted list → compare/swap loop → sorted list).",
+    "reading": {
+      "target_word_range": [1200, 1600],
+      "target_minutes_range": [6, 8]
+    },
+    "quiz": {
+      "min_questions": 5,
+      "max_questions": 6,
+      "include_short_answer": false
+    }
+  },
+  "expected_delivery_minutes": 7,
+  "status": "corpus_drafted"
+}

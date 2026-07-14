@@ -1,0 +1,46 @@
+$CATEGORY: CIT/M5/week-12/12.3-one-function-one-job-the-testable-unit-principle
+
+::12.3-Q1:: A student says\: "My function `save_report` computes the class average and then writes it to a file — but that is fine, because it all belongs to the same report." Why is this reasoning wrong?
+{
+~A function that computes a value is always correct on its own, so adding file-writing to it cannot introduce bugs#Computing and file-writing are independent concerns; combining them does not make either automatically correct.
+=When two responsibilities are mixed in one function, you cannot test the calculation independently of the file system — a failure could come from either part#Correct — tangled responsibilities mean you must set up a file just to check whether the maths is right.
+~The function name does not contain "and," so there is no sign of a second job being present#The name "save_report" hides two jobs; the absence of "and" in the name does not mean the body has one job.
+~Functions that write to files must always be kept separate only when they are longer than ten lines#Length is irrelevant to the one-job principle; a two-line function can still mix two responsibilities.
+#### Tests understanding of why one job matters for testing (corpus §5.3). Mixed responsibilities force unnecessary setup in every test, making bugs harder to isolate.
+}
+
+::12.3-Q2:: A classmate shows you this function\: `def validate_and_save_mark(mark, filename)\:`. Without seeing the body, what does the name alone tell you?
+{
+~The function is well-designed because it has a clear, descriptive name that explains everything it does#A descriptive name is good style, but a name containing "and" signals two separate jobs, which is a design problem.
+~The function is probably a single-job function because it only takes two parameters#The number of parameters does not indicate how many jobs a function performs; two parameters can serve a single job.
+~The function must be a helper function because it uses an underscore in the name#Python uses underscores in names for many reasons; an underscore is not a sign of helper status or job count.
+=The name contains "and," which signals the function is doing two separate jobs that should each have their own function#Correct — "validate" and "save" are distinct responsibilities; the "and" in the name is the smell that reveals this.
+#### Tests use of the "and" naming heuristic to detect multi-job functions (corpus §5.2). The name is the fastest place to spot a mixed-responsibility function before reading a single line of its body.
+}
+
+::12.3-Q3:: Which of the following function names most clearly signals a single-job function?
+{
+=compute_average#Correct — the name describes one clear action; you can write a one-sentence spec for it without needing "and."
+~fetch_and_display_results#"fetch_and_display" names two distinct jobs; the "and" is the signal to split at this boundary.
+~read_file_and_calculate_stats#"read_file" and "calculate_stats" are separate responsibilities; the "and" reveals this is a multi-job function.
+~validate_and_classify_mark#Validation and classification are two different concerns; the "and" shows both are inside the same function.
+#### Tests the "and" naming heuristic for detecting single-job vs multi-job functions (corpus §5.2). A name with no "and" that describes one action in one short phrase is the target.
+}
+
+::12.3-Q4:: A student refactors `compute_and_save_average(marks, filename)` by creating `compute_average(marks)` and `write_average_to_file(average, filename)`. What is the correct way to connect these two functions at the call site?
+{
+~Call `compute_average(marks)` and `write_average_to_file(average, filename)` with the same `marks` argument passed to both#`write_average_to_file` needs the computed number, not the original list; passing `marks` to it is the wrong argument type.
+~Nest the two functions so that `compute_average` calls `write_average_to_file` internally as part of its body#Nesting the call inside `compute_average` would mix the two jobs again, defeating the purpose of the refactor.
+=Store the result of `compute_average(marks)` in a variable, then pass that variable to `write_average_to_file`#Correct — `avg = compute_average(marks)` captures the result, and `write_average_to_file(avg, filename)` uses it.
+~Merge the two functions back into one before calling them, because two separate function calls cannot share data#Two function calls share data through return values and variables — merging them is the problem, not the solution.
+#### Tests the refactoring pattern for single-job functions (corpus §5.5). Return values passed through a variable at the call site is how single-job functions cooperate without tangling their responsibilities.
+}
+
+::12.3-Q5:: You have written `compute_average(marks)` as a single-job function. Which of the following best describes a correct manual test for it?
+{
+~Create a summary file, call `compute_average`, read the file back, and check whether the file contains the right value#Creating a file is only needed when testing file-writing; `compute_average` is a pure calculation and needs no file setup.
+=Call `compute_average([60, 80, 100])`, print the result, and check by eye that it equals `80.0`#Correct — a known input with a predictable output that you compare directly is the spec-first manual test pattern.
+~Call `compute_average` with no arguments first to confirm it raises an error before testing normal inputs#Error handling is a separate concern; the spec-first manual test starts with a valid, known input and a clear expected value.
+~Run the entire program end-to-end with a real data file and verify the printed summary looks correct#An end-to-end run tests everything at once; the whole point of a single-job function is that you test it in isolation.
+#### Tests writing a spec-first manual test for a single-job function (corpus §5.3, §6 Step 6). Known input, expected output, compare by eye — no other system required.
+}

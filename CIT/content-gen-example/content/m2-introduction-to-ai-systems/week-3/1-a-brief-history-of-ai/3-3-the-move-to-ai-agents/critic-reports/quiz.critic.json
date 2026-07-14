@@ -1,0 +1,81 @@
+{
+  "passed": true,
+  "attempt": 2,
+  "checks": {
+    "positional_bias": {
+      "passed": true,
+      "distribution": [1, 1, 2, 1],
+      "note": "Positions per question (0-based): q1=2, q2=0, q3=3, q4=1, q5=2. Count by position: pos0=1, pos1=1, pos2=2, pos3=1.",
+      "max_share": 0.40,
+      "meta_gift_desync": false
+    },
+    "length_bias": {
+      "passed": true,
+      "longest_correct_rate": 0.00,
+      "baseline": 0.25,
+      "per_question": [
+        {
+          "id": "q1",
+          "correct_len": 87,
+          "distractor_mean_len": 74.67,
+          "threshold_len": 89.60,
+          "longest_correct": false
+        },
+        {
+          "id": "q2",
+          "correct_len": 52,
+          "distractor_mean_len": 59.33,
+          "threshold_len": 71.20,
+          "longest_correct": false
+        },
+        {
+          "id": "q3",
+          "correct_len": 49,
+          "distractor_mean_len": 48.33,
+          "threshold_len": 58.00,
+          "longest_correct": false
+        },
+        {
+          "id": "q4",
+          "correct_len": 101,
+          "distractor_mean_len": 96.67,
+          "threshold_len": 116.00,
+          "longest_correct": false
+        },
+        {
+          "id": "q5",
+          "correct_len": 70,
+          "distractor_mean_len": 62.33,
+          "threshold_len": 74.80,
+          "longest_correct": false
+        }
+      ]
+    },
+    "distractor_plausibility": {
+      "passed": true,
+      "absurd_rate": 0.00,
+      "total_distractors": 15,
+      "absurd_count": 0
+    },
+    "objective_coverage": {
+      "passed": true,
+      "uncovered_objectives": [],
+      "orphan_questions": [],
+      "coverage_map": {
+        "LO1": ["q1"],
+        "LO2": ["q2"],
+        "LO3": ["q3"],
+        "LO4": ["q4"],
+        "LO5": ["q5"]
+      }
+    },
+    "beginner_fairness_and_scope": {
+      "passed": true,
+      "jargon_in_stem": [],
+      "out_of_scope_questions": [],
+      "unfair_distractors": []
+    }
+  },
+  "verdict": "PASS — all five checks clean: positional max_share=0.40 (boundary pass, not exceeded), length bias 0/5 questions flag (longest_correct_rate=0.00, down from 0.80 in attempt 1), absurd_rate=0.00, all 5 LOs covered 1:1, stems plain and on-headline.",
+  "at": "2026-06-17T00:00:00Z"
+}

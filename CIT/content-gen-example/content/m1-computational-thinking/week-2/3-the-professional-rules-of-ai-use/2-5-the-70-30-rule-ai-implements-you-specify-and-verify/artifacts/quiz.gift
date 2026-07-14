@@ -1,0 +1,61 @@
+$CATEGORY: CIT/M1/week-2/2.5-the-70-30-rule-ai-implements-you-specify-and-verify
+
+::2.5-Q1:: What does the 70/30 rule say about how work is divided in an AI-assisted task?
+{
+~AI handles 30% of the work as the implementer, while the human handles 70% including all prompting and editing#No — the proportions are reversed. AI holds the larger 70% share for implementation; the human's 30% is specification and verification.
+=AI handles roughly 70% of the work by producing output, while the human handles roughly 30% through specifying and verifying#Correct — AI does the bulk of producing; the human decides what is needed and checks the result.
+~Both human and AI share work equally at 50% each, since the human must still review everything the AI produces#No — the split is 70/30, not equal. The human's reviewing role is critical but it is the smaller proportion by design.
+~The human handles 70% of the work because writing a good specification takes far longer than generating an output#No — the rule says AI handles the 70% implementation share. The human's 30% is valuable precisely because it cannot be delegated, not because it takes more time.
+#### Tests the core definition of the 70/30 rule (corpus §5.1). The name encodes the proportion: AI implements 70%, human specifies and verifies 30%.
+}
+
+::2.5-Q2:: According to the 70/30 rule, which two roles belong entirely to the human?
+{
+~Drafting the initial output and then editing it for tone and style before submitting it to stakeholders#No — drafting output is the AI's 70% implementation role. Editing for style can be part of verifying, but the two named human roles are specifying and verifying.
+~Generating content at speed and checking whether the format matches the original request submitted to the AI#No — generating content is the AI's role. The two human roles are specifying what is needed and verifying what was produced.
+~Storing the completed output and deciding which AI tool to use before sending the task to it#No — storage and tool selection are not the two human roles the rule names. The rule assigns specifying and verifying to the human.
+=Specifying the task before prompting, and verifying the output against the specification afterward#Correct — these are the two human roles in the 70/30 rule. Together they make up the human's 30%.
+#### Tests identification of the two human roles (corpus §5.2, §5.3). Specifying sets the target; verifying checks whether the AI hit it.
+}
+
+::2.5-Q3:: Which of the following tasks should stay with the human and not be handed to AI?
+{
+=Deciding what the task is and setting the quality standard for the output#Correct — knowing your context, goals, and standards is exactly what AI cannot do. These belong to the human's 30%.
+~Running the same formatting task across hundreds of documents quickly and consistently#No — fast, consistent, repetitive output work is precisely what AI handles well. This belongs to the AI's 70%.
+~Retrieving information from a large set of documents to produce a first-draft summary#No — large-scale information retrieval and draft production is part of AI's implementation role, not the human's 30%.
+~Producing a high volume of text based on an explicit format that has already been defined#No — producing output at volume to a defined format is AI's implementation role. The human's job is to define and then check.
+#### Tests identification of human vs AI responsibilities (corpus §5.4, table). AI handles scale and production; the human handles judgment, context, and accountability.
+}
+
+::2.5-Q4:: A student sends the instruction "Summarise the report" to an AI and receives a short paragraph. What should the student do next according to the 70/30 rule?
+{
+~Accept the paragraph if it sounds accurate and is well written, since a polished output means the task is complete#No — looking right is not the same as being right. The rule requires checking the output against a written specification, not just reading it for plausibility.
+~Send the same instruction to a different AI tool to see whether its output is better than the first one#No — comparing two AI outputs without a specification still skips the human's 30%. The student needs criteria to check against, not a second draft to compare.
+=Go back and write a proper specification first, then verify any future output against each criterion in that specification#Correct — "Summarise the report" is not a specification. The first step is to apply the human's 30%\: specify the constraints, then verify the result.
+~Ask the AI to review its own summary for accuracy so the student can save time on verification#No — AI cannot reliably audit its own output. Verification is a human responsibility and cannot be delegated back to the tool that produced the output.
+#### Tests application of the 70/30 workflow (corpus §6). A vague prompt bypasses specification; no specification means no criterion to verify against.
+}
+
+::2.5-Q5:: Why does the 70/30 rule treat verification as a required step rather than an optional one?
+{
+=AI output can look polished and confident while still being wrong for your purpose — only checking against a specification can catch that gap#Correct — probabilistic systems do not guarantee correctness. A human verifying against a written criterion is the only reliable check.
+~AI tools always produce errors in every output they generate, so every run will fail at least one part of any specification you write#No — AI does not always produce errors. Verification is required because output can be wrong even when it looks correct, not because errors are inevitable.
+~Verification teaches the AI which mistakes it made so it learns and improves the next time you send the same prompt#No — AI tools do not learn from a single verification session. Verification protects the human's work product; it does not train the AI.
+~Verification is only required for long outputs because shorter responses have fewer opportunities to contain factual errors or formatting problems#No — the rule makes verification required regardless of output length. A one-sentence AI output can still be wrong for your specific purpose.
+#### Tests understanding of why verification is mandatory (corpus §5.3, §8). Probabilistic AI produces statistically likely output, not guaranteed-correct output — only a human with a specification can detect the gap.
+}
+
+::2.5-Q6:: A manager says\: "The AI will write the project plan, so my team can focus on other things." What does the 70/30 rule say is wrong with this plan?
+{
+~Nothing is wrong — AI handles first drafts well, and the team can skim the plan afterward to check if anything looks off#No — "skim if anything looks off" is reading, not verification. The rule requires active checking against a specification; the human roles cannot be dropped.
+=The manager has removed both human roles — no one specifies what the plan must contain or verifies the output meets actual project needs#Correct — AI can draft the plan, but a human must specify requirements and verify the output. Removing those roles removes the 30% that makes the output trustworthy.
+~The AI cannot produce a project plan at all, so the manager's approach will fail before any work is produced#No — producing a draft plan is exactly the kind of output work AI handles in its 70%. The problem is the absent human roles, not AI's capability.
+~The team should use a purpose-built AI planning tool so that human verification is handled automatically within the tool itself#No — switching tools does not remove the need for human specification and verification. The 70/30 rule applies regardless of which AI tool is used.
+#### Tests scenario application of human vs AI responsibilities (corpus §5.4, §8). Delegating the human's 30% to AI — or skipping it — makes the output untrustworthy, not faster.
+}
+
+::2.5-Q7:: The 70/30 rule distinguishes active verification from a passive alternative. Verification means checking each part of the output against each part of your specification. The corpus names the passive alternative as simply moving your eye over the text without checking any criterion. What is that passive alternative called? (one word)
+{
+=reading
+=Reading
+}

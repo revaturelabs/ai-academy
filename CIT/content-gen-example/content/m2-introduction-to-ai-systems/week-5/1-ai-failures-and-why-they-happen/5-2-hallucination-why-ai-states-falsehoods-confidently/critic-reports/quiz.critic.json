@@ -1,0 +1,63 @@
+{
+  "passed": true,
+  "checks": {
+    "bias_defense_present": {
+      "passed": true,
+      "note": "bias_defense_applied and $bias_defense_applied both true in quiz.meta.json"
+    },
+    "positional_bias": {
+      "passed": true,
+      "distribution": {"0": 1, "1": 1, "2": 2, "3": 1},
+      "positions_ordered": [2, 0, 3, 1, 2],
+      "max_position": 2,
+      "max_count": 2,
+      "max_share": 0.40,
+      "note": "max_share 0.40 is not strictly greater than 0.40; threshold is exclusive"
+    },
+    "length_bias": {
+      "passed": true,
+      "longest_correct_rate": 0.0,
+      "baseline": 0.25,
+      "per_question": {
+        "q1": {"correct_len": 103, "distractor_mean": 95.0, "ratio": 1.084, "longest_correct": false},
+        "q2": {"correct_len": 101, "distractor_mean": 92.67, "ratio": 1.090, "longest_correct": false},
+        "q3": {"correct_len": 93, "distractor_mean": 90.0, "ratio": 1.033, "longest_correct": false},
+        "q4": {"correct_len": 109, "distractor_mean": 98.67, "ratio": 1.105, "longest_correct": false},
+        "q5": {"correct_len": 122, "distractor_mean": 102.33, "ratio": 1.192, "longest_correct": false}
+      },
+      "note": "All 5 correct/mean ratios below 1.20 threshold. Cycle 2 length fix confirmed; 0 of 5 questions flagged."
+    },
+    "distractor_plausibility": {
+      "passed": true,
+      "absurd_rate": 0.0,
+      "total_distractors": 15,
+      "absurd_count": 0,
+      "weakest_questions": [],
+      "note": "All distractors score 2-3 on plausibility scale. No score-1 (obviously absurd) distractors found. All represent plausible beginner misconceptions grounded in the topic domain."
+    },
+    "objective_coverage": {
+      "passed": true,
+      "uncovered_objectives": [],
+      "orphan_questions": [],
+      "coverage_map": {
+        "LO1": ["q1"],
+        "LO2": ["q2"],
+        "LO3": ["q3"],
+        "LO4": ["q4"],
+        "LO5": ["q5"]
+      }
+    },
+    "beginner_scope": {
+      "passed": true,
+      "findings": [],
+      "note": "All stems plain language and scenario-based. LLM acronym spelled out in q1, q2, q4 stems. q3 and q5 use 'AI' which is established vocabulary per corpus §5.1. All tested concepts (next-token prediction §5.2, intrinsic/extrinsic §5.4, I-don't-know §5.5, harm domains §5.7) are taught in this corpus. No out-of-scope concepts present."
+    }
+  },
+  "cycle": 2,
+  "auto_correction_applied": {
+    "shuffle_round_2": false,
+    "length_rebalance": false
+  },
+  "verdict": "pass",
+  "at": "2026-06-17T00:00:00Z"
+}

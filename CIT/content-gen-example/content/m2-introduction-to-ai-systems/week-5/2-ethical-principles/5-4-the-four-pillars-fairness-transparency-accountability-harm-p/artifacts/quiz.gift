@@ -1,0 +1,55 @@
+$CATEGORY: CIT/M2/week-5/5.4-5-4-the-four-pillars-fairness-transparency-accountability-harm-p
+
+::q1:: Which statement best describes what transparency means as one of the four pillars of AI ethics? {
+~Making the AI system's full source code publicly available online for anyone to freely download.#No — publishing code is not the pillar; understandable explanations of decisions and limits are.
+=People affected by an AI system can understand what it did and why, including its limits.#Correct — transparency is about understandability for users, affected people, and those responsible.
+~The AI system always produces the correct answer, so there is nothing left that needs explaining.#No — accuracy is a separate matter; a correct system can still hide how it decided.
+~The AI system runs fast enough that users can see their results appear on screen in real time.#No — speed is unrelated; transparency is about understanding the decision, not the response time.
+#### Tests the plain-language definition of the transparency pillar (corpus §5.2).
+}
+
+::q2:: Which statement best describes what the fairness pillar requires of an AI system? {
+~Fairness is achieved simply by deleting race, gender, and age labels from the model's training data.#No — a common misconception; bias hides in proxy variables and historical patterns even with labels removed.
+~Fairness means the AI system gives every single user the exact same output regardless of the request.#No — identical outputs is not the goal; not disadvantaging people on protected characteristics is.
+~Fairness means the system was built by a large, demographically diverse team of engineers and testers.#No — team diversity may help, but it is not the definition; the pillar concerns the system's outputs.
+=The system does not systematically disadvantage people based on traits like race, gender, or age.#Correct — fairness is the absence of unjustified, systematic disadvantage across groups.
+#### Tests the plain-language definition of the fairness pillar and a common "remove the labels" misconception (corpus §5.1).
+}
+
+::q3:: An AI hiring tool wrongly rejects a qualified applicant. Under the accountability pillar, who is responsible for the harm? {
+=Identifiable parties such as developers, deployers, or the company are responsible and can be held to account.#Correct — accountability requires named human parties who answer for outcomes, not deflection to the machine.
+~Because the algorithm made the decision, no human party can be held responsible for the harm.#No — this is the accountability gap misconception; human parties remain responsible for what they built and deployed.
+~Because the company had no audit trail, responsibility automatically transfers to the affected user.#No — missing records make accountability harder, but harm does not become the victim's responsibility.
+~Only the government regulator is responsible, since private companies cannot be blamed for AI behaviour.#No — developers, deployers, and companies share responsibility; it is not solely a regulator's job.
+#### Tests the accountability pillar and the "the algorithm decided" deflection (corpus §5.3).
+}
+
+::q4:: Which statement best captures what the harm prevention pillar requires? {
+~Harm prevention means fixing software bugs quickly after users report them once the system is live.#No — that is reactive damage limitation; prevention acts before harm occurs, during design and deployment.
+~Harm prevention means adding a legal disclaimer so the company is not liable for any damage.#No — disclaimers shift blame, not prevent harm; the pillar requires anticipating and reducing harm.
+=Harm prevention means proactively assessing what could go wrong, and for whom, before the system is deployed.#Correct — prevention is proactive risk assessment ahead of deployment, including misuse and vulnerable groups.
+~Harm prevention means only deploying AI systems that have a zero chance of ever failing.#No — no system is failure-free; prevention is about anticipating and mitigating risk, not impossible perfection.
+#### Tests that harm prevention is proactive, not reactive bug-fixing (corpus §5.4).
+}
+
+::q5:: A fair and transparent AI system has no party responsible for its outcomes. What does the interdependence of the pillars tell us happens? {
+~Nothing changes, because each pillar works independently and the other three still fully protect users.#No — the corpus stresses interdependence; removing one pillar weakens all the others.
+~The system becomes three-quarters ethical, which is acceptable for most low-risk deployments.#No — an AI that satisfies three of four pillars is not three-quarters ethical; all four are required.
+~Transparency automatically compensates, since visible decisions no longer need a responsible party.#No — visibility without a responsible party means no one is obligated to act on what is revealed.
+=Removing accountability leaves no party empowered or obligated to act on problems the other pillars reveal.#Correct — the pillars are interdependent; without accountability, documented unfairness has no one required to fix it.
+#### Tests why the four pillars are interdependent — removing one weakens the others (corpus §5.5).
+}
+
+::q6:: Amazon's hiring algorithm from topic 5.1 downranked female candidates. Which of the four pillars did it fail? {
+=It violated fairness, transparency, accountability, and harm prevention, as real failures often do.#Correct — the hiring case from 5.1 breaks multiple pillars at once, which is why they are evaluated together.
+~It violated only transparency, because the applicants were never told that an algorithm had scored them.#No — it also violated fairness by downranking women, plus accountability and harm prevention.
+~It violated only fairness, since the resulting harm was limited to ranking the female candidates lower.#No — it also failed transparency, accountability, and harm prevention; real failures break multiple pillars.
+~It violated none of the pillars at all, because the algorithm worked exactly as it was programmed to.#No — working as built does not make a system ethical; it still systematically disadvantaged women.
+#### Tests connecting the pillars to a prior AI failure (topic 5.1) and that real failures violate multiple pillars (corpus §7).
+}
+
+::q7:: A pillar can be described as an ideal — something every ethical AI system should aim for. But the corpus also describes each pillar as something more concrete that a real system must actually satisfy before deployment. In one or two sentences, explain what a pillar is when treated this second way (not as an ideal). {
+=A pillar treated this way is a practical requirement: a concrete, testable standard the system must meet before deployment, checked through actions like fairness testing, explanations, audit trails, and risk assessment, not just an aspiration.
+=As a practical requirement it is a concrete standard the system must demonstrably satisfy and be tested against before deployment, rather than only an aspiration or goal.
+=It is a practical requirement that must be met and verified through concrete checks before deployment, not merely an ideal to aim for.
+}

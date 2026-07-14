@@ -1,0 +1,62 @@
+$CATEGORY: CIT/M5/week-12/12-1-functions-named-reusable-blocks-of-logic
+
+::q1:: In Python, what is a function? {
+~A variable that holds a value you can change anytime#No — a variable stores a value, not a reusable set of steps.
+=A named, reusable block of code you invoke by name#Correct — you write it once with `def` and run it by calling its name.
+~A loop that repeats instructions a set number of times#No — a loop repeats steps but is not defined and called by name the same way.
+~A built-in syntax rule controlling how lines are indented#No — indentation is a language rule, not a callable block of code.
+#### Tests the core definition of a Python function and why functions exist (corpus §5.1).
+}
+
+::q2:: Which of the following correctly defines a function called `say_hello` in Python? {
+~`function say_hello\: print("Hello!")`#No — Python uses `def`, not the word `function`, to define a function.
+~`def say_hello \{ print("Hello!") \}`#No — Python uses a colon and indentation, not curly braces, to mark the function body.
+~`say_hello() \= print("Hello!")`#No — this looks like an assignment, not a function definition; the `def` keyword is missing.
+=`def say_hello()\: \n    print("Hello!")`#Correct — `def`, the function name, empty parentheses, a colon, and an indented body is the right syntax.
+#### Tests correct use of the `def` keyword and Python function syntax (corpus §5.2).
+}
+
+::q3:: You have written `def greet():` followed by an indented `print` statement, but nothing else. What happens when you run the file? {
+=Nothing visible — the function is stored but does not run until you call it#Correct — defining only stores the function; you need `greet()` to execute the body.
+~The `print` runs once automatically as Python reads the `def` line#No — Python stores the definition when it reads `def`; the body does not execute at that point.
+~Python raises a `NameError` because calling the function was never attempted#No — a `NameError` fires when you call an undefined function, not when you define without calling.
+~Python skips the function block and moves straight to the next statement in the file#No — Python reads and stores the definition; it does not discard or skip the block.
+#### Tests understanding of when a function body executes versus when it is defined (corpus §5.3).
+}
+
+::q4:: A classmate names their function `x()`. What is the problem with this name? {
+~It uses the wrong keyword — functions must start with `def`, not a letter#No — `x` is a valid Python identifier; the `def` keyword is still required and correct.
+~It is too short to be stored in memory by Python#No — Python has no minimum length requirement for names; the issue is readability.
+=It gives no clue about what the function does, making code hard to read#Correct — a good function name is a verb phrase that signals the action, like `calculate_average()`.
+~It will cause a `NameError` when called because single-letter names are reserved#No — single-letter names are allowed in Python; they just give poor information to the reader.
+#### Tests the ability to choose clear, descriptive function names following PEP 8 conventions (corpus §5.5).
+}
+
+::q5:: Look at this code\:
+```
+def show_message():
+    print("Learning Python!")
+
+show_message()
+```
+Which line *defines* the function and which line *calls* it? {
+=`def show_message():` defines it\; `show_message()` calls it#Correct — the `def` line creates and stores the function; the bare name with `()` is what runs the body.
+~`show_message()` defines it\; `def show_message():` calls it#No — this is reversed. `def` always marks the definition; the name with `()` on its own line is the call.
+~Both lines define the function — you need two `def` lines for a function to work#No — one `def` line is all Python needs to define a function; the second line is the call.
+~Neither line calls the function — you need the word `call` before the name#No — Python does not use a `call` keyword; writing `show_message()` is the call.
+#### Tests the critical distinction between defining and calling a function (corpus §5.4).
+}
+
+::q6:: In a real AI-adjacent Python script you read this at the bottom of the file\:
+```
+load_data()
+check_records()
+print_summary()
+```
+What are these three lines most likely doing? {
+~Defining three new functions that will be added to the script later#No — definitions use the `def` keyword; these lines have no `def`, so they are calls.
+~Saving the output of three calculations into three separate variables#No — storing a value uses `=`; these lines have no assignment operator.
+~Looping over a list and running a print operation three separate times#No — a loop requires `for` or `while`; none of those keywords appear here.
+=Calling three functions defined earlier, each handling one step of the task#Correct — a name followed by `()` is a call; each line runs a named block defined above.
+#### Tests recognition of function calls in real AI-adjacent Python scripts (corpus §5.7 / §7).
+}

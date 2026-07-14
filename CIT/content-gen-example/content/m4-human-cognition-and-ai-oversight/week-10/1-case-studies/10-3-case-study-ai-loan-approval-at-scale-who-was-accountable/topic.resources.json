@@ -1,0 +1,30 @@
+{
+  "topic_id": "10.3",
+  "captured_at": "2026-06-12T00:00:00Z",
+  "captured_by": "namratas@revature.com",
+  "resources_source": "web_search",
+  "web_search_query": "AI loan approval at scale accountability governance failure case study 2025 2026",
+  "resources": [
+    {
+      "type": "url",
+      "value": "https://arxiv.org/pdf/2205.05661",
+      "role": "primary",
+      "source": "web_search",
+      "notes": "Case study on algorithmic accountability in instant loan platforms — power relations, accountability gaps, financially stressed users"
+    },
+    {
+      "type": "url",
+      "value": "https://hesfintech.com/blog/all-legislative-trends-regulating-ai-in-lending/",
+      "role": "supporting",
+      "source": "web_search",
+      "notes": "AI credit regulations 2025 — transparency, fairness, and accountability obligations in AI lending"
+    },
+    {
+      "type": "url",
+      "value": "https://www.grantthornton.com/services/advisory-services/artificial-intelligence/2026-ai-impact-survey",
+      "role": "supporting",
+      "source": "web_search",
+      "notes": "2026 AI Impact Survey — 78% of execs cannot demonstrate AI accountability within 90 days; governance audit-readiness gaps"
+    }
+  ]
+}

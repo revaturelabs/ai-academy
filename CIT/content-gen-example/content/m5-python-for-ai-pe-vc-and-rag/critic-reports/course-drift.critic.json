@@ -1,0 +1,159 @@
+{
+  "course_code": "M5",
+  "passed": true,
+  "checks": {
+    "terminology_consistency": {
+      "passed": true,
+      "drift_findings": [
+        {
+          "term": "system prompt",
+          "finding": "Consistent. 12.10 introduces 'system prompt' as the separate `system` parameter in the Anthropic Messages API, distinguishing it from the `messages` array user turn. 13.1 deepens the same definition (persistent context, authority, static vs dynamic split) without redefining it. Both corpora share the same core formulation and cross-reference each other explicitly.",
+          "severity": "none"
+        },
+        {
+          "term": "API / API key",
+          "finding": "Consistent. 11.1 introduces API as a brief forward-reference ('The technical details of APIs come in week 12'). 12.9 provides the full definition (Application Programming Interface, request-response, four-part request, three-part response). 13.x topics use the term freely without redefining it. No synonym drift detected.",
+          "severity": "none"
+        },
+        {
+          "term": "prompt / user prompt",
+          "finding": "Minor synonym variation but not contradictory. 12.10 uses 'user prompt' to mean the content field of a user-role message. 13.1 uses 'user prompt' identically but also introduces the phrase 'live request' as an explanatory synonym. This is additive framing, not a redefinition. No contradiction.",
+          "severity": "none"
+        },
+        {
+          "term": "LLM (Large Language Model)",
+          "finding": "Consistent. First spelled out in 12.9 ('LLM (Large Language Model) models like Claude'). Subsequent topics (13.x, 14.x) use the abbreviation freely. 14.8 explicitly states 'All prior-topic vocabulary — AI agent, LLM (Large Language Model), planning loop ...' is used without re-definition, confirming intentional design.",
+          "severity": "none"
+        },
+        {
+          "term": "embedding / vector",
+          "finding": "Consistent. 14.1 introduces 'embedding' as a list of numbers representing meaning, and introduces 'vector' as a synonym in the same section. 14.2 uses both terms freely, states '14.1 — Vector databases: you understand embeddings (lists of numbers representing meaning)' in prerequisites, and does not re-define them. No drift.",
+          "severity": "none"
+        },
+        {
+          "term": "constraint (prompt engineering)",
+          "finding": "Consistent. 13.5 defines 'constraint' as a rule in a prompt that restricts the model's output. 13.6 refers to format specification as 'a type of constraint (from topic 13.5), but targeted specifically at output structure.' Cross-reference is explicit and the term is not redefined.",
+          "severity": "none"
+        }
+      ],
+      "note": "Depth-profile upgrades for 11.1, 11.5, 11.7, and 11.9 (standard→deep) do not introduce new terms or alter term definitions — depth profile governs word count and coverage granularity only. No new terminology concerns arise from these upgrades."
+    },
+    "prerequisite_ordering": {
+      "passed": true,
+      "violations": [
+        {
+          "topic_id": "14.1",
+          "concern": "Prerequisites section lists 'Topic 12.x — Calling an LLM via the API' without a specific topic number. This is imprecise but not a forward reference — all 12.x content precedes 14.1. Minor: recommend pinning to '12.9–12.14' for exactness.",
+          "severity": "advisory"
+        },
+        {
+          "topic_id": "14.2",
+          "concern": "Same imprecision: prerequisites cite 'Topic 12.x' rather than specific IDs. Same advisory applies. Not a true forward-reference violation.",
+          "severity": "advisory"
+        }
+      ],
+      "summary": "No hard forward-reference violations found. W12 topics (12.1–12.8) cite W11 foundations explicitly by ID. W13 PE topics cite 12.10 and 12.11 explicitly. W13 output-validation topics cite 13.6 and 13.7 explicitly. W14 topics cite 14.1 before 14.2 and cite 14.4/14.7/14.9 before 14.10. Prerequisite chain is sound. Advisory on 14.1/14.2 citation precision remains open."
+    },
+    "weekly_time_budget": {
+      "passed": true,
+      "per_week": [
+        {
+          "week_num": 11,
+          "total_minutes": 71,
+          "topic_count": 9,
+          "status": "warn",
+          "thresholds": { "target": 90, "soft_warn_floor": 77, "soft_warn_ceiling": 104, "hard_fail_floor": 68, "hard_fail_ceiling": 113 },
+          "notes": "Post-fix: 4 topics upgraded to deep profile (11.1→10 min, 11.5/11.7/11.9→9 min). Total 71 min clears hard-fail floor (68 min) but remains in soft-warn band (below 77-min floor). Breakdown: 11.1=10, 11.2=7, 11.3=7, 11.4=7, 11.5=9, 11.6=6, 11.7=9, 11.8=7, 11.9=9. Artifacts for 11.1/11.5/11.7/11.9 must be regenerated at deep depth profile before publication. W11 remains 6 min below the soft-warn floor — a residual advisory, not a hard fail."
+        },
+        {
+          "week_num": 12,
+          "total_minutes": 89,
+          "topic_count": 14,
+          "status": "ok",
+          "thresholds": { "target": 90, "soft_warn_floor": 77, "soft_warn_ceiling": 104, "hard_fail_floor": 68, "hard_fail_ceiling": 113 },
+          "notes": "Post-fix: 12.14 expected_delivery_minutes populated at 5 (atomic depth profile). Total 89 min (all 14 topics now have known delivery minutes). Solidly within ok band (77–104 min). Breakdown: 13 standard/atomic topics at 5–8 min plus 12.14 at 5 min."
+        },
+        {
+          "week_num": 13,
+          "total_minutes": 97,
+          "topic_count": 15,
+          "status": "ok",
+          "thresholds": { "target": 90, "soft_warn_floor": 77, "soft_warn_ceiling": 104, "hard_fail_floor": 68, "hard_fail_ceiling": 113 },
+          "notes": "97 min is within the 77–104 soft-warn band. No action required. Unchanged from prior report."
+        },
+        {
+          "week_num": 14,
+          "total_minutes": 77,
+          "topic_count": 10,
+          "status": "ok",
+          "thresholds": { "target": 90, "soft_warn_floor": 77, "soft_warn_ceiling": 104, "hard_fail_floor": 68, "hard_fail_ceiling": 113 },
+          "notes": "Post-fix: 14.3 expected_delivery_minutes updated from 8 to 10 (standard profile with second worked example). Total 77 min — exactly at the soft-warn floor, within ok band. Breakdown: 7+7+10+7+7+7+7+11+7+7 = 77 min. No further action required."
+        }
+      ],
+      "recommendations": [
+        "W11 residual warn (71 min, 6 min below 77-min soft-warn floor): no hard fail. Artifacts for 11.1 (deep, 10 min), 11.5 (deep, 9 min), 11.7 (deep, 9 min), and 11.9 (deep, 9 min) must be regenerated at their upgraded depth profiles before publication. If curriculum scope can accommodate, a 10th topic (e.g., while-loops or string methods) would bring W11 into full ok range.",
+        "W12: all delivery minutes now populated. No further action required.",
+        "W14: 14.3 now at 10 min; W14 total at soft-warn floor (77 min). No further action required."
+      ]
+    },
+    "no_duplicated_material": {
+      "passed": true,
+      "high_similarity_pairs": [
+        {
+          "topic_a": "12.10",
+          "topic_b": "13.1",
+          "concept": "system prompt vs user prompt",
+          "assessment": "Overlap is intentional and pedagogically sound. 12.10 introduces system prompt as part of the Anthropic API anatomy — the focus is on the structural fields of an API request (model, messages array, system parameter, authentication). 13.1 deepens the concept from a prompt-engineering perspective — the focus is on why and when to use each, the static/dynamic test, authority/precedence, and the split method. Core concept list overlap: both define system prompt, user prompt, and their API placement. However, 13.1 explicitly cites 12.10 as a prerequisite and does not re-teach the API mechanics. Treatment is differentiated (API structure vs PE strategy). Estimated Jaccard on core concept lists: ~0.35. Below 0.55 threshold.",
+          "jaccard_estimate": 0.35,
+          "flag": false
+        },
+        {
+          "topic_a": "13.5",
+          "topic_b": "13.6",
+          "concept": "constraints / output format control",
+          "assessment": "Adjacent but differentiated. 13.5 covers constraints broadly (format, tone, content exclusion, scope limit) and explicitly defers detailed format control: 'Detailed output-format control — including enforcing specific JSON schema structures — is covered in topic 13.6.' 13.6 cites 13.5 as a prerequisite and begins from 'format specification is a type of constraint (from topic 13.5).' There is one-line definitional overlap on format constraints but no duplicated worked examples or explanatory sections. Estimated Jaccard: ~0.20. Well below threshold.",
+          "jaccard_estimate": 0.20,
+          "flag": false
+        },
+        {
+          "topic_a": "13.8",
+          "topic_b": "13.9",
+          "concept": "output validation / retry logic",
+          "assessment": "Sequential pair with appropriate division. 13.8 owns the validation function concept (what validation is, how to write a format-check function returning True/False). 13.9 begins 'In topic 13.8 you learned how to check whether an AI response has the shape you need' and focuses entirely on the retry loop, corrective message, retry counter, max retries, and fallback — none of which are defined in 13.8. 13.9 does not re-explain validation; it takes the validator as a given input. No duplication. Estimated Jaccard: ~0.15.",
+          "jaccard_estimate": 0.15,
+          "flag": false
+        },
+        {
+          "topic_a": "14.1",
+          "topic_b": "14.2",
+          "concept": "embeddings / vector database",
+          "assessment": "14.2 explicitly states '14.1 — Vector databases: you understand embeddings (lists of numbers representing meaning), vector databases, similarity search, and top-k results' in prerequisites and does not re-define any of those terms. The only shared content is a brief use of the term 'embedding model' (one sentence in 14.2 §5.2 to explain that the same model must be used at index and query time). This is necessary contextual anchoring, not duplication. Estimated Jaccard on core concept definitions: ~0.10. Well below threshold.",
+          "jaccard_estimate": 0.10,
+          "flag": false
+        }
+      ]
+    },
+    "learning_arc": {
+      "passed": true,
+      "scope_coverage_map": [
+        { "scope_facet": "Wk11: Python I", "covered_by": ["11.1","11.2","11.3","11.4","11.5","11.6","11.7","11.8","11.9"], "status": "covered" },
+        { "scope_facet": "Wk12: Python II", "covered_by": ["12.1","12.2","12.3","12.4","12.5","12.6","12.7","12.8"], "status": "covered" },
+        { "scope_facet": "Wk12: LLM API", "covered_by": ["12.9","12.10","12.11","12.12","12.13","12.14"], "status": "covered" },
+        { "scope_facet": "Wk13: Prompt Engineering", "covered_by": ["13.1","13.2","13.3","13.4","13.5","13.6","13.7","13.8","13.9"], "status": "covered" },
+        { "scope_facet": "Wk13: Version Control", "covered_by": ["13.10","13.11","13.12","13.13","13.14","13.15"], "status": "covered" },
+        { "scope_facet": "Wk14: RAG", "covered_by": ["14.2","14.3","14.4"], "status": "covered" },
+        { "scope_facet": "Wk14: Vectors", "covered_by": ["14.1"], "status": "covered" },
+        { "scope_facet": "Wk14: Agents", "covered_by": ["14.5","14.6","14.7","14.8"], "status": "covered" },
+        { "scope_facet": "Wk14: concept + demo, no build", "covered_by": ["14.1","14.2","14.3","14.4","14.5","14.6","14.7","14.8","14.9","14.10"], "status": "covered — confirmed. Implementation sections in W14 corpora are explicitly labeled 'conceptual — no build required' (14.2 §6, 14.1 §5.2). No W14 topic requires students to construct a vector database, RAG pipeline, or agent. Topic 14.10 capstone is an architectural decision record (written artifact), not a code build." }
+      ],
+      "assessment_a4_coverage": {
+        "assessment_id": "A4",
+        "requirement_check": "A4 requires: lab notebooks W11–W13 (covered by all W11–W13 topics), plain-English spec (11.7), independently written working code (11.7, 11.8), edge-case tests min 3 per notebook (11.9), reflection, PE portfolio with 3 iteration versions (13.5, 13.6 via iteration), accuracy comparison table (13.8), output validator with retry on format failure (13.8, 13.9), GitHub repo with README and 3 meaningful commits (13.12, 13.13, 13.15), VC discipline (13.10–13.15). All A4 components have corresponding topic coverage. Deep-profile upgrades for 11.1/11.5/11.7/11.9 reinforce A4-relevant topics (spec-first discipline, conditionals, edge cases) with richer treatment — no arc concern.",
+        "status": "fully covered"
+      },
+      "uncovered_scope_facets": []
+    }
+  },
+  "verdict": "M5 passes course-drift on all five checks after manifest fixes. Time-budget check now passes: W11 upgraded from hard-fail (62 min) to warn (71 min) after 4 topics promoted to deep profile; W12 resolved its null delivery_minutes (12.14 now 5 min, total 89 min, ok); W14 resolved its soft-warn (14.3 now 10 min, total 77 min, ok); W13 unchanged at 97 min (ok). W11 remains in the soft-warn band at 71 min — no hard fail, no check failure. Two open action items: (1) artifacts for 11.1, 11.5, 11.7, and 11.9 must be regenerated at deep depth profile before publication; (2) advisory on 14.1/14.2 prerequisite citation precision (citing '12.x' rather than specific IDs 12.9–12.14) remains open but is not a hard violation. Terminology consistency, prerequisite ordering, no-duplication, and learning-arc checks all carry forward as passed from the prior run.",
+  "at": "2026-06-23T21:00:00Z"
+}

@@ -1,0 +1,10 @@
+{
+  "topic_id": "7.5",
+  "artifact": "reading",
+  "word_count": 1310,
+  "estimated_minutes": 7,
+  "sections": ["Overview", "Key Concepts", "Worked Example", "In Practice", "Key Takeaways", "References"],
+  "citations_used": ["[1]", "[2]", "[3]"],
+  "diagram_embedded": true,
+  "generated_at": "2026-06-23T00:00:00Z"
+}

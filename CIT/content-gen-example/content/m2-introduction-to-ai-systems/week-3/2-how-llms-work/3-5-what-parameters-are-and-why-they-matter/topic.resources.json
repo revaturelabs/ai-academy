@@ -1,0 +1,30 @@
+{
+  "topic_id": "3.5",
+  "captured_at": "2026-06-17T00:00:00Z",
+  "captured_by": "bhuvaneshwarim@revature.com",
+  "resources_source": "web_search",
+  "web_search_query": "LLM parameters weights what they are why they matter explained beginner 2024",
+  "resources": [
+    {
+      "type": "url",
+      "value": "https://towardsai.net/p/machine-learning/what-are-llm-parameters-a-simple-explanation-of-weights-biases-and-scale",
+      "role": "primary",
+      "source": "web_search",
+      "notes": "Beginner explainer — parameters, weights, biases, and why scale (billions of parameters) matters"
+    },
+    {
+      "type": "url",
+      "value": "https://seantrott.substack.com/p/how-a-model-got-its-weights",
+      "role": "supporting",
+      "source": "web_search",
+      "notes": "How weights are learned through training — gradient descent, backpropagation angle"
+    },
+    {
+      "type": "url",
+      "value": "https://www.webopedia.com/technology/llm-tokens-weights-parameters/",
+      "role": "supporting",
+      "source": "web_search",
+      "notes": "Conceptual overview connecting tokens, weights, and parameters as an anatomy of an LLM"
+    }
+  ]
+}

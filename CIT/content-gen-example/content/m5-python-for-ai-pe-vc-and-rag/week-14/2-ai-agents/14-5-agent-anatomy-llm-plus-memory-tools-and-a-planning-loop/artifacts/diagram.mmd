@@ -1,0 +1,36 @@
+---
+title: "AI Agent System — Anatomy"
+theme: base
+themeVariables:
+  primaryColor: "#a5d8ff"
+  primaryBorderColor: "#4a9eed"
+  lineColor: "#555"
+flowchart:
+  htmlLabels: true
+  curve: basis
+---
+flowchart TD
+    classDef start fill:#a5d8ff,stroke:#4a9eed,stroke-width:2px,color:#1e3a5f
+    classDef act   fill:#a5d8ff,stroke:#4a9eed,stroke-width:1px,color:#1e3a5f
+    classDef auto  fill:#d0bfff,stroke:#8b5cf6,stroke-width:2px,color:#3b0764
+    classDef done  fill:#b2f2bb,stroke:#22c55e,stroke-width:2px,color:#14532d
+
+    LLM["<b>LLM Core</b><br/><span style='font-size:11px;color:#6d28d9'>The reasoner — reads all context,<br/>decides what to do next</span>"]:::start
+
+    STM["<b>Short-term Memory</b><br/><span style='font-size:11px;color:#6d28d9'>In-context history &amp; tool results<br/>(the desk)</span>"]:::act
+
+    LTM["<b>Long-term Memory</b><br/><span style='font-size:11px;color:#6d28d9'>External vector store<br/>(the filing cabinet)</span>"]:::act
+
+    TOOLS["<b>Tools</b><br/><span style='font-size:11px;color:#6d28d9'>Web search · APIs · databases<br/>calculator · code interpreter</span>"]:::act
+
+    LOOP["<b>Planning Loop</b><br/><span style='font-size:11px;color:#6d28d9'>Observe → Think → Act → Update<br/>repeat until done or max cycles</span>"]:::auto
+
+    DONE["<b>Final Answer</b><br/><span style='font-size:11px;color:#6d28d9'>Returned to user;<br/>archived to long-term memory</span>"]:::done
+
+    LOOP -->|"assembles context for"| LLM
+    LLM -->|"names tool + inputs"| TOOLS
+    TOOLS -->|"result feeds back into"| STM
+    STM -->|"loaded into next cycle of"| LOOP
+    LLM <-->|"reads &amp; writes"| STM
+    LLM <-->|"retrieves from"| LTM
+    LOOP -->|"goal reached"| DONE

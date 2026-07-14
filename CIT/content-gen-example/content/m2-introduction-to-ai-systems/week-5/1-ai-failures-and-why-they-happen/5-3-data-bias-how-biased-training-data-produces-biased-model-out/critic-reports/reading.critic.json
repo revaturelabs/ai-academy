@@ -1,0 +1,89 @@
+{
+  "topic_id": "5.3",
+  "artifact": "reading",
+  "cycle": 1,
+  "critic_at": "2026-06-17T00:00:00Z",
+  "verdict": "pass",
+  "hard_fail": false,
+  "soft_findings": [],
+  "checks": {
+    "format_discipline": {
+      "passed": true,
+      "no_frontmatter": true,
+      "sidecar_present": true,
+      "six_fixed_sections_in_order": true,
+      "notes": "File opens with H1 title, no YAML block. Sidecar reading.meta.json present with required fields. Six sections present in correct order: Overview, Key Concepts, Worked Example, In Practice, Key Takeaways, References."
+    },
+    "length": {
+      "passed": true,
+      "word_count": 1345,
+      "target_range": [1200, 1600],
+      "in_word_range": true,
+      "estimated_minutes_at_230wpm": 5.8,
+      "estimated_minutes_at_200wpm": 6.7,
+      "target_minute_range": [6, 8],
+      "notes": "1345 words, within 1200-1600 range. At 200 wpm = 6.7 min; at 230 wpm = 5.8 min. Both readings land within or at the edge of the 6-8 minute target."
+    },
+    "citations": {
+      "passed": true,
+      "primary_resource_cited": true,
+      "all_markers_in_bibliography": true,
+      "no_orphan_markers": true,
+      "no_orphan_bibliography": true,
+      "citations_used": [1, 2, 3],
+      "notes": "All three resources cited: [1] IBM (primary) cited 10+ times; [2] SAP cited 8+ times; [3] Arxiv cited 10+ times. Bibliography matches inline markers exactly."
+    },
+    "no_forward_references": {
+      "passed": true,
+      "notes": "Regulatory frameworks and technical debiasing methods named-and-deferred without definition. References to topic 5.1 and 5.2 are valid prior-topic back-references. No forward concept taught."
+    },
+    "faithfulness": {
+      "passed": true,
+      "assertions_sampled": 10,
+      "unsupported_assertions": 0,
+      "notes": "All 10 sampled assertions trace directly to corpus sections 5.1-5.5. The Amazon case closing (shut down after internal review) is framed as 'from topic 5.1', which is an acceptable prior-curriculum reference."
+    },
+    "beginner_readability": {
+      "passed": true,
+      "undefined_terms": [],
+      "jargon_dump": false,
+      "abstract_first": false,
+      "academic_register": false,
+      "notes": "All non-everyday terms defined on first use: data bias, GIGO, historical bias, representation bias, measurement bias, structural, objectivity illusion, disaggregated metrics. Each bias type introduced with a concrete example before or alongside the definition. No hedging language. Sentences mostly under 20 words."
+    },
+    "no_assessment_references": {
+      "passed": true,
+      "notes": "No assessment IDs, due weeks, or grade weights appear anywhere in the reading."
+    },
+    "formatting": {
+      "passed": true,
+      "wall_of_text": false,
+      "unlisted_sequence": false,
+      "no_inline_examples": false,
+      "definitions_bold_plain": true,
+      "notes": "Longest paragraphs are 4 sentences. Worked Example uses a numbered list. Table used in In Practice for the domain/harm comparison. Inline examples present in each bias-type definition. Bold-term / plain-meaning pattern used throughout."
+    },
+    "scope": {
+      "passed": true,
+      "scope_creep_found": false,
+      "notes": "Reading stays on the headline. Technical debiasing approaches named as orientation only (no mechanics taught). Regulatory frameworks referenced as future topic, not defined. No concept taught beyond what the topic title warrants."
+    }
+  },
+  "gold_example_check": {
+    "gold_example_path": ".claude/references/gold-examples/reading/3-4-how-llms-work-tokens-training-and-inference.reading.md",
+    "meets_gold_bar": true,
+    "notes": "Matches gold example's structure: subsection headers under Key Concepts, numbered list in Worked Example, table in In Practice, bullet Key Takeaways. Tone and formatting density comparable. No assessment reference (a known defect in the gold example that was correctly not replicated)."
+  },
+  "self_check": {
+    "in_word_range": true,
+    "every_primary_cited": true,
+    "no_new_assertions": true,
+    "diagram_inline": true,
+    "no_frontmatter": true,
+    "six_fixed_sections": true,
+    "sidecar_meta_written": true,
+    "beginner_terms_defined": true,
+    "no_scope_creep_beyond_headline": true,
+    "formatting_chunked": true
+  }
+}

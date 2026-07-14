@@ -1,0 +1,39 @@
+{
+  "critic": "reading-critic",
+  "topic_id": "6.7",
+  "cycle": 2,
+  "at": "2026-06-19T00:00:00Z",
+  "passed": true,
+  "checks": {
+    "format_discipline": {
+      "passed": true,
+      "notes": "No frontmatter present; first non-empty line is the H1 title. reading.meta.json exists and parses without error. All 6 required sections appear in correct order: Overview, Key Concepts, Worked Example, In Practice, Key Takeaways, References."
+    },
+    "length_budget": {
+      "passed": true,
+      "word_count": 856,
+      "target_range": [650, 900],
+      "notes": "The cycle-1 fail was caused by a bloated Key Concepts section (~1090 actual words). The revised artifact has been trimmed: the four-step Word2Vec numbered list is now a 2-sentence prose summary, the GloVe/FastText sentence is condensed, and the 'Embedding arithmetic (a preview)' subsection is removed. reading.meta.json reports 856 words; manual inspection of the revised artifact (paragraphs, bullets, tables, caption, headings) is consistent with that count. 856 falls within [650, 900]. Reading-aloud time at 230 wpm is approximately 3.7 min, reasonable for a standard-depth topic."
+    },
+    "citation_discipline": {
+      "passed": true,
+      "primary_cited": true,
+      "notes": "The single primary resource (Voita NLP Course, [1]) is cited in Overview, Key Concepts (multiple subsections), Worked Example, and Key Takeaways. Both supporting resources ([2] Coursera, [3] Brownlee/MLM) are cited in Key Concepts, Worked Example, In Practice, and Key Takeaways. All three entries appear in the References bibliography with matching titles and URLs. No orphan inline markers; no orphan bibliography entries."
+    },
+    "sequence_drift": {
+      "passed": true,
+      "forward_refs": [],
+      "notes": "reading.md contains no references to later topic numbers (6.8 or beyond). The corpus mentions 6.8 for vector arithmetic but the reading correctly omits that forward reference. All concepts used (vectors, dot product, similarity, embedding space) are established in prior topics 6.1–6.6 and this topic's own corpus."
+    },
+    "beginner_readability": {
+      "passed": true,
+      "findings": [],
+      "notes": "All technical terms defined on first use: one-hot encoding (Key Concepts), embedding (Key Concepts), dense/low-dimensional (bullet list), distributional hypothesis (Key Concepts), embedding space (Key Concepts). No paragraph introduces more than one new term without an immediate plain-language explanation. Paragraphs are 2–4 sentences; no walls of text. Comparison table and worked-example tables break up prose effectively. Steps/sequences rendered as bullet lists. Concrete examples (cat/kitten/skyscraper) precede abstract definitions throughout. No scope creep: no concepts taught beyond the topic headline."
+    },
+    "faithfulness": {
+      "passed": true,
+      "notes": "Every factual claim traces to the corpus: one-hot encoding properties and zero dot-product result (corpus 5.1), embedding definition and dense/low-dimensional properties (corpus 5.2), distributional hypothesis and Word2Vec training logic (corpus 5.3), GloVe/FastText as pre-trained sets (corpus Implementation section), Google Search/Spotify/Netflix/spam-filter examples (corpus section 7). The five-word worked example (cat, kitten, dog, skyscraper, tower) is consistent with the corpus hands-on exercise vocabulary (section 9). The 3-dimensional illustrative vectors in the worked example are a permissible didactic simplification (corpus uses 2D in the exercise; the reading adds a third dimension solely to illustrate low-dimensionality without contradicting any corpus claim). No new claims introduced."
+    }
+  },
+  "verdict": "PASS — all 6 checks pass; word count 856 within [650, 900], format clean, primary source well-cited, no forward references, beginner-readable with no scope creep, faithful to corpus."
+}

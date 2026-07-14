@@ -1,0 +1,54 @@
+{
+  "topic_id": "2.9",
+  "generated_at": "2026-06-17T00:00:00Z",
+  "format": "gift",
+  "question_count": 7,
+  "$bias_defense_applied": true,
+  "$shuffle_seed": "2e4b1c9f",
+  "correct_position_distribution": [1, 3, 0, 2, 1, 3],
+  "notes": "q7 is short-answer; excluded from positional/length-bias checks. MCQ distribution across 6 items: pos0=1, pos1=2, pos2=1, pos3=2. max_share=2/6=0.33 (below 0.40 threshold). All 4 positions used.",
+  "questions": [
+    {
+      "id": "q1",
+      "type": "mcq",
+      "objective_ref": "Define what 'iterating a specification' means: making one targeted change to the specific part that caused a test failure.",
+      "correct_position": 1
+    },
+    {
+      "id": "q2",
+      "type": "mcq",
+      "objective_ref": "Name the three gap types (format drift, constraint overflow, task drift) and match each to its correct fix.",
+      "correct_position": 3
+    },
+    {
+      "id": "q3",
+      "type": "mcq",
+      "objective_ref": "Apply the four-step iteration cycle (test → name the gap → patch the failing part → retest) to a given spec and test result.",
+      "correct_position": 0
+    },
+    {
+      "id": "q4",
+      "type": "mcq",
+      "objective_ref": "Explain the 'minimum viable patch' principle: change only the part of the spec that caused the failure.",
+      "correct_position": 2
+    },
+    {
+      "id": "q5",
+      "type": "mcq",
+      "objective_ref": "Decide when to stop iterating: full pass achieved, or diminishing returns accepted with a documented limitation.",
+      "correct_position": 1
+    },
+    {
+      "id": "q6",
+      "type": "mcq",
+      "objective_ref": "Name the three gap types (format drift, constraint overflow, task drift) and match each to its correct fix.",
+      "correct_position": 3
+    },
+    {
+      "id": "q7",
+      "type": "short_answer",
+      "objective_ref": "Apply the four-step iteration cycle (test → name the gap → patch the failing part → retest) to a given spec and test result.",
+      "correct_position": null
+    }
+  ]
+}

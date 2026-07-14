@@ -1,0 +1,24 @@
+{
+  "verdict": "pass",
+  "findings": [
+    {
+      "code": "looks_good",
+      "where": "full diagram",
+      "detail": "Five-node LR pipeline correctly represents the three AI eras with two bridging milestone nodes. All labels are plain-language, ≤4 words in the bold heading, with 12px subtitle spans for date ranges and bottleneck detail. Edge labels are single-line plain text. No concept drift — no LLMs, Transformers, or topics 3.2+ content present. Color tiers: start (blue) for era 1, hitl (yellow) for the two historical turning-point nodes, auto (purple) for era 2 (mid-stage), done (green) for era 3. Single strict path, no branching."
+    },
+    {
+      "code": "png_not_rendered",
+      "where": "diagram.png",
+      "detail": "mmdc is not available in this environment. PNG could not be rendered automatically. Visual checks (overlaps, truncation, edge label collision) could not be performed on actual pixels. Run: mmdc -i <topic-dir>/artifacts/diagram.mmd -o <topic-dir>/artifacts/diagram.png -w 1400 -b transparent to produce the PNG before HITL #3 review. Source-level pre-flight passed on all checks."
+    }
+  ],
+  "stats": {
+    "nodes": 5,
+    "edges": 4,
+    "layout": "flowchart LR (pipeline)",
+    "labels": ["Symbolic AI", "AI Winter", "Machine Learning", "AlexNet 2012", "Deep Learning"],
+    "png_path": null,
+    "png_dims": null
+  },
+  "cycles": 2
+}

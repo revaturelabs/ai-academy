@@ -1,0 +1,13 @@
+{
+  "passed": true,
+  "checks": {
+    "positional_bias": { "passed": true, "distribution": {"0": 2, "1": 1, "2": 2, "3": 1}, "max_share": 0.33 },
+    "length_bias": { "passed": true, "longest_correct_rate": 0.0, "baseline": 0.25, "flagged_questions": [] },
+    "distractor_plausibility": { "passed": true, "absurd_rate": 0.0, "weakest_questions": [] },
+    "objective_coverage": { "passed": true, "uncovered_objectives": [], "orphan_questions": [] },
+    "beginner_scope": { "passed": true, "notes": "All stems plain-language; |A|, A·B, magnitude grounded in corpus 5.3 / prerequisite 6.6. No undefined jargon. All questions on-headline; no out-of-scope items; distractors are plausible beginner misconceptions." }
+  },
+  "auto_correction_applied": { "shuffle_round_2": false },
+  "verdict": "Pass — all checks clean. Positional max_share 0.33; length-bias longest_correct_rate 0.00 (prior cycle-1 length-bias failure resolved: in every MCQ the correct answer is now at or below the 1.20x distractor-mean threshold); absurd_rate 0.00; all 5 LOs covered with no orphans; all questions on-scope and beginner-fair.",
+  "at": "2026-06-19T00:00:00Z"
+}

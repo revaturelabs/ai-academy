@@ -1,0 +1,55 @@
+{
+  "topic_id": "9.1",
+  "generated_at": "2026-06-11T00:00:00Z",
+  "format": "gift",
+  "question_count": 6,
+  "$bias_defense_applied": true,
+  "$shuffle_seed": "152",
+  "correct_position_distribution": [2, 0, 3, 1, 0, 2],
+  "bias_defense_notes": {
+    "max_share": 0.333,
+    "max_share_threshold": 0.40,
+    "all_positions_used": true,
+    "positions_used": [0, 1, 2, 3],
+    "length_bias_violations": 0,
+    "length_bias_threshold_pct": 120
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "type": "mcq",
+      "objective_ref": "Explain what System 1 thinking is and describe its three defining characteristics: speed, automaticity, and low effort.",
+      "correct_position": 2
+    },
+    {
+      "id": "q2",
+      "type": "mcq",
+      "objective_ref": "Give at least two everyday examples of System 1 thinking in action.",
+      "correct_position": 0
+    },
+    {
+      "id": "q3",
+      "type": "mcq",
+      "objective_ref": "Distinguish System 1 from System 2 thinking at a high level.",
+      "correct_position": 3
+    },
+    {
+      "id": "q4",
+      "type": "mcq",
+      "objective_ref": "Explain what a cognitive heuristic is and why heuristics are useful.",
+      "correct_position": 1
+    },
+    {
+      "id": "q5",
+      "type": "mcq",
+      "objective_ref": "Describe why System 1's speed and automation can sometimes produce errors.",
+      "correct_position": 0
+    },
+    {
+      "id": "q6",
+      "type": "mcq",
+      "objective_ref": "Identify one way System 1 thinking is relevant when a person evaluates AI-generated output.",
+      "correct_position": 2
+    }
+  ]
+}

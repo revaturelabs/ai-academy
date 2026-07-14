@@ -1,0 +1,41 @@
+$CATEGORY: CIT/M2/week-3/3-6-temperature-and-sampling-why-the-same-question-gives-differe
+
+::q1:: At each step of generating text, what does a Large Language Model (LLM) actually output before a token is chosen? {
+=It scores every token in its vocabulary and samples from those scores#Correct — the model produces a probability distribution over all tokens, then samples one.
+~It looks up the most common next word in a dictionary#No — LLMs do not use a dictionary; they compute scores from learned parameters.
+~It outputs the single word with the highest training frequency#No — the model samples from a distribution, it does not simply replay the most frequent word.
+~It randomly picks any word in the English language#No — the selection is weighted by computed probabilities, not uniform randomness.
+#### Tests understanding of the probability distribution at each generation step (corpus §5.1).
+}
+
+::q2:: What happens to an LLM's output when you raise the temperature from 0.1 to 1.5? {
+~It increases the number of tokens the model can choose from#No — temperature reshapes existing probabilities; it does not expand the vocabulary.
+~It makes the model retrieve answers from the internet instead#No — temperature has nothing to do with internet access; the model's knowledge is fixed.
+=It spreads the distribution across more tokens, making output more varied#Correct — higher temperature flattens the probability wheel, giving lower-ranked tokens a real chance.
+~It resets the model's memory of previous tokens in the conversation#No — temperature does not affect the context window or memory.
+#### Tests the directional effect of changing temperature (corpus §5.2).
+}
+
+::q3:: What makes top-p (nucleus) sampling different from top-k sampling? {
+~It always selects exactly p tokens from the vocabulary, making it a fixed-size method#No — top-p is adaptive, not fixed; only top-k uses a fixed count.
+=Its candidate pool adapts in size — it adds tokens until their cumulative probability reaches p#Correct — the nucleus grows or shrinks with model confidence, unlike the fixed k in top-k.
+~It picks randomly from the entire vocabulary with equal probability for every token#No — that would be uniform random sampling; nucleus sampling still weights by probability.
+~It keeps only the top k tokens, discarding all others regardless of model confidence#No — that describes top-k sampling, not top-p.
+#### Tests the distinguishing feature of nucleus sampling vs. top-k (corpus §5.3).
+}
+
+::q4:: A developer is building a tool that auto-completes code. Which temperature setting is most appropriate, and why? {
+~High temperature, because computers work better with varied code suggestions#No — code must be syntactically correct; high temperature increases the chance of invalid output.
+~Temperature 1.5, because code generation benefits from maximum creative exploration#No — temperatures above 1.5 tend to produce incoherent output; code needs precision, not creativity.
+~Medium temperature, because all programming tasks need a balance of randomness#No — code tasks specifically benefit from low temperature where correctness matters most.
+=Low temperature, because code must be syntactically correct and predictable#Correct — low temperature concentrates probability on well-formed tokens and produces consistent output.
+#### Tests appropriate temperature selection for a structured, accuracy-critical task (corpus §5.3–5.4).
+}
+
+::q5:: A user sends the exact same prompt to an LLM twice in a row and gets two different responses. What best explains this? {
+~The model clears its memory of the previous prompt after each reply is generated#No — each run is independent, but the cause of variation is sampling randomness, not memory clearing.
+~The internet connection speed varies between runs, altering which answer the model picks#No — LLMs generate from learned parameters, not live internet data; connection speed is irrelevant.
+=Sampling introduces randomness, so the token chosen at each step can differ each run#Correct — the probability wheel can land on different tokens each spin, producing different continuations.
+~The model updates its internal training weights between the two separate runs#No — model weights are fixed after training; they do not change between user requests.
+#### Tests why identical prompts can produce different outputs (corpus §5.1, §5.5).
+}

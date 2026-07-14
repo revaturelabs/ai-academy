@@ -1,0 +1,60 @@
+$CATEGORY: CIT/M5/week-11/11-6-for-loops-repeating-an-action-across-a-list
+
+::q1:: Given `scores = [70, 85, 55]`, what does `scores[2]` evaluate to? {
+~70#Incorrect — index 2 is the third element, not the first. Python uses zero-based indexing: index 0 = 70, index 1 = 85, index 2 = 55.
+~85#Incorrect — 85 is at index 1. Remember index 0 is the first element, so index 2 is the third.
+=55#Correct — list indexing is zero-based: index 0 = 70, index 1 = 85, index 2 = 55 [1][5].
+~IndexError — index 2 is out of range for a three-element list.#Incorrect — a three-element list has valid indices 0, 1, and 2. IndexError only occurs when the index is equal to or greater than the list length.
+#### Tests LO1: list index access (zero-based). See §5.1.
+}
+
+::q2:: What is the output of the following code?
+```
+for n in [3, 1, 4]:
+    print(n)
+``` {
+=3 on the first line, 1 on the second, 4 on the third.#Correct — the for loop visits each element of the list in order, printing each one [1][2][3].
+~1 on the first line, 3 on the second, 4 on the third.#Incorrect — for loops iterate in the order elements appear in the list, not sorted order.
+~4 on the first line, 1 on the second, 3 on the third.#Incorrect — for loops iterate from the first element to the last, not reversed.
+~3, 1, 4 all on a single line separated by commas.#Incorrect — each call to print() outputs on its own line; this would require print(3, 1, 4) or a join.
+#### Tests LO2: predict for loop output over a list. See §5.2.
+}
+
+::q3:: Which of the following correctly describes what `range(4)` generates? {
+~1, 2, 3, 4#Incorrect — range() starts at 0, not 1. range(4) generates 0, 1, 2, 3.
+=0, 1, 2, 3#Correct — range(n) always starts at 0 and generates n values, stopping before n [1][4].
+~0, 1, 2, 3, 4#Incorrect — range(4) generates 4 values; it stops before 4, so 4 itself is not included.
+~4, 3, 2, 1, 0#Incorrect — range(4) generates values in ascending order from 0; to reverse, you would use range(4, -1, -1).
+#### Tests LO4: range(n) semantics — zero-based, stops before n. See §5.3.
+}
+
+::q4:: A student writes the following code. What error did they make?
+```
+total = 0
+for mark in [80, 70, 90]:
+    total = 0
+    total += mark
+print(total)
+``` {
+~The loop variable should be named `marks` not `mark`.#Incorrect — the loop variable name is chosen by the programmer; mark is the conventional singular form and is correct.
+~`total += mark` is invalid syntax; you must write `total = total + mark` in full.#Incorrect — `+=` is valid Python shorthand for total = total + mark; both forms work identically.
+~The list should be stored in a variable before the loop, not written inline.#Incorrect — Python allows inline list literals inside for loops; this is not an error.
+=`total = 0` inside the loop resets on each pass — total only holds the last mark.#Correct — the accumulator must be initialised before the loop. As written, total resets to 0 on every pass so it only holds the last mark (90) after the loop [1][2].
+#### Tests LO5: accumulator pattern — initialise before the loop, not inside it. See §5.4.
+}
+
+::q5:: What does `len([10, 20, 30, 40])` return? {
+=4#Correct — len() returns the number of elements in the list; this list has four elements [1][5].
+~3#Incorrect — len() counts elements, not the last index. A four-element list has indices 0–3 but length 4.
+~40#Incorrect — len() counts the number of elements, not the largest value in the list.
+~IndexError — len() cannot be used on a list, only on a string.#Incorrect — len() works on any sequence including lists and strings; it returns the element count.
+#### Tests LO1 extended: len() on a list. See §5.1.
+}
+
+::q6:: A for loop is used to count how many values in a list are greater than 50. Which code correctly implements this? {
+~`count = 0` inside the loop, `if value > 50: count += 1` inside the loop.#Incorrect — placing `count = 0` inside the loop resets the counter on every iteration; only the final value (1 or 0) is retained.
+~`count += 1` before the loop, `if value > 50: count = 0` inside the loop.#Incorrect — this initialises the count incorrectly and resets it to zero when a match is found — the opposite of what is needed.
+=`count = 0` before the loop, `if value > 50: count += 1` inside the loop.#Correct — the accumulator (count) must be initialised to zero before the loop; the if-statement inside the loop increments it only when the condition is met [1][2].
+~`count = 0` after the loop, `count += 1` inside the loop without any if-statement.#Incorrect — initialising count after the loop overwrites the accumulated total with zero; the result would always be 0.
+#### Tests LO5 + LO2: counting accumulator with conditional inside a for loop. See §5.4 and §5.5.
+}

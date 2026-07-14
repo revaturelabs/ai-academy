@@ -1,0 +1,41 @@
+$CATEGORY: CIT/M1/week-1/1.1-what-is-computation
+
+::1.1-Q1:: A student says\: "Computation is something that only happens inside a computer or phone." Which response best corrects this idea? {
+~Computation does happen only inside computers, but very old computers were mechanical, not electronic.#No — this still limits computation to machines; the point is that any process with defined steps producing a result is computation, regardless of device.
+=Computation is any process that takes information in, applies defined steps to it, and produces a result — a vending machine, a traffic light, and a human cashier all do this.#Correct — the I/P/O structure with defined steps is what makes something computation; no silicon chip is required.
+~Computation requires electricity because the steps need a power source to run.#No — a human doing long division by hand, or a mechanical music box, both perform computation without electricity driving the process.
+~A computer is the only device precise enough to follow defined steps without making mistakes.#No — what matters is that the steps are defined and unambiguous, not what device follows them; human computers calculated artillery tables reliably for decades.
+#### Tests LO1 and LO3 — the plain-language meaning of computation and the idea that it extends beyond electronic devices (corpus §5.1, §5.4).
+}
+
+::1.1-Q2:: What is the correct set of three parts that must be present in every computation? {
+~Question, method, conclusion#No — these are parts of an argument or proof, not the structural parts of a computation.
+~Data, storage, retrieval#No — storage and retrieval describe how information is kept, not the transformation structure of a computation.
+~Problem, solution, feedback#No — feedback is an optional loop in some systems; the core structure of computation is not problem/solution/feedback.
+=Input, process, output#Correct — every computation starts with information going in (input), applies defined steps to it (process), and produces a result (output).
+#### Tests LO4 — identifying the three structural parts of any computation (corpus §5.1).
+}
+
+::1.1-Q3:: Which of the following is the best example of a "defined step" in a computation? {
+=Add exactly 2 grams of salt#Correct — this is specific and unambiguous; any person or machine following this instruction will do the same thing every time.
+~Add a pinch of salt#No — "a pinch" is vague; two people would add different amounts, so this cannot be part of a reliable computation.
+~Do the clever bit and sort the data#No — "do the clever bit" gives no specific instruction; it is too vague to be a step a machine could follow.
+~Make the result look reasonable#No — "look reasonable" requires human judgment and has no precise meaning; a machine cannot follow this instruction reliably.
+#### Tests LO2 and the concept of "defined steps" — specific, unambiguous instructions are required for computation (corpus §5.2).
+}
+
+::1.1-Q4:: A friend asks you to name one task a computer currently cannot compute. Which answer is most accurate based on this topic? {
+~Converting a temperature from Celsius to Fahrenheit#No — this is fully computable; there is a clear arithmetic formula with defined steps that always produces the correct result.
+~Finding the shortest route between two cities#No — this is fully computable; defined steps exist and the process always finishes with a correct result.
+=Deciding whether any given poem is beautiful#Correct — there are no agreed, precise steps that always produce a single correct answer; no finite set of defined steps can settle this for every poem.
+~Sorting a list of names alphabetically#No — this is fully computable; clear comparison steps exist and the process always finishes.
+#### Tests LO5 — distinguishing tasks that are computable from tasks that currently are not (corpus §5.3).
+}
+
+::1.1-Q5:: A GPS app takes your starting location and destination, calculates a route, and displays turn-by-turn directions. Which part of this example is the "process"? {
+~Your starting location and destination#No — these are the information you put in; that makes them the input, not the process.
+=The steps the app uses to calculate which route to recommend#Correct — the process is the defined set of steps applied to the input; here it is the calculation the app performs to turn location data into a recommended route.
+~The turn-by-turn directions displayed on screen#No — what comes out at the end is the output, not the process.
+~The GPS satellite signals the phone receives#No — satellite signals are part of the raw information the app receives; that is input, not the steps applied to it.
+#### Tests LO4 — identifying each part of the input → process → output structure in a real-world example (corpus §5.1, §5.4).
+}

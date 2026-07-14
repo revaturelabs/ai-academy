@@ -1,0 +1,43 @@
+{
+  "topic_id": "14.6",
+  "captured_at": "2026-06-15T00:00:00Z",
+  "captured_by": "bhuvaneshwarim@revature.com",
+  "resources_source": "human",
+  "resources": [
+    {
+      "type": "url",
+      "value": "https://react-lm.github.io",
+      "role": "primary",
+      "source": "human",
+      "notes": ""
+    },
+    {
+      "type": "url",
+      "value": "https://arxiv.org/abs/2210.03629",
+      "role": "primary",
+      "source": "human",
+      "notes": "Original ReAct paper — Yao et al. 2022"
+    },
+    {
+      "type": "url",
+      "value": "https://www.promptingguide.ai/techniques/react",
+      "role": "primary",
+      "source": "human",
+      "notes": ""
+    },
+    {
+      "type": "url",
+      "value": "https://blog.langchain.dev/react-agent",
+      "role": "primary",
+      "source": "human",
+      "notes": ""
+    },
+    {
+      "type": "url",
+      "value": "https://towardsdatascience.com/react-agent-pattern",
+      "role": "primary",
+      "source": "human",
+      "notes": ""
+    }
+  ]
+}

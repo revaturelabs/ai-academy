@@ -1,0 +1,39 @@
+{
+  "topic_id": "12.2",
+  "artifact": "diagram",
+  "critic": "diagram-critic",
+  "cycle": 1,
+  "at": "2026-06-14T00:00:00Z",
+  "passed": true,
+  "checks": {
+    "syntax_valid": true,
+    "node_count": 8,
+    "node_count_in_range": true,
+    "plain_language_labels": true,
+    "both_panels_present": true,
+    "scope_clean": true,
+    "beginner_readable": true
+  },
+  "hard_failures": [],
+  "soft_findings": [
+    {
+      "code": "node_compression",
+      "where": "A4 — Value Returned to Caller",
+      "detail": "Node A4 combines the 'return keyword fires' step and the 'caller receives result' step into a single node to stay within the 8-node ceiling. The subtitle 'return 74.0 → result = 74.0' makes both steps legible. Beginner readability is preserved; no information is lost."
+    }
+  ],
+  "verdict": "PASS — 8 nodes across two symmetric side-by-side panels; all labels trace to §5 Core Concepts (parameter, argument, function body, return keyword, implicit None); both WITH-return and WITHOUT-return contrast cases present; linear single-path flow in each panel; scope clean (no advanced Python constructs); beginner-readable edge labels explain each transition step; subgraph backgrounds differentiated (blue-tinted PANEL_A, red-tinted PANEL_B) for visual contrast. PNG render via 'mmdc -i <mmd_path> -o <png_path> -w 1400 -b transparent' must be executed in the local environment; source structure mirrors the proven topic 12-1 golden pattern.",
+  "preflight": {
+    "mermaid_parse": "pass — flowchart LR top-level, two direction-TB subgraphs, :::classDef suffix notation, style declarations for subgraph backgrounds, classDef block at end. Mirrors the proven 12-1 diagram.mmd structure.",
+    "node_count": "pass — 8 nodes total (A1–A4 in PANEL_A, B1–B4 in PANEL_B), within 6–8 range",
+    "label_discipline": "pass — all bold labels are 3–4 words maximum; no bare unexplained acronyms; all labels trace to §5 Core Concepts",
+    "concept_fidelity": "pass — nodes cover: call site (argument), parameter slot, function body, return keyword, implicit None. No downstream concepts (decorators, *args, **kwargs, closures, classes) present.",
+    "jargon_label": "pass — 'Parameter Slot' and 'Implicit None returned' are corpus-defined terms from §5; no unexplained acronyms",
+    "title_discipline": "pass — governing concept 'Parameters and Return Values — What Goes In and What Comes Out' in config title: field, not a node or ghost annotation",
+    "single_path": "pass — A1→A2→A3→A4 is a clean linear flow; B1→B2→B3→B4 is a clean linear flow; no branching within either panel",
+    "both_panels": "pass — PANEL_A (WITH return) and PANEL_B (WITHOUT return) both present; contrast is the central pedagogical point of the diagram intent",
+    "color_discipline": "pass — callSite (#4A90D9 blue), param (#7CB9E8 light blue), body (#E8F4FD pale blue), retVal (#27AE60 green), noneVal (#E74C3C red) — all match the task-specified classDef palette; subgraph backgrounds differentiated",
+    "scope_discipline": "pass — all 8 nodes map to §5 Core Concepts phrases for topic 12.2 only"
+  },
+  "render_note": "PNG render via 'mmdc -i content/m5-python-for-ai-pe-vc-and-rag/week-12/1-functions-and-data-structures/12-2-parameters-and-return-values-defining-what-goes-in-and-what/artifacts/diagram.mmd -o content/m5-python-for-ai-pe-vc-and-rag/week-12/1-functions-and-data-structures/12-2-parameters-and-return-values-defining-what-goes-in-and-what/artifacts/diagram.png -w 1400 -b transparent' must be executed in the local environment. Visual checks (overlap, truncation, edge crossings, whitespace balance, subtitle legibility) apply once rendered."
+}

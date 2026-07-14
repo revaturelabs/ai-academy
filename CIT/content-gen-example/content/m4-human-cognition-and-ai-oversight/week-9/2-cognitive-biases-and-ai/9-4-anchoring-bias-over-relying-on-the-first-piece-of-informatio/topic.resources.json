@@ -1,0 +1,30 @@
+{
+  "topic_id": "9.4",
+  "captured_at": "2026-06-12T00:00:00Z",
+  "captured_by": "vishnu.vardhan@revature.com",
+  "resources_source": "web_search",
+  "web_search_query": "anchoring bias cognitive psychology over-relying first information received",
+  "resources": [
+    {
+      "type": "url",
+      "value": "https://www.simplypsychology.org/what-is-the-anchoring-bias.html",
+      "role": "primary",
+      "source": "web_search",
+      "notes": "Canonical psychology explainer: definition, adjustment heuristic, Tversky & Kahneman original experiments"
+    },
+    {
+      "type": "url",
+      "value": "https://thedecisionlab.com/biases/anchoring-bias",
+      "role": "supporting",
+      "source": "web_search",
+      "notes": "Decision science perspective: real-world examples, why anchoring persists, practical mitigation"
+    },
+    {
+      "type": "url",
+      "value": "https://arxiv.org/abs/1911.12275",
+      "role": "supporting",
+      "source": "web_search",
+      "notes": "Large-scale empirical experiment quantifying anchoring bias effect size across domains"
+    }
+  ]
+}

@@ -1,0 +1,15 @@
+﻿flowchart LR
+    N1["High accuracy observed\nsystem performs correctly"]:::start
+    N2["Trust rises\noperator confidence grows"]:::hitl
+    N3["Monitoring effort drops\noperator checks less"]:::hitl
+    N4["Vigilance decays\nerror-spotting degrades"]:::hitl
+    N5["System failure occurs\ncorner case or novel input"]:::auto
+    N6["Human check fails\nshallow monitoring misses it"]:::hitl
+    N7["Error becomes real harm\nmissed diagnosis or approval"]:::done
+
+    N1 --> N2 --> N3 --> N4 --> N5 --> N6 --> N7
+
+    classDef start fill:#a5d8ff,stroke:#4a9eed,stroke-width:2px,color:#0b1f3a
+    classDef hitl fill:#fff3bf,stroke:#f59e0b,stroke-width:3px,color:#0b1f3a
+    classDef auto fill:#d0bfff,stroke:#8b5cf6,stroke-width:2px,color:#0b1f3a
+    classDef done fill:#b2f2bb,stroke:#22c55e,stroke-width:2px,color:#0b1f3a

@@ -1,0 +1,20 @@
+{
+  "type": "module",
+  "position": 3,
+  "title": "Professional Coding Discipline",
+  "slug": "3-professional-coding-discipline",
+  "course_code": "M5",
+  "course_slug": "m5-python-for-ai-pe-vc-and-rag",
+  "week_nums": [
+    11
+  ],
+  "session_name_by_week": {
+    "11": "Python Foundations I"
+  },
+  "narrative_seed_by_week": {
+    "11": "Python’s role — the orchestration layer that connects your specification to an AI system / Google Colab setup — no installation, runs in browser / Variables and data types — string, int, float, bool — with everyday analogies / If/else — making decisions in code, mirrors Week 1 flowcharts / For loops — doing something repeatedly / Spec-first discipline — describe what you want in plain English before asking AI to code / Golden rule — never run code you cannot explain line by line"
+  },
+  "lab_activity_seed_by_week": {
+    "11": "Script: student name + 3 marks → prints average and grade (A/B/C/F) / Step 1: write the spec. Step 2: ask Claude to implement. Step 3: explain every line. Step 4: test 3 edge cases / Journal Entry #6"
+  }
+}

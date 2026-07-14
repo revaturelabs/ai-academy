@@ -1,0 +1,73 @@
+{
+  "topic_id": "14.4",
+  "stage": "topic_artifacts_approved",
+  "gates": {
+    "resources_captured": true,
+    "corpus_generated": true,
+    "corpus_critic_passed": true,
+    "corpus_human_approved": true,
+    "reading_generated": true,
+    "reading_critic_passed": true,
+    "quiz_generated": true,
+    "quiz_critic_passed": true,
+    "diagram_generated": true,
+    "diagram_critic_passed": true,
+    "topic_artifacts_human_approved": true,
+    "week_human_approved": true,
+    "module_drift_passed": true,
+    "course_drift_passed": true
+  },
+  "history": [
+    {
+      "timestamp": "2026-06-15T00:00:00Z",
+      "stage": "awaiting_corpus",
+      "note": "Captured 3 resources (source=web_search)"
+    },
+    {
+      "timestamp": "2026-06-15T00:00:00Z",
+      "stage": "awaiting_corpus_critic",
+      "note": "Corpus generated (3050 words, standard profile, diagram=true)"
+    },
+    {
+      "timestamp": "2026-06-15T00:00:00Z",
+      "stage": "awaiting_corpus_human_review",
+      "note": "Corpus critic passed (soft: word count ~2840, 5% below floor)"
+    },
+    {
+      "timestamp": "2026-06-15T00:00:00Z",
+      "stage": "corpus_approved",
+      "note": "All 9 sections approved. Profile: standard. Diagram: true."
+    },
+    {
+      "timestamp": "2026-06-15T00:00:00Z",
+      "stage": "awaiting_diagram_critic",
+      "note": "diagram.mmd written (8 nodes, flowchart TD). PNG rendered 35KB."
+    },
+    {
+      "timestamp": "2026-06-15T00:00:00Z",
+      "stage": "awaiting_diagram_critic",
+      "note": "Diagram critic passed. Visual: 8 nodes, no overlaps, labels readable, palette correct."
+    },
+    {
+      "timestamp": "2026-06-15T00:00:00Z",
+      "stage": "awaiting_topic_artifacts_review",
+      "note": "Reading (1390w, 7min) + quiz (5q, all LOs) critics passed. All 3 artifacts ready for HITL #3."
+    },
+    {
+      "timestamp": "2026-06-15T00:00:00Z",
+      "stage": "topic_artifacts_approved",
+      "note": "HITL #3 approved. Reading 1390w/7min, quiz 5q, diagram 8-node. No carry-over failures."
+    },
+    {
+      "timestamp": "2026-06-15T00:00:00Z",
+      "stage": "topic_artifacts_approved",
+      "note": "HITL #3 approved. Reading 1390w/7min, quiz 5q, diagram 8-node. No carry-over failures."
+    },
+    {
+      "at": "2026-06-23T17:39:31Z",
+      "op": "set",
+      "gate": "course_drift_passed",
+      "value": true
+    }
+  ]
+}

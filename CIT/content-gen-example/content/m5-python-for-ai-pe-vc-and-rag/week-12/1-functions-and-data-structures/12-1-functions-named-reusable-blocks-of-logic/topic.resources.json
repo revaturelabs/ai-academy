@@ -1,0 +1,30 @@
+{
+  "topic_id": "12.1",
+  "captured_at": "2026-06-13T00:00:00Z",
+  "captured_by": "vishnu.vardhan@revature.com",
+  "resources_source": "web_search",
+  "web_search_query": "Python functions named reusable blocks beginner tutorial",
+  "resources": [
+    {
+      "type": "url",
+      "value": "https://realpython.com/defining-your-own-python-function/",
+      "role": "primary",
+      "source": "web_search",
+      "notes": "Real Python comprehensive guide: def syntax, parameters, return values, scope — best canonical beginner resource"
+    },
+    {
+      "type": "url",
+      "value": "https://www.w3schools.com/python/python_functions.asp",
+      "role": "supporting",
+      "source": "web_search",
+      "notes": "W3Schools interactive beginner tutorial with live examples"
+    },
+    {
+      "type": "url",
+      "value": "https://docs.python.org/3/tutorial/index.html",
+      "role": "supporting",
+      "source": "web_search",
+      "notes": "Official Python Software Foundation tutorial — authoritative reference"
+    }
+  ]
+}

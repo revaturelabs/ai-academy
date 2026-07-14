@@ -1,0 +1,23 @@
+---
+title: "Q3 — Who is accountable if this fails?"
+theme: base
+themeVariables:
+  primaryColor: "#a5d8ff"
+  primaryBorderColor: "#4a9eed"
+  lineColor: "#555"
+---
+flowchart TB
+    DEV["<b>AI Developer</b><br/><span style='font-size:11px;color:#3b0764'>model design · training data · documented limitations</span>"]:::auto
+    DEP["<b>AI Deployer</b><br/><span style='font-size:11px;color:#3b0764'>deployment context · workflow design · staff training</span>"]:::auto
+    OPR["<b>Operator</b><br/><span style='font-size:11px;color:#78350f'>specific action on AI output<br/>last human before output reaches the world</span>"]:::hitl
+    CHK{"<b>Name the accountable person</b><br/><span style='font-size:11px;color:#78350f'>Authority to approve · Knowledge of risk · Nameable</span>"}:::hitl
+    USR["<b>End User acts</b><br/><span style='font-size:11px;color:#14532d'>accountability named — safe to proceed</span>"]:::done
+    ESC["<b>Escalate — do not act alone</b><br/><span style='font-size:11px;color:#78350f'>no valid accountable person in the room</span>"]:::hitl
+
+    DEV --> DEP --> OPR --> CHK
+    CHK -->|"All 3 criteria met"| USR
+    CHK -->|"Any criterion missing"| ESC
+
+    classDef auto fill:#d0bfff,stroke:#8b5cf6,color:#3b0764
+    classDef hitl fill:#fff3bf,stroke:#f59e0b,stroke-width:3px,color:#78350f
+    classDef done fill:#b2f2bb,stroke:#22c55e,color:#14532d

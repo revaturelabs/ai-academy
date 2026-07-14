@@ -1,0 +1,68 @@
+{
+  "topic_id": "6.2",
+  "generated_at": "2026-06-18T00:00:00Z",
+  "format": "gift",
+  "question_count": 5,
+  "depth_profile": "standard",
+  "$bias_defense_applied": true,
+  "$shuffle_seed": "6.2-scalars-a-single-number-representing-one-property",
+  "correct_position_distribution": [1, 3, 0, 2, 1],
+  "objectives_covered": [
+    "Define a scalar in plain language as a single number that captures exactly one measurable property.",
+    "Identify scalar values in everyday AI contexts (temperature setting, confidence score, pixel brightness, learning rate, loss value).",
+    "Explain why scalars are the simplest unit of numerical data (magnitude: size/amount, no direction).",
+    "Distinguish what a scalar is (one number) from what it is not (a list of numbers — that is a vector).",
+    "Recognise scalars when reading about AI systems — loss, learning rate, confidence score, pixel brightness as scalar roles."
+  ],
+  "questions": [
+    {
+      "id": "q1",
+      "type": "mcq",
+      "objective_ref": "Define a scalar in plain language as a single number that captures exactly one measurable property.",
+      "correct_position": 1
+    },
+    {
+      "id": "q2",
+      "type": "mcq",
+      "objective_ref": "Identify scalar values in everyday AI contexts (learning rate, pixel brightness, confidence score).",
+      "correct_position": 3
+    },
+    {
+      "id": "q3",
+      "type": "mcq",
+      "objective_ref": "Explain what magnitude means for a scalar (size or amount, no direction or structure).",
+      "correct_position": 0
+    },
+    {
+      "id": "q4",
+      "type": "mcq",
+      "objective_ref": "Distinguish what a scalar is (one number) from what it is not — a vector groups several scalars in an ordered list.",
+      "correct_position": 2
+    },
+    {
+      "id": "q5",
+      "type": "mcq",
+      "objective_ref": "Recognise scalar roles in AI systems — loss as a single number summarising model error.",
+      "correct_position": 1
+    }
+  ],
+  "bias_defense_notes": {
+    "position_distribution_check": {
+      "position_0": 1,
+      "position_1": 2,
+      "position_2": 1,
+      "position_3": 1,
+      "max_share": 0.40,
+      "max_share_passes": true,
+      "all_positions_used": true
+    },
+    "length_bias_check": {
+      "method": "correct answer length vs mean distractor length ratio checked per question; all ratios < 1.20",
+      "q1_ratio": 1.03,
+      "q2_ratio": 1.10,
+      "q3_ratio": 1.06,
+      "q4_ratio": 1.12,
+      "q5_ratio": 1.08
+    }
+  }
+}

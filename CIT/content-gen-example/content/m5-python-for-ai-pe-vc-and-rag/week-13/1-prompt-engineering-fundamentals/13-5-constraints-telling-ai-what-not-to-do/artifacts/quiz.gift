@@ -1,0 +1,54 @@
+$CATEGORY: CIT/M5/week-13/13-5-constraints-telling-ai-what-not-to-do
+
+::q1:: Which statement best describes what a constraint does in a prompt? {
+~A constraint tells the model the specific output format it must always produce, overriding the task description.#Not quite — format constraints are one type, but a constraint more broadly restricts what the model may produce.
+~A constraint provides the model with example input-output pairs so it knows what good output looks like.#No — that describes few-shot prompting from topic 13.3, not a constraint.
+=A constraint is a rule that restricts the model's output, defining limits on what it must not produce.#Correct — a constraint narrows the model's behaviour by ruling out unwanted outputs.
+~A constraint sets the model's persona and tone by telling it who it is in the conversation.#No — that describes role assignment from topic 13.2, not a constraint.
+#### Tests LO 1 — the definition of a constraint and how it differs from positive instructions (corpus §5.1).
+}
+
+::q2:: A developer writes\: "Only answer questions about the HR leave-policy document. If the user asks about anything else, reply\: 'I can only help with leave-policy questions.'" Which type of constraint is this? {
+=A scope limit, because it defines an entire permitted zone and implicitly excludes everything outside it.#Correct — a scope limit draws a boundary around the topics the model may engage with at all.
+~A format constraint, because it controls the shape and length of the model's responses.#No — format constraints control things like word count, use of bullet points, or prose versus lists.
+~A tone constraint, because it tells the model what register and emotional character to use.#No — tone constraints control things like formality, empathy, or whether to use humour.
+~A content exclusion, because it forbids the model from discussing specific subjects.#Close but not the best fit — a content exclusion blocks a specific named thing, while a scope limit defines the whole permitted zone.
+#### Tests LO 2 — identifying the four constraint types, specifically scope limit (corpus §5.4).
+}
+
+::q3:: A student writes the constraint "Don't be too verbose" in their prompt but keeps getting long responses. What is the most likely reason this constraint is not working well? {
+~The constraint is placed in the user message instead of the system prompt, so it only applies for one turn.#Placement matters for persistence, but the question asks why this specific wording keeps failing — the core issue is wording.
+~The model ignores all "do not" instructions when they appear without a few-shot example to demonstrate the rule.#No — few-shot examples help, but "do not" instructions can work; the issue here is that the constraint is vague, not that examples are missing.
+~The student forgot to assign a role before adding the constraint, so the model has no context to apply the rule.#No — role assignment affects persona, not whether a length rule is followed; the problem is the vagueness of the rule itself.
+=The constraint is vague — "too verbose" has no clear pass/fail test, so the model cannot reliably judge when it has complied.#Correct — vague negations leave the model to guess, and different runs will guess differently (corpus §5.2, §5.3).
+#### Tests LO 3 and LO 5 — why vague negations fail and the need for measurable rules via positive reframe (corpus §5.3, §5.5 pitfalls).
+}
+
+::q4:: Why do language models sometimes fail to follow a "do not" instruction even when it is clearly written in the prompt? {
+~Models only follow instructions written as positive commands; they are designed to skip any sentence that begins with "do not" or "don't".#No — models can process "do not" instructions; the reliability issue is statistical and contextual, not a hard skip rule.
+=Models see far more training examples of text that *does* a thing than text that explicitly avoids it, so the negated form activates the concept rather than its absence.#Correct — the statistical weight of the concept overrides the negation word, making positive-reframe more reliable (corpus §5.2).
+~Models treat every "do not" as a low-priority style hint rather than a rule, and always prefer the user's explicit request over it.#No — models do not rank instruction types this way; the issue is how negation is processed statistically, not a priority override.
+~The system prompt is read only once per session, so a "do not" instruction set early is forgotten by the time the user sends a message.#No — system prompts are included in the context for every turn; they are not discarded after the first message.
+#### Tests LO 4 — the explanation for why negation is less reliable than positive instructions (corpus §5.2).
+}
+
+::q5:: A prompt contains these two constraints\: "Always provide a recommendation for the user's question" and "Do not make any recommendations." What problem do these two rules create? {
+~Constraint overload — too many constraints have been added, causing the model to drop the later ones silently.#No — overload is a pitfall caused by stacking too many constraints (five to seven or more), not by having just two that conflict.
+~Scope creep — the constraints define a topic area that is too broad, causing the model to wander into unrelated subjects.#No — scope creep relates to topic coverage, not to conflicting instructions within the same prompt.
+=Contradiction — both constraints fire on the same request, leaving the model's behaviour unpredictable because it cannot satisfy both at once.#Correct — contradictory constraints cause unpredictable output; the model cannot comply with both simultaneously (corpus §5.8 best practices).
+~Vague negation — "do not make any recommendations" is too vague for the model to apply reliably without a positive reframe.#No — "do not make any recommendations" is actually specific and measurable; the problem is not vagueness but the direct conflict with the first rule.
+#### Tests LO 5 — recognising the contradiction pitfall among the common constraint pitfalls (corpus §8 best practices).
+}
+
+::q6:: You want the model to always stay on-brand regardless of what users ask. Where should you place this constraint, and why? {
+~In the user message, because user messages carry the highest authority in the prompt hierarchy and override the system prompt.#No — the system prompt carries the highest authority in the hierarchy, not the user message (topic 13.1).
+~In the user message, because constraints placed in the system prompt are treated as suggestions rather than hard rules.#No — system prompt instructions are not downgraded to suggestions; they apply persistently with the highest authority.
+~It does not matter — the model treats instructions from the system prompt and user message as equally authoritative.#No — topic 13.1 established that the system prompt has higher authority and applies persistently across every turn.
+=In the system prompt, because it should apply to every turn and the system prompt carries persistent, highest-authority context.#Correct — persistent constraints always belong in the system prompt so they apply across the entire conversation (corpus §5.5).
+#### Tests LO 6 — knowing that persistent constraints belong in the system prompt (corpus §5.5).
+}
+
+::q7:: Complete the sentence\: The technique of converting "Don't be too formal" into "Write as if you are texting a friend, not filing a report" is called ____ (two words). {
+=positive reframe
+=positive reframing
+}

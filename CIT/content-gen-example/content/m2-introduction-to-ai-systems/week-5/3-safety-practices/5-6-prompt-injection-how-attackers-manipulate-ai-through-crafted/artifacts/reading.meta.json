@@ -1,0 +1,29 @@
+{
+  "topic_id": "5.6",
+  "title": "Prompt injection — how attackers manipulate AI through crafted inputs",
+  "word_count": 1365,
+  "reading_minutes": 7,
+  "estimated_read_minutes": 7,
+  "generated_at": "2026-06-22T07:40:00Z",
+  "diagram_embedded": true,
+  "embeds_diagram": true,
+  "citations_map": {
+    "1": {
+      "role": "primary",
+      "source": "https://www.ibm.com/think/topics/prompt-injection",
+      "label": "IBM Think — What Is a Prompt Injection Attack?"
+    },
+    "2": {
+      "role": "supporting",
+      "source": "https://www.evidentlyai.com/llm-guide/prompt-injection-llm",
+      "label": "Evidently AI — Prompt Injection in LLMs"
+    },
+    "3": {
+      "role": "supporting",
+      "source": "https://en.wikipedia.org/wiki/Prompt_injection",
+      "label": "Wikipedia — Prompt injection"
+    }
+  },
+  "citations_used": [1, 2, 3],
+  "sections": ["Overview", "Key Concepts", "Worked Example", "In Practice", "Key Takeaways", "References"]
+}

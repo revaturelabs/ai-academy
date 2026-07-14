@@ -1,0 +1,244 @@
+{
+  "schema_version": 1,
+  "generated_at": "2026-06-23T00:00:00Z",
+  "course": {
+    "code": "M4",
+    "slug": "m4-human-cognition-and-ai-oversight",
+    "title": "Human Cognition and AI Oversight",
+    "weeks": [9, 10],
+    "total_topics": 18
+  },
+  "passed": false,
+  "verdict": "FAIL — week-10 time budget 56 min is 37.8% below target (hard-fail threshold ±25%). One cross-week concept duplication (accountability gap in both 9.11 and 10.3 concepts_introduced). Five topic manifests carry stale or null expected_delivery_minutes. All other checks pass.",
+  "prerequisite_check": {
+    "status": "ok",
+    "forward_references": [],
+    "note": "All 18 topics have prerequisites pointing to strictly earlier (week_num, position_in_module) ordering. No forward references detected."
+  },
+  "checks": {
+    "check_1_terminology": {
+      "status": "warn",
+      "findings": [
+        {
+          "severity": "warn",
+          "term": "accountability gap",
+          "introduced_in": "9.11",
+          "reused_in": "10.3",
+          "detail": "accountability gap appears in concepts_introduced for both topic 9.11 and topic 10.3. The term is introduced in 9.11 (high-stakes domain context) and then re-listed as newly introduced in 10.3 (loan approval case study). 10.3 should list it as a prerequisite reference, not as a new concept_introduced. No textual contradiction exists — both uses are consistent — but the metadata signals a duplication.",
+          "action_required": "In sequence.index.json, remove 'accountability gap' from 10.3 concepts_introduced and add topic 9.11 as a prerequisite of 10.3 (or ensure 9.11 is already listed, which it is)."
+        },
+        {
+          "severity": "info",
+          "term": "calibration",
+          "detail": "calibration appears in three contexts: 9.1 corpus (in plain language about AI output evaluation), 9.5 concepts_introduced as 'calibrated trust', and 10.4 as 'trust calibration'. All three uses are semantically consistent and progressively specific. No contradiction.",
+          "action_required": null
+        },
+        {
+          "severity": "info",
+          "term": "training data",
+          "detail": "Introduced in 9.6 concepts_introduced. Reused in 10.1 concepts_introduced as a plain-language term (no redefinition). Consistent use.",
+          "action_required": null
+        },
+        {
+          "severity": "info",
+          "term": "automation bias vs automation complacency",
+          "detail": "9.5 defines automation bias (trusting automation over judgment). 10.4 defines automation complacency (reduced vigilance from correct performance). The 10.4 corpus explicitly distinguishes these two terms. Terminology is consistent and non-contradictory.",
+          "action_required": null
+        }
+      ]
+    },
+    "check_2_prerequisite_ordering": {
+      "status": "ok",
+      "forward_references": [],
+      "note": "All 18 topics verified. Every prerequisite ID has a strictly lower (week_num, position_in_module) than the topic referencing it. No violations."
+    },
+    "check_3_weekly_time_budget": {
+      "status": "fail",
+      "target_minutes": 90,
+      "soft_warn_pct": 15,
+      "hard_fail_pct": 25,
+      "soft_warn_floor": 76.5,
+      "soft_warn_ceil": 103.5,
+      "hard_fail_floor": 67.5,
+      "hard_fail_ceil": 112.5,
+      "weeks": [
+        {
+          "week_num": 9,
+          "status": "ok",
+          "topics": [
+            {"id": "9.1",  "expected_delivery_minutes": 7,  "source": "topic.manifest.json"},
+            {"id": "9.2",  "expected_delivery_minutes": 8,  "source": "topic.manifest.json + reading.meta.json (1445w)"},
+            {"id": "9.3",  "expected_delivery_minutes": 7,  "source": "topic.manifest.json + reading.meta.json (1362w)"},
+            {"id": "9.4",  "expected_delivery_minutes": 7,  "source": "reading.meta.json (1340w) — manifest null (stale)"},
+            {"id": "9.5",  "expected_delivery_minutes": 7,  "source": "reading.meta.json (1389w) — manifest null (stale)"},
+            {"id": "9.6",  "expected_delivery_minutes": 8,  "source": "reading.meta.json (1530w, ceil=8) — meta records 7 (rounding error in meta), manifest null (stale)"},
+            {"id": "9.7",  "expected_delivery_minutes": 7,  "source": "topic.manifest.json"},
+            {"id": "9.8",  "expected_delivery_minutes": 7,  "source": "topic.manifest.json + reading.meta.json (1389w)"},
+            {"id": "9.9",  "expected_delivery_minutes": 8,  "source": "topic.manifest.json"},
+            {"id": "9.10", "expected_delivery_minutes": 8,  "source": "reading.meta.json (1450w/8min) — manifest null (stale)"},
+            {"id": "9.11", "expected_delivery_minutes": 10, "source": "topic.manifest.json"}
+          ],
+          "week_total_minutes": 84,
+          "pct_of_target": 93.3,
+          "deviation_pct": -6.7,
+          "notes": "Within ±15% soft-warn band. OK."
+        },
+        {
+          "week_num": 10,
+          "status": "fail",
+          "topics": [
+            {"id": "10.1", "expected_delivery_minutes": 7,  "source": "reading.meta.json (1487w/7min) — MANIFEST STALE: manifest says 12 (incorrect)"},
+            {"id": "10.2", "expected_delivery_minutes": 7,  "source": "reading.meta.json (1556w/7min) — manifest says 8 (minor discrepancy, meta=7, formula=8)"},
+            {"id": "10.3", "expected_delivery_minutes": 8,  "source": "reading.meta.json (1599w/8min) — manifest agrees"},
+            {"id": "10.4", "expected_delivery_minutes": 10, "source": "reading.meta.json (2073w/10min) — manifest agrees"},
+            {"id": "10.5", "expected_delivery_minutes": 7,  "source": "reading.meta.json (1375w/7min) — manifest agrees"},
+            {"id": "10.6", "expected_delivery_minutes": 7,  "source": "reading.meta.json (1491w/7min) — manifest agrees"},
+            {"id": "10.7", "expected_delivery_minutes": 10, "source": "reading.meta.json (1963w/10min) — manifest agrees"}
+          ],
+          "week_total_minutes": 56,
+          "pct_of_target": 62.2,
+          "deviation_pct": -37.8,
+          "hard_fail": true,
+          "notes": "56 min is 37.8% below the 90-min target. Hard-fail floor is 67.5 min. Week-10 is 11.5 min short of even the hard-fail floor. Only 7 topics span week 10 vs 11 in week 9. All 7 topics are standard (7–8 min) or deep (10 min) profiles; none are atomic. The budget shortfall is structural: week 10 has fewer topics and none of the standard topics were pushed to deep. Remediation options: (a) elevate 10.2 or 10.3 from standard to deep (adds ~3 min each), (b) check whether 10.2 word count (1556w) should yield 8 min via ceiling formula — correcting the meta rounding adds 1 min, (c) consider adding a topic to week 10 if curriculum permits."
+        }
+      ]
+    },
+    "check_4_no_duplication": {
+      "status": "warn",
+      "method": "Jaccard similarity on concepts_introduced sets, cross-week pairs only (within-week duplication handled by module-drift critic)",
+      "threshold": 0.55,
+      "pairs_checked": 55,
+      "pairs_above_threshold": [],
+      "notable_near_misses": [
+        {
+          "pair": ["9.9", "10.3"],
+          "shared_concepts": ["accountability chain"],
+          "jaccard": 0.09,
+          "note": "Shared term is a prerequisite cross-reference, not a redefinition. No action required."
+        },
+        {
+          "pair": ["9.11", "10.3"],
+          "shared_concepts": ["accountability gap"],
+          "jaccard": 0.09,
+          "note": "accountability gap appears in both concepts_introduced lists. Flagged under Check 1 as a metadata duplication. Conceptual content differs: 9.11 introduces the term in the context of high-stakes domains; 10.3 uses it in a case-study context. Jaccard on full concept sets is below threshold, but the metadata duplication should be resolved."
+        },
+        {
+          "pair": ["9.5", "10.4"],
+          "shared_concepts": [],
+          "jaccard": 0.0,
+          "note": "automation bias (9.5) and automation complacency (10.4) are related but distinct concepts. Corpora treat them as separate. No duplication."
+        }
+      ],
+      "finding": "No cross-week topic pair exceeds the 0.55 Jaccard threshold on Core Concepts concept sets. One metadata-level duplication (accountability gap in concepts_introduced of both 9.11 and 10.3) is flagged under Check 1."
+    },
+    "check_5_learning_arc": {
+      "status": "ok",
+      "course_scope": "Cognitive biases, automation bias, oversight mechanisms and Cognition Case Studies deepdive.",
+      "scope_facets": [
+        {
+          "facet": "Cognitive biases",
+          "covered_by": ["9.1","9.2","9.3","9.4","9.5","9.6"],
+          "coverage": "complete — System 1/2 dual-process model, confirmation bias, anchoring bias, automation bias, and bias encoding into AI training data all present"
+        },
+        {
+          "facet": "Automation bias",
+          "covered_by": ["9.5","10.4"],
+          "coverage": "complete — 9.5 introduces automation bias formally; 10.4 extends to automation complacency (the downstream cognitive effect)"
+        },
+        {
+          "facet": "Oversight mechanisms",
+          "covered_by": ["9.7","9.8","9.9","9.10","9.11","10.5","10.6"],
+          "coverage": "complete — Judgment Framework (Q1/Q2/Q3), acceptable error thresholds, high-stakes domain rules, HITL/HOTL/HOOTL design patterns, risk-tiered component mapping"
+        },
+        {
+          "facet": "Cognition Case Studies deepdive",
+          "covered_by": ["10.1","10.2","10.3","10.4","10.7"],
+          "coverage": "complete — admissions AI (10.1), medical triage AI (10.2), loan approval AI (10.3), automation complacency (10.4), post-mortem writing framework (10.7)"
+        }
+      ],
+      "uncovered_facets": [],
+      "assessment_alignment": "A3 (Maths and Cognition Lab Report, due week 10) is satisfied by 9.7–9.9 Judgment Framework and 10.7 post-mortem framework. Coverage is direct and complete."
+    }
+  },
+  "manifest_data_issues": [
+    {
+      "topic_id": "10.1",
+      "field": "expected_delivery_minutes",
+      "manifest_value": 12,
+      "actual_value": 7,
+      "source": "reading.meta.json (1487w / 7 min)",
+      "severity": "error",
+      "action": "Update topic.manifest.json for 10.1: set expected_delivery_minutes to 7"
+    },
+    {
+      "topic_id": "9.4",
+      "field": "expected_delivery_minutes",
+      "manifest_value": null,
+      "actual_value": 7,
+      "source": "reading.meta.json (1340w / 7 min)",
+      "severity": "warn",
+      "action": "Update topic.manifest.json for 9.4: set expected_delivery_minutes to 7"
+    },
+    {
+      "topic_id": "9.5",
+      "field": "expected_delivery_minutes",
+      "manifest_value": null,
+      "actual_value": 7,
+      "source": "reading.meta.json (1389w / 7 min)",
+      "severity": "warn",
+      "action": "Update topic.manifest.json for 9.5: set expected_delivery_minutes to 7"
+    },
+    {
+      "topic_id": "9.6",
+      "field": "expected_delivery_minutes",
+      "manifest_value": null,
+      "actual_value": 8,
+      "source": "reading.meta.json (1530w, formula ceil(1530/200)=8; meta records 7 — rounding error in meta)",
+      "severity": "warn",
+      "action": "Update topic.manifest.json for 9.6: set expected_delivery_minutes to 8. Also correct reading.meta.json: estimated_read_minutes should be 8 not 7."
+    },
+    {
+      "topic_id": "9.10",
+      "field": "expected_delivery_minutes",
+      "manifest_value": null,
+      "actual_value": 8,
+      "source": "reading.meta.json (1450w / 8 min)",
+      "severity": "warn",
+      "action": "Update topic.manifest.json for 9.10: set expected_delivery_minutes to 8"
+    }
+  ],
+  "week_status_summary": [
+    {"week_num": 9, "status": "ok",   "total_minutes": 84, "deviation_pct": -6.7},
+    {"week_num": 10, "status": "fail", "total_minutes": 56, "deviation_pct": -37.8}
+  ],
+  "blocking_failures": [
+    {
+      "check": "check_3_weekly_time_budget",
+      "week_num": 10,
+      "detail": "Week 10 reading budget 56 min is 37.8% below the 90-min target. Hard-fail floor is 67.5 min (25% below target). Blocks course_drift_passed=true for all 7 week-10 topics.",
+      "remediation": "Option A: Elevate 10.2 (medical triage) from standard to deep profile — expands reading from 7→10 min, adds ~3 min. Option B: Elevate 10.3 (loan approval) from standard to deep — same gain. Doing both (A+B) brings week 10 to 62 min — still below hard-fail floor. Option C: Elevate 10.5 or 10.6 to deep (adds 3 min each). Combining A+B+C yields 68 min — just above hard-fail floor. Option D (preferred if curriculum allows): add a summary/synthesis topic to week 10 as a standard 7-min topic, bringing total to 63 min + any elevations."
+    }
+  ],
+  "non_blocking_findings": [
+    {
+      "check": "check_1_terminology",
+      "severity": "warn",
+      "topic_pair": ["9.11", "10.3"],
+      "detail": "accountability gap listed in concepts_introduced for both topics. Should be removed from 10.3 concepts_introduced in sequence.index.json."
+    },
+    {
+      "check": "manifest_data",
+      "severity": "error",
+      "topic": "10.1",
+      "detail": "expected_delivery_minutes=12 in manifest is incorrect; actual reading is 7 min. Correct the manifest."
+    },
+    {
+      "check": "manifest_data",
+      "severity": "warn",
+      "topics": ["9.4","9.5","9.6","9.10"],
+      "detail": "expected_delivery_minutes=null in manifests despite approved readings existing. Populate from reading.meta.json values."
+    }
+  ],
+  "course_drift_passed": false,
+  "next_step": "Resolve week-10 time budget hard-fail before running progress_update or session purge. See blocking_failures[0].remediation for options."
+}

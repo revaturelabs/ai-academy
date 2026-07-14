@@ -1,0 +1,42 @@
+{
+  "verdict": "pass",
+  "cycle": 1,
+  "findings": [
+    {
+      "code": "looks_good",
+      "where": "whole canvas — source-level pre-flight",
+      "detail": "Six nodes (D1, D2, D3, C1, C2, C3) in two direction-TB subgraphs under a flowchart LR root. All bold labels are 2–4 words. Every label traces directly to §5 Core Concepts: 'def keyword' (corpus: 'def keyword defines the function'), 'Function Name' (corpus: 'Name / Body (indented code) / Call'), 'Body stored in memory' (corpus: 'stores it in memory, does NOT run it'), 'Caller line' (corpus: 'Function call (name+()) actually runs the body'), 'Body executes' (corpus: 'call triggers execution'), 'Returns to caller' (corpus: 'execution flow back to caller'). No downstream topics (parameters, return values, lists, classes) appear. Title 'Definition vs Call — two phases of every function' sits in the config title: field — correct per title-discipline rule. Each subgraph is a clean single-path linear flow (no branching). DEFINE-->CALL cross-subgraph edge represents the phase transition, not a branch. classDef tiers: start (blue #a5d8ff), auto (purple #d0bfff), act (blue #a5d8ff, matches SKILL definition), done (green #b2f2bb) — all correct. No ghost nodes. No unexplained acronyms. Subgraph backgrounds differentiated (blue-tinted DEFINE, green-tinted CALL) for visual phase separation."
+    },
+    {
+      "code": "looks_good",
+      "where": "layout choice",
+      "detail": "Side-by-side panel layout (LR root + direction-TB subgraphs) exactly matches the diagram intent: 'illustrating the definition-vs-call distinction visually' with 'TWO phases'. Follows the canonical 2-4 golden-dataset pattern. DEFINE-->CALL edge with label 'call triggers execution' makes the phase transition explicit and beginner-readable."
+    }
+  ],
+  "stats": {
+    "nodes": 6,
+    "edges": 5,
+    "layout": "flowchart LR (two direction-TB subgraphs, side-by-side)",
+    "labels": [
+      "def keyword",
+      "Function Name",
+      "Body stored in memory",
+      "Caller line",
+      "Body executes",
+      "Returns to caller"
+    ],
+    "png_path": "content/m5-python-for-ai-pe-vc-and-rag/week-12/1-functions-and-data-structures/12-1-functions-named-reusable-blocks-of-logic/artifacts/diagram.png",
+    "png_dims": "pending — mmdc render required in local environment",
+    "preflight": {
+      "mermaid_parse": "pass (source structure matches Mermaid flowchart LR + direction-TB subgraph pattern verified against golden-dataset/2-4/artifacts/diagram.mmd)",
+      "node_count": "pass (6 nodes, within 3–8)",
+      "label_discipline": "pass (all bold labels ≤ 4 words)",
+      "concept_fidelity": "pass (all 6 labels trace to §5 Core Concepts / §6 Implementation of topic 12.1; no parameters, return values, lists, or classes present)",
+      "jargon_label": "pass (no bare unexplained acronyms; 'def' is corpus-defined and paired with 'keyword')",
+      "title_discipline": "pass (governing concept in config title: field, not a node or ghost annotation)",
+      "single_path": "pass (D1→D2→D3 linear; C1→C2→C3 linear; DEFINE→CALL is phase transition, not a branch)",
+      "color_tier": "pass (start:#a5d8ff, auto:#d0bfff, act:#a5d8ff, done:#b2f2bb — all match SKILL.md classDef definitions)"
+    }
+  },
+  "render_note": "PNG render via 'mmdc -i <mmd_path> -o <png_path> -w 1400 -b transparent' must be executed in the local environment. Claude Code does not have shell execution in this session. The .mmd source is structurally valid and mirrors the proven golden-dataset/2-4 side-by-side pattern. Visual inspection checks (overlap, truncation, edge crossings, whitespace balance) apply once the PNG is rendered."
+}

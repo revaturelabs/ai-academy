@@ -1,0 +1,46 @@
+$CATEGORY: CIT/M1/week-1/1.2-deterministic-systems-same-input-always-gives-the-same-output
+
+::1.2-Q1:: A calculator is given the input 8 × 9. Which statement best describes what makes this a deterministic system?
+{
+~The calculator runs on electricity, so the result is fixed by the hardware it uses#No — the physical device does not determine whether a system is deterministic; the relationship between input and output does.
+~The calculation is simple enough that any person could work it out, making the result predictable#No — how easy or difficult a calculation is has nothing to do with whether the system is deterministic.
+=No matter when or where you enter 8 × 9, the output is always 72 — the input completely fixes the output#Correct — a deterministic system is one where the input completely determines the output, with no variation.
+~The calculator has been tested many times, which proves it is reliable enough to be trusted#No — testing builds confidence, but reliability is not the same as determinism; a system is deterministic by its structure, not by how often it has been checked.
+#### Tests the core definition of a deterministic system (corpus §5.1). The key property is that the input completely fixes the output — always, with no variation possible.
+}
+
+::1.2-Q2:: You type the same question into an online maths solver twice, one week apart, and get the same answer both times. What does this observation tell you?
+{
+=It is consistent with the system being deterministic — the same input produced the same output both times#Correct — getting the same output from the same input is exactly the test for determinism (corpus §5.1).
+~It proves the system will always give correct answers, because it was consistent across two separate runs#No — consistency tells you about determinism, not correctness; a deterministic system can be consistently wrong.
+~It tells you the system has stored your previous answer and replayed it rather than recalculating it#No — both replaying a cached result and recalculating could produce the same output; this confuses caching with determinism.
+~It shows the system is non-deterministic, because a random system would have given a different answer by now#No — the same output for the same input is evidence of determinism, not non-determinism.
+#### Tests why "same input → same output" is the test for determinism (corpus §5.1). Repeated identical outputs for identical inputs is the observable signature of a deterministic system.
+}
+
+::1.2-Q3:: Which group of systems are ALL correctly identified as deterministic, and for the right reason?
+{
+~A classroom countdown timer, an AI poem writer, and a payroll calculator — because all three are run on computers#No — running on a computer is not the test; an AI poem writer can produce a different poem every time even for the same prompt.
+~A search engine result page, a weather forecast model, and a currency converter — because all three deal with numbers and data#No — working with numbers is not the test; a weather forecast model uses probabilistic methods and can produce varying outputs.
+~A vending machine (fixed price list), a postcode lookup (fixed table), and an AI chatbot answering factual questions — because all three give answers reliably most of the time#No — "most of the time" is not the determinism test; a deterministic system must give the same output every time, and an AI chatbot can vary.
+=A traffic light on a timer, a calculator doing 17 × 6, and sorting the same list — same input always gives same output in each case#Correct — each system applies fixed rules to a fixed input with no random element, so the output cannot vary (corpus §5.1, §5.7).
+#### Tests recognition of deterministic real-world examples (corpus §5.1, §5.7). The shared property is that knowing the full input tells you the output with certainty, every single time.
+}
+
+::1.2-Q4:: A payroll system calculates the same employee's net pay as £1,850 one month and £1,760 the next, using the same stated base salary. A colleague claims this proves the system is non-deterministic. What is the most accurate response?
+{
+~The colleague is correct — a deterministic system must always output the same number, so any variation proves randomness is involved#No — different outputs do not automatically mean non-determinism; the input may have changed.
+=The colleague is likely wrong — a changed input (different hours or deduction that month) explains the different output without any randomness#Correct — the test requires the same *full* input; if any input value changed, different output is expected and does not indicate non-determinism (corpus §5.3, §8).
+~The colleague is correct — a truly deterministic payroll system should ignore any changes in working hours and always pay the same amount#No — a deterministic system guarantees the same output for the same input, not the same output regardless of changes in circumstances.
+~The colleague is wrong because payroll law requires systems to be deterministic, so the output difference must be a user-entry mistake#No — while payroll systems are typically designed to be deterministic, the reason the output changed is most likely a change in input, not a legal provision that overrides arithmetic.
+#### Tests the distinction between "different outputs" and "non-deterministic" (corpus §5.3, §8). A deterministic system produces different outputs for different inputs — that is exactly what it is supposed to do.
+}
+
+::1.2-Q5:: A hospital uses a deterministic system to calculate medication dosages. A developer proposes switching to a system that occasionally varies its result slightly. Why would the hospital most likely reject this proposal?
+{
+~Because the new system would be far more expensive to build and the hospital does not have the budget for it#No — cost is a practical concern, but the reason to reject variable dosage results is about patient safety and verifiability, not budget.
+~Because regulators require all medical software to be written in programming languages that cannot produce variable outputs#No — medical software regulations focus on requiring deterministic, verifiable behaviour for safety reasons, not on programming language choice.
+=Because a variable-output system cannot be trusted or audited — dosage inputs must always produce the same result for patient safety#Correct — predictability and reproducibility are essential when correctness is life-critical; any variation in a dosage calculation is a safety defect (corpus §5.2, §7).
+~Because the hospital's existing system is newer and technically more capable, making any replacement an unnecessary downgrade#No — system age and capability are irrelevant here; the issue is whether the output is reliably the same for the same input in a life-critical context.
+#### Tests why predictability and reproducibility matter in practical computing (corpus §5.2, §7). When correctness is essential, guaranteed sameness is a requirement, not a preference.
+}

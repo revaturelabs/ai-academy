@@ -1,0 +1,55 @@
+$CATEGORY: CIT/M2/week-5/5.11-white-house-executive-order-on-ai-2023-key-provisions
+
+::5.11-Q1:: In plain terms, what is a US executive order, like the 2023 AI order signed by the President?
+{
+~A new law that the US Congress debates and then passes for everyone to follow#No - that describes a law made by the legislature, not an executive order.
+=A signed written instruction from the President that directs federal agencies to act#Correct - an executive order is the President telling the government's own agencies what to do.
+~A court ruling that judges issue to settle a legal dispute between two companies#No - that describes a court decision, not an order signed by the President.
+~A treaty that several countries sign together to set shared international rules#No - that describes an agreement between nations, not a Presidential order.
+#### Tests what an executive order is and who issues it (corpus 5.1, Learning Objectives).
+}
+
+::5.11-Q2:: Which set of four items best matches the key provisions of the 2023 AI executive order?
+{
+~Set ticket prices, hire staff, choose office sites, and pick brand colors for agencies#No - these are unrelated business chores, not the order's AI provisions.
+~Ban all AI research, delete all training data, fine every startup, and close labs#No - the order did not ban AI or impose blanket shutdowns; it set goals and tasks.
+~Build one national AI model, sell it abroad, tax imports, and fund space travel#No - none of these describe the order; they mix in unrelated policy ideas.
+=Safety-test the most powerful models, require transparency, protect civil rights, govern the government's own AI use#Correct - these are the four key provisions the corpus lists.
+#### Tests recall of the four key provisions (corpus 5.2 through 5.6).
+}
+
+::5.11-Q3:: The order said the most powerful models had to be safety-tested and the results reported to the government. What was this provision mainly about?
+{
+=Checking the most capable models for failures and sharing what those tests found#Correct - it required red-team style safety testing and reporting of the results.
+~Making every small company publish its source code so the public can read it#No - the provision targeted the most powerful models, not open-sourcing all code.
+~Forcing universities to stop teaching AI until a new license was approved#No - the order did not halt AI education or require teaching licenses.
+~Requiring citizens to register before they are allowed to use any AI chatbot#No - the provision was about developers testing top models, not registering users.
+#### Tests the safety-testing and reporting provision (corpus 5.3, 5.4).
+}
+
+::5.11-Q4:: How does the 2023 AI executive order differ from the EU AI Act and the NIST AI Risk Management Framework?
+{
+~It is a binding law for everyone, while the EU AI Act is only optional advice#No - this reverses them; the EU AI Act is the binding law, not the executive order.
+~It is fully optional guidance, exactly the same in force as the NIST framework#No - the order commanded agencies, so it was stronger than the voluntary NIST guidance.
+=It is a Presidential order that sits between a binding law and voluntary guidance#Correct - it was stronger than optional guidance but narrower than a full law.
+~It is a private industry agreement, while the other two are both government laws#No - the order came from the President, and the NIST framework is voluntary guidance, not a law.
+#### Tests the distinction among EO 14110, the EU AI Act, and the NIST RMF (corpus 5.7, Learning Objectives).
+}
+
+::5.11-Q5:: Why is an executive order considered narrower and more easily reversed than a law passed by a legislature?
+{
+~Because an executive order automatically expires after exactly one calendar year#No - an order does not auto-expire yearly; it ends when a President revokes it.
+=Because one President signs it, so a later President can simply revoke it with another order#Correct - it rests on the President alone, making it easier to undo than a law.
+~Because executive orders can only ever contain a single short sentence of text#No - length is not the reason; reversibility comes from who can undo it.
+~Because a law affects only the government while an order affects every private citizen#No - this is backwards; the order mainly directs the government, and a law is broader.
+#### Tests why an executive order is narrower and reversible (corpus 5.1, 5.7, 5.8).
+}
+
+::5.11-Q6:: How should a learner treat the 2023 AI executive order today, given what happened to it?
+{
+~As a permanent federal law that can never be changed or removed by anyone#No - it was not a law and was not permanent; a later President could undo it.
+~As a rule still fully in force that every private company must obey right now#No - it was revoked, so it is not currently-in-force law for everyone to obey.
+~As a draft proposal that was never actually signed by any US President#No - it was signed on October 30, 2023; it was real, not an unsigned draft.
+=As a historical example of US executive AI governance that was later revoked#Correct - it was signed in 2023 and revoked in January 2025, so it is studied as a case.
+#### Tests the order as a historical example and its revocation (corpus 5.8, Key Takeaways).
+}

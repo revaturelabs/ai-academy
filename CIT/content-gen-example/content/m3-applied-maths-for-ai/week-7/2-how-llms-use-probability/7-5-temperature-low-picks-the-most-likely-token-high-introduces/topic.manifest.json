@@ -1,0 +1,46 @@
+{
+  "type": "topic",
+  "id": "7.5",
+  "title": "Temperature — low picks the most likely token, high introduces variation",
+  "slug": "7-5-temperature-low-picks-the-most-likely-token-high-introduces",
+  "position_in_module": 2,
+  "week_num": 7,
+  "session_name": "Probability, Statistics and AI Confidence",
+  "module": {
+    "position": 2,
+    "slug": "2-how-llms-use-probability",
+    "title": "How LLMs Use Probability"
+  },
+  "course": {
+    "code": "M3",
+    "slug": "m3-applied-maths-for-ai",
+    "title": "Applied Maths for AI"
+  },
+  "next_assessment": {
+    "id": "A3",
+    "due_week": 10,
+    "title": "Maths and Cognition Lab Report",
+    "weight": "15%"
+  },
+  "paths": {
+    "corpus": "topic_corpus.md",
+    "resources": "topic.resources.json",
+    "progress": "topic.progress.json",
+    "artifacts_dir": "artifacts/",
+    "critic_reports_dir": "critic-reports/"
+  },
+  "artifact_plan": {
+    "diagram": true,
+    "diagram_intent": "Side-by-side bar chart showing the probability distribution over tokens at temperature 0.2 (sharp, one dominant bar) vs temperature 1.0 (neutral) vs temperature 1.5 (flat, many bars of similar height) to make the sharpening/flattening intuition visual.",
+    "depth_profile": "standard",
+    "depth_signals": "Two clear sub-concepts (low vs high temperature) with a contrast table, a worked numeric example, and real-world patterns — fits standard; topic title is mid-length and there is no multi-stage pipeline warranting deep.",
+    "reading_word_range": [1200, 1600],
+    "reading_minutes_range": [6, 8],
+    "quiz_questions_range": [5, 6],
+    "quiz_include_short_answer": false,
+    "hitl2_confirmed_at": "2026-06-23T00:00:00Z",
+    "hitl2_sections_kept": [2, 3, 4, 5, 6, 7, 8, 9, 10, 11]
+  },
+  "expected_delivery_minutes": 7,
+  "status": "corpus_drafted"
+}

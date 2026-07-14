@@ -1,0 +1,104 @@
+{
+  "critic": "module-drift",
+  "module": "4-version-control-with-git-and-github",
+  "course_code": "M5",
+  "week_num": 13,
+  "generated_at": "2026-06-15T00:00:00Z",
+  "verdict": "PASS",
+  "topics_evaluated": [
+    "13.10", "13.11", "13.12", "13.13", "13.14", "13.15"
+  ],
+  "checks": {
+    "terminology_consistency": {
+      "result": "PASS",
+      "findings": [
+        {
+          "severity": "soft",
+          "topic": "13.10",
+          "finding": "Cross-reference mismatch: corpus §5.7 states 'Branch — covered in topic 13.12' and 'Merge — covered in topic 13.12', but both branch and merge are fully taught in 13.11 (position 2). The reading.md echoes the same error ('Branch and merge — covered in topic 13.12'). This is a forward-reference label error — the content is not missing, the pointer is wrong.",
+          "recommendation": "Update §5.7 of topic_corpus.md and the corresponding paragraph in reading.md to read 'Branch and merge — covered in topic 13.11.'"
+        },
+        {
+          "severity": "info",
+          "topic": "13.13-vs-13.14",
+          "finding": "API key, python-dotenv, os.getenv(), and environment variable appear as core concepts in both 13.13 (§5.4) and 13.14 (§5.1, §5.4, §5.6). Noun-set Jaccard ≈ 0.22 — below the 0.6 hard-fail threshold. The framing is deliberately differentiated (13.13: organisational tool; 13.14: security consequences + depth). No action required; noted for author awareness."
+        }
+      ]
+    },
+    "prerequisites_respected": {
+      "result": "PASS",
+      "findings": []
+    },
+    "learning_arc": {
+      "result": "PASS",
+      "findings": [
+        {
+          "severity": "info",
+          "finding": "Union of LOs across 13.10–13.15 fully covers all stated module outcome facets: motivation/why VCS (13.10), core Git mechanics — repo/commit/branch/merge (13.11), GitHub remote workflow — clone/add/commit/push (13.12), professional project organisation — folder layout/README/.gitignore/requirements.txt (13.13), secret management and security consequences (13.14), atomic commit discipline and commit message conventions (13.15). No uncovered facets detected."
+        }
+      ]
+    },
+    "no_duplicated_core_concepts": {
+      "result": "PASS",
+      "findings": [
+        {
+          "severity": "soft",
+          "topics": ["13.13", "13.14"],
+          "jaccard_approximate": 0.22,
+          "shared_nouns": ["API key", "environment variable", "os.getenv", "python-dotenv"],
+          "finding": "13.13 §5.4 introduces .gitignore, API key, the .env file pattern, and os.getenv() in the context of project organisation. 13.14 re-introduces and deepens all four from a security-consequences angle. Jaccard ≈ 0.22, well below the 0.6 threshold. The topical overlap is intentional and pedagogically sound (breadth-first introduction → depth-focused follow-up). No action required."
+        },
+        {
+          "severity": "info",
+          "topics": ["13.11", "13.15"],
+          "jaccard_approximate": 0.11,
+          "finding": "13.15 deepens 'commit' and 'commit message' from 13.11. Jaccard ≈ 0.11 — well below threshold. Appropriate progressive deepening, not duplication."
+        }
+      ]
+    },
+    "lab_activity_alignment": {
+      "result": "PASS",
+      "lab_seed": "Create a GitHub repository for your Capstone. Commit with a proper README and .gitignore. Make at least 3 meaningful commits.",
+      "findings": [
+        {
+          "activity_element": "Create a GitHub repository",
+          "supported_by": ["13.12 — §6 Implementation: full step-by-step create → clone → add → commit → push; Hands-On Exercise builds the exact sequence"]
+        },
+        {
+          "activity_element": "Commit with a proper README",
+          "supported_by": ["13.13 — §5.3 five-section README template; §6 Implementation Step 7 writes the README; Hands-On Exercise produces the README as part of A4 submission"]
+        },
+        {
+          "activity_element": ".gitignore for API keys",
+          "supported_by": ["13.13 — §5.4 .gitignore introduced with ordering rule and practical template", "13.14 — security consequences + .env.example pattern deepens the rule"]
+        },
+        {
+          "activity_element": "At least 3 meaningful commits",
+          "supported_by": ["13.15 — §9 Hands-On Exercise explicitly produces 3 atomic commits with meaningful messages (README, .gitignore, requirements.txt); atomic commit rule taught in §5.1"]
+        }
+      ]
+    },
+    "audience_level_consistency": {
+      "result": "PASS",
+      "findings": [
+        {
+          "severity": "soft",
+          "topic": "13.13",
+          "finding": "pip, virtual environment, and Python import syntax (from dotenv import load_dotenv) first appear in this module in 13.13 without a cross-module citation. These are M5-module-external prerequisites expected from earlier weeks. Within this module they are used without forward-teaching, which is correct for week 13 of M5. The corpus.critic for 13.14 already logged a soft note ('verify pip introduced in prior M5 topic'). No action needed within this module; the M5 course-drift critic should confirm the prior introduction."
+        },
+        {
+          "severity": "soft",
+          "topic": "13.14",
+          "finding": "git rm --cached .env appears in §5.5 as a recovery step if .gitignore was added too late. The command is used without a step-by-step explanation of what 'un-staging' means at the Git internals level. Given the atomic profile and the remediation context, the brief inline treatment ('You must un-stage it with git rm --cached .env before committing. This tells Git to stop tracking it without deleting it from your disk.') is adequate for beginners. Soft flag only — no re-teach required, but authors may wish to confirm the explanation is sufficient for the target audience."
+        }
+      ]
+    }
+  },
+  "summary": {
+    "hard_failures": 0,
+    "soft_findings": 3,
+    "info_findings": 3,
+    "escalate_to_hitl4": false,
+    "notable_finding": "One soft terminology finding in 13.10: the forward-reference in §5.7 (and mirrored in reading.md) misidentifies topic 13.12 as the location where branch and merge are taught; the correct topic is 13.11. This is a label error only — the actual content is correct in 13.11. All other checks pass cleanly. Module learning arc is complete, prerequisites are respected in all six topics, no core-concept pairs exceed the 0.6 Jaccard duplication threshold, and the lab activity is fully supported."
+  }
+}

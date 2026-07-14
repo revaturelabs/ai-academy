@@ -1,0 +1,30 @@
+{
+  "topic_id": "5.7",
+  "captured_at": "2026-06-22T07:23:16Z",
+  "captured_by": "namratas@revature.com",
+  "resources_source": "web_search",
+  "resources": [
+    {
+      "type": "url",
+      "value": "https://digital-strategy.ec.europa.eu/en/policies/regulatory-framework-ai",
+      "role": "primary",
+      "source": "web_search",
+      "notes": "Official European Commission — AI Act regulatory framework page. Authoritative source for the four risk levels (unacceptable/high/limited/minimal) and obligations. Anchor."
+    },
+    {
+      "type": "url",
+      "value": "https://www.europarl.europa.eu/topics/en/article/20230601STO93804/eu-ai-act-first-regulation-on-artificial-intelligence",
+      "role": "supporting",
+      "source": "web_search",
+      "notes": "European Parliament topic explainer — official + beginner-readable summary of the risk tiers and aims."
+    },
+    {
+      "type": "url",
+      "value": "https://artificialintelligenceact.eu/assessment/eu-ai-act-compliance-checker/",
+      "role": "supporting",
+      "source": "web_search",
+      "notes": "EU AI Act compliance resource mirroring the regulation tiers — applied/reference view of which obligations attach to which tier."
+    }
+  ],
+  "web_search_query": "EU AI Act regulatory framework risk levels (restricted to official EU domains)"
+}

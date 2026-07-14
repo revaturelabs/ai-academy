@@ -1,0 +1,30 @@
+﻿{
+  "topic_id": "14.5",
+  "captured_at": "2026-06-15T00:00:00Z",
+  "captured_by": "bhuvaneshwarim@revature.com",
+  "resources_source": "web_search",
+  "web_search_query": "LLM agent anatomy memory tools planning loop AI agent components",
+  "resources": [
+    {
+      "type": "url",
+      "value": "https://blog.dailydoseofds.com/p/the-anatomy-of-an-agent-harness",
+      "role": "primary",
+      "source": "web_search",
+      "notes": "Daily Dose of DS — exact topic match: anatomy of an agent harness, memory/tools/planning breakdown"
+    },
+    {
+      "type": "url",
+      "value": "https://www.leanware.co/insights/llm-agent-architecture-guide",
+      "role": "supporting",
+      "source": "web_search",
+      "notes": "LLM agent architecture components breakdown with applications"
+    },
+    {
+      "type": "url",
+      "value": "https://langcopilot.com/posts/2025-09-17-llm-agents-explained-visual-guide-ai",
+      "role": "supporting",
+      "source": "web_search",
+      "notes": "2025/2026 visual guide — architecture, tools, memory, multi-agent systems"
+    }
+  ]
+}

@@ -1,0 +1,49 @@
+$CATEGORY: CIT/M5/week-14/14-1-vector-databases-storing-embeddings-and-enabling-similarity
+
+::q1:: An embedding model processes a sentence and produces an output. What is that output called, and what does it represent? {
+~A list of the most important keywords extracted from a document by a search index#No — a keyword list is what traditional search engines produce; an embedding is something different.
+=A list of numbers produced by an embedding model that represents the meaning of text#Correct — an embedding (also called a vector) is a list of numbers where similar meanings produce numerically similar lists.
+~A compressed version of a document stored as a single summary sentence in a database#No — a summary is still text; an embedding is a list of numbers, not a sentence.
+~A unique identifier that a database assigns to each document when it is first saved#No — that describes a record ID; an embedding carries the meaning of the content, not just a label.
+#### Tests the definition of an embedding and what it represents (LO1, corpus §5.1).
+}
+
+::q2:: A manager searches a support-ticket database for "payment not going through." The ticket that says "my card kept getting declined at checkout" is not returned. What is the most accurate explanation? {
+~Because keyword search can only handle short queries, while a vector database accepts longer ones#No — query length is not the reason keyword search fails here; the mismatch is about vocabulary, not length.
+~Because keyword search requires special punctuation that most users do not type correctly#No — punctuation is not the issue; the problem is that different words can describe the same problem.
+~Because keyword search is too slow for large document collections to respond in time#No — speed is a separate concern; the failure here is about matching meaning, not about response time.
+=Because keyword search only matches exact words, so it misses documents that use different wording#Correct — keyword search cannot recognise that "card declined at checkout" and "payment not going through" describe the same problem.
+#### Tests why keyword search fails for meaning-based queries and how vector databases address this (LO2, corpus §4, §5.2).
+}
+
+::q3:: When a user submits a question to a vector database, which sequence correctly describes what happens? {
+=Embed the query → measure distance against stored vectors → return the top-k closest results#Correct — the query is first converted to a vector, then compared by distance, and the closest matches are returned ranked.
+~Search for matching keywords → rank by frequency → return the most common results#No — that describes traditional keyword search, not vector database querying.
+~Store the query → embed the stored documents → return the newest matching documents#No — documents are embedded at index time, not at query time; queries are not stored.
+~Embed the query → sort all stored documents alphabetically → return the first k documents#No — the database ranks by distance (semantic similarity), not alphabetical order.
+#### Tests the three-step query process in a vector database (LO3, corpus §5.3, §6 Steps 4–5).
+}
+
+::q4:: A company's vector database holds 200 million product descriptions. Why is approximate nearest neighbour (ANN) search used instead of comparing the query against every stored vector? {
+~A method that compares a query against every stored vector to guarantee the single best match#No — that describes exact nearest-neighbour search (k-NN), which is what ANN replaces because it is too slow at scale.
+~A technique that removes duplicate embeddings before storing them to keep the database small#No — deduplication is a separate concern; ANN is about how a search is executed, not how data is stored.
+=A family of algorithms that skip most comparisons and still return very close matches in milliseconds#Correct — ANN trades a tiny chance of missing the perfect match for dramatically faster search, which is essential at production scale.
+~A process that splits large documents into smaller chunks before they are converted into embeddings#No — that describes chunking at index time; ANN describes the search algorithm used at query time.
+#### Tests the definition of ANN search and why it is necessary at scale (LO4, corpus §5.4).
+}
+
+::q5:: What is HNSW (Hierarchical Navigable Small World), and what role does it play in a vector database? {
+~A rule that requires the query and the stored documents to use the same embedding model at all times#No — that describes a best practice for consistent vector spaces, not the HNSW algorithm.
+=A layered graph index that helps a vector database zoom from a broad overview to precise matches quickly#Correct — HNSW builds a multi-layer graph so searches start with a coarse high-level pass and narrow down to the exact neighbourhood, enabling fast ANN search.
+~A distance formula that measures the angle between two vectors to determine how similar their meanings are#No — that describes cosine similarity, a distance metric; HNSW is the index structure, not the distance formula.
+~A metadata tagging system that assigns a category label to each stored vector for faster filtered queries#No — that describes metadata filtering; HNSW is the graph-based index that makes similarity search fast, regardless of metadata.
+#### Tests what HNSW is and why it is used at a conceptual level (LO5, corpus §5.5).
+}
+
+::q6:: A legal team wants to search thousands of contracts for clauses that cover a certain topic. They know that the same idea can be worded many different ways across different contracts. Which tool is the right choice? {
+~Counting the number of times a specific product name appears in a company's sales database#No — that is a keyword frequency count in structured data, not a semantic search problem.
+~Looking up a customer's order history using their account number in a transaction log#No — that is an exact-match lookup by ID, which a regular database handles perfectly.
+~Sorting a list of employee records alphabetically by surname in an HR system#No — alphabetical sorting is a standard database operation with no semantic search involved.
+=Finding support tickets about similar complaints even when customers use different words#Correct — any task where "similar meaning, different wording" is the challenge is a vector database use case; legal clause search fits this exactly.
+#### Tests the ability to identify real-world scenarios where a vector database is the right tool (LO6, corpus §7).
+}

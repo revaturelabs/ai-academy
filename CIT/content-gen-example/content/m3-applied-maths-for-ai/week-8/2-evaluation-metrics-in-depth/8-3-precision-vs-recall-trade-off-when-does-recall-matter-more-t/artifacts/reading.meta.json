@@ -1,0 +1,10 @@
+{
+  "topic_id": "8.3",
+  "title": "Precision vs recall trade-off — when does recall matter more than precision?",
+  "estimated_read_minutes": 7,
+  "word_count": 1293,
+  "generated_at": "2026-06-22T07:25:00Z",
+  "embeds_diagram": true,
+  "citations_used": [1, 2, 3],
+  "sections": ["Overview", "Key Concepts", "Worked Example", "In Practice", "Key Takeaways", "References"]
+}

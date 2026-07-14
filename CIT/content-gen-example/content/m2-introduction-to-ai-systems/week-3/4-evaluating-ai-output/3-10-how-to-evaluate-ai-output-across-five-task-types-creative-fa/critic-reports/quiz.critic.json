@@ -1,0 +1,78 @@
+{
+  "passed": true,
+  "checks": {
+    "bias_defense_prerequisite": {
+      "passed": true,
+      "note": "$bias_defense_applied=true confirmed in quiz.meta.json"
+    },
+    "positional_bias": {
+      "passed": true,
+      "derived_positions": [2, 0, 3, 1, 2],
+      "sidecar_positions":  [2, 0, 3, 1, 2],
+      "meta_gift_desync": false,
+      "distribution": { "pos0": 1, "pos1": 1, "pos2": 2, "pos3": 1 },
+      "max_share": 0.40,
+      "threshold": 0.40,
+      "note": "max_share=0.40 is exactly at threshold, not above it — passes the >0.40 hard-fail rule"
+    },
+    "length_bias": {
+      "passed": true,
+      "longest_correct_rate": 0.0,
+      "baseline": 0.25,
+      "threshold": 0.40,
+      "per_question": {
+        "q1": { "correct_pct_of_mean": 102.6, "longest_correct": false },
+        "q2": { "correct_pct_of_mean": 103.9, "longest_correct": false },
+        "q3": { "correct_pct_of_mean":  95.8, "longest_correct": false },
+        "q4": { "correct_pct_of_mean": 105.4, "longest_correct": false },
+        "q5": { "correct_pct_of_mean": 101.4, "longest_correct": false }
+      }
+    },
+    "distractor_plausibility": {
+      "passed": true,
+      "total_distractors": 15,
+      "absurd_count": 0,
+      "absurd_rate": 0.0,
+      "threshold": 0.25,
+      "weakest_questions": [
+        {
+          "id": "q5",
+          "distractor": "Selecting criteria after reading allows the AI system to refine its output in response to your initial impressions before the formal evaluation begins",
+          "score": 2,
+          "note": "Implies the AI observes the evaluator reading — implausible even to beginners; weak but not absurd (score=2, not 1)"
+        }
+      ]
+    },
+    "objective_coverage": {
+      "passed": true,
+      "learning_objectives": [
+        "Name the five AI output task types and explain why each one needs its own evaluation criteria.",
+        "Apply at least three evaluation criteria to creative AI output without incorrectly using factual accuracy as the standard.",
+        "Apply at least three evaluation criteria to factual AI output, including checking citations for hallucination.",
+        "Apply at least three evaluation criteria to logical AI output by tracing each reasoning step.",
+        "Apply the five-step general evaluation workflow to a real AI output and document the result in a structured format."
+      ],
+      "coverage_map": {
+        "LO1": ["q1"],
+        "LO2": ["q2"],
+        "LO3": ["q3"],
+        "LO4": ["q4"],
+        "LO5": ["q5"]
+      },
+      "uncovered_objectives": [],
+      "orphan_questions": []
+    },
+    "beginner_fairness_and_scope": {
+      "passed": true,
+      "jargon_in_stem": [],
+      "out_of_scope_questions": [],
+      "unfair_distractors": [],
+      "notes": "All stems readable with corpus knowledge only. All named criteria (step validity, no unwarranted leaps, etc.) defined in corpus §5.5. Anchoring concept in q5 correct answer text is grounded in corpus §6 Step 2 language. No acronyms. No prerequisites beyond this topic required."
+    }
+  },
+  "auto_correction_applied": {
+    "shuffle_round_2": false
+  },
+  "verdict": "Pass — all checks clean. Bias defense confirmed; positional max_share=0.40 (at threshold, not above); length bias rate=0.0; no absurd distractors (one score-2 weak distractor in q5 noted, not a fail); all 5 LOs covered 1:1; no out-of-scope questions; beginner-fair stems and distractors throughout.",
+  "at": "2026-06-18T00:00:00Z"
+}

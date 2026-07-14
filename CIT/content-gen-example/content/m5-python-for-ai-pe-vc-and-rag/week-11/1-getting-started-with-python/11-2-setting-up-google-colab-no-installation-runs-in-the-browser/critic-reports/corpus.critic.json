@@ -1,0 +1,41 @@
+{
+  "passed": true,
+  "cycle": 2,
+  "checks": {
+    "required_sections": {
+      "passed": true,
+      "notes": "All four required sections present with sufficient substance. Section 3 (Learning Objectives): 6 bullet objectives, ~100 words, exceeds ≥50-word threshold. Section 4 (Introduction): ~150 words, exceeds threshold. Section 5 (Core Concepts): 8 subsections (5.1–5.8), well over 100 words. Section 10 (Key Takeaways): 5 substantive bullets with citations, ~120 words."
+    },
+    "citation_density": {
+      "passed": true,
+      "primary_cited": true,
+      "uncited_resources": [],
+      "claim_citation_rate": 0.75,
+      "notes": "All 5 primary resources cited at least once. [1] cited at lines 32, 36, 48, 54, 163, 230. [2] cited at lines 36, 58, 70, 74, 78, 114, 124, 138, 154, 180, 231, 232. [3] cited at lines 50, 66, 78, 94, 124, 195, 201, 231. [4] cited at lines 98, 108, 207, 209, 233. [5] cited at lines 62, 112, 118, 234. Estimated ~75% of key factual assertions in sections 5, 6, 7 carry citation markers, exceeding the 60% threshold. Cycle 2 changes (numeric-expression substitutions) did not remove any citations."
+    },
+    "sequence_drift": {
+      "passed": true,
+      "forward_refs": [],
+      "notes": "Cycle 1 failure resolved. The term 'variable' now appears exactly once (line 201) as a proper deferral pointer: 'you will learn exactly how this works through variables in topic 11.3'. All other former uses of 'variable' have been replaced with non-technical paraphrases: 'output you computed by running code' (line 102), 'outputs are not what you expected' (line 106), 'live computational state in memory' (line 207), 'computed results in memory are lost' (line 233). One pointer to 11.3 is explicitly allowed per sequence rules. No other forward references to 11.4+ concepts (if/else, for loops, data types string/int/float/bool, LLM API, RAG, vectors) detected."
+    },
+    "length_sanity": {
+      "passed": true,
+      "word_count": 2050,
+      "profile": "standard",
+      "notes": "Cycle 2 edits (5 variable-to-paraphrase substitutions, print() replaced with numeric expressions in 2 locations) are net-neutral on word count. Estimated ~2050 words, within standard profile range of 1500–4000 words."
+    },
+    "topic_scope": {
+      "passed": true,
+      "scope_creep": [],
+      "notes": "Cycle 1 failure resolved. print() has been removed entirely from the corpus. Implementation walkthrough (Step 4, line 174) now uses the numeric expression '2 + 2', and the Hands-On Exercise (step 2, line 218) uses '10 + 5'. A further exercise step (line 221) uses '1 + 1'. These numeric expressions demonstrate code cell execution without naming or teaching any Python built-in function. No Python syntax is taught beyond entering an arithmetic expression into a cell. No other scope creep identified."
+    },
+    "beginner_readability": {
+      "passed": true,
+      "findings": [
+        "Minor soft finding: 'computational essay' (line 192, Real-World Patterns section) introduced without formal definition. Low severity — it appears in an optional context paragraph and is not a concept learners are assessed on. One finding is well under the 3-finding escalation threshold."
+      ]
+    }
+  },
+  "verdict": "PASS — all 6 checks pass in cycle 2. Both cycle 1 failures are resolved: (1) sequence_drift fixed — 'variable' now appears only as a single explicit deferral pointer to topic 11.3, with all substantive prior uses replaced by output/result/computed paraphrases; (2) topic_scope fixed — print() removed entirely, replaced with numeric expressions (2+2, 10+5, 1+1) that demonstrate cell execution without teaching Python syntax. Citation density (75%), required sections, length (~2050 words, standard profile), and beginner readability all continue to pass. One soft readability finding ('computational essay' undefined) is below the escalation threshold. Corpus is approved to ground downstream artifacts.",
+  "at": "2026-06-12T00:16:00Z"
+}

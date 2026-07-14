@@ -1,0 +1,69 @@
+{
+  "module": "3-calling-an-llm-from-python",
+  "week_num": 12,
+  "passed": true,
+  "topics_checked": ["12.9", "12.10", "12.11", "12.12", "12.13", "12.14"],
+  "checks": {
+    "terminology_consistency": {
+      "passed": true,
+      "findings": [
+        {
+          "severity": "soft",
+          "topics": ["12.10", "12.13", "12.14"],
+          "finding": "The conceptual label 'AnthropicClient' appears in 12.10 section 5.5 code comment and in 12.13/12.14 prerequisites, but the actual SDK class is 'anthropic.Anthropic' (introduced correctly in 12.11). The label is used as a descriptive shorthand, not as a callable identifier, so this is cosmetic rather than a teaching error. No learner is directed to type 'AnthropicClient'. Soft flag only."
+        },
+        {
+          "severity": "soft",
+          "topics": ["12.11", "12.14"],
+          "finding": "Token size defined as 'roughly three to four characters' in 12.11 and as 'roughly four characters' in 12.14. Same concept, minor wording inconsistency. Not a teaching error."
+        }
+      ]
+    },
+    "prerequisites_respected": {
+      "passed": true,
+      "findings": []
+    },
+    "module_learning_arc": {
+      "passed": true,
+      "findings": []
+    },
+    "no_duplicated_material": {
+      "passed": true,
+      "findings": [
+        {
+          "severity": "soft",
+          "topics": ["12.10", "12.11"],
+          "finding": "Both topics cover the messages array, model parameter, and API key concepts. Overlap is intentional pedagogical scaffolding: 12.10 teaches anatomy (what the fields mean), 12.11 teaches mechanics (how to send the live call with max_tokens and read the response). Estimated Jaccard on Core Concept nouns ~0.35, well below the 0.6 threshold."
+        },
+        {
+          "severity": "soft",
+          "topics": ["12.11", "12.12"],
+          "finding": "Both topics reference 'message.content[0].text' and the response object. 12.11 introduces the expression as the endpoint of a working call; 12.12 dissects every field of the response object in depth. Intentional layering, not duplication. Estimated Jaccard ~0.40, below the 0.6 threshold."
+        }
+      ]
+    },
+    "lab_activity_alignment": {
+      "passed": true,
+      "findings": []
+    }
+  },
+  "per_topic_findings": {
+    "12.9": [],
+    "12.10": [
+      "Soft: 'AnthropicClient' used as descriptive label in section 5.5 code comment; actual class name 'anthropic.Anthropic' is introduced in 12.11. Cosmetic, not a teaching error."
+    ],
+    "12.11": [
+      "Soft: token size described as 'roughly three to four characters'; 12.14 says 'roughly four characters'. Minor wording inconsistency, same concept."
+    ],
+    "12.12": [],
+    "12.13": [
+      "Soft: 'AnthropicClient' appears in prerequisites field as a concept label; actual SDK class is 'anthropic.Anthropic'. Consistent with same soft flag on 12.10 and 12.14."
+    ],
+    "12.14": [
+      "Soft: 'AnthropicClient' appears in prerequisites field as a concept label. Same soft flag as 12.10 and 12.13.",
+      "Soft: token size described as 'roughly four characters'; 12.11 says 'roughly three to four characters'. Same soft flag as 12.11."
+    ]
+  },
+  "verdict": "PASS. All five checks pass. The module has a clean left-to-right pedagogical arc: 12.9 introduces the API concept and request/response model; 12.10 teaches the Anthropic-specific request anatomy; 12.11 makes the first live call; 12.12 dissects the response object; 12.13 adds error handling; 12.14 closes with design-decision framing and the cost-and-latency note required for Assessment A4. Prerequisites are strictly respected in delivery order. Terminology is consistent across all six topics. No Core Concept section pair exceeds the 0.6 Jaccard similarity threshold. The lab_activity_seed (domain system → API → structured JSON + cost-and-latency note, 5 test inputs) is fully supported: 12.10 provides system-prompt-as-JSON-format, 12.11 provides the API call mechanics, 12.12 provides response parsing, 12.13 provides error safety, and 12.14 provides the exact cost-and-latency measurement function and A4 note format. Four soft findings are logged for HITL #4 visibility; none gate the pass verdict.",
+  "at": "2026-06-15T12:00:00Z"
+}

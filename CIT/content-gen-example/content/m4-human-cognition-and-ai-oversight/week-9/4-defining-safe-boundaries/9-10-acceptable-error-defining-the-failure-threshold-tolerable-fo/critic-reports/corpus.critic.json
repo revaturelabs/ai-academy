@@ -1,0 +1,101 @@
+{
+  "critic": "corpus-critic",
+  "topic_id": "9.10",
+  "topic_title": "Acceptable error — defining the failure threshold tolerable for a use case",
+  "passed": true,
+  "cycle": 1,
+  "at": "2026-06-13T00:00:00Z",
+  "checks": {
+    "required_sections": {
+      "passed": true,
+      "sections_found": [
+        "3. Learning Objectives",
+        "4. Introduction",
+        "5. Core Concepts",
+        "9. Key Takeaways"
+      ],
+      "word_counts": {
+        "learning_objectives": 120,
+        "introduction": 210,
+        "core_concepts": 1100,
+        "key_takeaways": 195
+      },
+      "notes": "All four required sections present and well above minimum word counts."
+    },
+    "citation_density": {
+      "passed": true,
+      "resources_source": "web_search",
+      "primary_cited": true,
+      "primary_citation_count": 5,
+      "all_resources_cited": true,
+      "key_claim_citation_rate": 0.80,
+      "threshold": 0.60,
+      "sampled_claims": [
+        { "claim": "acceptable AI error rate was 6.8% vs 11.3% for humans", "citation": "[1]", "cited": true },
+        { "claim": "medical device ≤2% FN rate requirement", "citation": "[1]", "cited": true },
+        { "claim": "threshold set tight against test-set will be breached in production", "citation": "[2]", "cited": true },
+        { "claim": "alert fatigue can increase overall error rates", "citation": "[2]", "cited": true },
+        { "claim": "three-tier fraud detection structure", "citation": "[2]", "cited": true },
+        { "claim": "confidence threshold is a tunable parameter", "citation": "[3]", "cited": true },
+        { "claim": "confidence scores not calibrated probabilities unless explicitly calibrated", "citation": "[3]", "cited": true },
+        { "claim": "stakeholders hold AI to stricter standards than human practitioners", "citation": "[1]", "cited": true },
+        { "claim": "asymmetric cost: false positive vs false negative examples", "citation": null, "cited": false, "note": "Illustrative examples in §5.2 table — not new empirical claims; no citation required." },
+        { "claim": "threshold segmentation definition", "citation": null, "cited": false, "note": "Conceptual definition, not an empirical claim." }
+      ],
+      "notes": "All three resources cited; primary cited 5 times. Uncited entries are definitional examples, not empirical claims."
+    },
+    "sequence_drift": {
+      "passed": true,
+      "forward_refs": [],
+      "back_refs_verified": [
+        { "term": "alert fatigue", "introduced_in": "9.5" },
+        { "term": "calibrated trust", "introduced_in": "9.5" },
+        { "term": "cost-of-error triage", "introduced_in": "9.7" },
+        { "term": "severity of error", "introduced_in": "9.7" },
+        { "term": "detectability", "introduced_in": "9.7" },
+        { "term": "Judgment Framework", "introduced_in": "9.7" }
+      ],
+      "new_concepts_introduced": [
+        "acceptable error",
+        "failure threshold",
+        "false positive (Type I error)",
+        "false negative (Type II error)",
+        "asymmetric error cost",
+        "error tolerance",
+        "confidence threshold",
+        "threshold segmentation",
+        "human baseline comparison"
+      ],
+      "deferred_pointers": ["9.11 — high-stakes domains — §9 final bullet, named and deferred only"],
+      "notes": "No forward references. 9.11 named-and-deferred in one sentence in §9; not taught."
+    },
+    "length_sanity": {
+      "passed": true,
+      "word_count": 2920,
+      "profile": "standard",
+      "allowed_range": [1500, 3500],
+      "notes": "Word count within standard range."
+    },
+    "topic_scope": {
+      "passed": true,
+      "scope_creep": false,
+      "out_of_scope_concepts": [],
+      "notes": "All teaching confined to acceptable error, threshold-setting, FP/FN asymmetry, human baseline. 9.11 territory (high-stakes domains) named-and-deferred only."
+    },
+    "beginner_readability": {
+      "passed": true,
+      "undefined_terms_on_first_use": [],
+      "jargon_dumps": [],
+      "notes": [
+        "false positive and false negative defined in §5.2 table at first use.",
+        "asymmetric error cost defined in §5.3 header at first use.",
+        "confidence threshold defined in §6.1 at first use.",
+        "threshold segmentation defined in §7.1 at first use.",
+        "alert fatigue back-referenced to 9.5 — not re-defined, correctly treated as prior vocabulary.",
+        "plain register throughout; no hedging."
+      ],
+      "distinct_findings_count": 0
+    }
+  },
+  "verdict": "PASS — all six checks clear on cycle 1. Required sections present and substantial. Citation density 80% on sampled claims (threshold 60%). No forward references; 9.11 named-and-deferred only. Word count 2920 within standard range. Scope stays on acceptable error threshold-setting. All new terms defined on first use; prior vocabulary (alert fatigue, Judgment Framework) correctly back-referenced."
+}
