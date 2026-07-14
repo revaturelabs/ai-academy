@@ -1,0 +1,54 @@
+{
+  "topic_id": "3.3",
+  "generated_at": "2026-07-14T00:00:00Z",
+  "format": "gift",
+  "question_count": 14,
+  "$bias_defense_applied": true,
+  "$shuffle_seed": "topic_id_ord_sum:148",
+  "correct_position_distribution": [2, 0, 3, 1, 0, 2, 3, 1, 2, 0, 3],
+  "correct_position_distribution_counts": {"0": 3, "1": 2, "2": 3, "3": 3},
+  "mean_option_length_chars": 105.5,
+  "longest_option_correct_count": 3,
+  "length_bias_check": {
+    "rule": "flag if len(correct) > mean(distractors) * 1.20",
+    "verification_method": "Every answer-line's char length (text before the '#' feedback delimiter) was hand-counted directly from the written quiz.gift in groups of 10 characters, independently of the number that was first drafted into this sidecar. This second pass caught and corrected a genuine arithmetic slip in Q1's original count (it had been mis-tallied as correct=95/distractors=[115,108,104]; the verified re-count is correct=94/distractors=[105,99,94]). All other questions' first-pass counts (Q2-Q11) were reproduced exactly on re-count and are unchanged.",
+    "per_question_chars": {
+      "q1": {"correct": 94, "distractors": [105, 99, 94], "mean_distractors": 99.33, "ratio": 0.946, "flag": false},
+      "q2": {"correct": 132, "distractors": [128, 105, 124], "mean_distractors": 119.0, "ratio": 1.109, "flag": false},
+      "q3": {"correct": 84, "distractors": [88, 94, 81], "mean_distractors": 87.67, "ratio": 0.958, "flag": false},
+      "q4": {"correct": 99, "distractors": [91, 86, 84], "mean_distractors": 87.0, "ratio": 1.138, "flag": false},
+      "q5": {"correct": 104, "distractors": [110, 97, 100], "mean_distractors": 102.33, "ratio": 1.016, "flag": false},
+      "q6": {"correct": 142, "distractors": [136, 128, 129], "mean_distractors": 131.0, "ratio": 1.084, "flag": false},
+      "q7": {"correct": 127, "distractors": [132, 100, 112], "mean_distractors": 114.67, "ratio": 1.108, "flag": false},
+      "q8": {"correct": 128, "distractors": [116, 133, 116], "mean_distractors": 121.67, "ratio": 1.052, "flag": false},
+      "q9": {"correct": 94, "distractors": [104, 96, 100], "mean_distractors": 100.0, "ratio": 0.94, "flag": false},
+      "q10": {"correct": 111, "distractors": [112, 102, 103], "mean_distractors": 105.67, "ratio": 1.05, "flag": false},
+      "q11": {"correct": 77, "distractors": [79, 78, 90], "mean_distractors": 82.33, "ratio": 0.935, "flag": false}
+    },
+    "summary": "All 11 MCQs land between 0.935x and 1.138x of their distractor mean -- well inside the +/-20% band and none trip the >1.20 flag rule. Correct answer is the single longest option in only 3/11 questions (q2, q4, q6), close to the 25% chance rate for a 4-option item, so length does not systematically mark the correct answer."
+  },
+  "questions": [
+    {"id": "q1", "type": "mcq", "objective_ref": "Import a module three ways (import, from ... import, import ... as) and explain how each changes what name you use to reach the imported code.", "correct_position": 2},
+    {"id": "q2", "type": "mcq", "objective_ref": "Import a module three ways (import, from ... import, import ... as) and explain how each changes what name you use to reach the imported code.", "correct_position": 0},
+    {"id": "q3", "type": "mcq", "objective_ref": "Use the standard library modules random, math, and datetime to solve small, concrete problems.", "correct_position": 3},
+    {"id": "q4", "type": "mcq", "objective_ref": "Use the standard library modules random, math, and datetime to solve small, concrete problems.", "correct_position": 1},
+    {"id": "q5", "type": "mcq", "objective_ref": "Use the standard library modules random, math, and datetime to solve small, concrete problems.", "correct_position": 0},
+    {"id": "q6", "type": "mcq", "objective_ref": "Explain what pip does and how installing a third-party package differs from importing a standard-library module.", "correct_position": 2},
+    {"id": "q7", "type": "mcq", "objective_ref": "Explain what pip does and how installing a third-party package differs from importing a standard-library module.", "correct_position": 3},
+    {"id": "q8", "type": "mcq", "objective_ref": "Explain why an isolated virtual environment (venv) matters for a real project, and describe the create -> activate -> install -> deactivate workflow.", "correct_position": 1},
+    {"id": "q9", "type": "mcq", "objective_ref": "Explain why an isolated virtual environment (venv) matters for a real project, and describe the create -> activate -> install -> deactivate workflow.", "correct_position": 2},
+    {"id": "q10", "type": "mcq", "objective_ref": "Describe, at a conceptual level, what poetry new scaffolds and how Poetry manages a project's dependencies.", "correct_position": 0},
+    {"id": "q11", "type": "mcq", "objective_ref": "Write a first Pytest test function and explain how Pytest discovers and reports on it.", "correct_position": 3},
+    {"id": "q12", "type": "short_answer", "objective_ref": "Explain why an isolated virtual environment (venv) matters for a real project, and describe the create -> activate -> install -> deactivate workflow.", "correct_position": null},
+    {"id": "q13", "type": "short_answer", "objective_ref": "Describe, at a conceptual level, what poetry new scaffolds and how Poetry manages a project's dependencies.", "correct_position": null},
+    {"id": "q14", "type": "short_answer", "objective_ref": "Write a first Pytest test function and explain how Pytest discovers and reports on it.", "correct_position": null}
+  ],
+  "objective_coverage": [
+    "Import a module three ways (import, from ... import, import ... as) and explain how each changes what name you use to reach the imported code.",
+    "Use the standard library modules random, math, and datetime to solve small, concrete problems.",
+    "Explain what pip does and how installing a third-party package differs from importing a standard-library module.",
+    "Explain why an isolated virtual environment (venv) matters for a real project, and describe the create -> activate -> install -> deactivate workflow.",
+    "Describe, at a conceptual level, what poetry new scaffolds and how Poetry manages a project's dependencies.",
+    "Write a first Pytest test function and explain how Pytest discovers and reports on it."
+  ]
+}

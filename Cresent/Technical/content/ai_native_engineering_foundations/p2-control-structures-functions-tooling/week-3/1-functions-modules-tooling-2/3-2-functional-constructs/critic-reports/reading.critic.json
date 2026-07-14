@@ -1,0 +1,72 @@
+{
+  "passed": true,
+  "checks": {
+    "format_discipline": {
+      "passed": true,
+      "frontmatter_present": false,
+      "detail": "reading.md's first non-empty line is '# Functional Constructs' -- no leading YAML frontmatter block."
+    },
+    "meta_sidecar": {
+      "passed": true,
+      "detail": "reading.meta.json exists and parses; word_count=2040, estimated_read_minutes=10, citations_used=[1,2,3,4], sections=[Overview, Key Concepts, Worked Example, In Practice, Key Takeaways, References]."
+    },
+    "section_template": {
+      "passed": true,
+      "detail": "Exactly the six fixed ## headings present in the required order: Overview (L3), Key Concepts (L7), Worked Example (L119), In Practice (L156), Key Takeaways (L167), References (L175). None added, renamed, or dropped."
+    },
+    "length": {
+      "passed": true,
+      "word_count_reported": 2040,
+      "target_word_range": [1800, 2200],
+      "word_count_ok": true,
+      "minutes_check": {
+        "wpm_authoritative_per_config": 200,
+        "minutes_at_200wpm": "2040/200 = 10.2 min",
+        "target_minute_range": [9, 11],
+        "ok": true,
+        "note": ".claude/config/artifact-mix.json fixes reading_wpm=200 (not the reading-critic SKILL.md's illustrative 230 figure); at 200 wpm the word range and minute range are calibrated consistently and 2040 words lands comfortably at ~10.2 min."
+      }
+    },
+    "citations": {
+      "passed": true,
+      "all_four_resources_cited": true,
+      "resource_check": {
+        "[1] realpython.com/python-lambda/": "cited (lambda syntax, sorted key, map/filter examples)",
+        "[2] docs.python.org/3/howto/functional.html": "cited (higher-order functions, map/filter/sorted, lazy evaluation)",
+        "[3] realpython.com/primer-on-python-decorators/": "cited (decorator mechanics, @timer worked example)",
+        "[4] realpython.com/introduction-to-python-generators/": "cited (generator/yield mechanics, lazy evaluation)"
+      },
+      "orphan_markers": [],
+      "orphan_bibliography_entries": [],
+      "bibliography_matches_inline_markers": true
+    },
+    "no_forward_references": {
+      "passed": true,
+      "detail": "Checked against sequence.index.json id=3.2 concepts_introduced (lambda, higher-order functions, map/filter, sorted(key=...), decorators, generators/yield, lazy evaluation). Reading stays within this set plus explicit backward references to 3.1 (*args/**kwargs). The one mention of 'list comprehension' (L50) is explicitly flagged as '(a later topic)' and is never used in code -- this phrasing is copied verbatim from topic_corpus.md L76, i.e. it is the pre-approved corpus convention, not a new forward reference introduced by the reading. No terms from 3.3 (modules/packaging) or 5.3 (Iterators, Generators & Collections) appear."
+    },
+    "generator_forward_reference_regression_check": {
+      "passed": true,
+      "detail": "Verified the reading did NOT reintroduce the previously-removed forward references in the generators subsection (corpus 5.4 fix: list-comprehension and bare next() removed, replaced with plain for/counter/break). reading.md's generator section (L72-117) consumes both count_up_to() and fibonacci() exclusively via 'for value in ...:' loops with an explicit count/break pattern -- no list comprehension and no bare next() call anywhere in the document."
+    },
+    "faithfulness": {
+      "passed": true,
+      "assertions_sampled": 12,
+      "unsupported_count": 0,
+      "detail": "Reading is a close, faithful paraphrase of topic_corpus.md sections 5.1-5.4, 6, 7, 8, 10. Sampled assertions (lambda single-expression restriction, sorted(key=) call-once-per-item semantics, map() returning a lazy map object, filter() truthy-keep semantics, decorator func=decorator(func) shorthand, wrapper *args/**kwargs necessity, generator-object-not-run-until-iterated, pause/resume state-freeze mechanics, fibonacci() while True infinite generator, break-stops-loop-not-generator, @timer step-by-step build, all five Key Takeaways) all trace verbatim or near-verbatim to the corpus. No fabricated claims found."
+    },
+    "tone_fit": {
+      "passed": true,
+      "hedging_phrase_count": 0,
+      "detail": "Plainspoken, second-person, example-driven register matching the corpus voice. A few individual sentences run long (Overview's opening sentence ~46 words; L112's diagram lead-in ~45 words) but these are isolated and do not pull the document's average sentence length over the 25-word threshold. No hedging phrases found."
+    },
+    "diagram_embedding": {
+      "passed": true,
+      "detail": "diagram.png/diagram.mmd (generator pause/resume cycle for fibonacci(), matching topic.manifest.json artifact_plan.diagram_intent) is referenced inline at L114-115, inside the Generators subsection, directly after the prose paragraph (L112) that walks through the exact cycle the diagram traces ('The diagram below traces exactly this cycle...'), and before the concluding paragraph on break/lazy evaluation. Diagram content (call -> paused generator holding a=0,b=1 -> yield -> for-loop count -> resume-and-update a,b=b,a+b -> break at count==5) matches the caption and the surrounding prose exactly. Not tacked on at the end of the document."
+    }
+  },
+  "non_blocking_findings": [
+    "Two individual sentences (Overview opener; the diagram lead-in sentence at L112) run notably longer than the surrounding register and could be split for readability, though this does not fail the tone-fit check."
+  ],
+  "verdict": "PASS - all checks pass. Format discipline is clean (no frontmatter, valid meta.json sidecar, exact six-section template in order). Word count (2040) sits inside the deep profile's [1800, 2200] target, and at the authoritative 200 wpm (.claude/config/artifact-mix.json, not the reading-critic SKILL.md's illustrative 230 figure) reading time is ~10.2 min, within [9, 11]. All four resources.json entries are cited at least once with no orphan markers or bibliography mismatches. No forward references beyond 3.2's own concepts_introduced in sequence.index.json -- the single 'list comprehension (a later topic)' mention is the pre-approved corpus phrasing, not a new addition. Specifically verified the generators subsection did not regress the corpus's prior fix: no list comprehension and no bare next() appear anywhere in the reading; both count_up_to() and fibonacci() are consumed only via for-loops with explicit count/break. Faithfulness check found zero unsupported assertions across 12 sampled claims. Tone is plainspoken with zero hedging phrases. The generator pause/resume diagram is embedded inline at the correct point in the Generators subsection with a contextual lead-in and a caption matching both the diagram.mmd nodes and surrounding prose, not tacked on at the end.",
+  "at": "2026-07-14T00:00:00Z"
+}

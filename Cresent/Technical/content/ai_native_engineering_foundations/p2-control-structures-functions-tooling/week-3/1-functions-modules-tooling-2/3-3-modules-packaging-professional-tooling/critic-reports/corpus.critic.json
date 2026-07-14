@@ -1,0 +1,96 @@
+{
+  "topic_id": "3.3",
+  "critic": "corpus-critic",
+  "corpus_path": "content/ai_native_engineering_foundations/p2-control-structures-functions-tooling/week-3/1-functions-modules-tooling-2/3-3-modules-packaging-professional-tooling/topic_corpus.md",
+  "resources_path": "content/ai_native_engineering_foundations/p2-control-structures-functions-tooling/week-3/1-functions-modules-tooling-2/3-3-modules-packaging-professional-tooling/topic.resources.json",
+  "sequence_index_path": "content/curriculum/sequence.index.json",
+  "passed": true,
+  "checks": {
+    "required_sections": {
+      "passed": true,
+      "detail": {
+        "section_3_learning_objectives": { "present": true, "word_count": 110, "min_required": 50, "ok": true, "note": "6 non-trivial, verifiable objectives" },
+        "section_4_introduction": { "present": true, "word_count": 225, "min_required": 50, "ok": true, "note": "2 paragraphs, motivates all four sub-topics (modules, stdlib, pip/venv, Poetry/Pytest)" },
+        "section_5_core_concepts": { "present": true, "word_count": 1248, "min_required": 100, "ok": true, "note": "6 sub-concepts (5.1-5.6), well over floor" },
+        "section_10_key_takeaways": { "present": true, "word_count": 132, "min_required": 50, "ok": true, "note": "5 substantive bullets, one per sub-concept" }
+      }
+    },
+    "citation_density": {
+      "passed": true,
+      "resources_source": "web_search",
+      "mode": "strict",
+      "primary_resources_cited": {
+        "[1] https://docs.python.org/3/tutorial/modules.html": { "cited": true, "occurrences": 4, "sections": ["5.1 (x3)", "7 (x1)"] },
+        "[2] https://docs.python.org/3/tutorial/venv.html": { "cited": true, "occurrences": 6, "sections": ["5.3 (x2)", "5.4 (x2)", "7 (x2, one shared with [4])"], "note": "resource's own notes field covers both venv AND pip ('creating/activating virtual environments, installing packages'), so citing [2] for the pip/PyPI claims in 5.3 is a correct source match, not a mismatch" }
+      },
+      "supporting_resources_cited": {
+        "[3] docs.python.org/3/tutorial/stdlib.html": { "cited": true, "occurrences": 4 },
+        "[4] python-poetry.org/docs/basic-usage/": { "cited": true, "occurrences": 4 },
+        "[5] docs.pytest.org/en/stable/getting-started.html": { "cited": true, "occurrences": 4 }
+      },
+      "all_five_resources_cited": true,
+      "fabricated_citations_found": false,
+      "standalone_claim_coverage_estimate": {
+        "method": "Enumerated standalone factual assertions per sub-section (5.1-5.6), Implementation (6), and Real-World Patterns (7), excluding code blocks, worked-example arithmetic/illustration sentences, and author-synthesis/framing sentences that restate an already-cited claim (same exclusion methodology used in the 3.1 and 3.2 corpus-critic passes).",
+        "5.1_modules_and_imports": "3/6 cited (50%) -- the three import/from-import/as semantic sentences sit uncited between two [1]-cited sentences (module def, namespacing) on the same resource/topic; treated as part of the same cited cluster rather than a fresh unsupported claim, consistent with how 3.1's minor single-sentence gaps were treated as non-blocking rather than hard misses.",
+        "5.2_stdlib": "4/5 cited (80%)",
+        "5.3_pip": "2/3 cited (67%, excluding the worked pip-install-requests illustration and the import-vs-pip-install distinction framing)",
+        "5.4_venv": "2/3 cited (67%, treating the 4-step create/activate/install/deactivate list as one unit closed out by [2])",
+        "5.5_poetry": "3/3 cited (100%, excluding the closing concept-framing sentence)",
+        "5.6_pytest": "3/4 cited (75%, excluding the closing concept-framing sentence)",
+        "6_implementation": "0/6 cited -- procedural how-to steps restating already-cited 5.1-5.6 concepts (poetry new, venv activate, pip install, import forms, pytest); same treatment as 3.2's uncited Implementation section",
+        "7_real_world_patterns": "4/4 cited (100%)",
+        "aggregate_excl_implementation": "21/28 standalone claims cited (~75%), comfortably above the 60% strict-mode floor",
+        "isolated_uncited_gaps_flagged_non_blocking": [
+          "5.1: the three sentences explaining what each of import / from...import / import...as actually does are individually uncited, though bracketed by [1]-cited sentences on the same topic from the same resource",
+          "5.2: closing 'point of the standard library...hundreds of modules' sentence",
+          "5.3: opening 'stdlib is large but cannot cover everything' sentence",
+          "5.4: opening 'installing globally is a problem' sentence and closing 'every serious project gets its own venv' framing",
+          "5.6: the assert-statement mechanics sentence"
+        ]
+      }
+    },
+    "forward_reference_drift": {
+      "passed": true,
+      "prior_concepts_checked": {
+        "3.1": ["function definition and calling", "return values", "positional/keyword/default arguments", "*args and **kwargs", "local vs global scope", "recursion (base case + recursive case)", "docstrings"],
+        "3.2": ["lambda (anonymous) functions", "higher-order functions", "map() and filter()", "sorted(key=...)", "decorators (@decorator syntax)", "generators and the yield keyword", "lazy evaluation (concept)"],
+        "3.3_own": ["modules and imports (import, from...import, as)", "namespacing", "packages (directories of modules)", "the Python Standard Library", "random, math, and datetime modules", "package management with pip", "PyPI (Python Package Index)", "virtual environments (venv) and dependency isolation", "Poetry (poetry new, pyproject.toml)", "Pytest (test functions, assert, test discovery)"],
+        "1.x_2.x": "concepts_introduced arrays for 1.1-2.2 are empty in sequence.index.json (not yet corpus-drafted); baseline evident subject matter (variables, for/while loops, default arguments, .py files/interpreter) treated as fair-game vocabulary per module prerequisites (1.1, 2.2 listed as this topic's own prerequisites) and consistent with prior critic passes' treatment."
+        },
+      "full_corpus_scan": {
+        "method": "Read the full topic_corpus.md and cross-checked every technical noun phrase and every code sample against the concept lists above.",
+        "in_scope_confirmed": "import / from...import / import...as, namespacing, packages, random/math/datetime, pip, PyPI, venv (create/activate/install/deactivate), Poetry (poetry new/add/install/run, pyproject.toml), Pytest (test_ discovery, assert) -- all map directly onto 3.3's own concepts_introduced.",
+        "backward_references_confirmed_ok": "Introduction's mention of `def`, loops, `*args`, decorators is explicitly backward-looking ('every tool you have used to write it... came built into Python itself'), referencing 3.1 (*args) and 3.2 (decorators) and 2.x (loops) -- not new forward material.",
+        "watch_item_not_flagged_as_a_failure": "5.3 names the runtime error `ModuleNotFoundError` when describing what happens if a package is not installed ('fails with a ModuleNotFoundError before installation'). Formal exception handling (try/except, 'Errors & Exceptions') is topic 7.2, far later in the sequence. However, this is a purely descriptive naming of a runtime error message -- no try/except syntax is used or required to follow the sentence, and no exception-handling behavior is taught or exercised. Judged non-blocking, consistent with how 3.2's parenthetical 'list comprehension (a later topic)' mention was judged acceptable pedagogical/descriptive language rather than a syntax-level forward reference -- this is a slightly higher-risk case since it is not explicitly flagged as 'a later topic,' but it does not rise to the level of requiring or demonstrating unstudied syntax.",
+        "other_candidates_checked_and_cleared": [
+          "round() builtin in the Pytest code example -- baseline builtin-function vocabulary, not a taught 'concept' of this or any listed topic, consistent with prior passes' treatment of baseline builtins (e.g. 3.2's time.time()).",
+          "default argument `roll(sides=6)` in the Hands-On Exercise -- explicitly 3.1's own concept (positional/keyword/default arguments), not a forward reference.",
+          "f-strings, list/dict comprehensions, classes, exceptions-as-syntax, iterator protocol -- none appear anywhere in the corpus (grep-verified for comprehension/fixture/unittest/TestCase/conftest/parametrize/@pytest patterns, all absent)."
+        ]
+      },
+      "unknown_or_forward_referenced_terms": []
+    },
+    "poetry_pytest_concept_level_verification": {
+      "passed": true,
+      "method": "Independently re-read sections 5.4 (venv), 5.5 (Poetry), 5.6 (Pytest), 6 (Implementation), and 9 (Hands-On Exercise) in full, plus grepped the whole corpus for fixture|unittest|TestCase|conftest|parametrize|@pytest|self\\.assert|live terminal patterns, rather than trusting the corpus-builder's self-report.",
+      "venv_no_live_terminal_assumption": "Confirmed. Section 5.4 explicitly frames the create/activate/install/deactivate workflow as 'described here rather than run live, since it depends on a real terminal.' The Hands-On Exercise (section 9) explicitly asks the learner to 'sketch (on paper, or as a comment block -- no live terminal required) the four venv commands' rather than execute them.",
+      "poetry_concept_only": "Confirmed. Section 5.5 and Implementation step 1/3 describe poetry new / poetry add / poetry install / poetry run narratively (what each command scaffolds/does and why), with no instruction to actually run a live Poetry command, no assumption of a live terminal session, and an explicit closing line ('At the concept level this topic asks you to hold onto...') anchoring it as conceptual.",
+      "pytest_no_fixtures_no_unittest": "Confirmed. Section 5.6's only code example is one `test_`-prefixed function using plain `assert` statements -- no `@pytest.fixture`, no `conftest.py`, no `@pytest.mark.parametrize`, no `unittest.TestCase`/`self.assert*` anywhere in the corpus (grep returned zero hits for any of these patterns). The Hands-On Exercise similarly asks only for one `test_dice.py` function with a plain `assert`.",
+      "grep_result": "Zero matches for fixture|unittest|TestCase|conftest|parametrize|@pytest|self\\.assert anywhere in topic_corpus.md. Two matches for the live-terminal-avoidance language itself (5.4 workflow intro, section 9 exercise instructions) -- both confirming the claim rather than contradicting it.",
+      "verdict": "The corpus-builder's self-reported claim holds under independent verification: Poetry and Pytest content is strictly conceptual, and the venv workflow makes no live-terminal assumption."
+    },
+    "length_sanity": {
+      "passed": true,
+      "recounted_word_count_excluding_code_and_frontmatter": 2328,
+      "recounted_word_count_including_code_blocks": "~2390-2400",
+      "self_reported_word_count": 2400,
+      "suggested_profile": "deep",
+      "reference_range_used": "artifact-mix.json profiles.deep.reading.target_word_range = [1800, 2200] (authoritative source per task instruction, same range used for 3.1 and 3.2)",
+      "method": "Manual section-by-section whitespace-token recount of the full corpus body (headers + prose + list items, excluding YAML frontmatter and fenced code blocks), then a rough token estimate for the ~5 short code blocks added back in for a second, code-inclusive figure. Both figures independently land close to the corpus-builder's own self-reported ~2400, corroborating that self-report rather than contradicting it.",
+      "verdict_on_flag": "~2390-2400 words is ~190-200 words / ~8.6-9.1% over the 2200 upper bound of the deep range. This is a smaller overage than 3.2's ~11.8% over, and well inside the 30%-outside-range hard-fail tolerance (2200 * 1.3 = 2860). Judged a SOFT FLAG, non-blocking, consistent with how 3.2 was treated (3.1, by contrast, landed in-range and needed no flag at all). Recommend trimming ~200 words on a future revision pass if this corpus is revisited (candidates: 5.4's closing 'every serious project gets its own venv' paragraph, 5.2's closing 'point of the standard library' paragraph, and 5.5/5.6's closing concept-framing sentences, all of which are uncited synthesis that could be tightened) -- but this does not block the current pass."
+    }
+  },
+  "verdict": "PASS. All required sections (3 Learning Objectives, 4 Introduction, 5 Core Concepts, 10 Key Takeaways) are present and well over their word-count floors. Citation density in strict mode (resources_source=web_search) is satisfied: both primary resources ([1] docs.python.org/tutorial/modules.html and [2] docs.python.org/tutorial/venv.html) are cited multiple times each, all 3 supporting resources are also cited, no fabricated [N] markers exist, and an enumerated standalone-claim count across sections 5 and 7 (excluding the uncited-but-precedent-accepted Implementation section, which purely restates already-cited concepts) clears the 60% floor at ~75%. No forward-reference violations against 3.3's own concepts_introduced or any prior topic (3.1, 3.2) in sequence.index.json; a full corpus scan found only backward references and one non-blocking watch item (a descriptive, non-syntactic mention of the ModuleNotFoundError runtime error name, well before formal exception handling at topic 7.2 -- judged acceptable since no try/except syntax is used or required). The corpus-builder's claim that Poetry and Pytest content is held strictly at concept level, with no live-terminal assumption for venv, was independently re-verified by re-reading sections 5.4-5.6/6/9 and grepping the whole corpus for fixture/unittest/TestCase/conftest/parametrize/@pytest/self.assert patterns (zero hits) -- the claim holds. Length: an independent manual recount lands at ~2328 words excluding code blocks (~2390-2400 including them), corroborating the corpus-builder's own ~2400 self-report; this is ~8.6-9.1% over the deep profile's 2200-word upper bound, a smaller overage than 3.2's ~11.8% and well inside the 30% hard-fail tolerance -- judged a non-blocking soft flag, same treatment 3.2 received, not a hard fail. No changes required before this corpus proceeds to the next gate; length trim is a recommended-but-optional future polish item.",
+  "at": "2026-07-14T00:00:00Z"
+}

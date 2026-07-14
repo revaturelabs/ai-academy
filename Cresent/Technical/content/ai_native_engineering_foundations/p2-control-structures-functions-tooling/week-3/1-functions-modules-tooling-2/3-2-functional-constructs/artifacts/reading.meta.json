@@ -1,0 +1,10 @@
+{
+  "topic_id": "3.2",
+  "title": "Functional Constructs",
+  "estimated_read_minutes": 10,
+  "word_count": 2040,
+  "generated_at": "2026-07-14T11:30:00Z",
+  "embeds_diagram": true,
+  "citations_used": [1, 2, 3, 4],
+  "sections": ["Overview", "Key Concepts", "Worked Example", "In Practice", "Key Takeaways", "References"]
+}

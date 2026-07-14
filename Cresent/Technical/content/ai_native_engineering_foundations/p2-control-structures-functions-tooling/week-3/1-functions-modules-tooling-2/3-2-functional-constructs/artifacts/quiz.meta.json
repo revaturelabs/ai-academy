@@ -1,0 +1,51 @@
+{
+  "topic_id": "3.2",
+  "generated_at": "2026-07-14T00:00:00Z",
+  "format": "gift",
+  "question_count": 15,
+  "mcq_count": 12,
+  "short_answer_count": 3,
+  "$bias_defense_applied": true,
+  "$shuffle_seed": "topic_id_charsum=147 (LCG a=5,c=1,m=4, seeded 147 mod 4 = 3)",
+  "correct_position_distribution": [3, 0, 1, 2, 3, 0, 1, 2, 3, 0, 1, 2],
+  "correct_position_distribution_note": "0-based index of the '=' line within each MCQ's answer block (q1-q12, in file order). Verified directly against artifacts/quiz.gift: counts {0: 3, 1: 3, 2: 3, 3: 3} — perfectly uniform across 12 MCQs.",
+  "option_length_balance": {
+    "method": "Character length of each answer option's learner-visible text (backslash escapes for : and = excluded, since they render invisibly in GIFT), measured per question; verified within +/-20% of that question's own mean.",
+    "per_question_lengths_chars": {
+      "q1": [21, 17, 20, 15],
+      "q2": [42, 42, 42, 41],
+      "q3": [58, 49, 52, 52],
+      "q4": [41, 57, 56, 42],
+      "q5": [60, 49, 58, 57],
+      "q6": [41, 40, 46, 41],
+      "q7": [39, 40, 40, 41],
+      "q8": [52, 54, 47, 54],
+      "q9": [54, 49, 50, 62],
+      "q10": [61, 60, 47, 50],
+      "q11": [48, 51, 57, 57],
+      "q12": [63, 58, 56, 63]
+    },
+    "per_question_lengths_note": "Listed in the answer-line order actually written in quiz.gift (post-shuffle), so index i corresponds to correct_position_distribution[i] for that question.",
+    "mean_option_length_chars": 47.7,
+    "raw_file_text_mean_chars_incl_escapes": 48.2,
+    "longest_option_is_correct_count": 3,
+    "longest_option_is_correct_note": "Out of 12 MCQs, the correct answer is the longest (or tied-longest) option in 3 (q2 tie, q9, q10) -- 25%, matching chance level for 4 options and showing no systematic length-favors-correct bias."
+  },
+  "questions": [
+    { "id": "q1", "type": "mcq", "objective_ref": "Write a lambda expression and explain when it is preferable to a named def function.", "correct_position": 3 },
+    { "id": "q2", "type": "mcq", "objective_ref": "Write a lambda expression and explain when it is preferable to a named def function.", "correct_position": 0 },
+    { "id": "q3", "type": "mcq", "objective_ref": "Use a lambda as the key argument to sorted() to control how a list is ordered.", "correct_position": 1 },
+    { "id": "q4", "type": "mcq", "objective_ref": "Use a lambda as the key argument to sorted() to control how a list is ordered.", "correct_position": 2 },
+    { "id": "q5", "type": "mcq", "objective_ref": "Explain what a higher-order function is and describe what map() and filter() do conceptually.", "correct_position": 3 },
+    { "id": "q6", "type": "mcq", "objective_ref": "Explain what a higher-order function is and describe what map() and filter() do conceptually.", "correct_position": 0 },
+    { "id": "q7", "type": "mcq", "objective_ref": "Explain what a higher-order function is and describe what map() and filter() do conceptually.", "correct_position": 1 },
+    { "id": "q8", "type": "mcq", "objective_ref": "Write a simple decorator using the @decorator syntax, including a @timer that measures a function's run time.", "correct_position": 2 },
+    { "id": "q9", "type": "mcq", "objective_ref": "Write a simple decorator using the @decorator syntax, including a @timer that measures a function's run time.", "correct_position": 3 },
+    { "id": "q10", "type": "mcq", "objective_ref": "Write a simple decorator using the @decorator syntax, including a @timer that measures a function's run time.", "correct_position": 0 },
+    { "id": "q11", "type": "mcq", "objective_ref": "Write a generator function using yield and explain lazy evaluation -- why a generator does not compute all its values up front.", "correct_position": 1 },
+    { "id": "q12", "type": "mcq", "objective_ref": "Write a generator function using yield and explain lazy evaluation -- why a generator does not compute all its values up front.", "correct_position": 2 },
+    { "id": "q13", "type": "short_answer", "objective_ref": "Write a lambda expression and explain when it is preferable to a named def function.", "correct_position": null },
+    { "id": "q14", "type": "short_answer", "objective_ref": "Write a simple decorator using the @decorator syntax, including a @timer that measures a function's run time.", "correct_position": null },
+    { "id": "q15", "type": "short_answer", "objective_ref": "Write a generator function using yield and explain lazy evaluation -- why a generator does not compute all its values up front.", "correct_position": null }
+  ]
+}

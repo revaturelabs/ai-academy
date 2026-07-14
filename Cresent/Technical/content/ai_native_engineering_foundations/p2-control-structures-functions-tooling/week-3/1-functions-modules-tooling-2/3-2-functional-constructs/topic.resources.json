@@ -1,0 +1,37 @@
+{
+  "topic_id": "3.2",
+  "captured_at": "2026-07-14T00:00:00Z",
+  "captured_by": "bhuvaneshwarim@revature.com",
+  "resources_source": "web_search",
+  "resources": [
+    {
+      "type": "url",
+      "value": "https://realpython.com/python-lambda/",
+      "role": "primary",
+      "source": "web_search",
+      "notes": "Lambda function syntax and use as a sort key / with map, filter, sorted."
+    },
+    {
+      "type": "url",
+      "value": "https://docs.python.org/3/howto/functional.html",
+      "role": "supporting",
+      "source": "web_search",
+      "notes": "Official Functional Programming HOWTO: higher-order functions, map/filter, sorted(key=), generators."
+    },
+    {
+      "type": "url",
+      "value": "https://realpython.com/primer-on-python-decorators/",
+      "role": "supporting",
+      "source": "web_search",
+      "notes": "Decorators: @decorator syntax, wrapper functions, @timer-style practical use cases."
+    },
+    {
+      "type": "url",
+      "value": "https://realpython.com/introduction-to-python-generators/",
+      "role": "supporting",
+      "source": "web_search",
+      "notes": "Generators and yield: lazy evaluation, memory efficiency vs lists."
+    }
+  ],
+  "web_search_query": "Python lambda higher-order functions map filter sorted key decorators generators yield"
+}

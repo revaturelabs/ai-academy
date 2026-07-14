@@ -1,0 +1,60 @@
+{
+  "passed": true,
+  "checks": {
+    "required_sections": {
+      "passed": true,
+      "detail": {
+        "section_3_learning_objectives": { "present": true, "word_count": 85, "min_required": 50, "ok": true },
+        "section_4_introduction": { "present": true, "word_count": 158, "min_required": 50, "ok": true },
+        "section_5_core_concepts": { "present": true, "word_count": 1235, "min_required": 100, "ok": true },
+        "section_10_key_takeaways": { "present": true, "word_count": 130, "min_required": 50, "ok": true }
+      }
+    },
+    "citation_density": {
+      "passed": true,
+      "mode": "strict",
+      "resources_source": "web_search",
+      "primary_resource_cited": {
+        "url": "https://docs.python.org/3/tutorial/controlflow.html",
+        "cited": true,
+        "citation_marker": "[1]",
+        "occurrences": 9
+      },
+      "supporting_resources_cited": {
+        "[2] https://realpython.com/python-optional-arguments/": { "cited": true, "occurrences": 2 },
+        "[3] https://www.programiz.com/python-programming/function-argument": { "cited": true, "occurrences": 3 },
+        "[4] https://realpython.com/python-recursion/": { "cited": true, "occurrences": 6 }
+      },
+      "fabricated_citations_found": false,
+      "finding": "Section 5.5 (Recursion) has been re-grounded against the newly added 4th resource (realpython.com/python-recursion/, role=supporting). It now carries 6 occurrences of [4]: the recursion definition, the base-case definition, the recursive-case definition, the factorial(n)/0!=1 definition, the call-stack definition, and the RecursionError/'maximum recursion depth exceeded' claim are all cited. The previously-flagged hard miss (an entire uncited sub-concept with no covering resource at all) no longer applies -- resource [4]'s own notes field explicitly lists 'base case, recursive case, factorial example, call stack, RecursionError / max recursion depth,' matching every claim now marked [4]. Two illustrative passages remain uncited by design and are treated as author-derived worked-example/synthesis rather than resource claims: (a) the step-by-step arithmetic trace of factorial(4) unwinding (1 -> 1*1 -> 2*1 -> 3*2 -> 4*6), which is a mechanical derivation from the code shown immediately above it, not an external fact; (b) the closing comparison to the Topic 2.2 for-loop equivalent ('Recursion is not faster here...'), which is author synthesis/framing, not a standalone factual assertion. Neither is a miss under the rubric. Section 5.5 standalone-claim coverage is now ~6/8 distinct factual assertions cited (~75%), comfortably above the 60% floor and no longer a structural (zero-coverage) miss.",
+      "section_5_overall_coverage_estimate": "~19/22 standalone factual assertions across 5.1-5.6 carry a citation marker (~86%), well above the 60% strict-mode floor.",
+      "other_uncited_spots_still_present": [
+        "5.2: 'There is one ordering rule to remember: parameters with defaults must come after parameters without them...' -- still no citation marker. Minor; does not affect the 60% floor and is not the class of miss (entire uncited sub-concept with no covering resource) that strict mode hard-fails on.",
+        "5.1: 'A function with no return statement (or a bare return) hands back the special value None.' -- still no citation marker. Same minor-gap category.",
+        "5.4: 'A variable defined at the top level of your file... functions can read it. But if a function assigns to a name, Python treats that name as local by default...' -- still no citation marker. Same minor-gap category."
+      ],
+      "all_four_resources_cited": true
+    },
+    "sequence_drift": {
+      "passed": true,
+      "detail": "Re-verified against content/curriculum/sequence.index.json id=3.1 concepts_introduced (function definition and calling; return values; positional/keyword/default arguments; *args and **kwargs; local vs global scope; recursion (base case + recursive case); docstrings). Every technical term used in the corpus maps onto this list. No terms from 3.2 (Functional Constructs: lambda, map/filter, comprehensions) or later topics appear. The recursion-section revision added no new concepts -- only citation markers and existing prose -- so no new drift was introduced by the fix.",
+      "unknown_or_forward_referenced_terms": []
+    },
+    "length_sanity": {
+      "passed": true,
+      "profile_used": "deep",
+      "profile_source": "topic.manifest.json artifact_plan.depth_profile_suggested",
+      "range_source": ".claude/config/artifact-mix.json profiles.deep.reading.target_word_range (authoritative over the SKILL.md doc's stated 5000-6000, per the doc-vs-config drift flagged in the prior report -- still unreconciled, noting again for maintainers)",
+      "range_words": [1800, 2200],
+      "reported_word_count_manifest": 2010,
+      "recount_estimate_after_revision": "~2019-2040 (the 5.5 revision added citation markers [4] to already-existing prose, not new paragraphs; manifest's corpus_word_count field was not regenerated after the targeted revise and should be refreshed but the delta is small)",
+      "ok": true,
+      "note": "Still comfortably inside [1800, 2200] under either the stale manifest figure or the recount estimate. Recommend the corpus-builder step refresh topic.manifest.json artifact_plan.corpus_word_count on next full regeneration; not a critic blocker."
+    }
+  },
+  "non_blocking_findings": [
+    "topic_corpus.md front matter still declares 'resource_count: 3' even though topic.resources.json now lists 4 resources (the new realpython.com/python-recursion/ entry). This is a metadata-sync issue, not one of the four gating checks, so it does not affect the pass/fail verdict here -- but it should be corrected before this corpus is treated as final."
+  ],
+  "verdict": "PASS - all four checks pass on re-check. The targeted revise added proper [4] citation markers to section 5.5 (Recursion) tied to the newly-added 4th resource (realpython.com/python-recursion/, role=supporting), which fully covers recursion/base-case/recursive-case/factorial/call-stack/RecursionError per its own notes field in topic.resources.json. All 4 captured resources (1 primary, 3 supporting) are now cited at least once, no fabricated citation markers exist, section 5 standalone-claim coverage is ~86% (well above the 60% strict-mode floor for resources_source=web_search), required sections 3/4/5/10 are all present and non-trivial, no forward-referenced terms exist against 3.1's own concepts_introduced or any prior topic in sequence.index.json, and word count remains within the deep profile's 1800-2200 range per .claude/config/artifact-mix.json. Two minor pre-existing uncited spots remain (5.2 parameter-ordering rule, 5.1 None-default-return fact, 5.4 global-scope-assignment rule) but these are isolated sentence-level gaps, not an uncovered sub-concept, and do not pull aggregate coverage below the strict-mode floor -- flagged as non-blocking for future polish. Also flagging a non-blocking metadata drift: topic_corpus.md front matter says 'resource_count: 3' but topic.resources.json now has 4 entries; recommend syncing before final sign-off.",
+  "at": "2026-07-14T00:00:00Z"
+}

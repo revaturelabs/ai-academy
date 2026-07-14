@@ -13,8 +13,18 @@
     "Decorators (light introduction): the @decorator syntax; a @timer example",
     "Generators: the yield keyword; lazy evaluation (concept)"
   ],
-  "expected_delivery_minutes": null,
-  "artifact_plan": {},
+  "expected_delivery_minutes": 10,
+  "artifact_plan": {
+    "depth_profile_suggested": "deep",
+    "depth_profile_confirmed": "deep",
+    "diagram": true,
+    "diagram_intent": "generator pause/resume flow: calling fibonacci() creates a paused generator object; each next() call resumes execution until the next yield, handing back progressive values (0, 1, 1, 2, 3...) while local state (a, b) persists across pauses.",
+    "corpus_word_count": 2459,
+    "reading_target_word_range": [1800, 2200],
+    "reading_target_minutes": [9, 11],
+    "quiz_question_range": [10, 15],
+    "quiz_include_short_answer": true
+  },
   "next_assessment": {
     "id": "A1",
     "week": 3,

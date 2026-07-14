@@ -1,0 +1,43 @@
+{
+  "module_slug": "1-functions-modules-tooling-2",
+  "course_slug": "p2-control-structures-functions-tooling",
+  "week_num": 3,
+  "topics_reviewed": ["3.1", "3.2", "3.3"],
+  "passed": true,
+  "checks": {
+    "terminology": {
+      "passed": true,
+      "notes": "\"parameter\" (def-time) vs \"argument\" (call-time) is defined once in 3.1 (5.2) and used consistently thereafter; neither 3.2 nor 3.3 redefines it. \"scope\" (local/global) is defined only in 3.1 and not contradicted elsewhere. \"namespace\"/\"namespacing\" is introduced only in 3.3 (5.1, module dot-notation) and does not collide with 3.1's variable-scope terminology since they name distinct concepts and 3.1 never uses the word \"namespace\". \"higher-order function\", \"decorator\", \"generator\", \"lazy evaluation\" are each defined once (3.2) and not redefined elsewhere. No synonym drift or conflicting definitions of a shared term found."
+    },
+    "prereq_ordering": {
+      "passed": true,
+      "notes": "3.1 prerequisites (1.2, 1.3, 1.4, 2.1, 2.2) are all earlier-in-sequence topics. 3.2 prerequisites (3.1, 2.2, 1.3, 1.2) reference only 3.1 (earlier position in same module) and earlier weeks; 3.2 explicitly reuses *args/**kwargs vocabulary from 3.1 rather than treating it as new. 3.3 prerequisites (3.1, 2.2, 1.1) are likewise all earlier. No topic assumes a concept from a later topic in the module (3.1 never uses lambdas/decorators/generators/modules; 3.2 never uses modules/pip/venv; 3.3 never uses lambdas/decorators)."
+    },
+    "duplication": {
+      "passed": true,
+      "notes": "3.2's decorator section (5.3) references the *args/**kwargs collecting pattern from 3.1 by name (\"uses exactly the *args/**kwargs collecting pattern from 3.1\") without re-explaining what * and ** do mechanically — correct reuse, not re-teaching. Recursion (3.1) is not duplicated in 3.2 or 3.3. No two topics' Core Concepts sections substantively overlap; each topic's terminology set is disjoint from the others'."
+    },
+    "learning_arc": {
+      "passed": true,
+      "notes": "narrative_seed_by_week[3] = 'Functions, parameters, scope, recursion; lambdas, decorators, generators; modules & imports; pip, venv, Poetry, Pytest'. All facets are covered: functions/parameters/scope/recursion -> 3.1; lambdas/decorators/generators -> 3.2; modules & imports/pip/venv/Poetry/Pytest -> 3.3. No uncovered facet."
+    },
+    "lab_alignment": {
+      "passed": true,
+      "notes": "function with defaults -> 3.1 Hands-On Exercise (greet(name, greeting=\"Hello\")). recursion (factorial) -> 3.1 Hands-On Exercise (factorial(n)). lambda sort -> 3.2 Hands-On Exercise (sorted(words, key=lambda w: len(w))). @timer decorator -> 3.2 Hands-On Exercise + Implementation/Worked Example (matches step-by-step build). stdlib imports -> 3.3 Hands-On Exercise (dice.py using random.randint). venv + pip + Poetry + Pytest -> 3.3 Implementation (poetry new/add/run walkthrough) + Hands-On Exercise (venv commands sketch, test_dice.py with assert); these are appropriately conceptual/offline per source_outline's explicit '(concept)' / '(concept + offline practice)' tags. One partial gap noted below re: the Fibonacci-generator lab."
+    }
+  },
+  "findings": [
+    {
+      "severity": "minor",
+      "topic": "3.2",
+      "finding": "lab_activity_seed_by_week[3] names 'Fibonacci generator' as the generator lab. 3.2's Core Concepts (5.4), diagram_intent, and Worked/Key-Takeaways content all teach the Fibonacci generator in depth, but the topic's own Hands-On Exercise (section 9) substitutes a different, simpler generator (`countdown(n)`) instead of asking the learner to write/run the Fibonacci generator themselves. Recommend either swapping the exercise to build on `fibonacci()` directly, or adding a second short Fibonacci-specific exercise step so the seeded lab activity has a matching hands-on artifact rather than only a taught concept."
+    },
+    {
+      "severity": "informational",
+      "topic": "module (3.1, 3.2, 3.3)",
+      "finding": "Total week-3 expected_delivery_minutes across the three topics is 30 (10+10+10) against a 90-minute weekly target in artifact-mix.json's weekly_balance_rule — outside the +/-25% band. This was already flagged individually at HITL#3 per-topic and is properly a course-drift-critic concern, but is directly observable here and is repeated for visibility. Not treated as a module-drift blocking failure."
+    }
+  ],
+  "verdict": "passed",
+  "at": "2026-07-14T00:00:00Z"
+}

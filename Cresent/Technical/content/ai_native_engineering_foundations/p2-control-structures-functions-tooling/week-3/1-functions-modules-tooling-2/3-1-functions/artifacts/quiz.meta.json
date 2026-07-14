@@ -1,0 +1,101 @@
+{
+  "topic_id": "3.1",
+  "generated_at": "2026-07-14T12:00:00Z",
+  "format": "gift",
+  "question_count": 15,
+  "$bias_defense_applied": true,
+  "$shuffle_seed": "sum_ord(topic_id=\"3.1\")=146",
+  "correct_position_distribution": [2, 0, 3, 1, 0, 2, 3, 1, 0, 2, 3, 1],
+  "questions": [
+    {
+      "id": "q1",
+      "type": "mcq",
+      "objective_ref": "Define a function with `def`, give it parameters, and return a value to the caller.",
+      "correct_position": 2
+    },
+    {
+      "id": "q2",
+      "type": "mcq",
+      "objective_ref": "Define a function with `def`, give it parameters, and return a value to the caller.",
+      "correct_position": 0
+    },
+    {
+      "id": "q3",
+      "type": "mcq",
+      "objective_ref": "Distinguish positional, keyword, and default arguments, and pass them correctly.",
+      "correct_position": 3
+    },
+    {
+      "id": "q4",
+      "type": "mcq",
+      "objective_ref": "Distinguish positional, keyword, and default arguments, and pass them correctly.",
+      "correct_position": 1
+    },
+    {
+      "id": "q5",
+      "type": "mcq",
+      "objective_ref": "Distinguish positional, keyword, and default arguments, and pass them correctly.",
+      "correct_position": 0
+    },
+    {
+      "id": "q6",
+      "type": "mcq",
+      "objective_ref": "Explain what `*args` and `**kwargs` collect, and iterate over extra positional arguments with a loop.",
+      "correct_position": 2
+    },
+    {
+      "id": "q7",
+      "type": "mcq",
+      "objective_ref": "Explain what `*args` and `**kwargs` collect, and iterate over extra positional arguments with a loop.",
+      "correct_position": 3
+    },
+    {
+      "id": "q8",
+      "type": "mcq",
+      "objective_ref": "Describe local versus global scope and state what the `global` keyword does.",
+      "correct_position": 1
+    },
+    {
+      "id": "q9",
+      "type": "mcq",
+      "objective_ref": "Describe local versus global scope and state what the `global` keyword does.",
+      "correct_position": 0
+    },
+    {
+      "id": "q10",
+      "type": "mcq",
+      "objective_ref": "Write a recursive function with a correct base case and recursive case, using factorial as the model.",
+      "correct_position": 2
+    },
+    {
+      "id": "q11",
+      "type": "mcq",
+      "objective_ref": "Write a recursive function with a correct base case and recursive case, using factorial as the model.",
+      "correct_position": 3
+    },
+    {
+      "id": "q12",
+      "type": "mcq",
+      "objective_ref": "Attach a docstring so a function documents its own purpose.",
+      "correct_position": 1
+    },
+    {
+      "id": "q13",
+      "type": "short_answer",
+      "objective_ref": "Write a recursive function with a correct base case and recursive case, using factorial as the model.",
+      "correct_position": null
+    },
+    {
+      "id": "q14",
+      "type": "short_answer",
+      "objective_ref": "Define a function with `def`, give it parameters, and return a value to the caller.",
+      "correct_position": null
+    },
+    {
+      "id": "q15",
+      "type": "short_answer",
+      "objective_ref": "Describe local versus global scope and state what the `global` keyword does.",
+      "correct_position": null
+    }
+  ]
+}

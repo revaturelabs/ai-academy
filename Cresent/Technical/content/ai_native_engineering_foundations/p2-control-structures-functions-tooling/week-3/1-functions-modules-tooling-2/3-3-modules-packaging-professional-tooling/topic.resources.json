@@ -1,0 +1,44 @@
+{
+  "topic_id": "3.3",
+  "captured_at": "2026-07-14T00:00:00Z",
+  "captured_by": "bhuvaneshwarim@revature.com",
+  "resources_source": "web_search",
+  "resources": [
+    {
+      "type": "url",
+      "value": "https://docs.python.org/3/tutorial/modules.html",
+      "role": "primary",
+      "source": "web_search",
+      "notes": "Official modules tutorial: import, from...import, as, namespacing, packages."
+    },
+    {
+      "type": "url",
+      "value": "https://docs.python.org/3/tutorial/venv.html",
+      "role": "primary",
+      "source": "web_search",
+      "notes": "Official venv + pip tutorial: creating/activating virtual environments, installing packages."
+    },
+    {
+      "type": "url",
+      "value": "https://docs.python.org/3/tutorial/stdlib.html",
+      "role": "supporting",
+      "source": "web_search",
+      "notes": "Brief tour of the standard library, covering random, math, datetime."
+    },
+    {
+      "type": "url",
+      "value": "https://python-poetry.org/docs/basic-usage/",
+      "role": "supporting",
+      "source": "web_search",
+      "notes": "Official Poetry docs: poetry new, project init, dependency management."
+    },
+    {
+      "type": "url",
+      "value": "https://docs.pytest.org/en/stable/getting-started.html",
+      "role": "supporting",
+      "source": "web_search",
+      "notes": "Official pytest docs: writing and running a first test."
+    }
+  ],
+  "web_search_query": "Python modules imports stdlib pip venv Poetry Pytest getting started"
+}

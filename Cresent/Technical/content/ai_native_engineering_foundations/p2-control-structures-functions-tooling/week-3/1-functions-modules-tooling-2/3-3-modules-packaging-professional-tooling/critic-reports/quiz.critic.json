@@ -1,0 +1,58 @@
+{
+  "passed": true,
+  "checks": {
+    "hard_prerequisites": {
+      "passed": true,
+      "meta_json_parses": true,
+      "bias_defense_applied": true
+    },
+    "meta_gift_desync": {
+      "passed": true,
+      "note": "Correct-position index independently re-derived from `=`/`~` markers in quiz.gift for all 11 MCQs; sequence matches quiz.meta.json's correct_position_distribution exactly.",
+      "independently_derived_sequence": [2, 0, 3, 1, 0, 2, 3, 1, 2, 0, 3]
+    },
+    "positional_bias": {
+      "passed": true,
+      "distribution": [2, 0, 3, 1, 0, 2, 3, 1, 2, 0, 3],
+      "counts": {"0": 3, "1": 2, "2": 3, "3": 3},
+      "max_share": 0.2727,
+      "threshold": 0.40,
+      "judgment": "11 items over 4 positions cannot divide evenly (11/4=2.75); {3,2,3,3} is the closest-to-uniform integer split achievable (three positions at 3, one at 2) and is not evidence of bias. Not flagged."
+    },
+    "length_bias": {
+      "passed": true,
+      "rule_applied": "flag if len(correct) > mean(distractors) * 1.20",
+      "per_question_ratio": {
+        "q1": 0.946, "q2": 1.109, "q3": 0.958, "q4": 1.138, "q5": 1.013,
+        "q6": 1.081, "q7": 1.108, "q8": 1.052, "q9": 0.940, "q10": 1.050, "q11": 0.935
+      },
+      "ratio_range": "0.935x - 1.138x",
+      "questions_exceeding_1.20x_threshold": 0,
+      "longest_correct_rate_by_rule": 0.0,
+      "baseline": 0.25,
+      "note_on_builder_claim": "Builder's '3/11 correct-is-longest' figure is a different, non-governing metric (raw 'is correct literally the longest option') and was independently confirmed to be accurate (q2, q4, q6) via hand-count, but the skill's actual pass/fail rule is the 1.20x-mean-of-distractors ratio, under which 0/11 questions are flagged. Both readings pass comfortably."
+    },
+    "distractor_plausibility": {
+      "passed": true,
+      "absurd_rate": 0.0,
+      "weakest_questions": [],
+      "note": "All distractors tie to real, specific misconceptions (module-confusion e.g. math.randint/random.pi, missing parens, wrong workflow ordering, wrong file/function naming) rather than nonsense options."
+    },
+    "objective_coverage": {
+      "passed": true,
+      "uncovered_objectives": [],
+      "orphan_questions": [],
+      "coverage_map": {
+        "Import forms / namespacing": ["q1", "q2"],
+        "Stdlib (random, math, datetime)": ["q3", "q4", "q5"],
+        "pip vs import / requirements.txt": ["q6", "q7"],
+        "venv isolation / workflow": ["q8", "q9", "q12"],
+        "Poetry scaffolding": ["q10", "q13"],
+        "Pytest discovery": ["q11", "q14"]
+      }
+    }
+  },
+  "auto_correction_applied": { "shuffle_round_2": false },
+  "verdict": "Pass -- all four bias/coverage checks clean; positional and length distributions independently re-verified from raw quiz.gift markers and match the builder's sidecar claims.",
+  "at": "2026-07-14T00:00:00Z"
+}
