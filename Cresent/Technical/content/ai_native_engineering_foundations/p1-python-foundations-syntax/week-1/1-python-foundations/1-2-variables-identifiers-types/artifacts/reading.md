@@ -32,7 +32,12 @@ A broken name like `2age = 30` produces a `SyntaxError` — Python cannot even m
 
 <u>**Inspecting types with `type()`.**</u> When you are unsure what type a value is, ask Python directly with the built-in **`type()`** function. Put a value or a variable inside the parentheses and it reports the type — for example, `type(30)` reports `<class 'int'>` [3]. The word `class` here just means "type," so read `<class 'int'>` as "this is an `int`." `type()` never changes the value; it just tells you what the value is, in one line.
 
-<u>**Dynamic typing.**</u> When you wrote `age = 30` you never told Python "this is an integer" — you just assigned the value, and Python figured out the type on its own. This is called **dynamic typing** [1]. It means two things. First, you do not declare a variable's type in advance; the value you assign decides the type. Second, a variable can refer to a value of one type now and a different type later, because the variable is just a name — it is the *value* that carries the type [1]. This makes Python flexible and quick to write. It also means *you* are responsible for tracking what a variable holds, which is exactly why `type()` is so handy.
+<u>**Dynamic typing.**</u> When you wrote `age = 30` you never told Python "this is an integer" — you just assigned the value, and Python figured out the type on its own. This is called **dynamic typing** [1]. It means two things:
+
+- You do not declare a variable's type in advance; the value you assign decides the type.
+- A variable can refer to a value of one type now and a different type later, because the variable is just a name — it is the *value* that carries the type [1].
+
+This makes Python flexible and quick to write. It also means *you* are responsible for tracking what a variable holds, which is exactly why `type()` is so handy.
 
 **Mental model.** The diagram below captures the whole idea: a **name** (identifier) is bound by the assignment operator `=` to a **value/object**, which carries a **type**; reassignment repoints the same name to a new value, and under dynamic typing that new value may carry a different type.
 
