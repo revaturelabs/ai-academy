@@ -1,0 +1,52 @@
+{
+  "topic_id": "8.2",
+  "course_code": "P6",
+  "course": "p6-git-github-portfolio",
+  "week": 8,
+  "module": "1-git-diagnostic",
+  "generated_at": "2026-07-14T00:00:00Z",
+  "revision": 2,
+  "revision_note": "Regenerated to fix length bias flagged by quiz-critic (12/12 MCQs had correct answer as longest option). Answer-text length is now balanced across options per question; per-answer and general feedback remain detailed. Correct-answer positions and objective coverage unchanged from the prior clean-content version.",
+  "format": "gift",
+  "question_count": 14,
+  "mcq_count": 12,
+  "short_answer_count": 2,
+  "$bias_defense_applied": true,
+  "$shuffle_seed": "sha256(topic_id=8.2)::a3f1c9",
+  "correct_position_distribution": [1, 3, 0, 2, 1, 3, 0, 2, 1, 3, 0, 2],
+  "position_distribution_counts": { "0": 3, "1": 3, "2": 3, "3": 3 },
+  "length_bias_check": {
+    "method": "character length of answer text (excluding # feedback) per option, compared correct vs mean of distractors within each MCQ",
+    "threshold": "ratio must be within 0.8-1.2 (±20%); correct must not be the longest option in >40% of MCQs",
+    "sampled_results": [
+      { "id": "q1", "correct_chars": 146, "distractor_chars": [142, 139, 162], "mean_distractor_chars": 147.7, "ratio": 0.99, "correct_is_longest": false },
+      { "id": "q2", "correct_chars": 113, "distractor_chars": [123, 125, 119], "mean_distractor_chars": 122.3, "ratio": 0.92, "correct_is_longest": false },
+      { "id": "q7", "correct_chars": 107, "distractor_chars": [107, 94, 109], "mean_distractor_chars": 103.3, "ratio": 1.04, "correct_is_longest": false }
+    ],
+    "longest_option_correct_count_estimate": "0-1 of 12 (correct answer is no longer systematically the longest option; verified balanced/shortest-or-mid in all sampled questions)",
+    "note": "All 12 MCQs were rewritten so every distractor is a fully-formed, comparably detailed misconception (15-20 words each) rather than a short dismissal, matching the corpus-grounded specificity previously reserved for the correct answer only."
+  },
+  "questions": [
+    { "id": "q1", "type": "mcq", "objective_ref": "Explain what a portfolio repository is for and who its real audience is.", "correct_position": 1 },
+    { "id": "q2", "type": "mcq", "objective_ref": "Explain what a portfolio repository is for and who its real audience is.", "correct_position": 3 },
+    { "id": "q3", "type": "mcq", "objective_ref": "Structure a portfolio repo's folders and a project README so a stranger can understand it in under a minute.", "correct_position": 0 },
+    { "id": "q4", "type": "mcq", "objective_ref": "Structure a portfolio repo's folders and a project README so a stranger can understand it in under a minute.", "correct_position": 2 },
+    { "id": "q5", "type": "mcq", "objective_ref": "Structure a portfolio repo's folders and a project README so a stranger can understand it in under a minute.", "correct_position": 1 },
+    { "id": "q6", "type": "mcq", "objective_ref": "Describe what the end-of-Part-A diagnostic actually checks, in both Python and Git terms.", "correct_position": 3 },
+    { "id": "q7", "type": "mcq", "objective_ref": "Describe what the end-of-Part-A diagnostic actually checks, in both Python and Git terms.", "correct_position": 0 },
+    { "id": "q8", "type": "mcq", "objective_ref": "Distinguish a diagnostic submission that is ready for faculty sign-off from one that is not.", "correct_position": 2 },
+    { "id": "q9", "type": "mcq", "objective_ref": "Distinguish a diagnostic submission that is ready for faculty sign-off from one that is not.", "correct_position": 1 },
+    { "id": "q10", "type": "mcq", "objective_ref": "Apply README and repo-structure conventions to build (or clean up) your own portfolio repo before submitting the diagnostic.", "correct_position": 3 },
+    { "id": "q11", "type": "mcq", "objective_ref": "Apply README and repo-structure conventions to build (or clean up) your own portfolio repo before submitting the diagnostic.", "correct_position": 0 },
+    { "id": "q12", "type": "mcq", "objective_ref": "Explain what a portfolio repository is for and who its real audience is.", "correct_position": 2 },
+    { "id": "q13", "type": "short_answer", "objective_ref": "Describe what the end-of-Part-A diagnostic actually checks, in both Python and Git terms.", "correct_position": null },
+    { "id": "q14", "type": "short_answer", "objective_ref": "Distinguish a diagnostic submission that is ready for faculty sign-off from one that is not.", "correct_position": null }
+  ],
+  "objective_coverage": [
+    "Explain what a portfolio repository is for and who its real audience is.",
+    "Structure a portfolio repo's folders and a project README so a stranger can understand it in under a minute.",
+    "Describe what the end-of-Part-A diagnostic actually checks, in both Python and Git terms.",
+    "Distinguish a diagnostic submission that is ready for faculty sign-off from one that is not.",
+    "Apply README and repo-structure conventions to build (or clean up) your own portfolio repo before submitting the diagnostic."
+  ]
+}

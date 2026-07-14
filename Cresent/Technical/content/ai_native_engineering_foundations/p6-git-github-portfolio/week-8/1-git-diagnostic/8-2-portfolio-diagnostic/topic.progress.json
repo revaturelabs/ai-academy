@@ -1,18 +1,18 @@
 {
   "topic_id": "8.2",
-  "stage": "awaiting_resources",
+  "stage": "topic_artifacts_approved",
   "gates": {
-    "resources_captured": false,
-    "corpus_generated": false,
-    "corpus_critic_passed": false,
-    "corpus_human_approved": false,
-    "reading_generated": false,
-    "reading_critic_passed": false,
-    "quiz_generated": false,
-    "quiz_critic_passed": false,
+    "resources_captured": true,
+    "corpus_generated": true,
+    "corpus_critic_passed": true,
+    "corpus_human_approved": true,
+    "reading_generated": true,
+    "reading_critic_passed": true,
+    "quiz_generated": true,
+    "quiz_critic_passed": true,
     "diagram_generated": false,
     "diagram_critic_passed": false,
-    "topic_artifacts_human_approved": false,
+    "topic_artifacts_human_approved": true,
     "module_drift_passed": false,
     "week_human_approved": false
   },
@@ -21,6 +21,152 @@
       "at": "2026-07-13T00:00:00Z",
       "op": "scaffold",
       "msg": "created by ai_native_ingest.py"
+    },
+    {
+      "at": "2026-07-14T12:13:37Z",
+      "op": "set",
+      "gate": "resources_captured",
+      "value": true
+    },
+    {
+      "at": "2026-07-14T12:13:37Z",
+      "op": "stage",
+      "to": "awaiting_corpus"
+    },
+    {
+      "at": "2026-07-14T12:13:37Z",
+      "op": "log",
+      "msg": "Captured 3 resources (source=web_search, 1 primary GitHub Docs + 2 supporting)"
+    },
+    {
+      "at": "2026-07-14T12:24:00Z",
+      "op": "set",
+      "gate": "corpus_generated",
+      "value": true
+    },
+    {
+      "at": "2026-07-14T12:24:00Z",
+      "op": "stage",
+      "to": "awaiting_corpus_critic"
+    },
+    {
+      "at": "2026-07-14T12:27:41Z",
+      "op": "set",
+      "gate": "corpus_critic_passed",
+      "value": true
+    },
+    {
+      "at": "2026-07-14T12:27:41Z",
+      "op": "stage",
+      "to": "awaiting_corpus_human_review"
+    },
+    {
+      "at": "2026-07-14T12:29:48Z",
+      "op": "set",
+      "gate": "corpus_human_approved",
+      "value": true
+    },
+    {
+      "at": "2026-07-14T12:29:48Z",
+      "op": "stage",
+      "to": "corpus_approved"
+    },
+    {
+      "at": "2026-07-14T12:33:18Z",
+      "op": "set",
+      "gate": "quiz_generated",
+      "value": true
+    },
+    {
+      "at": "2026-07-14T12:33:18Z",
+      "op": "stage",
+      "to": "awaiting_quiz_critic"
+    },
+    {
+      "at": "2026-07-14T12:33:18Z",
+      "op": "log",
+      "msg": "Quiz generated - 14 Q (12 MCQ + 2 short-answer), all 5 objectives covered, bias_defense_applied"
+    },
+    {
+      "at": "2026-07-14T12:35:25Z",
+      "op": "set",
+      "gate": "quiz_critic_passed",
+      "value": false
+    },
+    {
+      "at": "2026-07-14T12:35:25Z",
+      "op": "log",
+      "msg": "Critic failed: length bias - 12/12 MCQs (100%) have correct answer as longest option, vs 40% fail threshold. Positional bias, distractor plausibility, objective coverage all clean. Retry 1/2."
+    },
+    {
+      "at": "2026-07-14T12:35:57Z",
+      "op": "set",
+      "gate": "reading_generated",
+      "value": true
+    },
+    {
+      "at": "2026-07-14T12:35:57Z",
+      "op": "log",
+      "msg": "Reading generated - 1934w (10 min), all 3 resources cited, A3 tie-in, no diagram (diagram=false)"
+    },
+    {
+      "at": "2026-07-14T12:41:58Z",
+      "op": "set",
+      "gate": "reading_critic_passed",
+      "value": false
+    },
+    {
+      "at": "2026-07-14T12:41:58Z",
+      "op": "log",
+      "msg": "Critic failed: (1) sentence length 28-34 words/sentence avg vs 25-word ceiling, pervasive em-dash-chained compounds; (2) read-aloud-at-230wpm (8.4-8.7min) undershoots 9min floor despite word count (1934) sitting in target range. Format/citations/forward-refs/faithfulness all clean. Retry 1/2."
+    },
+    {
+      "at": "2026-07-14T12:43:13Z",
+      "op": "set",
+      "gate": "quiz_critic_passed",
+      "value": true
+    },
+    {
+      "at": "2026-07-14T12:43:13Z",
+      "op": "stage",
+      "to": "quiz_approved"
+    },
+    {
+      "at": "2026-07-14T12:43:13Z",
+      "op": "log",
+      "msg": "Quiz critic passed on retry 1/2 - length bias fixed (100% -> 8.3% longest-correct), positional/distractor/objective coverage all clean"
+    },
+    {
+      "at": "2026-07-14T12:53:03Z",
+      "op": "set",
+      "gate": "reading_critic_passed",
+      "value": true
+    },
+    {
+      "at": "2026-07-14T12:53:03Z",
+      "op": "stage",
+      "to": "awaiting_topic_artifacts_review"
+    },
+    {
+      "at": "2026-07-14T12:53:03Z",
+      "op": "log",
+      "msg": "Reading critic passed on retry 1/2 (sentence length + word count fixed, 2101w). Quiz+reading both critic-passed, no diagram required - ready for HITL#3"
+    },
+    {
+      "at": "2026-07-14T12:53:43Z",
+      "op": "set",
+      "gate": "topic_artifacts_human_approved",
+      "value": true
+    },
+    {
+      "at": "2026-07-14T12:53:43Z",
+      "op": "stage",
+      "to": "topic_artifacts_approved"
+    },
+    {
+      "at": "2026-07-14T12:53:43Z",
+      "op": "log",
+      "msg": "HITL#3 approved - reading + quiz both clean after 1 revise cycle each, no diagram, no carry-over failures"
     }
   ]
 }

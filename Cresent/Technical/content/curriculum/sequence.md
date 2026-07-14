@@ -248,10 +248,10 @@ status: "scaffolded"
 - path: `p6-git-github-portfolio/week-8/1-git-diagnostic/8-1-version-control-basics`
 
 ```yaml
-concepts_introduced: []
+concepts_introduced: ["version control (Git)", "repository / commit / push loop", "GitHub Classroom workflow", "README as project front door", "branching (main vs feature) - light intro", ".gitignore for secrets"]
 prerequisites: []
-cross_refs: []
-status: "scaffolded"
+cross_refs: ["Git", "GitHub", "GitHub Classroom", "web-based editing"]
+status: "corpus_drafted"
 ```
 
 ## 8.2 — Portfolio & Diagnostic
@@ -260,10 +260,10 @@ status: "scaffolded"
 - path: `p6-git-github-portfolio/week-8/1-git-diagnostic/8-2-portfolio-diagnostic`
 
 ```yaml
-concepts_introduced: []
-prerequisites: []
-cross_refs: []
-status: "scaffolded"
+concepts_introduced: ["portfolio repository", "README sections for a portfolio (title/description/quick-start/demo/index)", "repo/folder naming conventions", "Part A diagnostic gate", "faculty sign-off"]
+prerequisites: [8.1]
+cross_refs: ["Git", "GitHub", "README/Markdown", "CSV/Python file handling"]
+status: "corpus_drafted"
 ```
 
 ## 8.3 — What Is Computation

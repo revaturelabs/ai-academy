@@ -1,0 +1,79 @@
+{
+  "passed": true,
+  "checks": {
+    "positional_bias": {
+      "passed": true,
+      "distribution": [3, 3, 3, 3],
+      "position_labels": ["0", "1", "2", "3"],
+      "max_share": 0.25,
+      "per_question_positions": {
+        "q1": 1, "q2": 3, "q3": 0, "q4": 2, "q5": 1, "q6": 3,
+        "q7": 0, "q8": 2, "q9": 1, "q10": 3, "q11": 0, "q12": 2
+      },
+      "meta_gift_desync": false,
+      "note": "Re-derived correct-answer position independently from quiz.gift for all 12 MCQs; matches quiz.meta.json correct_position_distribution exactly. Even 3/3/3/3 split, max_share 0.25 (baseline)."
+    },
+    "length_bias": {
+      "passed": true,
+      "longest_correct_rate": 0.0833,
+      "baseline": 0.25,
+      "method": "Character length of every answer option (feedback after # stripped) counted individually for all 12 MCQs x 4 options = 48 options, not sampled. Flag = correct_len > mean(distractor_lens) * 1.20.",
+      "per_question": [
+        { "id": "q1",  "correct_chars": 146, "distractor_chars": [142, 138, 164], "mean_distractor": 148.0, "ratio": 0.986, "longest_correct": false },
+        { "id": "q2",  "correct_chars": 113, "distractor_chars": [122, 125, 119], "mean_distractor": 122.0, "ratio": 0.926, "longest_correct": false },
+        { "id": "q3",  "correct_chars": 126, "distractor_chars": [122, 101, 124], "mean_distractor": 115.67, "ratio": 1.089, "longest_correct": false },
+        { "id": "q4",  "correct_chars": 101, "distractor_chars": [106, 108, 104], "mean_distractor": 106.0, "ratio": 0.953, "longest_correct": false },
+        { "id": "q5",  "correct_chars": 107, "distractor_chars": [108, 103, 99], "mean_distractor": 103.33, "ratio": 1.035, "longest_correct": false },
+        { "id": "q6",  "correct_chars": 101, "distractor_chars": [94, 92, 91], "mean_distractor": 92.33, "ratio": 1.094, "longest_correct": false },
+        { "id": "q7",  "correct_chars": 109, "distractor_chars": [108, 94, 110], "mean_distractor": 104.0, "ratio": 1.048, "longest_correct": false },
+        { "id": "q8",  "correct_chars": 101, "distractor_chars": [97, 102, 94], "mean_distractor": 97.67, "ratio": 1.034, "longest_correct": false },
+        { "id": "q9",  "correct_chars": 110, "distractor_chars": [100, 98, 108], "mean_distractor": 102.0, "ratio": 1.078, "longest_correct": false },
+        { "id": "q10", "correct_chars": 104, "distractor_chars": [100, 101, 100], "mean_distractor": 100.33, "ratio": 1.037, "longest_correct": false },
+        { "id": "q11", "correct_chars": 95,  "distractor_chars": [99, 95, 96], "mean_distractor": 96.67, "ratio": 0.983, "longest_correct": false },
+        { "id": "q12", "correct_chars": 121, "distractor_chars": [96, 86, 107], "mean_distractor": 96.33, "ratio": 1.256, "longest_correct": true }
+      ],
+      "flagged_questions": ["q12"],
+      "note": "Only q12 crosses the 1.20 ratio threshold (correct 121 chars vs mean distractor 96.33 chars, ratio 1.26). 1/12 = 8.3% longest-correct rate, well under the 40% fail threshold. Prior version had 12/12 (100%); this revision resolves the length-bias failure. q12 alone is below the 40% bar and does not warrant an automatic re-shuffle/rewrite, but is flagged for optional tightening on a future pass."
+    },
+    "distractor_plausibility": {
+      "passed": true,
+      "absurd_rate": 0.0,
+      "total_distractors": 36,
+      "scored_1_count": 0,
+      "weakest_questions": [
+        {
+          "id": "q6",
+          "reason": "All three distractors (open GitHub Issue, fork status, one-word commit messages) are wrong claims not directly grounded in a common learner misconception from the corpus; scored 2/4 each (wrong but only loosely related) rather than absurd (1/4). This is an improvement over the prior version, which scored two of these same distractors as absurd (1/4).",
+          "distractor_scores": [2, 2, 2]
+        }
+      ],
+      "note": "Every distractor across all 12 MCQs scored 2-4 on the 1-4 plausibility scale; none scored 1 (obviously absurd) on this pass. Strongest distractors reuse the corpus's own named counter-examples (q3: misc/stuff, final2, numbered folders; q9: single giant commit)."
+    },
+    "objective_coverage": {
+      "passed": true,
+      "objectives_checked": 5,
+      "uncovered_objectives": [],
+      "orphan_questions": [],
+      "coverage_map": {
+        "Explain what a portfolio repository is for and who its real audience is.": ["q1", "q2", "q12"],
+        "Structure a portfolio repo's folders and a project README so a stranger can understand it in under a minute.": ["q3", "q4", "q5"],
+        "Describe what the end-of-Part-A diagnostic actually checks, in both Python and Git terms.": ["q6", "q7", "q13"],
+        "Distinguish a diagnostic submission that is ready for faculty sign-off from one that is not.": ["q8", "q9", "q14"],
+        "Apply README and repo-structure conventions to build (or clean up) your own portfolio repo before submitting the diagnostic.": ["q10", "q11"]
+      },
+      "note": "All 5 corpus Learning Objectives (section 3) have at least one matching question via sidecar objective_ref exact text match. No orphan questions. Unchanged from prior clean-content version."
+    }
+  },
+  "hard_prerequisites": {
+    "meta_json_present": true,
+    "bias_defense_applied": true
+  },
+  "auto_correction_applied": { "shuffle_round_2": false },
+  "shuffled_at": {
+    "builder_shuffle_seed": "sha256(topic_id=8.2)::a3f1c9",
+    "critic_reshuffle_performed": false,
+    "reason": "Positional bias check passed on first pass (max_share 0.25); no re-shuffle needed."
+  },
+  "verdict": "Pass (retry 1/2) — length bias resolved from 100% (12/12) longest-correct on the prior version to 8.3% (1/12, q12 only) on this revision, well under the 40% fail threshold. Positional bias clean (max_share 0.25), distractor plausibility clean (absurd_rate 0.0, improved from 0.056), and all 5 Learning Objectives covered with no orphans. Quiz passes all four checks.",
+  "at": "2026-07-14T00:00:00Z"
+}

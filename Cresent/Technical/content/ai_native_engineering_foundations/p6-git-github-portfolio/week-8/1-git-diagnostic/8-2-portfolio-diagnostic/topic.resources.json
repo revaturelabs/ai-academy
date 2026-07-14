@@ -1,0 +1,30 @@
+{
+  "topic_id": "8.2",
+  "captured_at": "2026-07-14T00:00:00Z",
+  "captured_by": "bhuvaneshwarim@revature.com",
+  "resources_source": "web_search",
+  "resources": [
+    {
+      "type": "url",
+      "value": "https://docs.github.com/en/repositories/creating-and-managing-repositories/best-practices-for-repositories",
+      "role": "primary",
+      "source": "web_search",
+      "notes": "Official canonical guidance on repo structure, README, LICENSE"
+    },
+    {
+      "type": "url",
+      "value": "https://www.freecodecamp.org/news/how-to-write-a-good-readme-file/",
+      "role": "supporting",
+      "source": "web_search",
+      "notes": "README structure: title, description, quick start, demo"
+    },
+    {
+      "type": "url",
+      "value": "https://medium.com/code-factory-berlin/github-repository-structure-best-practices-248e6effc405",
+      "role": "supporting",
+      "source": "web_search",
+      "notes": "Folder structure and naming conventions for a portfolio repo"
+    }
+  ],
+  "web_search_query": "GitHub portfolio repository structure README best practices for beginners"
+}

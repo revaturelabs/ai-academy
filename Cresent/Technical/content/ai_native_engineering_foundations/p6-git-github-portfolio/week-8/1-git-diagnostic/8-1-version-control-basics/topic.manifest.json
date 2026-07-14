@@ -14,8 +14,29 @@
     "Working via the web interface: editing files in the browser; reading commit history",
     "Good habits: README as the front door; small, descriptive commits; branching basics (main vs feature) - light intro; .gitignore for API keys - intro"
   ],
-  "expected_delivery_minutes": null,
-  "artifact_plan": {},
+  "expected_delivery_minutes": 9,
+  "artifact_plan": {
+    "depth_profile": "deep",
+    "depth_signals": [
+      "Core Concepts has 5 sub-concepts (5.1-5.5)",
+      "Implementation section warranted (numbered end-to-end browser workflow)",
+      "Real-World Patterns section warranted",
+      "topic spans multiple technologies (Git, GitHub, GitHub Classroom)",
+      "week has a gated Lab (P6.1-P6.4)"
+    ],
+    "hitl_confirmed": true,
+    "reading": {
+      "target_min_minutes": 9,
+      "target_max_minutes": 11,
+      "target_word_range": [1800, 2200]
+    },
+    "quiz": {
+      "min_questions": 10,
+      "max_questions": 15,
+      "include_short_answer": true
+    },
+    "diagram": true
+  },
   "next_assessment": {
     "id": "A3",
     "week": 8,

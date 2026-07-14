@@ -1,0 +1,97 @@
+$CATEGORY: CIT/P6/week-8/8.1-version-control-basics
+
+::q1:: What is the primary reason professional engineers use a version control system like Git instead of relying on careful file naming or a shared folder? {
+~It automatically reformats your code to match a team's official style guide before every commit.#No — Git tracks history, it doesn't enforce or apply code formatting.
+=It gives you backup, a full history, and safe multi-person collaboration all in one tool.#Correct — version control's core value is backup, history, and collaboration together.
+~It compresses project files so pushes and downloads finish faster over slow connections.#No — speed and compression aren't why version control exists; history and collaboration are.
+~It stops two people from ever editing the same file at the same time.#No — Git lets both people edit and records both sets of changes as separate commits.
+#### Tests the core rationale for version control (corpus 5.1).
+}
+
+::q2:: In the basic Git loop, what does "push" actually do to your work? {
+~Push saves a labeled snapshot of your files locally, along with a short message.#No — that describes a commit, not a push.
+~Push creates a brand-new, empty repository ready for your first commit.#No — creating a repository is a separate step, not what push does.
+~Push downloads the latest changes a collaborator made into your own machine.#No — that describes pulling changes down, the reverse direction of a push.
+=Push sends your already-made local commits up to the remote so others can see them.#Correct — push is the step that makes local commits visible on GitHub.
+#### Tests the repository/commit/push loop and the commit-vs-push distinction (corpus 5.2).
+}
+
+::q3:: What happens automatically the moment you accept a GitHub Classroom assignment link? {
+=It creates a new repo under your account, seeded with starter files, with access already granted.#Correct — accepting provisions a personal, correctly-scoped repo without manual setup.
+~It forks the instructor's repository and later merges your changes back into theirs.#No — Classroom provisions a separate repo for you; it isn't a fork-and-merge workflow.
+~It only downloads a zip copy of the assignment files to your local computer.#No — accepting creates a real GitHub repo, not merely a local zip download.
+~It sends a request to the instructor, who must manually build your repo by hand.#No — Classroom automates provisioning specifically so instructors don't build repos by hand.
+#### Tests understanding of what "accepting" a Classroom assignment actually does (corpus 5.3).
+}
+
+::q4:: When you edit a file in the GitHub web interface and click "Commit changes," what actually happens to the repo? {
+~It only stages your edit locally; you still need to run a separate push step.#No — there is no separate local stage here since you're editing the hosted copy directly.
+~It automatically opens a pull request for someone else to review and merge.#No — nothing about editing a file in the browser opens a pull request by itself.
+=It performs a full commit and, since it edits the hosted copy directly, a push too.#Correct — browser edits collapse commit and push into a single action on the hosted copy.
+~It only previews your change without saving anything into the repo's history.#No — clicking "Commit changes" really writes a permanent snapshot into the repo's history.
+#### Tests that browser-based edits are real commits, not previews (corpus 5.4).
+}
+
+::q5:: Which of these best describes a good README, per the front-door habit this topic teaches? {
+~A one-line README like "This is my project" is fine since GitHub does the explaining.#No — a one-line README is treated as a genuine defect, not an acceptable minimum.
+=A README at the repo root stating what the project is, how to use it, and why it exists.#Correct — this is exactly the content and placement the front-door habit calls for.
+~A README placed inside a subfolder so it doesn't clutter the main repo page.#No — GitHub only auto-renders the README that lives at the repo's root.
+~A README added only after the project is finished, since it just documents the final result.#No — a README should exist from the start, not be deferred until the project is done.
+#### Tests the README-as-front-door habit and where/why it matters (corpus 5.5).
+}
+
+::q6:: At a beginner level, what is the light difference between `main` and a feature branch? {
+~`main` and a feature branch are functionally identical; the name is just a label.#No — `main` is treated as the stable version, which is a real, meaningful difference.
+~A feature branch is where production code runs, while `main` is used only for experiments.#No — this reverses the actual roles of the two branches.
+~A feature branch is a full copy of the repository hosted on a separate platform.#No — a feature branch lives in the same repository, not on a different platform.
+=`main` is the stable, working version; a feature branch is a sandboxed attempt kept separate until ready.#Correct — this is exactly the light distinction this topic introduces.
+#### Tests the beginner-level main-vs-feature-branch distinction (corpus 5.5).
+}
+
+::q7:: A learner makes five commits locally over an afternoon but never runs "push." What is true about those commits from the instructor's point of view on GitHub? {
+=None of the five commits will appear in the GitHub-hosted repo until the learner pushes them.#Correct — commits stay local and invisible to the remote until a push happens.
+~The five commits are lost, because Git requires a push before a commit is actually saved.#No — the commits are safely recorded locally; they just aren't visible remotely yet.
+~GitHub automatically detects and displays the local commits within a few minutes on its own.#No — GitHub only shows commits that have actually been pushed to it.
+~Git silently merges the five local commits into a single commit before showing it remotely.#No — Git doesn't merge commits together on its own; each stays distinct until pushed.
+#### Tests the practical consequence of separating commit from push (corpus 5.2).
+}
+
+::q8:: A learner commits a file containing a real API key, then later adds a .gitignore entry covering that file. What is true about the leaked key now? {
+~Adding a .gitignore entry afterward removes the credential from every earlier snapshot in the history.#No — .gitignore only affects future tracking; it cannot erase what earlier commits already recorded.
+~GitHub automatically scrubs the credential from its servers once the file stops being tracked.#No — nothing automatically scrubs old commits; the earlier snapshot still contains the key.
+=The credential is compromised because it still exists in earlier commits and must be replaced.#Correct — a committed secret persists in history, so it must be treated as compromised.
+~No other collaborator can ever see the key, since the file is no longer tracked going forward.#No — anyone with repo access can still view the earlier commit containing the key.
+#### Tests the misconception that .gitignore retroactively removes an already-committed secret (corpus 5.5).
+}
+
+::q9:: Which commit message best follows the small, descriptive commit habit this topic recommends? {
+~Update stuff in the project after today's work session on the assignment.#No — "stuff" doesn't tell a reader what actually changed.
+=Add data-cleaning function that fills in missing timestamps in the survey dataset.#Correct — this names the specific, logical change that was made.
+~Fix various things across several files before submitting the assignment tonight.#No — "various things" bundles unrelated changes instead of describing one logical change.
+~Save progress on the assignment before taking a short lunch break today.#No — this describes a time of day, not what actually changed in the code.
+#### Tests recognizing a specific, well-scoped commit message versus a vague one (corpus 5.2, 5.5).
+}
+
+::q10:: If a student clicks a GitHub Classroom assignment link a second time after already accepting it, what happens? {
+~Classroom creates a second, duplicate repository for the same assignment and student.#No — Classroom is designed to avoid duplicate repos per student per assignment.
+~Classroom deletes the original repository and provisions a completely fresh one instead.#No — the original repo is preserved; nothing gets deleted on a repeat click.
+~Classroom pauses and waits for the instructor to approve the repeated access request.#No — no instructor approval step is triggered by clicking the link again.
+=Classroom recognizes the prior acceptance and redirects the student to their existing repo.#Correct — there is exactly one repo of record per student per assignment.
+#### Tests understanding that Classroom prevents duplicate repos on repeated accept clicks (corpus 5.3, 8).
+}
+
+::q11:: In Git, the default, stable branch of a repository is conventionally named ____. {
+=main
+=Main
+}
+
+::q12:: The three-step loop this topic teaches is repository, ____, and push. {
+=commit
+=Commit
+}
+
+::q13:: The file used to tell Git which files or patterns to never track — such as ones holding secrets — is called ____. {
+=.gitignore
+=gitignore
+=.gitignore file
+}
