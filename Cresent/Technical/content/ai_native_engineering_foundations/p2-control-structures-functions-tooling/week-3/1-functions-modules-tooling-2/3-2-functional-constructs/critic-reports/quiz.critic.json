@@ -1,0 +1,37 @@
+{
+  "passed": true,
+  "checks": {
+    "positional_bias": {
+      "passed": true,
+      "distribution": [3, 3, 3, 3],
+      "max_share": 0.25,
+      "note": "Independently re-derived the 0-based '=' index for all 12 MCQs directly from quiz.gift's = / ~ markers: [3,0,1,2,3,0,1,2,3,0,1,2] (q1-q12 in file order). Matches both the builder's self-report and quiz.meta.json's correct_position_distribution exactly. No meta_gift_desync."
+    },
+    "length_bias": {
+      "passed": true,
+      "longest_correct_rate": 0.083,
+      "baseline": 0.25,
+      "note": "Independently measured character length of every answer option (marker + feedback stripped) for all 12 MCQs and applied the skill's actual rule -- flag only if len(correct) > mean(distractors)*1.20. Only q9 crosses this threshold (correct=62 chars vs distractor mean=50.33, threshold=60.4). Rate = 1/12 = 8.3%, well under the 40% fail line and under the 25% chance baseline. This corrects the builder's self-reported '3/12 (25%)': the builder's own meta.json table (option_length_balance) applied a different, non-spec criterion -- 'is the correct answer the longest or tied-longest single option' (q2 tie, q9, q10) -- rather than the skill-mandated mean*1.20 comparison. Re-checked q2 (correct=42 vs mean(42,42,41)=41.67, threshold=50.0 -- not flagged) and q10 (correct=61 vs mean(60,47,50)=52.33, threshold=62.8 -- not flagged, 61<62.8) by hand; neither crosses the real threshold. Verdict on this check is unaffected (both 1/12 and the builder's claimed 3/12 pass the >0.40 fail bar), but the builder's self-reported number and methodology were wrong."
+    },
+    "distractor_plausibility": {
+      "passed": true,
+      "absurd_rate": 0.0,
+      "weakest_questions": ["q5 (two distractors are unrelated-to-misconception rather than plausible, scored 2/4, but not absurd)"]
+    },
+    "objective_coverage": {
+      "passed": true,
+      "uncovered_objectives": [],
+      "orphan_questions": [],
+      "mapping": {
+        "lambda expression / vs named def": ["q1", "q2", "q13"],
+        "lambda as sorted() key": ["q3", "q4"],
+        "higher-order functions / map / filter": ["q5", "q6", "q7"],
+        "decorators / @decorator / @timer": ["q8", "q9", "q10", "q14"],
+        "generators / yield / lazy evaluation": ["q11", "q12", "q15"]
+      }
+    }
+  },
+  "auto_correction_applied": { "shuffle_round_2": false },
+  "verdict": "Pass -- positional bias uniform (3/3/3/3, max_share 0.25), length bias clean at the correct rate of 1/12 (8.3%, not the builder-claimed 3/12 -- their meta used a non-spec 'longest single option' criterion instead of the skill's mean*1.20 rule), zero absurd distractors, and all 5 Learning Objectives from corpus section 3 covered by >=1 question with no orphans.",
+  "at": "2026-07-14T00:00:00Z"
+}

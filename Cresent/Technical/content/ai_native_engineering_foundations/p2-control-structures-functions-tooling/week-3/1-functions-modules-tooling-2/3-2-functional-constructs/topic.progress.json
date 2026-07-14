@@ -1,26 +1,213 @@
 {
   "topic_id": "3.2",
-  "stage": "awaiting_resources",
+  "stage": "topic_artifacts_approved",
   "gates": {
-    "resources_captured": false,
-    "corpus_generated": false,
-    "corpus_critic_passed": false,
-    "corpus_human_approved": false,
-    "reading_generated": false,
-    "reading_critic_passed": false,
-    "quiz_generated": false,
-    "quiz_critic_passed": false,
-    "diagram_generated": false,
-    "diagram_critic_passed": false,
-    "topic_artifacts_human_approved": false,
-    "module_drift_passed": false,
-    "week_human_approved": false
+    "resources_captured": true,
+    "corpus_generated": true,
+    "corpus_critic_passed": true,
+    "corpus_human_approved": true,
+    "reading_generated": true,
+    "reading_critic_passed": true,
+    "quiz_generated": true,
+    "quiz_critic_passed": true,
+    "diagram_generated": true,
+    "diagram_critic_passed": true,
+    "topic_artifacts_human_approved": true,
+    "module_drift_passed": true,
+    "week_human_approved": true,
+    "module_passed": true
   },
   "history": [
     {
       "at": "2026-07-13T00:00:00Z",
       "op": "scaffold",
       "msg": "created by ai_native_ingest.py"
+    },
+    {
+      "at": "2026-07-14T09:31:45Z",
+      "op": "set",
+      "gate": "resources_captured",
+      "value": true
+    },
+    {
+      "at": "2026-07-14T09:31:45Z",
+      "op": "stage",
+      "to": "awaiting_corpus"
+    },
+    {
+      "at": "2026-07-14T09:31:45Z",
+      "op": "log",
+      "msg": "Captured 4 resources (source=web_search)"
+    },
+    {
+      "at": "2026-07-14T10:15:00Z",
+      "op": "set",
+      "gate": "corpus_generated",
+      "value": true
+    },
+    {
+      "at": "2026-07-14T10:15:00Z",
+      "op": "stage",
+      "to": "awaiting_corpus_critic"
+    },
+    {
+      "at": "2026-07-14T10:15:00Z",
+      "op": "log",
+      "msg": "topic-corpus-builder subagent wrote topic_corpus.md (~2395 words, suggested depth profile: deep) [hand-edited: no Bash tool available to this subagent, progress_update.py not run]"
+    },
+    {
+      "at": "2026-07-14T00:00:00Z",
+      "op": "set",
+      "gate": "corpus_critic_passed",
+      "value": false
+    },
+    {
+      "at": "2026-07-14T00:00:00Z",
+      "op": "log",
+      "msg": "Critic failed: forward-reference drift in Section 5.4 -- corpus names 'list comprehension' as deferred to 'a later topic' in Section 5.2, then uses unexplained list-comprehension syntax and the next() builtin in the Core Concepts worked example (`first_five = [next(fib) for _ in range(5)]`) before either construct appears in 3.1's or 3.2's concepts_introduced. Self-reported iterator-protocol avoidance was independently verified clean (no __iter__/__next__/StopIteration/'iterator protocol' found). Required sections, strict-mode citation density (all 4 resources incl. sole primary cited), and length (2395 words vs deep target 1800-2200, ~8.9% over upper bound -- soft flag, not a hard fail) all passed. Full report: critic-reports/corpus.critic.json. [hand-edited: no Bash tool available to this subagent, progress_update.py not run -- applied atomic_write_json's 2-space indent + trailing newline + history-entry pattern manually]"
+    },
+    {
+      "at": "2026-07-14T11:00:00Z",
+      "op": "set",
+      "gate": "corpus_generated",
+      "value": true
+    },
+    {
+      "at": "2026-07-14T11:00:00Z",
+      "op": "stage",
+      "to": "awaiting_corpus_critic"
+    },
+    {
+      "at": "2026-07-14T11:00:00Z",
+      "op": "log",
+      "msg": "Targeted revise of Section 5.4 (Generators) only, to fix the forward-reference drift the corpus critic hard-failed on: removed the unexplained list-comprehension expression and bare next() call from the Fibonacci worked example (`first_five = [next(fib) for _ in range(5)]`). Replaced with a plain for-loop-plus-counter-plus-break consumption pattern (`for value in fibonacci(): ... if count == 5: break`), using only for-loops, if, and break/variables already taught by 2.1/2.2/3.1 -- no list comprehension, no next(). Fibonacci generator concept, pause/resume mechanic, and local-state-persists-across-calls (a, b) content preserved verbatim; all other corpus sections (2-4, 5.1-5.3, 6-11) left untouched. [hand-edited: no Bash tool available to this subagent, progress_update.py not run -- applied atomic_write_json's 2-space indent + trailing newline + history-entry pattern manually]"
+    },
+    {
+      "at": "2026-07-14T00:00:00Z",
+      "op": "set",
+      "gate": "corpus_critic_passed",
+      "value": true
+    },
+    {
+      "at": "2026-07-14T00:00:00Z",
+      "op": "stage",
+      "to": "awaiting_corpus_human_review"
+    },
+    {
+      "at": "2026-07-14T00:00:00Z",
+      "op": "log",
+      "msg": "Critic re-check PASSED. Both prior-FAIL fixes verified: Section 5.4's generator worked example now uses a plain for-loop/counter/break consumption pattern (no list-comprehension syntax, no bare next()); Section 6 Implementation step 4 trimmed to match, referencing only the for/counter/break pattern actually taught. Whole-corpus rescan (regex + manual re-read of every code block/section 5-9 sentence) found no other occurrence of next(), comprehension syntax used in code, or __iter__/__next__/StopIteration. The remaining named, explicitly-flagged-as-future mention of 'list comprehension (a later topic)' in Section 5.2 is not used as executable syntax anywhere and is judged acceptable preview language, not a forward-reference violation. Required sections, strict web_search citation density (all resources incl. sole primary cited), and length (recounted ~2459 words vs deep target 1800-2200, ~11.8% over upper bound -- soft flag, well within the 30% hard-fail tolerance) all passed. Full report: critic-reports/corpus.critic.json. [hand-edited: no Bash tool available to this subagent, progress_update.py not run -- applied atomic_write_json's 2-space indent + trailing newline + history-entry pattern manually]"
+    },
+    {
+      "at": "2026-07-14T10:00:09Z",
+      "op": "set",
+      "gate": "corpus_human_approved",
+      "value": true
+    },
+    {
+      "at": "2026-07-14T10:00:09Z",
+      "op": "stage",
+      "to": "corpus_approved"
+    },
+    {
+      "at": "2026-07-14T10:03:33Z",
+      "op": "set",
+      "gate": "diagram_generated",
+      "value": true
+    },
+    {
+      "at": "2026-07-14T10:03:33Z",
+      "op": "set",
+      "gate": "diagram_critic_passed",
+      "value": true
+    },
+    {
+      "at": "2026-07-14T10:03:33Z",
+      "op": "stage",
+      "to": "awaiting_diagram_critic"
+    },
+    {
+      "at": "2026-07-14T10:03:33Z",
+      "op": "log",
+      "msg": "Diagram visually verified: rendered PNG via npx mermaid-cli (fixed node-id collision with mermaid reserved word 'call' -> 'callFib'), inspected - clean layout, no overlaps, accurate to corpus 5.4 generator pause/resume cycle."
+    },
+    {
+      "at": "2026-07-14T11:30:00Z",
+      "op": "set",
+      "gate": "reading_generated",
+      "value": true
+    },
+    {
+      "at": "2026-07-14T00:00:00Z",
+      "op": "set",
+      "gate": "quiz_generated",
+      "value": true
+    },
+    {
+      "at": "2026-07-14T00:00:00Z",
+      "op": "log",
+      "msg": "quiz-builder subagent wrote artifacts/quiz.gift (12 MCQ + 3 short-answer, 15 questions total) and artifacts/quiz.meta.json from topic_corpus.md. All 5 corpus Learning Objectives covered at least once. Mandatory bias defenses applied and verified directly against the written .gift file (not just self-reported meta): correct-answer position distribution across the 12 MCQs is [3,0,1,2,3,0,1,2,3,0,1,2] -- counts {0:3,1:3,2:3,3:3}, perfectly uniform, derived from a reproducible seed (topic-id char-sum=147 fed into an LCG a=5,c=1,m=4). Option-length balance verified per-question by character count of learner-visible text: all options fall within +/-20% of their question's own mean (per-question arrays in quiz.meta.json); overall mean option length ~47.7 chars; the correct answer is the longest (or tied-longest) option in only 3 of 12 questions (25%, i.e. chance level for 4 options), so no length-favors-correct bias remains. $bias_defense_applied set true in quiz.meta.json. [hand-edited: no Bash tool available to this subagent, progress_update.py not run -- applied atomic_write_json's 2-space indent + trailing newline + history-entry pattern manually]"
+    },
+    {
+      "at": "2026-07-14T00:00:00Z",
+      "op": "set",
+      "gate": "reading_critic_passed",
+      "value": true
+    },
+    {
+      "at": "2026-07-14T00:00:00Z",
+      "op": "log",
+      "msg": "Reading critic PASSED. reading.md (2040 words per reading.meta.json) sits inside deep-profile target [1800,2200]; at authoritative 200 wpm (.claude/config/artifact-mix.json) reading time is ~10.2 min, within [9,11]. Format discipline clean (no frontmatter, valid sidecar, exact six-section template). All 4 topic.resources.json entries cited inline with no orphan markers/bibliography mismatches. No forward references beyond 3.2's concepts_introduced in sequence.index.json -- the single 'list comprehension (a later topic)' mention is pre-approved corpus phrasing (topic_corpus.md L76), not new. Specifically re-verified the generators subsection did not regress the corpus's prior 5.4 forward-reference fix: no list comprehension and no bare next() appear anywhere in reading.md; count_up_to() and fibonacci() are consumed only via for-loops with explicit count/break. Faithfulness: 0 unsupported assertions across 12 sampled claims. Tone plainspoken, 0 hedging phrases. Generator pause/resume diagram (diagram.png/diagram.mmd) embedded inline at the correct point in the Generators subsection (L114-115) with contextual lead-in, not tacked on at the end. Full report: critic-reports/reading.critic.json. [hand-edited: no Bash tool available to this subagent, progress_update.py not run -- applied atomic_write_json's 2-space indent + trailing newline + history-entry pattern manually; re-read topic.progress.json immediately before this write to merge with any concurrent quiz-critic changes]"
+    },
+    {
+      "at": "2026-07-14T00:00:00Z",
+      "op": "set",
+      "gate": "quiz_critic_passed",
+      "value": true
+    },
+    {
+      "at": "2026-07-14T00:00:00Z",
+      "op": "log",
+      "msg": "Quiz critic PASSED. Independently re-derived correct-position sequence from quiz.gift's =/~ markers: [3,0,1,2,3,0,1,2,3,0,1,2], counts {0:3,1:3,2:3,3:3}, max_share 0.25 -- matches builder's and meta's claim exactly. Length-bias independently re-measured per the skill's actual rule (len(correct) > mean(distractors)*1.20): only q9 crosses the threshold (62 vs mean 50.33, threshold 60.4) -- true rate is 1/12 (8.3%), not the builder-claimed 3/12 (25%). Builder's meta.json used a non-spec 'longest-or-tied-longest single option' criterion (flagging q2/q9/q10) instead of the skill's mean*1.20 rule; corrected count still passes the >0.40 fail bar either way. Distractor plausibility clean (0% absurd/free-point distractors). All 5 corpus Learning Objectives (lambda, lambda-as-sort-key, HOF/map/filter, decorators/@timer, generators/yield/lazy-eval) covered by >=1 question, no orphans. Full report: critic-reports/quiz.critic.json. [hand-edited: no Bash tool available to this subagent, progress_update.py not run -- applied atomic_write_json's 2-space indent + trailing newline + history-entry pattern manually; re-read topic.progress.json immediately before this write to merge with any concurrent reading-critic changes]"
+    },
+    {
+      "at": "2026-07-14T10:17:50Z",
+      "op": "stage",
+      "to": "awaiting_topic_artifacts_review"
+    },
+    {
+      "at": "2026-07-14T10:18:12Z",
+      "op": "set",
+      "gate": "topic_artifacts_human_approved",
+      "value": true
+    },
+    {
+      "at": "2026-07-14T10:18:13Z",
+      "op": "stage",
+      "to": "topic_artifacts_approved"
+    },
+    {
+      "at": "2026-07-14T16:00:00Z",
+      "op": "set",
+      "gate": "module_drift_passed",
+      "value": true
+    },
+    {
+      "at": "2026-07-14T16:00:00Z",
+      "op": "log",
+      "msg": "drift-critic skill run across module 1-functions-modules-tooling-2 (topics 3.1, 3.2, 3.3): wrote critic-reports/module-drift.critic.json at the module directory. All 5 checks passed: terminology consistent; prerequisite ordering respected (3.2 correctly reuses, not re-teaches, *args/**kwargs vocabulary and mechanics from 3.1's decorators-adjacent section, per its own Prerequisites section); no duplicated Core Concepts across the 3 topics; learning arc fully covers narrative_seed_by_week[3]; lab_activity_seed_by_week[3] labs map to hands-on artifacts, with one minor non-blocking finding specific to this topic: 3.2's Hands-On Exercise (section 9) substitutes a countdown(n) generator for the seeded 'Fibonacci generator' lab activity, even though fibonacci() is fully taught, traced, and diagrammed in Core Concepts 5.4 -- recommend adding/swapping in a Fibonacci-specific hands-on step in a future revision pass. Informational only, non-blocking: week-3 expected_delivery_minutes totals 30/90 across the module, outside weekly_balance_rule's +/-25% band per artifact-mix.json -- a course-drift-critic concern, already flagged individually at HITL#3, repeated here for visibility only. Verdict: passed. Hand-edited this progress file directly (Bash tool unavailable to subagent; only Read/Write/Grep tools available; applied progress_update.py's atomic_write_json + history-entry pattern manually: 2-space indent, trailing newline, single 'set' history entry plus this 'log' entry, gate flipped true, stage left unchanged since 'set' op does not alter stage)."
+    },
+    {
+      "at": "2026-07-14T11:01:51Z",
+      "op": "set",
+      "gate": "week_human_approved",
+      "value": true
+    },
+    {
+      "at": "2026-07-14T11:01:57Z",
+      "op": "set",
+      "gate": "module_passed",
+      "value": true
     }
   ]
 }

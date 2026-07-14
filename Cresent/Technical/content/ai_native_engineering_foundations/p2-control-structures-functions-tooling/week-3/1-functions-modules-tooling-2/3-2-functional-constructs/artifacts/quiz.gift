@@ -1,0 +1,114 @@
+$CATEGORY: CIT/P2/week-3/3.2-functional-constructs
+
+::q1:: Which is valid lambda syntax to double n? {
+~lambda n\: return n*2#No — a lambda's body is a single expression; it never uses the return keyword, the expression after the colon is returned automatically.
+~lambda(n)\: n * 2#No — lambda parameters are never wrapped in parentheses; that's function-call syntax, not lambda syntax.
+~def lambda n\: n * 2#No — this mixes def and lambda; a lambda is written entirely with the lambda keyword, not combined with def.
+=lambda n\: n * 2#Correct — lambda parameters: expression, with no parentheses around the parameter and no return keyword.
+}
+#### Tests correct lambda syntax versus common mistakes (corpus §5.1).
+
+::q2:: You need a one-line comparison function used only once as sorted()'s key. What's most idiomatic? {
+=A lambda — it's disposable, no name needed#Correct — a lambda is used once, passed directly as an argument; naming it would add nothing.
+~A named def — lambdas can't take arguments#No — lambdas can take any number of parameters; the limitation is on the body, not the parameter list.
+~A named def — only def works with sorted()#No — sorted()'s key argument accepts any callable, including a lambda; def is not required.
+~A lambda saved to ten variables for reuse#No — a lambda that is reused across many places is exactly the case where a named def is clearer to read and test.
+}
+#### Tests when a lambda is preferable to a named def function (corpus §5.1).
+
+::q3:: To sort words from shortest to longest, which key argument should you pass to sorted()? {
+~key\=lambda w\: len(w) with reverse\=True, sorting descending#No — reverse=True flips the order to longest-first, the opposite of what's asked.
+=key\=lambda w\: len(w), sorting ascending by length#Correct — sorted() calls the lambda once per item and orders by the returned length, shortest first by default.
+~key\=lambda w\: w, sorting alphabetically not by length#No — this sorts by the word itself (alphabetical order), not by its length.
+~key\=map(len, w), passing a map object not a function#No — key must be a callable applied per item, not a pre-built map object.
+}
+#### Tests using a lambda as the key argument to sorted() (corpus §5.1-5.2).
+
+::q4:: Leaderboard entries are dicts with a 'score' key. Which call ranks highest score first? {
+~sorted(entries, key\=lambda e\: e['score'])#No — without reverse=True this ranks lowest score first (ascending), not highest.
+~sorted(entries, key\=lambda e\: e['score'], reverse\=False)#No — reverse=False is the default behavior and still ranks lowest first.
+=sorted(entries, key\=lambda e\: e['score'], reverse\=True)#Correct — the lambda extracts each entry's score, and reverse=True orders it highest first.
+~sorted(entries, key\='score', reverse\=True)#No — key must be a callable (like a lambda) that Python calls per item, not a plain string.
+}
+#### Tests sorted(key=..., reverse=...) applied to a realistic ranking scenario (corpus §5.2, §7).
+
+::q5:: Which best defines a 'higher-order function'? {
+~A function that only accepts numbers or strings as arguments#No — accepting only certain data types has nothing to do with being higher-order.
+~A function defined inside another function's body#No — that describes a nested function, which may or may not itself be higher-order.
+~A function that executes faster by avoiding loops entirely#No — speed and loop-avoidance are unrelated to the higher-order definition.
+=A function that takes, returns, or both, another function#Correct — this is exactly the definition: a function is higher-order if it accepts or returns another function.
+}
+#### Tests the definition of a higher-order function (corpus §5.2).
+
+::q6:: What does list(map(lambda n\: n * 2, numbers)) produce for numbers \= [1, 2, 3]? {
+=[2, 4, 6] — each number doubled, in order#Correct — map() applies the lambda to every item, producing one doubled value per input.
+~[1, 2, 3] — the original list, unchanged#No — map() transforms every item; it does not pass values through unchanged.
+~A map object, since list() has no effect here#No — list() does force the map object to produce all its values as an actual list.
+~[6, 4, 2] — each number doubled, reversed#No — map() preserves input order; it does not reverse the sequence.
+}
+#### Tests what map() does conceptually (corpus §5.2).
+
+::q7:: What does list(filter(lambda n\: n % 2 \=\= 0, numbers)) return for numbers \= [1, 2, 3, 4]? {
+~[1, 3] — only the odd numbers, in order#No — the condition n % 2 == 0 keeps even numbers, not odd ones.
+=[2, 4] — only the even numbers, in order#Correct — filter() keeps only items where the lambda returns a truthy value, here the even numbers.
+~[1, 2, 3, 4] — the full list, unfiltered#No — filter() drops items that fail the condition; it does not keep everything.
+~[0, 0] — the results of each modulo check#No — filter() keeps the original items that pass the test, not the Boolean/modulo result itself.
+}
+#### Tests what filter() does conceptually (corpus §5.2).
+
+::q8:: Writing @my_decorator directly above a def greet(...)\: is shorthand for which reassignment? {
+~greet \= greet(my_decorator), swapping the call order#No — this calls greet with my_decorator as an argument, the reverse of what @ syntax does.
+~my_decorator \= greet(my_decorator), reversing the wrap#No — the decorator name is never reassigned; only the decorated function's name is.
+=greet \= my_decorator(greet), replacing the name#Correct — @my_decorator is shorthand for defining greet and then reassigning greet to my_decorator(greet).
+~greet \= my_decorator, discarding the original function#No — greet is reassigned to the result of calling my_decorator(greet), not to my_decorator itself.
+}
+#### Tests what the @decorator syntax expands to (corpus §5.3).
+
+::q9:: Why must a general-purpose decorator's inner wrapper function be defined as wrapper(*args, **kwargs)? {
+~So it can only wrap functions that take zero arguments#No — *args, **kwargs is what lets wrapper accept any number of arguments, not just zero.
+~So Python allows the @ syntax to be used at all#No — the @ syntax works regardless of wrapper's signature; it's a separate concern from argument-passing.
+~So the wrapper always returns a tuple of arguments#No — *args, **kwargs collects incoming arguments; it does not change what wrapper returns.
+=So it can accept any function's arguments, regardless of count#Correct — a decorator must work on any function, so wrapper needs to accept any combination of positional and keyword arguments.
+}
+#### Tests why a decorator's wrapper needs *args, **kwargs (corpus §5.3).
+
+::q10:: After applying @timer to slow_add(a, b), what does slow_add(2, 3) return to its caller? {
+=5 — the original result, with timing printed as a side effect#Correct — a well-written decorator returns the wrapped function's original result unchanged, alongside its side effect.
+~None — the wrapper swallows the return value after timing it#No — a correct decorator returns result from wrapper; it should never swallow it.
+~The elapsed time in seconds, instead of the sum#No — the elapsed time is printed as a message, not returned in place of the real result.
+~A tuple of (5, elapsed_time), bundling both values#No — the wrapper returns only the original result; the timing is reported via print, not bundled into the return value.
+}
+#### Tests that a decorator like @timer must return the original result (corpus §5.3).
+
+::q11:: Calling a generator function like count_up_to(5) immediately does what? {
+~Runs the whole body and returns a completed list#No — calling a generator function does not run its body at all yet; it only creates the generator object.
+=Returns a generator object; the body hasn't run yet#Correct — the function body only starts executing once you begin pulling values, e.g. with a for loop.
+~Raises an error, since yield needs a for loop present#No — calling the function is always valid; no for loop is required at call time.
+~Returns the first yielded value only, discarding the rest#No — calling the function does not yield any value yet; it just produces the generator object.
+}
+#### Tests what calling a generator function actually does (corpus §5.4).
+
+::q12:: Why does fibonacci()'s while True loop not cause an infinite hang when consumed with a for loop and a break? {
+~Python silently limits the loop to a fixed number of iterations#No — Python does not impose any hidden limit; the loop truly runs forever unless something outside stops it.
+~The while True loop is optimized away by the interpreter#No — the loop is not removed or altered; it genuinely runs indefinitely inside the generator.
+=Each value is produced lazily, one at a time, on request#Correct — lazy evaluation means the generator only computes and hands out the next value when asked, so the caller's break can stop consumption at any point.
+~The generator secretly converts itself into a finite list first#No — a generator never builds a full list; that is precisely what would make an infinite sequence impossible.
+}
+#### Tests lazy evaluation as the reason an infinite generator is safe to consume (corpus §5.4).
+
+::q13:: A ____ is a small, unnamed function written on a single line, using the `lambda` keyword instead of `def`. {
+=lambda
+=lambda function
+=lambda expression
+}
+#### Tests recognition of the lambda construct (corpus §5.1).
+
+::q14:: Writing `@my_decorator` above a `def greet(...)\:` is shorthand for `greet \= ____(greet)`. {
+=my_decorator
+}
+#### Tests the @decorator-to-reassignment equivalence (corpus §5.3).
+
+::q15:: Inside a generator function, the keyword used to produce a value and pause execution (instead of `return`) is ____. {
+=yield
+}
+#### Tests the core yield keyword mechanic (corpus §5.4).

@@ -1,0 +1,40 @@
+{
+  "passed": true,
+  "checks": {
+    "positional_bias": {
+      "passed": true,
+      "distribution": [3, 3, 3, 3],
+      "max_share": 0.25,
+      "note": "Re-derived correct-answer position independently from quiz.gift `=` markers for all 12 MCQs (q1-q12), ignoring quiz.meta.json. All 12 re-derived positions match the sidecar's correct_position_distribution exactly (q1:2,q2:0,q3:3,q4:1,q5:0,q6:2,q7:3,q8:1,q9:0,q10:2,q11:3,q12:1). Counting occurrences of each 0-based slot across the 12 MCQs gives 3/3/3/3 -- genuinely uniform, not just self-reported. No meta_gift_desync."
+    },
+    "length_bias": {
+      "passed": true,
+      "longest_correct_rate": 0.0,
+      "baseline": 0.25,
+      "note": "Applied the skill's exact rule (flag if len(correct) > mean(distractors)*1.20) after manually char-counting all 48 MCQ options (feedback stripped) from quiz.gift. Result: 0/12 questions trigger the flag -- well under the 0.25 baseline and the 0.40 fail threshold. The builder's self-reported '6/12 (50%) longest-option-correct' claim does NOT hold up under re-verification: even under a looser 'is correct simply the single longest option' test (not the mean*1.20 margin rule), only 3/12 (q3, q9, q10) have the correct answer as the nominal longest option -- exactly matching the 25% chance baseline, not 50%. In q3, q9, q10 the correct answer is longer because it must state a complete, precise mechanism (e.g. q9's 'without global, assignment creates a new local variable instead of changing the global one' vs. q10's full base-case definition) -- inherent technical completeness, not padding. Several distractors are in fact the single longest option in their question (e.g. q1 opt1=112 chars vs correct=110; q4 opt0=146 chars vs correct=110; q11 opt2=127 chars vs correct=110), which is the opposite of a lazy-distractor pattern. Conclusion: the builder's flagged concern is a false alarm from an evidently flawed self-check methodology, not a real bias in the artifact."
+    },
+    "distractor_plausibility": {
+      "passed": true,
+      "absurd_rate": 0.0,
+      "weakest_questions": [],
+      "note": "All 36 distractors across the 12 MCQs represent genuine misconceptions traceable to corpus section 5 (e.g. def-runs-immediately, print-also-returns, default-args-re-evaluated-per-call, *args/**kwargs role-swap, local-var-promoted-to-global, recursive/base-case-swap). None scored as obviously absurd (score 1); no filler options detected."
+    },
+    "objective_coverage": {
+      "passed": true,
+      "uncovered_objectives": [],
+      "orphan_questions": [],
+      "mapping": {
+        "Define a function with `def`, give it parameters, and return a value to the caller.": ["q1", "q2", "q14"],
+        "Distinguish positional, keyword, and default arguments, and pass them correctly.": ["q3", "q4", "q5"],
+        "Explain what `*args` and `**kwargs` collect, and iterate over extra positional arguments with a loop.": ["q6", "q7"],
+        "Describe local versus global scope and state what the `global` keyword does.": ["q8", "q9", "q15"],
+        "Write a recursive function with a correct base case and recursive case, using factorial as the model.": ["q10", "q11", "q13"],
+        "Attach a docstring so a function documents its own purpose.": ["q12"]
+      },
+      "note": "All 6 Learning Objectives from topic_corpus.md section 3 have >=1 question. Docstring LO (q12) is thinnest at exactly 1 question but satisfies the hard minimum."
+    }
+  },
+  "auto_correction_applied": { "shuffle_round_2": false },
+  "verdict": "Pass -- positional distribution independently re-verified as genuinely uniform (3/3/3/3) from quiz.gift source; length-bias re-audit using the skill's mean*1.20 rule finds 0/12 flagged questions (builder's self-reported 50% longest-correct claim is not substantiated -- true rate is ~25%, at chance baseline, and driven by inherent technical completeness in q3/q9/q10, not lazy distractor construction); distractor plausibility clean (0% absurd); all 6 Learning Objectives covered.",
+  "at": "2026-07-14T00:00:00Z"
+}

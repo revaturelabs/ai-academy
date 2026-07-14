@@ -1,0 +1,105 @@
+$CATEGORY: CIT/P2/week-3/3.3-modules-packaging-professional-tooling
+
+::q1:: Given a file `geometry.py` that defines a function `area_of_circle`, which import statement in another file lets you call it as `geo.area_of_circle(3)`? {
+~`from geometry import area_of_circle as geo`, which renames the function itself to `geo`, not the module.#Tempting — but `as` here renames the imported function, so `geo` refers to `area_of_circle` itself, not a module.
+~`from geometry import area_of_circle`, which copies the function in directly with no module prefix.#No — this drops the module prefix entirely; you would call `area_of_circle(3)`, not `geo.area_of_circle(3)`.
+=`import geometry as geo`, which imports the whole module and binds it to the local name `geo`.#Correct — `as` renames the whole module locally, so dot access becomes `geo.area_of_circle(3)`.
+~`import geometry`, which imports the module under its own name, `geometry`, rather than `geo`.#No — without `as`, the module keeps its original name `geometry`, so you would call `geometry.area_of_circle(3)`.
+#### Tests the three import forms and how `as` changes the local name used to reach imported code (corpus §5.1).
+}
+
+::q2:: Why does Python require dot notation such as `geometry.area_of_circle()` after a plain `import geometry`, instead of letting you call `area_of_circle()` directly? {
+=Namespacing keeps each module's names separate, so two modules can each define a function called `area_of_circle` without colliding.#Correct — namespacing is exactly why `import geometry` keeps names separated by module (corpus §5.1).
+~Python cannot execute any function unless its name is prefixed by the file it was written in, regardless of how it was imported.#No — this describes a made-up execution rule; Python has no such prefix requirement outside of namespacing.
+~The dot notation instructs Python to re-import the entire module fresh every time the function is called.#No — Python does not re-import a module on every call; the module is loaded once and cached.
+~It is purely a style convention — `import geometry` and `from geometry import area_of_circle` behave identically underneath.#No — the two forms differ precisely in namespacing: `from ... import` copies a name in and drops the module prefix.
+#### Tests understanding of namespacing as the reason for dot notation (corpus §5.1).
+}
+
+::q3:: Which call correctly simulates rolling one standard six-sided die? {
+~`random.random()`, which returns a floating-point value between 0 and 1, not a die face.#No — `random()` gives a float in [0, 1), not a whole number in a die's range.
+~`math.randint(1, 6)`, since `math` is the module that provides random whole-number generation.#No — `randint` lives in the `random` module, not `math`; `math` has no random-number functions.
+~`random.choice(1, 6)`, which picks randomly between the two numbers 1 and 6 only.#No — `choice` picks from a sequence you already have; passing two bare numbers this way is invalid and, even if it worked, would only ever pick 1 or 6.
+=`random.randint(1, 6)`, which returns a random whole number in that inclusive range.#Correct — `randint(1, 6)` returns a whole number 1 through 6 inclusive, exactly one die face (corpus §5.2).
+#### Tests correct use of the `random` module for a concrete simulation (corpus §5.2).
+}
+
+::q4:: Which expression correctly computes the area of a circle with radius 3, using the `math` module's constant and functions? {
+~`math.sqrt(3) * math.pi`, which multiplies pi by the square root of 3 instead of 3 squared.#No — this uses the square root of the radius, which is the wrong formula for a circle's area.
+=`math.pi * math.pow(3, 2)`, which multiplies the constant pi by 3 squared to get the circle's area.#Correct — area = pi * r^2, and `math.pow(3, 2)` computes 3 squared, matching the corpus example (corpus §5.2).
+~`random.pi * math.pow(3, 2)`, since `pi` is a constant defined in the `random` module.#No — `pi` is defined in `math`, not `random`; `random` has no such constant.
+~`math.floor(3.7) * math.pi`, which multiplies pi by an unrelated rounded-down value.#No — `math.floor(3.7)` rounds an unrelated number down to 3; it does not compute the radius squared.
+#### Tests correct use of the `math` module's constants and functions (corpus §5.2).
+}
+
+::q5:: Which expression correctly returns today's calendar date using the `datetime` module? {
+=`datetime.date.today()`, which returns today's date as a `date` object, using the `date` class directly.#Correct — `datetime.date.today()` returns today's date, as shown in the corpus example (corpus §5.2).
+~`datetime.datetime.today`, which refers to the method itself without calling it, so it returns no date at all.#No — missing the parentheses means this refers to the method object, not the date it would return if called.
+~`datetime.time.today()`, since the `time` class inside `datetime` provides today's calendar date.#No — `datetime.time` represents a time of day with no calendar date, and has no `today()` method.
+~`math.today()`, since date and time utilities live in the `math` module alongside numeric functions.#No — date and time utilities live in `datetime`, not `math`, which has no such function.
+#### Tests correct use of the `datetime` module for a concrete date lookup (corpus §5.2).
+}
+
+::q6:: What is the key difference between `import requests` and `pip install requests` the first time you set up a new machine? {
+~There is no real difference — both commands fetch the same code from PyPI, just using different command-line syntax for the same action.#No — `import` never downloads anything from PyPI; it only loads code that is already installed locally.
+~`pip install requests` only works for standard-library modules, while `import` is the command reserved for third-party packages.#No — this reverses the corpus distinction: `pip install` is specifically for third-party packages, not standard-library ones.
+=`pip install requests` fetches the package from PyPI; `import requests` only loads code already installed, else raising `ModuleNotFoundError`.#Correct — installing and importing are separate steps: pip puts third-party code on the machine, import loads what is already there (corpus §5.3).
+~`import requests` silently installs the package if it is missing, and `pip install requests` is only needed afterward to load it.#No — `import` never installs anything; a missing package raises `ModuleNotFoundError` instead.
+#### Tests the pip-vs-import / stdlib-vs-PyPI distinction (corpus §5.3).
+}
+
+::q7:: What is the purpose of a `requirements.txt` file in a plain pip-based project? {
+~It stores the full source code of every standard-library module the project imports, removing the need to install Python separately.#No — the standard library ships with Python itself; `requirements.txt` only lists third-party packages, not stdlib source code.
+~It tells `pip` which version of the Python interpreter itself to launch whenever the project is run.#No — `requirements.txt` lists packages, not interpreter versions; it plays no role in choosing which Python runs.
+~It replaces the need for a virtual environment by listing which packages should stay global instead of isolated.#No — `requirements.txt` and a virtual environment solve different problems; one lists packages, the other isolates them.
+=It records installed packages, often with versions, so others can recreate the same set with `pip install -r requirements.txt`.#Correct — `requirements.txt` is exactly the reproducibility record the corpus describes (corpus §5.3).
+#### Tests the purpose of `requirements.txt` as a reproducibility mechanism (corpus §5.3).
+}
+
+::q8:: Project A needs `requests` version 2.10 and Project B needs `requests` version 2.31, on the same machine. What problem does a virtual environment solve here? {
+~It automatically upgrades both projects to the newest version of `requests` so the version mismatch stops mattering.#No — venv does not change or upgrade version numbers; it isolates whichever versions each project actually installs.
+=Each project gets its own isolated interpreter and package set, so one project's version of `requests` cannot break the other's.#Correct — isolation is exactly why venv exists: separate interpreters and package sets per project (corpus §5.4).
+~It lets both projects share one global installation of `requests` by switching which version is active each time either project runs.#No — this describes manual, error-prone version-swapping, not what a virtual environment automates.
+~It removes the need to install `requests` at all, since a virtual environment bundles every PyPI package by default.#No — a virtual environment starts empty; each project still runs `pip install` for the packages it needs.
+#### Tests why isolated virtual environments matter for real projects (corpus §5.4).
+}
+
+::q9:: Put the `venv` workflow steps in the order the corpus describes\: (1) `pip install <package>`, (2) `python -m venv env`, (3) run the environment's activation script, (4) deactivate. {
+~1, 2, 3, 4 — install the package first, then create, activate, and deactivate the environment around it.#No — you cannot `pip install` into an environment before it exists or is activated.
+~2, 1, 3, 4 — create the environment, install packages globally, then activate and deactivate it.#No — installing here happens before activation, so the package would land in the global Python, not the isolated one.
+=2, 3, 1, 4 — create the environment, activate it, install packages inside it, then deactivate.#Correct — the corpus workflow is create, then activate, then install, then deactivate (corpus §5.4).
+~3, 2, 1, 4 — activate an environment before it even exists, then create it, install, and deactivate.#No — an environment must be created before it can be activated; this order is impossible.
+#### Tests the create -> activate -> install -> deactivate venv workflow (corpus §5.4).
+}
+
+::q10:: What does running `poetry new my_project` scaffold, according to the corpus? {
+=A `my_project` package folder, an empty `tests` folder, and a `pyproject.toml` recording name and dependencies.#Correct — this matches the corpus description of `poetry new`'s scaffold exactly (corpus §5.5).
+~A single `requirements.txt` file plus one global virtual environment shared across every project on the machine.#No — Poetry scaffolds a `pyproject.toml` per project, not one shared global environment across projects.
+~A `venv` folder only, leaving `pyproject.toml` and the `tests` folder to be created by hand afterward.#No — `poetry new` creates the `pyproject.toml` and `tests` folder itself; nothing is left to create by hand.
+~A compiled executable of the project along with a `setup.py` file ready for uploading directly to PyPI.#No — `poetry new` scaffolds project structure and dependency tracking, not a compiled executable or `setup.py`.
+#### Tests the conceptual scaffold produced by `poetry new` (corpus §5.5).
+}
+
+::q11:: Which file and function naming would Pytest automatically discover and run, with no extra configuration? {
+~A file `geometry_check.py` containing a function `def check_area_of_circle():`.#No — neither the file nor the function uses the `test_` (or `_test.py`) naming convention Pytest looks for.
+~A file `test_geometry.py` containing a function `def area_of_circle_check():`.#No — the file is named correctly, but the function itself does not start with `test_`, so Pytest will not run it.
+~A file `geometry_test_suite.py` containing a function `def verify_test_area_of_circle():`.#No — the file name ends in `_suite.py`, not `test_` or `_test.py`, so Pytest will not discover it automatically.
+=A file `test_geometry.py` containing a function `def test_area_of_circle():`.#Correct — both the file and the function follow the `test_` naming convention Pytest discovers automatically (corpus §5.6).
+#### Tests Pytest's naming-based test discovery (corpus §5.6).
+}
+
+::q12:: The terminal command `python -m ____ env` creates a new, isolated virtual environment in a folder named `env`. {
+=venv
+#### Tests the `venv` create step of the create -> activate -> install -> deactivate workflow (corpus §5.4).
+}
+
+::q13:: The Poetry command `poetry ____ my_project` scaffolds a new project's folder structure, `tests` folder, and `pyproject.toml` file. {
+=new
+#### Tests the `poetry new` scaffolding command (corpus §5.5).
+}
+
+::q14:: For Pytest to automatically discover a test function with no extra configuration, its name must start with the prefix ____. {
+=test_
+=test
+#### Tests Pytest's `test_` naming convention for automatic discovery (corpus §5.6).
+}

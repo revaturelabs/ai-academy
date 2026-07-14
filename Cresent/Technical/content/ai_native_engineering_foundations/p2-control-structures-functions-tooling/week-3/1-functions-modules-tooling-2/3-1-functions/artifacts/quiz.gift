@@ -1,0 +1,112 @@
+$CATEGORY: CIT/P2/week-3/3.1-functions
+
+::q1:: In Python, what happens when you write a `def` statement for a function but never call the function afterward? {
+~Python immediately executes the function body once, exactly as though the function had already been called.#No — defining a function only teaches Python what the name means; it does not run the body.
+~Python raises a SyntaxError immediately, because every function definition must be called on the very same line.#No — a def statement is complete on its own; calling it later, or never, is perfectly legal Python.
+=Python stores the function definition in memory; the body does not execute until the function is called later.#Correct — def only defines the function; the body runs only when the function is later called.
+~Python discards the definition right away, since a function that is not called is removed by the interpreter.#No — Python keeps the definition available for as long as the program runs, whether or not it is ever called.
+#### Tests defining vs calling a function (corpus \#5.1).
+}
+
+::q2:: A function named `describe` only contains `print("done")` and has no `return` statement. If you write `x` to store the result of calling `describe()`, what value ends up in `x`? {
+=`x` ends up as `None`, because a function without a `return` statement hands back the special value `None`.#Correct — no return statement (or a bare return) always hands back None to the caller.
+~`x` ends up as the string `"done"`, because printing a value also returns that same value to the caller.#No — print only displays text on screen; it does not send anything back to the caller.
+~`x` ends up as `0`, because Python treats a missing return value as the default numeric result.#No — Python's default "no value returned" result is None, not 0.
+~Calling `describe()` raises a TypeError, because every function must include an explicit return statement to be called.#No — a function with no return statement is completely legal to call; it just returns None.
+#### Tests the difference between printing and returning (corpus \#5.1).
+}
+
+::q3:: Given a function defined as `power(base, exponent)` and the call `power(2, 3)`, how are the arguments matched to parameters? {
+~The arguments are matched by name — Python looks up variables called `base` and `exponent` already in scope and copies them in.#No — that describes keyword arguments; a plain call like power(2, 3) uses no argument names at all.
+~The arguments are matched by type — Python inspects whether each value is an integer or a string and assigns it accordingly.#No — Python does not route arguments by their data type; positional order decides the match here.
+~The arguments are matched alphabetically — parameters are filled in alphabetical order of their names, not the order written in the call.#No — Python has no notion of alphabetically ordering parameters; it uses the order they were written in.
+=The arguments are matched by position — `2` fills `base` because it is listed first, and `3` fills `exponent` because it is listed second.#Correct — positional arguments are matched to parameters purely by their order in the call.
+#### Tests positional argument matching (corpus \#5.2).
+}
+
+::q4:: Why does calling `power` with `exponent` set to `3` and `base` set to `2`, using keyword syntax, still produce the same result as `power(2, 3)`? {
+~Python silently reorders any call so that positional-looking arguments always execute before named arguments, regardless of how they are written.#No — Python does not reorder calls; it simply matches named arguments to parameters directly.
+=Keyword arguments are matched to parameters by name, so the order in which they are written no longer matters.#Correct — keyword arguments bind by name, so writing exponent before base has no effect on the result.
+~Python evaluates both calls and keeps only the second one, discarding the first call's arguments entirely before running the function.#No — there is only one call here; nothing is discarded or re-evaluated.
+~Because `exponent` and `base` are global variables here, so the parameter names in the function definition are simply ignored.#No — exponent and base are the function's own parameter names, not separate global variables.
+#### Tests keyword argument matching (corpus \#5.2).
+}
+
+::q5:: According to the corpus, when is a function's default argument value actually evaluated? {
+=Once, at the moment the function is defined — not again each time the function is later called.#Correct — a default value is evaluated once, at definition time, which is why mutable defaults are risky.
+~Every time the function is called, fresh, using whatever values are currently in scope at that call site.#No — this is the common misconception; the default is fixed at definition time, not recomputed per call.
+~Only the first time the function is called, and then never re-evaluated again for any later call.#No — it is evaluated at definition time, before the function is ever called at all.
+~Never automatically; the programmer must manually re-assign the default value inside the body on every single call.#No — Python evaluates the default automatically once, at definition time; no manual re-assignment is needed.
+#### Tests the default-argument-evaluated-once trap (corpus \#5.2).
+}
+
+::q6:: In a function defined so that `*args` collects extra arguments, as in `total(*args)`, what does the single `*` before `args` cause Python to do? {
+~Collect any extra keyword arguments passed to the call into one dictionary, bound to the name `args`.#No — collecting keyword arguments into a dictionary is what two stars, `**kwargs`, does.
+~Multiply together every positional argument passed to the call before the function body runs at all.#No — the star does not perform any arithmetic; it only gathers arguments into a tuple.
+=Collect any extra positional arguments passed to the call into one tuple, bound to the name `args`.#Correct — one star gathers extra positional arguments into a tuple you can loop over.
+~Require the caller to pass at least one argument, or else Python raises a TypeError immediately.#No — total() with zero arguments is valid; args is simply an empty tuple in that case.
+#### Tests \*args collecting extra positional arguments (corpus \#5.3).
+}
+
+::q7:: What is the key difference between `*args` and `**kwargs` in a function definition? {
+~`*args` gathers extra keyword arguments into a dictionary; `**kwargs` gathers extra positional arguments into a tuple.#No — this reverses the actual roles of the one-star and two-star forms.
+~`*args` only works inside recursive functions; `**kwargs` only works inside functions that also use the `global` keyword.#No — both forms work in any function definition; they have no connection to recursion or global.
+~`*args` limits a function to exactly one argument total; `**kwargs` limits a function to exactly zero arguments total.#No — both forms exist precisely to accept a flexible, unlimited number of extra arguments.
+=`*args` gathers extra positional arguments into a tuple; `**kwargs` gathers extra keyword arguments into a dictionary.#Correct — one star for extra positional arguments, two stars for extra keyword arguments.
+#### Tests the \*args vs \*\*kwargs distinction (corpus \#5.3).
+}
+
+::q8:: In the corpus example, `compute()` sets a variable inside its body and returns it, then separate code outside the function tries to print that same variable name. What happens? {
+~Python prints the value, because any variable created inside a function becomes global once the function has run once.#No — running a function does not promote its local variables to global scope.
+=Python raises an error, because the variable is local to `compute` and does not exist outside the function.#Correct — a variable assigned inside a function is local and is not visible outside it.
+~Python prints `None`, because local variables are automatically copied to the global scope with an empty value.#No — local variables are not copied anywhere; they simply cease to exist once the function returns.
+~Python silently does nothing, because printing an out-of-scope variable is treated as a no-op instead of an error.#No — referencing an undefined name is an error in Python, not a silent no-op.
+#### Tests local scope (corpus \#5.4).
+}
+
+::q9:: Why does the `bump()` function in the corpus need the line `global counter` before it reassigns `counter`? {
+=Without it, reassigning `counter` inside the function would create a new local variable instead of changing the global one.#Correct — an assignment inside a function is local by default; global overrides that so the outer name is changed.
+~Without it, Python would raise a SyntaxError before the function is even allowed to be defined at all.#No — the function would still be valid Python; it would simply create an unrelated local variable.
+~Without it, the function would print the global value instead of returning it back to the caller.#No — bump() does not print anything; the issue is about assignment target, not printing.
+~Without it, Python would automatically delete the global `counter` variable the first time the function is called.#No — Python never deletes a global variable just because a function assigns a local name that shadows it.
+#### Tests the global keyword (corpus \#5.4).
+}
+
+::q10:: In the recursive `factorial(n)` function, what role does the check for whether `n` equals zero, which then returns `1` directly, play in the function? {
+~It is the recursive case — the branch where the function calls itself again on a smaller input.#No — this branch returns a fixed answer directly; it does not call the function again.
+~It is an optimization that speeds up the function but is not actually required for correctness.#No — without this check, the function would never stop calling itself and would never produce an answer.
+=It is the base case — the simplest input where the answer is known directly, stopping further recursive calls.#Correct — the base case is the smallest input with a known answer, and it is what stops the recursion.
+~It is error-handling code that only runs if the caller passes an invalid, non-numeric argument.#No — this check runs for the valid input n equal to 0, not for invalid arguments.
+#### Tests the recursive base case (corpus \#5.5).
+}
+
+::q11:: Tracing `factorial(4)` down to `factorial(0)` and back up, what is the correct order in which values are produced as the stack unwinds? {
+~It returns 24, then 4 times 6 gives 24, then 3 times 2 gives 6, then 2 times 1 gives 2, then 1 times 1 gives 1.#No — this reverses the actual unwind order; the base case's result of 1 is produced first, not last.
+~It returns 1, then 2 times 1 gives 2, then 1 times 1 gives 1, then 4 times 6 gives 24, then 3 times 2 gives 6.#No — the steps are out of order; each multiplication must use the result of the call directly below it on the stack.
+~It counts down through the input values 4, then 3, then 2, then 1, then 0, before climbing back up to a final value of 1 again.#No — this describes the descent into the calls, not the sequence of return values produced as the stack unwinds.
+=It returns 1, then 1 times 1 gives 1, then 2 times 1 gives 2, then 3 times 2 gives 6, then 4 times 6 gives 24.#Correct — factorial(0) returns 1 first, and each waiting call multiplies that result up to the final 24.
+#### Tests tracing the recursive call stack (corpus \#5.5).
+}
+
+::q12:: Where must a docstring be placed for Python to recognize it as the function's documentation? {
+~As a comment line directly above the `def` keyword, placed immediately before the function is defined.#No — a hash comment above def is not a docstring; Python does not store comments as documentation.
+=As the very first statement inside the function body, written as a triple-quoted string literal.#Correct — a docstring is the first statement inside the body, in triple quotes, which Python stores for tools and readers.
+~As the last statement inside the function body, immediately before the closing `return` line.#No — placed last, it is just an unused string literal, not a recognized docstring.
+~Inside the parentheses of the function's `def` line, listed alongside its declared parameters and default values.#No — the parentheses hold parameters only; a docstring must be a statement inside the body.
+#### Tests docstring placement (corpus \#5.6).
+}
+
+::q13:: Fill in the blank\: in a correct recursive function, the case that stops the recursion by returning an answer directly, without making another call, is called the ____ case. {
+=base
+=base case
+}
+
+::q14:: Fill in the blank\: to send a value back from a function to its caller — rather than just displaying it — you use the ____ statement. {
+=return
+=the return
+}
+
+::q15:: Fill in the blank\: to let a function reassign a variable that was defined at the top level, outside any function, you declare that intent with the ____ keyword. {
+=global
+=the global
+}

@@ -14,8 +14,18 @@
     "Recursion: base case and recursive case; factorial as the worked example",
     "Documentation: docstrings"
   ],
-  "expected_delivery_minutes": null,
-  "artifact_plan": {},
+  "expected_delivery_minutes": 10,
+  "artifact_plan": {
+    "depth_profile_suggested": "deep",
+    "depth_profile_confirmed": "deep",
+    "diagram": true,
+    "diagram_intent": "recursion call-stack: factorial(4) descending to base case then unwinding 1->1->2->6->24",
+    "corpus_word_count": 2010,
+    "reading_target_word_range": [1800, 2200],
+    "reading_target_minutes": [9, 11],
+    "quiz_question_range": [10, 15],
+    "quiz_include_short_answer": true
+  },
   "next_assessment": {
     "id": "A1",
     "week": 3,

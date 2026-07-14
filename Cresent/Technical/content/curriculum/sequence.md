@@ -80,10 +80,10 @@ status: "corpus_drafted"
 - path: `p2-control-structures-functions-tooling/week-3/1-functions-modules-tooling-2/3-1-functions`
 
 ```yaml
-concepts_introduced: []
-prerequisites: []
-cross_refs: []
-status: "scaffolded"
+concepts_introduced: ["function definition and calling", "return values", "positional/keyword/default arguments", "*args and **kwargs", "local vs global scope", "recursion (base case + recursive case)", "docstrings"]
+prerequisites: ["1.2", "1.3", "1.4", "2.1", "2.2"]
+cross_refs: ["Python"]
+status: "corpus_drafted"
 ```
 
 ## 3.2 — Functional Constructs
@@ -92,10 +92,10 @@ status: "scaffolded"
 - path: `p2-control-structures-functions-tooling/week-3/1-functions-modules-tooling-2/3-2-functional-constructs`
 
 ```yaml
-concepts_introduced: []
-prerequisites: []
-cross_refs: []
-status: "scaffolded"
+concepts_introduced: ["lambda (anonymous) functions", "higher-order functions", "map() and filter()", "sorted(key=...)", "decorators (@decorator syntax)", "generators and the yield keyword", "lazy evaluation (concept)"]
+prerequisites: ["1.2", "1.3", "2.2", "3.1"]
+cross_refs: ["Python"]
+status: "corpus_drafted"
 ```
 
 ## 3.3 — Modules, Packaging & Professional Tooling
@@ -104,10 +104,10 @@ status: "scaffolded"
 - path: `p2-control-structures-functions-tooling/week-3/1-functions-modules-tooling-2/3-3-modules-packaging-professional-tooling`
 
 ```yaml
-concepts_introduced: []
-prerequisites: []
-cross_refs: []
-status: "scaffolded"
+concepts_introduced: ["modules and imports (import, from...import, as)", "namespacing", "packages (directories of modules)", "the Python Standard Library", "random, math, and datetime modules", "package management with pip", "PyPI (Python Package Index)", "virtual environments (venv) and dependency isolation", "Poetry (poetry new, pyproject.toml)", "Pytest (test functions, assert, test discovery)"]
+prerequisites: ["1.1", "2.2", "3.1"]
+cross_refs: ["Python"]
+status: "corpus_drafted"
 ```
 
 ## 4.1 — Lists

@@ -1,0 +1,74 @@
+{
+  "passed": true,
+  "checks": {
+    "format_discipline": {
+      "passed": true,
+      "frontmatter_present": false,
+      "detail": "reading.md's first non-empty line is '# Modules, Packaging & Professional Tooling' -- no leading YAML frontmatter block."
+    },
+    "meta_sidecar": {
+      "passed": true,
+      "detail": "reading.meta.json exists and parses; word_count=2050, estimated_read_minutes=10, citations_used=[1,2,3,4,5], sections=[Overview, Key Concepts, Worked Example, In Practice, Key Takeaways, References]."
+    },
+    "section_template": {
+      "passed": true,
+      "detail": "Exactly the six fixed ## headings present in the required order: Overview (L3), Key Concepts (L7), Worked Example (L99), In Practice (L117), Key Takeaways (L129), References (L137). None added, renamed, or dropped."
+    },
+    "length": {
+      "passed": true,
+      "word_count_reported": 2050,
+      "target_word_range": [1800, 2200],
+      "word_count_ok": true,
+      "minutes_check": {
+        "wpm_authoritative_per_config": 200,
+        "minutes_at_200wpm": "2050/200 = 10.25 min",
+        "target_minute_range": [9, 11],
+        "ok": true,
+        "note": ".claude/config/artifact-mix.json fixes reading_wpm=200 for the deep profile (1800-2200 words / 9-11 min); 2050 words lands centrally in both ranges."
+      }
+    },
+    "citations": {
+      "passed": true,
+      "all_five_resources_cited": true,
+      "resource_check": {
+        "[1] docs.python.org/3/tutorial/modules.html": "cited (modules, import/from.../as, namespacing, packages, In Practice bullet)",
+        "[2] docs.python.org/3/tutorial/venv.html": "cited (pip mechanics, requirements.txt, venv 4-step workflow, In Practice bullets)",
+        "[3] docs.python.org/3/tutorial/stdlib.html": "cited (standard library framing, random/math/datetime)",
+        "[4] python-poetry.org/docs/basic-usage/": "cited (poetry new/add/install/run, pyproject.toml, In Practice bullet)",
+        "[5] docs.pytest.org getting-started": "cited (test_ discovery, assert, pass/fail reporting, In Practice bullet)"
+      },
+      "orphan_markers": [],
+      "orphan_bibliography_entries": [],
+      "bibliography_matches_inline_markers": true
+    },
+    "no_forward_references": {
+      "passed": true,
+      "detail": "Checked against sequence.index.json id=3.3 concepts_introduced (modules/imports, namespacing, packages, standard library, random/math/datetime, pip, PyPI, venv, Poetry, Pytest). Reading stays entirely within this set plus explicit backward references to 3.1 (functions) and 2.2 (loops, implicitly via dice-roll worked example). No terms from 4.1 (Lists) or any later topic appear anywhere in the document."
+    },
+    "concept_level_constraint_check": {
+      "passed": true,
+      "detail": "Verified the reading holds the same concept-level ceiling the corpus was held to: venv section explicitly frames the 4-step workflow as 'described here rather than run live, since it depends on a real terminal' (L69) -- no live-terminal assumption. Poetry section covers only poetry new / poetry add / poetry install / poetry run / pyproject.toml at a conceptual level -- no lockfile internals, plugins, or venv-config flags. Pytest section covers only a single test_-named function with plain assert and discovery/pass-fail reporting -- no @pytest.fixture, no parametrize, no unittest.TestCase, no conftest.py anywhere in the document."
+    },
+    "faithfulness": {
+      "passed": true,
+      "assertions_sampled": 12,
+      "unsupported_count": 0,
+      "detail": "Reading is a close, faithful paraphrase (in places near-verbatim) of topic_corpus.md sections 5.1-5.6, 6, 7, 8, 9, 10. Sampled assertions (namespacing/import-forms distinction, package-as-directory definition, random/math/datetime function signatures and return values, pip-vs-import distinction, requirements.txt recreation via -r, venv 4-step create/activate/install/deactivate workflow, Poetry does-not-replace-venv/pip framing, pyproject.toml as unified metadata file, Pytest test_ naming/discovery convention, assert-based test_area_of_circle example matching corpus's exact numbers (0, 12.57), all five Key Takeaways) all trace verbatim or near-verbatim to the corpus. No fabricated claims found; the dice.py/test_dice.py worked example folds the corpus's separate Hands-On Exercise (section 9) into the Worked Example, consistent with corpus content, not new material."
+    },
+    "tone_fit": {
+      "passed": true,
+      "hedging_phrase_count": 0,
+      "detail": "Plainspoken, example-driven register matching the corpus voice throughout. The Overview's third sentence ('This topic covers the plumbing... a project someone else can clone, install, and trust.') runs long (~50 words) as an isolated outlier, but this does not pull the document's average sentence length over the 25-word threshold. No hedging phrases found."
+    },
+    "diagram_embedding": {
+      "passed": true,
+      "detail": "diagram.png/diagram.mmd (6-node flowchart: Write Modules -> Isolate in venv -> Install with pip -> Poetry Scaffolds Project -> Pytest Discovers Tests -> Pass/Fail Report, matching topic.manifest.json artifact_plan.diagram_intent verbatim) is placed at the top of the Worked Example section (L99-104), immediately after the lead-in sentence 'The six ideas above are not separate tools -- they are stages of one pipeline, from writing code to confirming it works,' and immediately before the numbered end-to-end project-setup walkthrough. This placement is judged appropriate rather than a defect: the diagram synthesizes all six Key Concepts subsections into one pipeline (it is not scoped to any single subsection's narrower content the way, e.g., a generator pause/resume diagram is scoped to one subsection), so pinning it to a specific Key Concepts heading would misrepresent it as belonging to one stage rather than the whole flow. Placing it as the capstone opening of Worked Example -- the section whose job is exactly 'put it all together' -- matches both the diagram's actual scope and its stated intent in the manifest, and the caption's stage list matches the diagram's node labels exactly."
+    }
+  },
+  "non_blocking_findings": [
+    "Overview's third sentence runs notably longer (~50 words) than the surrounding register and could be split for readability, though this does not fail the tone-fit check.",
+    "Diagram placement at the top of Worked Example (rather than anchored inside a specific Key Concepts subsection) is intentional and judged correct given the diagram's whole-pipeline scope; flagged here only for visibility per the parent task's explicit ask to judge this placement."
+  ],
+  "verdict": "PASS - all checks pass. Format discipline is clean (no frontmatter, valid meta.json sidecar, exact six-section template in order). Word count (2050) sits centrally in the deep profile's [1800, 2200] target, and at the authoritative 200 wpm (.claude/config/artifact-mix.json) reading time is 10.25 min, within [9, 11]. All five resources.json entries are cited at least once with no orphan markers or bibliography mismatches. No forward references beyond 3.3's own concepts_introduced in sequence.index.json -- nothing from 4.1 (Lists) or later appears. The Poetry/Pytest/venv content holds the corpus's concept-level ceiling: no fixtures, no unittest.TestCase, no conftest.py/parametrize, and the venv workflow is explicitly framed as non-live ('described here rather than run live, since it depends on a real terminal'). Faithfulness check found zero unsupported assertions across 12 sampled claims; the reading is a close, in-places-near-verbatim paraphrase of the approved corpus with no new claims introduced. Tone is plainspoken with zero hedging phrases (one long outlier sentence noted, non-blocking). The 6-node tooling-pipeline diagram is embedded at the top of the Worked Example section as a capstone synthesis of all six Key Concepts subsections; this placement is judged correct rather than a defect, since the diagram's scope is the whole pipeline (matching artifact_plan.diagram_intent verbatim) rather than any single subsection, and anchoring it to one Key Concepts heading would understate that scope. No changes required.",
+  "at": "2026-07-14T00:00:00Z"
+}

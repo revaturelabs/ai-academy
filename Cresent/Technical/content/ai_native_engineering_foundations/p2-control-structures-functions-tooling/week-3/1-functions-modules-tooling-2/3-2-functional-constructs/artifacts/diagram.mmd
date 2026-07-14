@@ -1,0 +1,40 @@
+---
+title: Generator Pause/Resume Cycle (fibonacci())
+config:
+  theme: base
+  themeVariables:
+    primaryColor: '#a5d8ff'
+    primaryBorderColor: '#4a9eed'
+    lineColor: '#555'
+  flowchart:
+    htmlLabels: true
+    curve: basis
+    rankSpacing: 60
+    nodeSpacing: 40
+---
+flowchart TB
+    callFib["<b>Call fibonacci()</b><br/><span style='font-size:11px;color:#6d28d9'>for value in fibonacci():</span>"]
+    genobj["<b>Generator Paused</b><br/><span style='font-size:11px;color:#6d28d9'>a = 0, b = 1</span>"]
+    yieldpoint["<b>Yield Value</b><br/><span style='font-size:11px;color:#6d28d9'>hands back a (0, 1, 1, 2, 3...), pauses</span>"]
+    loopcheck["<b>For Loop Counts</b><br/><span style='font-size:11px;color:#6d28d9'>count += 1</span>"]
+    resume["<b>Resume &amp; Update</b><br/><span style='font-size:11px;color:#6d28d9'>a, b = b, a + b -- state persists</span>"]
+    brk["<b>Break Loop</b><br/><span style='font-size:11px;color:#6d28d9'>count == 5, generator still paused</span>"]
+
+    callFib --> genobj
+    genobj --> yieldpoint
+    yieldpoint --> loopcheck
+    loopcheck -->|count < 5| resume
+    resume --> yieldpoint
+    loopcheck -->|count == 5| brk
+
+    class callFib start
+    class genobj act
+    class yieldpoint auto
+    class loopcheck act
+    class resume auto
+    class brk done
+
+    classDef start fill:#a5d8ff,stroke:#4a9eed,stroke-width:2px,color:#1a1a1a
+    classDef auto fill:#d0bfff,stroke:#8b5cf6,stroke-width:2px,color:#1a1a1a
+    classDef act fill:#a5d8ff,stroke:#4a9eed,stroke-width:2px,color:#1a1a1a
+    classDef done fill:#b2f2bb,stroke:#22c55e,stroke-width:2px,color:#1a1a1a
