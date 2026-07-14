@@ -39,7 +39,10 @@ condensed from the corpus Introduction. If `next_assessment` is present and due_
 ## Key Concepts
 (The spine — a curated walkthrough of the corpus Core Concepts. Do NOT re-derive the corpus prose;
 tighten it. Cite external resources inline as `[N]` where they back a claim. If a diagram exists,
-embed it here — see "Diagram embedding" — replacing a paragraph, not adding to one.)
+embed it here — see "Diagram embedding" — replacing a paragraph, not adding to one.
+**Formatting (required) — see Discipline #8:** lead each sub-topic paragraph with an underlined
+bold label `<u>**Sub-topic label.**</u>`, and render any run-together enumeration as a Markdown
+bullet list, never inline prose.)
 
 ## Worked Example
 (The concrete example from the corpus Implementation / Hands-On section, shown step by step.
@@ -124,6 +127,20 @@ If `diagram_path` is **not** set, do not invent one. Skip the image; the reading
 7. **External resources earn citations.** Where an external resource sharpens or backs a corpus
    claim, weave it in with an inline `[N]` and list it in References. Every `primary` resource is
    cited at least once. Citations attach to claims, not decoration.
+
+8. **Scannable formatting (required in Key Concepts).** The learner must see at a glance what each
+   part explains.
+   - **Underline each sub-topic label.** Every sub-topic paragraph in Key Concepts begins with a
+     bold lead-in label wrapped in an HTML underline tag: `<u>**Variables and assignment.**</u> …`.
+     (Where a section introduces the sub-topic with an inline bold term instead of a lead-in label,
+     underline that first-introduction term: `<u>**operator precedence**</u>`.) `<u>` renders on
+     GitHub, ADO, and the LMS; it is valid inline HTML inside Markdown.
+   - **Bullet every enumeration.** Any list of points that would otherwise run together in prose —
+     "First… Second…", "two ways", "three kinds", a set of functions/rules/uses — is written as a
+     Markdown bullet list with an intro line ending in a colon, a blank line before and after the
+     list, and one point per bullet. Do NOT bury enumerated points inside a paragraph.
+   - Preserve all wording, `code`, `[N]` citations, and bold inside the bullets and labels. This is
+     a formatting convention, not a licence to reword.
 
 ## Return value
 

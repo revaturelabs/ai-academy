@@ -24,7 +24,12 @@ The *type* of the result depends on the operands. If both are `int`, the result 
 
 The one place Python surprises newcomers is division. The single slash `/` is **true division**: it *always* gives a `float`, even when the numbers divide evenly, so `6 / 2` is `3.0`, not `3` [1]. The double slash `//` is **floor division**: it divides and rounds *down* to the nearest whole number, discarding the fraction. Read `//` as "how many whole times does the second number fit into the first?" — `20 // 6` is `3`. The precise rule is that `//` rounds *toward negative infinity*, never toward zero [2]. For positive numbers those descriptions agree, but for negatives they differ: `-7 // 2` is `-4` (the true answer `-3.5` rounded down), not `-3`.
 
-The `%` operator gives the **remainder** after floor division [1][3]. It fits together with `//` so that `(a // b) * b + (a % b)` reconstructs `a`. Modulo has two common uses worth remembering now: the **even/odd test** (`n % 2` is `0` when `n` is even, `1` when odd, and more generally `x % n == 0` tests whether `x` divides evenly by `n`), and **wrap-around** — keeping a number inside a fixed range like a 12-hour clock, where any hour taken `% 12` lands in `0..11` [3]. Because Python floors toward negative infinity, the remainder takes the sign of the *divisor*, so `-7 % 2` is `1`, not `-1` [2]. Finally, the double asterisk `**` is **exponentiation**: `7 ** 2` is `49`, `2 ** 10` is `1024`. Do not confuse `**` (power) with `*` (multiply) — `2 ** 3` is `8`, while `2 * 3` is `6`.
+The `%` operator gives the **remainder** after floor division [1][3]. It fits together with `//` so that `(a // b) * b + (a % b)` reconstructs `a`. Modulo has two common uses worth remembering now:
+
+- **Even/odd test** — `n % 2` is `0` when `n` is even, `1` when odd; more generally `x % n == 0` tests whether `x` divides evenly by `n`.
+- **Wrap-around** — keeping a number inside a fixed range like a 12-hour clock, where any hour taken `% 12` lands in `0..11` [3].
+
+Because Python floors toward negative infinity, the remainder takes the sign of the *divisor*, so `-7 % 2` is `1`, not `-1` [2]. Finally, the double asterisk `**` is **exponentiation**: `7 ** 2` is `49`, `2 ** 10` is `1024`. Do not confuse `**` (power) with `*` (multiply) — `2 ** 3` is `8`, while `2 * 3` is `6`.
 
 <u>**Operator precedence**</u> is a fixed ranking that decides which operators run first when an expression has more than one [1][2]. This is the "order of operations" from arithmetic class, extended to every Python operator. `2 + 3 * 4` is `14`, not `20`, because `*` outranks `+`. Here is the ladder, highest (runs first) at the top [2]:
 
@@ -40,7 +45,13 @@ The `%` operator gives the **remainder** after floor division [1][3]. It fits to
 | | `and` | logical AND |
 | Lowest | `or` | logical OR |
 
-Several facts fall out. First, `**` binds tighter than unary minus, so `-2 ** 2` reads as "negate `2 ** 2`" and gives `-4`; to square the negative you must write `(-2) ** 2`, which is `4` [2]. Second, arithmetic runs before comparison, and comparison runs before logic — so `2 + 3 > 4 and 1 < 2` reads as `((2 + 3) > 4) and (1 < 2)`. Third, when two operators share a precedence level (like `*` and `/`), Python evaluates left to right — **left-associativity** — so `20 / 4 * 2` is `(20 / 4) * 2 = 10.0`, not `2.5` [2]. You do not have to memorize the ladder: any time the order is not obvious, wrap the part you want done first in parentheses, which always win [1][2]. Adding them for clarity costs nothing and never makes a correct expression wrong.
+Several facts fall out:
+
+- `**` binds tighter than unary minus, so `-2 ** 2` reads as "negate `2 ** 2`" and gives `-4`; to square the negative you must write `(-2) ** 2`, which is `4` [2].
+- Arithmetic runs before comparison, and comparison runs before logic — so `2 + 3 > 4 and 1 < 2` reads as `((2 + 3) > 4) and (1 < 2)`.
+- When two operators share a precedence level (like `*` and `/`), Python evaluates left to right — **left-associativity** — so `20 / 4 * 2` is `(20 / 4) * 2 = 10.0`, not `2.5` [2].
+
+You do not have to memorize the ladder: any time the order is not obvious, wrap the part you want done first in parentheses, which always win [1][2]. Adding them for clarity costs nothing and never makes a correct expression wrong.
 
 <u>**Comparison operators**</u> compare two values and produce a `bool` — either `True` or `False` [1][3]. A comparison is a question, and Python answers yes or no.
 
@@ -55,7 +66,11 @@ Several facts fall out. First, `**` binds tighter than unary minus, so `-2 ** 2`
 
 These work on more than numbers: two `str` values are equal only if they are the exact same text, character for character, and comparison is case sensitive (just as identifiers were in 1.2), so `"cat" == "Cat"` is `False` [3]. **The single most common beginner bug** is confusing `==` with `=`. A single `=` is the **assignment** operator from 1.2 — it stores a value in a variable. A double `==` is the **equality comparison** — it asks a question and yields `True` or `False` [1]. `x = 5` puts `5` into `x`; `x == 5` asks "does `x` equal `5`?" Python also lets you **chain** comparisons the way mathematics does: instead of `18 <= age and age < 65`, write `18 <= age < 65`, and Python reads it as "is `age` between 18 and 65?", evaluating each link and combining them for you [1][2].
 
-<u>**Logical operators**</u> combine or invert `bool` values into compound conditions [1][3]. There are exactly three, written as plain English words: `A and B` is `True` only when *both* are true; `A or B` is `True` when *at least one* is true; `not A` flips the value.
+<u>**Logical operators**</u> combine or invert `bool` values into compound conditions [1][3]. There are exactly three, written as plain English words:
+
+- `A and B` is `True` only when *both* are true.
+- `A or B` is `True` when *at least one* is true.
+- `not A` flips the value.
 
 | `A` | `B` | `A and B` | `A or B` |
 |-----|-----|-----------|----------|
