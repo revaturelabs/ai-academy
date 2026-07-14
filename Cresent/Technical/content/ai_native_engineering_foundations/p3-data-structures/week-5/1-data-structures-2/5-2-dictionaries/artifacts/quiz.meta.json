@@ -1,0 +1,41 @@
+{
+  "topic_id": "5.2",
+  "topic_title": "Dictionaries",
+  "generated_at": "2026-07-14T00:00:00Z",
+  "format": "gift",
+  "category": "CIT/P3/week-5/5.2-dictionaries",
+  "question_count": 15,
+  "mcq_count": 13,
+  "short_answer_count": 2,
+  "$bias_defense_applied": true,
+  "$shuffle_seed": "5.2-dictionaries",
+  "correct_position_distribution": [0, 1, 3, 1, 2, 1, 2, 3, 1, 2, 0, 2, 2],
+  "correct_position_histogram": { "0": 2, "1": 4, "2": 5, "3": 2 },
+  "questions": [
+    { "id": "q1", "type": "mcq", "objective_ref": "Create a dictionary of key-value pairs and access a value by its key, and explain why keys must be unique and hashable while values can be anything.", "correct_position": 0 },
+    { "id": "q2", "type": "mcq", "objective_ref": "Create a dictionary of key-value pairs and access a value by its key, and explain why keys must be unique and hashable while values can be anything.", "correct_position": 1 },
+    { "id": "q3", "type": "mcq", "objective_ref": "Create a dictionary of key-value pairs and access a value by its key (membership: in tests keys, not values).", "correct_position": 3 },
+    { "id": "q4", "type": "mcq", "objective_ref": "Create a dictionary of key-value pairs and access a value by its key (bracket access raises KeyError on a missing key).", "correct_position": 1 },
+    { "id": "q5", "type": "mcq", "objective_ref": "Add, modify, and delete entries with assignment (d[k] = v), del d[k], and d.pop(k), and describe what each does when the key is missing.", "correct_position": 2 },
+    { "id": "q6", "type": "mcq", "objective_ref": "Add, modify, and delete entries with assignment (d[k] = v), del d[k], and d.pop(k), and describe what each does when the key is missing.", "correct_position": 1 },
+    { "id": "q7", "type": "mcq", "objective_ref": "Add, modify, and delete entries with assignment (d[k] = v), del d[k], and d.pop(k), and describe what each does when the key is missing.", "correct_position": 2 },
+    { "id": "q8", "type": "mcq", "objective_ref": "Loop over a dictionary's keys, values, and pairs using keys(), values(), and items().", "correct_position": 3 },
+    { "id": "q9", "type": "mcq", "objective_ref": "Sort a dictionary's contents by key and by value using sorted() with a key function.", "correct_position": 1 },
+    { "id": "q10", "type": "mcq", "objective_ref": "Sort a dictionary's contents by key and by value using sorted() with a key function.", "correct_position": 2 },
+    { "id": "q11", "type": "mcq", "objective_ref": "Read and build nested dictionaries and access a value two levels deep.", "correct_position": 0 },
+    { "id": "q12", "type": "mcq", "objective_ref": "Use get() and setdefault() to read or initialize a key safely without triggering a KeyError.", "correct_position": 2 },
+    { "id": "q13", "type": "mcq", "objective_ref": "Write a dictionary comprehension to build a dictionary from an iterable, and to invert an existing dictionary (swap keys and values).", "correct_position": 2 },
+    { "id": "q14", "type": "short_answer", "objective_ref": "Use get() and setdefault() to read or initialize a key safely without triggering a KeyError.", "correct_position": null },
+    { "id": "q15", "type": "short_answer", "objective_ref": "Read and build nested dictionaries and access a value two levels deep.", "correct_position": null }
+  ],
+  "objective_coverage": [
+    "Create a dictionary and access a value by its key; keys unique + hashable, values anything (q1, q2, q3, q4)",
+    "Add, modify, and delete: d[k]=v, del d[k], d.pop(k[,default]) and missing-key behavior (q5, q6, q7)",
+    "Loop over keys(), values(), items() with tuple unpacking (q8)",
+    "Sort by key sorted(d) vs by value sorted(d.items(), key=lambda kv: kv[1]) (q9, q10)",
+    "Read and build nested dictionaries; chained access d[outer][inner] (q11, q15)",
+    "get() vs setdefault() safe access; which one mutates (q12, q14)",
+    "Dictionary comprehension and inversion with the duplicate-values caveat (q13)"
+  ],
+  "notes": "Correct-answer answer-line order shuffled per MCQ with a uniform random shuffle seeded on the topic id ('5.2-dictionaries') for reproducibility. correct_position is the 0-based index of the = line in each MCQ answer block. Distractors encode corpus misconceptions: in tests values not keys (q3), bracket access silently returns None (q4), assignment adds a second entry for an existing key (q5), del returns the value / pop and del interchangeable (q6), pop always raises on missing key (q7), keys()/items() usable for unpacking pairs (q8), sorted(d) sorts values or reorders in place (q9, q10), sorting keys with kv[1] or values() with kv[1] (q10), setdefault does not mutate (q12), inverting with duplicate values keeps all entries or the first wins (q13)."
+}

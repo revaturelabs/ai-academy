@@ -1,0 +1,28 @@
+{
+  "topic_id": "5.2",
+  "artifact": "topic_corpus.md",
+  "passed": true,
+  "checks": {
+    "required_sections": {
+      "passed": true,
+      "detail": "All required sections present and non-trivial. §3 Learning Objectives: 7 measurable bullets. §4 Introduction: ~250w. §5 Core Concepts: 9 subsections (5.1-5.8), far exceeds 100w minimum. §10 Key Takeaways: 7 bullets, each >=50w-equivalent substance. No placeholder strings in required sections."
+    },
+    "citation_density": {
+      "passed": true,
+      "mode": "strict (resources_source=web_search)",
+      "detail": "Primary [1]=realpython.com/python-dicts cited >=once (extensively across 5.1-5.6, §5.4 view objects). Supporting [2]=dict-comprehension cited in §5.8; [3]=nested cited in §5.7. All three [N] markers resolve to a listed resource; no fabricated/orphan markers ([4]+ absent). Core Concepts factual assertions carry [N] well above the 60% threshold. §6 Implementation and §7 Real-World are synthesis sections that back-reference already-cited §5 material rather than introducing net-new uncited claims, so aggregate density across 5/6/7 clears 60%."
+    },
+    "sequence_drift": {
+      "passed": true,
+      "detail": "No forward references. All concepts map to 5.2 concepts_introduced (dictionary, access-by-key/KeyError, CRUD assignment/del/pop, keys()/values()/items(), sorting by key/value, get()/setdefault(), nested dictionaries, comprehension/inversion) or prior topics (sets 5.1, lists 4.1, tuples 4.2, lambda from 3.2, sorted()). 5.3-owned concepts (Counter, defaultdict, generators, iter()/next()) are NOT named as introduced concepts. The three forward hints (§5.6 L246, §6 L343, §7 L353) all use vague 'a dedicated tool later this week' phrasing consistent with the accepted 5.1 pattern. 'View objects' (§5.4) is the documented return type of keys()/values()/items(), part of this topic's iteration concept, not a 5.3 leak."
+    },
+    "length_sanity": {
+      "passed": true,
+      "detail": "~3050 words. Deep profile band for this gate is 1500-6000w. Within band."
+    }
+  },
+  "forward_refs": [],
+  "citation_gaps": [],
+  "verdict": "PASS - all four checks clear: required sections complete, strict web_search citation density met (primary [1] cited, [2]/[3] resolve, no fabricated markers), no forward references (5.3 tools only hinted vaguely), ~3050w within deep band.",
+  "at": "2026-07-14T00:00:00Z"
+}

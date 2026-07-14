@@ -1,0 +1,30 @@
+{
+  "topic_id": "5.2",
+  "captured_at": "2026-07-14T00:00:00Z",
+  "captured_by": "namratas@revature.com",
+  "resources_source": "web_search",
+  "resources": [
+    {
+      "type": "url",
+      "value": "https://realpython.com/python-dicts/",
+      "role": "primary",
+      "source": "web_search",
+      "notes": "Anchor: creating/accessing by key, add/modify/delete (assignment, del, pop), looping items()/keys()/values(), get() and setdefault()."
+    },
+    {
+      "type": "url",
+      "value": "https://realpython.com/python-dictionary-comprehension/",
+      "role": "supporting",
+      "source": "web_search",
+      "notes": "Dictionary comprehension: building and inverting dictionaries, filtering; curly-brace key:value syntax vs list comprehension."
+    },
+    {
+      "type": "url",
+      "value": "https://www.w3schools.com/python/python_dictionaries_nested.asp",
+      "role": "supporting",
+      "source": "web_search",
+      "notes": "Nested dictionaries: dictionaries within dictionaries, beginner-level access patterns."
+    }
+  ],
+  "web_search_query": "Python dictionaries CRUD get setdefault comprehension nested beginners"
+}

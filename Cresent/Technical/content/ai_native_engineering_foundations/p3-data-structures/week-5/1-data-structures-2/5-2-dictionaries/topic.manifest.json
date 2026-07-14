@@ -16,8 +16,23 @@
     "Built-in functions: get(), setdefault()",
     "Dictionary comprehension: building and inverting dictionaries"
   ],
-  "expected_delivery_minutes": null,
-  "artifact_plan": {},
+  "expected_delivery_minutes": 10,
+  "artifact_plan": {
+    "profile": "deep",
+    "profile_source": "human_confirmed",
+    "profile_note": "Corpus-builder suggested deep (~3050w); human accepted deep at HITL#2. 8 core sub-concepts, 7 mandated sub-topics each worked. No diagram (accepted). Week budget comfortable (~20/90 after this topic).",
+    "reading": {
+      "target_word_range": [1800, 2200],
+      "target_minute_range": [9, 11]
+    },
+    "quiz": {
+      "min_questions": 10,
+      "max_questions": 15,
+      "include_short_answer": true
+    },
+    "diagram": false,
+    "diagram_note": "Corpus-builder recommended no diagram: content is code/table-driven; list/set/dict comparison table carries the only structural contrast, Mermaid adds nothing. Matches 5.1 decision rationale (5.1 later overridden to a Mermaid ops-map at HITL#2; dicts have no comparable visual)."
+  },
   "next_assessment": {
     "id": "A2",
     "week": 5,

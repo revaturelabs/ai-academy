@@ -1,0 +1,45 @@
+{
+  "artifact": "topic_corpus.md",
+  "topic_id": "5.1",
+  "critic": "corpus-critic",
+  "passed": true,
+  "at": "2026-07-14T00:00:00Z",
+  "re_check": "post-expansion (standard->deep). Prior report gated at 2680w/standard; corpus expanded to deep with frozenset, subset/superset/disjoint, in-place update operators, membership performance/hashing, operator+method forms, and deeper comprehension.",
+  "checks": [
+    {
+      "id": "required_sections_present",
+      "name": "Required sections present + non-trivial",
+      "passed": true,
+      "detail": "Section 3 Learning Objectives (7 objectives, >50w). Section 4 Introduction (~230w). Section 5 Core Concepts (subsections 5.1-5.10, well over the 100w floor). Section 10 Key Takeaways (7 bullets, >50w). All present and substantive; no placeholder strings in any required section."
+    },
+    {
+      "id": "citation_density",
+      "name": "Citation density (STRICT, resources_source=web_search)",
+      "passed": true,
+      "detail": "Only valid markers used: [1] realpython (primary), [2] w3schools, [3] docs.python.org. No out-of-range or fabricated markers ([4]+ absent). Primary [1] cited 25 times across every major concept (definition, creation, uniqueness, four operations, in-place ops, subset/superset/disjoint, add/remove/discard, frozenset, membership performance, comprehension). [2]/[3] appear 26 times combined. Every primary/supporting resource cited at least once. Standalone factual assertions in sections 5, 6, 7 carry [N] well above the 60% STRICT threshold; the newly added subsections (5.5 in-place, 5.6 subset/superset/disjoint, 5.8 frozenset, 5.9 hashing, 5.10 comprehension) are each anchored to [1] and/or [3]."
+    },
+    {
+      "id": "sequence_drift",
+      "name": "Sequence drift / forward references",
+      "passed": true,
+      "detail": "All new concepts are in this topic's concepts_introduced: frozenset, subset/superset/disjoint, in-place update operators, membership performance (hashing), set comprehension, plus operator+method forms of the four core operations. Backward refs to P1/P2 and 4.1 Lists / 4.2 Tuples (indexing, slicing, mutability/immutability, iteration, comprehension, 'in') are in-scope. FORBIDDEN material absent: no dictionaries taught, no iterators/generators, no Counter/defaultdict/namedtuple. Dictionaries appear only as the '{}' empty-set/empty-dict trap with an explicit forward-awareness one-liner ('You will meet dictionaries in the next topic; for now just remember the empty-set rule') and a best-practice restatement -- this disambiguates the set literal, it does not teach dict construction, access, or methods, so it is acceptable per the allowed exception. The 'dedicated counting tool later this week' pointer (sec 6) is unnamed and does not teach 5.3. No hard drift.",
+      "forward_referenced_terms": []
+    },
+    {
+      "id": "length_sanity",
+      "name": "Length sanity",
+      "passed": true,
+      "detail": "profile=deep (human_confirmed per manifest). Deep grounding band 5000-6000, floor ~3500. Expanded corpus ~5150 words lands inside the deep band and well clear of the floor. Growth from the prior 2680w standard corpus (340->472 lines) is genuine depth (new subsections 5.5, 5.6, 5.8, 5.9, 5.10 plus expanded 5.4), not padding.",
+      "word_count": 5150,
+      "profile": "deep",
+      "band": "5000-6000",
+      "floor": 3500,
+      "floor_cleared": true,
+      "in_band": true
+    }
+  ],
+  "soft_findings": [
+    "Dictionary '{}' disambiguation and the unnamed 'counting tool' pointer remain acceptable forward-awareness signposts; keep them phrased as pointers only and do not begin teaching 5.2/5.3 content in later revisions."
+  ],
+  "verdict": "PASS. Post-expansion re-check clears all four hard gates: required sections substantive (LO/Intro/Core Concepts 5.1-5.10/Key Takeaways), STRICT citation density met with only valid [1]/[2]/[3] markers and no fabrication (primary [1] cited 25x), no sequence drift (frozenset/subset-superset-disjoint/in-place-ops/hashing/comprehension all in-scope; dict appears only as the acceptable '{}'-trap forward-awareness one-liner, not taught), and word_count ~5150 sits inside the deep band 5000-6000."
+}

@@ -1,0 +1,30 @@
+{
+  "topic_id": "5.3",
+  "captured_at": "2026-07-14T00:00:00Z",
+  "captured_by": "namratas@revature.com",
+  "resources_source": "web_search",
+  "resources": [
+    {
+      "type": "url",
+      "value": "https://realpython.com/python-iterators-iterables/",
+      "role": "primary",
+      "source": "web_search",
+      "notes": "Anchor: iterables vs iterators, iter() and next() built-ins, the iterator protocol, StopIteration, how a for loop iterates under the hood."
+    },
+    {
+      "type": "url",
+      "value": "https://realpython.com/introduction-to-python-generators/",
+      "role": "supporting",
+      "source": "web_search",
+      "notes": "Generators recap: yield to stream values one at a time, lazy iterators that don't store contents in memory."
+    },
+    {
+      "type": "url",
+      "value": "https://realpython.com/python-collections-module/",
+      "role": "supporting",
+      "source": "web_search",
+      "notes": "collections module: Counter (dict subclass for counting), defaultdict (factory default for missing keys), namedtuple (tuple with named fields) — intro level."
+    }
+  ],
+  "web_search_query": "Python iterators iterables iter next generators yield / collections Counter defaultdict namedtuple"
+}

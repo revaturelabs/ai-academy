@@ -1,0 +1,36 @@
+---
+title: Set operations on A and B
+config:
+  theme: base
+  themeVariables:
+    primaryColor: "#a5d8ff"
+    primaryBorderColor: "#4a9eed"
+    lineColor: "#555"
+  flowchart:
+    htmlLabels: true
+    curve: basis
+    nodeSpacing: 55
+    rankSpacing: 70
+---
+flowchart TD
+    A["<b>Set A</b><br/><span style='font-size:11px;color:#6d28d9'>{1, 2, 3, 4}</span>"]
+    B["<b>Set B</b><br/><span style='font-size:11px;color:#6d28d9'>{3, 4, 5, 6}</span>"]
+
+    U["<b>Union</b><br/><span style='font-size:11px;color:#6d28d9'>A | B — in A or B</span>"]
+    I["<b>Intersection</b><br/><span style='font-size:11px;color:#6d28d9'>A &amp; B — in both</span>"]
+    D["<b>Difference</b><br/><span style='font-size:11px;color:#6d28d9'>A - B — in A not B</span>"]
+    S["<b>Symmetric difference</b><br/><span style='font-size:11px;color:#6d28d9'>A ^ B — in exactly one</span>"]
+
+    A --> U
+    A --> I
+    A --> D
+    A --> S
+    B --> U
+    B --> I
+    B --> D
+    B --> S
+
+    classDef start fill:#a5d8ff,stroke:#4a9eed,stroke-width:2px;
+    classDef auto fill:#d0bfff,stroke:#8b5cf6,stroke-width:2px;
+    class A,B start;
+    class U,I,D,S auto;

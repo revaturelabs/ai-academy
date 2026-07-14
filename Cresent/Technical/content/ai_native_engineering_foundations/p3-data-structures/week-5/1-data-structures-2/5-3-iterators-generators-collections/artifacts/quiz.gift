@@ -1,0 +1,117 @@
+$CATEGORY: CIT/P3/week-5/5.3-iterators-generators-collections
+
+::q1:: What is the key difference between an iterable and an iterator in Python? {
+=An iterable is any object you can loop over (it defines __iter__), while an iterator is the object that tracks position and produces the next item via __next__#Correct \- the iterable hands back an iterator, and the iterator does the actual walking (corpus §5.1).
+~An iterable produces items one at a time, while an iterator holds every item in memory at once for fast access#No \- this reverses the roles and neither definition depends on holding all items in memory.
+~An iterable is a mutable version of an iterator, and an iterator is a frozen read-only copy of an iterable#No \- mutability is unrelated; the distinction is about looping vs producing the next value.
+~They are two names for the same object, so any list is simultaneously both an iterable and an iterator#No \- a list is iterable but is NOT an iterator; it does not remember a current position.
+#### Tests the iterable-vs-iterator distinction and the __iter__/__next__ roles (corpus §5.1).
+}
+
+::q2:: When next(it) is called on an iterator that has no items left, what happens? {
+~It returns None to indicate that no value is available anymore#No \- next() raises StopIteration rather than returning None at the end (corpus §5.2).
+=It raises StopIteration, a special signal meaning the sequence is finished#Correct \- next() does not return a sentinel; it raises StopIteration to signal exhaustion (corpus §5.2).
+~It returns -1 as a conventional end-of-sequence marker value#No \- there is no -1 sentinel; exhaustion is signalled by raising StopIteration.
+~It silently restarts the iterator from the first item again#No \- an iterator cannot rewind; it is exhausted and raises StopIteration.
+#### Tests the StopIteration signal at exhaustion versus a None/-1 return (corpus §5.2).
+}
+
+::q3:: Which built-in function takes an iterable and returns a fresh iterator positioned at the start? {
+~next(obj), which under the hood calls the object's __iter__ method#No \- next() advances an existing iterator; it does not create one (corpus §5.2).
+~range(obj), which converts any iterable into an indexed iterator#No \- range() builds a range object; it is not how you obtain an iterator from an iterable.
+=iter(obj), which under the hood calls the object's __iter__ method#Correct \- iter() produces a new iterator; next() then advances it (corpus §5.2).
+~list(obj), which returns an iterator that lazily walks the object#No \- list() eagerly materializes items into a list, it does not return an iterator.
+#### Tests that iter() obtains the iterator and maps to __iter__ (corpus §5.2).
+}
+
+::q4:: Under the hood, what does a Python for loop do when it walks a collection? {
+~It calls iter() before every single item so each loop pass starts from a fresh iterator each time#No \- iter() is called only once at the start, not on every pass (corpus §5.3).
+~It uses integer indexing from 0 upward and stops when an IndexError is raised by the collection#No \- the for loop speaks iter()/next(), not indexing, which is why non-indexable iterables work.
+~It loads all items into a list first and then walks that list by numeric position#No \- the loop pulls one value at a time via next(); it does not pre-build a list (corpus §5.3).
+=It calls iter() once to get an iterator, then calls next() repeatedly, stopping silently when next() raises StopIteration#Correct \- iter() once, then next() until StopIteration, which the for statement catches (corpus §5.3).
+#### Tests the for-loop-under-the-hood protocol\: iter once, next until StopIteration (corpus §5.3).
+}
+
+::q5:: After list(it) fully consumes an iterator it, what does a second list(it) return? {
+~The same items again, because calling list() automatically resets the iterator to the start#No \- an iterator does not reset; only the underlying iterable can be looped again (corpus §5.4).
+=An empty list [], because the iterator is one-shot and cannot rewind once exhausted#Correct \- an iterator exhausts on the first pass; the second pass yields nothing (corpus §5.4).
+~A copy of the items in reverse order, since the bookmark now walks back to the start#No \- iterators do not walk backwards; once exhausted the second pass is empty.
+~A StopIteration error, because calling list() on a spent iterator is not allowed#No \- list() on a spent iterator simply returns [], it does not raise an error.
+#### Tests that an iterator is one-shot and exhausts, unlike the reusable iterable (corpus §5.4).
+}
+
+::q6:: Why can you loop over the same list many times but not the same iterator? {
+~A list stores its items twice as a backup, whereas an iterator stores each item only a single time#No \- reuse is not about duplicate storage; it is about getting a fresh iterator each loop (corpus §5.4).
+~A list is immutable so it can be shared safely, whereas an iterator is mutable and locks after one use#No \- lists are mutable, and the reason is fresh-iterator-per-loop, not immutability.
+=Each for loop asks the list for a fresh iterator, whereas an iterator is a single pass that remembers and cannot reset its position#Correct \- the list is reusable because it yields a new iterator each time; the iterator itself is one-shot (corpus §5.3-5.4).
+~A for loop caches a list's contents globally, whereas an iterator disables caching to save memory#No \- there is no global cache; the loop simply requests a new iterator from the iterable.
+#### Tests why a list is reusable while an iterator is one-shot (corpus §5.3-5.4).
+}
+
+::q7:: What does a generator function do each time it reaches a yield statement? {
+~It builds and returns the entire sequence of remaining values as one list right away#No \- a generator is lazy; it yields one value at a time and never builds the whole list (corpus §5.5).
+~It permanently exits the function the way a return statement ends execution#No \- yield pauses and can resume; return is what ends a generator (raising StopIteration).
+~It skips the value entirely and continues so that yielded values are never actually produced#No \- yield is precisely how the value is produced and handed to the caller.
+=It hands back that value and pauses, freezing all its local state until the next value is requested#Correct \- yield produces a value lazily and suspends execution, resuming on the next next() call (corpus §5.5).
+#### Tests generator yield semantics\: produce one value, pause, stream lazily (corpus §5.5).
+}
+
+::q8:: What is the difference between (x*x for x in range(1000000)) and [x*x for x in range(1000000)]? {
+=The parentheses form is a lazy generator expression that builds nothing until iterated, while the brackets form builds the whole list in memory immediately#Correct \- () gives a lazy generator expression; [] eagerly allocates the full list (corpus §5.5).
+~The parentheses form builds the whole list at once, while the brackets form is the lazy streaming version#No \- this is backwards; () is lazy and [] is the eager list comprehension (corpus §5.5).
+~Both forms are identical and always build the entire list; the brackets versus parentheses is only style#No \- they differ fundamentally\: () is lazy, [] materializes everything up front.
+~The parentheses form is invalid syntax, so a generator expression must always use square brackets#No \- () is exactly the valid generator-expression syntax; [] is the list comprehension.
+#### Tests generator expression (parens, lazy) versus list comprehension (brackets, eager) (corpus §5.5).
+}
+
+::q9:: Which expression counts how many times each character appears in the string \"mississippi\"? {
+~Counter(\"mississippi\") only after you first write a manual for loop to build the counts by hand#No \- Counter does the counting itself; no manual loop is needed (corpus §5.7).
+=Counter(\"mississippi\"), which returns a dict mapping each distinct item to its count in one line#Correct \- Counter over an iterable does the get(w,0)+1 loop for you in one line (corpus §5.7).
+~sorted(\"mississippi\"), which groups equal characters together and returns their counts#No \- sorted() only orders the characters; it does not produce counts.
+~set(\"mississippi\"), which returns each distinct character together with how often it occurred#No \- a set discards duplicates and stores no counts at all.
+#### Tests that Counter(iterable) counts in one line, replacing the manual loop (corpus §5.7).
+}
+
+::q10:: Given c = Counter([\"red\",\"blue\",\"red\",\"green\",\"red\",\"blue\"]), what does c.most_common(2) return? {
+~[('red', 3), ('blue', 2), ('green', 1)], every item since most_common ignores its argument n#No \- most_common(2) returns only the top 2, not all items (corpus §5.7).
+~[('blue', 2), ('green', 1)], the two lowest-count items sorted from least to most frequent#No \- most_common returns the highest counts first, not the lowest.
+=[('red', 3), ('blue', 2)], the two highest-count items already sorted by frequency#Correct \- most_common(n) returns the n highest counts pre-sorted, replacing a manual re-sort (corpus §5.7).
+~['red', 'blue'], just the two most frequent keys without their associated counts#No \- most_common yields (item, count) pairs, not bare keys.
+#### Tests most_common(n) returning the top n (item,count) pairs sorted by frequency (corpus §5.7).
+}
+
+::q11:: With d = defaultdict(list), what happens when you access a key that does not exist yet, e.g. d[\"a\"]? {
+~A KeyError is raised, exactly as it would be for a plain dict when the key is missing#No \- the whole point of defaultdict is that it auto-creates the value instead of raising KeyError (corpus §5.8).
+~The key is created with the value None, because that is the universal default for missing keys#No \- the value comes from the factory (list gives []), not None.
+~Nothing happens and d stays empty, because reading a missing key never modifies the dictionary#No \- accessing a missing key triggers the factory and inserts the new default entry.
+=The factory list is called automatically to create an empty list [] for that key, so no KeyError is raised#Correct \- defaultdict calls its factory on a missing key, auto-creating the default (corpus §5.8).
+#### Tests defaultdict(list) auto-creating defaults on missing-key access without KeyError (corpus §5.8).
+}
+
+::q12:: Which factory turns the manual grouping pattern setdefault(k, []).append(x) into a clean defaultdict version? {
+=defaultdict(list), so groups[key].append(x) works directly because a missing key auto-creates an empty list#Correct \- defaultdict(list) states the empty-list default once at creation, replacing setdefault (corpus §5.8).
+~defaultdict(int), because grouping items under a key uses an integer counter to hold each group#No \- int gives 0 and is for counting; grouping needs list to append onto (corpus §5.8).
+~defaultdict(str), because each group key is stored and joined together as a single string value#No \- grouping collects items in a list, not a string; the factory should be list.
+~defaultdict(None), which disables the KeyError so append can run on any missing key#No \- None is not a valid factory; defaultdict needs a callable like list.
+#### Tests choosing defaultdict(list) for grouping (list factory) versus int for counting (corpus §5.8).
+}
+
+::q13:: You define Point = namedtuple(\"Point\", [\"x\", \"y\"]) and p = Point(3, 5). What is true of p? {
+~You can read p.x and p.y by name, and you can reassign p.x = 9 because a namedtuple is mutable like a dict#No \- a namedtuple is immutable like any tuple; p.x = 9 raises an error (corpus §5.9).
+~You can only read fields positionally as p[0] and p[1]; naming the fields does not enable p.x access#No \- named access such as p.x is exactly the feature namedtuple adds.
+=You can read p.x and p.y by name and also p[0]/p[1] by position, but p.x = 9 raises an error because it is immutable#Correct \- a namedtuple adds named-field access while staying a real, immutable tuple (corpus §5.9).
+~You can read fields by name but the object is no longer a tuple, so it cannot be unpacked or compared#No \- it is still a real tuple\: you can unpack, compare, and pass it wherever a tuple is expected.
+#### Tests namedtuple named + positional access and immutability (corpus §5.9).
+}
+
+::q14:: A for loop calls iter() on its target exactly ____ time(s) at the start, then calls next() repeatedly until this exception is raised, which it catches silently. Name the exception (one word). {
+=StopIteration
+=stopiteration
+}
+
+::q15:: A generator expression uses this pair of enclosing symbols instead of the square brackets of a list comprehension, giving lazy streaming. Name them (one word). {
+=parentheses
+=parens
+=round brackets
+=()
+}

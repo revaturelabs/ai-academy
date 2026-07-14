@@ -1,0 +1,10 @@
+{
+  "topic_id": "5.1",
+  "title": "Sets",
+  "estimated_read_minutes": 10,
+  "word_count": 1920,
+  "generated_at": "2026-07-14T00:00:00Z",
+  "embeds_diagram": true,
+  "citations_used": [1, 2, 3],
+  "sections": ["Overview", "Key Concepts", "Worked Example", "In Practice", "Key Takeaways", "References"]
+}

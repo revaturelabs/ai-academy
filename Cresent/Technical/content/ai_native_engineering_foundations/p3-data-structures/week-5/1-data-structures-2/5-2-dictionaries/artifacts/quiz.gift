@@ -1,0 +1,113 @@
+$CATEGORY: CIT/P3/week-5/5.2-dictionaries
+
+::q1:: A dictionary is best described as which of the following? {
+=A mutable mapping of unique, hashable keys to values, where each key points at exactly one value#Correct — a dict maps unique hashable keys to arbitrary values, one value per key (corpus §5.1).
+~An ordered collection accessed by numeric position, where the same value may be stored at several positions at once#No — that describes a list (4.1); a dictionary is accessed by key, not by numeric position.
+~An unordered collection of unique values with no keys attached, checked only for membership#No — that describes a set (5.1); a dictionary stores key-to-value pairs, not bare values.
+~A fixed sequence of key-value pairs that cannot be changed once it has been created and filled#No — a dictionary is mutable; you can add, modify, and delete entries after creation.
+#### Tests the core definition of a dictionary versus lists and sets (corpus §5.1).
+}
+
+::q2:: Given capitals = {"France"\: "Paris", "Japan"\: "Tokyo"}, which statement about keys and values is TRUE? {
+~A value must be unique and hashable, while a key can be any object, including a mutable list#No — this reverses the rule; it is the KEY that must be hashable, not the value.
+=A key must be unique and hashable, while a value can be any object, including a list or another dict#Correct — keys are unique and hashable; values carry no restriction (corpus §5.1).
+~Both keys and values must be unique, so two keys can never point at the same value#No — values need not be unique; two different keys may share the same value (corpus §5.1).
+~A list may be used as a key as long as the list's contents never actually change at runtime#No — a list is never a valid key because it is mutable and therefore unhashable.
+#### Tests uniqueness and hashability of keys versus the freedom of values (corpus §5.1).
+}
+
+::q3:: With capitals = {"France"\: "Paris"}, what does the expression "Paris" in capitals evaluate to, and why? {
+~True, because the string "Paris" is present in the dictionary as one of its stored entries#No — this is the misconception the corpus warns against; `in` does not test values.
+~True, because the in operator scans both the keys and the values of the dictionary#No — `in` checks keys only, never values, so it does not find "Paris".
+~False, because the in operator on a dictionary always returns False for any string argument#No — `in` returns True for "France", which is a key; it is not always False.
+=False, because the in operator tests keys only, and "Paris" is a value rather than a key#Correct — `in` tests keys, not values; "Paris" is a value (corpus §5.2, §8).
+#### Tests that `in` checks keys, not values (corpus §5.2).
+}
+
+::q4:: For capitals = {"France"\: "Paris"}, what happens when you evaluate capitals["Spain"]? {
+~It returns None, because bracket access falls back to None whenever the key is absent#No — that is `get()` behavior; bare brackets do not silently return None.
+=It raises a KeyError and stops the program, because bracket access assumes the key exists#Correct — bracket access on a missing key raises KeyError (corpus §5.2).
+~It returns an empty string, because "Spain" is treated as a key that maps to no value yet#No — no such empty-string fallback exists; the access fails instead.
+~It silently adds "Spain" to the dictionary with a value of None and then returns that None#No — reading a missing key does not create it; only assignment adds keys.
+#### Tests KeyError on bracket access to a missing key (corpus §5.2).
+}
+
+::q5:: Starting from scores = {"ana"\: 10}, you run scores["ana"] = 12. What is the resulting dictionary? {
+~{"ana"\: 10, "ana"\: 12} — the assignment adds a second "ana" entry beside the original one#No — keys are unique; a dict cannot hold "ana" twice, so no second entry is created.
+~{"ana"\: 22} — the assignment adds the new value 12 onto the existing value 10 to make 22#No — assignment replaces the value outright; it does not add numerically.
+={"ana"\: 12} — the key already exists, so the assignment overwrites its old value with 12#Correct — assigning to an existing key overwrites; keys are unique (corpus §5.3).
+~{"ana"\: 10} — assigning to a key that is already present is ignored and changes nothing#No — assignment to an existing key does change it; the value becomes 12.
+#### Tests that assignment overwrites an existing key rather than adding a duplicate (corpus §5.3).
+}
+
+::q6:: You have scores = {"ana"\: 12, "ben"\: 8}. Which statement correctly contrasts del scores["ben"] with scores.pop("ben")? {
+~del returns the removed value 8, while pop removes the pair but returns nothing at all#No — this reverses them; it is `pop` that returns the value, not `del`.
+=del removes the pair and returns nothing, while pop removes it and hands back the value 8#Correct — `pop` returns the removed value; `del` does not (corpus §5.3).
+~Both del and pop return the removed value 8, so the two forms are completely interchangeable#No — `del` is a statement and returns nothing; only `pop` hands back the value.
+~Neither del nor pop can remove "ben" unless you also pass a default second argument#No — both remove an existing key without any default; the default only guards missing keys.
+#### Tests the del-versus-pop distinction on return value (corpus §5.3).
+}
+
+::q7:: For scores = {"ana"\: 12}, what does scores.pop("zoe", 0) do? {
+~It raises a KeyError, because "zoe" is not present and pop always raises on a missing key#No — a default second argument suppresses the KeyError; pop returns the default instead.
+~It inserts "zoe"\: 0 into the dictionary and then returns 0 as the newly stored value#No — pop with a default does not insert anything; it just returns the default.
+=It returns 0 without raising, because the default second argument is used when the key is absent#Correct — pop with a default returns that default for a missing key (corpus §5.3).
+~It returns None and leaves the dictionary unchanged, ignoring the supplied second argument#No — the supplied default 0 is exactly what is returned, not None.
+#### Tests pop() with a default second argument (corpus §5.3).
+}
+
+::q8:: Which loop correctly prints both the key and its value for each pair in d, using the recommended form? {
+~for k, v in d.keys()\: print(k, v) — keys() yields (key, value) pairs you unpack into k and v#No — keys() yields only keys, not pairs; it cannot be unpacked into two variables.
+~for v in d.values()\: print(v, d[v]) — values() yields keys that you then look up to get values#No — values() yields values, and d[v] would look up a value as if it were a key.
+~for k in d.items()\: print(k, d[k]) — items() yields keys that you re-look-up to find each value#No — items() yields pairs, not keys, so d[k] would fail here.
+=for k, v in d.items()\: print(k, v) — items() yields (key, value) pairs you unpack into k and v#Correct — items() yields (key, value) tuples to unpack (corpus §5.4).
+#### Tests looping with items() and tuple unpacking (corpus §5.4).
+}
+
+::q9:: Given scores = {"ben"\: 8, "ana"\: 12, "cara"\: 10}, what does sorted(scores) return? {
+~[8, 10, 12] — passing a dict to sorted() sorts and returns its values in ascending order#No — this is the common misconception; sorted(d) sorts keys, not values.
+=['ana', 'ben', 'cara'] — passing a dict to sorted() sorts and returns a list of its keys#Correct — iterating a dict yields keys, so sorted(d) returns sorted keys (corpus §5.5).
+~[('ana', 12), ('ben', 8), ('cara', 10)] — sorted() returns the (key, value) pairs in key order#No — sorted(d) returns a list of keys only, not a list of pairs.
+~['cara', 'ben', 'ana'] — sorted() reorders the dictionary itself into descending key order in place#No — sorted() ascends by default and returns a NEW list; it never reorders the dict in place.
+#### Tests that sorted(d) returns sorted keys, not values (corpus §5.5).
+}
+
+::q10:: To rank the entries of scores = {"ben"\: 8, "ana"\: 12} from highest value to lowest, which call is correct? {
+~sorted(scores, key=lambda kv\: kv[1], reverse=True) — sort the dict's keys using each key's value#No — sorted(scores) iterates keys (strings), so kv[1] would index a character, not a value.
+~sorted(scores.items(), key=lambda kv\: kv[0], reverse=True) — sort the pairs by their first element#No — kv[0] is the key; sorting by it ranks alphabetically, not by value.
+=sorted(scores.items(), key=lambda kv\: kv[1], reverse=True) — sort the pairs by their value, descending#Correct — sort items() using kv[1] (the value) with reverse=True (corpus §5.5).
+~sorted(scores.values(), key=lambda kv\: kv[1], reverse=True) — sort the bare values by position one#No — values() yields lone numbers; there is no kv[1] to index, and you lose the keys.
+#### Tests sorting by value with sorted(d.items(), key=lambda kv: kv[1]) (corpus §5.5).
+}
+
+::q11:: Given users = {"u1"\: {"name"\: "Ana", "city"\: "Paris"}}, what does users["u1"]["name"] evaluate to, and how is it read? {
+=It evaluates to "Ana"\: users["u1"] selects the inner record, then ["name"] pulls the name from it#Correct — the first bracket selects the inner dict, the second selects its field (corpus §5.7).
+~It raises a KeyError, because you cannot chain two square-bracket lookups on a nested dictionary#No — chained brackets are exactly how you reach a value two levels deep.
+~It evaluates to the whole inner dict {"name"\: "Ana", "city"\: "Paris"}, ignoring the second bracket#No — the second bracket ["name"] does apply, pulling just the name out of the inner record.
+~It evaluates to "u1", because the outer key is returned before the inner lookup is ever applied#No — users["u1"] returns the inner record, not the key "u1"; then ["name"] gives "Ana".
+#### Tests chained bracket access into a nested dictionary (corpus §5.7).
+}
+
+::q12:: What does prefs.setdefault("font", "sans") do when "font" is NOT already a key in prefs, and how does it differ from prefs.get("font", "sans")? {
+~Both calls insert "font"\: "sans" into prefs and return "sans"; setdefault and get behave identically here#No — get() never modifies the dict; only setdefault() inserts the missing key.
+~setdefault returns "sans" but leaves prefs unchanged, exactly like get, so neither one mutates prefs#No — setdefault DOES mutate: it inserts the missing key, unlike get which only reads.
+=setdefault inserts "font"\: "sans" and returns "sans", whereas get returns "sans" but leaves prefs unchanged#Correct — setdefault reads-and-creates; get only reads (corpus §5.6).
+~setdefault raises a KeyError because "font" is absent, whereas get safely returns the default "sans"#No — setdefault never raises on a missing key; it inserts it and returns the default.
+#### Tests that setdefault() mutates the dict while get() does not (corpus §5.6).
+}
+
+::q13:: You invert prices = {"pen"\: 2.0, "book"\: 2.0} with {v\: k for k, v in prices.items()}. What is the result, and why? {
+~{2.0\: "pen", 2.0\: "book"} — both original pairs survive because a dict can hold the value 2.0 twice#No — a dict cannot hold the key 2.0 twice; the duplicate values collide into one key.
+~It raises a ValueError, because a dictionary comprehension refuses to invert when two values match#No — no error is raised; the later pair silently overwrites the earlier one instead.
+={2.0\: "book"} — both keys map to 2.0, so they collide into one key and the later pair wins, losing "pen"#Correct — duplicate values collapse to one key; the last one silently overwrites (corpus §5.8).
+~{2.0\: "pen"} — the first pair encountered claims the key 2.0 and later duplicate values are skipped#No — it is the LATER pair that wins on collision, not the first; the result maps 2.0 to "book".
+#### Tests dict-comprehension inversion and the duplicate-values caveat (corpus §5.8).
+}
+
+::q14:: In the counting pattern counts[w] = counts.____(w, 0) + 1, which single method name safely reads the current count (or 0 for a new word) without raising a KeyError? {
+=get
+}
+
+::q15:: A dictionary whose values are themselves dictionaries — the shape that JSON and multi-field records naturally take — is called a ____ dictionary (one word). {
+=nested
+}

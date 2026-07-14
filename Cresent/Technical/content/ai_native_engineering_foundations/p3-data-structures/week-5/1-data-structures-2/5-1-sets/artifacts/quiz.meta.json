@@ -1,0 +1,36 @@
+{
+  "topic_id": "5.1",
+  "generated_at": "2026-07-14T00:00:00Z",
+  "format": "gift",
+  "question_count": 15,
+  "mcq_count": 13,
+  "short_answer_count": 2,
+  "$bias_defense_applied": true,
+  "$shuffle_seed": "sha256(5.1)->seed-int 51, fisher-yates uniform reorder",
+  "correct_position_distribution": [2, 0, 3, 1, 3, 0, 2, 1, 3, 0, 2, 1, 3],
+  "position_counts": {
+    "0": 3,
+    "1": 3,
+    "2": 3,
+    "3": 4
+  },
+  "mean_option_length_chars": 42,
+  "longest_option_correct_count": 4,
+  "questions": [
+    { "id": "q1", "type": "mcq", "objective_ref": "Create a set from literals and from an iterable, and explain the uniqueness guarantee that removes duplicates automatically.", "correct_position": 2 },
+    { "id": "q2", "type": "mcq", "objective_ref": "Create a set from literals and from an iterable, and explain the uniqueness guarantee (empty-set rule: {} is a dict, use set()).", "correct_position": 0 },
+    { "id": "q3", "type": "mcq", "objective_ref": "Choose a set over a list when the task is about uniqueness, membership testing, or overlap between collections.", "correct_position": 3 },
+    { "id": "q4", "type": "mcq", "objective_ref": "Apply the four core set operations (intersection) using operator and method forms.", "correct_position": 1 },
+    { "id": "q5", "type": "mcq", "objective_ref": "Apply the four core set operations (symmetric difference) using operator and method forms.", "correct_position": 3 },
+    { "id": "q6", "type": "mcq", "objective_ref": "Apply the four core set operations using operator (set-only) and method (any iterable) forms.", "correct_position": 0 },
+    { "id": "q7", "type": "mcq", "objective_ref": "Use the in-place variants of the four operations to mutate a set instead of building a new one.", "correct_position": 2 },
+    { "id": "q8", "type": "mcq", "objective_ref": "Compare two sets with subset, superset, and disjoint relations (subset/superset direction, proper vs non-proper).", "correct_position": 1 },
+    { "id": "q9", "type": "mcq", "objective_ref": "Compare two sets with subset, superset, and disjoint relations (disjoint has no operator form).", "correct_position": 3 },
+    { "id": "q10", "type": "mcq", "objective_ref": "Mutate a set with add, remove, and discard, and describe how remove and discard differ on a missing element.", "correct_position": 0 },
+    { "id": "q11", "type": "mcq", "objective_ref": "Explain why set membership is roughly constant time (O(1)) via hashing compared with scanning a list (O(n)).", "correct_position": 2 },
+    { "id": "q12", "type": "mcq", "objective_ref": "Use frozenset when you need an immutable set (immutability makes it hashable, so it can be an element of another set).", "correct_position": 1 },
+    { "id": "q13", "type": "mcq", "objective_ref": "Write a simple set comprehension by analogy with the list comprehension you already know.", "correct_position": 3 },
+    { "id": "q14", "type": "short_answer", "objective_ref": "Create a set from literals and from an iterable (empty-set rule: call set() with no arguments).", "correct_position": null },
+    { "id": "q15", "type": "short_answer", "objective_ref": "Mutate a set with add, remove, and discard (discard deletes without raising on a missing element).", "correct_position": null }
+  ]
+}

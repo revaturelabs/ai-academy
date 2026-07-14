@@ -1,0 +1,95 @@
+{
+  "critic": "drift-critic",
+  "scope": "module",
+  "module_slug": "1-data-structures-2",
+  "course_slug": "p3-data-structures",
+  "week_num": 5,
+  "module_title": "Data Structures (2)",
+  "topics_reviewed": ["5.1", "5.2", "5.3"],
+  "inputs_read": [
+    "5-1-sets/topic_corpus.md",
+    "5-1-sets/artifacts/reading.md",
+    "5-1-sets/topic.manifest.json",
+    "5-2-dictionaries/topic_corpus.md",
+    "5-2-dictionaries/artifacts/reading.md",
+    "5-2-dictionaries/topic.manifest.json",
+    "5-3-iterators-generators-collections/topic_corpus.md",
+    "5-3-iterators-generators-collections/artifacts/reading.md",
+    "5-3-iterators-generators-collections/topic.manifest.json",
+    "content/curriculum/sequence.index.json",
+    "module.manifest.json"
+  ],
+  "passed": true,
+  "verdict": "PASS - all three topics cohere: consistent terminology, valid prerequisite ordering, complete learning arc, callbacks framed as references (not re-teaching), all six week-5 labs supported, and forward-reference discipline held (Counter/defaultdict named only in 5.3).",
+  "checks": {
+    "terminology_consistency": {
+      "passed": true,
+      "summary": "Tracked terms carry the same name across the arc. No synonym drift detected.",
+      "evidence": {
+        "hashable_immutable": "5.1 introduces 'immutable (hashable)' for set elements; 5.2 explicitly re-uses it ('the same hashability requirement set elements had in 5.1 ... the key's hash is used to find the value fast, so it must never change'); 5.3 repeats 'the same rule as dict keys (5.2) and set elements (5.1)' for Counter/defaultdict. Consistent.",
+        "membership": "The 'membership' concept and the `in` operator are named identically in all three (5.1 sets, 5.2 dicts note 'in tests keys, not values', 5.3 'anything you can put after in in a for loop'). Consistent.",
+        "comprehension": "5.1 teaches 'set comprehension' (curly braces); 5.2 'dictionary comprehension' explicitly anchored 'You already write set comprehensions from 5.1 ... same idea, with one addition: ... colon'; 5.3 references 'the comprehensions you already know from 4.1 and 5.1'. Consistent lineage, no rename.",
+        "uniqueness_guarantee": "Named 'uniqueness guarantee' in 5.1 and carried explicitly into 5.2 ('the same uniqueness idea you saw with set elements in 5.1', 'the uniqueness guarantee from 5.1 in action') and into inversion caveat ('by the uniqueness rule'). Consistent."
+      },
+      "findings": []
+    },
+    "prerequisites_respected": {
+      "passed": true,
+      "summary": "Every topic's prerequisites reference only earlier-position topics; the expected set-inclusions hold.",
+      "evidence": {
+        "5.1": "prerequisites = [4.1, 4.2] - both earlier positions. OK.",
+        "5.2": "prerequisites = [5.1, 4.1, 4.2] - contains 5.1 as required (5.2 prereq superset of {5.1}). All earlier. OK.",
+        "5.3": "prerequisites = [5.2, 5.1, 4.1, 4.2] - contains both 5.1 and 5.2 as required (superset of {5.1,5.2}). All earlier. OK."
+      },
+      "findings": []
+    },
+    "learning_arc": {
+      "passed": true,
+      "summary": "Union of the three topics' LOs covers the module intent with no gaps; namedtuple is an in-scope bonus.",
+      "evidence": {
+        "sets_and_operations": "Covered by 5.1 LOs (create/uniqueness, choose set, union/intersection/difference/symmetric difference + in-place, subset/superset/disjoint, add/remove/discard, frozenset, membership performance, set comprehension).",
+        "dict_crud_looping_nesting_comprehension": "Covered by 5.2 LOs (create/access, add/modify/delete via assignment/del/pop, keys/values/items looping, sort by key/value, nested dicts, get/setdefault, dict comprehension + inversion).",
+        "iterators": "Covered by 5.3 LOs (iterable vs iterator, iter/next/StopIteration protocol, for-loop under the hood, one-shot exhaustion, generator recap).",
+        "collections_counter_defaultdict": "Covered by 5.3 LOs (Counter + most_common, defaultdict int/list factory; plus namedtuple, an in-scope addition beyond the stated seed)."
+      },
+      "findings": []
+    },
+    "no_duplicated_core_concepts": {
+      "passed": true,
+      "summary": "The three Core Concepts sections are substantively distinct. The two flagged intentional callbacks are correctly framed as references back, not re-taught from scratch.",
+      "evidence": {
+        "empty_dict_trap_callback": "5.1 5.2.2 introduces the trap ('{} is an empty dictionary, not an empty set ... You will meet dictionaries in the next topic'). 5.2 pays it off as a reference: intro 'In 5.1 you learned a trap ... This topic is the payoff of that trap' and 5.1's comparison-table note 'the resolution of the 5.1 trap'. Framed as callback - CORRECT.",
+        "count_pattern_callback": "The get(w,0)+1 counting loop is taught by-hand in 5.2 (6 worked example) with a forward note ('a dedicated counting tool ... you will meet it later this week; the get-based version above is the from-scratch equivalent'). 5.3 5.7 references it back ('In 5.2 you counted occurrences by hand with the dictionary pattern counts[w]=counts.get(w,0)+1 ... Counter is a dict subclass that does exactly that') rather than re-deriving. CORRECT.",
+        "grouping_pattern_callback": "The setdefault(k,[]).append(x) grouping is taught by-hand in 5.2 5.6/6 with forward note ('a dedicated tool that makes this grouping even smoother ... later this week'). 5.3 5.8 references it back ('The other 5.2 pattern was grouping: d.setdefault(k, []).append(x) ... defaultdict is a dict subclass that removes that friction') and re-frames, not re-teaches. CORRECT."
+      },
+      "findings": []
+    },
+    "lab_activity_alignment": {
+      "passed": true,
+      "summary": "Every lab in lab_activity_seed_by_week['5'] (Labs P3.5-P3.10) is supported by a topic's hands-on / worked example.",
+      "evidence": {
+        "set_operations": "5.1 Hands-On Exercise step 2 (intersection/difference/union/symmetric difference on session lists) and 6 worked micro-example; explicitly 'maps directly to the set-operations lab (P3.5)'.",
+        "dictionary_crud": "5.2 5.3 (assignment/del/pop) + Hands-On Exercise + 6 word-count worked example.",
+        "nested_dictionaries": "5.2 5.7 nested dicts + Hands-On step 1 (build nested dict keyed by name).",
+        "dictionary_comprehension": "5.2 5.8 building + inverting + Hands-On step 4 (invert name->grade).",
+        "counter_word_frequency": "5.3 5.7 Counter + most_common; Hands-On step 2 (Counter over generator expression, most_common) and 6 city-count example.",
+        "defaultdict_grouping": "5.3 5.8 defaultdict(list) grouping + Hands-On step 3 (level -> subsystems) and 6 by_city grouping."
+      },
+      "findings": []
+    },
+    "forward_reference_discipline": {
+      "passed": true,
+      "summary": "The 'dedicated tool later this week' hints in 5.1 and 5.2 are fulfilled by 5.3, and neither 5.1 nor 5.2 names Counter or defaultdict early.",
+      "evidence": {
+        "5.1_hint_unnamed": "5.1 6 step 2 says 'You will meet a dedicated counting tool later this week' and reading 'a dedicated counting tool arrives later this week' - Counter is NOT named. OK.",
+        "5.2_hints_unnamed": "5.2 5.6 'There is a dedicated tool that makes this grouping even smoother ... later this week'; 5.2 6 'Python has a dedicated counting tool ... later this week'; 5.2 7 'A dedicated tool later this week streamlines both'. Neither Counter nor defaultdict is named. OK.",
+        "5.3_fulfillment": "5.3 intro explicitly closes both loops ('each time a note promised a dedicated tool later this week. That tool is the collections module: Counter, defaultdict'); 5.3 5.6 'Counter and defaultdict are the dedicated tools that 5.1 and 5.2 promised'. Both hints fulfilled and named only here. OK.",
+        "no_leakage_confirmed": "Grep-level read of 5.1 and 5.2 corpus + readings shows no occurrence of 'Counter', 'defaultdict', or 'namedtuple'. Discipline held."
+      },
+      "findings": []
+    }
+  },
+  "cross_topic_findings": [],
+  "topics_with_findings": [],
+  "at": "2026-07-14T00:00:00Z"
+}
