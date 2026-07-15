@@ -10,6 +10,9 @@
 
 For nine topics you have built one big idea: meaning can be written as numbers. A word becomes a vector (a list of numbers), and similar words get similar vectors — that is an embedding. The problem is that you have never actually *seen* this space, because real embeddings are far too long to picture. This topic fixes that: you will use a free web tool, the TensorFlow Embedding Projector, to look at word embeddings as dots you can spin around in your browser and watch related words clump together [1].
 
+![The Embedding Projector — See Words as Dots](./diagram.png)
+*The Embedding Projector — See Words as Dots*
+
 ## Key Concepts
 
 **TensorFlow Embedding Projector — a free, browser-based tool for looking at embeddings.** You point your browser at *projector.tensorflow.org* and it shows a cloud of dots floating in space. Each dot is one word, and the position of each dot comes straight from that word's embedding vector [1][3]. TensorFlow is a software toolkit made by Google, but you do not need to know anything about it to use the Projector.

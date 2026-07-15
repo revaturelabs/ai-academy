@@ -1,5 +1,9 @@
+<!-- GENERATED FILE — DO NOT EDIT BY HAND.
+     Cresent view of 13.1 — Real Failure Cases.
+     Source of truth: CIT 5.1.
+     Regenerate: python Cresent/Technical/tools/generate_shared_readings.py -->
 <!-- nav:top:start -->
-[⬅ Previous: 4.8 — Presenting a findings-based recommendation](../../../../week-4/4-comparing-and-evaluating-ai-tools/4-8-presenting-a-findings-based-recommendation-evidence-not-opin/artifacts/reading.md)&emsp;·&emsp;[⬆ Table of Contents](../../../../../../../README.md#curriculum-topic-index)&emsp;·&emsp;[Next: 5.2 — Hallucination ➡](../../5-2-hallucination-why-ai-states-falsehoods-confidently/artifacts/reading.md)
+Previous: [⬅ 12.5 — Context and Prompting Basics](../../../week-12/1-how-llms-behave/12-5-context-and-prompting-basics/reading.md)&emsp;·&emsp;[⬆ Table of Contents](../../../../../../README.md#part-b)&emsp;·&emsp;[13.2 — Data Bias ➡](../13-2-data-bias/reading.md)
 <!-- nav:top:end -->
 
 ---
@@ -10,7 +14,7 @@
 
 AI systems do not always get things right — and when they get things wrong, real people get hurt. This topic examines three areas where AI failures have caused documented harm: incorrect medical diagnoses, biased hiring decisions, and deepfake identity attacks. You will see what went wrong, why the AI produced a harmful output, and who is responsible. Understanding these failures matters for anyone who will use, recommend, or deploy an AI system in a professional setting.
 
-![Biased or Misused Input → AI Output → Real Harm → Accountability Gap](./diagram.png)
+![Biased or Misused Input → AI Output → Real Harm → Accountability Gap](../../../../../../../../CIT/content-gen-example/content/m2-introduction-to-ai-systems/week-5/1-ai-failures-and-why-they-happen/5-1-real-ai-failure-cases-healthcare-misdiagnosis-hiring-bias-de/artifacts/diagram.png)
 *Biased or Misused Input → AI Output → Real Harm → Accountability Gap*
 
 ## Key Concepts
@@ -201,5 +205,5 @@ One anti-pattern to avoid: treating accuracy statistics as a guarantee. A system
 
 ---
 <!-- nav:bottom:start -->
-[⬅ Previous: 4.8 — Presenting a findings-based recommendation](../../../../week-4/4-comparing-and-evaluating-ai-tools/4-8-presenting-a-findings-based-recommendation-evidence-not-opin/artifacts/reading.md)&emsp;·&emsp;[⬆ Table of Contents](../../../../../../../README.md#curriculum-topic-index)&emsp;·&emsp;[Next: 5.2 — Hallucination ➡](../../5-2-hallucination-why-ai-states-falsehoods-confidently/artifacts/reading.md)
+Previous: [⬅ 12.5 — Context and Prompting Basics](../../../week-12/1-how-llms-behave/12-5-context-and-prompting-basics/reading.md)&emsp;·&emsp;[⬆ Table of Contents](../../../../../../README.md#part-b)&emsp;·&emsp;[13.2 — Data Bias ➡](../13-2-data-bias/reading.md)
 <!-- nav:bottom:end -->

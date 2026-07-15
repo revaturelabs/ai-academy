@@ -10,6 +10,9 @@
 
 In topic 6.8 you saw that word embeddings store meaning as directions in a high-dimensional space. Once you have two meaning-vectors, you need a reliable way to measure whether they agree on direction. The **dot product** from topic 6.6 is a start, but it is sensitive to vector size — a longer document produces a bigger dot product than a short tweet with identical meaning, just because its numbers are larger [1]. **Cosine similarity** fixes this with one extra step: divide the dot product by the lengths of both vectors. That single division cancels out size and keeps only direction. The result is always between −1 and 1, so every score is directly comparable no matter how the original vectors were scaled [1][3]. This makes cosine similarity the standard tool for any system that compares meaning stored as vectors.
 
+![Cosine Similarity — Direction, Not Size](./diagram.png)
+*Cosine Similarity — Direction, Not Size*
+
 ## Key Concepts
 
 ### Why the raw dot product is not enough

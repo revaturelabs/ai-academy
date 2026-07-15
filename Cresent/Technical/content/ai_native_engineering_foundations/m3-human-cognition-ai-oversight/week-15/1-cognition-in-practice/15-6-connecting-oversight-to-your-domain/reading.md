@@ -1,5 +1,9 @@
+<!-- GENERATED FILE — DO NOT EDIT BY HAND.
+     Cresent view of 15.6 — Connecting Oversight to Your Domain.
+     Source of truth: CIT 10.7.
+     Regenerate: python Cresent/Technical/tools/generate_shared_readings.py -->
 <!-- nav:top:start -->
-[⬅ Previous: 10.6 — Identifying which components in your system need a mandatory human checkpoint](../../../3-designing-human-oversight/10-6-identifying-which-components-in-your-system-need-a-mandatory/artifacts/reading.md)&emsp;·&emsp;[⬆ Table of Contents](../../../../../../../README.md#curriculum-topic-index)&emsp;·&emsp;[Next: 11.1 — Python's role ➡](../../../../../m5-python-for-ai-pe-vc-and-rag/week-11/1-getting-started-with-python/11-1-pythons-role-the-orchestration-layer-connecting-your-specifi/artifacts/reading.md)
+Previous: [⬅ 15.5 — Human-in-the-Loop Checkpoints](../15-5-human-in-the-loop-checkpoints/reading.md)&emsp;·&emsp;[⬆ Table of Contents](../../../../../../README.md#part-b)&emsp;·&emsp;Next: —
 <!-- nav:top:end -->
 
 ---
@@ -10,7 +14,7 @@
 
 When an AI system causes harm — unfair loan rejections, missed medical triage, denied college admissions — the immediate crisis eventually ends. What comes next determines whether the same failure happens again. A **post-mortem** is a structured written account produced after an AI incident that answers four plain-language questions: what exactly failed, why it failed, who was accountable, and what governance control would have prevented it [2]. Unlike a blame report, a post-mortem is a learning document — its goal is to improve the system, not to punish the people who ran it [2].
 
-![Post-Mortem Writing Process](./diagram.png)
+![Post-Mortem Writing Process](../../../../../../../../CIT/content-gen-example/content/m4-human-cognition-and-ai-oversight/week-10/4-post-mortem-writing/10-7-writing-a-post-mortem-what-failed-why-who-was-accountable-wh/artifacts/diagram.png)
 *Post-Mortem Writing Process*
 
 ## Key Concepts
@@ -202,5 +206,5 @@ This example names the system, states the harm in concrete terms, separates prox
 
 ---
 <!-- nav:bottom:start -->
-[⬅ Previous: 10.6 — Identifying which components in your system need a mandatory human checkpoint](../../../3-designing-human-oversight/10-6-identifying-which-components-in-your-system-need-a-mandatory/artifacts/reading.md)&emsp;·&emsp;[⬆ Table of Contents](../../../../../../../README.md#curriculum-topic-index)&emsp;·&emsp;[Next: 11.1 — Python's role ➡](../../../../../m5-python-for-ai-pe-vc-and-rag/week-11/1-getting-started-with-python/11-1-pythons-role-the-orchestration-layer-connecting-your-specifi/artifacts/reading.md)
+Previous: [⬅ 15.5 — Human-in-the-Loop Checkpoints](../15-5-human-in-the-loop-checkpoints/reading.md)&emsp;·&emsp;[⬆ Table of Contents](../../../../../../README.md#part-b)&emsp;·&emsp;Next: —
 <!-- nav:bottom:end -->

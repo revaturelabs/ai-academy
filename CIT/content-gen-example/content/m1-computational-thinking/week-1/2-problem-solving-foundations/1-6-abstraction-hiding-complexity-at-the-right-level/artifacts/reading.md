@@ -10,6 +10,9 @@
 
 When you press the accelerator in a car, the car speeds up. You do not need to know anything about fuel injectors, pistons, or exhaust valves. The designers hid all of that detail behind a single pedal. That hiding of unnecessary detail is called **abstraction** — and it is one of the four pillars of computational thinking. Abstraction works alongside decomposition (Topic 1.5): decomposition breaks a problem into parts, and abstraction keeps each part simple enough to work with by hiding the detail you do not need right now [1][3].
 
+![Abstraction — hiding complexity at the right level](./diagram.png)
+*Abstraction — hiding complexity at the right level*
+
 ## Key Concepts
 
 ### What abstraction means

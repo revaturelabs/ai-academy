@@ -10,6 +10,9 @@
 
 You type a message into an LLM (Large Language Model) and a response appears — but what actually happens between your keystroke and that first word on screen? This topic opens the hood on three interconnected mechanics: how your text is broken into pieces the model can process, how the model was taught to understand language, and how it generates a reply one step at a time. Understanding these mechanics will help you use LLMs more deliberately and explain behaviours that otherwise seem mysterious.
 
+![From Raw Text to Generated Token — LLM Inference Pipeline](./diagram.png)
+*From Raw Text to Generated Token — LLM Inference Pipeline*
+
 ## Key Concepts
 
 ### 1. Tokens — The Smallest Unit an LLM Sees

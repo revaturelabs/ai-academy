@@ -10,6 +10,9 @@
 
 This reading traces how artificial intelligence (AI) went from hand-written rules in the 1950s to systems that learn directly from massive amounts of raw data today. You will meet three distinct eras — symbolic AI, machine learning, and deep learning — each of which grew out of the limits of the one before it. Understanding this progression is the foundation for everything else in this course about how modern AI systems work [1][2].
 
+![Three Eras of AI — How Each Era Solved the Last](./diagram.png)
+*Three Eras of AI — How Each Era Solved the Last*
+
 ## Key Concepts
 
 ### The three eras at a glance
