@@ -2,22 +2,25 @@
 ---
 
 // ---------------------------------------------------------------------------
-// Revature brand palette — deliberately MUTED (professional, low-saturation).
-// The Revature logo is a black wordmark + rainbow arc on transparent, with
-// orange as the brand accent — so the top bar is white (logo reads on it) and
-// the accents are soft, not vibrant.
-// Override Cayman's defaults BEFORE the import so `!default` vars pick these up.
+// Revature brand tokens (taken from revature.com's stylesheet).
+//   --primary-dark-blue : #011635   (header + headings)
+//   --primary-orange    : #ff7014   (accent, used sparingly)
+//   --font-primary      : Inter, sans-serif
+// Overrides go BEFORE the Cayman import so its `!default` vars pick them up.
 // ---------------------------------------------------------------------------
-$ink:          #2c3e50;   // muted dark slate — headings + header base
-$steel:        #3a5064;   // muted steel-blue — header gradient end
-$link:         #35618c;   // muted blue links (not vibrant)
-$link-hover:   #24486a;
-$accent:       #d98a3d;   // soft, muted orange — subtle accents only
+$navy:       #011635;   // Revature dark blue
+$navy-2:     #06264d;   // slightly lifted navy for a subtle gradient
+$orange:     #ff7014;   // brand orange — thin accents only
+$link:       #14448c;   // readable, not-too-vibrant blue
+$link-hover: #011635;
+$ink:        #000000;   // jet-black body text
 
-$header-bg-color:           $ink;
-$header-bg-color-secondary: $steel;
+$brand-font: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+
+$header-bg-color:           $navy;
+$header-bg-color-secondary: $navy-2;
 $header-heading-color:      #ffffff;
-$section-headings-color:    $ink;
+$section-headings-color:    $navy;
 $content-link-color:        $link;
 
 @import "jekyll-theme-cayman";
@@ -26,27 +29,27 @@ $content-link-color:        $link;
 // Revature customisations layered on top of the Cayman base.
 // ---------------------------------------------------------------------------
 
+// Use Inter everywhere.
+body,
+.main-content,
+.page-header,
+.brand-bar,
+h1, h2, h3, h4, h5, h6 {
+  font-family: $brand-font;
+}
+
 // White brand bar so the black Revature wordmark is legible.
 .brand-bar {
   background-color: #ffffff;
-  border-bottom: 3px solid $accent;   // soft-orange brand accent line
+  border-bottom: 3px solid $orange;   // thin brand-orange accent line
   padding: 0.55rem 2rem;
 
-  .brand {
-    display: inline-flex;
-    align-items: center;
-    text-decoration: none;
-  }
+  .brand { display: inline-flex; align-items: center; text-decoration: none; }
 
-  .brand-logo {
-    height: 44px;
-    width: auto;
-    display: block;
-  }
+  .brand-logo { height: 44px; width: auto; display: block; }
 
-  // Fallback wordmark (only shows if the logo image is missing).
   .brand-wordmark {
-    color: $ink;
+    color: $navy;
     font-weight: 700;
     font-size: 1.35rem;
     letter-spacing: 0.14em;
@@ -54,36 +57,36 @@ $content-link-color:        $link;
   }
 }
 
-// Hero header: a muted slate → steel gradient (professional, not vibrant).
+// Hero header: Revature dark-blue with a subtle navy gradient.
 .page-header {
-  background-color: $ink;
-  background-image: linear-gradient(120deg, $ink 0%, $steel 100%);
-  padding: 2.5rem 2rem;
+  background-color: $navy;
+  background-image: linear-gradient(120deg, $navy 0%, $navy-2 100%);
+  padding: 2.25rem 2rem;
 }
 
-// Links: muted brand blue with a clear hover.
-.main-content a {
-  color: $link;
-  &:hover { color: $link-hover; }
-}
-
-// Section headings in muted slate.
-.main-content h1,
-.main-content h2,
-.main-content h3 {
+// Body content: jet black.
+.main-content {
   color: $ink;
-}
 
-// Subtle soft-orange accent on blockquotes.
-.main-content blockquote {
-  border-left: 0.3rem solid $accent;
-  color: #566573;
+  p, li, td, th, dd, dt { color: $ink; }
+
+  a       { color: $link; }
+  a:hover { color: $link-hover; }
+
+  // Headings in Revature dark blue.
+  h1, h2, h3, h4, h5, h6 { color: $navy; }
+
+  // Subtle orange accent on blockquotes.
+  blockquote {
+    border-left: 0.3rem solid $orange;
+    color: #333333;
+  }
 }
 
 // Quiet footer, no external links.
 .site-footer {
   border-top: 1px solid #dce1e6;
-  color: #6a737d;
+  color: #4a4a4a;
 
-  .site-footer-owner { font-weight: 600; color: $ink; }
+  .site-footer-owner { font-weight: 600; color: $navy; }
 }
