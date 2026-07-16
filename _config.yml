@@ -7,10 +7,7 @@
 # ---------------------------------------------------------------------------
 
 title: AI Native Engineering Foundations
-description: >-
-  A self-paced Python engineering track — syntax, control flow, data
-  structures, classes, files & exceptions, Git — plus shared AI-native
-  foundations (computational thinking, AI systems, human oversight).
+description: Revature AI Academy curriculum.
 
 # For a project site served at https://<org>.github.io/<repo>/ these two values
 # MUST match the org and repo, or the theme CSS and internal links will 404.

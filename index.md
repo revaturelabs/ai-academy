@@ -1,7 +1,6 @@
 ---
 layout: default
 title: AI Native Engineering Foundations
-description: A self-paced Python engineering track plus shared AI-native foundations.
 ---
 
 # AI Native Engineering Foundations

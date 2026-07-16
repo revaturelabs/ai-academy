@@ -17,13 +17,18 @@
     <!-- Revature brand bar. To use a logo image instead of the wordmark, drop a
          file at assets/images/revature-banner.png — it will replace the text. -->
     <div class="brand-bar">
-      <a class="brand" href="{{ '/' | relative_url }}">
-        <img class="brand-logo"
-             src="{{ '/assets/images/revature-banner.png' | relative_url }}"
-             alt="Revature"
-             onerror="this.remove(); document.getElementById('brand-wordmark').hidden = false;">
-        <span class="brand-wordmark" id="brand-wordmark" hidden>Revature</span>
-      </a>
+      <div class="brand-bar-inner">
+        <a class="brand" href="{{ '/' | relative_url }}">
+          <img class="brand-logo"
+               src="{{ '/assets/images/revature-banner.png' | relative_url }}"
+               alt="Revature"
+               onerror="this.remove(); document.getElementById('brand-wordmark').hidden = false;">
+          <span class="brand-wordmark" id="brand-wordmark" hidden>Revature</span>
+        </a>
+        <nav class="brand-nav">
+          <a href="{{ '/' | relative_url }}">Home</a>
+        </nav>
+      </div>
     </div>
 
     <header class="page-header" role="banner">

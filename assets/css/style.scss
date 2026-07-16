@@ -8,17 +8,22 @@
 //   --font-primary      : Inter, sans-serif
 // Overrides go BEFORE the Cayman import so its `!default` vars pick them up.
 // ---------------------------------------------------------------------------
-$navy:       #011635;   // Revature dark blue
-$navy-2:     #06264d;   // slightly lifted navy for a subtle gradient
-$orange:     #ff7014;   // brand orange — thin accents only
-$link:       #14448c;   // readable, not-too-vibrant blue
+$navy:       #011635;   // Revature dark blue — headings
+$orange:     #ff7014;   // brand orange
+$link:       #14448c;   // readable link blue
 $link-hover: #011635;
 $ink:        #000000;   // jet-black body text
 
+// Revature hero gradient (sampled from the brand thumbnail):
+// orange (top-left) -> pink (centre) -> purple (bottom-right).
+$hero-orange: #f16e2a;
+$hero-pink:   #d63a8e;
+$hero-purple: #a11fc1;
+
 $brand-font: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
 
-$header-bg-color:           $navy;
-$header-bg-color-secondary: $navy-2;
+$header-bg-color:           $hero-pink;
+$header-bg-color-secondary: $hero-purple;
 $header-heading-color:      #ffffff;
 $section-headings-color:    $navy;
 $content-link-color:        $link;
@@ -44,9 +49,34 @@ h1, h2, h3, h4, h5, h6 {
   border-bottom: 3px solid $orange;   // thin brand-orange accent line
   padding: 0.55rem 2rem;
 
+  .brand-bar-inner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    max-width: 64rem;
+    margin: 0 auto;
+  }
+
   .brand { display: inline-flex; align-items: center; text-decoration: none; }
 
   .brand-logo { height: 44px; width: auto; display: block; }
+
+  // "Home" link back to the main page.
+  .brand-nav a {
+    color: $navy;
+    font-weight: 600;
+    font-size: 0.95rem;
+    text-decoration: none;
+    padding: 0.35rem 0.9rem;
+    border: 1px solid #d7dde3;
+    border-radius: 4px;
+    transition: background-color 0.15s ease, color 0.15s ease;
+
+    &:hover {
+      background-color: $navy;
+      color: #ffffff;
+    }
+  }
 
   .brand-wordmark {
     color: $navy;
@@ -57,10 +87,10 @@ h1, h2, h3, h4, h5, h6 {
   }
 }
 
-// Hero header: Revature dark-blue with a subtle navy gradient.
+// Hero header: Revature brand gradient (orange -> pink -> purple).
 .page-header {
-  background-color: $navy;
-  background-image: linear-gradient(120deg, $navy 0%, $navy-2 100%);
+  background-color: $hero-pink;
+  background-image: linear-gradient(135deg, $hero-orange 0%, $hero-pink 50%, $hero-purple 100%);
   padding: 2.25rem 2rem;
 }
 
