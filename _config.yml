@@ -1,0 +1,85 @@
+# ---------------------------------------------------------------------------
+# Jekyll configuration for GitHub Pages
+# Site: https://revaturelabs.github.io/ai-academy/
+# ---------------------------------------------------------------------------
+
+title: AI Academy
+description: >-
+  Curriculum for AI-native engineering — computational thinking, AI systems,
+  applied maths, human oversight, and Python for AI, PE, VC & RAG.
+
+# For a project site served at https://<org>.github.io/<repo>/ these two values
+# MUST match the org and repo, or the theme CSS and internal links will 404.
+url: "https://revaturelabs.github.io"
+baseurl: "/ai-academy"
+
+# A clean, single-column theme supported natively by GitHub Pages.
+theme: jekyll-theme-cayman
+
+# Markdown / rendering
+markdown: kramdown
+kramdown:
+  input: GFM
+  syntax_highlighter: rouge
+
+# GitHub Pages auto-enables these; listing them makes local builds behave the
+# same. They are what let this site work WITHOUT editing any content file:
+#   optional-front-matter -> renders the ~389 reading.md files that have no
+#                            YAML front matter
+#   relative-links        -> rewrites [text](../foo/reading.md) links to the
+#                            generated .html URLs, so in-page Prev/TOC/Next nav
+#                            keeps working
+#   readme-index          -> serves each folder's README.md as its index page
+#   titles-from-headings  -> uses each page's first heading as its <title>
+#   default-layout        -> gives front-matter-less pages a layout
+plugins:
+  - jekyll-optional-front-matter
+  - jekyll-relative-links
+  - jekyll-readme-index
+  - jekyll-titles-from-headings
+  - jekyll-default-layout
+  - jekyll-remote-theme
+  - jekyll-seo-tag
+
+optional_front_matter:
+  remove_originals: true
+
+relative_links:
+  enabled: true
+  collections: false
+
+readme_index:
+  enabled: true
+  remove_originals: true
+
+titles_from_headings:
+  enabled: true
+  strip_title: false
+
+# Give every rendered page the theme's layout without touching content files.
+defaults:
+  - scope:
+      path: ""
+    values:
+      layout: default
+
+# Keep pipeline internals, tooling, and scaffolding out of the published site.
+# (Files/dirs beginning with "." — .git, .claude, .gitignore — are already
+# excluded by Jekyll automatically.)
+exclude:
+  - Gemfile
+  - Gemfile.lock
+  - vendor
+  - .bundle
+  - README-PUBLISHING.md
+  - "**/CLAUDE.md"
+  - "**/*.py"
+  - "**/*.puppeteer*"
+  - "**/topic_corpus.md"
+  - "**/*.meta.json"
+  - "**/*.manifest.json"
+  - "**/*.progress.json"
+  - "**/*.resources.json"
+  - "**/*.critic.json"
+  - "**/critic-reports"
+  - "**/curriculum/sequence.index.json"
