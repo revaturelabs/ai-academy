@@ -1,4 +1,4 @@
-﻿# Operators & Expressions
+# Operators & Expressions
 
 <sub>[&#8592; Previous: 1.2 Variables, Identifiers, Types](../../../../../../../content/ai_native_engineering_foundations/p1-python-foundations-syntax/week-1/1-python-foundations/1-2-variables-identifiers-types/artifacts/reading.md)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[Go back to TOC](../../../../../../../README.md)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[Next: 1.4 Statements, Conversion & Output &#8594;](../../../../../../../content/ai_native_engineering_foundations/p1-python-foundations-syntax/week-1/1-python-foundations/1-4-statements-conversion-output/artifacts/reading.md)</sub>
 
@@ -10,9 +10,9 @@ In topic 1.2 you learned to name values and check their types with `type()`. But
 
 ## Key Concepts
 
-An <u>**expression**</u> is any piece of code Python can evaluate to produce a single value [1]. `2 + 3` evaluates to `5`; `2 + 3 > 4` first evaluates `2 + 3` to `5`, then `5 > 4` to `True`. Every operator below takes one or more values (its **operands**) and hands back a result you can print, store, or feed into a larger expression [1][3].
+An **expression** is any piece of code Python can evaluate to produce a single value [1]. `2 + 3` evaluates to `5`; `2 + 3 > 4` first evaluates `2 + 3` to `5`, then `5 > 4` to `True`. Every operator below takes one or more values (its **operands**) and hands back a result you can print, store, or feed into a larger expression [1][3].
 
-<u>**Arithmetic operators**</u> do the math you expect on `int` and `float` values [1][3]:
+**Arithmetic operators** do the math you expect on `int` and `float` values [1][3]:
 
 | Operator | Name | Example | Result |
 |----------|------|---------|--------|
@@ -35,7 +35,7 @@ The `%` operator gives the **remainder** after floor division [1][3]. It fits to
 
 Because Python floors toward negative infinity, the remainder takes the sign of the *divisor*, so `-7 % 2` is `1`, not `-1` [2]. Finally, the double asterisk `**` is **exponentiation**: `7 ** 2` is `49`, `2 ** 10` is `1024`. Do not confuse `**` (power) with `*` (multiply) — `2 ** 3` is `8`, while `2 * 3` is `6`.
 
-<u>**Operator precedence**</u> is a fixed ranking that decides which operators run first when an expression has more than one [1][2]. This is the "order of operations" from arithmetic class, extended to every Python operator. `2 + 3 * 4` is `14`, not `20`, because `*` outranks `+`. Here is the ladder, highest (runs first) at the top [2]:
+**Operator precedence** is a fixed ranking that decides which operators run first when an expression has more than one [1][2]. This is the "order of operations" from arithmetic class, extended to every Python operator. `2 + 3 * 4` is `14`, not `20`, because `*` outranks `+`. Here is the ladder, highest (runs first) at the top [2]:
 
 | Precedence | Operators | Group |
 |------------|-----------|-------|
@@ -57,7 +57,7 @@ Several facts fall out:
 
 You do not have to memorize the ladder: any time the order is not obvious, wrap the part you want done first in parentheses, which always win [1][2]. Adding them for clarity costs nothing and never makes a correct expression wrong.
 
-<u>**Comparison operators**</u> compare two values and produce a `bool` — either `True` or `False` [1][3]. A comparison is a question, and Python answers yes or no.
+**Comparison operators** compare two values and produce a `bool` — either `True` or `False` [1][3]. A comparison is a question, and Python answers yes or no.
 
 | Operator | Meaning | Example | Result |
 |----------|---------|---------|--------|
@@ -70,7 +70,7 @@ You do not have to memorize the ladder: any time the order is not obvious, wrap 
 
 These work on more than numbers: two `str` values are equal only if they are the exact same text, character for character, and comparison is case sensitive (just as identifiers were in 1.2), so `"cat" == "Cat"` is `False` [3]. **The single most common beginner bug** is confusing `==` with `=`. A single `=` is the **assignment** operator from 1.2 — it stores a value in a variable. A double `==` is the **equality comparison** — it asks a question and yields `True` or `False` [1]. `x = 5` puts `5` into `x`; `x == 5` asks "does `x` equal `5`?" Python also lets you **chain** comparisons the way mathematics does: instead of `18 <= age and age < 65`, write `18 <= age < 65`, and Python reads it as "is `age` between 18 and 65?", evaluating each link and combining them for you [1][2].
 
-<u>**Logical operators**</u> combine or invert `bool` values into compound conditions [1][3]. There are exactly three, written as plain English words:
+**Logical operators** combine or invert `bool` values into compound conditions [1][3]. There are exactly three, written as plain English words:
 
 - `A and B` is `True` only when *both* are true.
 - `A or B` is `True` when *at least one* is true.
@@ -85,9 +85,9 @@ These work on more than numbers: two `str` values are equal only if they are the
 
 Among these three, precedence runs highest to lowest as `not`, then `and`, then `or` [2]. So `True or False and False` reads as `True or (False and False)` = `True`, not `(True or False) and False`. In practice you rarely type bare booleans — you combine *comparisons*, and because comparisons outrank the logical operators, `age >= 18 and has_ticket` reads naturally without extra parentheses [2].
 
-The logical operators are also <u>**short-circuit**</u>: Python evaluates the left side first and stops early if the answer is already decided [1]. For `and`, if the left side is falsy the whole thing cannot be true, so the right side is skipped; for `or`, if the left side is truthy the result is already true, so the right side is skipped. This is a tool, not a trick: put a cheap or protective check on the left and a riskier one on the right, and Python will skip the right side when it is safe to do so.
+The logical operators are also **short-circuit**: Python evaluates the left side first and stops early if the answer is already decided [1]. For `and`, if the left side is falsy the whole thing cannot be true, so the right side is skipped; for `or`, if the left side is truthy the result is already true, so the right side is skipped. This is a tool, not a trick: put a cheap or protective check on the left and a riskier one on the right, and Python will skip the right side when it is safe to do so.
 
-Finally, <u>**truthiness**</u>: Python treats *any* value as "true-ish" or "false-ish" in a logical context [1][3]. The **falsy** values are a short list — `False`, the numbers `0` and `0.0`, and the empty string `""`. Almost everything else is **truthy**: any non-zero number (including negatives like `-3`) and any non-empty string (even `"False"` written as text, because it is a non-empty string, not the boolean). These truthy/falsy verdicts are exactly what `and`, `or`, and `not` react to.
+Finally, **truthiness**: Python treats *any* value as "true-ish" or "false-ish" in a logical context [1][3]. The **falsy** values are a short list — `False`, the numbers `0` and `0.0`, and the empty string `""`. Almost everything else is **truthy**: any non-zero number (including negatives like `-3`) and any non-empty string (even `"False"` written as text, because it is a non-empty string, not the boolean). These truthy/falsy verdicts are exactly what `and`, `or`, and `not` react to.
 
 **The precedence ladder at a glance.** The diagram below shows the order operators run in — top binds first, bottom binds last. When an expression mixes levels, work down this ladder (or add parentheses to override it).
 

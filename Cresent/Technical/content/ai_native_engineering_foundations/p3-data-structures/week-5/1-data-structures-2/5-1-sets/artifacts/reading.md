@@ -1,4 +1,4 @@
-﻿# Sets
+# Sets
 
 <sub>[&#8592; Previous: 4.2 Tuples](../../../../../../../content/ai_native_engineering_foundations/p3-data-structures/week-4/1-data-structures-1/4-2-tuples/artifacts/reading.md)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[Go back to TOC](../../../../../../../README.md)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[Next: 5.2 Dictionaries &#8594;](../../../../../../../content/ai_native_engineering_foundations/p3-data-structures/week-5/1-data-structures-2/5-2-dictionaries/artifacts/reading.md)</sub>
 
@@ -10,7 +10,7 @@ You already have lists and tuples, and both keep every item you put in — dupli
 
 ## Key Concepts
 
-<u>**What a set is.**</u> A set is an *unordered collection of unique, immutable elements* [1][3]. Three words carry the weight:
+**What a set is.** A set is an *unordered collection of unique, immutable elements* [1][3]. Three words carry the weight:
 
 - **Unordered** — a set does not track position. There is no `my_set[0]`; indexing and slicing simply do not apply, and print order can change between runs [2].
 - **Unique** — a set never holds two equal elements. This is the *uniqueness guarantee*, and it is the whole point.
@@ -28,7 +28,7 @@ Placed against the structures you already know:
 
 Read the "no" column top to bottom and you have the definition at a glance. Everything about how you *use* a set — iterating with a `for` loop, testing with `in`, building with a comprehension — is deliberately the same as lists and tuples. The novelty is entirely in *what a set promises*, not in how you type it.
 
-<u>**Creating sets and the uniqueness guarantee.**</u> Write a set with curly braces, or build one from any iterable with `set()` [1][2]. Duplicates collapse *at construction* — there is no way to switch it off [1]:
+**Creating sets and the uniqueness guarantee.** Write a set with curly braces, or build one from any iterable with `set()` [1][2]. Duplicates collapse *at construction* — there is no way to switch it off [1]:
 
 ```python
 digits = {1, 2, 3, 2, 1}
@@ -39,7 +39,7 @@ print(letters)         # {'h', 'e', 'l', 'o'} — one 'l', in some order
 
 This gives the most common one-liner: **de-duplicate a list** with `list(set(names))` — clean, but it *discards order*. One trap: `{}` is an **empty dictionary**, not an empty set; use `set()` for an empty set [1][3].
 
-<u>**Membership testing.**</u> The headline query is "is this element present?" — the same `in` operator you already use [2]:
+**Membership testing.** The headline query is "is this element present?" — the same `in` operator you already use [2]:
 
 ```python
 colors = {"red", "green", "blue"}
@@ -47,7 +47,7 @@ print("red" in colors)         # True
 print("purple" not in colors)  # True
 ```
 
-<u>**The four set operations.**</u> This is where sets earn their place. Each operation has two spellings: a **method** (accepts any iterable) and an **operator** (both sides must be sets) [1][3]. They mean the same thing.
+**The four set operations.** This is where sets earn their place. Each operation has two spellings: a **method** (accepts any iterable) and an **operator** (both sides must be sets) [1][3]. They mean the same thing.
 
 ![Set operations on two sets A and B](./diagram.png)
 *How union, intersection, difference, and symmetric difference derive from two sets A={1,2,3,4} and B={3,4,5,6}.*
@@ -61,7 +61,7 @@ Given `a = {1, 2, 3, 4}` and `b = {3, 4, 5, 6}`:
 
 All four return a **new** set and leave the originals untouched, so you can chain them: `(a | b) - c` [1]. The operator-versus-method choice is the one place the spellings genuinely diverge [3]: the **operator requires a set on both sides** (`a & [3, 4]` raises `TypeError`), while the **method iterates any iterable** (`a.intersection([3, 4])` works). Real data usually arrives as a list, so the method form lets you compare without a `set()` conversion.
 
-<u>**In-place update forms.**</u> Each operation also has an **in-place** form that *modifies the left set* instead of returning a new one [1][3]:
+**In-place update forms.** Each operation also has an **in-place** form that *modifies the left set* instead of returning a new one [1][3]:
 
 - **Union**: `s |= t` or `s.update(t)` — add everything in `t`.
 - **Intersection**: `s &= t` or `s.intersection_update(t)` — keep only what is also in `t`.
@@ -70,7 +70,7 @@ All four return a **new** set and leave the originals untouched, so you can chai
 
 Use these when **accumulating into one set over time**: `all_seen |= batch` is clearer and cheaper than `all_seen = all_seen | batch` because it avoids allocating a new set each round.
 
-<u>**Subset, superset, and disjoint relations.**</u> Beyond combining sets, you often need to *compare* them, each relation available as operator and method [1][3]:
+**Subset, superset, and disjoint relations.** Beyond combining sets, you often need to *compare* them, each relation available as operator and method [1][3]:
 
 - **Subset** (`<=`, `issubset`) — is every element of the left set also in the right? `{1,2} <= {1,2,3,4}` is `True`.
 - **Superset** (`>=`, `issuperset`) — the mirror: does the left contain every element of the right?
@@ -79,7 +79,7 @@ Use these when **accumulating into one set over time**: `all_seen |= batch` is c
 
 These return `True`/`False`, so they read naturally inside an `if` — for example, `if required.issubset(user_has):` to check permissions.
 
-<u>**Mutating a set.**</u> A set is mutable, so you can change it after creation [1][2]:
+**Mutating a set.** A set is mutable, so you can change it after creation [1][2]:
 
 - **`add(x)`** — insert one element; if already present, nothing happens [2].
 - **`remove(x)`** — delete `x`; raises `KeyError` if `x` is absent [1].
@@ -87,11 +87,11 @@ These return `True`/`False`, so they read naturally inside an `if` — for examp
 
 Rule of thumb: use `discard` when you just want the element gone, and `remove` when its absence would be a genuine bug you want to hear about.
 
-<u>**frozenset — the immutable set.**</u> A `frozenset` is a set whose contents can never change after creation [1][3] — set is to frozenset as list is to tuple. It supports every non-mutating operation but has no `add`/`remove`/`update`. The key payoff mirrors tuple immutability: **because a `frozenset` cannot change, it is hashable, so it can be an element of another set** [3]. A regular `set` cannot go inside a set.
+**frozenset — the immutable set.** A `frozenset` is a set whose contents can never change after creation [1][3] — set is to frozenset as list is to tuple. It supports every non-mutating operation but has no `add`/`remove`/`update`. The key payoff mirrors tuple immutability: **because a `frozenset` cannot change, it is hashable, so it can be an element of another set** [3]. A regular `set` cannot go inside a set.
 
-<u>**Why set membership is fast — hashing.**</u> When you write `x in my_list`, Python compares `x` against each element in turn — up to *n* comparisons for *n* items, a linear scan (O(n)). A set stores each element in a location computed from its **hash**, so `x in my_set` hashes `x`, jumps straight there, and checks only that spot — roughly *constant* time, O(1), no matter how big the set is [1]. This is exactly why elements must be hashable: the hash must stay stable while the element sits in the set. Any time you test membership **repeatedly**, converting a list to a set once, up front, is often the single highest-impact change you can make.
+**Why set membership is fast — hashing.** When you write `x in my_list`, Python compares `x` against each element in turn — up to *n* comparisons for *n* items, a linear scan (O(n)). A set stores each element in a location computed from its **hash**, so `x in my_set` hashes `x`, jumps straight there, and checks only that spot — roughly *constant* time, O(1), no matter how big the set is [1]. This is exactly why elements must be hashable: the hash must stay stable while the element sits in the set. Any time you test membership **repeatedly**, converting a list to a set once, up front, is often the single highest-impact change you can make.
 
-<u>**Set comprehension.**</u> A set comprehension is a list comprehension with curly braces instead of square brackets; the result is unordered and de-duplicated [1][3]. It shines at de-dup-while-transforming:
+**Set comprehension.** A set comprehension is a list comprehension with curly braces instead of square brackets; the result is unordered and de-duplicated [1][3]. It shines at de-dup-while-transforming:
 
 ```python
 raw_names = ["Ana", "ANA", "ana", "Ben", "BEN"]

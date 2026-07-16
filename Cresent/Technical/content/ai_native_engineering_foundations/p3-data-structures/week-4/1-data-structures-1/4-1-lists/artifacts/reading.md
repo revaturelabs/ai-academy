@@ -1,4 +1,4 @@
-﻿# Lists
+# Lists
 
 <sub>[&#8592; Previous: 3.3 Modules, Packaging & Professional Tooling](../../../../../../../content/ai_native_engineering_foundations/p2-control-structures-functions-tooling/week-3/1-functions-modules-tooling-2/3-3-modules-packaging-professional-tooling/artifacts/reading.md)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[Go back to TOC](../../../../../../../README.md)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[Next: 4.2 Tuples &#8594;](../../../../../../../content/ai_native_engineering_foundations/p3-data-structures/week-4/1-data-structures-1/4-2-tuples/artifacts/reading.md)</sub>
 
@@ -10,7 +10,7 @@ Almost every real program juggles *collections* of things, not single values: a 
 
 ## Key Concepts
 
-<u>**Creating a list.**</u> A list is written as a comma-separated sequence of values inside **square brackets** `[ ]` [1]. It is a single value of type `list` that happens to contain other values — the elements — and it keeps them in the order you wrote them, an order that does not shuffle on its own [1]:
+**Creating a list.** A list is written as a comma-separated sequence of values inside **square brackets** `[ ]` [1]. It is a single value of type `list` that happens to contain other values — the elements — and it keeps them in the order you wrote them, an order that does not shuffle on its own [1]:
 
 ```python
 fruits = ["apple", "banana", "cherry"]
@@ -21,7 +21,7 @@ print(type(fruits))   # <class 'list'>
 print(len(fruits))    # 3  — len() gives the number of items
 ```
 
-<u>**Indexing.**</u> Each element has a numbered position called its **index**. Python indexes from **zero** — the first element is at index `0`, the second at `1`, and so on — and you reach an element with the list name followed by the index in square brackets [3]. Python also supports **negative indexing**, which counts from the *end*: `-1` is the last element, `-2` the second-to-last, saving you from computing `len(list) - 1` every time [3]. Asking for an index that does not exist raises an `IndexError`; for a list of length `n`, index `0` and index `-n` are the same element. The diagram below shows both numbering schemes over the same three slots — positive indices running left-to-right and negative indices running right-to-left:
+**Indexing.** Each element has a numbered position called its **index**. Python indexes from **zero** — the first element is at index `0`, the second at `1`, and so on — and you reach an element with the list name followed by the index in square brackets [3]. Python also supports **negative indexing**, which counts from the *end*: `-1` is the last element, `-2` the second-to-last, saving you from computing `len(list) - 1` every time [3]. Asking for an index that does not exist raises an `IndexError`; for a list of length `n`, index `0` and index `-n` are the same element. The diagram below shows both numbering schemes over the same three slots — positive indices running left-to-right and negative indices running right-to-left:
 
 ```mermaid
 ---
@@ -54,7 +54,7 @@ print(fruits[-1])  # cherry — last element
 print(fruits[-3])  # apple  — same as fruits[0]
 ```
 
-<u>**Slicing.**</u> **Slicing** pulls out a *range* of elements and returns them as a **new list**. The syntax is `list[start:stop:step]`, where `start` is included, `stop` is excluded, and `step` is how far to jump each time; `start` defaults to `0`, `stop` to `len(list)`, so `a[:]` is a full copy [3]. Two idioms are worth memorising: `a[::2]` takes every second item, and `a[::-1]` produces a reversed copy — a negative step walks backward. Because a slice always builds a *new* list, slicing never changes the original [3]:
+**Slicing.** **Slicing** pulls out a *range* of elements and returns them as a **new list**. The syntax is `list[start:stop:step]`, where `start` is included, `stop` is excluded, and `step` is how far to jump each time; `start` defaults to `0`, `stop` to `len(list)`, so `a[:]` is a full copy [3]. Two idioms are worth memorising: `a[::2]` takes every second item, and `a[::-1]` produces a reversed copy — a negative step walks backward. Because a slice always builds a *new* list, slicing never changes the original [3]:
 
 ```python
 a = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
@@ -66,7 +66,7 @@ print(a[1:5:2])   # [1, 3]           — from 1 to 5, stepping by 2
 print(a[::-1])    # [9, 8, ... 0]    — reversed copy
 ```
 
-<u>**Mutability.**</u> Lists are **mutable** — you can change their contents after creation without making a new list. Assigning to an index replaces one element in place, and assigning to a slice replaces several at once [1]. Mutability has a consequence worth understanding early: a variable holding a list holds a *reference* to that list, not a private copy, so if two names point at the same list, a change through one is visible through the other [1][2]:
+**Mutability.** Lists are **mutable** — you can change their contents after creation without making a new list. Assigning to an index replaces one element in place, and assigning to a slice replaces several at once [1]. Mutability has a consequence worth understanding early: a variable holding a list holds a *reference* to that list, not a private copy, so if two names point at the same list, a change through one is visible through the other [1][2]:
 
 ```python
 colors = ["red", "green", "blue"]
@@ -81,7 +81,7 @@ print(a)         # [1, 2, 3, 4]  — a changed too!
 
 For an independent copy, slice it (`b = a[:]`) or call `a.copy()`. The takeaway: lists can be changed in place, and sharing a list means sharing its changes [1][2].
 
-<u>**List methods.**</u> Lists carry built-in **methods** — functions attached to the list, called with the dot syntax `list.method(...)`. The everyday eight fall into three groups [1][2].
+**List methods.** Lists carry built-in **methods** — functions attached to the list, called with the dot syntax `list.method(...)`. The everyday eight fall into three groups [1][2].
 
 Methods that add elements:
 
@@ -109,7 +109,7 @@ nums.extend([5, 6])   # [99, 1, 2, 3, 4, 5, 6]
 
 Note the difference between `append` and `extend`: `nums.append([5, 6])` adds the *list* `[5, 6]` as one nested element, whereas `extend` unpacks it into individual elements [2]. All of `append`, `insert`, `extend`, `remove`, `pop`, and `clear` change the list *in place* and rely on mutability; `index` and `count` only read from it [1][2].
 
-<u>**Iteration.**</u> Because a list is ordered and iterable, a `for`-loop visits each element in turn. When you also need the position, pair the loop with `range(len(...))`; otherwise iterate directly for the values. Walking the items, testing each with a conditional, and accumulating a result is the most common thing you will do with a list — and the foundation the comprehension compresses into one line [1]:
+**Iteration.** Because a list is ordered and iterable, a `for`-loop visits each element in turn. When you also need the position, pair the loop with `range(len(...))`; otherwise iterate directly for the values. Walking the items, testing each with a conditional, and accumulating a result is the most common thing you will do with a list — and the foundation the comprehension compresses into one line [1]:
 
 ```python
 for fruit in fruits:
@@ -119,7 +119,7 @@ for i in range(len(fruits)):
     print(f"{i}: {fruits[i]}")
 ```
 
-<u>**Sorting.**</u> There are two ways to order a list, and the difference matters [2]:
+**Sorting.** There are two ways to order a list, and the difference matters [2]:
 
 - **`list.sort()`** is a *method* that sorts the list **in place** and returns `None` — the original is rearranged.
 - **`sorted(list)`** is a *built-in function* that returns a **new** sorted list and leaves the original untouched.
@@ -141,7 +141,7 @@ print(sorted(words, key=len))       # ['kiwi', 'apple', 'banana'] — by length
 
 A common mistake is writing `nums = nums.sort()`, which assigns `None` because `sort()` returns nothing. Use the method when you don't need the original order back, the function when you do. The `key` function can be `len` or any function you define with `def` that takes one element and returns a comparable value [2].
 
-<u>**Nested lists.**</u> A list element can itself be a list, giving you a **nested list** — a natural way to represent a grid, a table, or rows of data [2]. The first index selects a row; the second reaches inside that row. To visit every cell, nest one loop inside another. Each inner list is a full-fledged list with all the methods and slicing you already know:
+**Nested lists.** A list element can itself be a list, giving you a **nested list** — a natural way to represent a grid, a table, or rows of data [2]. The first index selects a row; the second reaches inside that row. To visit every cell, nest one loop inside another. Each inner list is a full-fledged list with all the methods and slicing you already know:
 
 ```python
 grid = [[1, 2, 3], [4, 5, 6], [7, 8, 9]]
@@ -154,7 +154,7 @@ for row in grid:
     print()
 ```
 
-<u>**Comprehensions.**</u> A **list comprehension** builds a new list from an existing sequence in a single expression, replacing the "create an empty list, loop, append" pattern with one line [1][2]. Read `[expression for item in iterable]` left to right: "the expression, for each item in the iterable." The part before `for` is what each new element becomes. A comprehension can map, filter, or do both:
+**Comprehensions.** A **list comprehension** builds a new list from an existing sequence in a single expression, replacing the "create an empty list, loop, append" pattern with one line [1][2]. Read `[expression for item in iterable]` left to right: "the expression, for each item in the iterable." The part before `for` is what each new element becomes. A comprehension can map, filter, or do both:
 
 - **Map** — transform every item: `[n * n for n in range(5)]` gives `[0, 1, 4, 9, 16]`.
 - **Filter** — add an `if` clause to keep only items that pass a condition: `[n for n in range(10) if n % 2 == 0]` gives `[0, 2, 4, 6, 8]`.
