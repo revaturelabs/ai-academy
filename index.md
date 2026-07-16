@@ -29,7 +29,7 @@ through the track in order or jump straight to a topic.
 | **P5 — Files & Exception Handling** | File handling, errors & exceptions, a robust-reader case study |
 | **P6 — Git, GitHub & Portfolio** | Version-control basics and portfolio diagnostics |
 
-### Part B — AI Foundations (shared with CIT)
+### Part B — AI Foundations
 
 | Module | Focus |
 |---|---|

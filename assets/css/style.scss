@@ -1,0 +1,81 @@
+---
+---
+
+// ---------------------------------------------------------------------------
+// Revature brand palette — override Cayman's defaults BEFORE the import so the
+// theme's `!default` variables pick these up.
+// ---------------------------------------------------------------------------
+$revature-navy:      #0a2540;   // deep brand navy
+$revature-blue:      #1466b8;   // primary brand blue
+$revature-blue-dark: #0f4c8c;
+
+$header-bg-color:           $revature-navy;
+$header-bg-color-secondary: $revature-blue;
+$header-heading-color:      #ffffff;
+$section-headings-color:    $revature-navy;
+$content-link-color:        $revature-blue;
+
+@import "jekyll-theme-cayman";
+
+// ---------------------------------------------------------------------------
+// Revature customisations layered on top of the Cayman base.
+// ---------------------------------------------------------------------------
+
+// Slim brand bar above the hero header.
+.brand-bar {
+  background-color: $revature-navy;
+  padding: 0.6rem 2rem;
+
+  .brand {
+    display: inline-flex;
+    align-items: center;
+    text-decoration: none;
+  }
+
+  .brand-logo {
+    height: 34px;
+    width: auto;
+    display: block;
+  }
+
+  .brand-wordmark {
+    color: #ffffff;
+    font-weight: 700;
+    font-size: 1.35rem;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+  }
+}
+
+// Hero header: a Revature navy → blue gradient (reinforces the theme vars).
+.page-header {
+  background-color: $revature-navy;
+  background-image: linear-gradient(120deg, $revature-navy 0%, $revature-blue 100%);
+}
+
+// Links: brand blue, with a clear hover.
+.main-content a {
+  color: $revature-blue;
+  &:hover { color: $revature-blue-dark; }
+}
+
+// Section headings in brand navy.
+.main-content h1,
+.main-content h2,
+.main-content h3 {
+  color: $revature-navy;
+}
+
+// Accent the left edge of blockquotes with brand blue.
+.main-content blockquote {
+  border-left: 0.3rem solid $revature-blue;
+  color: #4a5568;
+}
+
+// Footer: quiet, brand-tinted, no external links.
+.site-footer {
+  border-top: 1px solid #dce6f0;
+  color: #6a737d;
+
+  .site-footer-owner { font-weight: 600; color: $revature-navy; }
+}

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="{{ site.lang | default: "en-US" }}">
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+{% seo %}
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <meta name="theme-color" content="#0a2540">
+    <link rel="stylesheet" href="{{ '/assets/css/style.css?v=' | append: site.github.build_revision | relative_url }}">
+  </head>
+  <body>
+    <a id="skip-to-content" href="#content">Skip to the content.</a>
+
+    <!-- Revature brand bar. To use a logo image instead of the wordmark, drop a
+         file at assets/images/revature-banner.png — it will replace the text. -->
+    <div class="brand-bar">
+      <a class="brand" href="{{ '/' | relative_url }}">
+        <img class="brand-logo"
+             src="{{ '/assets/images/revature-banner.png' | relative_url }}"
+             alt="Revature"
+             onerror="this.remove(); document.getElementById('brand-wordmark').hidden = false;">
+        <span class="brand-wordmark" id="brand-wordmark" hidden>Revature</span>
+      </a>
+    </div>
+
+    <header class="page-header" role="banner">
+      <h1 class="project-name">{{ page.title | default: site.title | default: site.github.repository_name }}</h1>
+      <h2 class="project-tagline">{{ page.description | default: site.description | default: site.github.project_tagline }}</h2>
+    </header>
+
+    <main id="content" class="main-content" role="main">
+      {{ content }}
+
+      <footer class="site-footer">
+        <span class="site-footer-owner">&copy; {{ site.time | date: "%Y" }} Revature. All rights reserved.</span>
+      </footer>
+    </main>
+  </body>
+</html>
