@@ -2,18 +2,23 @@
 ---
 
 // ---------------------------------------------------------------------------
-// Revature brand palette — override Cayman's defaults BEFORE the import so the
-// theme's `!default` variables pick these up.
+// Revature brand palette — deliberately MUTED (professional, low-saturation).
+// The Revature logo is a black wordmark + rainbow arc on transparent, with
+// orange as the brand accent — so the top bar is white (logo reads on it) and
+// the accents are soft, not vibrant.
+// Override Cayman's defaults BEFORE the import so `!default` vars pick these up.
 // ---------------------------------------------------------------------------
-$revature-navy:      #0a2540;   // deep brand navy
-$revature-blue:      #1466b8;   // primary brand blue
-$revature-blue-dark: #0f4c8c;
+$ink:          #2c3e50;   // muted dark slate — headings + header base
+$steel:        #3a5064;   // muted steel-blue — header gradient end
+$link:         #35618c;   // muted blue links (not vibrant)
+$link-hover:   #24486a;
+$accent:       #d98a3d;   // soft, muted orange — subtle accents only
 
-$header-bg-color:           $revature-navy;
-$header-bg-color-secondary: $revature-blue;
+$header-bg-color:           $ink;
+$header-bg-color-secondary: $steel;
 $header-heading-color:      #ffffff;
-$section-headings-color:    $revature-navy;
-$content-link-color:        $revature-blue;
+$section-headings-color:    $ink;
+$content-link-color:        $link;
 
 @import "jekyll-theme-cayman";
 
@@ -21,10 +26,11 @@ $content-link-color:        $revature-blue;
 // Revature customisations layered on top of the Cayman base.
 // ---------------------------------------------------------------------------
 
-// Slim brand bar above the hero header.
+// White brand bar so the black Revature wordmark is legible.
 .brand-bar {
-  background-color: $revature-navy;
-  padding: 0.6rem 2rem;
+  background-color: #ffffff;
+  border-bottom: 3px solid $accent;   // soft-orange brand accent line
+  padding: 0.55rem 2rem;
 
   .brand {
     display: inline-flex;
@@ -33,13 +39,14 @@ $content-link-color:        $revature-blue;
   }
 
   .brand-logo {
-    height: 34px;
+    height: 44px;
     width: auto;
     display: block;
   }
 
+  // Fallback wordmark (only shows if the logo image is missing).
   .brand-wordmark {
-    color: #ffffff;
+    color: $ink;
     font-weight: 700;
     font-size: 1.35rem;
     letter-spacing: 0.14em;
@@ -47,35 +54,36 @@ $content-link-color:        $revature-blue;
   }
 }
 
-// Hero header: a Revature navy → blue gradient (reinforces the theme vars).
+// Hero header: a muted slate → steel gradient (professional, not vibrant).
 .page-header {
-  background-color: $revature-navy;
-  background-image: linear-gradient(120deg, $revature-navy 0%, $revature-blue 100%);
+  background-color: $ink;
+  background-image: linear-gradient(120deg, $ink 0%, $steel 100%);
+  padding: 2.5rem 2rem;
 }
 
-// Links: brand blue, with a clear hover.
+// Links: muted brand blue with a clear hover.
 .main-content a {
-  color: $revature-blue;
-  &:hover { color: $revature-blue-dark; }
+  color: $link;
+  &:hover { color: $link-hover; }
 }
 
-// Section headings in brand navy.
+// Section headings in muted slate.
 .main-content h1,
 .main-content h2,
 .main-content h3 {
-  color: $revature-navy;
+  color: $ink;
 }
 
-// Accent the left edge of blockquotes with brand blue.
+// Subtle soft-orange accent on blockquotes.
 .main-content blockquote {
-  border-left: 0.3rem solid $revature-blue;
-  color: #4a5568;
+  border-left: 0.3rem solid $accent;
+  color: #566573;
 }
 
-// Footer: quiet, brand-tinted, no external links.
+// Quiet footer, no external links.
 .site-footer {
-  border-top: 1px solid #dce6f0;
+  border-top: 1px solid #dce1e6;
   color: #6a737d;
 
-  .site-footer-owner { font-weight: 600; color: $revature-navy; }
+  .site-footer-owner { font-weight: 600; color: $ink; }
 }
