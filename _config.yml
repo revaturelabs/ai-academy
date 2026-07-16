@@ -1,0 +1,104 @@
+# ---------------------------------------------------------------------------
+# Jekyll configuration for GitHub Pages
+# Site:   https://revaturelabs.github.io/ai-academy/
+# Scope:  Crescent "AI Native Engineering Foundations" track only.
+#         (The CIT tree is not published as pages, but its diagram images are
+#          kept in the build because Crescent's Part B readings embed them.)
+# ---------------------------------------------------------------------------
+
+title: AI Native Engineering Foundations
+description: >-
+  A self-paced Python engineering track — syntax, control flow, data
+  structures, classes, files & exceptions, Git — plus shared AI-native
+  foundations (computational thinking, AI systems, human oversight).
+
+# For a project site served at https://<org>.github.io/<repo>/ these two values
+# MUST match the org and repo, or the theme CSS and internal links will 404.
+url: "https://revaturelabs.github.io"
+baseurl: "/ai-academy"
+
+# A clean, single-column theme supported natively by GitHub Pages.
+theme: jekyll-theme-cayman
+
+# Markdown / rendering
+markdown: kramdown
+kramdown:
+  input: GFM
+  syntax_highlighter: rouge
+
+# All of these ship with the `github-pages` gem and are what let this site
+# work WITHOUT editing any content file:
+#   optional-front-matter -> renders the reading.md files that have no YAML
+#                            front matter
+#   relative-links        -> rewrites [text](../foo/reading.md) links to the
+#                            generated .html URLs, so the in-page
+#                            Prev / TOC / Next nav keeps working
+#   readme-index          -> serves each folder's README.md as its index page
+#                            (so Cresent/Technical/README.md becomes the
+#                             curriculum index at /Cresent/Technical/)
+#   titles-from-headings  -> uses each page's first heading as its <title>
+#   default-layout        -> gives front-matter-less pages the theme layout
+plugins:
+  - jekyll-optional-front-matter
+  - jekyll-relative-links
+  - jekyll-readme-index
+  - jekyll-titles-from-headings
+  - jekyll-default-layout
+  - jekyll-seo-tag
+
+optional_front_matter:
+  remove_originals: true
+
+relative_links:
+  enabled: true
+  collections: false
+
+readme_index:
+  enabled: true
+  remove_originals: true
+
+titles_from_headings:
+  enabled: true
+  strip_title: false
+
+# Give every rendered page the theme's layout without touching content files.
+defaults:
+  - scope:
+      path: ""
+    values:
+      layout: default
+
+# ---------------------------------------------------------------------------
+# Keep tooling, scaffolding, and non-content files out of the published site.
+# Files/dirs beginning with "." (.git, .claude, .gitignore) and "_" are already
+# excluded by Jekyll automatically.
+# ---------------------------------------------------------------------------
+exclude:
+  - Gemfile
+  - Gemfile.lock
+  - vendor
+  - .bundle
+  - README-PUBLISHING.md
+  - "**/CLAUDE.md"
+  - "**/*.py"
+  - "**/*.ps1"
+  - "**/*.puppeteer*"
+  - "**/topic_corpus.md"
+  - "**/*.notes.md"
+  - "**/*.meta.json"
+  - "**/*.manifest.json"
+  - "**/*.progress.json"
+  - "**/*.resources.json"
+  - "**/*.critic.json"
+  - "**/critic-reports"
+  - "**/curriculum/sequence.index.json"
+
+  # --- Hide the CIT track from the published site -------------------------
+  # Crescent Part B readings embed diagram images that physically live in the
+  # CIT tree, so we exclude only CIT's *pages* and data files here and let the
+  # CIT *.png / *.mmd assets fall through into the build so those images load.
+  - "CIT/**/*.md"
+  - "CIT/**/*.gift"
+  - "CIT/**/*.json"
+  - "CIT/**/*.txt"
+  - CIT/README.md
