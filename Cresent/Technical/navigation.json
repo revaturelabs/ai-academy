@@ -8,11 +8,11 @@
     "tooltip": "Prerequisites and Learning Objectives"
   },
   "studyGuide": {
-    "url": "",
-    "title": "Study Guide",
-    "tooltip": "Study Guide"
+    "url": "README.md",
+    "title": "Table of Contents",
+    "tooltip": "Table of Contents"
   },
-  "references": [],
+ 
   "modules": [
     {
       "id": "f30181a7-082a-4008-bb51-188cc2803544",
