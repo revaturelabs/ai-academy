@@ -1,4 +1,4 @@
-﻿# Dictionaries
+# Dictionaries
 
 <sub>[&#8592; Previous: 5.1 Sets](../../../../../../../content/ai_native_engineering_foundations/p3-data-structures/week-5/1-data-structures-2/5-1-sets/artifacts/reading.md)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[Go back to TOC](../../../../../../../README.md)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[Next: 5.3 Iterators, Generators & Collections &#8594;](../../../../../../../content/ai_native_engineering_foundations/p3-data-structures/week-5/1-data-structures-2/5-3-iterators-generators-collections/artifacts/reading.md)</sub>
 
@@ -10,7 +10,7 @@ In 5.1 you hit a trap: `{}` is not an empty set — it is an empty **dictionary*
 
 ## Key Concepts
 
-<u>**What a dictionary is.**</u> A **dictionary** (type `dict`) is a **mutable mapping of unique keys to values** [1]. "Mapping" is the key word: it maps each key to exactly one value, like a real-world dictionary maps each word to its definition [1]. Four properties define it:
+<strong><u>What a dictionary is.</u></strong> A **dictionary** (type `dict`) is a **mutable mapping of unique keys to values** [1]. "Mapping" is the key word: it maps each key to exactly one value, like a real-world dictionary maps each word to its definition [1]. Four properties define it:
 
 - **Key-value pairs.** Every entry is a pair — a key and the value it points to. You look things up *by key*, never by position [1].
 - **Keys are unique.** A dictionary cannot hold the same key twice; assigning to an existing key overwrites its value rather than adding a second entry — the same uniqueness idea you saw with set elements in 5.1 [1].
@@ -25,7 +25,7 @@ capitals = {"France": "Paris", "Japan": "Tokyo", "Egypt": "Cairo"}
 
 A dictionary **is ordered**: since Python 3.7 it remembers the order in which you inserted keys, and looping visits them in that order [1] — a genuine difference from the unordered set you just learned. And the "written with" row resolves the 5.1 trap: `{}` is an empty dict, `{key: value}` is a non-empty dict, and `set()` is how you make an empty set.
 
-<u>**Creating and accessing by key.**</u> There are three everyday ways to create a dictionary [1]:
+<strong><u>Creating and accessing by key.</u></strong> There are three everyday ways to create a dictionary [1]:
 
 - Braces with literal pairs: `capitals = {"France": "Paris"}`
 - The `dict()` constructor with keyword arguments (keys become strings): `dict(name="Ana", age=30)`
@@ -44,7 +44,7 @@ print("France" in capitals)    # True  — France is a key
 print("Paris" in capitals)     # False — Paris is a value, not a key
 ```
 
-<u>**Adding, modifying, and deleting entries.**</u> A dictionary is mutable, so you can change its contents after creation. Three operations cover almost everything [1]:
+<strong><u>Adding, modifying, and deleting entries.</u></strong> A dictionary is mutable, so you can change its contents after creation. Three operations cover almost everything [1]:
 
 - **Add or modify with assignment.** `d[k] = v` is both add and update: if `k` is new the pair is added; if `k` already exists its value is overwritten. There is no separate "add" versus "update" syntax — this is the uniqueness guarantee in action, since a key can appear only once.
 - **Delete with `del`.** `del d[k]` removes a key and its value entirely. Like bracket access, it raises `KeyError` if the key is absent.
@@ -60,7 +60,7 @@ missing = scores.pop("zoe", 0)  # absent -> returns 0, no error
 
 Reach for `del` when you only want the key gone; reach for `pop()` when you want the value on the way out. The optional default on `pop()` is the safe form when you are not certain the key exists.
 
-<u>**Looping through a dictionary.**</u> Because a dictionary holds pairs, there are three things you might iterate — the keys, the values, or both together — and Python gives you a method for each [1]:
+<strong><u>Looping through a dictionary.</u></strong> Because a dictionary holds pairs, there are three things you might iterate — the keys, the values, or both together — and Python gives you a method for each [1]:
 
 - **`keys()`** — just the keys. Looping directly over the dictionary (`for k in d`) is identical to `for k in d.keys()`; keys are what you get by default, visited in insertion order.
 - **`values()`** — just the values.
@@ -73,7 +73,7 @@ for country, city in capitals.items():
 
 `items()` is the workhorse: when you need both the key and its value inside the loop, `for k, v in d.items()` is cleaner than looping the keys and re-looking-up each value with `d[k]` [1]. One note: these three methods return **view objects**, not lists — a view stays connected to the dictionary, and you can wrap it in `list()` when you need an actual list [1].
 
-<u>**Sorting a dictionary — by key and by value.**</u> A dictionary keeps insertion order, but often you want it in *sorted* order. The tool is the built-in `sorted()` you already use on lists [1]. There are two moves:
+<strong><u>Sorting a dictionary — by key and by value.</u></strong> A dictionary keeps insertion order, but often you want it in *sorted* order. The tool is the built-in `sorted()` you already use on lists [1]. There are two moves:
 
 - **Sort by key.** Passing a dictionary straight to `sorted()` sorts its keys (because iterating a dict yields keys), returning a sorted list of keys: `for name in sorted(scores):`. It returns a new list and does **not** change the dictionary.
 - **Sort by value.** Sort the *pairs* from `items()` and tell `sorted()` to use the value with the `key=` argument and a small `lambda` — a one-line anonymous function [1].
@@ -88,10 +88,10 @@ top = sorted(scores.items(), key=lambda kv: kv[1], reverse=True)
 
 Read `key=lambda kv: kv[1]` as "for each pair `kv`, sort using `kv[1]`, the value." The pattern is always the same: sort `items()`, choose element `[0]` for by-key or `[1]` for by-value. The result is a list of pairs you can loop over or feed back into `dict(...)` to build a new, value-ordered dictionary.
 
-<u>**Safe access: `get()` and `setdefault()`.**</u> Two methods let you read or initialize a key *without* risking a `KeyError` [1]:
+<strong><u>Safe access: `get()` and `setdefault()`.</u></strong> Two methods let you read or initialize a key *without* risking a `KeyError` [1]:
 
-- <u>**get(key, default).**</u> Returns the value if the key exists, otherwise returns a default (or `None` if none is supplied). Crucially, it **does not modify the dictionary** — a missing key stays missing. Use it whenever a key might be absent and you have a sensible fallback, instead of writing `if k in d: ... else: ...`.
-- <u>**setdefault(key, default).**</u> `get()`'s active sibling. If the key exists it returns the existing value and changes nothing; if the key is **absent** it *inserts* the key with the default **and** returns that default.
+- <strong><u>get(key, default).</u></strong> Returns the value if the key exists, otherwise returns a default (or `None` if none is supplied). Crucially, it **does not modify the dictionary** — a missing key stays missing. Use it whenever a key might be absent and you have a sensible fallback, instead of writing `if k in d: ... else: ...`.
+- <strong><u>setdefault(key, default).</u></strong> `get()`'s active sibling. If the key exists it returns the existing value and changes nothing; if the key is **absent** it *inserts* the key with the default **and** returns that default.
 
 ```python
 prefs = {"theme": "dark"}
@@ -101,7 +101,7 @@ prefs.setdefault("font", "sans")     # absent -> inserts, returns "sans"
 
 The difference is exactly whether the dictionary is left alone: `get()` reads only; `setdefault()` reads *and* creates the key when it was missing. `setdefault()` shines when building a dictionary whose values are containers — `d.setdefault(k, []).append(x)` gets-or-creates a list, then appends to it, a workhorse grouping move. (There is a dedicated tool that makes this grouping even smoother, which you will meet later this week — for now, `setdefault` does the job.)
 
-<u>**Nested dictionaries.**</u> Because a dictionary's values can be anything, a value can itself be a dictionary. A **nested dictionary** is a dictionary whose values are dictionaries — the natural way to model records that have their own fields, and the shape JSON from an API or a config file arrives in [3]:
+<strong><u>Nested dictionaries.</u></strong> Because a dictionary's values can be anything, a value can itself be a dictionary. A **nested dictionary** is a dictionary whose values are dictionaries — the natural way to model records that have their own fields, and the shape JSON from an API or a config file arrives in [3]:
 
 ```python
 users = {
@@ -113,7 +113,7 @@ print(users["u1"]["name"])     # Ana
 
 To reach a value two levels deep, **chain the bracket lookups**: the first bracket selects the inner dictionary, the second selects a field within it [3]. Read `users["u1"]["name"]` left to right — `users["u1"]` gives Ana's whole record, then `["name"]` pulls the name out. Nested records often have *missing* fields, so `get()` is especially valuable one level down, where a bare `record["city"]` would raise `KeyError` for any record lacking that field [3].
 
-<u>**Dictionary comprehension — building and inverting.**</u> You already write set comprehensions from 5.1 and list comprehensions from 4.1. A **dictionary comprehension** is the same idea with one addition: because a dictionary needs a key *and* a value, you write `key: value` (with a colon) before the `for` clause [2]. The braces are the same; the colon is what makes it a dict rather than a set comprehension. Two uses matter most:
+<strong><u>Dictionary comprehension — building and inverting.</u></strong> You already write set comprehensions from 5.1 and list comprehensions from 4.1. A **dictionary comprehension** is the same idea with one addition: because a dictionary needs a key *and* a value, you write `key: value` (with a colon) before the `for` clause [2]. The braces are the same; the colon is what makes it a dict rather than a set comprehension. Two uses matter most:
 
 - **Building a dictionary from an iterable** — `{n: n * n for n in range(1, 5)}` maps each number to its square, and you can add an `if` filter to keep only some pairs [2].
 - **Inverting a dictionary** — swapping keys and values so you can look up in the opposite direction: `{v: k for k, v in d.items()}` [2].

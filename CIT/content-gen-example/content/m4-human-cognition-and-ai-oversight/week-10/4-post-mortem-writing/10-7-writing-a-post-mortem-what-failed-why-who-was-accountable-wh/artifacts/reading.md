@@ -10,6 +10,9 @@
 
 When an AI system causes harm — unfair loan rejections, missed medical triage, denied college admissions — the immediate crisis eventually ends. What comes next determines whether the same failure happens again. A **post-mortem** is a structured written account produced after an AI incident that answers four plain-language questions: what exactly failed, why it failed, who was accountable, and what governance control would have prevented it [2]. Unlike a blame report, a post-mortem is a learning document — its goal is to improve the system, not to punish the people who ran it [2].
 
+![Post-Mortem Writing Process](./diagram.png)
+*Post-Mortem Writing Process*
+
 ## Key Concepts
 
 ### The four-section post-mortem framework

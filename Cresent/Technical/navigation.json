@@ -1,0 +1,498 @@
+{
+  "id": "4847f74e-d3d5-403a-9ca9-1ba6cc8ab243",
+  "title": "AI Native Engineering Foundations",
+  "description": "Crescent Technical track - a self-paced Python engineering course plus shared AI-native foundations (computational thinking, AI systems, human oversight).",
+  "prerequisites": {
+    "url": "README.md",
+    "title": "Prerequisites and Learning Objectives",
+    "tooltip": "Prerequisites and Learning Objectives"
+  },
+  "studyGuide": {
+    "url": "README.md",
+    "title": "Table of Contents",
+    "tooltip": "Table of Contents"
+  },
+ 
+  "modules": [
+    {
+      "id": "f30181a7-082a-4008-bb51-188cc2803544",
+      "title": "P1 - Python Foundations & Syntax",
+      "description": "P1 - Python Foundations & Syntax",
+      "url": "content/ai_native_engineering_foundations/p1-python-foundations-syntax",
+      "prerequisites": {
+        "url": "",
+        "title": "Prerequisites and Learning Objectives",
+        "tooltip": "Prerequisites and Learning Objectives"
+      },
+      "tooltip": "P1 - Python Foundations & Syntax",
+      "topics": [
+        {
+          "id": "f8e72cc0-1d37-4d6e-8121-178c2c067eae",
+          "title": "The Python Environment",
+          "tooltip": "The Python Environment",
+          "url": "content/ai_native_engineering_foundations/p1-python-foundations-syntax/week-1/1-python-foundations/1-1-the-python-environment/artifacts/reading.md"
+        },
+        {
+          "id": "5ae17c28-0236-42f1-8eac-231054063192",
+          "title": "Variables, Identifiers, Types",
+          "tooltip": "Variables, Identifiers, Types",
+          "url": "content/ai_native_engineering_foundations/p1-python-foundations-syntax/week-1/1-python-foundations/1-2-variables-identifiers-types/artifacts/reading.md"
+        },
+        {
+          "id": "8f4fbde2-c8ca-4f85-bee2-ae0169903237",
+          "title": "Operators & Expressions",
+          "tooltip": "Operators & Expressions",
+          "url": "content/ai_native_engineering_foundations/p1-python-foundations-syntax/week-1/1-python-foundations/1-3-operators-expressions/artifacts/reading.md"
+        },
+        {
+          "id": "fc4b990c-85fa-4fab-931e-6bbeab05dbfc",
+          "title": "Statements, Conversion & Output",
+          "tooltip": "Statements, Conversion & Output",
+          "url": "content/ai_native_engineering_foundations/p1-python-foundations-syntax/week-1/1-python-foundations/1-4-statements-conversion-output/artifacts/reading.md"
+        }
+      ]
+    },
+    {
+      "id": "ec38b6d8-90fa-41ca-84cc-0e64bcb980d2",
+      "title": "P2 - Control Structures, Functions & Tooling",
+      "description": "P2 - Control Structures, Functions & Tooling",
+      "url": "content/ai_native_engineering_foundations/p2-control-structures-functions-tooling",
+      "prerequisites": {
+        "url": "",
+        "title": "Prerequisites and Learning Objectives",
+        "tooltip": "Prerequisites and Learning Objectives"
+      },
+      "tooltip": "P2 - Control Structures, Functions & Tooling",
+      "topics": [
+        {
+          "id": "7c18b65f-34c6-47f5-813b-cbb461aa2c8b",
+          "title": "Conditionals",
+          "tooltip": "Conditionals",
+          "url": "content/ai_native_engineering_foundations/p2-control-structures-functions-tooling/week-2/1-control-structures-functions-1/2-1-conditionals/artifacts/reading.md"
+        },
+        {
+          "id": "3195e4b6-0b5c-4a8c-a82d-0d260e4108f3",
+          "title": "Loops",
+          "tooltip": "Loops",
+          "url": "content/ai_native_engineering_foundations/p2-control-structures-functions-tooling/week-2/1-control-structures-functions-1/2-2-loops/artifacts/reading.md"
+        },
+        {
+          "id": "d554d3a5-6288-4a72-adf4-8876e7f361e4",
+          "title": "Functions",
+          "tooltip": "Functions",
+          "url": "content/ai_native_engineering_foundations/p2-control-structures-functions-tooling/week-3/1-functions-modules-tooling-2/3-1-functions/artifacts/reading.md"
+        },
+        {
+          "id": "1235094f-539a-4653-bc9b-8b0d1cda848d",
+          "title": "Functional Constructs",
+          "tooltip": "Functional Constructs",
+          "url": "content/ai_native_engineering_foundations/p2-control-structures-functions-tooling/week-3/1-functions-modules-tooling-2/3-2-functional-constructs/artifacts/reading.md"
+        },
+        {
+          "id": "e963ccd0-48fa-4b78-948d-1ce436423914",
+          "title": "Modules, Packaging & Professional Tooling",
+          "tooltip": "Modules, Packaging & Professional Tooling",
+          "url": "content/ai_native_engineering_foundations/p2-control-structures-functions-tooling/week-3/1-functions-modules-tooling-2/3-3-modules-packaging-professional-tooling/artifacts/reading.md"
+        }
+      ]
+    },
+    {
+      "id": "26a1db04-7540-4b17-a0ca-006f87eaaa06",
+      "title": "P3 - Data Structures",
+      "description": "P3 - Data Structures",
+      "url": "content/ai_native_engineering_foundations/p3-data-structures",
+      "prerequisites": {
+        "url": "",
+        "title": "Prerequisites and Learning Objectives",
+        "tooltip": "Prerequisites and Learning Objectives"
+      },
+      "tooltip": "P3 - Data Structures",
+      "topics": [
+        {
+          "id": "a990c4f9-29a8-4285-8c1f-20fcfeb2fab4",
+          "title": "Lists",
+          "tooltip": "Lists",
+          "url": "content/ai_native_engineering_foundations/p3-data-structures/week-4/1-data-structures-1/4-1-lists/artifacts/reading.md"
+        },
+        {
+          "id": "2685da27-e48c-4125-87b9-ca0e496943fa",
+          "title": "Tuples",
+          "tooltip": "Tuples",
+          "url": "content/ai_native_engineering_foundations/p3-data-structures/week-4/1-data-structures-1/4-2-tuples/artifacts/reading.md"
+        },
+        {
+          "id": "124bead9-48bc-406b-bc7a-cc76217a6e6a",
+          "title": "Sets",
+          "tooltip": "Sets",
+          "url": "content/ai_native_engineering_foundations/p3-data-structures/week-5/1-data-structures-2/5-1-sets/artifacts/reading.md"
+        },
+        {
+          "id": "46b552a7-96dc-490b-be84-971a6cdaefd5",
+          "title": "Dictionaries",
+          "tooltip": "Dictionaries",
+          "url": "content/ai_native_engineering_foundations/p3-data-structures/week-5/1-data-structures-2/5-2-dictionaries/artifacts/reading.md"
+        },
+        {
+          "id": "e09a3d29-f2bd-4d1b-a315-226eaa8d5d17",
+          "title": "Iterators, Generators & Collections",
+          "tooltip": "Iterators, Generators & Collections",
+          "url": "content/ai_native_engineering_foundations/p3-data-structures/week-5/1-data-structures-2/5-3-iterators-generators-collections/artifacts/reading.md"
+        }
+      ]
+    },
+    {
+      "id": "5f4028b6-52dc-4dd0-a9fe-4e29340a854c",
+      "title": "P4 - Classes & Objects",
+      "description": "P4 - Classes & Objects",
+      "url": "content/ai_native_engineering_foundations/p4-classes-objects",
+      "prerequisites": {
+        "url": "",
+        "title": "Prerequisites and Learning Objectives",
+        "tooltip": "Prerequisites and Learning Objectives"
+      },
+      "tooltip": "P4 - Classes & Objects",
+      "topics": [
+        {
+          "id": "4858ef1f-396c-4fa7-a20f-086ac49b6e9b",
+          "title": "Object-Oriented Foundations",
+          "tooltip": "Object-Oriented Foundations",
+          "url": "content/ai_native_engineering_foundations/p4-classes-objects/week-6/1-classes-objects/6-1-object-oriented-foundations/artifacts/reading.md"
+        },
+        {
+          "id": "e89af789-589d-43dd-8012-7200e0b06398",
+          "title": "Inheritance & Encapsulation",
+          "tooltip": "Inheritance & Encapsulation",
+          "url": "content/ai_native_engineering_foundations/p4-classes-objects/week-6/1-classes-objects/6-2-inheritance-encapsulation/artifacts/reading.md"
+        },
+        {
+          "id": "c9731022-c867-464e-af83-a1cad7870639",
+          "title": "Special Methods & Dataclasses",
+          "tooltip": "Special Methods & Dataclasses",
+          "url": "content/ai_native_engineering_foundations/p4-classes-objects/week-6/1-classes-objects/6-3-special-methods-dataclasses/artifacts/reading.md"
+        }
+      ]
+    },
+    {
+      "id": "535242db-bb21-465d-b75d-5c50658207f6",
+      "title": "P5 - Files & Exception Handling",
+      "description": "P5 - Files & Exception Handling",
+      "url": "content/ai_native_engineering_foundations/p5-files-exception-handling",
+      "prerequisites": {
+        "url": "",
+        "title": "Prerequisites and Learning Objectives",
+        "tooltip": "Prerequisites and Learning Objectives"
+      },
+      "tooltip": "P5 - Files & Exception Handling",
+      "topics": [
+        {
+          "id": "b7aba91a-4d65-4b7e-bb15-4bd218bf0963",
+          "title": "File Handling",
+          "tooltip": "File Handling",
+          "url": "content/ai_native_engineering_foundations/p5-files-exception-handling/week-7/1-files-exception-handling/7-1-file-handling/reading.md"
+        },
+        {
+          "id": "62c4ddff-9e64-44ff-a690-c2f267209dd6",
+          "title": "Errors & Exceptions",
+          "tooltip": "Errors & Exceptions",
+          "url": "content/ai_native_engineering_foundations/p5-files-exception-handling/week-7/1-files-exception-handling/7-2-errors-exceptions/reading.md"
+        },
+        {
+          "id": "0c994f4c-e740-42bb-b878-5452e7da5fa3",
+          "title": "Case Study: Building a Robust File Reader",
+          "tooltip": "Case Study: Building a Robust File Reader",
+          "url": "content/ai_native_engineering_foundations/p5-files-exception-handling/week-7/1-files-exception-handling/7-3-case-study-building-a-robust-file-reader/reading.md"
+        }
+      ]
+    },
+    {
+      "id": "f60345e5-13ad-4caf-a4f8-eb881541a282",
+      "title": "P6 - Git, GitHub & Portfolio",
+      "description": "P6 - Git, GitHub & Portfolio",
+      "url": "content/ai_native_engineering_foundations/p6-git-github-portfolio",
+      "prerequisites": {
+        "url": "",
+        "title": "Prerequisites and Learning Objectives",
+        "tooltip": "Prerequisites and Learning Objectives"
+      },
+      "tooltip": "P6 - Git, GitHub & Portfolio",
+      "topics": [
+        {
+          "id": "441d8d1e-9720-461c-9fa1-6b83acca6e2b",
+          "title": "Version Control Basics",
+          "tooltip": "Version Control Basics",
+          "url": "content/ai_native_engineering_foundations/p6-git-github-portfolio/week-8/1-git-diagnostic/8-1-version-control-basics/artifacts/reading.md"
+        },
+        {
+          "id": "3f592538-c680-4f8c-b5ff-7c2f8547f442",
+          "title": "Portfolio Diagnostic",
+          "tooltip": "Portfolio Diagnostic",
+          "url": "content/ai_native_engineering_foundations/p6-git-github-portfolio/week-8/1-git-diagnostic/8-2-portfolio-diagnostic/artifacts/reading.md"
+        }
+      ]
+    },
+    {
+      "id": "eaa5804b-8117-4795-aeb6-6d71e892cf9a",
+      "title": "M1 - Computational Thinking",
+      "description": "M1 - Computational Thinking",
+      "url": "content/ai_native_engineering_foundations/m1-computational-thinking",
+      "prerequisites": {
+        "url": "",
+        "title": "Prerequisites and Learning Objectives",
+        "tooltip": "Prerequisites and Learning Objectives"
+      },
+      "tooltip": "M1 - Computational Thinking",
+      "topics": [
+        {
+          "id": "382ae1f5-26c3-43d1-a886-644ba9aabdb9",
+          "title": "What Is Computation",
+          "tooltip": "What Is Computation",
+          "url": "content/ai_native_engineering_foundations/m1-computational-thinking/week-8/1-computational-thinking-kickoff/8-3-what-is-computation/reading.md"
+        },
+        {
+          "id": "9bb0ff3f-50a5-47fd-9d4f-9d4afd816e62",
+          "title": "Why AI Gives Different Answers",
+          "tooltip": "Why AI Gives Different Answers",
+          "url": "content/ai_native_engineering_foundations/m1-computational-thinking/week-8/1-computational-thinking-kickoff/8-4-why-ai-gives-different-answers/reading.md"
+        },
+        {
+          "id": "e8f3fcaa-4fb7-4386-bb47-6f6fa3c2e2d1",
+          "title": "Human vs Machine Problem-Solving",
+          "tooltip": "Human vs Machine Problem-Solving",
+          "url": "content/ai_native_engineering_foundations/m1-computational-thinking/week-8/1-computational-thinking-kickoff/8-5-human-vs-machine-problem-solving/reading.md"
+        },
+        {
+          "id": "e80959d5-a8c5-4cd8-bafe-3332f69a9ea0",
+          "title": "Core Computational Thinking Skills",
+          "tooltip": "Core Computational Thinking Skills",
+          "url": "content/ai_native_engineering_foundations/m1-computational-thinking/week-9/1-computational-thinking/9-1-core-computational-thinking-skills/reading.md"
+        },
+        {
+          "id": "cfb248ca-5d8a-48fa-a0b5-56e09c6d4f79",
+          "title": "Expressing Logic",
+          "tooltip": "Expressing Logic",
+          "url": "content/ai_native_engineering_foundations/m1-computational-thinking/week-9/1-computational-thinking/9-2-expressing-logic/reading.md"
+        },
+        {
+          "id": "2484c3b9-ea14-47bb-9626-456a33a1a401",
+          "title": "Specifying for AI",
+          "tooltip": "Specifying for AI",
+          "url": "content/ai_native_engineering_foundations/m1-computational-thinking/week-9/1-computational-thinking/9-3-specifying-for-ai/reading.md"
+        }
+      ]
+    },
+    {
+      "id": "56a2b381-b4b3-4f87-815a-70fa9bffcfbb",
+      "title": "M2 - Introduction to AI Systems",
+      "description": "M2 - Introduction to AI Systems",
+      "url": "content/ai_native_engineering_foundations/m2-introduction-to-ai-systems",
+      "prerequisites": {
+        "url": "",
+        "title": "Prerequisites and Learning Objectives",
+        "tooltip": "Prerequisites and Learning Objectives"
+      },
+      "tooltip": "M2 - Introduction to AI Systems",
+      "topics": [
+        {
+          "id": "cd4babad-f464-4b12-908b-ac2f096de10d",
+          "title": "History of AI",
+          "tooltip": "History of AI",
+          "url": "content/ai_native_engineering_foundations/m2-introduction-to-ai-systems/week-10/1-what-ai-is-and-isnt/10-1-history-of-ai/reading.md"
+        },
+        {
+          "id": "4c0dcf5c-5dee-4370-9610-89c796ae2c63",
+          "title": "How LLMs Work",
+          "tooltip": "How LLMs Work",
+          "url": "content/ai_native_engineering_foundations/m2-introduction-to-ai-systems/week-10/1-what-ai-is-and-isnt/10-2-how-llms-work/reading.md"
+        },
+        {
+          "id": "cec18f36-eae1-4bda-a5ba-33f47a673edd",
+          "title": "The Jagged Frontier",
+          "tooltip": "The Jagged Frontier",
+          "url": "content/ai_native_engineering_foundations/m2-introduction-to-ai-systems/week-10/1-what-ai-is-and-isnt/10-3-the-jagged-frontier/reading.md"
+        },
+        {
+          "id": "67b040e9-69b4-4857-af0e-c9e0a80b52a7",
+          "title": "AI Today (Global and India)",
+          "tooltip": "AI Today (Global and India)",
+          "url": "content/ai_native_engineering_foundations/m2-introduction-to-ai-systems/week-10/1-what-ai-is-and-isnt/10-4-ai-today-global-and-india/reading.md"
+        },
+        {
+          "id": "1d4d1173-46c9-4359-b7ff-33bdc5b97639",
+          "title": "Capability vs Hype",
+          "tooltip": "Capability vs Hype",
+          "url": "content/ai_native_engineering_foundations/m2-introduction-to-ai-systems/week-10/1-what-ai-is-and-isnt/10-5-capability-vs-hype/reading.md"
+        },
+        {
+          "id": "578b63c2-7314-4f4a-8d4c-47cd100ee43d",
+          "title": "Foundation Models",
+          "tooltip": "Foundation Models",
+          "url": "content/ai_native_engineering_foundations/m2-introduction-to-ai-systems/week-11/1-the-2026-ai-stack/11-1-foundation-models/reading.md"
+        },
+        {
+          "id": "34315bd7-04f1-4c19-a187-11839777f8e8",
+          "title": "Fine-Tuning",
+          "tooltip": "Fine-Tuning",
+          "url": "content/ai_native_engineering_foundations/m2-introduction-to-ai-systems/week-11/1-the-2026-ai-stack/11-2-fine-tuning/reading.md"
+        },
+        {
+          "id": "091bd099-e8fd-43d7-a4c8-349b4339c98b",
+          "title": "RAG (Concept)",
+          "tooltip": "RAG (Concept)",
+          "url": "content/ai_native_engineering_foundations/m2-introduction-to-ai-systems/week-11/1-the-2026-ai-stack/11-3-rag-concept/reading.md"
+        },
+        {
+          "id": "9bcb02e9-a81f-4109-b7a2-793817824040",
+          "title": "Agents (Concept)",
+          "tooltip": "Agents (Concept)",
+          "url": "content/ai_native_engineering_foundations/m2-introduction-to-ai-systems/week-11/1-the-2026-ai-stack/11-4-agents-concept/reading.md"
+        },
+        {
+          "id": "b64a7e7f-7e4c-402c-94e0-464f65ee737b",
+          "title": "Tool Use",
+          "tooltip": "Tool Use",
+          "url": "content/ai_native_engineering_foundations/m2-introduction-to-ai-systems/week-11/1-the-2026-ai-stack/11-5-tool-use/reading.md"
+        },
+        {
+          "id": "4d29285d-f844-4c83-93aa-6efd1b738e6a",
+          "title": "Multimodal AI",
+          "tooltip": "Multimodal AI",
+          "url": "content/ai_native_engineering_foundations/m2-introduction-to-ai-systems/week-11/1-the-2026-ai-stack/11-6-multimodal-ai/reading.md"
+        },
+        {
+          "id": "24dfc289-24c4-4320-9108-9175b4bb848d",
+          "title": "Why the Same Question Gives Different Answers",
+          "tooltip": "Why the Same Question Gives Different Answers",
+          "url": "content/ai_native_engineering_foundations/m2-introduction-to-ai-systems/week-12/1-how-llms-behave/12-1-why-the-same-question-gives-different-answers/reading.md"
+        },
+        {
+          "id": "e7ea37ab-2a5f-43ce-8693-633531a3a188",
+          "title": "Temperature",
+          "tooltip": "Temperature",
+          "url": "content/ai_native_engineering_foundations/m2-introduction-to-ai-systems/week-12/1-how-llms-behave/12-2-temperature/reading.md"
+        },
+        {
+          "id": "bf5315f5-13d2-42dc-a925-93d594f7667b",
+          "title": "Probability Distributions",
+          "tooltip": "Probability Distributions",
+          "url": "content/ai_native_engineering_foundations/m2-introduction-to-ai-systems/week-12/1-how-llms-behave/12-3-probability-distributions/reading.md"
+        },
+        {
+          "id": "8b12504e-8fae-4987-95e5-ad56d1e850ae",
+          "title": "Hallucination",
+          "tooltip": "Hallucination",
+          "url": "content/ai_native_engineering_foundations/m2-introduction-to-ai-systems/week-12/1-how-llms-behave/12-4-hallucination/reading.md"
+        },
+        {
+          "id": "6e968f3b-02aa-495e-b089-2ed61d497058",
+          "title": "Context and Prompting Basics",
+          "tooltip": "Context and Prompting Basics",
+          "url": "content/ai_native_engineering_foundations/m2-introduction-to-ai-systems/week-12/1-how-llms-behave/12-5-context-and-prompting-basics/reading.md"
+        },
+        {
+          "id": "6e84fe96-c485-45fe-820c-6ae1bc3a17fb",
+          "title": "Real Failure Cases",
+          "tooltip": "Real Failure Cases",
+          "url": "content/ai_native_engineering_foundations/m2-introduction-to-ai-systems/week-13/1-ethics-safety-governance/13-1-real-failure-cases/reading.md"
+        },
+        {
+          "id": "39d39c06-8b28-4811-a80d-97eaf6977a20",
+          "title": "Data Bias",
+          "tooltip": "Data Bias",
+          "url": "content/ai_native_engineering_foundations/m2-introduction-to-ai-systems/week-13/1-ethics-safety-governance/13-2-data-bias/reading.md"
+        },
+        {
+          "id": "ccc985ae-7230-4369-9a13-7e14c2d7ef7e",
+          "title": "The Four Pillars",
+          "tooltip": "The Four Pillars",
+          "url": "content/ai_native_engineering_foundations/m2-introduction-to-ai-systems/week-13/1-ethics-safety-governance/13-3-the-four-pillars/reading.md"
+        },
+        {
+          "id": "6a80330b-885e-414c-b9c2-43f394f519f0",
+          "title": "Red-Teaming",
+          "tooltip": "Red-Teaming",
+          "url": "content/ai_native_engineering_foundations/m2-introduction-to-ai-systems/week-13/1-ethics-safety-governance/13-4-red-teaming/reading.md"
+        },
+        {
+          "id": "05f69aa7-edd5-4507-9acf-29d2a412e5c6",
+          "title": "Prompt Injection",
+          "tooltip": "Prompt Injection",
+          "url": "content/ai_native_engineering_foundations/m2-introduction-to-ai-systems/week-13/1-ethics-safety-governance/13-5-prompt-injection/reading.md"
+        },
+        {
+          "id": "869dd361-5213-4f1c-a0b0-4104ad0e2705",
+          "title": "Governance Frameworks",
+          "tooltip": "Governance Frameworks",
+          "url": "content/ai_native_engineering_foundations/m2-introduction-to-ai-systems/week-13/1-ethics-safety-governance/13-6-governance-frameworks/reading.md"
+        },
+        {
+          "id": "f1c00dae-9c7d-4516-851e-6ddf7084b273",
+          "title": "Engineering Takeaway",
+          "tooltip": "Engineering Takeaway",
+          "url": "content/ai_native_engineering_foundations/m2-introduction-to-ai-systems/week-13/1-ethics-safety-governance/13-7-engineering-takeaway/reading.md"
+        }
+      ]
+    },
+    {
+      "id": "11109587-5949-4f12-93f6-da15954942b5",
+      "title": "M3 - Human Cognition & AI Oversight",
+      "description": "M3 - Human Cognition & AI Oversight",
+      "url": "content/ai_native_engineering_foundations/m3-human-cognition-ai-oversight",
+      "prerequisites": {
+        "url": "",
+        "title": "Prerequisites and Learning Objectives",
+        "tooltip": "Prerequisites and Learning Objectives"
+      },
+      "tooltip": "M3 - Human Cognition & AI Oversight",
+      "topics": [
+        {
+          "id": "341c2361-2f29-44bf-8c52-d4437f760977",
+          "title": "How Humans Think",
+          "tooltip": "How Humans Think",
+          "url": "content/ai_native_engineering_foundations/m3-human-cognition-ai-oversight/week-14/1-human-judgment-ai-oversight/14-1-how-humans-think/reading.md"
+        },
+        {
+          "id": "45738894-4b90-4d26-850a-abec2fe5ea9e",
+          "title": "The Judgment Framework",
+          "tooltip": "The Judgment Framework",
+          "url": "content/ai_native_engineering_foundations/m3-human-cognition-ai-oversight/week-14/1-human-judgment-ai-oversight/14-2-the-judgment-framework/reading.md"
+        },
+        {
+          "id": "b7441801-ab72-479f-8175-21cf8598c3e4",
+          "title": "Case Study: College Admissions",
+          "tooltip": "Case Study: College Admissions",
+          "url": "content/ai_native_engineering_foundations/m3-human-cognition-ai-oversight/week-15/1-cognition-in-practice/15-1-case-study-1-college-admissions/reading.md"
+        },
+        {
+          "id": "4d9593c4-edac-4c89-9347-ba74299bc928",
+          "title": "Case Study: Automated Medical Triage",
+          "tooltip": "Case Study: Automated Medical Triage",
+          "url": "content/ai_native_engineering_foundations/m3-human-cognition-ai-oversight/week-15/1-cognition-in-practice/15-2-case-study-2-automated-medical-triage/reading.md"
+        },
+        {
+          "id": "5d529847-2b76-4581-85fc-e2bb75de1c8a",
+          "title": "Case Study: AI Loan Approval at Scale",
+          "tooltip": "Case Study: AI Loan Approval at Scale",
+          "url": "content/ai_native_engineering_foundations/m3-human-cognition-ai-oversight/week-15/1-cognition-in-practice/15-3-case-study-3-ai-loan-approval-at-scale/reading.md"
+        },
+        {
+          "id": "3778d2d1-0ede-483c-bcc1-74a8e50e7ebb",
+          "title": "Automation Complacency",
+          "tooltip": "Automation Complacency",
+          "url": "content/ai_native_engineering_foundations/m3-human-cognition-ai-oversight/week-15/1-cognition-in-practice/15-4-automation-complacency/reading.md"
+        },
+        {
+          "id": "ee09d0e5-44a6-465f-b1b4-5a76275324e9",
+          "title": "Human-in-the-Loop Checkpoints",
+          "tooltip": "Human-in-the-Loop Checkpoints",
+          "url": "content/ai_native_engineering_foundations/m3-human-cognition-ai-oversight/week-15/1-cognition-in-practice/15-5-human-in-the-loop-checkpoints/reading.md"
+        },
+        {
+          "id": "f42b5a73-ea0e-4e02-82c8-416dfcf6838a",
+          "title": "Connecting Oversight to Your Domain",
+          "tooltip": "Connecting Oversight to Your Domain",
+          "url": "content/ai_native_engineering_foundations/m3-human-cognition-ai-oversight/week-15/1-cognition-in-practice/15-6-connecting-oversight-to-your-domain/reading.md"
+        }
+      ]
+    }
+  ]
+}

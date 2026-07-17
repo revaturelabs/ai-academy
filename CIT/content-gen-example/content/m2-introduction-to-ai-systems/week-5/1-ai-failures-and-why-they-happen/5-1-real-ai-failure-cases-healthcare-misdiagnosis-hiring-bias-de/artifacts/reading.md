@@ -10,6 +10,9 @@
 
 AI systems do not always get things right — and when they get things wrong, real people get hurt. This topic examines three areas where AI failures have caused documented harm: incorrect medical diagnoses, biased hiring decisions, and deepfake identity attacks. You will see what went wrong, why the AI produced a harmful output, and who is responsible. Understanding these failures matters for anyone who will use, recommend, or deploy an AI system in a professional setting.
 
+![Biased or Misused Input → AI Output → Real Harm → Accountability Gap](./diagram.png)
+*Biased or Misused Input → AI Output → Real Harm → Accountability Gap*
+
 ## Key Concepts
 
 ### What an AI failure actually is

@@ -1,0 +1,122 @@
+---
+---
+
+// ---------------------------------------------------------------------------
+// Revature brand tokens (taken from revature.com's stylesheet).
+//   --primary-dark-blue : #011635   (header + headings)
+//   --primary-orange    : #ff7014   (accent, used sparingly)
+//   --font-primary      : Inter, sans-serif
+// Overrides go BEFORE the Cayman import so its `!default` vars pick them up.
+// ---------------------------------------------------------------------------
+$navy:       #011635;   // Revature dark blue — headings
+$orange:     #ff7014;   // brand orange
+$link:       #14448c;   // readable link blue
+$link-hover: #011635;
+$ink:        #000000;   // jet-black body text
+
+// Revature hero gradient (sampled from the brand thumbnail):
+// orange (top-left) -> pink (centre) -> purple (bottom-right).
+$hero-orange: #f16e2a;
+$hero-pink:   #d63a8e;
+$hero-purple: #a11fc1;
+
+$brand-font: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+
+$header-bg-color:           $hero-pink;
+$header-bg-color-secondary: $hero-purple;
+$header-heading-color:      #ffffff;
+$section-headings-color:    $navy;
+$content-link-color:        $link;
+
+@import "jekyll-theme-cayman";
+
+// ---------------------------------------------------------------------------
+// Revature customisations layered on top of the Cayman base.
+// ---------------------------------------------------------------------------
+
+// Use Inter everywhere.
+body,
+.main-content,
+.page-header,
+.brand-bar,
+h1, h2, h3, h4, h5, h6 {
+  font-family: $brand-font;
+}
+
+// White brand bar so the black Revature wordmark is legible.
+.brand-bar {
+  background-color: #ffffff;
+  border-bottom: 3px solid $orange;   // thin brand-orange accent line
+  padding: 0.55rem 2rem;
+
+  .brand-bar-inner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    max-width: 64rem;
+    margin: 0 auto;
+  }
+
+  .brand { display: inline-flex; align-items: center; text-decoration: none; }
+
+  .brand-logo { height: 44px; width: auto; display: block; }
+
+  // "Home" link back to the main page.
+  .brand-nav a {
+    color: $navy;
+    font-weight: 600;
+    font-size: 0.95rem;
+    text-decoration: none;
+    padding: 0.35rem 0.9rem;
+    border: 1px solid #d7dde3;
+    border-radius: 4px;
+    transition: background-color 0.15s ease, color 0.15s ease;
+
+    &:hover {
+      background-color: $navy;
+      color: #ffffff;
+    }
+  }
+
+  .brand-wordmark {
+    color: $navy;
+    font-weight: 700;
+    font-size: 1.35rem;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+  }
+}
+
+// Hero header: Revature brand gradient (orange -> pink -> purple).
+.page-header {
+  background-color: $hero-pink;
+  background-image: linear-gradient(135deg, $hero-orange 0%, $hero-pink 50%, $hero-purple 100%);
+  padding: 2.25rem 2rem;
+}
+
+// Body content: jet black.
+.main-content {
+  color: $ink;
+
+  p, li, td, th, dd, dt { color: $ink; }
+
+  a       { color: $link; }
+  a:hover { color: $link-hover; }
+
+  // Headings in Revature dark blue.
+  h1, h2, h3, h4, h5, h6 { color: $navy; }
+
+  // Subtle orange accent on blockquotes.
+  blockquote {
+    border-left: 0.3rem solid $orange;
+    color: #333333;
+  }
+}
+
+// Quiet footer, no external links.
+.site-footer {
+  border-top: 1px solid #dce1e6;
+  color: #4a4a4a;
+
+  .site-footer-owner { font-weight: 600; color: $navy; }
+}

@@ -10,6 +10,9 @@
 
 Large Language Models (LLMs) sometimes produce false information written in fluent, authoritative prose — and show no sign that anything is wrong. This specific failure is called **hallucination**. You already know from topic 3.9 that it exists, and from topic 5.1 that it causes real harm. This topic goes one level deeper: it explains the exact mechanism that makes an LLM state falsehoods confidently, and why the model cannot simply say "I don't know."
 
+![Next-Token Prediction — No Truth Check Inside](./diagram.png)
+*Next-Token Prediction — No Truth Check Inside*
+
 ## Key Concepts
 
 ### Next-token prediction — the engine behind every word

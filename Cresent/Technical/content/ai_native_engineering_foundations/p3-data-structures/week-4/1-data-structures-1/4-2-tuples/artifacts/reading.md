@@ -1,4 +1,4 @@
-﻿# Tuples
+# Tuples
 
 <sub>[&#8592; Previous: 4.1 Lists](../../../../../../../content/ai_native_engineering_foundations/p3-data-structures/week-4/1-data-structures-1/4-1-lists/artifacts/reading.md)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[Go back to TOC](../../../../../../../README.md)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[Next: 5.1 Sets &#8594;](../../../../../../../content/ai_native_engineering_foundations/p3-data-structures/week-5/1-data-structures-2/5-1-sets/artifacts/reading.md)</sub>
 
@@ -12,7 +12,7 @@ _This contributes to A2 — Data Structures Portfolio (due W5)._
 
 ## Key Concepts
 
-<u>**What a tuple is.**</u> A tuple is an **ordered, immutable sequence** of values. "Ordered" and "sequence" mean it behaves like a list for reading: elements have positions, you index them, loop over them, and slice them. "Immutable" means that once built, its contents cannot change — no adding, removing, or reassigning an element [1][2]. You write one with parentheses and comma-separated values, and the values need not share a type:
+<strong><u>What a tuple is.</u></strong> A tuple is an **ordered, immutable sequence** of values. "Ordered" and "sequence" mean it behaves like a list for reading: elements have positions, you index them, loop over them, and slice them. "Immutable" means that once built, its contents cannot change — no adding, removing, or reassigning an element [1][2]. You write one with parentheses and comma-separated values, and the values need not share a type:
 
 ```python
 point  = (3, 5)
@@ -21,7 +21,7 @@ person = ("Ada", 36, True)   # mixed types are fine, exactly like a list
 empty  = ()                  # an empty tuple
 ```
 
-<u>**Packing & the `tuple()` constructor.**</u> The parentheses are actually optional — when you write several comma-separated values, Python *packs* them into a tuple automatically [3]. The comma is what makes a tuple, not the parentheses, which leads to one gotcha: `(42)` is just the int `42`, so a one-element tuple needs a trailing comma, `(42,)`. Besides literal syntax, `tuple()` builds a tuple from any existing iterable [3]:
+<strong><u>Packing & the `tuple()` constructor.</u></strong> The parentheses are actually optional — when you write several comma-separated values, Python *packs* them into a tuple automatically [3]. The comma is what makes a tuple, not the parentheses, which leads to one gotcha: `(42)` is just the int `42`, so a one-element tuple needs a trailing comma, `(42,)`. Besides literal syntax, `tuple()` builds a tuple from any existing iterable [3]:
 
 ```python
 point  = 3, 5         # same as (3, 5) — packing, no parentheses needed
@@ -33,7 +33,7 @@ tuple(range(4))       # (0, 1, 2, 3)
 
 Note that `tuple()` takes **one** argument — an iterable. Writing `tuple(1, 2, 3)` raises a `TypeError`; when the items are loose, use the comma form `(1, 2, 3)` instead [3].
 
-<u>**Indexing & slicing.**</u> Because a tuple is a sequence, everything you learned about reading a list in 4.1 applies unchanged: indexing starts at `0`, negative indices count from the end, slicing uses `[start:stop:step]` and returns a brand-new tuple, and you can loop and test membership [2]:
+<strong><u>Indexing & slicing.</u></strong> Because a tuple is a sequence, everything you learned about reading a list in 4.1 applies unchanged: indexing starts at `0`, negative indices count from the end, slicing uses `[start:stop:step]` and returns a brand-new tuple, and you can loop and test membership [2]:
 
 ```python
 person = ("Ada", 36, True)
@@ -44,7 +44,7 @@ nums = (10, 20, 30, 40, 50)
 nums[::-1]       # (50, 40, 30, 20, 10)  — reversed
 ```
 
-<u>**Immutability.**</u> The one thing you cannot do is *write*. `person[1] = 40` raises `TypeError: 'tuple' object does not support item assignment` — a list would accept it, a tuple refuses [1]. A tuple has none of the mutating methods you used on lists (`append`, `insert`, `remove`, `pop`, `sort`, `reverse`); calling one raises an `AttributeError` because the method does not exist [1][2]. In fact a tuple exposes exactly **two** methods — `count()` and `index()`, both read-only — versus the roughly dozen a list carries; that short menu *is* the immutability guarantee expressed as an API. To get a "changed" tuple you build a new one rather than editing the old:
+<strong><u>Immutability.</u></strong> The one thing you cannot do is *write*. `person[1] = 40` raises `TypeError: 'tuple' object does not support item assignment` — a list would accept it, a tuple refuses [1]. A tuple has none of the mutating methods you used on lists (`append`, `insert`, `remove`, `pop`, `sort`, `reverse`); calling one raises an `AttributeError` because the method does not exist [1][2]. In fact a tuple exposes exactly **two** methods — `count()` and `index()`, both read-only — versus the roughly dozen a list carries; that short menu *is* the immutability guarantee expressed as an API. To get a "changed" tuple you build a new one rather than editing the old:
 
 ```python
 point = (3, 5)
@@ -53,7 +53,7 @@ point = point + (7,)   # rebinds point to a NEW tuple (3, 5, 7); original untouc
 
 One subtlety, named once: immutability applies to the tuple's *structure* — which objects it holds and in what order — not to those objects' internals. A tuple holding a list can still have that inner list edited, but for the everyday case of numbers, strings, and other tuples, treat a tuple as fully fixed [1]. (Because tuples are immutable in the common case, you will later be able to use one as a dictionary key where a list cannot.)
 
-<u>**Unpacking & swap.**</u> **Unpacking** is the reverse of packing: you spread a tuple's values across several variables in one statement, and the counts must match or Python raises a `ValueError` [3]. The P1 form `x, y = 1, 2` was doing exactly this — the right side packs `(1, 2)`, the left side unpacks it. This gives Python its clean **variable swap**, with no temporary variable, because the whole right side is built into a tuple *before* any assignment happens:
+<strong><u>Unpacking & swap.</u></strong> **Unpacking** is the reverse of packing: you spread a tuple's values across several variables in one statement, and the counts must match or Python raises a `ValueError` [3]. The P1 form `x, y = 1, 2` was doing exactly this — the right side packs `(1, 2)`, the left side unpacks it. This gives Python its clean **variable swap**, with no temporary variable, because the whole right side is built into a tuple *before* any assignment happens:
 
 ```python
 a, b = b, a          # right side packs (b, a), then unpacks — swap done
@@ -65,7 +65,7 @@ for name, age in pairs:          # each tuple unpacks in the loop header
 
 Star-unpacking collects "everything else" into a list: `first, *rest = (1, 2, 3, 4)` gives `first = 1`, `rest = [2, 3, 4]`; at most one star is allowed [3].
 
-<u>**Nested tuples.**</u> A tuple can contain other tuples, so you can represent tables or grids with no new syntax. Reading a nested value is **chained indexing** — the first index selects the inner tuple, the second reaches inside it — and immutability nests too [2]:
+<strong><u>Nested tuples.</u></strong> A tuple can contain other tuples, so you can represent tables or grids with no new syntax. Reading a nested value is **chained indexing** — the first index selects the inner tuple, the second reaches inside it — and immutability nests too [2]:
 
 ```python
 matrix = ((1, 2, 3),
@@ -75,7 +75,7 @@ matrix[0][2]     # 3          — chained indexing: row 0, column 2
 name, age, city = ("Ada", 36, "London")   # unpack a whole record at once
 ```
 
-<u>**Operations & methods.**</u> Three operations round out the toolkit, all using operators you already know from lists and P1 [2]:
+<strong><u>Operations & methods.</u></strong> Three operations round out the toolkit, all using operators you already know from lists and P1 [2]:
 
 - **Concatenation `+`** joins two tuples into a new one: `(1, 2) + (3, 4)` → `(1, 2, 3, 4)`.
 - **Repetition `*`** repeats a tuple: `(0,) * 3` → `(0, 0, 0)`.
@@ -86,7 +86,7 @@ Both `+` and `*` produce fresh tuples rather than modifying an operand, consiste
 - **`count(value)`** returns how many times a value appears: `(7, 3, 7, 7, 1).count(7)` → `3`.
 - **`index(value)`** returns the position of the *first* occurrence: `(7, 3, 7, 7, 1).index(7)` → `0`; it raises `ValueError` if the value is absent, so guard it with `in` when unsure.
 
-<u>**Comparison.**</u> Tuples support `<`, `>`, `==`, `<=`, `>=` and compare **element by element, left to right** — the same rule dictionaries use for words, which is why it is called *lexicographic* (dictionary-order) comparison [3]. Python compares the first elements; if they tie it moves to the second, and so on, until a pair differs or one tuple runs out:
+<strong><u>Comparison.</u></strong> Tuples support `<`, `>`, `==`, `<=`, `>=` and compare **element by element, left to right** — the same rule dictionaries use for words, which is why it is called *lexicographic* (dictionary-order) comparison [3]. Python compares the first elements; if they tie it moves to the second, and so on, until a pair differs or one tuple runs out:
 
 ```python
 (1, 2) < (1, 3)        # True  — first tie, 2 < 3 decides
@@ -96,7 +96,7 @@ Both `+` and `*` produce fresh tuples rather than modifying an operand, consiste
 
 This is why sorting a list of tuples "just works": `sorted()` orders by the first field, breaks ties with the second, and so on — multi-key ordering for free [3]. (Comparison only works when paired elements are themselves comparable; a number versus a string raises a `TypeError`.)
 
-<u>**Tuple vs list.**</u> Ask one question — *will the collection's membership change?* [1] Decide like this:
+<strong><u>Tuple vs list.</u></strong> Ask one question — *will the collection's membership change?* [1] Decide like this:
 
 - Items will be added, removed, or reordered → **list** (a to-do list, a growing log, a queue).
 - The group is a fixed-size, fixed-meaning record whose parts stay put → **tuple** (a coordinate, color, date, or row).
